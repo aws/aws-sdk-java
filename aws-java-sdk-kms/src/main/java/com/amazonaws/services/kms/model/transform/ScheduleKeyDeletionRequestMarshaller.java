@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.kms.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.kms.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ScheduleKeyDeletionRequest Marshaller
+ * ScheduleKeyDeletionRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ScheduleKeyDeletionRequestMarshaller implements Marshaller<Request<ScheduleKeyDeletionRequest>, ScheduleKeyDeletionRequest> {
+@SdkInternalApi
+public class ScheduleKeyDeletionRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> KEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KeyId").build();
+    private static final MarshallingInfo<Integer> PENDINGWINDOWINDAYS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PendingWindowInDays").build();
 
-    public ScheduleKeyDeletionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ScheduleKeyDeletionRequestMarshaller instance = new ScheduleKeyDeletionRequestMarshaller();
+
+    public static ScheduleKeyDeletionRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ScheduleKeyDeletionRequest> marshall(ScheduleKeyDeletionRequest scheduleKeyDeletionRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ScheduleKeyDeletionRequest scheduleKeyDeletionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (scheduleKeyDeletionRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ScheduleKeyDeletionRequest> request = new DefaultRequest<ScheduleKeyDeletionRequest>(scheduleKeyDeletionRequest, "AWSKMS");
-        request.addHeader("X-Amz-Target", "TrentService.ScheduleKeyDeletion");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (scheduleKeyDeletionRequest.getKeyId() != null) {
-                jsonGenerator.writeFieldName("KeyId").writeValue(scheduleKeyDeletionRequest.getKeyId());
-            }
-            if (scheduleKeyDeletionRequest.getPendingWindowInDays() != null) {
-                jsonGenerator.writeFieldName("PendingWindowInDays").writeValue(scheduleKeyDeletionRequest.getPendingWindowInDays());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(scheduleKeyDeletionRequest.getKeyId(), KEYID_BINDING);
+            protocolMarshaller.marshall(scheduleKeyDeletionRequest.getPendingWindowInDays(), PENDINGWINDOWINDAYS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

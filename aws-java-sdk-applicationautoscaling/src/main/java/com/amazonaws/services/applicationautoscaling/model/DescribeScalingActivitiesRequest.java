@@ -57,6 +57,12 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      * instance group ID. Example: <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique identifier is the fleet name.
+     * Example: <code>fleet/sample-fleet</code>.
+     * </p>
+     * </li>
      * </ul>
      */
     private String resourceId;
@@ -79,6 +85,11 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      * <li>
      * <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
      * </p>
      * </li>
      * </ul>
@@ -220,6 +231,12 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      * instance group ID. Example: <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique identifier is the fleet name.
+     * Example: <code>fleet/sample-fleet</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -242,6 +259,12 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      *        <p>
      *        EMR cluster - The resource type is <code>instancegroup</code> and the unique identifier is the cluster ID
      *        and instance group ID. Example: <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique identifier is the fleet name.
+     *        Example: <code>fleet/sample-fleet</code>.
      *        </p>
      *        </li>
      */
@@ -274,6 +297,12 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      * instance group ID. Example: <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique identifier is the fleet name.
+     * Example: <code>fleet/sample-fleet</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The identifier of the resource associated with the scaling activity. This string consists of the resource
@@ -296,6 +325,12 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      *         <p>
      *         EMR cluster - The resource type is <code>instancegroup</code> and the unique identifier is the cluster ID
      *         and instance group ID. Example: <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique identifier is the fleet
+     *         name. Example: <code>fleet/sample-fleet</code>.
      *         </p>
      *         </li>
      */
@@ -328,6 +363,12 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      * instance group ID. Example: <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique identifier is the fleet name.
+     * Example: <code>fleet/sample-fleet</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -350,6 +391,12 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      *        <p>
      *        EMR cluster - The resource type is <code>instancegroup</code> and the unique identifier is the cluster ID
      *        and instance group ID. Example: <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique identifier is the fleet name.
+     *        Example: <code>fleet/sample-fleet</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -381,6 +428,11 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -400,6 +452,11 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      *        <li>
      *        <p>
      *        <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -430,6 +487,11 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The scalable dimension. This string consists of the service namespace, resource type, and scaling
@@ -448,6 +510,11 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      *         <li>
      *         <p>
      *         <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
      *         </p>
      *         </li>
      * @see ScalableDimension
@@ -478,6 +545,11 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -497,6 +569,11 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      *        <li>
      *        <p>
      *        <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -529,6 +606,11 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -548,6 +630,11 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      *        <li>
      *        <p>
      *        <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -578,6 +665,11 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -597,6 +689,11 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      *        <li>
      *        <p>
      *        <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

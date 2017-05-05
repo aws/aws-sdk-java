@@ -431,6 +431,39 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
 
     /**
      * <p>
+     * Create a new version of your custom platform.
+     * </p>
+     * 
+     * @param createPlatformVersionRequest
+     *        Request to create a new platform version.
+     * @return A Java Future containing the result of the CreatePlatformVersion operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.CreatePlatformVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreatePlatformVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePlatformVersionResult> createPlatformVersionAsync(CreatePlatformVersionRequest createPlatformVersionRequest);
+
+    /**
+     * <p>
+     * Create a new version of your custom platform.
+     * </p>
+     * 
+     * @param createPlatformVersionRequest
+     *        Request to create a new platform version.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreatePlatformVersion operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.CreatePlatformVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreatePlatformVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePlatformVersionResult> createPlatformVersionAsync(CreatePlatformVersionRequest createPlatformVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreatePlatformVersionRequest, CreatePlatformVersionResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates the Amazon S3 storage location for the account.
      * </p>
      * <p>
@@ -667,6 +700,37 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
 
     /**
      * <p>
+     * Deletes the specified version of a custom platform.
+     * </p>
+     * 
+     * @param deletePlatformVersionRequest
+     * @return A Java Future containing the result of the DeletePlatformVersion operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.DeletePlatformVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeletePlatformVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePlatformVersionResult> deletePlatformVersionAsync(DeletePlatformVersionRequest deletePlatformVersionRequest);
+
+    /**
+     * <p>
+     * Deletes the specified version of a custom platform.
+     * </p>
+     * 
+     * @param deletePlatformVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeletePlatformVersion operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.DeletePlatformVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeletePlatformVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePlatformVersionResult> deletePlatformVersionAsync(DeletePlatformVersionRequest deletePlatformVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeletePlatformVersionRequest, DeletePlatformVersionResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieve a list of application versions.
      * </p>
      * 
@@ -771,7 +835,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * </p>
      * 
      * @param describeConfigurationOptionsRequest
-     *        Result message containig a list of application version descriptions.
+     *        Result message containing a list of application version descriptions.
      * @return A Java Future containing the result of the DescribeConfigurationOptions operation returned by the
      *         service.
      * @sample AWSElasticBeanstalkAsync.DescribeConfigurationOptions
@@ -789,7 +853,7 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      * </p>
      * 
      * @param describeConfigurationOptionsRequest
-     *        Result message containig a list of application version descriptions.
+     *        Result message containing a list of application version descriptions.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1172,7 +1236,39 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
 
     /**
      * <p>
-     * Returns a list of the available solution stack names.
+     * Describes the version of the platform.
+     * </p>
+     * 
+     * @param describePlatformVersionRequest
+     * @return A Java Future containing the result of the DescribePlatformVersion operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.DescribePlatformVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribePlatformVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribePlatformVersionResult> describePlatformVersionAsync(DescribePlatformVersionRequest describePlatformVersionRequest);
+
+    /**
+     * <p>
+     * Describes the version of the platform.
+     * </p>
+     * 
+     * @param describePlatformVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribePlatformVersion operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.DescribePlatformVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribePlatformVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribePlatformVersionResult> describePlatformVersionAsync(DescribePlatformVersionRequest describePlatformVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribePlatformVersionRequest, DescribePlatformVersionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of the available solution stack names, with the public version first and then in reverse
+     * chronological order.
      * </p>
      * 
      * @param listAvailableSolutionStacksRequest
@@ -1186,7 +1282,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
 
     /**
      * <p>
-     * Returns a list of the available solution stack names.
+     * Returns a list of the available solution stack names, with the public version first and then in reverse
+     * chronological order.
      * </p>
      * 
      * @param listAvailableSolutionStacksRequest
@@ -1217,6 +1314,37 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      */
     java.util.concurrent.Future<ListAvailableSolutionStacksResult> listAvailableSolutionStacksAsync(
             com.amazonaws.handlers.AsyncHandler<ListAvailableSolutionStacksRequest, ListAvailableSolutionStacksResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the available platforms.
+     * </p>
+     * 
+     * @param listPlatformVersionsRequest
+     * @return A Java Future containing the result of the ListPlatformVersions operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.ListPlatformVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPlatformVersionsResult> listPlatformVersionsAsync(ListPlatformVersionsRequest listPlatformVersionsRequest);
+
+    /**
+     * <p>
+     * Lists the available platforms.
+     * </p>
+     * 
+     * @param listPlatformVersionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListPlatformVersions operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.ListPlatformVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPlatformVersionsResult> listPlatformVersionsAsync(ListPlatformVersionsRequest listPlatformVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListPlatformVersionsRequest, ListPlatformVersionsResult> asyncHandler);
 
     /**
      * <p>

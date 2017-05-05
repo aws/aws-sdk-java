@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -49,19 +50,19 @@ import com.amazonaws.services.opsworkscm.model.transform.*;
  * <p>
  * <fullname>AWS OpsWorks for Chef Automate</fullname>
  * <p>
- * A service that runs and manages configuration management servers.
+ * AWS OpsWorks for Chef Automate is a service that runs and manages configuration management servers.
  * </p>
  * <p>
- * Glossary of terms
+ * <b>Glossary of terms</b>
  * </p>
  * <ul>
  * <li>
  * <p>
- * <b>Server</b>: A server is a configuration management server, and can be highly-available. The configuration manager
- * runs on your instances by using various AWS services, such as Amazon Elastic Compute Cloud (EC2), and potentially
- * Amazon Relational Database Service (RDS). A server is a generic abstraction over the configuration manager that you
- * want to use, much like Amazon RDS. In AWS OpsWorks for Chef Automate, you do not start or stop servers. After you
- * create servers, they continue to run until they are deleted.
+ * <b>Server</b>: A configuration management server that can be highly-available. The configuration manager runs on your
+ * instances by using various AWS services, such as Amazon Elastic Compute Cloud (EC2), and potentially Amazon
+ * Relational Database Service (RDS). A server is a generic abstraction over the configuration manager that you want to
+ * use, much like Amazon RDS. In AWS OpsWorks for Chef Automate, you do not start or stop servers. After you create
+ * servers, they continue to run until they are deleted.
  * </p>
  * </li>
  * <li>
@@ -92,10 +93,34 @@ import com.amazonaws.services.opsworkscm.model.transform.*;
  * </li>
  * </ul>
  * <p>
- * Throttling limits
+ * <b>Endpoints</b>
  * </p>
  * <p>
- * All API operations allow for 5 requests per second with a burst of 10 requests per second.
+ * AWS OpsWorks for Chef Automate supports the following endpoints, all HTTPS. You must connect to one of the following
+ * endpoints. Chef servers can only be accessed or managed within the endpoint in which they are created.
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * opsworks-cm.us-east-1.amazonaws.com
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * opsworks-cm.us-west-2.amazonaws.com
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * opsworks-cm.eu-west-1.amazonaws.com
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <b>Throttling limits</b>
+ * </p>
+ * <p>
+ * All API operations allow for five requests per second with a burst of 10 requests per second.
  * </p>
  */
 @ThreadSafe
@@ -288,6 +313,10 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
         init();
     }
 
+    public static AWSOpsWorksCMClientBuilder builder() {
+        return AWSOpsWorksCMClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on OpsWorksCM using the specified parameters.
      *
@@ -316,6 +345,22 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
     }
 
     /**
+     * <p>
+     * Associates a new node with the Chef server. This command is an alternative to <code>knife bootstrap</code>. For
+     * more information about how to disassociate a node, see <a>DisassociateNode</a>.
+     * </p>
+     * <p>
+     * A node can can only be associated with servers that are in a <code>HEALTHY</code> state. Otherwise, an
+     * <code>InvalidStateException</code> is thrown. A <code>ResourceNotFoundException</code> is thrown when the server
+     * does not exist. A <code>ValidationException</code> is raised when parameters of the request are not valid. The
+     * AssociateNode API call can be integrated into Auto Scaling configurations, AWS Cloudformation templates, or the
+     * user data of a server's instance.
+     * </p>
+     * <p>
+     * Example:
+     * <code>aws opsworks-cm associate-node --server-name <i>MyServer</i> --node-name <i>MyManagedNode</i> --engine-attributes "Name=<i>MyOrganization</i>,Value=default" "Name=<i>Chef_node_public_key</i>,Value=<i>Public_key_contents</i>"</code>
+     * </p>
+     * 
      * @param associateNodeRequest
      * @return Result of the AssociateNode operation returned by the service.
      * @throws InvalidStateException
@@ -329,7 +374,13 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      *      Documentation</a>
      */
     @Override
-    public AssociateNodeResult associateNode(AssociateNodeRequest associateNodeRequest) {
+    public AssociateNodeResult associateNode(AssociateNodeRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateNode(request);
+    }
+
+    @SdkInternalApi
+    final AssociateNodeResult executeAssociateNode(AssociateNodeRequest associateNodeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(associateNodeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -340,7 +391,7 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AssociateNodeRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateNodeRequest));
+                request = new AssociateNodeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateNodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -361,23 +412,21 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
 
     /**
      * <p>
-     * Creates an application-level backup of a server. While the server is <code>BACKING_UP</code>, the server can not
-     * be modified and no additional backup can be created.
+     * Creates an application-level backup of a server. While the server is in the <code>BACKING_UP</code> state, the
+     * server cannot be changed, and no additional backup can be created.
      * </p>
      * <p>
-     * Backups can be created for <code>RUNNING</code>, <code>HEALTHY</code> and <code>UNHEALTHY</code> servers.
+     * Backups can be created for servers in <code>RUNNING</code>, <code>HEALTHY</code>, and <code>UNHEALTHY</code>
+     * states. By default, you can create a maximum of 50 manual backups.
      * </p>
      * <p>
-     * This operation is asnychronous.
+     * This operation is asynchronous.
      * </p>
      * <p>
-     * By default 50 manual backups can be created.
-     * </p>
-     * <p>
-     * A <code>LimitExceededException</code> is thrown then the maximum number of manual backup is reached. A
-     * <code>InvalidStateException</code> is thrown when the server is not in any of RUNNING, HEALTHY, UNHEALTHY. A
-     * <code>ResourceNotFoundException</code> is thrown when the server is not found. A <code>ValidationException</code>
-     * is thrown when parameters of the request are not valid.
+     * A <code>LimitExceededException</code> is thrown when the maximum number of manual backups is reached. An
+     * <code>InvalidStateException</code> is thrown when the server is not in any of the following states: RUNNING,
+     * HEALTHY, or UNHEALTHY. A <code>ResourceNotFoundException</code> is thrown when the server is not found. A
+     * <code>ValidationException</code> is thrown when parameters of the request are not valid.
      * </p>
      * 
      * @param createBackupRequest
@@ -395,7 +444,13 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      *      Documentation</a>
      */
     @Override
-    public CreateBackupResult createBackup(CreateBackupRequest createBackupRequest) {
+    public CreateBackupResult createBackup(CreateBackupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateBackup(request);
+    }
+
+    @SdkInternalApi
+    final CreateBackupResult executeCreateBackup(CreateBackupRequest createBackupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createBackupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -406,7 +461,7 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateBackupRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBackupRequest));
+                request = new CreateBackupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBackupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -427,25 +482,23 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
 
     /**
      * <p>
-     * Creates and immedately starts a new Server. The server can be used once it has reached the <code>HEALTHY</code>
-     * state.
+     * Creates and immedately starts a new server. The server is ready to use when it is in the <code>HEALTHY</code>
+     * state. By default, you can create a maximum of 10 servers.
      * </p>
      * <p>
-     * This operation is asnychronous.
+     * This operation is asynchronous.
      * </p>
      * <p>
-     * A <code>LimitExceededException</code> is thrown then the maximum number of server backup is reached. A
-     * <code>ResourceAlreadyExistsException</code> is raise when a server with the same name already exists in the
-     * account. A <code>ResourceNotFoundException</code> is thrown when a backupId is passed, but the backup does not
-     * exist. A <code>ValidationException</code> is thrown when parameters of the request are not valid.
+     * A <code>LimitExceededException</code> is thrown when you have created the maximum number of servers (10). A
+     * <code>ResourceAlreadyExistsException</code> is thrown when a server with the same name already exists in the
+     * account. A <code>ResourceNotFoundException</code> is thrown when you specify a backup ID that is not valid or is
+     * for a backup that does not exist. A <code>ValidationException</code> is thrown when parameters of the request are
+     * not valid.
      * </p>
      * <p>
-     * By default 10 servers can be created. A <code>LimitExceededException</code> is raised when the limit is exceeded.
-     * </p>
-     * <p>
-     * When no security groups are provided by using <code>SecurityGroupIds</code>, AWS OpsWorks creates a new security
-     * group. This security group opens the Chef server to the world on TCP port 443. If a KeyName is present, SSH
-     * access is enabled. SSH is also open to the world on TCP port 22.
+     * If you do not specify a security group by adding the <code>SecurityGroupIds</code> parameter, AWS OpsWorks
+     * creates a new security group. The default security group opens the Chef server to the world on TCP port 443. If a
+     * KeyName is present, AWS OpsWorks enables SSH access. SSH is also open to the world on TCP port 22.
      * </p>
      * <p>
      * By default, the Chef Server is accessible from any IP address. We recommend that you update your security group
@@ -468,7 +521,13 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      *      Documentation</a>
      */
     @Override
-    public CreateServerResult createServer(CreateServerRequest createServerRequest) {
+    public CreateServerResult createServer(CreateServerRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateServer(request);
+    }
+
+    @SdkInternalApi
+    final CreateServerResult executeCreateServer(CreateServerRequest createServerRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createServerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -479,7 +538,7 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateServerRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createServerRequest));
+                request = new CreateServerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createServerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -500,13 +559,10 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
 
     /**
      * <p>
-     * Deletes a backup. You can delete both manual and automated backups.
+     * Deletes a backup. You can delete both manual and automated backups. This operation is asynchronous.
      * </p>
      * <p>
-     * This operation is asynchronous.
-     * </p>
-     * <p>
-     * A <code>InvalidStateException</code> is thrown then a backup is already deleting. A
+     * An <code>InvalidStateException</code> is thrown when a backup deletion is already in progress. A
      * <code>ResourceNotFoundException</code> is thrown when the backup does not exist. A
      * <code>ValidationException</code> is thrown when parameters of the request are not valid.
      * </p>
@@ -524,7 +580,13 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      *      Documentation</a>
      */
     @Override
-    public DeleteBackupResult deleteBackup(DeleteBackupRequest deleteBackupRequest) {
+    public DeleteBackupResult deleteBackup(DeleteBackupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteBackup(request);
+    }
+
+    @SdkInternalApi
+    final DeleteBackupResult executeDeleteBackup(DeleteBackupRequest deleteBackupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteBackupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -535,7 +597,7 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteBackupRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBackupRequest));
+                request = new DeleteBackupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBackupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -556,18 +618,18 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
 
     /**
      * <p>
-     * Deletes the server and the underlying AWS CloudFormation stack (including the server's EC2 instance). The server
-     * status updated to <code>DELETING</code>. Once the server is successfully deleted, it will no longer be returned
-     * by <code>DescribeServer</code> requests. If the AWS CloudFormation stack cannot be deleted, the server cannot be
-     * deleted.
+     * Deletes the server and the underlying AWS CloudFormation stack (including the server's EC2 instance). When you
+     * run this command, the server state is updated to <code>DELETING</code>. After the server is deleted, it is no
+     * longer returned by <code>DescribeServer</code> requests. If the AWS CloudFormation stack cannot be deleted, the
+     * server cannot be deleted.
      * </p>
      * <p>
      * This operation is asynchronous.
      * </p>
      * <p>
-     * A <code>InvalidStateException</code> is thrown then a server is already deleting. A
+     * An <code>InvalidStateException</code> is thrown when a server deletion is already in progress. A
      * <code>ResourceNotFoundException</code> is thrown when the server does not exist. A
-     * <code>ValidationException</code> is raised when parameters of the request are invalid.
+     * <code>ValidationException</code> is raised when parameters of the request are not valid.
      * </p>
      * <p>
      * </p>
@@ -585,7 +647,13 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      *      Documentation</a>
      */
     @Override
-    public DeleteServerResult deleteServer(DeleteServerRequest deleteServerRequest) {
+    public DeleteServerResult deleteServer(DeleteServerRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteServer(request);
+    }
+
+    @SdkInternalApi
+    final DeleteServerResult executeDeleteServer(DeleteServerRequest deleteServerRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteServerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -596,7 +664,7 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteServerRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteServerRequest));
+                request = new DeleteServerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteServerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -630,7 +698,13 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeAccountAttributesResult describeAccountAttributes(DescribeAccountAttributesRequest describeAccountAttributesRequest) {
+    public DescribeAccountAttributesResult describeAccountAttributes(DescribeAccountAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAccountAttributes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAccountAttributesResult executeDescribeAccountAttributes(DescribeAccountAttributesRequest describeAccountAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAccountAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -641,7 +715,8 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAccountAttributesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAccountAttributesRequest));
+                request = new DescribeAccountAttributesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeAccountAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -671,7 +746,7 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      * </p>
      * <p>
      * A <code>ResourceNotFoundException</code> is thrown when the backup does not exist. A
-     * <code>ValidationException</code> is raised when parameters of the request are invalid.
+     * <code>ValidationException</code> is raised when parameters of the request are not valid.
      * </p>
      * 
      * @param describeBackupsRequest
@@ -687,7 +762,13 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      *      Documentation</a>
      */
     @Override
-    public DescribeBackupsResult describeBackups(DescribeBackupsRequest describeBackupsRequest) {
+    public DescribeBackupsResult describeBackups(DescribeBackupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeBackups(request);
+    }
+
+    @SdkInternalApi
+    final DescribeBackupsResult executeDescribeBackups(DescribeBackupsRequest describeBackupsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeBackupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -698,7 +779,7 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeBackupsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeBackupsRequest));
+                request = new DescribeBackupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeBackupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -726,7 +807,7 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      * </p>
      * <p>
      * A <code>ResourceNotFoundException</code> is thrown when the server does not exist. A
-     * <code>ValidationException</code> is raised when parameters of the request are invalid.
+     * <code>ValidationException</code> is raised when parameters of the request are not valid.
      * </p>
      * 
      * @param describeEventsRequest
@@ -742,7 +823,13 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      *      Documentation</a>
      */
     @Override
-    public DescribeEventsResult describeEvents(DescribeEventsRequest describeEventsRequest) {
+    public DescribeEventsResult describeEvents(DescribeEventsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEvents(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEventsResult executeDescribeEvents(DescribeEventsRequest describeEventsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEventsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -753,7 +840,7 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeEventsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEventsRequest));
+                request = new DescribeEventsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -773,6 +860,15 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
     }
 
     /**
+     * <p>
+     * Returns the current status of an existing association or disassociation request.
+     * </p>
+     * <p>
+     * A <code>ResourceNotFoundException</code> is thrown when no recent association or disassociation request with the
+     * specified token is found, or when the server does not exist. A <code>ValidationException</code> is raised when
+     * parameters of the request are not valid.
+     * </p>
+     * 
      * @param describeNodeAssociationStatusRequest
      * @return Result of the DescribeNodeAssociationStatus operation returned by the service.
      * @throws ResourceNotFoundException
@@ -784,7 +880,13 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeNodeAssociationStatusResult describeNodeAssociationStatus(DescribeNodeAssociationStatusRequest describeNodeAssociationStatusRequest) {
+    public DescribeNodeAssociationStatusResult describeNodeAssociationStatus(DescribeNodeAssociationStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeNodeAssociationStatus(request);
+    }
+
+    @SdkInternalApi
+    final DescribeNodeAssociationStatusResult executeDescribeNodeAssociationStatus(DescribeNodeAssociationStatusRequest describeNodeAssociationStatusRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeNodeAssociationStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -795,7 +897,7 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeNodeAssociationStatusRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeNodeAssociationStatusRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeNodeAssociationStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -826,7 +928,7 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      * </p>
      * <p>
      * A <code>ResourceNotFoundException</code> is thrown when the server does not exist. A
-     * <code>ValidationException</code> is raised when parameters of the request are invalid.
+     * <code>ValidationException</code> is raised when parameters of the request are not valid.
      * </p>
      * 
      * @param describeServersRequest
@@ -842,7 +944,13 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      *      Documentation</a>
      */
     @Override
-    public DescribeServersResult describeServers(DescribeServersRequest describeServersRequest) {
+    public DescribeServersResult describeServers(DescribeServersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeServers(request);
+    }
+
+    @SdkInternalApi
+    final DescribeServersResult executeDescribeServers(DescribeServersRequest describeServersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeServersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -853,7 +961,7 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeServersRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeServersRequest));
+                request = new DescribeServersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeServersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -873,6 +981,17 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
     }
 
     /**
+     * <p>
+     * Disassociates a node from a Chef server, and removes the node from the Chef server's managed nodes. After a node
+     * is disassociated, the node key pair is no longer valid for accessing the Chef API. For more information about how
+     * to associate a node, see <a>AssociateNode</a>.
+     * </p>
+     * <p>
+     * A node can can only be disassociated from a server that is in a <code>HEALTHY</code> state. Otherwise, an
+     * <code>InvalidStateException</code> is thrown. A <code>ResourceNotFoundException</code> is thrown when the server
+     * does not exist. A <code>ValidationException</code> is raised when parameters of the request are not valid.
+     * </p>
+     * 
      * @param disassociateNodeRequest
      * @return Result of the DisassociateNode operation returned by the service.
      * @throws InvalidStateException
@@ -886,7 +1005,13 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      *      API Documentation</a>
      */
     @Override
-    public DisassociateNodeResult disassociateNode(DisassociateNodeRequest disassociateNodeRequest) {
+    public DisassociateNodeResult disassociateNode(DisassociateNodeRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateNode(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateNodeResult executeDisassociateNode(DisassociateNodeRequest disassociateNodeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(disassociateNodeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -897,7 +1022,7 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisassociateNodeRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(disassociateNodeRequest));
+                request = new DisassociateNodeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disassociateNodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -918,18 +1043,18 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
 
     /**
      * <p>
-     * Restores a backup to a server that is in a <code>RUNNING</code>, <code>FAILED</code>, or <code>HEALTHY</code>
-     * state. When you run RestoreServer, the server's EC2 instance is deleted, and a new EC2 instance is configured.
-     * RestoreServer maintains the existing server endpoint, so configuration management of all of the server's client
-     * devices should continue to work.
+     * Restores a backup to a server that is in a <code>CONNECTION_LOST</code>, <code>HEALTHY</code>,
+     * <code>RUNNING</code>, <code>UNHEALTHY</code>, or <code>TERMINATED</code> state. When you run RestoreServer, the
+     * server's EC2 instance is deleted, and a new EC2 instance is configured. RestoreServer maintains the existing
+     * server endpoint, so configuration management of the server's client devices (nodes) should continue to work.
      * </p>
      * <p>
      * This operation is asynchronous.
      * </p>
      * <p>
-     * A <code>InvalidStateException</code> is thrown when the server is not in a valid state. A
+     * An <code>InvalidStateException</code> is thrown when the server is not in a valid state. A
      * <code>ResourceNotFoundException</code> is thrown when the server does not exist. A
-     * <code>ValidationException</code> is raised when parameters of the request are invalid.
+     * <code>ValidationException</code> is raised when parameters of the request are not valid.
      * </p>
      * 
      * @param restoreServerRequest
@@ -945,7 +1070,13 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      *      Documentation</a>
      */
     @Override
-    public RestoreServerResult restoreServer(RestoreServerRequest restoreServerRequest) {
+    public RestoreServerResult restoreServer(RestoreServerRequest request) {
+        request = beforeClientExecution(request);
+        return executeRestoreServer(request);
+    }
+
+    @SdkInternalApi
+    final RestoreServerResult executeRestoreServer(RestoreServerRequest restoreServerRequest) {
 
         ExecutionContext executionContext = createExecutionContext(restoreServerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -956,7 +1087,7 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RestoreServerRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(restoreServerRequest));
+                request = new RestoreServerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(restoreServerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -978,14 +1109,13 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
     /**
      * <p>
      * Manually starts server maintenance. This command can be useful if an earlier maintenance attempt failed, and the
-     * underlying cause of maintenance failure has been resolved. The server will switch to
-     * <code>UNDER_MAINTENANCE</code> state, while maintenace is in progress.
+     * underlying cause of maintenance failure has been resolved. The server is in an <code>UNDER_MAINTENANCE</code>
+     * state while maintenance is in progress.
      * </p>
      * <p>
-     * Maintenace can only be started for <code>HEALTHY</code> and <code>UNHEALTHY</code> servers. A
-     * <code>InvalidStateException</code> is thrown otherwise. A <code>ResourceNotFoundException</code> is thrown when
-     * the server does not exist. A <code>ValidationException</code> is raised when parameters of the request are
-     * invalid.
+     * Maintenance can only be started on servers in <code>HEALTHY</code> and <code>UNHEALTHY</code> states. Otherwise,
+     * an <code>InvalidStateException</code> is thrown. A <code>ResourceNotFoundException</code> is thrown when the
+     * server does not exist. A <code>ValidationException</code> is raised when parameters of the request are not valid.
      * </p>
      * 
      * @param startMaintenanceRequest
@@ -1001,7 +1131,13 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      *      API Documentation</a>
      */
     @Override
-    public StartMaintenanceResult startMaintenance(StartMaintenanceRequest startMaintenanceRequest) {
+    public StartMaintenanceResult startMaintenance(StartMaintenanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartMaintenance(request);
+    }
+
+    @SdkInternalApi
+    final StartMaintenanceResult executeStartMaintenance(StartMaintenanceRequest startMaintenanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(startMaintenanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1012,7 +1148,7 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartMaintenanceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(startMaintenanceRequest));
+                request = new StartMaintenanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startMaintenanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1052,7 +1188,13 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      *      Documentation</a>
      */
     @Override
-    public UpdateServerResult updateServer(UpdateServerRequest updateServerRequest) {
+    public UpdateServerResult updateServer(UpdateServerRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateServer(request);
+    }
+
+    @SdkInternalApi
+    final UpdateServerResult executeUpdateServer(UpdateServerRequest updateServerRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateServerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1063,7 +1205,7 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateServerRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateServerRequest));
+                request = new UpdateServerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateServerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1084,21 +1226,18 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
 
     /**
      * <p>
-     * Updates engine specific attributes on a specified server. Server will enter the <code>MODIFYING</code> state when
-     * this operation is in progress. Only one update can take place at a time.
-     * </p>
-     * <p>
-     * This operation can be use to reset Chef Server main API key (<code>CHEF_PIVOTAL_KEY</code>).
+     * Updates engine-specific attributes on a specified server. The server enters the <code>MODIFYING</code> state when
+     * this operation is in progress. Only one update can occur at a time. You can use this command to reset the Chef
+     * server's private key (<code>CHEF_PIVOTAL_KEY</code>).
      * </p>
      * <p>
      * This operation is asynchronous.
      * </p>
      * <p>
-     * </p>
-     * <p>
-     * This operation can only be called for <code>HEALTHY</code> and <code>UNHEALTHY</code> servers. Otherwise a
-     * <code>InvalidStateException</code> is raised. A <code>ResourceNotFoundException</code> is thrown when the server
-     * does not exist. A <code>ValidationException</code> is raised when parameters of the request are invalid.
+     * This operation can only be called for servers in <code>HEALTHY</code> or <code>UNHEALTHY</code> states.
+     * Otherwise, an <code>InvalidStateException</code> is raised. A <code>ResourceNotFoundException</code> is thrown
+     * when the server does not exist. A <code>ValidationException</code> is raised when parameters of the request are
+     * not valid.
      * </p>
      * 
      * @param updateServerEngineAttributesRequest
@@ -1114,7 +1253,13 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateServerEngineAttributesResult updateServerEngineAttributes(UpdateServerEngineAttributesRequest updateServerEngineAttributesRequest) {
+    public UpdateServerEngineAttributesResult updateServerEngineAttributes(UpdateServerEngineAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateServerEngineAttributes(request);
+    }
+
+    @SdkInternalApi
+    final UpdateServerEngineAttributesResult executeUpdateServerEngineAttributes(UpdateServerEngineAttributesRequest updateServerEngineAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateServerEngineAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1125,7 +1270,7 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateServerEngineAttributesRequestMarshaller(protocolFactory).marshall(super
+                request = new UpdateServerEngineAttributesRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(updateServerEngineAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);

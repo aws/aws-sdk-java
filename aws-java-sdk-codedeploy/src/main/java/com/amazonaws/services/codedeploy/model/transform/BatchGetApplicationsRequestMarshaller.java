@@ -12,73 +12,45 @@
  */
 package com.amazonaws.services.codedeploy.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.codedeploy.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * BatchGetApplicationsRequest Marshaller
+ * BatchGetApplicationsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class BatchGetApplicationsRequestMarshaller implements Marshaller<Request<BatchGetApplicationsRequest>, BatchGetApplicationsRequest> {
+@SdkInternalApi
+public class BatchGetApplicationsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<List> APPLICATIONNAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("applicationNames").build();
 
-    public BatchGetApplicationsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final BatchGetApplicationsRequestMarshaller instance = new BatchGetApplicationsRequestMarshaller();
+
+    public static BatchGetApplicationsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<BatchGetApplicationsRequest> marshall(BatchGetApplicationsRequest batchGetApplicationsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(BatchGetApplicationsRequest batchGetApplicationsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (batchGetApplicationsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<BatchGetApplicationsRequest> request = new DefaultRequest<BatchGetApplicationsRequest>(batchGetApplicationsRequest, "AmazonCodeDeploy");
-        request.addHeader("X-Amz-Target", "CodeDeploy_20141006.BatchGetApplications");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            com.amazonaws.internal.SdkInternalList<String> applicationNamesList = (com.amazonaws.internal.SdkInternalList<String>) batchGetApplicationsRequest
-                    .getApplicationNames();
-            if (!applicationNamesList.isEmpty() || !applicationNamesList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("applicationNames");
-                jsonGenerator.writeStartArray();
-                for (String applicationNamesListValue : applicationNamesList) {
-                    if (applicationNamesListValue != null) {
-                        jsonGenerator.writeValue(applicationNamesListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(batchGetApplicationsRequest.getApplicationNames(), APPLICATIONNAMES_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

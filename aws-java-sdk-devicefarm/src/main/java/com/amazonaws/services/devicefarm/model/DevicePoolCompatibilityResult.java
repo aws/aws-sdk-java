@@ -14,6 +14,8 @@ package com.amazonaws.services.devicefarm.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,8 +26,13 @@ import javax.annotation.Generated;
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DevicePoolCompatibilityResult implements Serializable, Cloneable {
+public class DevicePoolCompatibilityResult implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The device (phone or tablet) that you wish to return information about.
+     * </p>
+     */
     private Device device;
     /**
      * <p>
@@ -41,7 +48,12 @@ public class DevicePoolCompatibilityResult implements Serializable, Cloneable {
     private java.util.List<IncompatibilityMessage> incompatibilityMessages;
 
     /**
+     * <p>
+     * The device (phone or tablet) that you wish to return information about.
+     * </p>
+     * 
      * @param device
+     *        The device (phone or tablet) that you wish to return information about.
      */
 
     public void setDevice(Device device) {
@@ -49,7 +61,11 @@ public class DevicePoolCompatibilityResult implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The device (phone or tablet) that you wish to return information about.
+     * </p>
+     * 
+     * @return The device (phone or tablet) that you wish to return information about.
      */
 
     public Device getDevice() {
@@ -57,7 +73,12 @@ public class DevicePoolCompatibilityResult implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The device (phone or tablet) that you wish to return information about.
+     * </p>
+     * 
      * @param device
+     *        The device (phone or tablet) that you wish to return information about.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -252,5 +273,11 @@ public class DevicePoolCompatibilityResult implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.devicefarm.model.transform.DevicePoolCompatibilityResultMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

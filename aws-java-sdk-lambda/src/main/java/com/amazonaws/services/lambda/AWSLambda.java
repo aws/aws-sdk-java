@@ -512,9 +512,6 @@ public interface AWSLambda {
      * Aliases</a>.
      * </p>
      * <p>
-     * For information about adding permissions, see <a>AddPermission</a>.
-     * </p>
-     * <p>
      * You need permission for the <code>lambda:GetPolicy action.</code>
      * </p>
      * 
@@ -747,6 +744,29 @@ public interface AWSLambda {
 
     /**
      * <p>
+     * Returns a list of tags assigned to a function when supplied the function ARN (Amazon Resource Name).
+     * </p>
+     * 
+     * @param listTagsRequest
+     * @return Result of the ListTags operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws ResourceNotFoundException
+     *         The resource (for example, a Lambda function or access policy statement) specified in the request does
+     *         not exist.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
+     *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
+     *         AWS Lambda is unable to assume you will get this exception.
+     * @throws TooManyRequestsException
+     * @sample AWSLambda.ListTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListTags" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListTagsResult listTags(ListTagsRequest listTagsRequest);
+
+    /**
+     * <p>
      * List all versions of a function. For information about the versioning feature, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS Lambda Function Versioning and
      * Aliases</a>.
@@ -835,6 +855,54 @@ public interface AWSLambda {
      *      Documentation</a>
      */
     RemovePermissionResult removePermission(RemovePermissionRequest removePermissionRequest);
+
+    /**
+     * <p>
+     * Creates a list of tags (key-value pairs) on the Lambda function. Requires the Lambda function ARN (Amazon
+     * Resource Name). If a key is specified without a value, Lambda creates a tag with the specified key and a value of
+     * null.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws ResourceNotFoundException
+     *         The resource (for example, a Lambda function or access policy statement) specified in the request does
+     *         not exist.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
+     *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
+     *         AWS Lambda is unable to assume you will get this exception.
+     * @throws TooManyRequestsException
+     * @sample AWSLambda.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes tags from a Lambda function. Requires the function ARN (Amazon Resource Name).
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws ResourceNotFoundException
+     *         The resource (for example, a Lambda function or access policy statement) specified in the request does
+     *         not exist.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid. For example, if you provided an IAM role for AWS Lambda
+     *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
+     *         AWS Lambda is unable to assume you will get this exception.
+     * @throws TooManyRequestsException
+     * @sample AWSLambda.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>

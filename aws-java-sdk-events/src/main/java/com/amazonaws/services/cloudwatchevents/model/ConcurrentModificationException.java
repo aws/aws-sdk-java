@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This exception occurs if there is concurrent modification on rule or target.
+ * There is concurrent modification on a rule or target.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

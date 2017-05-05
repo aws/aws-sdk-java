@@ -14,6 +14,8 @@ package com.amazonaws.services.gamelift.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class FleetAttributes implements Serializable, Cloneable {
+public class FleetAttributes implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -34,27 +36,33 @@ public class FleetAttributes implements Serializable, Cloneable {
     private String fleetId;
     /**
      * <p>
+     * Identifier for a fleet that is unique across all regions.
+     * </p>
+     */
+    private String fleetArn;
+    /**
+     * <p>
      * Human-readable description of the fleet.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * Descriptive label associated with a fleet. Fleet names do not need to be unique.
+     * Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      * </p>
      */
     private String name;
     /**
      * <p>
      * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057").
+     * milliseconds (for example "1469498468.057").
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
      * Time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057").
+     * milliseconds (for example "1469498468.057").
      * </p>
      */
     private java.util.Date terminationTime;
@@ -73,8 +81,8 @@ public class FleetAttributes implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new instances
-     * with the game build and starting server processes.
+     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – Amazon GameLift is setting up the new fleet, creating new
+     * instances with the game build and starting server processes.
      * </p>
      * </li>
      * <li>
@@ -110,15 +118,14 @@ public class FleetAttributes implements Serializable, Cloneable {
      * <p>
      * Path to a game server executable in the fleet's build, specified for fleets created prior to 2016-08-04 (or AWS
      * SDK v. 0.12.16). Server launch paths for fleets created after this date are specified in the fleet's
-     * <code> <a>RuntimeConfiguration</a> </code>.
+     * <a>RuntimeConfiguration</a>.
      * </p>
      */
     private String serverLaunchPath;
     /**
      * <p>
      * Game server launch parameters specified for fleets created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server
-     * launch parameters for fleets created after this date are specified in the fleet's
-     * <code> <a>RuntimeConfiguration</a> </code>.
+     * launch parameters for fleets created after this date are specified in the fleet's <a>RuntimeConfiguration</a>.
      * </p>
      */
     private String serverLaunchParameters;
@@ -128,9 +135,9 @@ public class FleetAttributes implements Serializable, Cloneable {
      * files in this location. These logs are in addition to game session logs; see more on game session logs in the <a
      * href=
      * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code"
-     * >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift will
+     * >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, Amazon GameLift will
      * automatically upload logs that are stored on each instance at <code>C:\game\logs</code> (for Windows) or
-     * <code>/local/game/logs</code> (for Linux). Use the GameLift console to access stored logs.
+     * <code>/local/game/logs</code> (for Linux). Use the Amazon GameLift console to access stored logs.
      * </p>
      */
     private java.util.List<String> logPaths;
@@ -209,6 +216,46 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Identifier for a fleet that is unique across all regions.
+     * </p>
+     * 
+     * @param fleetArn
+     *        Identifier for a fleet that is unique across all regions.
+     */
+
+    public void setFleetArn(String fleetArn) {
+        this.fleetArn = fleetArn;
+    }
+
+    /**
+     * <p>
+     * Identifier for a fleet that is unique across all regions.
+     * </p>
+     * 
+     * @return Identifier for a fleet that is unique across all regions.
+     */
+
+    public String getFleetArn() {
+        return this.fleetArn;
+    }
+
+    /**
+     * <p>
+     * Identifier for a fleet that is unique across all regions.
+     * </p>
+     * 
+     * @param fleetArn
+     *        Identifier for a fleet that is unique across all regions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FleetAttributes withFleetArn(String fleetArn) {
+        setFleetArn(fleetArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * Human-readable description of the fleet.
      * </p>
      * 
@@ -249,11 +296,11 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Descriptive label associated with a fleet. Fleet names do not need to be unique.
+     * Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with a fleet. Fleet names do not need to be unique.
+     *        Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      */
 
     public void setName(String name) {
@@ -262,10 +309,10 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Descriptive label associated with a fleet. Fleet names do not need to be unique.
+     * Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      * </p>
      * 
-     * @return Descriptive label associated with a fleet. Fleet names do not need to be unique.
+     * @return Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      */
 
     public String getName() {
@@ -274,11 +321,11 @@ public class FleetAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Descriptive label associated with a fleet. Fleet names do not need to be unique.
+     * Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with a fleet. Fleet names do not need to be unique.
+     *        Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -290,12 +337,12 @@ public class FleetAttributes implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057").
+     * milliseconds (for example "1469498468.057").
      * </p>
      * 
      * @param creationTime
      *        Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     *        milliseconds (ex: "1469498468.057").
+     *        milliseconds (for example "1469498468.057").
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -305,11 +352,11 @@ public class FleetAttributes implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057").
+     * milliseconds (for example "1469498468.057").
      * </p>
      * 
      * @return Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     *         milliseconds (ex: "1469498468.057").
+     *         milliseconds (for example "1469498468.057").
      */
 
     public java.util.Date getCreationTime() {
@@ -319,12 +366,12 @@ public class FleetAttributes implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057").
+     * milliseconds (for example "1469498468.057").
      * </p>
      * 
      * @param creationTime
      *        Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     *        milliseconds (ex: "1469498468.057").
+     *        milliseconds (for example "1469498468.057").
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -336,12 +383,12 @@ public class FleetAttributes implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057").
+     * milliseconds (for example "1469498468.057").
      * </p>
      * 
      * @param terminationTime
      *        Time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
-     *        milliseconds (ex: "1469498468.057").
+     *        milliseconds (for example "1469498468.057").
      */
 
     public void setTerminationTime(java.util.Date terminationTime) {
@@ -351,11 +398,11 @@ public class FleetAttributes implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057").
+     * milliseconds (for example "1469498468.057").
      * </p>
      * 
      * @return Time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
-     *         milliseconds (ex: "1469498468.057").
+     *         milliseconds (for example "1469498468.057").
      */
 
     public java.util.Date getTerminationTime() {
@@ -365,12 +412,12 @@ public class FleetAttributes implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057").
+     * milliseconds (for example "1469498468.057").
      * </p>
      * 
      * @param terminationTime
      *        Time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
-     *        milliseconds (ex: "1469498468.057").
+     *        milliseconds (for example "1469498468.057").
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -394,8 +441,8 @@ public class FleetAttributes implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new instances
-     * with the game build and starting server processes.
+     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – Amazon GameLift is setting up the new fleet, creating new
+     * instances with the game build and starting server processes.
      * </p>
      * </li>
      * <li>
@@ -433,8 +480,8 @@ public class FleetAttributes implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new
-     *        instances with the game build and starting server processes.
+     *        <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – Amazon GameLift is setting up the new fleet, creating
+     *        new instances with the game build and starting server processes.
      *        </p>
      *        </li>
      *        <li>
@@ -479,8 +526,8 @@ public class FleetAttributes implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new instances
-     * with the game build and starting server processes.
+     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – Amazon GameLift is setting up the new fleet, creating new
+     * instances with the game build and starting server processes.
      * </p>
      * </li>
      * <li>
@@ -517,8 +564,8 @@ public class FleetAttributes implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new
-     *         instances with the game build and starting server processes.
+     *         <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – Amazon GameLift is setting up the new fleet, creating
+     *         new instances with the game build and starting server processes.
      *         </p>
      *         </li>
      *         <li>
@@ -563,8 +610,8 @@ public class FleetAttributes implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new instances
-     * with the game build and starting server processes.
+     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – Amazon GameLift is setting up the new fleet, creating new
+     * instances with the game build and starting server processes.
      * </p>
      * </li>
      * <li>
@@ -602,8 +649,8 @@ public class FleetAttributes implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new
-     *        instances with the game build and starting server processes.
+     *        <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – Amazon GameLift is setting up the new fleet, creating
+     *        new instances with the game build and starting server processes.
      *        </p>
      *        </li>
      *        <li>
@@ -650,8 +697,8 @@ public class FleetAttributes implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new instances
-     * with the game build and starting server processes.
+     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – Amazon GameLift is setting up the new fleet, creating new
+     * instances with the game build and starting server processes.
      * </p>
      * </li>
      * <li>
@@ -689,8 +736,8 @@ public class FleetAttributes implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new
-     *        instances with the game build and starting server processes.
+     *        <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – Amazon GameLift is setting up the new fleet, creating
+     *        new instances with the game build and starting server processes.
      *        </p>
      *        </li>
      *        <li>
@@ -735,8 +782,8 @@ public class FleetAttributes implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new instances
-     * with the game build and starting server processes.
+     * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – Amazon GameLift is setting up the new fleet, creating new
+     * instances with the game build and starting server processes.
      * </p>
      * </li>
      * <li>
@@ -774,8 +821,8 @@ public class FleetAttributes implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new fleet, creating new
-     *        instances with the game build and starting server processes.
+     *        <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – Amazon GameLift is setting up the new fleet, creating
+     *        new instances with the game build and starting server processes.
      *        </p>
      *        </li>
      *        <li>
@@ -851,13 +898,13 @@ public class FleetAttributes implements Serializable, Cloneable {
      * <p>
      * Path to a game server executable in the fleet's build, specified for fleets created prior to 2016-08-04 (or AWS
      * SDK v. 0.12.16). Server launch paths for fleets created after this date are specified in the fleet's
-     * <code> <a>RuntimeConfiguration</a> </code>.
+     * <a>RuntimeConfiguration</a>.
      * </p>
      * 
      * @param serverLaunchPath
      *        Path to a game server executable in the fleet's build, specified for fleets created prior to 2016-08-04
      *        (or AWS SDK v. 0.12.16). Server launch paths for fleets created after this date are specified in the
-     *        fleet's <code> <a>RuntimeConfiguration</a> </code>.
+     *        fleet's <a>RuntimeConfiguration</a>.
      */
 
     public void setServerLaunchPath(String serverLaunchPath) {
@@ -868,12 +915,12 @@ public class FleetAttributes implements Serializable, Cloneable {
      * <p>
      * Path to a game server executable in the fleet's build, specified for fleets created prior to 2016-08-04 (or AWS
      * SDK v. 0.12.16). Server launch paths for fleets created after this date are specified in the fleet's
-     * <code> <a>RuntimeConfiguration</a> </code>.
+     * <a>RuntimeConfiguration</a>.
      * </p>
      * 
      * @return Path to a game server executable in the fleet's build, specified for fleets created prior to 2016-08-04
      *         (or AWS SDK v. 0.12.16). Server launch paths for fleets created after this date are specified in the
-     *         fleet's <code> <a>RuntimeConfiguration</a> </code>.
+     *         fleet's <a>RuntimeConfiguration</a>.
      */
 
     public String getServerLaunchPath() {
@@ -884,13 +931,13 @@ public class FleetAttributes implements Serializable, Cloneable {
      * <p>
      * Path to a game server executable in the fleet's build, specified for fleets created prior to 2016-08-04 (or AWS
      * SDK v. 0.12.16). Server launch paths for fleets created after this date are specified in the fleet's
-     * <code> <a>RuntimeConfiguration</a> </code>.
+     * <a>RuntimeConfiguration</a>.
      * </p>
      * 
      * @param serverLaunchPath
      *        Path to a game server executable in the fleet's build, specified for fleets created prior to 2016-08-04
      *        (or AWS SDK v. 0.12.16). Server launch paths for fleets created after this date are specified in the
-     *        fleet's <code> <a>RuntimeConfiguration</a> </code>.
+     *        fleet's <a>RuntimeConfiguration</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -902,14 +949,13 @@ public class FleetAttributes implements Serializable, Cloneable {
     /**
      * <p>
      * Game server launch parameters specified for fleets created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server
-     * launch parameters for fleets created after this date are specified in the fleet's
-     * <code> <a>RuntimeConfiguration</a> </code>.
+     * launch parameters for fleets created after this date are specified in the fleet's <a>RuntimeConfiguration</a>.
      * </p>
      * 
      * @param serverLaunchParameters
      *        Game server launch parameters specified for fleets created prior to 2016-08-04 (or AWS SDK v. 0.12.16).
      *        Server launch parameters for fleets created after this date are specified in the fleet's
-     *        <code> <a>RuntimeConfiguration</a> </code>.
+     *        <a>RuntimeConfiguration</a>.
      */
 
     public void setServerLaunchParameters(String serverLaunchParameters) {
@@ -919,13 +965,12 @@ public class FleetAttributes implements Serializable, Cloneable {
     /**
      * <p>
      * Game server launch parameters specified for fleets created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server
-     * launch parameters for fleets created after this date are specified in the fleet's
-     * <code> <a>RuntimeConfiguration</a> </code>.
+     * launch parameters for fleets created after this date are specified in the fleet's <a>RuntimeConfiguration</a>.
      * </p>
      * 
      * @return Game server launch parameters specified for fleets created prior to 2016-08-04 (or AWS SDK v. 0.12.16).
      *         Server launch parameters for fleets created after this date are specified in the fleet's
-     *         <code> <a>RuntimeConfiguration</a> </code>.
+     *         <a>RuntimeConfiguration</a>.
      */
 
     public String getServerLaunchParameters() {
@@ -935,14 +980,13 @@ public class FleetAttributes implements Serializable, Cloneable {
     /**
      * <p>
      * Game server launch parameters specified for fleets created prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server
-     * launch parameters for fleets created after this date are specified in the fleet's
-     * <code> <a>RuntimeConfiguration</a> </code>.
+     * launch parameters for fleets created after this date are specified in the fleet's <a>RuntimeConfiguration</a>.
      * </p>
      * 
      * @param serverLaunchParameters
      *        Game server launch parameters specified for fleets created prior to 2016-08-04 (or AWS SDK v. 0.12.16).
      *        Server launch parameters for fleets created after this date are specified in the fleet's
-     *        <code> <a>RuntimeConfiguration</a> </code>.
+     *        <a>RuntimeConfiguration</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -957,18 +1001,19 @@ public class FleetAttributes implements Serializable, Cloneable {
      * files in this location. These logs are in addition to game session logs; see more on game session logs in the <a
      * href=
      * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code"
-     * >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift will
+     * >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, Amazon GameLift will
      * automatically upload logs that are stored on each instance at <code>C:\game\logs</code> (for Windows) or
-     * <code>/local/game/logs</code> (for Linux). Use the GameLift console to access stored logs.
+     * <code>/local/game/logs</code> (for Linux). Use the Amazon GameLift console to access stored logs.
      * </p>
      * 
      * @return Location of default log files. When a server process is shut down, Amazon GameLift captures and stores
      *         any log files in this location. These logs are in addition to game session logs; see more on game session
      *         logs in the <a href=
      *         "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code"
-     *         >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift will
-     *         automatically upload logs that are stored on each instance at <code>C:\game\logs</code> (for Windows) or
-     *         <code>/local/game/logs</code> (for Linux). Use the GameLift console to access stored logs.
+     *         >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, Amazon GameLift
+     *         will automatically upload logs that are stored on each instance at <code>C:\game\logs</code> (for
+     *         Windows) or <code>/local/game/logs</code> (for Linux). Use the Amazon GameLift console to access stored
+     *         logs.
      */
 
     public java.util.List<String> getLogPaths() {
@@ -981,9 +1026,9 @@ public class FleetAttributes implements Serializable, Cloneable {
      * files in this location. These logs are in addition to game session logs; see more on game session logs in the <a
      * href=
      * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code"
-     * >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift will
+     * >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, Amazon GameLift will
      * automatically upload logs that are stored on each instance at <code>C:\game\logs</code> (for Windows) or
-     * <code>/local/game/logs</code> (for Linux). Use the GameLift console to access stored logs.
+     * <code>/local/game/logs</code> (for Linux). Use the Amazon GameLift console to access stored logs.
      * </p>
      * 
      * @param logPaths
@@ -991,9 +1036,9 @@ public class FleetAttributes implements Serializable, Cloneable {
      *        log files in this location. These logs are in addition to game session logs; see more on game session logs
      *        in the <a href=
      *        "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code"
-     *        >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift will
-     *        automatically upload logs that are stored on each instance at <code>C:\game\logs</code> (for Windows) or
-     *        <code>/local/game/logs</code> (for Linux). Use the GameLift console to access stored logs.
+     *        >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, Amazon GameLift
+     *        will automatically upload logs that are stored on each instance at <code>C:\game\logs</code> (for Windows)
+     *        or <code>/local/game/logs</code> (for Linux). Use the Amazon GameLift console to access stored logs.
      */
 
     public void setLogPaths(java.util.Collection<String> logPaths) {
@@ -1011,9 +1056,9 @@ public class FleetAttributes implements Serializable, Cloneable {
      * files in this location. These logs are in addition to game session logs; see more on game session logs in the <a
      * href=
      * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code"
-     * >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift will
+     * >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, Amazon GameLift will
      * automatically upload logs that are stored on each instance at <code>C:\game\logs</code> (for Windows) or
-     * <code>/local/game/logs</code> (for Linux). Use the GameLift console to access stored logs.
+     * <code>/local/game/logs</code> (for Linux). Use the Amazon GameLift console to access stored logs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1026,9 +1071,9 @@ public class FleetAttributes implements Serializable, Cloneable {
      *        log files in this location. These logs are in addition to game session logs; see more on game session logs
      *        in the <a href=
      *        "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code"
-     *        >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift will
-     *        automatically upload logs that are stored on each instance at <code>C:\game\logs</code> (for Windows) or
-     *        <code>/local/game/logs</code> (for Linux). Use the GameLift console to access stored logs.
+     *        >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, Amazon GameLift
+     *        will automatically upload logs that are stored on each instance at <code>C:\game\logs</code> (for Windows)
+     *        or <code>/local/game/logs</code> (for Linux). Use the Amazon GameLift console to access stored logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1048,9 +1093,9 @@ public class FleetAttributes implements Serializable, Cloneable {
      * files in this location. These logs are in addition to game session logs; see more on game session logs in the <a
      * href=
      * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code"
-     * >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift will
+     * >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, Amazon GameLift will
      * automatically upload logs that are stored on each instance at <code>C:\game\logs</code> (for Windows) or
-     * <code>/local/game/logs</code> (for Linux). Use the GameLift console to access stored logs.
+     * <code>/local/game/logs</code> (for Linux). Use the Amazon GameLift console to access stored logs.
      * </p>
      * 
      * @param logPaths
@@ -1058,9 +1103,9 @@ public class FleetAttributes implements Serializable, Cloneable {
      *        log files in this location. These logs are in addition to game session logs; see more on game session logs
      *        in the <a href=
      *        "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code"
-     *        >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift will
-     *        automatically upload logs that are stored on each instance at <code>C:\game\logs</code> (for Windows) or
-     *        <code>/local/game/logs</code> (for Linux). Use the GameLift console to access stored logs.
+     *        >Amazon GameLift Developer Guide</a>. If no default log path for a fleet is specified, Amazon GameLift
+     *        will automatically upload logs that are stored on each instance at <code>C:\game\logs</code> (for Windows)
+     *        or <code>/local/game/logs</code> (for Linux). Use the Amazon GameLift console to access stored logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1403,6 +1448,8 @@ public class FleetAttributes implements Serializable, Cloneable {
         sb.append("{");
         if (getFleetId() != null)
             sb.append("FleetId: ").append(getFleetId()).append(",");
+        if (getFleetArn() != null)
+            sb.append("FleetArn: ").append(getFleetArn()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getName() != null)
@@ -1444,6 +1491,10 @@ public class FleetAttributes implements Serializable, Cloneable {
         if (other.getFleetId() == null ^ this.getFleetId() == null)
             return false;
         if (other.getFleetId() != null && other.getFleetId().equals(this.getFleetId()) == false)
+            return false;
+        if (other.getFleetArn() == null ^ this.getFleetArn() == null)
+            return false;
+        if (other.getFleetArn() != null && other.getFleetArn().equals(this.getFleetArn()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
@@ -1503,6 +1554,7 @@ public class FleetAttributes implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getFleetId() == null) ? 0 : getFleetId().hashCode());
+        hashCode = prime * hashCode + ((getFleetArn() == null) ? 0 : getFleetArn().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
@@ -1525,5 +1577,11 @@ public class FleetAttributes implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.gamelift.model.transform.FleetAttributesMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

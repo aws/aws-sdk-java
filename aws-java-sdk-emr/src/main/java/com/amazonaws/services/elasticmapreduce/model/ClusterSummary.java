@@ -14,6 +14,8 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ClusterSummary implements Serializable, Cloneable {
+public class ClusterSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -46,7 +48,7 @@ public class ClusterSummary implements Serializable, Cloneable {
     private ClusterStatus status;
     /**
      * <p>
-     * An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one time
+     * An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time
      * for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly
      * four times more expensive would result in the normalized instance hours being incremented by four. This result is
      * only an approximation and does not reflect the actual billing rate.
@@ -176,14 +178,14 @@ public class ClusterSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one time
+     * An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time
      * for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly
      * four times more expensive would result in the normalized instance hours being incremented by four. This result is
      * only an approximation and does not reflect the actual billing rate.
      * </p>
      * 
      * @param normalizedInstanceHours
-     *        An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one
+     *        An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one
      *        time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that
      *        is roughly four times more expensive would result in the normalized instance hours being incremented by
      *        four. This result is only an approximation and does not reflect the actual billing rate.
@@ -195,14 +197,14 @@ public class ClusterSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one time
+     * An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time
      * for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly
      * four times more expensive would result in the normalized instance hours being incremented by four. This result is
      * only an approximation and does not reflect the actual billing rate.
      * </p>
      * 
-     * @return An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented
-     *         one time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance
+     * @return An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one
+     *         time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance
      *         that is roughly four times more expensive would result in the normalized instance hours being incremented
      *         by four. This result is only an approximation and does not reflect the actual billing rate.
      */
@@ -213,14 +215,14 @@ public class ClusterSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one time
+     * An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time
      * for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that is roughly
      * four times more expensive would result in the normalized instance hours being incremented by four. This result is
      * only an approximation and does not reflect the actual billing rate.
      * </p>
      * 
      * @param normalizedInstanceHours
-     *        An approximation of the cost of the job flow, represented in m1.small/hours. This value is incremented one
+     *        An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one
      *        time for every hour an m1.small instance runs. Larger instances are weighted more, so an EC2 instance that
      *        is roughly four times more expensive would result in the normalized instance hours being incremented by
      *        four. This result is only an approximation and does not reflect the actual billing rate.
@@ -303,5 +305,11 @@ public class ClusterSummary implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.elasticmapreduce.model.transform.ClusterSummaryMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

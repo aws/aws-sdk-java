@@ -12,70 +12,50 @@
  */
 package com.amazonaws.services.ecr.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.ecr.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetDownloadUrlForLayerRequest Marshaller
+ * GetDownloadUrlForLayerRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetDownloadUrlForLayerRequestMarshaller implements Marshaller<Request<GetDownloadUrlForLayerRequest>, GetDownloadUrlForLayerRequest> {
+@SdkInternalApi
+public class GetDownloadUrlForLayerRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> REGISTRYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("registryId").build();
+    private static final MarshallingInfo<String> REPOSITORYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("repositoryName").build();
+    private static final MarshallingInfo<String> LAYERDIGEST_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("layerDigest").build();
 
-    public GetDownloadUrlForLayerRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetDownloadUrlForLayerRequestMarshaller instance = new GetDownloadUrlForLayerRequestMarshaller();
+
+    public static GetDownloadUrlForLayerRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetDownloadUrlForLayerRequest> marshall(GetDownloadUrlForLayerRequest getDownloadUrlForLayerRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetDownloadUrlForLayerRequest getDownloadUrlForLayerRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getDownloadUrlForLayerRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetDownloadUrlForLayerRequest> request = new DefaultRequest<GetDownloadUrlForLayerRequest>(getDownloadUrlForLayerRequest, "AmazonECR");
-        request.addHeader("X-Amz-Target", "AmazonEC2ContainerRegistry_V20150921.GetDownloadUrlForLayer");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (getDownloadUrlForLayerRequest.getRegistryId() != null) {
-                jsonGenerator.writeFieldName("registryId").writeValue(getDownloadUrlForLayerRequest.getRegistryId());
-            }
-            if (getDownloadUrlForLayerRequest.getRepositoryName() != null) {
-                jsonGenerator.writeFieldName("repositoryName").writeValue(getDownloadUrlForLayerRequest.getRepositoryName());
-            }
-            if (getDownloadUrlForLayerRequest.getLayerDigest() != null) {
-                jsonGenerator.writeFieldName("layerDigest").writeValue(getDownloadUrlForLayerRequest.getLayerDigest());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getDownloadUrlForLayerRequest.getRegistryId(), REGISTRYID_BINDING);
+            protocolMarshaller.marshall(getDownloadUrlForLayerRequest.getRepositoryName(), REPOSITORYNAME_BINDING);
+            protocolMarshaller.marshall(getDownloadUrlForLayerRequest.getLayerDigest(), LAYERDIGEST_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -27,45 +27,51 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the <a>DomainName</a> resource.
+     * (Required) The name of the <a>DomainName</a> resource.
      * </p>
      */
     private String domainName;
     /**
      * <p>
-     * The name of the certificate.
+     * The user-friendly name of the certificate.
      * </p>
      */
     private String certificateName;
     /**
      * <p>
-     * The body of the server certificate provided by your certificate authority.
+     * [Deprecated] The body of the server certificate provided by your certificate authority.
      * </p>
      */
     private String certificateBody;
     /**
      * <p>
-     * Your certificate's private key.
+     * [Deprecated] Your certificate's private key.
      * </p>
      */
     private String certificatePrivateKey;
     /**
      * <p>
-     * The intermediate certificates and optionally the root certificate, one after the other without any blank lines.
-     * If you include the root certificate, your certificate chain must start with intermediate certificates and end
-     * with the root certificate. Use the intermediate certificates that were provided by your certificate authority. Do
-     * not include any intermediaries that are not in the chain of trust path.
+     * [Deprecated] The intermediate certificates and optionally the root certificate, one after the other without any
+     * blank lines. If you include the root certificate, your certificate chain must start with intermediate
+     * certificates and end with the root certificate. Use the intermediate certificates that were provided by your
+     * certificate authority. Do not include any intermediaries that are not in the chain of trust path.
      * </p>
      */
     private String certificateChain;
+    /**
+     * <p>
+     * The reference to an AWS-managed certificate. AWS Certificate Manager is the only supported source.
+     * </p>
+     */
+    private String certificateArn;
 
     /**
      * <p>
-     * The name of the <a>DomainName</a> resource.
+     * (Required) The name of the <a>DomainName</a> resource.
      * </p>
      * 
      * @param domainName
-     *        The name of the <a>DomainName</a> resource.
+     *        (Required) The name of the <a>DomainName</a> resource.
      */
 
     public void setDomainName(String domainName) {
@@ -74,10 +80,10 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the <a>DomainName</a> resource.
+     * (Required) The name of the <a>DomainName</a> resource.
      * </p>
      * 
-     * @return The name of the <a>DomainName</a> resource.
+     * @return (Required) The name of the <a>DomainName</a> resource.
      */
 
     public String getDomainName() {
@@ -86,11 +92,11 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the <a>DomainName</a> resource.
+     * (Required) The name of the <a>DomainName</a> resource.
      * </p>
      * 
      * @param domainName
-     *        The name of the <a>DomainName</a> resource.
+     *        (Required) The name of the <a>DomainName</a> resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +107,11 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the certificate.
+     * The user-friendly name of the certificate.
      * </p>
      * 
      * @param certificateName
-     *        The name of the certificate.
+     *        The user-friendly name of the certificate.
      */
 
     public void setCertificateName(String certificateName) {
@@ -114,10 +120,10 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the certificate.
+     * The user-friendly name of the certificate.
      * </p>
      * 
-     * @return The name of the certificate.
+     * @return The user-friendly name of the certificate.
      */
 
     public String getCertificateName() {
@@ -126,11 +132,11 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the certificate.
+     * The user-friendly name of the certificate.
      * </p>
      * 
      * @param certificateName
-     *        The name of the certificate.
+     *        The user-friendly name of the certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +147,11 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The body of the server certificate provided by your certificate authority.
+     * [Deprecated] The body of the server certificate provided by your certificate authority.
      * </p>
      * 
      * @param certificateBody
-     *        The body of the server certificate provided by your certificate authority.
+     *        [Deprecated] The body of the server certificate provided by your certificate authority.
      */
 
     public void setCertificateBody(String certificateBody) {
@@ -154,10 +160,10 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The body of the server certificate provided by your certificate authority.
+     * [Deprecated] The body of the server certificate provided by your certificate authority.
      * </p>
      * 
-     * @return The body of the server certificate provided by your certificate authority.
+     * @return [Deprecated] The body of the server certificate provided by your certificate authority.
      */
 
     public String getCertificateBody() {
@@ -166,11 +172,11 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The body of the server certificate provided by your certificate authority.
+     * [Deprecated] The body of the server certificate provided by your certificate authority.
      * </p>
      * 
      * @param certificateBody
-     *        The body of the server certificate provided by your certificate authority.
+     *        [Deprecated] The body of the server certificate provided by your certificate authority.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,11 +187,11 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Your certificate's private key.
+     * [Deprecated] Your certificate's private key.
      * </p>
      * 
      * @param certificatePrivateKey
-     *        Your certificate's private key.
+     *        [Deprecated] Your certificate's private key.
      */
 
     public void setCertificatePrivateKey(String certificatePrivateKey) {
@@ -194,10 +200,10 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Your certificate's private key.
+     * [Deprecated] Your certificate's private key.
      * </p>
      * 
-     * @return Your certificate's private key.
+     * @return [Deprecated] Your certificate's private key.
      */
 
     public String getCertificatePrivateKey() {
@@ -206,11 +212,11 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Your certificate's private key.
+     * [Deprecated] Your certificate's private key.
      * </p>
      * 
      * @param certificatePrivateKey
-     *        Your certificate's private key.
+     *        [Deprecated] Your certificate's private key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,17 +227,18 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The intermediate certificates and optionally the root certificate, one after the other without any blank lines.
-     * If you include the root certificate, your certificate chain must start with intermediate certificates and end
-     * with the root certificate. Use the intermediate certificates that were provided by your certificate authority. Do
-     * not include any intermediaries that are not in the chain of trust path.
+     * [Deprecated] The intermediate certificates and optionally the root certificate, one after the other without any
+     * blank lines. If you include the root certificate, your certificate chain must start with intermediate
+     * certificates and end with the root certificate. Use the intermediate certificates that were provided by your
+     * certificate authority. Do not include any intermediaries that are not in the chain of trust path.
      * </p>
      * 
      * @param certificateChain
-     *        The intermediate certificates and optionally the root certificate, one after the other without any blank
-     *        lines. If you include the root certificate, your certificate chain must start with intermediate
-     *        certificates and end with the root certificate. Use the intermediate certificates that were provided by
-     *        your certificate authority. Do not include any intermediaries that are not in the chain of trust path.
+     *        [Deprecated] The intermediate certificates and optionally the root certificate, one after the other
+     *        without any blank lines. If you include the root certificate, your certificate chain must start with
+     *        intermediate certificates and end with the root certificate. Use the intermediate certificates that were
+     *        provided by your certificate authority. Do not include any intermediaries that are not in the chain of
+     *        trust path.
      */
 
     public void setCertificateChain(String certificateChain) {
@@ -240,16 +247,17 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The intermediate certificates and optionally the root certificate, one after the other without any blank lines.
-     * If you include the root certificate, your certificate chain must start with intermediate certificates and end
-     * with the root certificate. Use the intermediate certificates that were provided by your certificate authority. Do
-     * not include any intermediaries that are not in the chain of trust path.
+     * [Deprecated] The intermediate certificates and optionally the root certificate, one after the other without any
+     * blank lines. If you include the root certificate, your certificate chain must start with intermediate
+     * certificates and end with the root certificate. Use the intermediate certificates that were provided by your
+     * certificate authority. Do not include any intermediaries that are not in the chain of trust path.
      * </p>
      * 
-     * @return The intermediate certificates and optionally the root certificate, one after the other without any blank
-     *         lines. If you include the root certificate, your certificate chain must start with intermediate
-     *         certificates and end with the root certificate. Use the intermediate certificates that were provided by
-     *         your certificate authority. Do not include any intermediaries that are not in the chain of trust path.
+     * @return [Deprecated] The intermediate certificates and optionally the root certificate, one after the other
+     *         without any blank lines. If you include the root certificate, your certificate chain must start with
+     *         intermediate certificates and end with the root certificate. Use the intermediate certificates that were
+     *         provided by your certificate authority. Do not include any intermediaries that are not in the chain of
+     *         trust path.
      */
 
     public String getCertificateChain() {
@@ -258,22 +266,63 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The intermediate certificates and optionally the root certificate, one after the other without any blank lines.
-     * If you include the root certificate, your certificate chain must start with intermediate certificates and end
-     * with the root certificate. Use the intermediate certificates that were provided by your certificate authority. Do
-     * not include any intermediaries that are not in the chain of trust path.
+     * [Deprecated] The intermediate certificates and optionally the root certificate, one after the other without any
+     * blank lines. If you include the root certificate, your certificate chain must start with intermediate
+     * certificates and end with the root certificate. Use the intermediate certificates that were provided by your
+     * certificate authority. Do not include any intermediaries that are not in the chain of trust path.
      * </p>
      * 
      * @param certificateChain
-     *        The intermediate certificates and optionally the root certificate, one after the other without any blank
-     *        lines. If you include the root certificate, your certificate chain must start with intermediate
-     *        certificates and end with the root certificate. Use the intermediate certificates that were provided by
-     *        your certificate authority. Do not include any intermediaries that are not in the chain of trust path.
+     *        [Deprecated] The intermediate certificates and optionally the root certificate, one after the other
+     *        without any blank lines. If you include the root certificate, your certificate chain must start with
+     *        intermediate certificates and end with the root certificate. Use the intermediate certificates that were
+     *        provided by your certificate authority. Do not include any intermediaries that are not in the chain of
+     *        trust path.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDomainNameRequest withCertificateChain(String certificateChain) {
         setCertificateChain(certificateChain);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The reference to an AWS-managed certificate. AWS Certificate Manager is the only supported source.
+     * </p>
+     * 
+     * @param certificateArn
+     *        The reference to an AWS-managed certificate. AWS Certificate Manager is the only supported source.
+     */
+
+    public void setCertificateArn(String certificateArn) {
+        this.certificateArn = certificateArn;
+    }
+
+    /**
+     * <p>
+     * The reference to an AWS-managed certificate. AWS Certificate Manager is the only supported source.
+     * </p>
+     * 
+     * @return The reference to an AWS-managed certificate. AWS Certificate Manager is the only supported source.
+     */
+
+    public String getCertificateArn() {
+        return this.certificateArn;
+    }
+
+    /**
+     * <p>
+     * The reference to an AWS-managed certificate. AWS Certificate Manager is the only supported source.
+     * </p>
+     * 
+     * @param certificateArn
+     *        The reference to an AWS-managed certificate. AWS Certificate Manager is the only supported source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDomainNameRequest withCertificateArn(String certificateArn) {
+        setCertificateArn(certificateArn);
         return this;
     }
 
@@ -297,7 +346,9 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
         if (getCertificatePrivateKey() != null)
             sb.append("CertificatePrivateKey: ").append(getCertificatePrivateKey()).append(",");
         if (getCertificateChain() != null)
-            sb.append("CertificateChain: ").append(getCertificateChain());
+            sb.append("CertificateChain: ").append(getCertificateChain()).append(",");
+        if (getCertificateArn() != null)
+            sb.append("CertificateArn: ").append(getCertificateArn());
         sb.append("}");
         return sb.toString();
     }
@@ -332,6 +383,10 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getCertificateChain() != null && other.getCertificateChain().equals(this.getCertificateChain()) == false)
             return false;
+        if (other.getCertificateArn() == null ^ this.getCertificateArn() == null)
+            return false;
+        if (other.getCertificateArn() != null && other.getCertificateArn().equals(this.getCertificateArn()) == false)
+            return false;
         return true;
     }
 
@@ -345,6 +400,7 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getCertificateBody() == null) ? 0 : getCertificateBody().hashCode());
         hashCode = prime * hashCode + ((getCertificatePrivateKey() == null) ? 0 : getCertificatePrivateKey().hashCode());
         hashCode = prime * hashCode + ((getCertificateChain() == null) ? 0 : getCertificateChain().hashCode());
+        hashCode = prime * hashCode + ((getCertificateArn() == null) ? 0 : getCertificateArn().hashCode());
         return hashCode;
     }
 

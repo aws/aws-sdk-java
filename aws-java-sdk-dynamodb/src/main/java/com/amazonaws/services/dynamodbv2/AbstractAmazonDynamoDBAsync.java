@@ -57,6 +57,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
      *
      * @see #batchGetItemAsync(BatchGetItemRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<BatchGetItemResult> batchGetItemAsync(java.util.Map<String, KeysAndAttributes> requestItems,
             String returnConsumedCapacity, com.amazonaws.handlers.AsyncHandler<BatchGetItemRequest, BatchGetItemResult> asyncHandler) {
 
@@ -79,6 +80,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
      *
      * @see #batchGetItemAsync(BatchGetItemRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<BatchGetItemResult> batchGetItemAsync(java.util.Map<String, KeysAndAttributes> requestItems,
             com.amazonaws.handlers.AsyncHandler<BatchGetItemRequest, BatchGetItemResult> asyncHandler) {
 
@@ -114,6 +116,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
      *
      * @see #batchWriteItemAsync(BatchWriteItemRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<BatchWriteItemResult> batchWriteItemAsync(java.util.Map<String, java.util.List<WriteRequest>> requestItems,
             com.amazonaws.handlers.AsyncHandler<BatchWriteItemRequest, BatchWriteItemResult> asyncHandler) {
 
@@ -151,6 +154,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
      *
      * @see #createTableAsync(CreateTableRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<CreateTableResult> createTableAsync(java.util.List<AttributeDefinition> attributeDefinitions, String tableName,
             java.util.List<KeySchemaElement> keySchema, ProvisionedThroughput provisionedThroughput,
             com.amazonaws.handlers.AsyncHandler<CreateTableRequest, CreateTableResult> asyncHandler) {
@@ -188,6 +192,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
      *
      * @see #deleteItemAsync(DeleteItemRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DeleteItemResult> deleteItemAsync(String tableName, java.util.Map<String, AttributeValue> key,
             com.amazonaws.handlers.AsyncHandler<DeleteItemRequest, DeleteItemResult> asyncHandler) {
 
@@ -210,6 +215,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
      *
      * @see #deleteItemAsync(DeleteItemRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DeleteItemResult> deleteItemAsync(String tableName, java.util.Map<String, AttributeValue> key, String returnValues,
             com.amazonaws.handlers.AsyncHandler<DeleteItemRequest, DeleteItemResult> asyncHandler) {
 
@@ -245,6 +251,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
      *
      * @see #deleteTableAsync(DeleteTableRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DeleteTableResult> deleteTableAsync(String tableName,
             com.amazonaws.handlers.AsyncHandler<DeleteTableRequest, DeleteTableResult> asyncHandler) {
 
@@ -293,10 +300,24 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
      *
      * @see #describeTableAsync(DescribeTableRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeTableResult> describeTableAsync(String tableName,
             com.amazonaws.handlers.AsyncHandler<DescribeTableRequest, DescribeTableResult> asyncHandler) {
 
         return describeTableAsync(new DescribeTableRequest().withTableName(tableName), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTimeToLiveResult> describeTimeToLiveAsync(DescribeTimeToLiveRequest request) {
+
+        return describeTimeToLiveAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTimeToLiveResult> describeTimeToLiveAsync(DescribeTimeToLiveRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeTimeToLiveRequest, DescribeTimeToLiveResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -328,6 +349,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
      *
      * @see #getItemAsync(GetItemRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetItemResult> getItemAsync(String tableName, java.util.Map<String, AttributeValue> key,
             com.amazonaws.handlers.AsyncHandler<GetItemRequest, GetItemResult> asyncHandler) {
 
@@ -350,6 +372,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
      *
      * @see #getItemAsync(GetItemRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetItemResult> getItemAsync(String tableName, java.util.Map<String, AttributeValue> key, Boolean consistentRead,
             com.amazonaws.handlers.AsyncHandler<GetItemRequest, GetItemResult> asyncHandler) {
 
@@ -385,6 +408,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
      *
      * @see #listTablesAsync(ListTablesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListTablesResult> listTablesAsync(com.amazonaws.handlers.AsyncHandler<ListTablesRequest, ListTablesResult> asyncHandler) {
 
         return listTablesAsync(new ListTablesRequest(), asyncHandler);
@@ -406,6 +430,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
      *
      * @see #listTablesAsync(ListTablesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListTablesResult> listTablesAsync(String exclusiveStartTableName,
             com.amazonaws.handlers.AsyncHandler<ListTablesRequest, ListTablesResult> asyncHandler) {
 
@@ -428,6 +453,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
      *
      * @see #listTablesAsync(ListTablesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListTablesResult> listTablesAsync(String exclusiveStartTableName, Integer limit,
             com.amazonaws.handlers.AsyncHandler<ListTablesRequest, ListTablesResult> asyncHandler) {
 
@@ -450,6 +476,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
      *
      * @see #listTablesAsync(ListTablesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListTablesResult> listTablesAsync(Integer limit,
             com.amazonaws.handlers.AsyncHandler<ListTablesRequest, ListTablesResult> asyncHandler) {
 
@@ -498,6 +525,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
      *
      * @see #putItemAsync(PutItemRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<PutItemResult> putItemAsync(String tableName, java.util.Map<String, AttributeValue> item,
             com.amazonaws.handlers.AsyncHandler<PutItemRequest, PutItemResult> asyncHandler) {
 
@@ -520,6 +548,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
      *
      * @see #putItemAsync(PutItemRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<PutItemResult> putItemAsync(String tableName, java.util.Map<String, AttributeValue> item, String returnValues,
             com.amazonaws.handlers.AsyncHandler<PutItemRequest, PutItemResult> asyncHandler) {
 
@@ -566,6 +595,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
      *
      * @see #scanAsync(ScanRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ScanResult> scanAsync(String tableName, java.util.List<String> attributesToGet,
             com.amazonaws.handlers.AsyncHandler<ScanRequest, ScanResult> asyncHandler) {
 
@@ -588,6 +618,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
      *
      * @see #scanAsync(ScanRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ScanResult> scanAsync(String tableName, java.util.Map<String, Condition> scanFilter,
             com.amazonaws.handlers.AsyncHandler<ScanRequest, ScanResult> asyncHandler) {
 
@@ -611,6 +642,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
      *
      * @see #scanAsync(ScanRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ScanResult> scanAsync(String tableName, java.util.List<String> attributesToGet,
             java.util.Map<String, Condition> scanFilter, com.amazonaws.handlers.AsyncHandler<ScanRequest, ScanResult> asyncHandler) {
 
@@ -673,6 +705,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
      *
      * @see #updateItemAsync(UpdateItemRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<UpdateItemResult> updateItemAsync(String tableName, java.util.Map<String, AttributeValue> key,
             java.util.Map<String, AttributeValueUpdate> attributeUpdates, com.amazonaws.handlers.AsyncHandler<UpdateItemRequest, UpdateItemResult> asyncHandler) {
 
@@ -697,6 +730,7 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
      *
      * @see #updateItemAsync(UpdateItemRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<UpdateItemResult> updateItemAsync(String tableName, java.util.Map<String, AttributeValue> key,
             java.util.Map<String, AttributeValueUpdate> attributeUpdates, String returnValues,
             com.amazonaws.handlers.AsyncHandler<UpdateItemRequest, UpdateItemResult> asyncHandler) {
@@ -735,10 +769,24 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
      *
      * @see #updateTableAsync(UpdateTableRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<UpdateTableResult> updateTableAsync(String tableName, ProvisionedThroughput provisionedThroughput,
             com.amazonaws.handlers.AsyncHandler<UpdateTableRequest, UpdateTableResult> asyncHandler) {
 
         return updateTableAsync(new UpdateTableRequest().withTableName(tableName).withProvisionedThroughput(provisionedThroughput), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTimeToLiveResult> updateTimeToLiveAsync(UpdateTimeToLiveRequest request) {
+
+        return updateTimeToLiveAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTimeToLiveResult> updateTimeToLiveAsync(UpdateTimeToLiveRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateTimeToLiveRequest, UpdateTimeToLiveResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
 }

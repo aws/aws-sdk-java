@@ -12,65 +12,50 @@
  */
 package com.amazonaws.services.iot.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.iot.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListPrincipalThingsRequest Marshaller
+ * ListPrincipalThingsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListPrincipalThingsRequestMarshaller implements Marshaller<Request<ListPrincipalThingsRequest>, ListPrincipalThingsRequest> {
+@SdkInternalApi
+public class ListPrincipalThingsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
+    private static final MarshallingInfo<String> PRINCIPAL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.HEADER)
+            .marshallLocationName("x-amzn-principal").build();
 
-    public ListPrincipalThingsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListPrincipalThingsRequestMarshaller instance = new ListPrincipalThingsRequestMarshaller();
+
+    public static ListPrincipalThingsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListPrincipalThingsRequest> marshall(ListPrincipalThingsRequest listPrincipalThingsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListPrincipalThingsRequest listPrincipalThingsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listPrincipalThingsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListPrincipalThingsRequest> request = new DefaultRequest<ListPrincipalThingsRequest>(listPrincipalThingsRequest, "AWSIot");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        if (listPrincipalThingsRequest.getPrincipal() != null) {
-            request.addHeader("x-amzn-principal", StringUtils.fromString(listPrincipalThingsRequest.getPrincipal()));
+        try {
+            protocolMarshaller.marshall(listPrincipalThingsRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listPrincipalThingsRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listPrincipalThingsRequest.getPrincipal(), PRINCIPAL_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        String uriResourcePath = "/principals/things";
-
-        request.setResourcePath(uriResourcePath);
-
-        if (listPrincipalThingsRequest.getNextToken() != null) {
-            request.addParameter("nextToken", StringUtils.fromString(listPrincipalThingsRequest.getNextToken()));
-        }
-
-        if (listPrincipalThingsRequest.getMaxResults() != null) {
-            request.addParameter("maxResults", StringUtils.fromInteger(listPrincipalThingsRequest.getMaxResults()));
-        }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

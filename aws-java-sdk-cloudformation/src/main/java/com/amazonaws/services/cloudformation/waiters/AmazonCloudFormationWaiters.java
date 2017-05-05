@@ -74,6 +74,21 @@ public class AmazonCloudFormationWaiters {
     }
 
     /**
+     * Builds a ChangeSetCreateComplete waiter by using custom parameters waiterParameters and other parameters defined
+     * in the waiters specification, and then polls until it determines whether the resource entered the desired state
+     * or not, where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<DescribeChangeSetRequest> changeSetCreateComplete() {
+
+        return new WaiterBuilder<DescribeChangeSetRequest, DescribeChangeSetResult>()
+                .withSdkFunction(new DescribeChangeSetFunction(client))
+                .withAcceptors(new ChangeSetCreateComplete.IsCREATE_COMPLETEMatcher(), new ChangeSetCreateComplete.IsFAILEDMatcher(),
+                        new ChangeSetCreateComplete.IsValidationErrorMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(120), new FixedDelayStrategy(30)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
      * Builds a StackDeleteComplete waiter by using custom parameters waiterParameters and other parameters defined in
      * the waiters specification, and then polls until it determines whether the resource entered the desired state or
      * not, where polling criteria is bound by either default polling strategy or custom polling strategy.
@@ -106,4 +121,7 @@ public class AmazonCloudFormationWaiters {
                 .withExecutorService(executorService).build();
     }
 
+    public void shutdown() {
+        executorService.shutdown();
+    }
 }

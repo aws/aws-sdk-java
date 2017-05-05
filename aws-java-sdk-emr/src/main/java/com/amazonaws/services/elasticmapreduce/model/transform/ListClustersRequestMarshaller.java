@@ -12,83 +12,54 @@
  */
 package com.amazonaws.services.elasticmapreduce.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.elasticmapreduce.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListClustersRequest Marshaller
+ * ListClustersRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListClustersRequestMarshaller implements Marshaller<Request<ListClustersRequest>, ListClustersRequest> {
+@SdkInternalApi
+public class ListClustersRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<java.util.Date> CREATEDAFTER_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedAfter").build();
+    private static final MarshallingInfo<java.util.Date> CREATEDBEFORE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedBefore").build();
+    private static final MarshallingInfo<List> CLUSTERSTATES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ClusterStates").build();
+    private static final MarshallingInfo<String> MARKER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Marker").build();
 
-    public ListClustersRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListClustersRequestMarshaller instance = new ListClustersRequestMarshaller();
+
+    public static ListClustersRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListClustersRequest> marshall(ListClustersRequest listClustersRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListClustersRequest listClustersRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listClustersRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListClustersRequest> request = new DefaultRequest<ListClustersRequest>(listClustersRequest, "AmazonElasticMapReduce");
-        request.addHeader("X-Amz-Target", "ElasticMapReduce.ListClusters");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (listClustersRequest.getCreatedAfter() != null) {
-                jsonGenerator.writeFieldName("CreatedAfter").writeValue(listClustersRequest.getCreatedAfter());
-            }
-            if (listClustersRequest.getCreatedBefore() != null) {
-                jsonGenerator.writeFieldName("CreatedBefore").writeValue(listClustersRequest.getCreatedBefore());
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> clusterStatesList = (com.amazonaws.internal.SdkInternalList<String>) listClustersRequest
-                    .getClusterStates();
-            if (!clusterStatesList.isEmpty() || !clusterStatesList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("ClusterStates");
-                jsonGenerator.writeStartArray();
-                for (String clusterStatesListValue : clusterStatesList) {
-                    if (clusterStatesListValue != null) {
-                        jsonGenerator.writeValue(clusterStatesListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (listClustersRequest.getMarker() != null) {
-                jsonGenerator.writeFieldName("Marker").writeValue(listClustersRequest.getMarker());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listClustersRequest.getCreatedAfter(), CREATEDAFTER_BINDING);
+            protocolMarshaller.marshall(listClustersRequest.getCreatedBefore(), CREATEDBEFORE_BINDING);
+            protocolMarshaller.marshall(listClustersRequest.getClusterStates(), CLUSTERSTATES_BINDING);
+            protocolMarshaller.marshall(listClustersRequest.getMarker(), MARKER_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

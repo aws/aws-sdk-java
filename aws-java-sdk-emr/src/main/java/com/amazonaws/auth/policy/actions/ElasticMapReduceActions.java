@@ -25,6 +25,8 @@ public enum ElasticMapReduceActions implements Action {
     /** Represents any action executed on Amazon EMR. */
     AllElasticMapReduceActions("elasticmapreduce:*"),
 
+    /** Action for the AddInstanceFleet operation. */
+    AddInstanceFleet("elasticmapreduce:AddInstanceFleet"),
     /** Action for the AddInstanceGroups operation. */
     AddInstanceGroups("elasticmapreduce:AddInstanceGroups"),
     /** Action for the AddJobFlowSteps operation. */
@@ -49,6 +51,8 @@ public enum ElasticMapReduceActions implements Action {
     ListBootstrapActions("elasticmapreduce:ListBootstrapActions"),
     /** Action for the ListClusters operation. */
     ListClusters("elasticmapreduce:ListClusters"),
+    /** Action for the ListInstanceFleets operation. */
+    ListInstanceFleets("elasticmapreduce:ListInstanceFleets"),
     /** Action for the ListInstanceGroups operation. */
     ListInstanceGroups("elasticmapreduce:ListInstanceGroups"),
     /** Action for the ListInstances operation. */
@@ -57,6 +61,8 @@ public enum ElasticMapReduceActions implements Action {
     ListSecurityConfigurations("elasticmapreduce:ListSecurityConfigurations"),
     /** Action for the ListSteps operation. */
     ListSteps("elasticmapreduce:ListSteps"),
+    /** Action for the ModifyInstanceFleet operation. */
+    ModifyInstanceFleet("elasticmapreduce:ModifyInstanceFleet"),
     /** Action for the ModifyInstanceGroups operation. */
     ModifyInstanceGroups("elasticmapreduce:ModifyInstanceGroups"),
     /** Action for the PutAutoScalingPolicy operation. */

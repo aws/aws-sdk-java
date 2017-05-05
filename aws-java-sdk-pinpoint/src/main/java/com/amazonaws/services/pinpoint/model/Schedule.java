@@ -14,9 +14,14 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * Shcedule that defines when a campaign is run.
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Schedule implements Serializable, Cloneable {
+public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /** The scheduled time that the campaign ends in ISO 8601 format. */
     private String endTime;
@@ -413,5 +418,11 @@ public class Schedule implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.pinpoint.model.transform.ScheduleMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

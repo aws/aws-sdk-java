@@ -12,70 +12,50 @@
  */
 package com.amazonaws.services.opsworks.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.opsworks.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteInstanceRequest Marshaller
+ * DeleteInstanceRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteInstanceRequestMarshaller implements Marshaller<Request<DeleteInstanceRequest>, DeleteInstanceRequest> {
+@SdkInternalApi
+public class DeleteInstanceRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> INSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceId").build();
+    private static final MarshallingInfo<Boolean> DELETEELASTICIP_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeleteElasticIp").build();
+    private static final MarshallingInfo<Boolean> DELETEVOLUMES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeleteVolumes").build();
 
-    public DeleteInstanceRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteInstanceRequestMarshaller instance = new DeleteInstanceRequestMarshaller();
+
+    public static DeleteInstanceRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteInstanceRequest> marshall(DeleteInstanceRequest deleteInstanceRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteInstanceRequest deleteInstanceRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteInstanceRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteInstanceRequest> request = new DefaultRequest<DeleteInstanceRequest>(deleteInstanceRequest, "AWSOpsWorks");
-        request.addHeader("X-Amz-Target", "OpsWorks_20130218.DeleteInstance");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteInstanceRequest.getInstanceId() != null) {
-                jsonGenerator.writeFieldName("InstanceId").writeValue(deleteInstanceRequest.getInstanceId());
-            }
-            if (deleteInstanceRequest.getDeleteElasticIp() != null) {
-                jsonGenerator.writeFieldName("DeleteElasticIp").writeValue(deleteInstanceRequest.getDeleteElasticIp());
-            }
-            if (deleteInstanceRequest.getDeleteVolumes() != null) {
-                jsonGenerator.writeFieldName("DeleteVolumes").writeValue(deleteInstanceRequest.getDeleteVolumes());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteInstanceRequest.getInstanceId(), INSTANCEID_BINDING);
+            protocolMarshaller.marshall(deleteInstanceRequest.getDeleteElasticIp(), DELETEELASTICIP_BINDING);
+            protocolMarshaller.marshall(deleteInstanceRequest.getDeleteVolumes(), DELETEVOLUMES_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

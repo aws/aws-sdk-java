@@ -26,10 +26,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class StopRunResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The run that was stopped.
+     * </p>
+     */
     private Run run;
 
     /**
+     * <p>
+     * The run that was stopped.
+     * </p>
+     * 
      * @param run
+     *        The run that was stopped.
      */
 
     public void setRun(Run run) {
@@ -37,7 +47,11 @@ public class StopRunResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
     }
 
     /**
-     * @return
+     * <p>
+     * The run that was stopped.
+     * </p>
+     * 
+     * @return The run that was stopped.
      */
 
     public Run getRun() {
@@ -45,7 +59,12 @@ public class StopRunResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
     }
 
     /**
+     * <p>
+     * The run that was stopped.
+     * </p>
+     * 
      * @param run
+     *        The run that was stopped.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,4 +124,5 @@ public class StopRunResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

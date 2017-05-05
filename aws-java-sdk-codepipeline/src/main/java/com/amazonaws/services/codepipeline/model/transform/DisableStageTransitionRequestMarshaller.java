@@ -12,73 +12,53 @@
  */
 package com.amazonaws.services.codepipeline.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.codepipeline.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DisableStageTransitionRequest Marshaller
+ * DisableStageTransitionRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DisableStageTransitionRequestMarshaller implements Marshaller<Request<DisableStageTransitionRequest>, DisableStageTransitionRequest> {
+@SdkInternalApi
+public class DisableStageTransitionRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> PIPELINENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pipelineName").build();
+    private static final MarshallingInfo<String> STAGENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("stageName").build();
+    private static final MarshallingInfo<String> TRANSITIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("transitionType").build();
+    private static final MarshallingInfo<String> REASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("reason").build();
 
-    public DisableStageTransitionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DisableStageTransitionRequestMarshaller instance = new DisableStageTransitionRequestMarshaller();
+
+    public static DisableStageTransitionRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DisableStageTransitionRequest> marshall(DisableStageTransitionRequest disableStageTransitionRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DisableStageTransitionRequest disableStageTransitionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (disableStageTransitionRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DisableStageTransitionRequest> request = new DefaultRequest<DisableStageTransitionRequest>(disableStageTransitionRequest, "AWSCodePipeline");
-        request.addHeader("X-Amz-Target", "CodePipeline_20150709.DisableStageTransition");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (disableStageTransitionRequest.getPipelineName() != null) {
-                jsonGenerator.writeFieldName("pipelineName").writeValue(disableStageTransitionRequest.getPipelineName());
-            }
-            if (disableStageTransitionRequest.getStageName() != null) {
-                jsonGenerator.writeFieldName("stageName").writeValue(disableStageTransitionRequest.getStageName());
-            }
-            if (disableStageTransitionRequest.getTransitionType() != null) {
-                jsonGenerator.writeFieldName("transitionType").writeValue(disableStageTransitionRequest.getTransitionType());
-            }
-            if (disableStageTransitionRequest.getReason() != null) {
-                jsonGenerator.writeFieldName("reason").writeValue(disableStageTransitionRequest.getReason());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(disableStageTransitionRequest.getPipelineName(), PIPELINENAME_BINDING);
+            protocolMarshaller.marshall(disableStageTransitionRequest.getStageName(), STAGENAME_BINDING);
+            protocolMarshaller.marshall(disableStageTransitionRequest.getTransitionType(), TRANSITIONTYPE_BINDING);
+            protocolMarshaller.marshall(disableStageTransitionRequest.getReason(), REASON_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

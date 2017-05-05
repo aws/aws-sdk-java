@@ -26,10 +26,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateProjectResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The project you wish to update.
+     * </p>
+     */
     private Project project;
 
     /**
+     * <p>
+     * The project you wish to update.
+     * </p>
+     * 
      * @param project
+     *        The project you wish to update.
      */
 
     public void setProject(Project project) {
@@ -37,7 +47,11 @@ public class UpdateProjectResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * @return
+     * <p>
+     * The project you wish to update.
+     * </p>
+     * 
+     * @return The project you wish to update.
      */
 
     public Project getProject() {
@@ -45,7 +59,12 @@ public class UpdateProjectResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * The project you wish to update.
+     * </p>
+     * 
      * @param project
+     *        The project you wish to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,4 +124,5 @@ public class UpdateProjectResult extends com.amazonaws.AmazonWebServiceResult<co
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

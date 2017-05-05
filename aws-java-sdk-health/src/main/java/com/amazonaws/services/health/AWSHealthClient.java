@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -295,6 +296,10 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
         init();
     }
 
+    public static AWSHealthClientBuilder builder() {
+        return AWSHealthClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWSHealth using the specified parameters.
      *
@@ -345,7 +350,13 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeAffectedEntitiesResult describeAffectedEntities(DescribeAffectedEntitiesRequest describeAffectedEntitiesRequest) {
+    public DescribeAffectedEntitiesResult describeAffectedEntities(DescribeAffectedEntitiesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAffectedEntities(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAffectedEntitiesResult executeDescribeAffectedEntities(DescribeAffectedEntitiesRequest describeAffectedEntitiesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAffectedEntitiesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -356,7 +367,8 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAffectedEntitiesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAffectedEntitiesRequest));
+                request = new DescribeAffectedEntitiesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeAffectedEntitiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -389,7 +401,13 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeEntityAggregatesResult describeEntityAggregates(DescribeEntityAggregatesRequest describeEntityAggregatesRequest) {
+    public DescribeEntityAggregatesResult describeEntityAggregates(DescribeEntityAggregatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEntityAggregates(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEntityAggregatesResult executeDescribeEntityAggregates(DescribeEntityAggregatesRequest describeEntityAggregatesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEntityAggregatesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -400,7 +418,8 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeEntityAggregatesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEntityAggregatesRequest));
+                request = new DescribeEntityAggregatesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeEntityAggregatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -435,7 +454,13 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      *      API Documentation</a>
      */
     @Override
-    public DescribeEventAggregatesResult describeEventAggregates(DescribeEventAggregatesRequest describeEventAggregatesRequest) {
+    public DescribeEventAggregatesResult describeEventAggregates(DescribeEventAggregatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEventAggregates(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEventAggregatesResult executeDescribeEventAggregates(DescribeEventAggregatesRequest describeEventAggregatesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEventAggregatesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -446,7 +471,8 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeEventAggregatesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEventAggregatesRequest));
+                request = new DescribeEventAggregatesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeEventAggregatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -486,7 +512,13 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      *      API Documentation</a>
      */
     @Override
-    public DescribeEventDetailsResult describeEventDetails(DescribeEventDetailsRequest describeEventDetailsRequest) {
+    public DescribeEventDetailsResult describeEventDetails(DescribeEventDetailsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEventDetails(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEventDetailsResult executeDescribeEventDetails(DescribeEventDetailsRequest describeEventDetailsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEventDetailsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -497,7 +529,7 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeEventDetailsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEventDetailsRequest));
+                request = new DescribeEventDetailsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEventDetailsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -533,7 +565,13 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      *      Documentation</a>
      */
     @Override
-    public DescribeEventTypesResult describeEventTypes(DescribeEventTypesRequest describeEventTypesRequest) {
+    public DescribeEventTypesResult describeEventTypes(DescribeEventTypesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEventTypes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEventTypesResult executeDescribeEventTypes(DescribeEventTypesRequest describeEventTypesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEventTypesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -544,7 +582,7 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeEventTypesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEventTypesRequest));
+                request = new DescribeEventTypesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEventTypesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -586,7 +624,13 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
      *      Documentation</a>
      */
     @Override
-    public DescribeEventsResult describeEvents(DescribeEventsRequest describeEventsRequest) {
+    public DescribeEventsResult describeEvents(DescribeEventsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEvents(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEventsResult executeDescribeEvents(DescribeEventsRequest describeEventsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEventsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -597,7 +641,7 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeEventsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEventsRequest));
+                request = new DescribeEventsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

@@ -12,67 +12,50 @@
  */
 package com.amazonaws.services.devicefarm.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.devicefarm.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * PurchaseOfferingRequest Marshaller
+ * PurchaseOfferingRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PurchaseOfferingRequestMarshaller implements Marshaller<Request<PurchaseOfferingRequest>, PurchaseOfferingRequest> {
+@SdkInternalApi
+public class PurchaseOfferingRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> OFFERINGID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("offeringId").build();
+    private static final MarshallingInfo<Integer> QUANTITY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("quantity").build();
+    private static final MarshallingInfo<String> OFFERINGPROMOTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("offeringPromotionId").build();
 
-    public PurchaseOfferingRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final PurchaseOfferingRequestMarshaller instance = new PurchaseOfferingRequestMarshaller();
+
+    public static PurchaseOfferingRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<PurchaseOfferingRequest> marshall(PurchaseOfferingRequest purchaseOfferingRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(PurchaseOfferingRequest purchaseOfferingRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (purchaseOfferingRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<PurchaseOfferingRequest> request = new DefaultRequest<PurchaseOfferingRequest>(purchaseOfferingRequest, "AWSDeviceFarm");
-        request.addHeader("X-Amz-Target", "DeviceFarm_20150623.PurchaseOffering");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (purchaseOfferingRequest.getOfferingId() != null) {
-                jsonGenerator.writeFieldName("offeringId").writeValue(purchaseOfferingRequest.getOfferingId());
-            }
-            if (purchaseOfferingRequest.getQuantity() != null) {
-                jsonGenerator.writeFieldName("quantity").writeValue(purchaseOfferingRequest.getQuantity());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(purchaseOfferingRequest.getOfferingId(), OFFERINGID_BINDING);
+            protocolMarshaller.marshall(purchaseOfferingRequest.getQuantity(), QUANTITY_BINDING);
+            protocolMarshaller.marshall(purchaseOfferingRequest.getOfferingPromotionId(), OFFERINGPROMOTIONID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

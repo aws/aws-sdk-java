@@ -12,70 +12,50 @@
  */
 package com.amazonaws.services.gamelift.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.gamelift.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListBuildsRequest Marshaller
+ * ListBuildsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListBuildsRequestMarshaller implements Marshaller<Request<ListBuildsRequest>, ListBuildsRequest> {
+@SdkInternalApi
+public class ListBuildsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Status").build();
+    private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Limit").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
 
-    public ListBuildsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListBuildsRequestMarshaller instance = new ListBuildsRequestMarshaller();
+
+    public static ListBuildsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListBuildsRequest> marshall(ListBuildsRequest listBuildsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListBuildsRequest listBuildsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listBuildsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListBuildsRequest> request = new DefaultRequest<ListBuildsRequest>(listBuildsRequest, "AmazonGameLift");
-        request.addHeader("X-Amz-Target", "GameLift.ListBuilds");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (listBuildsRequest.getStatus() != null) {
-                jsonGenerator.writeFieldName("Status").writeValue(listBuildsRequest.getStatus());
-            }
-            if (listBuildsRequest.getLimit() != null) {
-                jsonGenerator.writeFieldName("Limit").writeValue(listBuildsRequest.getLimit());
-            }
-            if (listBuildsRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(listBuildsRequest.getNextToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listBuildsRequest.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(listBuildsRequest.getLimit(), LIMIT_BINDING);
+            protocolMarshaller.marshall(listBuildsRequest.getNextToken(), NEXTTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

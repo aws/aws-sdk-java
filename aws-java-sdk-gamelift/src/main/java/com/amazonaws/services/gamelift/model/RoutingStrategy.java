@@ -14,6 +14,8 @@ package com.amazonaws.services.gamelift.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RoutingStrategy implements Serializable, Cloneable {
+public class RoutingStrategy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -50,7 +52,7 @@ public class RoutingStrategy implements Serializable, Cloneable {
     private String type;
     /**
      * <p>
-     * Unique identifier for a fleet.
+     * Unique identifier for a fleet that the alias points to.
      * </p>
      */
     private String fleetId;
@@ -296,11 +298,11 @@ public class RoutingStrategy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique identifier for a fleet.
+     * Unique identifier for a fleet that the alias points to.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet.
+     *        Unique identifier for a fleet that the alias points to.
      */
 
     public void setFleetId(String fleetId) {
@@ -309,10 +311,10 @@ public class RoutingStrategy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique identifier for a fleet.
+     * Unique identifier for a fleet that the alias points to.
      * </p>
      * 
-     * @return Unique identifier for a fleet.
+     * @return Unique identifier for a fleet that the alias points to.
      */
 
     public String getFleetId() {
@@ -321,11 +323,11 @@ public class RoutingStrategy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique identifier for a fleet.
+     * Unique identifier for a fleet that the alias points to.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet.
+     *        Unique identifier for a fleet that the alias points to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -438,5 +440,11 @@ public class RoutingStrategy implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.gamelift.model.transform.RoutingStrategyMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

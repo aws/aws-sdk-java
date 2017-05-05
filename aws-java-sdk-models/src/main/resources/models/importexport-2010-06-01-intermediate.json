@@ -17,6 +17,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
+    "deprecatedSuppressions" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
     "presignersFqcn" : null,
@@ -31,6 +32,7 @@
     "shapeSubstitutions" : null,
     "simpleMethods" : {
       "ListJobs" : {
+        "deprecated" : null,
         "methodForms" : [ [ ] ]
       }
     },
@@ -504,6 +506,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Description",
           "queryString" : false,
           "statusCode" : false,
@@ -511,10 +514,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "Description",
         "setterDocumentation" : "/**\n@param description */",
         "setterMethodName" : "setDescription",
@@ -527,6 +534,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param description \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -560,6 +568,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "URL",
           "queryString" : false,
           "statusCode" : false,
@@ -567,10 +576,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "URL",
         "setterDocumentation" : "/**\n@param uRL */",
         "setterMethodName" : "setURL",
@@ -583,6 +596,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param uRL \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -618,6 +632,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Description",
             "queryString" : false,
             "statusCode" : false,
@@ -625,10 +640,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "Description",
           "setterDocumentation" : "/**\n@param description */",
           "setterMethodName" : "setDescription",
@@ -641,6 +660,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param description \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -675,6 +695,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "URL",
             "queryString" : false,
             "statusCode" : false,
@@ -682,10 +703,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "URL",
           "setterDocumentation" : "/**\n@param uRL */",
           "setterMethodName" : "setURL",
@@ -698,6 +723,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param uRL \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -714,6 +740,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Artifact",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -751,6 +779,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BucketPermissionException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "BucketPermissionException",
@@ -809,6 +839,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "JobId",
           "queryString" : false,
           "statusCode" : false,
@@ -816,10 +847,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "JobId",
         "setterDocumentation" : "/**\n@param jobId */",
         "setterMethodName" : "setJobId",
@@ -832,6 +867,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -865,6 +901,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "APIVersion",
           "queryString" : false,
           "statusCode" : false,
@@ -872,10 +909,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "APIVersion",
         "setterDocumentation" : "/**\n@param aPIVersion */",
         "setterMethodName" : "setAPIVersion",
@@ -888,6 +929,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -923,6 +965,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "APIVersion",
             "queryString" : false,
             "statusCode" : false,
@@ -930,10 +973,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "APIVersion",
           "setterDocumentation" : "/**\n@param aPIVersion */",
           "setterMethodName" : "setAPIVersion",
@@ -946,6 +993,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -980,6 +1028,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "JobId",
             "queryString" : false,
             "statusCode" : false,
@@ -987,10 +1036,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "JobId",
           "setterDocumentation" : "/**\n@param jobId */",
           "setterMethodName" : "setJobId",
@@ -1003,6 +1056,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -1019,6 +1073,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "JobId" ],
       "shapeName" : "CancelJobRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CancelJobRequest",
@@ -1070,6 +1126,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Success",
           "queryString" : false,
           "statusCode" : false,
@@ -1077,10 +1134,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "Boolean",
+        "marshallingType" : "BOOLEAN",
         "name" : "Success",
         "setterDocumentation" : "/**\n@param success */",
         "setterMethodName" : "setSuccess",
@@ -1093,6 +1154,7 @@
           "variableSetterType" : "Boolean"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param success \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Boolean",
@@ -1128,6 +1190,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Success",
             "queryString" : false,
             "statusCode" : false,
@@ -1135,10 +1198,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "Boolean",
+          "marshallingType" : "BOOLEAN",
           "name" : "Success",
           "setterDocumentation" : "/**\n@param success */",
           "setterMethodName" : "setSuccess",
@@ -1151,6 +1218,7 @@
             "variableSetterType" : "Boolean"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param success \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Boolean",
@@ -1167,6 +1235,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CancelJobResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : "CancelJobResult"
@@ -1204,6 +1274,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CanceledJobIdException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CanceledJobIdException",
@@ -1238,6 +1310,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateJobQuotaExceededException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateJobQuotaExceededException",
@@ -1296,6 +1370,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "JobType",
           "queryString" : false,
           "statusCode" : false,
@@ -1303,10 +1378,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "JobType",
         "setterDocumentation" : "/**\n@param jobType \n@see JobType*/",
         "setterMethodName" : "setJobType",
@@ -1319,6 +1398,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -1352,6 +1432,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Manifest",
           "queryString" : false,
           "statusCode" : false,
@@ -1359,10 +1440,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "Manifest",
         "setterDocumentation" : "/**\n@param manifest */",
         "setterMethodName" : "setManifest",
@@ -1375,6 +1460,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param manifest \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -1408,6 +1494,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "ManifestAddendum",
           "queryString" : false,
           "statusCode" : false,
@@ -1415,10 +1502,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "ManifestAddendum",
         "setterDocumentation" : "/**\n@param manifestAddendum */",
         "setterMethodName" : "setManifestAddendum",
@@ -1431,6 +1522,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param manifestAddendum \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -1464,6 +1556,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "ValidateOnly",
           "queryString" : false,
           "statusCode" : false,
@@ -1471,10 +1564,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "Boolean",
+        "marshallingType" : "BOOLEAN",
         "name" : "ValidateOnly",
         "setterDocumentation" : "/**\n@param validateOnly */",
         "setterMethodName" : "setValidateOnly",
@@ -1487,6 +1584,7 @@
           "variableSetterType" : "Boolean"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param validateOnly \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Boolean",
@@ -1520,6 +1618,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "APIVersion",
           "queryString" : false,
           "statusCode" : false,
@@ -1527,10 +1626,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "APIVersion",
         "setterDocumentation" : "/**\n@param aPIVersion */",
         "setterMethodName" : "setAPIVersion",
@@ -1543,6 +1646,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -1578,6 +1682,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "APIVersion",
             "queryString" : false,
             "statusCode" : false,
@@ -1585,10 +1690,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "APIVersion",
           "setterDocumentation" : "/**\n@param aPIVersion */",
           "setterMethodName" : "setAPIVersion",
@@ -1601,6 +1710,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -1635,6 +1745,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "JobType",
             "queryString" : false,
             "statusCode" : false,
@@ -1642,10 +1753,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "JobType",
           "setterDocumentation" : "/**\n@param jobType \n@see JobType*/",
           "setterMethodName" : "setJobType",
@@ -1658,6 +1773,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -1692,6 +1808,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Manifest",
             "queryString" : false,
             "statusCode" : false,
@@ -1699,10 +1816,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "Manifest",
           "setterDocumentation" : "/**\n@param manifest */",
           "setterMethodName" : "setManifest",
@@ -1715,6 +1836,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param manifest \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -1749,6 +1871,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "ManifestAddendum",
             "queryString" : false,
             "statusCode" : false,
@@ -1756,10 +1879,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "ManifestAddendum",
           "setterDocumentation" : "/**\n@param manifestAddendum */",
           "setterMethodName" : "setManifestAddendum",
@@ -1772,6 +1899,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param manifestAddendum \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -1806,6 +1934,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "ValidateOnly",
             "queryString" : false,
             "statusCode" : false,
@@ -1813,10 +1942,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "Boolean",
+          "marshallingType" : "BOOLEAN",
           "name" : "ValidateOnly",
           "setterDocumentation" : "/**\n@param validateOnly */",
           "setterMethodName" : "setValidateOnly",
@@ -1829,6 +1962,7 @@
             "variableSetterType" : "Boolean"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param validateOnly \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Boolean",
@@ -1845,6 +1979,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "JobType", "Manifest", "ValidateOnly" ],
       "shapeName" : "CreateJobRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "CreateJobRequest",
@@ -1896,6 +2032,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "JobId",
           "queryString" : false,
           "statusCode" : false,
@@ -1903,10 +2040,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "JobId",
         "setterDocumentation" : "/**\n@param jobId */",
         "setterMethodName" : "setJobId",
@@ -1919,6 +2060,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -1952,6 +2094,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "JobType",
           "queryString" : false,
           "statusCode" : false,
@@ -1959,10 +2102,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "JobType",
         "setterDocumentation" : "/**\n@param jobType \n@see JobType*/",
         "setterMethodName" : "setJobType",
@@ -1975,6 +2122,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -2008,6 +2156,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Signature",
           "queryString" : false,
           "statusCode" : false,
@@ -2015,10 +2164,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "Signature",
         "setterDocumentation" : "/**\n@param signature */",
         "setterMethodName" : "setSignature",
@@ -2031,6 +2184,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param signature \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -2064,6 +2218,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "SignatureFileContents",
           "queryString" : false,
           "statusCode" : false,
@@ -2071,10 +2226,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "SignatureFileContents",
         "setterDocumentation" : "/**\n@param signatureFileContents */",
         "setterMethodName" : "setSignatureFileContents",
@@ -2087,6 +2246,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param signatureFileContents \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -2120,6 +2280,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "WarningMessage",
           "queryString" : false,
           "statusCode" : false,
@@ -2127,10 +2288,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "WarningMessage",
         "setterDocumentation" : "/**\n@param warningMessage */",
         "setterMethodName" : "setWarningMessage",
@@ -2143,6 +2308,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param warningMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -2176,6 +2342,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "ArtifactList",
           "queryString" : false,
           "statusCode" : false,
@@ -2183,6 +2350,8 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : true,
         "listModel" : {
           "implType" : "com.amazonaws.internal.SdkInternalList",
@@ -2210,6 +2379,7 @@
               "isPayload" : false,
               "isStreaming" : false,
               "location" : null,
+              "marshallLocation" : "PAYLOAD",
               "marshallLocationName" : "member",
               "queryString" : false,
               "statusCode" : false,
@@ -2217,10 +2387,14 @@
               "uri" : false
             },
             "idempotencyToken" : false,
+            "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
             "mapModel" : null,
+            "marshallingTargetClass" : "StructuredPojo",
+            "marshallingType" : "STRUCTURED",
             "name" : "Member",
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
@@ -2233,6 +2407,7 @@
               "variableSetterType" : "Artifact"
             },
             "simple" : false,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
               "variableDeclarationType" : "Artifact",
@@ -2258,6 +2433,8 @@
         },
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "List",
+        "marshallingType" : "LIST",
         "name" : "ArtifactList",
         "setterDocumentation" : "/**\n@param artifactList */",
         "setterMethodName" : "setArtifactList",
@@ -2270,6 +2447,7 @@
           "variableSetterType" : "java.util.Collection<Artifact>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setArtifactList(java.util.Collection)} or {@link #withArtifactList(java.util.Collection)} if you want to override the existing values.</p>\n@param artifactList \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
@@ -2305,6 +2483,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "ArtifactList",
             "queryString" : false,
             "statusCode" : false,
@@ -2312,6 +2491,8 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : true,
           "listModel" : {
             "implType" : "com.amazonaws.internal.SdkInternalList",
@@ -2339,6 +2520,7 @@
                 "isPayload" : false,
                 "isStreaming" : false,
                 "location" : null,
+                "marshallLocation" : "PAYLOAD",
                 "marshallLocationName" : "member",
                 "queryString" : false,
                 "statusCode" : false,
@@ -2346,10 +2528,14 @@
                 "uri" : false
               },
               "idempotencyToken" : false,
+              "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
               "mapModel" : null,
+              "marshallingTargetClass" : "StructuredPojo",
+              "marshallingType" : "STRUCTURED",
               "name" : "Member",
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
@@ -2362,6 +2548,7 @@
                 "variableSetterType" : "Artifact"
               },
               "simple" : false,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
                 "variableDeclarationType" : "Artifact",
@@ -2387,6 +2574,8 @@
           },
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "List",
+          "marshallingType" : "LIST",
           "name" : "ArtifactList",
           "setterDocumentation" : "/**\n@param artifactList */",
           "setterMethodName" : "setArtifactList",
@@ -2399,6 +2588,7 @@
             "variableSetterType" : "java.util.Collection<Artifact>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setArtifactList(java.util.Collection)} or {@link #withArtifactList(java.util.Collection)} if you want to override the existing values.</p>\n@param artifactList \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
@@ -2433,6 +2623,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "JobId",
             "queryString" : false,
             "statusCode" : false,
@@ -2440,10 +2631,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "JobId",
           "setterDocumentation" : "/**\n@param jobId */",
           "setterMethodName" : "setJobId",
@@ -2456,6 +2651,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -2490,6 +2686,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "JobType",
             "queryString" : false,
             "statusCode" : false,
@@ -2497,10 +2694,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "JobType",
           "setterDocumentation" : "/**\n@param jobType \n@see JobType*/",
           "setterMethodName" : "setJobType",
@@ -2513,6 +2714,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -2547,6 +2749,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Signature",
             "queryString" : false,
             "statusCode" : false,
@@ -2554,10 +2757,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "Signature",
           "setterDocumentation" : "/**\n@param signature */",
           "setterMethodName" : "setSignature",
@@ -2570,6 +2777,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param signature \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -2604,6 +2812,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "SignatureFileContents",
             "queryString" : false,
             "statusCode" : false,
@@ -2611,10 +2820,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "SignatureFileContents",
           "setterDocumentation" : "/**\n@param signatureFileContents */",
           "setterMethodName" : "setSignatureFileContents",
@@ -2627,6 +2840,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param signatureFileContents \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -2661,6 +2875,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "WarningMessage",
             "queryString" : false,
             "statusCode" : false,
@@ -2668,10 +2883,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "WarningMessage",
           "setterDocumentation" : "/**\n@param warningMessage */",
           "setterMethodName" : "setWarningMessage",
@@ -2684,6 +2903,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param warningMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -2700,6 +2920,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "CreateJobResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : "CreateJobResult"
@@ -2737,6 +2959,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ExpiredJobIdException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ExpiredJobIdException",
@@ -2795,6 +3019,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "jobIds",
           "queryString" : false,
           "statusCode" : false,
@@ -2802,6 +3027,8 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : true,
         "listModel" : {
           "implType" : "com.amazonaws.internal.SdkInternalList",
@@ -2829,6 +3056,7 @@
               "isPayload" : false,
               "isStreaming" : false,
               "location" : null,
+              "marshallLocation" : "PAYLOAD",
               "marshallLocationName" : "member",
               "queryString" : false,
               "statusCode" : false,
@@ -2836,10 +3064,14 @@
               "uri" : false
             },
             "idempotencyToken" : false,
+            "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
             "mapModel" : null,
+            "marshallingTargetClass" : "String",
+            "marshallingType" : "STRING",
             "name" : "Member",
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
@@ -2852,6 +3084,7 @@
               "variableSetterType" : "String"
             },
             "simple" : true,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
               "variableDeclarationType" : "String",
@@ -2877,6 +3110,8 @@
         },
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "List",
+        "marshallingType" : "LIST",
         "name" : "JobIds",
         "setterDocumentation" : "/**\n@param jobIds */",
         "setterMethodName" : "setJobIds",
@@ -2889,6 +3124,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setJobIds(java.util.Collection)} or {@link #withJobIds(java.util.Collection)} if you want to override the existing values.</p>\n@param jobIds \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
@@ -2922,6 +3158,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "name",
           "queryString" : false,
           "statusCode" : false,
@@ -2929,10 +3166,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "Name",
         "setterDocumentation" : "/**\n@param name */",
         "setterMethodName" : "setName",
@@ -2945,6 +3186,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param name \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -2978,6 +3220,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "company",
           "queryString" : false,
           "statusCode" : false,
@@ -2985,10 +3228,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "Company",
         "setterDocumentation" : "/**\n@param company */",
         "setterMethodName" : "setCompany",
@@ -3001,6 +3248,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param company \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -3034,6 +3282,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "phoneNumber",
           "queryString" : false,
           "statusCode" : false,
@@ -3041,10 +3290,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "PhoneNumber",
         "setterDocumentation" : "/**\n@param phoneNumber */",
         "setterMethodName" : "setPhoneNumber",
@@ -3057,6 +3310,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param phoneNumber \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -3090,6 +3344,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "country",
           "queryString" : false,
           "statusCode" : false,
@@ -3097,10 +3352,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "Country",
         "setterDocumentation" : "/**\n@param country */",
         "setterMethodName" : "setCountry",
@@ -3113,6 +3372,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param country \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -3146,6 +3406,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "stateOrProvince",
           "queryString" : false,
           "statusCode" : false,
@@ -3153,10 +3414,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "StateOrProvince",
         "setterDocumentation" : "/**\n@param stateOrProvince */",
         "setterMethodName" : "setStateOrProvince",
@@ -3169,6 +3434,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param stateOrProvince \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -3202,6 +3468,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "city",
           "queryString" : false,
           "statusCode" : false,
@@ -3209,10 +3476,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "City",
         "setterDocumentation" : "/**\n@param city */",
         "setterMethodName" : "setCity",
@@ -3225,6 +3496,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param city \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -3258,6 +3530,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "postalCode",
           "queryString" : false,
           "statusCode" : false,
@@ -3265,10 +3538,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "PostalCode",
         "setterDocumentation" : "/**\n@param postalCode */",
         "setterMethodName" : "setPostalCode",
@@ -3281,6 +3558,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param postalCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -3314,6 +3592,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "street1",
           "queryString" : false,
           "statusCode" : false,
@@ -3321,10 +3600,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "Street1",
         "setterDocumentation" : "/**\n@param street1 */",
         "setterMethodName" : "setStreet1",
@@ -3337,6 +3620,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param street1 \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -3370,6 +3654,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "street2",
           "queryString" : false,
           "statusCode" : false,
@@ -3377,10 +3662,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "Street2",
         "setterDocumentation" : "/**\n@param street2 */",
         "setterMethodName" : "setStreet2",
@@ -3393,6 +3682,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param street2 \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -3426,6 +3716,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "street3",
           "queryString" : false,
           "statusCode" : false,
@@ -3433,10 +3724,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "Street3",
         "setterDocumentation" : "/**\n@param street3 */",
         "setterMethodName" : "setStreet3",
@@ -3449,6 +3744,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param street3 \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -3482,6 +3778,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "APIVersion",
           "queryString" : false,
           "statusCode" : false,
@@ -3489,10 +3786,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "APIVersion",
         "setterDocumentation" : "/**\n@param aPIVersion */",
         "setterMethodName" : "setAPIVersion",
@@ -3505,6 +3806,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -3540,6 +3842,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "APIVersion",
             "queryString" : false,
             "statusCode" : false,
@@ -3547,10 +3850,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "APIVersion",
           "setterDocumentation" : "/**\n@param aPIVersion */",
           "setterMethodName" : "setAPIVersion",
@@ -3563,6 +3870,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -3597,6 +3905,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "city",
             "queryString" : false,
             "statusCode" : false,
@@ -3604,10 +3913,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "City",
           "setterDocumentation" : "/**\n@param city */",
           "setterMethodName" : "setCity",
@@ -3620,6 +3933,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param city \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -3654,6 +3968,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "company",
             "queryString" : false,
             "statusCode" : false,
@@ -3661,10 +3976,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "Company",
           "setterDocumentation" : "/**\n@param company */",
           "setterMethodName" : "setCompany",
@@ -3677,6 +3996,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param company \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -3711,6 +4031,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "country",
             "queryString" : false,
             "statusCode" : false,
@@ -3718,10 +4039,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "Country",
           "setterDocumentation" : "/**\n@param country */",
           "setterMethodName" : "setCountry",
@@ -3734,6 +4059,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param country \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -3768,6 +4094,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "jobIds",
             "queryString" : false,
             "statusCode" : false,
@@ -3775,6 +4102,8 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : true,
           "listModel" : {
             "implType" : "com.amazonaws.internal.SdkInternalList",
@@ -3802,6 +4131,7 @@
                 "isPayload" : false,
                 "isStreaming" : false,
                 "location" : null,
+                "marshallLocation" : "PAYLOAD",
                 "marshallLocationName" : "member",
                 "queryString" : false,
                 "statusCode" : false,
@@ -3809,10 +4139,14 @@
                 "uri" : false
               },
               "idempotencyToken" : false,
+              "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
               "mapModel" : null,
+              "marshallingTargetClass" : "String",
+              "marshallingType" : "STRING",
               "name" : "Member",
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
@@ -3825,6 +4159,7 @@
                 "variableSetterType" : "String"
               },
               "simple" : true,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
                 "variableDeclarationType" : "String",
@@ -3850,6 +4185,8 @@
           },
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "List",
+          "marshallingType" : "LIST",
           "name" : "JobIds",
           "setterDocumentation" : "/**\n@param jobIds */",
           "setterMethodName" : "setJobIds",
@@ -3862,6 +4199,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setJobIds(java.util.Collection)} or {@link #withJobIds(java.util.Collection)} if you want to override the existing values.</p>\n@param jobIds \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
@@ -3896,6 +4234,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "name",
             "queryString" : false,
             "statusCode" : false,
@@ -3903,10 +4242,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "Name",
           "setterDocumentation" : "/**\n@param name */",
           "setterMethodName" : "setName",
@@ -3919,6 +4262,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param name \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -3953,6 +4297,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "phoneNumber",
             "queryString" : false,
             "statusCode" : false,
@@ -3960,10 +4305,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "PhoneNumber",
           "setterDocumentation" : "/**\n@param phoneNumber */",
           "setterMethodName" : "setPhoneNumber",
@@ -3976,6 +4325,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param phoneNumber \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -4010,6 +4360,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "postalCode",
             "queryString" : false,
             "statusCode" : false,
@@ -4017,10 +4368,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "PostalCode",
           "setterDocumentation" : "/**\n@param postalCode */",
           "setterMethodName" : "setPostalCode",
@@ -4033,6 +4388,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param postalCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -4067,6 +4423,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "stateOrProvince",
             "queryString" : false,
             "statusCode" : false,
@@ -4074,10 +4431,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "StateOrProvince",
           "setterDocumentation" : "/**\n@param stateOrProvince */",
           "setterMethodName" : "setStateOrProvince",
@@ -4090,6 +4451,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param stateOrProvince \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -4124,6 +4486,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "street1",
             "queryString" : false,
             "statusCode" : false,
@@ -4131,10 +4494,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "Street1",
           "setterDocumentation" : "/**\n@param street1 */",
           "setterMethodName" : "setStreet1",
@@ -4147,6 +4514,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param street1 \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -4181,6 +4549,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "street2",
             "queryString" : false,
             "statusCode" : false,
@@ -4188,10 +4557,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "Street2",
           "setterDocumentation" : "/**\n@param street2 */",
           "setterMethodName" : "setStreet2",
@@ -4204,6 +4577,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param street2 \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -4238,6 +4612,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "street3",
             "queryString" : false,
             "statusCode" : false,
@@ -4245,10 +4620,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "Street3",
           "setterDocumentation" : "/**\n@param street3 */",
           "setterMethodName" : "setStreet3",
@@ -4261,6 +4640,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param street3 \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -4277,6 +4657,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "jobIds" ],
       "shapeName" : "GetShippingLabelRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetShippingLabelRequest",
@@ -4328,6 +4710,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "ShippingLabelURL",
           "queryString" : false,
           "statusCode" : false,
@@ -4335,10 +4718,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "ShippingLabelURL",
         "setterDocumentation" : "/**\n@param shippingLabelURL */",
         "setterMethodName" : "setShippingLabelURL",
@@ -4351,6 +4738,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param shippingLabelURL \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -4384,6 +4772,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Warning",
           "queryString" : false,
           "statusCode" : false,
@@ -4391,10 +4780,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "Warning",
         "setterDocumentation" : "/**\n@param warning */",
         "setterMethodName" : "setWarning",
@@ -4407,6 +4800,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param warning \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -4442,6 +4836,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "ShippingLabelURL",
             "queryString" : false,
             "statusCode" : false,
@@ -4449,10 +4844,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "ShippingLabelURL",
           "setterDocumentation" : "/**\n@param shippingLabelURL */",
           "setterMethodName" : "setShippingLabelURL",
@@ -4465,6 +4864,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param shippingLabelURL \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -4499,6 +4899,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Warning",
             "queryString" : false,
             "statusCode" : false,
@@ -4506,10 +4907,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "Warning",
           "setterDocumentation" : "/**\n@param warning */",
           "setterMethodName" : "setWarning",
@@ -4522,6 +4927,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param warning \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -4538,6 +4944,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetShippingLabelResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : "GetShippingLabelResult"
@@ -4599,6 +5007,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "JobId",
           "queryString" : false,
           "statusCode" : false,
@@ -4606,10 +5015,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "JobId",
         "setterDocumentation" : "/**\n@param jobId */",
         "setterMethodName" : "setJobId",
@@ -4622,6 +5035,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -4655,6 +5069,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "APIVersion",
           "queryString" : false,
           "statusCode" : false,
@@ -4662,10 +5077,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "APIVersion",
         "setterDocumentation" : "/**\n@param aPIVersion */",
         "setterMethodName" : "setAPIVersion",
@@ -4678,6 +5097,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -4713,6 +5133,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "APIVersion",
             "queryString" : false,
             "statusCode" : false,
@@ -4720,10 +5141,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "APIVersion",
           "setterDocumentation" : "/**\n@param aPIVersion */",
           "setterMethodName" : "setAPIVersion",
@@ -4736,6 +5161,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -4770,6 +5196,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "JobId",
             "queryString" : false,
             "statusCode" : false,
@@ -4777,10 +5204,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "JobId",
           "setterDocumentation" : "/**\n@param jobId */",
           "setterMethodName" : "setJobId",
@@ -4793,6 +5224,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -4809,6 +5241,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "JobId" ],
       "shapeName" : "GetStatusRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetStatusRequest",
@@ -4860,6 +5294,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "JobId",
           "queryString" : false,
           "statusCode" : false,
@@ -4867,10 +5302,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "JobId",
         "setterDocumentation" : "/**\n@param jobId */",
         "setterMethodName" : "setJobId",
@@ -4883,6 +5322,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -4916,6 +5356,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "JobType",
           "queryString" : false,
           "statusCode" : false,
@@ -4923,10 +5364,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "JobType",
         "setterDocumentation" : "/**\n@param jobType \n@see JobType*/",
         "setterMethodName" : "setJobType",
@@ -4939,6 +5384,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -4972,6 +5418,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "LocationCode",
           "queryString" : false,
           "statusCode" : false,
@@ -4979,10 +5426,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "LocationCode",
         "setterDocumentation" : "/**\n@param locationCode */",
         "setterMethodName" : "setLocationCode",
@@ -4995,6 +5446,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param locationCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -5028,6 +5480,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "LocationMessage",
           "queryString" : false,
           "statusCode" : false,
@@ -5035,10 +5488,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "LocationMessage",
         "setterDocumentation" : "/**\n@param locationMessage */",
         "setterMethodName" : "setLocationMessage",
@@ -5051,6 +5508,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param locationMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -5084,6 +5542,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "ProgressCode",
           "queryString" : false,
           "statusCode" : false,
@@ -5091,10 +5550,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "ProgressCode",
         "setterDocumentation" : "/**\n@param progressCode */",
         "setterMethodName" : "setProgressCode",
@@ -5107,6 +5570,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param progressCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -5140,6 +5604,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "ProgressMessage",
           "queryString" : false,
           "statusCode" : false,
@@ -5147,10 +5612,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "ProgressMessage",
         "setterDocumentation" : "/**\n@param progressMessage */",
         "setterMethodName" : "setProgressMessage",
@@ -5163,6 +5632,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param progressMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -5196,6 +5666,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Carrier",
           "queryString" : false,
           "statusCode" : false,
@@ -5203,10 +5674,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "Carrier",
         "setterDocumentation" : "/**\n@param carrier */",
         "setterMethodName" : "setCarrier",
@@ -5219,6 +5694,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param carrier \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -5252,6 +5728,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "TrackingNumber",
           "queryString" : false,
           "statusCode" : false,
@@ -5259,10 +5736,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "TrackingNumber",
         "setterDocumentation" : "/**\n@param trackingNumber */",
         "setterMethodName" : "setTrackingNumber",
@@ -5275,6 +5756,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param trackingNumber \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -5308,6 +5790,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "LogBucket",
           "queryString" : false,
           "statusCode" : false,
@@ -5315,10 +5798,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "LogBucket",
         "setterDocumentation" : "/**\n@param logBucket */",
         "setterMethodName" : "setLogBucket",
@@ -5331,6 +5818,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param logBucket \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -5364,6 +5852,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "LogKey",
           "queryString" : false,
           "statusCode" : false,
@@ -5371,10 +5860,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "LogKey",
         "setterDocumentation" : "/**\n@param logKey */",
         "setterMethodName" : "setLogKey",
@@ -5387,6 +5880,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param logKey \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -5420,6 +5914,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "ErrorCount",
           "queryString" : false,
           "statusCode" : false,
@@ -5427,10 +5922,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "Integer",
+        "marshallingType" : "INTEGER",
         "name" : "ErrorCount",
         "setterDocumentation" : "/**\n@param errorCount */",
         "setterMethodName" : "setErrorCount",
@@ -5443,6 +5942,7 @@
           "variableSetterType" : "Integer"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param errorCount \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Integer",
@@ -5476,6 +5976,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Signature",
           "queryString" : false,
           "statusCode" : false,
@@ -5483,10 +5984,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "Signature",
         "setterDocumentation" : "/**\n@param signature */",
         "setterMethodName" : "setSignature",
@@ -5499,6 +6004,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param signature \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -5532,6 +6038,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "SignatureFileContents",
           "queryString" : false,
           "statusCode" : false,
@@ -5539,10 +6046,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "SignatureFileContents",
         "setterDocumentation" : "/**\n@param signatureFileContents */",
         "setterMethodName" : "setSignatureFileContents",
@@ -5555,6 +6066,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param signatureFileContents \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -5588,6 +6100,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "CurrentManifest",
           "queryString" : false,
           "statusCode" : false,
@@ -5595,10 +6108,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "CurrentManifest",
         "setterDocumentation" : "/**\n@param currentManifest */",
         "setterMethodName" : "setCurrentManifest",
@@ -5611,6 +6128,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param currentManifest \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -5644,6 +6162,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "CreationDate",
           "queryString" : false,
           "statusCode" : false,
@@ -5651,10 +6170,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "java.util.Date",
+        "marshallingType" : "DATE",
         "name" : "CreationDate",
         "setterDocumentation" : "/**\n@param creationDate */",
         "setterMethodName" : "setCreationDate",
@@ -5667,6 +6190,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param creationDate \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.Date",
@@ -5700,6 +6224,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "ArtifactList",
           "queryString" : false,
           "statusCode" : false,
@@ -5707,6 +6232,8 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : true,
         "listModel" : {
           "implType" : "com.amazonaws.internal.SdkInternalList",
@@ -5734,6 +6261,7 @@
               "isPayload" : false,
               "isStreaming" : false,
               "location" : null,
+              "marshallLocation" : "PAYLOAD",
               "marshallLocationName" : "member",
               "queryString" : false,
               "statusCode" : false,
@@ -5741,10 +6269,14 @@
               "uri" : false
             },
             "idempotencyToken" : false,
+            "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
             "mapModel" : null,
+            "marshallingTargetClass" : "StructuredPojo",
+            "marshallingType" : "STRUCTURED",
             "name" : "Member",
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
@@ -5757,6 +6289,7 @@
               "variableSetterType" : "Artifact"
             },
             "simple" : false,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
               "variableDeclarationType" : "Artifact",
@@ -5782,6 +6315,8 @@
         },
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "List",
+        "marshallingType" : "LIST",
         "name" : "ArtifactList",
         "setterDocumentation" : "/**\n@param artifactList */",
         "setterMethodName" : "setArtifactList",
@@ -5794,6 +6329,7 @@
           "variableSetterType" : "java.util.Collection<Artifact>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setArtifactList(java.util.Collection)} or {@link #withArtifactList(java.util.Collection)} if you want to override the existing values.</p>\n@param artifactList \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
@@ -5829,6 +6365,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "ArtifactList",
             "queryString" : false,
             "statusCode" : false,
@@ -5836,6 +6373,8 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : true,
           "listModel" : {
             "implType" : "com.amazonaws.internal.SdkInternalList",
@@ -5863,6 +6402,7 @@
                 "isPayload" : false,
                 "isStreaming" : false,
                 "location" : null,
+                "marshallLocation" : "PAYLOAD",
                 "marshallLocationName" : "member",
                 "queryString" : false,
                 "statusCode" : false,
@@ -5870,10 +6410,14 @@
                 "uri" : false
               },
               "idempotencyToken" : false,
+              "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
               "mapModel" : null,
+              "marshallingTargetClass" : "StructuredPojo",
+              "marshallingType" : "STRUCTURED",
               "name" : "Member",
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
@@ -5886,6 +6430,7 @@
                 "variableSetterType" : "Artifact"
               },
               "simple" : false,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
                 "variableDeclarationType" : "Artifact",
@@ -5911,6 +6456,8 @@
           },
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "List",
+          "marshallingType" : "LIST",
           "name" : "ArtifactList",
           "setterDocumentation" : "/**\n@param artifactList */",
           "setterMethodName" : "setArtifactList",
@@ -5923,6 +6470,7 @@
             "variableSetterType" : "java.util.Collection<Artifact>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setArtifactList(java.util.Collection)} or {@link #withArtifactList(java.util.Collection)} if you want to override the existing values.</p>\n@param artifactList \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
@@ -5957,6 +6505,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Carrier",
             "queryString" : false,
             "statusCode" : false,
@@ -5964,10 +6513,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "Carrier",
           "setterDocumentation" : "/**\n@param carrier */",
           "setterMethodName" : "setCarrier",
@@ -5980,6 +6533,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param carrier \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -6014,6 +6568,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "CreationDate",
             "queryString" : false,
             "statusCode" : false,
@@ -6021,10 +6576,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "java.util.Date",
+          "marshallingType" : "DATE",
           "name" : "CreationDate",
           "setterDocumentation" : "/**\n@param creationDate */",
           "setterMethodName" : "setCreationDate",
@@ -6037,6 +6596,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param creationDate \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.Date",
@@ -6071,6 +6631,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "CurrentManifest",
             "queryString" : false,
             "statusCode" : false,
@@ -6078,10 +6639,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "CurrentManifest",
           "setterDocumentation" : "/**\n@param currentManifest */",
           "setterMethodName" : "setCurrentManifest",
@@ -6094,6 +6659,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param currentManifest \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -6128,6 +6694,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "ErrorCount",
             "queryString" : false,
             "statusCode" : false,
@@ -6135,10 +6702,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "Integer",
+          "marshallingType" : "INTEGER",
           "name" : "ErrorCount",
           "setterDocumentation" : "/**\n@param errorCount */",
           "setterMethodName" : "setErrorCount",
@@ -6151,6 +6722,7 @@
             "variableSetterType" : "Integer"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param errorCount \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Integer",
@@ -6185,6 +6757,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "JobId",
             "queryString" : false,
             "statusCode" : false,
@@ -6192,10 +6765,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "JobId",
           "setterDocumentation" : "/**\n@param jobId */",
           "setterMethodName" : "setJobId",
@@ -6208,6 +6785,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -6242,6 +6820,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "JobType",
             "queryString" : false,
             "statusCode" : false,
@@ -6249,10 +6828,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "JobType",
           "setterDocumentation" : "/**\n@param jobType \n@see JobType*/",
           "setterMethodName" : "setJobType",
@@ -6265,6 +6848,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -6299,6 +6883,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "LocationCode",
             "queryString" : false,
             "statusCode" : false,
@@ -6306,10 +6891,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "LocationCode",
           "setterDocumentation" : "/**\n@param locationCode */",
           "setterMethodName" : "setLocationCode",
@@ -6322,6 +6911,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param locationCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -6356,6 +6946,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "LocationMessage",
             "queryString" : false,
             "statusCode" : false,
@@ -6363,10 +6954,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "LocationMessage",
           "setterDocumentation" : "/**\n@param locationMessage */",
           "setterMethodName" : "setLocationMessage",
@@ -6379,6 +6974,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param locationMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -6413,6 +7009,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "LogBucket",
             "queryString" : false,
             "statusCode" : false,
@@ -6420,10 +7017,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "LogBucket",
           "setterDocumentation" : "/**\n@param logBucket */",
           "setterMethodName" : "setLogBucket",
@@ -6436,6 +7037,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param logBucket \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -6470,6 +7072,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "LogKey",
             "queryString" : false,
             "statusCode" : false,
@@ -6477,10 +7080,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "LogKey",
           "setterDocumentation" : "/**\n@param logKey */",
           "setterMethodName" : "setLogKey",
@@ -6493,6 +7100,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param logKey \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -6527,6 +7135,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "ProgressCode",
             "queryString" : false,
             "statusCode" : false,
@@ -6534,10 +7143,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "ProgressCode",
           "setterDocumentation" : "/**\n@param progressCode */",
           "setterMethodName" : "setProgressCode",
@@ -6550,6 +7163,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param progressCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -6584,6 +7198,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "ProgressMessage",
             "queryString" : false,
             "statusCode" : false,
@@ -6591,10 +7206,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "ProgressMessage",
           "setterDocumentation" : "/**\n@param progressMessage */",
           "setterMethodName" : "setProgressMessage",
@@ -6607,6 +7226,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param progressMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -6641,6 +7261,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Signature",
             "queryString" : false,
             "statusCode" : false,
@@ -6648,10 +7269,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "Signature",
           "setterDocumentation" : "/**\n@param signature */",
           "setterMethodName" : "setSignature",
@@ -6664,6 +7289,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param signature \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -6698,6 +7324,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "SignatureFileContents",
             "queryString" : false,
             "statusCode" : false,
@@ -6705,10 +7332,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "SignatureFileContents",
           "setterDocumentation" : "/**\n@param signatureFileContents */",
           "setterMethodName" : "setSignatureFileContents",
@@ -6721,6 +7352,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param signatureFileContents \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -6755,6 +7387,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "TrackingNumber",
             "queryString" : false,
             "statusCode" : false,
@@ -6762,10 +7395,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "TrackingNumber",
           "setterDocumentation" : "/**\n@param trackingNumber */",
           "setterMethodName" : "setTrackingNumber",
@@ -6778,6 +7415,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param trackingNumber \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -6794,6 +7432,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetStatusResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : "GetStatusResult"
@@ -6831,6 +7471,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidAccessKeyIdException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidAccessKeyIdException",
@@ -6865,6 +7507,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidAddressException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidAddressException",
@@ -6899,6 +7543,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidCustomsException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidCustomsException",
@@ -6933,6 +7579,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidFileSystemException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidFileSystemException",
@@ -6967,6 +7615,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidJobIdException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidJobIdException",
@@ -7001,6 +7651,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidManifestFieldException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidManifestFieldException",
@@ -7035,6 +7687,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidParameterException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidParameterException",
@@ -7069,6 +7723,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidVersionException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidVersionException",
@@ -7120,6 +7776,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "JobId",
           "queryString" : false,
           "statusCode" : false,
@@ -7127,10 +7784,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "JobId",
         "setterDocumentation" : "/**\n@param jobId */",
         "setterMethodName" : "setJobId",
@@ -7143,6 +7804,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -7176,6 +7838,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "CreationDate",
           "queryString" : false,
           "statusCode" : false,
@@ -7183,10 +7846,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "java.util.Date",
+        "marshallingType" : "DATE",
         "name" : "CreationDate",
         "setterDocumentation" : "/**\n@param creationDate */",
         "setterMethodName" : "setCreationDate",
@@ -7199,6 +7866,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param creationDate \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.Date",
@@ -7232,6 +7900,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "IsCanceled",
           "queryString" : false,
           "statusCode" : false,
@@ -7239,10 +7908,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "Boolean",
+        "marshallingType" : "BOOLEAN",
         "name" : "IsCanceled",
         "setterDocumentation" : "/**\n@param isCanceled */",
         "setterMethodName" : "setIsCanceled",
@@ -7255,6 +7928,7 @@
           "variableSetterType" : "Boolean"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param isCanceled \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Boolean",
@@ -7288,6 +7962,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "JobType",
           "queryString" : false,
           "statusCode" : false,
@@ -7295,10 +7970,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "JobType",
         "setterDocumentation" : "/**\n@param jobType \n@see JobType*/",
         "setterMethodName" : "setJobType",
@@ -7311,6 +7990,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -7346,6 +8026,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "CreationDate",
             "queryString" : false,
             "statusCode" : false,
@@ -7353,10 +8034,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "java.util.Date",
+          "marshallingType" : "DATE",
           "name" : "CreationDate",
           "setterDocumentation" : "/**\n@param creationDate */",
           "setterMethodName" : "setCreationDate",
@@ -7369,6 +8054,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param creationDate \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.Date",
@@ -7403,6 +8089,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "IsCanceled",
             "queryString" : false,
             "statusCode" : false,
@@ -7410,10 +8097,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "Boolean",
+          "marshallingType" : "BOOLEAN",
           "name" : "IsCanceled",
           "setterDocumentation" : "/**\n@param isCanceled */",
           "setterMethodName" : "setIsCanceled",
@@ -7426,6 +8117,7 @@
             "variableSetterType" : "Boolean"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param isCanceled \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Boolean",
@@ -7460,6 +8152,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "JobId",
             "queryString" : false,
             "statusCode" : false,
@@ -7467,10 +8160,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "JobId",
           "setterDocumentation" : "/**\n@param jobId */",
           "setterMethodName" : "setJobId",
@@ -7483,6 +8180,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -7517,6 +8215,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "JobType",
             "queryString" : false,
             "statusCode" : false,
@@ -7524,10 +8223,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "JobType",
           "setterDocumentation" : "/**\n@param jobType \n@see JobType*/",
           "setterMethodName" : "setJobType",
@@ -7540,6 +8243,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -7556,6 +8260,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Job",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -7599,6 +8305,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "JobType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -7660,6 +8368,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "MaxJobs",
           "queryString" : false,
           "statusCode" : false,
@@ -7667,10 +8376,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "Integer",
+        "marshallingType" : "INTEGER",
         "name" : "MaxJobs",
         "setterDocumentation" : "/**\n@param maxJobs */",
         "setterMethodName" : "setMaxJobs",
@@ -7683,6 +8396,7 @@
           "variableSetterType" : "Integer"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param maxJobs \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Integer",
@@ -7716,6 +8430,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Marker",
           "queryString" : false,
           "statusCode" : false,
@@ -7723,10 +8438,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "Marker",
         "setterDocumentation" : "/**\n@param marker */",
         "setterMethodName" : "setMarker",
@@ -7739,6 +8458,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param marker \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -7772,6 +8492,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "APIVersion",
           "queryString" : false,
           "statusCode" : false,
@@ -7779,10 +8500,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "APIVersion",
         "setterDocumentation" : "/**\n@param aPIVersion */",
         "setterMethodName" : "setAPIVersion",
@@ -7795,6 +8520,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -7830,6 +8556,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "APIVersion",
             "queryString" : false,
             "statusCode" : false,
@@ -7837,10 +8564,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "APIVersion",
           "setterDocumentation" : "/**\n@param aPIVersion */",
           "setterMethodName" : "setAPIVersion",
@@ -7853,6 +8584,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -7887,6 +8619,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Marker",
             "queryString" : false,
             "statusCode" : false,
@@ -7894,10 +8627,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "Marker",
           "setterDocumentation" : "/**\n@param marker */",
           "setterMethodName" : "setMarker",
@@ -7910,6 +8647,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param marker \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -7944,6 +8682,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "MaxJobs",
             "queryString" : false,
             "statusCode" : false,
@@ -7951,10 +8690,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "Integer",
+          "marshallingType" : "INTEGER",
           "name" : "MaxJobs",
           "setterDocumentation" : "/**\n@param maxJobs */",
           "setterMethodName" : "setMaxJobs",
@@ -7967,6 +8710,7 @@
             "variableSetterType" : "Integer"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param maxJobs \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Integer",
@@ -7983,6 +8727,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListJobsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListJobsRequest",
@@ -8034,6 +8780,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Jobs",
           "queryString" : false,
           "statusCode" : false,
@@ -8041,6 +8788,8 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : true,
         "listModel" : {
           "implType" : "com.amazonaws.internal.SdkInternalList",
@@ -8068,6 +8817,7 @@
               "isPayload" : false,
               "isStreaming" : false,
               "location" : null,
+              "marshallLocation" : "PAYLOAD",
               "marshallLocationName" : "member",
               "queryString" : false,
               "statusCode" : false,
@@ -8075,10 +8825,14 @@
               "uri" : false
             },
             "idempotencyToken" : false,
+            "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
             "mapModel" : null,
+            "marshallingTargetClass" : "StructuredPojo",
+            "marshallingType" : "STRUCTURED",
             "name" : "Member",
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
@@ -8091,6 +8845,7 @@
               "variableSetterType" : "Job"
             },
             "simple" : false,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
               "variableDeclarationType" : "Job",
@@ -8116,6 +8871,8 @@
         },
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "List",
+        "marshallingType" : "LIST",
         "name" : "Jobs",
         "setterDocumentation" : "/**\n@param jobs */",
         "setterMethodName" : "setJobs",
@@ -8128,6 +8885,7 @@
           "variableSetterType" : "java.util.Collection<Job>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setJobs(java.util.Collection)} or {@link #withJobs(java.util.Collection)} if you want to override the existing values.</p>\n@param jobs \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Job>",
@@ -8161,6 +8919,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "IsTruncated",
           "queryString" : false,
           "statusCode" : false,
@@ -8168,10 +8927,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "Boolean",
+        "marshallingType" : "BOOLEAN",
         "name" : "IsTruncated",
         "setterDocumentation" : "/**\n@param isTruncated */",
         "setterMethodName" : "setIsTruncated",
@@ -8184,6 +8947,7 @@
           "variableSetterType" : "Boolean"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param isTruncated \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Boolean",
@@ -8219,6 +8983,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "IsTruncated",
             "queryString" : false,
             "statusCode" : false,
@@ -8226,10 +8991,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "Boolean",
+          "marshallingType" : "BOOLEAN",
           "name" : "IsTruncated",
           "setterDocumentation" : "/**\n@param isTruncated */",
           "setterMethodName" : "setIsTruncated",
@@ -8242,6 +9011,7 @@
             "variableSetterType" : "Boolean"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param isTruncated \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Boolean",
@@ -8276,6 +9046,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Jobs",
             "queryString" : false,
             "statusCode" : false,
@@ -8283,6 +9054,8 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : true,
           "listModel" : {
             "implType" : "com.amazonaws.internal.SdkInternalList",
@@ -8310,6 +9083,7 @@
                 "isPayload" : false,
                 "isStreaming" : false,
                 "location" : null,
+                "marshallLocation" : "PAYLOAD",
                 "marshallLocationName" : "member",
                 "queryString" : false,
                 "statusCode" : false,
@@ -8317,10 +9091,14 @@
                 "uri" : false
               },
               "idempotencyToken" : false,
+              "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
               "mapModel" : null,
+              "marshallingTargetClass" : "StructuredPojo",
+              "marshallingType" : "STRUCTURED",
               "name" : "Member",
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
@@ -8333,6 +9111,7 @@
                 "variableSetterType" : "Job"
               },
               "simple" : false,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
                 "variableDeclarationType" : "Job",
@@ -8358,6 +9137,8 @@
           },
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "List",
+          "marshallingType" : "LIST",
           "name" : "Jobs",
           "setterDocumentation" : "/**\n@param jobs */",
           "setterMethodName" : "setJobs",
@@ -8370,6 +9151,7 @@
             "variableSetterType" : "java.util.Collection<Job>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setJobs(java.util.Collection)} or {@link #withJobs(java.util.Collection)} if you want to override the existing values.</p>\n@param jobs \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Job>",
@@ -8386,6 +9168,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListJobsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : "ListJobsResult"
@@ -8423,6 +9207,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MalformedManifestException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "MalformedManifestException",
@@ -8457,6 +9243,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MissingCustomsException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "MissingCustomsException",
@@ -8491,6 +9279,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MissingManifestFieldException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "MissingManifestFieldException",
@@ -8525,6 +9315,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MissingParameterException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "MissingParameterException",
@@ -8559,6 +9351,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MultipleRegionsException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "MultipleRegionsException",
@@ -8593,6 +9387,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "NoSuchBucketException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "NoSuchBucketException",
@@ -8627,6 +9423,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UnableToCancelJobIdException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UnableToCancelJobIdException",
@@ -8661,6 +9459,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UnableToUpdateJobIdException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UnableToUpdateJobIdException",
@@ -8719,6 +9519,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "JobId",
           "queryString" : false,
           "statusCode" : false,
@@ -8726,10 +9527,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "JobId",
         "setterDocumentation" : "/**\n@param jobId */",
         "setterMethodName" : "setJobId",
@@ -8742,6 +9547,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -8775,6 +9581,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Manifest",
           "queryString" : false,
           "statusCode" : false,
@@ -8782,10 +9589,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "Manifest",
         "setterDocumentation" : "/**\n@param manifest */",
         "setterMethodName" : "setManifest",
@@ -8798,6 +9609,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param manifest \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -8831,6 +9643,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "JobType",
           "queryString" : false,
           "statusCode" : false,
@@ -8838,10 +9651,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "JobType",
         "setterDocumentation" : "/**\n@param jobType \n@see JobType*/",
         "setterMethodName" : "setJobType",
@@ -8854,6 +9671,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -8887,6 +9705,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "ValidateOnly",
           "queryString" : false,
           "statusCode" : false,
@@ -8894,10 +9713,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "Boolean",
+        "marshallingType" : "BOOLEAN",
         "name" : "ValidateOnly",
         "setterDocumentation" : "/**\n@param validateOnly */",
         "setterMethodName" : "setValidateOnly",
@@ -8910,6 +9733,7 @@
           "variableSetterType" : "Boolean"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param validateOnly \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Boolean",
@@ -8943,6 +9767,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "APIVersion",
           "queryString" : false,
           "statusCode" : false,
@@ -8950,10 +9775,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "APIVersion",
         "setterDocumentation" : "/**\n@param aPIVersion */",
         "setterMethodName" : "setAPIVersion",
@@ -8966,6 +9795,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -9001,6 +9831,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "APIVersion",
             "queryString" : false,
             "statusCode" : false,
@@ -9008,10 +9839,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "APIVersion",
           "setterDocumentation" : "/**\n@param aPIVersion */",
           "setterMethodName" : "setAPIVersion",
@@ -9024,6 +9859,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param aPIVersion \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -9058,6 +9894,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "JobId",
             "queryString" : false,
             "statusCode" : false,
@@ -9065,10 +9902,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "JobId",
           "setterDocumentation" : "/**\n@param jobId */",
           "setterMethodName" : "setJobId",
@@ -9081,6 +9922,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param jobId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -9115,6 +9957,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "JobType",
             "queryString" : false,
             "statusCode" : false,
@@ -9122,10 +9965,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "JobType",
           "setterDocumentation" : "/**\n@param jobType \n@see JobType*/",
           "setterMethodName" : "setJobType",
@@ -9138,6 +9985,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param jobType \n@return Returns a reference to this object so that method calls can be chained together.\n@see JobType*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -9172,6 +10020,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Manifest",
             "queryString" : false,
             "statusCode" : false,
@@ -9179,10 +10028,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "Manifest",
           "setterDocumentation" : "/**\n@param manifest */",
           "setterMethodName" : "setManifest",
@@ -9195,6 +10048,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param manifest \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -9229,6 +10083,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "ValidateOnly",
             "queryString" : false,
             "statusCode" : false,
@@ -9236,10 +10091,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "Boolean",
+          "marshallingType" : "BOOLEAN",
           "name" : "ValidateOnly",
           "setterDocumentation" : "/**\n@param validateOnly */",
           "setterMethodName" : "setValidateOnly",
@@ -9252,6 +10111,7 @@
             "variableSetterType" : "Boolean"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param validateOnly \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Boolean",
@@ -9268,6 +10128,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "JobId", "Manifest", "JobType", "ValidateOnly" ],
       "shapeName" : "UpdateJobRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UpdateJobRequest",
@@ -9319,6 +10181,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Success",
           "queryString" : false,
           "statusCode" : false,
@@ -9326,10 +10189,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "Boolean",
+        "marshallingType" : "BOOLEAN",
         "name" : "Success",
         "setterDocumentation" : "/**\n@param success */",
         "setterMethodName" : "setSuccess",
@@ -9342,6 +10209,7 @@
           "variableSetterType" : "Boolean"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param success \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Boolean",
@@ -9375,6 +10243,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "WarningMessage",
           "queryString" : false,
           "statusCode" : false,
@@ -9382,10 +10251,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "WarningMessage",
         "setterDocumentation" : "/**\n@param warningMessage */",
         "setterMethodName" : "setWarningMessage",
@@ -9398,6 +10271,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param warningMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -9431,6 +10305,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "ArtifactList",
           "queryString" : false,
           "statusCode" : false,
@@ -9438,6 +10313,8 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : true,
         "listModel" : {
           "implType" : "com.amazonaws.internal.SdkInternalList",
@@ -9465,6 +10342,7 @@
               "isPayload" : false,
               "isStreaming" : false,
               "location" : null,
+              "marshallLocation" : "PAYLOAD",
               "marshallLocationName" : "member",
               "queryString" : false,
               "statusCode" : false,
@@ -9472,10 +10350,14 @@
               "uri" : false
             },
             "idempotencyToken" : false,
+            "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
             "mapModel" : null,
+            "marshallingTargetClass" : "StructuredPojo",
+            "marshallingType" : "STRUCTURED",
             "name" : "Member",
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
@@ -9488,6 +10370,7 @@
               "variableSetterType" : "Artifact"
             },
             "simple" : false,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
               "variableDeclarationType" : "Artifact",
@@ -9513,6 +10396,8 @@
         },
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "List",
+        "marshallingType" : "LIST",
         "name" : "ArtifactList",
         "setterDocumentation" : "/**\n@param artifactList */",
         "setterMethodName" : "setArtifactList",
@@ -9525,6 +10410,7 @@
           "variableSetterType" : "java.util.Collection<Artifact>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setArtifactList(java.util.Collection)} or {@link #withArtifactList(java.util.Collection)} if you want to override the existing values.</p>\n@param artifactList \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
@@ -9560,6 +10446,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "ArtifactList",
             "queryString" : false,
             "statusCode" : false,
@@ -9567,6 +10454,8 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : true,
           "listModel" : {
             "implType" : "com.amazonaws.internal.SdkInternalList",
@@ -9594,6 +10483,7 @@
                 "isPayload" : false,
                 "isStreaming" : false,
                 "location" : null,
+                "marshallLocation" : "PAYLOAD",
                 "marshallLocationName" : "member",
                 "queryString" : false,
                 "statusCode" : false,
@@ -9601,10 +10491,14 @@
                 "uri" : false
               },
               "idempotencyToken" : false,
+              "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
               "mapModel" : null,
+              "marshallingTargetClass" : "StructuredPojo",
+              "marshallingType" : "STRUCTURED",
               "name" : "Member",
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
@@ -9617,6 +10511,7 @@
                 "variableSetterType" : "Artifact"
               },
               "simple" : false,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
                 "variableDeclarationType" : "Artifact",
@@ -9642,6 +10537,8 @@
           },
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "List",
+          "marshallingType" : "LIST",
           "name" : "ArtifactList",
           "setterDocumentation" : "/**\n@param artifactList */",
           "setterMethodName" : "setArtifactList",
@@ -9654,6 +10551,7 @@
             "variableSetterType" : "java.util.Collection<Artifact>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setArtifactList(java.util.Collection)} or {@link #withArtifactList(java.util.Collection)} if you want to override the existing values.</p>\n@param artifactList \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<Artifact>",
@@ -9688,6 +10586,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Success",
             "queryString" : false,
             "statusCode" : false,
@@ -9695,10 +10594,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "Boolean",
+          "marshallingType" : "BOOLEAN",
           "name" : "Success",
           "setterDocumentation" : "/**\n@param success */",
           "setterMethodName" : "setSuccess",
@@ -9711,6 +10614,7 @@
             "variableSetterType" : "Boolean"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param success \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Boolean",
@@ -9745,6 +10649,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "WarningMessage",
             "queryString" : false,
             "statusCode" : false,
@@ -9752,10 +10657,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "WarningMessage",
           "setterDocumentation" : "/**\n@param warningMessage */",
           "setterMethodName" : "setWarningMessage",
@@ -9768,6 +10677,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param warningMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -9784,6 +10694,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UpdateJobResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : "UpdateJobResult"

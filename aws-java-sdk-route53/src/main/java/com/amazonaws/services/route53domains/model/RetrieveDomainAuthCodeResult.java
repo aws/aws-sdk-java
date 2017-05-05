@@ -30,9 +30,6 @@ public class RetrieveDomainAuthCodeResult extends com.amazonaws.AmazonWebService
      * <p>
      * The authorization code for the domain.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      */
     private String authCode;
 
@@ -40,14 +37,9 @@ public class RetrieveDomainAuthCodeResult extends com.amazonaws.AmazonWebService
      * <p>
      * The authorization code for the domain.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param authCode
-     *        The authorization code for the domain.</p>
-     *        <p>
-     *        Type: String
+     *        The authorization code for the domain.
      */
 
     public void setAuthCode(String authCode) {
@@ -58,13 +50,8 @@ public class RetrieveDomainAuthCodeResult extends com.amazonaws.AmazonWebService
      * <p>
      * The authorization code for the domain.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
-     * @return The authorization code for the domain.</p>
-     *         <p>
-     *         Type: String
+     * @return The authorization code for the domain.
      */
 
     public String getAuthCode() {
@@ -75,14 +62,9 @@ public class RetrieveDomainAuthCodeResult extends com.amazonaws.AmazonWebService
      * <p>
      * The authorization code for the domain.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param authCode
-     *        The authorization code for the domain.</p>
-     *        <p>
-     *        Type: String
+     *        The authorization code for the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,4 +124,5 @@ public class RetrieveDomainAuthCodeResult extends com.amazonaws.AmazonWebService
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

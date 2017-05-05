@@ -134,6 +134,7 @@ public class AbstractAWSSecurityTokenServiceAsync extends AbstractAWSSecurityTok
      *
      * @see #getSessionTokenAsync(GetSessionTokenRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetSessionTokenResult> getSessionTokenAsync(
             com.amazonaws.handlers.AsyncHandler<GetSessionTokenRequest, GetSessionTokenResult> asyncHandler) {
 

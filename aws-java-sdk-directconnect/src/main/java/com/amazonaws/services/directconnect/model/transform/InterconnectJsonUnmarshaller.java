@@ -76,6 +76,14 @@ public class InterconnectJsonUnmarshaller implements Unmarshaller<Interconnect, 
                     context.nextToken();
                     interconnect.setLoaIssueTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
+                if (context.testExpression("lagId", targetDepth)) {
+                    context.nextToken();
+                    interconnect.setLagId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("awsDevice", targetDepth)) {
+                    context.nextToken();
+                    interconnect.setAwsDevice(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.cloudhsm.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cloudhsm.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeHapgRequest Marshaller
+ * DescribeHapgRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeHapgRequestMarshaller implements Marshaller<Request<DescribeHapgRequest>, DescribeHapgRequest> {
+@SdkInternalApi
+public class DescribeHapgRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> HAPGARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("HapgArn").build();
 
-    public DescribeHapgRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeHapgRequestMarshaller instance = new DescribeHapgRequestMarshaller();
+
+    public static DescribeHapgRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeHapgRequest> marshall(DescribeHapgRequest describeHapgRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeHapgRequest describeHapgRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeHapgRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeHapgRequest> request = new DefaultRequest<DescribeHapgRequest>(describeHapgRequest, "AWSCloudHSM");
-        request.addHeader("X-Amz-Target", "CloudHsmFrontendService.DescribeHapg");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeHapgRequest.getHapgArn() != null) {
-                jsonGenerator.writeFieldName("HapgArn").writeValue(describeHapgRequest.getHapgArn());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeHapgRequest.getHapgArn(), HAPGARN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

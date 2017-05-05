@@ -56,4 +56,7 @@ public class AmazonCloudWatchWaiters {
                 .withExecutorService(executorService).build();
     }
 
+    public void shutdown() {
+        executorService.shutdown();
+    }
 }

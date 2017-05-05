@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -255,6 +256,10 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
         init();
     }
 
+    public static AWSCertificateManagerClientBuilder builder() {
+        return AWSCertificateManagerClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on ACM using the specified parameters.
      *
@@ -319,7 +324,13 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      *      Documentation</a>
      */
     @Override
-    public AddTagsToCertificateResult addTagsToCertificate(AddTagsToCertificateRequest addTagsToCertificateRequest) {
+    public AddTagsToCertificateResult addTagsToCertificate(AddTagsToCertificateRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddTagsToCertificate(request);
+    }
+
+    @SdkInternalApi
+    final AddTagsToCertificateResult executeAddTagsToCertificate(AddTagsToCertificateRequest addTagsToCertificateRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addTagsToCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -330,7 +341,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddTagsToCertificateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(addTagsToCertificateRequest));
+                request = new AddTagsToCertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addTagsToCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -378,7 +389,13 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      *      Documentation</a>
      */
     @Override
-    public DeleteCertificateResult deleteCertificate(DeleteCertificateRequest deleteCertificateRequest) {
+    public DeleteCertificateResult deleteCertificate(DeleteCertificateRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteCertificate(request);
+    }
+
+    @SdkInternalApi
+    final DeleteCertificateResult executeDeleteCertificate(DeleteCertificateRequest deleteCertificateRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -389,7 +406,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteCertificateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteCertificateRequest));
+                request = new DeleteCertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -425,7 +442,13 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      *      Documentation</a>
      */
     @Override
-    public DescribeCertificateResult describeCertificate(DescribeCertificateRequest describeCertificateRequest) {
+    public DescribeCertificateResult describeCertificate(DescribeCertificateRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeCertificate(request);
+    }
+
+    @SdkInternalApi
+    final DescribeCertificateResult executeDescribeCertificate(DescribeCertificateRequest describeCertificateRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -436,7 +459,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeCertificateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeCertificateRequest));
+                request = new DescribeCertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -482,7 +505,13 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      *      Documentation</a>
      */
     @Override
-    public GetCertificateResult getCertificate(GetCertificateRequest getCertificateRequest) {
+    public GetCertificateResult getCertificate(GetCertificateRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCertificate(request);
+    }
+
+    @SdkInternalApi
+    final GetCertificateResult executeGetCertificate(GetCertificateRequest getCertificateRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -493,7 +522,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetCertificateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCertificateRequest));
+                request = new GetCertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -565,7 +594,13 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      *      Documentation</a>
      */
     @Override
-    public ImportCertificateResult importCertificate(ImportCertificateRequest importCertificateRequest) {
+    public ImportCertificateResult importCertificate(ImportCertificateRequest request) {
+        request = beforeClientExecution(request);
+        return executeImportCertificate(request);
+    }
+
+    @SdkInternalApi
+    final ImportCertificateResult executeImportCertificate(ImportCertificateRequest importCertificateRequest) {
 
         ExecutionContext executionContext = createExecutionContext(importCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -576,7 +611,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ImportCertificateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(importCertificateRequest));
+                request = new ImportCertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(importCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -608,7 +643,13 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      *      Documentation</a>
      */
     @Override
-    public ListCertificatesResult listCertificates(ListCertificatesRequest listCertificatesRequest) {
+    public ListCertificatesResult listCertificates(ListCertificatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCertificates(request);
+    }
+
+    @SdkInternalApi
+    final ListCertificatesResult executeListCertificates(ListCertificatesRequest listCertificatesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listCertificatesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -619,7 +660,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListCertificatesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCertificatesRequest));
+                request = new ListCertificatesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCertificatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -657,7 +698,13 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      *      Documentation</a>
      */
     @Override
-    public ListTagsForCertificateResult listTagsForCertificate(ListTagsForCertificateRequest listTagsForCertificateRequest) {
+    public ListTagsForCertificateResult listTagsForCertificate(ListTagsForCertificateRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForCertificate(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForCertificateResult executeListTagsForCertificate(ListTagsForCertificateRequest listTagsForCertificateRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTagsForCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -668,7 +715,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTagsForCertificateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForCertificateRequest));
+                request = new ListTagsForCertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -714,7 +761,13 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      *      API Documentation</a>
      */
     @Override
-    public RemoveTagsFromCertificateResult removeTagsFromCertificate(RemoveTagsFromCertificateRequest removeTagsFromCertificateRequest) {
+    public RemoveTagsFromCertificateResult removeTagsFromCertificate(RemoveTagsFromCertificateRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveTagsFromCertificate(request);
+    }
+
+    @SdkInternalApi
+    final RemoveTagsFromCertificateResult executeRemoveTagsFromCertificate(RemoveTagsFromCertificateRequest removeTagsFromCertificateRequest) {
 
         ExecutionContext executionContext = createExecutionContext(removeTagsFromCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -725,7 +778,8 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RemoveTagsFromCertificateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeTagsFromCertificateRequest));
+                request = new RemoveTagsFromCertificateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(removeTagsFromCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -769,7 +823,13 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      *      Documentation</a>
      */
     @Override
-    public RequestCertificateResult requestCertificate(RequestCertificateRequest requestCertificateRequest) {
+    public RequestCertificateResult requestCertificate(RequestCertificateRequest request) {
+        request = beforeClientExecution(request);
+        return executeRequestCertificate(request);
+    }
+
+    @SdkInternalApi
+    final RequestCertificateResult executeRequestCertificate(RequestCertificateRequest requestCertificateRequest) {
 
         ExecutionContext executionContext = createExecutionContext(requestCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -780,7 +840,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RequestCertificateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(requestCertificateRequest));
+                request = new RequestCertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(requestCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -828,7 +888,13 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
      *      Documentation</a>
      */
     @Override
-    public ResendValidationEmailResult resendValidationEmail(ResendValidationEmailRequest resendValidationEmailRequest) {
+    public ResendValidationEmailResult resendValidationEmail(ResendValidationEmailRequest request) {
+        request = beforeClientExecution(request);
+        return executeResendValidationEmail(request);
+    }
+
+    @SdkInternalApi
+    final ResendValidationEmailResult executeResendValidationEmail(ResendValidationEmailRequest resendValidationEmailRequest) {
 
         ExecutionContext executionContext = createExecutionContext(resendValidationEmailRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -839,7 +905,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ResendValidationEmailRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(resendValidationEmailRequest));
+                request = new ResendValidationEmailRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(resendValidationEmailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

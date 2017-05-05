@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -259,6 +260,10 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
         init();
     }
 
+    public static AWSIotDataClientBuilder builder() {
+        return AWSIotDataClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWS IoT Data Plane using the specified parameters.
      *
@@ -318,7 +323,13 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
      * @sample AWSIotData.DeleteThingShadow
      */
     @Override
-    public DeleteThingShadowResult deleteThingShadow(DeleteThingShadowRequest deleteThingShadowRequest) {
+    public DeleteThingShadowResult deleteThingShadow(DeleteThingShadowRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteThingShadow(request);
+    }
+
+    @SdkInternalApi
+    final DeleteThingShadowResult executeDeleteThingShadow(DeleteThingShadowRequest deleteThingShadowRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteThingShadowRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -329,7 +340,7 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteThingShadowRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteThingShadowRequest));
+                request = new DeleteThingShadowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteThingShadowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -380,7 +391,13 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
      * @sample AWSIotData.GetThingShadow
      */
     @Override
-    public GetThingShadowResult getThingShadow(GetThingShadowRequest getThingShadowRequest) {
+    public GetThingShadowResult getThingShadow(GetThingShadowRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetThingShadow(request);
+    }
+
+    @SdkInternalApi
+    final GetThingShadowResult executeGetThingShadow(GetThingShadowRequest getThingShadowRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getThingShadowRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -391,7 +408,7 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetThingShadowRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getThingShadowRequest));
+                request = new GetThingShadowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getThingShadowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -433,7 +450,13 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
      * @sample AWSIotData.Publish
      */
     @Override
-    public PublishResult publish(PublishRequest publishRequest) {
+    public PublishResult publish(PublishRequest request) {
+        request = beforeClientExecution(request);
+        return executePublish(request);
+    }
+
+    @SdkInternalApi
+    final PublishResult executePublish(PublishRequest publishRequest) {
 
         ExecutionContext executionContext = createExecutionContext(publishRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -444,7 +467,7 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PublishRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(publishRequest));
+                request = new PublishRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(publishRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -497,7 +520,13 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
      * @sample AWSIotData.UpdateThingShadow
      */
     @Override
-    public UpdateThingShadowResult updateThingShadow(UpdateThingShadowRequest updateThingShadowRequest) {
+    public UpdateThingShadowResult updateThingShadow(UpdateThingShadowRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateThingShadow(request);
+    }
+
+    @SdkInternalApi
+    final UpdateThingShadowResult executeUpdateThingShadow(UpdateThingShadowRequest updateThingShadowRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateThingShadowRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -508,7 +537,7 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateThingShadowRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateThingShadowRequest));
+                request = new UpdateThingShadowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateThingShadowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

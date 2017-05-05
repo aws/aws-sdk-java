@@ -12,80 +12,51 @@
  */
 package com.amazonaws.services.certificatemanager.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.certificatemanager.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListCertificatesRequest Marshaller
+ * ListCertificatesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListCertificatesRequestMarshaller implements Marshaller<Request<ListCertificatesRequest>, ListCertificatesRequest> {
+@SdkInternalApi
+public class ListCertificatesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<List> CERTIFICATESTATUSES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CertificateStatuses").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
+    private static final MarshallingInfo<Integer> MAXITEMS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxItems").build();
 
-    public ListCertificatesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListCertificatesRequestMarshaller instance = new ListCertificatesRequestMarshaller();
+
+    public static ListCertificatesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListCertificatesRequest> marshall(ListCertificatesRequest listCertificatesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListCertificatesRequest listCertificatesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listCertificatesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListCertificatesRequest> request = new DefaultRequest<ListCertificatesRequest>(listCertificatesRequest, "AWSCertificateManager");
-        request.addHeader("X-Amz-Target", "CertificateManager.ListCertificates");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            java.util.List<String> certificateStatusesList = listCertificatesRequest.getCertificateStatuses();
-            if (certificateStatusesList != null) {
-                jsonGenerator.writeFieldName("CertificateStatuses");
-                jsonGenerator.writeStartArray();
-                for (String certificateStatusesListValue : certificateStatusesList) {
-                    if (certificateStatusesListValue != null) {
-                        jsonGenerator.writeValue(certificateStatusesListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (listCertificatesRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(listCertificatesRequest.getNextToken());
-            }
-            if (listCertificatesRequest.getMaxItems() != null) {
-                jsonGenerator.writeFieldName("MaxItems").writeValue(listCertificatesRequest.getMaxItems());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listCertificatesRequest.getCertificateStatuses(), CERTIFICATESTATUSES_BINDING);
+            protocolMarshaller.marshall(listCertificatesRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listCertificatesRequest.getMaxItems(), MAXITEMS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

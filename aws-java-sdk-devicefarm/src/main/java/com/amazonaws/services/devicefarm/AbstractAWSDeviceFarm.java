@@ -43,6 +43,11 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
     }
 
     @Override
+    public CreateNetworkProfileResult createNetworkProfile(CreateNetworkProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateProjectResult createProject(CreateProjectRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -59,6 +64,11 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
 
     @Override
     public DeleteDevicePoolResult deleteDevicePool(DeleteDevicePoolRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteNetworkProfileResult deleteNetworkProfile(DeleteNetworkProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -104,6 +114,11 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
 
     @Override
     public GetJobResult getJob(GetJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetNetworkProfileResult getNetworkProfile(GetNetworkProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -164,6 +179,16 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
 
     @Override
     public ListJobsResult listJobs(ListJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListNetworkProfilesResult listNetworkProfiles(ListNetworkProfilesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListOfferingPromotionsResult listOfferingPromotions(ListOfferingPromotionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -244,6 +269,11 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
 
     @Override
     public UpdateDevicePoolResult updateDevicePool(UpdateDevicePoolRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateNetworkProfileResult updateNetworkProfile(UpdateNetworkProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

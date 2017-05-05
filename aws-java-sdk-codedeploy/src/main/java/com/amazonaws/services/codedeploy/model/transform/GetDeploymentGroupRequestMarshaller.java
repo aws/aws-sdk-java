@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.codedeploy.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.codedeploy.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetDeploymentGroupRequest Marshaller
+ * GetDeploymentGroupRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetDeploymentGroupRequestMarshaller implements Marshaller<Request<GetDeploymentGroupRequest>, GetDeploymentGroupRequest> {
+@SdkInternalApi
+public class GetDeploymentGroupRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> APPLICATIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("applicationName").build();
+    private static final MarshallingInfo<String> DEPLOYMENTGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deploymentGroupName").build();
 
-    public GetDeploymentGroupRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetDeploymentGroupRequestMarshaller instance = new GetDeploymentGroupRequestMarshaller();
+
+    public static GetDeploymentGroupRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetDeploymentGroupRequest> marshall(GetDeploymentGroupRequest getDeploymentGroupRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetDeploymentGroupRequest getDeploymentGroupRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getDeploymentGroupRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetDeploymentGroupRequest> request = new DefaultRequest<GetDeploymentGroupRequest>(getDeploymentGroupRequest, "AmazonCodeDeploy");
-        request.addHeader("X-Amz-Target", "CodeDeploy_20141006.GetDeploymentGroup");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (getDeploymentGroupRequest.getApplicationName() != null) {
-                jsonGenerator.writeFieldName("applicationName").writeValue(getDeploymentGroupRequest.getApplicationName());
-            }
-            if (getDeploymentGroupRequest.getDeploymentGroupName() != null) {
-                jsonGenerator.writeFieldName("deploymentGroupName").writeValue(getDeploymentGroupRequest.getDeploymentGroupName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getDeploymentGroupRequest.getApplicationName(), APPLICATIONNAME_BINDING);
+            protocolMarshaller.marshall(getDeploymentGroupRequest.getDeploymentGroupName(), DEPLOYMENTGROUPNAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

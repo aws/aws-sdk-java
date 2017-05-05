@@ -52,7 +52,9 @@ public class TypeUtils {
 
     public static final String MAP_AUTO_CONSTRUCT_IMPL = "mapAutoConstructImpl";
 
-    private final static Map<String, String> dataTypeMappings = new HashMap<String, String>();
+    private final static Map<String, String> dataTypeMappings = new HashMap<>();
+
+    private final static Map<String, String> marshallingTypeMappings = new HashMap<>();
 
     static {
         dataTypeMappings.put("string", String.class.getSimpleName());
@@ -78,12 +80,34 @@ public class TypeUtils {
         dataTypeMappings.put(MAP_INTERFACE, Map.class.getName());
         dataTypeMappings.put(MAP_DEFAULT_IMPL, HashMap.class.getName());
         dataTypeMappings.put(MAP_AUTO_CONSTRUCT_IMPL, SdkInternalMap.class.getName());
+        dataTypeMappings.put(LIST_INTERFACE, List.class.getName());
+        dataTypeMappings.put(LIST_DEFAULT_IMPL, ArrayList.class.getName());
+        dataTypeMappings.put(LIST_AUTO_CONSTRUCT_IMPL, SdkInternalList.class.getName());
+        dataTypeMappings.put(MAP_INTERFACE, Map.class.getName());
+        dataTypeMappings.put(MAP_DEFAULT_IMPL, HashMap.class.getName());
+        dataTypeMappings.put(MAP_AUTO_CONSTRUCT_IMPL, SdkInternalMap.class.getName());
+
+        marshallingTypeMappings.put("String", "STRING");
+        marshallingTypeMappings.put("Integer", "INTEGER");
+        marshallingTypeMappings.put("Long", "LONG");
+        marshallingTypeMappings.put("Float", "FLOAT");
+        marshallingTypeMappings.put("Double", "DOUBLE");
+        marshallingTypeMappings.put("Date", "DATE");
+        marshallingTypeMappings.put("ByteBuffer", "BYTE_BUFFER");
+        marshallingTypeMappings.put("Boolean", "BOOLEAN");
+        marshallingTypeMappings.put("BigDecimal", "BIG_DECIMAL");
+        marshallingTypeMappings.put("InputStream", "STREAM");
+        marshallingTypeMappings.put(null, "NULL");
     }
 
     private final NamingStrategy namingStrategy;
 
     public TypeUtils(NamingStrategy namingStrategy) {
         this.namingStrategy = namingStrategy;
+    }
+
+    public static String getMarshallingType(String simpleType) {
+        return marshallingTypeMappings.get(simpleType);
     }
 
     public static boolean isSimple(String type) {
@@ -125,12 +149,14 @@ public class TypeUtils {
         if (Structure.getName().equals(shapeType)) {
             return namingStrategy.getJavaClassName(shapeName);
         } else if (List.getName().equals(shapeType)) {
-            String listType = customConfig != null && customConfig.isUseAutoConstructList() ? LIST_AUTO_CONSTRUCT_IMPL : LIST_INTERFACE;
+            String listType =
+                    customConfig != null && customConfig.isUseAutoConstructList() ? LIST_AUTO_CONSTRUCT_IMPL : LIST_INTERFACE;
             final String listContainerType = dataTypeMappings.get(listType);
             return listContainerType + "<" +
                    getJavaDataType(shapes, shape.getListMember().getShape()) + ">";
         } else if (Map.getName().equals(shapeType)) {
-            String mapType = customConfig != null && customConfig.isUseAutoConstructMap() ? MAP_AUTO_CONSTRUCT_IMPL : MAP_INTERFACE;
+            String mapType =
+                    customConfig != null && customConfig.isUseAutoConstructMap() ? MAP_AUTO_CONSTRUCT_IMPL : MAP_INTERFACE;
             final String mapContainerType = dataTypeMappings.get(mapType);
             return mapContainerType + "<" +
                    getJavaDataType(shapes, shape.getMapKeyType().getShape()) + "," +

@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.waf.model.waf_regional.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.waf.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DisassociateWebACLRequest Marshaller
+ * DisassociateWebACLRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DisassociateWebACLRequestMarshaller implements Marshaller<Request<DisassociateWebACLRequest>, DisassociateWebACLRequest> {
+@SdkInternalApi
+public class DisassociateWebACLRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> RESOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceArn").build();
 
-    public DisassociateWebACLRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DisassociateWebACLRequestMarshaller instance = new DisassociateWebACLRequestMarshaller();
+
+    public static DisassociateWebACLRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DisassociateWebACLRequest> marshall(DisassociateWebACLRequest disassociateWebACLRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DisassociateWebACLRequest disassociateWebACLRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (disassociateWebACLRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DisassociateWebACLRequest> request = new DefaultRequest<DisassociateWebACLRequest>(disassociateWebACLRequest, "AWSWAFRegional");
-        request.addHeader("X-Amz-Target", "AWSWAF_Regional_20161128.DisassociateWebACL");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (disassociateWebACLRequest.getResourceArn() != null) {
-                jsonGenerator.writeFieldName("ResourceArn").writeValue(disassociateWebACLRequest.getResourceArn());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(disassociateWebACLRequest.getResourceArn(), RESOURCEARN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

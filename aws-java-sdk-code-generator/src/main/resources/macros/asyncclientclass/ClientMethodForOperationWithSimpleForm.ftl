@@ -9,7 +9,7 @@
      * @see #${operation.methodName}Async(${operation.input.variableType})
      */
     @Override
-    <#if operation.deprecated>
+    <#if operation.deprecated || form.deprecated>
       @Deprecated
     </#if>
     public ${operation.asyncFutureType} ${operation.methodName}Async(
@@ -25,6 +25,10 @@
      *
      * @see #${operation.methodName}Async(${operation.input.variableType}, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
+    <#if operation.deprecated || form.deprecated>
+    @Deprecated
+    </#if>
     public ${operation.asyncFutureType} ${operation.methodName}Async(
             <#if form.arguments?has_content>
               ${form.argumentsDeclaration},

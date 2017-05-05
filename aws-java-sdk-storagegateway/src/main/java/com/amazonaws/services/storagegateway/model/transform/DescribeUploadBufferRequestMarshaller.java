@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.storagegateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.storagegateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeUploadBufferRequest Marshaller
+ * DescribeUploadBufferRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeUploadBufferRequestMarshaller implements Marshaller<Request<DescribeUploadBufferRequest>, DescribeUploadBufferRequest> {
+@SdkInternalApi
+public class DescribeUploadBufferRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> GATEWAYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GatewayARN").build();
 
-    public DescribeUploadBufferRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeUploadBufferRequestMarshaller instance = new DescribeUploadBufferRequestMarshaller();
+
+    public static DescribeUploadBufferRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeUploadBufferRequest> marshall(DescribeUploadBufferRequest describeUploadBufferRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeUploadBufferRequest describeUploadBufferRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeUploadBufferRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeUploadBufferRequest> request = new DefaultRequest<DescribeUploadBufferRequest>(describeUploadBufferRequest, "AWSStorageGateway");
-        request.addHeader("X-Amz-Target", "StorageGateway_20130630.DescribeUploadBuffer");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeUploadBufferRequest.getGatewayARN() != null) {
-                jsonGenerator.writeFieldName("GatewayARN").writeValue(describeUploadBufferRequest.getGatewayARN());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeUploadBufferRequest.getGatewayARN(), GATEWAYARN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

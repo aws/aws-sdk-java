@@ -14,6 +14,7 @@
  */
 package com.amazonaws.auth.internal;
 
+import com.amazonaws.auth.SdkClock;
 import java.util.Date;
 
 import com.amazonaws.SignableRequest;
@@ -99,7 +100,7 @@ public final class AWS4SignerRequestParams {
      * Returns the signing date from the request.
      */
     private final long getSigningDate(SignableRequest<?> request) {
-        return System.currentTimeMillis() - request.getTimeOffset() * 1000L;
+        return SdkClock.Instance.get().currentTimeMillis() - request.getTimeOffset() * 1000L;
     }
 
     /**

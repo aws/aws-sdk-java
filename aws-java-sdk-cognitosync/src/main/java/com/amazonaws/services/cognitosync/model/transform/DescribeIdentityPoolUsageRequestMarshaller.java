@@ -12,54 +12,44 @@
  */
 package com.amazonaws.services.cognitosync.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cognitosync.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeIdentityPoolUsageRequest Marshaller
+ * DescribeIdentityPoolUsageRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeIdentityPoolUsageRequestMarshaller implements Marshaller<Request<DescribeIdentityPoolUsageRequest>, DescribeIdentityPoolUsageRequest> {
+@SdkInternalApi
+public class DescribeIdentityPoolUsageRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> IDENTITYPOOLID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("IdentityPoolId").build();
 
-    public DescribeIdentityPoolUsageRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeIdentityPoolUsageRequestMarshaller instance = new DescribeIdentityPoolUsageRequestMarshaller();
+
+    public static DescribeIdentityPoolUsageRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeIdentityPoolUsageRequest> marshall(DescribeIdentityPoolUsageRequest describeIdentityPoolUsageRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeIdentityPoolUsageRequest describeIdentityPoolUsageRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeIdentityPoolUsageRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeIdentityPoolUsageRequest> request = new DefaultRequest<DescribeIdentityPoolUsageRequest>(describeIdentityPoolUsageRequest,
-                "AmazonCognitoSync");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/identitypools/{IdentityPoolId}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "IdentityPoolId",
-                describeIdentityPoolUsageRequest.getIdentityPoolId());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(describeIdentityPoolUsageRequest.getIdentityPoolId(), IDENTITYPOOLID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

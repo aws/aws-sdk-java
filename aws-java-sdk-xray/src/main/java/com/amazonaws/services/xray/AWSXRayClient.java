@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -230,6 +231,10 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
         init();
     }
 
+    public static AWSXRayClientBuilder builder() {
+        return AWSXRayClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWS X-Ray using the specified parameters.
      *
@@ -274,7 +279,13 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
      *      Documentation</a>
      */
     @Override
-    public BatchGetTracesResult batchGetTraces(BatchGetTracesRequest batchGetTracesRequest) {
+    public BatchGetTracesResult batchGetTraces(BatchGetTracesRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchGetTraces(request);
+    }
+
+    @SdkInternalApi
+    final BatchGetTracesResult executeBatchGetTraces(BatchGetTracesRequest batchGetTracesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(batchGetTracesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -285,7 +296,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new BatchGetTracesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetTracesRequest));
+                request = new BatchGetTracesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetTracesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -323,7 +334,13 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
      *      Documentation</a>
      */
     @Override
-    public GetServiceGraphResult getServiceGraph(GetServiceGraphRequest getServiceGraphRequest) {
+    public GetServiceGraphResult getServiceGraph(GetServiceGraphRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetServiceGraph(request);
+    }
+
+    @SdkInternalApi
+    final GetServiceGraphResult executeGetServiceGraph(GetServiceGraphRequest getServiceGraphRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getServiceGraphRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -334,7 +351,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetServiceGraphRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getServiceGraphRequest));
+                request = new GetServiceGraphRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getServiceGraphRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -369,7 +386,13 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
      *      Documentation</a>
      */
     @Override
-    public GetTraceGraphResult getTraceGraph(GetTraceGraphRequest getTraceGraphRequest) {
+    public GetTraceGraphResult getTraceGraph(GetTraceGraphRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetTraceGraph(request);
+    }
+
+    @SdkInternalApi
+    final GetTraceGraphResult executeGetTraceGraph(GetTraceGraphRequest getTraceGraphRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getTraceGraphRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -380,7 +403,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetTraceGraphRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getTraceGraphRequest));
+                request = new GetTraceGraphRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getTraceGraphRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -416,7 +439,13 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
      *      Documentation</a>
      */
     @Override
-    public GetTraceSummariesResult getTraceSummaries(GetTraceSummariesRequest getTraceSummariesRequest) {
+    public GetTraceSummariesResult getTraceSummaries(GetTraceSummariesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetTraceSummaries(request);
+    }
+
+    @SdkInternalApi
+    final GetTraceSummariesResult executeGetTraceSummaries(GetTraceSummariesRequest getTraceSummariesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getTraceSummariesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -427,7 +456,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetTraceSummariesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getTraceSummariesRequest));
+                request = new GetTraceSummariesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getTraceSummariesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -462,7 +491,13 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
      *      Documentation</a>
      */
     @Override
-    public PutTelemetryRecordsResult putTelemetryRecords(PutTelemetryRecordsRequest putTelemetryRecordsRequest) {
+    public PutTelemetryRecordsResult putTelemetryRecords(PutTelemetryRecordsRequest request) {
+        request = beforeClientExecution(request);
+        return executePutTelemetryRecords(request);
+    }
+
+    @SdkInternalApi
+    final PutTelemetryRecordsResult executePutTelemetryRecords(PutTelemetryRecordsRequest putTelemetryRecordsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putTelemetryRecordsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -473,7 +508,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutTelemetryRecordsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(putTelemetryRecordsRequest));
+                request = new PutTelemetryRecordsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putTelemetryRecordsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -510,7 +545,13 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
      *      Documentation</a>
      */
     @Override
-    public PutTraceSegmentsResult putTraceSegments(PutTraceSegmentsRequest putTraceSegmentsRequest) {
+    public PutTraceSegmentsResult putTraceSegments(PutTraceSegmentsRequest request) {
+        request = beforeClientExecution(request);
+        return executePutTraceSegments(request);
+    }
+
+    @SdkInternalApi
+    final PutTraceSegmentsResult executePutTraceSegments(PutTraceSegmentsRequest putTraceSegmentsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putTraceSegmentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -521,7 +562,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutTraceSegmentsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(putTraceSegmentsRequest));
+                request = new PutTraceSegmentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putTraceSegmentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

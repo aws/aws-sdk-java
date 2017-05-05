@@ -39,7 +39,8 @@ public enum DataSetType {
     Customer_profile_by_industry("customer_profile_by_industry"),
     Customer_profile_by_revenue("customer_profile_by_revenue"),
     Customer_profile_by_geography("customer_profile_by_geography"),
-    Sales_compensation_billed_revenue("sales_compensation_billed_revenue");
+    Sales_compensation_billed_revenue("sales_compensation_billed_revenue"),
+    Us_sales_and_use_tax_records("us_sales_and_use_tax_records");
 
     private String value;
 

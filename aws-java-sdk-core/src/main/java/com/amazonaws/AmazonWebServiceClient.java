@@ -585,6 +585,17 @@ public abstract class AmazonWebServiceClient {
     }
 
     /**
+     * Notify request handlers that we are about to start execution.
+     */
+    protected final <T extends AmazonWebServiceRequest> T beforeClientExecution(T request) {
+        T local = request;
+        for (RequestHandler2 handler : requestHandler2s) {
+            local = (T) handler.beforeExecution(local);
+        }
+        return local;
+    }
+
+    /**
      * Convenient method to end the client execution without logging the
      * awsRequestMetrics.
      */
@@ -862,5 +873,9 @@ public abstract class AmazonWebServiceClient {
      */
     protected boolean calculateCRC32FromCompressedData() {
         return false;
+    }
+
+    public String getSignerOverride() {
+        return clientConfiguration.getSignerOverride();
     }
 }

@@ -25,14 +25,49 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AssociateNodeRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The name of the server with which to associate the node.
+     * </p>
+     */
     private String serverName;
-
+    /**
+     * <p>
+     * The name of the Chef client node.
+     * </p>
+     */
     private String nodeName;
-
+    /**
+     * <p>
+     * Engine attributes used for associating the node.
+     * </p>
+     * <p class="title">
+     * <b>Attributes accepted in a AssociateNode request:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one
+     * organization named <code>default</code> can exist.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the
+     * <code>chef-client</code> agent to access the Chef API.
+     * </p>
+     * </li>
+     * </ul>
+     */
     private java.util.List<EngineAttribute> engineAttributes;
 
     /**
+     * <p>
+     * The name of the server with which to associate the node.
+     * </p>
+     * 
      * @param serverName
+     *        The name of the server with which to associate the node.
      */
 
     public void setServerName(String serverName) {
@@ -40,7 +75,11 @@ public class AssociateNodeRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the server with which to associate the node.
+     * </p>
+     * 
+     * @return The name of the server with which to associate the node.
      */
 
     public String getServerName() {
@@ -48,7 +87,12 @@ public class AssociateNodeRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The name of the server with which to associate the node.
+     * </p>
+     * 
      * @param serverName
+     *        The name of the server with which to associate the node.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -58,7 +102,12 @@ public class AssociateNodeRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The name of the Chef client node.
+     * </p>
+     * 
      * @param nodeName
+     *        The name of the Chef client node.
      */
 
     public void setNodeName(String nodeName) {
@@ -66,7 +115,11 @@ public class AssociateNodeRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the Chef client node.
+     * </p>
+     * 
+     * @return The name of the Chef client node.
      */
 
     public String getNodeName() {
@@ -74,7 +127,12 @@ public class AssociateNodeRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The name of the Chef client node.
+     * </p>
+     * 
      * @param nodeName
+     *        The name of the Chef client node.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,7 +142,44 @@ public class AssociateNodeRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * Engine attributes used for associating the node.
+     * </p>
+     * <p class="title">
+     * <b>Attributes accepted in a AssociateNode request:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one
+     * organization named <code>default</code> can exist.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the
+     * <code>chef-client</code> agent to access the Chef API.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Engine attributes used for associating the node. </p>
+     *         <p class="title">
+     *         <b>Attributes accepted in a AssociateNode request:</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only
+     *         one organization named <code>default</code> can exist.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the
+     *         <code>chef-client</code> agent to access the Chef API.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<EngineAttribute> getEngineAttributes() {
@@ -92,7 +187,45 @@ public class AssociateNodeRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * Engine attributes used for associating the node.
+     * </p>
+     * <p class="title">
+     * <b>Attributes accepted in a AssociateNode request:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one
+     * organization named <code>default</code> can exist.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the
+     * <code>chef-client</code> agent to access the Chef API.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param engineAttributes
+     *        Engine attributes used for associating the node. </p>
+     *        <p class="title">
+     *        <b>Attributes accepted in a AssociateNode request:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only
+     *        one organization named <code>default</code> can exist.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the
+     *        <code>chef-client</code> agent to access the Chef API.
+     *        </p>
+     *        </li>
      */
 
     public void setEngineAttributes(java.util.Collection<EngineAttribute> engineAttributes) {
@@ -106,12 +239,49 @@ public class AssociateNodeRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
+     * Engine attributes used for associating the node.
+     * </p>
+     * <p class="title">
+     * <b>Attributes accepted in a AssociateNode request:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one
+     * organization named <code>default</code> can exist.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the
+     * <code>chef-client</code> agent to access the Chef API.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setEngineAttributes(java.util.Collection)} or {@link #withEngineAttributes(java.util.Collection)} if you
      * want to override the existing values.
      * </p>
      * 
      * @param engineAttributes
+     *        Engine attributes used for associating the node. </p>
+     *        <p class="title">
+     *        <b>Attributes accepted in a AssociateNode request:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only
+     *        one organization named <code>default</code> can exist.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the
+     *        <code>chef-client</code> agent to access the Chef API.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,7 +296,45 @@ public class AssociateNodeRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * Engine attributes used for associating the node.
+     * </p>
+     * <p class="title">
+     * <b>Attributes accepted in a AssociateNode request:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only one
+     * organization named <code>default</code> can exist.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the
+     * <code>chef-client</code> agent to access the Chef API.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param engineAttributes
+     *        Engine attributes used for associating the node. </p>
+     *        <p class="title">
+     *        <b>Attributes accepted in a AssociateNode request:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is associated. By default only
+     *        one organization named <code>default</code> can exist.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted public key. This key is required for the
+     *        <code>chef-client</code> agent to access the Chef API.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.rekognition.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.rekognition.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteCollectionRequest Marshaller
+ * DeleteCollectionRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteCollectionRequestMarshaller implements Marshaller<Request<DeleteCollectionRequest>, DeleteCollectionRequest> {
+@SdkInternalApi
+public class DeleteCollectionRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> COLLECTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CollectionId").build();
 
-    public DeleteCollectionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteCollectionRequestMarshaller instance = new DeleteCollectionRequestMarshaller();
+
+    public static DeleteCollectionRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteCollectionRequest> marshall(DeleteCollectionRequest deleteCollectionRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteCollectionRequest deleteCollectionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteCollectionRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteCollectionRequest> request = new DefaultRequest<DeleteCollectionRequest>(deleteCollectionRequest, "AmazonRekognition");
-        request.addHeader("X-Amz-Target", "RekognitionService.DeleteCollection");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteCollectionRequest.getCollectionId() != null) {
-                jsonGenerator.writeFieldName("CollectionId").writeValue(deleteCollectionRequest.getCollectionId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteCollectionRequest.getCollectionId(), COLLECTIONID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

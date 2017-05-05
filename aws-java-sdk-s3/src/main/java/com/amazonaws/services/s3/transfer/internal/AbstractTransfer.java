@@ -276,8 +276,13 @@ public abstract class AbstractTransfer implements Transfer {
      * @return The root exception that caused the specified ExecutionException.
      */
     protected AmazonClientException unwrapExecutionException(ExecutionException e) {
-        Throwable t = e.getCause();
-        if (t instanceof AmazonClientException) return (AmazonClientException)t;
+        Throwable t = e;
+        while (t.getCause() != null && t instanceof ExecutionException) {
+            t = t.getCause();
+        }
+        if (t instanceof AmazonClientException) {
+            return (AmazonClientException) t;
+        }
         return new AmazonClientException("Unable to complete transfer: " + t.getMessage(), t);
     }
 

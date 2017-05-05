@@ -26,10 +26,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetJobResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * An object containing information about the requested job.
+     * </p>
+     */
     private Job job;
 
     /**
+     * <p>
+     * An object containing information about the requested job.
+     * </p>
+     * 
      * @param job
+     *        An object containing information about the requested job.
      */
 
     public void setJob(Job job) {
@@ -37,7 +47,11 @@ public class GetJobResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     }
 
     /**
-     * @return
+     * <p>
+     * An object containing information about the requested job.
+     * </p>
+     * 
+     * @return An object containing information about the requested job.
      */
 
     public Job getJob() {
@@ -45,7 +59,12 @@ public class GetJobResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     }
 
     /**
+     * <p>
+     * An object containing information about the requested job.
+     * </p>
+     * 
      * @param job
+     *        An object containing information about the requested job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,4 +124,5 @@ public class GetJobResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

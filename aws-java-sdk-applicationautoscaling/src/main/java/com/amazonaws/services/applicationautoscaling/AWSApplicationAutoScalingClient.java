@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -92,6 +93,13 @@ import com.amazonaws.services.applicationautoscaling.model.transform.*;
  * Amazon EMR clusters. For more information, see <a
  * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/ManagementGuide/emr-automatic-scaling.html">Using Automatic
  * Scaling in Amazon EMR</a> in the <i>Amazon EMR Management Guide</i>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * AppStream 2.0 fleets. For more information, see <a
+ * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/autoscaling.html">Autoscaling Amazon AppStream 2.0
+ * Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
  * </p>
  * </li>
  * </ul>
@@ -296,6 +304,10 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
         init();
     }
 
+    public static AWSApplicationAutoScalingClientBuilder builder() {
+        return AWSApplicationAutoScalingClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Application Auto Scaling using the specified parameters.
      *
@@ -355,7 +367,13 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteScalingPolicyResult deleteScalingPolicy(DeleteScalingPolicyRequest deleteScalingPolicyRequest) {
+    public DeleteScalingPolicyResult deleteScalingPolicy(DeleteScalingPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteScalingPolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeleteScalingPolicyResult executeDeleteScalingPolicy(DeleteScalingPolicyRequest deleteScalingPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteScalingPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -366,7 +384,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteScalingPolicyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteScalingPolicyRequest));
+                request = new DeleteScalingPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteScalingPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -416,7 +434,13 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeregisterScalableTargetResult deregisterScalableTarget(DeregisterScalableTargetRequest deregisterScalableTargetRequest) {
+    public DeregisterScalableTargetResult deregisterScalableTarget(DeregisterScalableTargetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeregisterScalableTarget(request);
+    }
+
+    @SdkInternalApi
+    final DeregisterScalableTargetResult executeDeregisterScalableTarget(DeregisterScalableTargetRequest deregisterScalableTargetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deregisterScalableTargetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -427,7 +451,8 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeregisterScalableTargetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deregisterScalableTargetRequest));
+                request = new DeregisterScalableTargetRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deregisterScalableTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -475,7 +500,13 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeScalableTargetsResult describeScalableTargets(DescribeScalableTargetsRequest describeScalableTargetsRequest) {
+    public DescribeScalableTargetsResult describeScalableTargets(DescribeScalableTargetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeScalableTargets(request);
+    }
+
+    @SdkInternalApi
+    final DescribeScalableTargetsResult executeDescribeScalableTargets(DescribeScalableTargetsRequest describeScalableTargetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeScalableTargetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -486,7 +517,8 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeScalableTargetsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeScalableTargetsRequest));
+                request = new DescribeScalableTargetsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeScalableTargetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -537,7 +569,13 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeScalingActivitiesResult describeScalingActivities(DescribeScalingActivitiesRequest describeScalingActivitiesRequest) {
+    public DescribeScalingActivitiesResult describeScalingActivities(DescribeScalingActivitiesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeScalingActivities(request);
+    }
+
+    @SdkInternalApi
+    final DescribeScalingActivitiesResult executeDescribeScalingActivities(DescribeScalingActivitiesRequest describeScalingActivitiesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeScalingActivitiesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -548,7 +586,8 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeScalingActivitiesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeScalingActivitiesRequest));
+                request = new DescribeScalingActivitiesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeScalingActivitiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -604,7 +643,13 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeScalingPoliciesResult describeScalingPolicies(DescribeScalingPoliciesRequest describeScalingPoliciesRequest) {
+    public DescribeScalingPoliciesResult describeScalingPolicies(DescribeScalingPoliciesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeScalingPolicies(request);
+    }
+
+    @SdkInternalApi
+    final DescribeScalingPoliciesResult executeDescribeScalingPolicies(DescribeScalingPoliciesRequest describeScalingPoliciesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeScalingPoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -615,7 +660,8 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeScalingPoliciesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeScalingPoliciesRequest));
+                request = new DescribeScalingPoliciesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeScalingPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -678,7 +724,13 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public PutScalingPolicyResult putScalingPolicy(PutScalingPolicyRequest putScalingPolicyRequest) {
+    public PutScalingPolicyResult putScalingPolicy(PutScalingPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutScalingPolicy(request);
+    }
+
+    @SdkInternalApi
+    final PutScalingPolicyResult executePutScalingPolicy(PutScalingPolicyRequest putScalingPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putScalingPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -689,7 +741,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutScalingPolicyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(putScalingPolicyRequest));
+                request = new PutScalingPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putScalingPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -739,7 +791,13 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RegisterScalableTargetResult registerScalableTarget(RegisterScalableTargetRequest registerScalableTargetRequest) {
+    public RegisterScalableTargetResult registerScalableTarget(RegisterScalableTargetRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterScalableTarget(request);
+    }
+
+    @SdkInternalApi
+    final RegisterScalableTargetResult executeRegisterScalableTarget(RegisterScalableTargetRequest registerScalableTargetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(registerScalableTargetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -750,7 +808,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterScalableTargetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerScalableTargetRequest));
+                request = new RegisterScalableTargetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerScalableTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

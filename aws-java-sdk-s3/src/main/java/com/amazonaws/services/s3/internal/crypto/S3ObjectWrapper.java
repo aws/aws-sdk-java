@@ -96,16 +96,6 @@ class S3ObjectWrapper implements Closeable {
     }
 
     /**
-     * Returns true if this S3 object is an instruction file; false otherwise.
-     */
-    final boolean isInstructionFile() {
-        ObjectMetadata metadata = s3obj.getObjectMetadata();
-        Map<String, String> userMeta = metadata.getUserMetadata();
-        return userMeta != null
-            && userMeta.containsKey(Headers.CRYPTO_INSTRUCTION_FILE);
-    }
-
-    /**
      * Returns true if this S3 object has the encryption information stored
      * as user meta data; false otherwise.
      */

@@ -14,47 +14,46 @@ package com.amazonaws.services.cloudwatchevents.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Targets are the resources that can be invoked when a rule is triggered. For example, AWS Lambda functions, Amazon
- * Kinesis streams, and built-in targets.
+ * Targets are the resources to be invoked when a rule is triggered. Target types include EC2 instances, AWS Lambda
+ * functions, Amazon Kinesis streams, Amazon ECS tasks, AWS Step Functions state machines, Run Command, and built-in
+ * targets.
  * </p>
- * <p>
- * <b>Input</b> and <b>InputPath</b> are mutually-exclusive and optional parameters of a target. When a rule is
- * triggered due to a matched event, if for a target:
- * </p>
- * <ul>
- * <li>Neither <b>Input</b> nor <b>InputPath</b> is specified, then the entire event is passed to the target in JSON
- * form.</li>
- * <li><b>InputPath</b> is specified in the form of JSONPath (e.g. <b>$.detail</b>), then only the part of the event
- * specified in the path is passed to the target (e.g. only the detail part of the event is passed).</li>
- * <li><b>Input</b> is specified in the form of a valid JSON, then the matched event is overridden with this constant.</li>
- * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/Target" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Target implements Serializable, Cloneable {
+public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique target assignment ID.
+     * The ID of the target.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) associated of the target.
+     * The Amazon Resource Name (ARN) of the target.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * Valid JSON text passed to the target. For more information about JSON text, see <a
-     * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange
-     * Format</a>.
+     * The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is triggered. If one rule
+     * triggers multiple targets, you can use a different IAM role for each target.
+     * </p>
+     */
+    private String roleArn;
+    /**
+     * <p>
+     * Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For
+     * more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON)
+     * Data Interchange Format</a>.
      * </p>
      */
     private String input;
@@ -65,14 +64,43 @@ public class Target implements Serializable, Cloneable {
      * </p>
      */
     private String inputPath;
+    /**
+     * <p>
+     * Settings to enable you to provide custom input to a target based on certain event data. You can extract one or
+     * more key-value pairs from the event and then use that data to send customized input to the target.
+     * </p>
+     */
+    private InputTransformer inputTransformer;
+    /**
+     * <p>
+     * The custom parameter you can use to control shard assignment, when the target is an Amazon Kinesis stream. If you
+     * do not include this parameter, the default is to use the <code>eventId</code> as the partition key.
+     * </p>
+     */
+    private KinesisParameters kinesisParameters;
+    /**
+     * <p>
+     * Parameters used when you are using the rule to invoke Amazon EC2 Run Command.
+     * </p>
+     */
+    private RunCommandParameters runCommandParameters;
+    /**
+     * <p>
+     * Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For
+     * more information about Amazon ECS tasks, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions </a> in
+     * the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * </p>
+     */
+    private EcsParameters ecsParameters;
 
     /**
      * <p>
-     * The unique target assignment ID.
+     * The ID of the target.
      * </p>
      * 
      * @param id
-     *        The unique target assignment ID.
+     *        The ID of the target.
      */
 
     public void setId(String id) {
@@ -81,10 +109,10 @@ public class Target implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The unique target assignment ID.
+     * The ID of the target.
      * </p>
      * 
-     * @return The unique target assignment ID.
+     * @return The ID of the target.
      */
 
     public String getId() {
@@ -93,11 +121,11 @@ public class Target implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The unique target assignment ID.
+     * The ID of the target.
      * </p>
      * 
      * @param id
-     *        The unique target assignment ID.
+     *        The ID of the target.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,11 +136,11 @@ public class Target implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) associated of the target.
+     * The Amazon Resource Name (ARN) of the target.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) associated of the target.
+     *        The Amazon Resource Name (ARN) of the target.
      */
 
     public void setArn(String arn) {
@@ -121,10 +149,10 @@ public class Target implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) associated of the target.
+     * The Amazon Resource Name (ARN) of the target.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) associated of the target.
+     * @return The Amazon Resource Name (ARN) of the target.
      */
 
     public String getArn() {
@@ -133,11 +161,11 @@ public class Target implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) associated of the target.
+     * The Amazon Resource Name (ARN) of the target.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) associated of the target.
+     *        The Amazon Resource Name (ARN) of the target.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,15 +176,61 @@ public class Target implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Valid JSON text passed to the target. For more information about JSON text, see <a
-     * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange
-     * Format</a>.
+     * The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is triggered. If one rule
+     * triggers multiple targets, you can use a different IAM role for each target.
+     * </p>
+     * 
+     * @param roleArn
+     *        The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is triggered. If
+     *        one rule triggers multiple targets, you can use a different IAM role for each target.
+     */
+
+    public void setRoleArn(String roleArn) {
+        this.roleArn = roleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is triggered. If one rule
+     * triggers multiple targets, you can use a different IAM role for each target.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is triggered. If
+     *         one rule triggers multiple targets, you can use a different IAM role for each target.
+     */
+
+    public String getRoleArn() {
+        return this.roleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is triggered. If one rule
+     * triggers multiple targets, you can use a different IAM role for each target.
+     * </p>
+     * 
+     * @param roleArn
+     *        The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is triggered. If
+     *        one rule triggers multiple targets, you can use a different IAM role for each target.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Target withRoleArn(String roleArn) {
+        setRoleArn(roleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For
+     * more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON)
+     * Data Interchange Format</a>.
      * </p>
      * 
      * @param input
-     *        Valid JSON text passed to the target. For more information about JSON text, see <a
-     *        href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange
-     *        Format</a>.
+     *        Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target.
+     *        For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object
+     *        Notation (JSON) Data Interchange Format</a>.
      */
 
     public void setInput(String input) {
@@ -165,14 +239,14 @@ public class Target implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Valid JSON text passed to the target. For more information about JSON text, see <a
-     * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange
-     * Format</a>.
+     * Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For
+     * more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON)
+     * Data Interchange Format</a>.
      * </p>
      * 
-     * @return Valid JSON text passed to the target. For more information about JSON text, see <a
-     *         href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange
-     *         Format</a>.
+     * @return Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the
+     *         target. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript
+     *         Object Notation (JSON) Data Interchange Format</a>.
      */
 
     public String getInput() {
@@ -181,15 +255,15 @@ public class Target implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Valid JSON text passed to the target. For more information about JSON text, see <a
-     * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange
-     * Format</a>.
+     * Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For
+     * more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON)
+     * Data Interchange Format</a>.
      * </p>
      * 
      * @param input
-     *        Valid JSON text passed to the target. For more information about JSON text, see <a
-     *        href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange
-     *        Format</a>.
+     *        Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target.
+     *        For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object
+     *        Notation (JSON) Data Interchange Format</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -248,6 +322,197 @@ public class Target implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Settings to enable you to provide custom input to a target based on certain event data. You can extract one or
+     * more key-value pairs from the event and then use that data to send customized input to the target.
+     * </p>
+     * 
+     * @param inputTransformer
+     *        Settings to enable you to provide custom input to a target based on certain event data. You can extract
+     *        one or more key-value pairs from the event and then use that data to send customized input to the target.
+     */
+
+    public void setInputTransformer(InputTransformer inputTransformer) {
+        this.inputTransformer = inputTransformer;
+    }
+
+    /**
+     * <p>
+     * Settings to enable you to provide custom input to a target based on certain event data. You can extract one or
+     * more key-value pairs from the event and then use that data to send customized input to the target.
+     * </p>
+     * 
+     * @return Settings to enable you to provide custom input to a target based on certain event data. You can extract
+     *         one or more key-value pairs from the event and then use that data to send customized input to the target.
+     */
+
+    public InputTransformer getInputTransformer() {
+        return this.inputTransformer;
+    }
+
+    /**
+     * <p>
+     * Settings to enable you to provide custom input to a target based on certain event data. You can extract one or
+     * more key-value pairs from the event and then use that data to send customized input to the target.
+     * </p>
+     * 
+     * @param inputTransformer
+     *        Settings to enable you to provide custom input to a target based on certain event data. You can extract
+     *        one or more key-value pairs from the event and then use that data to send customized input to the target.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Target withInputTransformer(InputTransformer inputTransformer) {
+        setInputTransformer(inputTransformer);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The custom parameter you can use to control shard assignment, when the target is an Amazon Kinesis stream. If you
+     * do not include this parameter, the default is to use the <code>eventId</code> as the partition key.
+     * </p>
+     * 
+     * @param kinesisParameters
+     *        The custom parameter you can use to control shard assignment, when the target is an Amazon Kinesis stream.
+     *        If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.
+     */
+
+    public void setKinesisParameters(KinesisParameters kinesisParameters) {
+        this.kinesisParameters = kinesisParameters;
+    }
+
+    /**
+     * <p>
+     * The custom parameter you can use to control shard assignment, when the target is an Amazon Kinesis stream. If you
+     * do not include this parameter, the default is to use the <code>eventId</code> as the partition key.
+     * </p>
+     * 
+     * @return The custom parameter you can use to control shard assignment, when the target is an Amazon Kinesis
+     *         stream. If you do not include this parameter, the default is to use the <code>eventId</code> as the
+     *         partition key.
+     */
+
+    public KinesisParameters getKinesisParameters() {
+        return this.kinesisParameters;
+    }
+
+    /**
+     * <p>
+     * The custom parameter you can use to control shard assignment, when the target is an Amazon Kinesis stream. If you
+     * do not include this parameter, the default is to use the <code>eventId</code> as the partition key.
+     * </p>
+     * 
+     * @param kinesisParameters
+     *        The custom parameter you can use to control shard assignment, when the target is an Amazon Kinesis stream.
+     *        If you do not include this parameter, the default is to use the <code>eventId</code> as the partition key.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Target withKinesisParameters(KinesisParameters kinesisParameters) {
+        setKinesisParameters(kinesisParameters);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Parameters used when you are using the rule to invoke Amazon EC2 Run Command.
+     * </p>
+     * 
+     * @param runCommandParameters
+     *        Parameters used when you are using the rule to invoke Amazon EC2 Run Command.
+     */
+
+    public void setRunCommandParameters(RunCommandParameters runCommandParameters) {
+        this.runCommandParameters = runCommandParameters;
+    }
+
+    /**
+     * <p>
+     * Parameters used when you are using the rule to invoke Amazon EC2 Run Command.
+     * </p>
+     * 
+     * @return Parameters used when you are using the rule to invoke Amazon EC2 Run Command.
+     */
+
+    public RunCommandParameters getRunCommandParameters() {
+        return this.runCommandParameters;
+    }
+
+    /**
+     * <p>
+     * Parameters used when you are using the rule to invoke Amazon EC2 Run Command.
+     * </p>
+     * 
+     * @param runCommandParameters
+     *        Parameters used when you are using the rule to invoke Amazon EC2 Run Command.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Target withRunCommandParameters(RunCommandParameters runCommandParameters) {
+        setRunCommandParameters(runCommandParameters);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For
+     * more information about Amazon ECS tasks, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions </a> in
+     * the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param ecsParameters
+     *        Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS
+     *        task. For more information about Amazon ECS tasks, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions
+     *        </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     */
+
+    public void setEcsParameters(EcsParameters ecsParameters) {
+        this.ecsParameters = ecsParameters;
+    }
+
+    /**
+     * <p>
+     * Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For
+     * more information about Amazon ECS tasks, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions </a> in
+     * the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS
+     *         task. For more information about Amazon ECS tasks, see <a
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions
+     *         </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     */
+
+    public EcsParameters getEcsParameters() {
+        return this.ecsParameters;
+    }
+
+    /**
+     * <p>
+     * Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For
+     * more information about Amazon ECS tasks, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions </a> in
+     * the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param ecsParameters
+     *        Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS
+     *        task. For more information about Amazon ECS tasks, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task Definitions
+     *        </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Target withEcsParameters(EcsParameters ecsParameters) {
+        setEcsParameters(ecsParameters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -262,10 +527,20 @@ public class Target implements Serializable, Cloneable {
             sb.append("Id: ").append(getId()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getRoleArn() != null)
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getInput() != null)
             sb.append("Input: ").append(getInput()).append(",");
         if (getInputPath() != null)
-            sb.append("InputPath: ").append(getInputPath());
+            sb.append("InputPath: ").append(getInputPath()).append(",");
+        if (getInputTransformer() != null)
+            sb.append("InputTransformer: ").append(getInputTransformer()).append(",");
+        if (getKinesisParameters() != null)
+            sb.append("KinesisParameters: ").append(getKinesisParameters()).append(",");
+        if (getRunCommandParameters() != null)
+            sb.append("RunCommandParameters: ").append(getRunCommandParameters()).append(",");
+        if (getEcsParameters() != null)
+            sb.append("EcsParameters: ").append(getEcsParameters());
         sb.append("}");
         return sb.toString();
     }
@@ -288,6 +563,10 @@ public class Target implements Serializable, Cloneable {
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
+        if (other.getRoleArn() == null ^ this.getRoleArn() == null)
+            return false;
+        if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
+            return false;
         if (other.getInput() == null ^ this.getInput() == null)
             return false;
         if (other.getInput() != null && other.getInput().equals(this.getInput()) == false)
@@ -295,6 +574,22 @@ public class Target implements Serializable, Cloneable {
         if (other.getInputPath() == null ^ this.getInputPath() == null)
             return false;
         if (other.getInputPath() != null && other.getInputPath().equals(this.getInputPath()) == false)
+            return false;
+        if (other.getInputTransformer() == null ^ this.getInputTransformer() == null)
+            return false;
+        if (other.getInputTransformer() != null && other.getInputTransformer().equals(this.getInputTransformer()) == false)
+            return false;
+        if (other.getKinesisParameters() == null ^ this.getKinesisParameters() == null)
+            return false;
+        if (other.getKinesisParameters() != null && other.getKinesisParameters().equals(this.getKinesisParameters()) == false)
+            return false;
+        if (other.getRunCommandParameters() == null ^ this.getRunCommandParameters() == null)
+            return false;
+        if (other.getRunCommandParameters() != null && other.getRunCommandParameters().equals(this.getRunCommandParameters()) == false)
+            return false;
+        if (other.getEcsParameters() == null ^ this.getEcsParameters() == null)
+            return false;
+        if (other.getEcsParameters() != null && other.getEcsParameters().equals(this.getEcsParameters()) == false)
             return false;
         return true;
     }
@@ -306,8 +601,13 @@ public class Target implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getInput() == null) ? 0 : getInput().hashCode());
         hashCode = prime * hashCode + ((getInputPath() == null) ? 0 : getInputPath().hashCode());
+        hashCode = prime * hashCode + ((getInputTransformer() == null) ? 0 : getInputTransformer().hashCode());
+        hashCode = prime * hashCode + ((getKinesisParameters() == null) ? 0 : getKinesisParameters().hashCode());
+        hashCode = prime * hashCode + ((getRunCommandParameters() == null) ? 0 : getRunCommandParameters().hashCode());
+        hashCode = prime * hashCode + ((getEcsParameters() == null) ? 0 : getEcsParameters().hashCode());
         return hashCode;
     }
 
@@ -318,5 +618,11 @@ public class Target implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.cloudwatchevents.model.transform.TargetMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

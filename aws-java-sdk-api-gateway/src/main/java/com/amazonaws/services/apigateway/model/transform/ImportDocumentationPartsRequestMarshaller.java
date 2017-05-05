@@ -15,59 +15,50 @@ package com.amazonaws.services.apigateway.model.transform;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ImportDocumentationPartsRequest Marshaller
+ * ImportDocumentationPartsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ImportDocumentationPartsRequestMarshaller implements Marshaller<Request<ImportDocumentationPartsRequest>, ImportDocumentationPartsRequest> {
+@SdkInternalApi
+public class ImportDocumentationPartsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> RESTAPIID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("restapi_id").build();
+    private static final MarshallingInfo<String> MODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("mode").build();
+    private static final MarshallingInfo<Boolean> FAILONWARNINGS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("failonwarnings").build();
+    private static final MarshallingInfo<java.nio.ByteBuffer> BODY_BINDING = MarshallingInfo.builder(MarshallingType.BYTE_BUFFER)
+            .marshallLocation(MarshallLocation.PAYLOAD).isExplicitPayloadMember(true).isBinary(true).build();
 
-    public ImportDocumentationPartsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ImportDocumentationPartsRequestMarshaller instance = new ImportDocumentationPartsRequestMarshaller();
+
+    public static ImportDocumentationPartsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ImportDocumentationPartsRequest> marshall(ImportDocumentationPartsRequest importDocumentationPartsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ImportDocumentationPartsRequest importDocumentationPartsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (importDocumentationPartsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ImportDocumentationPartsRequest> request = new DefaultRequest<ImportDocumentationPartsRequest>(importDocumentationPartsRequest,
-                "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.PUT);
-
-        String uriResourcePath = "/restapis/{restapi_id}/documentation/parts";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id",
-                importDocumentationPartsRequest.getRestApiId());
-        request.setResourcePath(uriResourcePath);
-
-        if (importDocumentationPartsRequest.getMode() != null) {
-            request.addParameter("mode", StringUtils.fromString(importDocumentationPartsRequest.getMode()));
+        try {
+            protocolMarshaller.marshall(importDocumentationPartsRequest.getRestApiId(), RESTAPIID_BINDING);
+            protocolMarshaller.marshall(importDocumentationPartsRequest.getMode(), MODE_BINDING);
+            protocolMarshaller.marshall(importDocumentationPartsRequest.getFailOnWarnings(), FAILONWARNINGS_BINDING);
+            protocolMarshaller.marshall(importDocumentationPartsRequest.getBody(), BODY_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (importDocumentationPartsRequest.getFailOnWarnings() != null) {
-            request.addParameter("failonwarnings", StringUtils.fromBoolean(importDocumentationPartsRequest.getFailOnWarnings()));
-        }
-
-        request.setContent(BinaryUtils.toStream(importDocumentationPartsRequest.getBody()));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

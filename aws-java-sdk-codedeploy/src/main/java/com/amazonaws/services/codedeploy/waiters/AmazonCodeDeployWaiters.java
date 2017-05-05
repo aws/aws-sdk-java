@@ -58,4 +58,7 @@ public class AmazonCodeDeployWaiters {
                 .withExecutorService(executorService).build();
     }
 
+    public void shutdown() {
+        executorService.shutdown();
+    }
 }

@@ -15,47 +15,44 @@ package com.amazonaws.services.lambda.model.transform;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.lambda.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * InvokeAsyncRequest Marshaller
+ * InvokeAsyncRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvokeAsyncRequestMarshaller implements Marshaller<Request<InvokeAsyncRequest>, InvokeAsyncRequest> {
+@SdkInternalApi
+public class InvokeAsyncRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> FUNCTIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("FunctionName").build();
+    private static final MarshallingInfo<java.io.InputStream> INVOKEARGS_BINDING = MarshallingInfo.builder(MarshallingType.STREAM)
+            .marshallLocation(MarshallLocation.PAYLOAD).isExplicitPayloadMember(true).isBinary(true).build();
 
-    public InvokeAsyncRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final InvokeAsyncRequestMarshaller instance = new InvokeAsyncRequestMarshaller();
+
+    public static InvokeAsyncRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<InvokeAsyncRequest> marshall(InvokeAsyncRequest invokeAsyncRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(InvokeAsyncRequest invokeAsyncRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (invokeAsyncRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<InvokeAsyncRequest> request = new DefaultRequest<InvokeAsyncRequest>(invokeAsyncRequest, "AWSLambda");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/2014-11-13/functions/{FunctionName}/invoke-async/";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "FunctionName", invokeAsyncRequest.getFunctionName());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(invokeAsyncRequest.getInvokeArgs());
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(invokeAsyncRequest.getFunctionName(), FUNCTIONNAME_BINDING);
+            protocolMarshaller.marshall(invokeAsyncRequest.getInvokeArgs(), INVOKEARGS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

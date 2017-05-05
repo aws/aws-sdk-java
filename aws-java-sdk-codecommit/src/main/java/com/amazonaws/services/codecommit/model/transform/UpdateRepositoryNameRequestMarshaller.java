@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.codecommit.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.codecommit.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateRepositoryNameRequest Marshaller
+ * UpdateRepositoryNameRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateRepositoryNameRequestMarshaller implements Marshaller<Request<UpdateRepositoryNameRequest>, UpdateRepositoryNameRequest> {
+@SdkInternalApi
+public class UpdateRepositoryNameRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> OLDNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("oldName").build();
+    private static final MarshallingInfo<String> NEWNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("newName").build();
 
-    public UpdateRepositoryNameRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateRepositoryNameRequestMarshaller instance = new UpdateRepositoryNameRequestMarshaller();
+
+    public static UpdateRepositoryNameRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateRepositoryNameRequest> marshall(UpdateRepositoryNameRequest updateRepositoryNameRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateRepositoryNameRequest updateRepositoryNameRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateRepositoryNameRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateRepositoryNameRequest> request = new DefaultRequest<UpdateRepositoryNameRequest>(updateRepositoryNameRequest, "AWSCodeCommit");
-        request.addHeader("X-Amz-Target", "CodeCommit_20150413.UpdateRepositoryName");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (updateRepositoryNameRequest.getOldName() != null) {
-                jsonGenerator.writeFieldName("oldName").writeValue(updateRepositoryNameRequest.getOldName());
-            }
-            if (updateRepositoryNameRequest.getNewName() != null) {
-                jsonGenerator.writeFieldName("newName").writeValue(updateRepositoryNameRequest.getNewName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateRepositoryNameRequest.getOldName(), OLDNAME_BINDING);
+            protocolMarshaller.marshall(updateRepositoryNameRequest.getNewName(), NEWNAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

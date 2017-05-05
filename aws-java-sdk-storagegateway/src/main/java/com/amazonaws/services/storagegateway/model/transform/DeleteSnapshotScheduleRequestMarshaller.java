@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.storagegateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.storagegateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteSnapshotScheduleRequest Marshaller
+ * DeleteSnapshotScheduleRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteSnapshotScheduleRequestMarshaller implements Marshaller<Request<DeleteSnapshotScheduleRequest>, DeleteSnapshotScheduleRequest> {
+@SdkInternalApi
+public class DeleteSnapshotScheduleRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> VOLUMEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("VolumeARN").build();
 
-    public DeleteSnapshotScheduleRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteSnapshotScheduleRequestMarshaller instance = new DeleteSnapshotScheduleRequestMarshaller();
+
+    public static DeleteSnapshotScheduleRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteSnapshotScheduleRequest> marshall(DeleteSnapshotScheduleRequest deleteSnapshotScheduleRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteSnapshotScheduleRequest deleteSnapshotScheduleRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteSnapshotScheduleRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteSnapshotScheduleRequest> request = new DefaultRequest<DeleteSnapshotScheduleRequest>(deleteSnapshotScheduleRequest, "AWSStorageGateway");
-        request.addHeader("X-Amz-Target", "StorageGateway_20130630.DeleteSnapshotSchedule");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteSnapshotScheduleRequest.getVolumeARN() != null) {
-                jsonGenerator.writeFieldName("VolumeARN").writeValue(deleteSnapshotScheduleRequest.getVolumeARN());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteSnapshotScheduleRequest.getVolumeARN(), VOLUMEARN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

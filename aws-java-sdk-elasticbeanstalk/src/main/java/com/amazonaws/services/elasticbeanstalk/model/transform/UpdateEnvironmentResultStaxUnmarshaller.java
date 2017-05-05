@@ -70,6 +70,11 @@ public class UpdateEnvironmentResultStaxUnmarshaller implements Unmarshaller<Upd
                     continue;
                 }
 
+                if (context.testExpression("PlatformArn", targetDepth)) {
+                    updateEnvironmentResult.setPlatformArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("TemplateName", targetDepth)) {
                     updateEnvironmentResult.setTemplateName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

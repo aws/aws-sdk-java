@@ -14,18 +14,20 @@ package com.amazonaws.services.storagegateway.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * The Unix file permissions and ownership information assigned, by default, to native S3 objects when Storage Gateway
- * discovers them in S3 buckets.
+ * discovers them in S3 buckets. This operation is only supported in file gateways.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/NFSFileShareInfo" target="_top">AWS
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NFSFileShareInfo implements Serializable, Cloneable {
+public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo {
 
     private NFSFileShareDefaults nFSFileShareDefaults;
 
@@ -58,6 +60,12 @@ public class NFSFileShareInfo implements Serializable, Cloneable {
      * </p>
      */
     private String defaultStorageClass;
+
+    private com.amazonaws.internal.SdkInternalList<String> clientList;
+
+    private String squash;
+
+    private Boolean readOnly;
 
     /**
      * @param nFSFileShareDefaults
@@ -403,6 +411,121 @@ public class NFSFileShareInfo implements Serializable, Cloneable {
     }
 
     /**
+     * @return
+     */
+
+    public java.util.List<String> getClientList() {
+        if (clientList == null) {
+            clientList = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return clientList;
+    }
+
+    /**
+     * @param clientList
+     */
+
+    public void setClientList(java.util.Collection<String> clientList) {
+        if (clientList == null) {
+            this.clientList = null;
+            return;
+        }
+
+        this.clientList = new com.amazonaws.internal.SdkInternalList<String>(clientList);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setClientList(java.util.Collection)} or {@link #withClientList(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param clientList
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NFSFileShareInfo withClientList(String... clientList) {
+        if (this.clientList == null) {
+            setClientList(new com.amazonaws.internal.SdkInternalList<String>(clientList.length));
+        }
+        for (String ele : clientList) {
+            this.clientList.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param clientList
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NFSFileShareInfo withClientList(java.util.Collection<String> clientList) {
+        setClientList(clientList);
+        return this;
+    }
+
+    /**
+     * @param squash
+     */
+
+    public void setSquash(String squash) {
+        this.squash = squash;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getSquash() {
+        return this.squash;
+    }
+
+    /**
+     * @param squash
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NFSFileShareInfo withSquash(String squash) {
+        setSquash(squash);
+        return this;
+    }
+
+    /**
+     * @param readOnly
+     */
+
+    public void setReadOnly(Boolean readOnly) {
+        this.readOnly = readOnly;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean getReadOnly() {
+        return this.readOnly;
+    }
+
+    /**
+     * @param readOnly
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NFSFileShareInfo withReadOnly(Boolean readOnly) {
+        setReadOnly(readOnly);
+        return this;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean isReadOnly() {
+        return this.readOnly;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -434,7 +557,13 @@ public class NFSFileShareInfo implements Serializable, Cloneable {
         if (getLocationARN() != null)
             sb.append("LocationARN: ").append(getLocationARN()).append(",");
         if (getDefaultStorageClass() != null)
-            sb.append("DefaultStorageClass: ").append(getDefaultStorageClass());
+            sb.append("DefaultStorageClass: ").append(getDefaultStorageClass()).append(",");
+        if (getClientList() != null)
+            sb.append("ClientList: ").append(getClientList()).append(",");
+        if (getSquash() != null)
+            sb.append("Squash: ").append(getSquash()).append(",");
+        if (getReadOnly() != null)
+            sb.append("ReadOnly: ").append(getReadOnly());
         sb.append("}");
         return sb.toString();
     }
@@ -493,6 +622,18 @@ public class NFSFileShareInfo implements Serializable, Cloneable {
             return false;
         if (other.getDefaultStorageClass() != null && other.getDefaultStorageClass().equals(this.getDefaultStorageClass()) == false)
             return false;
+        if (other.getClientList() == null ^ this.getClientList() == null)
+            return false;
+        if (other.getClientList() != null && other.getClientList().equals(this.getClientList()) == false)
+            return false;
+        if (other.getSquash() == null ^ this.getSquash() == null)
+            return false;
+        if (other.getSquash() != null && other.getSquash().equals(this.getSquash()) == false)
+            return false;
+        if (other.getReadOnly() == null ^ this.getReadOnly() == null)
+            return false;
+        if (other.getReadOnly() != null && other.getReadOnly().equals(this.getReadOnly()) == false)
+            return false;
         return true;
     }
 
@@ -512,6 +653,9 @@ public class NFSFileShareInfo implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getRole() == null) ? 0 : getRole().hashCode());
         hashCode = prime * hashCode + ((getLocationARN() == null) ? 0 : getLocationARN().hashCode());
         hashCode = prime * hashCode + ((getDefaultStorageClass() == null) ? 0 : getDefaultStorageClass().hashCode());
+        hashCode = prime * hashCode + ((getClientList() == null) ? 0 : getClientList().hashCode());
+        hashCode = prime * hashCode + ((getSquash() == null) ? 0 : getSquash().hashCode());
+        hashCode = prime * hashCode + ((getReadOnly() == null) ? 0 : getReadOnly().hashCode());
         return hashCode;
     }
 
@@ -522,5 +666,11 @@ public class NFSFileShareInfo implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.storagegateway.model.transform.NFSFileShareInfoMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

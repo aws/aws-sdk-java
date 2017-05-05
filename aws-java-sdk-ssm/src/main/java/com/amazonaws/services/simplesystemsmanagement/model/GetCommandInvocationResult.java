@@ -44,7 +44,7 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
     private String comment;
     /**
      * <p>
-     * The name of the SSM document that was executed. For example, AWS-RunShellScript is an SSM document.
+     * The name of the document that was executed. For example, AWS-RunShellScript.
      * </p>
      */
     private String documentName;
@@ -94,9 +94,8 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      * information than <code>Status</code> because it includes states resulting from error and concurrency control
      * parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For more information
      * about these statuses, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor Commands</a> (Linux) or
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor Commands</a>
-     * (Windows). <code>StatusDetails</code> can be one of the following values:
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run Command
+     * Status</a>. <code>StatusDetails</code> can be one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -323,11 +322,11 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the SSM document that was executed. For example, AWS-RunShellScript is an SSM document.
+     * The name of the document that was executed. For example, AWS-RunShellScript.
      * </p>
      * 
      * @param documentName
-     *        The name of the SSM document that was executed. For example, AWS-RunShellScript is an SSM document.
+     *        The name of the document that was executed. For example, AWS-RunShellScript.
      */
 
     public void setDocumentName(String documentName) {
@@ -336,10 +335,10 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the SSM document that was executed. For example, AWS-RunShellScript is an SSM document.
+     * The name of the document that was executed. For example, AWS-RunShellScript.
      * </p>
      * 
-     * @return The name of the SSM document that was executed. For example, AWS-RunShellScript is an SSM document.
+     * @return The name of the document that was executed. For example, AWS-RunShellScript.
      */
 
     public String getDocumentName() {
@@ -348,11 +347,11 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the SSM document that was executed. For example, AWS-RunShellScript is an SSM document.
+     * The name of the document that was executed. For example, AWS-RunShellScript.
      * </p>
      * 
      * @param documentName
-     *        The name of the SSM document that was executed. For example, AWS-RunShellScript is an SSM document.
+     *        The name of the document that was executed. For example, AWS-RunShellScript.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -674,9 +673,8 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      * information than <code>Status</code> because it includes states resulting from error and concurrency control
      * parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For more information
      * about these statuses, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor Commands</a> (Linux) or
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor Commands</a>
-     * (Windows). <code>StatusDetails</code> can be one of the following values:
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run Command
+     * Status</a>. <code>StatusDetails</code> can be one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -749,9 +747,8 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      *        information than <code>Status</code> because it includes states resulting from error and concurrency
      *        control parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For
      *        more information about these statuses, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor Commands</a>
-     *        (Linux) or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-     *        Commands</a> (Windows). <code>StatusDetails</code> can be one of the following values: </p>
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run Command
+     *        Status</a>. <code>StatusDetails</code> can be one of the following values:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -829,9 +826,8 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      * information than <code>Status</code> because it includes states resulting from error and concurrency control
      * parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For more information
      * about these statuses, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor Commands</a> (Linux) or
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor Commands</a>
-     * (Windows). <code>StatusDetails</code> can be one of the following values:
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run Command
+     * Status</a>. <code>StatusDetails</code> can be one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -903,9 +899,8 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      *         information than <code>Status</code> because it includes states resulting from error and concurrency
      *         control parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For
      *         more information about these statuses, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor Commands</a>
-     *         (Linux) or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-     *         Commands</a> (Windows). <code>StatusDetails</code> can be one of the following values: </p>
+     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run Command
+     *         Status</a>. <code>StatusDetails</code> can be one of the following values:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -983,9 +978,8 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      * information than <code>Status</code> because it includes states resulting from error and concurrency control
      * parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For more information
      * about these statuses, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor Commands</a> (Linux) or
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor Commands</a>
-     * (Windows). <code>StatusDetails</code> can be one of the following values:
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run Command
+     * Status</a>. <code>StatusDetails</code> can be one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -1058,9 +1052,8 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
      *        information than <code>Status</code> because it includes states resulting from error and concurrency
      *        control parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For
      *        more information about these statuses, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor Commands</a>
-     *        (Linux) or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-     *        Commands</a> (Windows). <code>StatusDetails</code> can be one of the following values: </p>
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run Command
+     *        Status</a>. <code>StatusDetails</code> can be one of the following values:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1473,4 +1466,5 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

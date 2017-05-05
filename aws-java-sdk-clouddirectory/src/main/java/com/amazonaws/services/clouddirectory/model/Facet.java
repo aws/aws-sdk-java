@@ -14,17 +14,20 @@ package com.amazonaws.services.clouddirectory.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A structure that contains Name, ARN, Attributes, <a>Rule</a>s, and ObjectTypes.
+ * A structure that contains <code>Name</code>, <code>ARN</code>, <code>Attributes</code>, <a>Rule</a>s, and
+ * <code>ObjectTypes</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/Facet" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Facet implements Serializable, Cloneable {
+public class Facet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -209,5 +212,11 @@ public class Facet implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.clouddirectory.model.transform.FacetMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

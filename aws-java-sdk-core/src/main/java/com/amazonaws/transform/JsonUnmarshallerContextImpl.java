@@ -30,7 +30,6 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonToken;
 
 public class JsonUnmarshallerContextImpl extends JsonUnmarshallerContext {
-
     /** The current JsonToken that the private JsonParser is currently pointing to. **/
     private JsonToken currentToken;
 
@@ -87,9 +86,15 @@ public class JsonUnmarshallerContextImpl extends JsonUnmarshallerContext {
 
     private final Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> unmarshallerMap;
 
-    public JsonUnmarshallerContextImpl(JsonParser jsonParser, Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> mapper, HttpResponse httpResponse) {
+    private final Map<UnmarshallerType, Unmarshaller<?, JsonUnmarshallerContext>> customUnmarshallerMap;
+
+    public JsonUnmarshallerContextImpl(JsonParser jsonParser,
+                                       Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> mapper,
+                                       Map<UnmarshallerType, Unmarshaller<?, JsonUnmarshallerContext>> customUnmarshallerMap,
+                                       HttpResponse httpResponse) {
         this.jsonParser = jsonParser;
         this.unmarshallerMap = mapper;
+        this.customUnmarshallerMap = customUnmarshallerMap;
         this.httpResponse = httpResponse;
     }
 
@@ -225,10 +230,13 @@ public class JsonUnmarshallerContextImpl extends JsonUnmarshallerContext {
     }
 
     @Override
-    public <T> Unmarshaller<T, JsonUnmarshallerContext> getUnmarshaller
-            (Class<T> type) {
-        return (Unmarshaller<T, JsonUnmarshallerContext>) unmarshallerMap.get
-                (type);
+    public <T> Unmarshaller<T, JsonUnmarshallerContext> getUnmarshaller(Class<T> type) {
+        return (Unmarshaller<T, JsonUnmarshallerContext>) unmarshallerMap.get(type);
+    }
+
+    @Override
+    public <T> Unmarshaller<T, JsonUnmarshallerContext> getUnmarshaller(Class<T> type, UnmarshallerType unmarshallerType) {
+        return (Unmarshaller<T, JsonUnmarshallerContext>) customUnmarshallerMap.get(unmarshallerType);
     }
 
     @Override

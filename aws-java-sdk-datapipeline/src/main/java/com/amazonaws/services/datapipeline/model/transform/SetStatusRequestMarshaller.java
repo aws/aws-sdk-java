@@ -12,79 +12,51 @@
  */
 package com.amazonaws.services.datapipeline.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.datapipeline.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * SetStatusRequest Marshaller
+ * SetStatusRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SetStatusRequestMarshaller implements Marshaller<Request<SetStatusRequest>, SetStatusRequest> {
+@SdkInternalApi
+public class SetStatusRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> PIPELINEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pipelineId").build();
+    private static final MarshallingInfo<List> OBJECTIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("objectIds").build();
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("status").build();
 
-    public SetStatusRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final SetStatusRequestMarshaller instance = new SetStatusRequestMarshaller();
+
+    public static SetStatusRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<SetStatusRequest> marshall(SetStatusRequest setStatusRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(SetStatusRequest setStatusRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (setStatusRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<SetStatusRequest> request = new DefaultRequest<SetStatusRequest>(setStatusRequest, "DataPipeline");
-        request.addHeader("X-Amz-Target", "DataPipeline.SetStatus");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (setStatusRequest.getPipelineId() != null) {
-                jsonGenerator.writeFieldName("pipelineId").writeValue(setStatusRequest.getPipelineId());
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> objectIdsList = (com.amazonaws.internal.SdkInternalList<String>) setStatusRequest.getObjectIds();
-            if (!objectIdsList.isEmpty() || !objectIdsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("objectIds");
-                jsonGenerator.writeStartArray();
-                for (String objectIdsListValue : objectIdsList) {
-                    if (objectIdsListValue != null) {
-                        jsonGenerator.writeValue(objectIdsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (setStatusRequest.getStatus() != null) {
-                jsonGenerator.writeFieldName("status").writeValue(setStatusRequest.getStatus());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(setStatusRequest.getPipelineId(), PIPELINEID_BINDING);
+            protocolMarshaller.marshall(setStatusRequest.getObjectIds(), OBJECTIDS_BINDING);
+            protocolMarshaller.marshall(setStatusRequest.getStatus(), STATUS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

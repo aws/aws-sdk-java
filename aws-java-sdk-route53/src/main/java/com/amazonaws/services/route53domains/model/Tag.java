@@ -14,6 +14,8 @@ package com.amazonaws.services.route53domains.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,26 +26,17 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Tag implements Serializable, Cloneable {
+public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
      * The key (name) of a tag.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
      * Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"
      * </p>
      * <p>
      * Constraints: Each key can be 1-128 characters long.
-     * </p>
-     * <p>
-     * Required: Yes
      * </p>
      */
     private String key;
@@ -52,19 +45,10 @@ public class Tag implements Serializable, Cloneable {
      * The value of a tag.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
      * Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"
      * </p>
      * <p>
      * Constraints: Each value can be 0-256 characters long.
-     * </p>
-     * <p>
-     * Required: Yes
      * </p>
      */
     private String value;
@@ -74,37 +58,19 @@ public class Tag implements Serializable, Cloneable {
      * The key (name) of a tag.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
      * Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"
      * </p>
      * <p>
      * Constraints: Each key can be 1-128 characters long.
      * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param key
      *        The key (name) of a tag.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
      *        <p>
      *        Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"
      *        </p>
      *        <p>
      *        Constraints: Each key can be 1-128 characters long.
-     *        </p>
-     *        <p>
-     *        Required: Yes
      */
 
     public void setKey(String key) {
@@ -116,36 +82,18 @@ public class Tag implements Serializable, Cloneable {
      * The key (name) of a tag.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
      * Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"
      * </p>
      * <p>
      * Constraints: Each key can be 1-128 characters long.
      * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @return The key (name) of a tag.</p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
      *         <p>
      *         Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"
      *         </p>
      *         <p>
      *         Constraints: Each key can be 1-128 characters long.
-     *         </p>
-     *         <p>
-     *         Required: Yes
      */
 
     public String getKey() {
@@ -157,37 +105,19 @@ public class Tag implements Serializable, Cloneable {
      * The key (name) of a tag.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
      * Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"
      * </p>
      * <p>
      * Constraints: Each key can be 1-128 characters long.
      * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param key
      *        The key (name) of a tag.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
      *        <p>
      *        Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"
      *        </p>
      *        <p>
      *        Constraints: Each key can be 1-128 characters long.
-     *        </p>
-     *        <p>
-     *        Required: Yes
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -201,37 +131,19 @@ public class Tag implements Serializable, Cloneable {
      * The value of a tag.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
      * Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"
      * </p>
      * <p>
      * Constraints: Each value can be 0-256 characters long.
      * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param value
      *        The value of a tag.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
      *        <p>
      *        Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"
      *        </p>
      *        <p>
      *        Constraints: Each value can be 0-256 characters long.
-     *        </p>
-     *        <p>
-     *        Required: Yes
      */
 
     public void setValue(String value) {
@@ -243,36 +155,18 @@ public class Tag implements Serializable, Cloneable {
      * The value of a tag.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
      * Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"
      * </p>
      * <p>
      * Constraints: Each value can be 0-256 characters long.
      * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @return The value of a tag.</p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
      *         <p>
      *         Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"
      *         </p>
      *         <p>
      *         Constraints: Each value can be 0-256 characters long.
-     *         </p>
-     *         <p>
-     *         Required: Yes
      */
 
     public String getValue() {
@@ -284,37 +178,19 @@ public class Tag implements Serializable, Cloneable {
      * The value of a tag.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
      * Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"
      * </p>
      * <p>
      * Constraints: Each value can be 0-256 characters long.
      * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param value
      *        The value of a tag.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
      *        <p>
      *        Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"
      *        </p>
      *        <p>
      *        Constraints: Each value can be 0-256 characters long.
-     *        </p>
-     *        <p>
-     *        Required: Yes
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -380,5 +256,11 @@ public class Tag implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.route53domains.model.transform.TagMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

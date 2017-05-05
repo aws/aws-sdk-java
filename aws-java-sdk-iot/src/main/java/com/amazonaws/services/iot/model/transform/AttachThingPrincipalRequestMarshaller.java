@@ -12,58 +12,47 @@
  */
 package com.amazonaws.services.iot.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.iot.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * AttachThingPrincipalRequest Marshaller
+ * AttachThingPrincipalRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AttachThingPrincipalRequestMarshaller implements Marshaller<Request<AttachThingPrincipalRequest>, AttachThingPrincipalRequest> {
+@SdkInternalApi
+public class AttachThingPrincipalRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> THINGNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("thingName").build();
+    private static final MarshallingInfo<String> PRINCIPAL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.HEADER)
+            .marshallLocationName("x-amzn-principal").build();
 
-    public AttachThingPrincipalRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final AttachThingPrincipalRequestMarshaller instance = new AttachThingPrincipalRequestMarshaller();
+
+    public static AttachThingPrincipalRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<AttachThingPrincipalRequest> marshall(AttachThingPrincipalRequest attachThingPrincipalRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(AttachThingPrincipalRequest attachThingPrincipalRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (attachThingPrincipalRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<AttachThingPrincipalRequest> request = new DefaultRequest<AttachThingPrincipalRequest>(attachThingPrincipalRequest, "AWSIot");
-
-        request.setHttpMethod(HttpMethodName.PUT);
-
-        if (attachThingPrincipalRequest.getPrincipal() != null) {
-            request.addHeader("x-amzn-principal", StringUtils.fromString(attachThingPrincipalRequest.getPrincipal()));
+        try {
+            protocolMarshaller.marshall(attachThingPrincipalRequest.getThingName(), THINGNAME_BINDING);
+            protocolMarshaller.marshall(attachThingPrincipalRequest.getPrincipal(), PRINCIPAL_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        String uriResourcePath = "/things/{thingName}/principals";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "thingName", attachThingPrincipalRequest.getThingName());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

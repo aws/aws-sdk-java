@@ -14,6 +14,8 @@ package com.amazonaws.services.servermigration.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * Object representing a server
@@ -21,7 +23,7 @@ import javax.annotation.Generated;
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/Server" target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Server implements Serializable, Cloneable {
+public class Server implements Serializable, Cloneable, StructuredPojo {
 
     private String serverId;
 
@@ -272,5 +274,11 @@ public class Server implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.servermigration.model.transform.ServerMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

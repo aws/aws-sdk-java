@@ -42,7 +42,6 @@ import com.amazonaws.services.stepfunctions.builder.states.WaitForSecondsPath;
 import com.amazonaws.services.stepfunctions.builder.states.WaitForTimestamp;
 import com.amazonaws.services.stepfunctions.builder.states.WaitForTimestampPath;
 import com.amazonaws.services.stepfunctions.builder.states.WaitState;
-
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -167,8 +166,11 @@ public class StateMachineValidator {
 
         private boolean validateChoiceState(ValidationContext stateContext, ChoiceState choiceState) {
             final Map<String, State> merged = mergeParentVisited();
-            boolean hasPathToTerminal = new GraphValidator(stateContext, merged, choiceState.getDefaultStateName(), states)
-                    .validate();
+            boolean hasPathToTerminal = false;
+            if (choiceState.getDefaultStateName() != null) {
+                hasPathToTerminal = new GraphValidator(stateContext, merged, choiceState.getDefaultStateName(), states)
+                        .validate();
+            }
             int index = 0;
             for (Choice choice : choiceState.getChoices()) {
                 final String nextStateName = ((NextStateTransition) choice.getTransition()).getNextStateName();

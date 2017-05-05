@@ -16,25 +16,55 @@
 package com.amazonaws.internal.auth;
 
 import com.amazonaws.AmazonWebServiceClient;
+import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.Request;
+import com.amazonaws.auth.SignerFactory;
+import com.amazonaws.auth.SignerTypeAware;
 import com.amazonaws.auth.Signer;
+import com.amazonaws.auth.SignerParams;
+import com.amazonaws.util.AwsHostNameUtils;
+
+import java.net.URI;
 
 public class DefaultSignerProvider extends SignerProvider {
 
     private final AmazonWebServiceClient awsClient;
-    private final Signer signer;
+    private final Signer defaultSigner;
 
     public DefaultSignerProvider(final AmazonWebServiceClient awsClient,
-                                 final Signer signer) {
+                                 final Signer defaultSigner) {
         this.awsClient = awsClient;
-        this.signer = signer;
+        this.defaultSigner = defaultSigner;
     }
 
     @Override
     public Signer getSigner(SignerProviderContext context) {
-        if (context.isRedirect()) {
-            return awsClient.getSignerByURI(context.getUri());
+    Request<?> request = context.getRequest();
+        if (request == null || shouldUseDefaultSigner(request.getOriginalRequest())) {
+            if (context.isRedirect()) {
+                return awsClient.getSignerByURI(context.getUri());
+            }
+            return defaultSigner;
         }
-        return signer;
+
+        SignerTypeAware signerTypeAware = (SignerTypeAware) request.getOriginalRequest();
+        SignerParams params = new SignerParams(awsClient.getServiceName(), getSigningRegionForRequestURI(request.getEndpoint()));
+        return SignerFactory.createSigner(signerTypeAware.getSignerType(), params);
     }
 
+    private boolean shouldUseDefaultSigner(AmazonWebServiceRequest originalRequest) {
+        return !(originalRequest instanceof SignerTypeAware) || isSignerOverridden();
+    }
+
+    private boolean isSignerOverridden() {
+        return awsClient.getSignerOverride() != null;
+    }
+
+    private String getSigningRegionForRequestURI(URI uri) {
+        String regionName = awsClient.getSignerRegionOverride();
+        if (regionName == null) {
+            regionName = AwsHostNameUtils.parseRegion(uri.getHost(), awsClient.getServiceName());
+        }
+        return regionName;
+    }
 }

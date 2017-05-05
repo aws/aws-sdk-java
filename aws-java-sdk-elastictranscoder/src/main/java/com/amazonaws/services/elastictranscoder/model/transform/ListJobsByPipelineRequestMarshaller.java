@@ -12,62 +12,50 @@
  */
 package com.amazonaws.services.elastictranscoder.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.elastictranscoder.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListJobsByPipelineRequest Marshaller
+ * ListJobsByPipelineRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListJobsByPipelineRequestMarshaller implements Marshaller<Request<ListJobsByPipelineRequest>, ListJobsByPipelineRequest> {
+@SdkInternalApi
+public class ListJobsByPipelineRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> PIPELINEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("PipelineId").build();
+    private static final MarshallingInfo<String> ASCENDING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("Ascending").build();
+    private static final MarshallingInfo<String> PAGETOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("PageToken").build();
 
-    public ListJobsByPipelineRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListJobsByPipelineRequestMarshaller instance = new ListJobsByPipelineRequestMarshaller();
+
+    public static ListJobsByPipelineRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListJobsByPipelineRequest> marshall(ListJobsByPipelineRequest listJobsByPipelineRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListJobsByPipelineRequest listJobsByPipelineRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listJobsByPipelineRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListJobsByPipelineRequest> request = new DefaultRequest<ListJobsByPipelineRequest>(listJobsByPipelineRequest, "AmazonElasticTranscoder");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/2012-09-25/jobsByPipeline/{PipelineId}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "PipelineId", listJobsByPipelineRequest.getPipelineId());
-        request.setResourcePath(uriResourcePath);
-
-        if (listJobsByPipelineRequest.getAscending() != null) {
-            request.addParameter("Ascending", StringUtils.fromString(listJobsByPipelineRequest.getAscending()));
+        try {
+            protocolMarshaller.marshall(listJobsByPipelineRequest.getPipelineId(), PIPELINEID_BINDING);
+            protocolMarshaller.marshall(listJobsByPipelineRequest.getAscending(), ASCENDING_BINDING);
+            protocolMarshaller.marshall(listJobsByPipelineRequest.getPageToken(), PAGETOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (listJobsByPipelineRequest.getPageToken() != null) {
-            request.addParameter("PageToken", StringUtils.fromString(listJobsByPipelineRequest.getPageToken()));
-        }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

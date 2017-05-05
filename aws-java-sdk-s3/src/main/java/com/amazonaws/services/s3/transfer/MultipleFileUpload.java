@@ -18,7 +18,7 @@ import java.util.Collection;
 
 
 /**
- * Multiple file download of an entire virtual directory.
+ * Multiple file upload of an entire virtual directory.
  */
 public interface  MultipleFileUpload extends Transfer {
 

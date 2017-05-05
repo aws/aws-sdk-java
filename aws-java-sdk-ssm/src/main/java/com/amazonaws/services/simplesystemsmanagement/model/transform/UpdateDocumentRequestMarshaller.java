@@ -12,70 +12,50 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simplesystemsmanagement.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateDocumentRequest Marshaller
+ * UpdateDocumentRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateDocumentRequestMarshaller implements Marshaller<Request<UpdateDocumentRequest>, UpdateDocumentRequest> {
+@SdkInternalApi
+public class UpdateDocumentRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CONTENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Content").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> DOCUMENTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentVersion").build();
 
-    public UpdateDocumentRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateDocumentRequestMarshaller instance = new UpdateDocumentRequestMarshaller();
+
+    public static UpdateDocumentRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateDocumentRequest> marshall(UpdateDocumentRequest updateDocumentRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateDocumentRequest updateDocumentRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateDocumentRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateDocumentRequest> request = new DefaultRequest<UpdateDocumentRequest>(updateDocumentRequest, "AWSSimpleSystemsManagement");
-        request.addHeader("X-Amz-Target", "AmazonSSM.UpdateDocument");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (updateDocumentRequest.getContent() != null) {
-                jsonGenerator.writeFieldName("Content").writeValue(updateDocumentRequest.getContent());
-            }
-            if (updateDocumentRequest.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(updateDocumentRequest.getName());
-            }
-            if (updateDocumentRequest.getDocumentVersion() != null) {
-                jsonGenerator.writeFieldName("DocumentVersion").writeValue(updateDocumentRequest.getDocumentVersion());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateDocumentRequest.getContent(), CONTENT_BINDING);
+            protocolMarshaller.marshall(updateDocumentRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(updateDocumentRequest.getDocumentVersion(), DOCUMENTVERSION_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

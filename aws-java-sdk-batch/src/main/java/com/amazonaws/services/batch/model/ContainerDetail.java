@@ -14,6 +14,8 @@ package com.amazonaws.services.batch.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ContainerDetail implements Serializable, Cloneable {
+public class ContainerDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -118,6 +120,12 @@ public class ContainerDetail implements Serializable, Cloneable {
      * </p>
      */
     private String containerInstanceArn;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the container job.
+     * </p>
+     */
+    private String taskArn;
 
     /**
      * <p>
@@ -908,6 +916,46 @@ public class ContainerDetail implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the container job.
+     * </p>
+     * 
+     * @param taskArn
+     *        The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the container job.
+     */
+
+    public void setTaskArn(String taskArn) {
+        this.taskArn = taskArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the container job.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the container job.
+     */
+
+    public String getTaskArn() {
+        return this.taskArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the container job.
+     * </p>
+     * 
+     * @param taskArn
+     *        The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with the container job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDetail withTaskArn(String taskArn) {
+        setTaskArn(taskArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -947,7 +995,9 @@ public class ContainerDetail implements Serializable, Cloneable {
         if (getReason() != null)
             sb.append("Reason: ").append(getReason()).append(",");
         if (getContainerInstanceArn() != null)
-            sb.append("ContainerInstanceArn: ").append(getContainerInstanceArn());
+            sb.append("ContainerInstanceArn: ").append(getContainerInstanceArn()).append(",");
+        if (getTaskArn() != null)
+            sb.append("TaskArn: ").append(getTaskArn());
         sb.append("}");
         return sb.toString();
     }
@@ -1022,6 +1072,10 @@ public class ContainerDetail implements Serializable, Cloneable {
             return false;
         if (other.getContainerInstanceArn() != null && other.getContainerInstanceArn().equals(this.getContainerInstanceArn()) == false)
             return false;
+        if (other.getTaskArn() == null ^ this.getTaskArn() == null)
+            return false;
+        if (other.getTaskArn() != null && other.getTaskArn().equals(this.getTaskArn()) == false)
+            return false;
         return true;
     }
 
@@ -1045,6 +1099,7 @@ public class ContainerDetail implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getExitCode() == null) ? 0 : getExitCode().hashCode());
         hashCode = prime * hashCode + ((getReason() == null) ? 0 : getReason().hashCode());
         hashCode = prime * hashCode + ((getContainerInstanceArn() == null) ? 0 : getContainerInstanceArn().hashCode());
+        hashCode = prime * hashCode + ((getTaskArn() == null) ? 0 : getTaskArn().hashCode());
         return hashCode;
     }
 
@@ -1055,5 +1110,11 @@ public class ContainerDetail implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.batch.model.transform.ContainerDetailMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

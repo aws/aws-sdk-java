@@ -30,7 +30,7 @@ public class ListFleetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Unique identifier of the build to return fleets for. Use this parameter to return only fleets using the specified
+     * Unique identifier for a build to return fleets for. Use this parameter to return only fleets using the specified
      * build. To retrieve all fleets, leave this parameter empty.
      * </p>
      */
@@ -44,20 +44,20 @@ public class ListFleetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private Integer limit;
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. Use the token that is returned with a previous
-     * call to this action. To specify the start of the result set, do not specify a value.
+     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * previous call to this action. To specify the start of the result set, do not specify a value.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Unique identifier of the build to return fleets for. Use this parameter to return only fleets using the specified
+     * Unique identifier for a build to return fleets for. Use this parameter to return only fleets using the specified
      * build. To retrieve all fleets, leave this parameter empty.
      * </p>
      * 
      * @param buildId
-     *        Unique identifier of the build to return fleets for. Use this parameter to return only fleets using the
+     *        Unique identifier for a build to return fleets for. Use this parameter to return only fleets using the
      *        specified build. To retrieve all fleets, leave this parameter empty.
      */
 
@@ -67,11 +67,11 @@ public class ListFleetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Unique identifier of the build to return fleets for. Use this parameter to return only fleets using the specified
+     * Unique identifier for a build to return fleets for. Use this parameter to return only fleets using the specified
      * build. To retrieve all fleets, leave this parameter empty.
      * </p>
      * 
-     * @return Unique identifier of the build to return fleets for. Use this parameter to return only fleets using the
+     * @return Unique identifier for a build to return fleets for. Use this parameter to return only fleets using the
      *         specified build. To retrieve all fleets, leave this parameter empty.
      */
 
@@ -81,12 +81,12 @@ public class ListFleetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Unique identifier of the build to return fleets for. Use this parameter to return only fleets using the specified
+     * Unique identifier for a build to return fleets for. Use this parameter to return only fleets using the specified
      * build. To retrieve all fleets, leave this parameter empty.
      * </p>
      * 
      * @param buildId
-     *        Unique identifier of the build to return fleets for. Use this parameter to return only fleets using the
+     *        Unique identifier for a build to return fleets for. Use this parameter to return only fleets using the
      *        specified build. To retrieve all fleets, leave this parameter empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -144,13 +144,13 @@ public class ListFleetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. Use the token that is returned with a previous
-     * call to this action. To specify the start of the result set, do not specify a value.
+     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * previous call to this action. To specify the start of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
-     *        Token indicating the start of the next sequential page of results. Use the token that is returned with a
-     *        previous call to this action. To specify the start of the result set, do not specify a value.
+     *        Token that indicates the start of the next sequential page of results. Use the token that is returned with
+     *        a previous call to this action. To specify the start of the result set, do not specify a value.
      */
 
     public void setNextToken(String nextToken) {
@@ -159,12 +159,12 @@ public class ListFleetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. Use the token that is returned with a previous
-     * call to this action. To specify the start of the result set, do not specify a value.
+     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * previous call to this action. To specify the start of the result set, do not specify a value.
      * </p>
      * 
-     * @return Token indicating the start of the next sequential page of results. Use the token that is returned with a
-     *         previous call to this action. To specify the start of the result set, do not specify a value.
+     * @return Token that indicates the start of the next sequential page of results. Use the token that is returned
+     *         with a previous call to this action. To specify the start of the result set, do not specify a value.
      */
 
     public String getNextToken() {
@@ -173,13 +173,13 @@ public class ListFleetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. Use the token that is returned with a previous
-     * call to this action. To specify the start of the result set, do not specify a value.
+     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * previous call to this action. To specify the start of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
-     *        Token indicating the start of the next sequential page of results. Use the token that is returned with a
-     *        previous call to this action. To specify the start of the result set, do not specify a value.
+     *        Token that indicates the start of the next sequential page of results. Use the token that is returned with
+     *        a previous call to this action. To specify the start of the result set, do not specify a value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

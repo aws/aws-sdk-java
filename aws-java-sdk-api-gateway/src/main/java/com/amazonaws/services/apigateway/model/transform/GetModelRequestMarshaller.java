@@ -12,59 +12,50 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetModelRequest Marshaller
+ * GetModelRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetModelRequestMarshaller implements Marshaller<Request<GetModelRequest>, GetModelRequest> {
+@SdkInternalApi
+public class GetModelRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> RESTAPIID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("restapi_id").build();
+    private static final MarshallingInfo<String> MODELNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("model_name").build();
+    private static final MarshallingInfo<Boolean> FLATTEN_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("flatten").build();
 
-    public GetModelRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetModelRequestMarshaller instance = new GetModelRequestMarshaller();
+
+    public static GetModelRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetModelRequest> marshall(GetModelRequest getModelRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetModelRequest getModelRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getModelRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetModelRequest> request = new DefaultRequest<GetModelRequest>(getModelRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/restapis/{restapi_id}/models/{model_name}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", getModelRequest.getRestApiId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "model_name", getModelRequest.getModelName());
-        request.setResourcePath(uriResourcePath);
-
-        if (getModelRequest.getFlatten() != null) {
-            request.addParameter("flatten", StringUtils.fromBoolean(getModelRequest.getFlatten()));
+        try {
+            protocolMarshaller.marshall(getModelRequest.getRestApiId(), RESTAPIID_BINDING);
+            protocolMarshaller.marshall(getModelRequest.getModelName(), MODELNAME_BINDING);
+            protocolMarshaller.marshall(getModelRequest.getFlatten(), FLATTEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

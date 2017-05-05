@@ -38,14 +38,15 @@ public class ListVPCAssociationAuthorizationsRequest extends com.amazonaws.Amazo
      * <p>
      * <i>Optional</i>: If a response includes a <code>NextToken</code> element, there are more VPCs that can be
      * associated with the specified hosted zone. To get the next page of results, submit another request, and include
-     * the value of the <code>NextToken</code> element in from the response in the <code>NextToken</code> parameter in
-     * another <code>ListVPCAssociationAuthorizations</code> request.
+     * the value of <code>NextToken</code> from the response in the <code>nexttoken</code> parameter in another
+     * <code>ListVPCAssociationAuthorizations</code> request.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * <i>Optional</i>: An integer that specifies the maximum number of VPCs that you want Amazon Route 53 to return.
+     * <i>Optional</i>: An integer that specifies the maximum number of VPCs that you want Amazon Route 53 to return. If
+     * you don't specify a value for <code>MaxResults</code>, Amazon Route 53 returns up to 50 VPCs per page.
      * </p>
      */
     private String maxResults;
@@ -94,15 +95,15 @@ public class ListVPCAssociationAuthorizationsRequest extends com.amazonaws.Amazo
      * <p>
      * <i>Optional</i>: If a response includes a <code>NextToken</code> element, there are more VPCs that can be
      * associated with the specified hosted zone. To get the next page of results, submit another request, and include
-     * the value of the <code>NextToken</code> element in from the response in the <code>NextToken</code> parameter in
-     * another <code>ListVPCAssociationAuthorizations</code> request.
+     * the value of <code>NextToken</code> from the response in the <code>nexttoken</code> parameter in another
+     * <code>ListVPCAssociationAuthorizations</code> request.
      * </p>
      * 
      * @param nextToken
      *        <i>Optional</i>: If a response includes a <code>NextToken</code> element, there are more VPCs that can be
      *        associated with the specified hosted zone. To get the next page of results, submit another request, and
-     *        include the value of the <code>NextToken</code> element in from the response in the <code>NextToken</code>
-     *        parameter in another <code>ListVPCAssociationAuthorizations</code> request.
+     *        include the value of <code>NextToken</code> from the response in the <code>nexttoken</code> parameter in
+     *        another <code>ListVPCAssociationAuthorizations</code> request.
      */
 
     public void setNextToken(String nextToken) {
@@ -113,14 +114,14 @@ public class ListVPCAssociationAuthorizationsRequest extends com.amazonaws.Amazo
      * <p>
      * <i>Optional</i>: If a response includes a <code>NextToken</code> element, there are more VPCs that can be
      * associated with the specified hosted zone. To get the next page of results, submit another request, and include
-     * the value of the <code>NextToken</code> element in from the response in the <code>NextToken</code> parameter in
-     * another <code>ListVPCAssociationAuthorizations</code> request.
+     * the value of <code>NextToken</code> from the response in the <code>nexttoken</code> parameter in another
+     * <code>ListVPCAssociationAuthorizations</code> request.
      * </p>
      * 
      * @return <i>Optional</i>: If a response includes a <code>NextToken</code> element, there are more VPCs that can be
      *         associated with the specified hosted zone. To get the next page of results, submit another request, and
-     *         include the value of the <code>NextToken</code> element in from the response in the
-     *         <code>NextToken</code> parameter in another <code>ListVPCAssociationAuthorizations</code> request.
+     *         include the value of <code>NextToken</code> from the response in the <code>nexttoken</code> parameter in
+     *         another <code>ListVPCAssociationAuthorizations</code> request.
      */
 
     public String getNextToken() {
@@ -131,15 +132,15 @@ public class ListVPCAssociationAuthorizationsRequest extends com.amazonaws.Amazo
      * <p>
      * <i>Optional</i>: If a response includes a <code>NextToken</code> element, there are more VPCs that can be
      * associated with the specified hosted zone. To get the next page of results, submit another request, and include
-     * the value of the <code>NextToken</code> element in from the response in the <code>NextToken</code> parameter in
-     * another <code>ListVPCAssociationAuthorizations</code> request.
+     * the value of <code>NextToken</code> from the response in the <code>nexttoken</code> parameter in another
+     * <code>ListVPCAssociationAuthorizations</code> request.
      * </p>
      * 
      * @param nextToken
      *        <i>Optional</i>: If a response includes a <code>NextToken</code> element, there are more VPCs that can be
      *        associated with the specified hosted zone. To get the next page of results, submit another request, and
-     *        include the value of the <code>NextToken</code> element in from the response in the <code>NextToken</code>
-     *        parameter in another <code>ListVPCAssociationAuthorizations</code> request.
+     *        include the value of <code>NextToken</code> from the response in the <code>nexttoken</code> parameter in
+     *        another <code>ListVPCAssociationAuthorizations</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,12 +151,14 @@ public class ListVPCAssociationAuthorizationsRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * <i>Optional</i>: An integer that specifies the maximum number of VPCs that you want Amazon Route 53 to return.
+     * <i>Optional</i>: An integer that specifies the maximum number of VPCs that you want Amazon Route 53 to return. If
+     * you don't specify a value for <code>MaxResults</code>, Amazon Route 53 returns up to 50 VPCs per page.
      * </p>
      * 
      * @param maxResults
      *        <i>Optional</i>: An integer that specifies the maximum number of VPCs that you want Amazon Route 53 to
-     *        return.
+     *        return. If you don't specify a value for <code>MaxResults</code>, Amazon Route 53 returns up to 50 VPCs
+     *        per page.
      */
 
     public void setMaxResults(String maxResults) {
@@ -164,11 +167,13 @@ public class ListVPCAssociationAuthorizationsRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * <i>Optional</i>: An integer that specifies the maximum number of VPCs that you want Amazon Route 53 to return.
+     * <i>Optional</i>: An integer that specifies the maximum number of VPCs that you want Amazon Route 53 to return. If
+     * you don't specify a value for <code>MaxResults</code>, Amazon Route 53 returns up to 50 VPCs per page.
      * </p>
      * 
      * @return <i>Optional</i>: An integer that specifies the maximum number of VPCs that you want Amazon Route 53 to
-     *         return.
+     *         return. If you don't specify a value for <code>MaxResults</code>, Amazon Route 53 returns up to 50 VPCs
+     *         per page.
      */
 
     public String getMaxResults() {
@@ -177,12 +182,14 @@ public class ListVPCAssociationAuthorizationsRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * <i>Optional</i>: An integer that specifies the maximum number of VPCs that you want Amazon Route 53 to return.
+     * <i>Optional</i>: An integer that specifies the maximum number of VPCs that you want Amazon Route 53 to return. If
+     * you don't specify a value for <code>MaxResults</code>, Amazon Route 53 returns up to 50 VPCs per page.
      * </p>
      * 
      * @param maxResults
      *        <i>Optional</i>: An integer that specifies the maximum number of VPCs that you want Amazon Route 53 to
-     *        return.
+     *        return. If you don't specify a value for <code>MaxResults</code>, Amazon Route 53 returns up to 50 VPCs
+     *        per page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

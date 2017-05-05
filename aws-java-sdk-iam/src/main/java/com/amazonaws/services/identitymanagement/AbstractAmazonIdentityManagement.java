@@ -129,6 +129,11 @@ public class AbstractAmazonIdentityManagement implements AmazonIdentityManagemen
     }
 
     @Override
+    public CreateServiceLinkedRoleResult createServiceLinkedRole(CreateServiceLinkedRoleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateServiceSpecificCredentialResult createServiceSpecificCredential(CreateServiceSpecificCredentialRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -690,6 +695,11 @@ public class AbstractAmazonIdentityManagement implements AmazonIdentityManagemen
 
     @Override
     public UpdateOpenIDConnectProviderThumbprintResult updateOpenIDConnectProviderThumbprint(UpdateOpenIDConnectProviderThumbprintRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateRoleDescriptionResult updateRoleDescription(UpdateRoleDescriptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

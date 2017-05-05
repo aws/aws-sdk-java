@@ -107,11 +107,9 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
 
     /**
      * <p>
-     * Creates an address for a Snowball to be shipped to.
-     * </p>
-     * <p>
-     * Addresses are validated at the time of creation. The address you provide must be located within the serviceable
-     * area of your region. If the address is invalid or unsupported, then an exception is thrown.
+     * Creates an address for a Snowball to be shipped to. In most regions, addresses are validated at the time of
+     * creation. The address you provide must be located within the serviceable area of your region. If the address is
+     * invalid or unsupported, then an exception is thrown.
      * </p>
      * 
      * @param createAddressRequest
@@ -124,11 +122,9 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
 
     /**
      * <p>
-     * Creates an address for a Snowball to be shipped to.
-     * </p>
-     * <p>
-     * Addresses are validated at the time of creation. The address you provide must be located within the serviceable
-     * area of your region. If the address is invalid or unsupported, then an exception is thrown.
+     * Creates an address for a Snowball to be shipped to. In most regions, addresses are validated at the time of
+     * creation. The address you provide must be located within the serviceable area of your region. If the address is
+     * invalid or unsupported, then an exception is thrown.
      * </p>
      * 
      * @param createAddressRequest
@@ -179,7 +175,7 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
 
     /**
      * <p>
-     * Creates a job to the other job attributes are inherited from the cluster. .
+     * Creates a job to the other job attributes are inherited from the cluster.
      * </p>
      * 
      * @param createJobRequest
@@ -195,7 +191,7 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
      * Creates a job to import or export data between Amazon S3 and your on-premises data center. Your AWS account must
      * have the right trust policies and permissions in place to create a job for Snowball. If you're creating a job for
      * a node in a cluster, you only need to provide the <code>clusterId</code> value; the other job attributes are
-     * inherited from the cluster. .
+     * inherited from the cluster.
      * </p>
      * 
      * @param createJobRequest
@@ -313,7 +309,7 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
     /**
      * <p>
      * Returns information about a specific job including shipping information, job status, and other important
-     * metadata. .
+     * metadata.
      * </p>
      * 
      * @param describeJobRequest
@@ -327,7 +323,7 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
     /**
      * <p>
      * Returns information about a specific job including shipping information, job status, and other important
-     * metadata. .
+     * metadata.
      * </p>
      * 
      * @param describeJobRequest

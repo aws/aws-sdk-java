@@ -22,7 +22,7 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * ID of an existing collection to which you want to add the faces that are detected in the input images.
+     * The ID of an existing collection to which you want to add the faces that are detected in the input images.
      * </p>
      */
     private String collectionId;
@@ -36,25 +36,26 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String externalImageId;
     /**
      * <p>
-     * (Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial
-     * attributes.
+     * A list of facial attributes that you want to be returned. This can be the default list of attributes or all
+     * attributes. If you don't specify a value for <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>,
+     * the API returns the following subset of facial attributes: <code>BoundingBox</code>, <code>Confidence</code>,
+     * <code>Pose</code>, <code>Quality</code> and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
+     * facial attributes are returned but the operation will take longer to complete.
      * </p>
      * <p>
-     * For example, you can specify the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL", "DEFAULT"],
-     * Amazon Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all
-     * attributes). If you specify all attributes, the service performs additional detection, in addition to the
-     * default.
+     * If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which
+     * attributes to return (in this case, all attributes).
      * </p>
      */
     private java.util.List<String> detectionAttributes;
 
     /**
      * <p>
-     * ID of an existing collection to which you want to add the faces that are detected in the input images.
+     * The ID of an existing collection to which you want to add the faces that are detected in the input images.
      * </p>
      * 
      * @param collectionId
-     *        ID of an existing collection to which you want to add the faces that are detected in the input images.
+     *        The ID of an existing collection to which you want to add the faces that are detected in the input images.
      */
 
     public void setCollectionId(String collectionId) {
@@ -63,10 +64,11 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * ID of an existing collection to which you want to add the faces that are detected in the input images.
+     * The ID of an existing collection to which you want to add the faces that are detected in the input images.
      * </p>
      * 
-     * @return ID of an existing collection to which you want to add the faces that are detected in the input images.
+     * @return The ID of an existing collection to which you want to add the faces that are detected in the input
+     *         images.
      */
 
     public String getCollectionId() {
@@ -75,11 +77,11 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * ID of an existing collection to which you want to add the faces that are detected in the input images.
+     * The ID of an existing collection to which you want to add the faces that are detected in the input images.
      * </p>
      * 
      * @param collectionId
-     *        ID of an existing collection to which you want to add the faces that are detected in the input images.
+     *        The ID of an existing collection to which you want to add the faces that are detected in the input images.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -156,23 +158,26 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * (Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial
-     * attributes.
+     * A list of facial attributes that you want to be returned. This can be the default list of attributes or all
+     * attributes. If you don't specify a value for <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>,
+     * the API returns the following subset of facial attributes: <code>BoundingBox</code>, <code>Confidence</code>,
+     * <code>Pose</code>, <code>Quality</code> and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
+     * facial attributes are returned but the operation will take longer to complete.
      * </p>
      * <p>
-     * For example, you can specify the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL", "DEFAULT"],
-     * Amazon Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all
-     * attributes). If you specify all attributes, the service performs additional detection, in addition to the
-     * default.
+     * If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which
+     * attributes to return (in this case, all attributes).
      * </p>
      * 
-     * @return (Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of
-     *         the facial attributes. </p>
+     * @return A list of facial attributes that you want to be returned. This can be the default list of attributes or
+     *         all attributes. If you don't specify a value for <code>Attributes</code> or if you specify
+     *         <code>["DEFAULT"]</code>, the API returns the following subset of facial attributes:
+     *         <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
+     *         <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial attributes are returned but the
+     *         operation will take longer to complete.</p>
      *         <p>
-     *         For example, you can specify the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL",
-     *         "DEFAULT"], Amazon Rekognition uses the logical AND operator to determine which attributes to return (in
-     *         this case, it is all attributes). If you specify all attributes, the service performs additional
-     *         detection, in addition to the default.
+     *         If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to
+     *         determine which attributes to return (in this case, all attributes).
      * @see Attribute
      */
 
@@ -182,24 +187,27 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * (Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial
-     * attributes.
+     * A list of facial attributes that you want to be returned. This can be the default list of attributes or all
+     * attributes. If you don't specify a value for <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>,
+     * the API returns the following subset of facial attributes: <code>BoundingBox</code>, <code>Confidence</code>,
+     * <code>Pose</code>, <code>Quality</code> and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
+     * facial attributes are returned but the operation will take longer to complete.
      * </p>
      * <p>
-     * For example, you can specify the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL", "DEFAULT"],
-     * Amazon Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all
-     * attributes). If you specify all attributes, the service performs additional detection, in addition to the
-     * default.
+     * If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which
+     * attributes to return (in this case, all attributes).
      * </p>
      * 
      * @param detectionAttributes
-     *        (Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the
-     *        facial attributes. </p>
+     *        A list of facial attributes that you want to be returned. This can be the default list of attributes or
+     *        all attributes. If you don't specify a value for <code>Attributes</code> or if you specify
+     *        <code>["DEFAULT"]</code>, the API returns the following subset of facial attributes:
+     *        <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
+     *        <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial attributes are returned but the
+     *        operation will take longer to complete.</p>
      *        <p>
-     *        For example, you can specify the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL",
-     *        "DEFAULT"], Amazon Rekognition uses the logical AND operator to determine which attributes to return (in
-     *        this case, it is all attributes). If you specify all attributes, the service performs additional
-     *        detection, in addition to the default.
+     *        If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine
+     *        which attributes to return (in this case, all attributes).
      * @see Attribute
      */
 
@@ -214,14 +222,15 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * (Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial
-     * attributes.
+     * A list of facial attributes that you want to be returned. This can be the default list of attributes or all
+     * attributes. If you don't specify a value for <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>,
+     * the API returns the following subset of facial attributes: <code>BoundingBox</code>, <code>Confidence</code>,
+     * <code>Pose</code>, <code>Quality</code> and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
+     * facial attributes are returned but the operation will take longer to complete.
      * </p>
      * <p>
-     * For example, you can specify the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL", "DEFAULT"],
-     * Amazon Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all
-     * attributes). If you specify all attributes, the service performs additional detection, in addition to the
-     * default.
+     * If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which
+     * attributes to return (in this case, all attributes).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -230,13 +239,15 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param detectionAttributes
-     *        (Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the
-     *        facial attributes. </p>
+     *        A list of facial attributes that you want to be returned. This can be the default list of attributes or
+     *        all attributes. If you don't specify a value for <code>Attributes</code> or if you specify
+     *        <code>["DEFAULT"]</code>, the API returns the following subset of facial attributes:
+     *        <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
+     *        <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial attributes are returned but the
+     *        operation will take longer to complete.</p>
      *        <p>
-     *        For example, you can specify the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL",
-     *        "DEFAULT"], Amazon Rekognition uses the logical AND operator to determine which attributes to return (in
-     *        this case, it is all attributes). If you specify all attributes, the service performs additional
-     *        detection, in addition to the default.
+     *        If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine
+     *        which attributes to return (in this case, all attributes).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Attribute
      */
@@ -253,24 +264,27 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * (Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial
-     * attributes.
+     * A list of facial attributes that you want to be returned. This can be the default list of attributes or all
+     * attributes. If you don't specify a value for <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>,
+     * the API returns the following subset of facial attributes: <code>BoundingBox</code>, <code>Confidence</code>,
+     * <code>Pose</code>, <code>Quality</code> and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
+     * facial attributes are returned but the operation will take longer to complete.
      * </p>
      * <p>
-     * For example, you can specify the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL", "DEFAULT"],
-     * Amazon Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all
-     * attributes). If you specify all attributes, the service performs additional detection, in addition to the
-     * default.
+     * If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which
+     * attributes to return (in this case, all attributes).
      * </p>
      * 
      * @param detectionAttributes
-     *        (Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the
-     *        facial attributes. </p>
+     *        A list of facial attributes that you want to be returned. This can be the default list of attributes or
+     *        all attributes. If you don't specify a value for <code>Attributes</code> or if you specify
+     *        <code>["DEFAULT"]</code>, the API returns the following subset of facial attributes:
+     *        <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
+     *        <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial attributes are returned but the
+     *        operation will take longer to complete.</p>
      *        <p>
-     *        For example, you can specify the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL",
-     *        "DEFAULT"], Amazon Rekognition uses the logical AND operator to determine which attributes to return (in
-     *        this case, it is all attributes). If you specify all attributes, the service performs additional
-     *        detection, in addition to the default.
+     *        If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine
+     *        which attributes to return (in this case, all attributes).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Attribute
      */
@@ -282,24 +296,27 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * (Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the facial
-     * attributes.
+     * A list of facial attributes that you want to be returned. This can be the default list of attributes or all
+     * attributes. If you don't specify a value for <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>,
+     * the API returns the following subset of facial attributes: <code>BoundingBox</code>, <code>Confidence</code>,
+     * <code>Pose</code>, <code>Quality</code> and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
+     * facial attributes are returned but the operation will take longer to complete.
      * </p>
      * <p>
-     * For example, you can specify the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL", "DEFAULT"],
-     * Amazon Rekognition uses the logical AND operator to determine which attributes to return (in this case, it is all
-     * attributes). If you specify all attributes, the service performs additional detection, in addition to the
-     * default.
+     * If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which
+     * attributes to return (in this case, all attributes).
      * </p>
      * 
      * @param detectionAttributes
-     *        (Optional) Returns detailed attributes of indexed faces. By default, the operation returns a subset of the
-     *        facial attributes. </p>
+     *        A list of facial attributes that you want to be returned. This can be the default list of attributes or
+     *        all attributes. If you don't specify a value for <code>Attributes</code> or if you specify
+     *        <code>["DEFAULT"]</code>, the API returns the following subset of facial attributes:
+     *        <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
+     *        <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial attributes are returned but the
+     *        operation will take longer to complete.</p>
      *        <p>
-     *        For example, you can specify the value as, ["ALL"] or ["DEFAULT"]. If you provide both, ["ALL",
-     *        "DEFAULT"], Amazon Rekognition uses the logical AND operator to determine which attributes to return (in
-     *        this case, it is all attributes). If you specify all attributes, the service performs additional
-     *        detection, in addition to the default.
+     *        If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine
+     *        which attributes to return (in this case, all attributes).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Attribute
      */

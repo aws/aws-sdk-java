@@ -12,71 +12,50 @@
  */
 package com.amazonaws.services.kinesisanalytics.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.kinesisanalytics.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * AddApplicationOutputRequest Marshaller
+ * AddApplicationOutputRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AddApplicationOutputRequestMarshaller implements Marshaller<Request<AddApplicationOutputRequest>, AddApplicationOutputRequest> {
+@SdkInternalApi
+public class AddApplicationOutputRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> APPLICATIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationName").build();
+    private static final MarshallingInfo<Long> CURRENTAPPLICATIONVERSIONID_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CurrentApplicationVersionId").build();
+    private static final MarshallingInfo<StructuredPojo> OUTPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Output").build();
 
-    public AddApplicationOutputRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final AddApplicationOutputRequestMarshaller instance = new AddApplicationOutputRequestMarshaller();
+
+    public static AddApplicationOutputRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<AddApplicationOutputRequest> marshall(AddApplicationOutputRequest addApplicationOutputRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(AddApplicationOutputRequest addApplicationOutputRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (addApplicationOutputRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<AddApplicationOutputRequest> request = new DefaultRequest<AddApplicationOutputRequest>(addApplicationOutputRequest, "AmazonKinesisAnalytics");
-        request.addHeader("X-Amz-Target", "KinesisAnalytics_20150814.AddApplicationOutput");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (addApplicationOutputRequest.getApplicationName() != null) {
-                jsonGenerator.writeFieldName("ApplicationName").writeValue(addApplicationOutputRequest.getApplicationName());
-            }
-            if (addApplicationOutputRequest.getCurrentApplicationVersionId() != null) {
-                jsonGenerator.writeFieldName("CurrentApplicationVersionId").writeValue(addApplicationOutputRequest.getCurrentApplicationVersionId());
-            }
-            if (addApplicationOutputRequest.getOutput() != null) {
-                jsonGenerator.writeFieldName("Output");
-                OutputJsonMarshaller.getInstance().marshall(addApplicationOutputRequest.getOutput(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(addApplicationOutputRequest.getApplicationName(), APPLICATIONNAME_BINDING);
+            protocolMarshaller.marshall(addApplicationOutputRequest.getCurrentApplicationVersionId(), CURRENTAPPLICATIONVERSIONID_BINDING);
+            protocolMarshaller.marshall(addApplicationOutputRequest.getOutput(), OUTPUT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -14,9 +14,14 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * Used to create a campaign treatment.
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class WriteTreatmentResource implements Serializable, Cloneable {
+public class WriteTreatmentResource implements Serializable, Cloneable, StructuredPojo {
 
     /** The message configuration settings. */
     private MessageConfiguration messageConfiguration;
@@ -277,5 +282,11 @@ public class WriteTreatmentResource implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.pinpoint.model.transform.WriteTreatmentResourceMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

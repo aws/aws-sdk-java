@@ -58,6 +58,10 @@ public class DescribeConfigurationOptionsRequestMarshaller implements
             request.addParameter("SolutionStackName", StringUtils.fromString(describeConfigurationOptionsRequest.getSolutionStackName()));
         }
 
+        if (describeConfigurationOptionsRequest.getPlatformArn() != null) {
+            request.addParameter("PlatformArn", StringUtils.fromString(describeConfigurationOptionsRequest.getPlatformArn()));
+        }
+
         com.amazonaws.internal.SdkInternalList<OptionSpecification> optionsList = (com.amazonaws.internal.SdkInternalList<OptionSpecification>) describeConfigurationOptionsRequest
                 .getOptions();
         if (!optionsList.isEmpty() || !optionsList.isAutoConstruct()) {

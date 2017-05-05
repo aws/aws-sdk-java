@@ -14,6 +14,8 @@ package com.amazonaws.services.devicefarm.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Run implements Serializable, Cloneable {
+public class Run implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -298,6 +300,12 @@ public class Run implements Serializable, Cloneable {
      * </p>
      */
     private DeviceMinutes deviceMinutes;
+    /**
+     * <p>
+     * The network profile being used for a test run.
+     * </p>
+     */
+    private NetworkProfile networkProfile;
 
     /**
      * <p>
@@ -2865,6 +2873,46 @@ public class Run implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The network profile being used for a test run.
+     * </p>
+     * 
+     * @param networkProfile
+     *        The network profile being used for a test run.
+     */
+
+    public void setNetworkProfile(NetworkProfile networkProfile) {
+        this.networkProfile = networkProfile;
+    }
+
+    /**
+     * <p>
+     * The network profile being used for a test run.
+     * </p>
+     * 
+     * @return The network profile being used for a test run.
+     */
+
+    public NetworkProfile getNetworkProfile() {
+        return this.networkProfile;
+    }
+
+    /**
+     * <p>
+     * The network profile being used for a test run.
+     * </p>
+     * 
+     * @param networkProfile
+     *        The network profile being used for a test run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Run withNetworkProfile(NetworkProfile networkProfile) {
+        setNetworkProfile(networkProfile);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -2904,7 +2952,9 @@ public class Run implements Serializable, Cloneable {
         if (getBillingMethod() != null)
             sb.append("BillingMethod: ").append(getBillingMethod()).append(",");
         if (getDeviceMinutes() != null)
-            sb.append("DeviceMinutes: ").append(getDeviceMinutes());
+            sb.append("DeviceMinutes: ").append(getDeviceMinutes()).append(",");
+        if (getNetworkProfile() != null)
+            sb.append("NetworkProfile: ").append(getNetworkProfile());
         sb.append("}");
         return sb.toString();
     }
@@ -2979,6 +3029,10 @@ public class Run implements Serializable, Cloneable {
             return false;
         if (other.getDeviceMinutes() != null && other.getDeviceMinutes().equals(this.getDeviceMinutes()) == false)
             return false;
+        if (other.getNetworkProfile() == null ^ this.getNetworkProfile() == null)
+            return false;
+        if (other.getNetworkProfile() != null && other.getNetworkProfile().equals(this.getNetworkProfile()) == false)
+            return false;
         return true;
     }
 
@@ -3002,6 +3056,7 @@ public class Run implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCompletedJobs() == null) ? 0 : getCompletedJobs().hashCode());
         hashCode = prime * hashCode + ((getBillingMethod() == null) ? 0 : getBillingMethod().hashCode());
         hashCode = prime * hashCode + ((getDeviceMinutes() == null) ? 0 : getDeviceMinutes().hashCode());
+        hashCode = prime * hashCode + ((getNetworkProfile() == null) ? 0 : getNetworkProfile().hashCode());
         return hashCode;
     }
 
@@ -3012,5 +3067,11 @@ public class Run implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.devicefarm.model.transform.RunMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

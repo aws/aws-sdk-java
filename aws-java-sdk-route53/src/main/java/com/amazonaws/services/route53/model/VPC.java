@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A complex type that contains information about an Amazon VPC that is associated with a private hosted zone.
+ * (Private hosted zones only) A complex type that contains information about an Amazon VPC.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/VPC" target="_top">AWS API Documentation</a>
@@ -27,8 +27,7 @@ public class VPC implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region in which you created the VPC that you want to associate with the specified Amazon Route 53 hosted
-     * zone.
+     * (Private hosted zones only) The region in which you created an Amazon VPC.
      * </p>
      */
     private String vPCRegion;
@@ -37,13 +36,11 @@ public class VPC implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region in which you created the VPC that you want to associate with the specified Amazon Route 53 hosted
-     * zone.
+     * (Private hosted zones only) The region in which you created an Amazon VPC.
      * </p>
      * 
      * @param vPCRegion
-     *        The region in which you created the VPC that you want to associate with the specified Amazon Route 53
-     *        hosted zone.
+     *        (Private hosted zones only) The region in which you created an Amazon VPC.
      * @see VPCRegion
      */
 
@@ -53,12 +50,10 @@ public class VPC implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region in which you created the VPC that you want to associate with the specified Amazon Route 53 hosted
-     * zone.
+     * (Private hosted zones only) The region in which you created an Amazon VPC.
      * </p>
      * 
-     * @return The region in which you created the VPC that you want to associate with the specified Amazon Route 53
-     *         hosted zone.
+     * @return (Private hosted zones only) The region in which you created an Amazon VPC.
      * @see VPCRegion
      */
 
@@ -68,13 +63,11 @@ public class VPC implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region in which you created the VPC that you want to associate with the specified Amazon Route 53 hosted
-     * zone.
+     * (Private hosted zones only) The region in which you created an Amazon VPC.
      * </p>
      * 
      * @param vPCRegion
-     *        The region in which you created the VPC that you want to associate with the specified Amazon Route 53
-     *        hosted zone.
+     *        (Private hosted zones only) The region in which you created an Amazon VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VPCRegion
      */
@@ -86,13 +79,11 @@ public class VPC implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region in which you created the VPC that you want to associate with the specified Amazon Route 53 hosted
-     * zone.
+     * (Private hosted zones only) The region in which you created an Amazon VPC.
      * </p>
      * 
      * @param vPCRegion
-     *        The region in which you created the VPC that you want to associate with the specified Amazon Route 53
-     *        hosted zone.
+     *        (Private hosted zones only) The region in which you created an Amazon VPC.
      * @see VPCRegion
      */
 
@@ -102,13 +93,11 @@ public class VPC implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The region in which you created the VPC that you want to associate with the specified Amazon Route 53 hosted
-     * zone.
+     * (Private hosted zones only) The region in which you created an Amazon VPC.
      * </p>
      * 
      * @param vPCRegion
-     *        The region in which you created the VPC that you want to associate with the specified Amazon Route 53
-     *        hosted zone.
+     *        (Private hosted zones only) The region in which you created an Amazon VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VPCRegion
      */
@@ -202,4 +191,5 @@ public class VPC implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

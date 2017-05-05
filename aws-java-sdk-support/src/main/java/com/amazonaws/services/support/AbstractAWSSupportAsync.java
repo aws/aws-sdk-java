@@ -108,6 +108,7 @@ public class AbstractAWSSupportAsync extends AbstractAWSSupport implements AWSSu
      *
      * @see #describeCasesAsync(DescribeCasesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeCasesResult> describeCasesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeCasesRequest, DescribeCasesResult> asyncHandler) {
 
@@ -156,6 +157,7 @@ public class AbstractAWSSupportAsync extends AbstractAWSSupport implements AWSSu
      *
      * @see #describeServicesAsync(DescribeServicesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeServicesResult> describeServicesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeServicesRequest, DescribeServicesResult> asyncHandler) {
 
@@ -191,6 +193,7 @@ public class AbstractAWSSupportAsync extends AbstractAWSSupport implements AWSSu
      *
      * @see #describeSeverityLevelsAsync(DescribeSeverityLevelsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeSeverityLevelsResult> describeSeverityLevelsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeSeverityLevelsRequest, DescribeSeverityLevelsResult> asyncHandler) {
 
@@ -297,6 +300,7 @@ public class AbstractAWSSupportAsync extends AbstractAWSSupport implements AWSSu
      *
      * @see #resolveCaseAsync(ResolveCaseRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ResolveCaseResult> resolveCaseAsync(
             com.amazonaws.handlers.AsyncHandler<ResolveCaseRequest, ResolveCaseResult> asyncHandler) {
 

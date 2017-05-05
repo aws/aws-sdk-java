@@ -12,70 +12,50 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simplesystemsmanagement.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeAssociationRequest Marshaller
+ * DescribeAssociationRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeAssociationRequestMarshaller implements Marshaller<Request<DescribeAssociationRequest>, DescribeAssociationRequest> {
+@SdkInternalApi
+public class DescribeAssociationRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> INSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceId").build();
+    private static final MarshallingInfo<String> ASSOCIATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssociationId").build();
 
-    public DescribeAssociationRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeAssociationRequestMarshaller instance = new DescribeAssociationRequestMarshaller();
+
+    public static DescribeAssociationRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeAssociationRequest> marshall(DescribeAssociationRequest describeAssociationRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeAssociationRequest describeAssociationRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeAssociationRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeAssociationRequest> request = new DefaultRequest<DescribeAssociationRequest>(describeAssociationRequest, "AWSSimpleSystemsManagement");
-        request.addHeader("X-Amz-Target", "AmazonSSM.DescribeAssociation");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeAssociationRequest.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(describeAssociationRequest.getName());
-            }
-            if (describeAssociationRequest.getInstanceId() != null) {
-                jsonGenerator.writeFieldName("InstanceId").writeValue(describeAssociationRequest.getInstanceId());
-            }
-            if (describeAssociationRequest.getAssociationId() != null) {
-                jsonGenerator.writeFieldName("AssociationId").writeValue(describeAssociationRequest.getAssociationId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeAssociationRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(describeAssociationRequest.getInstanceId(), INSTANCEID_BINDING);
+            protocolMarshaller.marshall(describeAssociationRequest.getAssociationId(), ASSOCIATIONID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

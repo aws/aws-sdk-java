@@ -105,4 +105,7 @@ public class AmazonElastiCacheWaiters {
                 .withExecutorService(executorService).build();
     }
 
+    public void shutdown() {
+        executorService.shutdown();
+    }
 }

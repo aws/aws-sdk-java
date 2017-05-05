@@ -12,52 +12,44 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetUsagePlanRequest Marshaller
+ * GetUsagePlanRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetUsagePlanRequestMarshaller implements Marshaller<Request<GetUsagePlanRequest>, GetUsagePlanRequest> {
+@SdkInternalApi
+public class GetUsagePlanRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> USAGEPLANID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("usageplanId").build();
 
-    public GetUsagePlanRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetUsagePlanRequestMarshaller instance = new GetUsagePlanRequestMarshaller();
+
+    public static GetUsagePlanRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetUsagePlanRequest> marshall(GetUsagePlanRequest getUsagePlanRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetUsagePlanRequest getUsagePlanRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getUsagePlanRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetUsagePlanRequest> request = new DefaultRequest<GetUsagePlanRequest>(getUsagePlanRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/usageplans/{usageplanId}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "usageplanId", getUsagePlanRequest.getUsagePlanId());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(getUsagePlanRequest.getUsagePlanId(), USAGEPLANID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

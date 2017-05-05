@@ -39,8 +39,8 @@ public class StateReason implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>Server.SpotInstanceTermination</code>: A Spot instance was terminated due to an increase in the market
-     * price.
+     * <code>Server.InsufficientInstanceCapacity</code>: There was insufficient instance capacity to satisfy the launch
+     * request.
      * </p>
      * </li>
      * <li>
@@ -50,8 +50,13 @@ public class StateReason implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>Server.InsufficientInstanceCapacity</code>: There was insufficient instance capacity to satisfy the launch
-     * request.
+     * <code>Server.ScheduledStop</code>: The instance was stopped due to a scheduled retirement.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Server.SpotInstanceTermination</code>: A Spot instance was terminated due to an increase in the market
+     * price.
      * </p>
      * </li>
      * <li>
@@ -132,8 +137,8 @@ public class StateReason implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>Server.SpotInstanceTermination</code>: A Spot instance was terminated due to an increase in the market
-     * price.
+     * <code>Server.InsufficientInstanceCapacity</code>: There was insufficient instance capacity to satisfy the launch
+     * request.
      * </p>
      * </li>
      * <li>
@@ -143,8 +148,13 @@ public class StateReason implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>Server.InsufficientInstanceCapacity</code>: There was insufficient instance capacity to satisfy the launch
-     * request.
+     * <code>Server.ScheduledStop</code>: The instance was stopped due to a scheduled retirement.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Server.SpotInstanceTermination</code>: A Spot instance was terminated due to an increase in the market
+     * price.
      * </p>
      * </li>
      * <li>
@@ -181,8 +191,8 @@ public class StateReason implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Server.SpotInstanceTermination</code>: A Spot instance was terminated due to an increase in the
-     *        market price.
+     *        <code>Server.InsufficientInstanceCapacity</code>: There was insufficient instance capacity to satisfy the
+     *        launch request.
      *        </p>
      *        </li>
      *        <li>
@@ -193,8 +203,13 @@ public class StateReason implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Server.InsufficientInstanceCapacity</code>: There was insufficient instance capacity to satisfy the
-     *        launch request.
+     *        <code>Server.ScheduledStop</code>: The instance was stopped due to a scheduled retirement.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Server.SpotInstanceTermination</code>: A Spot instance was terminated due to an increase in the
+     *        market price.
      *        </p>
      *        </li>
      *        <li>
@@ -237,8 +252,8 @@ public class StateReason implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>Server.SpotInstanceTermination</code>: A Spot instance was terminated due to an increase in the market
-     * price.
+     * <code>Server.InsufficientInstanceCapacity</code>: There was insufficient instance capacity to satisfy the launch
+     * request.
      * </p>
      * </li>
      * <li>
@@ -248,8 +263,13 @@ public class StateReason implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>Server.InsufficientInstanceCapacity</code>: There was insufficient instance capacity to satisfy the launch
-     * request.
+     * <code>Server.ScheduledStop</code>: The instance was stopped due to a scheduled retirement.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Server.SpotInstanceTermination</code>: A Spot instance was terminated due to an increase in the market
+     * price.
      * </p>
      * </li>
      * <li>
@@ -285,8 +305,8 @@ public class StateReason implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>Server.SpotInstanceTermination</code>: A Spot instance was terminated due to an increase in the
-     *         market price.
+     *         <code>Server.InsufficientInstanceCapacity</code>: There was insufficient instance capacity to satisfy the
+     *         launch request.
      *         </p>
      *         </li>
      *         <li>
@@ -297,8 +317,13 @@ public class StateReason implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Server.InsufficientInstanceCapacity</code>: There was insufficient instance capacity to satisfy the
-     *         launch request.
+     *         <code>Server.ScheduledStop</code>: The instance was stopped due to a scheduled retirement.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Server.SpotInstanceTermination</code>: A Spot instance was terminated due to an increase in the
+     *         market price.
      *         </p>
      *         </li>
      *         <li>
@@ -341,8 +366,8 @@ public class StateReason implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>Server.SpotInstanceTermination</code>: A Spot instance was terminated due to an increase in the market
-     * price.
+     * <code>Server.InsufficientInstanceCapacity</code>: There was insufficient instance capacity to satisfy the launch
+     * request.
      * </p>
      * </li>
      * <li>
@@ -352,8 +377,13 @@ public class StateReason implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>Server.InsufficientInstanceCapacity</code>: There was insufficient instance capacity to satisfy the launch
-     * request.
+     * <code>Server.ScheduledStop</code>: The instance was stopped due to a scheduled retirement.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Server.SpotInstanceTermination</code>: A Spot instance was terminated due to an increase in the market
+     * price.
      * </p>
      * </li>
      * <li>
@@ -390,8 +420,8 @@ public class StateReason implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Server.SpotInstanceTermination</code>: A Spot instance was terminated due to an increase in the
-     *        market price.
+     *        <code>Server.InsufficientInstanceCapacity</code>: There was insufficient instance capacity to satisfy the
+     *        launch request.
      *        </p>
      *        </li>
      *        <li>
@@ -402,8 +432,13 @@ public class StateReason implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Server.InsufficientInstanceCapacity</code>: There was insufficient instance capacity to satisfy the
-     *        launch request.
+     *        <code>Server.ScheduledStop</code>: The instance was stopped due to a scheduled retirement.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Server.SpotInstanceTermination</code>: A Spot instance was terminated due to an increase in the
+     *        market price.
      *        </p>
      *        </li>
      *        <li>
@@ -499,4 +534,5 @@ public class StateReason implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

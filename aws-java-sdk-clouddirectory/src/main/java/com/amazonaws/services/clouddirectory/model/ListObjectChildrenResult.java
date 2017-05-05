@@ -25,23 +25,24 @@ public class ListObjectChildrenResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Children structure, which is a map with key as the LinkName and ObjectIdentifier as the value.
+     * Children structure, which is a map with key as the LinkName and <code>ObjectIdentifier</code> as the value.
      * </p>
      */
     private java.util.Map<String, String> children;
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Children structure, which is a map with key as the LinkName and ObjectIdentifier as the value.
+     * Children structure, which is a map with key as the LinkName and <code>ObjectIdentifier</code> as the value.
      * </p>
      * 
-     * @return Children structure, which is a map with key as the LinkName and ObjectIdentifier as the value.
+     * @return Children structure, which is a map with key as the LinkName and <code>ObjectIdentifier</code> as the
+     *         value.
      */
 
     public java.util.Map<String, String> getChildren() {
@@ -50,11 +51,12 @@ public class ListObjectChildrenResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Children structure, which is a map with key as the LinkName and ObjectIdentifier as the value.
+     * Children structure, which is a map with key as the LinkName and <code>ObjectIdentifier</code> as the value.
      * </p>
      * 
      * @param children
-     *        Children structure, which is a map with key as the LinkName and ObjectIdentifier as the value.
+     *        Children structure, which is a map with key as the LinkName and <code>ObjectIdentifier</code> as the
+     *        value.
      */
 
     public void setChildren(java.util.Map<String, String> children) {
@@ -63,11 +65,12 @@ public class ListObjectChildrenResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Children structure, which is a map with key as the LinkName and ObjectIdentifier as the value.
+     * Children structure, which is a map with key as the LinkName and <code>ObjectIdentifier</code> as the value.
      * </p>
      * 
      * @param children
-     *        Children structure, which is a map with key as the LinkName and ObjectIdentifier as the value.
+     *        Children structure, which is a map with key as the LinkName and <code>ObjectIdentifier</code> as the
+     *        value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,11 +102,11 @@ public class ListObjectChildrenResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      * 
      * @param nextToken
-     *        Token used for pagination.
+     *        The pagination token.
      */
 
     public void setNextToken(String nextToken) {
@@ -112,10 +115,10 @@ public class ListObjectChildrenResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      * 
-     * @return Token used for pagination.
+     * @return The pagination token.
      */
 
     public String getNextToken() {
@@ -124,11 +127,11 @@ public class ListObjectChildrenResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      * 
      * @param nextToken
-     *        Token used for pagination.
+     *        The pagination token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -195,4 +198,5 @@ public class ListObjectChildrenResult extends com.amazonaws.AmazonWebServiceResu
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

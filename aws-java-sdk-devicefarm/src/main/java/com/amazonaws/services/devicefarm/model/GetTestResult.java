@@ -26,10 +26,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetTestResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * A test condition that is evaluated.
+     * </p>
+     */
     private Test test;
 
     /**
+     * <p>
+     * A test condition that is evaluated.
+     * </p>
+     * 
      * @param test
+     *        A test condition that is evaluated.
      */
 
     public void setTest(Test test) {
@@ -37,7 +47,11 @@ public class GetTestResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
     }
 
     /**
-     * @return
+     * <p>
+     * A test condition that is evaluated.
+     * </p>
+     * 
+     * @return A test condition that is evaluated.
      */
 
     public Test getTest() {
@@ -45,7 +59,12 @@ public class GetTestResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
     }
 
     /**
+     * <p>
+     * A test condition that is evaluated.
+     * </p>
+     * 
      * @param test
+     *        A test condition that is evaluated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,4 +124,5 @@ public class GetTestResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

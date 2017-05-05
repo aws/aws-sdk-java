@@ -50,6 +50,11 @@ public class CreateConfigurationTemplateResultStaxUnmarshaller implements Unmars
                     continue;
                 }
 
+                if (context.testExpression("PlatformArn", targetDepth)) {
+                    createConfigurationTemplateResult.setPlatformArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("ApplicationName", targetDepth)) {
                     createConfigurationTemplateResult.setApplicationName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

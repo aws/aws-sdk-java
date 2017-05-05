@@ -14,17 +14,19 @@ package com.amazonaws.services.clouddirectory.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents the output of a BatchWrite response operation.
+ * Represents the output of a <code>BatchWrite</code> response operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchWriteOperationResponse"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class BatchWriteOperationResponse implements Serializable, Cloneable {
+public class BatchWriteOperationResponse implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -441,5 +443,11 @@ public class BatchWriteOperationResponse implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.clouddirectory.model.transform.BatchWriteOperationResponseMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

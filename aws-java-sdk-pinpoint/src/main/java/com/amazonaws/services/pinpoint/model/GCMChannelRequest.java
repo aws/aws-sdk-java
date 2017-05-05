@@ -14,9 +14,14 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * Google Cloud Messaging credentials
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GCMChannelRequest implements Serializable, Cloneable {
+public class GCMChannelRequest implements Serializable, Cloneable, StructuredPojo {
 
     /** Platform credential API key from Google. */
     private String apiKey;
@@ -105,5 +110,11 @@ public class GCMChannelRequest implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.pinpoint.model.transform.GCMChannelRequestMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

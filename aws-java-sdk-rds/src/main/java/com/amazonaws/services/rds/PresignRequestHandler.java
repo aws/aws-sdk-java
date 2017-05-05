@@ -25,11 +25,9 @@ import com.amazonaws.regions.Region;
 import com.amazonaws.regions.RegionUtils;
 import com.amazonaws.util.AwsHostNameUtils;
 import com.amazonaws.util.SdkHttpUtils;
-
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Arrays;
-import java.util.Date;
 
 /**
  * Abstract pre-sign handler that follows the pre-signing scheme outlined in the 'RDS Presigned URL for Cross-Region Copying' SEP.
@@ -54,19 +52,8 @@ abstract class PresignRequestHandler<T extends AmazonWebServiceRequest> extends 
 
     private final Class<T> requestClassToPreSign;
 
-    private final Date signingOverrideDate;
-
     protected PresignRequestHandler(Class<T> requestClassToPreSign) {
-        this(requestClassToPreSign, null);
-    }
-
-    protected PresignRequestHandler(Class<T> requestClassToPreSign, Date signingOverrideDate) {
         this.requestClassToPreSign = requestClassToPreSign;
-        if (signingOverrideDate != null) {
-            this.signingOverrideDate = new Date(signingOverrideDate.getTime());
-        } else {
-            this.signingOverrideDate = null;
-        }
     }
 
     @Override
@@ -115,7 +102,6 @@ abstract class PresignRequestHandler<T extends AmazonWebServiceRequest> extends 
         AWS4Signer signer = new AWS4Signer(true);
         signer.setRegionName(signingRegion);
         signer.setServiceName(SERVICE_NAME);
-        signer.setOverrideDate(signingOverrideDate);
         return signer;
     }
 

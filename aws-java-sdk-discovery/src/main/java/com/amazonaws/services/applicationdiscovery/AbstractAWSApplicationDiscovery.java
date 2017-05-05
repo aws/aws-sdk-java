@@ -73,7 +73,13 @@ public class AbstractAWSApplicationDiscovery implements AWSApplicationDiscovery 
     }
 
     @Override
+    @Deprecated
     public DescribeExportConfigurationsResult describeExportConfigurations(DescribeExportConfigurationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeExportTasksResult describeExportTasks(DescribeExportTasksRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -89,6 +95,7 @@ public class AbstractAWSApplicationDiscovery implements AWSApplicationDiscovery 
     }
 
     @Override
+    @Deprecated
     public ExportConfigurationsResult exportConfigurations(ExportConfigurationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -110,6 +117,11 @@ public class AbstractAWSApplicationDiscovery implements AWSApplicationDiscovery 
 
     @Override
     public StartDataCollectionByAgentIdsResult startDataCollectionByAgentIds(StartDataCollectionByAgentIdsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartExportTaskResult startExportTask(StartExportTaskRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

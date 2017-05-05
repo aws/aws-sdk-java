@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -50,20 +51,20 @@ import com.amazonaws.services.opsworks.model.transform.*;
  * <p>
  * <fullname>AWS OpsWorks</fullname>
  * <p>
- * Welcome to the <i>AWS OpsWorks API Reference</i>. This guide provides descriptions, syntax, and usage examples for
- * AWS OpsWorks actions and data types, including common parameters and error codes.
+ * Welcome to the <i>AWS OpsWorks Stacks API Reference</i>. This guide provides descriptions, syntax, and usage examples
+ * for AWS OpsWorks Stacks actions and data types, including common parameters and error codes.
  * </p>
  * <p>
- * AWS OpsWorks is an application management service that provides an integrated experience for overseeing the complete
- * application lifecycle. For information about this product, go to the <a href="http://aws.amazon.com/opsworks/">AWS
- * OpsWorks</a> details page.
+ * AWS OpsWorks Stacks is an application management service that provides an integrated experience for overseeing the
+ * complete application lifecycle. For information about this product, go to the <a
+ * href="http://aws.amazon.com/opsworks/">AWS OpsWorks</a> details page.
  * </p>
  * <p>
  * <b>SDKs and CLI</b>
  * </p>
  * <p>
- * The most common way to use the AWS OpsWorks API is by using the AWS Command Line Interface (CLI) or by using one of
- * the AWS SDKs to implement applications in your preferred language. For more information, see:
+ * The most common way to use the AWS OpsWorks Stacks API is by using the AWS Command Line Interface (CLI) or by using
+ * one of the AWS SDKs to implement applications in your preferred language. For more information, see:
  * </p>
  * <ul>
  * <li>
@@ -109,13 +110,18 @@ import com.amazonaws.services.opsworks.model.transform.*;
  * <b>Endpoints</b>
  * </p>
  * <p>
- * AWS OpsWorks supports the following endpoints, all HTTPS. You must connect to one of the following endpoints. Stacks
- * can only be accessed or managed within the endpoint in which they are created.
+ * AWS OpsWorks Stacks supports the following endpoints, all HTTPS. You must connect to one of the following endpoints.
+ * Stacks can only be accessed or managed within the endpoint in which they are created.
  * </p>
  * <ul>
  * <li>
  * <p>
  * opsworks.us-east-1.amazonaws.com
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * opsworks.us-east-2.amazonaws.com
  * </p>
  * </li>
  * <li>
@@ -131,6 +137,11 @@ import com.amazonaws.services.opsworks.model.transform.*;
  * <li>
  * <p>
  * opsworks.eu-west-1.amazonaws.com
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * opsworks.eu-west-2.amazonaws.com
  * </p>
  * </li>
  * <li>
@@ -365,6 +376,10 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         init();
     }
 
+    public static AWSOpsWorksClientBuilder builder() {
+        return AWSOpsWorksClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWS OpsWorks using the specified parameters.
      *
@@ -409,7 +424,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * </li>
      * <li>
      * <p>
-     * You cannot use this action with instances that were created with AWS OpsWorks.
+     * You cannot use this action with instances that were created with AWS OpsWorks Stacks.
      * </p>
      * </li>
      * </ul>
@@ -432,7 +447,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public AssignInstanceResult assignInstance(AssignInstanceRequest assignInstanceRequest) {
+    public AssignInstanceResult assignInstance(AssignInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssignInstance(request);
+    }
+
+    @SdkInternalApi
+    final AssignInstanceResult executeAssignInstance(AssignInstanceRequest assignInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(assignInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -443,7 +464,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AssignInstanceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(assignInstanceRequest));
+                request = new AssignInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(assignInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -487,7 +508,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public AssignVolumeResult assignVolume(AssignVolumeRequest assignVolumeRequest) {
+    public AssignVolumeResult assignVolume(AssignVolumeRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssignVolume(request);
+    }
+
+    @SdkInternalApi
+    final AssignVolumeResult executeAssignVolume(AssignVolumeRequest assignVolumeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(assignVolumeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -498,7 +525,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AssignVolumeRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(assignVolumeRequest));
+                request = new AssignVolumeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(assignVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -541,7 +568,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      API Documentation</a>
      */
     @Override
-    public AssociateElasticIpResult associateElasticIp(AssociateElasticIpRequest associateElasticIpRequest) {
+    public AssociateElasticIpResult associateElasticIp(AssociateElasticIpRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateElasticIp(request);
+    }
+
+    @SdkInternalApi
+    final AssociateElasticIpResult executeAssociateElasticIp(AssociateElasticIpRequest associateElasticIpRequest) {
 
         ExecutionContext executionContext = createExecutionContext(associateElasticIpRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -552,7 +585,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AssociateElasticIpRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateElasticIpRequest));
+                request = new AssociateElasticIpRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateElasticIpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -602,7 +635,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AttachElasticLoadBalancerResult attachElasticLoadBalancer(AttachElasticLoadBalancerRequest attachElasticLoadBalancerRequest) {
+    public AttachElasticLoadBalancerResult attachElasticLoadBalancer(AttachElasticLoadBalancerRequest request) {
+        request = beforeClientExecution(request);
+        return executeAttachElasticLoadBalancer(request);
+    }
+
+    @SdkInternalApi
+    final AttachElasticLoadBalancerResult executeAttachElasticLoadBalancer(AttachElasticLoadBalancerRequest attachElasticLoadBalancerRequest) {
 
         ExecutionContext executionContext = createExecutionContext(attachElasticLoadBalancerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -613,7 +652,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AttachElasticLoadBalancerRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(attachElasticLoadBalancerRequest));
+                request = new AttachElasticLoadBalancerRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(attachElasticLoadBalancerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -657,7 +697,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public CloneStackResult cloneStack(CloneStackRequest cloneStackRequest) {
+    public CloneStackResult cloneStack(CloneStackRequest request) {
+        request = beforeClientExecution(request);
+        return executeCloneStack(request);
+    }
+
+    @SdkInternalApi
+    final CloneStackResult executeCloneStack(CloneStackRequest cloneStackRequest) {
 
         ExecutionContext executionContext = createExecutionContext(cloneStackRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -668,7 +714,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CloneStackRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(cloneStackRequest));
+                request = new CloneStackRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cloneStackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -710,7 +756,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public CreateAppResult createApp(CreateAppRequest createAppRequest) {
+    public CreateAppResult createApp(CreateAppRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateApp(request);
+    }
+
+    @SdkInternalApi
+    final CreateAppResult executeCreateApp(CreateAppRequest createAppRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createAppRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -721,7 +773,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateAppRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAppRequest));
+                request = new CreateAppRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAppRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -764,7 +816,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public CreateDeploymentResult createDeployment(CreateDeploymentRequest createDeploymentRequest) {
+    public CreateDeploymentResult createDeployment(CreateDeploymentRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDeployment(request);
+    }
+
+    @SdkInternalApi
+    final CreateDeploymentResult executeCreateDeployment(CreateDeploymentRequest createDeploymentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createDeploymentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -775,7 +833,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateDeploymentRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDeploymentRequest));
+                request = new CreateDeploymentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDeploymentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -818,7 +876,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public CreateInstanceResult createInstance(CreateInstanceRequest createInstanceRequest) {
+    public CreateInstanceResult createInstance(CreateInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateInstance(request);
+    }
+
+    @SdkInternalApi
+    final CreateInstanceResult executeCreateInstance(CreateInstanceRequest createInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -829,7 +893,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateInstanceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createInstanceRequest));
+                request = new CreateInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -880,7 +944,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public CreateLayerResult createLayer(CreateLayerRequest createLayerRequest) {
+    public CreateLayerResult createLayer(CreateLayerRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateLayer(request);
+    }
+
+    @SdkInternalApi
+    final CreateLayerResult executeCreateLayer(CreateLayerRequest createLayerRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createLayerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -891,7 +961,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateLayerRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createLayerRequest));
+                request = new CreateLayerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createLayerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -931,7 +1001,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public CreateStackResult createStack(CreateStackRequest createStackRequest) {
+    public CreateStackResult createStack(CreateStackRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateStack(request);
+    }
+
+    @SdkInternalApi
+    final CreateStackResult executeCreateStack(CreateStackRequest createStackRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createStackRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -942,7 +1018,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateStackRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createStackRequest));
+                request = new CreateStackRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createStackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -981,7 +1057,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public CreateUserProfileResult createUserProfile(CreateUserProfileRequest createUserProfileRequest) {
+    public CreateUserProfileResult createUserProfile(CreateUserProfileRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateUserProfile(request);
+    }
+
+    @SdkInternalApi
+    final CreateUserProfileResult executeCreateUserProfile(CreateUserProfileRequest createUserProfileRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createUserProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -992,7 +1074,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateUserProfileRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUserProfileRequest));
+                request = new CreateUserProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUserProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1033,7 +1115,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public DeleteAppResult deleteApp(DeleteAppRequest deleteAppRequest) {
+    public DeleteAppResult deleteApp(DeleteAppRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteApp(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAppResult executeDeleteApp(DeleteAppRequest deleteAppRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteAppRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1044,7 +1132,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteAppRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAppRequest));
+                request = new DeleteAppRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAppRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1090,7 +1178,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public DeleteInstanceResult deleteInstance(DeleteInstanceRequest deleteInstanceRequest) {
+    public DeleteInstanceResult deleteInstance(DeleteInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteInstance(request);
+    }
+
+    @SdkInternalApi
+    final DeleteInstanceResult executeDeleteInstance(DeleteInstanceRequest deleteInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1101,7 +1195,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteInstanceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteInstanceRequest));
+                request = new DeleteInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1145,7 +1239,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public DeleteLayerResult deleteLayer(DeleteLayerRequest deleteLayerRequest) {
+    public DeleteLayerResult deleteLayer(DeleteLayerRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteLayer(request);
+    }
+
+    @SdkInternalApi
+    final DeleteLayerResult executeDeleteLayer(DeleteLayerRequest deleteLayerRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteLayerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1156,7 +1256,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteLayerRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteLayerRequest));
+                request = new DeleteLayerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteLayerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1199,7 +1299,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public DeleteStackResult deleteStack(DeleteStackRequest deleteStackRequest) {
+    public DeleteStackResult deleteStack(DeleteStackRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteStack(request);
+    }
+
+    @SdkInternalApi
+    final DeleteStackResult executeDeleteStack(DeleteStackRequest deleteStackRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteStackRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1210,7 +1316,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteStackRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteStackRequest));
+                request = new DeleteStackRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteStackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1251,7 +1357,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public DeleteUserProfileResult deleteUserProfile(DeleteUserProfileRequest deleteUserProfileRequest) {
+    public DeleteUserProfileResult deleteUserProfile(DeleteUserProfileRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteUserProfile(request);
+    }
+
+    @SdkInternalApi
+    final DeleteUserProfileResult executeDeleteUserProfile(DeleteUserProfileRequest deleteUserProfileRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteUserProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1262,7 +1374,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteUserProfileRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUserProfileRequest));
+                request = new DeleteUserProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUserProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1305,7 +1417,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      API Documentation</a>
      */
     @Override
-    public DeregisterEcsClusterResult deregisterEcsCluster(DeregisterEcsClusterRequest deregisterEcsClusterRequest) {
+    public DeregisterEcsClusterResult deregisterEcsCluster(DeregisterEcsClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeregisterEcsCluster(request);
+    }
+
+    @SdkInternalApi
+    final DeregisterEcsClusterResult executeDeregisterEcsCluster(DeregisterEcsClusterRequest deregisterEcsClusterRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deregisterEcsClusterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1316,7 +1434,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeregisterEcsClusterRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deregisterEcsClusterRequest));
+                request = new DeregisterEcsClusterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deregisterEcsClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1359,7 +1477,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      API Documentation</a>
      */
     @Override
-    public DeregisterElasticIpResult deregisterElasticIp(DeregisterElasticIpRequest deregisterElasticIpRequest) {
+    public DeregisterElasticIpResult deregisterElasticIp(DeregisterElasticIpRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeregisterElasticIp(request);
+    }
+
+    @SdkInternalApi
+    final DeregisterElasticIpResult executeDeregisterElasticIp(DeregisterElasticIpRequest deregisterElasticIpRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deregisterElasticIpRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1370,7 +1494,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeregisterElasticIpRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deregisterElasticIpRequest));
+                request = new DeregisterElasticIpRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deregisterElasticIpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1392,7 +1516,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
     /**
      * <p>
      * Deregister a registered Amazon EC2 or on-premises instance. This action removes the instance from the stack and
-     * returns it to your control. This action can not be used with instances that were created with AWS OpsWorks.
+     * returns it to your control. This action can not be used with instances that were created with AWS OpsWorks
+     * Stacks.
      * </p>
      * <p>
      * <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack
@@ -1412,7 +1537,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      API Documentation</a>
      */
     @Override
-    public DeregisterInstanceResult deregisterInstance(DeregisterInstanceRequest deregisterInstanceRequest) {
+    public DeregisterInstanceResult deregisterInstance(DeregisterInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeregisterInstance(request);
+    }
+
+    @SdkInternalApi
+    final DeregisterInstanceResult executeDeregisterInstance(DeregisterInstanceRequest deregisterInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deregisterInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1423,7 +1554,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeregisterInstanceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deregisterInstanceRequest));
+                request = new DeregisterInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deregisterInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1464,7 +1595,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeregisterRdsDbInstanceResult deregisterRdsDbInstance(DeregisterRdsDbInstanceRequest deregisterRdsDbInstanceRequest) {
+    public DeregisterRdsDbInstanceResult deregisterRdsDbInstance(DeregisterRdsDbInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeregisterRdsDbInstance(request);
+    }
+
+    @SdkInternalApi
+    final DeregisterRdsDbInstanceResult executeDeregisterRdsDbInstance(DeregisterRdsDbInstanceRequest deregisterRdsDbInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deregisterRdsDbInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1475,7 +1612,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeregisterRdsDbInstanceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deregisterRdsDbInstanceRequest));
+                request = new DeregisterRdsDbInstanceRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deregisterRdsDbInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1518,7 +1656,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public DeregisterVolumeResult deregisterVolume(DeregisterVolumeRequest deregisterVolumeRequest) {
+    public DeregisterVolumeResult deregisterVolume(DeregisterVolumeRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeregisterVolume(request);
+    }
+
+    @SdkInternalApi
+    final DeregisterVolumeResult executeDeregisterVolume(DeregisterVolumeRequest deregisterVolumeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deregisterVolumeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1529,7 +1673,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeregisterVolumeRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deregisterVolumeRequest));
+                request = new DeregisterVolumeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deregisterVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1550,8 +1694,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
     /**
      * <p>
-     * Describes the available AWS OpsWorks agent versions. You must specify a stack ID or a configuration manager.
-     * <code>DescribeAgentVersions</code> returns a list of available agent versions for the specified stack or
+     * Describes the available AWS OpsWorks Stacks agent versions. You must specify a stack ID or a configuration
+     * manager. <code>DescribeAgentVersions</code> returns a list of available agent versions for the specified stack or
      * configuration manager.
      * </p>
      * 
@@ -1566,7 +1710,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      API Documentation</a>
      */
     @Override
-    public DescribeAgentVersionsResult describeAgentVersions(DescribeAgentVersionsRequest describeAgentVersionsRequest) {
+    public DescribeAgentVersionsResult describeAgentVersions(DescribeAgentVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAgentVersions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAgentVersionsResult executeDescribeAgentVersions(DescribeAgentVersionsRequest describeAgentVersionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAgentVersionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1577,7 +1727,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAgentVersionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAgentVersionsRequest));
+                request = new DescribeAgentVersionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAgentVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1603,7 +1753,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * </p>
      * <note>
      * <p>
-     * You must specify at least one of the parameters.
+     * This call accepts only one resource-identifying parameter.
      * </p>
      * </note>
      * <p>
@@ -1625,7 +1775,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public DescribeAppsResult describeApps(DescribeAppsRequest describeAppsRequest) {
+    public DescribeAppsResult describeApps(DescribeAppsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeApps(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAppsResult executeDescribeApps(DescribeAppsRequest describeAppsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAppsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1636,7 +1792,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAppsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAppsRequest));
+                request = new DescribeAppsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAppsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1661,7 +1817,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * </p>
      * <note>
      * <p>
-     * You must specify at least one of the parameters.
+     * This call accepts only one resource-identifying parameter.
      * </p>
      * </note>
      * <p>
@@ -1683,7 +1839,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public DescribeCommandsResult describeCommands(DescribeCommandsRequest describeCommandsRequest) {
+    public DescribeCommandsResult describeCommands(DescribeCommandsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeCommands(request);
+    }
+
+    @SdkInternalApi
+    final DescribeCommandsResult executeDescribeCommands(DescribeCommandsRequest describeCommandsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeCommandsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1694,7 +1856,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeCommandsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeCommandsRequest));
+                request = new DescribeCommandsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeCommandsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1719,7 +1881,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * </p>
      * <note>
      * <p>
-     * You must specify at least one of the parameters.
+     * This call accepts only one resource-identifying parameter.
      * </p>
      * </note>
      * <p>
@@ -1741,7 +1903,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      API Documentation</a>
      */
     @Override
-    public DescribeDeploymentsResult describeDeployments(DescribeDeploymentsRequest describeDeploymentsRequest) {
+    public DescribeDeploymentsResult describeDeployments(DescribeDeploymentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDeployments(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDeploymentsResult executeDescribeDeployments(DescribeDeploymentsRequest describeDeploymentsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeDeploymentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1752,7 +1920,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeDeploymentsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDeploymentsRequest));
+                request = new DescribeDeploymentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDeploymentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1775,7 +1943,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * <p>
      * Describes Amazon ECS clusters that are registered with a stack. If you specify only a stack ID, you can use the
      * <code>MaxResults</code> and <code>NextToken</code> parameters to paginate the response. However, AWS OpsWorks
-     * currently supports only one cluster per layer, so the result set has a maximum of one element.
+     * Stacks currently supports only one cluster per layer, so the result set has a maximum of one element.
      * </p>
      * <p>
      * <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions
@@ -1783,6 +1951,9 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * permissions, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
      * Permissions</a>.
+     * </p>
+     * <p>
+     * This call accepts only one resource-identifying parameter.
      * </p>
      * 
      * @param describeEcsClustersRequest
@@ -1796,7 +1967,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      API Documentation</a>
      */
     @Override
-    public DescribeEcsClustersResult describeEcsClusters(DescribeEcsClustersRequest describeEcsClustersRequest) {
+    public DescribeEcsClustersResult describeEcsClusters(DescribeEcsClustersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEcsClusters(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEcsClustersResult executeDescribeEcsClusters(DescribeEcsClustersRequest describeEcsClustersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEcsClustersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1807,7 +1984,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeEcsClustersRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEcsClustersRequest));
+                request = new DescribeEcsClustersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEcsClustersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1833,7 +2010,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * </p>
      * <note>
      * <p>
-     * You must specify at least one of the parameters.
+     * This call accepts only one resource-identifying parameter.
      * </p>
      * </note>
      * <p>
@@ -1855,7 +2032,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      API Documentation</a>
      */
     @Override
-    public DescribeElasticIpsResult describeElasticIps(DescribeElasticIpsRequest describeElasticIpsRequest) {
+    public DescribeElasticIpsResult describeElasticIps(DescribeElasticIpsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeElasticIps(request);
+    }
+
+    @SdkInternalApi
+    final DescribeElasticIpsResult executeDescribeElasticIps(DescribeElasticIpsRequest describeElasticIpsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeElasticIpsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1866,7 +2049,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeElasticIpsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeElasticIpsRequest));
+                request = new DescribeElasticIpsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeElasticIpsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1891,7 +2074,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * </p>
      * <note>
      * <p>
-     * You must specify at least one of the parameters.
+     * This call accepts only one resource-identifying parameter.
      * </p>
      * </note>
      * <p>
@@ -1913,7 +2096,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeElasticLoadBalancersResult describeElasticLoadBalancers(DescribeElasticLoadBalancersRequest describeElasticLoadBalancersRequest) {
+    public DescribeElasticLoadBalancersResult describeElasticLoadBalancers(DescribeElasticLoadBalancersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeElasticLoadBalancers(request);
+    }
+
+    @SdkInternalApi
+    final DescribeElasticLoadBalancersResult executeDescribeElasticLoadBalancers(DescribeElasticLoadBalancersRequest describeElasticLoadBalancersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeElasticLoadBalancersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1924,7 +2113,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeElasticLoadBalancersRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeElasticLoadBalancersRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeElasticLoadBalancersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1951,7 +2140,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * </p>
      * <note>
      * <p>
-     * You must specify at least one of the parameters.
+     * This call accepts only one resource-identifying parameter.
      * </p>
      * </note>
      * <p>
@@ -1973,7 +2162,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public DescribeInstancesResult describeInstances(DescribeInstancesRequest describeInstancesRequest) {
+    public DescribeInstancesResult describeInstances(DescribeInstancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeInstances(request);
+    }
+
+    @SdkInternalApi
+    final DescribeInstancesResult executeDescribeInstances(DescribeInstancesRequest describeInstancesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1984,7 +2179,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeInstancesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeInstancesRequest));
+                request = new DescribeInstancesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2009,7 +2204,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * </p>
      * <note>
      * <p>
-     * You must specify at least one of the parameters.
+     * This call accepts only one resource-identifying parameter.
      * </p>
      * </note>
      * <p>
@@ -2031,7 +2226,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public DescribeLayersResult describeLayers(DescribeLayersRequest describeLayersRequest) {
+    public DescribeLayersResult describeLayers(DescribeLayersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeLayers(request);
+    }
+
+    @SdkInternalApi
+    final DescribeLayersResult executeDescribeLayers(DescribeLayersRequest describeLayersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeLayersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2042,7 +2243,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeLayersRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeLayersRequest));
+                request = new DescribeLayersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeLayersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2089,7 +2290,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeLoadBasedAutoScalingResult describeLoadBasedAutoScaling(DescribeLoadBasedAutoScalingRequest describeLoadBasedAutoScalingRequest) {
+    public DescribeLoadBasedAutoScalingResult describeLoadBasedAutoScaling(DescribeLoadBasedAutoScalingRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeLoadBasedAutoScaling(request);
+    }
+
+    @SdkInternalApi
+    final DescribeLoadBasedAutoScalingResult executeDescribeLoadBasedAutoScaling(DescribeLoadBasedAutoScalingRequest describeLoadBasedAutoScalingRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeLoadBasedAutoScalingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2100,7 +2307,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeLoadBasedAutoScalingRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeLoadBasedAutoScalingRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeLoadBasedAutoScalingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -2139,7 +2346,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      API Documentation</a>
      */
     @Override
-    public DescribeMyUserProfileResult describeMyUserProfile(DescribeMyUserProfileRequest describeMyUserProfileRequest) {
+    public DescribeMyUserProfileResult describeMyUserProfile(DescribeMyUserProfileRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeMyUserProfile(request);
+    }
+
+    @SdkInternalApi
+    final DescribeMyUserProfileResult executeDescribeMyUserProfile(DescribeMyUserProfileRequest describeMyUserProfileRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeMyUserProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2150,7 +2363,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeMyUserProfileRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeMyUserProfileRequest));
+                request = new DescribeMyUserProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeMyUserProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2192,7 +2405,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      API Documentation</a>
      */
     @Override
-    public DescribePermissionsResult describePermissions(DescribePermissionsRequest describePermissionsRequest) {
+    public DescribePermissionsResult describePermissions(DescribePermissionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribePermissions(request);
+    }
+
+    @SdkInternalApi
+    final DescribePermissionsResult executeDescribePermissions(DescribePermissionsRequest describePermissionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describePermissionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2203,7 +2422,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribePermissionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describePermissionsRequest));
+                request = new DescribePermissionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describePermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2228,7 +2447,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * </p>
      * <note>
      * <p>
-     * You must specify at least one of the parameters.
+     * This call accepts only one resource-identifying parameter.
      * </p>
      * </note>
      * <p>
@@ -2250,7 +2469,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      API Documentation</a>
      */
     @Override
-    public DescribeRaidArraysResult describeRaidArrays(DescribeRaidArraysRequest describeRaidArraysRequest) {
+    public DescribeRaidArraysResult describeRaidArrays(DescribeRaidArraysRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeRaidArrays(request);
+    }
+
+    @SdkInternalApi
+    final DescribeRaidArraysResult executeDescribeRaidArrays(DescribeRaidArraysRequest describeRaidArraysRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeRaidArraysRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2261,7 +2486,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeRaidArraysRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeRaidArraysRequest));
+                request = new DescribeRaidArraysRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeRaidArraysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2291,6 +2516,9 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
      * Permissions</a>.
      * </p>
+     * <p>
+     * This call accepts only one resource-identifying parameter.
+     * </p>
      * 
      * @param describeRdsDbInstancesRequest
      * @return Result of the DescribeRdsDbInstances operation returned by the service.
@@ -2303,7 +2531,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeRdsDbInstancesResult describeRdsDbInstances(DescribeRdsDbInstancesRequest describeRdsDbInstancesRequest) {
+    public DescribeRdsDbInstancesResult describeRdsDbInstances(DescribeRdsDbInstancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeRdsDbInstances(request);
+    }
+
+    @SdkInternalApi
+    final DescribeRdsDbInstancesResult executeDescribeRdsDbInstances(DescribeRdsDbInstancesRequest describeRdsDbInstancesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeRdsDbInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2314,7 +2548,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeRdsDbInstancesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeRdsDbInstancesRequest));
+                request = new DescribeRdsDbInstancesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeRdsDbInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2336,7 +2570,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
     /**
      * <p>
-     * Describes AWS OpsWorks service errors.
+     * Describes AWS OpsWorks Stacks service errors.
      * </p>
      * <p>
      * <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions
@@ -2344,6 +2578,9 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * permissions, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
      * Permissions</a>.
+     * </p>
+     * <p>
+     * This call accepts only one resource-identifying parameter.
      * </p>
      * 
      * @param describeServiceErrorsRequest
@@ -2357,7 +2594,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      API Documentation</a>
      */
     @Override
-    public DescribeServiceErrorsResult describeServiceErrors(DescribeServiceErrorsRequest describeServiceErrorsRequest) {
+    public DescribeServiceErrorsResult describeServiceErrors(DescribeServiceErrorsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeServiceErrors(request);
+    }
+
+    @SdkInternalApi
+    final DescribeServiceErrorsResult executeDescribeServiceErrors(DescribeServiceErrorsRequest describeServiceErrorsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeServiceErrorsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2368,7 +2611,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeServiceErrorsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeServiceErrorsRequest));
+                request = new DescribeServiceErrorsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeServiceErrorsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2411,7 +2654,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeStackProvisioningParametersResult describeStackProvisioningParameters(
+    public DescribeStackProvisioningParametersResult describeStackProvisioningParameters(DescribeStackProvisioningParametersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeStackProvisioningParameters(request);
+    }
+
+    @SdkInternalApi
+    final DescribeStackProvisioningParametersResult executeDescribeStackProvisioningParameters(
             DescribeStackProvisioningParametersRequest describeStackProvisioningParametersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeStackProvisioningParametersRequest);
@@ -2423,7 +2672,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeStackProvisioningParametersRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeStackProvisioningParametersRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeStackProvisioningParametersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -2468,7 +2717,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      API Documentation</a>
      */
     @Override
-    public DescribeStackSummaryResult describeStackSummary(DescribeStackSummaryRequest describeStackSummaryRequest) {
+    public DescribeStackSummaryResult describeStackSummary(DescribeStackSummaryRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeStackSummary(request);
+    }
+
+    @SdkInternalApi
+    final DescribeStackSummaryResult executeDescribeStackSummary(DescribeStackSummaryRequest describeStackSummaryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeStackSummaryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2479,7 +2734,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeStackSummaryRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeStackSummaryRequest));
+                request = new DescribeStackSummaryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeStackSummaryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2521,7 +2776,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public DescribeStacksResult describeStacks(DescribeStacksRequest describeStacksRequest) {
+    public DescribeStacksResult describeStacks(DescribeStacksRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeStacks(request);
+    }
+
+    @SdkInternalApi
+    final DescribeStacksResult executeDescribeStacks(DescribeStacksRequest describeStacksRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeStacksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2532,7 +2793,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeStacksRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeStacksRequest));
+                request = new DescribeStacksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeStacksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2579,7 +2840,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeTimeBasedAutoScalingResult describeTimeBasedAutoScaling(DescribeTimeBasedAutoScalingRequest describeTimeBasedAutoScalingRequest) {
+    public DescribeTimeBasedAutoScalingResult describeTimeBasedAutoScaling(DescribeTimeBasedAutoScalingRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTimeBasedAutoScaling(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTimeBasedAutoScalingResult executeDescribeTimeBasedAutoScaling(DescribeTimeBasedAutoScalingRequest describeTimeBasedAutoScalingRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTimeBasedAutoScalingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2590,7 +2857,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTimeBasedAutoScalingRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeTimeBasedAutoScalingRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeTimeBasedAutoScalingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -2633,7 +2900,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      API Documentation</a>
      */
     @Override
-    public DescribeUserProfilesResult describeUserProfiles(DescribeUserProfilesRequest describeUserProfilesRequest) {
+    public DescribeUserProfilesResult describeUserProfiles(DescribeUserProfilesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeUserProfiles(request);
+    }
+
+    @SdkInternalApi
+    final DescribeUserProfilesResult executeDescribeUserProfiles(DescribeUserProfilesRequest describeUserProfilesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeUserProfilesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2644,7 +2917,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeUserProfilesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeUserProfilesRequest));
+                request = new DescribeUserProfilesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeUserProfilesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2669,7 +2942,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * </p>
      * <note>
      * <p>
-     * You must specify at least one of the parameters.
+     * This call accepts only one resource-identifying parameter.
      * </p>
      * </note>
      * <p>
@@ -2691,7 +2964,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public DescribeVolumesResult describeVolumes(DescribeVolumesRequest describeVolumesRequest) {
+    public DescribeVolumesResult describeVolumes(DescribeVolumesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeVolumes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeVolumesResult executeDescribeVolumes(DescribeVolumesRequest describeVolumesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeVolumesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2702,7 +2981,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeVolumesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeVolumesRequest));
+                request = new DescribeVolumesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeVolumesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2741,7 +3020,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DetachElasticLoadBalancerResult detachElasticLoadBalancer(DetachElasticLoadBalancerRequest detachElasticLoadBalancerRequest) {
+    public DetachElasticLoadBalancerResult detachElasticLoadBalancer(DetachElasticLoadBalancerRequest request) {
+        request = beforeClientExecution(request);
+        return executeDetachElasticLoadBalancer(request);
+    }
+
+    @SdkInternalApi
+    final DetachElasticLoadBalancerResult executeDetachElasticLoadBalancer(DetachElasticLoadBalancerRequest detachElasticLoadBalancerRequest) {
 
         ExecutionContext executionContext = createExecutionContext(detachElasticLoadBalancerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2752,7 +3037,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DetachElasticLoadBalancerRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(detachElasticLoadBalancerRequest));
+                request = new DetachElasticLoadBalancerRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(detachElasticLoadBalancerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2796,7 +3082,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      API Documentation</a>
      */
     @Override
-    public DisassociateElasticIpResult disassociateElasticIp(DisassociateElasticIpRequest disassociateElasticIpRequest) {
+    public DisassociateElasticIpResult disassociateElasticIp(DisassociateElasticIpRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateElasticIp(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateElasticIpResult executeDisassociateElasticIp(DisassociateElasticIpRequest disassociateElasticIpRequest) {
 
         ExecutionContext executionContext = createExecutionContext(disassociateElasticIpRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2807,7 +3099,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisassociateElasticIpRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(disassociateElasticIpRequest));
+                request = new DisassociateElasticIpRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disassociateElasticIpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2849,7 +3141,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      API Documentation</a>
      */
     @Override
-    public GetHostnameSuggestionResult getHostnameSuggestion(GetHostnameSuggestionRequest getHostnameSuggestionRequest) {
+    public GetHostnameSuggestionResult getHostnameSuggestion(GetHostnameSuggestionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetHostnameSuggestion(request);
+    }
+
+    @SdkInternalApi
+    final GetHostnameSuggestionResult executeGetHostnameSuggestion(GetHostnameSuggestionRequest getHostnameSuggestionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getHostnameSuggestionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2860,7 +3158,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetHostnameSuggestionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getHostnameSuggestionRequest));
+                request = new GetHostnameSuggestionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getHostnameSuggestionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2901,7 +3199,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public GrantAccessResult grantAccess(GrantAccessRequest grantAccessRequest) {
+    public GrantAccessResult grantAccess(GrantAccessRequest request) {
+        request = beforeClientExecution(request);
+        return executeGrantAccess(request);
+    }
+
+    @SdkInternalApi
+    final GrantAccessResult executeGrantAccess(GrantAccessRequest grantAccessRequest) {
 
         ExecutionContext executionContext = createExecutionContext(grantAccessRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2912,7 +3216,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GrantAccessRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(grantAccessRequest));
+                request = new GrantAccessRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(grantAccessRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2955,7 +3259,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public RebootInstanceResult rebootInstance(RebootInstanceRequest rebootInstanceRequest) {
+    public RebootInstanceResult rebootInstance(RebootInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeRebootInstance(request);
+    }
+
+    @SdkInternalApi
+    final RebootInstanceResult executeRebootInstance(RebootInstanceRequest rebootInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(rebootInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2966,7 +3276,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RebootInstanceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(rebootInstanceRequest));
+                request = new RebootInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(rebootInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3010,7 +3320,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      API Documentation</a>
      */
     @Override
-    public RegisterEcsClusterResult registerEcsCluster(RegisterEcsClusterRequest registerEcsClusterRequest) {
+    public RegisterEcsClusterResult registerEcsCluster(RegisterEcsClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterEcsCluster(request);
+    }
+
+    @SdkInternalApi
+    final RegisterEcsClusterResult executeRegisterEcsCluster(RegisterEcsClusterRequest registerEcsClusterRequest) {
 
         ExecutionContext executionContext = createExecutionContext(registerEcsClusterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3021,7 +3337,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterEcsClusterRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerEcsClusterRequest));
+                request = new RegisterEcsClusterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerEcsClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3065,7 +3381,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public RegisterElasticIpResult registerElasticIp(RegisterElasticIpRequest registerElasticIpRequest) {
+    public RegisterElasticIpResult registerElasticIp(RegisterElasticIpRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterElasticIp(request);
+    }
+
+    @SdkInternalApi
+    final RegisterElasticIpResult executeRegisterElasticIp(RegisterElasticIpRequest registerElasticIpRequest) {
 
         ExecutionContext executionContext = createExecutionContext(registerElasticIpRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3076,7 +3398,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterElasticIpRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerElasticIpRequest));
+                request = new RegisterElasticIpRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerElasticIpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3097,18 +3419,26 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
 
     /**
      * <p>
-     * Registers instances with a specified stack that were created outside of AWS OpsWorks.
+     * Registers instances that were created outside of AWS OpsWorks Stacks with a specified stack.
      * </p>
      * <note>
      * <p>
-     * We do not recommend using this action to register instances. The complete registration operation has two primary
-     * steps, installing the AWS OpsWorks agent on the instance and registering the instance with the stack.
+     * We do not recommend using this action to register instances. The complete registration operation includes two
+     * tasks: installing the AWS OpsWorks Stacks agent on the instance, and registering the instance with the stack.
      * <code>RegisterInstance</code> handles only the second step. You should instead use the AWS CLI
      * <code>register</code> command, which performs the entire registration operation. For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register.html"> Registering an
-     * Instance with an AWS OpsWorks Stack</a>.
+     * Instance with an AWS OpsWorks Stacks Stack</a>.
      * </p>
      * </note>
+     * <p>
+     * Registered instances have the same requirements as instances that are created by using the <a>CreateInstance</a>
+     * API. For example, registered instances must be running a supported Linux-based operating system, and they must
+     * have a supported instance type. For more information about requirements for instances that you want to register,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register-registering-preparer.html">
+     * Preparing the Instance</a>.
+     * </p>
      * <p>
      * <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack
      * or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
@@ -3127,7 +3457,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public RegisterInstanceResult registerInstance(RegisterInstanceRequest registerInstanceRequest) {
+    public RegisterInstanceResult registerInstance(RegisterInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterInstance(request);
+    }
+
+    @SdkInternalApi
+    final RegisterInstanceResult executeRegisterInstance(RegisterInstanceRequest registerInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(registerInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3138,7 +3474,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterInstanceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerInstanceRequest));
+                request = new RegisterInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3179,7 +3515,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      API Documentation</a>
      */
     @Override
-    public RegisterRdsDbInstanceResult registerRdsDbInstance(RegisterRdsDbInstanceRequest registerRdsDbInstanceRequest) {
+    public RegisterRdsDbInstanceResult registerRdsDbInstance(RegisterRdsDbInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterRdsDbInstance(request);
+    }
+
+    @SdkInternalApi
+    final RegisterRdsDbInstanceResult executeRegisterRdsDbInstance(RegisterRdsDbInstanceRequest registerRdsDbInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(registerRdsDbInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3190,7 +3532,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterRdsDbInstanceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerRdsDbInstanceRequest));
+                request = new RegisterRdsDbInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerRdsDbInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3235,7 +3577,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public RegisterVolumeResult registerVolume(RegisterVolumeRequest registerVolumeRequest) {
+    public RegisterVolumeResult registerVolume(RegisterVolumeRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterVolume(request);
+    }
+
+    @SdkInternalApi
+    final RegisterVolumeResult executeRegisterVolume(RegisterVolumeRequest registerVolumeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(registerVolumeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3246,7 +3594,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterVolumeRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerVolumeRequest));
+                request = new RegisterVolumeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3296,7 +3644,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public SetLoadBasedAutoScalingResult setLoadBasedAutoScaling(SetLoadBasedAutoScalingRequest setLoadBasedAutoScalingRequest) {
+    public SetLoadBasedAutoScalingResult setLoadBasedAutoScaling(SetLoadBasedAutoScalingRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetLoadBasedAutoScaling(request);
+    }
+
+    @SdkInternalApi
+    final SetLoadBasedAutoScalingResult executeSetLoadBasedAutoScaling(SetLoadBasedAutoScalingRequest setLoadBasedAutoScalingRequest) {
 
         ExecutionContext executionContext = createExecutionContext(setLoadBasedAutoScalingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3307,7 +3661,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetLoadBasedAutoScalingRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(setLoadBasedAutoScalingRequest));
+                request = new SetLoadBasedAutoScalingRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(setLoadBasedAutoScalingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3350,7 +3705,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public SetPermissionResult setPermission(SetPermissionRequest setPermissionRequest) {
+    public SetPermissionResult setPermission(SetPermissionRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetPermission(request);
+    }
+
+    @SdkInternalApi
+    final SetPermissionResult executeSetPermission(SetPermissionRequest setPermissionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(setPermissionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3361,7 +3722,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetPermissionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(setPermissionRequest));
+                request = new SetPermissionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setPermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3404,7 +3765,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public SetTimeBasedAutoScalingResult setTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest setTimeBasedAutoScalingRequest) {
+    public SetTimeBasedAutoScalingResult setTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetTimeBasedAutoScaling(request);
+    }
+
+    @SdkInternalApi
+    final SetTimeBasedAutoScalingResult executeSetTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest setTimeBasedAutoScalingRequest) {
 
         ExecutionContext executionContext = createExecutionContext(setTimeBasedAutoScalingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3415,7 +3782,8 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetTimeBasedAutoScalingRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(setTimeBasedAutoScalingRequest));
+                request = new SetTimeBasedAutoScalingRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(setTimeBasedAutoScalingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3459,7 +3827,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public StartInstanceResult startInstance(StartInstanceRequest startInstanceRequest) {
+    public StartInstanceResult startInstance(StartInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartInstance(request);
+    }
+
+    @SdkInternalApi
+    final StartInstanceResult executeStartInstance(StartInstanceRequest startInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(startInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3470,7 +3844,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartInstanceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(startInstanceRequest));
+                request = new StartInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3511,7 +3885,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public StartStackResult startStack(StartStackRequest startStackRequest) {
+    public StartStackResult startStack(StartStackRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartStack(request);
+    }
+
+    @SdkInternalApi
+    final StartStackResult executeStartStack(StartStackRequest startStackRequest) {
 
         ExecutionContext executionContext = createExecutionContext(startStackRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3522,7 +3902,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartStackRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(startStackRequest));
+                request = new StartStackRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startStackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3566,7 +3946,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public StopInstanceResult stopInstance(StopInstanceRequest stopInstanceRequest) {
+    public StopInstanceResult stopInstance(StopInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopInstance(request);
+    }
+
+    @SdkInternalApi
+    final StopInstanceResult executeStopInstance(StopInstanceRequest stopInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(stopInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3577,7 +3963,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopInstanceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopInstanceRequest));
+                request = new StopInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3618,7 +4004,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public StopStackResult stopStack(StopStackRequest stopStackRequest) {
+    public StopStackResult stopStack(StopStackRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopStack(request);
+    }
+
+    @SdkInternalApi
+    final StopStackResult executeStopStack(StopStackRequest stopStackRequest) {
 
         ExecutionContext executionContext = createExecutionContext(stopStackRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3629,7 +4021,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopStackRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopStackRequest));
+                request = new StopStackRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopStackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3652,7 +4044,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      * <p>
      * Unassigns a registered instance from all of it's layers. The instance remains in the stack as an unassigned
      * instance and can be assigned to another layer, as needed. You cannot use this action with instances that were
-     * created with AWS OpsWorks.
+     * created with AWS OpsWorks Stacks.
      * </p>
      * <p>
      * <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack
@@ -3672,7 +4064,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public UnassignInstanceResult unassignInstance(UnassignInstanceRequest unassignInstanceRequest) {
+    public UnassignInstanceResult unassignInstance(UnassignInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUnassignInstance(request);
+    }
+
+    @SdkInternalApi
+    final UnassignInstanceResult executeUnassignInstance(UnassignInstanceRequest unassignInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(unassignInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3683,7 +4081,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UnassignInstanceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(unassignInstanceRequest));
+                request = new UnassignInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(unassignInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3725,7 +4123,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public UnassignVolumeResult unassignVolume(UnassignVolumeRequest unassignVolumeRequest) {
+    public UnassignVolumeResult unassignVolume(UnassignVolumeRequest request) {
+        request = beforeClientExecution(request);
+        return executeUnassignVolume(request);
+    }
+
+    @SdkInternalApi
+    final UnassignVolumeResult executeUnassignVolume(UnassignVolumeRequest unassignVolumeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(unassignVolumeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3736,7 +4140,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UnassignVolumeRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(unassignVolumeRequest));
+                request = new UnassignVolumeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(unassignVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3777,7 +4181,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public UpdateAppResult updateApp(UpdateAppRequest updateAppRequest) {
+    public UpdateAppResult updateApp(UpdateAppRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateApp(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAppResult executeUpdateApp(UpdateAppRequest updateAppRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateAppRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3788,7 +4198,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateAppRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAppRequest));
+                request = new UpdateAppRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAppRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3830,7 +4240,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public UpdateElasticIpResult updateElasticIp(UpdateElasticIpRequest updateElasticIpRequest) {
+    public UpdateElasticIpResult updateElasticIp(UpdateElasticIpRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateElasticIp(request);
+    }
+
+    @SdkInternalApi
+    final UpdateElasticIpResult executeUpdateElasticIp(UpdateElasticIpRequest updateElasticIpRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateElasticIpRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3841,7 +4257,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateElasticIpRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateElasticIpRequest));
+                request = new UpdateElasticIpRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateElasticIpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3882,7 +4298,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public UpdateInstanceResult updateInstance(UpdateInstanceRequest updateInstanceRequest) {
+    public UpdateInstanceResult updateInstance(UpdateInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateInstance(request);
+    }
+
+    @SdkInternalApi
+    final UpdateInstanceResult executeUpdateInstance(UpdateInstanceRequest updateInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3893,7 +4315,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateInstanceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateInstanceRequest));
+                request = new UpdateInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3934,7 +4356,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public UpdateLayerResult updateLayer(UpdateLayerRequest updateLayerRequest) {
+    public UpdateLayerResult updateLayer(UpdateLayerRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateLayer(request);
+    }
+
+    @SdkInternalApi
+    final UpdateLayerResult executeUpdateLayer(UpdateLayerRequest updateLayerRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateLayerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3945,7 +4373,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateLayerRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateLayerRequest));
+                request = new UpdateLayerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateLayerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3984,7 +4412,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      API Documentation</a>
      */
     @Override
-    public UpdateMyUserProfileResult updateMyUserProfile(UpdateMyUserProfileRequest updateMyUserProfileRequest) {
+    public UpdateMyUserProfileResult updateMyUserProfile(UpdateMyUserProfileRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateMyUserProfile(request);
+    }
+
+    @SdkInternalApi
+    final UpdateMyUserProfileResult executeUpdateMyUserProfile(UpdateMyUserProfileRequest updateMyUserProfileRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateMyUserProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3995,7 +4429,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateMyUserProfileRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateMyUserProfileRequest));
+                request = new UpdateMyUserProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateMyUserProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4036,7 +4470,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      API Documentation</a>
      */
     @Override
-    public UpdateRdsDbInstanceResult updateRdsDbInstance(UpdateRdsDbInstanceRequest updateRdsDbInstanceRequest) {
+    public UpdateRdsDbInstanceResult updateRdsDbInstance(UpdateRdsDbInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateRdsDbInstance(request);
+    }
+
+    @SdkInternalApi
+    final UpdateRdsDbInstanceResult executeUpdateRdsDbInstance(UpdateRdsDbInstanceRequest updateRdsDbInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateRdsDbInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4047,7 +4487,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateRdsDbInstanceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRdsDbInstanceRequest));
+                request = new UpdateRdsDbInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRdsDbInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4088,7 +4528,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public UpdateStackResult updateStack(UpdateStackRequest updateStackRequest) {
+    public UpdateStackResult updateStack(UpdateStackRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateStack(request);
+    }
+
+    @SdkInternalApi
+    final UpdateStackResult executeUpdateStack(UpdateStackRequest updateStackRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateStackRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4099,7 +4545,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateStackRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateStackRequest));
+                request = new UpdateStackRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateStackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4140,7 +4586,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public UpdateUserProfileResult updateUserProfile(UpdateUserProfileRequest updateUserProfileRequest) {
+    public UpdateUserProfileResult updateUserProfile(UpdateUserProfileRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateUserProfile(request);
+    }
+
+    @SdkInternalApi
+    final UpdateUserProfileResult executeUpdateUserProfile(UpdateUserProfileRequest updateUserProfileRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateUserProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4151,7 +4603,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateUserProfileRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateUserProfileRequest));
+                request = new UpdateUserProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateUserProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4193,7 +4645,13 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
      *      Documentation</a>
      */
     @Override
-    public UpdateVolumeResult updateVolume(UpdateVolumeRequest updateVolumeRequest) {
+    public UpdateVolumeResult updateVolume(UpdateVolumeRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateVolume(request);
+    }
+
+    @SdkInternalApi
+    final UpdateVolumeResult executeUpdateVolume(UpdateVolumeRequest updateVolumeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateVolumeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4204,7 +4662,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateVolumeRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateVolumeRequest));
+                request = new UpdateVolumeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4286,6 +4744,14 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
             }
         }
         return waiters;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
 
 }

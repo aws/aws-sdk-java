@@ -12,70 +12,47 @@
  */
 package com.amazonaws.services.clouddirectory.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.clouddirectory.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListDevelopmentSchemaArnsRequest Marshaller
+ * ListDevelopmentSchemaArnsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListDevelopmentSchemaArnsRequestMarshaller implements Marshaller<Request<ListDevelopmentSchemaArnsRequest>, ListDevelopmentSchemaArnsRequest> {
+@SdkInternalApi
+public class ListDevelopmentSchemaArnsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
 
-    public ListDevelopmentSchemaArnsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListDevelopmentSchemaArnsRequestMarshaller instance = new ListDevelopmentSchemaArnsRequestMarshaller();
+
+    public static ListDevelopmentSchemaArnsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListDevelopmentSchemaArnsRequest> marshall(ListDevelopmentSchemaArnsRequest listDevelopmentSchemaArnsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListDevelopmentSchemaArnsRequest listDevelopmentSchemaArnsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listDevelopmentSchemaArnsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListDevelopmentSchemaArnsRequest> request = new DefaultRequest<ListDevelopmentSchemaArnsRequest>(listDevelopmentSchemaArnsRequest,
-                "AmazonCloudDirectory");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/amazonclouddirectory/2017-01-11/schema/development";
-
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (listDevelopmentSchemaArnsRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(listDevelopmentSchemaArnsRequest.getNextToken());
-            }
-            if (listDevelopmentSchemaArnsRequest.getMaxResults() != null) {
-                jsonGenerator.writeFieldName("MaxResults").writeValue(listDevelopmentSchemaArnsRequest.getMaxResults());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listDevelopmentSchemaArnsRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listDevelopmentSchemaArnsRequest.getMaxResults(), MAXRESULTS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -96,4 +96,7 @@ public class AmazonMachineLearningWaiters {
                 .withExecutorService(executorService).build();
     }
 
+    public void shutdown() {
+        executorService.shutdown();
+    }
 }

@@ -12,62 +12,50 @@
  */
 package com.amazonaws.services.pinpoint.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.pinpoint.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetSegmentsRequest Marshaller
+ * GetSegmentsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetSegmentsRequestMarshaller implements Marshaller<Request<GetSegmentsRequest>, GetSegmentsRequest> {
+@SdkInternalApi
+public class GetSegmentsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("application-id").build();
+    private static final MarshallingInfo<String> PAGESIZE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("page-size").build();
+    private static final MarshallingInfo<String> TOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("token").build();
 
-    public GetSegmentsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetSegmentsRequestMarshaller instance = new GetSegmentsRequestMarshaller();
+
+    public static GetSegmentsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetSegmentsRequest> marshall(GetSegmentsRequest getSegmentsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetSegmentsRequest getSegmentsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getSegmentsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetSegmentsRequest> request = new DefaultRequest<GetSegmentsRequest>(getSegmentsRequest, "AmazonPinpoint");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/v1/apps/{application-id}/segments";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "application-id", getSegmentsRequest.getApplicationId());
-        request.setResourcePath(uriResourcePath);
-
-        if (getSegmentsRequest.getPageSize() != null) {
-            request.addParameter("page-size", StringUtils.fromString(getSegmentsRequest.getPageSize()));
+        try {
+            protocolMarshaller.marshall(getSegmentsRequest.getApplicationId(), APPLICATIONID_BINDING);
+            protocolMarshaller.marshall(getSegmentsRequest.getPageSize(), PAGESIZE_BINDING);
+            protocolMarshaller.marshall(getSegmentsRequest.getToken(), TOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (getSegmentsRequest.getToken() != null) {
-            request.addParameter("token", StringUtils.fromString(getSegmentsRequest.getToken()));
-        }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

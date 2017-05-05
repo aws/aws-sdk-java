@@ -13,11 +13,8 @@
 package com.amazonaws.services.rds;
 
 import com.amazonaws.Request;
-import com.amazonaws.annotation.SdkTestInternalApi;
 import com.amazonaws.services.rds.model.CopyDBSnapshotRequest;
 import com.amazonaws.services.rds.model.transform.CopyDBSnapshotRequestMarshaller;
-
-import java.util.Date;
 
 /**
  * Handler for pre-signing {@link CopyDBSnapshotRequest}.
@@ -26,11 +23,6 @@ public class CopyDBSnapshotPresignHandler extends PresignRequestHandler<CopyDBSn
 
     public CopyDBSnapshotPresignHandler() {
         super(CopyDBSnapshotRequest.class);
-    }
-
-    @SdkTestInternalApi
-    CopyDBSnapshotPresignHandler(Date signingOverrideDate) {
-        super(CopyDBSnapshotRequest.class, signingOverrideDate);
     }
 
     @Override

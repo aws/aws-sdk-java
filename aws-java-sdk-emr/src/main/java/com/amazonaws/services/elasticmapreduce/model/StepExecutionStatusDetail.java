@@ -14,6 +14,8 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,11 +26,11 @@ import javax.annotation.Generated;
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class StepExecutionStatusDetail implements Serializable, Cloneable {
+public class StepExecutionStatusDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The state of the job flow step.
+     * The state of the step.
      * </p>
      */
     private String state;
@@ -69,7 +71,7 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable {
      * methods to initialize any additional object members.
      * 
      * @param state
-     *        The state of the job flow step.
+     *        The state of the step.
      * @param creationDateTime
      *        The creation date and time of the step.
      */
@@ -83,7 +85,7 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable {
      * methods to initialize any additional object members.
      * 
      * @param state
-     *        The state of the job flow step.
+     *        The state of the step.
      * @param creationDateTime
      *        The creation date and time of the step.
      */
@@ -94,11 +96,11 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the job flow step.
+     * The state of the step.
      * </p>
      * 
      * @param state
-     *        The state of the job flow step.
+     *        The state of the step.
      * @see StepExecutionState
      */
 
@@ -108,10 +110,10 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the job flow step.
+     * The state of the step.
      * </p>
      * 
-     * @return The state of the job flow step.
+     * @return The state of the step.
      * @see StepExecutionState
      */
 
@@ -121,11 +123,11 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the job flow step.
+     * The state of the step.
      * </p>
      * 
      * @param state
-     *        The state of the job flow step.
+     *        The state of the step.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StepExecutionState
      */
@@ -137,11 +139,11 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the job flow step.
+     * The state of the step.
      * </p>
      * 
      * @param state
-     *        The state of the job flow step.
+     *        The state of the step.
      * @see StepExecutionState
      */
 
@@ -151,11 +153,11 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the job flow step.
+     * The state of the step.
      * </p>
      * 
      * @param state
-     *        The state of the job flow step.
+     *        The state of the step.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StepExecutionState
      */
@@ -403,5 +405,11 @@ public class StepExecutionStatusDetail implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.elasticmapreduce.model.transform.StepExecutionStatusDetailMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

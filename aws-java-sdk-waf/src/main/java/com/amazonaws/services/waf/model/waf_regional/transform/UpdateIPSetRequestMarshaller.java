@@ -12,82 +12,51 @@
  */
 package com.amazonaws.services.waf.model.waf_regional.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.waf.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateIPSetRequest Marshaller
+ * UpdateIPSetRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateIPSetRequestMarshaller implements Marshaller<Request<UpdateIPSetRequest>, UpdateIPSetRequest> {
+@SdkInternalApi
+public class UpdateIPSetRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> IPSETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("IPSetId").build();
+    private static final MarshallingInfo<String> CHANGETOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ChangeToken").build();
+    private static final MarshallingInfo<List> UPDATES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Updates").build();
 
-    public UpdateIPSetRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateIPSetRequestMarshaller instance = new UpdateIPSetRequestMarshaller();
+
+    public static UpdateIPSetRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateIPSetRequest> marshall(UpdateIPSetRequest updateIPSetRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateIPSetRequest updateIPSetRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateIPSetRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateIPSetRequest> request = new DefaultRequest<UpdateIPSetRequest>(updateIPSetRequest, "AWSWAFRegional");
-        request.addHeader("X-Amz-Target", "AWSWAF_Regional_20161128.UpdateIPSet");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (updateIPSetRequest.getIPSetId() != null) {
-                jsonGenerator.writeFieldName("IPSetId").writeValue(updateIPSetRequest.getIPSetId());
-            }
-            if (updateIPSetRequest.getChangeToken() != null) {
-                jsonGenerator.writeFieldName("ChangeToken").writeValue(updateIPSetRequest.getChangeToken());
-            }
-
-            java.util.List<IPSetUpdate> updatesList = updateIPSetRequest.getUpdates();
-            if (updatesList != null) {
-                jsonGenerator.writeFieldName("Updates");
-                jsonGenerator.writeStartArray();
-                for (IPSetUpdate updatesListValue : updatesList) {
-                    if (updatesListValue != null) {
-
-                        IPSetUpdateJsonMarshaller.getInstance().marshall(updatesListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateIPSetRequest.getIPSetId(), IPSETID_BINDING);
+            protocolMarshaller.marshall(updateIPSetRequest.getChangeToken(), CHANGETOKEN_BINDING);
+            protocolMarshaller.marshall(updateIPSetRequest.getUpdates(), UPDATES_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

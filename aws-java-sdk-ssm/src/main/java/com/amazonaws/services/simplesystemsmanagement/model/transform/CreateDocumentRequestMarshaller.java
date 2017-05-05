@@ -12,70 +12,50 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simplesystemsmanagement.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateDocumentRequest Marshaller
+ * CreateDocumentRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateDocumentRequestMarshaller implements Marshaller<Request<CreateDocumentRequest>, CreateDocumentRequest> {
+@SdkInternalApi
+public class CreateDocumentRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CONTENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Content").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> DOCUMENTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentType").build();
 
-    public CreateDocumentRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateDocumentRequestMarshaller instance = new CreateDocumentRequestMarshaller();
+
+    public static CreateDocumentRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateDocumentRequest> marshall(CreateDocumentRequest createDocumentRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateDocumentRequest createDocumentRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createDocumentRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateDocumentRequest> request = new DefaultRequest<CreateDocumentRequest>(createDocumentRequest, "AWSSimpleSystemsManagement");
-        request.addHeader("X-Amz-Target", "AmazonSSM.CreateDocument");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createDocumentRequest.getContent() != null) {
-                jsonGenerator.writeFieldName("Content").writeValue(createDocumentRequest.getContent());
-            }
-            if (createDocumentRequest.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(createDocumentRequest.getName());
-            }
-            if (createDocumentRequest.getDocumentType() != null) {
-                jsonGenerator.writeFieldName("DocumentType").writeValue(createDocumentRequest.getDocumentType());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createDocumentRequest.getContent(), CONTENT_BINDING);
+            protocolMarshaller.marshall(createDocumentRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createDocumentRequest.getDocumentType(), DOCUMENTTYPE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

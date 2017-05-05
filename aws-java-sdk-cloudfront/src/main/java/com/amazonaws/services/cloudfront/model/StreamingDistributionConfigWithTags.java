@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * A streaming distribution Configuration and a list of tags to be associated with the streaming distribution.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/StreamingDistributionConfigWithTags"
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/StreamingDistributionConfigWithTags"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -177,4 +177,5 @@ public class StreamingDistributionConfigWithTags implements Serializable, Clonea
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

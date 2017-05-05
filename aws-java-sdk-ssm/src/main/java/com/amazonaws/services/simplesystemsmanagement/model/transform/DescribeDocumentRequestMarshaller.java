@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simplesystemsmanagement.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeDocumentRequest Marshaller
+ * DescribeDocumentRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeDocumentRequestMarshaller implements Marshaller<Request<DescribeDocumentRequest>, DescribeDocumentRequest> {
+@SdkInternalApi
+public class DescribeDocumentRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> DOCUMENTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentVersion").build();
 
-    public DescribeDocumentRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeDocumentRequestMarshaller instance = new DescribeDocumentRequestMarshaller();
+
+    public static DescribeDocumentRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeDocumentRequest> marshall(DescribeDocumentRequest describeDocumentRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeDocumentRequest describeDocumentRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeDocumentRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeDocumentRequest> request = new DefaultRequest<DescribeDocumentRequest>(describeDocumentRequest, "AWSSimpleSystemsManagement");
-        request.addHeader("X-Amz-Target", "AmazonSSM.DescribeDocument");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeDocumentRequest.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(describeDocumentRequest.getName());
-            }
-            if (describeDocumentRequest.getDocumentVersion() != null) {
-                jsonGenerator.writeFieldName("DocumentVersion").writeValue(describeDocumentRequest.getDocumentVersion());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeDocumentRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(describeDocumentRequest.getDocumentVersion(), DOCUMENTVERSION_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

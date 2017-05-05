@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.cloudwatchevents.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cloudwatchevents.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * EnableRuleRequest Marshaller
+ * EnableRuleRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EnableRuleRequestMarshaller implements Marshaller<Request<EnableRuleRequest>, EnableRuleRequest> {
+@SdkInternalApi
+public class EnableRuleRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
 
-    public EnableRuleRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final EnableRuleRequestMarshaller instance = new EnableRuleRequestMarshaller();
+
+    public static EnableRuleRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<EnableRuleRequest> marshall(EnableRuleRequest enableRuleRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(EnableRuleRequest enableRuleRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (enableRuleRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<EnableRuleRequest> request = new DefaultRequest<EnableRuleRequest>(enableRuleRequest, "AmazonCloudWatchEvents");
-        request.addHeader("X-Amz-Target", "AWSEvents.EnableRule");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (enableRuleRequest.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(enableRuleRequest.getName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(enableRuleRequest.getName(), NAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

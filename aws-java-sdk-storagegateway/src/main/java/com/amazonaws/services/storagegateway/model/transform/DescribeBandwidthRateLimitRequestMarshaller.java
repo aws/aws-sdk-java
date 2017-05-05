@@ -12,65 +12,44 @@
  */
 package com.amazonaws.services.storagegateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.storagegateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeBandwidthRateLimitRequest Marshaller
+ * DescribeBandwidthRateLimitRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeBandwidthRateLimitRequestMarshaller implements Marshaller<Request<DescribeBandwidthRateLimitRequest>, DescribeBandwidthRateLimitRequest> {
+@SdkInternalApi
+public class DescribeBandwidthRateLimitRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> GATEWAYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GatewayARN").build();
 
-    public DescribeBandwidthRateLimitRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeBandwidthRateLimitRequestMarshaller instance = new DescribeBandwidthRateLimitRequestMarshaller();
+
+    public static DescribeBandwidthRateLimitRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeBandwidthRateLimitRequest> marshall(DescribeBandwidthRateLimitRequest describeBandwidthRateLimitRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeBandwidthRateLimitRequest describeBandwidthRateLimitRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeBandwidthRateLimitRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeBandwidthRateLimitRequest> request = new DefaultRequest<DescribeBandwidthRateLimitRequest>(describeBandwidthRateLimitRequest,
-                "AWSStorageGateway");
-        request.addHeader("X-Amz-Target", "StorageGateway_20130630.DescribeBandwidthRateLimit");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeBandwidthRateLimitRequest.getGatewayARN() != null) {
-                jsonGenerator.writeFieldName("GatewayARN").writeValue(describeBandwidthRateLimitRequest.getGatewayARN());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeBandwidthRateLimitRequest.getGatewayARN(), GATEWAYARN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

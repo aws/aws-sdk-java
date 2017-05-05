@@ -28,9 +28,11 @@ public enum ServerStatus {
     FAILED("FAILED"),
     HEALTHY("HEALTHY"),
     RUNNING("RUNNING"),
+    RESTORING("RESTORING"),
     SETUP("SETUP"),
     UNDER_MAINTENANCE("UNDER_MAINTENANCE"),
-    UNHEALTHY("UNHEALTHY");
+    UNHEALTHY("UNHEALTHY"),
+    TERMINATED("TERMINATED");
 
     private String value;
 

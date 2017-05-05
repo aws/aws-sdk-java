@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.stepfunctions.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.stepfunctions.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * SendTaskSuccessRequest Marshaller
+ * SendTaskSuccessRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SendTaskSuccessRequestMarshaller implements Marshaller<Request<SendTaskSuccessRequest>, SendTaskSuccessRequest> {
+@SdkInternalApi
+public class SendTaskSuccessRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> TASKTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("taskToken").build();
+    private static final MarshallingInfo<String> OUTPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("output").build();
 
-    public SendTaskSuccessRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final SendTaskSuccessRequestMarshaller instance = new SendTaskSuccessRequestMarshaller();
+
+    public static SendTaskSuccessRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<SendTaskSuccessRequest> marshall(SendTaskSuccessRequest sendTaskSuccessRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(SendTaskSuccessRequest sendTaskSuccessRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (sendTaskSuccessRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<SendTaskSuccessRequest> request = new DefaultRequest<SendTaskSuccessRequest>(sendTaskSuccessRequest, "AWSStepFunctions");
-        request.addHeader("X-Amz-Target", "AWSStepFunctions.SendTaskSuccess");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (sendTaskSuccessRequest.getTaskToken() != null) {
-                jsonGenerator.writeFieldName("taskToken").writeValue(sendTaskSuccessRequest.getTaskToken());
-            }
-            if (sendTaskSuccessRequest.getOutput() != null) {
-                jsonGenerator.writeFieldName("output").writeValue(sendTaskSuccessRequest.getOutput());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(sendTaskSuccessRequest.getTaskToken(), TASKTOKEN_BINDING);
+            protocolMarshaller.marshall(sendTaskSuccessRequest.getOutput(), OUTPUT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

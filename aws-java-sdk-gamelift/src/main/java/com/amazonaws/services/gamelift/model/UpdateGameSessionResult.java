@@ -28,18 +28,18 @@ public class UpdateGameSessionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Object containing the updated game session metadata.
+     * Object that contains the updated game session metadata.
      * </p>
      */
     private GameSession gameSession;
 
     /**
      * <p>
-     * Object containing the updated game session metadata.
+     * Object that contains the updated game session metadata.
      * </p>
      * 
      * @param gameSession
-     *        Object containing the updated game session metadata.
+     *        Object that contains the updated game session metadata.
      */
 
     public void setGameSession(GameSession gameSession) {
@@ -48,10 +48,10 @@ public class UpdateGameSessionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Object containing the updated game session metadata.
+     * Object that contains the updated game session metadata.
      * </p>
      * 
-     * @return Object containing the updated game session metadata.
+     * @return Object that contains the updated game session metadata.
      */
 
     public GameSession getGameSession() {
@@ -60,11 +60,11 @@ public class UpdateGameSessionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Object containing the updated game session metadata.
+     * Object that contains the updated game session metadata.
      * </p>
      * 
      * @param gameSession
-     *        Object containing the updated game session metadata.
+     *        Object that contains the updated game session metadata.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,4 +124,5 @@ public class UpdateGameSessionResult extends com.amazonaws.AmazonWebServiceResul
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

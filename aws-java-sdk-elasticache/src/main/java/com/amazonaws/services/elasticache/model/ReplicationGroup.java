@@ -131,6 +131,22 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </p>
      */
     private String snapshotWindow;
+    /**
+     * <p>
+     * A flag indicating whether or not this replication group is cluster enabled; i.e., whether its data can be
+     * partitioned across multiple shards (API/CLI: node groups).
+     * </p>
+     * <p>
+     * Valid values: <code>true</code> | <code>false</code>
+     * </p>
+     */
+    private Boolean clusterEnabled;
+    /**
+     * <p>
+     * The name of the compute and memory capacity node type for each node in the replication group.
+     * </p>
+     */
+    private String cacheNodeType;
 
     /**
      * <p>
@@ -970,6 +986,126 @@ public class ReplicationGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A flag indicating whether or not this replication group is cluster enabled; i.e., whether its data can be
+     * partitioned across multiple shards (API/CLI: node groups).
+     * </p>
+     * <p>
+     * Valid values: <code>true</code> | <code>false</code>
+     * </p>
+     * 
+     * @param clusterEnabled
+     *        A flag indicating whether or not this replication group is cluster enabled; i.e., whether its data can be
+     *        partitioned across multiple shards (API/CLI: node groups).</p>
+     *        <p>
+     *        Valid values: <code>true</code> | <code>false</code>
+     */
+
+    public void setClusterEnabled(Boolean clusterEnabled) {
+        this.clusterEnabled = clusterEnabled;
+    }
+
+    /**
+     * <p>
+     * A flag indicating whether or not this replication group is cluster enabled; i.e., whether its data can be
+     * partitioned across multiple shards (API/CLI: node groups).
+     * </p>
+     * <p>
+     * Valid values: <code>true</code> | <code>false</code>
+     * </p>
+     * 
+     * @return A flag indicating whether or not this replication group is cluster enabled; i.e., whether its data can be
+     *         partitioned across multiple shards (API/CLI: node groups).</p>
+     *         <p>
+     *         Valid values: <code>true</code> | <code>false</code>
+     */
+
+    public Boolean getClusterEnabled() {
+        return this.clusterEnabled;
+    }
+
+    /**
+     * <p>
+     * A flag indicating whether or not this replication group is cluster enabled; i.e., whether its data can be
+     * partitioned across multiple shards (API/CLI: node groups).
+     * </p>
+     * <p>
+     * Valid values: <code>true</code> | <code>false</code>
+     * </p>
+     * 
+     * @param clusterEnabled
+     *        A flag indicating whether or not this replication group is cluster enabled; i.e., whether its data can be
+     *        partitioned across multiple shards (API/CLI: node groups).</p>
+     *        <p>
+     *        Valid values: <code>true</code> | <code>false</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationGroup withClusterEnabled(Boolean clusterEnabled) {
+        setClusterEnabled(clusterEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A flag indicating whether or not this replication group is cluster enabled; i.e., whether its data can be
+     * partitioned across multiple shards (API/CLI: node groups).
+     * </p>
+     * <p>
+     * Valid values: <code>true</code> | <code>false</code>
+     * </p>
+     * 
+     * @return A flag indicating whether or not this replication group is cluster enabled; i.e., whether its data can be
+     *         partitioned across multiple shards (API/CLI: node groups).</p>
+     *         <p>
+     *         Valid values: <code>true</code> | <code>false</code>
+     */
+
+    public Boolean isClusterEnabled() {
+        return this.clusterEnabled;
+    }
+
+    /**
+     * <p>
+     * The name of the compute and memory capacity node type for each node in the replication group.
+     * </p>
+     * 
+     * @param cacheNodeType
+     *        The name of the compute and memory capacity node type for each node in the replication group.
+     */
+
+    public void setCacheNodeType(String cacheNodeType) {
+        this.cacheNodeType = cacheNodeType;
+    }
+
+    /**
+     * <p>
+     * The name of the compute and memory capacity node type for each node in the replication group.
+     * </p>
+     * 
+     * @return The name of the compute and memory capacity node type for each node in the replication group.
+     */
+
+    public String getCacheNodeType() {
+        return this.cacheNodeType;
+    }
+
+    /**
+     * <p>
+     * The name of the compute and memory capacity node type for each node in the replication group.
+     * </p>
+     * 
+     * @param cacheNodeType
+     *        The name of the compute and memory capacity node type for each node in the replication group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationGroup withCacheNodeType(String cacheNodeType) {
+        setCacheNodeType(cacheNodeType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1001,7 +1137,11 @@ public class ReplicationGroup implements Serializable, Cloneable {
         if (getSnapshotRetentionLimit() != null)
             sb.append("SnapshotRetentionLimit: ").append(getSnapshotRetentionLimit()).append(",");
         if (getSnapshotWindow() != null)
-            sb.append("SnapshotWindow: ").append(getSnapshotWindow());
+            sb.append("SnapshotWindow: ").append(getSnapshotWindow()).append(",");
+        if (getClusterEnabled() != null)
+            sb.append("ClusterEnabled: ").append(getClusterEnabled()).append(",");
+        if (getCacheNodeType() != null)
+            sb.append("CacheNodeType: ").append(getCacheNodeType());
         sb.append("}");
         return sb.toString();
     }
@@ -1060,6 +1200,14 @@ public class ReplicationGroup implements Serializable, Cloneable {
             return false;
         if (other.getSnapshotWindow() != null && other.getSnapshotWindow().equals(this.getSnapshotWindow()) == false)
             return false;
+        if (other.getClusterEnabled() == null ^ this.getClusterEnabled() == null)
+            return false;
+        if (other.getClusterEnabled() != null && other.getClusterEnabled().equals(this.getClusterEnabled()) == false)
+            return false;
+        if (other.getCacheNodeType() == null ^ this.getCacheNodeType() == null)
+            return false;
+        if (other.getCacheNodeType() != null && other.getCacheNodeType().equals(this.getCacheNodeType()) == false)
+            return false;
         return true;
     }
 
@@ -1079,6 +1227,8 @@ public class ReplicationGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getConfigurationEndpoint() == null) ? 0 : getConfigurationEndpoint().hashCode());
         hashCode = prime * hashCode + ((getSnapshotRetentionLimit() == null) ? 0 : getSnapshotRetentionLimit().hashCode());
         hashCode = prime * hashCode + ((getSnapshotWindow() == null) ? 0 : getSnapshotWindow().hashCode());
+        hashCode = prime * hashCode + ((getClusterEnabled() == null) ? 0 : getClusterEnabled().hashCode());
+        hashCode = prime * hashCode + ((getCacheNodeType() == null) ? 0 : getCacheNodeType().hashCode());
         return hashCode;
     }
 
@@ -1090,4 +1240,5 @@ public class ReplicationGroup implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

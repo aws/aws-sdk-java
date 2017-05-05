@@ -12,66 +12,44 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simplesystemsmanagement.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * RegisterDefaultPatchBaselineRequest Marshaller
+ * RegisterDefaultPatchBaselineRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RegisterDefaultPatchBaselineRequestMarshaller implements
-        Marshaller<Request<RegisterDefaultPatchBaselineRequest>, RegisterDefaultPatchBaselineRequest> {
+@SdkInternalApi
+public class RegisterDefaultPatchBaselineRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> BASELINEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BaselineId").build();
 
-    public RegisterDefaultPatchBaselineRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final RegisterDefaultPatchBaselineRequestMarshaller instance = new RegisterDefaultPatchBaselineRequestMarshaller();
+
+    public static RegisterDefaultPatchBaselineRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<RegisterDefaultPatchBaselineRequest> marshall(RegisterDefaultPatchBaselineRequest registerDefaultPatchBaselineRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(RegisterDefaultPatchBaselineRequest registerDefaultPatchBaselineRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (registerDefaultPatchBaselineRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<RegisterDefaultPatchBaselineRequest> request = new DefaultRequest<RegisterDefaultPatchBaselineRequest>(registerDefaultPatchBaselineRequest,
-                "AWSSimpleSystemsManagement");
-        request.addHeader("X-Amz-Target", "AmazonSSM.RegisterDefaultPatchBaseline");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (registerDefaultPatchBaselineRequest.getBaselineId() != null) {
-                jsonGenerator.writeFieldName("BaselineId").writeValue(registerDefaultPatchBaselineRequest.getBaselineId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(registerDefaultPatchBaselineRequest.getBaselineId(), BASELINEID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

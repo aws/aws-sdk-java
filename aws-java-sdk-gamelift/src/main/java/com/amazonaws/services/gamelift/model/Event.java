@@ -14,6 +14,8 @@ package com.amazonaws.services.gamelift.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -25,7 +27,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Event implements Serializable, Cloneable {
+public class Event implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -35,7 +37,7 @@ public class Event implements Serializable, Cloneable {
     private String eventId;
     /**
      * <p>
-     * Unique identifier for the resource, such as a fleet ID.
+     * Unique identifier for an event resource, such as a fleet ID.
      * </p>
      */
     private String resourceId;
@@ -53,8 +55,8 @@ public class Event implements Serializable, Cloneable {
     private String message;
     /**
      * <p>
-     * Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (ex:
-     * "1469498468.057").
+     * Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (for
+     * example "1469498468.057").
      * </p>
      */
     private java.util.Date eventTime;
@@ -101,11 +103,11 @@ public class Event implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique identifier for the resource, such as a fleet ID.
+     * Unique identifier for an event resource, such as a fleet ID.
      * </p>
      * 
      * @param resourceId
-     *        Unique identifier for the resource, such as a fleet ID.
+     *        Unique identifier for an event resource, such as a fleet ID.
      */
 
     public void setResourceId(String resourceId) {
@@ -114,10 +116,10 @@ public class Event implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique identifier for the resource, such as a fleet ID.
+     * Unique identifier for an event resource, such as a fleet ID.
      * </p>
      * 
-     * @return Unique identifier for the resource, such as a fleet ID.
+     * @return Unique identifier for an event resource, such as a fleet ID.
      */
 
     public String getResourceId() {
@@ -126,11 +128,11 @@ public class Event implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique identifier for the resource, such as a fleet ID.
+     * Unique identifier for an event resource, such as a fleet ID.
      * </p>
      * 
      * @param resourceId
-     *        Unique identifier for the resource, such as a fleet ID.
+     *        Unique identifier for an event resource, such as a fleet ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -254,13 +256,13 @@ public class Event implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (ex:
-     * "1469498468.057").
+     * Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (for
+     * example "1469498468.057").
      * </p>
      * 
      * @param eventTime
      *        Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds
-     *        (ex: "1469498468.057").
+     *        (for example "1469498468.057").
      */
 
     public void setEventTime(java.util.Date eventTime) {
@@ -269,12 +271,12 @@ public class Event implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (ex:
-     * "1469498468.057").
+     * Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (for
+     * example "1469498468.057").
      * </p>
      * 
      * @return Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds
-     *         (ex: "1469498468.057").
+     *         (for example "1469498468.057").
      */
 
     public java.util.Date getEventTime() {
@@ -283,13 +285,13 @@ public class Event implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (ex:
-     * "1469498468.057").
+     * Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (for
+     * example "1469498468.057").
      * </p>
      * 
      * @param eventTime
      *        Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds
-     *        (ex: "1469498468.057").
+     *        (for example "1469498468.057").
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -376,5 +378,11 @@ public class Event implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.gamelift.model.transform.EventMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

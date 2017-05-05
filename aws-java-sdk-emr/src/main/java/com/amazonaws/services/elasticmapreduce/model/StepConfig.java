@@ -14,33 +14,35 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specification of a job flow step.
+ * Specification of a cluster (job flow) step.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StepConfig" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class StepConfig implements Serializable, Cloneable {
+public class StepConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the job flow step.
+     * The name of the step.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The action to take if the job flow step fails.
+     * The action to take if the step fails.
      * </p>
      */
     private String actionOnFailure;
     /**
      * <p>
-     * The JAR file used for the job flow step.
+     * The JAR file used for the step.
      * </p>
      */
     private HadoopJarStepConfig hadoopJarStep;
@@ -57,9 +59,9 @@ public class StepConfig implements Serializable, Cloneable {
      * initialize any additional object members.
      * 
      * @param name
-     *        The name of the job flow step.
+     *        The name of the step.
      * @param hadoopJarStep
-     *        The JAR file used for the job flow step.
+     *        The JAR file used for the step.
      */
     public StepConfig(String name, HadoopJarStepConfig hadoopJarStep) {
         setName(name);
@@ -68,11 +70,11 @@ public class StepConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the job flow step.
+     * The name of the step.
      * </p>
      * 
      * @param name
-     *        The name of the job flow step.
+     *        The name of the step.
      */
 
     public void setName(String name) {
@@ -81,10 +83,10 @@ public class StepConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the job flow step.
+     * The name of the step.
      * </p>
      * 
-     * @return The name of the job flow step.
+     * @return The name of the step.
      */
 
     public String getName() {
@@ -93,11 +95,11 @@ public class StepConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the job flow step.
+     * The name of the step.
      * </p>
      * 
      * @param name
-     *        The name of the job flow step.
+     *        The name of the step.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,11 +110,11 @@ public class StepConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The action to take if the job flow step fails.
+     * The action to take if the step fails.
      * </p>
      * 
      * @param actionOnFailure
-     *        The action to take if the job flow step fails.
+     *        The action to take if the step fails.
      * @see ActionOnFailure
      */
 
@@ -122,10 +124,10 @@ public class StepConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The action to take if the job flow step fails.
+     * The action to take if the step fails.
      * </p>
      * 
-     * @return The action to take if the job flow step fails.
+     * @return The action to take if the step fails.
      * @see ActionOnFailure
      */
 
@@ -135,11 +137,11 @@ public class StepConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The action to take if the job flow step fails.
+     * The action to take if the step fails.
      * </p>
      * 
      * @param actionOnFailure
-     *        The action to take if the job flow step fails.
+     *        The action to take if the step fails.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionOnFailure
      */
@@ -151,11 +153,11 @@ public class StepConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The action to take if the job flow step fails.
+     * The action to take if the step fails.
      * </p>
      * 
      * @param actionOnFailure
-     *        The action to take if the job flow step fails.
+     *        The action to take if the step fails.
      * @see ActionOnFailure
      */
 
@@ -165,11 +167,11 @@ public class StepConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The action to take if the job flow step fails.
+     * The action to take if the step fails.
      * </p>
      * 
      * @param actionOnFailure
-     *        The action to take if the job flow step fails.
+     *        The action to take if the step fails.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionOnFailure
      */
@@ -181,11 +183,11 @@ public class StepConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The JAR file used for the job flow step.
+     * The JAR file used for the step.
      * </p>
      * 
      * @param hadoopJarStep
-     *        The JAR file used for the job flow step.
+     *        The JAR file used for the step.
      */
 
     public void setHadoopJarStep(HadoopJarStepConfig hadoopJarStep) {
@@ -194,10 +196,10 @@ public class StepConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The JAR file used for the job flow step.
+     * The JAR file used for the step.
      * </p>
      * 
-     * @return The JAR file used for the job flow step.
+     * @return The JAR file used for the step.
      */
 
     public HadoopJarStepConfig getHadoopJarStep() {
@@ -206,11 +208,11 @@ public class StepConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The JAR file used for the job flow step.
+     * The JAR file used for the step.
      * </p>
      * 
      * @param hadoopJarStep
-     *        The JAR file used for the job flow step.
+     *        The JAR file used for the step.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -283,5 +285,11 @@ public class StepConfig implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.elasticmapreduce.model.transform.StepConfigMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

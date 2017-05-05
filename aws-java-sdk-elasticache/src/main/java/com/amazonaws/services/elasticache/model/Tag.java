@@ -29,24 +29,24 @@ public class Tag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The key for the tag.
+     * The key for the tag. May not be null.
      * </p>
      */
     private String key;
     /**
      * <p>
-     * The tag's value. May not be null.
+     * The tag's value. May be null.
      * </p>
      */
     private String value;
 
     /**
      * <p>
-     * The key for the tag.
+     * The key for the tag. May not be null.
      * </p>
      * 
      * @param key
-     *        The key for the tag.
+     *        The key for the tag. May not be null.
      */
 
     public void setKey(String key) {
@@ -55,10 +55,10 @@ public class Tag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The key for the tag.
+     * The key for the tag. May not be null.
      * </p>
      * 
-     * @return The key for the tag.
+     * @return The key for the tag. May not be null.
      */
 
     public String getKey() {
@@ -67,11 +67,11 @@ public class Tag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The key for the tag.
+     * The key for the tag. May not be null.
      * </p>
      * 
      * @param key
-     *        The key for the tag.
+     *        The key for the tag. May not be null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -82,11 +82,11 @@ public class Tag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The tag's value. May not be null.
+     * The tag's value. May be null.
      * </p>
      * 
      * @param value
-     *        The tag's value. May not be null.
+     *        The tag's value. May be null.
      */
 
     public void setValue(String value) {
@@ -95,10 +95,10 @@ public class Tag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The tag's value. May not be null.
+     * The tag's value. May be null.
      * </p>
      * 
-     * @return The tag's value. May not be null.
+     * @return The tag's value. May be null.
      */
 
     public String getValue() {
@@ -107,11 +107,11 @@ public class Tag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The tag's value. May not be null.
+     * The tag's value. May be null.
      * </p>
      * 
      * @param value
-     *        The tag's value. May not be null.
+     *        The tag's value. May be null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,4 +178,5 @@ public class Tag implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

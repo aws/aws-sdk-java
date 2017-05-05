@@ -177,4 +177,5 @@ public class ClusterSecurityGroupMembership implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

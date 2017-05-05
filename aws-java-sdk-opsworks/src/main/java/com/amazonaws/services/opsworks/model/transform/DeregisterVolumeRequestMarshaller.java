@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.opsworks.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.opsworks.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeregisterVolumeRequest Marshaller
+ * DeregisterVolumeRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeregisterVolumeRequestMarshaller implements Marshaller<Request<DeregisterVolumeRequest>, DeregisterVolumeRequest> {
+@SdkInternalApi
+public class DeregisterVolumeRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> VOLUMEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("VolumeId").build();
 
-    public DeregisterVolumeRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeregisterVolumeRequestMarshaller instance = new DeregisterVolumeRequestMarshaller();
+
+    public static DeregisterVolumeRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeregisterVolumeRequest> marshall(DeregisterVolumeRequest deregisterVolumeRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeregisterVolumeRequest deregisterVolumeRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deregisterVolumeRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeregisterVolumeRequest> request = new DefaultRequest<DeregisterVolumeRequest>(deregisterVolumeRequest, "AWSOpsWorks");
-        request.addHeader("X-Amz-Target", "OpsWorks_20130218.DeregisterVolume");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deregisterVolumeRequest.getVolumeId() != null) {
-                jsonGenerator.writeFieldName("VolumeId").writeValue(deregisterVolumeRequest.getVolumeId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deregisterVolumeRequest.getVolumeId(), VOLUMEID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

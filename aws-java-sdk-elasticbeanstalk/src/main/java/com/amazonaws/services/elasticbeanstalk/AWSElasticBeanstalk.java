@@ -327,6 +327,26 @@ public interface AWSElasticBeanstalk {
 
     /**
      * <p>
+     * Create a new version of your custom platform.
+     * </p>
+     * 
+     * @param createPlatformVersionRequest
+     *        Request to create a new platform version.
+     * @return Result of the CreatePlatformVersion operation returned by the service.
+     * @throws InsufficientPrivilegesException
+     *         The specified account does not have sufficient privileges for one of more AWS services.
+     * @throws ElasticBeanstalkServiceException
+     *         A generic service exception has occurred.
+     * @throws TooManyPlatformsException
+     *         You have exceeded the maximum number of allowed platforms associated with the account.
+     * @sample AWSElasticBeanstalk.CreatePlatformVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreatePlatformVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreatePlatformVersionResult createPlatformVersion(CreatePlatformVersionRequest createPlatformVersionRequest);
+
+    /**
+     * <p>
      * Creates the Amazon S3 storage location for the account.
      * </p>
      * <p>
@@ -468,6 +488,28 @@ public interface AWSElasticBeanstalk {
 
     /**
      * <p>
+     * Deletes the specified version of a custom platform.
+     * </p>
+     * 
+     * @param deletePlatformVersionRequest
+     * @return Result of the DeletePlatformVersion operation returned by the service.
+     * @throws OperationInProgressException
+     *         Unable to perform the specified operation because another operation that effects an element in this
+     *         activity is already in progress.
+     * @throws InsufficientPrivilegesException
+     *         The specified account does not have sufficient privileges for one of more AWS services.
+     * @throws ElasticBeanstalkServiceException
+     *         A generic service exception has occurred.
+     * @throws PlatformVersionStillReferencedException
+     *         You cannot delete the platform version because there are still environments running on it.
+     * @sample AWSElasticBeanstalk.DeletePlatformVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DeletePlatformVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeletePlatformVersionResult deletePlatformVersion(DeletePlatformVersionRequest deletePlatformVersionRequest);
+
+    /**
+     * <p>
      * Retrieve a list of application versions.
      * </p>
      * 
@@ -516,7 +558,7 @@ public interface AWSElasticBeanstalk {
      * </p>
      * 
      * @param describeConfigurationOptionsRequest
-     *        Result message containig a list of application version descriptions.
+     *        Result message containing a list of application version descriptions.
      * @return Result of the DescribeConfigurationOptions operation returned by the service.
      * @throws TooManyBucketsException
      *         The specified account has reached its limit of Amazon S3 buckets.
@@ -700,7 +742,25 @@ public interface AWSElasticBeanstalk {
 
     /**
      * <p>
-     * Returns a list of the available solution stack names.
+     * Describes the version of the platform.
+     * </p>
+     * 
+     * @param describePlatformVersionRequest
+     * @return Result of the DescribePlatformVersion operation returned by the service.
+     * @throws InsufficientPrivilegesException
+     *         The specified account does not have sufficient privileges for one of more AWS services.
+     * @throws ElasticBeanstalkServiceException
+     *         A generic service exception has occurred.
+     * @sample AWSElasticBeanstalk.DescribePlatformVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribePlatformVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribePlatformVersionResult describePlatformVersion(DescribePlatformVersionRequest describePlatformVersionRequest);
+
+    /**
+     * <p>
+     * Returns a list of the available solution stack names, with the public version first and then in reverse
+     * chronological order.
      * </p>
      * 
      * @param listAvailableSolutionStacksRequest
@@ -717,6 +777,23 @@ public interface AWSElasticBeanstalk {
      * @see #listAvailableSolutionStacks(ListAvailableSolutionStacksRequest)
      */
     ListAvailableSolutionStacksResult listAvailableSolutionStacks();
+
+    /**
+     * <p>
+     * Lists the available platforms.
+     * </p>
+     * 
+     * @param listPlatformVersionsRequest
+     * @return Result of the ListPlatformVersions operation returned by the service.
+     * @throws InsufficientPrivilegesException
+     *         The specified account does not have sufficient privileges for one of more AWS services.
+     * @throws ElasticBeanstalkServiceException
+     *         A generic service exception has occurred.
+     * @sample AWSElasticBeanstalk.ListPlatformVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListPlatformVersionsResult listPlatformVersions(ListPlatformVersionsRequest listPlatformVersionsRequest);
 
     /**
      * <p>

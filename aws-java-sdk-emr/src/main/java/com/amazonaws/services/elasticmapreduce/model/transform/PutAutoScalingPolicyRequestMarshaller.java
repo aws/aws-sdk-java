@@ -12,71 +12,50 @@
  */
 package com.amazonaws.services.elasticmapreduce.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.elasticmapreduce.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * PutAutoScalingPolicyRequest Marshaller
+ * PutAutoScalingPolicyRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PutAutoScalingPolicyRequestMarshaller implements Marshaller<Request<PutAutoScalingPolicyRequest>, PutAutoScalingPolicyRequest> {
+@SdkInternalApi
+public class PutAutoScalingPolicyRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CLUSTERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ClusterId").build();
+    private static final MarshallingInfo<String> INSTANCEGROUPID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceGroupId").build();
+    private static final MarshallingInfo<StructuredPojo> AUTOSCALINGPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoScalingPolicy").build();
 
-    public PutAutoScalingPolicyRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final PutAutoScalingPolicyRequestMarshaller instance = new PutAutoScalingPolicyRequestMarshaller();
+
+    public static PutAutoScalingPolicyRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<PutAutoScalingPolicyRequest> marshall(PutAutoScalingPolicyRequest putAutoScalingPolicyRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(PutAutoScalingPolicyRequest putAutoScalingPolicyRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (putAutoScalingPolicyRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<PutAutoScalingPolicyRequest> request = new DefaultRequest<PutAutoScalingPolicyRequest>(putAutoScalingPolicyRequest, "AmazonElasticMapReduce");
-        request.addHeader("X-Amz-Target", "ElasticMapReduce.PutAutoScalingPolicy");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (putAutoScalingPolicyRequest.getClusterId() != null) {
-                jsonGenerator.writeFieldName("ClusterId").writeValue(putAutoScalingPolicyRequest.getClusterId());
-            }
-            if (putAutoScalingPolicyRequest.getInstanceGroupId() != null) {
-                jsonGenerator.writeFieldName("InstanceGroupId").writeValue(putAutoScalingPolicyRequest.getInstanceGroupId());
-            }
-            if (putAutoScalingPolicyRequest.getAutoScalingPolicy() != null) {
-                jsonGenerator.writeFieldName("AutoScalingPolicy");
-                AutoScalingPolicyJsonMarshaller.getInstance().marshall(putAutoScalingPolicyRequest.getAutoScalingPolicy(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(putAutoScalingPolicyRequest.getClusterId(), CLUSTERID_BINDING);
+            protocolMarshaller.marshall(putAutoScalingPolicyRequest.getInstanceGroupId(), INSTANCEGROUPID_BINDING);
+            protocolMarshaller.marshall(putAutoScalingPolicyRequest.getAutoScalingPolicy(), AUTOSCALINGPOLICY_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

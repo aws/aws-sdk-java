@@ -14,6 +14,8 @@ package com.amazonaws.services.opsworkscm.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,8 +26,14 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Server implements Serializable, Cloneable {
+public class Server implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * Associate a public IP address with a server that you are launching.
+     * </p>
+     */
+    private Boolean associatePublicIpAddress;
     /**
      * <p>
      * The number of automated backups to keep.
@@ -44,6 +52,12 @@ public class Server implements Serializable, Cloneable {
      * </p>
      */
     private java.util.Date createdAt;
+    /**
+     * <p>
+     * The ARN of the CloudFormation stack that was used to create the server.
+     * </p>
+     */
+    private String cloudFormationStackArn;
     /**
      * <p>
      * Disables automated backups. The number of stored backups is dependent on the value of PreferredBackupCount.
@@ -154,7 +168,7 @@ public class Server implements Serializable, Cloneable {
     /**
      * <p>
      * The server's status. This field displays the states of actions in progress, such as creating, running, or backing
-     * up the server, as well as server health.
+     * up the server, as well as the server's health state.
      * </p>
      */
     private String status;
@@ -177,6 +191,58 @@ public class Server implements Serializable, Cloneable {
      * </p>
      */
     private String serverArn;
+
+    /**
+     * <p>
+     * Associate a public IP address with a server that you are launching.
+     * </p>
+     * 
+     * @param associatePublicIpAddress
+     *        Associate a public IP address with a server that you are launching.
+     */
+
+    public void setAssociatePublicIpAddress(Boolean associatePublicIpAddress) {
+        this.associatePublicIpAddress = associatePublicIpAddress;
+    }
+
+    /**
+     * <p>
+     * Associate a public IP address with a server that you are launching.
+     * </p>
+     * 
+     * @return Associate a public IP address with a server that you are launching.
+     */
+
+    public Boolean getAssociatePublicIpAddress() {
+        return this.associatePublicIpAddress;
+    }
+
+    /**
+     * <p>
+     * Associate a public IP address with a server that you are launching.
+     * </p>
+     * 
+     * @param associatePublicIpAddress
+     *        Associate a public IP address with a server that you are launching.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Server withAssociatePublicIpAddress(Boolean associatePublicIpAddress) {
+        setAssociatePublicIpAddress(associatePublicIpAddress);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Associate a public IP address with a server that you are launching.
+     * </p>
+     * 
+     * @return Associate a public IP address with a server that you are launching.
+     */
+
+    public Boolean isAssociatePublicIpAddress() {
+        return this.associatePublicIpAddress;
+    }
 
     /**
      * <p>
@@ -295,6 +361,46 @@ public class Server implements Serializable, Cloneable {
 
     public Server withCreatedAt(java.util.Date createdAt) {
         setCreatedAt(createdAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the CloudFormation stack that was used to create the server.
+     * </p>
+     * 
+     * @param cloudFormationStackArn
+     *        The ARN of the CloudFormation stack that was used to create the server.
+     */
+
+    public void setCloudFormationStackArn(String cloudFormationStackArn) {
+        this.cloudFormationStackArn = cloudFormationStackArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the CloudFormation stack that was used to create the server.
+     * </p>
+     * 
+     * @return The ARN of the CloudFormation stack that was used to create the server.
+     */
+
+    public String getCloudFormationStackArn() {
+        return this.cloudFormationStackArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the CloudFormation stack that was used to create the server.
+     * </p>
+     * 
+     * @param cloudFormationStackArn
+     *        The ARN of the CloudFormation stack that was used to create the server.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Server withCloudFormationStackArn(String cloudFormationStackArn) {
+        setCloudFormationStackArn(cloudFormationStackArn);
         return this;
     }
 
@@ -1153,12 +1259,12 @@ public class Server implements Serializable, Cloneable {
     /**
      * <p>
      * The server's status. This field displays the states of actions in progress, such as creating, running, or backing
-     * up the server, as well as server health.
+     * up the server, as well as the server's health state.
      * </p>
      * 
      * @param status
      *        The server's status. This field displays the states of actions in progress, such as creating, running, or
-     *        backing up the server, as well as server health.
+     *        backing up the server, as well as the server's health state.
      * @see ServerStatus
      */
 
@@ -1169,11 +1275,11 @@ public class Server implements Serializable, Cloneable {
     /**
      * <p>
      * The server's status. This field displays the states of actions in progress, such as creating, running, or backing
-     * up the server, as well as server health.
+     * up the server, as well as the server's health state.
      * </p>
      * 
      * @return The server's status. This field displays the states of actions in progress, such as creating, running, or
-     *         backing up the server, as well as server health.
+     *         backing up the server, as well as the server's health state.
      * @see ServerStatus
      */
 
@@ -1184,12 +1290,12 @@ public class Server implements Serializable, Cloneable {
     /**
      * <p>
      * The server's status. This field displays the states of actions in progress, such as creating, running, or backing
-     * up the server, as well as server health.
+     * up the server, as well as the server's health state.
      * </p>
      * 
      * @param status
      *        The server's status. This field displays the states of actions in progress, such as creating, running, or
-     *        backing up the server, as well as server health.
+     *        backing up the server, as well as the server's health state.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ServerStatus
      */
@@ -1202,12 +1308,12 @@ public class Server implements Serializable, Cloneable {
     /**
      * <p>
      * The server's status. This field displays the states of actions in progress, such as creating, running, or backing
-     * up the server, as well as server health.
+     * up the server, as well as the server's health state.
      * </p>
      * 
      * @param status
      *        The server's status. This field displays the states of actions in progress, such as creating, running, or
-     *        backing up the server, as well as server health.
+     *        backing up the server, as well as the server's health state.
      * @see ServerStatus
      */
 
@@ -1218,12 +1324,12 @@ public class Server implements Serializable, Cloneable {
     /**
      * <p>
      * The server's status. This field displays the states of actions in progress, such as creating, running, or backing
-     * up the server, as well as server health.
+     * up the server, as well as the server's health state.
      * </p>
      * 
      * @param status
      *        The server's status. This field displays the states of actions in progress, such as creating, running, or
-     *        backing up the server, as well as server health.
+     *        backing up the server, as well as the server's health state.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ServerStatus
      */
@@ -1400,12 +1506,16 @@ public class Server implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAssociatePublicIpAddress() != null)
+            sb.append("AssociatePublicIpAddress: ").append(getAssociatePublicIpAddress()).append(",");
         if (getBackupRetentionCount() != null)
             sb.append("BackupRetentionCount: ").append(getBackupRetentionCount()).append(",");
         if (getServerName() != null)
             sb.append("ServerName: ").append(getServerName()).append(",");
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
+        if (getCloudFormationStackArn() != null)
+            sb.append("CloudFormationStackArn: ").append(getCloudFormationStackArn()).append(",");
         if (getDisableAutomatedBackup() != null)
             sb.append("DisableAutomatedBackup: ").append(getDisableAutomatedBackup()).append(",");
         if (getEndpoint() != null)
@@ -1456,6 +1566,10 @@ public class Server implements Serializable, Cloneable {
         if (obj instanceof Server == false)
             return false;
         Server other = (Server) obj;
+        if (other.getAssociatePublicIpAddress() == null ^ this.getAssociatePublicIpAddress() == null)
+            return false;
+        if (other.getAssociatePublicIpAddress() != null && other.getAssociatePublicIpAddress().equals(this.getAssociatePublicIpAddress()) == false)
+            return false;
         if (other.getBackupRetentionCount() == null ^ this.getBackupRetentionCount() == null)
             return false;
         if (other.getBackupRetentionCount() != null && other.getBackupRetentionCount().equals(this.getBackupRetentionCount()) == false)
@@ -1467,6 +1581,10 @@ public class Server implements Serializable, Cloneable {
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
         if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+            return false;
+        if (other.getCloudFormationStackArn() == null ^ this.getCloudFormationStackArn() == null)
+            return false;
+        if (other.getCloudFormationStackArn() != null && other.getCloudFormationStackArn().equals(this.getCloudFormationStackArn()) == false)
             return false;
         if (other.getDisableAutomatedBackup() == null ^ this.getDisableAutomatedBackup() == null)
             return false;
@@ -1548,9 +1666,11 @@ public class Server implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAssociatePublicIpAddress() == null) ? 0 : getAssociatePublicIpAddress().hashCode());
         hashCode = prime * hashCode + ((getBackupRetentionCount() == null) ? 0 : getBackupRetentionCount().hashCode());
         hashCode = prime * hashCode + ((getServerName() == null) ? 0 : getServerName().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getCloudFormationStackArn() == null) ? 0 : getCloudFormationStackArn().hashCode());
         hashCode = prime * hashCode + ((getDisableAutomatedBackup() == null) ? 0 : getDisableAutomatedBackup().hashCode());
         hashCode = prime * hashCode + ((getEndpoint() == null) ? 0 : getEndpoint().hashCode());
         hashCode = prime * hashCode + ((getEngine() == null) ? 0 : getEngine().hashCode());
@@ -1579,5 +1699,11 @@ public class Server implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.opsworkscm.model.transform.ServerMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

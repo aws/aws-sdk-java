@@ -12,69 +12,47 @@
  */
 package com.amazonaws.services.servermigration.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.servermigration.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * StartOnDemandReplicationRunRequest Marshaller
+ * StartOnDemandReplicationRunRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class StartOnDemandReplicationRunRequestMarshaller implements
-        Marshaller<Request<StartOnDemandReplicationRunRequest>, StartOnDemandReplicationRunRequest> {
+@SdkInternalApi
+public class StartOnDemandReplicationRunRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> REPLICATIONJOBID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("replicationJobId").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
 
-    public StartOnDemandReplicationRunRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final StartOnDemandReplicationRunRequestMarshaller instance = new StartOnDemandReplicationRunRequestMarshaller();
+
+    public static StartOnDemandReplicationRunRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<StartOnDemandReplicationRunRequest> marshall(StartOnDemandReplicationRunRequest startOnDemandReplicationRunRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(StartOnDemandReplicationRunRequest startOnDemandReplicationRunRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (startOnDemandReplicationRunRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<StartOnDemandReplicationRunRequest> request = new DefaultRequest<StartOnDemandReplicationRunRequest>(startOnDemandReplicationRunRequest,
-                "AWSServerMigration");
-        request.addHeader("X-Amz-Target", "AWSServerMigrationService_V2016_10_24.StartOnDemandReplicationRun");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (startOnDemandReplicationRunRequest.getReplicationJobId() != null) {
-                jsonGenerator.writeFieldName("replicationJobId").writeValue(startOnDemandReplicationRunRequest.getReplicationJobId());
-            }
-            if (startOnDemandReplicationRunRequest.getDescription() != null) {
-                jsonGenerator.writeFieldName("description").writeValue(startOnDemandReplicationRunRequest.getDescription());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(startOnDemandReplicationRunRequest.getReplicationJobId(), REPLICATIONJOBID_BINDING);
+            protocolMarshaller.marshall(startOnDemandReplicationRunRequest.getDescription(), DESCRIPTION_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

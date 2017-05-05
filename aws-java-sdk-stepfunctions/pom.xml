@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.87-SNAPSHOT</version>
+    <version>1.11.127-SNAPSHOT</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-stepfunctions</artifactId>
@@ -15,18 +15,6 @@
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
-    <dependency>
-        <artifactId>json-path</artifactId>
-        <exclusions>
-            <exclusion>
-                <artifactId>json-smart</artifactId>
-                <groupId>net.minidev</groupId>
-            </exclusion>
-        </exclusions>
-        <groupId>com.jayway.jsonpath</groupId>
-        <optional>false</optional>
-        <version>2.2.0</version>
-    </dependency>
     <dependency>
         <artifactId>aws-java-sdk-core</artifactId>
         <groupId>com.amazonaws</groupId>

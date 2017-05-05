@@ -71,4 +71,20 @@ public class AmazonElasticMapReduceWaiters {
                 .withExecutorService(executorService).build();
     }
 
+    /**
+     * Builds a ClusterTerminated waiter by using custom parameters waiterParameters and other parameters defined in the
+     * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
+     * where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<DescribeClusterRequest> clusterTerminated() {
+
+        return new WaiterBuilder<DescribeClusterRequest, DescribeClusterResult>().withSdkFunction(new DescribeClusterFunction(client))
+                .withAcceptors(new ClusterTerminated.IsTERMINATEDMatcher(), new ClusterTerminated.IsTERMINATED_WITH_ERRORSMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(60), new FixedDelayStrategy(30)))
+                .withExecutorService(executorService).build();
+    }
+
+    public void shutdown() {
+        executorService.shutdown();
+    }
 }

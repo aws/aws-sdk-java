@@ -12,68 +12,47 @@
  */
 package com.amazonaws.services.directconnect.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.directconnect.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeVirtualInterfacesRequest Marshaller
+ * DescribeVirtualInterfacesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeVirtualInterfacesRequestMarshaller implements Marshaller<Request<DescribeVirtualInterfacesRequest>, DescribeVirtualInterfacesRequest> {
+@SdkInternalApi
+public class DescribeVirtualInterfacesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CONNECTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectionId").build();
+    private static final MarshallingInfo<String> VIRTUALINTERFACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("virtualInterfaceId").build();
 
-    public DescribeVirtualInterfacesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeVirtualInterfacesRequestMarshaller instance = new DescribeVirtualInterfacesRequestMarshaller();
+
+    public static DescribeVirtualInterfacesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeVirtualInterfacesRequest> marshall(DescribeVirtualInterfacesRequest describeVirtualInterfacesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeVirtualInterfacesRequest describeVirtualInterfacesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeVirtualInterfacesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeVirtualInterfacesRequest> request = new DefaultRequest<DescribeVirtualInterfacesRequest>(describeVirtualInterfacesRequest,
-                "AmazonDirectConnect");
-        request.addHeader("X-Amz-Target", "OvertureService.DescribeVirtualInterfaces");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeVirtualInterfacesRequest.getConnectionId() != null) {
-                jsonGenerator.writeFieldName("connectionId").writeValue(describeVirtualInterfacesRequest.getConnectionId());
-            }
-            if (describeVirtualInterfacesRequest.getVirtualInterfaceId() != null) {
-                jsonGenerator.writeFieldName("virtualInterfaceId").writeValue(describeVirtualInterfacesRequest.getVirtualInterfaceId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeVirtualInterfacesRequest.getConnectionId(), CONNECTIONID_BINDING);
+            protocolMarshaller.marshall(describeVirtualInterfacesRequest.getVirtualInterfaceId(), VIRTUALINTERFACEID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

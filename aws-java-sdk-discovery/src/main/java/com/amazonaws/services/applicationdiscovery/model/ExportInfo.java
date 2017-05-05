@@ -14,6 +14,8 @@ package com.amazonaws.services.applicationdiscovery.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -21,7 +23,7 @@ import javax.annotation.Generated;
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ExportInfo implements Serializable, Cloneable {
+public class ExportInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -51,7 +53,7 @@ public class ExportInfo implements Serializable, Cloneable {
     private String configurationsDownloadUrl;
     /**
      * <p>
-     * The time the configuration data export was initiated.
+     * The time that the configuration data export was initiated.
      * </p>
      */
     private java.util.Date exportRequestTime;
@@ -263,11 +265,11 @@ public class ExportInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time the configuration data export was initiated.
+     * The time that the configuration data export was initiated.
      * </p>
      * 
      * @param exportRequestTime
-     *        The time the configuration data export was initiated.
+     *        The time that the configuration data export was initiated.
      */
 
     public void setExportRequestTime(java.util.Date exportRequestTime) {
@@ -276,10 +278,10 @@ public class ExportInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time the configuration data export was initiated.
+     * The time that the configuration data export was initiated.
      * </p>
      * 
-     * @return The time the configuration data export was initiated.
+     * @return The time that the configuration data export was initiated.
      */
 
     public java.util.Date getExportRequestTime() {
@@ -288,11 +290,11 @@ public class ExportInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time the configuration data export was initiated.
+     * The time that the configuration data export was initiated.
      * </p>
      * 
      * @param exportRequestTime
-     *        The time the configuration data export was initiated.
+     *        The time that the configuration data export was initiated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -379,5 +381,11 @@ public class ExportInfo implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.applicationdiscovery.model.transform.ExportInfoMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

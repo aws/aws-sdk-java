@@ -18,6 +18,8 @@ import com.amazonaws.retry.PredefinedRetryPolicies;
 import com.amazonaws.retry.RetryPolicy;
 import com.amazonaws.util.ImmutableMapParameter;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.apache.commons.lang.RandomStringUtils;
 import org.apache.http.conn.socket.ConnectionSocketFactory;
 import org.apache.http.conn.ssl.SSLSocketFactory;
@@ -279,7 +281,9 @@ public class ClientConfigurationTest {
                 field.set(customConfig, ImmutableMapParameter.of("foo", "bar"));
             } else if (clzz.isAssignableFrom(ApacheHttpClientConfig.class)) {
                 customConfig.getApacheHttpClientConfig()
-                        .setSslSocketFactory(Mockito.mock(ConnectionSocketFactory.class));
+                            .setSslSocketFactory(Mockito.mock(ConnectionSocketFactory.class));
+            } else if (clzz.isAssignableFrom(List.class)) {
+                field.set(customConfig, new ArrayList<Object>());
             } else {
                 throw new RuntimeException(
                         String.format("Field %s of type %s is not supported",

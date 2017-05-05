@@ -112,6 +112,10 @@ public class PublishVersionResultJsonUnmarshaller implements Unmarshaller<Publis
                     context.nextToken();
                     publishVersionResult.setKMSKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("TracingConfig", targetDepth)) {
+                    context.nextToken();
+                    publishVersionResult.setTracingConfig(TracingConfigResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

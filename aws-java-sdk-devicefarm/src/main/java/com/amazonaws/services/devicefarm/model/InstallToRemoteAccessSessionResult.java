@@ -26,10 +26,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InstallToRemoteAccessSessionResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * An app to upload or that has been uploaded.
+     * </p>
+     */
     private Upload appUpload;
 
     /**
+     * <p>
+     * An app to upload or that has been uploaded.
+     * </p>
+     * 
      * @param appUpload
+     *        An app to upload or that has been uploaded.
      */
 
     public void setAppUpload(Upload appUpload) {
@@ -37,7 +47,11 @@ public class InstallToRemoteAccessSessionResult extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * @return
+     * <p>
+     * An app to upload or that has been uploaded.
+     * </p>
+     * 
+     * @return An app to upload or that has been uploaded.
      */
 
     public Upload getAppUpload() {
@@ -45,7 +59,12 @@ public class InstallToRemoteAccessSessionResult extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * An app to upload or that has been uploaded.
+     * </p>
+     * 
      * @param appUpload
+     *        An app to upload or that has been uploaded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,4 +124,5 @@ public class InstallToRemoteAccessSessionResult extends com.amazonaws.AmazonWebS
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

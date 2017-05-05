@@ -14,14 +14,16 @@ package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * AWS OpsWorks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and
- * <b>shutdown</b>. For each layer, AWS OpsWorks runs a set of standard recipes for each event. In addition, you can
- * provide custom recipes for any or all layers and events. AWS OpsWorks runs custom event recipes after the standard
- * recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in response to
- * each of the five events.
+ * AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>,
+ * <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each
+ * event. In addition, you can provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom
+ * event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a
+ * particular layer to be run in response to each of the five events.
  * </p>
  * <p>
  * To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe name,
@@ -33,7 +35,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Recipes implements Serializable, Cloneable {
+public class Recipes implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -509,5 +511,11 @@ public class Recipes implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.opsworks.model.transform.RecipesMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

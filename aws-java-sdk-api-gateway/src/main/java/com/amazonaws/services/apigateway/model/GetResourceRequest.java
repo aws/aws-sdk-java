@@ -37,6 +37,16 @@ public class GetResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String resourceId;
+    /**
+     * <p>
+     * A query parameter to retrieve the specified resources embedded in the returned <a>Resource</a> representation in
+     * the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the
+     * request supports only retrieval of the embedded <a>Method</a> resources this way. The query parameter value must
+     * be a single-valued list and contain the <code>"methods"</code> string. For example,
+     * <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.
+     * </p>
+     */
+    private java.util.List<String> embed;
 
     /**
      * <p>
@@ -119,6 +129,108 @@ public class GetResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * A query parameter to retrieve the specified resources embedded in the returned <a>Resource</a> representation in
+     * the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the
+     * request supports only retrieval of the embedded <a>Method</a> resources this way. The query parameter value must
+     * be a single-valued list and contain the <code>"methods"</code> string. For example,
+     * <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.
+     * </p>
+     * 
+     * @return A query parameter to retrieve the specified resources embedded in the returned <a>Resource</a>
+     *         representation in the response. This <code>embed</code> parameter value is a list of comma-separated
+     *         strings. Currently, the request supports only retrieval of the embedded <a>Method</a> resources this way.
+     *         The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For
+     *         example, <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.
+     */
+
+    public java.util.List<String> getEmbed() {
+        return embed;
+    }
+
+    /**
+     * <p>
+     * A query parameter to retrieve the specified resources embedded in the returned <a>Resource</a> representation in
+     * the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the
+     * request supports only retrieval of the embedded <a>Method</a> resources this way. The query parameter value must
+     * be a single-valued list and contain the <code>"methods"</code> string. For example,
+     * <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.
+     * </p>
+     * 
+     * @param embed
+     *        A query parameter to retrieve the specified resources embedded in the returned <a>Resource</a>
+     *        representation in the response. This <code>embed</code> parameter value is a list of comma-separated
+     *        strings. Currently, the request supports only retrieval of the embedded <a>Method</a> resources this way.
+     *        The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For
+     *        example, <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.
+     */
+
+    public void setEmbed(java.util.Collection<String> embed) {
+        if (embed == null) {
+            this.embed = null;
+            return;
+        }
+
+        this.embed = new java.util.ArrayList<String>(embed);
+    }
+
+    /**
+     * <p>
+     * A query parameter to retrieve the specified resources embedded in the returned <a>Resource</a> representation in
+     * the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the
+     * request supports only retrieval of the embedded <a>Method</a> resources this way. The query parameter value must
+     * be a single-valued list and contain the <code>"methods"</code> string. For example,
+     * <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEmbed(java.util.Collection)} or {@link #withEmbed(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param embed
+     *        A query parameter to retrieve the specified resources embedded in the returned <a>Resource</a>
+     *        representation in the response. This <code>embed</code> parameter value is a list of comma-separated
+     *        strings. Currently, the request supports only retrieval of the embedded <a>Method</a> resources this way.
+     *        The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For
+     *        example, <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetResourceRequest withEmbed(String... embed) {
+        if (this.embed == null) {
+            setEmbed(new java.util.ArrayList<String>(embed.length));
+        }
+        for (String ele : embed) {
+            this.embed.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A query parameter to retrieve the specified resources embedded in the returned <a>Resource</a> representation in
+     * the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the
+     * request supports only retrieval of the embedded <a>Method</a> resources this way. The query parameter value must
+     * be a single-valued list and contain the <code>"methods"</code> string. For example,
+     * <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.
+     * </p>
+     * 
+     * @param embed
+     *        A query parameter to retrieve the specified resources embedded in the returned <a>Resource</a>
+     *        representation in the response. This <code>embed</code> parameter value is a list of comma-separated
+     *        strings. Currently, the request supports only retrieval of the embedded <a>Method</a> resources this way.
+     *        The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For
+     *        example, <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetResourceRequest withEmbed(java.util.Collection<String> embed) {
+        setEmbed(embed);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -132,7 +244,9 @@ public class GetResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getRestApiId() != null)
             sb.append("RestApiId: ").append(getRestApiId()).append(",");
         if (getResourceId() != null)
-            sb.append("ResourceId: ").append(getResourceId());
+            sb.append("ResourceId: ").append(getResourceId()).append(",");
+        if (getEmbed() != null)
+            sb.append("Embed: ").append(getEmbed());
         sb.append("}");
         return sb.toString();
     }
@@ -155,6 +269,10 @@ public class GetResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
             return false;
+        if (other.getEmbed() == null ^ this.getEmbed() == null)
+            return false;
+        if (other.getEmbed() != null && other.getEmbed().equals(this.getEmbed()) == false)
+            return false;
         return true;
     }
 
@@ -165,6 +283,7 @@ public class GetResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
         hashCode = prime * hashCode + ((getRestApiId() == null) ? 0 : getRestApiId().hashCode());
         hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
+        hashCode = prime * hashCode + ((getEmbed() == null) ? 0 : getEmbed().hashCode());
         return hashCode;
     }
 

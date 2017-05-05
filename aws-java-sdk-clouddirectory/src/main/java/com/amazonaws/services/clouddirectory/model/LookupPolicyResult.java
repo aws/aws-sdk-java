@@ -25,23 +25,26 @@ public class LookupPolicyResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Provides list of path to policies. Policies contain PolicyId, ObjectIdentifier, and PolicyType.
+     * Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and
+     * <code>PolicyType</code>.
      * </p>
      */
     private java.util.List<PolicyToPath> policyToPathList;
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Provides list of path to policies. Policies contain PolicyId, ObjectIdentifier, and PolicyType.
+     * Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and
+     * <code>PolicyType</code>.
      * </p>
      * 
-     * @return Provides list of path to policies. Policies contain PolicyId, ObjectIdentifier, and PolicyType.
+     * @return Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>,
+     *         and <code>PolicyType</code>.
      */
 
     public java.util.List<PolicyToPath> getPolicyToPathList() {
@@ -50,11 +53,13 @@ public class LookupPolicyResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Provides list of path to policies. Policies contain PolicyId, ObjectIdentifier, and PolicyType.
+     * Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and
+     * <code>PolicyType</code>.
      * </p>
      * 
      * @param policyToPathList
-     *        Provides list of path to policies. Policies contain PolicyId, ObjectIdentifier, and PolicyType.
+     *        Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>,
+     *        and <code>PolicyType</code>.
      */
 
     public void setPolicyToPathList(java.util.Collection<PolicyToPath> policyToPathList) {
@@ -68,7 +73,8 @@ public class LookupPolicyResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Provides list of path to policies. Policies contain PolicyId, ObjectIdentifier, and PolicyType.
+     * Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and
+     * <code>PolicyType</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +83,8 @@ public class LookupPolicyResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param policyToPathList
-     *        Provides list of path to policies. Policies contain PolicyId, ObjectIdentifier, and PolicyType.
+     *        Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>,
+     *        and <code>PolicyType</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +100,13 @@ public class LookupPolicyResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Provides list of path to policies. Policies contain PolicyId, ObjectIdentifier, and PolicyType.
+     * Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and
+     * <code>PolicyType</code>.
      * </p>
      * 
      * @param policyToPathList
-     *        Provides list of path to policies. Policies contain PolicyId, ObjectIdentifier, and PolicyType.
+     *        Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>,
+     *        and <code>PolicyType</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,11 +117,11 @@ public class LookupPolicyResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      * 
      * @param nextToken
-     *        Token used for pagination.
+     *        The pagination token.
      */
 
     public void setNextToken(String nextToken) {
@@ -121,10 +130,10 @@ public class LookupPolicyResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      * 
-     * @return Token used for pagination.
+     * @return The pagination token.
      */
 
     public String getNextToken() {
@@ -133,11 +142,11 @@ public class LookupPolicyResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      * 
      * @param nextToken
-     *        Token used for pagination.
+     *        The pagination token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,4 +213,5 @@ public class LookupPolicyResult extends com.amazonaws.AmazonWebServiceResult<com
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

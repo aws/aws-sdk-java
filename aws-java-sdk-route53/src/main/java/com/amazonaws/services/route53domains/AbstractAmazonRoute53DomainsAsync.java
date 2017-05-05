@@ -186,6 +186,7 @@ public class AbstractAmazonRoute53DomainsAsync extends AbstractAmazonRoute53Doma
      *
      * @see #listDomainsAsync(ListDomainsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListDomainsResult> listDomainsAsync(
             com.amazonaws.handlers.AsyncHandler<ListDomainsRequest, ListDomainsResult> asyncHandler) {
 
@@ -221,6 +222,7 @@ public class AbstractAmazonRoute53DomainsAsync extends AbstractAmazonRoute53Doma
      *
      * @see #listOperationsAsync(ListOperationsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListOperationsResult> listOperationsAsync(
             com.amazonaws.handlers.AsyncHandler<ListOperationsRequest, ListOperationsResult> asyncHandler) {
 

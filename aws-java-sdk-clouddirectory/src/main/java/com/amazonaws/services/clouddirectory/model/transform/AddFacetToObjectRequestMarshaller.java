@@ -12,92 +12,54 @@
  */
 package com.amazonaws.services.clouddirectory.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.clouddirectory.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * AddFacetToObjectRequest Marshaller
+ * AddFacetToObjectRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AddFacetToObjectRequestMarshaller implements Marshaller<Request<AddFacetToObjectRequest>, AddFacetToObjectRequest> {
+@SdkInternalApi
+public class AddFacetToObjectRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DIRECTORYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("x-amz-data-partition").build();
+    private static final MarshallingInfo<StructuredPojo> SCHEMAFACET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SchemaFacet").build();
+    private static final MarshallingInfo<List> OBJECTATTRIBUTELIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ObjectAttributeList").build();
+    private static final MarshallingInfo<StructuredPojo> OBJECTREFERENCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ObjectReference").build();
 
-    public AddFacetToObjectRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final AddFacetToObjectRequestMarshaller instance = new AddFacetToObjectRequestMarshaller();
+
+    public static AddFacetToObjectRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<AddFacetToObjectRequest> marshall(AddFacetToObjectRequest addFacetToObjectRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(AddFacetToObjectRequest addFacetToObjectRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (addFacetToObjectRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<AddFacetToObjectRequest> request = new DefaultRequest<AddFacetToObjectRequest>(addFacetToObjectRequest, "AmazonCloudDirectory");
-
-        request.setHttpMethod(HttpMethodName.PUT);
-
-        if (addFacetToObjectRequest.getDirectoryArn() != null) {
-            request.addHeader("x-amz-data-partition", StringUtils.fromString(addFacetToObjectRequest.getDirectoryArn()));
-        }
-
-        String uriResourcePath = "/amazonclouddirectory/2017-01-11/object/facets";
-
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (addFacetToObjectRequest.getSchemaFacet() != null) {
-                jsonGenerator.writeFieldName("SchemaFacet");
-                SchemaFacetJsonMarshaller.getInstance().marshall(addFacetToObjectRequest.getSchemaFacet(), jsonGenerator);
-            }
-
-            java.util.List<AttributeKeyAndValue> objectAttributeListList = addFacetToObjectRequest.getObjectAttributeList();
-            if (objectAttributeListList != null) {
-                jsonGenerator.writeFieldName("ObjectAttributeList");
-                jsonGenerator.writeStartArray();
-                for (AttributeKeyAndValue objectAttributeListListValue : objectAttributeListList) {
-                    if (objectAttributeListListValue != null) {
-
-                        AttributeKeyAndValueJsonMarshaller.getInstance().marshall(objectAttributeListListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (addFacetToObjectRequest.getObjectReference() != null) {
-                jsonGenerator.writeFieldName("ObjectReference");
-                ObjectReferenceJsonMarshaller.getInstance().marshall(addFacetToObjectRequest.getObjectReference(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(addFacetToObjectRequest.getDirectoryArn(), DIRECTORYARN_BINDING);
+            protocolMarshaller.marshall(addFacetToObjectRequest.getSchemaFacet(), SCHEMAFACET_BINDING);
+            protocolMarshaller.marshall(addFacetToObjectRequest.getObjectAttributeList(), OBJECTATTRIBUTELIST_BINDING);
+            protocolMarshaller.marshall(addFacetToObjectRequest.getObjectReference(), OBJECTREFERENCE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

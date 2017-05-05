@@ -22,53 +22,6 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Gets the value that Amazon Route 53 returns in response to a DNS request for a specified record name and type. You
  * can optionally specify the IP address of a DNS resolver, an EDNS0 client subnet IP address, and a subnet mask.
  * </p>
- * <p>
- * <b>Parameters</b>
- * </p>
- * <dl>
- * <dt>hostedzoneid</dt>
- * <dd>
- * <p>
- * The ID of the hosted zone that you want Amazon Route 53 to simulate a query for.
- * </p>
- * </dd>
- * <dt>recordname</dt>
- * <dd>
- * <p>
- * The name of the resource record set that you want Amazon Route 53 to simulate a query for.
- * </p>
- * </dd>
- * <dt>recordtype</dt>
- * <dd>
- * <p>
- * The type of the resource record set.
- * </p>
- * </dd>
- * <dt>resolverip (optional)</dt>
- * <dd>
- * <p>
- * If you want to simulate a request from a specific DNS resolver, specify the IP address for that resolver. If you omit
- * this value, <code>TestDNSAnswer</code> uses the IP address of a DNS resolver in the AWS US East region.
- * </p>
- * </dd>
- * <dt>edns0clientsubnetip (optional)</dt>
- * <dd>
- * <p>
- * If the resolver that you specified for <code>resolverip</code> supports EDNS0, specify the IP address of a client in
- * the applicable location.
- * </p>
- * </dd>
- * <dt>edns0clientsubnetmask (optional)</dt>
- * <dd>
- * <p>
- * If you specify an IP address for <code>edns0clientsubnetip</code>, you can optionally specify the number of bits of
- * the IP address that you want the checking tool to include in the DNS query. For example, if you specify
- * <code>192.0.2.44</code> for <code>edns0clientsubnetip</code> and <code>24</code> for
- * <code>edns0clientsubnetmask</code>, the checking tool will simulate a request from <code>192.0.2.0/24</code>. The
- * default value is 24 bits.
- * </p>
- * </dd>
- * </dl>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/TestDNSAnswer" target="_top">AWS API
  *      Documentation</a>
@@ -97,14 +50,15 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * If you want to simulate a request from a specific DNS resolver, specify the IP address for that resolver. If you
-     * omit this value, <code>TestDnsAnswer</code> uses the IP address of a DNS resolver in the AWS US East region.
+     * omit this value, <code>TestDnsAnswer</code> uses the IP address of a DNS resolver in the AWS US East (N.
+     * Virginia) Region (<code>us-east-1</code>).
      * </p>
      */
     private String resolverIP;
     /**
      * <p>
-     * If the resolver that you specified for resolverip supports EDNS0, specify the IP address of a client in the
-     * applicable location.
+     * If the resolver that you specified for resolverip supports EDNS0, specify the IPv4 or IPv6 address of a client in
+     * the applicable location, for example, <code>192.0.2.44</code> or <code>2001:db8:85a3::8a2e:370:7334</code>.
      * </p>
      */
     private String eDNS0ClientSubnetIP;
@@ -114,7 +68,7 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
      * of the IP address that you want the checking tool to include in the DNS query. For example, if you specify
      * <code>192.0.2.44</code> for <code>edns0clientsubnetip</code> and <code>24</code> for
      * <code>edns0clientsubnetmask</code>, the checking tool will simulate a request from 192.0.2.0/24. The default
-     * value is 24 bits.
+     * value is 24 bits for IPv4 addresses and 64 bits for IPv6 addresses.
      * </p>
      */
     private String eDNS0ClientSubnetMask;
@@ -275,13 +229,14 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * If you want to simulate a request from a specific DNS resolver, specify the IP address for that resolver. If you
-     * omit this value, <code>TestDnsAnswer</code> uses the IP address of a DNS resolver in the AWS US East region.
+     * omit this value, <code>TestDnsAnswer</code> uses the IP address of a DNS resolver in the AWS US East (N.
+     * Virginia) Region (<code>us-east-1</code>).
      * </p>
      * 
      * @param resolverIP
      *        If you want to simulate a request from a specific DNS resolver, specify the IP address for that resolver.
      *        If you omit this value, <code>TestDnsAnswer</code> uses the IP address of a DNS resolver in the AWS US
-     *        East region.
+     *        East (N. Virginia) Region (<code>us-east-1</code>).
      */
 
     public void setResolverIP(String resolverIP) {
@@ -291,12 +246,13 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * If you want to simulate a request from a specific DNS resolver, specify the IP address for that resolver. If you
-     * omit this value, <code>TestDnsAnswer</code> uses the IP address of a DNS resolver in the AWS US East region.
+     * omit this value, <code>TestDnsAnswer</code> uses the IP address of a DNS resolver in the AWS US East (N.
+     * Virginia) Region (<code>us-east-1</code>).
      * </p>
      * 
      * @return If you want to simulate a request from a specific DNS resolver, specify the IP address for that resolver.
      *         If you omit this value, <code>TestDnsAnswer</code> uses the IP address of a DNS resolver in the AWS US
-     *         East region.
+     *         East (N. Virginia) Region (<code>us-east-1</code>).
      */
 
     public String getResolverIP() {
@@ -306,13 +262,14 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * If you want to simulate a request from a specific DNS resolver, specify the IP address for that resolver. If you
-     * omit this value, <code>TestDnsAnswer</code> uses the IP address of a DNS resolver in the AWS US East region.
+     * omit this value, <code>TestDnsAnswer</code> uses the IP address of a DNS resolver in the AWS US East (N.
+     * Virginia) Region (<code>us-east-1</code>).
      * </p>
      * 
      * @param resolverIP
      *        If you want to simulate a request from a specific DNS resolver, specify the IP address for that resolver.
      *        If you omit this value, <code>TestDnsAnswer</code> uses the IP address of a DNS resolver in the AWS US
-     *        East region.
+     *        East (N. Virginia) Region (<code>us-east-1</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -323,13 +280,14 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * If the resolver that you specified for resolverip supports EDNS0, specify the IP address of a client in the
-     * applicable location.
+     * If the resolver that you specified for resolverip supports EDNS0, specify the IPv4 or IPv6 address of a client in
+     * the applicable location, for example, <code>192.0.2.44</code> or <code>2001:db8:85a3::8a2e:370:7334</code>.
      * </p>
      * 
      * @param eDNS0ClientSubnetIP
-     *        If the resolver that you specified for resolverip supports EDNS0, specify the IP address of a client in
-     *        the applicable location.
+     *        If the resolver that you specified for resolverip supports EDNS0, specify the IPv4 or IPv6 address of a
+     *        client in the applicable location, for example, <code>192.0.2.44</code> or
+     *        <code>2001:db8:85a3::8a2e:370:7334</code>.
      */
 
     public void setEDNS0ClientSubnetIP(String eDNS0ClientSubnetIP) {
@@ -338,12 +296,13 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * If the resolver that you specified for resolverip supports EDNS0, specify the IP address of a client in the
-     * applicable location.
+     * If the resolver that you specified for resolverip supports EDNS0, specify the IPv4 or IPv6 address of a client in
+     * the applicable location, for example, <code>192.0.2.44</code> or <code>2001:db8:85a3::8a2e:370:7334</code>.
      * </p>
      * 
-     * @return If the resolver that you specified for resolverip supports EDNS0, specify the IP address of a client in
-     *         the applicable location.
+     * @return If the resolver that you specified for resolverip supports EDNS0, specify the IPv4 or IPv6 address of a
+     *         client in the applicable location, for example, <code>192.0.2.44</code> or
+     *         <code>2001:db8:85a3::8a2e:370:7334</code>.
      */
 
     public String getEDNS0ClientSubnetIP() {
@@ -352,13 +311,14 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * If the resolver that you specified for resolverip supports EDNS0, specify the IP address of a client in the
-     * applicable location.
+     * If the resolver that you specified for resolverip supports EDNS0, specify the IPv4 or IPv6 address of a client in
+     * the applicable location, for example, <code>192.0.2.44</code> or <code>2001:db8:85a3::8a2e:370:7334</code>.
      * </p>
      * 
      * @param eDNS0ClientSubnetIP
-     *        If the resolver that you specified for resolverip supports EDNS0, specify the IP address of a client in
-     *        the applicable location.
+     *        If the resolver that you specified for resolverip supports EDNS0, specify the IPv4 or IPv6 address of a
+     *        client in the applicable location, for example, <code>192.0.2.44</code> or
+     *        <code>2001:db8:85a3::8a2e:370:7334</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -373,7 +333,7 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
      * of the IP address that you want the checking tool to include in the DNS query. For example, if you specify
      * <code>192.0.2.44</code> for <code>edns0clientsubnetip</code> and <code>24</code> for
      * <code>edns0clientsubnetmask</code>, the checking tool will simulate a request from 192.0.2.0/24. The default
-     * value is 24 bits.
+     * value is 24 bits for IPv4 addresses and 64 bits for IPv6 addresses.
      * </p>
      * 
      * @param eDNS0ClientSubnetMask
@@ -381,7 +341,7 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        of bits of the IP address that you want the checking tool to include in the DNS query. For example, if you
      *        specify <code>192.0.2.44</code> for <code>edns0clientsubnetip</code> and <code>24</code> for
      *        <code>edns0clientsubnetmask</code>, the checking tool will simulate a request from 192.0.2.0/24. The
-     *        default value is 24 bits.
+     *        default value is 24 bits for IPv4 addresses and 64 bits for IPv6 addresses.
      */
 
     public void setEDNS0ClientSubnetMask(String eDNS0ClientSubnetMask) {
@@ -394,14 +354,14 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
      * of the IP address that you want the checking tool to include in the DNS query. For example, if you specify
      * <code>192.0.2.44</code> for <code>edns0clientsubnetip</code> and <code>24</code> for
      * <code>edns0clientsubnetmask</code>, the checking tool will simulate a request from 192.0.2.0/24. The default
-     * value is 24 bits.
+     * value is 24 bits for IPv4 addresses and 64 bits for IPv6 addresses.
      * </p>
      * 
      * @return If you specify an IP address for <code>edns0clientsubnetip</code>, you can optionally specify the number
      *         of bits of the IP address that you want the checking tool to include in the DNS query. For example, if
      *         you specify <code>192.0.2.44</code> for <code>edns0clientsubnetip</code> and <code>24</code> for
      *         <code>edns0clientsubnetmask</code>, the checking tool will simulate a request from 192.0.2.0/24. The
-     *         default value is 24 bits.
+     *         default value is 24 bits for IPv4 addresses and 64 bits for IPv6 addresses.
      */
 
     public String getEDNS0ClientSubnetMask() {
@@ -414,7 +374,7 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
      * of the IP address that you want the checking tool to include in the DNS query. For example, if you specify
      * <code>192.0.2.44</code> for <code>edns0clientsubnetip</code> and <code>24</code> for
      * <code>edns0clientsubnetmask</code>, the checking tool will simulate a request from 192.0.2.0/24. The default
-     * value is 24 bits.
+     * value is 24 bits for IPv4 addresses and 64 bits for IPv6 addresses.
      * </p>
      * 
      * @param eDNS0ClientSubnetMask
@@ -422,7 +382,7 @@ public class TestDNSAnswerRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        of bits of the IP address that you want the checking tool to include in the DNS query. For example, if you
      *        specify <code>192.0.2.44</code> for <code>edns0clientsubnetip</code> and <code>24</code> for
      *        <code>edns0clientsubnetmask</code>, the checking tool will simulate a request from 192.0.2.0/24. The
-     *        default value is 24 bits.
+     *        default value is 24 bits for IPv4 addresses and 64 bits for IPv6 addresses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

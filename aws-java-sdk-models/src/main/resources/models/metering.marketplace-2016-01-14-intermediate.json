@@ -17,6 +17,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
+    "deprecatedSuppressions" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
     "presignersFqcn" : null,
@@ -274,6 +275,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "UsageRecords",
           "queryString" : false,
           "statusCode" : false,
@@ -281,6 +283,8 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : true,
         "listModel" : {
           "implType" : "java.util.ArrayList",
@@ -308,6 +312,7 @@
               "isPayload" : false,
               "isStreaming" : false,
               "location" : null,
+              "marshallLocation" : "PAYLOAD",
               "marshallLocationName" : "member",
               "queryString" : false,
               "statusCode" : false,
@@ -315,10 +320,14 @@
               "uri" : false
             },
             "idempotencyToken" : false,
+            "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
             "mapModel" : null,
+            "marshallingTargetClass" : "StructuredPojo",
+            "marshallingType" : "STRUCTURED",
             "name" : "Member",
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
@@ -331,6 +340,7 @@
               "variableSetterType" : "UsageRecord"
             },
             "simple" : false,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
               "variableDeclarationType" : "UsageRecord",
@@ -356,6 +366,8 @@
         },
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "List",
+        "marshallingType" : "LIST",
         "name" : "UsageRecords",
         "setterDocumentation" : "/**<p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.</p>\n@param usageRecords The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.*/",
         "setterMethodName" : "setUsageRecords",
@@ -368,6 +380,7 @@
           "variableSetterType" : "java.util.Collection<UsageRecord>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setUsageRecords(java.util.Collection)} or {@link #withUsageRecords(java.util.Collection)} if you want to override the existing values.</p>\n@param usageRecords The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<UsageRecord>",
@@ -401,6 +414,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "ProductCode",
           "queryString" : false,
           "statusCode" : false,
@@ -408,10 +422,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "ProductCode",
         "setterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.*/",
         "setterMethodName" : "setProductCode",
@@ -424,6 +442,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -459,6 +478,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "ProductCode",
             "queryString" : false,
             "statusCode" : false,
@@ -466,10 +486,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "ProductCode",
           "setterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.*/",
           "setterMethodName" : "setProductCode",
@@ -482,6 +506,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -516,6 +541,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "UsageRecords",
             "queryString" : false,
             "statusCode" : false,
@@ -523,6 +549,8 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : true,
           "listModel" : {
             "implType" : "java.util.ArrayList",
@@ -550,6 +578,7 @@
                 "isPayload" : false,
                 "isStreaming" : false,
                 "location" : null,
+                "marshallLocation" : "PAYLOAD",
                 "marshallLocationName" : "member",
                 "queryString" : false,
                 "statusCode" : false,
@@ -557,10 +586,14 @@
                 "uri" : false
               },
               "idempotencyToken" : false,
+              "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
               "mapModel" : null,
+              "marshallingTargetClass" : "StructuredPojo",
+              "marshallingType" : "STRUCTURED",
               "name" : "Member",
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
@@ -573,6 +606,7 @@
                 "variableSetterType" : "UsageRecord"
               },
               "simple" : false,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
                 "variableDeclarationType" : "UsageRecord",
@@ -598,6 +632,8 @@
           },
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "List",
+          "marshallingType" : "LIST",
           "name" : "UsageRecords",
           "setterDocumentation" : "/**<p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.</p>\n@param usageRecords The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.*/",
           "setterMethodName" : "setUsageRecords",
@@ -610,6 +646,7 @@
             "variableSetterType" : "java.util.Collection<UsageRecord>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setUsageRecords(java.util.Collection)} or {@link #withUsageRecords(java.util.Collection)} if you want to override the existing values.</p>\n@param usageRecords The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at a time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<UsageRecord>",
@@ -626,6 +663,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "UsageRecords", "ProductCode" ],
       "shapeName" : "BatchMeterUsageRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "BatchMeterUsageRequest",
@@ -677,6 +716,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Results",
           "queryString" : false,
           "statusCode" : false,
@@ -684,6 +724,8 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : true,
         "listModel" : {
           "implType" : "java.util.ArrayList",
@@ -711,6 +753,7 @@
               "isPayload" : false,
               "isStreaming" : false,
               "location" : null,
+              "marshallLocation" : "PAYLOAD",
               "marshallLocationName" : "member",
               "queryString" : false,
               "statusCode" : false,
@@ -718,10 +761,14 @@
               "uri" : false
             },
             "idempotencyToken" : false,
+            "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
             "mapModel" : null,
+            "marshallingTargetClass" : "StructuredPojo",
+            "marshallingType" : "STRUCTURED",
             "name" : "Member",
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
@@ -734,6 +781,7 @@
               "variableSetterType" : "UsageRecordResult"
             },
             "simple" : false,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
               "variableDeclarationType" : "UsageRecordResult",
@@ -759,6 +807,8 @@
         },
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "List",
+        "marshallingType" : "LIST",
         "name" : "Results",
         "setterDocumentation" : "/**<p>Contains all UsageRecords processed by BatchMeterUsage. These records were either honored by AWS Marketplace Metering Service or were invalid.</p>\n@param results Contains all UsageRecords processed by BatchMeterUsage. These records were either honored by AWS Marketplace Metering Service or were invalid.*/",
         "setterMethodName" : "setResults",
@@ -771,6 +821,7 @@
           "variableSetterType" : "java.util.Collection<UsageRecordResult>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Contains all UsageRecords processed by BatchMeterUsage. These records were either honored by AWS Marketplace Metering Service or were invalid.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResults(java.util.Collection)} or {@link #withResults(java.util.Collection)} if you want to override the existing values.</p>\n@param results Contains all UsageRecords processed by BatchMeterUsage. These records were either honored by AWS Marketplace Metering Service or were invalid.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<UsageRecordResult>",
@@ -804,6 +855,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "UnprocessedRecords",
           "queryString" : false,
           "statusCode" : false,
@@ -811,6 +863,8 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : true,
         "listModel" : {
           "implType" : "java.util.ArrayList",
@@ -838,6 +892,7 @@
               "isPayload" : false,
               "isStreaming" : false,
               "location" : null,
+              "marshallLocation" : "PAYLOAD",
               "marshallLocationName" : "member",
               "queryString" : false,
               "statusCode" : false,
@@ -845,10 +900,14 @@
               "uri" : false
             },
             "idempotencyToken" : false,
+            "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
             "mapModel" : null,
+            "marshallingTargetClass" : "StructuredPojo",
+            "marshallingType" : "STRUCTURED",
             "name" : "Member",
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
@@ -861,6 +920,7 @@
               "variableSetterType" : "UsageRecord"
             },
             "simple" : false,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
               "variableDeclarationType" : "UsageRecord",
@@ -886,6 +946,8 @@
         },
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "List",
+        "marshallingType" : "LIST",
         "name" : "UnprocessedRecords",
         "setterDocumentation" : "/**<p>Contains all UsageRecords that were not processed by BatchMeterUsage. This is a list of UsageRecords. You can retry the failed request by making another BatchMeterUsage call with this list as input in the BatchMeterUsageRequest.</p>\n@param unprocessedRecords Contains all UsageRecords that were not processed by BatchMeterUsage. This is a list of UsageRecords. You can retry the failed request by making another BatchMeterUsage call with this list as input in the BatchMeterUsageRequest.*/",
         "setterMethodName" : "setUnprocessedRecords",
@@ -898,6 +960,7 @@
           "variableSetterType" : "java.util.Collection<UsageRecord>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Contains all UsageRecords that were not processed by BatchMeterUsage. This is a list of UsageRecords. You can retry the failed request by making another BatchMeterUsage call with this list as input in the BatchMeterUsageRequest.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setUnprocessedRecords(java.util.Collection)} or {@link #withUnprocessedRecords(java.util.Collection)} if you want to override the existing values.</p>\n@param unprocessedRecords Contains all UsageRecords that were not processed by BatchMeterUsage. This is a list of UsageRecords. You can retry the failed request by making another BatchMeterUsage call with this list as input in the BatchMeterUsageRequest.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<UsageRecord>",
@@ -933,6 +996,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Results",
             "queryString" : false,
             "statusCode" : false,
@@ -940,6 +1004,8 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : true,
           "listModel" : {
             "implType" : "java.util.ArrayList",
@@ -967,6 +1033,7 @@
                 "isPayload" : false,
                 "isStreaming" : false,
                 "location" : null,
+                "marshallLocation" : "PAYLOAD",
                 "marshallLocationName" : "member",
                 "queryString" : false,
                 "statusCode" : false,
@@ -974,10 +1041,14 @@
                 "uri" : false
               },
               "idempotencyToken" : false,
+              "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
               "mapModel" : null,
+              "marshallingTargetClass" : "StructuredPojo",
+              "marshallingType" : "STRUCTURED",
               "name" : "Member",
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
@@ -990,6 +1061,7 @@
                 "variableSetterType" : "UsageRecordResult"
               },
               "simple" : false,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
                 "variableDeclarationType" : "UsageRecordResult",
@@ -1015,6 +1087,8 @@
           },
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "List",
+          "marshallingType" : "LIST",
           "name" : "Results",
           "setterDocumentation" : "/**<p>Contains all UsageRecords processed by BatchMeterUsage. These records were either honored by AWS Marketplace Metering Service or were invalid.</p>\n@param results Contains all UsageRecords processed by BatchMeterUsage. These records were either honored by AWS Marketplace Metering Service or were invalid.*/",
           "setterMethodName" : "setResults",
@@ -1027,6 +1101,7 @@
             "variableSetterType" : "java.util.Collection<UsageRecordResult>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Contains all UsageRecords processed by BatchMeterUsage. These records were either honored by AWS Marketplace Metering Service or were invalid.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResults(java.util.Collection)} or {@link #withResults(java.util.Collection)} if you want to override the existing values.</p>\n@param results Contains all UsageRecords processed by BatchMeterUsage. These records were either honored by AWS Marketplace Metering Service or were invalid.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<UsageRecordResult>",
@@ -1061,6 +1136,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "UnprocessedRecords",
             "queryString" : false,
             "statusCode" : false,
@@ -1068,6 +1144,8 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : true,
           "listModel" : {
             "implType" : "java.util.ArrayList",
@@ -1095,6 +1173,7 @@
                 "isPayload" : false,
                 "isStreaming" : false,
                 "location" : null,
+                "marshallLocation" : "PAYLOAD",
                 "marshallLocationName" : "member",
                 "queryString" : false,
                 "statusCode" : false,
@@ -1102,10 +1181,14 @@
                 "uri" : false
               },
               "idempotencyToken" : false,
+              "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
               "mapModel" : null,
+              "marshallingTargetClass" : "StructuredPojo",
+              "marshallingType" : "STRUCTURED",
               "name" : "Member",
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
@@ -1118,6 +1201,7 @@
                 "variableSetterType" : "UsageRecord"
               },
               "simple" : false,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
                 "variableDeclarationType" : "UsageRecord",
@@ -1143,6 +1227,8 @@
           },
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "List",
+          "marshallingType" : "LIST",
           "name" : "UnprocessedRecords",
           "setterDocumentation" : "/**<p>Contains all UsageRecords that were not processed by BatchMeterUsage. This is a list of UsageRecords. You can retry the failed request by making another BatchMeterUsage call with this list as input in the BatchMeterUsageRequest.</p>\n@param unprocessedRecords Contains all UsageRecords that were not processed by BatchMeterUsage. This is a list of UsageRecords. You can retry the failed request by making another BatchMeterUsage call with this list as input in the BatchMeterUsageRequest.*/",
           "setterMethodName" : "setUnprocessedRecords",
@@ -1155,6 +1241,7 @@
             "variableSetterType" : "java.util.Collection<UsageRecord>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Contains all UsageRecords that were not processed by BatchMeterUsage. This is a list of UsageRecords. You can retry the failed request by making another BatchMeterUsage call with this list as input in the BatchMeterUsageRequest.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setUnprocessedRecords(java.util.Collection)} or {@link #withUnprocessedRecords(java.util.Collection)} if you want to override the existing values.</p>\n@param unprocessedRecords Contains all UsageRecords that were not processed by BatchMeterUsage. This is a list of UsageRecords. You can retry the failed request by making another BatchMeterUsage call with this list as input in the BatchMeterUsageRequest.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<UsageRecord>",
@@ -1171,6 +1258,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "BatchMeterUsageResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -1208,6 +1297,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DuplicateRequestException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DuplicateRequestException",
@@ -1242,6 +1333,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ExpiredTokenException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ExpiredTokenException",
@@ -1276,6 +1369,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InternalServiceErrorException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InternalServiceErrorException",
@@ -1310,6 +1405,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidCustomerIdentifierException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidCustomerIdentifierException",
@@ -1344,6 +1441,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidEndpointRegionException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidEndpointRegionException",
@@ -1378,6 +1477,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidProductCodeException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidProductCodeException",
@@ -1412,6 +1513,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidTokenException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidTokenException",
@@ -1446,6 +1549,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidUsageDimensionException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidUsageDimensionException",
@@ -1504,6 +1609,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "ProductCode",
           "queryString" : false,
           "statusCode" : false,
@@ -1511,10 +1617,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "ProductCode",
         "setterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.*/",
         "setterMethodName" : "setProductCode",
@@ -1527,6 +1637,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -1560,6 +1671,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Timestamp",
           "queryString" : false,
           "statusCode" : false,
@@ -1567,10 +1679,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "java.util.Date",
+        "marshallingType" : "DATE",
         "name" : "Timestamp",
         "setterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p>\n@param timestamp Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.*/",
         "setterMethodName" : "setTimestamp",
@@ -1583,6 +1699,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p>\n@param timestamp Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.Date",
@@ -1616,6 +1733,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "UsageDimension",
           "queryString" : false,
           "statusCode" : false,
@@ -1623,10 +1741,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "UsageDimension",
         "setterDocumentation" : "/**<p>It will be one of the fcp dimension name provided during the publishing of the product.</p>\n@param usageDimension It will be one of the fcp dimension name provided during the publishing of the product.*/",
         "setterMethodName" : "setUsageDimension",
@@ -1639,6 +1761,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>It will be one of the fcp dimension name provided during the publishing of the product.</p>\n@param usageDimension It will be one of the fcp dimension name provided during the publishing of the product.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -1672,6 +1795,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "UsageQuantity",
           "queryString" : false,
           "statusCode" : false,
@@ -1679,10 +1803,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "Integer",
+        "marshallingType" : "INTEGER",
         "name" : "UsageQuantity",
         "setterDocumentation" : "/**<p>Consumption value for the hour.</p>\n@param usageQuantity Consumption value for the hour.*/",
         "setterMethodName" : "setUsageQuantity",
@@ -1695,6 +1823,7 @@
           "variableSetterType" : "Integer"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Consumption value for the hour.</p>\n@param usageQuantity Consumption value for the hour.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Integer",
@@ -1728,6 +1857,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "DryRun",
           "queryString" : false,
           "statusCode" : false,
@@ -1735,10 +1865,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "Boolean",
+        "marshallingType" : "BOOLEAN",
         "name" : "DryRun",
         "setterDocumentation" : "/**<p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.</p>\n@param dryRun Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.*/",
         "setterMethodName" : "setDryRun",
@@ -1751,6 +1885,7 @@
           "variableSetterType" : "Boolean"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.</p>\n@param dryRun Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Boolean",
@@ -1786,6 +1921,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "DryRun",
             "queryString" : false,
             "statusCode" : false,
@@ -1793,10 +1929,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "Boolean",
+          "marshallingType" : "BOOLEAN",
           "name" : "DryRun",
           "setterDocumentation" : "/**<p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.</p>\n@param dryRun Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.*/",
           "setterMethodName" : "setDryRun",
@@ -1809,6 +1949,7 @@
             "variableSetterType" : "Boolean"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.</p>\n@param dryRun Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns DryRunOperation; otherwise, it returns UnauthorizedException.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Boolean",
@@ -1843,6 +1984,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "ProductCode",
             "queryString" : false,
             "statusCode" : false,
@@ -1850,10 +1992,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "ProductCode",
           "setterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.*/",
           "setterMethodName" : "setProductCode",
@@ -1866,6 +2012,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -1900,6 +2047,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Timestamp",
             "queryString" : false,
             "statusCode" : false,
@@ -1907,10 +2055,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "java.util.Date",
+          "marshallingType" : "DATE",
           "name" : "Timestamp",
           "setterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p>\n@param timestamp Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.*/",
           "setterMethodName" : "setTimestamp",
@@ -1923,6 +2075,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p>\n@param timestamp Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.Date",
@@ -1957,6 +2110,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "UsageDimension",
             "queryString" : false,
             "statusCode" : false,
@@ -1964,10 +2118,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "UsageDimension",
           "setterDocumentation" : "/**<p>It will be one of the fcp dimension name provided during the publishing of the product.</p>\n@param usageDimension It will be one of the fcp dimension name provided during the publishing of the product.*/",
           "setterMethodName" : "setUsageDimension",
@@ -1980,6 +2138,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>It will be one of the fcp dimension name provided during the publishing of the product.</p>\n@param usageDimension It will be one of the fcp dimension name provided during the publishing of the product.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -2014,6 +2173,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "UsageQuantity",
             "queryString" : false,
             "statusCode" : false,
@@ -2021,10 +2181,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "Integer",
+          "marshallingType" : "INTEGER",
           "name" : "UsageQuantity",
           "setterDocumentation" : "/**<p>Consumption value for the hour.</p>\n@param usageQuantity Consumption value for the hour.*/",
           "setterMethodName" : "setUsageQuantity",
@@ -2037,6 +2201,7 @@
             "variableSetterType" : "Integer"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Consumption value for the hour.</p>\n@param usageQuantity Consumption value for the hour.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Integer",
@@ -2053,6 +2218,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "ProductCode", "Timestamp", "UsageDimension", "UsageQuantity", "DryRun" ],
       "shapeName" : "MeterUsageRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "MeterUsageRequest",
@@ -2104,6 +2271,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "MeteringRecordId",
           "queryString" : false,
           "statusCode" : false,
@@ -2111,10 +2279,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "MeteringRecordId",
         "setterDocumentation" : "/**\n@param meteringRecordId */",
         "setterMethodName" : "setMeteringRecordId",
@@ -2127,6 +2299,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param meteringRecordId \n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -2162,6 +2335,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "MeteringRecordId",
             "queryString" : false,
             "statusCode" : false,
@@ -2169,10 +2343,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "MeteringRecordId",
           "setterDocumentation" : "/**\n@param meteringRecordId */",
           "setterMethodName" : "setMeteringRecordId",
@@ -2185,6 +2363,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param meteringRecordId \n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -2201,6 +2380,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MeterUsageResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -2262,6 +2443,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "RegistrationToken",
           "queryString" : false,
           "statusCode" : false,
@@ -2269,10 +2451,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "RegistrationToken",
         "setterDocumentation" : "/**<p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.</p>\n@param registrationToken When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.*/",
         "setterMethodName" : "setRegistrationToken",
@@ -2285,6 +2471,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.</p>\n@param registrationToken When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -2320,6 +2507,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "RegistrationToken",
             "queryString" : false,
             "statusCode" : false,
@@ -2327,10 +2515,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "RegistrationToken",
           "setterDocumentation" : "/**<p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.</p>\n@param registrationToken When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.*/",
           "setterMethodName" : "setRegistrationToken",
@@ -2343,6 +2535,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.</p>\n@param registrationToken When a buyer visits your website during the registration process, the buyer submits a registration token through the browser. The registration token is resolved to obtain a CustomerIdentifier and product code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -2359,6 +2552,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "RegistrationToken" ],
       "shapeName" : "ResolveCustomerRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ResolveCustomerRequest",
@@ -2410,6 +2605,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "CustomerIdentifier",
           "queryString" : false,
           "statusCode" : false,
@@ -2417,10 +2613,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "CustomerIdentifier",
         "setterDocumentation" : "/**<p>The CustomerIdentifier is used to identify an individual customer in your application. Calls to BatchMeterUsage require CustomerIdentifiers for each UsageRecord.</p>\n@param customerIdentifier The CustomerIdentifier is used to identify an individual customer in your application. Calls to BatchMeterUsage require CustomerIdentifiers for each UsageRecord.*/",
         "setterMethodName" : "setCustomerIdentifier",
@@ -2433,6 +2633,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The CustomerIdentifier is used to identify an individual customer in your application. Calls to BatchMeterUsage require CustomerIdentifiers for each UsageRecord.</p>\n@param customerIdentifier The CustomerIdentifier is used to identify an individual customer in your application. Calls to BatchMeterUsage require CustomerIdentifiers for each UsageRecord.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -2466,6 +2667,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "ProductCode",
           "queryString" : false,
           "statusCode" : false,
@@ -2473,10 +2675,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "ProductCode",
         "setterDocumentation" : "/**<p>The product code is returned to confirm that the buyer is registering for your product. Subsequent BatchMeterUsage calls should be made using this product code.</p>\n@param productCode The product code is returned to confirm that the buyer is registering for your product. Subsequent BatchMeterUsage calls should be made using this product code.*/",
         "setterMethodName" : "setProductCode",
@@ -2489,6 +2695,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The product code is returned to confirm that the buyer is registering for your product. Subsequent BatchMeterUsage calls should be made using this product code.</p>\n@param productCode The product code is returned to confirm that the buyer is registering for your product. Subsequent BatchMeterUsage calls should be made using this product code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -2524,6 +2731,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "CustomerIdentifier",
             "queryString" : false,
             "statusCode" : false,
@@ -2531,10 +2739,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "CustomerIdentifier",
           "setterDocumentation" : "/**<p>The CustomerIdentifier is used to identify an individual customer in your application. Calls to BatchMeterUsage require CustomerIdentifiers for each UsageRecord.</p>\n@param customerIdentifier The CustomerIdentifier is used to identify an individual customer in your application. Calls to BatchMeterUsage require CustomerIdentifiers for each UsageRecord.*/",
           "setterMethodName" : "setCustomerIdentifier",
@@ -2547,6 +2759,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The CustomerIdentifier is used to identify an individual customer in your application. Calls to BatchMeterUsage require CustomerIdentifiers for each UsageRecord.</p>\n@param customerIdentifier The CustomerIdentifier is used to identify an individual customer in your application. Calls to BatchMeterUsage require CustomerIdentifiers for each UsageRecord.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -2581,6 +2794,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "ProductCode",
             "queryString" : false,
             "statusCode" : false,
@@ -2588,10 +2802,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "ProductCode",
           "setterDocumentation" : "/**<p>The product code is returned to confirm that the buyer is registering for your product. Subsequent BatchMeterUsage calls should be made using this product code.</p>\n@param productCode The product code is returned to confirm that the buyer is registering for your product. Subsequent BatchMeterUsage calls should be made using this product code.*/",
           "setterMethodName" : "setProductCode",
@@ -2604,6 +2822,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The product code is returned to confirm that the buyer is registering for your product. Subsequent BatchMeterUsage calls should be made using this product code.</p>\n@param productCode The product code is returned to confirm that the buyer is registering for your product. Subsequent BatchMeterUsage calls should be made using this product code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -2620,6 +2839,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ResolveCustomerResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -2657,6 +2878,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ThrottlingException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ThrottlingException",
@@ -2691,6 +2914,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TimestampOutOfBoundsException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "TimestampOutOfBoundsException",
@@ -2742,6 +2967,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Timestamp",
           "queryString" : false,
           "statusCode" : false,
@@ -2749,10 +2975,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "java.util.Date",
+        "marshallingType" : "DATE",
         "name" : "Timestamp",
         "setterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p> <p>Your application can meter usage for up to one hour in the past.</p>\n@param timestamp Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p> <p>Your application can meter usage for up to one hour in the past.*/",
         "setterMethodName" : "setTimestamp",
@@ -2765,6 +2995,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p> <p>Your application can meter usage for up to one hour in the past.</p>\n@param timestamp Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p> <p>Your application can meter usage for up to one hour in the past.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.Date",
@@ -2798,6 +3029,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "CustomerIdentifier",
           "queryString" : false,
           "statusCode" : false,
@@ -2805,10 +3037,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "CustomerIdentifier",
         "setterDocumentation" : "/**<p>The CustomerIdentifier is obtained through the ResolveCustomer operation and represents an individual buyer in your application.</p>\n@param customerIdentifier The CustomerIdentifier is obtained through the ResolveCustomer operation and represents an individual buyer in your application.*/",
         "setterMethodName" : "setCustomerIdentifier",
@@ -2821,6 +3057,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The CustomerIdentifier is obtained through the ResolveCustomer operation and represents an individual buyer in your application.</p>\n@param customerIdentifier The CustomerIdentifier is obtained through the ResolveCustomer operation and represents an individual buyer in your application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -2854,6 +3091,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Dimension",
           "queryString" : false,
           "statusCode" : false,
@@ -2861,10 +3099,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "Dimension",
         "setterDocumentation" : "/**<p>During the process of registering a product on AWS Marketplace, up to eight dimensions are specified. These represent different units of value in your application.</p>\n@param dimension During the process of registering a product on AWS Marketplace, up to eight dimensions are specified. These represent different units of value in your application.*/",
         "setterMethodName" : "setDimension",
@@ -2877,6 +3119,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>During the process of registering a product on AWS Marketplace, up to eight dimensions are specified. These represent different units of value in your application.</p>\n@param dimension During the process of registering a product on AWS Marketplace, up to eight dimensions are specified. These represent different units of value in your application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -2910,6 +3153,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Quantity",
           "queryString" : false,
           "statusCode" : false,
@@ -2917,10 +3161,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "Integer",
+        "marshallingType" : "INTEGER",
         "name" : "Quantity",
         "setterDocumentation" : "/**<p>The quantity of usage consumed by the customer for the given dimension and time.</p>\n@param quantity The quantity of usage consumed by the customer for the given dimension and time.*/",
         "setterMethodName" : "setQuantity",
@@ -2933,6 +3181,7 @@
           "variableSetterType" : "Integer"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The quantity of usage consumed by the customer for the given dimension and time.</p>\n@param quantity The quantity of usage consumed by the customer for the given dimension and time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Integer",
@@ -2968,6 +3217,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "CustomerIdentifier",
             "queryString" : false,
             "statusCode" : false,
@@ -2975,10 +3225,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "CustomerIdentifier",
           "setterDocumentation" : "/**<p>The CustomerIdentifier is obtained through the ResolveCustomer operation and represents an individual buyer in your application.</p>\n@param customerIdentifier The CustomerIdentifier is obtained through the ResolveCustomer operation and represents an individual buyer in your application.*/",
           "setterMethodName" : "setCustomerIdentifier",
@@ -2991,6 +3245,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The CustomerIdentifier is obtained through the ResolveCustomer operation and represents an individual buyer in your application.</p>\n@param customerIdentifier The CustomerIdentifier is obtained through the ResolveCustomer operation and represents an individual buyer in your application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -3025,6 +3280,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Dimension",
             "queryString" : false,
             "statusCode" : false,
@@ -3032,10 +3288,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "Dimension",
           "setterDocumentation" : "/**<p>During the process of registering a product on AWS Marketplace, up to eight dimensions are specified. These represent different units of value in your application.</p>\n@param dimension During the process of registering a product on AWS Marketplace, up to eight dimensions are specified. These represent different units of value in your application.*/",
           "setterMethodName" : "setDimension",
@@ -3048,6 +3308,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>During the process of registering a product on AWS Marketplace, up to eight dimensions are specified. These represent different units of value in your application.</p>\n@param dimension During the process of registering a product on AWS Marketplace, up to eight dimensions are specified. These represent different units of value in your application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -3082,6 +3343,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Quantity",
             "queryString" : false,
             "statusCode" : false,
@@ -3089,10 +3351,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "Integer",
+          "marshallingType" : "INTEGER",
           "name" : "Quantity",
           "setterDocumentation" : "/**<p>The quantity of usage consumed by the customer for the given dimension and time.</p>\n@param quantity The quantity of usage consumed by the customer for the given dimension and time.*/",
           "setterMethodName" : "setQuantity",
@@ -3105,6 +3371,7 @@
             "variableSetterType" : "Integer"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The quantity of usage consumed by the customer for the given dimension and time.</p>\n@param quantity The quantity of usage consumed by the customer for the given dimension and time.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Integer",
@@ -3139,6 +3406,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Timestamp",
             "queryString" : false,
             "statusCode" : false,
@@ -3146,10 +3414,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "java.util.Date",
+          "marshallingType" : "DATE",
           "name" : "Timestamp",
           "setterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p> <p>Your application can meter usage for up to one hour in the past.</p>\n@param timestamp Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p> <p>Your application can meter usage for up to one hour in the past.*/",
           "setterMethodName" : "setTimestamp",
@@ -3162,6 +3434,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p> <p>Your application can meter usage for up to one hour in the past.</p>\n@param timestamp Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the timestamp will be ignored.</p> <p>Your application can meter usage for up to one hour in the past.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.Date",
@@ -3178,6 +3451,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Timestamp", "CustomerIdentifier", "Dimension", "Quantity" ],
       "shapeName" : "UsageRecord",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3232,6 +3507,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "UsageRecord",
           "queryString" : false,
           "statusCode" : false,
@@ -3239,10 +3515,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "StructuredPojo",
+        "marshallingType" : "STRUCTURED",
         "name" : "UsageRecord",
         "setterDocumentation" : "/**<p>The UsageRecord that was part of the BatchMeterUsage request.</p>\n@param usageRecord The UsageRecord that was part of the BatchMeterUsage request.*/",
         "setterMethodName" : "setUsageRecord",
@@ -3255,6 +3535,7 @@
           "variableSetterType" : "UsageRecord"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The UsageRecord that was part of the BatchMeterUsage request.</p>\n@param usageRecord The UsageRecord that was part of the BatchMeterUsage request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "UsageRecord",
@@ -3288,6 +3569,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "MeteringRecordId",
           "queryString" : false,
           "statusCode" : false,
@@ -3295,10 +3577,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "MeteringRecordId",
         "setterDocumentation" : "/**<p>The MeteringRecordId is a unique identifier for this metering event.</p>\n@param meteringRecordId The MeteringRecordId is a unique identifier for this metering event.*/",
         "setterMethodName" : "setMeteringRecordId",
@@ -3311,6 +3597,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The MeteringRecordId is a unique identifier for this metering event.</p>\n@param meteringRecordId The MeteringRecordId is a unique identifier for this metering event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -3344,6 +3631,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Status",
           "queryString" : false,
           "statusCode" : false,
@@ -3351,10 +3639,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "Status",
         "setterDocumentation" : "/**<p>The UsageRecordResult Status indicates the status of an individual UsageRecord processed by BatchMeterUsage.</p> <ul> <li> <p> <i>Success</i>- The UsageRecord was accepted and honored by BatchMeterUsage.</p> </li> <li> <p> <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed to your product. The UsageRecord was not honored. Future UsageRecords for this customer will fail until the customer subscribes to your product.</p> </li> <li> <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not honored. A previously metered UsageRecord had the same customer, dimension, and time, but a different quantity.</p> </li> </ul>\n@param status The UsageRecordResult Status indicates the status of an individual UsageRecord processed by BatchMeterUsage.</p> <ul> <li> <p> <i>Success</i>- The UsageRecord was accepted and honored by BatchMeterUsage.</p> </li> <li> <p> <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed to your product. The UsageRecord was not honored. Future UsageRecords for this customer will fail until the customer subscribes to your product.</p> </li> <li> <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not honored. A previously metered UsageRecord had the same customer, dimension, and time, but a different quantity.</p> </li>\n@see UsageRecordResultStatus*/",
         "setterMethodName" : "setStatus",
@@ -3367,6 +3659,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The UsageRecordResult Status indicates the status of an individual UsageRecord processed by BatchMeterUsage.</p> <ul> <li> <p> <i>Success</i>- The UsageRecord was accepted and honored by BatchMeterUsage.</p> </li> <li> <p> <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed to your product. The UsageRecord was not honored. Future UsageRecords for this customer will fail until the customer subscribes to your product.</p> </li> <li> <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not honored. A previously metered UsageRecord had the same customer, dimension, and time, but a different quantity.</p> </li> </ul>\n@param status The UsageRecordResult Status indicates the status of an individual UsageRecord processed by BatchMeterUsage.</p> <ul> <li> <p> <i>Success</i>- The UsageRecord was accepted and honored by BatchMeterUsage.</p> </li> <li> <p> <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed to your product. The UsageRecord was not honored. Future UsageRecords for this customer will fail until the customer subscribes to your product.</p> </li> <li> <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not honored. A previously metered UsageRecord had the same customer, dimension, and time, but a different quantity.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see UsageRecordResultStatus*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -3402,6 +3695,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "MeteringRecordId",
             "queryString" : false,
             "statusCode" : false,
@@ -3409,10 +3703,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "MeteringRecordId",
           "setterDocumentation" : "/**<p>The MeteringRecordId is a unique identifier for this metering event.</p>\n@param meteringRecordId The MeteringRecordId is a unique identifier for this metering event.*/",
           "setterMethodName" : "setMeteringRecordId",
@@ -3425,6 +3723,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The MeteringRecordId is a unique identifier for this metering event.</p>\n@param meteringRecordId The MeteringRecordId is a unique identifier for this metering event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -3459,6 +3758,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Status",
             "queryString" : false,
             "statusCode" : false,
@@ -3466,10 +3766,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "Status",
           "setterDocumentation" : "/**<p>The UsageRecordResult Status indicates the status of an individual UsageRecord processed by BatchMeterUsage.</p> <ul> <li> <p> <i>Success</i>- The UsageRecord was accepted and honored by BatchMeterUsage.</p> </li> <li> <p> <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed to your product. The UsageRecord was not honored. Future UsageRecords for this customer will fail until the customer subscribes to your product.</p> </li> <li> <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not honored. A previously metered UsageRecord had the same customer, dimension, and time, but a different quantity.</p> </li> </ul>\n@param status The UsageRecordResult Status indicates the status of an individual UsageRecord processed by BatchMeterUsage.</p> <ul> <li> <p> <i>Success</i>- The UsageRecord was accepted and honored by BatchMeterUsage.</p> </li> <li> <p> <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed to your product. The UsageRecord was not honored. Future UsageRecords for this customer will fail until the customer subscribes to your product.</p> </li> <li> <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not honored. A previously metered UsageRecord had the same customer, dimension, and time, but a different quantity.</p> </li>\n@see UsageRecordResultStatus*/",
           "setterMethodName" : "setStatus",
@@ -3482,6 +3786,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The UsageRecordResult Status indicates the status of an individual UsageRecord processed by BatchMeterUsage.</p> <ul> <li> <p> <i>Success</i>- The UsageRecord was accepted and honored by BatchMeterUsage.</p> </li> <li> <p> <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed to your product. The UsageRecord was not honored. Future UsageRecords for this customer will fail until the customer subscribes to your product.</p> </li> <li> <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not honored. A previously metered UsageRecord had the same customer, dimension, and time, but a different quantity.</p> </li> </ul>\n@param status The UsageRecordResult Status indicates the status of an individual UsageRecord processed by BatchMeterUsage.</p> <ul> <li> <p> <i>Success</i>- The UsageRecord was accepted and honored by BatchMeterUsage.</p> </li> <li> <p> <i>CustomerNotSubscribed</i>- The CustomerIdentifier specified is not subscribed to your product. The UsageRecord was not honored. Future UsageRecords for this customer will fail until the customer subscribes to your product.</p> </li> <li> <p> <i>DuplicateRecord</i>- Indicates that the UsageRecord was invalid and not honored. A previously metered UsageRecord had the same customer, dimension, and time, but a different quantity.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see UsageRecordResultStatus*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -3516,6 +3821,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "UsageRecord",
             "queryString" : false,
             "statusCode" : false,
@@ -3523,10 +3829,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "StructuredPojo",
+          "marshallingType" : "STRUCTURED",
           "name" : "UsageRecord",
           "setterDocumentation" : "/**<p>The UsageRecord that was part of the BatchMeterUsage request.</p>\n@param usageRecord The UsageRecord that was part of the BatchMeterUsage request.*/",
           "setterMethodName" : "setUsageRecord",
@@ -3539,6 +3849,7 @@
             "variableSetterType" : "UsageRecord"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The UsageRecord that was part of the BatchMeterUsage request.</p>\n@param usageRecord The UsageRecord that was part of the BatchMeterUsage request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "UsageRecord",
@@ -3555,6 +3866,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UsageRecordResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3601,6 +3914,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UsageRecordResultStatus",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null

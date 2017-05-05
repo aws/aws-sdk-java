@@ -14,6 +14,8 @@ package com.amazonaws.services.clouddirectory.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,22 +26,22 @@ import javax.annotation.Generated;
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class BatchAttachObjectResponse implements Serializable, Cloneable {
+public class BatchAttachObjectResponse implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ObjectIdentifier of the object that has been attached.
+     * The <code>ObjectIdentifier</code> of the object that has been attached.
      * </p>
      */
     private String attachedObjectIdentifier;
 
     /**
      * <p>
-     * The ObjectIdentifier of the object that has been attached.
+     * The <code>ObjectIdentifier</code> of the object that has been attached.
      * </p>
      * 
      * @param attachedObjectIdentifier
-     *        The ObjectIdentifier of the object that has been attached.
+     *        The <code>ObjectIdentifier</code> of the object that has been attached.
      */
 
     public void setAttachedObjectIdentifier(String attachedObjectIdentifier) {
@@ -48,10 +50,10 @@ public class BatchAttachObjectResponse implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ObjectIdentifier of the object that has been attached.
+     * The <code>ObjectIdentifier</code> of the object that has been attached.
      * </p>
      * 
-     * @return The ObjectIdentifier of the object that has been attached.
+     * @return The <code>ObjectIdentifier</code> of the object that has been attached.
      */
 
     public String getAttachedObjectIdentifier() {
@@ -60,11 +62,11 @@ public class BatchAttachObjectResponse implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ObjectIdentifier of the object that has been attached.
+     * The <code>ObjectIdentifier</code> of the object that has been attached.
      * </p>
      * 
      * @param attachedObjectIdentifier
-     *        The ObjectIdentifier of the object that has been attached.
+     *        The <code>ObjectIdentifier</code> of the object that has been attached.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -123,5 +125,11 @@ public class BatchAttachObjectResponse implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.clouddirectory.model.transform.BatchAttachObjectResponseMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

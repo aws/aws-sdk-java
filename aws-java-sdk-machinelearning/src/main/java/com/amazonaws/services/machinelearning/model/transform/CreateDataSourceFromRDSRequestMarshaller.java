@@ -12,78 +12,56 @@
  */
 package com.amazonaws.services.machinelearning.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.machinelearning.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateDataSourceFromRDSRequest Marshaller
+ * CreateDataSourceFromRDSRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateDataSourceFromRDSRequestMarshaller implements Marshaller<Request<CreateDataSourceFromRDSRequest>, CreateDataSourceFromRDSRequest> {
+@SdkInternalApi
+public class CreateDataSourceFromRDSRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DATASOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataSourceId").build();
+    private static final MarshallingInfo<String> DATASOURCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataSourceName").build();
+    private static final MarshallingInfo<StructuredPojo> RDSDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RDSData").build();
+    private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("RoleARN").build();
+    private static final MarshallingInfo<Boolean> COMPUTESTATISTICS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ComputeStatistics").build();
 
-    public CreateDataSourceFromRDSRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateDataSourceFromRDSRequestMarshaller instance = new CreateDataSourceFromRDSRequestMarshaller();
+
+    public static CreateDataSourceFromRDSRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateDataSourceFromRDSRequest> marshall(CreateDataSourceFromRDSRequest createDataSourceFromRDSRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateDataSourceFromRDSRequest createDataSourceFromRDSRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createDataSourceFromRDSRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateDataSourceFromRDSRequest> request = new DefaultRequest<CreateDataSourceFromRDSRequest>(createDataSourceFromRDSRequest,
-                "AmazonMachineLearning");
-        request.addHeader("X-Amz-Target", "AmazonML_20141212.CreateDataSourceFromRDS");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createDataSourceFromRDSRequest.getDataSourceId() != null) {
-                jsonGenerator.writeFieldName("DataSourceId").writeValue(createDataSourceFromRDSRequest.getDataSourceId());
-            }
-            if (createDataSourceFromRDSRequest.getDataSourceName() != null) {
-                jsonGenerator.writeFieldName("DataSourceName").writeValue(createDataSourceFromRDSRequest.getDataSourceName());
-            }
-            if (createDataSourceFromRDSRequest.getRDSData() != null) {
-                jsonGenerator.writeFieldName("RDSData");
-                RDSDataSpecJsonMarshaller.getInstance().marshall(createDataSourceFromRDSRequest.getRDSData(), jsonGenerator);
-            }
-            if (createDataSourceFromRDSRequest.getRoleARN() != null) {
-                jsonGenerator.writeFieldName("RoleARN").writeValue(createDataSourceFromRDSRequest.getRoleARN());
-            }
-            if (createDataSourceFromRDSRequest.getComputeStatistics() != null) {
-                jsonGenerator.writeFieldName("ComputeStatistics").writeValue(createDataSourceFromRDSRequest.getComputeStatistics());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createDataSourceFromRDSRequest.getDataSourceId(), DATASOURCEID_BINDING);
+            protocolMarshaller.marshall(createDataSourceFromRDSRequest.getDataSourceName(), DATASOURCENAME_BINDING);
+            protocolMarshaller.marshall(createDataSourceFromRDSRequest.getRDSData(), RDSDATA_BINDING);
+            protocolMarshaller.marshall(createDataSourceFromRDSRequest.getRoleARN(), ROLEARN_BINDING);
+            protocolMarshaller.marshall(createDataSourceFromRDSRequest.getComputeStatistics(), COMPUTESTATISTICS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

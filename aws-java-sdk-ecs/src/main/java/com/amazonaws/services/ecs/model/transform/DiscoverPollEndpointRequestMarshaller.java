@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.ecs.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.ecs.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DiscoverPollEndpointRequest Marshaller
+ * DiscoverPollEndpointRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DiscoverPollEndpointRequestMarshaller implements Marshaller<Request<DiscoverPollEndpointRequest>, DiscoverPollEndpointRequest> {
+@SdkInternalApi
+public class DiscoverPollEndpointRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CONTAINERINSTANCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("containerInstance").build();
+    private static final MarshallingInfo<String> CLUSTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("cluster").build();
 
-    public DiscoverPollEndpointRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DiscoverPollEndpointRequestMarshaller instance = new DiscoverPollEndpointRequestMarshaller();
+
+    public static DiscoverPollEndpointRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DiscoverPollEndpointRequest> marshall(DiscoverPollEndpointRequest discoverPollEndpointRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DiscoverPollEndpointRequest discoverPollEndpointRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (discoverPollEndpointRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DiscoverPollEndpointRequest> request = new DefaultRequest<DiscoverPollEndpointRequest>(discoverPollEndpointRequest, "AmazonECS");
-        request.addHeader("X-Amz-Target", "AmazonEC2ContainerServiceV20141113.DiscoverPollEndpoint");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (discoverPollEndpointRequest.getContainerInstance() != null) {
-                jsonGenerator.writeFieldName("containerInstance").writeValue(discoverPollEndpointRequest.getContainerInstance());
-            }
-            if (discoverPollEndpointRequest.getCluster() != null) {
-                jsonGenerator.writeFieldName("cluster").writeValue(discoverPollEndpointRequest.getCluster());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(discoverPollEndpointRequest.getContainerInstance(), CONTAINERINSTANCE_BINDING);
+            protocolMarshaller.marshall(discoverPollEndpointRequest.getCluster(), CLUSTER_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

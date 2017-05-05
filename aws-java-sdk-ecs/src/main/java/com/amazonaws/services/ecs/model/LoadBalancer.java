@@ -14,6 +14,8 @@ package com.amazonaws.services.ecs.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class LoadBalancer implements Serializable, Cloneable {
+public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -34,7 +36,7 @@ public class LoadBalancer implements Serializable, Cloneable {
     private String targetGroupArn;
     /**
      * <p>
-     * The name of the load balancer.
+     * The name of a Classic load balancer.
      * </p>
      */
     private String loadBalancerName;
@@ -95,11 +97,11 @@ public class LoadBalancer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the load balancer.
+     * The name of a Classic load balancer.
      * </p>
      * 
      * @param loadBalancerName
-     *        The name of the load balancer.
+     *        The name of a Classic load balancer.
      */
 
     public void setLoadBalancerName(String loadBalancerName) {
@@ -108,10 +110,10 @@ public class LoadBalancer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the load balancer.
+     * The name of a Classic load balancer.
      * </p>
      * 
-     * @return The name of the load balancer.
+     * @return The name of a Classic load balancer.
      */
 
     public String getLoadBalancerName() {
@@ -120,11 +122,11 @@ public class LoadBalancer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the load balancer.
+     * The name of a Classic load balancer.
      * </p>
      * 
      * @param loadBalancerName
-     *        The name of the load balancer.
+     *        The name of a Classic load balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -296,5 +298,11 @@ public class LoadBalancer implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.ecs.model.transform.LoadBalancerMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

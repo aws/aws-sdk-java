@@ -14,12 +14,14 @@ package com.amazonaws.services.budgets.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * A time period indicated the start date and end date of a budget.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TimePeriod implements Serializable, Cloneable {
+public class TimePeriod implements Serializable, Cloneable, StructuredPojo {
 
     private java.util.Date start;
 
@@ -134,5 +136,11 @@ public class TimePeriod implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.budgets.model.transform.TimePeriodMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

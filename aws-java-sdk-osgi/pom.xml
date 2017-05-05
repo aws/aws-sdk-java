@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.87-SNAPSHOT</version>
+    <version>1.11.127-SNAPSHOT</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -15,6 +15,30 @@
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
+    <dependency>
+        <artifactId>aws-java-sdk-marketplaceentitlement</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-codestar</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-lexmodelbuilding</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-resourcegroupstaggingapi</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
     <dependency>
         <artifactId>aws-java-sdk-pinpoint</artifactId>
         <groupId>com.amazonaws</groupId>
@@ -520,7 +544,37 @@
         <version>${awsjavasdk.version}</version>
     </dependency>
     <dependency>
+        <artifactId>aws-java-sdk-lex</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-mechanicalturkrequester</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-organizations</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-workdocs</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
         <artifactId>aws-java-sdk-core</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>jmespath-java</artifactId>
         <groupId>com.amazonaws</groupId>
         <optional>false</optional>
         <version>${awsjavasdk.version}</version>
@@ -674,6 +728,22 @@
                               </taglet>
                           </taglets>
                           <groups>
+                              <group>
+                                  <title>AWS Marketplace Entitlement</title>
+                                  <packages>com.amazonaws.services.marketplaceentitlement*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS CodeStar</title>
+                                  <packages>com.amazonaws.services.codestar*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Lex Model Building</title>
+                                  <packages>com.amazonaws.services.lexmodelbuilding*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Resource Groups Tagging API</title>
+                                  <packages>com.amazonaws.services.resourcegroupstaggingapi*</packages>
+                              </group>
                               <group>
                                   <title>Amazon S3</title>
                                   <packages>com.amazonaws.services.s3*</packages>
@@ -997,6 +1067,22 @@
                               <group>
                                   <title>AWS Batch</title>
                                   <packages>com.amazonaws.services.batch*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Lex</title>
+                                  <packages>com.amazonaws.services.lex*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Mechanical Turk Requester</title>
+                                  <packages>com.amazonaws.services.mechanicalturkrequester*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Organizations</title>
+                                  <packages>com.amazonaws.services.organizations*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon WorkDocs</title>
+                                  <packages>com.amazonaws.services.workdocs*</packages>
                               </group>
                               <group>
                                   <title>Common</title>

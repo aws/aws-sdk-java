@@ -33,6 +33,11 @@ import com.amazonaws.util.TimingInfo;
 public abstract class RequestHandler2 implements IRequestHandler2 {
 
     @Override
+    public AmazonWebServiceRequest beforeExecution(AmazonWebServiceRequest request) {
+        return request;
+    }
+
+    @Override
     public AmazonWebServiceRequest beforeMarshalling(AmazonWebServiceRequest request) {
         return request;
     }

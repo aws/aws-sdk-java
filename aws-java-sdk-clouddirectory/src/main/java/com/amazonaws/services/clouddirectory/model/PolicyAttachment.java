@@ -14,44 +14,47 @@ package com.amazonaws.services.clouddirectory.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains the PolicyType, PolicyId, and the ObjectIdentifier to which it is attached.
+ * Contains the <code>PolicyType</code>, <code>PolicyId</code>, and the <code>ObjectIdentifier</code> to which it is
+ * attached.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PolicyAttachment" target="_top">AWS
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PolicyAttachment implements Serializable, Cloneable {
+public class PolicyAttachment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of PolicyAttachment.
+     * The ID of <code>PolicyAttachment</code>.
      * </p>
      */
     private String policyId;
     /**
      * <p>
-     * The ObjectIdentifier associated with PolicyAttachment.
+     * The <code>ObjectIdentifier</code> associated with <code>PolicyAttachment</code>.
      * </p>
      */
     private String objectIdentifier;
     /**
      * <p>
-     * The type of policy that can be associated with PolicyAttachment.
+     * The type of policy that can be associated with <code>PolicyAttachment</code>.
      * </p>
      */
     private String policyType;
 
     /**
      * <p>
-     * The ID of PolicyAttachment.
+     * The ID of <code>PolicyAttachment</code>.
      * </p>
      * 
      * @param policyId
-     *        The ID of PolicyAttachment.
+     *        The ID of <code>PolicyAttachment</code>.
      */
 
     public void setPolicyId(String policyId) {
@@ -60,10 +63,10 @@ public class PolicyAttachment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of PolicyAttachment.
+     * The ID of <code>PolicyAttachment</code>.
      * </p>
      * 
-     * @return The ID of PolicyAttachment.
+     * @return The ID of <code>PolicyAttachment</code>.
      */
 
     public String getPolicyId() {
@@ -72,11 +75,11 @@ public class PolicyAttachment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of PolicyAttachment.
+     * The ID of <code>PolicyAttachment</code>.
      * </p>
      * 
      * @param policyId
-     *        The ID of PolicyAttachment.
+     *        The ID of <code>PolicyAttachment</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +90,11 @@ public class PolicyAttachment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ObjectIdentifier associated with PolicyAttachment.
+     * The <code>ObjectIdentifier</code> associated with <code>PolicyAttachment</code>.
      * </p>
      * 
      * @param objectIdentifier
-     *        The ObjectIdentifier associated with PolicyAttachment.
+     *        The <code>ObjectIdentifier</code> associated with <code>PolicyAttachment</code>.
      */
 
     public void setObjectIdentifier(String objectIdentifier) {
@@ -100,10 +103,10 @@ public class PolicyAttachment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ObjectIdentifier associated with PolicyAttachment.
+     * The <code>ObjectIdentifier</code> associated with <code>PolicyAttachment</code>.
      * </p>
      * 
-     * @return The ObjectIdentifier associated with PolicyAttachment.
+     * @return The <code>ObjectIdentifier</code> associated with <code>PolicyAttachment</code>.
      */
 
     public String getObjectIdentifier() {
@@ -112,11 +115,11 @@ public class PolicyAttachment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ObjectIdentifier associated with PolicyAttachment.
+     * The <code>ObjectIdentifier</code> associated with <code>PolicyAttachment</code>.
      * </p>
      * 
      * @param objectIdentifier
-     *        The ObjectIdentifier associated with PolicyAttachment.
+     *        The <code>ObjectIdentifier</code> associated with <code>PolicyAttachment</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,11 +130,11 @@ public class PolicyAttachment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of policy that can be associated with PolicyAttachment.
+     * The type of policy that can be associated with <code>PolicyAttachment</code>.
      * </p>
      * 
      * @param policyType
-     *        The type of policy that can be associated with PolicyAttachment.
+     *        The type of policy that can be associated with <code>PolicyAttachment</code>.
      */
 
     public void setPolicyType(String policyType) {
@@ -140,10 +143,10 @@ public class PolicyAttachment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of policy that can be associated with PolicyAttachment.
+     * The type of policy that can be associated with <code>PolicyAttachment</code>.
      * </p>
      * 
-     * @return The type of policy that can be associated with PolicyAttachment.
+     * @return The type of policy that can be associated with <code>PolicyAttachment</code>.
      */
 
     public String getPolicyType() {
@@ -152,11 +155,11 @@ public class PolicyAttachment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The type of policy that can be associated with PolicyAttachment.
+     * The type of policy that can be associated with <code>PolicyAttachment</code>.
      * </p>
      * 
      * @param policyType
-     *        The type of policy that can be associated with PolicyAttachment.
+     *        The type of policy that can be associated with <code>PolicyAttachment</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -229,5 +232,11 @@ public class PolicyAttachment implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.clouddirectory.model.transform.PolicyAttachmentMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

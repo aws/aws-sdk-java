@@ -12,80 +12,53 @@
  */
 package com.amazonaws.services.clouddirectory.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.clouddirectory.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * AttachObjectRequest Marshaller
+ * AttachObjectRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AttachObjectRequestMarshaller implements Marshaller<Request<AttachObjectRequest>, AttachObjectRequest> {
+@SdkInternalApi
+public class AttachObjectRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DIRECTORYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("x-amz-data-partition").build();
+    private static final MarshallingInfo<StructuredPojo> PARENTREFERENCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ParentReference").build();
+    private static final MarshallingInfo<StructuredPojo> CHILDREFERENCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ChildReference").build();
+    private static final MarshallingInfo<String> LINKNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("LinkName").build();
 
-    public AttachObjectRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final AttachObjectRequestMarshaller instance = new AttachObjectRequestMarshaller();
+
+    public static AttachObjectRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<AttachObjectRequest> marshall(AttachObjectRequest attachObjectRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(AttachObjectRequest attachObjectRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (attachObjectRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<AttachObjectRequest> request = new DefaultRequest<AttachObjectRequest>(attachObjectRequest, "AmazonCloudDirectory");
-
-        request.setHttpMethod(HttpMethodName.PUT);
-
-        if (attachObjectRequest.getDirectoryArn() != null) {
-            request.addHeader("x-amz-data-partition", StringUtils.fromString(attachObjectRequest.getDirectoryArn()));
-        }
-
-        String uriResourcePath = "/amazonclouddirectory/2017-01-11/object/attach";
-
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (attachObjectRequest.getParentReference() != null) {
-                jsonGenerator.writeFieldName("ParentReference");
-                ObjectReferenceJsonMarshaller.getInstance().marshall(attachObjectRequest.getParentReference(), jsonGenerator);
-            }
-            if (attachObjectRequest.getChildReference() != null) {
-                jsonGenerator.writeFieldName("ChildReference");
-                ObjectReferenceJsonMarshaller.getInstance().marshall(attachObjectRequest.getChildReference(), jsonGenerator);
-            }
-            if (attachObjectRequest.getLinkName() != null) {
-                jsonGenerator.writeFieldName("LinkName").writeValue(attachObjectRequest.getLinkName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(attachObjectRequest.getDirectoryArn(), DIRECTORYARN_BINDING);
+            protocolMarshaller.marshall(attachObjectRequest.getParentReference(), PARENTREFERENCE_BINDING);
+            protocolMarshaller.marshall(attachObjectRequest.getChildReference(), CHILDREFERENCE_BINDING);
+            protocolMarshaller.marshall(attachObjectRequest.getLinkName(), LINKNAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

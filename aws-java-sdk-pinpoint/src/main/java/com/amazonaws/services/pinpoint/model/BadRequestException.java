@@ -15,11 +15,14 @@ package com.amazonaws.services.pinpoint.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * Simple message object.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class BadRequestException extends com.amazonaws.services.pinpoint.model.AmazonPinpointException {
     private static final long serialVersionUID = 1L;
+
+    /** The unique message body ID. */
+    private String requestID;
 
     /**
      * Constructs a new BadRequestException with the specified error message.
@@ -29,6 +32,42 @@ public class BadRequestException extends com.amazonaws.services.pinpoint.model.A
      */
     public BadRequestException(String message) {
         super(message);
+    }
+
+    /**
+     * The unique message body ID.
+     * 
+     * @param requestID
+     *        The unique message body ID.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("RequestID")
+    public void setRequestID(String requestID) {
+        this.requestID = requestID;
+    }
+
+    /**
+     * The unique message body ID.
+     * 
+     * @return The unique message body ID.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("RequestID")
+    public String getRequestID() {
+        return this.requestID;
+    }
+
+    /**
+     * The unique message body ID.
+     * 
+     * @param requestID
+     *        The unique message body ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BadRequestException withRequestID(String requestID) {
+        setRequestID(requestID);
+        return this;
     }
 
 }

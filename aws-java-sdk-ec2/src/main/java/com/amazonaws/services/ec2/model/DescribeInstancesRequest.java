@@ -54,29 +54,6 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>association.public-ip</code> - The address of the Elastic IP address (IPv4) bound to the network interface.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4) associated with the network
-     * interface.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>association.allocation-id</code> - The allocation ID returned when you allocated the Elastic IP address
-     * (IPv4) for your network interface.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>association.association-id</code> - The association ID returned when the network interface was associated
-     * with an IPv4 address.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>availability-zone</code> - The Availability Zone of the instance.
      * </p>
      * </li>
@@ -242,6 +219,30 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <p>
      * <code>network-interface.addresses.association.ip-owner-id</code> - The owner ID of the private IPv4 address
      * associated with the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.public-ip</code> - The address of the Elastic IP address (IPv4) bound to the
+     * network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4) associated
+     * with the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.allocation-id</code> - The allocation ID returned when you allocated the
+     * Elastic IP address (IPv4) for your network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.association-id</code> - The association ID returned when the network
+     * interface was associated with an IPv4 address.
      * </p>
      * </li>
      * <li>
@@ -635,29 +636,6 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>association.public-ip</code> - The address of the Elastic IP address (IPv4) bound to the network interface.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4) associated with the network
-     * interface.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>association.allocation-id</code> - The allocation ID returned when you allocated the Elastic IP address
-     * (IPv4) for your network interface.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>association.association-id</code> - The association ID returned when the network interface was associated
-     * with an IPv4 address.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>availability-zone</code> - The Availability Zone of the instance.
      * </p>
      * </li>
@@ -823,6 +801,30 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <p>
      * <code>network-interface.addresses.association.ip-owner-id</code> - The owner ID of the private IPv4 address
      * associated with the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.public-ip</code> - The address of the Elastic IP address (IPv4) bound to the
+     * network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4) associated
+     * with the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.allocation-id</code> - The allocation ID returned when you allocated the
+     * Elastic IP address (IPv4) for your network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.association-id</code> - The association ID returned when the network
+     * interface was associated with an IPv4 address.
      * </p>
      * </li>
      * <li>
@@ -1104,30 +1106,6 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
-     *         <code>association.public-ip</code> - The address of the Elastic IP address (IPv4) bound to the network
-     *         interface.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4) associated with the
-     *         network interface.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>association.allocation-id</code> - The allocation ID returned when you allocated the Elastic IP
-     *         address (IPv4) for your network interface.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>association.association-id</code> - The association ID returned when the network interface was
-     *         associated with an IPv4 address.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         <code>availability-zone</code> - The Availability Zone of the instance.
      *         </p>
      *         </li>
@@ -1295,6 +1273,30 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         <p>
      *         <code>network-interface.addresses.association.ip-owner-id</code> - The owner ID of the private IPv4
      *         address associated with the network interface.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>network-interface.association.public-ip</code> - The address of the Elastic IP address (IPv4) bound
+     *         to the network interface.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>network-interface.association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4)
+     *         associated with the network interface.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>network-interface.association.allocation-id</code> - The allocation ID returned when you allocated
+     *         the Elastic IP address (IPv4) for your network interface.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>network-interface.association.association-id</code> - The association ID returned when the network
+     *         interface was associated with an IPv4 address.
      *         </p>
      *         </li>
      *         <li>
@@ -1592,29 +1594,6 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>association.public-ip</code> - The address of the Elastic IP address (IPv4) bound to the network interface.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4) associated with the network
-     * interface.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>association.allocation-id</code> - The allocation ID returned when you allocated the Elastic IP address
-     * (IPv4) for your network interface.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>association.association-id</code> - The association ID returned when the network interface was associated
-     * with an IPv4 address.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>availability-zone</code> - The Availability Zone of the instance.
      * </p>
      * </li>
@@ -1780,6 +1759,30 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <p>
      * <code>network-interface.addresses.association.ip-owner-id</code> - The owner ID of the private IPv4 address
      * associated with the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.public-ip</code> - The address of the Elastic IP address (IPv4) bound to the
+     * network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4) associated
+     * with the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.allocation-id</code> - The allocation ID returned when you allocated the
+     * Elastic IP address (IPv4) for your network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.association-id</code> - The association ID returned when the network
+     * interface was associated with an IPv4 address.
      * </p>
      * </li>
      * <li>
@@ -2062,30 +2065,6 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>association.public-ip</code> - The address of the Elastic IP address (IPv4) bound to the network
-     *        interface.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4) associated with the
-     *        network interface.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>association.allocation-id</code> - The allocation ID returned when you allocated the Elastic IP
-     *        address (IPv4) for your network interface.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>association.association-id</code> - The association ID returned when the network interface was
-     *        associated with an IPv4 address.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>availability-zone</code> - The Availability Zone of the instance.
      *        </p>
      *        </li>
@@ -2253,6 +2232,30 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        <code>network-interface.addresses.association.ip-owner-id</code> - The owner ID of the private IPv4
      *        address associated with the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.association.public-ip</code> - The address of the Elastic IP address (IPv4) bound
+     *        to the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4)
+     *        associated with the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.association.allocation-id</code> - The allocation ID returned when you allocated
+     *        the Elastic IP address (IPv4) for your network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.association.association-id</code> - The association ID returned when the network
+     *        interface was associated with an IPv4 address.
      *        </p>
      *        </li>
      *        <li>
@@ -2551,29 +2554,6 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>association.public-ip</code> - The address of the Elastic IP address (IPv4) bound to the network interface.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4) associated with the network
-     * interface.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>association.allocation-id</code> - The allocation ID returned when you allocated the Elastic IP address
-     * (IPv4) for your network interface.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>association.association-id</code> - The association ID returned when the network interface was associated
-     * with an IPv4 address.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>availability-zone</code> - The Availability Zone of the instance.
      * </p>
      * </li>
@@ -2739,6 +2719,30 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <p>
      * <code>network-interface.addresses.association.ip-owner-id</code> - The owner ID of the private IPv4 address
      * associated with the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.public-ip</code> - The address of the Elastic IP address (IPv4) bound to the
+     * network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4) associated
+     * with the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.allocation-id</code> - The allocation ID returned when you allocated the
+     * Elastic IP address (IPv4) for your network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.association-id</code> - The association ID returned when the network
+     * interface was associated with an IPv4 address.
      * </p>
      * </li>
      * <li>
@@ -3026,30 +3030,6 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>association.public-ip</code> - The address of the Elastic IP address (IPv4) bound to the network
-     *        interface.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4) associated with the
-     *        network interface.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>association.allocation-id</code> - The allocation ID returned when you allocated the Elastic IP
-     *        address (IPv4) for your network interface.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>association.association-id</code> - The association ID returned when the network interface was
-     *        associated with an IPv4 address.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>availability-zone</code> - The Availability Zone of the instance.
      *        </p>
      *        </li>
@@ -3217,6 +3197,30 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        <code>network-interface.addresses.association.ip-owner-id</code> - The owner ID of the private IPv4
      *        address associated with the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.association.public-ip</code> - The address of the Elastic IP address (IPv4) bound
+     *        to the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4)
+     *        associated with the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.association.allocation-id</code> - The allocation ID returned when you allocated
+     *        the Elastic IP address (IPv4) for your network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.association.association-id</code> - The association ID returned when the network
+     *        interface was associated with an IPv4 address.
      *        </p>
      *        </li>
      *        <li>
@@ -3517,29 +3521,6 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>association.public-ip</code> - The address of the Elastic IP address (IPv4) bound to the network interface.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4) associated with the network
-     * interface.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>association.allocation-id</code> - The allocation ID returned when you allocated the Elastic IP address
-     * (IPv4) for your network interface.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>association.association-id</code> - The association ID returned when the network interface was associated
-     * with an IPv4 address.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>availability-zone</code> - The Availability Zone of the instance.
      * </p>
      * </li>
@@ -3705,6 +3686,30 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <p>
      * <code>network-interface.addresses.association.ip-owner-id</code> - The owner ID of the private IPv4 address
      * associated with the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.public-ip</code> - The address of the Elastic IP address (IPv4) bound to the
+     * network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4) associated
+     * with the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.allocation-id</code> - The allocation ID returned when you allocated the
+     * Elastic IP address (IPv4) for your network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.association-id</code> - The association ID returned when the network
+     * interface was associated with an IPv4 address.
      * </p>
      * </li>
      * <li>
@@ -3987,30 +3992,6 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>association.public-ip</code> - The address of the Elastic IP address (IPv4) bound to the network
-     *        interface.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4) associated with the
-     *        network interface.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>association.allocation-id</code> - The allocation ID returned when you allocated the Elastic IP
-     *        address (IPv4) for your network interface.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>association.association-id</code> - The association ID returned when the network interface was
-     *        associated with an IPv4 address.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>availability-zone</code> - The Availability Zone of the instance.
      *        </p>
      *        </li>
@@ -4178,6 +4159,30 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        <code>network-interface.addresses.association.ip-owner-id</code> - The owner ID of the private IPv4
      *        address associated with the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.association.public-ip</code> - The address of the Elastic IP address (IPv4) bound
+     *        to the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4)
+     *        associated with the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.association.allocation-id</code> - The allocation ID returned when you allocated
+     *        the Elastic IP address (IPv4) for your network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.association.association-id</code> - The association ID returned when the network
+     *        interface was associated with an IPv4 address.
      *        </p>
      *        </li>
      *        <li>

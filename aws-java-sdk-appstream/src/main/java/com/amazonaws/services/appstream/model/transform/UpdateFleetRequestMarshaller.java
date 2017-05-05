@@ -12,93 +12,74 @@
  */
 package com.amazonaws.services.appstream.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.appstream.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateFleetRequest Marshaller
+ * UpdateFleetRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateFleetRequestMarshaller implements Marshaller<Request<UpdateFleetRequest>, UpdateFleetRequest> {
+@SdkInternalApi
+public class UpdateFleetRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> IMAGENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ImageName").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> INSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceType").build();
+    private static final MarshallingInfo<StructuredPojo> COMPUTECAPACITY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ComputeCapacity").build();
+    private static final MarshallingInfo<StructuredPojo> VPCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcConfig").build();
+    private static final MarshallingInfo<Integer> MAXUSERDURATIONINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxUserDurationInSeconds").build();
+    private static final MarshallingInfo<Integer> DISCONNECTTIMEOUTINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisconnectTimeoutInSeconds").build();
+    private static final MarshallingInfo<Boolean> DELETEVPCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeleteVpcConfig").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisplayName").build();
+    private static final MarshallingInfo<Boolean> ENABLEDEFAULTINTERNETACCESS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableDefaultInternetAccess").build();
 
-    public UpdateFleetRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateFleetRequestMarshaller instance = new UpdateFleetRequestMarshaller();
+
+    public static UpdateFleetRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateFleetRequest> marshall(UpdateFleetRequest updateFleetRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateFleetRequest updateFleetRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateFleetRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateFleetRequest> request = new DefaultRequest<UpdateFleetRequest>(updateFleetRequest, "AmazonAppStream");
-        request.addHeader("X-Amz-Target", "PhotonAdminProxyService.UpdateFleet");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (updateFleetRequest.getImageName() != null) {
-                jsonGenerator.writeFieldName("ImageName").writeValue(updateFleetRequest.getImageName());
-            }
-            if (updateFleetRequest.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(updateFleetRequest.getName());
-            }
-            if (updateFleetRequest.getInstanceType() != null) {
-                jsonGenerator.writeFieldName("InstanceType").writeValue(updateFleetRequest.getInstanceType());
-            }
-            if (updateFleetRequest.getComputeCapacity() != null) {
-                jsonGenerator.writeFieldName("ComputeCapacity");
-                ComputeCapacityJsonMarshaller.getInstance().marshall(updateFleetRequest.getComputeCapacity(), jsonGenerator);
-            }
-            if (updateFleetRequest.getVpcConfig() != null) {
-                jsonGenerator.writeFieldName("VpcConfig");
-                VpcConfigJsonMarshaller.getInstance().marshall(updateFleetRequest.getVpcConfig(), jsonGenerator);
-            }
-            if (updateFleetRequest.getMaxUserDurationInSeconds() != null) {
-                jsonGenerator.writeFieldName("MaxUserDurationInSeconds").writeValue(updateFleetRequest.getMaxUserDurationInSeconds());
-            }
-            if (updateFleetRequest.getDisconnectTimeoutInSeconds() != null) {
-                jsonGenerator.writeFieldName("DisconnectTimeoutInSeconds").writeValue(updateFleetRequest.getDisconnectTimeoutInSeconds());
-            }
-            if (updateFleetRequest.getDeleteVpcConfig() != null) {
-                jsonGenerator.writeFieldName("DeleteVpcConfig").writeValue(updateFleetRequest.getDeleteVpcConfig());
-            }
-            if (updateFleetRequest.getDescription() != null) {
-                jsonGenerator.writeFieldName("Description").writeValue(updateFleetRequest.getDescription());
-            }
-            if (updateFleetRequest.getDisplayName() != null) {
-                jsonGenerator.writeFieldName("DisplayName").writeValue(updateFleetRequest.getDisplayName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateFleetRequest.getImageName(), IMAGENAME_BINDING);
+            protocolMarshaller.marshall(updateFleetRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(updateFleetRequest.getInstanceType(), INSTANCETYPE_BINDING);
+            protocolMarshaller.marshall(updateFleetRequest.getComputeCapacity(), COMPUTECAPACITY_BINDING);
+            protocolMarshaller.marshall(updateFleetRequest.getVpcConfig(), VPCCONFIG_BINDING);
+            protocolMarshaller.marshall(updateFleetRequest.getMaxUserDurationInSeconds(), MAXUSERDURATIONINSECONDS_BINDING);
+            protocolMarshaller.marshall(updateFleetRequest.getDisconnectTimeoutInSeconds(), DISCONNECTTIMEOUTINSECONDS_BINDING);
+            protocolMarshaller.marshall(updateFleetRequest.getDeleteVpcConfig(), DELETEVPCCONFIG_BINDING);
+            protocolMarshaller.marshall(updateFleetRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(updateFleetRequest.getDisplayName(), DISPLAYNAME_BINDING);
+            protocolMarshaller.marshall(updateFleetRequest.getEnableDefaultInternetAccess(), ENABLEDEFAULTINTERNETACCESS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

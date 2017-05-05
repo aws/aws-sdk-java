@@ -53,7 +53,7 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String routingStrategyType;
     /**
      * <p>
-     * Descriptive label associated with an alias. Alias names do not need to be unique.
+     * Descriptive label that is associated with an alias. Alias names do not need to be unique.
      * </p>
      */
     private String name;
@@ -66,8 +66,8 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
     private Integer limit;
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. Use the token that is returned with a previous
-     * call to this action. To specify the start of the result set, do not specify a value.
+     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * previous call to this action. To specify the start of the result set, do not specify a value.
      * </p>
      */
     private String nextToken;
@@ -317,11 +317,11 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Descriptive label associated with an alias. Alias names do not need to be unique.
+     * Descriptive label that is associated with an alias. Alias names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with an alias. Alias names do not need to be unique.
+     *        Descriptive label that is associated with an alias. Alias names do not need to be unique.
      */
 
     public void setName(String name) {
@@ -330,10 +330,10 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Descriptive label associated with an alias. Alias names do not need to be unique.
+     * Descriptive label that is associated with an alias. Alias names do not need to be unique.
      * </p>
      * 
-     * @return Descriptive label associated with an alias. Alias names do not need to be unique.
+     * @return Descriptive label that is associated with an alias. Alias names do not need to be unique.
      */
 
     public String getName() {
@@ -342,11 +342,11 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Descriptive label associated with an alias. Alias names do not need to be unique.
+     * Descriptive label that is associated with an alias. Alias names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with an alias. Alias names do not need to be unique.
+     *        Descriptive label that is associated with an alias. Alias names do not need to be unique.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -403,13 +403,13 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. Use the token that is returned with a previous
-     * call to this action. To specify the start of the result set, do not specify a value.
+     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * previous call to this action. To specify the start of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
-     *        Token indicating the start of the next sequential page of results. Use the token that is returned with a
-     *        previous call to this action. To specify the start of the result set, do not specify a value.
+     *        Token that indicates the start of the next sequential page of results. Use the token that is returned with
+     *        a previous call to this action. To specify the start of the result set, do not specify a value.
      */
 
     public void setNextToken(String nextToken) {
@@ -418,12 +418,12 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. Use the token that is returned with a previous
-     * call to this action. To specify the start of the result set, do not specify a value.
+     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * previous call to this action. To specify the start of the result set, do not specify a value.
      * </p>
      * 
-     * @return Token indicating the start of the next sequential page of results. Use the token that is returned with a
-     *         previous call to this action. To specify the start of the result set, do not specify a value.
+     * @return Token that indicates the start of the next sequential page of results. Use the token that is returned
+     *         with a previous call to this action. To specify the start of the result set, do not specify a value.
      */
 
     public String getNextToken() {
@@ -432,13 +432,13 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. Use the token that is returned with a previous
-     * call to this action. To specify the start of the result set, do not specify a value.
+     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * previous call to this action. To specify the start of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
-     *        Token indicating the start of the next sequential page of results. Use the token that is returned with a
-     *        previous call to this action. To specify the start of the result set, do not specify a value.
+     *        Token that indicates the start of the next sequential page of results. Use the token that is returned with
+     *        a previous call to this action. To specify the start of the result set, do not specify a value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

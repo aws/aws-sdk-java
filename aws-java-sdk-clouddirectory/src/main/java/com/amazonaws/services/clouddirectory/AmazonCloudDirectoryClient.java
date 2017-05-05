@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -333,6 +334,10 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         init();
     }
 
+    public static AmazonCloudDirectoryClientBuilder builder() {
+        return AmazonCloudDirectoryClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon CloudDirectory using the specified parameters.
      *
@@ -399,7 +404,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AddFacetToObjectResult addFacetToObject(AddFacetToObjectRequest addFacetToObjectRequest) {
+    public AddFacetToObjectResult addFacetToObject(AddFacetToObjectRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddFacetToObject(request);
+    }
+
+    @SdkInternalApi
+    final AddFacetToObjectResult executeAddFacetToObject(AddFacetToObjectRequest addFacetToObjectRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addFacetToObjectRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -410,7 +421,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddFacetToObjectRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(addFacetToObjectRequest));
+                request = new AddFacetToObjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addFacetToObjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -467,7 +478,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      Documentation</a>
      */
     @Override
-    public ApplySchemaResult applySchema(ApplySchemaRequest applySchemaRequest) {
+    public ApplySchemaResult applySchema(ApplySchemaRequest request) {
+        request = beforeClientExecution(request);
+        return executeApplySchema(request);
+    }
+
+    @SdkInternalApi
+    final ApplySchemaResult executeApplySchema(ApplySchemaRequest applySchemaRequest) {
 
         ExecutionContext executionContext = createExecutionContext(applySchemaRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -478,7 +495,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ApplySchemaRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(applySchemaRequest));
+                request = new ApplySchemaRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(applySchemaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -509,7 +526,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      * </li>
      * <li>
      * <p>
-     * Using ObjectIdentifier
+     * Using <code>ObjectIdentifier</code>
      * </p>
      * </li>
      * </ol>
@@ -549,12 +566,20 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *         has occurred. Rename the link or the schema and then try again.
      * @throws ValidationException
      *         Indicates your request is malformed in some manner. See the exception message.
+     * @throws FacetValidationException
+     *         The <a>Facet</a> you provided was not well formed or could not be validated with the schema.
      * @sample AmazonCloudDirectory.AttachObject
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachObject" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
-    public AttachObjectResult attachObject(AttachObjectRequest attachObjectRequest) {
+    public AttachObjectResult attachObject(AttachObjectRequest request) {
+        request = beforeClientExecution(request);
+        return executeAttachObject(request);
+    }
+
+    @SdkInternalApi
+    final AttachObjectResult executeAttachObject(AttachObjectRequest attachObjectRequest) {
 
         ExecutionContext executionContext = createExecutionContext(attachObjectRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -565,7 +590,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AttachObjectRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(attachObjectRequest));
+                request = new AttachObjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(attachObjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -625,7 +650,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public AttachPolicyResult attachPolicy(AttachPolicyRequest attachPolicyRequest) {
+    public AttachPolicyResult attachPolicy(AttachPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeAttachPolicy(request);
+    }
+
+    @SdkInternalApi
+    final AttachPolicyResult executeAttachPolicy(AttachPolicyRequest attachPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(attachPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -636,7 +667,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AttachPolicyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(attachPolicyRequest));
+                request = new AttachPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(attachPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -700,7 +731,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public AttachToIndexResult attachToIndex(AttachToIndexRequest attachToIndexRequest) {
+    public AttachToIndexResult attachToIndex(AttachToIndexRequest request) {
+        request = beforeClientExecution(request);
+        return executeAttachToIndex(request);
+    }
+
+    @SdkInternalApi
+    final AttachToIndexResult executeAttachToIndex(AttachToIndexRequest attachToIndexRequest) {
 
         ExecutionContext executionContext = createExecutionContext(attachToIndexRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -711,7 +748,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AttachToIndexRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(attachToIndexRequest));
+                request = new AttachToIndexRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(attachToIndexRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -765,7 +802,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      Documentation</a>
      */
     @Override
-    public BatchReadResult batchRead(BatchReadRequest batchReadRequest) {
+    public BatchReadResult batchRead(BatchReadRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchRead(request);
+    }
+
+    @SdkInternalApi
+    final BatchReadResult executeBatchRead(BatchReadRequest batchReadRequest) {
 
         ExecutionContext executionContext = createExecutionContext(batchReadRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -776,7 +819,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new BatchReadRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchReadRequest));
+                request = new BatchReadRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchReadRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -827,13 +870,19 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      * @throws DirectoryNotEnabledException
      *         An operation can only operate on a directory that is not enabled.
      * @throws BatchWriteException
-     *         A BatchWrite exception has occurred.
+     *         A <code>BatchWrite</code> exception has occurred.
      * @sample AmazonCloudDirectory.BatchWrite
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchWrite" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
-    public BatchWriteResult batchWrite(BatchWriteRequest batchWriteRequest) {
+    public BatchWriteResult batchWrite(BatchWriteRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchWrite(request);
+    }
+
+    @SdkInternalApi
+    final BatchWriteResult executeBatchWrite(BatchWriteRequest batchWriteRequest) {
 
         ExecutionContext executionContext = createExecutionContext(batchWriteRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -844,7 +893,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new BatchWriteRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchWriteRequest));
+                request = new BatchWriteRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchWriteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -904,7 +953,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public CreateDirectoryResult createDirectory(CreateDirectoryRequest createDirectoryRequest) {
+    public CreateDirectoryResult createDirectory(CreateDirectoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDirectory(request);
+    }
+
+    @SdkInternalApi
+    final CreateDirectoryResult executeCreateDirectory(CreateDirectoryRequest createDirectoryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createDirectoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -915,7 +970,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateDirectoryRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDirectoryRequest));
+                request = new CreateDirectoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDirectoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -973,7 +1028,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      Documentation</a>
      */
     @Override
-    public CreateFacetResult createFacet(CreateFacetRequest createFacetRequest) {
+    public CreateFacetResult createFacet(CreateFacetRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateFacet(request);
+    }
+
+    @SdkInternalApi
+    final CreateFacetResult executeCreateFacet(CreateFacetRequest createFacetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createFacetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -984,7 +1045,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateFacetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createFacetRequest));
+                request = new CreateFacetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createFacetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1049,7 +1110,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      Documentation</a>
      */
     @Override
-    public CreateIndexResult createIndex(CreateIndexRequest createIndexRequest) {
+    public CreateIndexResult createIndex(CreateIndexRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateIndex(request);
+    }
+
+    @SdkInternalApi
+    final CreateIndexResult executeCreateIndex(CreateIndexRequest createIndexRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createIndexRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1060,7 +1127,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateIndexRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createIndexRequest));
+                request = new CreateIndexRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createIndexRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1127,7 +1194,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public CreateObjectResult createObject(CreateObjectRequest createObjectRequest) {
+    public CreateObjectResult createObject(CreateObjectRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateObject(request);
+    }
+
+    @SdkInternalApi
+    final CreateObjectResult executeCreateObject(CreateObjectRequest createObjectRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createObjectRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1138,7 +1211,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateObjectRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createObjectRequest));
+                request = new CreateObjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createObjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1214,7 +1287,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public CreateSchemaResult createSchema(CreateSchemaRequest createSchemaRequest) {
+    public CreateSchemaResult createSchema(CreateSchemaRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSchema(request);
+    }
+
+    @SdkInternalApi
+    final CreateSchemaResult executeCreateSchema(CreateSchemaRequest createSchemaRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createSchemaRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1225,7 +1304,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateSchemaRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSchemaRequest));
+                request = new CreateSchemaRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSchemaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1272,12 +1351,24 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      * @throws DirectoryDeletedException
      *         A directory that has been deleted has been attempted to be accessed. Note: The requested resource will
      *         eventually cease to exist.
+     * @throws RetryableConflictException
+     *         Occurs when a conflict with a previous successful write is detected. For example, if a write operation
+     *         occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this
+     *         exception may result. This generally occurs when the previous write did not have time to propagate to the
+     *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
+     *         this exception.
      * @sample AmazonCloudDirectory.DeleteDirectory
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteDirectory" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
-    public DeleteDirectoryResult deleteDirectory(DeleteDirectoryRequest deleteDirectoryRequest) {
+    public DeleteDirectoryResult deleteDirectory(DeleteDirectoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDirectory(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDirectoryResult executeDeleteDirectory(DeleteDirectoryRequest deleteDirectoryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteDirectoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1288,7 +1379,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteDirectoryRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDirectoryRequest));
+                request = new DeleteDirectoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDirectoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1348,7 +1439,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      Documentation</a>
      */
     @Override
-    public DeleteFacetResult deleteFacet(DeleteFacetRequest deleteFacetRequest) {
+    public DeleteFacetResult deleteFacet(DeleteFacetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteFacet(request);
+    }
+
+    @SdkInternalApi
+    final DeleteFacetResult executeDeleteFacet(DeleteFacetRequest deleteFacetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteFacetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1359,7 +1456,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteFacetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFacetRequest));
+                request = new DeleteFacetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFacetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1418,7 +1515,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public DeleteObjectResult deleteObject(DeleteObjectRequest deleteObjectRequest) {
+    public DeleteObjectResult deleteObject(DeleteObjectRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteObject(request);
+    }
+
+    @SdkInternalApi
+    final DeleteObjectResult executeDeleteObject(DeleteObjectRequest deleteObjectRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteObjectRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1429,7 +1532,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteObjectRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteObjectRequest));
+                request = new DeleteObjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteObjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1486,7 +1589,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public DeleteSchemaResult deleteSchema(DeleteSchemaRequest deleteSchemaRequest) {
+    public DeleteSchemaResult deleteSchema(DeleteSchemaRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteSchema(request);
+    }
+
+    @SdkInternalApi
+    final DeleteSchemaResult executeDeleteSchema(DeleteSchemaRequest deleteSchemaRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteSchemaRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1497,7 +1606,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteSchemaRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSchemaRequest));
+                request = new DeleteSchemaRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSchemaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1557,7 +1666,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public DetachFromIndexResult detachFromIndex(DetachFromIndexRequest detachFromIndexRequest) {
+    public DetachFromIndexResult detachFromIndex(DetachFromIndexRequest request) {
+        request = beforeClientExecution(request);
+        return executeDetachFromIndex(request);
+    }
+
+    @SdkInternalApi
+    final DetachFromIndexResult executeDetachFromIndex(DetachFromIndexRequest detachFromIndexRequest) {
 
         ExecutionContext executionContext = createExecutionContext(detachFromIndexRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1568,7 +1683,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DetachFromIndexRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(detachFromIndexRequest));
+                request = new DetachFromIndexRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(detachFromIndexRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1625,7 +1740,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public DetachObjectResult detachObject(DetachObjectRequest detachObjectRequest) {
+    public DetachObjectResult detachObject(DetachObjectRequest request) {
+        request = beforeClientExecution(request);
+        return executeDetachObject(request);
+    }
+
+    @SdkInternalApi
+    final DetachObjectResult executeDetachObject(DetachObjectRequest detachObjectRequest) {
 
         ExecutionContext executionContext = createExecutionContext(detachObjectRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1636,7 +1757,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DetachObjectRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(detachObjectRequest));
+                request = new DetachObjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(detachObjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1696,7 +1817,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public DetachPolicyResult detachPolicy(DetachPolicyRequest detachPolicyRequest) {
+    public DetachPolicyResult detachPolicy(DetachPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDetachPolicy(request);
+    }
+
+    @SdkInternalApi
+    final DetachPolicyResult executeDetachPolicy(DetachPolicyRequest detachPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(detachPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1707,7 +1834,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DetachPolicyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(detachPolicyRequest));
+                request = new DetachPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(detachPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1752,12 +1879,24 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
+     * @throws RetryableConflictException
+     *         Occurs when a conflict with a previous successful write is detected. For example, if a write operation
+     *         occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this
+     *         exception may result. This generally occurs when the previous write did not have time to propagate to the
+     *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
+     *         this exception.
      * @sample AmazonCloudDirectory.DisableDirectory
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DisableDirectory"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DisableDirectoryResult disableDirectory(DisableDirectoryRequest disableDirectoryRequest) {
+    public DisableDirectoryResult disableDirectory(DisableDirectoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisableDirectory(request);
+    }
+
+    @SdkInternalApi
+    final DisableDirectoryResult executeDisableDirectory(DisableDirectoryRequest disableDirectoryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(disableDirectoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1768,7 +1907,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisableDirectoryRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableDirectoryRequest));
+                request = new DisableDirectoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableDirectoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1813,12 +1952,24 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
+     * @throws RetryableConflictException
+     *         Occurs when a conflict with a previous successful write is detected. For example, if a write operation
+     *         occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this
+     *         exception may result. This generally occurs when the previous write did not have time to propagate to the
+     *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
+     *         this exception.
      * @sample AmazonCloudDirectory.EnableDirectory
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/EnableDirectory" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
-    public EnableDirectoryResult enableDirectory(EnableDirectoryRequest enableDirectoryRequest) {
+    public EnableDirectoryResult enableDirectory(EnableDirectoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnableDirectory(request);
+    }
+
+    @SdkInternalApi
+    final EnableDirectoryResult executeEnableDirectory(EnableDirectoryRequest enableDirectoryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(enableDirectoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1829,7 +1980,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EnableDirectoryRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableDirectoryRequest));
+                request = new EnableDirectoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableDirectoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1881,7 +2032,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public GetDirectoryResult getDirectory(GetDirectoryRequest getDirectoryRequest) {
+    public GetDirectoryResult getDirectory(GetDirectoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDirectory(request);
+    }
+
+    @SdkInternalApi
+    final GetDirectoryResult executeGetDirectory(GetDirectoryRequest getDirectoryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getDirectoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1892,7 +2049,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDirectoryRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDirectoryRequest));
+                request = new GetDirectoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDirectoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1949,7 +2106,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      Documentation</a>
      */
     @Override
-    public GetFacetResult getFacet(GetFacetRequest getFacetRequest) {
+    public GetFacetResult getFacet(GetFacetRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetFacet(request);
+    }
+
+    @SdkInternalApi
+    final GetFacetResult executeGetFacet(GetFacetRequest getFacetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getFacetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1960,7 +2123,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetFacetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getFacetRequest));
+                request = new GetFacetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getFacetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2016,7 +2179,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetObjectInformationResult getObjectInformation(GetObjectInformationRequest getObjectInformationRequest) {
+    public GetObjectInformationResult getObjectInformation(GetObjectInformationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetObjectInformation(request);
+    }
+
+    @SdkInternalApi
+    final GetObjectInformationResult executeGetObjectInformation(GetObjectInformationRequest getObjectInformationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getObjectInformationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2027,7 +2196,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetObjectInformationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getObjectInformationRequest));
+                request = new GetObjectInformationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getObjectInformationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2085,7 +2254,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public GetSchemaAsJsonResult getSchemaAsJson(GetSchemaAsJsonRequest getSchemaAsJsonRequest) {
+    public GetSchemaAsJsonResult getSchemaAsJson(GetSchemaAsJsonRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSchemaAsJson(request);
+    }
+
+    @SdkInternalApi
+    final GetSchemaAsJsonResult executeGetSchemaAsJson(GetSchemaAsJsonRequest getSchemaAsJsonRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getSchemaAsJsonRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2096,7 +2271,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetSchemaAsJsonRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSchemaAsJsonRequest));
+                request = new GetSchemaAsJsonRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSchemaAsJsonRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2146,13 +2321,19 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws InvalidNextTokenException
-     *         Indicates that the NextToken value is not valid.
+     *         Indicates that the <code>NextToken</code> value is not valid.
      * @sample AmazonCloudDirectory.ListAppliedSchemaArns
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAppliedSchemaArns"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListAppliedSchemaArnsResult listAppliedSchemaArns(ListAppliedSchemaArnsRequest listAppliedSchemaArnsRequest) {
+    public ListAppliedSchemaArnsResult listAppliedSchemaArns(ListAppliedSchemaArnsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAppliedSchemaArns(request);
+    }
+
+    @SdkInternalApi
+    final ListAppliedSchemaArnsResult executeListAppliedSchemaArns(ListAppliedSchemaArnsRequest listAppliedSchemaArnsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listAppliedSchemaArnsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2163,7 +2344,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAppliedSchemaArnsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAppliedSchemaArnsRequest));
+                request = new ListAppliedSchemaArnsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAppliedSchemaArnsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2220,7 +2401,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListAttachedIndicesResult listAttachedIndices(ListAttachedIndicesRequest listAttachedIndicesRequest) {
+    public ListAttachedIndicesResult listAttachedIndices(ListAttachedIndicesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAttachedIndices(request);
+    }
+
+    @SdkInternalApi
+    final ListAttachedIndicesResult executeListAttachedIndices(ListAttachedIndicesRequest listAttachedIndicesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listAttachedIndicesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2231,7 +2418,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAttachedIndicesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAttachedIndicesRequest));
+                request = new ListAttachedIndicesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAttachedIndicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2281,13 +2468,19 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws InvalidNextTokenException
-     *         Indicates that the NextToken value is not valid.
+     *         Indicates that the <code>NextToken</code> value is not valid.
      * @sample AmazonCloudDirectory.ListDevelopmentSchemaArns
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDevelopmentSchemaArns"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListDevelopmentSchemaArnsResult listDevelopmentSchemaArns(ListDevelopmentSchemaArnsRequest listDevelopmentSchemaArnsRequest) {
+    public ListDevelopmentSchemaArnsResult listDevelopmentSchemaArns(ListDevelopmentSchemaArnsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDevelopmentSchemaArns(request);
+    }
+
+    @SdkInternalApi
+    final ListDevelopmentSchemaArnsResult executeListDevelopmentSchemaArns(ListDevelopmentSchemaArnsRequest listDevelopmentSchemaArnsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listDevelopmentSchemaArnsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2298,7 +2491,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListDevelopmentSchemaArnsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDevelopmentSchemaArnsRequest));
+                request = new ListDevelopmentSchemaArnsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listDevelopmentSchemaArnsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2347,13 +2541,19 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
      * @throws InvalidNextTokenException
-     *         Indicates that the NextToken value is not valid.
+     *         Indicates that the <code>NextToken</code> value is not valid.
      * @sample AmazonCloudDirectory.ListDirectories
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDirectories" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
-    public ListDirectoriesResult listDirectories(ListDirectoriesRequest listDirectoriesRequest) {
+    public ListDirectoriesResult listDirectories(ListDirectoriesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDirectories(request);
+    }
+
+    @SdkInternalApi
+    final ListDirectoriesResult executeListDirectories(ListDirectoriesRequest listDirectoriesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listDirectoriesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2364,7 +2564,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListDirectoriesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDirectoriesRequest));
+                request = new ListDirectoriesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDirectoriesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2416,13 +2616,19 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      * @throws FacetNotFoundException
      *         The specified <a>Facet</a> could not be found.
      * @throws InvalidNextTokenException
-     *         Indicates that the NextToken value is not valid.
+     *         Indicates that the <code>NextToken</code> value is not valid.
      * @sample AmazonCloudDirectory.ListFacetAttributes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetAttributes"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListFacetAttributesResult listFacetAttributes(ListFacetAttributesRequest listFacetAttributesRequest) {
+    public ListFacetAttributesResult listFacetAttributes(ListFacetAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListFacetAttributes(request);
+    }
+
+    @SdkInternalApi
+    final ListFacetAttributesResult executeListFacetAttributes(ListFacetAttributesRequest listFacetAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listFacetAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2433,7 +2639,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListFacetAttributesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFacetAttributesRequest));
+                request = new ListFacetAttributesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFacetAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2483,13 +2689,19 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws InvalidNextTokenException
-     *         Indicates that the NextToken value is not valid.
+     *         Indicates that the <code>NextToken</code> value is not valid.
      * @sample AmazonCloudDirectory.ListFacetNames
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetNames" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
-    public ListFacetNamesResult listFacetNames(ListFacetNamesRequest listFacetNamesRequest) {
+    public ListFacetNamesResult listFacetNames(ListFacetNamesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListFacetNames(request);
+    }
+
+    @SdkInternalApi
+    final ListFacetNamesResult executeListFacetNames(ListFacetNamesRequest listFacetNamesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listFacetNamesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2500,7 +2712,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListFacetNamesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFacetNamesRequest));
+                request = new ListFacetNamesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFacetNamesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2558,7 +2770,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      Documentation</a>
      */
     @Override
-    public ListIndexResult listIndex(ListIndexRequest listIndexRequest) {
+    public ListIndexResult listIndex(ListIndexRequest request) {
+        request = beforeClientExecution(request);
+        return executeListIndex(request);
+    }
+
+    @SdkInternalApi
+    final ListIndexResult executeListIndex(ListIndexRequest listIndexRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listIndexRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2569,7 +2787,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListIndexRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listIndexRequest));
+                request = new ListIndexRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listIndexRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2590,9 +2808,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Lists all attributes associated with an object. This also supports common namespace prefix (key) listing. For
-     * example, if you want to retrieve all attributes associated with facet1, key can be <code>facet1</code>. If key is
-     * empty, all attributes are returned in a paginated list.
+     * Lists all attributes associated with an object.
      * </p>
      * 
      * @param listObjectAttributesRequest
@@ -2625,13 +2841,21 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws InvalidNextTokenException
-     *         Indicates that the NextToken value is not valid.
+     *         Indicates that the <code>NextToken</code> value is not valid.
+     * @throws FacetValidationException
+     *         The <a>Facet</a> you provided was not well formed or could not be validated with the schema.
      * @sample AmazonCloudDirectory.ListObjectAttributes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectAttributes"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListObjectAttributesResult listObjectAttributes(ListObjectAttributesRequest listObjectAttributesRequest) {
+    public ListObjectAttributesResult listObjectAttributes(ListObjectAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListObjectAttributes(request);
+    }
+
+    @SdkInternalApi
+    final ListObjectAttributesResult executeListObjectAttributes(ListObjectAttributesRequest listObjectAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listObjectAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2642,7 +2866,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListObjectAttributesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listObjectAttributesRequest));
+                request = new ListObjectAttributesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listObjectAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2696,16 +2920,22 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws InvalidNextTokenException
-     *         Indicates that the NextToken value is not valid.
+     *         Indicates that the <code>NextToken</code> value is not valid.
      * @throws NotNodeException
      *         Occurs when any invalid operations are performed on an object which is not a node, such as calling
-     *         ListObjectChildren for a leaf node object.
+     *         <code>ListObjectChildren</code> for a leaf node object.
      * @sample AmazonCloudDirectory.ListObjectChildren
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectChildren"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListObjectChildrenResult listObjectChildren(ListObjectChildrenRequest listObjectChildrenRequest) {
+    public ListObjectChildrenResult listObjectChildren(ListObjectChildrenRequest request) {
+        request = beforeClientExecution(request);
+        return executeListObjectChildren(request);
+    }
+
+    @SdkInternalApi
+    final ListObjectChildrenResult executeListObjectChildren(ListObjectChildrenRequest listObjectChildrenRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listObjectChildrenRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2716,7 +2946,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListObjectChildrenRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listObjectChildrenRequest));
+                request = new ListObjectChildrenRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listObjectChildrenRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2725,6 +2955,92 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
 
             HttpResponseHandler<AmazonWebServiceResponse<ListObjectChildrenResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListObjectChildrenResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node
+     * objects. For more information about objects, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#dirstructure">Directory
+     * Structure</a>.
+     * </p>
+     * <p>
+     * Use this API to evaluate all parents for an object. The call returns all objects from the root of the directory
+     * up to the requested object. The API returns the number of paths based on user-defined <code>MaxResults</code>, in
+     * case there are multiple paths to the parent. The order of the paths and nodes returned is consistent among
+     * multiple API calls unless the objects are deleted or moved. Paths not leading to directory root are ignored from
+     * the target object.
+     * </p>
+     * 
+     * @param listObjectParentPathsRequest
+     * @return Result of the ListObjectParentPaths operation returned by the service.
+     * @throws InternalServiceException
+     *         Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in
+     *         which case you can retry your request until it succeeds. Otherwise, go to the <a
+     *         href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any
+     *         operational issues with the service.
+     * @throws InvalidArnException
+     *         Indicates that the provided ARN value is not valid.
+     * @throws RetryableConflictException
+     *         Occurs when a conflict with a previous successful write is detected. For example, if a write operation
+     *         occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this
+     *         exception may result. This generally occurs when the previous write did not have time to propagate to the
+     *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
+     *         this exception.
+     * @throws ValidationException
+     *         Indicates your request is malformed in some manner. See the exception message.
+     * @throws LimitExceededException
+     *         Indicates limits are exceeded. See <a
+     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         information.
+     * @throws AccessDeniedException
+     *         Access denied. Check your permissions.
+     * @throws DirectoryNotEnabledException
+     *         An operation can only operate on a directory that is not enabled.
+     * @throws InvalidNextTokenException
+     *         Indicates that the <code>NextToken</code> value is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @sample AmazonCloudDirectory.ListObjectParentPaths
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParentPaths"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListObjectParentPathsResult listObjectParentPaths(ListObjectParentPathsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListObjectParentPaths(request);
+    }
+
+    @SdkInternalApi
+    final ListObjectParentPathsResult executeListObjectParentPaths(ListObjectParentPathsRequest listObjectParentPathsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listObjectParentPathsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListObjectParentPathsRequest> request = null;
+        Response<ListObjectParentPathsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListObjectParentPathsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listObjectParentPathsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListObjectParentPathsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListObjectParentPathsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2770,7 +3086,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws InvalidNextTokenException
-     *         Indicates that the NextToken value is not valid.
+     *         Indicates that the <code>NextToken</code> value is not valid.
      * @throws CannotListParentOfRootException
      *         Cannot list the parents of a <a>Directory</a> root.
      * @sample AmazonCloudDirectory.ListObjectParents
@@ -2778,7 +3094,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListObjectParentsResult listObjectParents(ListObjectParentsRequest listObjectParentsRequest) {
+    public ListObjectParentsResult listObjectParents(ListObjectParentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListObjectParents(request);
+    }
+
+    @SdkInternalApi
+    final ListObjectParentsResult executeListObjectParents(ListObjectParentsRequest listObjectParentsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listObjectParentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2789,7 +3111,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListObjectParentsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listObjectParentsRequest));
+                request = new ListObjectParentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listObjectParentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2841,13 +3163,19 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws InvalidNextTokenException
-     *         Indicates that the NextToken value is not valid.
+     *         Indicates that the <code>NextToken</code> value is not valid.
      * @sample AmazonCloudDirectory.ListObjectPolicies
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectPolicies"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListObjectPoliciesResult listObjectPolicies(ListObjectPoliciesRequest listObjectPoliciesRequest) {
+    public ListObjectPoliciesResult listObjectPolicies(ListObjectPoliciesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListObjectPolicies(request);
+    }
+
+    @SdkInternalApi
+    final ListObjectPoliciesResult executeListObjectPolicies(ListObjectPoliciesRequest listObjectPoliciesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listObjectPoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2858,7 +3186,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListObjectPoliciesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listObjectPoliciesRequest));
+                request = new ListObjectPoliciesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listObjectPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2879,7 +3207,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Returns all of the ObjectIdentifiers to which a given policy is attached.
+     * Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached.
      * </p>
      * 
      * @param listPolicyAttachmentsRequest
@@ -2910,7 +3238,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      * @throws InvalidArnException
      *         Indicates that the provided ARN value is not valid.
      * @throws InvalidNextTokenException
-     *         Indicates that the NextToken value is not valid.
+     *         Indicates that the <code>NextToken</code> value is not valid.
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws NotPolicyException
@@ -2920,7 +3248,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListPolicyAttachmentsResult listPolicyAttachments(ListPolicyAttachmentsRequest listPolicyAttachmentsRequest) {
+    public ListPolicyAttachmentsResult listPolicyAttachments(ListPolicyAttachmentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPolicyAttachments(request);
+    }
+
+    @SdkInternalApi
+    final ListPolicyAttachmentsResult executeListPolicyAttachments(ListPolicyAttachmentsRequest listPolicyAttachmentsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listPolicyAttachmentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2931,7 +3265,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListPolicyAttachmentsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPolicyAttachmentsRequest));
+                request = new ListPolicyAttachmentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPolicyAttachmentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2982,13 +3316,19 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws InvalidNextTokenException
-     *         Indicates that the NextToken value is not valid.
+     *         Indicates that the <code>NextToken</code> value is not valid.
      * @sample AmazonCloudDirectory.ListPublishedSchemaArns
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPublishedSchemaArns"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListPublishedSchemaArnsResult listPublishedSchemaArns(ListPublishedSchemaArnsRequest listPublishedSchemaArnsRequest) {
+    public ListPublishedSchemaArnsResult listPublishedSchemaArns(ListPublishedSchemaArnsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPublishedSchemaArns(request);
+    }
+
+    @SdkInternalApi
+    final ListPublishedSchemaArnsResult executeListPublishedSchemaArns(ListPublishedSchemaArnsRequest listPublishedSchemaArnsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listPublishedSchemaArnsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2999,7 +3339,8 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListPublishedSchemaArnsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPublishedSchemaArnsRequest));
+                request = new ListPublishedSchemaArnsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listPublishedSchemaArnsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3058,7 +3399,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3069,7 +3416,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTagsForResourceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3092,8 +3439,9 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      * <p>
      * Lists all policies from the root of the <a>Directory</a> to the object specified. If there are no policies
      * present, an empty list is returned. If policies are present, and if some objects don't have the policies
-     * attached, it returns the objectIdentifier for such objects. If policies are present, it returns objectIdentifier,
-     * policyId, and policyType. Paths that don't lead to the root from the target object are ignored.
+     * attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns
+     * <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the
+     * root from the target object are ignored.
      * </p>
      * 
      * @param lookupPolicyRequest
@@ -3124,7 +3472,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      * @throws InvalidArnException
      *         Indicates that the provided ARN value is not valid.
      * @throws InvalidNextTokenException
-     *         Indicates that the NextToken value is not valid.
+     *         Indicates that the <code>NextToken</code> value is not valid.
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @sample AmazonCloudDirectory.LookupPolicy
@@ -3132,7 +3480,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public LookupPolicyResult lookupPolicy(LookupPolicyRequest lookupPolicyRequest) {
+    public LookupPolicyResult lookupPolicy(LookupPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeLookupPolicy(request);
+    }
+
+    @SdkInternalApi
+    final LookupPolicyResult executeLookupPolicy(LookupPolicyRequest lookupPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(lookupPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3143,7 +3497,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new LookupPolicyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(lookupPolicyRequest));
+                request = new LookupPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(lookupPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3201,7 +3555,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public PublishSchemaResult publishSchema(PublishSchemaRequest publishSchemaRequest) {
+    public PublishSchemaResult publishSchema(PublishSchemaRequest request) {
+        request = beforeClientExecution(request);
+        return executePublishSchema(request);
+    }
+
+    @SdkInternalApi
+    final PublishSchemaResult executePublishSchema(PublishSchemaRequest publishSchemaRequest) {
 
         ExecutionContext executionContext = createExecutionContext(publishSchemaRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3212,7 +3572,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PublishSchemaRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(publishSchemaRequest));
+                request = new PublishSchemaRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(publishSchemaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3262,7 +3622,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
      * @throws InvalidSchemaDocException
-     *         Indicates that the provided SchemaDoc value is not valid.
+     *         Indicates that the provided <code>SchemaDoc</code> value is not valid.
      * @throws InvalidRuleException
      *         Occurs when any of the rule parameter keys or values are invalid.
      * @sample AmazonCloudDirectory.PutSchemaFromJson
@@ -3270,7 +3630,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public PutSchemaFromJsonResult putSchemaFromJson(PutSchemaFromJsonRequest putSchemaFromJsonRequest) {
+    public PutSchemaFromJsonResult putSchemaFromJson(PutSchemaFromJsonRequest request) {
+        request = beforeClientExecution(request);
+        return executePutSchemaFromJson(request);
+    }
+
+    @SdkInternalApi
+    final PutSchemaFromJsonResult executePutSchemaFromJson(PutSchemaFromJsonRequest putSchemaFromJsonRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putSchemaFromJsonRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3281,7 +3647,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutSchemaFromJsonRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(putSchemaFromJsonRequest));
+                request = new PutSchemaFromJsonRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putSchemaFromJsonRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3339,7 +3705,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RemoveFacetFromObjectResult removeFacetFromObject(RemoveFacetFromObjectRequest removeFacetFromObjectRequest) {
+    public RemoveFacetFromObjectResult removeFacetFromObject(RemoveFacetFromObjectRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveFacetFromObject(request);
+    }
+
+    @SdkInternalApi
+    final RemoveFacetFromObjectResult executeRemoveFacetFromObject(RemoveFacetFromObjectRequest removeFacetFromObjectRequest) {
 
         ExecutionContext executionContext = createExecutionContext(removeFacetFromObjectRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3350,7 +3722,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RemoveFacetFromObjectRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeFacetFromObjectRequest));
+                request = new RemoveFacetFromObjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeFacetFromObjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3408,7 +3780,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      Documentation</a>
      */
     @Override
-    public TagResourceResult tagResource(TagResourceRequest tagResourceRequest) {
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3419,7 +3797,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new TagResourceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3476,7 +3854,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest) {
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3487,7 +3871,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UntagResourceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3513,17 +3897,17 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      * <ol>
      * <li>
      * <p>
-     * Adds new Attributes, Rules, or ObjectTypes.
+     * Adds new <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Updates existing Attributes, Rules, or ObjectTypes.
+     * Updates existing <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Deletes existing Attributes, Rules, or ObjectTypes.
+     * Deletes existing <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.
      * </p>
      * </li>
      * </ol>
@@ -3564,7 +3948,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      Documentation</a>
      */
     @Override
-    public UpdateFacetResult updateFacet(UpdateFacetRequest updateFacetRequest) {
+    public UpdateFacetResult updateFacet(UpdateFacetRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateFacet(request);
+    }
+
+    @SdkInternalApi
+    final UpdateFacetResult executeUpdateFacet(UpdateFacetRequest updateFacetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateFacetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3575,7 +3965,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateFacetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFacetRequest));
+                request = new UpdateFacetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFacetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3633,7 +4023,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateObjectAttributesResult updateObjectAttributes(UpdateObjectAttributesRequest updateObjectAttributesRequest) {
+    public UpdateObjectAttributesResult updateObjectAttributes(UpdateObjectAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateObjectAttributes(request);
+    }
+
+    @SdkInternalApi
+    final UpdateObjectAttributesResult executeUpdateObjectAttributes(UpdateObjectAttributesRequest updateObjectAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateObjectAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3644,7 +4040,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateObjectAttributesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateObjectAttributesRequest));
+                request = new UpdateObjectAttributesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateObjectAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3699,7 +4095,13 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public UpdateSchemaResult updateSchema(UpdateSchemaRequest updateSchemaRequest) {
+    public UpdateSchemaResult updateSchema(UpdateSchemaRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateSchema(request);
+    }
+
+    @SdkInternalApi
+    final UpdateSchemaResult executeUpdateSchema(UpdateSchemaRequest updateSchemaRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateSchemaRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3710,7 +4112,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateSchemaRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateSchemaRequest));
+                request = new UpdateSchemaRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateSchemaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

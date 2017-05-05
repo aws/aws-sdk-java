@@ -16,11 +16,9 @@ package com.amazonaws.retry;
 
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.SdkBaseException;
-
-import org.apache.http.HttpStatus;
-
 import java.util.HashSet;
 import java.util.Set;
+import org.apache.http.HttpStatus;
 
 public class RetryUtils {
 
@@ -84,7 +82,11 @@ public class RetryUtils {
      * @return True if the exception resulted from a throttling error message from a service, otherwise false.
      */
     public static boolean isThrottlingException(SdkBaseException exception) {
-        return isAse(exception) && THROTTLING_ERROR_CODES.contains(toAse(exception).getErrorCode());
+        if (!isAse(exception)) {
+            return false;
+        }
+        final AmazonServiceException ase = toAse(exception);
+        return THROTTLING_ERROR_CODES.contains(ase.getErrorCode()) || ase.getStatusCode() == 429;
     }
 
     /**

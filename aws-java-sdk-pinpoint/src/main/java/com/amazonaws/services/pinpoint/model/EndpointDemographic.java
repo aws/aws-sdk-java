@@ -14,9 +14,14 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * Endpoint demographic data
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EndpointDemographic implements Serializable, Cloneable {
+public class EndpointDemographic implements Serializable, Cloneable, StructuredPojo {
 
     /** The version of the application associated with the endpoint. */
     private String appVersion;
@@ -415,5 +420,11 @@ public class EndpointDemographic implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.pinpoint.model.transform.EndpointDemographicMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -12,64 +12,53 @@
  */
 package com.amazonaws.services.cognitosync.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cognitosync.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListDatasetsRequest Marshaller
+ * ListDatasetsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListDatasetsRequestMarshaller implements Marshaller<Request<ListDatasetsRequest>, ListDatasetsRequest> {
+@SdkInternalApi
+public class ListDatasetsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> IDENTITYPOOLID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("IdentityPoolId").build();
+    private static final MarshallingInfo<String> IDENTITYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("IdentityId").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
 
-    public ListDatasetsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListDatasetsRequestMarshaller instance = new ListDatasetsRequestMarshaller();
+
+    public static ListDatasetsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListDatasetsRequest> marshall(ListDatasetsRequest listDatasetsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListDatasetsRequest listDatasetsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listDatasetsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListDatasetsRequest> request = new DefaultRequest<ListDatasetsRequest>(listDatasetsRequest, "AmazonCognitoSync");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "IdentityPoolId",
-                listDatasetsRequest.getIdentityPoolId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "IdentityId", listDatasetsRequest.getIdentityId());
-        request.setResourcePath(uriResourcePath);
-
-        if (listDatasetsRequest.getNextToken() != null) {
-            request.addParameter("nextToken", StringUtils.fromString(listDatasetsRequest.getNextToken()));
+        try {
+            protocolMarshaller.marshall(listDatasetsRequest.getIdentityPoolId(), IDENTITYPOOLID_BINDING);
+            protocolMarshaller.marshall(listDatasetsRequest.getIdentityId(), IDENTITYID_BINDING);
+            protocolMarshaller.marshall(listDatasetsRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listDatasetsRequest.getMaxResults(), MAXRESULTS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (listDatasetsRequest.getMaxResults() != null) {
-            request.addParameter("maxResults", StringUtils.fromInteger(listDatasetsRequest.getMaxResults()));
-        }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

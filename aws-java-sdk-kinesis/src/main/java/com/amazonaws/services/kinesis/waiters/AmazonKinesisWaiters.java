@@ -56,4 +56,20 @@ public class AmazonKinesisWaiters {
                 .withExecutorService(executorService).build();
     }
 
+    /**
+     * Builds a StreamNotExists waiter by using custom parameters waiterParameters and other parameters defined in the
+     * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
+     * where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<DescribeStreamRequest> streamNotExists() {
+
+        return new WaiterBuilder<DescribeStreamRequest, DescribeStreamResult>().withSdkFunction(new DescribeStreamFunction(client))
+                .withAcceptors(new StreamNotExists.IsResourceNotFoundExceptionMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(18), new FixedDelayStrategy(10)))
+                .withExecutorService(executorService).build();
+    }
+
+    public void shutdown() {
+        executorService.shutdown();
+    }
 }

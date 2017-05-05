@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -274,6 +275,10 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         init();
     }
 
+    public static AmazonECSClientBuilder builder() {
+        return AmazonECSClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon ECS using the specified parameters.
      *
@@ -323,7 +328,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public CreateClusterResult createCluster(CreateClusterRequest createClusterRequest) {
+    public CreateClusterResult createCluster(CreateClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCluster(request);
+    }
+
+    @SdkInternalApi
+    final CreateClusterResult executeCreateCluster(CreateClusterRequest createClusterRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createClusterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -334,7 +345,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateClusterRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createClusterRequest));
+                request = new CreateClusterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -381,20 +392,22 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * The <code>minimumHealthyPercent</code> represents a lower limit on the number of your service's tasks that must
      * remain in the <code>RUNNING</code> state during a deployment, as a percentage of the <code>desiredCount</code>
      * (rounded up to the nearest integer). This parameter enables you to deploy without using additional cluster
-     * capacity. For example, if <code>desiredCount</code> is four tasks and the minimum is 50%, the scheduler can stop
-     * two existing tasks to free up cluster capacity before starting two new tasks. Tasks for services that do not use
-     * a load balancer are considered healthy if they are in the <code>RUNNING</code> state. Tasks for services that use
-     * a load balancer are considered healthy if they are in the <code>RUNNING</code> state and the container instance
-     * they are hosted on is reported as healthy by the load balancer. The default value is 50% in the console and 100%
-     * for the AWS CLI, the AWS SDKs, and the APIs.
+     * capacity. For example, if your service has a <code>desiredCount</code> of four tasks and a
+     * <code>minimumHealthyPercent</code> of 50%, the scheduler can stop two existing tasks to free up cluster capacity
+     * before starting two new tasks. Tasks for services that <i>do not</i> use a load balancer are considered healthy
+     * if they are in the <code>RUNNING</code> state. Tasks for services that <i>do</i> use a load balancer are
+     * considered healthy if they are in the <code>RUNNING</code> state and the container instance they are hosted on is
+     * reported as healthy by the load balancer. The default value for <code>minimumHealthyPercent</code> is 50% in the
+     * console and 100% for the AWS CLI, the AWS SDKs, and the APIs.
      * </p>
      * <p>
      * The <code>maximumPercent</code> parameter represents an upper limit on the number of your service's tasks that
      * are allowed in the <code>RUNNING</code> or <code>PENDING</code> state during a deployment, as a percentage of the
      * <code>desiredCount</code> (rounded down to the nearest integer). This parameter enables you to define the
-     * deployment batch size. For example, if <code>desiredCount</code> is four tasks and the maximum is 200%, the
-     * scheduler can start four new tasks before stopping the four older tasks (provided that the cluster resources
-     * required to do this are available). The default value is 200%.
+     * deployment batch size. For example, if your service has a <code>desiredCount</code> of four tasks and a
+     * <code>maximumPercent</code> value of 200%, the scheduler can start four new tasks before stopping the four older
+     * tasks (provided that the cluster resources required to do this are available). The default value for
+     * <code>maximumPercent</code> is 200%.
      * </p>
      * <p>
      * When the service scheduler launches new tasks, it determines task placement in your cluster using the following
@@ -410,7 +423,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * <li>
      * <p>
      * By default, the service scheduler attempts to balance tasks across Availability Zones in this manner (although
-     * you can choose a different placement strategy):
+     * you can choose a different placement strategy) with the <code>placementStrategy</code> parameter):
      * </p>
      * <ul>
      * <li>
@@ -448,7 +461,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public CreateServiceResult createService(CreateServiceRequest createServiceRequest) {
+    public CreateServiceResult createService(CreateServiceRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateService(request);
+    }
+
+    @SdkInternalApi
+    final CreateServiceResult executeCreateService(CreateServiceRequest createServiceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createServiceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -459,7 +478,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateServiceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createServiceRequest));
+                request = new CreateServiceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createServiceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -498,7 +517,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public DeleteAttributesResult deleteAttributes(DeleteAttributesRequest deleteAttributesRequest) {
+    public DeleteAttributesResult deleteAttributes(DeleteAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAttributes(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAttributesResult executeDeleteAttributes(DeleteAttributesRequest deleteAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -509,7 +534,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteAttributesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAttributesRequest));
+                request = new DeleteAttributesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -561,7 +586,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public DeleteClusterResult deleteCluster(DeleteClusterRequest deleteClusterRequest) {
+    public DeleteClusterResult deleteCluster(DeleteClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteCluster(request);
+    }
+
+    @SdkInternalApi
+    final DeleteClusterResult executeDeleteCluster(DeleteClusterRequest deleteClusterRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteClusterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -572,7 +603,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteClusterRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteClusterRequest));
+                request = new DeleteClusterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -631,7 +662,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public DeleteServiceResult deleteService(DeleteServiceRequest deleteServiceRequest) {
+    public DeleteServiceResult deleteService(DeleteServiceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteService(request);
+    }
+
+    @SdkInternalApi
+    final DeleteServiceResult executeDeleteService(DeleteServiceRequest deleteServiceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteServiceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -642,7 +679,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteServiceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteServiceRequest));
+                request = new DeleteServiceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteServiceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -702,7 +739,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeregisterContainerInstanceResult deregisterContainerInstance(DeregisterContainerInstanceRequest deregisterContainerInstanceRequest) {
+    public DeregisterContainerInstanceResult deregisterContainerInstance(DeregisterContainerInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeregisterContainerInstance(request);
+    }
+
+    @SdkInternalApi
+    final DeregisterContainerInstanceResult executeDeregisterContainerInstance(DeregisterContainerInstanceRequest deregisterContainerInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deregisterContainerInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -713,7 +756,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeregisterContainerInstanceRequestMarshaller(protocolFactory).marshall(super
+                request = new DeregisterContainerInstanceRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(deregisterContainerInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -746,6 +789,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * update an existing service to reference an <code>INACTIVE</code> task definition (although there may be up to a
      * 10 minute window following deregistration where these restrictions have not yet taken effect).
      * </p>
+     * <note>
+     * <p>
+     * At this time, <code>INACTIVE</code> task definitions remain discoverable in your account indefinitely; however,
+     * this behavior is subject to change in the future, so you should not rely on <code>INACTIVE</code> task
+     * definitions persisting beyond the life cycle of any associated tasks and services.
+     * </p>
+     * </note>
      * 
      * @param deregisterTaskDefinitionRequest
      * @return Result of the DeregisterTaskDefinition operation returned by the service.
@@ -762,7 +812,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      API Documentation</a>
      */
     @Override
-    public DeregisterTaskDefinitionResult deregisterTaskDefinition(DeregisterTaskDefinitionRequest deregisterTaskDefinitionRequest) {
+    public DeregisterTaskDefinitionResult deregisterTaskDefinition(DeregisterTaskDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeregisterTaskDefinition(request);
+    }
+
+    @SdkInternalApi
+    final DeregisterTaskDefinitionResult executeDeregisterTaskDefinition(DeregisterTaskDefinitionRequest deregisterTaskDefinitionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deregisterTaskDefinitionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -773,7 +829,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeregisterTaskDefinitionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deregisterTaskDefinitionRequest));
+                request = new DeregisterTaskDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deregisterTaskDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -813,7 +870,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public DescribeClustersResult describeClusters(DescribeClustersRequest describeClustersRequest) {
+    public DescribeClustersResult describeClusters(DescribeClustersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeClusters(request);
+    }
+
+    @SdkInternalApi
+    final DescribeClustersResult executeDescribeClusters(DescribeClustersRequest describeClustersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeClustersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -824,7 +887,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeClustersRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeClustersRequest));
+                request = new DescribeClustersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeClustersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -872,7 +935,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      API Documentation</a>
      */
     @Override
-    public DescribeContainerInstancesResult describeContainerInstances(DescribeContainerInstancesRequest describeContainerInstancesRequest) {
+    public DescribeContainerInstancesResult describeContainerInstances(DescribeContainerInstancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeContainerInstances(request);
+    }
+
+    @SdkInternalApi
+    final DescribeContainerInstancesResult executeDescribeContainerInstances(DescribeContainerInstancesRequest describeContainerInstancesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeContainerInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -883,7 +952,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeContainerInstancesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeContainerInstancesRequest));
+                request = new DescribeContainerInstancesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeContainerInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -926,7 +996,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public DescribeServicesResult describeServices(DescribeServicesRequest describeServicesRequest) {
+    public DescribeServicesResult describeServices(DescribeServicesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeServices(request);
+    }
+
+    @SdkInternalApi
+    final DescribeServicesResult executeDescribeServices(DescribeServicesRequest describeServicesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeServicesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -937,7 +1013,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeServicesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeServicesRequest));
+                request = new DescribeServicesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeServicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -983,7 +1059,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public DescribeTaskDefinitionResult describeTaskDefinition(DescribeTaskDefinitionRequest describeTaskDefinitionRequest) {
+    public DescribeTaskDefinitionResult describeTaskDefinition(DescribeTaskDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTaskDefinition(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTaskDefinitionResult executeDescribeTaskDefinition(DescribeTaskDefinitionRequest describeTaskDefinitionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTaskDefinitionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -994,7 +1076,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTaskDefinitionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTaskDefinitionRequest));
+                request = new DescribeTaskDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTaskDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1037,7 +1119,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public DescribeTasksResult describeTasks(DescribeTasksRequest describeTasksRequest) {
+    public DescribeTasksResult describeTasks(DescribeTasksRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTasks(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTasksResult executeDescribeTasks(DescribeTasksRequest describeTasksRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTasksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1048,7 +1136,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTasksRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTasksRequest));
+                request = new DescribeTasksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTasksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1091,7 +1179,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public DiscoverPollEndpointResult discoverPollEndpoint(DiscoverPollEndpointRequest discoverPollEndpointRequest) {
+    public DiscoverPollEndpointResult discoverPollEndpoint(DiscoverPollEndpointRequest request) {
+        request = beforeClientExecution(request);
+        return executeDiscoverPollEndpoint(request);
+    }
+
+    @SdkInternalApi
+    final DiscoverPollEndpointResult executeDiscoverPollEndpoint(DiscoverPollEndpointRequest discoverPollEndpointRequest) {
 
         ExecutionContext executionContext = createExecutionContext(discoverPollEndpointRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1102,7 +1196,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DiscoverPollEndpointRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(discoverPollEndpointRequest));
+                request = new DiscoverPollEndpointRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(discoverPollEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1129,7 +1223,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
     /**
      * <p>
      * Lists the attributes for Amazon ECS resources within a specified target type and cluster. When you specify a
-     * target type and cluster, <code>LisAttributes</code> returns a list of attribute objects, one for each attribute
+     * target type and cluster, <code>ListAttributes</code> returns a list of attribute objects, one for each attribute
      * on each resource. You can filter the list of results to a single attribute name to only return results that have
      * that name. You can also filter the results by attribute name and value, for example, to see which container
      * instances in a cluster are running a Linux AMI (<code>ecs.os-type=linux</code>).
@@ -1147,7 +1241,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public ListAttributesResult listAttributes(ListAttributesRequest listAttributesRequest) {
+    public ListAttributesResult listAttributes(ListAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAttributes(request);
+    }
+
+    @SdkInternalApi
+    final ListAttributesResult executeListAttributes(ListAttributesRequest listAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1158,7 +1258,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAttributesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAttributesRequest));
+                request = new ListAttributesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1197,7 +1297,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public ListClustersResult listClusters(ListClustersRequest listClustersRequest) {
+    public ListClustersResult listClusters(ListClustersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListClusters(request);
+    }
+
+    @SdkInternalApi
+    final ListClustersResult executeListClusters(ListClustersRequest listClustersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listClustersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1208,7 +1314,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListClustersRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listClustersRequest));
+                request = new ListClustersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listClustersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1259,7 +1365,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public ListContainerInstancesResult listContainerInstances(ListContainerInstancesRequest listContainerInstancesRequest) {
+    public ListContainerInstancesResult listContainerInstances(ListContainerInstancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListContainerInstances(request);
+    }
+
+    @SdkInternalApi
+    final ListContainerInstancesResult executeListContainerInstances(ListContainerInstancesRequest listContainerInstancesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listContainerInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1270,7 +1382,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListContainerInstancesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listContainerInstancesRequest));
+                request = new ListContainerInstancesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listContainerInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1318,7 +1430,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public ListServicesResult listServices(ListServicesRequest listServicesRequest) {
+    public ListServicesResult listServices(ListServicesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListServices(request);
+    }
+
+    @SdkInternalApi
+    final ListServicesResult executeListServices(ListServicesRequest listServicesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listServicesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1329,7 +1447,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListServicesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listServicesRequest));
+                request = new ListServicesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listServicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1379,7 +1497,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      API Documentation</a>
      */
     @Override
-    public ListTaskDefinitionFamiliesResult listTaskDefinitionFamilies(ListTaskDefinitionFamiliesRequest listTaskDefinitionFamiliesRequest) {
+    public ListTaskDefinitionFamiliesResult listTaskDefinitionFamilies(ListTaskDefinitionFamiliesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTaskDefinitionFamilies(request);
+    }
+
+    @SdkInternalApi
+    final ListTaskDefinitionFamiliesResult executeListTaskDefinitionFamilies(ListTaskDefinitionFamiliesRequest listTaskDefinitionFamiliesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTaskDefinitionFamiliesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1390,7 +1514,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTaskDefinitionFamiliesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTaskDefinitionFamiliesRequest));
+                request = new ListTaskDefinitionFamiliesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listTaskDefinitionFamiliesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1436,7 +1561,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public ListTaskDefinitionsResult listTaskDefinitions(ListTaskDefinitionsRequest listTaskDefinitionsRequest) {
+    public ListTaskDefinitionsResult listTaskDefinitions(ListTaskDefinitionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTaskDefinitions(request);
+    }
+
+    @SdkInternalApi
+    final ListTaskDefinitionsResult executeListTaskDefinitions(ListTaskDefinitionsRequest listTaskDefinitionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTaskDefinitionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1447,7 +1578,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTaskDefinitionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTaskDefinitionsRequest));
+                request = new ListTaskDefinitionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTaskDefinitionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1503,7 +1634,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public ListTasksResult listTasks(ListTasksRequest listTasksRequest) {
+    public ListTasksResult listTasks(ListTasksRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTasks(request);
+    }
+
+    @SdkInternalApi
+    final ListTasksResult executeListTasks(ListTasksRequest listTasksRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTasksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1514,7 +1651,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTasksRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTasksRequest));
+                request = new ListTasksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTasksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1565,7 +1702,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public PutAttributesResult putAttributes(PutAttributesRequest putAttributesRequest) {
+    public PutAttributesResult putAttributes(PutAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executePutAttributes(request);
+    }
+
+    @SdkInternalApi
+    final PutAttributesResult executePutAttributes(PutAttributesRequest putAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1576,7 +1719,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutAttributesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(putAttributesRequest));
+                request = new PutAttributesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1619,7 +1762,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      API Documentation</a>
      */
     @Override
-    public RegisterContainerInstanceResult registerContainerInstance(RegisterContainerInstanceRequest registerContainerInstanceRequest) {
+    public RegisterContainerInstanceResult registerContainerInstance(RegisterContainerInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterContainerInstance(request);
+    }
+
+    @SdkInternalApi
+    final RegisterContainerInstanceResult executeRegisterContainerInstance(RegisterContainerInstanceRequest registerContainerInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(registerContainerInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1630,7 +1779,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterContainerInstanceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerContainerInstanceRequest));
+                request = new RegisterContainerInstanceRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(registerContainerInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1687,7 +1837,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public RegisterTaskDefinitionResult registerTaskDefinition(RegisterTaskDefinitionRequest registerTaskDefinitionRequest) {
+    public RegisterTaskDefinitionResult registerTaskDefinition(RegisterTaskDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterTaskDefinition(request);
+    }
+
+    @SdkInternalApi
+    final RegisterTaskDefinitionResult executeRegisterTaskDefinition(RegisterTaskDefinitionRequest registerTaskDefinitionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(registerTaskDefinitionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1698,7 +1854,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterTaskDefinitionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerTaskDefinitionRequest));
+                request = new RegisterTaskDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerTaskDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1751,7 +1907,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public RunTaskResult runTask(RunTaskRequest runTaskRequest) {
+    public RunTaskResult runTask(RunTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeRunTask(request);
+    }
+
+    @SdkInternalApi
+    final RunTaskResult executeRunTask(RunTaskRequest runTaskRequest) {
 
         ExecutionContext executionContext = createExecutionContext(runTaskRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1762,7 +1924,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RunTaskRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(runTaskRequest));
+                request = new RunTaskRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(runTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1809,7 +1971,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public StartTaskResult startTask(StartTaskRequest startTaskRequest) {
+    public StartTaskResult startTask(StartTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartTask(request);
+    }
+
+    @SdkInternalApi
+    final StartTaskResult executeStartTask(StartTaskRequest startTaskRequest) {
 
         ExecutionContext executionContext = createExecutionContext(startTaskRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1820,7 +1988,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartTaskRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(startTaskRequest));
+                request = new StartTaskRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1845,10 +2013,18 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * </p>
      * <p>
      * When <a>StopTask</a> is called on a task, the equivalent of <code>docker stop</code> is issued to the containers
-     * running in the task. This results in a <code>SIGTERM</code> and a 30-second timeout, after which
+     * running in the task. This results in a <code>SIGTERM</code> and a default 30-second timeout, after which
      * <code>SIGKILL</code> is sent and the containers are forcibly stopped. If the container handles the
      * <code>SIGTERM</code> gracefully and exits within 30 seconds from receiving it, no <code>SIGKILL</code> is sent.
      * </p>
+     * <note>
+     * <p>
+     * The default 30-second timeout can be configured on the Amazon ECS container agent with the
+     * <code>ECS_CONTAINER_STOP_TIMEOUT</code> variable. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container
+     * Agent Configuration</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param stopTaskRequest
      * @return Result of the StopTask operation returned by the service.
@@ -1868,7 +2044,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public StopTaskResult stopTask(StopTaskRequest stopTaskRequest) {
+    public StopTaskResult stopTask(StopTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopTask(request);
+    }
+
+    @SdkInternalApi
+    final StopTaskResult executeStopTask(StopTaskRequest stopTaskRequest) {
 
         ExecutionContext executionContext = createExecutionContext(stopTaskRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1879,7 +2061,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopTaskRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopTaskRequest));
+                request = new StopTaskRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1922,7 +2104,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      API Documentation</a>
      */
     @Override
-    public SubmitContainerStateChangeResult submitContainerStateChange(SubmitContainerStateChangeRequest submitContainerStateChangeRequest) {
+    public SubmitContainerStateChangeResult submitContainerStateChange(SubmitContainerStateChangeRequest request) {
+        request = beforeClientExecution(request);
+        return executeSubmitContainerStateChange(request);
+    }
+
+    @SdkInternalApi
+    final SubmitContainerStateChangeResult executeSubmitContainerStateChange(SubmitContainerStateChangeRequest submitContainerStateChangeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(submitContainerStateChangeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1933,7 +2121,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SubmitContainerStateChangeRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(submitContainerStateChangeRequest));
+                request = new SubmitContainerStateChangeRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(submitContainerStateChangeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1982,7 +2171,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public SubmitTaskStateChangeResult submitTaskStateChange(SubmitTaskStateChangeRequest submitTaskStateChangeRequest) {
+    public SubmitTaskStateChangeResult submitTaskStateChange(SubmitTaskStateChangeRequest request) {
+        request = beforeClientExecution(request);
+        return executeSubmitTaskStateChange(request);
+    }
+
+    @SdkInternalApi
+    final SubmitTaskStateChangeResult executeSubmitTaskStateChange(SubmitTaskStateChangeRequest submitTaskStateChangeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(submitTaskStateChangeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1993,7 +2188,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SubmitTaskStateChangeRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(submitTaskStateChangeRequest));
+                request = new SubmitTaskStateChangeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(submitTaskStateChangeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2059,7 +2254,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public UpdateContainerAgentResult updateContainerAgent(UpdateContainerAgentRequest updateContainerAgentRequest) {
+    public UpdateContainerAgentResult updateContainerAgent(UpdateContainerAgentRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateContainerAgent(request);
+    }
+
+    @SdkInternalApi
+    final UpdateContainerAgentResult executeUpdateContainerAgent(UpdateContainerAgentRequest updateContainerAgentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateContainerAgentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2070,7 +2271,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateContainerAgentRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateContainerAgentRequest));
+                request = new UpdateContainerAgentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateContainerAgentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2162,7 +2363,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateContainerInstancesStateResult updateContainerInstancesState(UpdateContainerInstancesStateRequest updateContainerInstancesStateRequest) {
+    public UpdateContainerInstancesStateResult updateContainerInstancesState(UpdateContainerInstancesStateRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateContainerInstancesState(request);
+    }
+
+    @SdkInternalApi
+    final UpdateContainerInstancesStateResult executeUpdateContainerInstancesState(UpdateContainerInstancesStateRequest updateContainerInstancesStateRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateContainerInstancesStateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2173,7 +2380,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateContainerInstancesStateRequestMarshaller(protocolFactory).marshall(super
+                request = new UpdateContainerInstancesStateRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(updateContainerInstancesStateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -2313,7 +2520,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *      Documentation</a>
      */
     @Override
-    public UpdateServiceResult updateService(UpdateServiceRequest updateServiceRequest) {
+    public UpdateServiceResult updateService(UpdateServiceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateService(request);
+    }
+
+    @SdkInternalApi
+    final UpdateServiceResult executeUpdateService(UpdateServiceRequest updateServiceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateServiceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2324,7 +2537,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateServiceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateServiceRequest));
+                request = new UpdateServiceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateServiceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2406,6 +2619,14 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
             }
         }
         return waiters;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
 
 }

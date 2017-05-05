@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A complex type that contains the response information from a CreateVPCAssociationAuthorization request.
+ * A complex type that contains the response information from a <code>CreateVPCAssociationAuthorization</code> request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateVPCAssociationAuthorization"
@@ -178,4 +178,5 @@ public class CreateVPCAssociationAuthorizationResult extends com.amazonaws.Amazo
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

@@ -14,6 +14,8 @@ package com.amazonaws.services.gamelift.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -26,7 +28,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class FleetCapacity implements Serializable, Cloneable {
+public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -37,7 +39,7 @@ public class FleetCapacity implements Serializable, Cloneable {
     /**
      * <p>
      * Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing
-     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. GameLift
+     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift
      * supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
      * Instance Types</a> for detailed descriptions.
      * </p>
@@ -93,7 +95,7 @@ public class FleetCapacity implements Serializable, Cloneable {
     /**
      * <p>
      * Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing
-     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. GameLift
+     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift
      * supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
      * Instance Types</a> for detailed descriptions.
      * </p>
@@ -101,7 +103,7 @@ public class FleetCapacity implements Serializable, Cloneable {
      * @param instanceType
      *        Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the
      *        computing resources of each instance in the fleet, including CPU, memory, storage, and networking
-     *        capacity. GameLift supports the following EC2 instance types. See <a
+     *        capacity. Amazon GameLift supports the following EC2 instance types. See <a
      *        href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
      * @see EC2InstanceType
      */
@@ -113,14 +115,14 @@ public class FleetCapacity implements Serializable, Cloneable {
     /**
      * <p>
      * Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing
-     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. GameLift
+     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift
      * supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
      * Instance Types</a> for detailed descriptions.
      * </p>
      * 
      * @return Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the
      *         computing resources of each instance in the fleet, including CPU, memory, storage, and networking
-     *         capacity. GameLift supports the following EC2 instance types. See <a
+     *         capacity. Amazon GameLift supports the following EC2 instance types. See <a
      *         href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
      * @see EC2InstanceType
      */
@@ -132,7 +134,7 @@ public class FleetCapacity implements Serializable, Cloneable {
     /**
      * <p>
      * Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing
-     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. GameLift
+     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift
      * supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
      * Instance Types</a> for detailed descriptions.
      * </p>
@@ -140,7 +142,7 @@ public class FleetCapacity implements Serializable, Cloneable {
      * @param instanceType
      *        Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the
      *        computing resources of each instance in the fleet, including CPU, memory, storage, and networking
-     *        capacity. GameLift supports the following EC2 instance types. See <a
+     *        capacity. Amazon GameLift supports the following EC2 instance types. See <a
      *        href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EC2InstanceType
@@ -154,7 +156,7 @@ public class FleetCapacity implements Serializable, Cloneable {
     /**
      * <p>
      * Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing
-     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. GameLift
+     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift
      * supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
      * Instance Types</a> for detailed descriptions.
      * </p>
@@ -162,7 +164,7 @@ public class FleetCapacity implements Serializable, Cloneable {
      * @param instanceType
      *        Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the
      *        computing resources of each instance in the fleet, including CPU, memory, storage, and networking
-     *        capacity. GameLift supports the following EC2 instance types. See <a
+     *        capacity. Amazon GameLift supports the following EC2 instance types. See <a
      *        href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
      * @see EC2InstanceType
      */
@@ -174,7 +176,7 @@ public class FleetCapacity implements Serializable, Cloneable {
     /**
      * <p>
      * Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing
-     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. GameLift
+     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift
      * supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
      * Instance Types</a> for detailed descriptions.
      * </p>
@@ -182,7 +184,7 @@ public class FleetCapacity implements Serializable, Cloneable {
      * @param instanceType
      *        Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the
      *        computing resources of each instance in the fleet, including CPU, memory, storage, and networking
-     *        capacity. GameLift supports the following EC2 instance types. See <a
+     *        capacity. Amazon GameLift supports the following EC2 instance types. See <a
      *        href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EC2InstanceType
@@ -297,5 +299,11 @@ public class FleetCapacity implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.gamelift.model.transform.FleetCapacityMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -14,6 +14,8 @@ package com.amazonaws.services.snowball.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -25,7 +27,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class JobMetadata implements Serializable, Cloneable {
+public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -73,13 +75,15 @@ public class JobMetadata implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS) key associated with this job. This
-     * ARN was created using the <code>CreateKey</code> API action in AWS KMS.
+     * ARN was created using the <a
+     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS KMS.
      * </p>
      */
     private String kmsKeyARN;
     /**
      * <p>
-     * The role ARN associated with this job. This ARN was created using the <code>CreateRole</code> API action in AWS
+     * The role ARN associated with this job. This ARN was created using the <a
+     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in AWS
      * Identity and Access Management (IAM).
      * </p>
      */
@@ -133,6 +137,13 @@ public class JobMetadata implements Serializable, Cloneable {
      * </p>
      */
     private String clusterId;
+    /**
+     * <p>
+     * The ID of the address that you want a job shipped to, after it will be shipped to its primary address. This field
+     * is not supported in most regions.
+     * </p>
+     */
+    private String forwardingAddressId;
 
     /**
      * <p>
@@ -525,12 +536,15 @@ public class JobMetadata implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS) key associated with this job. This
-     * ARN was created using the <code>CreateKey</code> API action in AWS KMS.
+     * ARN was created using the <a
+     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS KMS.
      * </p>
      * 
      * @param kmsKeyARN
      *        The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS) key associated with this job.
-     *        This ARN was created using the <code>CreateKey</code> API action in AWS KMS.
+     *        This ARN was created using the <a
+     *        href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in
+     *        AWS KMS.
      */
 
     public void setKmsKeyARN(String kmsKeyARN) {
@@ -540,11 +554,14 @@ public class JobMetadata implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS) key associated with this job. This
-     * ARN was created using the <code>CreateKey</code> API action in AWS KMS.
+     * ARN was created using the <a
+     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS KMS.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS) key associated with this job.
-     *         This ARN was created using the <code>CreateKey</code> API action in AWS KMS.
+     *         This ARN was created using the <a
+     *         href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in
+     *         AWS KMS.
      */
 
     public String getKmsKeyARN() {
@@ -554,12 +571,15 @@ public class JobMetadata implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS) key associated with this job. This
-     * ARN was created using the <code>CreateKey</code> API action in AWS KMS.
+     * ARN was created using the <a
+     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in AWS KMS.
      * </p>
      * 
      * @param kmsKeyARN
      *        The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS) key associated with this job.
-     *        This ARN was created using the <code>CreateKey</code> API action in AWS KMS.
+     *        This ARN was created using the <a
+     *        href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in
+     *        AWS KMS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -570,13 +590,15 @@ public class JobMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The role ARN associated with this job. This ARN was created using the <code>CreateRole</code> API action in AWS
+     * The role ARN associated with this job. This ARN was created using the <a
+     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in AWS
      * Identity and Access Management (IAM).
      * </p>
      * 
      * @param roleARN
-     *        The role ARN associated with this job. This ARN was created using the <code>CreateRole</code> API action
-     *        in AWS Identity and Access Management (IAM).
+     *        The role ARN associated with this job. This ARN was created using the <a
+     *        href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in
+     *        AWS Identity and Access Management (IAM).
      */
 
     public void setRoleARN(String roleARN) {
@@ -585,11 +607,13 @@ public class JobMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The role ARN associated with this job. This ARN was created using the <code>CreateRole</code> API action in AWS
+     * The role ARN associated with this job. This ARN was created using the <a
+     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in AWS
      * Identity and Access Management (IAM).
      * </p>
      * 
-     * @return The role ARN associated with this job. This ARN was created using the <code>CreateRole</code> API action
+     * @return The role ARN associated with this job. This ARN was created using the <a
+     *         href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action
      *         in AWS Identity and Access Management (IAM).
      */
 
@@ -599,13 +623,15 @@ public class JobMetadata implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The role ARN associated with this job. This ARN was created using the <code>CreateRole</code> API action in AWS
+     * The role ARN associated with this job. This ARN was created using the <a
+     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in AWS
      * Identity and Access Management (IAM).
      * </p>
      * 
      * @param roleARN
-     *        The role ARN associated with this job. This ARN was created using the <code>CreateRole</code> API action
-     *        in AWS Identity and Access Management (IAM).
+     *        The role ARN associated with this job. This ARN was created using the <a
+     *        href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in
+     *        AWS Identity and Access Management (IAM).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -974,6 +1000,52 @@ public class JobMetadata implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the address that you want a job shipped to, after it will be shipped to its primary address. This field
+     * is not supported in most regions.
+     * </p>
+     * 
+     * @param forwardingAddressId
+     *        The ID of the address that you want a job shipped to, after it will be shipped to its primary address.
+     *        This field is not supported in most regions.
+     */
+
+    public void setForwardingAddressId(String forwardingAddressId) {
+        this.forwardingAddressId = forwardingAddressId;
+    }
+
+    /**
+     * <p>
+     * The ID of the address that you want a job shipped to, after it will be shipped to its primary address. This field
+     * is not supported in most regions.
+     * </p>
+     * 
+     * @return The ID of the address that you want a job shipped to, after it will be shipped to its primary address.
+     *         This field is not supported in most regions.
+     */
+
+    public String getForwardingAddressId() {
+        return this.forwardingAddressId;
+    }
+
+    /**
+     * <p>
+     * The ID of the address that you want a job shipped to, after it will be shipped to its primary address. This field
+     * is not supported in most regions.
+     * </p>
+     * 
+     * @param forwardingAddressId
+     *        The ID of the address that you want a job shipped to, after it will be shipped to its primary address.
+     *        This field is not supported in most regions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobMetadata withForwardingAddressId(String forwardingAddressId) {
+        setForwardingAddressId(forwardingAddressId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1015,7 +1087,9 @@ public class JobMetadata implements Serializable, Cloneable {
         if (getJobLogInfo() != null)
             sb.append("JobLogInfo: ").append(getJobLogInfo()).append(",");
         if (getClusterId() != null)
-            sb.append("ClusterId: ").append(getClusterId());
+            sb.append("ClusterId: ").append(getClusterId()).append(",");
+        if (getForwardingAddressId() != null)
+            sb.append("ForwardingAddressId: ").append(getForwardingAddressId());
         sb.append("}");
         return sb.toString();
     }
@@ -1094,6 +1168,10 @@ public class JobMetadata implements Serializable, Cloneable {
             return false;
         if (other.getClusterId() != null && other.getClusterId().equals(this.getClusterId()) == false)
             return false;
+        if (other.getForwardingAddressId() == null ^ this.getForwardingAddressId() == null)
+            return false;
+        if (other.getForwardingAddressId() != null && other.getForwardingAddressId().equals(this.getForwardingAddressId()) == false)
+            return false;
         return true;
     }
 
@@ -1118,6 +1196,7 @@ public class JobMetadata implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDataTransferProgress() == null) ? 0 : getDataTransferProgress().hashCode());
         hashCode = prime * hashCode + ((getJobLogInfo() == null) ? 0 : getJobLogInfo().hashCode());
         hashCode = prime * hashCode + ((getClusterId() == null) ? 0 : getClusterId().hashCode());
+        hashCode = prime * hashCode + ((getForwardingAddressId() == null) ? 0 : getForwardingAddressId().hashCode());
         return hashCode;
     }
 
@@ -1128,5 +1207,11 @@ public class JobMetadata implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.snowball.model.transform.JobMetadataMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -12,69 +12,47 @@
  */
 package com.amazonaws.services.opsworkscm.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.opsworkscm.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeNodeAssociationStatusRequest Marshaller
+ * DescribeNodeAssociationStatusRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeNodeAssociationStatusRequestMarshaller implements
-        Marshaller<Request<DescribeNodeAssociationStatusRequest>, DescribeNodeAssociationStatusRequest> {
+@SdkInternalApi
+public class DescribeNodeAssociationStatusRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> NODEASSOCIATIONSTATUSTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NodeAssociationStatusToken").build();
+    private static final MarshallingInfo<String> SERVERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServerName").build();
 
-    public DescribeNodeAssociationStatusRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeNodeAssociationStatusRequestMarshaller instance = new DescribeNodeAssociationStatusRequestMarshaller();
+
+    public static DescribeNodeAssociationStatusRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeNodeAssociationStatusRequest> marshall(DescribeNodeAssociationStatusRequest describeNodeAssociationStatusRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeNodeAssociationStatusRequest describeNodeAssociationStatusRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeNodeAssociationStatusRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeNodeAssociationStatusRequest> request = new DefaultRequest<DescribeNodeAssociationStatusRequest>(describeNodeAssociationStatusRequest,
-                "AWSOpsWorksCM");
-        request.addHeader("X-Amz-Target", "OpsWorksCM_V2016_11_01.DescribeNodeAssociationStatus");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeNodeAssociationStatusRequest.getNodeAssociationStatusToken() != null) {
-                jsonGenerator.writeFieldName("NodeAssociationStatusToken").writeValue(describeNodeAssociationStatusRequest.getNodeAssociationStatusToken());
-            }
-            if (describeNodeAssociationStatusRequest.getServerName() != null) {
-                jsonGenerator.writeFieldName("ServerName").writeValue(describeNodeAssociationStatusRequest.getServerName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeNodeAssociationStatusRequest.getNodeAssociationStatusToken(), NODEASSOCIATIONSTATUSTOKEN_BINDING);
+            protocolMarshaller.marshall(describeNodeAssociationStatusRequest.getServerName(), SERVERNAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

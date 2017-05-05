@@ -17,18 +17,18 @@ public ${operation.asyncFutureType} ${operation.methodName}Async(
 public ${operation.asyncFutureType} ${operation.methodName}Async(
     final ${operation.input.variableType} request,
     final ${operation.asyncHandlerType} asyncHandler) {
+    final ${operation.input.variableType} finalRequest = beforeClientExecution(request);
 
     return executorService.submit(new ${operation.asyncCallableType}() {
         @Override
         public ${operation.asyncReturnType} call() throws Exception {
-            ${operation.asyncReturnType} result;
+            ${operation.asyncReturnType} result = null;
 
             try {
               <#if operation.returnType??>
-                result = ${operation.methodName}(request);
+                result = execute${operation.methodName?cap_first}(finalRequest);
               <#else>
-                ${operation.methodName}(request);
-                result = null;
+                execute${operation.methodName?cap_first}(finalRequest);
               </#if>
             } catch (Exception ex) {
                 if (asyncHandler != null) {
@@ -38,7 +38,7 @@ public ${operation.asyncFutureType} ${operation.methodName}Async(
             }
 
             if (asyncHandler != null) {
-                asyncHandler.onSuccess(request, result);
+                asyncHandler.onSuccess(finalRequest, result);
             }
             return result;
         }

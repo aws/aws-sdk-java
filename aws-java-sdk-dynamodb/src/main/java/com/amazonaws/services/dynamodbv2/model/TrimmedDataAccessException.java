@@ -30,8 +30,9 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
- * You obtain a shard iterator, but before you use the iterator in a <i>GetRecords</i> request, a stream record in the
- * shard exceeds the 24 hour period and is trimmed. This causes the iterator to access a record that no longer exists.
+ * You obtain a shard iterator, but before you use the iterator in a <code>GetRecords</code> request, a stream record in
+ * the shard exceeds the 24 hour period and is trimmed. This causes the iterator to access a record that no longer
+ * exists.
  * </p>
  * </li>
  * </ul>

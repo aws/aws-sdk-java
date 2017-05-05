@@ -12,80 +12,51 @@
  */
 package com.amazonaws.services.gamelift.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.gamelift.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeFleetCapacityRequest Marshaller
+ * DescribeFleetCapacityRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeFleetCapacityRequestMarshaller implements Marshaller<Request<DescribeFleetCapacityRequest>, DescribeFleetCapacityRequest> {
+@SdkInternalApi
+public class DescribeFleetCapacityRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<List> FLEETIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("FleetIds").build();
+    private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Limit").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
 
-    public DescribeFleetCapacityRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeFleetCapacityRequestMarshaller instance = new DescribeFleetCapacityRequestMarshaller();
+
+    public static DescribeFleetCapacityRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeFleetCapacityRequest> marshall(DescribeFleetCapacityRequest describeFleetCapacityRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeFleetCapacityRequest describeFleetCapacityRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeFleetCapacityRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeFleetCapacityRequest> request = new DefaultRequest<DescribeFleetCapacityRequest>(describeFleetCapacityRequest, "AmazonGameLift");
-        request.addHeader("X-Amz-Target", "GameLift.DescribeFleetCapacity");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            java.util.List<String> fleetIdsList = describeFleetCapacityRequest.getFleetIds();
-            if (fleetIdsList != null) {
-                jsonGenerator.writeFieldName("FleetIds");
-                jsonGenerator.writeStartArray();
-                for (String fleetIdsListValue : fleetIdsList) {
-                    if (fleetIdsListValue != null) {
-                        jsonGenerator.writeValue(fleetIdsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (describeFleetCapacityRequest.getLimit() != null) {
-                jsonGenerator.writeFieldName("Limit").writeValue(describeFleetCapacityRequest.getLimit());
-            }
-            if (describeFleetCapacityRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(describeFleetCapacityRequest.getNextToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeFleetCapacityRequest.getFleetIds(), FLEETIDS_BINDING);
+            protocolMarshaller.marshall(describeFleetCapacityRequest.getLimit(), LIMIT_BINDING);
+            protocolMarshaller.marshall(describeFleetCapacityRequest.getNextToken(), NEXTTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

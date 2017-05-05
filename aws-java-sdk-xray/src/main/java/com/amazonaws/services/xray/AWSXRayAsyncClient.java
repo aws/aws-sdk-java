@@ -220,6 +220,10 @@ public class AWSXRayAsyncClient extends AWSXRayClient implements AWSXRayAsync {
         this.executorService = executorService;
     }
 
+    public static AWSXRayAsyncClientBuilder asyncBuilder() {
+        return AWSXRayAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on AWS X-Ray using the specified parameters.
      *
@@ -249,14 +253,15 @@ public class AWSXRayAsyncClient extends AWSXRayClient implements AWSXRayAsync {
     @Override
     public java.util.concurrent.Future<BatchGetTracesResult> batchGetTracesAsync(final BatchGetTracesRequest request,
             final com.amazonaws.handlers.AsyncHandler<BatchGetTracesRequest, BatchGetTracesResult> asyncHandler) {
+        final BatchGetTracesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<BatchGetTracesResult>() {
             @Override
             public BatchGetTracesResult call() throws Exception {
-                BatchGetTracesResult result;
+                BatchGetTracesResult result = null;
 
                 try {
-                    result = batchGetTraces(request);
+                    result = executeBatchGetTraces(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -265,7 +270,7 @@ public class AWSXRayAsyncClient extends AWSXRayClient implements AWSXRayAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -281,14 +286,15 @@ public class AWSXRayAsyncClient extends AWSXRayClient implements AWSXRayAsync {
     @Override
     public java.util.concurrent.Future<GetServiceGraphResult> getServiceGraphAsync(final GetServiceGraphRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetServiceGraphRequest, GetServiceGraphResult> asyncHandler) {
+        final GetServiceGraphRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetServiceGraphResult>() {
             @Override
             public GetServiceGraphResult call() throws Exception {
-                GetServiceGraphResult result;
+                GetServiceGraphResult result = null;
 
                 try {
-                    result = getServiceGraph(request);
+                    result = executeGetServiceGraph(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -297,7 +303,7 @@ public class AWSXRayAsyncClient extends AWSXRayClient implements AWSXRayAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -313,14 +319,15 @@ public class AWSXRayAsyncClient extends AWSXRayClient implements AWSXRayAsync {
     @Override
     public java.util.concurrent.Future<GetTraceGraphResult> getTraceGraphAsync(final GetTraceGraphRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetTraceGraphRequest, GetTraceGraphResult> asyncHandler) {
+        final GetTraceGraphRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetTraceGraphResult>() {
             @Override
             public GetTraceGraphResult call() throws Exception {
-                GetTraceGraphResult result;
+                GetTraceGraphResult result = null;
 
                 try {
-                    result = getTraceGraph(request);
+                    result = executeGetTraceGraph(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -329,7 +336,7 @@ public class AWSXRayAsyncClient extends AWSXRayClient implements AWSXRayAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -345,14 +352,15 @@ public class AWSXRayAsyncClient extends AWSXRayClient implements AWSXRayAsync {
     @Override
     public java.util.concurrent.Future<GetTraceSummariesResult> getTraceSummariesAsync(final GetTraceSummariesRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetTraceSummariesRequest, GetTraceSummariesResult> asyncHandler) {
+        final GetTraceSummariesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetTraceSummariesResult>() {
             @Override
             public GetTraceSummariesResult call() throws Exception {
-                GetTraceSummariesResult result;
+                GetTraceSummariesResult result = null;
 
                 try {
-                    result = getTraceSummaries(request);
+                    result = executeGetTraceSummaries(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -361,7 +369,7 @@ public class AWSXRayAsyncClient extends AWSXRayClient implements AWSXRayAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -377,14 +385,15 @@ public class AWSXRayAsyncClient extends AWSXRayClient implements AWSXRayAsync {
     @Override
     public java.util.concurrent.Future<PutTelemetryRecordsResult> putTelemetryRecordsAsync(final PutTelemetryRecordsRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutTelemetryRecordsRequest, PutTelemetryRecordsResult> asyncHandler) {
+        final PutTelemetryRecordsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PutTelemetryRecordsResult>() {
             @Override
             public PutTelemetryRecordsResult call() throws Exception {
-                PutTelemetryRecordsResult result;
+                PutTelemetryRecordsResult result = null;
 
                 try {
-                    result = putTelemetryRecords(request);
+                    result = executePutTelemetryRecords(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -393,7 +402,7 @@ public class AWSXRayAsyncClient extends AWSXRayClient implements AWSXRayAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -409,14 +418,15 @@ public class AWSXRayAsyncClient extends AWSXRayClient implements AWSXRayAsync {
     @Override
     public java.util.concurrent.Future<PutTraceSegmentsResult> putTraceSegmentsAsync(final PutTraceSegmentsRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutTraceSegmentsRequest, PutTraceSegmentsResult> asyncHandler) {
+        final PutTraceSegmentsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PutTraceSegmentsResult>() {
             @Override
             public PutTraceSegmentsResult call() throws Exception {
-                PutTraceSegmentsResult result;
+                PutTraceSegmentsResult result = null;
 
                 try {
-                    result = putTraceSegments(request);
+                    result = executePutTraceSegments(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -425,7 +435,7 @@ public class AWSXRayAsyncClient extends AWSXRayClient implements AWSXRayAsync {
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

@@ -199,6 +199,7 @@ public class AbstractAmazonCloudFormationAsync extends AbstractAmazonCloudFormat
      *
      * @see #describeStacksAsync(DescribeStacksRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeStacksResult> describeStacksAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeStacksRequest, DescribeStacksResult> asyncHandler) {
 
@@ -234,6 +235,7 @@ public class AbstractAmazonCloudFormationAsync extends AbstractAmazonCloudFormat
      *
      * @see #estimateTemplateCostAsync(EstimateTemplateCostRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<EstimateTemplateCostResult> estimateTemplateCostAsync(
             com.amazonaws.handlers.AsyncHandler<EstimateTemplateCostRequest, EstimateTemplateCostResult> asyncHandler) {
 
@@ -308,6 +310,7 @@ public class AbstractAmazonCloudFormationAsync extends AbstractAmazonCloudFormat
      *
      * @see #getTemplateSummaryAsync(GetTemplateSummaryRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetTemplateSummaryResult> getTemplateSummaryAsync(
             com.amazonaws.handlers.AsyncHandler<GetTemplateSummaryRequest, GetTemplateSummaryResult> asyncHandler) {
 
@@ -395,6 +398,7 @@ public class AbstractAmazonCloudFormationAsync extends AbstractAmazonCloudFormat
      *
      * @see #listStacksAsync(ListStacksRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListStacksResult> listStacksAsync(com.amazonaws.handlers.AsyncHandler<ListStacksRequest, ListStacksResult> asyncHandler) {
 
         return listStacksAsync(new ListStacksRequest(), asyncHandler);

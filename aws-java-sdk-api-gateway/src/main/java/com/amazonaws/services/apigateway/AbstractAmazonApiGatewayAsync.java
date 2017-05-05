@@ -132,6 +132,19 @@ public class AbstractAmazonApiGatewayAsync extends AbstractAmazonApiGateway impl
     }
 
     @Override
+    public java.util.concurrent.Future<CreateRequestValidatorResult> createRequestValidatorAsync(CreateRequestValidatorRequest request) {
+
+        return createRequestValidatorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRequestValidatorResult> createRequestValidatorAsync(CreateRequestValidatorRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateRequestValidatorRequest, CreateRequestValidatorResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateResourceResult> createResourceAsync(CreateResourceRequest request) {
 
         return createResourceAsync(request, null);
@@ -361,6 +374,19 @@ public class AbstractAmazonApiGatewayAsync extends AbstractAmazonApiGateway impl
     @Override
     public java.util.concurrent.Future<DeleteModelResult> deleteModelAsync(DeleteModelRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteModelRequest, DeleteModelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRequestValidatorResult> deleteRequestValidatorAsync(DeleteRequestValidatorRequest request) {
+
+        return deleteRequestValidatorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRequestValidatorResult> deleteRequestValidatorAsync(DeleteRequestValidatorRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteRequestValidatorRequest, DeleteRequestValidatorResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -790,6 +816,32 @@ public class AbstractAmazonApiGatewayAsync extends AbstractAmazonApiGateway impl
     @Override
     public java.util.concurrent.Future<GetModelsResult> getModelsAsync(GetModelsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetModelsRequest, GetModelsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRequestValidatorResult> getRequestValidatorAsync(GetRequestValidatorRequest request) {
+
+        return getRequestValidatorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRequestValidatorResult> getRequestValidatorAsync(GetRequestValidatorRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetRequestValidatorRequest, GetRequestValidatorResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRequestValidatorsResult> getRequestValidatorsAsync(GetRequestValidatorsRequest request) {
+
+        return getRequestValidatorsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRequestValidatorsResult> getRequestValidatorsAsync(GetRequestValidatorsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetRequestValidatorsRequest, GetRequestValidatorsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1284,6 +1336,19 @@ public class AbstractAmazonApiGatewayAsync extends AbstractAmazonApiGateway impl
     @Override
     public java.util.concurrent.Future<UpdateModelResult> updateModelAsync(UpdateModelRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateModelRequest, UpdateModelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRequestValidatorResult> updateRequestValidatorAsync(UpdateRequestValidatorRequest request) {
+
+        return updateRequestValidatorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRequestValidatorResult> updateRequestValidatorAsync(UpdateRequestValidatorRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateRequestValidatorRequest, UpdateRequestValidatorResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

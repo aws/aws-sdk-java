@@ -52,6 +52,12 @@ public class SynthesizeSpeechResult extends com.amazonaws.AmazonWebServiceResult
      * audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is
+     * audio/json.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * </p>
@@ -127,6 +133,12 @@ public class SynthesizeSpeechResult extends com.amazonaws.AmazonWebServiceResult
      * audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is
+     * audio/json.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * </p>
@@ -151,6 +163,12 @@ public class SynthesizeSpeechResult extends com.amazonaws.AmazonWebServiceResult
      *        <p>
      *        If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is
      *        audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned
+     *        is audio/json.
      *        </p>
      *        </li>
      *        </ul>
@@ -184,6 +202,12 @@ public class SynthesizeSpeechResult extends com.amazonaws.AmazonWebServiceResult
      * audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is
+     * audio/json.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * </p>
@@ -207,6 +231,12 @@ public class SynthesizeSpeechResult extends com.amazonaws.AmazonWebServiceResult
      *         <p>
      *         If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned
      *         is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned
+     *         is audio/json.
      *         </p>
      *         </li>
      *         </ul>
@@ -240,6 +270,12 @@ public class SynthesizeSpeechResult extends com.amazonaws.AmazonWebServiceResult
      * audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is
+     * audio/json.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * </p>
@@ -264,6 +300,12 @@ public class SynthesizeSpeechResult extends com.amazonaws.AmazonWebServiceResult
      *        <p>
      *        If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is
      *        audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned
+     *        is audio/json.
      *        </p>
      *        </li>
      *        </ul>
@@ -381,4 +423,5 @@ public class SynthesizeSpeechResult extends com.amazonaws.AmazonWebServiceResult
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

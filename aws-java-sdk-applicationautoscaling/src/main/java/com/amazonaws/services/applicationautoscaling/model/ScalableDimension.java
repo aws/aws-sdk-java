@@ -22,7 +22,8 @@ public enum ScalableDimension {
 
     EcsServiceDesiredCount("ecs:service:DesiredCount"),
     Ec2SpotFleetRequestTargetCapacity("ec2:spot-fleet-request:TargetCapacity"),
-    ElasticmapreduceInstancegroupInstanceCount("elasticmapreduce:instancegroup:InstanceCount");
+    ElasticmapreduceInstancegroupInstanceCount("elasticmapreduce:instancegroup:InstanceCount"),
+    AppstreamFleetDesiredCapacity("appstream:fleet:DesiredCapacity");
 
     private String value;
 

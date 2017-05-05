@@ -29,25 +29,21 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RenewDomainRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The name of the domain that you want to renew.
+     * </p>
+     */
     private String domainName;
     /**
      * <p>
      * The number of years that you want to renew the domain for. The maximum number of years depends on the top-level
      * domain. For the range of valid values for your domain, see <a
-     * href="http://docs.aws.amazon.com/console/route53/domain-tld-list">Domains that You Can Register with Amazon Route
-     * 53</a> in the Amazon Route 53 documentation.
-     * </p>
-     * <p>
-     * Type: Integer
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can
+     * Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
      * Default: 1
-     * </p>
-     * <p>
-     * Valid values: Integer from 1 to 10
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      */
     private Integer durationInYears;
@@ -56,23 +52,16 @@ public class RenewDomainRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The year when the registration for the domain is set to expire. This value must match the current expiration date
      * for the domain.
      * </p>
-     * <p>
-     * Type: Integer
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Valid values: Integer
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      */
     private Integer currentExpiryYear;
 
     /**
+     * <p>
+     * The name of the domain that you want to renew.
+     * </p>
+     * 
      * @param domainName
+     *        The name of the domain that you want to renew.
      */
 
     public void setDomainName(String domainName) {
@@ -80,7 +69,11 @@ public class RenewDomainRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the domain that you want to renew.
+     * </p>
+     * 
+     * @return The name of the domain that you want to renew.
      */
 
     public String getDomainName() {
@@ -88,7 +81,12 @@ public class RenewDomainRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The name of the domain that you want to renew.
+     * </p>
+     * 
      * @param domainName
+     *        The name of the domain that you want to renew.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,38 +99,20 @@ public class RenewDomainRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The number of years that you want to renew the domain for. The maximum number of years depends on the top-level
      * domain. For the range of valid values for your domain, see <a
-     * href="http://docs.aws.amazon.com/console/route53/domain-tld-list">Domains that You Can Register with Amazon Route
-     * 53</a> in the Amazon Route 53 documentation.
-     * </p>
-     * <p>
-     * Type: Integer
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can
+     * Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
      * Default: 1
-     * </p>
-     * <p>
-     * Valid values: Integer from 1 to 10
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      * 
      * @param durationInYears
      *        The number of years that you want to renew the domain for. The maximum number of years depends on the
      *        top-level domain. For the range of valid values for your domain, see <a
-     *        href="http://docs.aws.amazon.com/console/route53/domain-tld-list">Domains that You Can Register with
-     *        Amazon Route 53</a> in the Amazon Route 53 documentation.</p>
-     *        <p>
-     *        Type: Integer
-     *        </p>
+     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You
+     *        Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      *        <p>
      *        Default: 1
-     *        </p>
-     *        <p>
-     *        Valid values: Integer from 1 to 10
-     *        </p>
-     *        <p>
-     *        Required: No
      */
 
     public void setDurationInYears(Integer durationInYears) {
@@ -143,37 +123,19 @@ public class RenewDomainRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The number of years that you want to renew the domain for. The maximum number of years depends on the top-level
      * domain. For the range of valid values for your domain, see <a
-     * href="http://docs.aws.amazon.com/console/route53/domain-tld-list">Domains that You Can Register with Amazon Route
-     * 53</a> in the Amazon Route 53 documentation.
-     * </p>
-     * <p>
-     * Type: Integer
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can
+     * Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
      * Default: 1
      * </p>
-     * <p>
-     * Valid values: Integer from 1 to 10
-     * </p>
-     * <p>
-     * Required: No
-     * </p>
      * 
      * @return The number of years that you want to renew the domain for. The maximum number of years depends on the
      *         top-level domain. For the range of valid values for your domain, see <a
-     *         href="http://docs.aws.amazon.com/console/route53/domain-tld-list">Domains that You Can Register with
-     *         Amazon Route 53</a> in the Amazon Route 53 documentation.</p>
-     *         <p>
-     *         Type: Integer
-     *         </p>
+     *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You
+     *         Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      *         <p>
      *         Default: 1
-     *         </p>
-     *         <p>
-     *         Valid values: Integer from 1 to 10
-     *         </p>
-     *         <p>
-     *         Required: No
      */
 
     public Integer getDurationInYears() {
@@ -184,38 +146,20 @@ public class RenewDomainRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The number of years that you want to renew the domain for. The maximum number of years depends on the top-level
      * domain. For the range of valid values for your domain, see <a
-     * href="http://docs.aws.amazon.com/console/route53/domain-tld-list">Domains that You Can Register with Amazon Route
-     * 53</a> in the Amazon Route 53 documentation.
-     * </p>
-     * <p>
-     * Type: Integer
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can
+     * Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
      * Default: 1
-     * </p>
-     * <p>
-     * Valid values: Integer from 1 to 10
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      * 
      * @param durationInYears
      *        The number of years that you want to renew the domain for. The maximum number of years depends on the
      *        top-level domain. For the range of valid values for your domain, see <a
-     *        href="http://docs.aws.amazon.com/console/route53/domain-tld-list">Domains that You Can Register with
-     *        Amazon Route 53</a> in the Amazon Route 53 documentation.</p>
-     *        <p>
-     *        Type: Integer
-     *        </p>
+     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You
+     *        Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      *        <p>
      *        Default: 1
-     *        </p>
-     *        <p>
-     *        Valid values: Integer from 1 to 10
-     *        </p>
-     *        <p>
-     *        Required: No
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -229,33 +173,10 @@ public class RenewDomainRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The year when the registration for the domain is set to expire. This value must match the current expiration date
      * for the domain.
      * </p>
-     * <p>
-     * Type: Integer
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Valid values: Integer
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param currentExpiryYear
      *        The year when the registration for the domain is set to expire. This value must match the current
-     *        expiration date for the domain.</p>
-     *        <p>
-     *        Type: Integer
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Valid values: Integer
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        expiration date for the domain.
      */
 
     public void setCurrentExpiryYear(Integer currentExpiryYear) {
@@ -267,32 +188,9 @@ public class RenewDomainRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The year when the registration for the domain is set to expire. This value must match the current expiration date
      * for the domain.
      * </p>
-     * <p>
-     * Type: Integer
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Valid values: Integer
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @return The year when the registration for the domain is set to expire. This value must match the current
-     *         expiration date for the domain.</p>
-     *         <p>
-     *         Type: Integer
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Valid values: Integer
-     *         </p>
-     *         <p>
-     *         Required: Yes
+     *         expiration date for the domain.
      */
 
     public Integer getCurrentExpiryYear() {
@@ -304,33 +202,10 @@ public class RenewDomainRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The year when the registration for the domain is set to expire. This value must match the current expiration date
      * for the domain.
      * </p>
-     * <p>
-     * Type: Integer
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Valid values: Integer
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param currentExpiryYear
      *        The year when the registration for the domain is set to expire. This value must match the current
-     *        expiration date for the domain.</p>
-     *        <p>
-     *        Type: Integer
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Valid values: Integer
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        expiration date for the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

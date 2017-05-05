@@ -4205,6 +4205,13 @@ public interface AmazonS3 extends S3DirectSpi {
      * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#
      * specify-signature-version
      * </p>
+     * <p>
+     * When supplying an {@link InputStream} using {@link
+     * UploadPartRequest#withInputStream(InputStream)} or {@link
+     * UploadPartRequest#setInputStream(InputStream)}, the stream will only be
+     * closed by the client if {@link UploadPartRequest#isLastPart()} is {@code
+     * true}. If this is not the last part, the stream will be left open.
+     * </p>
      * @param request
      *            The UploadPartRequest object that specifies all the parameters
      *            of this operation.
@@ -4965,6 +4972,15 @@ public interface AmazonS3 extends S3DirectSpi {
     public ListBucketInventoryConfigurationsResult listBucketInventoryConfigurations(
             ListBucketInventoryConfigurationsRequest listBucketInventoryConfigurationsRequest)
             throws AmazonServiceException, SdkClientException;
+
+    /**
+     * Shuts down this client object, releasing any resources that might be held
+     * open. This is an optional method, and callers are not expected to call
+     * it, but can if they want to explicitly release any open resources. Once a
+     * client has been shutdown, it should not be used to make any more
+     * requests.
+     */
+    void shutdown();
 
     /**
      * Returns the region with which the client is configured.

@@ -1,0 +1,2065 @@
+/*
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.workdocs;
+
+import org.w3c.dom.*;
+
+import java.net.*;
+import java.util.*;
+
+import javax.annotation.Generated;
+
+import org.apache.commons.logging.*;
+
+import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
+import com.amazonaws.auth.*;
+
+import com.amazonaws.handlers.*;
+import com.amazonaws.http.*;
+import com.amazonaws.internal.*;
+import com.amazonaws.internal.auth.*;
+import com.amazonaws.metrics.*;
+import com.amazonaws.regions.*;
+import com.amazonaws.transform.*;
+import com.amazonaws.util.*;
+import com.amazonaws.protocol.json.*;
+import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.services.workdocs.AmazonWorkDocsClientBuilder;
+
+import com.amazonaws.AmazonServiceException;
+
+import com.amazonaws.services.workdocs.model.*;
+import com.amazonaws.services.workdocs.model.transform.*;
+
+/**
+ * Client for accessing Amazon WorkDocs. All service calls made using this client are blocking, and will not return
+ * until the service call completes.
+ * <p>
+ * <p>
+ * The WorkDocs API is designed for the following use cases:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * File Migration: File migration applications are supported for users who want to migrate their files from an
+ * on-premise or off-premise file system or service. Users can insert files into a user directory structure, as well as
+ * allow for basic metadata changes, such as modifications to the permissions of files.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Security: Support security applications are supported for users who have additional security needs, such as
+ * anti-virus or data loss prevention. The APIs, in conjunction with Amazon CloudTrail, allow these applications to
+ * detect when changes occur in Amazon WorkDocs, so the application can take the necessary actions and replace the
+ * target file. The application can also choose to email the user if the target file violates the policy.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * eDiscovery/Analytics: General administrative applications are supported, such as eDiscovery and analytics. These
+ * applications can choose to mimic and/or record the actions in an Amazon WorkDocs site, in conjunction with Amazon
+ * CloudTrails, to replicate data for eDiscovery, backup, or analytical applications.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * All Amazon WorkDocs APIs are Amazon authenticated, certificate-signed APIs. They not only require the use of the AWS
+ * SDK, but also allow for the exclusive use of IAM users and roles to help facilitate access, trust, and permission
+ * policies. By creating a role and allowing an IAM user to access the Amazon WorkDocs site, the IAM user gains full
+ * administrative visibility into the entire Amazon WorkDocs site (or as set in the IAM policy). This includes, but is
+ * not limited to, the ability to modify file permissions and upload any file to any user. This allows developers to
+ * perform the three use cases above, as well as give users the ability to grant access on a selective basis using the
+ * IAM model.
+ * </p>
+ */
+@ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class AmazonWorkDocsClient extends AmazonWebServiceClient implements AmazonWorkDocs {
+    /** Provider for AWS credentials. */
+    private final AWSCredentialsProvider awsCredentialsProvider;
+
+    private static final Log log = LogFactory.getLog(AmazonWorkDocs.class);
+
+    /** Default signing name for the service. */
+    private static final String DEFAULT_SIGNING_NAME = "workdocs";
+
+    /** Client configuration factory providing ClientConfigurations tailored to this client */
+    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .withContentTypeOverride("")
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("FailedDependencyException").withModeledClass(
+                                    com.amazonaws.services.workdocs.model.FailedDependencyException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withModeledClass(
+                                    com.amazonaws.services.workdocs.model.ConcurrentModificationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidOperationException").withModeledClass(
+                                    com.amazonaws.services.workdocs.model.InvalidOperationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnauthorizedResourceAccessException").withModeledClass(
+                                    com.amazonaws.services.workdocs.model.UnauthorizedResourceAccessException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TooManySubscriptionsException").withModeledClass(
+                                    com.amazonaws.services.workdocs.model.TooManySubscriptionsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("EntityAlreadyExistsException").withModeledClass(
+                                    com.amazonaws.services.workdocs.model.EntityAlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("EntityNotExistsException").withModeledClass(
+                                    com.amazonaws.services.workdocs.model.EntityNotExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("StorageLimitExceededException").withModeledClass(
+                                    com.amazonaws.services.workdocs.model.StorageLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("StorageLimitWillExceedException").withModeledClass(
+                                    com.amazonaws.services.workdocs.model.StorageLimitWillExceedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ProhibitedStateException").withModeledClass(
+                                    com.amazonaws.services.workdocs.model.ProhibitedStateException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
+                                    com.amazonaws.services.workdocs.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("IllegalUserStateException").withModeledClass(
+                                    com.amazonaws.services.workdocs.model.IllegalUserStateException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidArgumentException").withModeledClass(
+                                    com.amazonaws.services.workdocs.model.InvalidArgumentException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnauthorizedOperationException").withModeledClass(
+                                    com.amazonaws.services.workdocs.model.UnauthorizedOperationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withModeledClass(
+                                    com.amazonaws.services.workdocs.model.ServiceUnavailableException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DeactivatingLastSystemUserException").withModeledClass(
+                                    com.amazonaws.services.workdocs.model.DeactivatingLastSystemUserException.class))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.workdocs.model.AmazonWorkDocsException.class));
+
+    public static AmazonWorkDocsClientBuilder builder() {
+        return AmazonWorkDocsClientBuilder.standard();
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on Amazon WorkDocs using the specified parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AmazonWorkDocsClient(AwsSyncClientParams clientParams) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        init();
+    }
+
+    private void init() {
+        setServiceNameIntern(DEFAULT_SIGNING_NAME);
+        setEndpointPrefix(ENDPOINT_PREFIX);
+        // calling this.setEndPoint(...) will also modify the signer accordingly
+        setEndpoint("workdocs.us-east-1.amazonaws.com");
+        HandlerChainFactory chainFactory = new HandlerChainFactory();
+        requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/workdocs/request.handlers"));
+        requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/workdocs/request.handler2s"));
+        requestHandler2s.addAll(chainFactory.getGlobalHandlers());
+    }
+
+    /**
+     * <p>
+     * Aborts the upload of the specified document version that was previously initiated by
+     * <a>InitiateDocumentVersionUpload</a>. The client should make this call only when it no longer intends or fails to
+     * upload the document version.
+     * </p>
+     * 
+     * @param abortDocumentVersionUploadRequest
+     * @return Result of the AbortDocumentVersionUpload operation returned by the service.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws ProhibitedStateException
+     *         The specified document version is not in the INITIALIZED state.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @sample AmazonWorkDocs.AbortDocumentVersionUpload
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/AbortDocumentVersionUpload"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AbortDocumentVersionUploadResult abortDocumentVersionUpload(AbortDocumentVersionUploadRequest request) {
+        request = beforeClientExecution(request);
+        return executeAbortDocumentVersionUpload(request);
+    }
+
+    @SdkInternalApi
+    final AbortDocumentVersionUploadResult executeAbortDocumentVersionUpload(AbortDocumentVersionUploadRequest abortDocumentVersionUploadRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(abortDocumentVersionUploadRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AbortDocumentVersionUploadRequest> request = null;
+        Response<AbortDocumentVersionUploadResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AbortDocumentVersionUploadRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(abortDocumentVersionUploadRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AbortDocumentVersionUploadResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AbortDocumentVersionUploadResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Activates the specified user. Only active users can access Amazon WorkDocs.
+     * </p>
+     * 
+     * @param activateUserRequest
+     * @return Result of the ActivateUser operation returned by the service.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @sample AmazonWorkDocs.ActivateUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/ActivateUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ActivateUserResult activateUser(ActivateUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeActivateUser(request);
+    }
+
+    @SdkInternalApi
+    final ActivateUserResult executeActivateUser(ActivateUserRequest activateUserRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(activateUserRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ActivateUserRequest> request = null;
+        Response<ActivateUserResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ActivateUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(activateUserRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ActivateUserResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ActivateUserResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a set of permissions for the specified folder or document. The resource permissions are overwritten if
+     * the principals already have different permissions.
+     * </p>
+     * 
+     * @param addResourcePermissionsRequest
+     * @return Result of the AddResourcePermissions operation returned by the service.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @sample AmazonWorkDocs.AddResourcePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/AddResourcePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AddResourcePermissionsResult addResourcePermissions(AddResourcePermissionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddResourcePermissions(request);
+    }
+
+    @SdkInternalApi
+    final AddResourcePermissionsResult executeAddResourcePermissions(AddResourcePermissionsRequest addResourcePermissionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(addResourcePermissionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AddResourcePermissionsRequest> request = null;
+        Response<AddResourcePermissionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AddResourcePermissionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addResourcePermissionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AddResourcePermissionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AddResourcePermissionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a folder with the specified name and parent folder.
+     * </p>
+     * 
+     * @param createFolderRequest
+     * @return Result of the CreateFolder operation returned by the service.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws EntityAlreadyExistsException
+     *         The resource already exists.
+     * @throws ProhibitedStateException
+     *         The specified document version is not in the INITIALIZED state.
+     * @throws LimitExceededException
+     *         You've exceeded the maximum of 100,000 folders under the parent folder.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @sample AmazonWorkDocs.CreateFolder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateFolder" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateFolderResult createFolder(CreateFolderRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateFolder(request);
+    }
+
+    @SdkInternalApi
+    final CreateFolderResult executeCreateFolder(CreateFolderRequest createFolderRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createFolderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateFolderRequest> request = null;
+        Response<CreateFolderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateFolderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createFolderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateFolderResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateFolderResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Configure WorkDocs to use Amazon SNS notifications.
+     * </p>
+     * <p>
+     * The endpoint receives a confirmation message, and must confirm the subscription. For more information, see <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/SendMessageToHttp.html#SendMessageToHttp.confirm">Confirm the
+     * Subscription</a> in the <i>Amazon Simple Notification Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param createNotificationSubscriptionRequest
+     * @return Result of the CreateNotificationSubscription operation returned by the service.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws TooManySubscriptionsException
+     *         You've reached the limit on the number of subscriptions for the WorkDocs instance.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @sample AmazonWorkDocs.CreateNotificationSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateNotificationSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateNotificationSubscriptionResult createNotificationSubscription(CreateNotificationSubscriptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateNotificationSubscription(request);
+    }
+
+    @SdkInternalApi
+    final CreateNotificationSubscriptionResult executeCreateNotificationSubscription(CreateNotificationSubscriptionRequest createNotificationSubscriptionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createNotificationSubscriptionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateNotificationSubscriptionRequest> request = null;
+        Response<CreateNotificationSubscriptionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateNotificationSubscriptionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createNotificationSubscriptionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateNotificationSubscriptionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateNotificationSubscriptionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a user in a Simple AD or Microsoft AD directory. The status of a newly created user is "ACTIVE". New
+     * users can access Amazon WorkDocs.
+     * </p>
+     * 
+     * @param createUserRequest
+     * @return Result of the CreateUser operation returned by the service.
+     * @throws EntityAlreadyExistsException
+     *         The resource already exists.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @sample AmazonWorkDocs.CreateUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateUserResult createUser(CreateUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateUser(request);
+    }
+
+    @SdkInternalApi
+    final CreateUserResult executeCreateUser(CreateUserRequest createUserRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createUserRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateUserRequest> request = null;
+        Response<CreateUserResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUserRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateUserResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateUserResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deactivates the specified user, which revokes the user's access to Amazon WorkDocs.
+     * </p>
+     * 
+     * @param deactivateUserRequest
+     * @return Result of the DeactivateUser operation returned by the service.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @sample AmazonWorkDocs.DeactivateUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeactivateUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeactivateUserResult deactivateUser(DeactivateUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeactivateUser(request);
+    }
+
+    @SdkInternalApi
+    final DeactivateUserResult executeDeactivateUser(DeactivateUserRequest deactivateUserRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deactivateUserRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeactivateUserRequest> request = null;
+        Response<DeactivateUserResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeactivateUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deactivateUserRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeactivateUserResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeactivateUserResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Permanently deletes the specified document and its associated metadata.
+     * </p>
+     * 
+     * @param deleteDocumentRequest
+     * @return Result of the DeleteDocument operation returned by the service.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws ProhibitedStateException
+     *         The specified document version is not in the INITIALIZED state.
+     * @throws ConcurrentModificationException
+     *         The resource hierarchy is changing.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @sample AmazonWorkDocs.DeleteDocument
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteDocument" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteDocumentResult deleteDocument(DeleteDocumentRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDocument(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDocumentResult executeDeleteDocument(DeleteDocumentRequest deleteDocumentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteDocumentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteDocumentRequest> request = null;
+        Response<DeleteDocumentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteDocumentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDocumentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteDocumentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteDocumentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Permanently deletes the specified folder and its contents.
+     * </p>
+     * 
+     * @param deleteFolderRequest
+     * @return Result of the DeleteFolder operation returned by the service.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws ProhibitedStateException
+     *         The specified document version is not in the INITIALIZED state.
+     * @throws ConcurrentModificationException
+     *         The resource hierarchy is changing.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @sample AmazonWorkDocs.DeleteFolder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteFolder" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteFolderResult deleteFolder(DeleteFolderRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteFolder(request);
+    }
+
+    @SdkInternalApi
+    final DeleteFolderResult executeDeleteFolder(DeleteFolderRequest deleteFolderRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteFolderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteFolderRequest> request = null;
+        Response<DeleteFolderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteFolderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFolderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteFolderResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteFolderResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the contents of the specified folder.
+     * </p>
+     * 
+     * @param deleteFolderContentsRequest
+     * @return Result of the DeleteFolderContents operation returned by the service.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @sample AmazonWorkDocs.DeleteFolderContents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteFolderContents" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteFolderContentsResult deleteFolderContents(DeleteFolderContentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteFolderContents(request);
+    }
+
+    @SdkInternalApi
+    final DeleteFolderContentsResult executeDeleteFolderContents(DeleteFolderContentsRequest deleteFolderContentsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteFolderContentsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteFolderContentsRequest> request = null;
+        Response<DeleteFolderContentsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteFolderContentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFolderContentsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteFolderContentsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteFolderContentsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified subscription from the specified organization.
+     * </p>
+     * 
+     * @param deleteNotificationSubscriptionRequest
+     * @return Result of the DeleteNotificationSubscription operation returned by the service.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @throws ProhibitedStateException
+     *         The specified document version is not in the INITIALIZED state.
+     * @sample AmazonWorkDocs.DeleteNotificationSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteNotificationSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteNotificationSubscriptionResult deleteNotificationSubscription(DeleteNotificationSubscriptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteNotificationSubscription(request);
+    }
+
+    @SdkInternalApi
+    final DeleteNotificationSubscriptionResult executeDeleteNotificationSubscription(DeleteNotificationSubscriptionRequest deleteNotificationSubscriptionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteNotificationSubscriptionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteNotificationSubscriptionRequest> request = null;
+        Response<DeleteNotificationSubscriptionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteNotificationSubscriptionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteNotificationSubscriptionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteNotificationSubscriptionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteNotificationSubscriptionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified user from a Simple AD or Microsoft AD directory.
+     * </p>
+     * 
+     * @param deleteUserRequest
+     * @return Result of the DeleteUser operation returned by the service.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @sample AmazonWorkDocs.DeleteUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteUserResult deleteUser(DeleteUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteUser(request);
+    }
+
+    @SdkInternalApi
+    final DeleteUserResult executeDeleteUser(DeleteUserRequest deleteUserRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteUserRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteUserRequest> request = null;
+        Response<DeleteUserResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUserRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteUserResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteUserResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the document versions for the specified document.
+     * </p>
+     * <p>
+     * By default, only active versions are returned.
+     * </p>
+     * 
+     * @param describeDocumentVersionsRequest
+     * @return Result of the DescribeDocumentVersions operation returned by the service.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws InvalidArgumentException
+     *         The pagination marker and/or limit fields are not valid.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @throws ProhibitedStateException
+     *         The specified document version is not in the INITIALIZED state.
+     * @sample AmazonWorkDocs.DescribeDocumentVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeDocumentVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeDocumentVersionsResult describeDocumentVersions(DescribeDocumentVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDocumentVersions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDocumentVersionsResult executeDescribeDocumentVersions(DescribeDocumentVersionsRequest describeDocumentVersionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeDocumentVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeDocumentVersionsRequest> request = null;
+        Response<DescribeDocumentVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeDocumentVersionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeDocumentVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeDocumentVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeDocumentVersionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the contents of the specified folder, including its documents and sub-folders.
+     * </p>
+     * <p>
+     * By default, Amazon WorkDocs returns the first 100 active document and folder metadata items. If there are more
+     * results, the response includes a marker that you can use to request the next set of results. You can also request
+     * initialized documents.
+     * </p>
+     * 
+     * @param describeFolderContentsRequest
+     * @return Result of the DescribeFolderContents operation returned by the service.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws InvalidArgumentException
+     *         The pagination marker and/or limit fields are not valid.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @throws ProhibitedStateException
+     *         The specified document version is not in the INITIALIZED state.
+     * @sample AmazonWorkDocs.DescribeFolderContents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeFolderContents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeFolderContentsResult describeFolderContents(DescribeFolderContentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeFolderContents(request);
+    }
+
+    @SdkInternalApi
+    final DescribeFolderContentsResult executeDescribeFolderContents(DescribeFolderContentsRequest describeFolderContentsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeFolderContentsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeFolderContentsRequest> request = null;
+        Response<DescribeFolderContentsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeFolderContentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFolderContentsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeFolderContentsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeFolderContentsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the specified notification subscriptions.
+     * </p>
+     * 
+     * @param describeNotificationSubscriptionsRequest
+     * @return Result of the DescribeNotificationSubscriptions operation returned by the service.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @sample AmazonWorkDocs.DescribeNotificationSubscriptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeNotificationSubscriptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeNotificationSubscriptionsResult describeNotificationSubscriptions(DescribeNotificationSubscriptionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeNotificationSubscriptions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeNotificationSubscriptionsResult executeDescribeNotificationSubscriptions(
+            DescribeNotificationSubscriptionsRequest describeNotificationSubscriptionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeNotificationSubscriptionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeNotificationSubscriptionsRequest> request = null;
+        Response<DescribeNotificationSubscriptionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeNotificationSubscriptionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeNotificationSubscriptionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeNotificationSubscriptionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeNotificationSubscriptionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the permissions of a specified resource.
+     * </p>
+     * 
+     * @param describeResourcePermissionsRequest
+     * @return Result of the DescribeResourcePermissions operation returned by the service.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @sample AmazonWorkDocs.DescribeResourcePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeResourcePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeResourcePermissionsResult describeResourcePermissions(DescribeResourcePermissionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeResourcePermissions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeResourcePermissionsResult executeDescribeResourcePermissions(DescribeResourcePermissionsRequest describeResourcePermissionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeResourcePermissionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeResourcePermissionsRequest> request = null;
+        Response<DescribeResourcePermissionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeResourcePermissionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeResourcePermissionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeResourcePermissionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeResourcePermissionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the specified users. You can describe all users or filter the results (for example, by status or
+     * organization).
+     * </p>
+     * <p>
+     * By default, Amazon WorkDocs returns the first 24 active or pending users. If there are more results, the response
+     * includes a marker that you can use to request the next set of results.
+     * </p>
+     * 
+     * @param describeUsersRequest
+     * @return Result of the DescribeUsers operation returned by the service.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @throws InvalidArgumentException
+     *         The pagination marker and/or limit fields are not valid.
+     * @sample AmazonWorkDocs.DescribeUsers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeUsers" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeUsersResult describeUsers(DescribeUsersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeUsers(request);
+    }
+
+    @SdkInternalApi
+    final DescribeUsersResult executeDescribeUsers(DescribeUsersRequest describeUsersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeUsersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeUsersRequest> request = null;
+        Response<DescribeUsersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeUsersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeUsersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeUsersResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeUsersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the specified document object.
+     * </p>
+     * 
+     * @param getDocumentRequest
+     * @return Result of the GetDocument operation returned by the service.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws InvalidArgumentException
+     *         The pagination marker and/or limit fields are not valid.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @sample AmazonWorkDocs.GetDocument
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetDocument" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetDocumentResult getDocument(GetDocumentRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDocument(request);
+    }
+
+    @SdkInternalApi
+    final GetDocumentResult executeGetDocument(GetDocumentRequest getDocumentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDocumentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDocumentRequest> request = null;
+        Response<GetDocumentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDocumentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDocumentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDocumentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDocumentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the path information (the hierarchy from the root folder) for the requested document.
+     * </p>
+     * <p>
+     * By default, Amazon WorkDocs returns a maximum of 100 levels upwards from the requested document and only includes
+     * the IDs of the parent folders in the path. You can limit the maximum number of levels. You can also request the
+     * names of the parent folders.
+     * </p>
+     * 
+     * @param getDocumentPathRequest
+     * @return Result of the GetDocumentPath operation returned by the service.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @sample AmazonWorkDocs.GetDocumentPath
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetDocumentPath" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetDocumentPathResult getDocumentPath(GetDocumentPathRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDocumentPath(request);
+    }
+
+    @SdkInternalApi
+    final GetDocumentPathResult executeGetDocumentPath(GetDocumentPathRequest getDocumentPathRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDocumentPathRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDocumentPathRequest> request = null;
+        Response<GetDocumentPathResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDocumentPathRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDocumentPathRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDocumentPathResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDocumentPathResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves version metadata for the specified document.
+     * </p>
+     * 
+     * @param getDocumentVersionRequest
+     * @return Result of the GetDocumentVersion operation returned by the service.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @throws ProhibitedStateException
+     *         The specified document version is not in the INITIALIZED state.
+     * @sample AmazonWorkDocs.GetDocumentVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetDocumentVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetDocumentVersionResult getDocumentVersion(GetDocumentVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDocumentVersion(request);
+    }
+
+    @SdkInternalApi
+    final GetDocumentVersionResult executeGetDocumentVersion(GetDocumentVersionRequest getDocumentVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDocumentVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDocumentVersionRequest> request = null;
+        Response<GetDocumentVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDocumentVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDocumentVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDocumentVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDocumentVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the metadata of the specified folder.
+     * </p>
+     * 
+     * @param getFolderRequest
+     * @return Result of the GetFolder operation returned by the service.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws InvalidArgumentException
+     *         The pagination marker and/or limit fields are not valid.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @throws ProhibitedStateException
+     *         The specified document version is not in the INITIALIZED state.
+     * @sample AmazonWorkDocs.GetFolder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetFolder" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetFolderResult getFolder(GetFolderRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetFolder(request);
+    }
+
+    @SdkInternalApi
+    final GetFolderResult executeGetFolder(GetFolderRequest getFolderRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getFolderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetFolderRequest> request = null;
+        Response<GetFolderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetFolderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getFolderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetFolderResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetFolderResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the path information (the hierarchy from the root folder) for the specified folder.
+     * </p>
+     * <p>
+     * By default, Amazon WorkDocs returns a maximum of 100 levels upwards from the requested folder and only includes
+     * the IDs of the parent folders in the path. You can limit the maximum number of levels. You can also request the
+     * parent folder names.
+     * </p>
+     * 
+     * @param getFolderPathRequest
+     * @return Result of the GetFolderPath operation returned by the service.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @sample AmazonWorkDocs.GetFolderPath
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetFolderPath" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetFolderPathResult getFolderPath(GetFolderPathRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetFolderPath(request);
+    }
+
+    @SdkInternalApi
+    final GetFolderPathResult executeGetFolderPath(GetFolderPathRequest getFolderPathRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getFolderPathRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetFolderPathRequest> request = null;
+        Response<GetFolderPathResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetFolderPathRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getFolderPathRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetFolderPathResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetFolderPathResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new document object and version object.
+     * </p>
+     * <p>
+     * The client specifies the parent folder ID and name of the document to upload. The ID is optionally specified when
+     * creating a new version of an existing document. This is the first step to upload a document. Next, upload the
+     * document to the URL returned from the call, and then call <a>UpdateDocumentVersion</a>.
+     * </p>
+     * <p>
+     * To cancel the document upload, call <a>AbortDocumentVersionUpload</a>.
+     * </p>
+     * 
+     * @param initiateDocumentVersionUploadRequest
+     * @return Result of the InitiateDocumentVersionUpload operation returned by the service.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws EntityAlreadyExistsException
+     *         The resource already exists.
+     * @throws StorageLimitExceededException
+     *         The storage limit has been exceeded.
+     * @throws StorageLimitWillExceedException
+     *         The storage limit will be exceeded.
+     * @throws ProhibitedStateException
+     *         The specified document version is not in the INITIALIZED state.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @sample AmazonWorkDocs.InitiateDocumentVersionUpload
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/InitiateDocumentVersionUpload"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public InitiateDocumentVersionUploadResult initiateDocumentVersionUpload(InitiateDocumentVersionUploadRequest request) {
+        request = beforeClientExecution(request);
+        return executeInitiateDocumentVersionUpload(request);
+    }
+
+    @SdkInternalApi
+    final InitiateDocumentVersionUploadResult executeInitiateDocumentVersionUpload(InitiateDocumentVersionUploadRequest initiateDocumentVersionUploadRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(initiateDocumentVersionUploadRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<InitiateDocumentVersionUploadRequest> request = null;
+        Response<InitiateDocumentVersionUploadResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new InitiateDocumentVersionUploadRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(initiateDocumentVersionUploadRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<InitiateDocumentVersionUploadResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new InitiateDocumentVersionUploadResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes all the permissions from the specified resource.
+     * </p>
+     * 
+     * @param removeAllResourcePermissionsRequest
+     * @return Result of the RemoveAllResourcePermissions operation returned by the service.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @sample AmazonWorkDocs.RemoveAllResourcePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/RemoveAllResourcePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public RemoveAllResourcePermissionsResult removeAllResourcePermissions(RemoveAllResourcePermissionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveAllResourcePermissions(request);
+    }
+
+    @SdkInternalApi
+    final RemoveAllResourcePermissionsResult executeRemoveAllResourcePermissions(RemoveAllResourcePermissionsRequest removeAllResourcePermissionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(removeAllResourcePermissionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RemoveAllResourcePermissionsRequest> request = null;
+        Response<RemoveAllResourcePermissionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RemoveAllResourcePermissionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(removeAllResourcePermissionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RemoveAllResourcePermissionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new RemoveAllResourcePermissionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes the permission for the specified principal from the specified resource.
+     * </p>
+     * 
+     * @param removeResourcePermissionRequest
+     * @return Result of the RemoveResourcePermission operation returned by the service.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @sample AmazonWorkDocs.RemoveResourcePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/RemoveResourcePermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public RemoveResourcePermissionResult removeResourcePermission(RemoveResourcePermissionRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveResourcePermission(request);
+    }
+
+    @SdkInternalApi
+    final RemoveResourcePermissionResult executeRemoveResourcePermission(RemoveResourcePermissionRequest removeResourcePermissionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(removeResourcePermissionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RemoveResourcePermissionRequest> request = null;
+        Response<RemoveResourcePermissionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RemoveResourcePermissionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(removeResourcePermissionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RemoveResourcePermissionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new RemoveResourcePermissionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the specified attributes of the specified document. The user must have access to both the document and
+     * its parent folder, if applicable.
+     * </p>
+     * 
+     * @param updateDocumentRequest
+     * @return Result of the UpdateDocument operation returned by the service.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws EntityAlreadyExistsException
+     *         The resource already exists.
+     * @throws LimitExceededException
+     *         You've exceeded the maximum of 100,000 folders under the parent folder.
+     * @throws ProhibitedStateException
+     *         The specified document version is not in the INITIALIZED state.
+     * @throws ConcurrentModificationException
+     *         The resource hierarchy is changing.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @sample AmazonWorkDocs.UpdateDocument
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UpdateDocument" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateDocumentResult updateDocument(UpdateDocumentRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDocument(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDocumentResult executeUpdateDocument(UpdateDocumentRequest updateDocumentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateDocumentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateDocumentRequest> request = null;
+        Response<UpdateDocumentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateDocumentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDocumentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateDocumentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateDocumentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Changes the status of the document version to ACTIVE.
+     * </p>
+     * <p>
+     * Amazon WorkDocs also sets its document container to ACTIVE. This is the last step in a document upload, after the
+     * client uploads the document to an S3-presigned URL returned by <a>InitiateDocumentVersionUpload</a>.
+     * </p>
+     * 
+     * @param updateDocumentVersionRequest
+     * @return Result of the UpdateDocumentVersion operation returned by the service.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws ProhibitedStateException
+     *         The specified document version is not in the INITIALIZED state.
+     * @throws ConcurrentModificationException
+     *         The resource hierarchy is changing.
+     * @throws InvalidOperationException
+     *         The operation is invalid.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @sample AmazonWorkDocs.UpdateDocumentVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UpdateDocumentVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateDocumentVersionResult updateDocumentVersion(UpdateDocumentVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDocumentVersion(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDocumentVersionResult executeUpdateDocumentVersion(UpdateDocumentVersionRequest updateDocumentVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateDocumentVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateDocumentVersionRequest> request = null;
+        Response<UpdateDocumentVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateDocumentVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDocumentVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateDocumentVersionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new UpdateDocumentVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the specified attributes of the specified folder. The user must have access to both the folder and its
+     * parent folder, if applicable.
+     * </p>
+     * 
+     * @param updateFolderRequest
+     * @return Result of the UpdateFolder operation returned by the service.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws EntityAlreadyExistsException
+     *         The resource already exists.
+     * @throws ProhibitedStateException
+     *         The specified document version is not in the INITIALIZED state.
+     * @throws ConcurrentModificationException
+     *         The resource hierarchy is changing.
+     * @throws LimitExceededException
+     *         You've exceeded the maximum of 100,000 folders under the parent folder.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @sample AmazonWorkDocs.UpdateFolder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UpdateFolder" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateFolderResult updateFolder(UpdateFolderRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateFolder(request);
+    }
+
+    @SdkInternalApi
+    final UpdateFolderResult executeUpdateFolder(UpdateFolderRequest updateFolderRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateFolderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateFolderRequest> request = null;
+        Response<UpdateFolderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateFolderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFolderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateFolderResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateFolderResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the specified attributes of the specified user, and grants or revokes administrative privileges to the
+     * Amazon WorkDocs site.
+     * </p>
+     * 
+     * @param updateUserRequest
+     * @return Result of the UpdateUser operation returned by the service.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws IllegalUserStateException
+     *         The user is undergoing transfer of ownership.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @throws DeactivatingLastSystemUserException
+     *         The last user in the organization is being deactivated.
+     * @sample AmazonWorkDocs.UpdateUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/UpdateUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateUserResult updateUser(UpdateUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateUser(request);
+    }
+
+    @SdkInternalApi
+    final UpdateUserResult executeUpdateUser(UpdateUserRequest updateUserRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateUserRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateUserRequest> request = null;
+        Response<UpdateUserResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateUserRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateUserResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateUserResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Returns additional metadata for a previously executed successful, request, typically used for debugging issues
+     * where a service isn't acting as expected. This data isn't considered part of the result data returned by an
+     * operation, so it's available through this separate, diagnostic interface.
+     * <p>
+     * Response metadata is only cached for a limited period of time, so if you need to access this extra diagnostic
+     * information for an executed request, you should use this method to retrieve it as soon as possible after
+     * executing the request.
+     *
+     * @param request
+     *        The originally executed request
+     *
+     * @return The response metadata for the specified request, or null if none is available.
+     */
+    public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request) {
+        return client.getResponseMetadataForRequest(request);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke with no authentication. Credentials are not required and any credentials set on the client or request will
+     * be ignored for this operation.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
+
+        return doInvoke(request, responseHandler, executionContext);
+    }
+
+    /**
+     * Invoke the request using the http client. Assumes credentials (or lack thereof) have been configured in the
+     * ExecutionContext beforehand.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+        request.setEndpoint(endpoint);
+        request.setTimeOffset(timeOffset);
+
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory.createErrorResponseHandler(new JsonErrorResponseMetadata());
+
+        return client.execute(request, responseHandler, errorResponseHandler, executionContext);
+    }
+
+}

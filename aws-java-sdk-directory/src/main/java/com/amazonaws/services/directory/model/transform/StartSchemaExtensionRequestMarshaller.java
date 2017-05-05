@@ -12,74 +12,53 @@
  */
 package com.amazonaws.services.directory.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.directory.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * StartSchemaExtensionRequest Marshaller
+ * StartSchemaExtensionRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class StartSchemaExtensionRequestMarshaller implements Marshaller<Request<StartSchemaExtensionRequest>, StartSchemaExtensionRequest> {
+@SdkInternalApi
+public class StartSchemaExtensionRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DIRECTORYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DirectoryId").build();
+    private static final MarshallingInfo<Boolean> CREATESNAPSHOTBEFORESCHEMAEXTENSION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateSnapshotBeforeSchemaExtension").build();
+    private static final MarshallingInfo<String> LDIFCONTENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LdifContent").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
 
-    public StartSchemaExtensionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final StartSchemaExtensionRequestMarshaller instance = new StartSchemaExtensionRequestMarshaller();
+
+    public static StartSchemaExtensionRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<StartSchemaExtensionRequest> marshall(StartSchemaExtensionRequest startSchemaExtensionRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(StartSchemaExtensionRequest startSchemaExtensionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (startSchemaExtensionRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<StartSchemaExtensionRequest> request = new DefaultRequest<StartSchemaExtensionRequest>(startSchemaExtensionRequest, "AWSDirectoryService");
-        request.addHeader("X-Amz-Target", "DirectoryService_20150416.StartSchemaExtension");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (startSchemaExtensionRequest.getDirectoryId() != null) {
-                jsonGenerator.writeFieldName("DirectoryId").writeValue(startSchemaExtensionRequest.getDirectoryId());
-            }
-            if (startSchemaExtensionRequest.getCreateSnapshotBeforeSchemaExtension() != null) {
-                jsonGenerator.writeFieldName("CreateSnapshotBeforeSchemaExtension").writeValue(
-                        startSchemaExtensionRequest.getCreateSnapshotBeforeSchemaExtension());
-            }
-            if (startSchemaExtensionRequest.getLdifContent() != null) {
-                jsonGenerator.writeFieldName("LdifContent").writeValue(startSchemaExtensionRequest.getLdifContent());
-            }
-            if (startSchemaExtensionRequest.getDescription() != null) {
-                jsonGenerator.writeFieldName("Description").writeValue(startSchemaExtensionRequest.getDescription());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(startSchemaExtensionRequest.getDirectoryId(), DIRECTORYID_BINDING);
+            protocolMarshaller.marshall(startSchemaExtensionRequest.getCreateSnapshotBeforeSchemaExtension(), CREATESNAPSHOTBEFORESCHEMAEXTENSION_BINDING);
+            protocolMarshaller.marshall(startSchemaExtensionRequest.getLdifContent(), LDIFCONTENT_BINDING);
+            protocolMarshaller.marshall(startSchemaExtensionRequest.getDescription(), DESCRIPTION_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

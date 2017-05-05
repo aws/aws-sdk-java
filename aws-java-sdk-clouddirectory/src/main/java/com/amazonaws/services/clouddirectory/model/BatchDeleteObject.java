@@ -14,17 +14,19 @@ package com.amazonaws.services.clouddirectory.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents the output of a DeleteObject operation.
+ * Represents the output of a <code>DeleteObject</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchDeleteObject" target="_top">AWS
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class BatchDeleteObject implements Serializable, Cloneable {
+public class BatchDeleteObject implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -123,5 +125,11 @@ public class BatchDeleteObject implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.clouddirectory.model.transform.BatchDeleteObjectMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

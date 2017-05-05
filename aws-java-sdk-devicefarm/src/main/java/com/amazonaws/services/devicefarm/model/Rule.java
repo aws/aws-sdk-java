@@ -14,6 +14,8 @@ package com.amazonaws.services.devicefarm.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Rule implements Serializable, Cloneable {
+public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -52,6 +54,16 @@ public class Rule implements Serializable, Cloneable {
      * <li>
      * <p>
      * PLATFORM: The platform (for example, Android or iOS).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_VERSION: The Appium version for the test.
      * </p>
      * </li>
      * </ul>
@@ -85,6 +97,11 @@ public class Rule implements Serializable, Cloneable {
      * <li>
      * <p>
      * NOT_IN: The not-in operator.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CONTAINS: The contains operator.
      * </p>
      * </li>
      * </ul>
@@ -125,6 +142,16 @@ public class Rule implements Serializable, Cloneable {
      * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_VERSION: The Appium version for the test.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param attribute
@@ -151,6 +178,16 @@ public class Rule implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        PLATFORM: The platform (for example, Android or iOS).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_VERSION: The Appium version for the test.
      *        </p>
      *        </li>
      * @see DeviceAttribute
@@ -188,6 +225,16 @@ public class Rule implements Serializable, Cloneable {
      * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_VERSION: The Appium version for the test.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The rule's stringified attribute. For example, specify the value as <code>"\"abc\""</code>.</p>
@@ -213,6 +260,16 @@ public class Rule implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         PLATFORM: The platform (for example, Android or iOS).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_VERSION: The Appium version for the test.
      *         </p>
      *         </li>
      * @see DeviceAttribute
@@ -250,6 +307,16 @@ public class Rule implements Serializable, Cloneable {
      * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_VERSION: The Appium version for the test.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param attribute
@@ -276,6 +343,16 @@ public class Rule implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        PLATFORM: The platform (for example, Android or iOS).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_VERSION: The Appium version for the test.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -315,6 +392,16 @@ public class Rule implements Serializable, Cloneable {
      * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_VERSION: The Appium version for the test.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param attribute
@@ -341,6 +428,16 @@ public class Rule implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        PLATFORM: The platform (for example, Android or iOS).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_VERSION: The Appium version for the test.
      *        </p>
      *        </li>
      * @see DeviceAttribute
@@ -378,6 +475,16 @@ public class Rule implements Serializable, Cloneable {
      * PLATFORM: The platform (for example, Android or iOS).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_VERSION: The Appium version for the test.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param attribute
@@ -404,6 +511,16 @@ public class Rule implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        PLATFORM: The platform (for example, Android or iOS).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_VERSION: The Appium version for the test.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -445,6 +562,11 @@ public class Rule implements Serializable, Cloneable {
      * NOT_IN: The not-in operator.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * CONTAINS: The contains operator.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param operator
@@ -473,6 +595,11 @@ public class Rule implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        NOT_IN: The not-in operator.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CONTAINS: The contains operator.
      *        </p>
      *        </li>
      * @see RuleOperator
@@ -512,6 +639,11 @@ public class Rule implements Serializable, Cloneable {
      * NOT_IN: The not-in operator.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * CONTAINS: The contains operator.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The rule's operator.</p>
@@ -539,6 +671,11 @@ public class Rule implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         NOT_IN: The not-in operator.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         CONTAINS: The contains operator.
      *         </p>
      *         </li>
      * @see RuleOperator
@@ -578,6 +715,11 @@ public class Rule implements Serializable, Cloneable {
      * NOT_IN: The not-in operator.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * CONTAINS: The contains operator.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param operator
@@ -606,6 +748,11 @@ public class Rule implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        NOT_IN: The not-in operator.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CONTAINS: The contains operator.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -647,6 +794,11 @@ public class Rule implements Serializable, Cloneable {
      * NOT_IN: The not-in operator.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * CONTAINS: The contains operator.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param operator
@@ -675,6 +827,11 @@ public class Rule implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        NOT_IN: The not-in operator.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CONTAINS: The contains operator.
      *        </p>
      *        </li>
      * @see RuleOperator
@@ -714,6 +871,11 @@ public class Rule implements Serializable, Cloneable {
      * NOT_IN: The not-in operator.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * CONTAINS: The contains operator.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param operator
@@ -742,6 +904,11 @@ public class Rule implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        NOT_IN: The not-in operator.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CONTAINS: The contains operator.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -857,5 +1024,11 @@ public class Rule implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.devicefarm.model.transform.RuleMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

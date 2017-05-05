@@ -14,19 +14,22 @@ package com.amazonaws.services.storagegateway.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * Describes file share default values. Files and folders stored as Amazon S3 objects in S3 buckets don't, by default,
  * have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that
- * represent files and folders are assigned these default Unix permissions.
+ * represent files and folders are assigned these default Unix permissions. This operation is only supported in file
+ * gateways.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/NFSFileShareDefaults"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NFSFileShareDefaults implements Serializable, Cloneable {
+public class NFSFileShareDefaults implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -312,5 +315,11 @@ public class NFSFileShareDefaults implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.storagegateway.model.transform.NFSFileShareDefaultsMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

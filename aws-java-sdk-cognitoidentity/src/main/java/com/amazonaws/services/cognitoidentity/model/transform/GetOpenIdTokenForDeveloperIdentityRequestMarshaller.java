@@ -12,89 +12,55 @@
  */
 package com.amazonaws.services.cognitoidentity.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.Map;
 
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cognitoidentity.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetOpenIdTokenForDeveloperIdentityRequest Marshaller
+ * GetOpenIdTokenForDeveloperIdentityRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetOpenIdTokenForDeveloperIdentityRequestMarshaller implements
-        Marshaller<Request<GetOpenIdTokenForDeveloperIdentityRequest>, GetOpenIdTokenForDeveloperIdentityRequest> {
+@SdkInternalApi
+public class GetOpenIdTokenForDeveloperIdentityRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> IDENTITYPOOLID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentityPoolId").build();
+    private static final MarshallingInfo<String> IDENTITYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentityId").build();
+    private static final MarshallingInfo<Map> LOGINS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Logins").build();
+    private static final MarshallingInfo<Long> TOKENDURATION_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TokenDuration").build();
 
-    public GetOpenIdTokenForDeveloperIdentityRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetOpenIdTokenForDeveloperIdentityRequestMarshaller instance = new GetOpenIdTokenForDeveloperIdentityRequestMarshaller();
+
+    public static GetOpenIdTokenForDeveloperIdentityRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetOpenIdTokenForDeveloperIdentityRequest> marshall(GetOpenIdTokenForDeveloperIdentityRequest getOpenIdTokenForDeveloperIdentityRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetOpenIdTokenForDeveloperIdentityRequest getOpenIdTokenForDeveloperIdentityRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getOpenIdTokenForDeveloperIdentityRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetOpenIdTokenForDeveloperIdentityRequest> request = new DefaultRequest<GetOpenIdTokenForDeveloperIdentityRequest>(
-                getOpenIdTokenForDeveloperIdentityRequest, "AmazonCognitoIdentity");
-        request.addHeader("X-Amz-Target", "AWSCognitoIdentityService.GetOpenIdTokenForDeveloperIdentity");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (getOpenIdTokenForDeveloperIdentityRequest.getIdentityPoolId() != null) {
-                jsonGenerator.writeFieldName("IdentityPoolId").writeValue(getOpenIdTokenForDeveloperIdentityRequest.getIdentityPoolId());
-            }
-            if (getOpenIdTokenForDeveloperIdentityRequest.getIdentityId() != null) {
-                jsonGenerator.writeFieldName("IdentityId").writeValue(getOpenIdTokenForDeveloperIdentityRequest.getIdentityId());
-            }
-
-            java.util.Map<String, String> loginsMap = getOpenIdTokenForDeveloperIdentityRequest.getLogins();
-            if (loginsMap != null) {
-                jsonGenerator.writeFieldName("Logins");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, String> loginsMapValue : loginsMap.entrySet()) {
-                    if (loginsMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(loginsMapValue.getKey());
-
-                        jsonGenerator.writeValue(loginsMapValue.getValue());
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-            if (getOpenIdTokenForDeveloperIdentityRequest.getTokenDuration() != null) {
-                jsonGenerator.writeFieldName("TokenDuration").writeValue(getOpenIdTokenForDeveloperIdentityRequest.getTokenDuration());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getOpenIdTokenForDeveloperIdentityRequest.getIdentityPoolId(), IDENTITYPOOLID_BINDING);
+            protocolMarshaller.marshall(getOpenIdTokenForDeveloperIdentityRequest.getIdentityId(), IDENTITYID_BINDING);
+            protocolMarshaller.marshall(getOpenIdTokenForDeveloperIdentityRequest.getLogins(), LOGINS_BINDING);
+            protocolMarshaller.marshall(getOpenIdTokenForDeveloperIdentityRequest.getTokenDuration(), TOKENDURATION_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

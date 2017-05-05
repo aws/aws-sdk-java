@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.kms.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.kms.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateAliasRequest Marshaller
+ * UpdateAliasRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateAliasRequestMarshaller implements Marshaller<Request<UpdateAliasRequest>, UpdateAliasRequest> {
+@SdkInternalApi
+public class UpdateAliasRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ALIASNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AliasName").build();
+    private static final MarshallingInfo<String> TARGETKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetKeyId").build();
 
-    public UpdateAliasRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateAliasRequestMarshaller instance = new UpdateAliasRequestMarshaller();
+
+    public static UpdateAliasRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateAliasRequest> marshall(UpdateAliasRequest updateAliasRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateAliasRequest updateAliasRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateAliasRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateAliasRequest> request = new DefaultRequest<UpdateAliasRequest>(updateAliasRequest, "AWSKMS");
-        request.addHeader("X-Amz-Target", "TrentService.UpdateAlias");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (updateAliasRequest.getAliasName() != null) {
-                jsonGenerator.writeFieldName("AliasName").writeValue(updateAliasRequest.getAliasName());
-            }
-            if (updateAliasRequest.getTargetKeyId() != null) {
-                jsonGenerator.writeFieldName("TargetKeyId").writeValue(updateAliasRequest.getTargetKeyId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateAliasRequest.getAliasName(), ALIASNAME_BINDING);
+            protocolMarshaller.marshall(updateAliasRequest.getTargetKeyId(), TARGETKEYID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

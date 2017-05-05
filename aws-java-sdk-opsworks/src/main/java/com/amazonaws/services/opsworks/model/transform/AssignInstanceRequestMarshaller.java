@@ -12,76 +12,48 @@
  */
 package com.amazonaws.services.opsworks.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.opsworks.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * AssignInstanceRequest Marshaller
+ * AssignInstanceRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AssignInstanceRequestMarshaller implements Marshaller<Request<AssignInstanceRequest>, AssignInstanceRequest> {
+@SdkInternalApi
+public class AssignInstanceRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> INSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceId").build();
+    private static final MarshallingInfo<List> LAYERIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("LayerIds").build();
 
-    public AssignInstanceRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final AssignInstanceRequestMarshaller instance = new AssignInstanceRequestMarshaller();
+
+    public static AssignInstanceRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<AssignInstanceRequest> marshall(AssignInstanceRequest assignInstanceRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(AssignInstanceRequest assignInstanceRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (assignInstanceRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<AssignInstanceRequest> request = new DefaultRequest<AssignInstanceRequest>(assignInstanceRequest, "AWSOpsWorks");
-        request.addHeader("X-Amz-Target", "OpsWorks_20130218.AssignInstance");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (assignInstanceRequest.getInstanceId() != null) {
-                jsonGenerator.writeFieldName("InstanceId").writeValue(assignInstanceRequest.getInstanceId());
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> layerIdsList = (com.amazonaws.internal.SdkInternalList<String>) assignInstanceRequest.getLayerIds();
-            if (!layerIdsList.isEmpty() || !layerIdsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("LayerIds");
-                jsonGenerator.writeStartArray();
-                for (String layerIdsListValue : layerIdsList) {
-                    if (layerIdsListValue != null) {
-                        jsonGenerator.writeValue(layerIdsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(assignInstanceRequest.getInstanceId(), INSTANCEID_BINDING);
+            protocolMarshaller.marshall(assignInstanceRequest.getLayerIds(), LAYERIDS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

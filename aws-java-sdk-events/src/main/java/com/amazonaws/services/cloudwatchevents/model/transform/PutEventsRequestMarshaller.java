@@ -12,75 +12,45 @@
  */
 package com.amazonaws.services.cloudwatchevents.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cloudwatchevents.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * PutEventsRequest Marshaller
+ * PutEventsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PutEventsRequestMarshaller implements Marshaller<Request<PutEventsRequest>, PutEventsRequest> {
+@SdkInternalApi
+public class PutEventsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<List> ENTRIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Entries").build();
 
-    public PutEventsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final PutEventsRequestMarshaller instance = new PutEventsRequestMarshaller();
+
+    public static PutEventsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<PutEventsRequest> marshall(PutEventsRequest putEventsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(PutEventsRequest putEventsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (putEventsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<PutEventsRequest> request = new DefaultRequest<PutEventsRequest>(putEventsRequest, "AmazonCloudWatchEvents");
-        request.addHeader("X-Amz-Target", "AWSEvents.PutEvents");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            java.util.List<PutEventsRequestEntry> entriesList = putEventsRequest.getEntries();
-            if (entriesList != null) {
-                jsonGenerator.writeFieldName("Entries");
-                jsonGenerator.writeStartArray();
-                for (PutEventsRequestEntry entriesListValue : entriesList) {
-                    if (entriesListValue != null) {
-
-                        PutEventsRequestEntryJsonMarshaller.getInstance().marshall(entriesListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(putEventsRequest.getEntries(), ENTRIES_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -36,16 +36,15 @@ public class ListTrafficPolicyVersionsResult extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you
-     * can get the next group of <code>maxitems</code> traffic policies by calling
-     * <code>ListTrafficPolicyVersions</code> again and specifying the value of the <code>NextMarker</code> element in
-     * the <code>marker</code> parameter.
+     * can get the next group of traffic policies by submitting another <code>ListTrafficPolicyVersions</code> request
+     * and specifying the value of <code>NextMarker</code> in the <code>marker</code> parameter.
      * </p>
      */
     private Boolean isTruncated;
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, the value of <code>TrafficPolicyVersionMarker</code> identifies
-     * the first traffic policy in the next group of <code>MaxItems</code> traffic policies. Call
+     * the first traffic policy that Amazon Route 53 will return if you submit another request. Call
      * <code>ListTrafficPolicyVersions</code> again and specify the value of <code>TrafficPolicyVersionMarker</code> in
      * the <code>TrafficPolicyVersionMarker</code> request parameter.
      * </p>
@@ -56,8 +55,8 @@ public class ListTrafficPolicyVersionsResult extends com.amazonaws.AmazonWebServ
     private String trafficPolicyVersionMarker;
     /**
      * <p>
-     * The value that you specified for the <code>maxitems</code> parameter in the call to
-     * <code>ListTrafficPolicyVersions</code> that produced the current response.
+     * The value that you specified for the <code>maxitems</code> parameter in the
+     * <code>ListTrafficPolicyVersions</code> request that produced the current response.
      * </p>
      */
     private String maxItems;
@@ -146,16 +145,15 @@ public class ListTrafficPolicyVersionsResult extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you
-     * can get the next group of <code>maxitems</code> traffic policies by calling
-     * <code>ListTrafficPolicyVersions</code> again and specifying the value of the <code>NextMarker</code> element in
-     * the <code>marker</code> parameter.
+     * can get the next group of traffic policies by submitting another <code>ListTrafficPolicyVersions</code> request
+     * and specifying the value of <code>NextMarker</code> in the <code>marker</code> parameter.
      * </p>
      * 
      * @param isTruncated
      *        A flag that indicates whether there are more traffic policies to be listed. If the response was truncated,
-     *        you can get the next group of <code>maxitems</code> traffic policies by calling
-     *        <code>ListTrafficPolicyVersions</code> again and specifying the value of the <code>NextMarker</code>
-     *        element in the <code>marker</code> parameter.
+     *        you can get the next group of traffic policies by submitting another
+     *        <code>ListTrafficPolicyVersions</code> request and specifying the value of <code>NextMarker</code> in the
+     *        <code>marker</code> parameter.
      */
 
     public void setIsTruncated(Boolean isTruncated) {
@@ -165,15 +163,14 @@ public class ListTrafficPolicyVersionsResult extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you
-     * can get the next group of <code>maxitems</code> traffic policies by calling
-     * <code>ListTrafficPolicyVersions</code> again and specifying the value of the <code>NextMarker</code> element in
-     * the <code>marker</code> parameter.
+     * can get the next group of traffic policies by submitting another <code>ListTrafficPolicyVersions</code> request
+     * and specifying the value of <code>NextMarker</code> in the <code>marker</code> parameter.
      * </p>
      * 
      * @return A flag that indicates whether there are more traffic policies to be listed. If the response was
-     *         truncated, you can get the next group of <code>maxitems</code> traffic policies by calling
-     *         <code>ListTrafficPolicyVersions</code> again and specifying the value of the <code>NextMarker</code>
-     *         element in the <code>marker</code> parameter.
+     *         truncated, you can get the next group of traffic policies by submitting another
+     *         <code>ListTrafficPolicyVersions</code> request and specifying the value of <code>NextMarker</code> in the
+     *         <code>marker</code> parameter.
      */
 
     public Boolean getIsTruncated() {
@@ -183,16 +180,15 @@ public class ListTrafficPolicyVersionsResult extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you
-     * can get the next group of <code>maxitems</code> traffic policies by calling
-     * <code>ListTrafficPolicyVersions</code> again and specifying the value of the <code>NextMarker</code> element in
-     * the <code>marker</code> parameter.
+     * can get the next group of traffic policies by submitting another <code>ListTrafficPolicyVersions</code> request
+     * and specifying the value of <code>NextMarker</code> in the <code>marker</code> parameter.
      * </p>
      * 
      * @param isTruncated
      *        A flag that indicates whether there are more traffic policies to be listed. If the response was truncated,
-     *        you can get the next group of <code>maxitems</code> traffic policies by calling
-     *        <code>ListTrafficPolicyVersions</code> again and specifying the value of the <code>NextMarker</code>
-     *        element in the <code>marker</code> parameter.
+     *        you can get the next group of traffic policies by submitting another
+     *        <code>ListTrafficPolicyVersions</code> request and specifying the value of <code>NextMarker</code> in the
+     *        <code>marker</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,15 +200,14 @@ public class ListTrafficPolicyVersionsResult extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you
-     * can get the next group of <code>maxitems</code> traffic policies by calling
-     * <code>ListTrafficPolicyVersions</code> again and specifying the value of the <code>NextMarker</code> element in
-     * the <code>marker</code> parameter.
+     * can get the next group of traffic policies by submitting another <code>ListTrafficPolicyVersions</code> request
+     * and specifying the value of <code>NextMarker</code> in the <code>marker</code> parameter.
      * </p>
      * 
      * @return A flag that indicates whether there are more traffic policies to be listed. If the response was
-     *         truncated, you can get the next group of <code>maxitems</code> traffic policies by calling
-     *         <code>ListTrafficPolicyVersions</code> again and specifying the value of the <code>NextMarker</code>
-     *         element in the <code>marker</code> parameter.
+     *         truncated, you can get the next group of traffic policies by submitting another
+     *         <code>ListTrafficPolicyVersions</code> request and specifying the value of <code>NextMarker</code> in the
+     *         <code>marker</code> parameter.
      */
 
     public Boolean isTruncated() {
@@ -222,7 +217,7 @@ public class ListTrafficPolicyVersionsResult extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, the value of <code>TrafficPolicyVersionMarker</code> identifies
-     * the first traffic policy in the next group of <code>MaxItems</code> traffic policies. Call
+     * the first traffic policy that Amazon Route 53 will return if you submit another request. Call
      * <code>ListTrafficPolicyVersions</code> again and specify the value of <code>TrafficPolicyVersionMarker</code> in
      * the <code>TrafficPolicyVersionMarker</code> request parameter.
      * </p>
@@ -232,7 +227,7 @@ public class ListTrafficPolicyVersionsResult extends com.amazonaws.AmazonWebServ
      * 
      * @param trafficPolicyVersionMarker
      *        If <code>IsTruncated</code> is <code>true</code>, the value of <code>TrafficPolicyVersionMarker</code>
-     *        identifies the first traffic policy in the next group of <code>MaxItems</code> traffic policies. Call
+     *        identifies the first traffic policy that Amazon Route 53 will return if you submit another request. Call
      *        <code>ListTrafficPolicyVersions</code> again and specify the value of
      *        <code>TrafficPolicyVersionMarker</code> in the <code>TrafficPolicyVersionMarker</code> request
      *        parameter.</p>
@@ -247,7 +242,7 @@ public class ListTrafficPolicyVersionsResult extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, the value of <code>TrafficPolicyVersionMarker</code> identifies
-     * the first traffic policy in the next group of <code>MaxItems</code> traffic policies. Call
+     * the first traffic policy that Amazon Route 53 will return if you submit another request. Call
      * <code>ListTrafficPolicyVersions</code> again and specify the value of <code>TrafficPolicyVersionMarker</code> in
      * the <code>TrafficPolicyVersionMarker</code> request parameter.
      * </p>
@@ -256,7 +251,7 @@ public class ListTrafficPolicyVersionsResult extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @return If <code>IsTruncated</code> is <code>true</code>, the value of <code>TrafficPolicyVersionMarker</code>
-     *         identifies the first traffic policy in the next group of <code>MaxItems</code> traffic policies. Call
+     *         identifies the first traffic policy that Amazon Route 53 will return if you submit another request. Call
      *         <code>ListTrafficPolicyVersions</code> again and specify the value of
      *         <code>TrafficPolicyVersionMarker</code> in the <code>TrafficPolicyVersionMarker</code> request
      *         parameter.</p>
@@ -271,7 +266,7 @@ public class ListTrafficPolicyVersionsResult extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * If <code>IsTruncated</code> is <code>true</code>, the value of <code>TrafficPolicyVersionMarker</code> identifies
-     * the first traffic policy in the next group of <code>MaxItems</code> traffic policies. Call
+     * the first traffic policy that Amazon Route 53 will return if you submit another request. Call
      * <code>ListTrafficPolicyVersions</code> again and specify the value of <code>TrafficPolicyVersionMarker</code> in
      * the <code>TrafficPolicyVersionMarker</code> request parameter.
      * </p>
@@ -281,7 +276,7 @@ public class ListTrafficPolicyVersionsResult extends com.amazonaws.AmazonWebServ
      * 
      * @param trafficPolicyVersionMarker
      *        If <code>IsTruncated</code> is <code>true</code>, the value of <code>TrafficPolicyVersionMarker</code>
-     *        identifies the first traffic policy in the next group of <code>MaxItems</code> traffic policies. Call
+     *        identifies the first traffic policy that Amazon Route 53 will return if you submit another request. Call
      *        <code>ListTrafficPolicyVersions</code> again and specify the value of
      *        <code>TrafficPolicyVersionMarker</code> in the <code>TrafficPolicyVersionMarker</code> request
      *        parameter.</p>
@@ -297,13 +292,13 @@ public class ListTrafficPolicyVersionsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The value that you specified for the <code>maxitems</code> parameter in the call to
-     * <code>ListTrafficPolicyVersions</code> that produced the current response.
+     * The value that you specified for the <code>maxitems</code> parameter in the
+     * <code>ListTrafficPolicyVersions</code> request that produced the current response.
      * </p>
      * 
      * @param maxItems
-     *        The value that you specified for the <code>maxitems</code> parameter in the call to
-     *        <code>ListTrafficPolicyVersions</code> that produced the current response.
+     *        The value that you specified for the <code>maxitems</code> parameter in the
+     *        <code>ListTrafficPolicyVersions</code> request that produced the current response.
      */
 
     public void setMaxItems(String maxItems) {
@@ -312,12 +307,12 @@ public class ListTrafficPolicyVersionsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The value that you specified for the <code>maxitems</code> parameter in the call to
-     * <code>ListTrafficPolicyVersions</code> that produced the current response.
+     * The value that you specified for the <code>maxitems</code> parameter in the
+     * <code>ListTrafficPolicyVersions</code> request that produced the current response.
      * </p>
      * 
-     * @return The value that you specified for the <code>maxitems</code> parameter in the call to
-     *         <code>ListTrafficPolicyVersions</code> that produced the current response.
+     * @return The value that you specified for the <code>maxitems</code> parameter in the
+     *         <code>ListTrafficPolicyVersions</code> request that produced the current response.
      */
 
     public String getMaxItems() {
@@ -326,13 +321,13 @@ public class ListTrafficPolicyVersionsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The value that you specified for the <code>maxitems</code> parameter in the call to
-     * <code>ListTrafficPolicyVersions</code> that produced the current response.
+     * The value that you specified for the <code>maxitems</code> parameter in the
+     * <code>ListTrafficPolicyVersions</code> request that produced the current response.
      * </p>
      * 
      * @param maxItems
-     *        The value that you specified for the <code>maxitems</code> parameter in the call to
-     *        <code>ListTrafficPolicyVersions</code> that produced the current response.
+     *        The value that you specified for the <code>maxitems</code> parameter in the
+     *        <code>ListTrafficPolicyVersions</code> request that produced the current response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -413,4 +408,5 @@ public class ListTrafficPolicyVersionsResult extends com.amazonaws.AmazonWebServ
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

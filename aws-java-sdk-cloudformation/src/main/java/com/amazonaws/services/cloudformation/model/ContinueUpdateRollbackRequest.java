@@ -82,12 +82,21 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * To specify resources in a nested stack, use the following format: <code>NestedStackName.ResourceLogicalID</code>.
-     * You can specify a nested stack resource (the logical ID of an <code>AWS::CloudFormation::Stack</code> resource)
-     * only if it's in one of the following states: <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
+     * If the <code>ResourceLogicalID</code> is a stack resource (<code>Type: AWS::CloudFormation::Stack</code>), it
+     * must be in one of the following states: <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
      * <code>DELETE_FAILED</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> resourcesToSkip;
+    /**
+     * <p>
+     * A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify this token if you plan to retry
+     * requests so that AWS CloudFormation knows that you're not attempting to continue the rollback to a stack with the
+     * same name. You might retry <code>ContinueUpdateRollback</code> requests to ensure that AWS CloudFormation
+     * successfully received them.
+     * </p>
+     */
+    private String clientRequestToken;
 
     /**
      * <p>
@@ -280,8 +289,8 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * To specify resources in a nested stack, use the following format: <code>NestedStackName.ResourceLogicalID</code>.
-     * You can specify a nested stack resource (the logical ID of an <code>AWS::CloudFormation::Stack</code> resource)
-     * only if it's in one of the following states: <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
+     * If the <code>ResourceLogicalID</code> is a stack resource (<code>Type: AWS::CloudFormation::Stack</code>), it
+     * must be in one of the following states: <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
      * <code>DELETE_FAILED</code>.
      * </p>
      * 
@@ -309,8 +318,8 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      *         </p>
      *         <p>
      *         To specify resources in a nested stack, use the following format:
-     *         <code>NestedStackName.ResourceLogicalID</code>. You can specify a nested stack resource (the logical ID
-     *         of an <code>AWS::CloudFormation::Stack</code> resource) only if it's in one of the following states:
+     *         <code>NestedStackName.ResourceLogicalID</code>. If the <code>ResourceLogicalID</code> is a stack resource
+     *         (<code>Type: AWS::CloudFormation::Stack</code>), it must be in one of the following states:
      *         <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or <code>DELETE_FAILED</code>.
      */
 
@@ -348,8 +357,8 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * To specify resources in a nested stack, use the following format: <code>NestedStackName.ResourceLogicalID</code>.
-     * You can specify a nested stack resource (the logical ID of an <code>AWS::CloudFormation::Stack</code> resource)
-     * only if it's in one of the following states: <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
+     * If the <code>ResourceLogicalID</code> is a stack resource (<code>Type: AWS::CloudFormation::Stack</code>), it
+     * must be in one of the following states: <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
      * <code>DELETE_FAILED</code>.
      * </p>
      * 
@@ -378,8 +387,8 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <p>
      *        To specify resources in a nested stack, use the following format:
-     *        <code>NestedStackName.ResourceLogicalID</code>. You can specify a nested stack resource (the logical ID of
-     *        an <code>AWS::CloudFormation::Stack</code> resource) only if it's in one of the following states:
+     *        <code>NestedStackName.ResourceLogicalID</code>. If the <code>ResourceLogicalID</code> is a stack resource
+     *        (<code>Type: AWS::CloudFormation::Stack</code>), it must be in one of the following states:
      *        <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or <code>DELETE_FAILED</code>.
      */
 
@@ -419,8 +428,8 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * To specify resources in a nested stack, use the following format: <code>NestedStackName.ResourceLogicalID</code>.
-     * You can specify a nested stack resource (the logical ID of an <code>AWS::CloudFormation::Stack</code> resource)
-     * only if it's in one of the following states: <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
+     * If the <code>ResourceLogicalID</code> is a stack resource (<code>Type: AWS::CloudFormation::Stack</code>), it
+     * must be in one of the following states: <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
      * <code>DELETE_FAILED</code>.
      * </p>
      * <p>
@@ -454,8 +463,8 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <p>
      *        To specify resources in a nested stack, use the following format:
-     *        <code>NestedStackName.ResourceLogicalID</code>. You can specify a nested stack resource (the logical ID of
-     *        an <code>AWS::CloudFormation::Stack</code> resource) only if it's in one of the following states:
+     *        <code>NestedStackName.ResourceLogicalID</code>. If the <code>ResourceLogicalID</code> is a stack resource
+     *        (<code>Type: AWS::CloudFormation::Stack</code>), it must be in one of the following states:
      *        <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or <code>DELETE_FAILED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -497,8 +506,8 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * To specify resources in a nested stack, use the following format: <code>NestedStackName.ResourceLogicalID</code>.
-     * You can specify a nested stack resource (the logical ID of an <code>AWS::CloudFormation::Stack</code> resource)
-     * only if it's in one of the following states: <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
+     * If the <code>ResourceLogicalID</code> is a stack resource (<code>Type: AWS::CloudFormation::Stack</code>), it
+     * must be in one of the following states: <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
      * <code>DELETE_FAILED</code>.
      * </p>
      * 
@@ -527,14 +536,72 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <p>
      *        To specify resources in a nested stack, use the following format:
-     *        <code>NestedStackName.ResourceLogicalID</code>. You can specify a nested stack resource (the logical ID of
-     *        an <code>AWS::CloudFormation::Stack</code> resource) only if it's in one of the following states:
+     *        <code>NestedStackName.ResourceLogicalID</code>. If the <code>ResourceLogicalID</code> is a stack resource
+     *        (<code>Type: AWS::CloudFormation::Stack</code>), it must be in one of the following states:
      *        <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or <code>DELETE_FAILED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ContinueUpdateRollbackRequest withResourcesToSkip(java.util.Collection<String> resourcesToSkip) {
         setResourcesToSkip(resourcesToSkip);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify this token if you plan to retry
+     * requests so that AWS CloudFormation knows that you're not attempting to continue the rollback to a stack with the
+     * same name. You might retry <code>ContinueUpdateRollback</code> requests to ensure that AWS CloudFormation
+     * successfully received them.
+     * </p>
+     * 
+     * @param clientRequestToken
+     *        A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify this token if you plan
+     *        to retry requests so that AWS CloudFormation knows that you're not attempting to continue the rollback to
+     *        a stack with the same name. You might retry <code>ContinueUpdateRollback</code> requests to ensure that
+     *        AWS CloudFormation successfully received them.
+     */
+
+    public void setClientRequestToken(String clientRequestToken) {
+        this.clientRequestToken = clientRequestToken;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify this token if you plan to retry
+     * requests so that AWS CloudFormation knows that you're not attempting to continue the rollback to a stack with the
+     * same name. You might retry <code>ContinueUpdateRollback</code> requests to ensure that AWS CloudFormation
+     * successfully received them.
+     * </p>
+     * 
+     * @return A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify this token if you plan
+     *         to retry requests so that AWS CloudFormation knows that you're not attempting to continue the rollback to
+     *         a stack with the same name. You might retry <code>ContinueUpdateRollback</code> requests to ensure that
+     *         AWS CloudFormation successfully received them.
+     */
+
+    public String getClientRequestToken() {
+        return this.clientRequestToken;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify this token if you plan to retry
+     * requests so that AWS CloudFormation knows that you're not attempting to continue the rollback to a stack with the
+     * same name. You might retry <code>ContinueUpdateRollback</code> requests to ensure that AWS CloudFormation
+     * successfully received them.
+     * </p>
+     * 
+     * @param clientRequestToken
+     *        A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify this token if you plan
+     *        to retry requests so that AWS CloudFormation knows that you're not attempting to continue the rollback to
+     *        a stack with the same name. You might retry <code>ContinueUpdateRollback</code> requests to ensure that
+     *        AWS CloudFormation successfully received them.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContinueUpdateRollbackRequest withClientRequestToken(String clientRequestToken) {
+        setClientRequestToken(clientRequestToken);
         return this;
     }
 
@@ -554,7 +621,9 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
         if (getRoleARN() != null)
             sb.append("RoleARN: ").append(getRoleARN()).append(",");
         if (getResourcesToSkip() != null)
-            sb.append("ResourcesToSkip: ").append(getResourcesToSkip());
+            sb.append("ResourcesToSkip: ").append(getResourcesToSkip()).append(",");
+        if (getClientRequestToken() != null)
+            sb.append("ClientRequestToken: ").append(getClientRequestToken());
         sb.append("}");
         return sb.toString();
     }
@@ -581,6 +650,10 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getResourcesToSkip() != null && other.getResourcesToSkip().equals(this.getResourcesToSkip()) == false)
             return false;
+        if (other.getClientRequestToken() == null ^ this.getClientRequestToken() == null)
+            return false;
+        if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
+            return false;
         return true;
     }
 
@@ -592,6 +665,7 @@ public class ContinueUpdateRollbackRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getStackName() == null) ? 0 : getStackName().hashCode());
         hashCode = prime * hashCode + ((getRoleARN() == null) ? 0 : getRoleARN().hashCode());
         hashCode = prime * hashCode + ((getResourcesToSkip() == null) ? 0 : getResourcesToSkip().hashCode());
+        hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         return hashCode;
     }
 

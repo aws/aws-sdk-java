@@ -39,7 +39,9 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name
      * (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS
-     * Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>).
+     * Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the
+     * length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters
+     * in length.
      * </p>
      * <p>
      * If you are using versioning, you can also provide a qualified function ARN (ARN that is qualified with function
@@ -114,7 +116,9 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name
      * (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS
-     * Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>).
+     * Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the
+     * length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters
+     * in length.
      * </p>
      * <p>
      * If you are using versioning, you can also provide a qualified function ARN (ARN that is qualified with function
@@ -133,7 +137,8 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *        You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource
      *        Name (ARN) of the function (for example,
      *        <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to
-     *        specify a partial ARN (for example, <code>account-id:Thumbnail</code>).
+     *        specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint
+     *        applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.
      *        </p>
      *        <p>
      *        If you are using versioning, you can also provide a qualified function ARN (ARN that is qualified with
@@ -157,7 +162,9 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name
      * (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS
-     * Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>).
+     * Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the
+     * length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters
+     * in length.
      * </p>
      * <p>
      * If you are using versioning, you can also provide a qualified function ARN (ARN that is qualified with function
@@ -175,7 +182,8 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *         You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource
      *         Name (ARN) of the function (for example,
      *         <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to
-     *         specify a partial ARN (for example, <code>account-id:Thumbnail</code>).
+     *         specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint
+     *         applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.
      *         </p>
      *         <p>
      *         If you are using versioning, you can also provide a qualified function ARN (ARN that is qualified with
@@ -199,7 +207,9 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name
      * (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS
-     * Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>).
+     * Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the
+     * length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters
+     * in length.
      * </p>
      * <p>
      * If you are using versioning, you can also provide a qualified function ARN (ARN that is qualified with function
@@ -218,7 +228,8 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *        You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource
      *        Name (ARN) of the function (for example,
      *        <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to
-     *        specify a partial ARN (for example, <code>account-id:Thumbnail</code>).
+     *        specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint
+     *        applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.
      *        </p>
      *        <p>
      *        If you are using versioning, you can also provide a qualified function ARN (ARN that is qualified with

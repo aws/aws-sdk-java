@@ -14,6 +14,8 @@ package com.amazonaws.services.lambda.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,24 +26,21 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Environment implements Serializable, Cloneable {
+public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key-value pairs that represent your environment's configuration settings. The value you specify cannot
-     * contain a ",".
+     * The key-value pairs that represent your environment's configuration settings.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> variables;
 
     /**
      * <p>
-     * The key-value pairs that represent your environment's configuration settings. The value you specify cannot
-     * contain a ",".
+     * The key-value pairs that represent your environment's configuration settings.
      * </p>
      * 
-     * @return The key-value pairs that represent your environment's configuration settings. The value you specify
-     *         cannot contain a ",".
+     * @return The key-value pairs that represent your environment's configuration settings.
      */
 
     public java.util.Map<String, String> getVariables() {
@@ -53,13 +52,11 @@ public class Environment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The key-value pairs that represent your environment's configuration settings. The value you specify cannot
-     * contain a ",".
+     * The key-value pairs that represent your environment's configuration settings.
      * </p>
      * 
      * @param variables
-     *        The key-value pairs that represent your environment's configuration settings. The value you specify cannot
-     *        contain a ",".
+     *        The key-value pairs that represent your environment's configuration settings.
      */
 
     public void setVariables(java.util.Map<String, String> variables) {
@@ -68,13 +65,11 @@ public class Environment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The key-value pairs that represent your environment's configuration settings. The value you specify cannot
-     * contain a ",".
+     * The key-value pairs that represent your environment's configuration settings.
      * </p>
      * 
      * @param variables
-     *        The key-value pairs that represent your environment's configuration settings. The value you specify cannot
-     *        contain a ",".
+     *        The key-value pairs that represent your environment's configuration settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,5 +149,11 @@ public class Environment implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.lambda.model.transform.EnvironmentMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

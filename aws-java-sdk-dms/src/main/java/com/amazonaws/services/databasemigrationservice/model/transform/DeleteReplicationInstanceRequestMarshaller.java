@@ -12,65 +12,44 @@
  */
 package com.amazonaws.services.databasemigrationservice.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.databasemigrationservice.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteReplicationInstanceRequest Marshaller
+ * DeleteReplicationInstanceRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteReplicationInstanceRequestMarshaller implements Marshaller<Request<DeleteReplicationInstanceRequest>, DeleteReplicationInstanceRequest> {
+@SdkInternalApi
+public class DeleteReplicationInstanceRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> REPLICATIONINSTANCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReplicationInstanceArn").build();
 
-    public DeleteReplicationInstanceRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteReplicationInstanceRequestMarshaller instance = new DeleteReplicationInstanceRequestMarshaller();
+
+    public static DeleteReplicationInstanceRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteReplicationInstanceRequest> marshall(DeleteReplicationInstanceRequest deleteReplicationInstanceRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteReplicationInstanceRequest deleteReplicationInstanceRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteReplicationInstanceRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteReplicationInstanceRequest> request = new DefaultRequest<DeleteReplicationInstanceRequest>(deleteReplicationInstanceRequest,
-                "AWSDatabaseMigrationService");
-        request.addHeader("X-Amz-Target", "AmazonDMSv20160101.DeleteReplicationInstance");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteReplicationInstanceRequest.getReplicationInstanceArn() != null) {
-                jsonGenerator.writeFieldName("ReplicationInstanceArn").writeValue(deleteReplicationInstanceRequest.getReplicationInstanceArn());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteReplicationInstanceRequest.getReplicationInstanceArn(), REPLICATIONINSTANCEARN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

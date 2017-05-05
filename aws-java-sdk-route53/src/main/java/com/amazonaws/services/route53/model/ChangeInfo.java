@@ -41,9 +41,9 @@ public class ChangeInfo implements Serializable, Cloneable {
     private String status;
     /**
      * <p>
-     * The date and time the change request was submitted, in Coordinated Universal Time (UTC) format:
-     * <code>YYYY-MM-DDThh:mm:ssZ</code>. For more information, see the Wikipedia entry <a
-     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>.
+     * The date and time that the change request was submitted in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO
+     * 8601 format</a> and Coordinated Universal Time (UTC). For example, the value
+     * <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.
      * </p>
      */
     private java.util.Date submittedAt;
@@ -75,9 +75,10 @@ public class ChangeInfo implements Serializable, Cloneable {
      *        The current state of the request. <code>PENDING</code> indicates that this request has not yet been
      *        applied to all Amazon Route 53 DNS servers.
      * @param submittedAt
-     *        The date and time the change request was submitted, in Coordinated Universal Time (UTC) format:
-     *        <code>YYYY-MM-DDThh:mm:ssZ</code>. For more information, see the Wikipedia entry <a
-     *        href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>.
+     *        The date and time that the change request was submitted in <a
+     *        href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC).
+     *        For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751
+     *        UTC.
      */
     public ChangeInfo(String id, String status, java.util.Date submittedAt) {
         setId(id);
@@ -95,9 +96,10 @@ public class ChangeInfo implements Serializable, Cloneable {
      *        The current state of the request. <code>PENDING</code> indicates that this request has not yet been
      *        applied to all Amazon Route 53 DNS servers.
      * @param submittedAt
-     *        The date and time the change request was submitted, in Coordinated Universal Time (UTC) format:
-     *        <code>YYYY-MM-DDThh:mm:ssZ</code>. For more information, see the Wikipedia entry <a
-     *        href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>.
+     *        The date and time that the change request was submitted in <a
+     *        href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC).
+     *        For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751
+     *        UTC.
      */
     public ChangeInfo(String id, ChangeStatus status, java.util.Date submittedAt) {
         setId(id);
@@ -230,15 +232,16 @@ public class ChangeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time the change request was submitted, in Coordinated Universal Time (UTC) format:
-     * <code>YYYY-MM-DDThh:mm:ssZ</code>. For more information, see the Wikipedia entry <a
-     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>.
+     * The date and time that the change request was submitted in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO
+     * 8601 format</a> and Coordinated Universal Time (UTC). For example, the value
+     * <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.
      * </p>
      * 
      * @param submittedAt
-     *        The date and time the change request was submitted, in Coordinated Universal Time (UTC) format:
-     *        <code>YYYY-MM-DDThh:mm:ssZ</code>. For more information, see the Wikipedia entry <a
-     *        href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>.
+     *        The date and time that the change request was submitted in <a
+     *        href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC).
+     *        For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751
+     *        UTC.
      */
 
     public void setSubmittedAt(java.util.Date submittedAt) {
@@ -247,14 +250,15 @@ public class ChangeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time the change request was submitted, in Coordinated Universal Time (UTC) format:
-     * <code>YYYY-MM-DDThh:mm:ssZ</code>. For more information, see the Wikipedia entry <a
-     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>.
+     * The date and time that the change request was submitted in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO
+     * 8601 format</a> and Coordinated Universal Time (UTC). For example, the value
+     * <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.
      * </p>
      * 
-     * @return The date and time the change request was submitted, in Coordinated Universal Time (UTC) format:
-     *         <code>YYYY-MM-DDThh:mm:ssZ</code>. For more information, see the Wikipedia entry <a
-     *         href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>.
+     * @return The date and time that the change request was submitted in <a
+     *         href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC).
+     *         For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751
+     *         UTC.
      */
 
     public java.util.Date getSubmittedAt() {
@@ -263,15 +267,16 @@ public class ChangeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time the change request was submitted, in Coordinated Universal Time (UTC) format:
-     * <code>YYYY-MM-DDThh:mm:ssZ</code>. For more information, see the Wikipedia entry <a
-     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>.
+     * The date and time that the change request was submitted in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO
+     * 8601 format</a> and Coordinated Universal Time (UTC). For example, the value
+     * <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751 UTC.
      * </p>
      * 
      * @param submittedAt
-     *        The date and time the change request was submitted, in Coordinated Universal Time (UTC) format:
-     *        <code>YYYY-MM-DDThh:mm:ssZ</code>. For more information, see the Wikipedia entry <a
-     *        href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>.
+     *        The date and time that the change request was submitted in <a
+     *        href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and Coordinated Universal Time (UTC).
+     *        For example, the value <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751
+     *        UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -413,4 +418,5 @@ public class ChangeInfo implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

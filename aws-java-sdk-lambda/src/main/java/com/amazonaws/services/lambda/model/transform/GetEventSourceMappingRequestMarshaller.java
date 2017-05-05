@@ -12,52 +12,44 @@
  */
 package com.amazonaws.services.lambda.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.lambda.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetEventSourceMappingRequest Marshaller
+ * GetEventSourceMappingRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetEventSourceMappingRequestMarshaller implements Marshaller<Request<GetEventSourceMappingRequest>, GetEventSourceMappingRequest> {
+@SdkInternalApi
+public class GetEventSourceMappingRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> UUID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("UUID").build();
 
-    public GetEventSourceMappingRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetEventSourceMappingRequestMarshaller instance = new GetEventSourceMappingRequestMarshaller();
+
+    public static GetEventSourceMappingRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetEventSourceMappingRequest> marshall(GetEventSourceMappingRequest getEventSourceMappingRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetEventSourceMappingRequest getEventSourceMappingRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getEventSourceMappingRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetEventSourceMappingRequest> request = new DefaultRequest<GetEventSourceMappingRequest>(getEventSourceMappingRequest, "AWSLambda");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/2015-03-31/event-source-mappings/{UUID}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "UUID", getEventSourceMappingRequest.getUUID());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(getEventSourceMappingRequest.getUUID(), UUID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

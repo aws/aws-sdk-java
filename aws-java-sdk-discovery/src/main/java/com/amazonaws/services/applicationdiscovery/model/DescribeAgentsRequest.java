@@ -34,11 +34,6 @@ public class DescribeAgentsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * <code>{"key": "collectionStatus", "value": "STARTED"}</code>
      * </p>
-     * <p>
-     * For a complete list of filter options and guidance about using them with this action, see <a
-     * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/managing-agent.html">Managing AWS
-     * Application Discovery Service Agents and the AWS Application Discovery Connector </a>.
-     * </p>
      */
     private java.util.List<Filter> filters;
     /**
@@ -141,21 +136,11 @@ public class DescribeAgentsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * <code>{"key": "collectionStatus", "value": "STARTED"}</code>
      * </p>
-     * <p>
-     * For a complete list of filter options and guidance about using them with this action, see <a
-     * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/managing-agent.html">Managing AWS
-     * Application Discovery Service Agents and the AWS Application Discovery Connector </a>.
-     * </p>
      * 
      * @return You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For
      *         example: </p>
      *         <p>
      *         <code>{"key": "collectionStatus", "value": "STARTED"}</code>
-     *         </p>
-     *         <p>
-     *         For a complete list of filter options and guidance about using them with this action, see <a
-     *         href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/managing-agent.html">Managing
-     *         AWS Application Discovery Service Agents and the AWS Application Discovery Connector </a>.
      */
 
     public java.util.List<Filter> getFilters() {
@@ -169,22 +154,12 @@ public class DescribeAgentsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * <code>{"key": "collectionStatus", "value": "STARTED"}</code>
      * </p>
-     * <p>
-     * For a complete list of filter options and guidance about using them with this action, see <a
-     * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/managing-agent.html">Managing AWS
-     * Application Discovery Service Agents and the AWS Application Discovery Connector </a>.
-     * </p>
      * 
      * @param filters
      *        You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For
      *        example: </p>
      *        <p>
      *        <code>{"key": "collectionStatus", "value": "STARTED"}</code>
-     *        </p>
-     *        <p>
-     *        For a complete list of filter options and guidance about using them with this action, see <a
-     *        href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/managing-agent.html">Managing
-     *        AWS Application Discovery Service Agents and the AWS Application Discovery Connector </a>.
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -204,11 +179,6 @@ public class DescribeAgentsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>{"key": "collectionStatus", "value": "STARTED"}</code>
      * </p>
      * <p>
-     * For a complete list of filter options and guidance about using them with this action, see <a
-     * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/managing-agent.html">Managing AWS
-     * Application Discovery Service Agents and the AWS Application Discovery Connector </a>.
-     * </p>
-     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
      * the existing values.
@@ -219,11 +189,6 @@ public class DescribeAgentsRequest extends com.amazonaws.AmazonWebServiceRequest
      *        example: </p>
      *        <p>
      *        <code>{"key": "collectionStatus", "value": "STARTED"}</code>
-     *        </p>
-     *        <p>
-     *        For a complete list of filter options and guidance about using them with this action, see <a
-     *        href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/managing-agent.html">Managing
-     *        AWS Application Discovery Service Agents and the AWS Application Discovery Connector </a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -244,22 +209,12 @@ public class DescribeAgentsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * <code>{"key": "collectionStatus", "value": "STARTED"}</code>
      * </p>
-     * <p>
-     * For a complete list of filter options and guidance about using them with this action, see <a
-     * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/managing-agent.html">Managing AWS
-     * Application Discovery Service Agents and the AWS Application Discovery Connector </a>.
-     * </p>
      * 
      * @param filters
      *        You can filter the request using various logical operators and a <i>key</i>-<i>value</i> format. For
      *        example: </p>
      *        <p>
      *        <code>{"key": "collectionStatus", "value": "STARTED"}</code>
-     *        </p>
-     *        <p>
-     *        For a complete list of filter options and guidance about using them with this action, see <a
-     *        href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/managing-agent.html">Managing
-     *        AWS Application Discovery Service Agents and the AWS Application Discovery Connector </a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

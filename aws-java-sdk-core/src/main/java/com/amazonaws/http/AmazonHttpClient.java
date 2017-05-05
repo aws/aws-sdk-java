@@ -97,6 +97,7 @@ import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.client.protocol.HttpClientContext;
 import org.apache.http.entity.BufferedHttpEntity;
 import org.apache.http.pool.ConnPoolControl;
+import org.apache.http.pool.PoolStats;
 import org.apache.http.protocol.HttpContext;
 
 import java.io.BufferedInputStream;
@@ -158,12 +159,6 @@ public class AmazonHttpClient {
      * pool.
      */
     private static final int THROTTLED_RETRY_COST = 5;
-
-    /**
-     * When throttled retries are enabled, this is the total number of subsequent failed retries
-     * that may be attempted before retry capacity is fully drained.
-     */
-    private static final int THROTTLED_RETRIES = 100;
 
     static {
         // Customers have reported XML parsing issues with the following
@@ -352,7 +347,7 @@ public class AmazonHttpClient {
         // When enabled, total retry capacity is computed based on retry cost
         // and desired number of retries.
         int throttledRetryMaxCapacity = clientConfig.useThrottledRetries()
-                ? THROTTLED_RETRY_COST * THROTTLED_RETRIES : -1;
+                ? THROTTLED_RETRY_COST * config.getMaxConsecutiveRetriesBeforeThrottling() : -1;
         this.retryCapacity = new CapacityManager(throttledRetryMaxCapacity);
     }
 
@@ -1037,21 +1032,7 @@ public class AmazonHttpClient {
                         return response;
                     }
                 } catch (IOException ioe) {
-                    captureExceptionMetrics(ioe);
-                    awsRequestMetrics.addProperty(Field.AWSRequestID, null);
-                    SdkClientException sdkClientException = new SdkClientException(
-                            "Unable to execute HTTP request: " + ioe.getMessage(), ioe);
-                    boolean willRetry = shouldRetry(execOneParams, sdkClientException);
-                    if (log.isTraceEnabled()) {
-                        log.trace(sdkClientException.getMessage() + (willRetry ? " Request will be retried." : ""), ioe);
-                    } else if (log.isDebugEnabled()) {
-                        log.trace(sdkClientException.getMessage() + (willRetry ? " Request will be retried." : ""));
-                    }
-                    if (!willRetry) {
-                        throw lastReset(sdkClientException);
-                    }
-                    // Cache the retryable exception
-                    execOneParams.retriedException = sdkClientException;
+                    handleRetryableException(execOneParams, ioe);
                 } catch (RuntimeException e) {
                     throw lastReset(captureExceptionMetrics(e));
                 } catch (Error e) {
@@ -1077,6 +1058,29 @@ public class AmazonHttpClient {
                     }
                 }
             } /* end while (true) */
+        }
+
+        private void handleRetryableException(ExecOneRequestParams execOneParams, Exception e) {
+            captureExceptionMetrics(e);
+            awsRequestMetrics.addProperty(Field.AWSRequestID, null);
+            SdkClientException sdkClientException;
+            if (!(e instanceof SdkClientException)) {
+                sdkClientException = new SdkClientException(
+                        "Unable to execute HTTP request: " + e.getMessage(), e);
+            } else {
+                sdkClientException = (SdkClientException) e;
+            }
+            boolean willRetry = shouldRetry(execOneParams, sdkClientException);
+            if (log.isTraceEnabled()) {
+                log.trace(sdkClientException.getMessage() + (willRetry ? " Request will be retried." : ""), e);
+            } else if (log.isDebugEnabled()) {
+                log.trace(sdkClientException.getMessage() + (willRetry ? " Request will be retried." : ""));
+            }
+            if (!willRetry) {
+                throw lastReset(sdkClientException);
+            }
+            // Cache the retryable exception
+            execOneParams.retriedException = sdkClientException;
         }
 
         /**
@@ -1328,15 +1332,13 @@ public class AmazonHttpClient {
             if (awsRequestMetrics.isEnabled() &&
                 httpClient.getHttpClientConnectionManager() instanceof
                         ConnPoolControl<?>) {
-                ConnPoolControl<?> control = (ConnPoolControl<?>) httpClient
-                        .getHttpClientConnectionManager();
+                final PoolStats stats = ((ConnPoolControl<?>) httpClient
+                        .getHttpClientConnectionManager()).getTotalStats();
 
                 awsRequestMetrics
-                        .withCounter(HttpClientPoolAvailableCount,
-                                     control.getTotalStats().getAvailable())
-                        .withCounter(HttpClientPoolLeasedCount, control.getTotalStats().getLeased())
-                        .withCounter(HttpClientPoolPendingCount,
-                                     control.getTotalStats().getPending());
+                        .withCounter(HttpClientPoolAvailableCount, stats.getAvailable())
+                        .withCounter(HttpClientPoolLeasedCount, stats.getLeased())
+                        .withCounter(HttpClientPoolPendingCount, stats.getPending());
             }
 
         }

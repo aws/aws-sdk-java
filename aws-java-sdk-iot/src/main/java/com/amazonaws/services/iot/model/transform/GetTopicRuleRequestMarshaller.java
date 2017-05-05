@@ -12,52 +12,44 @@
  */
 package com.amazonaws.services.iot.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.iot.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetTopicRuleRequest Marshaller
+ * GetTopicRuleRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetTopicRuleRequestMarshaller implements Marshaller<Request<GetTopicRuleRequest>, GetTopicRuleRequest> {
+@SdkInternalApi
+public class GetTopicRuleRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> RULENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("ruleName").build();
 
-    public GetTopicRuleRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetTopicRuleRequestMarshaller instance = new GetTopicRuleRequestMarshaller();
+
+    public static GetTopicRuleRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetTopicRuleRequest> marshall(GetTopicRuleRequest getTopicRuleRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetTopicRuleRequest getTopicRuleRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getTopicRuleRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetTopicRuleRequest> request = new DefaultRequest<GetTopicRuleRequest>(getTopicRuleRequest, "AWSIot");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/rules/{ruleName}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "ruleName", getTopicRuleRequest.getRuleName());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(getTopicRuleRequest.getRuleName(), RULENAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

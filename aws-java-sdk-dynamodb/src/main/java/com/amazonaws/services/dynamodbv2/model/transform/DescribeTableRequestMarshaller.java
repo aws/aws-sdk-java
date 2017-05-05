@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.dynamodbv2.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.dynamodbv2.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeTableRequest Marshaller
+ * DescribeTableRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeTableRequestMarshaller implements Marshaller<Request<DescribeTableRequest>, DescribeTableRequest> {
+@SdkInternalApi
+public class DescribeTableRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> TABLENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TableName").build();
 
-    public DescribeTableRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeTableRequestMarshaller instance = new DescribeTableRequestMarshaller();
+
+    public static DescribeTableRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeTableRequest> marshall(DescribeTableRequest describeTableRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeTableRequest describeTableRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeTableRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeTableRequest> request = new DefaultRequest<DescribeTableRequest>(describeTableRequest, "AmazonDynamoDBv2");
-        request.addHeader("X-Amz-Target", "DynamoDB_20120810.DescribeTable");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeTableRequest.getTableName() != null) {
-                jsonGenerator.writeFieldName("TableName").writeValue(describeTableRequest.getTableName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeTableRequest.getTableName(), TABLENAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

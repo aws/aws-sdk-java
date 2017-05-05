@@ -83,7 +83,7 @@ public class DBInstance implements Serializable, Cloneable {
      * Replicas are only supported for these engines.
      * </p>
      * <p>
-     * <b>MySQL, MariaDB, SQL Server, PostgreSQL, Amazon Aurora</b>
+     * <b>MySQL, MariaDB, SQL Server, PostgreSQL</b>
      * </p>
      * <p>
      * Contains the name of the initial database of this instance that was provided at create time, if one was specified
@@ -389,6 +389,33 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      */
     private String timezone;
+    /**
+     * <p>
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
+     * false.
+     * </p>
+     * <p>
+     * IAM database authentication can be enabled for the following database engines
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For MySQL 5.6, minor version 5.6.34 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For MySQL 5.7, minor version 5.7.16 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aurora 5.6 or higher. To enable IAM database authentication for Aurora, see DBCluster Type.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private Boolean iAMDatabaseAuthenticationEnabled;
 
     /**
      * <p>
@@ -600,7 +627,7 @@ public class DBInstance implements Serializable, Cloneable {
      * Replicas are only supported for these engines.
      * </p>
      * <p>
-     * <b>MySQL, MariaDB, SQL Server, PostgreSQL, Amazon Aurora</b>
+     * <b>MySQL, MariaDB, SQL Server, PostgreSQL</b>
      * </p>
      * <p>
      * Contains the name of the initial database of this instance that was provided at create time, if one was specified
@@ -622,7 +649,7 @@ public class DBInstance implements Serializable, Cloneable {
      *        returns MySQL, MariaDB, or PostgreSQL information when returning values from CreateDBInstanceReadReplica
      *        since Read Replicas are only supported for these engines.</p>
      *        <p>
-     *        <b>MySQL, MariaDB, SQL Server, PostgreSQL, Amazon Aurora</b>
+     *        <b>MySQL, MariaDB, SQL Server, PostgreSQL</b>
      *        </p>
      *        <p>
      *        Contains the name of the initial database of this instance that was provided at create time, if one was
@@ -650,7 +677,7 @@ public class DBInstance implements Serializable, Cloneable {
      * Replicas are only supported for these engines.
      * </p>
      * <p>
-     * <b>MySQL, MariaDB, SQL Server, PostgreSQL, Amazon Aurora</b>
+     * <b>MySQL, MariaDB, SQL Server, PostgreSQL</b>
      * </p>
      * <p>
      * Contains the name of the initial database of this instance that was provided at create time, if one was specified
@@ -671,7 +698,7 @@ public class DBInstance implements Serializable, Cloneable {
      *         returns MySQL, MariaDB, or PostgreSQL information when returning values from CreateDBInstanceReadReplica
      *         since Read Replicas are only supported for these engines.</p>
      *         <p>
-     *         <b>MySQL, MariaDB, SQL Server, PostgreSQL, Amazon Aurora</b>
+     *         <b>MySQL, MariaDB, SQL Server, PostgreSQL</b>
      *         </p>
      *         <p>
      *         Contains the name of the initial database of this instance that was provided at create time, if one was
@@ -699,7 +726,7 @@ public class DBInstance implements Serializable, Cloneable {
      * Replicas are only supported for these engines.
      * </p>
      * <p>
-     * <b>MySQL, MariaDB, SQL Server, PostgreSQL, Amazon Aurora</b>
+     * <b>MySQL, MariaDB, SQL Server, PostgreSQL</b>
      * </p>
      * <p>
      * Contains the name of the initial database of this instance that was provided at create time, if one was specified
@@ -721,7 +748,7 @@ public class DBInstance implements Serializable, Cloneable {
      *        returns MySQL, MariaDB, or PostgreSQL information when returning values from CreateDBInstanceReadReplica
      *        since Read Replicas are only supported for these engines.</p>
      *        <p>
-     *        <b>MySQL, MariaDB, SQL Server, PostgreSQL, Amazon Aurora</b>
+     *        <b>MySQL, MariaDB, SQL Server, PostgreSQL</b>
      *        </p>
      *        <p>
      *        Contains the name of the initial database of this instance that was provided at create time, if one was
@@ -3018,6 +3045,222 @@ public class DBInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
+     * false.
+     * </p>
+     * <p>
+     * IAM database authentication can be enabled for the following database engines
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For MySQL 5.6, minor version 5.6.34 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For MySQL 5.7, minor version 5.7.16 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aurora 5.6 or higher. To enable IAM database authentication for Aurora, see DBCluster Type.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param iAMDatabaseAuthenticationEnabled
+     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled;
+     *        otherwise false.</p>
+     *        <p>
+     *        IAM database authentication can be enabled for the following database engines
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For MySQL 5.6, minor version 5.6.34 or higher
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For MySQL 5.7, minor version 5.7.16 or higher
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Aurora 5.6 or higher. To enable IAM database authentication for Aurora, see DBCluster Type.
+     *        </p>
+     *        </li>
+     */
+
+    public void setIAMDatabaseAuthenticationEnabled(Boolean iAMDatabaseAuthenticationEnabled) {
+        this.iAMDatabaseAuthenticationEnabled = iAMDatabaseAuthenticationEnabled;
+    }
+
+    /**
+     * <p>
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
+     * false.
+     * </p>
+     * <p>
+     * IAM database authentication can be enabled for the following database engines
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For MySQL 5.6, minor version 5.6.34 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For MySQL 5.7, minor version 5.7.16 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aurora 5.6 or higher. To enable IAM database authentication for Aurora, see DBCluster Type.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled;
+     *         otherwise false.</p>
+     *         <p>
+     *         IAM database authentication can be enabled for the following database engines
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For MySQL 5.6, minor version 5.6.34 or higher
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For MySQL 5.7, minor version 5.7.16 or higher
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Aurora 5.6 or higher. To enable IAM database authentication for Aurora, see DBCluster Type.
+     *         </p>
+     *         </li>
+     */
+
+    public Boolean getIAMDatabaseAuthenticationEnabled() {
+        return this.iAMDatabaseAuthenticationEnabled;
+    }
+
+    /**
+     * <p>
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
+     * false.
+     * </p>
+     * <p>
+     * IAM database authentication can be enabled for the following database engines
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For MySQL 5.6, minor version 5.6.34 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For MySQL 5.7, minor version 5.7.16 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aurora 5.6 or higher. To enable IAM database authentication for Aurora, see DBCluster Type.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param iAMDatabaseAuthenticationEnabled
+     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled;
+     *        otherwise false.</p>
+     *        <p>
+     *        IAM database authentication can be enabled for the following database engines
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For MySQL 5.6, minor version 5.6.34 or higher
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For MySQL 5.7, minor version 5.7.16 or higher
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Aurora 5.6 or higher. To enable IAM database authentication for Aurora, see DBCluster Type.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withIAMDatabaseAuthenticationEnabled(Boolean iAMDatabaseAuthenticationEnabled) {
+        setIAMDatabaseAuthenticationEnabled(iAMDatabaseAuthenticationEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
+     * false.
+     * </p>
+     * <p>
+     * IAM database authentication can be enabled for the following database engines
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For MySQL 5.6, minor version 5.6.34 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For MySQL 5.7, minor version 5.7.16 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aurora 5.6 or higher. To enable IAM database authentication for Aurora, see DBCluster Type.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled;
+     *         otherwise false.</p>
+     *         <p>
+     *         IAM database authentication can be enabled for the following database engines
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For MySQL 5.6, minor version 5.6.34 or higher
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For MySQL 5.7, minor version 5.7.16 or higher
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Aurora 5.6 or higher. To enable IAM database authentication for Aurora, see DBCluster Type.
+     *         </p>
+     *         </li>
+     */
+
+    public Boolean isIAMDatabaseAuthenticationEnabled() {
+        return this.iAMDatabaseAuthenticationEnabled;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -3123,7 +3366,9 @@ public class DBInstance implements Serializable, Cloneable {
         if (getDBInstanceArn() != null)
             sb.append("DBInstanceArn: ").append(getDBInstanceArn()).append(",");
         if (getTimezone() != null)
-            sb.append("Timezone: ").append(getTimezone());
+            sb.append("Timezone: ").append(getTimezone()).append(",");
+        if (getIAMDatabaseAuthenticationEnabled() != null)
+            sb.append("IAMDatabaseAuthenticationEnabled: ").append(getIAMDatabaseAuthenticationEnabled());
         sb.append("}");
         return sb.toString();
     }
@@ -3334,6 +3579,11 @@ public class DBInstance implements Serializable, Cloneable {
             return false;
         if (other.getTimezone() != null && other.getTimezone().equals(this.getTimezone()) == false)
             return false;
+        if (other.getIAMDatabaseAuthenticationEnabled() == null ^ this.getIAMDatabaseAuthenticationEnabled() == null)
+            return false;
+        if (other.getIAMDatabaseAuthenticationEnabled() != null
+                && other.getIAMDatabaseAuthenticationEnabled().equals(this.getIAMDatabaseAuthenticationEnabled()) == false)
+            return false;
         return true;
     }
 
@@ -3390,6 +3640,7 @@ public class DBInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getPromotionTier() == null) ? 0 : getPromotionTier().hashCode());
         hashCode = prime * hashCode + ((getDBInstanceArn() == null) ? 0 : getDBInstanceArn().hashCode());
         hashCode = prime * hashCode + ((getTimezone() == null) ? 0 : getTimezone().hashCode());
+        hashCode = prime * hashCode + ((getIAMDatabaseAuthenticationEnabled() == null) ? 0 : getIAMDatabaseAuthenticationEnabled().hashCode());
         return hashCode;
     }
 
@@ -3401,4 +3652,5 @@ public class DBInstance implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

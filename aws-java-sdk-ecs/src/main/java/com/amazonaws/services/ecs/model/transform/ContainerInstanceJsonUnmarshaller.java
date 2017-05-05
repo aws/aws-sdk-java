@@ -96,6 +96,10 @@ public class ContainerInstanceJsonUnmarshaller implements Unmarshaller<Container
                     context.nextToken();
                     containerInstance.setAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("registeredAt", targetDepth)) {
+                    context.nextToken();
+                    containerInstance.setRegisteredAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

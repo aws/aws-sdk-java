@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -65,8 +66,9 @@ import com.amazonaws.services.cloudformation.model.transform.*;
  * CloudFormation Product Page</a>.
  * </p>
  * <p>
- * Amazon CloudFormation makes use of other AWS products. For additional technical information about a specific AWS
- * product, see its <a href="http://docs.aws.amazon.com/">technical documentation</a>.
+ * Amazon CloudFormation makes use of other AWS products. If you need additional technical information about a specific
+ * AWS product, you can find the product's technical documentation at <a
+ * href="http://docs.aws.amazon.com/">docs.aws.amazon.com</a>.
  * </p>
  */
 @ThreadSafe
@@ -242,6 +244,10 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
         init();
     }
 
+    public static AmazonCloudFormationClientBuilder builder() {
+        return AmazonCloudFormationClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWS CloudFormation using the specified parameters.
      *
@@ -262,6 +268,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
         exceptionUnmarshallers.add(new InvalidChangeSetStatusExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InsufficientCapabilitiesExceptionUnmarshaller());
         exceptionUnmarshallers.add(new AlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TokenAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ChangeSetNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new LimitExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller(com.amazonaws.services.cloudformation.model.AmazonCloudFormationException.class));
@@ -290,12 +297,20 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * @param cancelUpdateStackRequest
      *        The input for the <a>CancelUpdateStack</a> action.
      * @return Result of the CancelUpdateStack operation returned by the service.
+     * @throws TokenAlreadyExistsException
+     *         A client request token already exists.
      * @sample AmazonCloudFormation.CancelUpdateStack
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CancelUpdateStack"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CancelUpdateStackResult cancelUpdateStack(CancelUpdateStackRequest cancelUpdateStackRequest) {
+    public CancelUpdateStackResult cancelUpdateStack(CancelUpdateStackRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelUpdateStack(request);
+    }
+
+    @SdkInternalApi
+    final CancelUpdateStackResult executeCancelUpdateStack(CancelUpdateStackRequest cancelUpdateStackRequest) {
 
         ExecutionContext executionContext = createExecutionContext(cancelUpdateStackRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -344,12 +359,20 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * @param continueUpdateRollbackRequest
      *        The input for the <a>ContinueUpdateRollback</a> action.
      * @return Result of the ContinueUpdateRollback operation returned by the service.
+     * @throws TokenAlreadyExistsException
+     *         A client request token already exists.
      * @sample AmazonCloudFormation.ContinueUpdateRollback
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ContinueUpdateRollback"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ContinueUpdateRollbackResult continueUpdateRollback(ContinueUpdateRollbackRequest continueUpdateRollbackRequest) {
+    public ContinueUpdateRollbackResult continueUpdateRollback(ContinueUpdateRollbackRequest request) {
+        request = beforeClientExecution(request);
+        return executeContinueUpdateRollback(request);
+    }
+
+    @SdkInternalApi
+    final ContinueUpdateRollbackResult executeContinueUpdateRollback(ContinueUpdateRollbackRequest continueUpdateRollbackRequest) {
 
         ExecutionContext executionContext = createExecutionContext(continueUpdateRollbackRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -381,18 +404,24 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Creates a list of changes for a stack. AWS CloudFormation generates the change set by comparing the template's
-     * information with the information that you submit. A change set can help you understand which resources AWS
-     * CloudFormation will change, and how it will change them, before you update your stack. Change sets allow you to
-     * check before making a change to avoid deleting or replacing critical resources.
+     * Creates a list of changes that will be applied to a stack so that you can review the changes before executing
+     * them. You can create a change set for a stack that doesn't exist or an existing stack. If you create a change set
+     * for a stack that doesn't exist, the change set shows all of the resources that AWS CloudFormation will create. If
+     * you create a change set for an existing stack, AWS CloudFormation compares the stack's information with the
+     * information that you submit in the change set and lists the differences. Use change sets to understand which
+     * resources AWS CloudFormation will create or change, and how it will change resources in an existing stack, before
+     * you create or update a stack.
      * </p>
      * <p>
-     * AWS CloudFormation doesn't make any changes to the stack when you create a change set. To make the specified
-     * changes, you must execute the change set by using the <a>ExecuteChangeSet</a> action.
+     * To create a change set for a stack that doesn't exist, for the <code>ChangeSetType</code> parameter, specify
+     * <code>CREATE</code>. To create a change set for an existing stack, specify <code>UPDATE</code> for the
+     * <code>ChangeSetType</code> parameter. After the <code>CreateChangeSet</code> call successfully completes, AWS
+     * CloudFormation starts creating the change set. To check the status of the change set or to review it, use the
+     * <a>DescribeChangeSet</a> action.
      * </p>
      * <p>
-     * After the call successfully completes, AWS CloudFormation starts creating the change set. To check the status of
-     * the change set, use the <a>DescribeChangeSet</a> action.
+     * When you are satisfied with the changes the change set will make, execute the change set by using the
+     * <a>ExecuteChangeSet</a> action. AWS CloudFormation doesn't make changes until you execute the change set.
      * </p>
      * 
      * @param createChangeSetRequest
@@ -409,7 +438,13 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public CreateChangeSetResult createChangeSet(CreateChangeSetRequest createChangeSetRequest) {
+    public CreateChangeSetResult createChangeSet(CreateChangeSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateChangeSet(request);
+    }
+
+    @SdkInternalApi
+    final CreateChangeSetResult executeCreateChangeSet(CreateChangeSetRequest createChangeSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createChangeSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -452,6 +487,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *         Quota for the resource has already been reached.
      * @throws AlreadyExistsException
      *         Resource with the name requested already exists.
+     * @throws TokenAlreadyExistsException
+     *         A client request token already exists.
      * @throws InsufficientCapabilitiesException
      *         The template contains resources with capabilities that were not specified in the Capabilities parameter.
      * @sample AmazonCloudFormation.CreateStack
@@ -459,7 +496,13 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *      Documentation</a>
      */
     @Override
-    public CreateStackResult createStack(CreateStackRequest createStackRequest) {
+    public CreateStackResult createStack(CreateStackRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateStack(request);
+    }
+
+    @SdkInternalApi
+    final CreateStackResult executeCreateStack(CreateStackRequest createStackRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createStackRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -507,7 +550,13 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public DeleteChangeSetResult deleteChangeSet(DeleteChangeSetRequest deleteChangeSetRequest) {
+    public DeleteChangeSetResult deleteChangeSet(DeleteChangeSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteChangeSet(request);
+    }
+
+    @SdkInternalApi
+    final DeleteChangeSetResult executeDeleteChangeSet(DeleteChangeSetRequest deleteChangeSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteChangeSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -546,12 +595,20 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * @param deleteStackRequest
      *        The input for <a>DeleteStack</a> action.
      * @return Result of the DeleteStack operation returned by the service.
+     * @throws TokenAlreadyExistsException
+     *         A client request token already exists.
      * @sample AmazonCloudFormation.DeleteStack
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteStack" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
-    public DeleteStackResult deleteStack(DeleteStackRequest deleteStackRequest) {
+    public DeleteStackResult deleteStack(DeleteStackRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteStack(request);
+    }
+
+    @SdkInternalApi
+    final DeleteStackResult executeDeleteStack(DeleteStackRequest deleteStackRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteStackRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -594,7 +651,13 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeAccountLimitsResult describeAccountLimits(DescribeAccountLimitsRequest describeAccountLimitsRequest) {
+    public DescribeAccountLimitsResult describeAccountLimits(DescribeAccountLimitsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAccountLimits(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAccountLimitsResult executeDescribeAccountLimits(DescribeAccountLimitsRequest describeAccountLimitsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAccountLimitsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -643,7 +706,13 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeChangeSetResult describeChangeSet(DescribeChangeSetRequest describeChangeSetRequest) {
+    public DescribeChangeSetResult describeChangeSet(DescribeChangeSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeChangeSet(request);
+    }
+
+    @SdkInternalApi
+    final DescribeChangeSetResult executeDescribeChangeSet(DescribeChangeSetRequest describeChangeSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeChangeSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -695,7 +764,13 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeStackEventsResult describeStackEvents(DescribeStackEventsRequest describeStackEventsRequest) {
+    public DescribeStackEventsResult describeStackEvents(DescribeStackEventsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeStackEvents(request);
+    }
+
+    @SdkInternalApi
+    final DescribeStackEventsResult executeDescribeStackEvents(DescribeStackEventsRequest describeStackEventsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeStackEventsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -742,7 +817,13 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeStackResourceResult describeStackResource(DescribeStackResourceRequest describeStackResourceRequest) {
+    public DescribeStackResourceResult describeStackResource(DescribeStackResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeStackResource(request);
+    }
+
+    @SdkInternalApi
+    final DescribeStackResourceResult executeDescribeStackResource(DescribeStackResourceRequest describeStackResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeStackResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -809,7 +890,13 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeStackResourcesResult describeStackResources(DescribeStackResourcesRequest describeStackResourcesRequest) {
+    public DescribeStackResourcesResult describeStackResources(DescribeStackResourcesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeStackResources(request);
+    }
+
+    @SdkInternalApi
+    final DescribeStackResourcesResult executeDescribeStackResources(DescribeStackResourcesRequest describeStackResourcesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeStackResourcesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -858,7 +945,13 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public DescribeStacksResult describeStacks(DescribeStacksRequest describeStacksRequest) {
+    public DescribeStacksResult describeStacks(DescribeStacksRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeStacks(request);
+    }
+
+    @SdkInternalApi
+    final DescribeStacksResult executeDescribeStacks(DescribeStacksRequest describeStacksRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeStacksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -907,7 +1000,13 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public EstimateTemplateCostResult estimateTemplateCost(EstimateTemplateCostRequest estimateTemplateCostRequest) {
+    public EstimateTemplateCostResult estimateTemplateCost(EstimateTemplateCostRequest request) {
+        request = beforeClientExecution(request);
+        return executeEstimateTemplateCost(request);
+    }
+
+    @SdkInternalApi
+    final EstimateTemplateCostResult executeEstimateTemplateCost(EstimateTemplateCostRequest estimateTemplateCostRequest) {
 
         ExecutionContext executionContext = createExecutionContext(estimateTemplateCostRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -968,12 +1067,20 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *         <code>ListChangeSets</code> action.
      * @throws InsufficientCapabilitiesException
      *         The template contains resources with capabilities that were not specified in the Capabilities parameter.
+     * @throws TokenAlreadyExistsException
+     *         A client request token already exists.
      * @sample AmazonCloudFormation.ExecuteChangeSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ExecuteChangeSet"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ExecuteChangeSetResult executeChangeSet(ExecuteChangeSetRequest executeChangeSetRequest) {
+    public ExecuteChangeSetResult executeChangeSet(ExecuteChangeSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeExecuteChangeSet(request);
+    }
+
+    @SdkInternalApi
+    final ExecuteChangeSetResult executeExecuteChangeSet(ExecuteChangeSetRequest executeChangeSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(executeChangeSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1016,7 +1123,13 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public GetStackPolicyResult getStackPolicy(GetStackPolicyRequest getStackPolicyRequest) {
+    public GetStackPolicyResult getStackPolicy(GetStackPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetStackPolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetStackPolicyResult executeGetStackPolicy(GetStackPolicyRequest getStackPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getStackPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1070,7 +1183,13 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *      Documentation</a>
      */
     @Override
-    public GetTemplateResult getTemplate(GetTemplateRequest getTemplateRequest) {
+    public GetTemplateResult getTemplate(GetTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetTemplate(request);
+    }
+
+    @SdkInternalApi
+    final GetTemplateResult executeGetTemplate(GetTemplateRequest getTemplateRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getTemplateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1122,7 +1241,13 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetTemplateSummaryResult getTemplateSummary(GetTemplateSummaryRequest getTemplateSummaryRequest) {
+    public GetTemplateSummaryResult getTemplateSummary(GetTemplateSummaryRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetTemplateSummary(request);
+    }
+
+    @SdkInternalApi
+    final GetTemplateSummaryResult executeGetTemplateSummary(GetTemplateSummaryRequest getTemplateSummaryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getTemplateSummaryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1171,7 +1296,13 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public ListChangeSetsResult listChangeSets(ListChangeSetsRequest listChangeSetsRequest) {
+    public ListChangeSetsResult listChangeSets(ListChangeSetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListChangeSets(request);
+    }
+
+    @SdkInternalApi
+    final ListChangeSetsResult executeListChangeSets(ListChangeSetsRequest listChangeSetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listChangeSetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1221,7 +1352,13 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *      Documentation</a>
      */
     @Override
-    public ListExportsResult listExports(ListExportsRequest listExportsRequest) {
+    public ListExportsResult listExports(ListExportsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListExports(request);
+    }
+
+    @SdkInternalApi
+    final ListExportsResult executeListExports(ListExportsRequest listExportsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listExportsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1269,7 +1406,13 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *      Documentation</a>
      */
     @Override
-    public ListImportsResult listImports(ListImportsRequest listImportsRequest) {
+    public ListImportsResult listImports(ListImportsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListImports(request);
+    }
+
+    @SdkInternalApi
+    final ListImportsResult executeListImports(ListImportsRequest listImportsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listImportsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1315,7 +1458,13 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListStackResourcesResult listStackResources(ListStackResourcesRequest listStackResourcesRequest) {
+    public ListStackResourcesResult listStackResources(ListStackResourcesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListStackResources(request);
+    }
+
+    @SdkInternalApi
+    final ListStackResourcesResult executeListStackResources(ListStackResourcesRequest listStackResourcesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listStackResourcesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1361,7 +1510,13 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *      Documentation</a>
      */
     @Override
-    public ListStacksResult listStacks(ListStacksRequest listStacksRequest) {
+    public ListStacksResult listStacks(ListStacksRequest request) {
+        request = beforeClientExecution(request);
+        return executeListStacks(request);
+    }
+
+    @SdkInternalApi
+    final ListStacksResult executeListStacks(ListStacksRequest listStacksRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listStacksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1408,7 +1563,13 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public SetStackPolicyResult setStackPolicy(SetStackPolicyRequest setStackPolicyRequest) {
+    public SetStackPolicyResult setStackPolicy(SetStackPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetStackPolicy(request);
+    }
+
+    @SdkInternalApi
+    final SetStackPolicyResult executeSetStackPolicy(SetStackPolicyRequest setStackPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(setStackPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1455,7 +1616,13 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public SignalResourceResult signalResource(SignalResourceRequest signalResourceRequest) {
+    public SignalResourceResult signalResource(SignalResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeSignalResource(request);
+    }
+
+    @SdkInternalApi
+    final SignalResourceResult executeSignalResource(SignalResourceRequest signalResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(signalResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1505,12 +1672,20 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * @return Result of the UpdateStack operation returned by the service.
      * @throws InsufficientCapabilitiesException
      *         The template contains resources with capabilities that were not specified in the Capabilities parameter.
+     * @throws TokenAlreadyExistsException
+     *         A client request token already exists.
      * @sample AmazonCloudFormation.UpdateStack
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStack" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
-    public UpdateStackResult updateStack(UpdateStackRequest updateStackRequest) {
+    public UpdateStackResult updateStack(UpdateStackRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateStack(request);
+    }
+
+    @SdkInternalApi
+    final UpdateStackResult executeUpdateStack(UpdateStackRequest updateStackRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateStackRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1554,7 +1729,13 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ValidateTemplateResult validateTemplate(ValidateTemplateRequest validateTemplateRequest) {
+    public ValidateTemplateResult validateTemplate(ValidateTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeValidateTemplate(request);
+    }
+
+    @SdkInternalApi
+    final ValidateTemplateResult executeValidateTemplate(ValidateTemplateRequest validateTemplateRequest) {
 
         ExecutionContext executionContext = createExecutionContext(validateTemplateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1647,6 +1828,14 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             }
         }
         return waiters;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
 
 }

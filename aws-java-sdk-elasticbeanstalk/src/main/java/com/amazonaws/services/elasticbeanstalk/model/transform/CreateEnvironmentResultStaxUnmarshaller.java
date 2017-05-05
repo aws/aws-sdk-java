@@ -70,6 +70,11 @@ public class CreateEnvironmentResultStaxUnmarshaller implements Unmarshaller<Cre
                     continue;
                 }
 
+                if (context.testExpression("PlatformArn", targetDepth)) {
+                    createEnvironmentResult.setPlatformArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("TemplateName", targetDepth)) {
                     createEnvironmentResult.setTemplateName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -14,12 +14,14 @@ package com.amazonaws.services.cloudtrail.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * The Amazon S3 objects that you specify in your event selectors for your trail to log data events. Data events are
- * object level API operations that access S3 objects, such as <code>GetObject</code>, <code>DeleteObject</code>, and
- * <code>PutObject</code>. You can specify up to 50 S3 buckets and object prefixes for an event selector.
+ * object-level API operations that access S3 objects, such as <code>GetObject</code>, <code>DeleteObject</code>, and
+ * <code>PutObject</code>. You can specify up to 250 S3 buckets and object prefixes for a trail.
  * </p>
  * <p>
  * Example
@@ -59,7 +61,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DataResource implements Serializable, Cloneable {
+public class DataResource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -328,5 +330,11 @@ public class DataResource implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.cloudtrail.model.transform.DataResourceMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

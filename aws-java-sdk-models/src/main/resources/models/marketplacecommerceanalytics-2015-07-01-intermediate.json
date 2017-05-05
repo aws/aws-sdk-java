@@ -17,6 +17,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
+    "deprecatedSuppressions" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
     "presignersFqcn" : null,
@@ -210,6 +211,9 @@
       }, {
         "name" : "Sales_compensation_billed_revenue",
         "value" : "sales_compensation_billed_revenue"
+      }, {
+        "name" : "Us_sales_and_use_tax_records",
+        "value" : "us_sales_and_use_tax_records"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -223,6 +227,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DataSetType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -265,11 +271,11 @@
         "c2jName" : "dataSetType",
         "c2jShape" : "DataSetType",
         "deprecated" : false,
-        "documentation" : "<p>The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> </ul> </p>",
+        "documentation" : "<p>The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> <li><i>us_sales_and_use_tax_records</i> - Available monthly on the 15th day of the month by 5:00 PM Pacific Time since 2017-02-15.</li> </ul> </p>",
         "enumType" : "DataSetType",
-        "fluentSetterDocumentation" : "/**<p>The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> </ul> </p>\n@param dataSetType The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> </ul>\n@return Returns a reference to this object so that method calls can be chained together.\n@see DataSetType*/",
+        "fluentSetterDocumentation" : "/**<p>The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> <li><i>us_sales_and_use_tax_records</i> - Available monthly on the 15th day of the month by 5:00 PM Pacific Time since 2017-02-15.</li> </ul> </p>\n@param dataSetType The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> <li><i>us_sales_and_use_tax_records</i> - Available monthly on the 15th day of the month by 5:00 PM Pacific Time since 2017-02-15.</li> </ul>\n@return Returns a reference to this object so that method calls can be chained together.\n@see DataSetType*/",
         "fluentSetterMethodName" : "withDataSetType",
-        "getterDocumentation" : "/**<p>The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> </ul> </p>\n@return The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> </ul>\n@see DataSetType*/",
+        "getterDocumentation" : "/**<p>The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> <li><i>us_sales_and_use_tax_records</i> - Available monthly on the 15th day of the month by 5:00 PM Pacific Time since 2017-02-15.</li> </ul> </p>\n@return The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> <li><i>us_sales_and_use_tax_records</i> - Available monthly on the 15th day of the month by 5:00 PM Pacific Time since 2017-02-15.</li> </ul>\n@see DataSetType*/",
         "getterMethodName" : "getDataSetType",
         "getterModel" : {
           "returnType" : "String",
@@ -284,6 +290,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "dataSetType",
           "queryString" : false,
           "statusCode" : false,
@@ -291,12 +298,16 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "DataSetType",
-        "setterDocumentation" : "/**<p>The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> </ul> </p>\n@param dataSetType The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> </ul>\n@see DataSetType*/",
+        "setterDocumentation" : "/**<p>The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> <li><i>us_sales_and_use_tax_records</i> - Available monthly on the 15th day of the month by 5:00 PM Pacific Time since 2017-02-15.</li> </ul> </p>\n@param dataSetType The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> <li><i>us_sales_and_use_tax_records</i> - Available monthly on the 15th day of the month by 5:00 PM Pacific Time since 2017-02-15.</li> </ul>\n@see DataSetType*/",
         "setterMethodName" : "setDataSetType",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -307,12 +318,13 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p>The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> </ul> </p>\n@param dataSetType The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> </ul>\n@return Returns a reference to this object so that method calls can be chained together.\n@see DataSetType*/",
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> <li><i>us_sales_and_use_tax_records</i> - Available monthly on the 15th day of the month by 5:00 PM Pacific Time since 2017-02-15.</li> </ul> </p>\n@param dataSetType The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> <li><i>us_sales_and_use_tax_records</i> - Available monthly on the 15th day of the month by 5:00 PM Pacific Time since 2017-02-15.</li> </ul>\n@return Returns a reference to this object so that method calls can be chained together.\n@see DataSetType*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "dataSetType",
           "variableType" : "String",
-          "documentation" : "<p>The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> </ul> </p>",
+          "documentation" : "<p>The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> <li><i>us_sales_and_use_tax_records</i> - Available monthly on the 15th day of the month by 5:00 PM Pacific Time since 2017-02-15.</li> </ul> </p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -340,6 +352,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "dataSetPublicationDate",
           "queryString" : false,
           "statusCode" : false,
@@ -347,10 +360,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "java.util.Date",
+        "marshallingType" : "DATE",
         "name" : "DataSetPublicationDate",
         "setterDocumentation" : "/**The date a data set was published. For daily data sets, provide a date with day-level granularity for the desired day. For weekly data sets, provide a date with day-level granularity within the desired week (the day value will be ignored). For monthly data sets, provide a date with month-level granularity for the desired month (the day value will be ignored).\n@param dataSetPublicationDate The date a data set was published. For daily data sets, provide a date with day-level granularity for the desired day. For weekly data sets, provide a date with day-level granularity within the desired week (the day value will be ignored). For monthly data sets, provide a date with month-level granularity for the desired month (the day value will be ignored).*/",
         "setterMethodName" : "setDataSetPublicationDate",
@@ -363,6 +380,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The date a data set was published. For daily data sets, provide a date with day-level granularity for the desired day. For weekly data sets, provide a date with day-level granularity within the desired week (the day value will be ignored). For monthly data sets, provide a date with month-level granularity for the desired month (the day value will be ignored).\n@param dataSetPublicationDate The date a data set was published. For daily data sets, provide a date with day-level granularity for the desired day. For weekly data sets, provide a date with day-level granularity within the desired week (the day value will be ignored). For monthly data sets, provide a date with month-level granularity for the desired month (the day value will be ignored).\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.Date",
@@ -396,6 +414,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "roleNameArn",
           "queryString" : false,
           "statusCode" : false,
@@ -403,10 +422,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "RoleNameArn",
         "setterDocumentation" : "/**The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.\n@param roleNameArn The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.*/",
         "setterMethodName" : "setRoleNameArn",
@@ -419,6 +442,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.\n@param roleNameArn The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -452,6 +476,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "destinationS3BucketName",
           "queryString" : false,
           "statusCode" : false,
@@ -459,10 +484,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "DestinationS3BucketName",
         "setterDocumentation" : "/**The name (friendly name, not ARN) of the destination S3 bucket.\n@param destinationS3BucketName The name (friendly name, not ARN) of the destination S3 bucket.*/",
         "setterMethodName" : "setDestinationS3BucketName",
@@ -475,6 +504,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name (friendly name, not ARN) of the destination S3 bucket.\n@param destinationS3BucketName The name (friendly name, not ARN) of the destination S3 bucket.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -508,6 +538,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "destinationS3Prefix",
           "queryString" : false,
           "statusCode" : false,
@@ -515,10 +546,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "DestinationS3Prefix",
         "setterDocumentation" : "/**(Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems. For example, if given the bucket name \"mybucket\" and the prefix \"myprefix/mydatasets\", the output file \"outputfile\" would be published to \"s3://mybucket/myprefix/mydatasets/outputfile\". If the prefix directory structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3 bucket root.\n@param destinationS3Prefix (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems. For example, if given the bucket name \"mybucket\" and the prefix \"myprefix/mydatasets\", the output file \"outputfile\" would be published to \"s3://mybucket/myprefix/mydatasets/outputfile\". If the prefix directory structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3 bucket root.*/",
         "setterMethodName" : "setDestinationS3Prefix",
@@ -531,6 +566,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**(Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems. For example, if given the bucket name \"mybucket\" and the prefix \"myprefix/mydatasets\", the output file \"outputfile\" would be published to \"s3://mybucket/myprefix/mydatasets/outputfile\". If the prefix directory structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3 bucket root.\n@param destinationS3Prefix (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems. For example, if given the bucket name \"mybucket\" and the prefix \"myprefix/mydatasets\", the output file \"outputfile\" would be published to \"s3://mybucket/myprefix/mydatasets/outputfile\". If the prefix directory structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3 bucket root.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -564,6 +600,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "snsTopicArn",
           "queryString" : false,
           "statusCode" : false,
@@ -571,10 +608,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "SnsTopicArn",
         "setterDocumentation" : "/**Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.\n@param snsTopicArn Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.*/",
         "setterMethodName" : "setSnsTopicArn",
@@ -587,6 +628,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.\n@param snsTopicArn Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -620,6 +662,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "customerDefinedValues",
           "queryString" : false,
           "statusCode" : false,
@@ -627,6 +670,8 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : true,
@@ -660,6 +705,7 @@
               "isPayload" : false,
               "isStreaming" : false,
               "location" : null,
+              "marshallLocation" : "PAYLOAD",
               "marshallLocationName" : "value",
               "queryString" : false,
               "statusCode" : false,
@@ -667,10 +713,14 @@
               "uri" : false
             },
             "idempotencyToken" : false,
+            "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
             "mapModel" : null,
+            "marshallingTargetClass" : "String",
+            "marshallingType" : "STRING",
             "name" : "Value",
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
@@ -683,6 +733,7 @@
               "variableSetterType" : "String"
             },
             "simple" : true,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
               "variableDeclarationType" : "String",
@@ -702,6 +753,8 @@
           "valueList" : false,
           "valueSimple" : true
         },
+        "marshallingTargetClass" : "Map",
+        "marshallingType" : "MAP",
         "name" : "CustomerDefinedValues",
         "setterDocumentation" : "/**(Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file. These key-value pairs can be used to correlated responses with tracking information from other systems.\n@param customerDefinedValues (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file. These key-value pairs can be used to correlated responses with tracking information from other systems.*/",
         "setterMethodName" : "setCustomerDefinedValues",
@@ -714,6 +767,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**(Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file. These key-value pairs can be used to correlated responses with tracking information from other systems.\n@param customerDefinedValues (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file. These key-value pairs can be used to correlated responses with tracking information from other systems.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.Map<String,String>",
@@ -749,6 +803,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "customerDefinedValues",
             "queryString" : false,
             "statusCode" : false,
@@ -756,6 +811,8 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : true,
@@ -789,6 +846,7 @@
                 "isPayload" : false,
                 "isStreaming" : false,
                 "location" : null,
+                "marshallLocation" : "PAYLOAD",
                 "marshallLocationName" : "value",
                 "queryString" : false,
                 "statusCode" : false,
@@ -796,10 +854,14 @@
                 "uri" : false
               },
               "idempotencyToken" : false,
+              "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
               "mapModel" : null,
+              "marshallingTargetClass" : "String",
+              "marshallingType" : "STRING",
               "name" : "Value",
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
@@ -812,6 +874,7 @@
                 "variableSetterType" : "String"
               },
               "simple" : true,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
                 "variableDeclarationType" : "String",
@@ -831,6 +894,8 @@
             "valueList" : false,
             "valueSimple" : true
           },
+          "marshallingTargetClass" : "Map",
+          "marshallingType" : "MAP",
           "name" : "CustomerDefinedValues",
           "setterDocumentation" : "/**(Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file. These key-value pairs can be used to correlated responses with tracking information from other systems.\n@param customerDefinedValues (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file. These key-value pairs can be used to correlated responses with tracking information from other systems.*/",
           "setterMethodName" : "setCustomerDefinedValues",
@@ -843,6 +908,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**(Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file. These key-value pairs can be used to correlated responses with tracking information from other systems.\n@param customerDefinedValues (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file. These key-value pairs can be used to correlated responses with tracking information from other systems.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.Map<String,String>",
@@ -877,6 +943,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "dataSetPublicationDate",
             "queryString" : false,
             "statusCode" : false,
@@ -884,10 +951,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "java.util.Date",
+          "marshallingType" : "DATE",
           "name" : "DataSetPublicationDate",
           "setterDocumentation" : "/**The date a data set was published. For daily data sets, provide a date with day-level granularity for the desired day. For weekly data sets, provide a date with day-level granularity within the desired week (the day value will be ignored). For monthly data sets, provide a date with month-level granularity for the desired month (the day value will be ignored).\n@param dataSetPublicationDate The date a data set was published. For daily data sets, provide a date with day-level granularity for the desired day. For weekly data sets, provide a date with day-level granularity within the desired week (the day value will be ignored). For monthly data sets, provide a date with month-level granularity for the desired month (the day value will be ignored).*/",
           "setterMethodName" : "setDataSetPublicationDate",
@@ -900,6 +971,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The date a data set was published. For daily data sets, provide a date with day-level granularity for the desired day. For weekly data sets, provide a date with day-level granularity within the desired week (the day value will be ignored). For monthly data sets, provide a date with month-level granularity for the desired month (the day value will be ignored).\n@param dataSetPublicationDate The date a data set was published. For daily data sets, provide a date with day-level granularity for the desired day. For weekly data sets, provide a date with day-level granularity within the desired week (the day value will be ignored). For monthly data sets, provide a date with month-level granularity for the desired month (the day value will be ignored).\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.Date",
@@ -915,11 +987,11 @@
           "c2jName" : "dataSetType",
           "c2jShape" : "DataSetType",
           "deprecated" : false,
-          "documentation" : "<p>The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> </ul> </p>",
+          "documentation" : "<p>The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> <li><i>us_sales_and_use_tax_records</i> - Available monthly on the 15th day of the month by 5:00 PM Pacific Time since 2017-02-15.</li> </ul> </p>",
           "enumType" : "DataSetType",
-          "fluentSetterDocumentation" : "/**<p>The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> </ul> </p>\n@param dataSetType The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> </ul>\n@return Returns a reference to this object so that method calls can be chained together.\n@see DataSetType*/",
+          "fluentSetterDocumentation" : "/**<p>The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> <li><i>us_sales_and_use_tax_records</i> - Available monthly on the 15th day of the month by 5:00 PM Pacific Time since 2017-02-15.</li> </ul> </p>\n@param dataSetType The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> <li><i>us_sales_and_use_tax_records</i> - Available monthly on the 15th day of the month by 5:00 PM Pacific Time since 2017-02-15.</li> </ul>\n@return Returns a reference to this object so that method calls can be chained together.\n@see DataSetType*/",
           "fluentSetterMethodName" : "withDataSetType",
-          "getterDocumentation" : "/**<p>The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> </ul> </p>\n@return The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> </ul>\n@see DataSetType*/",
+          "getterDocumentation" : "/**<p>The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> <li><i>us_sales_and_use_tax_records</i> - Available monthly on the 15th day of the month by 5:00 PM Pacific Time since 2017-02-15.</li> </ul> </p>\n@return The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> <li><i>us_sales_and_use_tax_records</i> - Available monthly on the 15th day of the month by 5:00 PM Pacific Time since 2017-02-15.</li> </ul>\n@see DataSetType*/",
           "getterMethodName" : "getDataSetType",
           "getterModel" : {
             "returnType" : "String",
@@ -934,6 +1006,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "dataSetType",
             "queryString" : false,
             "statusCode" : false,
@@ -941,12 +1014,16 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "DataSetType",
-          "setterDocumentation" : "/**<p>The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> </ul> </p>\n@param dataSetType The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> </ul>\n@see DataSetType*/",
+          "setterDocumentation" : "/**<p>The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> <li><i>us_sales_and_use_tax_records</i> - Available monthly on the 15th day of the month by 5:00 PM Pacific Time since 2017-02-15.</li> </ul> </p>\n@param dataSetType The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> <li><i>us_sales_and_use_tax_records</i> - Available monthly on the 15th day of the month by 5:00 PM Pacific Time since 2017-02-15.</li> </ul>\n@see DataSetType*/",
           "setterMethodName" : "setDataSetType",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -957,12 +1034,13 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p>The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> </ul> </p>\n@param dataSetType The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> </ul>\n@return Returns a reference to this object so that method calls can be chained together.\n@see DataSetType*/",
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> <li><i>us_sales_and_use_tax_records</i> - Available monthly on the 15th day of the month by 5:00 PM Pacific Time since 2017-02-15.</li> </ul> </p>\n@param dataSetType The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> <li><i>us_sales_and_use_tax_records</i> - Available monthly on the 15th day of the month by 5:00 PM Pacific Time since 2017-02-15.</li> </ul>\n@return Returns a reference to this object so that method calls can be chained together.\n@see DataSetType*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "dataSetType",
             "variableType" : "String",
-            "documentation" : "<p>The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> </ul> </p>",
+            "documentation" : "<p>The desired data set type.</p> <p> <ul> <li><i>customer_subscriber_hourly_monthly_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>customer_subscriber_annual_subscriptions</i> - Available daily by 5:00 PM Pacific Time since 2014-07-21.</li> <li><i>daily_business_usage_by_instance_type</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_fees</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_free_trial_conversions</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_instances</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_new_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>daily_business_canceled_product_subscribers</i> - Available daily by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>monthly_revenue_billing_and_revenue_data</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>monthly_revenue_annual_subscriptions</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2015-02.</li> <li><i>disbursed_amount_by_product</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_product_with_uncollected_funds</i> -This data set is only available from 2012-04-19 until 2015-01-25. After 2015-01-25, this data set was split into three data sets: disbursed_amount_by_product, disbursed_amount_by_age_of_uncollected_funds, and disbursed_amount_by_age_of_disbursed_funds. </li> <li><i>disbursed_amount_by_instance_hours</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-09-04.</li> <li><i>disbursed_amount_by_customer_geo</i> - Available every 30 days by 5:00 PM Pacific Time since 2012-04-19.</li> <li><i>disbursed_amount_by_age_of_uncollected_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>disbursed_amount_by_age_of_disbursed_funds</i> - Available every 30 days by 5:00 PM Pacific Time since 2015-01-26.</li> <li><i>customer_profile_by_industry</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_revenue</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>customer_profile_by_geography</i> - Available daily by 5:00 PM Pacific Time since 2015-10-01.</li> <li><i>sales_compensation_billed_revenue</i> - Available monthly on the 4th day of the month by 5:00 PM Pacific Time since 2016-12.</li> <li><i>us_sales_and_use_tax_records</i> - Available monthly on the 15th day of the month by 5:00 PM Pacific Time since 2017-02-15.</li> </ul> </p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -991,6 +1069,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "destinationS3BucketName",
             "queryString" : false,
             "statusCode" : false,
@@ -998,10 +1077,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "DestinationS3BucketName",
           "setterDocumentation" : "/**The name (friendly name, not ARN) of the destination S3 bucket.\n@param destinationS3BucketName The name (friendly name, not ARN) of the destination S3 bucket.*/",
           "setterMethodName" : "setDestinationS3BucketName",
@@ -1014,6 +1097,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name (friendly name, not ARN) of the destination S3 bucket.\n@param destinationS3BucketName The name (friendly name, not ARN) of the destination S3 bucket.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -1048,6 +1132,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "destinationS3Prefix",
             "queryString" : false,
             "statusCode" : false,
@@ -1055,10 +1140,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "DestinationS3Prefix",
           "setterDocumentation" : "/**(Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems. For example, if given the bucket name \"mybucket\" and the prefix \"myprefix/mydatasets\", the output file \"outputfile\" would be published to \"s3://mybucket/myprefix/mydatasets/outputfile\". If the prefix directory structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3 bucket root.\n@param destinationS3Prefix (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems. For example, if given the bucket name \"mybucket\" and the prefix \"myprefix/mydatasets\", the output file \"outputfile\" would be published to \"s3://mybucket/myprefix/mydatasets/outputfile\". If the prefix directory structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3 bucket root.*/",
           "setterMethodName" : "setDestinationS3Prefix",
@@ -1071,6 +1160,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**(Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems. For example, if given the bucket name \"mybucket\" and the prefix \"myprefix/mydatasets\", the output file \"outputfile\" would be published to \"s3://mybucket/myprefix/mydatasets/outputfile\". If the prefix directory structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3 bucket root.\n@param destinationS3Prefix (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems. For example, if given the bucket name \"mybucket\" and the prefix \"myprefix/mydatasets\", the output file \"outputfile\" would be published to \"s3://mybucket/myprefix/mydatasets/outputfile\". If the prefix directory structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3 bucket root.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -1105,6 +1195,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "roleNameArn",
             "queryString" : false,
             "statusCode" : false,
@@ -1112,10 +1203,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "RoleNameArn",
           "setterDocumentation" : "/**The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.\n@param roleNameArn The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.*/",
           "setterMethodName" : "setRoleNameArn",
@@ -1128,6 +1223,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.\n@param roleNameArn The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -1162,6 +1258,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "snsTopicArn",
             "queryString" : false,
             "statusCode" : false,
@@ -1169,10 +1266,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "SnsTopicArn",
           "setterDocumentation" : "/**Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.\n@param snsTopicArn Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.*/",
           "setterMethodName" : "setSnsTopicArn",
@@ -1185,6 +1286,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.\n@param snsTopicArn Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -1201,6 +1303,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "dataSetType", "dataSetPublicationDate", "roleNameArn", "destinationS3BucketName", "snsTopicArn" ],
       "shapeName" : "GenerateDataSetRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GenerateDataSetRequest",
@@ -1252,6 +1356,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "dataSetRequestId",
           "queryString" : false,
           "statusCode" : false,
@@ -1259,10 +1364,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "DataSetRequestId",
         "setterDocumentation" : "/**A unique identifier representing a specific request to the GenerateDataSet operation. This identifier can be used to correlate a request with notifications from the SNS topic.\n@param dataSetRequestId A unique identifier representing a specific request to the GenerateDataSet operation. This identifier can be used to correlate a request with notifications from the SNS topic.*/",
         "setterMethodName" : "setDataSetRequestId",
@@ -1275,6 +1384,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A unique identifier representing a specific request to the GenerateDataSet operation. This identifier can be used to correlate a request with notifications from the SNS topic.\n@param dataSetRequestId A unique identifier representing a specific request to the GenerateDataSet operation. This identifier can be used to correlate a request with notifications from the SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -1310,6 +1420,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "dataSetRequestId",
             "queryString" : false,
             "statusCode" : false,
@@ -1317,10 +1428,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "DataSetRequestId",
           "setterDocumentation" : "/**A unique identifier representing a specific request to the GenerateDataSet operation. This identifier can be used to correlate a request with notifications from the SNS topic.\n@param dataSetRequestId A unique identifier representing a specific request to the GenerateDataSet operation. This identifier can be used to correlate a request with notifications from the SNS topic.*/",
           "setterMethodName" : "setDataSetRequestId",
@@ -1333,6 +1448,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A unique identifier representing a specific request to the GenerateDataSet operation. This identifier can be used to correlate a request with notifications from the SNS topic.\n@param dataSetRequestId A unique identifier representing a specific request to the GenerateDataSet operation. This identifier can be used to correlate a request with notifications from the SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -1349,6 +1465,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GenerateDataSetResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -1386,6 +1504,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MarketplaceCommerceAnalyticsException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "MarketplaceCommerceAnalyticsException",
@@ -1444,6 +1564,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "dataSetType",
           "queryString" : false,
           "statusCode" : false,
@@ -1451,10 +1572,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "DataSetType",
         "setterDocumentation" : "/**<p> Specifies the data set type to be written to the output csv file. The data set types customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file containing the following fields: Product Id, Product Code, Customer Guid, Subscription Guid, Subscription Start Date, Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code, Operation Type, and Operation Time. </p> <p> <ul> <li><i>customer_support_contacts_data</i> Customer support contact data. The data set will contain all changes (Creates, Updates, and Deletes) to customer support contact data from the date specified in the from_date parameter.</li> <li><i>test_customer_support_contacts_data</i> An example data set containing static test data in the same format as customer_support_contacts_data</li> </ul> </p>\n@param dataSetType Specifies the data set type to be written to the output csv file. The data set types customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file containing the following fields: Product Id, Product Code, Customer Guid, Subscription Guid, Subscription Start Date, Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code, Operation Type, and Operation Time. </p> <p> <ul> <li><i>customer_support_contacts_data</i> Customer support contact data. The data set will contain all changes (Creates, Updates, and Deletes) to customer support contact data from the date specified in the from_date parameter.</li> <li><i>test_customer_support_contacts_data</i> An example data set containing static test data in the same format as customer_support_contacts_data</li> </ul>\n@see SupportDataSetType*/",
         "setterMethodName" : "setDataSetType",
@@ -1467,6 +1592,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Specifies the data set type to be written to the output csv file. The data set types customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file containing the following fields: Product Id, Product Code, Customer Guid, Subscription Guid, Subscription Start Date, Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code, Operation Type, and Operation Time. </p> <p> <ul> <li><i>customer_support_contacts_data</i> Customer support contact data. The data set will contain all changes (Creates, Updates, and Deletes) to customer support contact data from the date specified in the from_date parameter.</li> <li><i>test_customer_support_contacts_data</i> An example data set containing static test data in the same format as customer_support_contacts_data</li> </ul> </p>\n@param dataSetType Specifies the data set type to be written to the output csv file. The data set types customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file containing the following fields: Product Id, Product Code, Customer Guid, Subscription Guid, Subscription Start Date, Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code, Operation Type, and Operation Time. </p> <p> <ul> <li><i>customer_support_contacts_data</i> Customer support contact data. The data set will contain all changes (Creates, Updates, and Deletes) to customer support contact data from the date specified in the from_date parameter.</li> <li><i>test_customer_support_contacts_data</i> An example data set containing static test data in the same format as customer_support_contacts_data</li> </ul>\n@return Returns a reference to this object so that method calls can be chained together.\n@see SupportDataSetType*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -1500,6 +1626,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "fromDate",
           "queryString" : false,
           "statusCode" : false,
@@ -1507,10 +1634,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "java.util.Date",
+        "marshallingType" : "DATE",
         "name" : "FromDate",
         "setterDocumentation" : "/**The start date from which to retrieve the data set in UTC. This parameter only affects the customer_support_contacts_data data set type.\n@param fromDate The start date from which to retrieve the data set in UTC. This parameter only affects the customer_support_contacts_data data set type.*/",
         "setterMethodName" : "setFromDate",
@@ -1523,6 +1654,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The start date from which to retrieve the data set in UTC. This parameter only affects the customer_support_contacts_data data set type.\n@param fromDate The start date from which to retrieve the data set in UTC. This parameter only affects the customer_support_contacts_data data set type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.Date",
@@ -1556,6 +1688,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "roleNameArn",
           "queryString" : false,
           "statusCode" : false,
@@ -1563,10 +1696,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "RoleNameArn",
         "setterDocumentation" : "/**The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.\n@param roleNameArn The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.*/",
         "setterMethodName" : "setRoleNameArn",
@@ -1579,6 +1716,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.\n@param roleNameArn The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -1612,6 +1750,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "destinationS3BucketName",
           "queryString" : false,
           "statusCode" : false,
@@ -1619,10 +1758,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "DestinationS3BucketName",
         "setterDocumentation" : "/**The name (friendly name, not ARN) of the destination S3 bucket.\n@param destinationS3BucketName The name (friendly name, not ARN) of the destination S3 bucket.*/",
         "setterMethodName" : "setDestinationS3BucketName",
@@ -1635,6 +1778,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name (friendly name, not ARN) of the destination S3 bucket.\n@param destinationS3BucketName The name (friendly name, not ARN) of the destination S3 bucket.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -1668,6 +1812,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "destinationS3Prefix",
           "queryString" : false,
           "statusCode" : false,
@@ -1675,10 +1820,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "DestinationS3Prefix",
         "setterDocumentation" : "/**(Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems. For example, if given the bucket name \"mybucket\" and the prefix \"myprefix/mydatasets\", the output file \"outputfile\" would be published to \"s3://mybucket/myprefix/mydatasets/outputfile\". If the prefix directory structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3 bucket root.\n@param destinationS3Prefix (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems. For example, if given the bucket name \"mybucket\" and the prefix \"myprefix/mydatasets\", the output file \"outputfile\" would be published to \"s3://mybucket/myprefix/mydatasets/outputfile\". If the prefix directory structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3 bucket root.*/",
         "setterMethodName" : "setDestinationS3Prefix",
@@ -1691,6 +1840,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**(Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems. For example, if given the bucket name \"mybucket\" and the prefix \"myprefix/mydatasets\", the output file \"outputfile\" would be published to \"s3://mybucket/myprefix/mydatasets/outputfile\". If the prefix directory structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3 bucket root.\n@param destinationS3Prefix (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems. For example, if given the bucket name \"mybucket\" and the prefix \"myprefix/mydatasets\", the output file \"outputfile\" would be published to \"s3://mybucket/myprefix/mydatasets/outputfile\". If the prefix directory structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3 bucket root.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -1724,6 +1874,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "snsTopicArn",
           "queryString" : false,
           "statusCode" : false,
@@ -1731,10 +1882,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "SnsTopicArn",
         "setterDocumentation" : "/**Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.\n@param snsTopicArn Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.*/",
         "setterMethodName" : "setSnsTopicArn",
@@ -1747,6 +1902,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.\n@param snsTopicArn Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -1780,6 +1936,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "customerDefinedValues",
           "queryString" : false,
           "statusCode" : false,
@@ -1787,6 +1944,8 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : true,
@@ -1820,6 +1979,7 @@
               "isPayload" : false,
               "isStreaming" : false,
               "location" : null,
+              "marshallLocation" : "PAYLOAD",
               "marshallLocationName" : "value",
               "queryString" : false,
               "statusCode" : false,
@@ -1827,10 +1987,14 @@
               "uri" : false
             },
             "idempotencyToken" : false,
+            "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
             "mapModel" : null,
+            "marshallingTargetClass" : "String",
+            "marshallingType" : "STRING",
             "name" : "Value",
             "setterDocumentation" : "/**\n@param value */",
             "setterMethodName" : "setValue",
@@ -1843,6 +2007,7 @@
               "variableSetterType" : "String"
             },
             "simple" : true,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
               "variableDeclarationType" : "String",
@@ -1862,6 +2027,8 @@
           "valueList" : false,
           "valueSimple" : true
         },
+        "marshallingTargetClass" : "Map",
+        "marshallingType" : "MAP",
         "name" : "CustomerDefinedValues",
         "setterDocumentation" : "/**(Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file.\n@param customerDefinedValues (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file.*/",
         "setterMethodName" : "setCustomerDefinedValues",
@@ -1874,6 +2041,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**(Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file.\n@param customerDefinedValues (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.Map<String,String>",
@@ -1909,6 +2077,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "customerDefinedValues",
             "queryString" : false,
             "statusCode" : false,
@@ -1916,6 +2085,8 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : true,
@@ -1949,6 +2120,7 @@
                 "isPayload" : false,
                 "isStreaming" : false,
                 "location" : null,
+                "marshallLocation" : "PAYLOAD",
                 "marshallLocationName" : "value",
                 "queryString" : false,
                 "statusCode" : false,
@@ -1956,10 +2128,14 @@
                 "uri" : false
               },
               "idempotencyToken" : false,
+              "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
               "mapModel" : null,
+              "marshallingTargetClass" : "String",
+              "marshallingType" : "STRING",
               "name" : "Value",
               "setterDocumentation" : "/**\n@param value */",
               "setterMethodName" : "setValue",
@@ -1972,6 +2148,7 @@
                 "variableSetterType" : "String"
               },
               "simple" : true,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
                 "variableDeclarationType" : "String",
@@ -1991,6 +2168,8 @@
             "valueList" : false,
             "valueSimple" : true
           },
+          "marshallingTargetClass" : "Map",
+          "marshallingType" : "MAP",
           "name" : "CustomerDefinedValues",
           "setterDocumentation" : "/**(Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file.\n@param customerDefinedValues (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file.*/",
           "setterMethodName" : "setCustomerDefinedValues",
@@ -2003,6 +2182,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**(Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file.\n@param customerDefinedValues (Optional) Key-value pairs which will be returned, unmodified, in the Amazon SNS notification message and the data set metadata file.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.Map<String,String>",
@@ -2037,6 +2217,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "dataSetType",
             "queryString" : false,
             "statusCode" : false,
@@ -2044,10 +2225,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "DataSetType",
           "setterDocumentation" : "/**<p> Specifies the data set type to be written to the output csv file. The data set types customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file containing the following fields: Product Id, Product Code, Customer Guid, Subscription Guid, Subscription Start Date, Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code, Operation Type, and Operation Time. </p> <p> <ul> <li><i>customer_support_contacts_data</i> Customer support contact data. The data set will contain all changes (Creates, Updates, and Deletes) to customer support contact data from the date specified in the from_date parameter.</li> <li><i>test_customer_support_contacts_data</i> An example data set containing static test data in the same format as customer_support_contacts_data</li> </ul> </p>\n@param dataSetType Specifies the data set type to be written to the output csv file. The data set types customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file containing the following fields: Product Id, Product Code, Customer Guid, Subscription Guid, Subscription Start Date, Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code, Operation Type, and Operation Time. </p> <p> <ul> <li><i>customer_support_contacts_data</i> Customer support contact data. The data set will contain all changes (Creates, Updates, and Deletes) to customer support contact data from the date specified in the from_date parameter.</li> <li><i>test_customer_support_contacts_data</i> An example data set containing static test data in the same format as customer_support_contacts_data</li> </ul>\n@see SupportDataSetType*/",
           "setterMethodName" : "setDataSetType",
@@ -2060,6 +2245,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Specifies the data set type to be written to the output csv file. The data set types customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file containing the following fields: Product Id, Product Code, Customer Guid, Subscription Guid, Subscription Start Date, Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code, Operation Type, and Operation Time. </p> <p> <ul> <li><i>customer_support_contacts_data</i> Customer support contact data. The data set will contain all changes (Creates, Updates, and Deletes) to customer support contact data from the date specified in the from_date parameter.</li> <li><i>test_customer_support_contacts_data</i> An example data set containing static test data in the same format as customer_support_contacts_data</li> </ul> </p>\n@param dataSetType Specifies the data set type to be written to the output csv file. The data set types customer_support_contacts_data and test_customer_support_contacts_data both result in a csv file containing the following fields: Product Id, Product Code, Customer Guid, Subscription Guid, Subscription Start Date, Organization, AWS Account Id, Given Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code, Operation Type, and Operation Time. </p> <p> <ul> <li><i>customer_support_contacts_data</i> Customer support contact data. The data set will contain all changes (Creates, Updates, and Deletes) to customer support contact data from the date specified in the from_date parameter.</li> <li><i>test_customer_support_contacts_data</i> An example data set containing static test data in the same format as customer_support_contacts_data</li> </ul>\n@return Returns a reference to this object so that method calls can be chained together.\n@see SupportDataSetType*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -2094,6 +2280,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "destinationS3BucketName",
             "queryString" : false,
             "statusCode" : false,
@@ -2101,10 +2288,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "DestinationS3BucketName",
           "setterDocumentation" : "/**The name (friendly name, not ARN) of the destination S3 bucket.\n@param destinationS3BucketName The name (friendly name, not ARN) of the destination S3 bucket.*/",
           "setterMethodName" : "setDestinationS3BucketName",
@@ -2117,6 +2308,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name (friendly name, not ARN) of the destination S3 bucket.\n@param destinationS3BucketName The name (friendly name, not ARN) of the destination S3 bucket.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -2151,6 +2343,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "destinationS3Prefix",
             "queryString" : false,
             "statusCode" : false,
@@ -2158,10 +2351,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "DestinationS3Prefix",
           "setterDocumentation" : "/**(Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems. For example, if given the bucket name \"mybucket\" and the prefix \"myprefix/mydatasets\", the output file \"outputfile\" would be published to \"s3://mybucket/myprefix/mydatasets/outputfile\". If the prefix directory structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3 bucket root.\n@param destinationS3Prefix (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems. For example, if given the bucket name \"mybucket\" and the prefix \"myprefix/mydatasets\", the output file \"outputfile\" would be published to \"s3://mybucket/myprefix/mydatasets/outputfile\". If the prefix directory structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3 bucket root.*/",
           "setterMethodName" : "setDestinationS3Prefix",
@@ -2174,6 +2371,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**(Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems. For example, if given the bucket name \"mybucket\" and the prefix \"myprefix/mydatasets\", the output file \"outputfile\" would be published to \"s3://mybucket/myprefix/mydatasets/outputfile\". If the prefix directory structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3 bucket root.\n@param destinationS3Prefix (Optional) The desired S3 prefix for the published data set, similar to a directory path in standard file systems. For example, if given the bucket name \"mybucket\" and the prefix \"myprefix/mydatasets\", the output file \"outputfile\" would be published to \"s3://mybucket/myprefix/mydatasets/outputfile\". If the prefix directory structure does not exist, it will be created. If no prefix is provided, the data set will be published to the S3 bucket root.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -2208,6 +2406,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "fromDate",
             "queryString" : false,
             "statusCode" : false,
@@ -2215,10 +2414,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "java.util.Date",
+          "marshallingType" : "DATE",
           "name" : "FromDate",
           "setterDocumentation" : "/**The start date from which to retrieve the data set in UTC. This parameter only affects the customer_support_contacts_data data set type.\n@param fromDate The start date from which to retrieve the data set in UTC. This parameter only affects the customer_support_contacts_data data set type.*/",
           "setterMethodName" : "setFromDate",
@@ -2231,6 +2434,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The start date from which to retrieve the data set in UTC. This parameter only affects the customer_support_contacts_data data set type.\n@param fromDate The start date from which to retrieve the data set in UTC. This parameter only affects the customer_support_contacts_data data set type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.Date",
@@ -2265,6 +2469,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "roleNameArn",
             "queryString" : false,
             "statusCode" : false,
@@ -2272,10 +2477,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "RoleNameArn",
           "setterDocumentation" : "/**The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.\n@param roleNameArn The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.*/",
           "setterMethodName" : "setRoleNameArn",
@@ -2288,6 +2497,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.\n@param roleNameArn The Amazon Resource Name (ARN) of the Role with an attached permissions policy to interact with the provided AWS services.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -2322,6 +2532,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "snsTopicArn",
             "queryString" : false,
             "statusCode" : false,
@@ -2329,10 +2540,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "SnsTopicArn",
           "setterDocumentation" : "/**Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.\n@param snsTopicArn Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.*/",
           "setterMethodName" : "setSnsTopicArn",
@@ -2345,6 +2560,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.\n@param snsTopicArn Amazon Resource Name (ARN) for the SNS Topic that will be notified when the data set has been published or if an error has occurred.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -2361,6 +2577,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "dataSetType", "fromDate", "roleNameArn", "destinationS3BucketName", "snsTopicArn" ],
       "shapeName" : "StartSupportDataExportRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "StartSupportDataExportRequest",
@@ -2412,6 +2630,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "dataSetRequestId",
           "queryString" : false,
           "statusCode" : false,
@@ -2419,10 +2638,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "DataSetRequestId",
         "setterDocumentation" : "/**A unique identifier representing a specific request to the StartSupportDataExport operation. This identifier can be used to correlate a request with notifications from the SNS topic.\n@param dataSetRequestId A unique identifier representing a specific request to the StartSupportDataExport operation. This identifier can be used to correlate a request with notifications from the SNS topic.*/",
         "setterMethodName" : "setDataSetRequestId",
@@ -2435,6 +2658,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A unique identifier representing a specific request to the StartSupportDataExport operation. This identifier can be used to correlate a request with notifications from the SNS topic.\n@param dataSetRequestId A unique identifier representing a specific request to the StartSupportDataExport operation. This identifier can be used to correlate a request with notifications from the SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -2470,6 +2694,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "dataSetRequestId",
             "queryString" : false,
             "statusCode" : false,
@@ -2477,10 +2702,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "DataSetRequestId",
           "setterDocumentation" : "/**A unique identifier representing a specific request to the StartSupportDataExport operation. This identifier can be used to correlate a request with notifications from the SNS topic.\n@param dataSetRequestId A unique identifier representing a specific request to the StartSupportDataExport operation. This identifier can be used to correlate a request with notifications from the SNS topic.*/",
           "setterMethodName" : "setDataSetRequestId",
@@ -2493,6 +2722,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A unique identifier representing a specific request to the StartSupportDataExport operation. This identifier can be used to correlate a request with notifications from the SNS topic.\n@param dataSetRequestId A unique identifier representing a specific request to the StartSupportDataExport operation. This identifier can be used to correlate a request with notifications from the SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -2509,6 +2739,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "StartSupportDataExportResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -2552,6 +2784,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SupportDataSetType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null

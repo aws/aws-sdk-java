@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A BatchWrite exception has occurred.
+ * A <code>BatchWrite</code> exception has occurred.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -30,24 +30,12 @@ public class ListOperationsResult extends com.amazonaws.AmazonWebServiceResult<c
      * <p>
      * Lists summaries of the operations.
      * </p>
-     * <p>
-     * Type: Complex type containing a list of operation summaries
-     * </p>
-     * <p>
-     * Children: <code>OperationId</code>, <code>Status</code>, <code>SubmittedDate</code>, <code>Type</code>
-     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<OperationSummary> operations;
     /**
      * <p>
      * If there are more operations than you specified for <code>MaxItems</code> in the request, submit another request
      * and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Parent: <code>Operations</code>
      * </p>
      */
     private String nextPageMarker;
@@ -56,19 +44,8 @@ public class ListOperationsResult extends com.amazonaws.AmazonWebServiceResult<c
      * <p>
      * Lists summaries of the operations.
      * </p>
-     * <p>
-     * Type: Complex type containing a list of operation summaries
-     * </p>
-     * <p>
-     * Children: <code>OperationId</code>, <code>Status</code>, <code>SubmittedDate</code>, <code>Type</code>
-     * </p>
      * 
-     * @return Lists summaries of the operations.</p>
-     *         <p>
-     *         Type: Complex type containing a list of operation summaries
-     *         </p>
-     *         <p>
-     *         Children: <code>OperationId</code>, <code>Status</code>, <code>SubmittedDate</code>, <code>Type</code>
+     * @return Lists summaries of the operations.
      */
 
     public java.util.List<OperationSummary> getOperations() {
@@ -82,20 +59,9 @@ public class ListOperationsResult extends com.amazonaws.AmazonWebServiceResult<c
      * <p>
      * Lists summaries of the operations.
      * </p>
-     * <p>
-     * Type: Complex type containing a list of operation summaries
-     * </p>
-     * <p>
-     * Children: <code>OperationId</code>, <code>Status</code>, <code>SubmittedDate</code>, <code>Type</code>
-     * </p>
      * 
      * @param operations
-     *        Lists summaries of the operations.</p>
-     *        <p>
-     *        Type: Complex type containing a list of operation summaries
-     *        </p>
-     *        <p>
-     *        Children: <code>OperationId</code>, <code>Status</code>, <code>SubmittedDate</code>, <code>Type</code>
+     *        Lists summaries of the operations.
      */
 
     public void setOperations(java.util.Collection<OperationSummary> operations) {
@@ -112,24 +78,13 @@ public class ListOperationsResult extends com.amazonaws.AmazonWebServiceResult<c
      * Lists summaries of the operations.
      * </p>
      * <p>
-     * Type: Complex type containing a list of operation summaries
-     * </p>
-     * <p>
-     * Children: <code>OperationId</code>, <code>Status</code>, <code>SubmittedDate</code>, <code>Type</code>
-     * </p>
-     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setOperations(java.util.Collection)} or {@link #withOperations(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param operations
-     *        Lists summaries of the operations.</p>
-     *        <p>
-     *        Type: Complex type containing a list of operation summaries
-     *        </p>
-     *        <p>
-     *        Children: <code>OperationId</code>, <code>Status</code>, <code>SubmittedDate</code>, <code>Type</code>
+     *        Lists summaries of the operations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,20 +102,9 @@ public class ListOperationsResult extends com.amazonaws.AmazonWebServiceResult<c
      * <p>
      * Lists summaries of the operations.
      * </p>
-     * <p>
-     * Type: Complex type containing a list of operation summaries
-     * </p>
-     * <p>
-     * Children: <code>OperationId</code>, <code>Status</code>, <code>SubmittedDate</code>, <code>Type</code>
-     * </p>
      * 
      * @param operations
-     *        Lists summaries of the operations.</p>
-     *        <p>
-     *        Type: Complex type containing a list of operation summaries
-     *        </p>
-     *        <p>
-     *        Children: <code>OperationId</code>, <code>Status</code>, <code>SubmittedDate</code>, <code>Type</code>
+     *        Lists summaries of the operations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -174,21 +118,10 @@ public class ListOperationsResult extends com.amazonaws.AmazonWebServiceResult<c
      * If there are more operations than you specified for <code>MaxItems</code> in the request, submit another request
      * and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Parent: <code>Operations</code>
-     * </p>
      * 
      * @param nextPageMarker
      *        If there are more operations than you specified for <code>MaxItems</code> in the request, submit another
-     *        request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Parent: <code>Operations</code>
+     *        request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.
      */
 
     public void setNextPageMarker(String nextPageMarker) {
@@ -200,20 +133,9 @@ public class ListOperationsResult extends com.amazonaws.AmazonWebServiceResult<c
      * If there are more operations than you specified for <code>MaxItems</code> in the request, submit another request
      * and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Parent: <code>Operations</code>
-     * </p>
      * 
      * @return If there are more operations than you specified for <code>MaxItems</code> in the request, submit another
-     *         request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Parent: <code>Operations</code>
+     *         request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.
      */
 
     public String getNextPageMarker() {
@@ -225,21 +147,10 @@ public class ListOperationsResult extends com.amazonaws.AmazonWebServiceResult<c
      * If there are more operations than you specified for <code>MaxItems</code> in the request, submit another request
      * and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Parent: <code>Operations</code>
-     * </p>
      * 
      * @param nextPageMarker
      *        If there are more operations than you specified for <code>MaxItems</code> in the request, submit another
-     *        request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Parent: <code>Operations</code>
+     *        request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -306,4 +217,5 @@ public class ListOperationsResult extends com.amazonaws.AmazonWebServiceResult<c
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

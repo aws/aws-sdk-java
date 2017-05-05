@@ -1,5 +1,8 @@
 <#macro content memberModel >
-    <#if memberModel.simple>
+    <#if memberModel.unmarshallingType?? >
+        context.getUnmarshaller(${memberModel.variable.variableType}.class,
+                                JsonUnmarshallerContext.UnmarshallerType.${memberModel.unmarshallingType})
+    <#elseif memberModel.simple >
         context.getUnmarshaller(${memberModel.variable.variableType}.class)
     <#elseif memberModel.list >
         <#if memberModel.listModel.listMemberModel?has_content >

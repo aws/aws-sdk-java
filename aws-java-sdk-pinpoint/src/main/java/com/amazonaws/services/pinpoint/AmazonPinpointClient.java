@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -240,6 +241,10 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
         init();
     }
 
+    public static AmazonPinpointClientBuilder builder() {
+        return AmazonPinpointClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon Pinpoint using the specified parameters.
      *
@@ -287,7 +292,13 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonPinpoint.CreateCampaign
      */
     @Override
-    public CreateCampaignResult createCampaign(CreateCampaignRequest createCampaignRequest) {
+    public CreateCampaignResult createCampaign(CreateCampaignRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCampaign(request);
+    }
+
+    @SdkInternalApi
+    final CreateCampaignResult executeCreateCampaign(CreateCampaignRequest createCampaignRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createCampaignRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -298,7 +309,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateCampaignRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createCampaignRequest));
+                request = new CreateCampaignRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createCampaignRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -337,7 +348,13 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonPinpoint.CreateImportJob
      */
     @Override
-    public CreateImportJobResult createImportJob(CreateImportJobRequest createImportJobRequest) {
+    public CreateImportJobResult createImportJob(CreateImportJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateImportJob(request);
+    }
+
+    @SdkInternalApi
+    final CreateImportJobResult executeCreateImportJob(CreateImportJobRequest createImportJobRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createImportJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -348,7 +365,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateImportJobRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createImportJobRequest));
+                request = new CreateImportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createImportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -387,7 +404,13 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonPinpoint.CreateSegment
      */
     @Override
-    public CreateSegmentResult createSegment(CreateSegmentRequest createSegmentRequest) {
+    public CreateSegmentResult createSegment(CreateSegmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSegment(request);
+    }
+
+    @SdkInternalApi
+    final CreateSegmentResult executeCreateSegment(CreateSegmentRequest createSegmentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createSegmentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -398,7 +421,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateSegmentRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSegmentRequest));
+                request = new CreateSegmentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSegmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -437,7 +460,13 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonPinpoint.DeleteApnsChannel
      */
     @Override
-    public DeleteApnsChannelResult deleteApnsChannel(DeleteApnsChannelRequest deleteApnsChannelRequest) {
+    public DeleteApnsChannelResult deleteApnsChannel(DeleteApnsChannelRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteApnsChannel(request);
+    }
+
+    @SdkInternalApi
+    final DeleteApnsChannelResult executeDeleteApnsChannel(DeleteApnsChannelRequest deleteApnsChannelRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteApnsChannelRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -448,7 +477,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteApnsChannelRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteApnsChannelRequest));
+                request = new DeleteApnsChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteApnsChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -487,7 +516,13 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonPinpoint.DeleteCampaign
      */
     @Override
-    public DeleteCampaignResult deleteCampaign(DeleteCampaignRequest deleteCampaignRequest) {
+    public DeleteCampaignResult deleteCampaign(DeleteCampaignRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteCampaign(request);
+    }
+
+    @SdkInternalApi
+    final DeleteCampaignResult executeDeleteCampaign(DeleteCampaignRequest deleteCampaignRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteCampaignRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -498,7 +533,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteCampaignRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteCampaignRequest));
+                request = new DeleteCampaignRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteCampaignRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -507,6 +542,63 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteCampaignResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteCampaignResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Deletes the event stream for an app.
+     * 
+     * @param deleteEventStreamRequest
+     *        DeleteEventStream Request
+     * @return Result of the DeleteEventStream operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.DeleteEventStream
+     */
+    @Override
+    public DeleteEventStreamResult deleteEventStream(DeleteEventStreamRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteEventStream(request);
+    }
+
+    @SdkInternalApi
+    final DeleteEventStreamResult executeDeleteEventStream(DeleteEventStreamRequest deleteEventStreamRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteEventStreamRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteEventStreamRequest> request = null;
+        Response<DeleteEventStreamResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteEventStreamRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteEventStreamRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteEventStreamResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteEventStreamResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -537,7 +629,13 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonPinpoint.DeleteGcmChannel
      */
     @Override
-    public DeleteGcmChannelResult deleteGcmChannel(DeleteGcmChannelRequest deleteGcmChannelRequest) {
+    public DeleteGcmChannelResult deleteGcmChannel(DeleteGcmChannelRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteGcmChannel(request);
+    }
+
+    @SdkInternalApi
+    final DeleteGcmChannelResult executeDeleteGcmChannel(DeleteGcmChannelRequest deleteGcmChannelRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteGcmChannelRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -548,7 +646,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteGcmChannelRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteGcmChannelRequest));
+                request = new DeleteGcmChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteGcmChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -587,7 +685,13 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonPinpoint.DeleteSegment
      */
     @Override
-    public DeleteSegmentResult deleteSegment(DeleteSegmentRequest deleteSegmentRequest) {
+    public DeleteSegmentResult deleteSegment(DeleteSegmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteSegment(request);
+    }
+
+    @SdkInternalApi
+    final DeleteSegmentResult executeDeleteSegment(DeleteSegmentRequest deleteSegmentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteSegmentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -598,7 +702,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteSegmentRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSegmentRequest));
+                request = new DeleteSegmentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSegmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -637,7 +741,13 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonPinpoint.GetApnsChannel
      */
     @Override
-    public GetApnsChannelResult getApnsChannel(GetApnsChannelRequest getApnsChannelRequest) {
+    public GetApnsChannelResult getApnsChannel(GetApnsChannelRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetApnsChannel(request);
+    }
+
+    @SdkInternalApi
+    final GetApnsChannelResult executeGetApnsChannel(GetApnsChannelRequest getApnsChannelRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getApnsChannelRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -648,7 +758,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetApnsChannelRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getApnsChannelRequest));
+                request = new GetApnsChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getApnsChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -687,7 +797,13 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonPinpoint.GetApplicationSettings
      */
     @Override
-    public GetApplicationSettingsResult getApplicationSettings(GetApplicationSettingsRequest getApplicationSettingsRequest) {
+    public GetApplicationSettingsResult getApplicationSettings(GetApplicationSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetApplicationSettings(request);
+    }
+
+    @SdkInternalApi
+    final GetApplicationSettingsResult executeGetApplicationSettings(GetApplicationSettingsRequest getApplicationSettingsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getApplicationSettingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -698,7 +814,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetApplicationSettingsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getApplicationSettingsRequest));
+                request = new GetApplicationSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getApplicationSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -738,7 +854,13 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonPinpoint.GetCampaign
      */
     @Override
-    public GetCampaignResult getCampaign(GetCampaignRequest getCampaignRequest) {
+    public GetCampaignResult getCampaign(GetCampaignRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCampaign(request);
+    }
+
+    @SdkInternalApi
+    final GetCampaignResult executeGetCampaign(GetCampaignRequest getCampaignRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getCampaignRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -749,7 +871,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetCampaignRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCampaignRequest));
+                request = new GetCampaignRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCampaignRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -788,7 +910,13 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonPinpoint.GetCampaignActivities
      */
     @Override
-    public GetCampaignActivitiesResult getCampaignActivities(GetCampaignActivitiesRequest getCampaignActivitiesRequest) {
+    public GetCampaignActivitiesResult getCampaignActivities(GetCampaignActivitiesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCampaignActivities(request);
+    }
+
+    @SdkInternalApi
+    final GetCampaignActivitiesResult executeGetCampaignActivities(GetCampaignActivitiesRequest getCampaignActivitiesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getCampaignActivitiesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -799,7 +927,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetCampaignActivitiesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCampaignActivitiesRequest));
+                request = new GetCampaignActivitiesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCampaignActivitiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -820,7 +948,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
     }
 
     /**
-     * Returns information about your campaign versions.
+     * Returns information about a specific version of a campaign.
      * 
      * @param getCampaignVersionRequest
      * @return Result of the GetCampaignVersion operation returned by the service.
@@ -839,7 +967,13 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonPinpoint.GetCampaignVersion
      */
     @Override
-    public GetCampaignVersionResult getCampaignVersion(GetCampaignVersionRequest getCampaignVersionRequest) {
+    public GetCampaignVersionResult getCampaignVersion(GetCampaignVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCampaignVersion(request);
+    }
+
+    @SdkInternalApi
+    final GetCampaignVersionResult executeGetCampaignVersion(GetCampaignVersionRequest getCampaignVersionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getCampaignVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -850,7 +984,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetCampaignVersionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCampaignVersionRequest));
+                request = new GetCampaignVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCampaignVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -889,7 +1023,13 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonPinpoint.GetCampaignVersions
      */
     @Override
-    public GetCampaignVersionsResult getCampaignVersions(GetCampaignVersionsRequest getCampaignVersionsRequest) {
+    public GetCampaignVersionsResult getCampaignVersions(GetCampaignVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCampaignVersions(request);
+    }
+
+    @SdkInternalApi
+    final GetCampaignVersionsResult executeGetCampaignVersions(GetCampaignVersionsRequest getCampaignVersionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getCampaignVersionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -900,7 +1040,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetCampaignVersionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCampaignVersionsRequest));
+                request = new GetCampaignVersionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCampaignVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -939,7 +1079,13 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonPinpoint.GetCampaigns
      */
     @Override
-    public GetCampaignsResult getCampaigns(GetCampaignsRequest getCampaignsRequest) {
+    public GetCampaignsResult getCampaigns(GetCampaignsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCampaigns(request);
+    }
+
+    @SdkInternalApi
+    final GetCampaignsResult executeGetCampaigns(GetCampaignsRequest getCampaignsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getCampaignsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -950,7 +1096,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetCampaignsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCampaignsRequest));
+                request = new GetCampaignsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCampaignsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -989,7 +1135,13 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonPinpoint.GetEndpoint
      */
     @Override
-    public GetEndpointResult getEndpoint(GetEndpointRequest getEndpointRequest) {
+    public GetEndpointResult getEndpoint(GetEndpointRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetEndpoint(request);
+    }
+
+    @SdkInternalApi
+    final GetEndpointResult executeGetEndpoint(GetEndpointRequest getEndpointRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getEndpointRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1000,7 +1152,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetEndpointRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getEndpointRequest));
+                request = new GetEndpointRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1009,6 +1161,63 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<GetEndpointResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetEndpointResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Returns the event stream for an app.
+     * 
+     * @param getEventStreamRequest
+     *        GetEventStream Request
+     * @return Result of the GetEventStream operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.GetEventStream
+     */
+    @Override
+    public GetEventStreamResult getEventStream(GetEventStreamRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetEventStream(request);
+    }
+
+    @SdkInternalApi
+    final GetEventStreamResult executeGetEventStream(GetEventStreamRequest getEventStreamRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getEventStreamRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetEventStreamRequest> request = null;
+        Response<GetEventStreamResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetEventStreamRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getEventStreamRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetEventStreamResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetEventStreamResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1039,7 +1248,13 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonPinpoint.GetGcmChannel
      */
     @Override
-    public GetGcmChannelResult getGcmChannel(GetGcmChannelRequest getGcmChannelRequest) {
+    public GetGcmChannelResult getGcmChannel(GetGcmChannelRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetGcmChannel(request);
+    }
+
+    @SdkInternalApi
+    final GetGcmChannelResult executeGetGcmChannel(GetGcmChannelRequest getGcmChannelRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getGcmChannelRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1050,7 +1265,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetGcmChannelRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getGcmChannelRequest));
+                request = new GetGcmChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getGcmChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1089,7 +1304,13 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonPinpoint.GetImportJob
      */
     @Override
-    public GetImportJobResult getImportJob(GetImportJobRequest getImportJobRequest) {
+    public GetImportJobResult getImportJob(GetImportJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetImportJob(request);
+    }
+
+    @SdkInternalApi
+    final GetImportJobResult executeGetImportJob(GetImportJobRequest getImportJobRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getImportJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1100,7 +1321,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetImportJobRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getImportJobRequest));
+                request = new GetImportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getImportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1139,7 +1360,13 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonPinpoint.GetImportJobs
      */
     @Override
-    public GetImportJobsResult getImportJobs(GetImportJobsRequest getImportJobsRequest) {
+    public GetImportJobsResult getImportJobs(GetImportJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetImportJobs(request);
+    }
+
+    @SdkInternalApi
+    final GetImportJobsResult executeGetImportJobs(GetImportJobsRequest getImportJobsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getImportJobsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1150,7 +1377,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetImportJobsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getImportJobsRequest));
+                request = new GetImportJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getImportJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1189,7 +1416,13 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonPinpoint.GetSegment
      */
     @Override
-    public GetSegmentResult getSegment(GetSegmentRequest getSegmentRequest) {
+    public GetSegmentResult getSegment(GetSegmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSegment(request);
+    }
+
+    @SdkInternalApi
+    final GetSegmentResult executeGetSegment(GetSegmentRequest getSegmentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getSegmentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1200,7 +1433,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetSegmentRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSegmentRequest));
+                request = new GetSegmentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSegmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1239,7 +1472,13 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonPinpoint.GetSegmentImportJobs
      */
     @Override
-    public GetSegmentImportJobsResult getSegmentImportJobs(GetSegmentImportJobsRequest getSegmentImportJobsRequest) {
+    public GetSegmentImportJobsResult getSegmentImportJobs(GetSegmentImportJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSegmentImportJobs(request);
+    }
+
+    @SdkInternalApi
+    final GetSegmentImportJobsResult executeGetSegmentImportJobs(GetSegmentImportJobsRequest getSegmentImportJobsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getSegmentImportJobsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1250,7 +1489,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetSegmentImportJobsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSegmentImportJobsRequest));
+                request = new GetSegmentImportJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSegmentImportJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1289,7 +1528,13 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonPinpoint.GetSegmentVersion
      */
     @Override
-    public GetSegmentVersionResult getSegmentVersion(GetSegmentVersionRequest getSegmentVersionRequest) {
+    public GetSegmentVersionResult getSegmentVersion(GetSegmentVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSegmentVersion(request);
+    }
+
+    @SdkInternalApi
+    final GetSegmentVersionResult executeGetSegmentVersion(GetSegmentVersionRequest getSegmentVersionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getSegmentVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1300,7 +1545,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetSegmentVersionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSegmentVersionRequest));
+                request = new GetSegmentVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSegmentVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1339,7 +1584,13 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonPinpoint.GetSegmentVersions
      */
     @Override
-    public GetSegmentVersionsResult getSegmentVersions(GetSegmentVersionsRequest getSegmentVersionsRequest) {
+    public GetSegmentVersionsResult getSegmentVersions(GetSegmentVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSegmentVersions(request);
+    }
+
+    @SdkInternalApi
+    final GetSegmentVersionsResult executeGetSegmentVersions(GetSegmentVersionsRequest getSegmentVersionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getSegmentVersionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1350,7 +1601,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetSegmentVersionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSegmentVersionsRequest));
+                request = new GetSegmentVersionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSegmentVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1389,7 +1640,13 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonPinpoint.GetSegments
      */
     @Override
-    public GetSegmentsResult getSegments(GetSegmentsRequest getSegmentsRequest) {
+    public GetSegmentsResult getSegments(GetSegmentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSegments(request);
+    }
+
+    @SdkInternalApi
+    final GetSegmentsResult executeGetSegments(GetSegmentsRequest getSegmentsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getSegmentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1400,7 +1657,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetSegmentsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSegmentsRequest));
+                request = new GetSegmentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSegmentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1409,6 +1666,63 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<GetSegmentsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetSegmentsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Use to create or update the event stream for an app.
+     * 
+     * @param putEventStreamRequest
+     *        PutEventStream Request
+     * @return Result of the PutEventStream operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.PutEventStream
+     */
+    @Override
+    public PutEventStreamResult putEventStream(PutEventStreamRequest request) {
+        request = beforeClientExecution(request);
+        return executePutEventStream(request);
+    }
+
+    @SdkInternalApi
+    final PutEventStreamResult executePutEventStream(PutEventStreamRequest putEventStreamRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putEventStreamRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutEventStreamRequest> request = null;
+        Response<PutEventStreamResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutEventStreamRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putEventStreamRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutEventStreamResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutEventStreamResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1439,7 +1753,13 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonPinpoint.UpdateApnsChannel
      */
     @Override
-    public UpdateApnsChannelResult updateApnsChannel(UpdateApnsChannelRequest updateApnsChannelRequest) {
+    public UpdateApnsChannelResult updateApnsChannel(UpdateApnsChannelRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateApnsChannel(request);
+    }
+
+    @SdkInternalApi
+    final UpdateApnsChannelResult executeUpdateApnsChannel(UpdateApnsChannelRequest updateApnsChannelRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateApnsChannelRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1450,7 +1770,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateApnsChannelRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateApnsChannelRequest));
+                request = new UpdateApnsChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateApnsChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1489,7 +1809,13 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonPinpoint.UpdateApplicationSettings
      */
     @Override
-    public UpdateApplicationSettingsResult updateApplicationSettings(UpdateApplicationSettingsRequest updateApplicationSettingsRequest) {
+    public UpdateApplicationSettingsResult updateApplicationSettings(UpdateApplicationSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateApplicationSettings(request);
+    }
+
+    @SdkInternalApi
+    final UpdateApplicationSettingsResult executeUpdateApplicationSettings(UpdateApplicationSettingsRequest updateApplicationSettingsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateApplicationSettingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1500,7 +1826,8 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateApplicationSettingsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateApplicationSettingsRequest));
+                request = new UpdateApplicationSettingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateApplicationSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1540,7 +1867,13 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonPinpoint.UpdateCampaign
      */
     @Override
-    public UpdateCampaignResult updateCampaign(UpdateCampaignRequest updateCampaignRequest) {
+    public UpdateCampaignResult updateCampaign(UpdateCampaignRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateCampaign(request);
+    }
+
+    @SdkInternalApi
+    final UpdateCampaignResult executeUpdateCampaign(UpdateCampaignRequest updateCampaignRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateCampaignRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1551,7 +1884,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateCampaignRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateCampaignRequest));
+                request = new UpdateCampaignRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateCampaignRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1590,7 +1923,13 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonPinpoint.UpdateEndpoint
      */
     @Override
-    public UpdateEndpointResult updateEndpoint(UpdateEndpointRequest updateEndpointRequest) {
+    public UpdateEndpointResult updateEndpoint(UpdateEndpointRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateEndpoint(request);
+    }
+
+    @SdkInternalApi
+    final UpdateEndpointResult executeUpdateEndpoint(UpdateEndpointRequest updateEndpointRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateEndpointRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1601,7 +1940,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateEndpointRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateEndpointRequest));
+                request = new UpdateEndpointRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1621,7 +1960,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
     }
 
     /**
-     * Use to update your endpoints.
+     * Use to update a batch of endpoints.
      * 
      * @param updateEndpointsBatchRequest
      * @return Result of the UpdateEndpointsBatch operation returned by the service.
@@ -1640,7 +1979,13 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonPinpoint.UpdateEndpointsBatch
      */
     @Override
-    public UpdateEndpointsBatchResult updateEndpointsBatch(UpdateEndpointsBatchRequest updateEndpointsBatchRequest) {
+    public UpdateEndpointsBatchResult updateEndpointsBatch(UpdateEndpointsBatchRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateEndpointsBatch(request);
+    }
+
+    @SdkInternalApi
+    final UpdateEndpointsBatchResult executeUpdateEndpointsBatch(UpdateEndpointsBatchRequest updateEndpointsBatchRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateEndpointsBatchRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1651,7 +1996,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateEndpointsBatchRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateEndpointsBatchRequest));
+                request = new UpdateEndpointsBatchRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateEndpointsBatchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1690,7 +2035,13 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonPinpoint.UpdateGcmChannel
      */
     @Override
-    public UpdateGcmChannelResult updateGcmChannel(UpdateGcmChannelRequest updateGcmChannelRequest) {
+    public UpdateGcmChannelResult updateGcmChannel(UpdateGcmChannelRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateGcmChannel(request);
+    }
+
+    @SdkInternalApi
+    final UpdateGcmChannelResult executeUpdateGcmChannel(UpdateGcmChannelRequest updateGcmChannelRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateGcmChannelRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1701,7 +2052,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateGcmChannelRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGcmChannelRequest));
+                request = new UpdateGcmChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGcmChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1740,7 +2091,13 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @sample AmazonPinpoint.UpdateSegment
      */
     @Override
-    public UpdateSegmentResult updateSegment(UpdateSegmentRequest updateSegmentRequest) {
+    public UpdateSegmentResult updateSegment(UpdateSegmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateSegment(request);
+    }
+
+    @SdkInternalApi
+    final UpdateSegmentResult executeUpdateSegment(UpdateSegmentRequest updateSegmentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateSegmentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1751,7 +2108,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateSegmentRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateSegmentRequest));
+                request = new UpdateSegmentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateSegmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

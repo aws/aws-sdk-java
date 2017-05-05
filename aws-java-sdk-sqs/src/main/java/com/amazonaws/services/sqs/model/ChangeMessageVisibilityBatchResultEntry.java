@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Encloses the <code>Id</code> of an entry in <code> <a>ChangeMessageVisibilityBatch</a> </code>.
+ * Encloses the <code>Id</code> of an entry in <code> <a>ChangeMessageVisibilityBatch</a>.</code>
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatchResultEntry"
@@ -124,4 +124,5 @@ public class ChangeMessageVisibilityBatchResultEntry implements Serializable, Cl
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

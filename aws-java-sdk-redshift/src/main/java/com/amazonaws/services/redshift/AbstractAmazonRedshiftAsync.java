@@ -356,6 +356,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
      * @see #describeClusterParameterGroupsAsync(DescribeClusterParameterGroupsRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeClusterParameterGroupsResult> describeClusterParameterGroupsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeClusterParameterGroupsRequest, DescribeClusterParameterGroupsResult> asyncHandler) {
 
@@ -405,6 +406,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
      * @see #describeClusterSecurityGroupsAsync(DescribeClusterSecurityGroupsRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeClusterSecurityGroupsResult> describeClusterSecurityGroupsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeClusterSecurityGroupsRequest, DescribeClusterSecurityGroupsResult> asyncHandler) {
 
@@ -440,6 +442,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
      *
      * @see #describeClusterSnapshotsAsync(DescribeClusterSnapshotsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeClusterSnapshotsResult> describeClusterSnapshotsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeClusterSnapshotsRequest, DescribeClusterSnapshotsResult> asyncHandler) {
 
@@ -475,6 +478,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
      *
      * @see #describeClusterSubnetGroupsAsync(DescribeClusterSubnetGroupsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeClusterSubnetGroupsResult> describeClusterSubnetGroupsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeClusterSubnetGroupsRequest, DescribeClusterSubnetGroupsResult> asyncHandler) {
 
@@ -510,6 +514,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
      *
      * @see #describeClusterVersionsAsync(DescribeClusterVersionsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeClusterVersionsResult> describeClusterVersionsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeClusterVersionsRequest, DescribeClusterVersionsResult> asyncHandler) {
 
@@ -545,6 +550,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
      *
      * @see #describeClustersAsync(DescribeClustersRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeClustersResult> describeClustersAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeClustersRequest, DescribeClustersResult> asyncHandler) {
 
@@ -593,6 +599,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
      *
      * @see #describeEventCategoriesAsync(DescribeEventCategoriesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeEventCategoriesResult> describeEventCategoriesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeEventCategoriesRequest, DescribeEventCategoriesResult> asyncHandler) {
 
@@ -628,6 +635,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
      *
      * @see #describeEventSubscriptionsAsync(DescribeEventSubscriptionsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeEventSubscriptionsResult> describeEventSubscriptionsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeEventSubscriptionsRequest, DescribeEventSubscriptionsResult> asyncHandler) {
 
@@ -663,6 +671,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
      *
      * @see #describeEventsAsync(DescribeEventsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeEventsResult> describeEventsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeEventsRequest, DescribeEventsResult> asyncHandler) {
 
@@ -699,6 +708,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
      * @see #describeHsmClientCertificatesAsync(DescribeHsmClientCertificatesRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeHsmClientCertificatesResult> describeHsmClientCertificatesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeHsmClientCertificatesRequest, DescribeHsmClientCertificatesResult> asyncHandler) {
 
@@ -734,6 +744,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
      *
      * @see #describeHsmConfigurationsAsync(DescribeHsmConfigurationsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeHsmConfigurationsResult> describeHsmConfigurationsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeHsmConfigurationsRequest, DescribeHsmConfigurationsResult> asyncHandler) {
 
@@ -785,6 +796,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
      * @see #describeOrderableClusterOptionsAsync(DescribeOrderableClusterOptionsRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeOrderableClusterOptionsResult> describeOrderableClusterOptionsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeOrderableClusterOptionsRequest, DescribeOrderableClusterOptionsResult> asyncHandler) {
 
@@ -821,6 +833,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
      * @see #describeReservedNodeOfferingsAsync(DescribeReservedNodeOfferingsRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeReservedNodeOfferingsResult> describeReservedNodeOfferingsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeReservedNodeOfferingsRequest, DescribeReservedNodeOfferingsResult> asyncHandler) {
 
@@ -856,6 +869,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
      *
      * @see #describeReservedNodesAsync(DescribeReservedNodesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeReservedNodesResult> describeReservedNodesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeReservedNodesRequest, DescribeReservedNodesResult> asyncHandler) {
 
@@ -904,6 +918,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
      *
      * @see #describeSnapshotCopyGrantsAsync(DescribeSnapshotCopyGrantsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeSnapshotCopyGrantsResult> describeSnapshotCopyGrantsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeSnapshotCopyGrantsRequest, DescribeSnapshotCopyGrantsResult> asyncHandler) {
 
@@ -939,6 +954,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
      *
      * @see #describeTableRestoreStatusAsync(DescribeTableRestoreStatusRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeTableRestoreStatusResult> describeTableRestoreStatusAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeTableRestoreStatusRequest, DescribeTableRestoreStatusResult> asyncHandler) {
 
@@ -974,6 +990,7 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
      *
      * @see #describeTagsAsync(DescribeTagsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeTagsResult> describeTagsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeTagsRequest, DescribeTagsResult> asyncHandler) {
 
@@ -1028,6 +1045,19 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     @Override
     public java.util.concurrent.Future<Cluster> enableSnapshotCopyAsync(EnableSnapshotCopyRequest request,
             com.amazonaws.handlers.AsyncHandler<EnableSnapshotCopyRequest, Cluster> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetClusterCredentialsResult> getClusterCredentialsAsync(GetClusterCredentialsRequest request) {
+
+        return getClusterCredentialsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetClusterCredentialsResult> getClusterCredentialsAsync(GetClusterCredentialsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetClusterCredentialsRequest, GetClusterCredentialsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

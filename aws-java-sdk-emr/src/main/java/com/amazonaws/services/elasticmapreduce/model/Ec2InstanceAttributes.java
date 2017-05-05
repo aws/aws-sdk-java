@@ -14,6 +14,8 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -25,7 +27,7 @@ import javax.annotation.Generated;
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Ec2InstanceAttributes implements Serializable, Cloneable {
+public class Ec2InstanceAttributes implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -36,16 +38,26 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
     private String ec2KeyName;
     /**
      * <p>
-     * To launch the job flow in Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where you
-     * want the job flow to launch. If you do not specify this value, the job flow is launched in the normal AWS cloud,
-     * outside of a VPC.
+     * To launch the cluster in Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where you want
+     * the cluster to launch. If you do not specify this value, the cluster is launched in the normal AWS cloud, outside
+     * of a VPC.
      * </p>
      * <p>
      * Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus, you
-     * cannot specify the cc1.4xlarge instance type for nodes of a job flow launched in a VPC.
+     * cannot specify the cc1.4xlarge instance type for nodes of a cluster launched in a VPC.
      * </p>
      */
     private String ec2SubnetId;
+    /**
+     * <p>
+     * Applies to clusters configured with the instance fleets option. Specifies the unique identifier of one or more
+     * Amazon EC2 subnets in which to launch EC2 cluster instances. Amazon EMR chooses the EC2 subnet with the best
+     * performance and cost characteristics from among the list of RequestedEc2SubnetIds and launches all cluster
+     * instances within that subnet. If this value is not specified, and the account supports EC2-Classic networks, the
+     * cluster launches instances in the EC2-Classic network and uses Requested
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> requestedEc2SubnetIds;
     /**
      * <p>
      * The Availability Zone in which the cluster will run.
@@ -54,8 +66,15 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
     private String ec2AvailabilityZone;
     /**
      * <p>
-     * The IAM role that was specified when the job flow was launched. The EC2 instances of the job flow assume this
-     * role.
+     * Applies to clusters configured with the The list of availability zones to choose from. The service will choose
+     * the availability zone with the best mix of available capacity and lowest cost to launch the cluster. If you do
+     * not specify this value, the cluster is launched in any availability zone that the customer account has access to.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> requestedEc2AvailabilityZones;
+    /**
+     * <p>
+     * The IAM role that was specified when the cluster was launched. The EC2 instances of the cluster assume this role.
      * </p>
      */
     private String iamInstanceProfile;
@@ -139,22 +158,22 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * To launch the job flow in Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where you
-     * want the job flow to launch. If you do not specify this value, the job flow is launched in the normal AWS cloud,
-     * outside of a VPC.
+     * To launch the cluster in Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where you want
+     * the cluster to launch. If you do not specify this value, the cluster is launched in the normal AWS cloud, outside
+     * of a VPC.
      * </p>
      * <p>
      * Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus, you
-     * cannot specify the cc1.4xlarge instance type for nodes of a job flow launched in a VPC.
+     * cannot specify the cc1.4xlarge instance type for nodes of a cluster launched in a VPC.
      * </p>
      * 
      * @param ec2SubnetId
-     *        To launch the job flow in Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where
-     *        you want the job flow to launch. If you do not specify this value, the job flow is launched in the normal
+     *        To launch the cluster in Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where
+     *        you want the cluster to launch. If you do not specify this value, the cluster is launched in the normal
      *        AWS cloud, outside of a VPC.</p>
      *        <p>
      *        Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus,
-     *        you cannot specify the cc1.4xlarge instance type for nodes of a job flow launched in a VPC.
+     *        you cannot specify the cc1.4xlarge instance type for nodes of a cluster launched in a VPC.
      */
 
     public void setEc2SubnetId(String ec2SubnetId) {
@@ -163,21 +182,21 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * To launch the job flow in Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where you
-     * want the job flow to launch. If you do not specify this value, the job flow is launched in the normal AWS cloud,
-     * outside of a VPC.
+     * To launch the cluster in Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where you want
+     * the cluster to launch. If you do not specify this value, the cluster is launched in the normal AWS cloud, outside
+     * of a VPC.
      * </p>
      * <p>
      * Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus, you
-     * cannot specify the cc1.4xlarge instance type for nodes of a job flow launched in a VPC.
+     * cannot specify the cc1.4xlarge instance type for nodes of a cluster launched in a VPC.
      * </p>
      * 
-     * @return To launch the job flow in Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where
-     *         you want the job flow to launch. If you do not specify this value, the job flow is launched in the normal
+     * @return To launch the cluster in Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where
+     *         you want the cluster to launch. If you do not specify this value, the cluster is launched in the normal
      *         AWS cloud, outside of a VPC.</p>
      *         <p>
      *         Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances.
-     *         Thus, you cannot specify the cc1.4xlarge instance type for nodes of a job flow launched in a VPC.
+     *         Thus, you cannot specify the cc1.4xlarge instance type for nodes of a cluster launched in a VPC.
      */
 
     public String getEc2SubnetId() {
@@ -186,27 +205,132 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * To launch the job flow in Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where you
-     * want the job flow to launch. If you do not specify this value, the job flow is launched in the normal AWS cloud,
-     * outside of a VPC.
+     * To launch the cluster in Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where you want
+     * the cluster to launch. If you do not specify this value, the cluster is launched in the normal AWS cloud, outside
+     * of a VPC.
      * </p>
      * <p>
      * Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus, you
-     * cannot specify the cc1.4xlarge instance type for nodes of a job flow launched in a VPC.
+     * cannot specify the cc1.4xlarge instance type for nodes of a cluster launched in a VPC.
      * </p>
      * 
      * @param ec2SubnetId
-     *        To launch the job flow in Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where
-     *        you want the job flow to launch. If you do not specify this value, the job flow is launched in the normal
+     *        To launch the cluster in Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where
+     *        you want the cluster to launch. If you do not specify this value, the cluster is launched in the normal
      *        AWS cloud, outside of a VPC.</p>
      *        <p>
      *        Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus,
-     *        you cannot specify the cc1.4xlarge instance type for nodes of a job flow launched in a VPC.
+     *        you cannot specify the cc1.4xlarge instance type for nodes of a cluster launched in a VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Ec2InstanceAttributes withEc2SubnetId(String ec2SubnetId) {
         setEc2SubnetId(ec2SubnetId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Applies to clusters configured with the instance fleets option. Specifies the unique identifier of one or more
+     * Amazon EC2 subnets in which to launch EC2 cluster instances. Amazon EMR chooses the EC2 subnet with the best
+     * performance and cost characteristics from among the list of RequestedEc2SubnetIds and launches all cluster
+     * instances within that subnet. If this value is not specified, and the account supports EC2-Classic networks, the
+     * cluster launches instances in the EC2-Classic network and uses Requested
+     * </p>
+     * 
+     * @return Applies to clusters configured with the instance fleets option. Specifies the unique identifier of one or
+     *         more Amazon EC2 subnets in which to launch EC2 cluster instances. Amazon EMR chooses the EC2 subnet with
+     *         the best performance and cost characteristics from among the list of RequestedEc2SubnetIds and launches
+     *         all cluster instances within that subnet. If this value is not specified, and the account supports
+     *         EC2-Classic networks, the cluster launches instances in the EC2-Classic network and uses Requested
+     */
+
+    public java.util.List<String> getRequestedEc2SubnetIds() {
+        if (requestedEc2SubnetIds == null) {
+            requestedEc2SubnetIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return requestedEc2SubnetIds;
+    }
+
+    /**
+     * <p>
+     * Applies to clusters configured with the instance fleets option. Specifies the unique identifier of one or more
+     * Amazon EC2 subnets in which to launch EC2 cluster instances. Amazon EMR chooses the EC2 subnet with the best
+     * performance and cost characteristics from among the list of RequestedEc2SubnetIds and launches all cluster
+     * instances within that subnet. If this value is not specified, and the account supports EC2-Classic networks, the
+     * cluster launches instances in the EC2-Classic network and uses Requested
+     * </p>
+     * 
+     * @param requestedEc2SubnetIds
+     *        Applies to clusters configured with the instance fleets option. Specifies the unique identifier of one or
+     *        more Amazon EC2 subnets in which to launch EC2 cluster instances. Amazon EMR chooses the EC2 subnet with
+     *        the best performance and cost characteristics from among the list of RequestedEc2SubnetIds and launches
+     *        all cluster instances within that subnet. If this value is not specified, and the account supports
+     *        EC2-Classic networks, the cluster launches instances in the EC2-Classic network and uses Requested
+     */
+
+    public void setRequestedEc2SubnetIds(java.util.Collection<String> requestedEc2SubnetIds) {
+        if (requestedEc2SubnetIds == null) {
+            this.requestedEc2SubnetIds = null;
+            return;
+        }
+
+        this.requestedEc2SubnetIds = new com.amazonaws.internal.SdkInternalList<String>(requestedEc2SubnetIds);
+    }
+
+    /**
+     * <p>
+     * Applies to clusters configured with the instance fleets option. Specifies the unique identifier of one or more
+     * Amazon EC2 subnets in which to launch EC2 cluster instances. Amazon EMR chooses the EC2 subnet with the best
+     * performance and cost characteristics from among the list of RequestedEc2SubnetIds and launches all cluster
+     * instances within that subnet. If this value is not specified, and the account supports EC2-Classic networks, the
+     * cluster launches instances in the EC2-Classic network and uses Requested
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRequestedEc2SubnetIds(java.util.Collection)} or
+     * {@link #withRequestedEc2SubnetIds(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param requestedEc2SubnetIds
+     *        Applies to clusters configured with the instance fleets option. Specifies the unique identifier of one or
+     *        more Amazon EC2 subnets in which to launch EC2 cluster instances. Amazon EMR chooses the EC2 subnet with
+     *        the best performance and cost characteristics from among the list of RequestedEc2SubnetIds and launches
+     *        all cluster instances within that subnet. If this value is not specified, and the account supports
+     *        EC2-Classic networks, the cluster launches instances in the EC2-Classic network and uses Requested
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Ec2InstanceAttributes withRequestedEc2SubnetIds(String... requestedEc2SubnetIds) {
+        if (this.requestedEc2SubnetIds == null) {
+            setRequestedEc2SubnetIds(new com.amazonaws.internal.SdkInternalList<String>(requestedEc2SubnetIds.length));
+        }
+        for (String ele : requestedEc2SubnetIds) {
+            this.requestedEc2SubnetIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Applies to clusters configured with the instance fleets option. Specifies the unique identifier of one or more
+     * Amazon EC2 subnets in which to launch EC2 cluster instances. Amazon EMR chooses the EC2 subnet with the best
+     * performance and cost characteristics from among the list of RequestedEc2SubnetIds and launches all cluster
+     * instances within that subnet. If this value is not specified, and the account supports EC2-Classic networks, the
+     * cluster launches instances in the EC2-Classic network and uses Requested
+     * </p>
+     * 
+     * @param requestedEc2SubnetIds
+     *        Applies to clusters configured with the instance fleets option. Specifies the unique identifier of one or
+     *        more Amazon EC2 subnets in which to launch EC2 cluster instances. Amazon EMR chooses the EC2 subnet with
+     *        the best performance and cost characteristics from among the list of RequestedEc2SubnetIds and launches
+     *        all cluster instances within that subnet. If this value is not specified, and the account supports
+     *        EC2-Classic networks, the cluster launches instances in the EC2-Classic network and uses Requested
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Ec2InstanceAttributes withRequestedEc2SubnetIds(java.util.Collection<String> requestedEc2SubnetIds) {
+        setRequestedEc2SubnetIds(requestedEc2SubnetIds);
         return this;
     }
 
@@ -252,12 +376,104 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IAM role that was specified when the job flow was launched. The EC2 instances of the job flow assume this
-     * role.
+     * Applies to clusters configured with the The list of availability zones to choose from. The service will choose
+     * the availability zone with the best mix of available capacity and lowest cost to launch the cluster. If you do
+     * not specify this value, the cluster is launched in any availability zone that the customer account has access to.
+     * </p>
+     * 
+     * @return Applies to clusters configured with the The list of availability zones to choose from. The service will
+     *         choose the availability zone with the best mix of available capacity and lowest cost to launch the
+     *         cluster. If you do not specify this value, the cluster is launched in any availability zone that the
+     *         customer account has access to.
+     */
+
+    public java.util.List<String> getRequestedEc2AvailabilityZones() {
+        if (requestedEc2AvailabilityZones == null) {
+            requestedEc2AvailabilityZones = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return requestedEc2AvailabilityZones;
+    }
+
+    /**
+     * <p>
+     * Applies to clusters configured with the The list of availability zones to choose from. The service will choose
+     * the availability zone with the best mix of available capacity and lowest cost to launch the cluster. If you do
+     * not specify this value, the cluster is launched in any availability zone that the customer account has access to.
+     * </p>
+     * 
+     * @param requestedEc2AvailabilityZones
+     *        Applies to clusters configured with the The list of availability zones to choose from. The service will
+     *        choose the availability zone with the best mix of available capacity and lowest cost to launch the
+     *        cluster. If you do not specify this value, the cluster is launched in any availability zone that the
+     *        customer account has access to.
+     */
+
+    public void setRequestedEc2AvailabilityZones(java.util.Collection<String> requestedEc2AvailabilityZones) {
+        if (requestedEc2AvailabilityZones == null) {
+            this.requestedEc2AvailabilityZones = null;
+            return;
+        }
+
+        this.requestedEc2AvailabilityZones = new com.amazonaws.internal.SdkInternalList<String>(requestedEc2AvailabilityZones);
+    }
+
+    /**
+     * <p>
+     * Applies to clusters configured with the The list of availability zones to choose from. The service will choose
+     * the availability zone with the best mix of available capacity and lowest cost to launch the cluster. If you do
+     * not specify this value, the cluster is launched in any availability zone that the customer account has access to.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRequestedEc2AvailabilityZones(java.util.Collection)} or
+     * {@link #withRequestedEc2AvailabilityZones(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param requestedEc2AvailabilityZones
+     *        Applies to clusters configured with the The list of availability zones to choose from. The service will
+     *        choose the availability zone with the best mix of available capacity and lowest cost to launch the
+     *        cluster. If you do not specify this value, the cluster is launched in any availability zone that the
+     *        customer account has access to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Ec2InstanceAttributes withRequestedEc2AvailabilityZones(String... requestedEc2AvailabilityZones) {
+        if (this.requestedEc2AvailabilityZones == null) {
+            setRequestedEc2AvailabilityZones(new com.amazonaws.internal.SdkInternalList<String>(requestedEc2AvailabilityZones.length));
+        }
+        for (String ele : requestedEc2AvailabilityZones) {
+            this.requestedEc2AvailabilityZones.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Applies to clusters configured with the The list of availability zones to choose from. The service will choose
+     * the availability zone with the best mix of available capacity and lowest cost to launch the cluster. If you do
+     * not specify this value, the cluster is launched in any availability zone that the customer account has access to.
+     * </p>
+     * 
+     * @param requestedEc2AvailabilityZones
+     *        Applies to clusters configured with the The list of availability zones to choose from. The service will
+     *        choose the availability zone with the best mix of available capacity and lowest cost to launch the
+     *        cluster. If you do not specify this value, the cluster is launched in any availability zone that the
+     *        customer account has access to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Ec2InstanceAttributes withRequestedEc2AvailabilityZones(java.util.Collection<String> requestedEc2AvailabilityZones) {
+        setRequestedEc2AvailabilityZones(requestedEc2AvailabilityZones);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IAM role that was specified when the cluster was launched. The EC2 instances of the cluster assume this role.
      * </p>
      * 
      * @param iamInstanceProfile
-     *        The IAM role that was specified when the job flow was launched. The EC2 instances of the job flow assume
+     *        The IAM role that was specified when the cluster was launched. The EC2 instances of the cluster assume
      *        this role.
      */
 
@@ -267,11 +483,10 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IAM role that was specified when the job flow was launched. The EC2 instances of the job flow assume this
-     * role.
+     * The IAM role that was specified when the cluster was launched. The EC2 instances of the cluster assume this role.
      * </p>
      * 
-     * @return The IAM role that was specified when the job flow was launched. The EC2 instances of the job flow assume
+     * @return The IAM role that was specified when the cluster was launched. The EC2 instances of the cluster assume
      *         this role.
      */
 
@@ -281,12 +496,11 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IAM role that was specified when the job flow was launched. The EC2 instances of the job flow assume this
-     * role.
+     * The IAM role that was specified when the cluster was launched. The EC2 instances of the cluster assume this role.
      * </p>
      * 
      * @param iamInstanceProfile
-     *        The IAM role that was specified when the job flow was launched. The EC2 instances of the job flow assume
+     *        The IAM role that was specified when the cluster was launched. The EC2 instances of the cluster assume
      *        this role.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -583,8 +797,12 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
             sb.append("Ec2KeyName: ").append(getEc2KeyName()).append(",");
         if (getEc2SubnetId() != null)
             sb.append("Ec2SubnetId: ").append(getEc2SubnetId()).append(",");
+        if (getRequestedEc2SubnetIds() != null)
+            sb.append("RequestedEc2SubnetIds: ").append(getRequestedEc2SubnetIds()).append(",");
         if (getEc2AvailabilityZone() != null)
             sb.append("Ec2AvailabilityZone: ").append(getEc2AvailabilityZone()).append(",");
+        if (getRequestedEc2AvailabilityZones() != null)
+            sb.append("RequestedEc2AvailabilityZones: ").append(getRequestedEc2AvailabilityZones()).append(",");
         if (getIamInstanceProfile() != null)
             sb.append("IamInstanceProfile: ").append(getIamInstanceProfile()).append(",");
         if (getEmrManagedMasterSecurityGroup() != null)
@@ -619,9 +837,18 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
             return false;
         if (other.getEc2SubnetId() != null && other.getEc2SubnetId().equals(this.getEc2SubnetId()) == false)
             return false;
+        if (other.getRequestedEc2SubnetIds() == null ^ this.getRequestedEc2SubnetIds() == null)
+            return false;
+        if (other.getRequestedEc2SubnetIds() != null && other.getRequestedEc2SubnetIds().equals(this.getRequestedEc2SubnetIds()) == false)
+            return false;
         if (other.getEc2AvailabilityZone() == null ^ this.getEc2AvailabilityZone() == null)
             return false;
         if (other.getEc2AvailabilityZone() != null && other.getEc2AvailabilityZone().equals(this.getEc2AvailabilityZone()) == false)
+            return false;
+        if (other.getRequestedEc2AvailabilityZones() == null ^ this.getRequestedEc2AvailabilityZones() == null)
+            return false;
+        if (other.getRequestedEc2AvailabilityZones() != null
+                && other.getRequestedEc2AvailabilityZones().equals(this.getRequestedEc2AvailabilityZones()) == false)
             return false;
         if (other.getIamInstanceProfile() == null ^ this.getIamInstanceProfile() == null)
             return false;
@@ -660,7 +887,9 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getEc2KeyName() == null) ? 0 : getEc2KeyName().hashCode());
         hashCode = prime * hashCode + ((getEc2SubnetId() == null) ? 0 : getEc2SubnetId().hashCode());
+        hashCode = prime * hashCode + ((getRequestedEc2SubnetIds() == null) ? 0 : getRequestedEc2SubnetIds().hashCode());
         hashCode = prime * hashCode + ((getEc2AvailabilityZone() == null) ? 0 : getEc2AvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getRequestedEc2AvailabilityZones() == null) ? 0 : getRequestedEc2AvailabilityZones().hashCode());
         hashCode = prime * hashCode + ((getIamInstanceProfile() == null) ? 0 : getIamInstanceProfile().hashCode());
         hashCode = prime * hashCode + ((getEmrManagedMasterSecurityGroup() == null) ? 0 : getEmrManagedMasterSecurityGroup().hashCode());
         hashCode = prime * hashCode + ((getEmrManagedSlaveSecurityGroup() == null) ? 0 : getEmrManagedSlaveSecurityGroup().hashCode());
@@ -677,5 +906,11 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.elasticmapreduce.model.transform.Ec2InstanceAttributesMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

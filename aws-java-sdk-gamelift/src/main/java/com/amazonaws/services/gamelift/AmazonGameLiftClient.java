@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -49,339 +50,432 @@ import com.amazonaws.services.gamelift.model.transform.*;
  * <p>
  * <fullname>Amazon GameLift Service</fullname>
  * <p>
- * Welcome to the <i>Amazon GameLift API Reference</i>. Amazon GameLift is a managed Amazon Web Services (AWS) service
- * for developers who need a scalable, server-based solution for multiplayer games. Amazon GameLift provides setup and
- * deployment of game servers, and handles infrastructure scaling and session management.
+ * Amazon GameLift is a managed service for developers who need a scalable, dedicated server solution for their
+ * multiplayer games. Amazon GameLift provides tools to acquire computing resources and deploy game servers, scale game
+ * server capacity to meet player demand, and track in-depth metrics on player usage and server performance.
  * </p>
  * <p>
- * This reference describes the low-level service API for GameLift. You can call this API directly or use the <a
- * href="http://aws.amazon.com/tools/#sdk">AWS SDK</a> for your preferred language. The AWS SDK includes a set of
- * high-level GameLift actions multiplayer game sessions. Alternatively, you can use the <a
- * href="http://aws.amazon.com/cli/">AWS command-line interface</a> (CLI) tool, which includes commands for GameLift.
- * For administrative actions, you can also use the Amazon GameLift console.
- * </p>
- * <p>
- * <b>More Resources</b>
+ * The Amazon GameLift service API includes important features:
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon GameLift Developer Guide</a>: Learn more
- * about GameLift features and how to use them
+ * Find game sessions and match players to games – Retrieve information on available game sessions; create new game
+ * sessions; send player requests to join a game session.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="https://gamedev.amazon.com/forums/tutorials">Lumberyard and GameLift Tutorials</a>: Get started fast with
- * walkthroughs and sample projects
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="http://aws.amazon.com/blogs/gamedev/">GameDev Blog</a>: Stay up to date with new features and techniques
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://gamedev.amazon.com/forums/spaces/123/gamelift-discussion.html">GameDev Forums</a>: Connect with the
- * GameDev community
+ * Configure and manage game server resources – Manage builds, fleets, queues, and aliases; set autoscaling policies;
+ * retrieve logs and metrics.
  * </p>
  * </li>
  * </ul>
  * <p>
- * <b>Manage Games and Players Through GameLift</b>
+ * This reference guide describes the low-level service API for Amazon GameLift. We recommend using either the Amazon
+ * Web Services software development kit (<a href="http://aws.amazon.com/tools/#sdk">AWS SDK</a>), available in multiple
+ * languages, or the <a href="http://aws.amazon.com/cli/">AWS command-line interface</a> (CLI) tool. Both of these align
+ * with the low-level service API. In addition, you can use the <a
+ * href="https://console.aws.amazon.com/gamelift/home">AWS Management Console</a> for Amazon GameLift for many
+ * administrative actions.
  * </p>
  * <p>
- * Call these actions from your game clients and/or services to create and manage multiplayer game sessions and player
+ * You can use some API actions with Amazon GameLift Local, a testing tool that lets you test your game integration
+ * locally before deploying on Amazon GameLift. You can call these APIs from the AWS CLI or programmatically; API calls
+ * to Amazon GameLift Local servers perform exactly as they do when calling Amazon GameLift web servers. For more
+ * information on using Amazon GameLift Local, see <a
+ * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/integration-testing-local.html">Testing an
+ * Integration</a>.
+ * </p>
+ * <p>
+ * <b>MORE RESOURCES</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon GameLift Developer Guide</a> – Learn more
+ * about Amazon GameLift features and how to use them.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://gamedev.amazon.com/forums/tutorials">Lumberyard and Amazon GameLift Tutorials</a> – Get started fast
+ * with walkthroughs and sample projects.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="http://aws.amazon.com/blogs/gamedev/">GameDev Blog</a> – Stay up to date with new features and techniques.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://gamedev.amazon.com/forums/spaces/123/gamelift-discussion.html">GameDev Forums</a> – Connect with the
+ * GameDev community.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/doc-history.html">Amazon GameLift Document
+ * History</a> – See changes to the Amazon GameLift service, SDKs, and documentation, as well as links to release notes.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <b>API SUMMARY</b>
+ * </p>
+ * <p>
+ * This list offers a functional overview of the Amazon GameLift service API.
+ * </p>
+ * <p>
+ * <b>Finding Games and Joining Players</b>
+ * </p>
+ * <p>
+ * You can enable players to connect to game servers on Amazon GameLift from a game client or through a game service
+ * (such as a matchmaking service). You can use these operations to discover actively running game or start new games.
+ * You can also match players to games, either singly or as a group.
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <b>Discover existing game sessions</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>SearchGameSessions</a> – Get all available game sessions or search for game sessions that match a set of criteria.
+ * <i>Available in Amazon GameLift Local.</i>
+ * </p>
+ * </li>
+ * </ul>
+ * </li>
+ * <li>
+ * <p>
+ * <b>Start a new game session</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * Game session placement – Use a queue to process new game session requests and create game sessions on fleets
+ * designated for the queue.
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>StartGameSessionPlacement</a> – Request a new game session placement and add one or more players to it.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeGameSessionPlacement</a> – Get details on a placement request, including status.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>StopGameSessionPlacement</a> – Cancel a placement request.
+ * </p>
+ * </li>
+ * </ul>
+ * </li>
+ * <li>
+ * <p>
+ * <a>CreateGameSession</a> – Start a new game session on a specific fleet. <i>Available in Amazon GameLift Local.</i>
+ * </p>
+ * </li>
+ * </ul>
+ * </li>
+ * <li>
+ * <p>
+ * <b>Manage game session objects</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>DescribeGameSessions</a> – Retrieve metadata for one or more game sessions, including length of time active and
+ * current player count. <i>Available in Amazon GameLift Local.</i>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeGameSessionDetails</a> – Retrieve metadata and the game session protection setting for one or more game
  * sessions.
  * </p>
- * <ul>
+ * </li>
  * <li>
  * <p>
- * <b>Game sessions:</b>
- * </p>
- * <ul>
- * <li>
- * <p>
- * <a>CreateGameSession</a>
+ * <a>UpdateGameSession</a> – Change game session settings, such as maximum player count and join policy.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeGameSessions</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeGameSessionDetails</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>UpdateGameSession</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>SearchGameSessions</a>
+ * <a>GetGameSessionLogUrl</a> – Get the location of saved logs for a game session.
  * </p>
  * </li>
  * </ul>
  * </li>
  * <li>
  * <p>
- * <b>Player sessions:</b>
+ * <b>Manage player sessions objects</b>
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a>CreatePlayerSession</a>
+ * <a>CreatePlayerSession</a> – Send a request for a player to join a game session. <i>Available in Amazon GameLift
+ * Local.</i>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>CreatePlayerSessions</a>
+ * <a>CreatePlayerSessions</a> – Send a request for multiple players to join a game session. <i>Available in Amazon
+ * GameLift Local.</i>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribePlayerSessions</a>
+ * <a>DescribePlayerSessions</a> – Get details on player activity, including status, playing time, and player data.
+ * <i>Available in Amazon GameLift Local.</i>
  * </p>
  * </li>
  * </ul>
  * </li>
- * <li>
+ * </ul>
  * <p>
- * <b>Other actions:</b>
+ * <b>Setting Up and Managing Game Servers</b>
+ * </p>
+ * <p>
+ * When setting up Amazon GameLift, first create a game build and upload the files to Amazon GameLift. Then use these
+ * operations to set up a fleet of resources to run your game servers. Manage games to scale capacity, adjust
+ * configuration settings, access raw utilization data, and more.
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a>GetGameSessionLogUrl</a>
- * </p>
- * </li>
- * </ul>
- * </li>
- * </ul>
- * <p>
- * <b>Set Up and Manage Game Servers</b>
- * </p>
- * <p>
- * Use these administrative actions to configure GameLift to host your game servers. When setting up GameLift, you will
- * need to (1) configure a build for your game and upload build files, and (2) set up one or more fleets to host game
- * sessions. Once you've created and activated a fleet, you can assign aliases to it, scale capacity, track performance
- * and utilization, etc.
+ * <b>Manage game builds</b>
  * </p>
  * <ul>
  * <li>
  * <p>
- * <b>Game builds:</b>
+ * <a>CreateBuild</a> – Create a new build by uploading files stored in an Amazon S3 bucket. (To create a build stored
+ * at a local file location, use the AWS CLI command <code>upload-build</code>.)
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListBuilds</a> – Get a list of all builds uploaded to a Amazon GameLift region.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeBuild</a> – Retrieve information associated with a build.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateBuild</a> – Change build metadata, including build name and version.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteBuild</a> – Remove a build from Amazon GameLift.
+ * </p>
+ * </li>
+ * </ul>
+ * </li>
+ * <li>
+ * <p>
+ * <b>Manage fleets</b>
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a>ListBuilds</a>
+ * <a>CreateFleet</a> – Configure and activate a new fleet to run a build's game servers.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>CreateBuild</a>
+ * <a>DeleteFleet</a> – Terminate a fleet that is no longer running game servers or hosting players.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeBuild</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>UpdateBuild</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DeleteBuild</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>RequestUploadCredentials</a>
- * </p>
- * </li>
- * </ul>
- * </li>
- * <li>
- * <p>
- * <b>Fleets:</b>
+ * View / update fleet configurations.
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a>ListFleets</a>
+ * <a>ListFleets</a> – Get a list of all fleet IDs in a Amazon GameLift region (all statuses).
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>CreateFleet</a>
+ * <a>DescribeFleetAttributes</a> / <a>UpdateFleetAttributes</a> – View or change a fleet's metadata and settings for
+ * game session protection and resource creation limits.
  * </p>
  * </li>
  * <li>
  * <p>
- * Describe fleets:
+ * <a>DescribeFleetPortSettings</a> / <a>UpdateFleetPortSettings</a> – View or change the inbound permissions (IP
+ * address and port setting ranges) allowed for a fleet.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeRuntimeConfiguration</a> / <a>UpdateRuntimeConfiguration</a> – View or change what server processes (and
+ * how many) to run on each instance in a fleet.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeInstances</a> – Get information on each instance in a fleet, including instance ID, IP address, and
+ * status.
+ * </p>
+ * </li>
+ * </ul>
+ * </li>
+ * </ul>
+ * </li>
+ * <li>
+ * <p>
+ * <b>Control fleet capacity</b>
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a>DescribeFleetAttributes</a>
+ * <a>DescribeEC2InstanceLimits</a> – Retrieve maximum number of instances allowed for the current AWS account and the
+ * current usage level.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeFleetCapacity</a>
+ * <a>DescribeFleetCapacity</a> / <a>UpdateFleetCapacity</a> – Retrieve the capacity settings and the current number of
+ * instances in a fleet; adjust fleet capacity settings to scale up or down.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeFleetPortSettings</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeFleetUtilization</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeEC2InstanceLimits</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeFleetEvents</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeRuntimeConfiguration</a>
- * </p>
- * </li>
- * </ul>
- * </li>
- * <li>
- * <p>
- * Update fleets:
+ * Autoscale – Manage autoscaling rules and apply them to a fleet.
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a>UpdateFleetAttributes</a>
+ * <a>PutScalingPolicy</a> – Create a new autoscaling policy, or update an existing one.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>UpdateFleetCapacity</a>
+ * <a>DescribeScalingPolicies</a> – Retrieve an existing autoscaling policy.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>UpdateFleetPortSettings</a>
+ * <a>DeleteScalingPolicy</a> – Delete an autoscaling policy and stop it from affecting a fleet's capacity.
  * </p>
  * </li>
- * <li>
- * <p>
- * <a>UpdateRuntimeConfiguration</a>
- * </p>
+ * </ul>
  * </li>
  * </ul>
  * </li>
  * <li>
  * <p>
- * <a>DeleteFleet</a>
- * </p>
- * </li>
- * </ul>
- * </li>
- * <li>
- * <p>
- * <b>Manage your instances:</b>
+ * <b>Access fleet activity statistics</b>
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a>DescribeInstances</a>
+ * <a>DescribeFleetUtilization</a> – Get current data on the number of server processes, game sessions, and players
+ * currently active on a fleet.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>GetInstanceAccess</a>
+ * <a>DescribeFleetEvents</a> – Get a fleet's logged events for a specified time span.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeGameSessions</a> – Retrieve metadata associated with one or more game sessions, including length of time
+ * active and current player count.
  * </p>
  * </li>
  * </ul>
  * </li>
  * <li>
  * <p>
- * <b>Manage fleet aliases:</b>
+ * <b>Remotely access an instance</b>
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a>ListAliases</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>CreateAlias</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeAlias</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>UpdateAlias</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DeleteAlias</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>ResolveAlias</a>
+ * <a>GetInstanceAccess</a> – Request access credentials needed to remotely connect to a specified instance in a fleet.
  * </p>
  * </li>
  * </ul>
  * </li>
  * <li>
  * <p>
- * <b>Manage autoscaling:</b>
+ * <b>Manage fleet aliases</b>
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a>PutScalingPolicy</a>
+ * <a>CreateAlias</a> – Define a new alias and optionally assign it to a fleet.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeScalingPolicies</a>
+ * <a>ListAliases</a> – Get all fleet aliases defined in a Amazon GameLift region.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DeleteScalingPolicy</a>
+ * <a>DescribeAlias</a> – Retrieve information on an existing alias.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateAlias</a> – Change settings for a alias, such as redirecting it from one fleet to another.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteAlias</a> – Remove an alias from the region.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ResolveAlias</a> – Get the fleet ID that a specified alias points to.
+ * </p>
+ * </li>
+ * </ul>
+ * </li>
+ * <li>
+ * <p>
+ * <b>Manage game session queues</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>CreateGameSessionQueue</a> – Create a queue for processing requests for new game sessions.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeGameSessionQueues</a> – Get data on all game session queues defined in a Amazon GameLift region.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateGameSessionQueue</a> – Change the configuration of a game session queue.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteGameSessionQueue</a> – Remove a game session queue from the region.
  * </p>
  * </li>
  * </ul>
  * </li>
  * </ul>
- * <p>
- * To view changes to the API, see the GameLift <a
- * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/doc-history.html">Document History</a> page.
- * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -591,6 +685,10 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         init();
     }
 
+    public static AmazonGameLiftClientBuilder builder() {
+        return AmazonGameLiftClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon GameLift using the specified parameters.
      *
@@ -620,11 +718,17 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Creates an alias for a fleet. You can use an alias to anonymize your fleet by referencing an alias instead of a
-     * specific fleet when you create game sessions. Amazon GameLift supports two types of routing strategies for
-     * aliases: simple and terminal. Use a simple alias to point to an active fleet. Use a terminal alias to display a
-     * message to incoming traffic instead of routing players to an active fleet. This option is useful when a game
-     * server is no longer supported but you want to provide better messaging than a standard 404 error.
+     * Creates an alias and sets a target fleet. A fleet alias can be used in place of a fleet ID, such as when calling
+     * <code>CreateGameSession</code> from a game client or game service or adding destinations to a game session queue.
+     * By changing an alias's target fleet, you can switch your players to the new fleet without changing any other
+     * component. In production, this feature is particularly useful to redirect your player base seamlessly to the
+     * latest game server update.
+     * </p>
+     * <p>
+     * Amazon GameLift supports two types of routing strategies for aliases: simple and terminal. Use a simple alias to
+     * point to an active fleet. Use a terminal alias to display a message to incoming traffic instead of routing
+     * players to an active fleet. This option is useful when a game server is no longer supported but you want to
+     * provide better messaging than a standard 404 error.
      * </p>
      * <p>
      * To create a fleet alias, specify an alias name, routing strategy, and optional description. If successful, a new
@@ -654,7 +758,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public CreateAliasResult createAlias(CreateAliasRequest createAliasRequest) {
+    public CreateAliasResult createAlias(CreateAliasRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAlias(request);
+    }
+
+    @SdkInternalApi
+    final CreateAliasResult executeCreateAlias(CreateAliasRequest createAliasRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -665,7 +775,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateAliasRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAliasRequest));
+                request = new CreateAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -686,24 +796,27 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Initializes a new build record and generates information required to upload a game build to Amazon GameLift. Once
-     * the build record has been created and its status is <code>INITIALIZED</code>, you can upload your game build.
+     * Creates a new Amazon GameLift build from a set of game server binary files stored in an Amazon Simple Storage
+     * Service (Amazon S3) location. When using this API call, you must create a <code>.zip</code> file containing all
+     * of the build files and store it in an Amazon S3 bucket under your AWS account. For help on packaging your build
+     * files and creating a build, see <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading Your Game to
+     * Amazon GameLift</a>.
      * </p>
      * <important>
      * <p>
-     * Do not use this API action unless you are using your own Amazon Simple Storage Service (Amazon S3) client and
-     * need to manually upload your build files. Instead, to create a build, use the CLI command
-     * <code>upload-build</code>, which creates a new build record and uploads the build files in one step. (See the <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Amazon GameLift
-     * Developer Guide</a> help on packaging and uploading your build.)
+     * Use this API action ONLY if you are storing your game build files in an Amazon S3 bucket in your AWS account. To
+     * create a build using files stored in a directory, use the CLI command <a
+     * href="http://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html"> <code>upload-build</code>
+     * </a>, which uploads the build files from a file location you specify and creates a build.
      * </p>
      * </important>
      * <p>
-     * To create a new build, identify the operating system of the game server binaries. All game servers in a build
-     * must use the same operating system. Optionally, specify a build name and version; this metadata is stored with
-     * other properties in the build record and is displayed in the GameLift console (it is not visible to players). If
-     * successful, this action returns the newly created build record along with the Amazon S3 storage location and AWS
-     * account credentials. Use the location and credentials to upload your game build.
+     * To create a new build using <code>CreateBuild</code>, identify the storage location and operating system of your
+     * game build. You also have the option of specifying a build name and version. If successful, this action creates a
+     * new build record with an unique build ID and in <code>INITIALIZED</code> status. Use the API call
+     * <a>DescribeBuild</a> to check the status of your build. A build must be in <code>READY</code> status before it
+     * can be used to create fleets to host your game.
      * </p>
      * 
      * @param createBuildRequest
@@ -725,7 +838,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public CreateBuildResult createBuild(CreateBuildRequest createBuildRequest) {
+    public CreateBuildResult createBuild(CreateBuildRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateBuild(request);
+    }
+
+    @SdkInternalApi
+    final CreateBuildResult executeCreateBuild(CreateBuildRequest createBuildRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createBuildRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -736,7 +855,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateBuildRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBuildRequest));
+                request = new CreateBuildRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBuildRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -768,11 +887,11 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * To create a new fleet, provide a fleet name, an EC2 instance type, and a build ID of the game build to deploy.
      * You can also configure the new fleet with the following settings: (1) a runtime configuration describing what
      * server processes to run on each instance in the fleet (required to create fleet), (2) access permissions for
-     * inbound traffic, (3) fleet-wide game session protection, and (4) the location of default log files for GameLift
-     * to upload and store.
+     * inbound traffic, (3) fleet-wide game session protection, and (4) the location of default log files for Amazon
+     * GameLift to upload and store.
      * </p>
      * <p>
-     * If the <code>CreateFleet</code> call is successful, Amazon GameLift performs the following tasks:
+     * If the CreateFleet call is successful, Amazon GameLift performs the following tasks:
      * </p>
      * <ul>
      * <li>
@@ -783,18 +902,18 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * </li>
      * <li>
      * <p>
-     * Sets the fleet's capacity to 1 "desired", which causes GameLift to start one new EC2 instance.
+     * Sets the fleet's capacity to 1 "desired", which causes Amazon GameLift to start one new EC2 instance.
      * </p>
      * </li>
      * <li>
      * <p>
      * Starts launching server processes on the instance. If the fleet is configured to run multiple server processes
-     * per instance, GameLift staggers each launch by a few seconds.
+     * per instance, Amazon GameLift staggers each launch by a few seconds.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Begins writing events to the fleet event log, which can be accessed in the GameLift console.
+     * Begins writing events to the fleet event log, which can be accessed in the Amazon GameLift console.
      * </p>
      * </li>
      * <li>
@@ -829,6 +948,11 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * path, launch parameters, and the number of concurrent processes.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <a>PutScalingPolicy</a> -- Create or update rules that are used to set the fleet's capacity (autoscaling).
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param createFleetRequest
@@ -856,7 +980,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public CreateFleetResult createFleet(CreateFleetRequest createFleetRequest) {
+    public CreateFleetResult createFleet(CreateFleetRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateFleet(request);
+    }
+
+    @SdkInternalApi
+    final CreateFleetResult executeCreateFleet(CreateFleetRequest createFleetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createFleetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -867,7 +997,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateFleetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createFleetRequest));
+                request = new CreateFleetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createFleetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -889,19 +1019,32 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
     /**
      * <p>
      * Creates a multiplayer game session for players. This action creates a game session record and assigns an
-     * available server process in the specified fleet to host the game session. A fleet must be in an
+     * available server process in the specified fleet to host the game session. A fleet must have an
      * <code>ACTIVE</code> status before a game session can be created in it.
      * </p>
      * <p>
-     * To create a game session, specify either fleet ID or alias ID, and indicate a maximum number of players to allow
+     * To create a game session, specify either fleet ID or alias ID and indicate a maximum number of players to allow
      * in the game session. You can also provide a name and game-specific properties for this game session. If
-     * successful, a <a>GameSession</a> object is returned containing session properties, including an IP address. By
-     * default, newly created game sessions allow new players to join. Use <a>UpdateGameSession</a> to change the game
-     * sessions player session creation policy.
+     * successful, a <a>GameSession</a> object is returned containing game session properties, including a game session
+     * ID with the custom string you provided.
      * </p>
      * <p>
-     * When creating a game session on a fleet with a resource limit creation policy, the request should include a
-     * creator ID. If none is provided, GameLift does not evaluate the fleet's resource limit creation policy.
+     * <b>Idempotency tokens.</b> You can add a token that uniquely identifies game session requests. This is useful for
+     * ensuring that game session requests are idempotent. Multiple requests with the same idempotency token are
+     * processed only once; subsequent requests return the original result. All response values are the same with the
+     * exception of game session status, which may change.
+     * </p>
+     * <p>
+     * <b>Resource creation limits.</b> If you are creating a game session on a fleet with a resource creation limit
+     * policy in force, then you must specify a creator ID. Without this ID, Amazon GameLift has no way to evaluate the
+     * policy for this new game session request.
+     * </p>
+     * <p>
+     * By default, newly created game sessions allow new players to join. Use <a>UpdateGameSession</a> to change the
+     * game session's player session creation policy.
+     * </p>
+     * <p>
+     * <i>Available in Amazon GameLift Local.</i>
      * </p>
      * 
      * @param createGameSessionRequest
@@ -943,7 +1086,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public CreateGameSessionResult createGameSession(CreateGameSessionRequest createGameSessionRequest) {
+    public CreateGameSessionResult createGameSession(CreateGameSessionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateGameSession(request);
+    }
+
+    @SdkInternalApi
+    final CreateGameSessionResult executeCreateGameSession(CreateGameSessionRequest createGameSessionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createGameSessionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -954,7 +1103,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateGameSessionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGameSessionRequest));
+                request = new CreateGameSessionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGameSessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -975,13 +1124,100 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Adds a player to a game session and creates a player session record. A game session must be in an
-     * <code>ACTIVE</code> status, have a creation policy of <code>ALLOW_ALL</code>, and have an open player slot before
-     * players can be added to the session.
+     * Establishes a new queue for processing requests to place new game sessions. A queue identifies where new game
+     * sessions can be hosted -- by specifying a list of destinations (fleets or aliases) -- and how long requests can
+     * wait in the queue before timing out. You can set up a queue to try to place game sessions on fleets in multiple
+     * regions. To add placement requests to a queue, call <a>StartGameSessionPlacement</a> and reference the queue
+     * name.
      * </p>
      * <p>
-     * To create a player session, specify a game session ID and player ID. If successful, the player is added to the
-     * game session and a new <a>PlayerSession</a> object is returned.
+     * <b>Destination order.</b> When processing a request for a game session, Amazon GameLift tries each destination in
+     * order until it finds one with available resources to host the new game session. A queue's default order is
+     * determined by how destinations are listed. The default order is overridden when a game session placement request
+     * provides player latency information. Player latency information enables Amazon GameLift to prioritize
+     * destinations where players report the lowest average latency, as a result placing the new game session where the
+     * majority of players will have the best possible gameplay experience.
+     * </p>
+     * <p>
+     * <b>Player latency policies.</b> For placement requests containing player latency information, use player latency
+     * policies to protect individual players from very high latencies. With a latency cap, even when a destination can
+     * deliver a low latency for most players, the game is not placed where any individual player is reporting latency
+     * higher than a policy's maximum. A queue can have multiple latency policies, which are enforced consecutively
+     * starting with the policy with the lowest latency cap. Use multiple policies to gradually relax latency controls;
+     * for example, you might set a policy with a low latency cap for the first 60 seconds, a second policy with a
+     * higher cap for the next 60 seconds, etc.
+     * </p>
+     * <p>
+     * To create a new queue, provide a name, timeout value, a list of destinations and, if desired, a set of latency
+     * policies. If successful, a new queue object is returned.
+     * </p>
+     * 
+     * @param createGameSessionQueueRequest
+     *        Represents the input for a request action.
+     * @return Result of the CreateGameSessionQueue operation returned by the service.
+     * @throws InternalServiceException
+     *         The service encountered an unrecoverable internal failure while processing the request. Clients can retry
+     *         such requests immediately or after a waiting period.
+     * @throws InvalidRequestException
+     *         One or more parameter values in the request are invalid. Correct the invalid parameter values before
+     *         retrying.
+     * @throws UnauthorizedException
+     *         The client failed authentication. Clients should not retry such requests.
+     * @sample AmazonGameLift.CreateGameSessionQueue
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSessionQueue"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateGameSessionQueueResult createGameSessionQueue(CreateGameSessionQueueRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateGameSessionQueue(request);
+    }
+
+    @SdkInternalApi
+    final CreateGameSessionQueueResult executeCreateGameSessionQueue(CreateGameSessionQueueRequest createGameSessionQueueRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createGameSessionQueueRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateGameSessionQueueRequest> request = null;
+        Response<CreateGameSessionQueueResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateGameSessionQueueRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGameSessionQueueRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateGameSessionQueueResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateGameSessionQueueResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds a player to a game session and creates a player session record. Before a player can be added, a game session
+     * must have an <code>ACTIVE</code> status, have a creation policy of <code>ALLOW_ALL</code>, and have an open
+     * player slot. To add a group of players to a game session, use <a>CreatePlayerSessions</a>.
+     * </p>
+     * <p>
+     * To create a player session, specify a game session ID, player ID, and optionally a string of player data. If
+     * successful, the player is added to the game session and a new <a>PlayerSession</a> object is returned. Player
+     * sessions cannot be updated.
+     * </p>
+     * <p>
+     * <i>Available in Amazon GameLift Local.</i>
      * </p>
      * 
      * @param createPlayerSessionRequest
@@ -1014,7 +1250,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      API Documentation</a>
      */
     @Override
-    public CreatePlayerSessionResult createPlayerSession(CreatePlayerSessionRequest createPlayerSessionRequest) {
+    public CreatePlayerSessionResult createPlayerSession(CreatePlayerSessionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreatePlayerSession(request);
+    }
+
+    @SdkInternalApi
+    final CreatePlayerSessionResult executeCreatePlayerSession(CreatePlayerSessionRequest createPlayerSessionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createPlayerSessionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1025,7 +1267,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreatePlayerSessionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPlayerSessionRequest));
+                request = new CreatePlayerSessionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPlayerSessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1046,14 +1288,18 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Adds a group of players to a game session. Similar to <a>CreatePlayerSession</a>, this action allows you to add
-     * multiple players in a single call, which is useful for games that provide party and/or matchmaking features. A
-     * game session must be in an <code>ACTIVE</code> status, have a creation policy of <code>ALLOW_ALL</code>, and have
-     * an open player slot before players can be added to the session.
+     * Adds a group of players to a game session. This action is useful with a team matching feature. Before players can
+     * be added, a game session must have an <code>ACTIVE</code> status, have a creation policy of
+     * <code>ALLOW_ALL</code>, and have an open player slot. To add a single player to a game session, use
+     * <a>CreatePlayerSession</a>.
      * </p>
      * <p>
-     * To create player sessions, specify a game session ID and a list of player IDs. If successful, the players are
-     * added to the game session and a set of new <a>PlayerSession</a> objects is returned.
+     * To create player sessions, specify a game session ID, a list of player IDs, and optionally a set of player data
+     * strings. If successful, the players are added to the game session and a set of new <a>PlayerSession</a> objects
+     * is returned. Player sessions cannot be updated.
+     * </p>
+     * <p>
+     * <i>Available in Amazon GameLift Local.</i>
      * </p>
      * 
      * @param createPlayerSessionsRequest
@@ -1086,7 +1332,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      API Documentation</a>
      */
     @Override
-    public CreatePlayerSessionsResult createPlayerSessions(CreatePlayerSessionsRequest createPlayerSessionsRequest) {
+    public CreatePlayerSessionsResult createPlayerSessions(CreatePlayerSessionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreatePlayerSessions(request);
+    }
+
+    @SdkInternalApi
+    final CreatePlayerSessionsResult executeCreatePlayerSessions(CreatePlayerSessionsRequest createPlayerSessionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createPlayerSessionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1097,7 +1349,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreatePlayerSessionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPlayerSessionsRequest));
+                request = new CreatePlayerSessionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPlayerSessionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1118,8 +1370,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Deletes an alias. This action removes all record of the alias; game clients attempting to access a server process
-     * using the deleted alias receive an error. To delete an alias, specify the alias ID to be deleted.
+     * Deletes a fleet alias. This action removes all record of the alias. Game clients attempting to access a server
+     * process using the deleted alias receive an error. To delete an alias, specify the alias ID to be deleted.
      * </p>
      * 
      * @param deleteAliasRequest
@@ -1141,7 +1393,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public DeleteAliasResult deleteAlias(DeleteAliasRequest deleteAliasRequest) {
+    public DeleteAliasResult deleteAlias(DeleteAliasRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAlias(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAliasResult executeDeleteAlias(DeleteAliasRequest deleteAliasRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1152,7 +1410,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteAliasRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAliasRequest));
+                request = new DeleteAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1199,7 +1457,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public DeleteBuildResult deleteBuild(DeleteBuildRequest deleteBuildRequest) {
+    public DeleteBuildResult deleteBuild(DeleteBuildRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteBuild(request);
+    }
+
+    @SdkInternalApi
+    final DeleteBuildResult executeDeleteBuild(DeleteBuildRequest deleteBuildRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteBuildRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1210,7 +1474,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteBuildRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBuildRequest));
+                request = new DeleteBuildRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBuildRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1261,7 +1525,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public DeleteFleetResult deleteFleet(DeleteFleetRequest deleteFleetRequest) {
+    public DeleteFleetResult deleteFleet(DeleteFleetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteFleet(request);
+    }
+
+    @SdkInternalApi
+    final DeleteFleetResult executeDeleteFleet(DeleteFleetRequest deleteFleetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteFleetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1272,7 +1542,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteFleetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFleetRequest));
+                request = new DeleteFleetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFleetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1281,6 +1551,68 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteFleetResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteFleetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a game session queue. This action means that any <a>StartGameSessionPlacement</a> requests that reference
+     * this queue will fail. To delete a queue, specify the queue name.
+     * </p>
+     * 
+     * @param deleteGameSessionQueueRequest
+     *        Represents the input for a request action.
+     * @return Result of the DeleteGameSessionQueue operation returned by the service.
+     * @throws InternalServiceException
+     *         The service encountered an unrecoverable internal failure while processing the request. Clients can retry
+     *         such requests immediately or after a waiting period.
+     * @throws InvalidRequestException
+     *         One or more parameter values in the request are invalid. Correct the invalid parameter values before
+     *         retrying.
+     * @throws NotFoundException
+     *         A service resource associated with the request could not be found. Clients should not retry such
+     *         requests.
+     * @throws UnauthorizedException
+     *         The client failed authentication. Clients should not retry such requests.
+     * @sample AmazonGameLift.DeleteGameSessionQueue
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteGameSessionQueue"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteGameSessionQueueResult deleteGameSessionQueue(DeleteGameSessionQueueRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteGameSessionQueue(request);
+    }
+
+    @SdkInternalApi
+    final DeleteGameSessionQueueResult executeDeleteGameSessionQueue(DeleteGameSessionQueueRequest deleteGameSessionQueueRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteGameSessionQueueRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteGameSessionQueueRequest> request = null;
+        Response<DeleteGameSessionQueueResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteGameSessionQueueRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteGameSessionQueueRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteGameSessionQueueResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteGameSessionQueueResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1316,7 +1648,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      API Documentation</a>
      */
     @Override
-    public DeleteScalingPolicyResult deleteScalingPolicy(DeleteScalingPolicyRequest deleteScalingPolicyRequest) {
+    public DeleteScalingPolicyResult deleteScalingPolicy(DeleteScalingPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteScalingPolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeleteScalingPolicyResult executeDeleteScalingPolicy(DeleteScalingPolicyRequest deleteScalingPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteScalingPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1327,7 +1665,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteScalingPolicyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteScalingPolicyRequest));
+                request = new DeleteScalingPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteScalingPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1348,8 +1686,11 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Retrieves properties for a specified alias. To get the alias, specify an alias ID. If successful, an <a>Alias</a>
-     * object is returned.
+     * Retrieves properties for a fleet alias. This operation returns all alias metadata and settings. To get just the
+     * fleet ID an alias is currently pointing to, use <a>ResolveAlias</a>.
+     * </p>
+     * <p>
+     * To get alias properties, specify the alias ID. If successful, an <a>Alias</a> object is returned.
      * </p>
      * 
      * @param describeAliasRequest
@@ -1371,7 +1712,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public DescribeAliasResult describeAlias(DescribeAliasRequest describeAliasRequest) {
+    public DescribeAliasResult describeAlias(DescribeAliasRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAlias(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAliasResult executeDescribeAlias(DescribeAliasRequest describeAliasRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1382,7 +1729,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAliasRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAliasRequest));
+                request = new DescribeAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1426,7 +1773,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public DescribeBuildResult describeBuild(DescribeBuildRequest describeBuildRequest) {
+    public DescribeBuildResult describeBuild(DescribeBuildRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeBuild(request);
+    }
+
+    @SdkInternalApi
+    final DescribeBuildResult executeDescribeBuild(DescribeBuildRequest describeBuildRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeBuildRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1437,7 +1790,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeBuildRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeBuildRequest));
+                request = new DescribeBuildRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeBuildRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1473,8 +1826,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * </li>
      * </ul>
      * <p>
-     * Service limits vary depending on region. Available regions for GameLift can be found in the AWS Management
-     * Console for GameLift (see the drop-down list in the upper right corner).
+     * Service limits vary depending on region. Available regions for Amazon GameLift can be found in the AWS Management
+     * Console for Amazon GameLift (see the drop-down list in the upper right corner).
      * </p>
      * 
      * @param describeEC2InstanceLimitsRequest
@@ -1493,7 +1846,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeEC2InstanceLimitsResult describeEC2InstanceLimits(DescribeEC2InstanceLimitsRequest describeEC2InstanceLimitsRequest) {
+    public DescribeEC2InstanceLimitsResult describeEC2InstanceLimits(DescribeEC2InstanceLimitsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEC2InstanceLimits(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEC2InstanceLimitsResult executeDescribeEC2InstanceLimits(DescribeEC2InstanceLimitsRequest describeEC2InstanceLimitsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEC2InstanceLimitsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1504,7 +1863,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeEC2InstanceLimitsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEC2InstanceLimitsRequest));
+                request = new DescribeEC2InstanceLimitsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeEC2InstanceLimitsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1558,7 +1918,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeFleetAttributesResult describeFleetAttributes(DescribeFleetAttributesRequest describeFleetAttributesRequest) {
+    public DescribeFleetAttributesResult describeFleetAttributes(DescribeFleetAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeFleetAttributes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeFleetAttributesResult executeDescribeFleetAttributes(DescribeFleetAttributesRequest describeFleetAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeFleetAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1569,7 +1935,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeFleetAttributesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFleetAttributesRequest));
+                request = new DescribeFleetAttributesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeFleetAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1624,7 +1991,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      API Documentation</a>
      */
     @Override
-    public DescribeFleetCapacityResult describeFleetCapacity(DescribeFleetCapacityRequest describeFleetCapacityRequest) {
+    public DescribeFleetCapacityResult describeFleetCapacity(DescribeFleetCapacityRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeFleetCapacity(request);
+    }
+
+    @SdkInternalApi
+    final DescribeFleetCapacityResult executeDescribeFleetCapacity(DescribeFleetCapacityRequest describeFleetCapacityRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeFleetCapacityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1635,7 +2008,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeFleetCapacityRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFleetCapacityRequest));
+                request = new DescribeFleetCapacityRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFleetCapacityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1681,7 +2054,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      API Documentation</a>
      */
     @Override
-    public DescribeFleetEventsResult describeFleetEvents(DescribeFleetEventsRequest describeFleetEventsRequest) {
+    public DescribeFleetEventsResult describeFleetEvents(DescribeFleetEventsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeFleetEvents(request);
+    }
+
+    @SdkInternalApi
+    final DescribeFleetEventsResult executeDescribeFleetEvents(DescribeFleetEventsRequest describeFleetEventsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeFleetEventsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1692,7 +2071,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeFleetEventsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFleetEventsRequest));
+                request = new DescribeFleetEventsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFleetEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1738,7 +2117,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeFleetPortSettingsResult describeFleetPortSettings(DescribeFleetPortSettingsRequest describeFleetPortSettingsRequest) {
+    public DescribeFleetPortSettingsResult describeFleetPortSettings(DescribeFleetPortSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeFleetPortSettings(request);
+    }
+
+    @SdkInternalApi
+    final DescribeFleetPortSettingsResult executeDescribeFleetPortSettings(DescribeFleetPortSettingsRequest describeFleetPortSettingsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeFleetPortSettingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1749,7 +2134,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeFleetPortSettingsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFleetPortSettingsRequest));
+                request = new DescribeFleetPortSettingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeFleetPortSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1803,7 +2189,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeFleetUtilizationResult describeFleetUtilization(DescribeFleetUtilizationRequest describeFleetUtilizationRequest) {
+    public DescribeFleetUtilizationResult describeFleetUtilization(DescribeFleetUtilizationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeFleetUtilization(request);
+    }
+
+    @SdkInternalApi
+    final DescribeFleetUtilizationResult executeDescribeFleetUtilization(DescribeFleetUtilizationRequest describeFleetUtilizationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeFleetUtilizationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1814,7 +2206,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeFleetUtilizationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFleetUtilizationRequest));
+                request = new DescribeFleetUtilizationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeFleetUtilizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1837,9 +2230,9 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
     /**
      * <p>
      * Retrieves properties, including the protection policy in force, for one or more game sessions. This action can be
-     * used in several ways: (1) provide a <code>GameSessionId</code> to request details for a specific game session;
-     * (2) provide either a <code>FleetId</code> or an <code>AliasId</code> to request properties for all game sessions
-     * running on a fleet.
+     * used in several ways: (1) provide a <code>GameSessionId</code> or <code>GameSessionArn</code> to request details
+     * for a specific game session; (2) provide either a <code>FleetId</code> or an <code>AliasId</code> to request
+     * properties for all game sessions running on a fleet.
      * </p>
      * <p>
      * To get game session record(s), specify just one of the following: game session ID, fleet ID, or alias ID. You can
@@ -1872,7 +2265,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeGameSessionDetailsResult describeGameSessionDetails(DescribeGameSessionDetailsRequest describeGameSessionDetailsRequest) {
+    public DescribeGameSessionDetailsResult describeGameSessionDetails(DescribeGameSessionDetailsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeGameSessionDetails(request);
+    }
+
+    @SdkInternalApi
+    final DescribeGameSessionDetailsResult executeDescribeGameSessionDetails(DescribeGameSessionDetailsRequest describeGameSessionDetailsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeGameSessionDetailsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1883,7 +2282,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeGameSessionDetailsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeGameSessionDetailsRequest));
+                request = new DescribeGameSessionDetailsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeGameSessionDetailsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1905,17 +2305,146 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Retrieves a set of one or more game sessions and properties. This action can be used in several ways: (1) provide
-     * a <code>GameSessionId</code> to request properties for a specific game session; (2) provide a
-     * <code>FleetId</code> or an <code>AliasId</code> to request properties for all game sessions running on a fleet.
-     * You can also use <a>SearchGameSessions</a>, which allows you to retrieve all game sessions or filter on certain
-     * criteria, but only returns game sessions with a status of ACTIVE. If you need to retrieve the protection policy
-     * for each game session, use <a>DescribeGameSessionDetails</a>.
+     * Retrieves properties and current status of a game session placement request. To get game session placement
+     * details, specify the placement ID. If successful, a <a>GameSessionPlacement</a> object is returned.
+     * </p>
+     * 
+     * @param describeGameSessionPlacementRequest
+     *        Represents the input for a request action.
+     * @return Result of the DescribeGameSessionPlacement operation returned by the service.
+     * @throws InternalServiceException
+     *         The service encountered an unrecoverable internal failure while processing the request. Clients can retry
+     *         such requests immediately or after a waiting period.
+     * @throws InvalidRequestException
+     *         One or more parameter values in the request are invalid. Correct the invalid parameter values before
+     *         retrying.
+     * @throws NotFoundException
+     *         A service resource associated with the request could not be found. Clients should not retry such
+     *         requests.
+     * @throws UnauthorizedException
+     *         The client failed authentication. Clients should not retry such requests.
+     * @sample AmazonGameLift.DescribeGameSessionPlacement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionPlacement"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeGameSessionPlacementResult describeGameSessionPlacement(DescribeGameSessionPlacementRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeGameSessionPlacement(request);
+    }
+
+    @SdkInternalApi
+    final DescribeGameSessionPlacementResult executeDescribeGameSessionPlacement(DescribeGameSessionPlacementRequest describeGameSessionPlacementRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeGameSessionPlacementRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeGameSessionPlacementRequest> request = null;
+        Response<DescribeGameSessionPlacementResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeGameSessionPlacementRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeGameSessionPlacementRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeGameSessionPlacementResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeGameSessionPlacementResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the properties for one or more game session queues. When requesting multiple queues, use the pagination
+     * parameters to retrieve results as a set of sequential pages. If successful, a <a>GameSessionQueue</a> object is
+     * returned for each requested queue. When specifying a list of queues, objects are returned only for queues that
+     * currently exist in the region.
+     * </p>
+     * 
+     * @param describeGameSessionQueuesRequest
+     *        Represents the input for a request action.
+     * @return Result of the DescribeGameSessionQueues operation returned by the service.
+     * @throws InternalServiceException
+     *         The service encountered an unrecoverable internal failure while processing the request. Clients can retry
+     *         such requests immediately or after a waiting period.
+     * @throws InvalidRequestException
+     *         One or more parameter values in the request are invalid. Correct the invalid parameter values before
+     *         retrying.
+     * @throws NotFoundException
+     *         A service resource associated with the request could not be found. Clients should not retry such
+     *         requests.
+     * @throws UnauthorizedException
+     *         The client failed authentication. Clients should not retry such requests.
+     * @sample AmazonGameLift.DescribeGameSessionQueues
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionQueues"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeGameSessionQueuesResult describeGameSessionQueues(DescribeGameSessionQueuesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeGameSessionQueues(request);
+    }
+
+    @SdkInternalApi
+    final DescribeGameSessionQueuesResult executeDescribeGameSessionQueues(DescribeGameSessionQueuesRequest describeGameSessionQueuesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeGameSessionQueuesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeGameSessionQueuesRequest> request = null;
+        Response<DescribeGameSessionQueuesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeGameSessionQueuesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeGameSessionQueuesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeGameSessionQueuesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeGameSessionQueuesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a set of one or more game sessions. Request a specific game session or request all game sessions on a
+     * fleet. Alternatively, use <a>SearchGameSessions</a> to request a set of active game sessions that are filtered by
+     * certain criteria. To retrieve protection policy settings for game sessions, use
+     * <a>DescribeGameSessionDetails</a>.
      * </p>
      * <p>
-     * To get game session record(s), specify just one of the following: game session ID, fleet ID, or alias ID. You can
-     * filter this request by game session status. Use the pagination parameters to retrieve results as a set of
-     * sequential pages. If successful, a <a>GameSession</a> object is returned for each session matching the request.
+     * To get game sessions, specify one of the following: game session ID, fleet ID, or alias ID. You can filter this
+     * request by game session status. Use the pagination parameters to retrieve results as a set of sequential pages.
+     * If successful, a <a>GameSession</a> object is returned for each game session matching the request.
+     * </p>
+     * <p>
+     * <i>Available in Amazon GameLift Local.</i>
      * </p>
      * 
      * @param describeGameSessionsRequest
@@ -1942,7 +2471,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      API Documentation</a>
      */
     @Override
-    public DescribeGameSessionsResult describeGameSessions(DescribeGameSessionsRequest describeGameSessionsRequest) {
+    public DescribeGameSessionsResult describeGameSessions(DescribeGameSessionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeGameSessions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeGameSessionsResult executeDescribeGameSessions(DescribeGameSessionsRequest describeGameSessionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeGameSessionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1953,7 +2488,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeGameSessionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeGameSessionsRequest));
+                request = new DescribeGameSessionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeGameSessionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2002,7 +2537,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public DescribeInstancesResult describeInstances(DescribeInstancesRequest describeInstancesRequest) {
+    public DescribeInstancesResult describeInstances(DescribeInstancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeInstances(request);
+    }
+
+    @SdkInternalApi
+    final DescribeInstancesResult executeDescribeInstances(DescribeInstancesRequest describeInstancesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2013,7 +2554,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeInstancesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeInstancesRequest));
+                request = new DescribeInstancesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2035,16 +2576,18 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
     /**
      * <p>
      * Retrieves properties for one or more player sessions. This action can be used in several ways: (1) provide a
-     * <code>PlayerSessionId</code> parameter to request properties for a specific player session; (2) provide a
-     * <code>GameSessionId</code> parameter to request properties for all player sessions in the specified game session;
-     * (3) provide a <code>PlayerId</code> parameter to request properties for all player sessions of a specified
-     * player.
+     * <code>PlayerSessionId</code> to request properties for a specific player session; (2) provide a
+     * <code>GameSessionId</code> to request properties for all player sessions in the specified game session; (3)
+     * provide a <code>PlayerId</code> to request properties for all player sessions of a specified player.
      * </p>
      * <p>
      * To get game session record(s), specify only one of the following: a player session ID, a game session ID, or a
      * player ID. You can filter this request by player session status. Use the pagination parameters to retrieve
      * results as a set of sequential pages. If successful, a <a>PlayerSession</a> object is returned for each session
      * matching the request.
+     * </p>
+     * <p>
+     * <i>Available in Amazon GameLift Local.</i>
      * </p>
      * 
      * @param describePlayerSessionsRequest
@@ -2066,7 +2609,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribePlayerSessionsResult describePlayerSessions(DescribePlayerSessionsRequest describePlayerSessionsRequest) {
+    public DescribePlayerSessionsResult describePlayerSessions(DescribePlayerSessionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribePlayerSessions(request);
+    }
+
+    @SdkInternalApi
+    final DescribePlayerSessionsResult executeDescribePlayerSessions(DescribePlayerSessionsRequest describePlayerSessionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describePlayerSessionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2077,7 +2626,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribePlayerSessionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describePlayerSessionsRequest));
+                request = new DescribePlayerSessionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describePlayerSessionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2099,8 +2648,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Retrieves the current runtime configuration for the specified fleet. The runtime configuration tells GameLift how
-     * to launch server processes on instances in the fleet.
+     * Retrieves the current runtime configuration for the specified fleet. The runtime configuration tells Amazon
+     * GameLift how to launch server processes on instances in the fleet.
      * </p>
      * 
      * @param describeRuntimeConfigurationRequest
@@ -2122,7 +2671,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeRuntimeConfigurationResult describeRuntimeConfiguration(DescribeRuntimeConfigurationRequest describeRuntimeConfigurationRequest) {
+    public DescribeRuntimeConfigurationResult describeRuntimeConfiguration(DescribeRuntimeConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeRuntimeConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DescribeRuntimeConfigurationResult executeDescribeRuntimeConfiguration(DescribeRuntimeConfigurationRequest describeRuntimeConfigurationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeRuntimeConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2133,7 +2688,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeRuntimeConfigurationRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeRuntimeConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeRuntimeConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -2183,7 +2738,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeScalingPoliciesResult describeScalingPolicies(DescribeScalingPoliciesRequest describeScalingPoliciesRequest) {
+    public DescribeScalingPoliciesResult describeScalingPolicies(DescribeScalingPoliciesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeScalingPolicies(request);
+    }
+
+    @SdkInternalApi
+    final DescribeScalingPoliciesResult executeDescribeScalingPolicies(DescribeScalingPoliciesRequest describeScalingPoliciesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeScalingPoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2194,7 +2755,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeScalingPoliciesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeScalingPoliciesRequest));
+                request = new DescribeScalingPoliciesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeScalingPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2245,7 +2807,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      API Documentation</a>
      */
     @Override
-    public GetGameSessionLogUrlResult getGameSessionLogUrl(GetGameSessionLogUrlRequest getGameSessionLogUrlRequest) {
+    public GetGameSessionLogUrlResult getGameSessionLogUrl(GetGameSessionLogUrlRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetGameSessionLogUrl(request);
+    }
+
+    @SdkInternalApi
+    final GetGameSessionLogUrlResult executeGetGameSessionLogUrl(GetGameSessionLogUrlRequest getGameSessionLogUrlRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getGameSessionLogUrlRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2256,7 +2824,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetGameSessionLogUrlRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getGameSessionLogUrlRequest));
+                request = new GetGameSessionLogUrlRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getGameSessionLogUrlRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2281,14 +2849,14 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * or watching activity in real time.
      * </p>
      * <p>
-     * Access requires credentials that match the operating system of the instance. For a Windows instance, GameLift
-     * returns a username and password as strings for use with a Windows Remote Desktop client. For a Linux instance,
-     * GameLift returns a username and RSA private key, also as strings, for use with an SSH client. The private key
-     * must be saved in the proper format to a .pem file before using. If you're making this request using the AWS CLI,
-     * saving the secret can be handled as part of the GetInstanceAccess request (see the example later in this topic).
-     * For more information on remote access, see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-remote-access.html">Remotely Accessing
-     * an Instance</a>.
+     * Access requires credentials that match the operating system of the instance. For a Windows instance, Amazon
+     * GameLift returns a user name and password as strings for use with a Windows Remote Desktop client. For a Linux
+     * instance, Amazon GameLift returns a user name and RSA private key, also as strings, for use with an SSH client.
+     * The private key must be saved in the proper format to a <code>.pem</code> file before using. If you're making
+     * this request using the AWS CLI, saving the secret can be handled as part of the GetInstanceAccess request. (See
+     * the example later in this topic). For more information on remote access, see <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely Accessing an
+     * Instance</a>.
      * </p>
      * <p>
      * To request access to a specific instance, specify the IDs of the instance and the fleet it belongs to. If
@@ -2297,6 +2865,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * </p>
      * 
      * @param getInstanceAccessRequest
+     *        Represents the input for a request action.
      * @return Result of the GetInstanceAccess operation returned by the service.
      * @throws UnauthorizedException
      *         The client failed authentication. Clients should not retry such requests.
@@ -2314,7 +2883,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public GetInstanceAccessResult getInstanceAccess(GetInstanceAccessRequest getInstanceAccessRequest) {
+    public GetInstanceAccessResult getInstanceAccess(GetInstanceAccessRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetInstanceAccess(request);
+    }
+
+    @SdkInternalApi
+    final GetInstanceAccessResult executeGetInstanceAccess(GetInstanceAccessRequest getInstanceAccessRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getInstanceAccessRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2325,7 +2900,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetInstanceAccessRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInstanceAccessRequest));
+                request = new GetInstanceAccessRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInstanceAccessRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2371,7 +2946,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public ListAliasesResult listAliases(ListAliasesRequest listAliasesRequest) {
+    public ListAliasesResult listAliases(ListAliasesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAliases(request);
+    }
+
+    @SdkInternalApi
+    final ListAliasesResult executeListAliases(ListAliasesRequest listAliasesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listAliasesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2382,7 +2963,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAliasesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAliasesRequest));
+                request = new ListAliasesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAliasesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2429,7 +3010,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public ListBuildsResult listBuilds(ListBuildsRequest listBuildsRequest) {
+    public ListBuildsResult listBuilds(ListBuildsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListBuilds(request);
+    }
+
+    @SdkInternalApi
+    final ListBuildsResult executeListBuilds(ListBuildsRequest listBuildsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listBuildsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2440,7 +3027,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListBuildsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBuildsRequest));
+                request = new ListBuildsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBuildsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2489,7 +3076,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public ListFleetsResult listFleets(ListFleetsRequest listFleetsRequest) {
+    public ListFleetsResult listFleets(ListFleetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListFleets(request);
+    }
+
+    @SdkInternalApi
+    final ListFleetsResult executeListFleets(ListFleetsRequest listFleetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listFleetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2500,7 +3093,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListFleetsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFleetsRequest));
+                request = new ListFleetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFleetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2566,7 +3159,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public PutScalingPolicyResult putScalingPolicy(PutScalingPolicyRequest putScalingPolicyRequest) {
+    public PutScalingPolicyResult putScalingPolicy(PutScalingPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutScalingPolicy(request);
+    }
+
+    @SdkInternalApi
+    final PutScalingPolicyResult executePutScalingPolicy(PutScalingPolicyRequest putScalingPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putScalingPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2577,7 +3176,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutScalingPolicyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(putScalingPolicyRequest));
+                request = new PutScalingPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putScalingPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2598,20 +3197,9 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Retrieves a fresh set of upload credentials and the assigned Amazon S3 storage location for a specific build.
-     * Valid credentials are required to upload your game build files to Amazon S3.
-     * </p>
-     * <important>
-     * <p>
-     * Call this action only if you need credentials for a build created with<code> <a>CreateBuild</a> </code>. This is
-     * a rare situation; in most cases, builds are created using the CLI command <code>upload-build</code>, which
-     * creates a build record and also uploads build files.
-     * </p>
-     * </important>
-     * <p>
-     * Upload credentials are returned when you create the build, but they have a limited lifespan. You can get fresh
-     * credentials and use them to re-upload game files until the status of that build changes to <code>READY</code>.
-     * Once this happens, you must create a brand new build.
+     * <i>This API call is not currently in use. </i> Retrieves a fresh set of upload credentials and the assigned
+     * Amazon S3 storage location for a specific build. Valid credentials are required to upload your game build files
+     * to Amazon S3.
      * </p>
      * 
      * @param requestUploadCredentialsRequest
@@ -2633,7 +3221,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RequestUploadCredentialsResult requestUploadCredentials(RequestUploadCredentialsRequest requestUploadCredentialsRequest) {
+    public RequestUploadCredentialsResult requestUploadCredentials(RequestUploadCredentialsRequest request) {
+        request = beforeClientExecution(request);
+        return executeRequestUploadCredentials(request);
+    }
+
+    @SdkInternalApi
+    final RequestUploadCredentialsResult executeRequestUploadCredentials(RequestUploadCredentialsRequest requestUploadCredentialsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(requestUploadCredentialsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2644,7 +3238,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RequestUploadCredentialsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(requestUploadCredentialsRequest));
+                request = new RequestUploadCredentialsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(requestUploadCredentialsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2693,7 +3288,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public ResolveAliasResult resolveAlias(ResolveAliasRequest resolveAliasRequest) {
+    public ResolveAliasResult resolveAlias(ResolveAliasRequest request) {
+        request = beforeClientExecution(request);
+        return executeResolveAlias(request);
+    }
+
+    @SdkInternalApi
+    final ResolveAliasResult executeResolveAlias(ResolveAliasRequest resolveAliasRequest) {
 
         ExecutionContext executionContext = createExecutionContext(resolveAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2704,7 +3305,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ResolveAliasRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(resolveAliasRequest));
+                request = new ResolveAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(resolveAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2727,7 +3328,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * <p>
      * Retrieves a set of game sessions that match a set of search criteria and sorts them in a specified order.
      * Currently a game session search is limited to a single fleet. Search results include only game sessions that are
-     * in ACTIVE status. If you need to retrieve game sessions with a status other than active, use
+     * in <code>ACTIVE</code> status. If you need to retrieve game sessions with a status other than active, use
      * <a>DescribeGameSessions</a>. If you need to retrieve the protection policy for each game session, use
      * <a>DescribeGameSessionDetails</a>.
      * </p>
@@ -2737,8 +3338,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * <ul>
      * <li>
      * <p>
-     * <b>gameSessionId</b> -- ID value assigned to a game session. This unique value is returned in a
-     * <a>GameSession</a> object when a new game session is created.
+     * <b>gameSessionId</b> -- Unique identifier for the game session. You can use either a <code>GameSessionId</code>
+     * or <code>GameSessionArn</code> value.
      * </p>
      * </li>
      * <li>
@@ -2787,6 +3388,9 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      * search results often, and handle sessions that fill up before a player can join.
      * </p>
      * </note>
+     * <p>
+     * <i>Available in Amazon GameLift Local.</i>
+     * </p>
      * 
      * @param searchGameSessionsRequest
      *        Represents the input for a request action.
@@ -2812,7 +3416,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      API Documentation</a>
      */
     @Override
-    public SearchGameSessionsResult searchGameSessions(SearchGameSessionsRequest searchGameSessionsRequest) {
+    public SearchGameSessionsResult searchGameSessions(SearchGameSessionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeSearchGameSessions(request);
+    }
+
+    @SdkInternalApi
+    final SearchGameSessionsResult executeSearchGameSessions(SearchGameSessionsRequest searchGameSessionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(searchGameSessionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2823,7 +3433,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SearchGameSessionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchGameSessionsRequest));
+                request = new SearchGameSessionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchGameSessionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2844,7 +3454,155 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Updates properties for an alias. To update properties, specify the alias ID to be updated and provide the
+     * Places a request for a new game session in a queue (see <a>CreateGameSessionQueue</a>). When processing a
+     * placement request, Amazon GameLift searches for available resources on the queue's destinations, scanning each
+     * until it finds resources or the placement request times out. A game session placement request can also request
+     * player sessions. When a new game session is successfully created, Amazon GameLift creates a player session for
+     * each player included in the request.
+     * </p>
+     * <p>
+     * When placing a game session, by default Amazon GameLift tries each fleet in the order they are listed in the
+     * queue configuration. Ideally, a queue's destinations are listed in preference order. Alternatively, when
+     * requesting a game session with players, you can also provide latency data for each player in relevant regions.
+     * Latency data indicates the performance lag a player experiences when connected to a fleet in the region. Amazon
+     * GameLift uses latency data to reorder the list of destinations to place the game session in a region with minimal
+     * lag. If latency data is provided for multiple players, Amazon GameLift calculates each region's average lag for
+     * all players and reorders to get the best game play across all players.
+     * </p>
+     * <p>
+     * To place a new game session request, specify the queue name and a set of game session properties and settings.
+     * Also provide a unique ID (such as a UUID) for the placement. You'll use this ID to track the status of the
+     * placement request. Optionally, provide a set of IDs and player data for each player you want to join to the new
+     * game session. To optimize game play for the players, also provide latency data for all players. If successful, a
+     * new game session placement is created. To track the status of a placement request, call
+     * <a>DescribeGameSessionPlacement</a> and check the request's status. If the status is Fulfilled, a new game
+     * session has been created and a game session ARN and region are referenced. If the placement request times out,
+     * you have the option of resubmitting the request or retrying it with a different queue.
+     * </p>
+     * 
+     * @param startGameSessionPlacementRequest
+     *        Represents the input for a request action.
+     * @return Result of the StartGameSessionPlacement operation returned by the service.
+     * @throws InternalServiceException
+     *         The service encountered an unrecoverable internal failure while processing the request. Clients can retry
+     *         such requests immediately or after a waiting period.
+     * @throws InvalidRequestException
+     *         One or more parameter values in the request are invalid. Correct the invalid parameter values before
+     *         retrying.
+     * @throws NotFoundException
+     *         A service resource associated with the request could not be found. Clients should not retry such
+     *         requests.
+     * @throws UnauthorizedException
+     *         The client failed authentication. Clients should not retry such requests.
+     * @sample AmazonGameLift.StartGameSessionPlacement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartGameSessionPlacement"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartGameSessionPlacementResult startGameSessionPlacement(StartGameSessionPlacementRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartGameSessionPlacement(request);
+    }
+
+    @SdkInternalApi
+    final StartGameSessionPlacementResult executeStartGameSessionPlacement(StartGameSessionPlacementRequest startGameSessionPlacementRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startGameSessionPlacementRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartGameSessionPlacementRequest> request = null;
+        Response<StartGameSessionPlacementResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartGameSessionPlacementRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startGameSessionPlacementRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartGameSessionPlacementResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartGameSessionPlacementResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Cancels a game session placement that is in Pending status. To stop a placement, provide the placement ID values.
+     * If successful, the placement is moved to Cancelled status.
+     * </p>
+     * 
+     * @param stopGameSessionPlacementRequest
+     *        Represents the input for a request action.
+     * @return Result of the StopGameSessionPlacement operation returned by the service.
+     * @throws InternalServiceException
+     *         The service encountered an unrecoverable internal failure while processing the request. Clients can retry
+     *         such requests immediately or after a waiting period.
+     * @throws InvalidRequestException
+     *         One or more parameter values in the request are invalid. Correct the invalid parameter values before
+     *         retrying.
+     * @throws NotFoundException
+     *         A service resource associated with the request could not be found. Clients should not retry such
+     *         requests.
+     * @throws UnauthorizedException
+     *         The client failed authentication. Clients should not retry such requests.
+     * @sample AmazonGameLift.StopGameSessionPlacement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopGameSessionPlacement"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StopGameSessionPlacementResult stopGameSessionPlacement(StopGameSessionPlacementRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopGameSessionPlacement(request);
+    }
+
+    @SdkInternalApi
+    final StopGameSessionPlacementResult executeStopGameSessionPlacement(StopGameSessionPlacementRequest stopGameSessionPlacementRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopGameSessionPlacementRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopGameSessionPlacementRequest> request = null;
+        Response<StopGameSessionPlacementResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopGameSessionPlacementRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(stopGameSessionPlacementRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopGameSessionPlacementResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StopGameSessionPlacementResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates properties for a fleet alias. To update properties, specify the alias ID to be updated and provide the
      * information to be changed. To reassign an alias to another fleet, provide an updated routing strategy. If
      * successful, the updated alias record is returned.
      * </p>
@@ -2868,7 +3626,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public UpdateAliasResult updateAlias(UpdateAliasRequest updateAliasRequest) {
+    public UpdateAliasResult updateAlias(UpdateAliasRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAlias(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAliasResult executeUpdateAlias(UpdateAliasRequest updateAliasRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2879,7 +3643,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateAliasRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAliasRequest));
+                request = new UpdateAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2924,7 +3688,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public UpdateBuildResult updateBuild(UpdateBuildRequest updateBuildRequest) {
+    public UpdateBuildResult updateBuild(UpdateBuildRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateBuild(request);
+    }
+
+    @SdkInternalApi
+    final UpdateBuildResult executeUpdateBuild(UpdateBuildRequest updateBuildRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateBuildRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2935,7 +3705,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateBuildRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateBuildRequest));
+                request = new UpdateBuildRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateBuildRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2988,7 +3758,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      API Documentation</a>
      */
     @Override
-    public UpdateFleetAttributesResult updateFleetAttributes(UpdateFleetAttributesRequest updateFleetAttributesRequest) {
+    public UpdateFleetAttributesResult updateFleetAttributes(UpdateFleetAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateFleetAttributes(request);
+    }
+
+    @SdkInternalApi
+    final UpdateFleetAttributesResult executeUpdateFleetAttributes(UpdateFleetAttributesRequest updateFleetAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateFleetAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2999,7 +3775,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateFleetAttributesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFleetAttributesRequest));
+                request = new UpdateFleetAttributesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFleetAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3066,7 +3842,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      API Documentation</a>
      */
     @Override
-    public UpdateFleetCapacityResult updateFleetCapacity(UpdateFleetCapacityRequest updateFleetCapacityRequest) {
+    public UpdateFleetCapacityResult updateFleetCapacity(UpdateFleetCapacityRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateFleetCapacity(request);
+    }
+
+    @SdkInternalApi
+    final UpdateFleetCapacityResult executeUpdateFleetCapacity(UpdateFleetCapacityRequest updateFleetCapacityRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateFleetCapacityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3077,7 +3859,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateFleetCapacityRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFleetCapacityRequest));
+                request = new UpdateFleetCapacityRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFleetCapacityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3133,7 +3915,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateFleetPortSettingsResult updateFleetPortSettings(UpdateFleetPortSettingsRequest updateFleetPortSettingsRequest) {
+    public UpdateFleetPortSettingsResult updateFleetPortSettings(UpdateFleetPortSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateFleetPortSettings(request);
+    }
+
+    @SdkInternalApi
+    final UpdateFleetPortSettingsResult executeUpdateFleetPortSettings(UpdateFleetPortSettingsRequest updateFleetPortSettingsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateFleetPortSettingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3144,7 +3932,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateFleetPortSettingsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFleetPortSettingsRequest));
+                request = new UpdateFleetPortSettingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateFleetPortSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3198,7 +3987,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public UpdateGameSessionResult updateGameSession(UpdateGameSessionRequest updateGameSessionRequest) {
+    public UpdateGameSessionResult updateGameSession(UpdateGameSessionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateGameSession(request);
+    }
+
+    @SdkInternalApi
+    final UpdateGameSessionResult executeUpdateGameSession(UpdateGameSessionRequest updateGameSessionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateGameSessionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3209,7 +4004,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateGameSessionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGameSessionRequest));
+                request = new UpdateGameSessionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGameSessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3230,20 +4025,83 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Updates the current runtime configuration for the specified fleet, which tells GameLift how to launch server
-     * processes on instances in the fleet. You can update a fleet's runtime configuration at any time after the fleet
-     * is created; it does not need to be in an <code>ACTIVE</code> status.
+     * Updates settings for a game session queue, which determines how new game session requests in the queue are
+     * processed. To update settings, specify the queue name to be updated and provide the new settings. When updating
+     * destinations, provide a complete list of destinations.
+     * </p>
+     * 
+     * @param updateGameSessionQueueRequest
+     *        Represents the input for a request action.
+     * @return Result of the UpdateGameSessionQueue operation returned by the service.
+     * @throws InternalServiceException
+     *         The service encountered an unrecoverable internal failure while processing the request. Clients can retry
+     *         such requests immediately or after a waiting period.
+     * @throws InvalidRequestException
+     *         One or more parameter values in the request are invalid. Correct the invalid parameter values before
+     *         retrying.
+     * @throws NotFoundException
+     *         A service resource associated with the request could not be found. Clients should not retry such
+     *         requests.
+     * @throws UnauthorizedException
+     *         The client failed authentication. Clients should not retry such requests.
+     * @sample AmazonGameLift.UpdateGameSessionQueue
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSessionQueue"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateGameSessionQueueResult updateGameSessionQueue(UpdateGameSessionQueueRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateGameSessionQueue(request);
+    }
+
+    @SdkInternalApi
+    final UpdateGameSessionQueueResult executeUpdateGameSessionQueue(UpdateGameSessionQueueRequest updateGameSessionQueueRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateGameSessionQueueRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateGameSessionQueueRequest> request = null;
+        Response<UpdateGameSessionQueueResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateGameSessionQueueRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGameSessionQueueRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateGameSessionQueueResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateGameSessionQueueResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the current runtime configuration for the specified fleet, which tells Amazon GameLift how to launch
+     * server processes on instances in the fleet. You can update a fleet's runtime configuration at any time after the
+     * fleet is created; it does not need to be in an <code>ACTIVE</code> status.
      * </p>
      * <p>
      * To update runtime configuration, specify the fleet ID and provide a <code>RuntimeConfiguration</code> object with
      * the updated collection of server process configurations.
      * </p>
      * <p>
-     * Each instance in a GameLift fleet checks regularly for an updated runtime configuration and changes how it
+     * Each instance in a Amazon GameLift fleet checks regularly for an updated runtime configuration and changes how it
      * launches server processes to comply with the latest version. Existing server processes are not affected by the
-     * update; they continue to run until they end, while GameLift simply adds new server processes to fit the current
-     * runtime configuration. As a result, the runtime configuration changes are applied gradually as existing processes
-     * shut down and new processes are launched in GameLift's normal process recycling activity.
+     * update; they continue to run until they end, while Amazon GameLift simply adds new server processes to fit the
+     * current runtime configuration. As a result, the runtime configuration changes are applied gradually as existing
+     * processes shut down and new processes are launched in Amazon GameLift's normal process recycling activity.
      * </p>
      * 
      * @param updateRuntimeConfigurationRequest
@@ -3268,7 +4126,13 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateRuntimeConfigurationResult updateRuntimeConfiguration(UpdateRuntimeConfigurationRequest updateRuntimeConfigurationRequest) {
+    public UpdateRuntimeConfigurationResult updateRuntimeConfiguration(UpdateRuntimeConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateRuntimeConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final UpdateRuntimeConfigurationResult executeUpdateRuntimeConfiguration(UpdateRuntimeConfigurationRequest updateRuntimeConfigurationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateRuntimeConfigurationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3279,7 +4143,8 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateRuntimeConfigurationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRuntimeConfigurationRequest));
+                request = new UpdateRuntimeConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateRuntimeConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

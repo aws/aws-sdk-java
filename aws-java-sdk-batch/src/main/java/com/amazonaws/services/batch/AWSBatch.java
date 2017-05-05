@@ -127,7 +127,7 @@ public interface AWSBatch {
 
     /**
      * <p>
-     * Creates an AWS Batch compute environment. You can create <code>MANAGED</code> or <code>UNMANAGED</code>compute
+     * Creates an AWS Batch compute environment. You can create <code>MANAGED</code> or <code>UNMANAGED</code> compute
      * environments.
      * </p>
      * <p>

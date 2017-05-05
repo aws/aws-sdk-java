@@ -36,7 +36,7 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest impl
     private String volumeId;
     /**
      * <p>
-     * The instance attribute.
+     * The attribute of the volume. This parameter is required.
      * </p>
      */
     private String attribute;
@@ -83,11 +83,11 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The instance attribute.
+     * The attribute of the volume. This parameter is required.
      * </p>
      * 
      * @param attribute
-     *        The instance attribute.
+     *        The attribute of the volume. This parameter is required.
      * @see VolumeAttributeName
      */
 
@@ -97,10 +97,10 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The instance attribute.
+     * The attribute of the volume. This parameter is required.
      * </p>
      * 
-     * @return The instance attribute.
+     * @return The attribute of the volume. This parameter is required.
      * @see VolumeAttributeName
      */
 
@@ -110,11 +110,11 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The instance attribute.
+     * The attribute of the volume. This parameter is required.
      * </p>
      * 
      * @param attribute
-     *        The instance attribute.
+     *        The attribute of the volume. This parameter is required.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VolumeAttributeName
      */
@@ -126,11 +126,11 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The instance attribute.
+     * The attribute of the volume. This parameter is required.
      * </p>
      * 
      * @param attribute
-     *        The instance attribute.
+     *        The attribute of the volume. This parameter is required.
      * @see VolumeAttributeName
      */
 
@@ -140,11 +140,11 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The instance attribute.
+     * The attribute of the volume. This parameter is required.
      * </p>
      * 
      * @param attribute
-     *        The instance attribute.
+     *        The attribute of the volume. This parameter is required.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VolumeAttributeName
      */

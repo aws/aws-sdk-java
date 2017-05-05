@@ -41,6 +41,8 @@ public enum DiscoveryActions implements Action {
     DescribeConfigurations("discovery:DescribeConfigurations"),
     /** Action for the DescribeExportConfigurations operation. */
     DescribeExportConfigurations("discovery:DescribeExportConfigurations"),
+    /** Action for the DescribeExportTasks operation. */
+    DescribeExportTasks("discovery:DescribeExportTasks"),
     /** Action for the DescribeTags operation. */
     DescribeTags("discovery:DescribeTags"),
     /** Action for the DisassociateConfigurationItemsFromApplication operation. */
@@ -55,6 +57,8 @@ public enum DiscoveryActions implements Action {
     ListServerNeighbors("discovery:ListServerNeighbors"),
     /** Action for the StartDataCollectionByAgentIds operation. */
     StartDataCollectionByAgentIds("discovery:StartDataCollectionByAgentIds"),
+    /** Action for the StartExportTask operation. */
+    StartExportTask("discovery:StartExportTask"),
     /** Action for the StopDataCollectionByAgentIds operation. */
     StopDataCollectionByAgentIds("discovery:StopDataCollectionByAgentIds"),
     /** Action for the UpdateApplication operation. */

@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -234,6 +235,10 @@ public class AWSCostAndUsageReportClient extends AmazonWebServiceClient implemen
         init();
     }
 
+    public static AWSCostAndUsageReportClientBuilder builder() {
+        return AWSCostAndUsageReportClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWS Cost and Usage Report Service using the specified
      * parameters.
@@ -278,7 +283,13 @@ public class AWSCostAndUsageReportClient extends AmazonWebServiceClient implemen
      *      Documentation</a>
      */
     @Override
-    public DeleteReportDefinitionResult deleteReportDefinition(DeleteReportDefinitionRequest deleteReportDefinitionRequest) {
+    public DeleteReportDefinitionResult deleteReportDefinition(DeleteReportDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteReportDefinition(request);
+    }
+
+    @SdkInternalApi
+    final DeleteReportDefinitionResult executeDeleteReportDefinition(DeleteReportDefinitionRequest deleteReportDefinitionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteReportDefinitionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -289,7 +300,7 @@ public class AWSCostAndUsageReportClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteReportDefinitionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteReportDefinitionRequest));
+                request = new DeleteReportDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteReportDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -322,7 +333,13 @@ public class AWSCostAndUsageReportClient extends AmazonWebServiceClient implemen
      *      API Documentation</a>
      */
     @Override
-    public DescribeReportDefinitionsResult describeReportDefinitions(DescribeReportDefinitionsRequest describeReportDefinitionsRequest) {
+    public DescribeReportDefinitionsResult describeReportDefinitions(DescribeReportDefinitionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeReportDefinitions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeReportDefinitionsResult executeDescribeReportDefinitions(DescribeReportDefinitionsRequest describeReportDefinitionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeReportDefinitionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -333,7 +350,8 @@ public class AWSCostAndUsageReportClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeReportDefinitionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeReportDefinitionsRequest));
+                request = new DescribeReportDefinitionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeReportDefinitionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -373,7 +391,13 @@ public class AWSCostAndUsageReportClient extends AmazonWebServiceClient implemen
      *      Documentation</a>
      */
     @Override
-    public PutReportDefinitionResult putReportDefinition(PutReportDefinitionRequest putReportDefinitionRequest) {
+    public PutReportDefinitionResult putReportDefinition(PutReportDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executePutReportDefinition(request);
+    }
+
+    @SdkInternalApi
+    final PutReportDefinitionResult executePutReportDefinition(PutReportDefinitionRequest putReportDefinitionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putReportDefinitionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -384,7 +408,7 @@ public class AWSCostAndUsageReportClient extends AmazonWebServiceClient implemen
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutReportDefinitionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(putReportDefinitionRequest));
+                request = new PutReportDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putReportDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -266,6 +267,10 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         init();
     }
 
+    public static AmazonDynamoDBClientBuilder builder() {
+        return AmazonDynamoDBClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on DynamoDB using the specified parameters.
      *
@@ -376,7 +381,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public BatchGetItemResult batchGetItem(BatchGetItemRequest batchGetItemRequest) {
+    public BatchGetItemResult batchGetItem(BatchGetItemRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchGetItem(request);
+    }
+
+    @SdkInternalApi
+    final BatchGetItemResult executeBatchGetItem(BatchGetItemRequest batchGetItemRequest) {
 
         ExecutionContext executionContext = createExecutionContext(batchGetItemRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -387,7 +398,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new BatchGetItemRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetItemRequest));
+                request = new BatchGetItemRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetItemRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -535,7 +546,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public BatchWriteItemResult batchWriteItem(BatchWriteItemRequest batchWriteItemRequest) {
+    public BatchWriteItemResult batchWriteItem(BatchWriteItemRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchWriteItem(request);
+    }
+
+    @SdkInternalApi
+    final BatchWriteItemResult executeBatchWriteItem(BatchWriteItemRequest batchWriteItemRequest) {
 
         ExecutionContext executionContext = createExecutionContext(batchWriteItemRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -546,7 +563,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new BatchWriteItemRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchWriteItemRequest));
+                request = new BatchWriteItemRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchWriteItemRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -613,7 +630,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public CreateTableResult createTable(CreateTableRequest createTableRequest) {
+    public CreateTableResult createTable(CreateTableRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTable(request);
+    }
+
+    @SdkInternalApi
+    final CreateTableResult executeCreateTable(CreateTableRequest createTableRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createTableRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -624,7 +647,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateTableRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTableRequest));
+                request = new CreateTableRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -692,7 +715,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public DeleteItemResult deleteItem(DeleteItemRequest deleteItemRequest) {
+    public DeleteItemResult deleteItem(DeleteItemRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteItem(request);
+    }
+
+    @SdkInternalApi
+    final DeleteItemResult executeDeleteItem(DeleteItemRequest deleteItemRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteItemRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -703,7 +732,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteItemRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteItemRequest));
+                request = new DeleteItemRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteItemRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -783,7 +812,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public DeleteTableResult deleteTable(DeleteTableRequest deleteTableRequest) {
+    public DeleteTableResult deleteTable(DeleteTableRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTable(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTableResult executeDeleteTable(DeleteTableRequest deleteTableRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteTableRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -794,7 +829,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteTableRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTableRequest));
+                request = new DeleteTableRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -921,7 +956,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public DescribeLimitsResult describeLimits(DescribeLimitsRequest describeLimitsRequest) {
+    public DescribeLimitsResult describeLimits(DescribeLimitsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeLimits(request);
+    }
+
+    @SdkInternalApi
+    final DescribeLimitsResult executeDescribeLimits(DescribeLimitsRequest describeLimitsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeLimitsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -932,7 +973,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeLimitsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeLimitsRequest));
+                request = new DescribeLimitsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeLimitsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -978,7 +1019,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public DescribeTableResult describeTable(DescribeTableRequest describeTableRequest) {
+    public DescribeTableResult describeTable(DescribeTableRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTable(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTableResult executeDescribeTable(DescribeTableRequest describeTableRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTableRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -989,7 +1036,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTableRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTableRequest));
+                request = new DescribeTableRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1011,6 +1058,59 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     @Override
     public DescribeTableResult describeTable(String tableName) {
         return describeTable(new DescribeTableRequest().withTableName(tableName));
+    }
+
+    /**
+     * <p>
+     * Gives a description of the Time to Live (TTL) status on the specified table.
+     * </p>
+     * 
+     * @param describeTimeToLiveRequest
+     * @return Result of the DescribeTimeToLive operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access a nonexistent table or index. The resource might not be specified
+     *         correctly, or its status might not be <code>ACTIVE</code>.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.DescribeTimeToLive
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTimeToLive" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeTimeToLiveResult describeTimeToLive(DescribeTimeToLiveRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTimeToLive(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTimeToLiveResult executeDescribeTimeToLive(DescribeTimeToLiveRequest describeTimeToLiveRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeTimeToLiveRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeTimeToLiveRequest> request = null;
+        Response<DescribeTimeToLiveResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeTimeToLiveRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTimeToLiveRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeTimeToLiveResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeTimeToLiveResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -1044,7 +1144,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public GetItemResult getItem(GetItemRequest getItemRequest) {
+    public GetItemResult getItem(GetItemRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetItem(request);
+    }
+
+    @SdkInternalApi
+    final GetItemResult executeGetItem(GetItemRequest getItemRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getItemRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1055,7 +1161,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetItemRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getItemRequest));
+                request = new GetItemRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getItemRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1100,7 +1206,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public ListTablesResult listTables(ListTablesRequest listTablesRequest) {
+    public ListTablesResult listTables(ListTablesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTables(request);
+    }
+
+    @SdkInternalApi
+    final ListTablesResult executeListTables(ListTablesRequest listTablesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTablesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1111,7 +1223,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTablesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTablesRequest));
+                request = new ListTablesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTablesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1173,7 +1285,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *      API Documentation</a>
      */
     @Override
-    public ListTagsOfResourceResult listTagsOfResource(ListTagsOfResourceRequest listTagsOfResourceRequest) {
+    public ListTagsOfResourceResult listTagsOfResource(ListTagsOfResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsOfResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsOfResourceResult executeListTagsOfResource(ListTagsOfResourceRequest listTagsOfResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTagsOfResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1184,7 +1302,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTagsOfResourceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsOfResourceRequest));
+                request = new ListTagsOfResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsOfResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1257,7 +1375,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public PutItemResult putItem(PutItemRequest putItemRequest) {
+    public PutItemResult putItem(PutItemRequest request) {
+        request = beforeClientExecution(request);
+        return executePutItem(request);
+    }
+
+    @SdkInternalApi
+    final PutItemResult executePutItem(PutItemRequest putItemRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putItemRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1268,7 +1392,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutItemRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(putItemRequest));
+                request = new PutItemRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putItemRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1347,7 +1471,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public QueryResult query(QueryRequest queryRequest) {
+    public QueryResult query(QueryRequest request) {
+        request = beforeClientExecution(request);
+        return executeQuery(request);
+    }
+
+    @SdkInternalApi
+    final QueryResult executeQuery(QueryRequest queryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(queryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1358,7 +1488,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new QueryRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(queryRequest));
+                request = new QueryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(queryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1422,7 +1552,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public ScanResult scan(ScanRequest scanRequest) {
+    public ScanResult scan(ScanRequest request) {
+        request = beforeClientExecution(request);
+        return executeScan(request);
+    }
+
+    @SdkInternalApi
+    final ScanResult executeScan(ScanRequest scanRequest) {
 
         ExecutionContext executionContext = createExecutionContext(scanRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1433,7 +1569,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ScanRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(scanRequest));
+                request = new ScanRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(scanRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1503,7 +1639,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public TagResourceResult tagResource(TagResourceRequest tagResourceRequest) {
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1514,7 +1656,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new TagResourceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1568,7 +1710,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest) {
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1579,7 +1727,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UntagResourceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1634,7 +1782,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public UpdateItemResult updateItem(UpdateItemRequest updateItemRequest) {
+    public UpdateItemResult updateItem(UpdateItemRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateItem(request);
+    }
+
+    @SdkInternalApi
+    final UpdateItemResult executeUpdateItem(UpdateItemRequest updateItemRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateItemRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1645,7 +1799,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateItemRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateItemRequest));
+                request = new UpdateItemRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateItemRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1738,7 +1892,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *      Documentation</a>
      */
     @Override
-    public UpdateTableResult updateTable(UpdateTableRequest updateTableRequest) {
+    public UpdateTableResult updateTable(UpdateTableRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateTable(request);
+    }
+
+    @SdkInternalApi
+    final UpdateTableResult executeUpdateTable(UpdateTableRequest updateTableRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateTableRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1749,7 +1909,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateTableRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateTableRequest));
+                request = new UpdateTableRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateTableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1771,6 +1931,104 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     @Override
     public UpdateTableResult updateTable(String tableName, ProvisionedThroughput provisionedThroughput) {
         return updateTable(new UpdateTableRequest().withTableName(tableName).withProvisionedThroughput(provisionedThroughput));
+    }
+
+    /**
+     * <p>
+     * Specify the lifetime of individual table items. The database automatically removes the item at the expiration of
+     * the item. The UpdateTimeToLive method will enable or disable TTL for the specified table. A successful
+     * <code>UpdateTimeToLive</code> call returns the current <code>TimeToLiveSpecification</code>; it may take up to
+     * one hour for the change to fully process.
+     * </p>
+     * <p>
+     * TTL compares the current time in epoch time format to the time stored in the TTL attribute of an item. If the
+     * epoch time value stored in the attribute is less than the current time, the item is marked as expired and
+     * subsequently deleted.
+     * </p>
+     * <note>
+     * <p>
+     * The epoch time format is the number of seconds elapsed since 12:00:00 AM January 1st, 1970 UTC.
+     * </p>
+     * </note>
+     * <p>
+     * DynamoDB deletes expired items on a best-effort basis to ensure availability of throughput for other data
+     * operations.
+     * </p>
+     * <important>
+     * <p>
+     * DynamoDB typically deletes expired items within two days of expiration. The exact duration within which an item
+     * gets deleted after expiration is specific to the nature of the workload. Items that have expired and not been
+     * deleted will still show up in reads, queries, and scans.
+     * </p>
+     * </important>
+     * <p>
+     * As items are deleted, they are removed from any Local Secondary Index and Global Secondary Index immediately in
+     * the same eventually consistent way as a standard delete operation.
+     * </p>
+     * <p>
+     * For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html">Time
+     * To Live</a> in the Amazon DynamoDB Developer Guide.
+     * </p>
+     * 
+     * @param updateTimeToLiveRequest
+     *        Represents the input of an <code>UpdateTimeToLive</code> operation.
+     * @return Result of the UpdateTimeToLive operation returned by the service.
+     * @throws ResourceInUseException
+     *         The operation conflicts with the resource's availability. For example, you attempted to recreate an
+     *         existing table, or tried to delete a table currently in the <code>CREATING</code> state.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access a nonexistent table or index. The resource might not be specified
+     *         correctly, or its status might not be <code>ACTIVE</code>.
+     * @throws LimitExceededException
+     *         The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
+     *         <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed of 10.</p>
+     *         <p>
+     *         Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
+     *         state at any point in time. Do not attempt to create more than one such table simultaneously.
+     *         </p>
+     *         <p>
+     *         The total limit of tables in the <code>ACTIVE</code> state is 250.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.UpdateTimeToLive
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTimeToLive" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateTimeToLiveResult updateTimeToLive(UpdateTimeToLiveRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateTimeToLive(request);
+    }
+
+    @SdkInternalApi
+    final UpdateTimeToLiveResult executeUpdateTimeToLive(UpdateTimeToLiveRequest updateTimeToLiveRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateTimeToLiveRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateTimeToLiveRequest> request = null;
+        Response<UpdateTimeToLiveResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateTimeToLiveRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateTimeToLiveRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateTimeToLiveResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateTimeToLiveResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -1841,6 +2099,14 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
             }
         }
         return waiters;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
 
 }

@@ -222,6 +222,10 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
         this.executorService = executorService;
     }
 
+    public static AmazonElasticMapReduceAsyncClientBuilder asyncBuilder() {
+        return AmazonElasticMapReduceAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon EMR using the specified parameters.
      *
@@ -243,22 +247,23 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     }
 
     @Override
-    public java.util.concurrent.Future<AddInstanceGroupsResult> addInstanceGroupsAsync(AddInstanceGroupsRequest request) {
+    public java.util.concurrent.Future<AddInstanceFleetResult> addInstanceFleetAsync(AddInstanceFleetRequest request) {
 
-        return addInstanceGroupsAsync(request, null);
+        return addInstanceFleetAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<AddInstanceGroupsResult> addInstanceGroupsAsync(final AddInstanceGroupsRequest request,
-            final com.amazonaws.handlers.AsyncHandler<AddInstanceGroupsRequest, AddInstanceGroupsResult> asyncHandler) {
+    public java.util.concurrent.Future<AddInstanceFleetResult> addInstanceFleetAsync(final AddInstanceFleetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AddInstanceFleetRequest, AddInstanceFleetResult> asyncHandler) {
+        final AddInstanceFleetRequest finalRequest = beforeClientExecution(request);
 
-        return executorService.submit(new java.util.concurrent.Callable<AddInstanceGroupsResult>() {
+        return executorService.submit(new java.util.concurrent.Callable<AddInstanceFleetResult>() {
             @Override
-            public AddInstanceGroupsResult call() throws Exception {
-                AddInstanceGroupsResult result;
+            public AddInstanceFleetResult call() throws Exception {
+                AddInstanceFleetResult result = null;
 
                 try {
-                    result = addInstanceGroups(request);
+                    result = executeAddInstanceFleet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -267,7 +272,40 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddInstanceGroupsResult> addInstanceGroupsAsync(AddInstanceGroupsRequest request) {
+
+        return addInstanceGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddInstanceGroupsResult> addInstanceGroupsAsync(final AddInstanceGroupsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AddInstanceGroupsRequest, AddInstanceGroupsResult> asyncHandler) {
+        final AddInstanceGroupsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AddInstanceGroupsResult>() {
+            @Override
+            public AddInstanceGroupsResult call() throws Exception {
+                AddInstanceGroupsResult result = null;
+
+                try {
+                    result = executeAddInstanceGroups(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -283,14 +321,15 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     @Override
     public java.util.concurrent.Future<AddJobFlowStepsResult> addJobFlowStepsAsync(final AddJobFlowStepsRequest request,
             final com.amazonaws.handlers.AsyncHandler<AddJobFlowStepsRequest, AddJobFlowStepsResult> asyncHandler) {
+        final AddJobFlowStepsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AddJobFlowStepsResult>() {
             @Override
             public AddJobFlowStepsResult call() throws Exception {
-                AddJobFlowStepsResult result;
+                AddJobFlowStepsResult result = null;
 
                 try {
-                    result = addJobFlowSteps(request);
+                    result = executeAddJobFlowSteps(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -299,7 +338,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -315,14 +354,15 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     @Override
     public java.util.concurrent.Future<AddTagsResult> addTagsAsync(final AddTagsRequest request,
             final com.amazonaws.handlers.AsyncHandler<AddTagsRequest, AddTagsResult> asyncHandler) {
+        final AddTagsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AddTagsResult>() {
             @Override
             public AddTagsResult call() throws Exception {
-                AddTagsResult result;
+                AddTagsResult result = null;
 
                 try {
-                    result = addTags(request);
+                    result = executeAddTags(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -331,7 +371,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -347,14 +387,15 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     @Override
     public java.util.concurrent.Future<CancelStepsResult> cancelStepsAsync(final CancelStepsRequest request,
             final com.amazonaws.handlers.AsyncHandler<CancelStepsRequest, CancelStepsResult> asyncHandler) {
+        final CancelStepsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CancelStepsResult>() {
             @Override
             public CancelStepsResult call() throws Exception {
-                CancelStepsResult result;
+                CancelStepsResult result = null;
 
                 try {
-                    result = cancelSteps(request);
+                    result = executeCancelSteps(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -363,7 +404,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -379,14 +420,15 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     @Override
     public java.util.concurrent.Future<CreateSecurityConfigurationResult> createSecurityConfigurationAsync(final CreateSecurityConfigurationRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateSecurityConfigurationRequest, CreateSecurityConfigurationResult> asyncHandler) {
+        final CreateSecurityConfigurationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateSecurityConfigurationResult>() {
             @Override
             public CreateSecurityConfigurationResult call() throws Exception {
-                CreateSecurityConfigurationResult result;
+                CreateSecurityConfigurationResult result = null;
 
                 try {
-                    result = createSecurityConfiguration(request);
+                    result = executeCreateSecurityConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -395,7 +437,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -411,14 +453,15 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     @Override
     public java.util.concurrent.Future<DeleteSecurityConfigurationResult> deleteSecurityConfigurationAsync(final DeleteSecurityConfigurationRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteSecurityConfigurationRequest, DeleteSecurityConfigurationResult> asyncHandler) {
+        final DeleteSecurityConfigurationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteSecurityConfigurationResult>() {
             @Override
             public DeleteSecurityConfigurationResult call() throws Exception {
-                DeleteSecurityConfigurationResult result;
+                DeleteSecurityConfigurationResult result = null;
 
                 try {
-                    result = deleteSecurityConfiguration(request);
+                    result = executeDeleteSecurityConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -427,7 +470,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -443,14 +486,15 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     @Override
     public java.util.concurrent.Future<DescribeClusterResult> describeClusterAsync(final DescribeClusterRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeClusterRequest, DescribeClusterResult> asyncHandler) {
+        final DescribeClusterRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeClusterResult>() {
             @Override
             public DescribeClusterResult call() throws Exception {
-                DescribeClusterResult result;
+                DescribeClusterResult result = null;
 
                 try {
-                    result = describeCluster(request);
+                    result = executeDescribeCluster(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -459,7 +503,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -477,14 +521,15 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     @Deprecated
     public java.util.concurrent.Future<DescribeJobFlowsResult> describeJobFlowsAsync(final DescribeJobFlowsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeJobFlowsRequest, DescribeJobFlowsResult> asyncHandler) {
+        final DescribeJobFlowsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeJobFlowsResult>() {
             @Override
             public DescribeJobFlowsResult call() throws Exception {
-                DescribeJobFlowsResult result;
+                DescribeJobFlowsResult result = null;
 
                 try {
-                    result = describeJobFlows(request);
+                    result = executeDescribeJobFlows(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -493,7 +538,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -517,6 +562,8 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      *
      * @see #describeJobFlowsAsync(DescribeJobFlowsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
+    @Deprecated
     public java.util.concurrent.Future<DescribeJobFlowsResult> describeJobFlowsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeJobFlowsRequest, DescribeJobFlowsResult> asyncHandler) {
 
@@ -533,14 +580,15 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     public java.util.concurrent.Future<DescribeSecurityConfigurationResult> describeSecurityConfigurationAsync(
             final DescribeSecurityConfigurationRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeSecurityConfigurationRequest, DescribeSecurityConfigurationResult> asyncHandler) {
+        final DescribeSecurityConfigurationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeSecurityConfigurationResult>() {
             @Override
             public DescribeSecurityConfigurationResult call() throws Exception {
-                DescribeSecurityConfigurationResult result;
+                DescribeSecurityConfigurationResult result = null;
 
                 try {
-                    result = describeSecurityConfiguration(request);
+                    result = executeDescribeSecurityConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -549,7 +597,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -565,14 +613,15 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     @Override
     public java.util.concurrent.Future<DescribeStepResult> describeStepAsync(final DescribeStepRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeStepRequest, DescribeStepResult> asyncHandler) {
+        final DescribeStepRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeStepResult>() {
             @Override
             public DescribeStepResult call() throws Exception {
-                DescribeStepResult result;
+                DescribeStepResult result = null;
 
                 try {
-                    result = describeStep(request);
+                    result = executeDescribeStep(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -581,7 +630,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -597,14 +646,15 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     @Override
     public java.util.concurrent.Future<ListBootstrapActionsResult> listBootstrapActionsAsync(final ListBootstrapActionsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListBootstrapActionsRequest, ListBootstrapActionsResult> asyncHandler) {
+        final ListBootstrapActionsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListBootstrapActionsResult>() {
             @Override
             public ListBootstrapActionsResult call() throws Exception {
-                ListBootstrapActionsResult result;
+                ListBootstrapActionsResult result = null;
 
                 try {
-                    result = listBootstrapActions(request);
+                    result = executeListBootstrapActions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -613,7 +663,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -629,14 +679,15 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     @Override
     public java.util.concurrent.Future<ListClustersResult> listClustersAsync(final ListClustersRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListClustersRequest, ListClustersResult> asyncHandler) {
+        final ListClustersRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListClustersResult>() {
             @Override
             public ListClustersResult call() throws Exception {
-                ListClustersResult result;
+                ListClustersResult result = null;
 
                 try {
-                    result = listClusters(request);
+                    result = executeListClusters(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -645,7 +696,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -668,10 +719,44 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      *
      * @see #listClustersAsync(ListClustersRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListClustersResult> listClustersAsync(
             com.amazonaws.handlers.AsyncHandler<ListClustersRequest, ListClustersResult> asyncHandler) {
 
         return listClustersAsync(new ListClustersRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInstanceFleetsResult> listInstanceFleetsAsync(ListInstanceFleetsRequest request) {
+
+        return listInstanceFleetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInstanceFleetsResult> listInstanceFleetsAsync(final ListInstanceFleetsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListInstanceFleetsRequest, ListInstanceFleetsResult> asyncHandler) {
+        final ListInstanceFleetsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListInstanceFleetsResult>() {
+            @Override
+            public ListInstanceFleetsResult call() throws Exception {
+                ListInstanceFleetsResult result = null;
+
+                try {
+                    result = executeListInstanceFleets(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -683,14 +768,15 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     @Override
     public java.util.concurrent.Future<ListInstanceGroupsResult> listInstanceGroupsAsync(final ListInstanceGroupsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListInstanceGroupsRequest, ListInstanceGroupsResult> asyncHandler) {
+        final ListInstanceGroupsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListInstanceGroupsResult>() {
             @Override
             public ListInstanceGroupsResult call() throws Exception {
-                ListInstanceGroupsResult result;
+                ListInstanceGroupsResult result = null;
 
                 try {
-                    result = listInstanceGroups(request);
+                    result = executeListInstanceGroups(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -699,7 +785,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -715,14 +801,15 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     @Override
     public java.util.concurrent.Future<ListInstancesResult> listInstancesAsync(final ListInstancesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListInstancesRequest, ListInstancesResult> asyncHandler) {
+        final ListInstancesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListInstancesResult>() {
             @Override
             public ListInstancesResult call() throws Exception {
-                ListInstancesResult result;
+                ListInstancesResult result = null;
 
                 try {
-                    result = listInstances(request);
+                    result = executeListInstances(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -731,7 +818,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -747,14 +834,15 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     @Override
     public java.util.concurrent.Future<ListSecurityConfigurationsResult> listSecurityConfigurationsAsync(final ListSecurityConfigurationsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListSecurityConfigurationsRequest, ListSecurityConfigurationsResult> asyncHandler) {
+        final ListSecurityConfigurationsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListSecurityConfigurationsResult>() {
             @Override
             public ListSecurityConfigurationsResult call() throws Exception {
-                ListSecurityConfigurationsResult result;
+                ListSecurityConfigurationsResult result = null;
 
                 try {
-                    result = listSecurityConfigurations(request);
+                    result = executeListSecurityConfigurations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -763,7 +851,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -779,14 +867,15 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     @Override
     public java.util.concurrent.Future<ListStepsResult> listStepsAsync(final ListStepsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListStepsRequest, ListStepsResult> asyncHandler) {
+        final ListStepsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListStepsResult>() {
             @Override
             public ListStepsResult call() throws Exception {
-                ListStepsResult result;
+                ListStepsResult result = null;
 
                 try {
-                    result = listSteps(request);
+                    result = executeListSteps(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -795,7 +884,40 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyInstanceFleetResult> modifyInstanceFleetAsync(ModifyInstanceFleetRequest request) {
+
+        return modifyInstanceFleetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyInstanceFleetResult> modifyInstanceFleetAsync(final ModifyInstanceFleetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyInstanceFleetRequest, ModifyInstanceFleetResult> asyncHandler) {
+        final ModifyInstanceFleetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifyInstanceFleetResult>() {
+            @Override
+            public ModifyInstanceFleetResult call() throws Exception {
+                ModifyInstanceFleetResult result = null;
+
+                try {
+                    result = executeModifyInstanceFleet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -811,14 +933,15 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     @Override
     public java.util.concurrent.Future<ModifyInstanceGroupsResult> modifyInstanceGroupsAsync(final ModifyInstanceGroupsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ModifyInstanceGroupsRequest, ModifyInstanceGroupsResult> asyncHandler) {
+        final ModifyInstanceGroupsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ModifyInstanceGroupsResult>() {
             @Override
             public ModifyInstanceGroupsResult call() throws Exception {
-                ModifyInstanceGroupsResult result;
+                ModifyInstanceGroupsResult result = null;
 
                 try {
-                    result = modifyInstanceGroups(request);
+                    result = executeModifyInstanceGroups(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -827,7 +950,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -850,6 +973,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      *
      * @see #modifyInstanceGroupsAsync(ModifyInstanceGroupsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ModifyInstanceGroupsResult> modifyInstanceGroupsAsync(
             com.amazonaws.handlers.AsyncHandler<ModifyInstanceGroupsRequest, ModifyInstanceGroupsResult> asyncHandler) {
 
@@ -865,14 +989,15 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     @Override
     public java.util.concurrent.Future<PutAutoScalingPolicyResult> putAutoScalingPolicyAsync(final PutAutoScalingPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutAutoScalingPolicyRequest, PutAutoScalingPolicyResult> asyncHandler) {
+        final PutAutoScalingPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PutAutoScalingPolicyResult>() {
             @Override
             public PutAutoScalingPolicyResult call() throws Exception {
-                PutAutoScalingPolicyResult result;
+                PutAutoScalingPolicyResult result = null;
 
                 try {
-                    result = putAutoScalingPolicy(request);
+                    result = executePutAutoScalingPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -881,7 +1006,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -897,14 +1022,15 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     @Override
     public java.util.concurrent.Future<RemoveAutoScalingPolicyResult> removeAutoScalingPolicyAsync(final RemoveAutoScalingPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<RemoveAutoScalingPolicyRequest, RemoveAutoScalingPolicyResult> asyncHandler) {
+        final RemoveAutoScalingPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<RemoveAutoScalingPolicyResult>() {
             @Override
             public RemoveAutoScalingPolicyResult call() throws Exception {
-                RemoveAutoScalingPolicyResult result;
+                RemoveAutoScalingPolicyResult result = null;
 
                 try {
-                    result = removeAutoScalingPolicy(request);
+                    result = executeRemoveAutoScalingPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -913,7 +1039,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -929,14 +1055,15 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     @Override
     public java.util.concurrent.Future<RemoveTagsResult> removeTagsAsync(final RemoveTagsRequest request,
             final com.amazonaws.handlers.AsyncHandler<RemoveTagsRequest, RemoveTagsResult> asyncHandler) {
+        final RemoveTagsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<RemoveTagsResult>() {
             @Override
             public RemoveTagsResult call() throws Exception {
-                RemoveTagsResult result;
+                RemoveTagsResult result = null;
 
                 try {
-                    result = removeTags(request);
+                    result = executeRemoveTags(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -945,7 +1072,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -961,14 +1088,15 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     @Override
     public java.util.concurrent.Future<RunJobFlowResult> runJobFlowAsync(final RunJobFlowRequest request,
             final com.amazonaws.handlers.AsyncHandler<RunJobFlowRequest, RunJobFlowResult> asyncHandler) {
+        final RunJobFlowRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<RunJobFlowResult>() {
             @Override
             public RunJobFlowResult call() throws Exception {
-                RunJobFlowResult result;
+                RunJobFlowResult result = null;
 
                 try {
-                    result = runJobFlow(request);
+                    result = executeRunJobFlow(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -977,7 +1105,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -993,14 +1121,15 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     @Override
     public java.util.concurrent.Future<SetTerminationProtectionResult> setTerminationProtectionAsync(final SetTerminationProtectionRequest request,
             final com.amazonaws.handlers.AsyncHandler<SetTerminationProtectionRequest, SetTerminationProtectionResult> asyncHandler) {
+        final SetTerminationProtectionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<SetTerminationProtectionResult>() {
             @Override
             public SetTerminationProtectionResult call() throws Exception {
-                SetTerminationProtectionResult result;
+                SetTerminationProtectionResult result = null;
 
                 try {
-                    result = setTerminationProtection(request);
+                    result = executeSetTerminationProtection(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1009,7 +1138,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1025,14 +1154,15 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     @Override
     public java.util.concurrent.Future<SetVisibleToAllUsersResult> setVisibleToAllUsersAsync(final SetVisibleToAllUsersRequest request,
             final com.amazonaws.handlers.AsyncHandler<SetVisibleToAllUsersRequest, SetVisibleToAllUsersResult> asyncHandler) {
+        final SetVisibleToAllUsersRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<SetVisibleToAllUsersResult>() {
             @Override
             public SetVisibleToAllUsersResult call() throws Exception {
-                SetVisibleToAllUsersResult result;
+                SetVisibleToAllUsersResult result = null;
 
                 try {
-                    result = setVisibleToAllUsers(request);
+                    result = executeSetVisibleToAllUsers(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1041,7 +1171,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1057,14 +1187,15 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     @Override
     public java.util.concurrent.Future<TerminateJobFlowsResult> terminateJobFlowsAsync(final TerminateJobFlowsRequest request,
             final com.amazonaws.handlers.AsyncHandler<TerminateJobFlowsRequest, TerminateJobFlowsResult> asyncHandler) {
+        final TerminateJobFlowsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<TerminateJobFlowsResult>() {
             @Override
             public TerminateJobFlowsResult call() throws Exception {
-                TerminateJobFlowsResult result;
+                TerminateJobFlowsResult result = null;
 
                 try {
-                    result = terminateJobFlows(request);
+                    result = executeTerminateJobFlows(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1073,7 +1204,7 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

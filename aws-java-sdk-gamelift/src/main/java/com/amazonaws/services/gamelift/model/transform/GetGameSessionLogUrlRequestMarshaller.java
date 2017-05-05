@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.gamelift.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.gamelift.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetGameSessionLogUrlRequest Marshaller
+ * GetGameSessionLogUrlRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetGameSessionLogUrlRequestMarshaller implements Marshaller<Request<GetGameSessionLogUrlRequest>, GetGameSessionLogUrlRequest> {
+@SdkInternalApi
+public class GetGameSessionLogUrlRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> GAMESESSIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GameSessionId").build();
 
-    public GetGameSessionLogUrlRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetGameSessionLogUrlRequestMarshaller instance = new GetGameSessionLogUrlRequestMarshaller();
+
+    public static GetGameSessionLogUrlRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetGameSessionLogUrlRequest> marshall(GetGameSessionLogUrlRequest getGameSessionLogUrlRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetGameSessionLogUrlRequest getGameSessionLogUrlRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getGameSessionLogUrlRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetGameSessionLogUrlRequest> request = new DefaultRequest<GetGameSessionLogUrlRequest>(getGameSessionLogUrlRequest, "AmazonGameLift");
-        request.addHeader("X-Amz-Target", "GameLift.GetGameSessionLogUrl");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (getGameSessionLogUrlRequest.getGameSessionId() != null) {
-                jsonGenerator.writeFieldName("GameSessionId").writeValue(getGameSessionLogUrlRequest.getGameSessionId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getGameSessionLogUrlRequest.getGameSessionId(), GAMESESSIONID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

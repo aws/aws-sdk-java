@@ -12,79 +12,53 @@
  */
 package com.amazonaws.services.iot.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.iot.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * RegisterCACertificateRequest Marshaller
+ * RegisterCACertificateRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RegisterCACertificateRequestMarshaller implements Marshaller<Request<RegisterCACertificateRequest>, RegisterCACertificateRequest> {
+@SdkInternalApi
+public class RegisterCACertificateRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CACERTIFICATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("caCertificate").build();
+    private static final MarshallingInfo<String> VERIFICATIONCERTIFICATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("verificationCertificate").build();
+    private static final MarshallingInfo<Boolean> SETASACTIVE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("setAsActive").build();
+    private static final MarshallingInfo<Boolean> ALLOWAUTOREGISTRATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("allowAutoRegistration").build();
 
-    public RegisterCACertificateRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final RegisterCACertificateRequestMarshaller instance = new RegisterCACertificateRequestMarshaller();
+
+    public static RegisterCACertificateRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<RegisterCACertificateRequest> marshall(RegisterCACertificateRequest registerCACertificateRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(RegisterCACertificateRequest registerCACertificateRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (registerCACertificateRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<RegisterCACertificateRequest> request = new DefaultRequest<RegisterCACertificateRequest>(registerCACertificateRequest, "AWSIot");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/cacertificate";
-
-        request.setResourcePath(uriResourcePath);
-
-        if (registerCACertificateRequest.getSetAsActive() != null) {
-            request.addParameter("setAsActive", StringUtils.fromBoolean(registerCACertificateRequest.getSetAsActive()));
-        }
-
-        if (registerCACertificateRequest.getAllowAutoRegistration() != null) {
-            request.addParameter("allowAutoRegistration", StringUtils.fromBoolean(registerCACertificateRequest.getAllowAutoRegistration()));
-        }
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (registerCACertificateRequest.getCaCertificate() != null) {
-                jsonGenerator.writeFieldName("caCertificate").writeValue(registerCACertificateRequest.getCaCertificate());
-            }
-            if (registerCACertificateRequest.getVerificationCertificate() != null) {
-                jsonGenerator.writeFieldName("verificationCertificate").writeValue(registerCACertificateRequest.getVerificationCertificate());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(registerCACertificateRequest.getCaCertificate(), CACERTIFICATE_BINDING);
+            protocolMarshaller.marshall(registerCACertificateRequest.getVerificationCertificate(), VERIFICATIONCERTIFICATE_BINDING);
+            protocolMarshaller.marshall(registerCACertificateRequest.getSetAsActive(), SETASACTIVE_BINDING);
+            protocolMarshaller.marshall(registerCACertificateRequest.getAllowAutoRegistration(), ALLOWAUTOREGISTRATION_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

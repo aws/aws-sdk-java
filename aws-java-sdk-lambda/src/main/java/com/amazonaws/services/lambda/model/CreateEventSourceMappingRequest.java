@@ -55,7 +55,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * <p>
      * Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to
-     * 64 character in length.
+     * 64 characters in length.
      * </p>
      */
     private String functionName;
@@ -170,7 +170,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * <p>
      * Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to
-     * 64 character in length.
+     * 64 characters in length.
      * </p>
      * 
      * @param functionName
@@ -192,7 +192,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *        </p>
      *        <p>
      *        Note that the length constraint applies only to the ARN. If you specify only the function name, it is
-     *        limited to 64 character in length.
+     *        limited to 64 characters in length.
      */
 
     public void setFunctionName(String functionName) {
@@ -219,7 +219,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * <p>
      * Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to
-     * 64 character in length.
+     * 64 characters in length.
      * </p>
      * 
      * @return The Lambda function to invoke when AWS Lambda detects an event on the stream.</p>
@@ -240,7 +240,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *         </p>
      *         <p>
      *         Note that the length constraint applies only to the ARN. If you specify only the function name, it is
-     *         limited to 64 character in length.
+     *         limited to 64 characters in length.
      */
 
     public String getFunctionName() {
@@ -267,7 +267,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * <p>
      * Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to
-     * 64 character in length.
+     * 64 characters in length.
      * </p>
      * 
      * @param functionName
@@ -289,7 +289,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *        </p>
      *        <p>
      *        Note that the length constraint applies only to the ARN. If you specify only the function name, it is
-     *        limited to 64 character in length.
+     *        limited to 64 characters in length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

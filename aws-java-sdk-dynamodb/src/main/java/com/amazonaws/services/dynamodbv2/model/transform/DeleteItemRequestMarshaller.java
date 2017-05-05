@@ -12,141 +12,73 @@
  */
 package com.amazonaws.services.dynamodbv2.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.Map;
 
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.dynamodbv2.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteItemRequest Marshaller
+ * DeleteItemRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteItemRequestMarshaller implements Marshaller<Request<DeleteItemRequest>, DeleteItemRequest> {
+@SdkInternalApi
+public class DeleteItemRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> TABLENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TableName").build();
+    private static final MarshallingInfo<Map> KEY_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Key").build();
+    private static final MarshallingInfo<Map> EXPECTED_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Expected").build();
+    private static final MarshallingInfo<String> CONDITIONALOPERATOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConditionalOperator").build();
+    private static final MarshallingInfo<String> RETURNVALUES_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReturnValues").build();
+    private static final MarshallingInfo<String> RETURNCONSUMEDCAPACITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReturnConsumedCapacity").build();
+    private static final MarshallingInfo<String> RETURNITEMCOLLECTIONMETRICS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReturnItemCollectionMetrics").build();
+    private static final MarshallingInfo<String> CONDITIONEXPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConditionExpression").build();
+    private static final MarshallingInfo<Map> EXPRESSIONATTRIBUTENAMES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExpressionAttributeNames").build();
+    private static final MarshallingInfo<Map> EXPRESSIONATTRIBUTEVALUES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExpressionAttributeValues").build();
 
-    public DeleteItemRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteItemRequestMarshaller instance = new DeleteItemRequestMarshaller();
+
+    public static DeleteItemRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteItemRequest> marshall(DeleteItemRequest deleteItemRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteItemRequest deleteItemRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteItemRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteItemRequest> request = new DefaultRequest<DeleteItemRequest>(deleteItemRequest, "AmazonDynamoDBv2");
-        request.addHeader("X-Amz-Target", "DynamoDB_20120810.DeleteItem");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteItemRequest.getTableName() != null) {
-                jsonGenerator.writeFieldName("TableName").writeValue(deleteItemRequest.getTableName());
-            }
-
-            java.util.Map<String, AttributeValue> keyMap = deleteItemRequest.getKey();
-            if (keyMap != null) {
-                jsonGenerator.writeFieldName("Key");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, AttributeValue> keyMapValue : keyMap.entrySet()) {
-                    if (keyMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(keyMapValue.getKey());
-
-                        AttributeValueJsonMarshaller.getInstance().marshall(keyMapValue.getValue(), jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-
-            java.util.Map<String, ExpectedAttributeValue> expectedMap = deleteItemRequest.getExpected();
-            if (expectedMap != null) {
-                jsonGenerator.writeFieldName("Expected");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, ExpectedAttributeValue> expectedMapValue : expectedMap.entrySet()) {
-                    if (expectedMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(expectedMapValue.getKey());
-
-                        ExpectedAttributeValueJsonMarshaller.getInstance().marshall(expectedMapValue.getValue(), jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-            if (deleteItemRequest.getConditionalOperator() != null) {
-                jsonGenerator.writeFieldName("ConditionalOperator").writeValue(deleteItemRequest.getConditionalOperator());
-            }
-            if (deleteItemRequest.getReturnValues() != null) {
-                jsonGenerator.writeFieldName("ReturnValues").writeValue(deleteItemRequest.getReturnValues());
-            }
-            if (deleteItemRequest.getReturnConsumedCapacity() != null) {
-                jsonGenerator.writeFieldName("ReturnConsumedCapacity").writeValue(deleteItemRequest.getReturnConsumedCapacity());
-            }
-            if (deleteItemRequest.getReturnItemCollectionMetrics() != null) {
-                jsonGenerator.writeFieldName("ReturnItemCollectionMetrics").writeValue(deleteItemRequest.getReturnItemCollectionMetrics());
-            }
-            if (deleteItemRequest.getConditionExpression() != null) {
-                jsonGenerator.writeFieldName("ConditionExpression").writeValue(deleteItemRequest.getConditionExpression());
-            }
-
-            java.util.Map<String, String> expressionAttributeNamesMap = deleteItemRequest.getExpressionAttributeNames();
-            if (expressionAttributeNamesMap != null) {
-                jsonGenerator.writeFieldName("ExpressionAttributeNames");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, String> expressionAttributeNamesMapValue : expressionAttributeNamesMap.entrySet()) {
-                    if (expressionAttributeNamesMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(expressionAttributeNamesMapValue.getKey());
-
-                        jsonGenerator.writeValue(expressionAttributeNamesMapValue.getValue());
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-
-            java.util.Map<String, AttributeValue> expressionAttributeValuesMap = deleteItemRequest.getExpressionAttributeValues();
-            if (expressionAttributeValuesMap != null) {
-                jsonGenerator.writeFieldName("ExpressionAttributeValues");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, AttributeValue> expressionAttributeValuesMapValue : expressionAttributeValuesMap.entrySet()) {
-                    if (expressionAttributeValuesMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(expressionAttributeValuesMapValue.getKey());
-
-                        AttributeValueJsonMarshaller.getInstance().marshall(expressionAttributeValuesMapValue.getValue(), jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteItemRequest.getTableName(), TABLENAME_BINDING);
+            protocolMarshaller.marshall(deleteItemRequest.getKey(), KEY_BINDING);
+            protocolMarshaller.marshall(deleteItemRequest.getExpected(), EXPECTED_BINDING);
+            protocolMarshaller.marshall(deleteItemRequest.getConditionalOperator(), CONDITIONALOPERATOR_BINDING);
+            protocolMarshaller.marshall(deleteItemRequest.getReturnValues(), RETURNVALUES_BINDING);
+            protocolMarshaller.marshall(deleteItemRequest.getReturnConsumedCapacity(), RETURNCONSUMEDCAPACITY_BINDING);
+            protocolMarshaller.marshall(deleteItemRequest.getReturnItemCollectionMetrics(), RETURNITEMCOLLECTIONMETRICS_BINDING);
+            protocolMarshaller.marshall(deleteItemRequest.getConditionExpression(), CONDITIONEXPRESSION_BINDING);
+            protocolMarshaller.marshall(deleteItemRequest.getExpressionAttributeNames(), EXPRESSIONATTRIBUTENAMES_BINDING);
+            protocolMarshaller.marshall(deleteItemRequest.getExpressionAttributeValues(), EXPRESSIONATTRIBUTEVALUES_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

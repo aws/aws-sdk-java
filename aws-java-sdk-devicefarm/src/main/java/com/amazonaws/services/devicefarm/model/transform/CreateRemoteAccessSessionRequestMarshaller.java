@@ -12,75 +12,53 @@
  */
 package com.amazonaws.services.devicefarm.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.devicefarm.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateRemoteAccessSessionRequest Marshaller
+ * CreateRemoteAccessSessionRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateRemoteAccessSessionRequestMarshaller implements Marshaller<Request<CreateRemoteAccessSessionRequest>, CreateRemoteAccessSessionRequest> {
+@SdkInternalApi
+public class CreateRemoteAccessSessionRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> PROJECTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("projectArn").build();
+    private static final MarshallingInfo<String> DEVICEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("deviceArn").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("name").build();
+    private static final MarshallingInfo<StructuredPojo> CONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("configuration").build();
 
-    public CreateRemoteAccessSessionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateRemoteAccessSessionRequestMarshaller instance = new CreateRemoteAccessSessionRequestMarshaller();
+
+    public static CreateRemoteAccessSessionRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateRemoteAccessSessionRequest> marshall(CreateRemoteAccessSessionRequest createRemoteAccessSessionRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateRemoteAccessSessionRequest createRemoteAccessSessionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createRemoteAccessSessionRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateRemoteAccessSessionRequest> request = new DefaultRequest<CreateRemoteAccessSessionRequest>(createRemoteAccessSessionRequest,
-                "AWSDeviceFarm");
-        request.addHeader("X-Amz-Target", "DeviceFarm_20150623.CreateRemoteAccessSession");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createRemoteAccessSessionRequest.getProjectArn() != null) {
-                jsonGenerator.writeFieldName("projectArn").writeValue(createRemoteAccessSessionRequest.getProjectArn());
-            }
-            if (createRemoteAccessSessionRequest.getDeviceArn() != null) {
-                jsonGenerator.writeFieldName("deviceArn").writeValue(createRemoteAccessSessionRequest.getDeviceArn());
-            }
-            if (createRemoteAccessSessionRequest.getName() != null) {
-                jsonGenerator.writeFieldName("name").writeValue(createRemoteAccessSessionRequest.getName());
-            }
-            if (createRemoteAccessSessionRequest.getConfiguration() != null) {
-                jsonGenerator.writeFieldName("configuration");
-                CreateRemoteAccessSessionConfigurationJsonMarshaller.getInstance().marshall(createRemoteAccessSessionRequest.getConfiguration(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createRemoteAccessSessionRequest.getProjectArn(), PROJECTARN_BINDING);
+            protocolMarshaller.marshall(createRemoteAccessSessionRequest.getDeviceArn(), DEVICEARN_BINDING);
+            protocolMarshaller.marshall(createRemoteAccessSessionRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createRemoteAccessSessionRequest.getConfiguration(), CONFIGURATION_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

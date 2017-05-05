@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A complex type containing the information for the delete request.
+ * A request to delete a reusable delegation set.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteReusableDelegationSet"
@@ -30,18 +30,18 @@ public class DeleteReusableDelegationSetRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ID of the reusable delegation set you want to delete.
+     * The ID of the reusable delegation set that you want to delete.
      * </p>
      */
     private String id;
 
     /**
      * <p>
-     * The ID of the reusable delegation set you want to delete.
+     * The ID of the reusable delegation set that you want to delete.
      * </p>
      * 
      * @param id
-     *        The ID of the reusable delegation set you want to delete.
+     *        The ID of the reusable delegation set that you want to delete.
      */
 
     public void setId(String id) {
@@ -50,10 +50,10 @@ public class DeleteReusableDelegationSetRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ID of the reusable delegation set you want to delete.
+     * The ID of the reusable delegation set that you want to delete.
      * </p>
      * 
-     * @return The ID of the reusable delegation set you want to delete.
+     * @return The ID of the reusable delegation set that you want to delete.
      */
 
     public String getId() {
@@ -62,11 +62,11 @@ public class DeleteReusableDelegationSetRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ID of the reusable delegation set you want to delete.
+     * The ID of the reusable delegation set that you want to delete.
      * </p>
      * 
      * @param id
-     *        The ID of the reusable delegation set you want to delete.
+     *        The ID of the reusable delegation set that you want to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

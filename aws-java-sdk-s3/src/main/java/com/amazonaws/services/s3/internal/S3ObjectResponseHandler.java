@@ -21,7 +21,6 @@ import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectInputStream;
-import com.amazonaws.util.BinaryUtils;
 
 /**
  * S3 HTTP response handler that knows how to pull S3 object content and
@@ -55,10 +54,14 @@ public class S3ObjectResponseHandler extends AbstractS3ResponseHandler<S3Object>
         ObjectMetadata metadata = object.getObjectMetadata();
         populateObjectMetadata(response, metadata);
 
-        object.setObjectContent(new S3ObjectInputStream(response.getContent(), response.getHttpRequest()));
+        object.setObjectContent(new S3ObjectInputStream(abortableIs(response), response.getHttpRequest()));
 
         awsResponse.setResult(object);
         return awsResponse;
+    }
+
+    private S3AbortableInputStream abortableIs(HttpResponse response) {
+        return new S3AbortableInputStream(response.getContent(), response.getHttpRequest(), getContentLength(response));
     }
 
     /**
@@ -71,6 +74,15 @@ public class S3ObjectResponseHandler extends AbstractS3ResponseHandler<S3Object>
     @Override
     public boolean needsConnectionLeftOpen() {
         return true;
+    }
+
+    private long getContentLength(HttpResponse response) {
+        final String contentLength = response.getHeader("Content-Length");
+        if (contentLength == null) {
+            return -1;
+        } else {
+            return Long.parseLong(response.getHeader("Content-Length"));
+        }
     }
 
 }

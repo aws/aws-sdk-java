@@ -14,6 +14,8 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,10 +26,11 @@ import javax.annotation.Generated;
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AutoScalingPolicyStatus implements Serializable, Cloneable {
+public class AutoScalingPolicyStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Indicates the status of the automatic scaling policy.
      * </p>
      */
     private String state;
@@ -40,9 +43,11 @@ public class AutoScalingPolicyStatus implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Indicates the status of the automatic scaling policy.
      * </p>
      * 
      * @param state
+     *        Indicates the status of the automatic scaling policy.
      * @see AutoScalingPolicyState
      */
 
@@ -52,9 +57,10 @@ public class AutoScalingPolicyStatus implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Indicates the status of the automatic scaling policy.
      * </p>
      * 
-     * @return
+     * @return Indicates the status of the automatic scaling policy.
      * @see AutoScalingPolicyState
      */
 
@@ -64,9 +70,11 @@ public class AutoScalingPolicyStatus implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Indicates the status of the automatic scaling policy.
      * </p>
      * 
      * @param state
+     *        Indicates the status of the automatic scaling policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoScalingPolicyState
      */
@@ -78,9 +86,11 @@ public class AutoScalingPolicyStatus implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Indicates the status of the automatic scaling policy.
      * </p>
      * 
      * @param state
+     *        Indicates the status of the automatic scaling policy.
      * @see AutoScalingPolicyState
      */
 
@@ -90,9 +100,11 @@ public class AutoScalingPolicyStatus implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Indicates the status of the automatic scaling policy.
      * </p>
      * 
      * @param state
+     *        Indicates the status of the automatic scaling policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoScalingPolicyState
      */
@@ -199,5 +211,11 @@ public class AutoScalingPolicyStatus implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.elasticmapreduce.model.transform.AutoScalingPolicyStatusMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

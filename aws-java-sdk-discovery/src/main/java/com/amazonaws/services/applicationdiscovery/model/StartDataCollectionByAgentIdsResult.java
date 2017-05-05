@@ -21,23 +21,23 @@ public class StartDataCollectionByAgentIdsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Information about agents or the Connector that were instructed to start collecting data. Information includes the
-     * agent/Connector ID, a description of the operation performed, and whether or not the agent/Connector
-     * configuration was updated.
+     * Information about agents or the connector that were instructed to start collecting data. Information includes the
+     * agent/connector ID, a description of the operation performed, and whether the agent/connector configuration was
+     * updated.
      * </p>
      */
     private java.util.List<AgentConfigurationStatus> agentsConfigurationStatus;
 
     /**
      * <p>
-     * Information about agents or the Connector that were instructed to start collecting data. Information includes the
-     * agent/Connector ID, a description of the operation performed, and whether or not the agent/Connector
-     * configuration was updated.
+     * Information about agents or the connector that were instructed to start collecting data. Information includes the
+     * agent/connector ID, a description of the operation performed, and whether the agent/connector configuration was
+     * updated.
      * </p>
      * 
-     * @return Information about agents or the Connector that were instructed to start collecting data. Information
-     *         includes the agent/Connector ID, a description of the operation performed, and whether or not the
-     *         agent/Connector configuration was updated.
+     * @return Information about agents or the connector that were instructed to start collecting data. Information
+     *         includes the agent/connector ID, a description of the operation performed, and whether the
+     *         agent/connector configuration was updated.
      */
 
     public java.util.List<AgentConfigurationStatus> getAgentsConfigurationStatus() {
@@ -46,15 +46,15 @@ public class StartDataCollectionByAgentIdsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Information about agents or the Connector that were instructed to start collecting data. Information includes the
-     * agent/Connector ID, a description of the operation performed, and whether or not the agent/Connector
-     * configuration was updated.
+     * Information about agents or the connector that were instructed to start collecting data. Information includes the
+     * agent/connector ID, a description of the operation performed, and whether the agent/connector configuration was
+     * updated.
      * </p>
      * 
      * @param agentsConfigurationStatus
-     *        Information about agents or the Connector that were instructed to start collecting data. Information
-     *        includes the agent/Connector ID, a description of the operation performed, and whether or not the
-     *        agent/Connector configuration was updated.
+     *        Information about agents or the connector that were instructed to start collecting data. Information
+     *        includes the agent/connector ID, a description of the operation performed, and whether the agent/connector
+     *        configuration was updated.
      */
 
     public void setAgentsConfigurationStatus(java.util.Collection<AgentConfigurationStatus> agentsConfigurationStatus) {
@@ -68,9 +68,9 @@ public class StartDataCollectionByAgentIdsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Information about agents or the Connector that were instructed to start collecting data. Information includes the
-     * agent/Connector ID, a description of the operation performed, and whether or not the agent/Connector
-     * configuration was updated.
+     * Information about agents or the connector that were instructed to start collecting data. Information includes the
+     * agent/connector ID, a description of the operation performed, and whether the agent/connector configuration was
+     * updated.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,9 +79,9 @@ public class StartDataCollectionByAgentIdsResult extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param agentsConfigurationStatus
-     *        Information about agents or the Connector that were instructed to start collecting data. Information
-     *        includes the agent/Connector ID, a description of the operation performed, and whether or not the
-     *        agent/Connector configuration was updated.
+     *        Information about agents or the connector that were instructed to start collecting data. Information
+     *        includes the agent/connector ID, a description of the operation performed, and whether the agent/connector
+     *        configuration was updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,15 +97,15 @@ public class StartDataCollectionByAgentIdsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Information about agents or the Connector that were instructed to start collecting data. Information includes the
-     * agent/Connector ID, a description of the operation performed, and whether or not the agent/Connector
-     * configuration was updated.
+     * Information about agents or the connector that were instructed to start collecting data. Information includes the
+     * agent/connector ID, a description of the operation performed, and whether the agent/connector configuration was
+     * updated.
      * </p>
      * 
      * @param agentsConfigurationStatus
-     *        Information about agents or the Connector that were instructed to start collecting data. Information
-     *        includes the agent/Connector ID, a description of the operation performed, and whether or not the
-     *        agent/Connector configuration was updated.
+     *        Information about agents or the connector that were instructed to start collecting data. Information
+     *        includes the agent/connector ID, a description of the operation performed, and whether the agent/connector
+     *        configuration was updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -165,4 +165,5 @@ public class StartDataCollectionByAgentIdsResult extends com.amazonaws.AmazonWeb
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

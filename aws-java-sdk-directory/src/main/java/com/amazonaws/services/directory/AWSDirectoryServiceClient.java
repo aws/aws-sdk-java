@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -280,6 +281,10 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         init();
     }
 
+    public static AWSDirectoryServiceClientBuilder builder() {
+        return AWSDirectoryServiceClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Directory Service using the specified parameters.
      *
@@ -343,7 +348,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public AddIpRoutesResult addIpRoutes(AddIpRoutesRequest addIpRoutesRequest) {
+    public AddIpRoutesResult addIpRoutes(AddIpRoutesRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddIpRoutes(request);
+    }
+
+    @SdkInternalApi
+    final AddIpRoutesResult executeAddIpRoutes(AddIpRoutesRequest addIpRoutesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addIpRoutesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -354,7 +365,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddIpRoutesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(addIpRoutesRequest));
+                request = new AddIpRoutesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addIpRoutesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -396,7 +407,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public AddTagsToResourceResult addTagsToResource(AddTagsToResourceRequest addTagsToResourceRequest) {
+    public AddTagsToResourceResult addTagsToResource(AddTagsToResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddTagsToResource(request);
+    }
+
+    @SdkInternalApi
+    final AddTagsToResourceResult executeAddTagsToResource(AddTagsToResourceRequest addTagsToResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addTagsToResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -407,7 +424,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddTagsToResourceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(addTagsToResourceRequest));
+                request = new AddTagsToResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addTagsToResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -447,7 +464,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public CancelSchemaExtensionResult cancelSchemaExtension(CancelSchemaExtensionRequest cancelSchemaExtensionRequest) {
+    public CancelSchemaExtensionResult cancelSchemaExtension(CancelSchemaExtensionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelSchemaExtension(request);
+    }
+
+    @SdkInternalApi
+    final CancelSchemaExtensionResult executeCancelSchemaExtension(CancelSchemaExtensionRequest cancelSchemaExtensionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(cancelSchemaExtensionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -458,7 +481,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CancelSchemaExtensionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelSchemaExtensionRequest));
+                request = new CancelSchemaExtensionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelSchemaExtensionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -507,7 +530,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public ConnectDirectoryResult connectDirectory(ConnectDirectoryRequest connectDirectoryRequest) {
+    public ConnectDirectoryResult connectDirectory(ConnectDirectoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeConnectDirectory(request);
+    }
+
+    @SdkInternalApi
+    final ConnectDirectoryResult executeConnectDirectory(ConnectDirectoryRequest connectDirectoryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(connectDirectoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -518,7 +547,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ConnectDirectoryRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(connectDirectoryRequest));
+                request = new ConnectDirectoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(connectDirectoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -567,7 +596,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public CreateAliasResult createAlias(CreateAliasRequest createAliasRequest) {
+    public CreateAliasResult createAlias(CreateAliasRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAlias(request);
+    }
+
+    @SdkInternalApi
+    final CreateAliasResult executeCreateAlias(CreateAliasRequest createAliasRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -578,7 +613,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateAliasRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAliasRequest));
+                request = new CreateAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -626,7 +661,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public CreateComputerResult createComputer(CreateComputerRequest createComputerRequest) {
+    public CreateComputerResult createComputer(CreateComputerRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateComputer(request);
+    }
+
+    @SdkInternalApi
+    final CreateComputerResult executeCreateComputer(CreateComputerRequest createComputerRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createComputerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -637,7 +678,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateComputerRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createComputerRequest));
+                request = new CreateComputerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createComputerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -686,7 +727,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      API Documentation</a>
      */
     @Override
-    public CreateConditionalForwarderResult createConditionalForwarder(CreateConditionalForwarderRequest createConditionalForwarderRequest) {
+    public CreateConditionalForwarderResult createConditionalForwarder(CreateConditionalForwarderRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateConditionalForwarder(request);
+    }
+
+    @SdkInternalApi
+    final CreateConditionalForwarderResult executeCreateConditionalForwarder(CreateConditionalForwarderRequest createConditionalForwarderRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createConditionalForwarderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -697,7 +744,8 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateConditionalForwarderRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createConditionalForwarderRequest));
+                request = new CreateConditionalForwarderRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createConditionalForwarderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -746,7 +794,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public CreateDirectoryResult createDirectory(CreateDirectoryRequest createDirectoryRequest) {
+    public CreateDirectoryResult createDirectory(CreateDirectoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDirectory(request);
+    }
+
+    @SdkInternalApi
+    final CreateDirectoryResult executeCreateDirectory(CreateDirectoryRequest createDirectoryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createDirectoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -757,7 +811,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateDirectoryRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDirectoryRequest));
+                request = new CreateDirectoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDirectoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -807,7 +861,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public CreateMicrosoftADResult createMicrosoftAD(CreateMicrosoftADRequest createMicrosoftADRequest) {
+    public CreateMicrosoftADResult createMicrosoftAD(CreateMicrosoftADRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateMicrosoftAD(request);
+    }
+
+    @SdkInternalApi
+    final CreateMicrosoftADResult executeCreateMicrosoftAD(CreateMicrosoftADRequest createMicrosoftADRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createMicrosoftADRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -818,7 +878,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateMicrosoftADRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createMicrosoftADRequest));
+                request = new CreateMicrosoftADRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createMicrosoftADRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -866,7 +926,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public CreateSnapshotResult createSnapshot(CreateSnapshotRequest createSnapshotRequest) {
+    public CreateSnapshotResult createSnapshot(CreateSnapshotRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSnapshot(request);
+    }
+
+    @SdkInternalApi
+    final CreateSnapshotResult executeCreateSnapshot(CreateSnapshotRequest createSnapshotRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createSnapshotRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -877,7 +943,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateSnapshotRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSnapshotRequest));
+                request = new CreateSnapshotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -934,7 +1000,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public CreateTrustResult createTrust(CreateTrustRequest createTrustRequest) {
+    public CreateTrustResult createTrust(CreateTrustRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTrust(request);
+    }
+
+    @SdkInternalApi
+    final CreateTrustResult executeCreateTrust(CreateTrustRequest createTrustRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createTrustRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -945,7 +1017,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateTrustRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTrustRequest));
+                request = new CreateTrustRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTrustRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -989,7 +1061,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      API Documentation</a>
      */
     @Override
-    public DeleteConditionalForwarderResult deleteConditionalForwarder(DeleteConditionalForwarderRequest deleteConditionalForwarderRequest) {
+    public DeleteConditionalForwarderResult deleteConditionalForwarder(DeleteConditionalForwarderRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteConditionalForwarder(request);
+    }
+
+    @SdkInternalApi
+    final DeleteConditionalForwarderResult executeDeleteConditionalForwarder(DeleteConditionalForwarderRequest deleteConditionalForwarderRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteConditionalForwarderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1000,7 +1078,8 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteConditionalForwarderRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteConditionalForwarderRequest));
+                request = new DeleteConditionalForwarderRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteConditionalForwarderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1046,7 +1125,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public DeleteDirectoryResult deleteDirectory(DeleteDirectoryRequest deleteDirectoryRequest) {
+    public DeleteDirectoryResult deleteDirectory(DeleteDirectoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDirectory(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDirectoryResult executeDeleteDirectory(DeleteDirectoryRequest deleteDirectoryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteDirectoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1057,7 +1142,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteDirectoryRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDirectoryRequest));
+                request = new DeleteDirectoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDirectoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1097,7 +1182,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public DeleteSnapshotResult deleteSnapshot(DeleteSnapshotRequest deleteSnapshotRequest) {
+    public DeleteSnapshotResult deleteSnapshot(DeleteSnapshotRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteSnapshot(request);
+    }
+
+    @SdkInternalApi
+    final DeleteSnapshotResult executeDeleteSnapshot(DeleteSnapshotRequest deleteSnapshotRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteSnapshotRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1108,7 +1199,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteSnapshotRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSnapshotRequest));
+                request = new DeleteSnapshotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1151,7 +1242,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public DeleteTrustResult deleteTrust(DeleteTrustRequest deleteTrustRequest) {
+    public DeleteTrustResult deleteTrust(DeleteTrustRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTrust(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTrustResult executeDeleteTrust(DeleteTrustRequest deleteTrustRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteTrustRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1162,7 +1259,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteTrustRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTrustRequest));
+                request = new DeleteTrustRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTrustRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1202,7 +1299,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public DeregisterEventTopicResult deregisterEventTopic(DeregisterEventTopicRequest deregisterEventTopicRequest) {
+    public DeregisterEventTopicResult deregisterEventTopic(DeregisterEventTopicRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeregisterEventTopic(request);
+    }
+
+    @SdkInternalApi
+    final DeregisterEventTopicResult executeDeregisterEventTopic(DeregisterEventTopicRequest deregisterEventTopicRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deregisterEventTopicRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1213,7 +1316,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeregisterEventTopicRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deregisterEventTopicRequest));
+                request = new DeregisterEventTopicRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deregisterEventTopicRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1261,7 +1364,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeConditionalForwardersResult describeConditionalForwarders(DescribeConditionalForwardersRequest describeConditionalForwardersRequest) {
+    public DescribeConditionalForwardersResult describeConditionalForwarders(DescribeConditionalForwardersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeConditionalForwarders(request);
+    }
+
+    @SdkInternalApi
+    final DescribeConditionalForwardersResult executeDescribeConditionalForwarders(DescribeConditionalForwardersRequest describeConditionalForwardersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeConditionalForwardersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1272,7 +1381,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeConditionalForwardersRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeConditionalForwardersRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeConditionalForwardersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1328,7 +1437,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public DescribeDirectoriesResult describeDirectories(DescribeDirectoriesRequest describeDirectoriesRequest) {
+    public DescribeDirectoriesResult describeDirectories(DescribeDirectoriesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDirectories(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDirectoriesResult executeDescribeDirectories(DescribeDirectoriesRequest describeDirectoriesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeDirectoriesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1339,7 +1454,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeDirectoriesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDirectoriesRequest));
+                request = new DescribeDirectoriesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDirectoriesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1388,7 +1503,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public DescribeEventTopicsResult describeEventTopics(DescribeEventTopicsRequest describeEventTopicsRequest) {
+    public DescribeEventTopicsResult describeEventTopics(DescribeEventTopicsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEventTopics(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEventTopicsResult executeDescribeEventTopics(DescribeEventTopicsRequest describeEventTopicsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEventTopicsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1399,7 +1520,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeEventTopicsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEventTopicsRequest));
+                request = new DescribeEventTopicsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEventTopicsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1449,7 +1570,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public DescribeSnapshotsResult describeSnapshots(DescribeSnapshotsRequest describeSnapshotsRequest) {
+    public DescribeSnapshotsResult describeSnapshots(DescribeSnapshotsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeSnapshots(request);
+    }
+
+    @SdkInternalApi
+    final DescribeSnapshotsResult executeDescribeSnapshots(DescribeSnapshotsRequest describeSnapshotsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeSnapshotsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1460,7 +1587,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeSnapshotsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeSnapshotsRequest));
+                request = new DescribeSnapshotsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeSnapshotsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1514,7 +1641,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public DescribeTrustsResult describeTrusts(DescribeTrustsRequest describeTrustsRequest) {
+    public DescribeTrustsResult describeTrusts(DescribeTrustsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTrusts(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTrustsResult executeDescribeTrusts(DescribeTrustsRequest describeTrustsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTrustsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1525,7 +1658,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTrustsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTrustsRequest));
+                request = new DescribeTrustsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTrustsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1564,7 +1697,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public DisableRadiusResult disableRadius(DisableRadiusRequest disableRadiusRequest) {
+    public DisableRadiusResult disableRadius(DisableRadiusRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisableRadius(request);
+    }
+
+    @SdkInternalApi
+    final DisableRadiusResult executeDisableRadius(DisableRadiusRequest disableRadiusRequest) {
 
         ExecutionContext executionContext = createExecutionContext(disableRadiusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1575,7 +1714,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisableRadiusRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableRadiusRequest));
+                request = new DisableRadiusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableRadiusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1617,7 +1756,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public DisableSsoResult disableSso(DisableSsoRequest disableSsoRequest) {
+    public DisableSsoResult disableSso(DisableSsoRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisableSso(request);
+    }
+
+    @SdkInternalApi
+    final DisableSsoResult executeDisableSso(DisableSsoRequest disableSsoRequest) {
 
         ExecutionContext executionContext = createExecutionContext(disableSsoRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1628,7 +1773,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisableSsoRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableSsoRequest));
+                request = new DisableSsoRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableSsoRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1671,7 +1816,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public EnableRadiusResult enableRadius(EnableRadiusRequest enableRadiusRequest) {
+    public EnableRadiusResult enableRadius(EnableRadiusRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnableRadius(request);
+    }
+
+    @SdkInternalApi
+    final EnableRadiusResult executeEnableRadius(EnableRadiusRequest enableRadiusRequest) {
 
         ExecutionContext executionContext = createExecutionContext(enableRadiusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1682,7 +1833,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EnableRadiusRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableRadiusRequest));
+                request = new EnableRadiusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableRadiusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1724,7 +1875,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public EnableSsoResult enableSso(EnableSsoRequest enableSsoRequest) {
+    public EnableSsoResult enableSso(EnableSsoRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnableSso(request);
+    }
+
+    @SdkInternalApi
+    final EnableSsoResult executeEnableSso(EnableSsoRequest enableSsoRequest) {
 
         ExecutionContext executionContext = createExecutionContext(enableSsoRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1735,7 +1892,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EnableSsoRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableSsoRequest));
+                request = new EnableSsoRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableSsoRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1773,7 +1930,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public GetDirectoryLimitsResult getDirectoryLimits(GetDirectoryLimitsRequest getDirectoryLimitsRequest) {
+    public GetDirectoryLimitsResult getDirectoryLimits(GetDirectoryLimitsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDirectoryLimits(request);
+    }
+
+    @SdkInternalApi
+    final GetDirectoryLimitsResult executeGetDirectoryLimits(GetDirectoryLimitsRequest getDirectoryLimitsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getDirectoryLimitsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1784,7 +1947,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDirectoryLimitsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDirectoryLimitsRequest));
+                request = new GetDirectoryLimitsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDirectoryLimitsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1827,7 +1990,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public GetSnapshotLimitsResult getSnapshotLimits(GetSnapshotLimitsRequest getSnapshotLimitsRequest) {
+    public GetSnapshotLimitsResult getSnapshotLimits(GetSnapshotLimitsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSnapshotLimits(request);
+    }
+
+    @SdkInternalApi
+    final GetSnapshotLimitsResult executeGetSnapshotLimits(GetSnapshotLimitsRequest getSnapshotLimitsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getSnapshotLimitsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1838,7 +2007,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetSnapshotLimitsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSnapshotLimitsRequest));
+                request = new GetSnapshotLimitsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSnapshotLimitsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1879,7 +2048,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public ListIpRoutesResult listIpRoutes(ListIpRoutesRequest listIpRoutesRequest) {
+    public ListIpRoutesResult listIpRoutes(ListIpRoutesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListIpRoutes(request);
+    }
+
+    @SdkInternalApi
+    final ListIpRoutesResult executeListIpRoutes(ListIpRoutesRequest listIpRoutesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listIpRoutesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1890,7 +2065,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListIpRoutesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listIpRoutesRequest));
+                request = new ListIpRoutesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listIpRoutesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1929,7 +2104,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public ListSchemaExtensionsResult listSchemaExtensions(ListSchemaExtensionsRequest listSchemaExtensionsRequest) {
+    public ListSchemaExtensionsResult listSchemaExtensions(ListSchemaExtensionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSchemaExtensions(request);
+    }
+
+    @SdkInternalApi
+    final ListSchemaExtensionsResult executeListSchemaExtensions(ListSchemaExtensionsRequest listSchemaExtensionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listSchemaExtensionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1940,7 +2121,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListSchemaExtensionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSchemaExtensionsRequest));
+                request = new ListSchemaExtensionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSchemaExtensionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1981,7 +2162,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1992,7 +2179,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTagsForResourceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2035,7 +2222,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public RegisterEventTopicResult registerEventTopic(RegisterEventTopicRequest registerEventTopicRequest) {
+    public RegisterEventTopicResult registerEventTopic(RegisterEventTopicRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterEventTopic(request);
+    }
+
+    @SdkInternalApi
+    final RegisterEventTopicResult executeRegisterEventTopic(RegisterEventTopicRequest registerEventTopicRequest) {
 
         ExecutionContext executionContext = createExecutionContext(registerEventTopicRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2046,7 +2239,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterEventTopicRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerEventTopicRequest));
+                request = new RegisterEventTopicRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerEventTopicRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2087,7 +2280,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public RemoveIpRoutesResult removeIpRoutes(RemoveIpRoutesRequest removeIpRoutesRequest) {
+    public RemoveIpRoutesResult removeIpRoutes(RemoveIpRoutesRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveIpRoutes(request);
+    }
+
+    @SdkInternalApi
+    final RemoveIpRoutesResult executeRemoveIpRoutes(RemoveIpRoutesRequest removeIpRoutesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(removeIpRoutesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2098,7 +2297,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RemoveIpRoutesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeIpRoutesRequest));
+                request = new RemoveIpRoutesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeIpRoutesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2137,7 +2336,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public RemoveTagsFromResourceResult removeTagsFromResource(RemoveTagsFromResourceRequest removeTagsFromResourceRequest) {
+    public RemoveTagsFromResourceResult removeTagsFromResource(RemoveTagsFromResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveTagsFromResource(request);
+    }
+
+    @SdkInternalApi
+    final RemoveTagsFromResourceResult executeRemoveTagsFromResource(RemoveTagsFromResourceRequest removeTagsFromResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(removeTagsFromResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2148,7 +2353,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RemoveTagsFromResourceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeTagsFromResourceRequest));
+                request = new RemoveTagsFromResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeTagsFromResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2198,7 +2403,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public RestoreFromSnapshotResult restoreFromSnapshot(RestoreFromSnapshotRequest restoreFromSnapshotRequest) {
+    public RestoreFromSnapshotResult restoreFromSnapshot(RestoreFromSnapshotRequest request) {
+        request = beforeClientExecution(request);
+        return executeRestoreFromSnapshot(request);
+    }
+
+    @SdkInternalApi
+    final RestoreFromSnapshotResult executeRestoreFromSnapshot(RestoreFromSnapshotRequest restoreFromSnapshotRequest) {
 
         ExecutionContext executionContext = createExecutionContext(restoreFromSnapshotRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2209,7 +2420,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RestoreFromSnapshotRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(restoreFromSnapshotRequest));
+                request = new RestoreFromSnapshotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(restoreFromSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2253,7 +2464,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public StartSchemaExtensionResult startSchemaExtension(StartSchemaExtensionRequest startSchemaExtensionRequest) {
+    public StartSchemaExtensionResult startSchemaExtension(StartSchemaExtensionRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartSchemaExtension(request);
+    }
+
+    @SdkInternalApi
+    final StartSchemaExtensionResult executeStartSchemaExtension(StartSchemaExtensionRequest startSchemaExtensionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(startSchemaExtensionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2264,7 +2481,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartSchemaExtensionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(startSchemaExtensionRequest));
+                request = new StartSchemaExtensionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startSchemaExtensionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2308,7 +2525,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      API Documentation</a>
      */
     @Override
-    public UpdateConditionalForwarderResult updateConditionalForwarder(UpdateConditionalForwarderRequest updateConditionalForwarderRequest) {
+    public UpdateConditionalForwarderResult updateConditionalForwarder(UpdateConditionalForwarderRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateConditionalForwarder(request);
+    }
+
+    @SdkInternalApi
+    final UpdateConditionalForwarderResult executeUpdateConditionalForwarder(UpdateConditionalForwarderRequest updateConditionalForwarderRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateConditionalForwarderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2319,7 +2542,8 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateConditionalForwarderRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateConditionalForwarderRequest));
+                request = new UpdateConditionalForwarderRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateConditionalForwarderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2360,7 +2584,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public UpdateRadiusResult updateRadius(UpdateRadiusRequest updateRadiusRequest) {
+    public UpdateRadiusResult updateRadius(UpdateRadiusRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateRadius(request);
+    }
+
+    @SdkInternalApi
+    final UpdateRadiusResult executeUpdateRadius(UpdateRadiusRequest updateRadiusRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateRadiusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2371,7 +2601,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateRadiusRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRadiusRequest));
+                request = new UpdateRadiusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRadiusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2417,7 +2647,13 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
      *      Documentation</a>
      */
     @Override
-    public VerifyTrustResult verifyTrust(VerifyTrustRequest verifyTrustRequest) {
+    public VerifyTrustResult verifyTrust(VerifyTrustRequest request) {
+        request = beforeClientExecution(request);
+        return executeVerifyTrust(request);
+    }
+
+    @SdkInternalApi
+    final VerifyTrustResult executeVerifyTrust(VerifyTrustRequest verifyTrustRequest) {
 
         ExecutionContext executionContext = createExecutionContext(verifyTrustRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2428,7 +2664,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new VerifyTrustRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(verifyTrustRequest));
+                request = new VerifyTrustRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(verifyTrustRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

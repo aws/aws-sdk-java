@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.logs.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.logs.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteMetricFilterRequest Marshaller
+ * DeleteMetricFilterRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteMetricFilterRequestMarshaller implements Marshaller<Request<DeleteMetricFilterRequest>, DeleteMetricFilterRequest> {
+@SdkInternalApi
+public class DeleteMetricFilterRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> LOGGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logGroupName").build();
+    private static final MarshallingInfo<String> FILTERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("filterName").build();
 
-    public DeleteMetricFilterRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteMetricFilterRequestMarshaller instance = new DeleteMetricFilterRequestMarshaller();
+
+    public static DeleteMetricFilterRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteMetricFilterRequest> marshall(DeleteMetricFilterRequest deleteMetricFilterRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteMetricFilterRequest deleteMetricFilterRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteMetricFilterRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteMetricFilterRequest> request = new DefaultRequest<DeleteMetricFilterRequest>(deleteMetricFilterRequest, "AWSLogs");
-        request.addHeader("X-Amz-Target", "Logs_20140328.DeleteMetricFilter");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteMetricFilterRequest.getLogGroupName() != null) {
-                jsonGenerator.writeFieldName("logGroupName").writeValue(deleteMetricFilterRequest.getLogGroupName());
-            }
-            if (deleteMetricFilterRequest.getFilterName() != null) {
-                jsonGenerator.writeFieldName("filterName").writeValue(deleteMetricFilterRequest.getFilterName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteMetricFilterRequest.getLogGroupName(), LOGGROUPNAME_BINDING);
+            protocolMarshaller.marshall(deleteMetricFilterRequest.getFilterName(), FILTERNAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

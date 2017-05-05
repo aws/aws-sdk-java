@@ -25,18 +25,18 @@ public class DetachObjectResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The ObjectIdentifier that was detached from the object.
+     * The <code>ObjectIdentifier</code> that was detached from the object.
      * </p>
      */
     private String detachedObjectIdentifier;
 
     /**
      * <p>
-     * The ObjectIdentifier that was detached from the object.
+     * The <code>ObjectIdentifier</code> that was detached from the object.
      * </p>
      * 
      * @param detachedObjectIdentifier
-     *        The ObjectIdentifier that was detached from the object.
+     *        The <code>ObjectIdentifier</code> that was detached from the object.
      */
 
     public void setDetachedObjectIdentifier(String detachedObjectIdentifier) {
@@ -45,10 +45,10 @@ public class DetachObjectResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The ObjectIdentifier that was detached from the object.
+     * The <code>ObjectIdentifier</code> that was detached from the object.
      * </p>
      * 
-     * @return The ObjectIdentifier that was detached from the object.
+     * @return The <code>ObjectIdentifier</code> that was detached from the object.
      */
 
     public String getDetachedObjectIdentifier() {
@@ -57,11 +57,11 @@ public class DetachObjectResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The ObjectIdentifier that was detached from the object.
+     * The <code>ObjectIdentifier</code> that was detached from the object.
      * </p>
      * 
      * @param detachedObjectIdentifier
-     *        The ObjectIdentifier that was detached from the object.
+     *        The <code>ObjectIdentifier</code> that was detached from the object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -121,4 +121,5 @@ public class DetachObjectResult extends com.amazonaws.AmazonWebServiceResult<com
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

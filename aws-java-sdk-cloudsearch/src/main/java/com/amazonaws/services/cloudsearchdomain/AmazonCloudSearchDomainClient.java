@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -241,6 +242,10 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient implem
         init();
     }
 
+    public static AmazonCloudSearchDomainClientBuilder builder() {
+        return AmazonCloudSearchDomainClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon CloudSearch Domain using the specified parameters.
      *
@@ -300,7 +305,13 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient implem
      * @sample AmazonCloudSearchDomain.Search
      */
     @Override
-    public SearchResult search(SearchRequest searchRequest) {
+    public SearchResult search(SearchRequest request) {
+        request = beforeClientExecution(request);
+        return executeSearch(request);
+    }
+
+    @SdkInternalApi
+    final SearchResult executeSearch(SearchRequest searchRequest) {
 
         ExecutionContext executionContext = createExecutionContext(searchRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -311,7 +322,7 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SearchRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchRequest));
+                request = new SearchRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -358,7 +369,13 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient implem
      * @sample AmazonCloudSearchDomain.Suggest
      */
     @Override
-    public SuggestResult suggest(SuggestRequest suggestRequest) {
+    public SuggestResult suggest(SuggestRequest request) {
+        request = beforeClientExecution(request);
+        return executeSuggest(request);
+    }
+
+    @SdkInternalApi
+    final SuggestResult executeSuggest(SuggestRequest suggestRequest) {
 
         ExecutionContext executionContext = createExecutionContext(suggestRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -369,7 +386,7 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SuggestRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(suggestRequest));
+                request = new SuggestRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(suggestRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -420,7 +437,13 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient implem
      * @sample AmazonCloudSearchDomain.UploadDocuments
      */
     @Override
-    public UploadDocumentsResult uploadDocuments(UploadDocumentsRequest uploadDocumentsRequest) {
+    public UploadDocumentsResult uploadDocuments(UploadDocumentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeUploadDocuments(request);
+    }
+
+    @SdkInternalApi
+    final UploadDocumentsResult executeUploadDocuments(UploadDocumentsRequest uploadDocumentsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(uploadDocumentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -431,7 +454,7 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UploadDocumentsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(uploadDocumentsRequest));
+                request = new UploadDocumentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(uploadDocumentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

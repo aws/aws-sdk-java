@@ -12,73 +12,53 @@
  */
 package com.amazonaws.services.lambda.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.lambda.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateEventSourceMappingRequest Marshaller
+ * UpdateEventSourceMappingRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateEventSourceMappingRequestMarshaller implements Marshaller<Request<UpdateEventSourceMappingRequest>, UpdateEventSourceMappingRequest> {
+@SdkInternalApi
+public class UpdateEventSourceMappingRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> UUID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("UUID").build();
+    private static final MarshallingInfo<String> FUNCTIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FunctionName").build();
+    private static final MarshallingInfo<Boolean> ENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Enabled").build();
+    private static final MarshallingInfo<Integer> BATCHSIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BatchSize").build();
 
-    public UpdateEventSourceMappingRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateEventSourceMappingRequestMarshaller instance = new UpdateEventSourceMappingRequestMarshaller();
+
+    public static UpdateEventSourceMappingRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateEventSourceMappingRequest> marshall(UpdateEventSourceMappingRequest updateEventSourceMappingRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateEventSourceMappingRequest updateEventSourceMappingRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateEventSourceMappingRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateEventSourceMappingRequest> request = new DefaultRequest<UpdateEventSourceMappingRequest>(updateEventSourceMappingRequest, "AWSLambda");
-
-        request.setHttpMethod(HttpMethodName.PUT);
-
-        String uriResourcePath = "/2015-03-31/event-source-mappings/{UUID}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "UUID", updateEventSourceMappingRequest.getUUID());
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (updateEventSourceMappingRequest.getFunctionName() != null) {
-                jsonGenerator.writeFieldName("FunctionName").writeValue(updateEventSourceMappingRequest.getFunctionName());
-            }
-            if (updateEventSourceMappingRequest.getEnabled() != null) {
-                jsonGenerator.writeFieldName("Enabled").writeValue(updateEventSourceMappingRequest.getEnabled());
-            }
-            if (updateEventSourceMappingRequest.getBatchSize() != null) {
-                jsonGenerator.writeFieldName("BatchSize").writeValue(updateEventSourceMappingRequest.getBatchSize());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateEventSourceMappingRequest.getUUID(), UUID_BINDING);
+            protocolMarshaller.marshall(updateEventSourceMappingRequest.getFunctionName(), FUNCTIONNAME_BINDING);
+            protocolMarshaller.marshall(updateEventSourceMappingRequest.getEnabled(), ENABLED_BINDING);
+            protocolMarshaller.marshall(updateEventSourceMappingRequest.getBatchSize(), BATCHSIZE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

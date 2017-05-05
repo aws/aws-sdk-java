@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -250,6 +251,10 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         init();
     }
 
+    public static AmazonElasticTranscoderClientBuilder builder() {
+        return AmazonElasticTranscoderClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon Elastic Transcoder using the specified parameters.
      *
@@ -308,7 +313,13 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @sample AmazonElasticTranscoder.CancelJob
      */
     @Override
-    public CancelJobResult cancelJob(CancelJobRequest cancelJobRequest) {
+    public CancelJobResult cancelJob(CancelJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelJob(request);
+    }
+
+    @SdkInternalApi
+    final CancelJobResult executeCancelJob(CancelJobRequest cancelJobRequest) {
 
         ExecutionContext executionContext = createExecutionContext(cancelJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -319,7 +330,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CancelJobRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelJobRequest));
+                request = new CancelJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -368,7 +379,13 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @sample AmazonElasticTranscoder.CreateJob
      */
     @Override
-    public CreateJobResult createJob(CreateJobRequest createJobRequest) {
+    public CreateJobResult createJob(CreateJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateJob(request);
+    }
+
+    @SdkInternalApi
+    final CreateJobResult executeCreateJob(CreateJobRequest createJobRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -379,7 +396,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateJobRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createJobRequest));
+                request = new CreateJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -422,7 +439,13 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @sample AmazonElasticTranscoder.CreatePipeline
      */
     @Override
-    public CreatePipelineResult createPipeline(CreatePipelineRequest createPipelineRequest) {
+    public CreatePipelineResult createPipeline(CreatePipelineRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreatePipeline(request);
+    }
+
+    @SdkInternalApi
+    final CreatePipelineResult executeCreatePipeline(CreatePipelineRequest createPipelineRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createPipelineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -433,7 +456,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreatePipelineRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPipelineRequest));
+                request = new CreatePipelineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -489,7 +512,13 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @sample AmazonElasticTranscoder.CreatePreset
      */
     @Override
-    public CreatePresetResult createPreset(CreatePresetRequest createPresetRequest) {
+    public CreatePresetResult createPreset(CreatePresetRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreatePreset(request);
+    }
+
+    @SdkInternalApi
+    final CreatePresetResult executeCreatePreset(CreatePresetRequest createPresetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createPresetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -500,7 +529,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreatePresetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPresetRequest));
+                request = new CreatePresetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPresetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -547,7 +576,13 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @sample AmazonElasticTranscoder.DeletePipeline
      */
     @Override
-    public DeletePipelineResult deletePipeline(DeletePipelineRequest deletePipelineRequest) {
+    public DeletePipelineResult deletePipeline(DeletePipelineRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeletePipeline(request);
+    }
+
+    @SdkInternalApi
+    final DeletePipelineResult executeDeletePipeline(DeletePipelineRequest deletePipelineRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deletePipelineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -558,7 +593,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeletePipelineRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePipelineRequest));
+                request = new DeletePipelineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -603,7 +638,13 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @sample AmazonElasticTranscoder.DeletePreset
      */
     @Override
-    public DeletePresetResult deletePreset(DeletePresetRequest deletePresetRequest) {
+    public DeletePresetResult deletePreset(DeletePresetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeletePreset(request);
+    }
+
+    @SdkInternalApi
+    final DeletePresetResult executeDeletePreset(DeletePresetRequest deletePresetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deletePresetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -614,7 +655,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeletePresetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePresetRequest));
+                request = new DeletePresetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePresetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -658,7 +699,13 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @sample AmazonElasticTranscoder.ListJobsByPipeline
      */
     @Override
-    public ListJobsByPipelineResult listJobsByPipeline(ListJobsByPipelineRequest listJobsByPipelineRequest) {
+    public ListJobsByPipelineResult listJobsByPipeline(ListJobsByPipelineRequest request) {
+        request = beforeClientExecution(request);
+        return executeListJobsByPipeline(request);
+    }
+
+    @SdkInternalApi
+    final ListJobsByPipelineResult executeListJobsByPipeline(ListJobsByPipelineRequest listJobsByPipelineRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listJobsByPipelineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -669,7 +716,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListJobsByPipelineRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listJobsByPipelineRequest));
+                request = new ListJobsByPipelineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listJobsByPipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -710,7 +757,13 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @sample AmazonElasticTranscoder.ListJobsByStatus
      */
     @Override
-    public ListJobsByStatusResult listJobsByStatus(ListJobsByStatusRequest listJobsByStatusRequest) {
+    public ListJobsByStatusResult listJobsByStatus(ListJobsByStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeListJobsByStatus(request);
+    }
+
+    @SdkInternalApi
+    final ListJobsByStatusResult executeListJobsByStatus(ListJobsByStatusRequest listJobsByStatusRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listJobsByStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -721,7 +774,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListJobsByStatusRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listJobsByStatusRequest));
+                request = new ListJobsByStatusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listJobsByStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -758,7 +811,13 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @sample AmazonElasticTranscoder.ListPipelines
      */
     @Override
-    public ListPipelinesResult listPipelines(ListPipelinesRequest listPipelinesRequest) {
+    public ListPipelinesResult listPipelines(ListPipelinesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPipelines(request);
+    }
+
+    @SdkInternalApi
+    final ListPipelinesResult executeListPipelines(ListPipelinesRequest listPipelinesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listPipelinesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -769,7 +828,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListPipelinesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPipelinesRequest));
+                request = new ListPipelinesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPipelinesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -812,7 +871,13 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @sample AmazonElasticTranscoder.ListPresets
      */
     @Override
-    public ListPresetsResult listPresets(ListPresetsRequest listPresetsRequest) {
+    public ListPresetsResult listPresets(ListPresetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPresets(request);
+    }
+
+    @SdkInternalApi
+    final ListPresetsResult executeListPresets(ListPresetsRequest listPresetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listPresetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -823,7 +888,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListPresetsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPresetsRequest));
+                request = new ListPresetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPresetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -868,7 +933,13 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @sample AmazonElasticTranscoder.ReadJob
      */
     @Override
-    public ReadJobResult readJob(ReadJobRequest readJobRequest) {
+    public ReadJobResult readJob(ReadJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeReadJob(request);
+    }
+
+    @SdkInternalApi
+    final ReadJobResult executeReadJob(ReadJobRequest readJobRequest) {
 
         ExecutionContext executionContext = createExecutionContext(readJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -879,7 +950,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ReadJobRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(readJobRequest));
+                request = new ReadJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(readJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -919,7 +990,13 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @sample AmazonElasticTranscoder.ReadPipeline
      */
     @Override
-    public ReadPipelineResult readPipeline(ReadPipelineRequest readPipelineRequest) {
+    public ReadPipelineResult readPipeline(ReadPipelineRequest request) {
+        request = beforeClientExecution(request);
+        return executeReadPipeline(request);
+    }
+
+    @SdkInternalApi
+    final ReadPipelineResult executeReadPipeline(ReadPipelineRequest readPipelineRequest) {
 
         ExecutionContext executionContext = createExecutionContext(readPipelineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -930,7 +1007,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ReadPipelineRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(readPipelineRequest));
+                request = new ReadPipelineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(readPipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -970,7 +1047,13 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @sample AmazonElasticTranscoder.ReadPreset
      */
     @Override
-    public ReadPresetResult readPreset(ReadPresetRequest readPresetRequest) {
+    public ReadPresetResult readPreset(ReadPresetRequest request) {
+        request = beforeClientExecution(request);
+        return executeReadPreset(request);
+    }
+
+    @SdkInternalApi
+    final ReadPresetResult executeReadPreset(ReadPresetRequest readPresetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(readPresetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -981,7 +1064,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ReadPresetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(readPresetRequest));
+                request = new ReadPresetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(readPresetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1028,7 +1111,13 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      */
     @Override
     @Deprecated
-    public TestRoleResult testRole(TestRoleRequest testRoleRequest) {
+    public TestRoleResult testRole(TestRoleRequest request) {
+        request = beforeClientExecution(request);
+        return executeTestRole(request);
+    }
+
+    @SdkInternalApi
+    final TestRoleResult executeTestRole(TestRoleRequest testRoleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(testRoleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1039,7 +1128,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new TestRoleRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(testRoleRequest));
+                request = new TestRoleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(testRoleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1089,7 +1178,13 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @sample AmazonElasticTranscoder.UpdatePipeline
      */
     @Override
-    public UpdatePipelineResult updatePipeline(UpdatePipelineRequest updatePipelineRequest) {
+    public UpdatePipelineResult updatePipeline(UpdatePipelineRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdatePipeline(request);
+    }
+
+    @SdkInternalApi
+    final UpdatePipelineResult executeUpdatePipeline(UpdatePipelineRequest updatePipelineRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updatePipelineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1100,7 +1195,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdatePipelineRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updatePipelineRequest));
+                request = new UpdatePipelineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updatePipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1148,7 +1243,13 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @sample AmazonElasticTranscoder.UpdatePipelineNotifications
      */
     @Override
-    public UpdatePipelineNotificationsResult updatePipelineNotifications(UpdatePipelineNotificationsRequest updatePipelineNotificationsRequest) {
+    public UpdatePipelineNotificationsResult updatePipelineNotifications(UpdatePipelineNotificationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdatePipelineNotifications(request);
+    }
+
+    @SdkInternalApi
+    final UpdatePipelineNotificationsResult executeUpdatePipelineNotifications(UpdatePipelineNotificationsRequest updatePipelineNotificationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updatePipelineNotificationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1159,7 +1260,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdatePipelineNotificationsRequestMarshaller(protocolFactory).marshall(super
+                request = new UpdatePipelineNotificationsRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(updatePipelineNotificationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1210,7 +1311,13 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @sample AmazonElasticTranscoder.UpdatePipelineStatus
      */
     @Override
-    public UpdatePipelineStatusResult updatePipelineStatus(UpdatePipelineStatusRequest updatePipelineStatusRequest) {
+    public UpdatePipelineStatusResult updatePipelineStatus(UpdatePipelineStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdatePipelineStatus(request);
+    }
+
+    @SdkInternalApi
+    final UpdatePipelineStatusResult executeUpdatePipelineStatus(UpdatePipelineStatusRequest updatePipelineStatusRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updatePipelineStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1221,7 +1328,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdatePipelineStatusRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updatePipelineStatusRequest));
+                request = new UpdatePipelineStatusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updatePipelineStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1303,6 +1410,14 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
             }
         }
         return waiters;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
 
 }

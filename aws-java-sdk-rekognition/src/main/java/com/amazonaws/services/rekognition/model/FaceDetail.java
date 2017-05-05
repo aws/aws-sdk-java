@@ -14,6 +14,8 @@ package com.amazonaws.services.rekognition.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -21,7 +23,7 @@ import javax.annotation.Generated;
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class FaceDetail implements Serializable, Cloneable {
+public class FaceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -29,6 +31,13 @@ public class FaceDetail implements Serializable, Cloneable {
      * </p>
      */
     private BoundingBox boundingBox;
+    /**
+     * <p>
+     * The estimated age range, in years, for the face. Low represents the lowest estimated age and High represents the
+     * highest estimated age.
+     * </p>
+     */
+    private AgeRange ageRange;
     /**
      * <p>
      * Indicates whether or not the face is smiling, and the confidence level in the determination.
@@ -146,6 +155,52 @@ public class FaceDetail implements Serializable, Cloneable {
 
     public FaceDetail withBoundingBox(BoundingBox boundingBox) {
         setBoundingBox(boundingBox);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The estimated age range, in years, for the face. Low represents the lowest estimated age and High represents the
+     * highest estimated age.
+     * </p>
+     * 
+     * @param ageRange
+     *        The estimated age range, in years, for the face. Low represents the lowest estimated age and High
+     *        represents the highest estimated age.
+     */
+
+    public void setAgeRange(AgeRange ageRange) {
+        this.ageRange = ageRange;
+    }
+
+    /**
+     * <p>
+     * The estimated age range, in years, for the face. Low represents the lowest estimated age and High represents the
+     * highest estimated age.
+     * </p>
+     * 
+     * @return The estimated age range, in years, for the face. Low represents the lowest estimated age and High
+     *         represents the highest estimated age.
+     */
+
+    public AgeRange getAgeRange() {
+        return this.ageRange;
+    }
+
+    /**
+     * <p>
+     * The estimated age range, in years, for the face. Low represents the lowest estimated age and High represents the
+     * highest estimated age.
+     * </p>
+     * 
+     * @param ageRange
+     *        The estimated age range, in years, for the face. Low represents the lowest estimated age and High
+     *        represents the highest estimated age.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FaceDetail withAgeRange(AgeRange ageRange) {
+        setAgeRange(ageRange);
         return this;
     }
 
@@ -750,6 +805,8 @@ public class FaceDetail implements Serializable, Cloneable {
         sb.append("{");
         if (getBoundingBox() != null)
             sb.append("BoundingBox: ").append(getBoundingBox()).append(",");
+        if (getAgeRange() != null)
+            sb.append("AgeRange: ").append(getAgeRange()).append(",");
         if (getSmile() != null)
             sb.append("Smile: ").append(getSmile()).append(",");
         if (getEyeglasses() != null)
@@ -793,6 +850,10 @@ public class FaceDetail implements Serializable, Cloneable {
         if (other.getBoundingBox() == null ^ this.getBoundingBox() == null)
             return false;
         if (other.getBoundingBox() != null && other.getBoundingBox().equals(this.getBoundingBox()) == false)
+            return false;
+        if (other.getAgeRange() == null ^ this.getAgeRange() == null)
+            return false;
+        if (other.getAgeRange() != null && other.getAgeRange().equals(this.getAgeRange()) == false)
             return false;
         if (other.getSmile() == null ^ this.getSmile() == null)
             return false;
@@ -855,6 +916,7 @@ public class FaceDetail implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getBoundingBox() == null) ? 0 : getBoundingBox().hashCode());
+        hashCode = prime * hashCode + ((getAgeRange() == null) ? 0 : getAgeRange().hashCode());
         hashCode = prime * hashCode + ((getSmile() == null) ? 0 : getSmile().hashCode());
         hashCode = prime * hashCode + ((getEyeglasses() == null) ? 0 : getEyeglasses().hashCode());
         hashCode = prime * hashCode + ((getSunglasses() == null) ? 0 : getSunglasses().hashCode());
@@ -878,5 +940,11 @@ public class FaceDetail implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.rekognition.model.transform.FaceDetailMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

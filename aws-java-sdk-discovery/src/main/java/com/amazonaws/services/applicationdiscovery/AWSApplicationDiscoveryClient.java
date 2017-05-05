@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -85,7 +86,7 @@ import com.amazonaws.services.applicationdiscovery.model.transform.*;
  * </ul>
  * <p>
  * Application Discovery Service integrates with application discovery solutions from AWS Partner Network (APN)
- * partners. Third-party application discovery tools can query the Application Discovery Service and write to the
+ * partners. Third-party application discovery tools can query Application Discovery Service and write to the
  * Application Discovery Service database using a public API. You can then import the data into either a visualization
  * tool or cloud-migration solution.
  * </p>
@@ -98,12 +99,12 @@ import com.amazonaws.services.applicationdiscovery.model.transform.*;
  * </important>
  * <p>
  * Your AWS account must be granted access to Application Discovery Service, a process called <i>whitelisting</i>. This
- * is true for AWS partners and customers alike. To request access, sign up for the AWS Application Discovery Service <a
- * href="http://aws.amazon.com/application-discovery/preview/">here</a>. We will send you information about how to get
+ * is true for AWS partners and customers alike. To request access, sign up for AWS Application Discovery Service <a
+ * href="http://aws.amazon.com/application-discovery/preview/">here</a>. We send you information about how to get
  * started.
  * </p>
  * <p>
- * This API reference provides descriptions, syntax, and usage examples for each of the actions and data types for the
+ * This API reference provides descriptions, syntax, and usage examples for each of the actions and data types for
  * Application Discovery Service. The topic for each action shows the API request parameters and the response.
  * Alternatively, you can use one of the AWS SDKs to access an API that is tailored to the programming language or
  * platform that you're using. For more information, see <a href="http://aws.amazon.com/tools/#SDKs">AWS SDKs</a>.
@@ -304,6 +305,10 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
         init();
     }
 
+    public static AWSApplicationDiscoveryClientBuilder builder() {
+        return AWSApplicationDiscoveryClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWS Application Discovery Service using the specified
      * parameters.
@@ -352,7 +357,13 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @sample AWSApplicationDiscovery.AssociateConfigurationItemsToApplication
      */
     @Override
-    public AssociateConfigurationItemsToApplicationResult associateConfigurationItemsToApplication(
+    public AssociateConfigurationItemsToApplicationResult associateConfigurationItemsToApplication(AssociateConfigurationItemsToApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateConfigurationItemsToApplication(request);
+    }
+
+    @SdkInternalApi
+    final AssociateConfigurationItemsToApplicationResult executeAssociateConfigurationItemsToApplication(
             AssociateConfigurationItemsToApplicationRequest associateConfigurationItemsToApplicationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(associateConfigurationItemsToApplicationRequest);
@@ -364,7 +375,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AssociateConfigurationItemsToApplicationRequestMarshaller(protocolFactory).marshall(super
+                request = new AssociateConfigurationItemsToApplicationRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(associateConfigurationItemsToApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -405,7 +416,13 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @sample AWSApplicationDiscovery.CreateApplication
      */
     @Override
-    public CreateApplicationResult createApplication(CreateApplicationRequest createApplicationRequest) {
+    public CreateApplicationResult createApplication(CreateApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateApplication(request);
+    }
+
+    @SdkInternalApi
+    final CreateApplicationResult executeCreateApplication(CreateApplicationRequest createApplicationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -416,7 +433,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateApplicationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createApplicationRequest));
+                request = new CreateApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -458,7 +475,13 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @sample AWSApplicationDiscovery.CreateTags
      */
     @Override
-    public CreateTagsResult createTags(CreateTagsRequest createTagsRequest) {
+    public CreateTagsResult createTags(CreateTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTags(request);
+    }
+
+    @SdkInternalApi
+    final CreateTagsResult executeCreateTags(CreateTagsRequest createTagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -469,7 +492,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateTagsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTagsRequest));
+                request = new CreateTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -508,7 +531,13 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @sample AWSApplicationDiscovery.DeleteApplications
      */
     @Override
-    public DeleteApplicationsResult deleteApplications(DeleteApplicationsRequest deleteApplicationsRequest) {
+    public DeleteApplicationsResult deleteApplications(DeleteApplicationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteApplications(request);
+    }
+
+    @SdkInternalApi
+    final DeleteApplicationsResult executeDeleteApplications(DeleteApplicationsRequest deleteApplicationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteApplicationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -519,7 +548,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteApplicationsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteApplicationsRequest));
+                request = new DeleteApplicationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteApplicationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -561,7 +590,13 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @sample AWSApplicationDiscovery.DeleteTags
      */
     @Override
-    public DeleteTagsResult deleteTags(DeleteTagsRequest deleteTagsRequest) {
+    public DeleteTagsResult deleteTags(DeleteTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTags(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTagsResult executeDeleteTags(DeleteTagsRequest deleteTagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -572,7 +607,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteTagsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTagsRequest));
+                request = new DeleteTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -612,7 +647,13 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @sample AWSApplicationDiscovery.DescribeAgents
      */
     @Override
-    public DescribeAgentsResult describeAgents(DescribeAgentsRequest describeAgentsRequest) {
+    public DescribeAgentsResult describeAgents(DescribeAgentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAgents(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAgentsResult executeDescribeAgents(DescribeAgentsRequest describeAgentsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAgentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -623,7 +664,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAgentsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAgentsRequest));
+                request = new DescribeAgentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAgentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -651,8 +692,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * </p>
      * <p>
      * For a complete list of outputs for each asset type, see <a href=
-     * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#DescribeConfigurations"
-     * >Querying Discovered Configuration Items</a>.
+     * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#DescribeConfigurations"
+     * >Using the DescribeConfigurations Action</a>.
      * </p>
      * 
      * @param describeConfigurationsRequest
@@ -670,7 +711,13 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @sample AWSApplicationDiscovery.DescribeConfigurations
      */
     @Override
-    public DescribeConfigurationsResult describeConfigurations(DescribeConfigurationsRequest describeConfigurationsRequest) {
+    public DescribeConfigurationsResult describeConfigurations(DescribeConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final DescribeConfigurationsResult executeDescribeConfigurations(DescribeConfigurationsRequest describeConfigurationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeConfigurationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -681,7 +728,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeConfigurationsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeConfigurationsRequest));
+                request = new DescribeConfigurationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeConfigurationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -703,6 +750,9 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
+     * Deprecated. Use <code>DescribeExportTasks</code> instead.
+     * </p>
+     * <p>
      * Retrieves the status of a given export process. You can retrieve status from a maximum of 100 processes.
      * </p>
      * 
@@ -723,7 +773,14 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @sample AWSApplicationDiscovery.DescribeExportConfigurations
      */
     @Override
-    public DescribeExportConfigurationsResult describeExportConfigurations(DescribeExportConfigurationsRequest describeExportConfigurationsRequest) {
+    @Deprecated
+    public DescribeExportConfigurationsResult describeExportConfigurations(DescribeExportConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeExportConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final DescribeExportConfigurationsResult executeDescribeExportConfigurations(DescribeExportConfigurationsRequest describeExportConfigurationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeExportConfigurationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -734,7 +791,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeExportConfigurationsRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeExportConfigurationsRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeExportConfigurationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -745,6 +802,62 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
             HttpResponseHandler<AmazonWebServiceResponse<DescribeExportConfigurationsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeExportConfigurationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieve status of one or more export tasks. You can retrieve the status of up to 100 export tasks.
+     * </p>
+     * 
+     * @param describeExportTasksRequest
+     * @return Result of the DescribeExportTasks operation returned by the service.
+     * @throws AuthorizationErrorException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid. Verify the parameters and try again.
+     * @throws InvalidParameterValueException
+     *         The value of one or more parameters are either invalid or out of range. Verify the parameter values and
+     *         try again.
+     * @throws ServerInternalErrorException
+     *         The server experienced an internal error. Try again.
+     * @sample AWSApplicationDiscovery.DescribeExportTasks
+     */
+    @Override
+    public DescribeExportTasksResult describeExportTasks(DescribeExportTasksRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeExportTasks(request);
+    }
+
+    @SdkInternalApi
+    final DescribeExportTasksResult executeDescribeExportTasks(DescribeExportTasksRequest describeExportTasksRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeExportTasksRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeExportTasksRequest> request = null;
+        Response<DescribeExportTasksResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeExportTasksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeExportTasksRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeExportTasksResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeExportTasksResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -778,7 +891,13 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @sample AWSApplicationDiscovery.DescribeTags
      */
     @Override
-    public DescribeTagsResult describeTags(DescribeTagsRequest describeTagsRequest) {
+    public DescribeTagsResult describeTags(DescribeTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTags(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTagsResult executeDescribeTags(DescribeTagsRequest describeTagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -789,7 +908,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTagsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTagsRequest));
+                request = new DescribeTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -829,6 +948,13 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      */
     @Override
     public DisassociateConfigurationItemsFromApplicationResult disassociateConfigurationItemsFromApplication(
+            DisassociateConfigurationItemsFromApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateConfigurationItemsFromApplication(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateConfigurationItemsFromApplicationResult executeDisassociateConfigurationItemsFromApplication(
             DisassociateConfigurationItemsFromApplicationRequest disassociateConfigurationItemsFromApplicationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(disassociateConfigurationItemsFromApplicationRequest);
@@ -840,7 +966,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisassociateConfigurationItemsFromApplicationRequestMarshaller(protocolFactory).marshall(super
+                request = new DisassociateConfigurationItemsFromApplicationRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(disassociateConfigurationItemsFromApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -863,9 +989,12 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
+     * Deprecated. Use <code>StartExportTask</code> instead.
+     * </p>
+     * <p>
      * Exports all discovered configuration data to an Amazon S3 bucket or an application that enables you to view and
      * evaluate the data. Data includes tags and tag associations, processes, connections, servers, and system
-     * performance. This API returns an export ID which you can query using the <i>DescribeExportConfigurations</i> API.
+     * performance. This API returns an export ID that you can query using the <i>DescribeExportConfigurations</i> API.
      * The system imposes a limit of two configuration exports in six hours.
      * </p>
      * 
@@ -886,7 +1015,14 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @sample AWSApplicationDiscovery.ExportConfigurations
      */
     @Override
-    public ExportConfigurationsResult exportConfigurations(ExportConfigurationsRequest exportConfigurationsRequest) {
+    @Deprecated
+    public ExportConfigurationsResult exportConfigurations(ExportConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeExportConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final ExportConfigurationsResult executeExportConfigurations(ExportConfigurationsRequest exportConfigurationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(exportConfigurationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -897,7 +1033,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ExportConfigurationsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(exportConfigurationsRequest));
+                request = new ExportConfigurationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(exportConfigurationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -936,7 +1072,13 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @sample AWSApplicationDiscovery.GetDiscoverySummary
      */
     @Override
-    public GetDiscoverySummaryResult getDiscoverySummary(GetDiscoverySummaryRequest getDiscoverySummaryRequest) {
+    public GetDiscoverySummaryResult getDiscoverySummary(GetDiscoverySummaryRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDiscoverySummary(request);
+    }
+
+    @SdkInternalApi
+    final GetDiscoverySummaryResult executeGetDiscoverySummary(GetDiscoverySummaryRequest getDiscoverySummaryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getDiscoverySummaryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -947,7 +1089,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDiscoverySummaryRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDiscoverySummaryRequest));
+                request = new GetDiscoverySummaryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDiscoverySummaryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -968,8 +1110,8 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
-     * Retrieves a list of configuration items according to criteria you specify in a filter. The filter criteria
-     * identify relationship requirements.
+     * Retrieves a list of configuration items according to criteria that you specify in a filter. The filter criteria
+     * identifies the relationship requirements.
      * </p>
      * 
      * @param listConfigurationsRequest
@@ -989,7 +1131,13 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @sample AWSApplicationDiscovery.ListConfigurations
      */
     @Override
-    public ListConfigurationsResult listConfigurations(ListConfigurationsRequest listConfigurationsRequest) {
+    public ListConfigurationsResult listConfigurations(ListConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final ListConfigurationsResult executeListConfigurations(ListConfigurationsRequest listConfigurationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listConfigurationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1000,7 +1148,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListConfigurationsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listConfigurationsRequest));
+                request = new ListConfigurationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listConfigurationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1021,7 +1169,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
-     * Retrieves a list of servers which are one network hop away from a specified server.
+     * Retrieves a list of servers that are one network hop away from a specified server.
      * </p>
      * 
      * @param listServerNeighborsRequest
@@ -1039,7 +1187,13 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @sample AWSApplicationDiscovery.ListServerNeighbors
      */
     @Override
-    public ListServerNeighborsResult listServerNeighbors(ListServerNeighborsRequest listServerNeighborsRequest) {
+    public ListServerNeighborsResult listServerNeighbors(ListServerNeighborsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListServerNeighbors(request);
+    }
+
+    @SdkInternalApi
+    final ListServerNeighborsResult executeListServerNeighbors(ListServerNeighborsRequest listServerNeighborsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listServerNeighborsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1050,7 +1204,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListServerNeighborsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listServerNeighborsRequest));
+                request = new ListServerNeighborsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listServerNeighborsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1071,7 +1225,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
-     * Instructs the specified agents or Connectors to start collecting data.
+     * Instructs the specified agents or connectors to start collecting data.
      * </p>
      * 
      * @param startDataCollectionByAgentIdsRequest
@@ -1089,7 +1243,13 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @sample AWSApplicationDiscovery.StartDataCollectionByAgentIds
      */
     @Override
-    public StartDataCollectionByAgentIdsResult startDataCollectionByAgentIds(StartDataCollectionByAgentIdsRequest startDataCollectionByAgentIdsRequest) {
+    public StartDataCollectionByAgentIdsResult startDataCollectionByAgentIds(StartDataCollectionByAgentIdsRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartDataCollectionByAgentIds(request);
+    }
+
+    @SdkInternalApi
+    final StartDataCollectionByAgentIdsResult executeStartDataCollectionByAgentIds(StartDataCollectionByAgentIdsRequest startDataCollectionByAgentIdsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(startDataCollectionByAgentIdsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1100,7 +1260,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartDataCollectionByAgentIdsRequestMarshaller(protocolFactory).marshall(super
+                request = new StartDataCollectionByAgentIdsRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(startDataCollectionByAgentIdsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1123,7 +1283,66 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
-     * Instructs the specified agents or Connectors to stop collecting data.
+     * Export the configuration data about discovered configuration items and relationships to an S3 bucket in a
+     * specified format.
+     * </p>
+     * 
+     * @param startExportTaskRequest
+     * @return Result of the StartExportTask operation returned by the service.
+     * @throws AuthorizationErrorException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid. Verify the parameters and try again.
+     * @throws InvalidParameterValueException
+     *         The value of one or more parameters are either invalid or out of range. Verify the parameter values and
+     *         try again.
+     * @throws ServerInternalErrorException
+     *         The server experienced an internal error. Try again.
+     * @throws OperationNotPermittedException
+     *         This operation is not permitted.
+     * @sample AWSApplicationDiscovery.StartExportTask
+     */
+    @Override
+    public StartExportTaskResult startExportTask(StartExportTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartExportTask(request);
+    }
+
+    @SdkInternalApi
+    final StartExportTaskResult executeStartExportTask(StartExportTaskRequest startExportTaskRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startExportTaskRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartExportTaskRequest> request = null;
+        Response<StartExportTaskResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartExportTaskRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startExportTaskRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartExportTaskResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartExportTaskResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Instructs the specified agents or connectors to stop collecting data.
      * </p>
      * 
      * @param stopDataCollectionByAgentIdsRequest
@@ -1141,7 +1360,13 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @sample AWSApplicationDiscovery.StopDataCollectionByAgentIds
      */
     @Override
-    public StopDataCollectionByAgentIdsResult stopDataCollectionByAgentIds(StopDataCollectionByAgentIdsRequest stopDataCollectionByAgentIdsRequest) {
+    public StopDataCollectionByAgentIdsResult stopDataCollectionByAgentIds(StopDataCollectionByAgentIdsRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopDataCollectionByAgentIds(request);
+    }
+
+    @SdkInternalApi
+    final StopDataCollectionByAgentIdsResult executeStopDataCollectionByAgentIds(StopDataCollectionByAgentIdsRequest stopDataCollectionByAgentIdsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(stopDataCollectionByAgentIdsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1152,7 +1377,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopDataCollectionByAgentIdsRequestMarshaller(protocolFactory).marshall(super
+                request = new StopDataCollectionByAgentIdsRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(stopDataCollectionByAgentIdsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1193,7 +1418,13 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @sample AWSApplicationDiscovery.UpdateApplication
      */
     @Override
-    public UpdateApplicationResult updateApplication(UpdateApplicationRequest updateApplicationRequest) {
+    public UpdateApplicationResult updateApplication(UpdateApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateApplication(request);
+    }
+
+    @SdkInternalApi
+    final UpdateApplicationResult executeUpdateApplication(UpdateApplicationRequest updateApplicationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1204,7 +1435,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateApplicationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateApplicationRequest));
+                request = new UpdateApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

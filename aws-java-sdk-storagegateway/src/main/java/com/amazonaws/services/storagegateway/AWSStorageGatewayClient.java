@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -306,6 +307,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         init();
     }
 
+    public static AWSStorageGatewayClientBuilder builder() {
+        return AWSStorageGatewayClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWS Storage Gateway using the specified parameters.
      *
@@ -337,8 +342,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * <p>
      * Activates the gateway you previously deployed on your host. For more information, see <a
      * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedActivateGateway-common.html">
-     * Activate the AWS Storage Gateway</a>. In the activation process, you specify information such as the you want to
-     * use for storing snapshots, the time zone for scheduled snapshots the gateway snapshot schedule window, an
+     * Activate the AWS Storage Gateway</a>. In the activation process, you specify information such as the region you
+     * want to use for storing snapshots, the time zone for scheduled snapshots the gateway snapshot schedule window, an
      * activation key, and a name for your gateway. The activation process also associates your gateway with your
      * account; for more information, see <a>UpdateGatewayInformation</a>.
      * </p>
@@ -398,7 +403,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public ActivateGatewayResult activateGateway(ActivateGatewayRequest activateGatewayRequest) {
+    public ActivateGatewayResult activateGateway(ActivateGatewayRequest request) {
+        request = beforeClientExecution(request);
+        return executeActivateGateway(request);
+    }
+
+    @SdkInternalApi
+    final ActivateGatewayResult executeActivateGateway(ActivateGatewayRequest activateGatewayRequest) {
 
         ExecutionContext executionContext = createExecutionContext(activateGatewayRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -409,7 +420,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ActivateGatewayRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(activateGatewayRequest));
+                request = new ActivateGatewayRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(activateGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -430,8 +441,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Configures one or more gateway local disks as cache for a cached-volume gateway. This operation is supported only
-     * for the gateway-cached volume architecture (see <a
+     * Configures one or more gateway local disks as cache for a cached volumes gateway. This operation is only
+     * supported in the cached volumes gateway architecture (see <a
      * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">Storage Gateway
      * Concepts</a>).
      * </p>
@@ -453,7 +464,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      Documentation</a>
      */
     @Override
-    public AddCacheResult addCache(AddCacheRequest addCacheRequest) {
+    public AddCacheResult addCache(AddCacheRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddCache(request);
+    }
+
+    @SdkInternalApi
+    final AddCacheResult executeAddCache(AddCacheRequest addCacheRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addCacheRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -464,7 +481,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddCacheRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(addCacheRequest));
+                request = new AddCacheRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addCacheRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -530,7 +547,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AddTagsToResourceResult addTagsToResource(AddTagsToResourceRequest addTagsToResourceRequest) {
+    public AddTagsToResourceResult addTagsToResource(AddTagsToResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddTagsToResource(request);
+    }
+
+    @SdkInternalApi
+    final AddTagsToResourceResult executeAddTagsToResource(AddTagsToResourceRequest addTagsToResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addTagsToResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -541,7 +564,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddTagsToResourceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(addTagsToResourceRequest));
+                request = new AddTagsToResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addTagsToResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -563,7 +586,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Configures one or more gateway local disks as upload buffer for a specified gateway. This operation is supported
-     * for both the gateway-stored and gateway-cached volume architectures.
+     * for both the stored volumes and cached volumes gateway architectures.
      * </p>
      * <p>
      * In the request, you specify the gateway Amazon Resource Name (ARN) to which you want to add upload buffer, and
@@ -583,7 +606,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public AddUploadBufferResult addUploadBuffer(AddUploadBufferRequest addUploadBufferRequest) {
+    public AddUploadBufferResult addUploadBuffer(AddUploadBufferRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddUploadBuffer(request);
+    }
+
+    @SdkInternalApi
+    final AddUploadBufferResult executeAddUploadBuffer(AddUploadBufferRequest addUploadBufferRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addUploadBufferRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -594,7 +623,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddUploadBufferRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(addUploadBufferRequest));
+                request = new AddUploadBufferRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addUploadBufferRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -615,8 +644,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Configures one or more gateway local disks as working storage for a gateway. This operation is supported only for
-     * the gateway-stored volume architecture. This operation is deprecated in cached-volumes API version 20120630. Use
+     * Configures one or more gateway local disks as working storage for a gateway. This operation is only supported in
+     * the stored volume gateway architecture. This operation is deprecated in cached-volumes API version 20120630. Use
      * <a>AddUploadBuffer</a> instead.
      * </p>
      * <note>
@@ -650,7 +679,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AddWorkingStorageResult addWorkingStorage(AddWorkingStorageRequest addWorkingStorageRequest) {
+    public AddWorkingStorageResult addWorkingStorage(AddWorkingStorageRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddWorkingStorage(request);
+    }
+
+    @SdkInternalApi
+    final AddWorkingStorageResult executeAddWorkingStorage(AddWorkingStorageRequest addWorkingStorageRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addWorkingStorageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -661,7 +696,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddWorkingStorageRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(addWorkingStorageRequest));
+                request = new AddWorkingStorageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addWorkingStorageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -683,6 +718,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Cancels archiving of a virtual tape to the virtual tape shelf (VTS) after the archiving process is initiated.
+     * This operation is only supported in tape gateways.
      * </p>
      * 
      * @param cancelArchivalRequest
@@ -699,7 +735,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public CancelArchivalResult cancelArchival(CancelArchivalRequest cancelArchivalRequest) {
+    public CancelArchivalResult cancelArchival(CancelArchivalRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelArchival(request);
+    }
+
+    @SdkInternalApi
+    final CancelArchivalResult executeCancelArchival(CancelArchivalRequest cancelArchivalRequest) {
 
         ExecutionContext executionContext = createExecutionContext(cancelArchivalRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -710,7 +752,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CancelArchivalRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelArchivalRequest));
+                request = new CancelArchivalRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelArchivalRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -749,7 +791,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public CancelRetrievalResult cancelRetrieval(CancelRetrievalRequest cancelRetrievalRequest) {
+    public CancelRetrievalResult cancelRetrieval(CancelRetrievalRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelRetrieval(request);
+    }
+
+    @SdkInternalApi
+    final CancelRetrievalResult executeCancelRetrieval(CancelRetrievalRequest cancelRetrievalRequest) {
 
         ExecutionContext executionContext = createExecutionContext(cancelRetrievalRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -760,7 +808,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CancelRetrievalRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelRetrievalRequest));
+                request = new CancelRetrievalRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelRetrievalRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -781,8 +829,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Creates a cached volume on a specified cached gateway. This operation is supported only for the gateway-cached
-     * volume architecture.
+     * Creates a cached volume on a specified cached volumes gateway. This operation is only supported in the cached
+     * volumes gateway architecture.
      * </p>
      * <note>
      * <p>
@@ -815,7 +863,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateCachediSCSIVolumeResult createCachediSCSIVolume(CreateCachediSCSIVolumeRequest createCachediSCSIVolumeRequest) {
+    public CreateCachediSCSIVolumeResult createCachediSCSIVolume(CreateCachediSCSIVolumeRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCachediSCSIVolume(request);
+    }
+
+    @SdkInternalApi
+    final CreateCachediSCSIVolumeResult executeCreateCachediSCSIVolume(CreateCachediSCSIVolumeRequest createCachediSCSIVolumeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createCachediSCSIVolumeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -826,7 +880,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateCachediSCSIVolumeRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createCachediSCSIVolumeRequest));
+                request = new CreateCachediSCSIVolumeRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createCachediSCSIVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -850,7 +905,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * <p>
      * Creates a file share on an existing file gateway. In Storage Gateway, a file share is a file system mount point
      * backed by Amazon S3 cloud storage. Storage Gateway exposes file shares using a Network File System (NFS)
-     * interface.
+     * interface. This operation is only supported in file gateways.
      * </p>
      * 
      * @param createNFSFileShareRequest
@@ -867,7 +922,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateNFSFileShareResult createNFSFileShare(CreateNFSFileShareRequest createNFSFileShareRequest) {
+    public CreateNFSFileShareResult createNFSFileShare(CreateNFSFileShareRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateNFSFileShare(request);
+    }
+
+    @SdkInternalApi
+    final CreateNFSFileShareResult executeCreateNFSFileShare(CreateNFSFileShareRequest createNFSFileShareRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createNFSFileShareRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -878,7 +939,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateNFSFileShareRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createNFSFileShareRequest));
+                request = new CreateNFSFileShareRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createNFSFileShareRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -914,7 +975,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * provide description for the snapshot. When AWS Storage Gateway takes the snapshot of specified volume, the
      * snapshot and description appears in the AWS Storage Gateway Console. In response, AWS Storage Gateway returns you
      * a snapshot ID. You can use this snapshot ID to check the snapshot progress or later use it when you want to
-     * create a volume from a snapshot.
+     * create a volume from a snapshot. This operation is only supported in stored and cached volumes gateways.
      * </p>
      * <note>
      * <p>
@@ -957,7 +1018,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public CreateSnapshotResult createSnapshot(CreateSnapshotRequest createSnapshotRequest) {
+    public CreateSnapshotResult createSnapshot(CreateSnapshotRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSnapshot(request);
+    }
+
+    @SdkInternalApi
+    final CreateSnapshotResult executeCreateSnapshot(CreateSnapshotRequest createSnapshotRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createSnapshotRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -968,7 +1035,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateSnapshotRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSnapshotRequest));
+                request = new CreateSnapshotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -989,12 +1056,12 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Initiates a snapshot of a gateway from a volume recovery point. This operation is supported only for the
-     * gateway-cached volume architecture.
+     * Initiates a snapshot of a gateway from a volume recovery point. This operation is only supported in the cached
+     * volumes gateway architecture.
      * </p>
      * <p>
      * A volume recovery point is a point in time at which all data of the volume is consistent and from which you can
-     * create a snapshot. To get a list of volume recovery point for gateway-cached volumes, use
+     * create a snapshot. To get a list of volume recovery point for cached volumes gateway, use
      * <a>ListVolumeRecoveryPoints</a>.
      * </p>
      * <p>
@@ -1028,7 +1095,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateSnapshotFromVolumeRecoveryPointResult createSnapshotFromVolumeRecoveryPoint(
+    public CreateSnapshotFromVolumeRecoveryPointResult createSnapshotFromVolumeRecoveryPoint(CreateSnapshotFromVolumeRecoveryPointRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSnapshotFromVolumeRecoveryPoint(request);
+    }
+
+    @SdkInternalApi
+    final CreateSnapshotFromVolumeRecoveryPointResult executeCreateSnapshotFromVolumeRecoveryPoint(
             CreateSnapshotFromVolumeRecoveryPointRequest createSnapshotFromVolumeRecoveryPointRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createSnapshotFromVolumeRecoveryPointRequest);
@@ -1040,7 +1113,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateSnapshotFromVolumeRecoveryPointRequestMarshaller(protocolFactory).marshall(super
+                request = new CreateSnapshotFromVolumeRecoveryPointRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(createSnapshotFromVolumeRecoveryPointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1063,7 +1136,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Creates a volume on a specified gateway. This operation is supported only for the gateway-stored volume
+     * Creates a volume on a specified gateway. This operation is only supported in the stored volumes gateway
      * architecture.
      * </p>
      * <p>
@@ -1117,7 +1190,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateStorediSCSIVolumeResult createStorediSCSIVolume(CreateStorediSCSIVolumeRequest createStorediSCSIVolumeRequest) {
+    public CreateStorediSCSIVolumeResult createStorediSCSIVolume(CreateStorediSCSIVolumeRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateStorediSCSIVolume(request);
+    }
+
+    @SdkInternalApi
+    final CreateStorediSCSIVolumeResult executeCreateStorediSCSIVolume(CreateStorediSCSIVolumeRequest createStorediSCSIVolumeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createStorediSCSIVolumeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1128,7 +1207,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateStorediSCSIVolumeRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createStorediSCSIVolumeRequest));
+                request = new CreateStorediSCSIVolumeRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createStorediSCSIVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1151,6 +1231,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Creates a virtual tape by using your own barcode. You write data to the virtual tape and then archive the tape.
+     * This operation is only supported in tape gateways.
      * </p>
      * <note>
      * <p>
@@ -1173,7 +1254,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateTapeWithBarcodeResult createTapeWithBarcode(CreateTapeWithBarcodeRequest createTapeWithBarcodeRequest) {
+    public CreateTapeWithBarcodeResult createTapeWithBarcode(CreateTapeWithBarcodeRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTapeWithBarcode(request);
+    }
+
+    @SdkInternalApi
+    final CreateTapeWithBarcodeResult executeCreateTapeWithBarcode(CreateTapeWithBarcodeRequest createTapeWithBarcodeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createTapeWithBarcodeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1184,7 +1271,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateTapeWithBarcodeRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTapeWithBarcodeRequest));
+                request = new CreateTapeWithBarcodeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTapeWithBarcodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1206,7 +1293,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Creates one or more virtual tapes. You write data to the virtual tapes and then archive the tapes.
+     * Creates one or more virtual tapes. You write data to the virtual tapes and then archive the tapes. This operation
+     * is only supported in tape gateways.
      * </p>
      * <note>
      * <p>
@@ -1229,7 +1317,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      Documentation</a>
      */
     @Override
-    public CreateTapesResult createTapes(CreateTapesRequest createTapesRequest) {
+    public CreateTapesResult createTapes(CreateTapesRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTapes(request);
+    }
+
+    @SdkInternalApi
+    final CreateTapesResult executeCreateTapes(CreateTapesRequest createTapesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createTapesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1240,7 +1334,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateTapesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTapesRequest));
+                request = new CreateTapesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTapesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1286,7 +1380,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteBandwidthRateLimitResult deleteBandwidthRateLimit(DeleteBandwidthRateLimitRequest deleteBandwidthRateLimitRequest) {
+    public DeleteBandwidthRateLimitResult deleteBandwidthRateLimit(DeleteBandwidthRateLimitRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteBandwidthRateLimit(request);
+    }
+
+    @SdkInternalApi
+    final DeleteBandwidthRateLimitResult executeDeleteBandwidthRateLimit(DeleteBandwidthRateLimitRequest deleteBandwidthRateLimitRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteBandwidthRateLimitRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1297,7 +1397,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteBandwidthRateLimitRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBandwidthRateLimitRequest));
+                request = new DeleteBandwidthRateLimitRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteBandwidthRateLimitRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1348,7 +1449,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteChapCredentialsResult deleteChapCredentials(DeleteChapCredentialsRequest deleteChapCredentialsRequest) {
+    public DeleteChapCredentialsResult deleteChapCredentials(DeleteChapCredentialsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteChapCredentials(request);
+    }
+
+    @SdkInternalApi
+    final DeleteChapCredentialsResult executeDeleteChapCredentials(DeleteChapCredentialsRequest deleteChapCredentialsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteChapCredentialsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1359,7 +1466,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteChapCredentialsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteChapCredentialsRequest));
+                request = new DeleteChapCredentialsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteChapCredentialsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1381,7 +1488,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Deletes a file share from a file gateway.
+     * Deletes a file share from a file gateway. This operation is only supported in file gateways.
      * </p>
      * 
      * @param deleteFileShareRequest
@@ -1398,7 +1505,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public DeleteFileShareResult deleteFileShare(DeleteFileShareRequest deleteFileShareRequest) {
+    public DeleteFileShareResult deleteFileShare(DeleteFileShareRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteFileShare(request);
+    }
+
+    @SdkInternalApi
+    final DeleteFileShareResult executeDeleteFileShare(DeleteFileShareRequest deleteFileShareRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteFileShareRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1409,7 +1522,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteFileShareRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFileShareRequest));
+                request = new DeleteFileShareRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFileShareRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1463,7 +1576,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public DeleteGatewayResult deleteGateway(DeleteGatewayRequest deleteGatewayRequest) {
+    public DeleteGatewayResult deleteGateway(DeleteGatewayRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteGateway(request);
+    }
+
+    @SdkInternalApi
+    final DeleteGatewayResult executeDeleteGateway(DeleteGatewayRequest deleteGatewayRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteGatewayRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1474,7 +1593,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteGatewayRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteGatewayRequest));
+                request = new DeleteGatewayRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1524,7 +1643,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteSnapshotScheduleResult deleteSnapshotSchedule(DeleteSnapshotScheduleRequest deleteSnapshotScheduleRequest) {
+    public DeleteSnapshotScheduleResult deleteSnapshotSchedule(DeleteSnapshotScheduleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteSnapshotSchedule(request);
+    }
+
+    @SdkInternalApi
+    final DeleteSnapshotScheduleResult executeDeleteSnapshotSchedule(DeleteSnapshotScheduleRequest deleteSnapshotScheduleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteSnapshotScheduleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1535,7 +1660,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteSnapshotScheduleRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSnapshotScheduleRequest));
+                request = new DeleteSnapshotScheduleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSnapshotScheduleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1557,7 +1682,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Deletes the specified virtual tape.
+     * Deletes the specified virtual tape. This operation is only supported in tape gateways.
      * </p>
      * 
      * @param deleteTapeRequest
@@ -1574,7 +1699,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      Documentation</a>
      */
     @Override
-    public DeleteTapeResult deleteTape(DeleteTapeRequest deleteTapeRequest) {
+    public DeleteTapeResult deleteTape(DeleteTapeRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTape(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTapeResult executeDeleteTape(DeleteTapeRequest deleteTapeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteTapeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1585,7 +1716,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteTapeRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTapeRequest));
+                request = new DeleteTapeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTapeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1606,7 +1737,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Deletes the specified virtual tape from the virtual tape shelf (VTS).
+     * Deletes the specified virtual tape from the virtual tape shelf (VTS). This operation is only supported in tape
+     * gateways.
      * </p>
      * 
      * @param deleteTapeArchiveRequest
@@ -1623,7 +1755,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteTapeArchiveResult deleteTapeArchive(DeleteTapeArchiveRequest deleteTapeArchiveRequest) {
+    public DeleteTapeArchiveResult deleteTapeArchive(DeleteTapeArchiveRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTapeArchive(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTapeArchiveResult executeDeleteTapeArchive(DeleteTapeArchiveRequest deleteTapeArchiveRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteTapeArchiveRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1634,7 +1772,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteTapeArchiveRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTapeArchiveRequest));
+                request = new DeleteTapeArchiveRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTapeArchiveRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1656,8 +1794,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Deletes the specified gateway volume that you previously created using the <a>CreateCachediSCSIVolume</a> or
-     * <a>CreateStorediSCSIVolume</a> API. For gateway-stored volumes, the local disk that was configured as the storage
-     * volume is not deleted. You can reuse the local disk to create another storage volume.
+     * <a>CreateStorediSCSIVolume</a> API. For stored volumes gateways, the local disk that was configured as the
+     * storage volume is not deleted. You can reuse the local disk to create another storage volume.
      * </p>
      * <p>
      * Before you delete a gateway volume, make sure there are no iSCSI connections to the volume you are deleting. You
@@ -1684,7 +1822,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public DeleteVolumeResult deleteVolume(DeleteVolumeRequest deleteVolumeRequest) {
+    public DeleteVolumeResult deleteVolume(DeleteVolumeRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteVolume(request);
+    }
+
+    @SdkInternalApi
+    final DeleteVolumeResult executeDeleteVolume(DeleteVolumeRequest deleteVolumeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteVolumeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1695,7 +1839,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteVolumeRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteVolumeRequest));
+                request = new DeleteVolumeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1739,7 +1883,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeBandwidthRateLimitResult describeBandwidthRateLimit(DescribeBandwidthRateLimitRequest describeBandwidthRateLimitRequest) {
+    public DescribeBandwidthRateLimitResult describeBandwidthRateLimit(DescribeBandwidthRateLimitRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeBandwidthRateLimit(request);
+    }
+
+    @SdkInternalApi
+    final DescribeBandwidthRateLimitResult executeDescribeBandwidthRateLimit(DescribeBandwidthRateLimitRequest describeBandwidthRateLimitRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeBandwidthRateLimitRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1750,7 +1900,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeBandwidthRateLimitRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeBandwidthRateLimitRequest));
+                request = new DescribeBandwidthRateLimitRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeBandwidthRateLimitRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1772,7 +1923,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Returns information about the cache of a gateway. This operation is supported only for the gateway-cached volume
+     * Returns information about the cache of a gateway. This operation is only supported in the cached volumes gateway
      * architecture.
      * </p>
      * <p>
@@ -1793,7 +1944,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public DescribeCacheResult describeCache(DescribeCacheRequest describeCacheRequest) {
+    public DescribeCacheResult describeCache(DescribeCacheRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeCache(request);
+    }
+
+    @SdkInternalApi
+    final DescribeCacheResult executeDescribeCache(DescribeCacheRequest describeCacheRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeCacheRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1804,7 +1961,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeCacheRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeCacheRequest));
+                request = new DescribeCacheRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeCacheRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1825,8 +1982,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Returns a description of the gateway volumes specified in the request. This operation is supported only for the
-     * gateway-cached volume architecture.
+     * Returns a description of the gateway volumes specified in the request. This operation is only supported in the
+     * cached volumes gateway architecture.
      * </p>
      * <p>
      * The list of gateway volumes in the request must be from one gateway. In the response Amazon Storage Gateway
@@ -1846,7 +2003,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeCachediSCSIVolumesResult describeCachediSCSIVolumes(DescribeCachediSCSIVolumesRequest describeCachediSCSIVolumesRequest) {
+    public DescribeCachediSCSIVolumesResult describeCachediSCSIVolumes(DescribeCachediSCSIVolumesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeCachediSCSIVolumes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeCachediSCSIVolumesResult executeDescribeCachediSCSIVolumes(DescribeCachediSCSIVolumesRequest describeCachediSCSIVolumesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeCachediSCSIVolumesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1857,7 +2020,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeCachediSCSIVolumesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeCachediSCSIVolumesRequest));
+                request = new DescribeCachediSCSIVolumesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeCachediSCSIVolumesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1897,7 +2061,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeChapCredentialsResult describeChapCredentials(DescribeChapCredentialsRequest describeChapCredentialsRequest) {
+    public DescribeChapCredentialsResult describeChapCredentials(DescribeChapCredentialsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeChapCredentials(request);
+    }
+
+    @SdkInternalApi
+    final DescribeChapCredentialsResult executeDescribeChapCredentials(DescribeChapCredentialsRequest describeChapCredentialsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeChapCredentialsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1908,7 +2078,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeChapCredentialsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeChapCredentialsRequest));
+                request = new DescribeChapCredentialsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeChapCredentialsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1949,7 +2120,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeGatewayInformationResult describeGatewayInformation(DescribeGatewayInformationRequest describeGatewayInformationRequest) {
+    public DescribeGatewayInformationResult describeGatewayInformation(DescribeGatewayInformationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeGatewayInformation(request);
+    }
+
+    @SdkInternalApi
+    final DescribeGatewayInformationResult executeDescribeGatewayInformation(DescribeGatewayInformationRequest describeGatewayInformationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeGatewayInformationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1960,7 +2137,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeGatewayInformationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeGatewayInformationRequest));
+                request = new DescribeGatewayInformationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeGatewayInformationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2000,7 +2178,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeMaintenanceStartTimeResult describeMaintenanceStartTime(DescribeMaintenanceStartTimeRequest describeMaintenanceStartTimeRequest) {
+    public DescribeMaintenanceStartTimeResult describeMaintenanceStartTime(DescribeMaintenanceStartTimeRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeMaintenanceStartTime(request);
+    }
+
+    @SdkInternalApi
+    final DescribeMaintenanceStartTimeResult executeDescribeMaintenanceStartTime(DescribeMaintenanceStartTimeRequest describeMaintenanceStartTimeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeMaintenanceStartTimeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2011,7 +2195,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeMaintenanceStartTimeRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeMaintenanceStartTimeRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeMaintenanceStartTimeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -2034,7 +2218,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Gets a description for one or more file shares from a file gateway.
+     * Gets a description for one or more file shares from a file gateway. This operation is only supported in file
+     * gateways.
      * </p>
      * 
      * @param describeNFSFileSharesRequest
@@ -2051,7 +2236,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeNFSFileSharesResult describeNFSFileShares(DescribeNFSFileSharesRequest describeNFSFileSharesRequest) {
+    public DescribeNFSFileSharesResult describeNFSFileShares(DescribeNFSFileSharesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeNFSFileShares(request);
+    }
+
+    @SdkInternalApi
+    final DescribeNFSFileSharesResult executeDescribeNFSFileShares(DescribeNFSFileSharesRequest describeNFSFileSharesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeNFSFileSharesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2062,7 +2253,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeNFSFileSharesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeNFSFileSharesRequest));
+                request = new DescribeNFSFileSharesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeNFSFileSharesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2102,7 +2293,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeSnapshotScheduleResult describeSnapshotSchedule(DescribeSnapshotScheduleRequest describeSnapshotScheduleRequest) {
+    public DescribeSnapshotScheduleResult describeSnapshotSchedule(DescribeSnapshotScheduleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeSnapshotSchedule(request);
+    }
+
+    @SdkInternalApi
+    final DescribeSnapshotScheduleResult executeDescribeSnapshotSchedule(DescribeSnapshotScheduleRequest describeSnapshotScheduleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeSnapshotScheduleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2113,7 +2310,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeSnapshotScheduleRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeSnapshotScheduleRequest));
+                request = new DescribeSnapshotScheduleRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeSnapshotScheduleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2137,7 +2335,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * <p>
      * Returns the description of the gateway volumes specified in the request. The list of gateway volumes in the
      * request must be from one gateway. In the response Amazon Storage Gateway returns volume information sorted by
-     * volume ARNs.
+     * volume ARNs. This operation is only supported in stored volumes gateways.
      * </p>
      * 
      * @param describeStorediSCSIVolumesRequest
@@ -2154,7 +2352,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeStorediSCSIVolumesResult describeStorediSCSIVolumes(DescribeStorediSCSIVolumesRequest describeStorediSCSIVolumesRequest) {
+    public DescribeStorediSCSIVolumesResult describeStorediSCSIVolumes(DescribeStorediSCSIVolumesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeStorediSCSIVolumes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeStorediSCSIVolumesResult executeDescribeStorediSCSIVolumes(DescribeStorediSCSIVolumesRequest describeStorediSCSIVolumesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeStorediSCSIVolumesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2165,7 +2369,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeStorediSCSIVolumesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeStorediSCSIVolumesRequest));
+                request = new DescribeStorediSCSIVolumesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeStorediSCSIVolumesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2191,7 +2396,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * </p>
      * <p>
      * If a specific <code>TapeARN</code> is not specified, AWS Storage Gateway returns a description of all virtual
-     * tapes found in the VTS associated with your account.
+     * tapes found in the VTS associated with your account. This operation is only supported in tape gateways.
      * </p>
      * 
      * @param describeTapeArchivesRequest
@@ -2208,7 +2413,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeTapeArchivesResult describeTapeArchives(DescribeTapeArchivesRequest describeTapeArchivesRequest) {
+    public DescribeTapeArchivesResult describeTapeArchives(DescribeTapeArchivesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTapeArchives(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTapeArchivesResult executeDescribeTapeArchives(DescribeTapeArchivesRequest describeTapeArchivesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTapeArchivesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2219,7 +2430,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTapeArchivesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTapeArchivesRequest));
+                request = new DescribeTapeArchivesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTapeArchivesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2245,11 +2456,12 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Returns a list of virtual tape recovery points that are available for the specified gateway-VTL.
+     * Returns a list of virtual tape recovery points that are available for the specified tape gateway.
      * </p>
      * <p>
      * A recovery point is a point-in-time view of a virtual tape at which all the data on the virtual tape is
      * consistent. If your gateway crashes, virtual tapes that have recovery points can be recovered to a new gateway.
+     * This operation is only supported in tape gateways.
      * </p>
      * 
      * @param describeTapeRecoveryPointsRequest
@@ -2266,7 +2478,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeTapeRecoveryPointsResult describeTapeRecoveryPoints(DescribeTapeRecoveryPointsRequest describeTapeRecoveryPointsRequest) {
+    public DescribeTapeRecoveryPointsResult describeTapeRecoveryPoints(DescribeTapeRecoveryPointsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTapeRecoveryPoints(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTapeRecoveryPointsResult executeDescribeTapeRecoveryPoints(DescribeTapeRecoveryPointsRequest describeTapeRecoveryPointsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTapeRecoveryPointsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2277,7 +2495,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTapeRecoveryPointsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTapeRecoveryPointsRequest));
+                request = new DescribeTapeRecoveryPointsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeTapeRecoveryPointsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2300,7 +2519,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Returns a description of the specified Amazon Resource Name (ARN) of virtual tapes. If a <code>TapeARN</code> is
-     * not specified, returns a description of all virtual tapes associated with the specified gateway.
+     * not specified, returns a description of all virtual tapes associated with the specified gateway. This operation
+     * is only supported in tape gateways.
      * </p>
      * 
      * @param describeTapesRequest
@@ -2317,7 +2537,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public DescribeTapesResult describeTapes(DescribeTapesRequest describeTapesRequest) {
+    public DescribeTapesResult describeTapes(DescribeTapesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTapes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTapesResult executeDescribeTapes(DescribeTapesRequest describeTapesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTapesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2328,7 +2554,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTapesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTapesRequest));
+                request = new DescribeTapesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTapesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2349,8 +2575,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Returns information about the upload buffer of a gateway. This operation is supported for both the gateway-stored
-     * and gateway-cached volume architectures.
+     * Returns information about the upload buffer of a gateway. This operation is supported for both the stored volume
+     * and cached volumes gateway architectures.
      * </p>
      * <p>
      * The response includes disk IDs that are configured as upload buffer space, and it includes the amount of upload
@@ -2370,7 +2596,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeUploadBufferResult describeUploadBuffer(DescribeUploadBufferRequest describeUploadBufferRequest) {
+    public DescribeUploadBufferResult describeUploadBuffer(DescribeUploadBufferRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeUploadBuffer(request);
+    }
+
+    @SdkInternalApi
+    final DescribeUploadBufferResult executeDescribeUploadBuffer(DescribeUploadBufferRequest describeUploadBufferRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeUploadBufferRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2381,7 +2613,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeUploadBufferRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeUploadBufferRequest));
+                request = new DescribeUploadBufferRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeUploadBufferRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2402,11 +2634,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Returns a description of virtual tape library (VTL) devices for the specified gateway. In the response, AWS
+     * Returns a description of virtual tape library (VTL) devices for the specified tape gateway. In the response, AWS
      * Storage Gateway returns VTL device information.
      * </p>
      * <p>
-     * The list of VTL devices must be from one gateway.
+     * This operation is only supported in tape gateways.
      * </p>
      * 
      * @param describeVTLDevicesRequest
@@ -2423,7 +2655,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeVTLDevicesResult describeVTLDevices(DescribeVTLDevicesRequest describeVTLDevicesRequest) {
+    public DescribeVTLDevicesResult describeVTLDevices(DescribeVTLDevicesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeVTLDevices(request);
+    }
+
+    @SdkInternalApi
+    final DescribeVTLDevicesResult executeDescribeVTLDevices(DescribeVTLDevicesRequest describeVTLDevicesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeVTLDevicesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2434,7 +2672,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeVTLDevicesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeVTLDevicesRequest));
+                request = new DescribeVTLDevicesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeVTLDevicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2455,8 +2693,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Returns information about the working storage of a gateway. This operation is supported only for the
-     * gateway-stored volume architecture. This operation is deprecated in cached-volumes API version (20120630). Use
+     * Returns information about the working storage of a gateway. This operation is only supported in the stored
+     * volumes gateway architecture. This operation is deprecated in cached-volumes API version (20120630). Use
      * DescribeUploadBuffer instead.
      * </p>
      * <note>
@@ -2484,7 +2722,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeWorkingStorageResult describeWorkingStorage(DescribeWorkingStorageRequest describeWorkingStorageRequest) {
+    public DescribeWorkingStorageResult describeWorkingStorage(DescribeWorkingStorageRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeWorkingStorage(request);
+    }
+
+    @SdkInternalApi
+    final DescribeWorkingStorageResult executeDescribeWorkingStorage(DescribeWorkingStorageRequest describeWorkingStorageRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeWorkingStorageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2495,7 +2739,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeWorkingStorageRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeWorkingStorageRequest));
+                request = new DescribeWorkingStorageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeWorkingStorageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2521,7 +2765,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * disable the gateway so you can recover virtual tapes.
      * </p>
      * <p>
-     * Use this operation for a gateway-VTL that is not reachable or not functioning.
+     * Use this operation for a tape gateway that is not reachable or not functioning.
      * </p>
      * <important>
      * <p>
@@ -2543,7 +2787,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public DisableGatewayResult disableGateway(DisableGatewayRequest disableGatewayRequest) {
+    public DisableGatewayResult disableGateway(DisableGatewayRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisableGateway(request);
+    }
+
+    @SdkInternalApi
+    final DisableGatewayResult executeDisableGateway(DisableGatewayRequest disableGatewayRequest) {
 
         ExecutionContext executionContext = createExecutionContext(disableGatewayRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2554,7 +2804,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisableGatewayRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableGatewayRequest));
+                request = new DisableGatewayRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2576,7 +2826,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Gets a list of the file shares for a specific file gateway, or the list of file shares that belong to the calling
-     * user account.
+     * user account. This operation is only supported in file gateways.
      * </p>
      * 
      * @param listFileSharesRequest
@@ -2593,7 +2843,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public ListFileSharesResult listFileShares(ListFileSharesRequest listFileSharesRequest) {
+    public ListFileSharesResult listFileShares(ListFileSharesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListFileShares(request);
+    }
+
+    @SdkInternalApi
+    final ListFileSharesResult executeListFileShares(ListFileSharesRequest listFileSharesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listFileSharesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2604,7 +2860,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListFileSharesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFileSharesRequest));
+                request = new ListFileSharesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFileSharesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2663,7 +2919,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public ListGatewaysResult listGateways(ListGatewaysRequest listGatewaysRequest) {
+    public ListGatewaysResult listGateways(ListGatewaysRequest request) {
+        request = beforeClientExecution(request);
+        return executeListGateways(request);
+    }
+
+    @SdkInternalApi
+    final ListGatewaysResult executeListGateways(ListGatewaysRequest listGatewaysRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listGatewaysRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2674,7 +2936,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListGatewaysRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGatewaysRequest));
+                request = new ListGatewaysRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGatewaysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2724,7 +2986,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public ListLocalDisksResult listLocalDisks(ListLocalDisksRequest listLocalDisksRequest) {
+    public ListLocalDisksResult listLocalDisks(ListLocalDisksRequest request) {
+        request = beforeClientExecution(request);
+        return executeListLocalDisks(request);
+    }
+
+    @SdkInternalApi
+    final ListLocalDisksResult executeListLocalDisks(ListLocalDisksRequest listLocalDisksRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listLocalDisksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2735,7 +3003,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListLocalDisksRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listLocalDisksRequest));
+                request = new ListLocalDisksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listLocalDisksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2773,7 +3041,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2784,7 +3058,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTagsForResourceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2818,7 +3092,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * This operation supports pagination. By default, the operation returns a maximum of up to 100 tapes. You can
      * optionally specify the <code>Limit</code> parameter in the body to limit the number of tapes in the response. If
      * the number of tapes returned in the response is truncated, the response includes a <code>Marker</code> element
-     * that you can use in your subsequent request to retrieve the next set of tapes.
+     * that you can use in your subsequent request to retrieve the next set of tapes. This operation is only supported
+     * in tape gateways.
      * </p>
      * 
      * @param listTapesRequest
@@ -2851,7 +3126,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      Documentation</a>
      */
     @Override
-    public ListTapesResult listTapes(ListTapesRequest listTapesRequest) {
+    public ListTapesResult listTapes(ListTapesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTapes(request);
+    }
+
+    @SdkInternalApi
+    final ListTapesResult executeListTapes(ListTapesRequest listTapesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTapesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2862,7 +3143,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTapesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTapesRequest));
+                request = new ListTapesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTapesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2901,7 +3182,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListVolumeInitiatorsResult listVolumeInitiators(ListVolumeInitiatorsRequest listVolumeInitiatorsRequest) {
+    public ListVolumeInitiatorsResult listVolumeInitiators(ListVolumeInitiatorsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListVolumeInitiators(request);
+    }
+
+    @SdkInternalApi
+    final ListVolumeInitiatorsResult executeListVolumeInitiators(ListVolumeInitiatorsRequest listVolumeInitiatorsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listVolumeInitiatorsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2912,7 +3199,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListVolumeInitiatorsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listVolumeInitiatorsRequest));
+                request = new ListVolumeInitiatorsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listVolumeInitiatorsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2933,13 +3220,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Lists the recovery points for a specified gateway. This operation is supported only for the gateway-cached volume
+     * Lists the recovery points for a specified gateway. This operation is only supported in the cached volumes gateway
      * architecture.
      * </p>
      * <p>
-     * Each gateway-cached volume has one recovery point. A volume recovery point is a point in time at which all data
-     * of the volume is consistent and from which you can create a snapshot. To create a snapshot from a volume recovery
-     * point use the <a>CreateSnapshotFromVolumeRecoveryPoint</a> operation.
+     * Each cache volume has one recovery point. A volume recovery point is a point in time at which all data of the
+     * volume is consistent and from which you can create a snapshot or clone a new cached volume from a source volume.
+     * To create a snapshot from a volume recovery point use the <a>CreateSnapshotFromVolumeRecoveryPoint</a> operation.
      * </p>
      * 
      * @param listVolumeRecoveryPointsRequest
@@ -2955,7 +3242,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListVolumeRecoveryPointsResult listVolumeRecoveryPoints(ListVolumeRecoveryPointsRequest listVolumeRecoveryPointsRequest) {
+    public ListVolumeRecoveryPointsResult listVolumeRecoveryPoints(ListVolumeRecoveryPointsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListVolumeRecoveryPoints(request);
+    }
+
+    @SdkInternalApi
+    final ListVolumeRecoveryPointsResult executeListVolumeRecoveryPoints(ListVolumeRecoveryPointsRequest listVolumeRecoveryPointsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listVolumeRecoveryPointsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2966,7 +3259,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListVolumeRecoveryPointsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listVolumeRecoveryPointsRequest));
+                request = new ListVolumeRecoveryPointsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listVolumeRecoveryPointsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3024,7 +3318,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      Documentation</a>
      */
     @Override
-    public ListVolumesResult listVolumes(ListVolumesRequest listVolumesRequest) {
+    public ListVolumesResult listVolumes(ListVolumesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListVolumes(request);
+    }
+
+    @SdkInternalApi
+    final ListVolumesResult executeListVolumes(ListVolumesRequest listVolumesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listVolumesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3035,7 +3335,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListVolumesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listVolumesRequest));
+                request = new ListVolumesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listVolumesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3044,6 +3344,61 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<ListVolumesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListVolumesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Refreshes the cache for the specified file share. This operation finds objects in the Amazon S3 bucket that were
+     * added or removed since the gateway last listed the bucket's contents and cached the results.
+     * </p>
+     * 
+     * @param refreshCacheRequest
+     * @return Result of the RefreshCache operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.RefreshCache
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RefreshCache" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public RefreshCacheResult refreshCache(RefreshCacheRequest request) {
+        request = beforeClientExecution(request);
+        return executeRefreshCache(request);
+    }
+
+    @SdkInternalApi
+    final RefreshCacheResult executeRefreshCache(RefreshCacheRequest refreshCacheRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(refreshCacheRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RefreshCacheRequest> request = null;
+        Response<RefreshCacheResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RefreshCacheRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(refreshCacheRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RefreshCacheResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RefreshCacheResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3073,7 +3428,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RemoveTagsFromResourceResult removeTagsFromResource(RemoveTagsFromResourceRequest removeTagsFromResourceRequest) {
+    public RemoveTagsFromResourceResult removeTagsFromResource(RemoveTagsFromResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveTagsFromResource(request);
+    }
+
+    @SdkInternalApi
+    final RemoveTagsFromResourceResult executeRemoveTagsFromResource(RemoveTagsFromResourceRequest removeTagsFromResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(removeTagsFromResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3084,7 +3445,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RemoveTagsFromResourceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeTagsFromResourceRequest));
+                request = new RemoveTagsFromResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeTagsFromResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3137,7 +3498,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      Documentation</a>
      */
     @Override
-    public ResetCacheResult resetCache(ResetCacheRequest resetCacheRequest) {
+    public ResetCacheResult resetCache(ResetCacheRequest request) {
+        request = beforeClientExecution(request);
+        return executeResetCache(request);
+    }
+
+    @SdkInternalApi
+    final ResetCacheResult executeResetCache(ResetCacheRequest resetCacheRequest) {
 
         ExecutionContext executionContext = createExecutionContext(resetCacheRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3148,7 +3515,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ResetCacheRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(resetCacheRequest));
+                request = new ResetCacheRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(resetCacheRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3169,7 +3536,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Retrieves an archived virtual tape from the virtual tape shelf (VTS) to a gateway-VTL. Virtual tapes archived in
+     * Retrieves an archived virtual tape from the virtual tape shelf (VTS) to a tape gateway. Virtual tapes archived in
      * the VTS are not associated with any gateway. However after a tape is retrieved, it is associated with a gateway,
      * even though it is also listed in the VTS.
      * </p>
@@ -3192,7 +3559,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RetrieveTapeArchiveResult retrieveTapeArchive(RetrieveTapeArchiveRequest retrieveTapeArchiveRequest) {
+    public RetrieveTapeArchiveResult retrieveTapeArchive(RetrieveTapeArchiveRequest request) {
+        request = beforeClientExecution(request);
+        return executeRetrieveTapeArchive(request);
+    }
+
+    @SdkInternalApi
+    final RetrieveTapeArchiveResult executeRetrieveTapeArchive(RetrieveTapeArchiveRequest retrieveTapeArchiveRequest) {
 
         ExecutionContext executionContext = createExecutionContext(retrieveTapeArchiveRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3203,7 +3576,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RetrieveTapeArchiveRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(retrieveTapeArchiveRequest));
+                request = new RetrieveTapeArchiveRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(retrieveTapeArchiveRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3233,7 +3606,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * <note>
      * <p>
      * The virtual tape can be retrieved to only one gateway. The retrieved tape is read-only. The virtual tape can be
-     * retrieved to only a gateway-VTL. There is no charge for retrieving recovery points.
+     * retrieved to only a tape gateway. There is no charge for retrieving recovery points.
      * </p>
      * </note>
      * 
@@ -3251,7 +3624,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RetrieveTapeRecoveryPointResult retrieveTapeRecoveryPoint(RetrieveTapeRecoveryPointRequest retrieveTapeRecoveryPointRequest) {
+    public RetrieveTapeRecoveryPointResult retrieveTapeRecoveryPoint(RetrieveTapeRecoveryPointRequest request) {
+        request = beforeClientExecution(request);
+        return executeRetrieveTapeRecoveryPoint(request);
+    }
+
+    @SdkInternalApi
+    final RetrieveTapeRecoveryPointResult executeRetrieveTapeRecoveryPoint(RetrieveTapeRecoveryPointRequest retrieveTapeRecoveryPointRequest) {
 
         ExecutionContext executionContext = createExecutionContext(retrieveTapeRecoveryPointRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3262,7 +3641,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RetrieveTapeRecoveryPointRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(retrieveTapeRecoveryPointRequest));
+                request = new RetrieveTapeRecoveryPointRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(retrieveTapeRecoveryPointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3303,7 +3683,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public SetLocalConsolePasswordResult setLocalConsolePassword(SetLocalConsolePasswordRequest setLocalConsolePasswordRequest) {
+    public SetLocalConsolePasswordResult setLocalConsolePassword(SetLocalConsolePasswordRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetLocalConsolePassword(request);
+    }
+
+    @SdkInternalApi
+    final SetLocalConsolePasswordResult executeSetLocalConsolePassword(SetLocalConsolePasswordRequest setLocalConsolePasswordRequest) {
 
         ExecutionContext executionContext = createExecutionContext(setLocalConsolePasswordRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3314,7 +3700,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetLocalConsolePasswordRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(setLocalConsolePasswordRequest));
+                request = new SetLocalConsolePasswordRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(setLocalConsolePasswordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3380,7 +3767,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public ShutdownGatewayResult shutdownGateway(ShutdownGatewayRequest shutdownGatewayRequest) {
+    public ShutdownGatewayResult shutdownGateway(ShutdownGatewayRequest request) {
+        request = beforeClientExecution(request);
+        return executeShutdownGateway(request);
+    }
+
+    @SdkInternalApi
+    final ShutdownGatewayResult executeShutdownGateway(ShutdownGatewayRequest shutdownGatewayRequest) {
 
         ExecutionContext executionContext = createExecutionContext(shutdownGatewayRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3391,7 +3784,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ShutdownGatewayRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(shutdownGatewayRequest));
+                request = new ShutdownGatewayRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(shutdownGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3441,7 +3834,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public StartGatewayResult startGateway(StartGatewayRequest startGatewayRequest) {
+    public StartGatewayResult startGateway(StartGatewayRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartGateway(request);
+    }
+
+    @SdkInternalApi
+    final StartGatewayResult executeStartGateway(StartGatewayRequest startGatewayRequest) {
 
         ExecutionContext executionContext = createExecutionContext(startGatewayRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3452,7 +3851,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartGatewayRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(startGatewayRequest));
+                request = new StartGatewayRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3509,7 +3908,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateBandwidthRateLimitResult updateBandwidthRateLimit(UpdateBandwidthRateLimitRequest updateBandwidthRateLimitRequest) {
+    public UpdateBandwidthRateLimitResult updateBandwidthRateLimit(UpdateBandwidthRateLimitRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateBandwidthRateLimit(request);
+    }
+
+    @SdkInternalApi
+    final UpdateBandwidthRateLimitResult executeUpdateBandwidthRateLimit(UpdateBandwidthRateLimitRequest updateBandwidthRateLimitRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateBandwidthRateLimitRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3520,7 +3925,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateBandwidthRateLimitRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateBandwidthRateLimitRequest));
+                request = new UpdateBandwidthRateLimitRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateBandwidthRateLimitRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3587,7 +3993,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateChapCredentialsResult updateChapCredentials(UpdateChapCredentialsRequest updateChapCredentialsRequest) {
+    public UpdateChapCredentialsResult updateChapCredentials(UpdateChapCredentialsRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateChapCredentials(request);
+    }
+
+    @SdkInternalApi
+    final UpdateChapCredentialsResult executeUpdateChapCredentials(UpdateChapCredentialsRequest updateChapCredentialsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateChapCredentialsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3598,7 +4010,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateChapCredentialsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateChapCredentialsRequest));
+                request = new UpdateChapCredentialsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateChapCredentialsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3643,7 +4055,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateGatewayInformationResult updateGatewayInformation(UpdateGatewayInformationRequest updateGatewayInformationRequest) {
+    public UpdateGatewayInformationResult updateGatewayInformation(UpdateGatewayInformationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateGatewayInformation(request);
+    }
+
+    @SdkInternalApi
+    final UpdateGatewayInformationResult executeUpdateGatewayInformation(UpdateGatewayInformationRequest updateGatewayInformationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateGatewayInformationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3654,7 +4072,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateGatewayInformationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGatewayInformationRequest));
+                request = new UpdateGatewayInformationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateGatewayInformationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3710,7 +4129,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateGatewaySoftwareNowResult updateGatewaySoftwareNow(UpdateGatewaySoftwareNowRequest updateGatewaySoftwareNowRequest) {
+    public UpdateGatewaySoftwareNowResult updateGatewaySoftwareNow(UpdateGatewaySoftwareNowRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateGatewaySoftwareNow(request);
+    }
+
+    @SdkInternalApi
+    final UpdateGatewaySoftwareNowResult executeUpdateGatewaySoftwareNow(UpdateGatewaySoftwareNowRequest updateGatewaySoftwareNowRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateGatewaySoftwareNowRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3721,7 +4146,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateGatewaySoftwareNowRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGatewaySoftwareNowRequest));
+                request = new UpdateGatewaySoftwareNowRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateGatewaySoftwareNowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3777,7 +4203,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateMaintenanceStartTimeResult updateMaintenanceStartTime(UpdateMaintenanceStartTimeRequest updateMaintenanceStartTimeRequest) {
+    public UpdateMaintenanceStartTimeResult updateMaintenanceStartTime(UpdateMaintenanceStartTimeRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateMaintenanceStartTime(request);
+    }
+
+    @SdkInternalApi
+    final UpdateMaintenanceStartTimeResult executeUpdateMaintenanceStartTime(UpdateMaintenanceStartTimeRequest updateMaintenanceStartTimeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateMaintenanceStartTimeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3788,7 +4220,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateMaintenanceStartTimeRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateMaintenanceStartTimeRequest));
+                request = new UpdateMaintenanceStartTimeRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateMaintenanceStartTimeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3810,7 +4243,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Updates a file share.
+     * Updates a file share. This operation is only supported in file gateways.
      * </p>
      * <note>
      * <p>
@@ -3832,7 +4265,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateNFSFileShareResult updateNFSFileShare(UpdateNFSFileShareRequest updateNFSFileShareRequest) {
+    public UpdateNFSFileShareResult updateNFSFileShare(UpdateNFSFileShareRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateNFSFileShare(request);
+    }
+
+    @SdkInternalApi
+    final UpdateNFSFileShareResult executeUpdateNFSFileShare(UpdateNFSFileShareRequest updateNFSFileShareRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateNFSFileShareRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3843,7 +4282,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateNFSFileShareRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateNFSFileShareRequest));
+                request = new UpdateNFSFileShareRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateNFSFileShareRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3910,7 +4349,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateSnapshotScheduleResult updateSnapshotSchedule(UpdateSnapshotScheduleRequest updateSnapshotScheduleRequest) {
+    public UpdateSnapshotScheduleResult updateSnapshotSchedule(UpdateSnapshotScheduleRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateSnapshotSchedule(request);
+    }
+
+    @SdkInternalApi
+    final UpdateSnapshotScheduleResult executeUpdateSnapshotSchedule(UpdateSnapshotScheduleRequest updateSnapshotScheduleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateSnapshotScheduleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3921,7 +4366,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateSnapshotScheduleRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateSnapshotScheduleRequest));
+                request = new UpdateSnapshotScheduleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateSnapshotScheduleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3943,9 +4388,9 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Updates the type of medium changer in a gateway-VTL. When you activate a gateway-VTL, you select a medium changer
-     * type for the gateway-VTL. This operation enables you to select a different type of medium changer after a
-     * gateway-VTL is activated.
+     * Updates the type of medium changer in a tape gateway. When you activate a tape gateway, you select a medium
+     * changer type for the tape gateway. This operation enables you to select a different type of medium changer after
+     * a tape gateway is activated. This operation is only supported in tape gateways.
      * </p>
      * 
      * @param updateVTLDeviceTypeRequest
@@ -3961,7 +4406,13 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateVTLDeviceTypeResult updateVTLDeviceType(UpdateVTLDeviceTypeRequest updateVTLDeviceTypeRequest) {
+    public UpdateVTLDeviceTypeResult updateVTLDeviceType(UpdateVTLDeviceTypeRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateVTLDeviceType(request);
+    }
+
+    @SdkInternalApi
+    final UpdateVTLDeviceTypeResult executeUpdateVTLDeviceType(UpdateVTLDeviceTypeRequest updateVTLDeviceTypeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateVTLDeviceTypeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3972,7 +4423,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateVTLDeviceTypeRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateVTLDeviceTypeRequest));
+                request = new UpdateVTLDeviceTypeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateVTLDeviceTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

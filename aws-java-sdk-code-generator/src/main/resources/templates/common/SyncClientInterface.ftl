@@ -34,6 +34,7 @@ public interface ${metadata.syncInterface} {
      */
     String ENDPOINT_PREFIX = "${metadata.endpointPrefix}";
 
+<#if customizationConfig.emitClientMutationMethods() >
     /**
      * Overrides the default endpoint for this client<#if metadata.defaultEndpoint?has_content> ("${metadata.defaultEndpoint}")</#if>.
      * Callers can use this method to control which AWS region they want to work with.
@@ -63,12 +64,14 @@ public interface ${metadata.syncInterface} {
      */
     @Deprecated
     void setEndpoint(String endpoint);
-
+</#if>
   <#if shapes.Region?has_content>
     <#assign regionClassType="com.amazonaws.regions.Region" />
   <#else>
     <#assign regionClassType="Region" />
   </#if>
+
+<#if customizationConfig.emitClientMutationMethods() >
     /**
      * An alternative to {@link ${metadata.syncInterface}#setEndpoint(String)}, sets the
      * regional endpoint for this client's service calls. Callers can use this
@@ -96,6 +99,7 @@ public interface ${metadata.syncInterface} {
      */
     @Deprecated
     void setRegion(${regionClassType} region);
+</#if>
 
   <#list operations?values as operationModel>
     <@InterfaceMethodForOperationMacro.content metadata operationModel />

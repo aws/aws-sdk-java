@@ -133,7 +133,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private String dBClusterParameterGroupName;
     /**
      * <p>
-     * A lst of VPC security groups that the DB cluster will belong to.
+     * A list of VPC security groups that the DB cluster will belong to.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIds;
@@ -232,6 +232,16 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String preferredMaintenanceWindow;
+    /**
+     * <p>
+     * A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to database
+     * accounts, and otherwise false.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     */
+    private Boolean enableIAMDatabaseAuthentication;
 
     /**
      * <p>
@@ -910,10 +920,10 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A lst of VPC security groups that the DB cluster will belong to.
+     * A list of VPC security groups that the DB cluster will belong to.
      * </p>
      * 
-     * @return A lst of VPC security groups that the DB cluster will belong to.
+     * @return A list of VPC security groups that the DB cluster will belong to.
      */
 
     public java.util.List<String> getVpcSecurityGroupIds() {
@@ -925,11 +935,11 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A lst of VPC security groups that the DB cluster will belong to.
+     * A list of VPC security groups that the DB cluster will belong to.
      * </p>
      * 
      * @param vpcSecurityGroupIds
-     *        A lst of VPC security groups that the DB cluster will belong to.
+     *        A list of VPC security groups that the DB cluster will belong to.
      */
 
     public void setVpcSecurityGroupIds(java.util.Collection<String> vpcSecurityGroupIds) {
@@ -943,7 +953,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A lst of VPC security groups that the DB cluster will belong to.
+     * A list of VPC security groups that the DB cluster will belong to.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -952,7 +962,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param vpcSecurityGroupIds
-     *        A lst of VPC security groups that the DB cluster will belong to.
+     *        A list of VPC security groups that the DB cluster will belong to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -968,11 +978,11 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A lst of VPC security groups that the DB cluster will belong to.
+     * A list of VPC security groups that the DB cluster will belong to.
      * </p>
      * 
      * @param vpcSecurityGroupIds
-     *        A lst of VPC security groups that the DB cluster will belong to.
+     *        A list of VPC security groups that the DB cluster will belong to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1560,6 +1570,86 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to database
+     * accounts, and otherwise false.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @param enableIAMDatabaseAuthentication
+     *        A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to
+     *        database accounts, and otherwise false.</p>
+     *        <p>
+     *        Default: <code>false</code>
+     */
+
+    public void setEnableIAMDatabaseAuthentication(Boolean enableIAMDatabaseAuthentication) {
+        this.enableIAMDatabaseAuthentication = enableIAMDatabaseAuthentication;
+    }
+
+    /**
+     * <p>
+     * A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to database
+     * accounts, and otherwise false.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @return A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to
+     *         database accounts, and otherwise false.</p>
+     *         <p>
+     *         Default: <code>false</code>
+     */
+
+    public Boolean getEnableIAMDatabaseAuthentication() {
+        return this.enableIAMDatabaseAuthentication;
+    }
+
+    /**
+     * <p>
+     * A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to database
+     * accounts, and otherwise false.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @param enableIAMDatabaseAuthentication
+     *        A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to
+     *        database accounts, and otherwise false.</p>
+     *        <p>
+     *        Default: <code>false</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyDBClusterRequest withEnableIAMDatabaseAuthentication(Boolean enableIAMDatabaseAuthentication) {
+        setEnableIAMDatabaseAuthentication(enableIAMDatabaseAuthentication);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to database
+     * accounts, and otherwise false.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @return A Boolean value that is true to enable mapping of AWS Identity and Access Management (IAM) accounts to
+     *         database accounts, and otherwise false.</p>
+     *         <p>
+     *         Default: <code>false</code>
+     */
+
+    public Boolean isEnableIAMDatabaseAuthentication() {
+        return this.enableIAMDatabaseAuthentication;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1591,7 +1681,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         if (getPreferredBackupWindow() != null)
             sb.append("PreferredBackupWindow: ").append(getPreferredBackupWindow()).append(",");
         if (getPreferredMaintenanceWindow() != null)
-            sb.append("PreferredMaintenanceWindow: ").append(getPreferredMaintenanceWindow());
+            sb.append("PreferredMaintenanceWindow: ").append(getPreferredMaintenanceWindow()).append(",");
+        if (getEnableIAMDatabaseAuthentication() != null)
+            sb.append("EnableIAMDatabaseAuthentication: ").append(getEnableIAMDatabaseAuthentication());
         sb.append("}");
         return sb.toString();
     }
@@ -1650,6 +1742,11 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getPreferredMaintenanceWindow() != null && other.getPreferredMaintenanceWindow().equals(this.getPreferredMaintenanceWindow()) == false)
             return false;
+        if (other.getEnableIAMDatabaseAuthentication() == null ^ this.getEnableIAMDatabaseAuthentication() == null)
+            return false;
+        if (other.getEnableIAMDatabaseAuthentication() != null
+                && other.getEnableIAMDatabaseAuthentication().equals(this.getEnableIAMDatabaseAuthentication()) == false)
+            return false;
         return true;
     }
 
@@ -1669,6 +1766,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getOptionGroupName() == null) ? 0 : getOptionGroupName().hashCode());
         hashCode = prime * hashCode + ((getPreferredBackupWindow() == null) ? 0 : getPreferredBackupWindow().hashCode());
         hashCode = prime * hashCode + ((getPreferredMaintenanceWindow() == null) ? 0 : getPreferredMaintenanceWindow().hashCode());
+        hashCode = prime * hashCode + ((getEnableIAMDatabaseAuthentication() == null) ? 0 : getEnableIAMDatabaseAuthentication().hashCode());
         return hashCode;
     }
 

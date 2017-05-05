@@ -232,6 +232,10 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
         this.executorService = executorService;
     }
 
+    public static AmazonLightsailAsyncClientBuilder asyncBuilder() {
+        return AmazonLightsailAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon Lightsail using the specified
      * parameters.
@@ -262,14 +266,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<AllocateStaticIpResult> allocateStaticIpAsync(final AllocateStaticIpRequest request,
             final com.amazonaws.handlers.AsyncHandler<AllocateStaticIpRequest, AllocateStaticIpResult> asyncHandler) {
+        final AllocateStaticIpRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AllocateStaticIpResult>() {
             @Override
             public AllocateStaticIpResult call() throws Exception {
-                AllocateStaticIpResult result;
+                AllocateStaticIpResult result = null;
 
                 try {
-                    result = allocateStaticIp(request);
+                    result = executeAllocateStaticIp(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -278,7 +283,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -294,14 +299,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<AttachStaticIpResult> attachStaticIpAsync(final AttachStaticIpRequest request,
             final com.amazonaws.handlers.AsyncHandler<AttachStaticIpRequest, AttachStaticIpResult> asyncHandler) {
+        final AttachStaticIpRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AttachStaticIpResult>() {
             @Override
             public AttachStaticIpResult call() throws Exception {
-                AttachStaticIpResult result;
+                AttachStaticIpResult result = null;
 
                 try {
-                    result = attachStaticIp(request);
+                    result = executeAttachStaticIp(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -310,7 +316,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -326,14 +332,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<CloseInstancePublicPortsResult> closeInstancePublicPortsAsync(final CloseInstancePublicPortsRequest request,
             final com.amazonaws.handlers.AsyncHandler<CloseInstancePublicPortsRequest, CloseInstancePublicPortsResult> asyncHandler) {
+        final CloseInstancePublicPortsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CloseInstancePublicPortsResult>() {
             @Override
             public CloseInstancePublicPortsResult call() throws Exception {
-                CloseInstancePublicPortsResult result;
+                CloseInstancePublicPortsResult result = null;
 
                 try {
-                    result = closeInstancePublicPorts(request);
+                    result = executeCloseInstancePublicPorts(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -342,7 +349,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -358,14 +365,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<CreateDomainResult> createDomainAsync(final CreateDomainRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateDomainRequest, CreateDomainResult> asyncHandler) {
+        final CreateDomainRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateDomainResult>() {
             @Override
             public CreateDomainResult call() throws Exception {
-                CreateDomainResult result;
+                CreateDomainResult result = null;
 
                 try {
-                    result = createDomain(request);
+                    result = executeCreateDomain(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -374,7 +382,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -390,14 +398,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<CreateDomainEntryResult> createDomainEntryAsync(final CreateDomainEntryRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateDomainEntryRequest, CreateDomainEntryResult> asyncHandler) {
+        final CreateDomainEntryRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateDomainEntryResult>() {
             @Override
             public CreateDomainEntryResult call() throws Exception {
-                CreateDomainEntryResult result;
+                CreateDomainEntryResult result = null;
 
                 try {
-                    result = createDomainEntry(request);
+                    result = executeCreateDomainEntry(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -406,7 +415,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -422,14 +431,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<CreateInstanceSnapshotResult> createInstanceSnapshotAsync(final CreateInstanceSnapshotRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateInstanceSnapshotRequest, CreateInstanceSnapshotResult> asyncHandler) {
+        final CreateInstanceSnapshotRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateInstanceSnapshotResult>() {
             @Override
             public CreateInstanceSnapshotResult call() throws Exception {
-                CreateInstanceSnapshotResult result;
+                CreateInstanceSnapshotResult result = null;
 
                 try {
-                    result = createInstanceSnapshot(request);
+                    result = executeCreateInstanceSnapshot(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -438,7 +448,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -454,14 +464,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<CreateInstancesResult> createInstancesAsync(final CreateInstancesRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateInstancesRequest, CreateInstancesResult> asyncHandler) {
+        final CreateInstancesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateInstancesResult>() {
             @Override
             public CreateInstancesResult call() throws Exception {
-                CreateInstancesResult result;
+                CreateInstancesResult result = null;
 
                 try {
-                    result = createInstances(request);
+                    result = executeCreateInstances(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -470,7 +481,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -486,14 +497,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<CreateInstancesFromSnapshotResult> createInstancesFromSnapshotAsync(final CreateInstancesFromSnapshotRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateInstancesFromSnapshotRequest, CreateInstancesFromSnapshotResult> asyncHandler) {
+        final CreateInstancesFromSnapshotRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateInstancesFromSnapshotResult>() {
             @Override
             public CreateInstancesFromSnapshotResult call() throws Exception {
-                CreateInstancesFromSnapshotResult result;
+                CreateInstancesFromSnapshotResult result = null;
 
                 try {
-                    result = createInstancesFromSnapshot(request);
+                    result = executeCreateInstancesFromSnapshot(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -502,7 +514,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -518,14 +530,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<CreateKeyPairResult> createKeyPairAsync(final CreateKeyPairRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateKeyPairRequest, CreateKeyPairResult> asyncHandler) {
+        final CreateKeyPairRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateKeyPairResult>() {
             @Override
             public CreateKeyPairResult call() throws Exception {
-                CreateKeyPairResult result;
+                CreateKeyPairResult result = null;
 
                 try {
-                    result = createKeyPair(request);
+                    result = executeCreateKeyPair(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -534,7 +547,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -550,14 +563,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<DeleteDomainResult> deleteDomainAsync(final DeleteDomainRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteDomainRequest, DeleteDomainResult> asyncHandler) {
+        final DeleteDomainRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteDomainResult>() {
             @Override
             public DeleteDomainResult call() throws Exception {
-                DeleteDomainResult result;
+                DeleteDomainResult result = null;
 
                 try {
-                    result = deleteDomain(request);
+                    result = executeDeleteDomain(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -566,7 +580,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -582,14 +596,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<DeleteDomainEntryResult> deleteDomainEntryAsync(final DeleteDomainEntryRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteDomainEntryRequest, DeleteDomainEntryResult> asyncHandler) {
+        final DeleteDomainEntryRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteDomainEntryResult>() {
             @Override
             public DeleteDomainEntryResult call() throws Exception {
-                DeleteDomainEntryResult result;
+                DeleteDomainEntryResult result = null;
 
                 try {
-                    result = deleteDomainEntry(request);
+                    result = executeDeleteDomainEntry(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -598,7 +613,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -614,14 +629,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<DeleteInstanceResult> deleteInstanceAsync(final DeleteInstanceRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteInstanceRequest, DeleteInstanceResult> asyncHandler) {
+        final DeleteInstanceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteInstanceResult>() {
             @Override
             public DeleteInstanceResult call() throws Exception {
-                DeleteInstanceResult result;
+                DeleteInstanceResult result = null;
 
                 try {
-                    result = deleteInstance(request);
+                    result = executeDeleteInstance(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -630,7 +646,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -646,14 +662,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<DeleteInstanceSnapshotResult> deleteInstanceSnapshotAsync(final DeleteInstanceSnapshotRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteInstanceSnapshotRequest, DeleteInstanceSnapshotResult> asyncHandler) {
+        final DeleteInstanceSnapshotRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteInstanceSnapshotResult>() {
             @Override
             public DeleteInstanceSnapshotResult call() throws Exception {
-                DeleteInstanceSnapshotResult result;
+                DeleteInstanceSnapshotResult result = null;
 
                 try {
-                    result = deleteInstanceSnapshot(request);
+                    result = executeDeleteInstanceSnapshot(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -662,7 +679,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -678,14 +695,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<DeleteKeyPairResult> deleteKeyPairAsync(final DeleteKeyPairRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteKeyPairRequest, DeleteKeyPairResult> asyncHandler) {
+        final DeleteKeyPairRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteKeyPairResult>() {
             @Override
             public DeleteKeyPairResult call() throws Exception {
-                DeleteKeyPairResult result;
+                DeleteKeyPairResult result = null;
 
                 try {
-                    result = deleteKeyPair(request);
+                    result = executeDeleteKeyPair(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -694,7 +712,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -710,14 +728,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<DetachStaticIpResult> detachStaticIpAsync(final DetachStaticIpRequest request,
             final com.amazonaws.handlers.AsyncHandler<DetachStaticIpRequest, DetachStaticIpResult> asyncHandler) {
+        final DetachStaticIpRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DetachStaticIpResult>() {
             @Override
             public DetachStaticIpResult call() throws Exception {
-                DetachStaticIpResult result;
+                DetachStaticIpResult result = null;
 
                 try {
-                    result = detachStaticIp(request);
+                    result = executeDetachStaticIp(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -726,7 +745,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -742,14 +761,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<DownloadDefaultKeyPairResult> downloadDefaultKeyPairAsync(final DownloadDefaultKeyPairRequest request,
             final com.amazonaws.handlers.AsyncHandler<DownloadDefaultKeyPairRequest, DownloadDefaultKeyPairResult> asyncHandler) {
+        final DownloadDefaultKeyPairRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DownloadDefaultKeyPairResult>() {
             @Override
             public DownloadDefaultKeyPairResult call() throws Exception {
-                DownloadDefaultKeyPairResult result;
+                DownloadDefaultKeyPairResult result = null;
 
                 try {
-                    result = downloadDefaultKeyPair(request);
+                    result = executeDownloadDefaultKeyPair(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -758,7 +778,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -774,14 +794,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<GetActiveNamesResult> getActiveNamesAsync(final GetActiveNamesRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetActiveNamesRequest, GetActiveNamesResult> asyncHandler) {
+        final GetActiveNamesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetActiveNamesResult>() {
             @Override
             public GetActiveNamesResult call() throws Exception {
-                GetActiveNamesResult result;
+                GetActiveNamesResult result = null;
 
                 try {
-                    result = getActiveNames(request);
+                    result = executeGetActiveNames(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -790,7 +811,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -806,14 +827,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<GetBlueprintsResult> getBlueprintsAsync(final GetBlueprintsRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetBlueprintsRequest, GetBlueprintsResult> asyncHandler) {
+        final GetBlueprintsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetBlueprintsResult>() {
             @Override
             public GetBlueprintsResult call() throws Exception {
-                GetBlueprintsResult result;
+                GetBlueprintsResult result = null;
 
                 try {
-                    result = getBlueprints(request);
+                    result = executeGetBlueprints(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -822,7 +844,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -838,14 +860,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<GetBundlesResult> getBundlesAsync(final GetBundlesRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetBundlesRequest, GetBundlesResult> asyncHandler) {
+        final GetBundlesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetBundlesResult>() {
             @Override
             public GetBundlesResult call() throws Exception {
-                GetBundlesResult result;
+                GetBundlesResult result = null;
 
                 try {
-                    result = getBundles(request);
+                    result = executeGetBundles(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -854,7 +877,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -870,14 +893,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<GetDomainResult> getDomainAsync(final GetDomainRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetDomainRequest, GetDomainResult> asyncHandler) {
+        final GetDomainRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetDomainResult>() {
             @Override
             public GetDomainResult call() throws Exception {
-                GetDomainResult result;
+                GetDomainResult result = null;
 
                 try {
-                    result = getDomain(request);
+                    result = executeGetDomain(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -886,7 +910,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -902,14 +926,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<GetDomainsResult> getDomainsAsync(final GetDomainsRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetDomainsRequest, GetDomainsResult> asyncHandler) {
+        final GetDomainsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetDomainsResult>() {
             @Override
             public GetDomainsResult call() throws Exception {
-                GetDomainsResult result;
+                GetDomainsResult result = null;
 
                 try {
-                    result = getDomains(request);
+                    result = executeGetDomains(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -918,7 +943,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -934,14 +959,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<GetInstanceResult> getInstanceAsync(final GetInstanceRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetInstanceRequest, GetInstanceResult> asyncHandler) {
+        final GetInstanceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetInstanceResult>() {
             @Override
             public GetInstanceResult call() throws Exception {
-                GetInstanceResult result;
+                GetInstanceResult result = null;
 
                 try {
-                    result = getInstance(request);
+                    result = executeGetInstance(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -950,7 +976,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -966,14 +992,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<GetInstanceAccessDetailsResult> getInstanceAccessDetailsAsync(final GetInstanceAccessDetailsRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetInstanceAccessDetailsRequest, GetInstanceAccessDetailsResult> asyncHandler) {
+        final GetInstanceAccessDetailsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetInstanceAccessDetailsResult>() {
             @Override
             public GetInstanceAccessDetailsResult call() throws Exception {
-                GetInstanceAccessDetailsResult result;
+                GetInstanceAccessDetailsResult result = null;
 
                 try {
-                    result = getInstanceAccessDetails(request);
+                    result = executeGetInstanceAccessDetails(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -982,7 +1009,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -998,14 +1025,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<GetInstanceMetricDataResult> getInstanceMetricDataAsync(final GetInstanceMetricDataRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetInstanceMetricDataRequest, GetInstanceMetricDataResult> asyncHandler) {
+        final GetInstanceMetricDataRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetInstanceMetricDataResult>() {
             @Override
             public GetInstanceMetricDataResult call() throws Exception {
-                GetInstanceMetricDataResult result;
+                GetInstanceMetricDataResult result = null;
 
                 try {
-                    result = getInstanceMetricData(request);
+                    result = executeGetInstanceMetricData(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1014,7 +1042,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1030,14 +1058,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<GetInstancePortStatesResult> getInstancePortStatesAsync(final GetInstancePortStatesRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetInstancePortStatesRequest, GetInstancePortStatesResult> asyncHandler) {
+        final GetInstancePortStatesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetInstancePortStatesResult>() {
             @Override
             public GetInstancePortStatesResult call() throws Exception {
-                GetInstancePortStatesResult result;
+                GetInstancePortStatesResult result = null;
 
                 try {
-                    result = getInstancePortStates(request);
+                    result = executeGetInstancePortStates(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1046,7 +1075,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1062,14 +1091,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<GetInstanceSnapshotResult> getInstanceSnapshotAsync(final GetInstanceSnapshotRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetInstanceSnapshotRequest, GetInstanceSnapshotResult> asyncHandler) {
+        final GetInstanceSnapshotRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetInstanceSnapshotResult>() {
             @Override
             public GetInstanceSnapshotResult call() throws Exception {
-                GetInstanceSnapshotResult result;
+                GetInstanceSnapshotResult result = null;
 
                 try {
-                    result = getInstanceSnapshot(request);
+                    result = executeGetInstanceSnapshot(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1078,7 +1108,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1094,14 +1124,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<GetInstanceSnapshotsResult> getInstanceSnapshotsAsync(final GetInstanceSnapshotsRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetInstanceSnapshotsRequest, GetInstanceSnapshotsResult> asyncHandler) {
+        final GetInstanceSnapshotsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetInstanceSnapshotsResult>() {
             @Override
             public GetInstanceSnapshotsResult call() throws Exception {
-                GetInstanceSnapshotsResult result;
+                GetInstanceSnapshotsResult result = null;
 
                 try {
-                    result = getInstanceSnapshots(request);
+                    result = executeGetInstanceSnapshots(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1110,7 +1141,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1126,14 +1157,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<GetInstanceStateResult> getInstanceStateAsync(final GetInstanceStateRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetInstanceStateRequest, GetInstanceStateResult> asyncHandler) {
+        final GetInstanceStateRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetInstanceStateResult>() {
             @Override
             public GetInstanceStateResult call() throws Exception {
-                GetInstanceStateResult result;
+                GetInstanceStateResult result = null;
 
                 try {
-                    result = getInstanceState(request);
+                    result = executeGetInstanceState(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1142,7 +1174,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1158,14 +1190,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<GetInstancesResult> getInstancesAsync(final GetInstancesRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetInstancesRequest, GetInstancesResult> asyncHandler) {
+        final GetInstancesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetInstancesResult>() {
             @Override
             public GetInstancesResult call() throws Exception {
-                GetInstancesResult result;
+                GetInstancesResult result = null;
 
                 try {
-                    result = getInstances(request);
+                    result = executeGetInstances(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1174,7 +1207,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1190,14 +1223,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<GetKeyPairResult> getKeyPairAsync(final GetKeyPairRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetKeyPairRequest, GetKeyPairResult> asyncHandler) {
+        final GetKeyPairRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetKeyPairResult>() {
             @Override
             public GetKeyPairResult call() throws Exception {
-                GetKeyPairResult result;
+                GetKeyPairResult result = null;
 
                 try {
-                    result = getKeyPair(request);
+                    result = executeGetKeyPair(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1206,7 +1240,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1222,14 +1256,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<GetKeyPairsResult> getKeyPairsAsync(final GetKeyPairsRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetKeyPairsRequest, GetKeyPairsResult> asyncHandler) {
+        final GetKeyPairsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetKeyPairsResult>() {
             @Override
             public GetKeyPairsResult call() throws Exception {
-                GetKeyPairsResult result;
+                GetKeyPairsResult result = null;
 
                 try {
-                    result = getKeyPairs(request);
+                    result = executeGetKeyPairs(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1238,7 +1273,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1254,14 +1289,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<GetOperationResult> getOperationAsync(final GetOperationRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetOperationRequest, GetOperationResult> asyncHandler) {
+        final GetOperationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetOperationResult>() {
             @Override
             public GetOperationResult call() throws Exception {
-                GetOperationResult result;
+                GetOperationResult result = null;
 
                 try {
-                    result = getOperation(request);
+                    result = executeGetOperation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1270,7 +1306,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1286,14 +1322,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<GetOperationsResult> getOperationsAsync(final GetOperationsRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetOperationsRequest, GetOperationsResult> asyncHandler) {
+        final GetOperationsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetOperationsResult>() {
             @Override
             public GetOperationsResult call() throws Exception {
-                GetOperationsResult result;
+                GetOperationsResult result = null;
 
                 try {
-                    result = getOperations(request);
+                    result = executeGetOperations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1302,7 +1339,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1318,14 +1355,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<GetOperationsForResourceResult> getOperationsForResourceAsync(final GetOperationsForResourceRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetOperationsForResourceRequest, GetOperationsForResourceResult> asyncHandler) {
+        final GetOperationsForResourceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetOperationsForResourceResult>() {
             @Override
             public GetOperationsForResourceResult call() throws Exception {
-                GetOperationsForResourceResult result;
+                GetOperationsForResourceResult result = null;
 
                 try {
-                    result = getOperationsForResource(request);
+                    result = executeGetOperationsForResource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1334,7 +1372,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1350,14 +1388,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<GetRegionsResult> getRegionsAsync(final GetRegionsRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetRegionsRequest, GetRegionsResult> asyncHandler) {
+        final GetRegionsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetRegionsResult>() {
             @Override
             public GetRegionsResult call() throws Exception {
-                GetRegionsResult result;
+                GetRegionsResult result = null;
 
                 try {
-                    result = getRegions(request);
+                    result = executeGetRegions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1366,7 +1405,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1382,14 +1421,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<GetStaticIpResult> getStaticIpAsync(final GetStaticIpRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetStaticIpRequest, GetStaticIpResult> asyncHandler) {
+        final GetStaticIpRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetStaticIpResult>() {
             @Override
             public GetStaticIpResult call() throws Exception {
-                GetStaticIpResult result;
+                GetStaticIpResult result = null;
 
                 try {
-                    result = getStaticIp(request);
+                    result = executeGetStaticIp(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1398,7 +1438,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1414,14 +1454,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<GetStaticIpsResult> getStaticIpsAsync(final GetStaticIpsRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetStaticIpsRequest, GetStaticIpsResult> asyncHandler) {
+        final GetStaticIpsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetStaticIpsResult>() {
             @Override
             public GetStaticIpsResult call() throws Exception {
-                GetStaticIpsResult result;
+                GetStaticIpsResult result = null;
 
                 try {
-                    result = getStaticIps(request);
+                    result = executeGetStaticIps(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1430,7 +1471,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1446,14 +1487,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<ImportKeyPairResult> importKeyPairAsync(final ImportKeyPairRequest request,
             final com.amazonaws.handlers.AsyncHandler<ImportKeyPairRequest, ImportKeyPairResult> asyncHandler) {
+        final ImportKeyPairRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ImportKeyPairResult>() {
             @Override
             public ImportKeyPairResult call() throws Exception {
-                ImportKeyPairResult result;
+                ImportKeyPairResult result = null;
 
                 try {
-                    result = importKeyPair(request);
+                    result = executeImportKeyPair(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1462,7 +1504,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1478,14 +1520,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<IsVpcPeeredResult> isVpcPeeredAsync(final IsVpcPeeredRequest request,
             final com.amazonaws.handlers.AsyncHandler<IsVpcPeeredRequest, IsVpcPeeredResult> asyncHandler) {
+        final IsVpcPeeredRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<IsVpcPeeredResult>() {
             @Override
             public IsVpcPeeredResult call() throws Exception {
-                IsVpcPeeredResult result;
+                IsVpcPeeredResult result = null;
 
                 try {
-                    result = isVpcPeered(request);
+                    result = executeIsVpcPeered(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1494,7 +1537,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1510,14 +1553,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<OpenInstancePublicPortsResult> openInstancePublicPortsAsync(final OpenInstancePublicPortsRequest request,
             final com.amazonaws.handlers.AsyncHandler<OpenInstancePublicPortsRequest, OpenInstancePublicPortsResult> asyncHandler) {
+        final OpenInstancePublicPortsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<OpenInstancePublicPortsResult>() {
             @Override
             public OpenInstancePublicPortsResult call() throws Exception {
-                OpenInstancePublicPortsResult result;
+                OpenInstancePublicPortsResult result = null;
 
                 try {
-                    result = openInstancePublicPorts(request);
+                    result = executeOpenInstancePublicPorts(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1526,7 +1570,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1542,14 +1586,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<PeerVpcResult> peerVpcAsync(final PeerVpcRequest request,
             final com.amazonaws.handlers.AsyncHandler<PeerVpcRequest, PeerVpcResult> asyncHandler) {
+        final PeerVpcRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PeerVpcResult>() {
             @Override
             public PeerVpcResult call() throws Exception {
-                PeerVpcResult result;
+                PeerVpcResult result = null;
 
                 try {
-                    result = peerVpc(request);
+                    result = executePeerVpc(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1558,7 +1603,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1574,14 +1619,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<RebootInstanceResult> rebootInstanceAsync(final RebootInstanceRequest request,
             final com.amazonaws.handlers.AsyncHandler<RebootInstanceRequest, RebootInstanceResult> asyncHandler) {
+        final RebootInstanceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<RebootInstanceResult>() {
             @Override
             public RebootInstanceResult call() throws Exception {
-                RebootInstanceResult result;
+                RebootInstanceResult result = null;
 
                 try {
-                    result = rebootInstance(request);
+                    result = executeRebootInstance(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1590,7 +1636,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1606,14 +1652,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<ReleaseStaticIpResult> releaseStaticIpAsync(final ReleaseStaticIpRequest request,
             final com.amazonaws.handlers.AsyncHandler<ReleaseStaticIpRequest, ReleaseStaticIpResult> asyncHandler) {
+        final ReleaseStaticIpRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ReleaseStaticIpResult>() {
             @Override
             public ReleaseStaticIpResult call() throws Exception {
-                ReleaseStaticIpResult result;
+                ReleaseStaticIpResult result = null;
 
                 try {
-                    result = releaseStaticIp(request);
+                    result = executeReleaseStaticIp(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1622,7 +1669,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1638,14 +1685,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<StartInstanceResult> startInstanceAsync(final StartInstanceRequest request,
             final com.amazonaws.handlers.AsyncHandler<StartInstanceRequest, StartInstanceResult> asyncHandler) {
+        final StartInstanceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<StartInstanceResult>() {
             @Override
             public StartInstanceResult call() throws Exception {
-                StartInstanceResult result;
+                StartInstanceResult result = null;
 
                 try {
-                    result = startInstance(request);
+                    result = executeStartInstance(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1654,7 +1702,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1670,14 +1718,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<StopInstanceResult> stopInstanceAsync(final StopInstanceRequest request,
             final com.amazonaws.handlers.AsyncHandler<StopInstanceRequest, StopInstanceResult> asyncHandler) {
+        final StopInstanceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<StopInstanceResult>() {
             @Override
             public StopInstanceResult call() throws Exception {
-                StopInstanceResult result;
+                StopInstanceResult result = null;
 
                 try {
-                    result = stopInstance(request);
+                    result = executeStopInstance(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1686,7 +1735,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1702,14 +1751,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<UnpeerVpcResult> unpeerVpcAsync(final UnpeerVpcRequest request,
             final com.amazonaws.handlers.AsyncHandler<UnpeerVpcRequest, UnpeerVpcResult> asyncHandler) {
+        final UnpeerVpcRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UnpeerVpcResult>() {
             @Override
             public UnpeerVpcResult call() throws Exception {
-                UnpeerVpcResult result;
+                UnpeerVpcResult result = null;
 
                 try {
-                    result = unpeerVpc(request);
+                    result = executeUnpeerVpc(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1718,7 +1768,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1734,14 +1784,15 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     @Override
     public java.util.concurrent.Future<UpdateDomainEntryResult> updateDomainEntryAsync(final UpdateDomainEntryRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateDomainEntryRequest, UpdateDomainEntryResult> asyncHandler) {
+        final UpdateDomainEntryRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateDomainEntryResult>() {
             @Override
             public UpdateDomainEntryResult call() throws Exception {
-                UpdateDomainEntryResult result;
+                UpdateDomainEntryResult result = null;
 
                 try {
-                    result = updateDomainEntry(request);
+                    result = executeUpdateDomainEntry(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1750,7 +1801,7 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

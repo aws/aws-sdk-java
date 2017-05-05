@@ -220,6 +220,10 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
         this.executorService = executorService;
     }
 
+    public static AmazonAppStreamAsyncClientBuilder asyncBuilder() {
+        return AmazonAppStreamAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon AppStream using the specified
      * parameters.
@@ -250,14 +254,15 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
     @Override
     public java.util.concurrent.Future<AssociateFleetResult> associateFleetAsync(final AssociateFleetRequest request,
             final com.amazonaws.handlers.AsyncHandler<AssociateFleetRequest, AssociateFleetResult> asyncHandler) {
+        final AssociateFleetRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AssociateFleetResult>() {
             @Override
             public AssociateFleetResult call() throws Exception {
-                AssociateFleetResult result;
+                AssociateFleetResult result = null;
 
                 try {
-                    result = associateFleet(request);
+                    result = executeAssociateFleet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -266,7 +271,7 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -282,14 +287,15 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
     @Override
     public java.util.concurrent.Future<CreateFleetResult> createFleetAsync(final CreateFleetRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateFleetRequest, CreateFleetResult> asyncHandler) {
+        final CreateFleetRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateFleetResult>() {
             @Override
             public CreateFleetResult call() throws Exception {
-                CreateFleetResult result;
+                CreateFleetResult result = null;
 
                 try {
-                    result = createFleet(request);
+                    result = executeCreateFleet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -298,7 +304,7 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -314,14 +320,15 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
     @Override
     public java.util.concurrent.Future<CreateStackResult> createStackAsync(final CreateStackRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateStackRequest, CreateStackResult> asyncHandler) {
+        final CreateStackRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateStackResult>() {
             @Override
             public CreateStackResult call() throws Exception {
-                CreateStackResult result;
+                CreateStackResult result = null;
 
                 try {
-                    result = createStack(request);
+                    result = executeCreateStack(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -330,7 +337,7 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -346,14 +353,15 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
     @Override
     public java.util.concurrent.Future<CreateStreamingURLResult> createStreamingURLAsync(final CreateStreamingURLRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateStreamingURLRequest, CreateStreamingURLResult> asyncHandler) {
+        final CreateStreamingURLRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateStreamingURLResult>() {
             @Override
             public CreateStreamingURLResult call() throws Exception {
-                CreateStreamingURLResult result;
+                CreateStreamingURLResult result = null;
 
                 try {
-                    result = createStreamingURL(request);
+                    result = executeCreateStreamingURL(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -362,7 +370,7 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -378,14 +386,15 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
     @Override
     public java.util.concurrent.Future<DeleteFleetResult> deleteFleetAsync(final DeleteFleetRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteFleetRequest, DeleteFleetResult> asyncHandler) {
+        final DeleteFleetRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteFleetResult>() {
             @Override
             public DeleteFleetResult call() throws Exception {
-                DeleteFleetResult result;
+                DeleteFleetResult result = null;
 
                 try {
-                    result = deleteFleet(request);
+                    result = executeDeleteFleet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -394,7 +403,7 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -410,14 +419,15 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
     @Override
     public java.util.concurrent.Future<DeleteStackResult> deleteStackAsync(final DeleteStackRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteStackRequest, DeleteStackResult> asyncHandler) {
+        final DeleteStackRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteStackResult>() {
             @Override
             public DeleteStackResult call() throws Exception {
-                DeleteStackResult result;
+                DeleteStackResult result = null;
 
                 try {
-                    result = deleteStack(request);
+                    result = executeDeleteStack(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -426,7 +436,7 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -442,14 +452,15 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
     @Override
     public java.util.concurrent.Future<DescribeFleetsResult> describeFleetsAsync(final DescribeFleetsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeFleetsRequest, DescribeFleetsResult> asyncHandler) {
+        final DescribeFleetsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeFleetsResult>() {
             @Override
             public DescribeFleetsResult call() throws Exception {
-                DescribeFleetsResult result;
+                DescribeFleetsResult result = null;
 
                 try {
-                    result = describeFleets(request);
+                    result = executeDescribeFleets(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -458,7 +469,7 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -474,14 +485,15 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
     @Override
     public java.util.concurrent.Future<DescribeImagesResult> describeImagesAsync(final DescribeImagesRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeImagesRequest, DescribeImagesResult> asyncHandler) {
+        final DescribeImagesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeImagesResult>() {
             @Override
             public DescribeImagesResult call() throws Exception {
-                DescribeImagesResult result;
+                DescribeImagesResult result = null;
 
                 try {
-                    result = describeImages(request);
+                    result = executeDescribeImages(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -490,7 +502,7 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -506,14 +518,15 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
     @Override
     public java.util.concurrent.Future<DescribeSessionsResult> describeSessionsAsync(final DescribeSessionsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeSessionsRequest, DescribeSessionsResult> asyncHandler) {
+        final DescribeSessionsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeSessionsResult>() {
             @Override
             public DescribeSessionsResult call() throws Exception {
-                DescribeSessionsResult result;
+                DescribeSessionsResult result = null;
 
                 try {
-                    result = describeSessions(request);
+                    result = executeDescribeSessions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -522,7 +535,7 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -538,14 +551,15 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
     @Override
     public java.util.concurrent.Future<DescribeStacksResult> describeStacksAsync(final DescribeStacksRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeStacksRequest, DescribeStacksResult> asyncHandler) {
+        final DescribeStacksRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeStacksResult>() {
             @Override
             public DescribeStacksResult call() throws Exception {
-                DescribeStacksResult result;
+                DescribeStacksResult result = null;
 
                 try {
-                    result = describeStacks(request);
+                    result = executeDescribeStacks(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -554,7 +568,7 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -570,14 +584,15 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
     @Override
     public java.util.concurrent.Future<DisassociateFleetResult> disassociateFleetAsync(final DisassociateFleetRequest request,
             final com.amazonaws.handlers.AsyncHandler<DisassociateFleetRequest, DisassociateFleetResult> asyncHandler) {
+        final DisassociateFleetRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DisassociateFleetResult>() {
             @Override
             public DisassociateFleetResult call() throws Exception {
-                DisassociateFleetResult result;
+                DisassociateFleetResult result = null;
 
                 try {
-                    result = disassociateFleet(request);
+                    result = executeDisassociateFleet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -586,7 +601,7 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -602,14 +617,15 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
     @Override
     public java.util.concurrent.Future<ExpireSessionResult> expireSessionAsync(final ExpireSessionRequest request,
             final com.amazonaws.handlers.AsyncHandler<ExpireSessionRequest, ExpireSessionResult> asyncHandler) {
+        final ExpireSessionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ExpireSessionResult>() {
             @Override
             public ExpireSessionResult call() throws Exception {
-                ExpireSessionResult result;
+                ExpireSessionResult result = null;
 
                 try {
-                    result = expireSession(request);
+                    result = executeExpireSession(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -618,7 +634,7 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -634,14 +650,15 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
     @Override
     public java.util.concurrent.Future<ListAssociatedFleetsResult> listAssociatedFleetsAsync(final ListAssociatedFleetsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListAssociatedFleetsRequest, ListAssociatedFleetsResult> asyncHandler) {
+        final ListAssociatedFleetsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListAssociatedFleetsResult>() {
             @Override
             public ListAssociatedFleetsResult call() throws Exception {
-                ListAssociatedFleetsResult result;
+                ListAssociatedFleetsResult result = null;
 
                 try {
-                    result = listAssociatedFleets(request);
+                    result = executeListAssociatedFleets(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -650,7 +667,7 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -666,14 +683,15 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
     @Override
     public java.util.concurrent.Future<ListAssociatedStacksResult> listAssociatedStacksAsync(final ListAssociatedStacksRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListAssociatedStacksRequest, ListAssociatedStacksResult> asyncHandler) {
+        final ListAssociatedStacksRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListAssociatedStacksResult>() {
             @Override
             public ListAssociatedStacksResult call() throws Exception {
-                ListAssociatedStacksResult result;
+                ListAssociatedStacksResult result = null;
 
                 try {
-                    result = listAssociatedStacks(request);
+                    result = executeListAssociatedStacks(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -682,7 +700,7 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -698,14 +716,15 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
     @Override
     public java.util.concurrent.Future<StartFleetResult> startFleetAsync(final StartFleetRequest request,
             final com.amazonaws.handlers.AsyncHandler<StartFleetRequest, StartFleetResult> asyncHandler) {
+        final StartFleetRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<StartFleetResult>() {
             @Override
             public StartFleetResult call() throws Exception {
-                StartFleetResult result;
+                StartFleetResult result = null;
 
                 try {
-                    result = startFleet(request);
+                    result = executeStartFleet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -714,7 +733,7 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -730,14 +749,15 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
     @Override
     public java.util.concurrent.Future<StopFleetResult> stopFleetAsync(final StopFleetRequest request,
             final com.amazonaws.handlers.AsyncHandler<StopFleetRequest, StopFleetResult> asyncHandler) {
+        final StopFleetRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<StopFleetResult>() {
             @Override
             public StopFleetResult call() throws Exception {
-                StopFleetResult result;
+                StopFleetResult result = null;
 
                 try {
-                    result = stopFleet(request);
+                    result = executeStopFleet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -746,7 +766,7 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -762,14 +782,15 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
     @Override
     public java.util.concurrent.Future<UpdateFleetResult> updateFleetAsync(final UpdateFleetRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateFleetRequest, UpdateFleetResult> asyncHandler) {
+        final UpdateFleetRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateFleetResult>() {
             @Override
             public UpdateFleetResult call() throws Exception {
-                UpdateFleetResult result;
+                UpdateFleetResult result = null;
 
                 try {
-                    result = updateFleet(request);
+                    result = executeUpdateFleet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -778,7 +799,7 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -794,14 +815,15 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
     @Override
     public java.util.concurrent.Future<UpdateStackResult> updateStackAsync(final UpdateStackRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateStackRequest, UpdateStackResult> asyncHandler) {
+        final UpdateStackRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateStackResult>() {
             @Override
             public UpdateStackResult call() throws Exception {
-                UpdateStackResult result;
+                UpdateStackResult result = null;
 
                 try {
-                    result = updateStack(request);
+                    result = executeUpdateStack(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -810,7 +832,7 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

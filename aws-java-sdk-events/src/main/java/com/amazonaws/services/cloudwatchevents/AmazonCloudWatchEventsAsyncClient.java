@@ -32,20 +32,32 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * <p>
  * Amazon CloudWatch Events helps you to respond to state changes in your AWS resources. When your resources change
- * state they automatically send events into an event stream. You can create rules that match selected events in the
+ * state, they automatically send events into an event stream. You can create rules that match selected events in the
  * stream and route them to targets to take action. You can also use rules to take action on a pre-determined schedule.
  * For example, you can configure rules to:
  * </p>
  * <ul>
- * <li>Automatically invoke an AWS Lambda function to update DNS entries when an event notifies you that Amazon EC2
- * instance enters the running state.</li>
- * <li>Direct specific API records from CloudTrail to an Amazon Kinesis stream for detailed analysis of potential
- * security or availability risks.</li>
- * <li>Periodically invoke a built-in target to create a snapshot of an Amazon EBS volume.</li>
+ * <li>
+ * <p>
+ * Automatically invoke an AWS Lambda function to update DNS entries when an event notifies you that Amazon EC2 instance
+ * enters the running state.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Direct specific API records from CloudTrail to an Amazon Kinesis stream for detailed analysis of potential security
+ * or availability risks.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Periodically invoke a built-in target to create a snapshot of an Amazon EBS volume.
+ * </p>
+ * </li>
  * </ul>
  * <p>
- * For more information about Amazon CloudWatch Events features, see the <a
- * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide">Amazon CloudWatch Developer Guide</a>.
+ * For more information about the features of Amazon CloudWatch Events, see the <a
+ * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events">Amazon CloudWatch Events User Guide</a>.
  * </p>
  */
 @ThreadSafe
@@ -234,6 +246,10 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
         this.executorService = executorService;
     }
 
+    public static AmazonCloudWatchEventsAsyncClientBuilder asyncBuilder() {
+        return AmazonCloudWatchEventsAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon CloudWatch Events using the specified
      * parameters.
@@ -264,14 +280,15 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
     @Override
     public java.util.concurrent.Future<DeleteRuleResult> deleteRuleAsync(final DeleteRuleRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteRuleRequest, DeleteRuleResult> asyncHandler) {
+        final DeleteRuleRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteRuleResult>() {
             @Override
             public DeleteRuleResult call() throws Exception {
-                DeleteRuleResult result;
+                DeleteRuleResult result = null;
 
                 try {
-                    result = deleteRule(request);
+                    result = executeDeleteRule(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -280,7 +297,7 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -296,14 +313,15 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
     @Override
     public java.util.concurrent.Future<DescribeRuleResult> describeRuleAsync(final DescribeRuleRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeRuleRequest, DescribeRuleResult> asyncHandler) {
+        final DescribeRuleRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeRuleResult>() {
             @Override
             public DescribeRuleResult call() throws Exception {
-                DescribeRuleResult result;
+                DescribeRuleResult result = null;
 
                 try {
-                    result = describeRule(request);
+                    result = executeDescribeRule(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -312,7 +330,7 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -328,14 +346,15 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
     @Override
     public java.util.concurrent.Future<DisableRuleResult> disableRuleAsync(final DisableRuleRequest request,
             final com.amazonaws.handlers.AsyncHandler<DisableRuleRequest, DisableRuleResult> asyncHandler) {
+        final DisableRuleRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DisableRuleResult>() {
             @Override
             public DisableRuleResult call() throws Exception {
-                DisableRuleResult result;
+                DisableRuleResult result = null;
 
                 try {
-                    result = disableRule(request);
+                    result = executeDisableRule(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -344,7 +363,7 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -360,14 +379,15 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
     @Override
     public java.util.concurrent.Future<EnableRuleResult> enableRuleAsync(final EnableRuleRequest request,
             final com.amazonaws.handlers.AsyncHandler<EnableRuleRequest, EnableRuleResult> asyncHandler) {
+        final EnableRuleRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<EnableRuleResult>() {
             @Override
             public EnableRuleResult call() throws Exception {
-                EnableRuleResult result;
+                EnableRuleResult result = null;
 
                 try {
-                    result = enableRule(request);
+                    result = executeEnableRule(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -376,7 +396,7 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -392,14 +412,15 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
     @Override
     public java.util.concurrent.Future<ListRuleNamesByTargetResult> listRuleNamesByTargetAsync(final ListRuleNamesByTargetRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListRuleNamesByTargetRequest, ListRuleNamesByTargetResult> asyncHandler) {
+        final ListRuleNamesByTargetRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListRuleNamesByTargetResult>() {
             @Override
             public ListRuleNamesByTargetResult call() throws Exception {
-                ListRuleNamesByTargetResult result;
+                ListRuleNamesByTargetResult result = null;
 
                 try {
-                    result = listRuleNamesByTarget(request);
+                    result = executeListRuleNamesByTarget(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -408,7 +429,7 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -424,14 +445,15 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
     @Override
     public java.util.concurrent.Future<ListRulesResult> listRulesAsync(final ListRulesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListRulesRequest, ListRulesResult> asyncHandler) {
+        final ListRulesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListRulesResult>() {
             @Override
             public ListRulesResult call() throws Exception {
-                ListRulesResult result;
+                ListRulesResult result = null;
 
                 try {
-                    result = listRules(request);
+                    result = executeListRules(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -440,7 +462,7 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -456,14 +478,15 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
     @Override
     public java.util.concurrent.Future<ListTargetsByRuleResult> listTargetsByRuleAsync(final ListTargetsByRuleRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListTargetsByRuleRequest, ListTargetsByRuleResult> asyncHandler) {
+        final ListTargetsByRuleRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListTargetsByRuleResult>() {
             @Override
             public ListTargetsByRuleResult call() throws Exception {
-                ListTargetsByRuleResult result;
+                ListTargetsByRuleResult result = null;
 
                 try {
-                    result = listTargetsByRule(request);
+                    result = executeListTargetsByRule(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -472,7 +495,7 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -488,14 +511,15 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
     @Override
     public java.util.concurrent.Future<PutEventsResult> putEventsAsync(final PutEventsRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutEventsRequest, PutEventsResult> asyncHandler) {
+        final PutEventsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PutEventsResult>() {
             @Override
             public PutEventsResult call() throws Exception {
-                PutEventsResult result;
+                PutEventsResult result = null;
 
                 try {
-                    result = putEvents(request);
+                    result = executePutEvents(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -504,7 +528,7 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -520,14 +544,15 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
     @Override
     public java.util.concurrent.Future<PutRuleResult> putRuleAsync(final PutRuleRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutRuleRequest, PutRuleResult> asyncHandler) {
+        final PutRuleRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PutRuleResult>() {
             @Override
             public PutRuleResult call() throws Exception {
-                PutRuleResult result;
+                PutRuleResult result = null;
 
                 try {
-                    result = putRule(request);
+                    result = executePutRule(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -536,7 +561,7 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -552,14 +577,15 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
     @Override
     public java.util.concurrent.Future<PutTargetsResult> putTargetsAsync(final PutTargetsRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutTargetsRequest, PutTargetsResult> asyncHandler) {
+        final PutTargetsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PutTargetsResult>() {
             @Override
             public PutTargetsResult call() throws Exception {
-                PutTargetsResult result;
+                PutTargetsResult result = null;
 
                 try {
-                    result = putTargets(request);
+                    result = executePutTargets(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -568,7 +594,7 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -584,14 +610,15 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
     @Override
     public java.util.concurrent.Future<RemoveTargetsResult> removeTargetsAsync(final RemoveTargetsRequest request,
             final com.amazonaws.handlers.AsyncHandler<RemoveTargetsRequest, RemoveTargetsResult> asyncHandler) {
+        final RemoveTargetsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<RemoveTargetsResult>() {
             @Override
             public RemoveTargetsResult call() throws Exception {
-                RemoveTargetsResult result;
+                RemoveTargetsResult result = null;
 
                 try {
-                    result = removeTargets(request);
+                    result = executeRemoveTargets(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -600,7 +627,7 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -616,14 +643,15 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
     @Override
     public java.util.concurrent.Future<TestEventPatternResult> testEventPatternAsync(final TestEventPatternRequest request,
             final com.amazonaws.handlers.AsyncHandler<TestEventPatternRequest, TestEventPatternResult> asyncHandler) {
+        final TestEventPatternRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<TestEventPatternResult>() {
             @Override
             public TestEventPatternResult call() throws Exception {
-                TestEventPatternResult result;
+                TestEventPatternResult result = null;
 
                 try {
-                    result = testEventPattern(request);
+                    result = executeTestEventPattern(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -632,7 +660,7 @@ public class AmazonCloudWatchEventsAsyncClient extends AmazonCloudWatchEventsCli
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

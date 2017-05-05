@@ -245,6 +245,10 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
         this.executorService = executorService;
     }
 
+    public static AmazonConfigAsyncClientBuilder asyncBuilder() {
+        return AmazonConfigAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Config Service using the specified parameters.
      *
@@ -274,14 +278,15 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     @Override
     public java.util.concurrent.Future<DeleteConfigRuleResult> deleteConfigRuleAsync(final DeleteConfigRuleRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteConfigRuleRequest, DeleteConfigRuleResult> asyncHandler) {
+        final DeleteConfigRuleRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteConfigRuleResult>() {
             @Override
             public DeleteConfigRuleResult call() throws Exception {
-                DeleteConfigRuleResult result;
+                DeleteConfigRuleResult result = null;
 
                 try {
-                    result = deleteConfigRule(request);
+                    result = executeDeleteConfigRule(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -290,7 +295,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -306,14 +311,15 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     @Override
     public java.util.concurrent.Future<DeleteConfigurationRecorderResult> deleteConfigurationRecorderAsync(final DeleteConfigurationRecorderRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteConfigurationRecorderRequest, DeleteConfigurationRecorderResult> asyncHandler) {
+        final DeleteConfigurationRecorderRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteConfigurationRecorderResult>() {
             @Override
             public DeleteConfigurationRecorderResult call() throws Exception {
-                DeleteConfigurationRecorderResult result;
+                DeleteConfigurationRecorderResult result = null;
 
                 try {
-                    result = deleteConfigurationRecorder(request);
+                    result = executeDeleteConfigurationRecorder(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -322,7 +328,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -338,14 +344,15 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     @Override
     public java.util.concurrent.Future<DeleteDeliveryChannelResult> deleteDeliveryChannelAsync(final DeleteDeliveryChannelRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteDeliveryChannelRequest, DeleteDeliveryChannelResult> asyncHandler) {
+        final DeleteDeliveryChannelRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteDeliveryChannelResult>() {
             @Override
             public DeleteDeliveryChannelResult call() throws Exception {
-                DeleteDeliveryChannelResult result;
+                DeleteDeliveryChannelResult result = null;
 
                 try {
-                    result = deleteDeliveryChannel(request);
+                    result = executeDeleteDeliveryChannel(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -354,7 +361,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -370,14 +377,15 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     @Override
     public java.util.concurrent.Future<DeleteEvaluationResultsResult> deleteEvaluationResultsAsync(final DeleteEvaluationResultsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteEvaluationResultsRequest, DeleteEvaluationResultsResult> asyncHandler) {
+        final DeleteEvaluationResultsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteEvaluationResultsResult>() {
             @Override
             public DeleteEvaluationResultsResult call() throws Exception {
-                DeleteEvaluationResultsResult result;
+                DeleteEvaluationResultsResult result = null;
 
                 try {
-                    result = deleteEvaluationResults(request);
+                    result = executeDeleteEvaluationResults(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -386,7 +394,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -402,14 +410,15 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     @Override
     public java.util.concurrent.Future<DeliverConfigSnapshotResult> deliverConfigSnapshotAsync(final DeliverConfigSnapshotRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeliverConfigSnapshotRequest, DeliverConfigSnapshotResult> asyncHandler) {
+        final DeliverConfigSnapshotRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeliverConfigSnapshotResult>() {
             @Override
             public DeliverConfigSnapshotResult call() throws Exception {
-                DeliverConfigSnapshotResult result;
+                DeliverConfigSnapshotResult result = null;
 
                 try {
-                    result = deliverConfigSnapshot(request);
+                    result = executeDeliverConfigSnapshot(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -418,7 +427,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -435,14 +444,15 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     public java.util.concurrent.Future<DescribeComplianceByConfigRuleResult> describeComplianceByConfigRuleAsync(
             final DescribeComplianceByConfigRuleRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeComplianceByConfigRuleRequest, DescribeComplianceByConfigRuleResult> asyncHandler) {
+        final DescribeComplianceByConfigRuleRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeComplianceByConfigRuleResult>() {
             @Override
             public DescribeComplianceByConfigRuleResult call() throws Exception {
-                DescribeComplianceByConfigRuleResult result;
+                DescribeComplianceByConfigRuleResult result = null;
 
                 try {
-                    result = describeComplianceByConfigRule(request);
+                    result = executeDescribeComplianceByConfigRule(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -451,7 +461,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -475,6 +485,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
      * @see #describeComplianceByConfigRuleAsync(DescribeComplianceByConfigRuleRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeComplianceByConfigRuleResult> describeComplianceByConfigRuleAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeComplianceByConfigRuleRequest, DescribeComplianceByConfigRuleResult> asyncHandler) {
 
@@ -490,14 +501,15 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     @Override
     public java.util.concurrent.Future<DescribeComplianceByResourceResult> describeComplianceByResourceAsync(final DescribeComplianceByResourceRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeComplianceByResourceRequest, DescribeComplianceByResourceResult> asyncHandler) {
+        final DescribeComplianceByResourceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeComplianceByResourceResult>() {
             @Override
             public DescribeComplianceByResourceResult call() throws Exception {
-                DescribeComplianceByResourceResult result;
+                DescribeComplianceByResourceResult result = null;
 
                 try {
-                    result = describeComplianceByResource(request);
+                    result = executeDescribeComplianceByResource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -506,7 +518,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -529,6 +541,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
      *
      * @see #describeComplianceByResourceAsync(DescribeComplianceByResourceRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeComplianceByResourceResult> describeComplianceByResourceAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeComplianceByResourceRequest, DescribeComplianceByResourceResult> asyncHandler) {
 
@@ -546,14 +559,15 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     public java.util.concurrent.Future<DescribeConfigRuleEvaluationStatusResult> describeConfigRuleEvaluationStatusAsync(
             final DescribeConfigRuleEvaluationStatusRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeConfigRuleEvaluationStatusRequest, DescribeConfigRuleEvaluationStatusResult> asyncHandler) {
+        final DescribeConfigRuleEvaluationStatusRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeConfigRuleEvaluationStatusResult>() {
             @Override
             public DescribeConfigRuleEvaluationStatusResult call() throws Exception {
-                DescribeConfigRuleEvaluationStatusResult result;
+                DescribeConfigRuleEvaluationStatusResult result = null;
 
                 try {
-                    result = describeConfigRuleEvaluationStatus(request);
+                    result = executeDescribeConfigRuleEvaluationStatus(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -562,7 +576,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -586,6 +600,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
      * @see #describeConfigRuleEvaluationStatusAsync(DescribeConfigRuleEvaluationStatusRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeConfigRuleEvaluationStatusResult> describeConfigRuleEvaluationStatusAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeConfigRuleEvaluationStatusRequest, DescribeConfigRuleEvaluationStatusResult> asyncHandler) {
 
@@ -601,14 +616,15 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     @Override
     public java.util.concurrent.Future<DescribeConfigRulesResult> describeConfigRulesAsync(final DescribeConfigRulesRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeConfigRulesRequest, DescribeConfigRulesResult> asyncHandler) {
+        final DescribeConfigRulesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeConfigRulesResult>() {
             @Override
             public DescribeConfigRulesResult call() throws Exception {
-                DescribeConfigRulesResult result;
+                DescribeConfigRulesResult result = null;
 
                 try {
-                    result = describeConfigRules(request);
+                    result = executeDescribeConfigRules(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -617,7 +633,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -640,6 +656,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
      *
      * @see #describeConfigRulesAsync(DescribeConfigRulesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeConfigRulesResult> describeConfigRulesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeConfigRulesRequest, DescribeConfigRulesResult> asyncHandler) {
 
@@ -657,14 +674,15 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     public java.util.concurrent.Future<DescribeConfigurationRecorderStatusResult> describeConfigurationRecorderStatusAsync(
             final DescribeConfigurationRecorderStatusRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeConfigurationRecorderStatusRequest, DescribeConfigurationRecorderStatusResult> asyncHandler) {
+        final DescribeConfigurationRecorderStatusRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeConfigurationRecorderStatusResult>() {
             @Override
             public DescribeConfigurationRecorderStatusResult call() throws Exception {
-                DescribeConfigurationRecorderStatusResult result;
+                DescribeConfigurationRecorderStatusResult result = null;
 
                 try {
-                    result = describeConfigurationRecorderStatus(request);
+                    result = executeDescribeConfigurationRecorderStatus(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -673,7 +691,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -697,6 +715,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
      * @see #describeConfigurationRecorderStatusAsync(DescribeConfigurationRecorderStatusRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeConfigurationRecorderStatusResult> describeConfigurationRecorderStatusAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeConfigurationRecorderStatusRequest, DescribeConfigurationRecorderStatusResult> asyncHandler) {
 
@@ -713,14 +732,15 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     public java.util.concurrent.Future<DescribeConfigurationRecordersResult> describeConfigurationRecordersAsync(
             final DescribeConfigurationRecordersRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeConfigurationRecordersRequest, DescribeConfigurationRecordersResult> asyncHandler) {
+        final DescribeConfigurationRecordersRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeConfigurationRecordersResult>() {
             @Override
             public DescribeConfigurationRecordersResult call() throws Exception {
-                DescribeConfigurationRecordersResult result;
+                DescribeConfigurationRecordersResult result = null;
 
                 try {
-                    result = describeConfigurationRecorders(request);
+                    result = executeDescribeConfigurationRecorders(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -729,7 +749,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -753,6 +773,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
      * @see #describeConfigurationRecordersAsync(DescribeConfigurationRecordersRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeConfigurationRecordersResult> describeConfigurationRecordersAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeConfigurationRecordersRequest, DescribeConfigurationRecordersResult> asyncHandler) {
 
@@ -769,14 +790,15 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     public java.util.concurrent.Future<DescribeDeliveryChannelStatusResult> describeDeliveryChannelStatusAsync(
             final DescribeDeliveryChannelStatusRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeDeliveryChannelStatusRequest, DescribeDeliveryChannelStatusResult> asyncHandler) {
+        final DescribeDeliveryChannelStatusRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeDeliveryChannelStatusResult>() {
             @Override
             public DescribeDeliveryChannelStatusResult call() throws Exception {
-                DescribeDeliveryChannelStatusResult result;
+                DescribeDeliveryChannelStatusResult result = null;
 
                 try {
-                    result = describeDeliveryChannelStatus(request);
+                    result = executeDescribeDeliveryChannelStatus(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -785,7 +807,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -809,6 +831,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
      * @see #describeDeliveryChannelStatusAsync(DescribeDeliveryChannelStatusRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeDeliveryChannelStatusResult> describeDeliveryChannelStatusAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeDeliveryChannelStatusRequest, DescribeDeliveryChannelStatusResult> asyncHandler) {
 
@@ -824,14 +847,15 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     @Override
     public java.util.concurrent.Future<DescribeDeliveryChannelsResult> describeDeliveryChannelsAsync(final DescribeDeliveryChannelsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeDeliveryChannelsRequest, DescribeDeliveryChannelsResult> asyncHandler) {
+        final DescribeDeliveryChannelsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeDeliveryChannelsResult>() {
             @Override
             public DescribeDeliveryChannelsResult call() throws Exception {
-                DescribeDeliveryChannelsResult result;
+                DescribeDeliveryChannelsResult result = null;
 
                 try {
-                    result = describeDeliveryChannels(request);
+                    result = executeDescribeDeliveryChannels(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -840,7 +864,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -863,6 +887,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
      *
      * @see #describeDeliveryChannelsAsync(DescribeDeliveryChannelsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeDeliveryChannelsResult> describeDeliveryChannelsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeDeliveryChannelsRequest, DescribeDeliveryChannelsResult> asyncHandler) {
 
@@ -880,14 +905,15 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     public java.util.concurrent.Future<GetComplianceDetailsByConfigRuleResult> getComplianceDetailsByConfigRuleAsync(
             final GetComplianceDetailsByConfigRuleRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetComplianceDetailsByConfigRuleRequest, GetComplianceDetailsByConfigRuleResult> asyncHandler) {
+        final GetComplianceDetailsByConfigRuleRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetComplianceDetailsByConfigRuleResult>() {
             @Override
             public GetComplianceDetailsByConfigRuleResult call() throws Exception {
-                GetComplianceDetailsByConfigRuleResult result;
+                GetComplianceDetailsByConfigRuleResult result = null;
 
                 try {
-                    result = getComplianceDetailsByConfigRule(request);
+                    result = executeGetComplianceDetailsByConfigRule(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -896,7 +922,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -913,14 +939,15 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     public java.util.concurrent.Future<GetComplianceDetailsByResourceResult> getComplianceDetailsByResourceAsync(
             final GetComplianceDetailsByResourceRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetComplianceDetailsByResourceRequest, GetComplianceDetailsByResourceResult> asyncHandler) {
+        final GetComplianceDetailsByResourceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetComplianceDetailsByResourceResult>() {
             @Override
             public GetComplianceDetailsByResourceResult call() throws Exception {
-                GetComplianceDetailsByResourceResult result;
+                GetComplianceDetailsByResourceResult result = null;
 
                 try {
-                    result = getComplianceDetailsByResource(request);
+                    result = executeGetComplianceDetailsByResource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -929,7 +956,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -947,14 +974,15 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     public java.util.concurrent.Future<GetComplianceSummaryByConfigRuleResult> getComplianceSummaryByConfigRuleAsync(
             final GetComplianceSummaryByConfigRuleRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetComplianceSummaryByConfigRuleRequest, GetComplianceSummaryByConfigRuleResult> asyncHandler) {
+        final GetComplianceSummaryByConfigRuleRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetComplianceSummaryByConfigRuleResult>() {
             @Override
             public GetComplianceSummaryByConfigRuleResult call() throws Exception {
-                GetComplianceSummaryByConfigRuleResult result;
+                GetComplianceSummaryByConfigRuleResult result = null;
 
                 try {
-                    result = getComplianceSummaryByConfigRule(request);
+                    result = executeGetComplianceSummaryByConfigRule(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -963,7 +991,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -987,6 +1015,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
      * @see #getComplianceSummaryByConfigRuleAsync(GetComplianceSummaryByConfigRuleRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetComplianceSummaryByConfigRuleResult> getComplianceSummaryByConfigRuleAsync(
             com.amazonaws.handlers.AsyncHandler<GetComplianceSummaryByConfigRuleRequest, GetComplianceSummaryByConfigRuleResult> asyncHandler) {
 
@@ -1004,14 +1033,15 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     public java.util.concurrent.Future<GetComplianceSummaryByResourceTypeResult> getComplianceSummaryByResourceTypeAsync(
             final GetComplianceSummaryByResourceTypeRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetComplianceSummaryByResourceTypeRequest, GetComplianceSummaryByResourceTypeResult> asyncHandler) {
+        final GetComplianceSummaryByResourceTypeRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetComplianceSummaryByResourceTypeResult>() {
             @Override
             public GetComplianceSummaryByResourceTypeResult call() throws Exception {
-                GetComplianceSummaryByResourceTypeResult result;
+                GetComplianceSummaryByResourceTypeResult result = null;
 
                 try {
-                    result = getComplianceSummaryByResourceType(request);
+                    result = executeGetComplianceSummaryByResourceType(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1020,7 +1050,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1044,6 +1074,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
      * @see #getComplianceSummaryByResourceTypeAsync(GetComplianceSummaryByResourceTypeRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<GetComplianceSummaryByResourceTypeResult> getComplianceSummaryByResourceTypeAsync(
             com.amazonaws.handlers.AsyncHandler<GetComplianceSummaryByResourceTypeRequest, GetComplianceSummaryByResourceTypeResult> asyncHandler) {
 
@@ -1059,14 +1090,15 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     @Override
     public java.util.concurrent.Future<GetResourceConfigHistoryResult> getResourceConfigHistoryAsync(final GetResourceConfigHistoryRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetResourceConfigHistoryRequest, GetResourceConfigHistoryResult> asyncHandler) {
+        final GetResourceConfigHistoryRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetResourceConfigHistoryResult>() {
             @Override
             public GetResourceConfigHistoryResult call() throws Exception {
-                GetResourceConfigHistoryResult result;
+                GetResourceConfigHistoryResult result = null;
 
                 try {
-                    result = getResourceConfigHistory(request);
+                    result = executeGetResourceConfigHistory(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1075,7 +1107,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1091,14 +1123,15 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     @Override
     public java.util.concurrent.Future<ListDiscoveredResourcesResult> listDiscoveredResourcesAsync(final ListDiscoveredResourcesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListDiscoveredResourcesRequest, ListDiscoveredResourcesResult> asyncHandler) {
+        final ListDiscoveredResourcesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListDiscoveredResourcesResult>() {
             @Override
             public ListDiscoveredResourcesResult call() throws Exception {
-                ListDiscoveredResourcesResult result;
+                ListDiscoveredResourcesResult result = null;
 
                 try {
-                    result = listDiscoveredResources(request);
+                    result = executeListDiscoveredResources(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1107,7 +1140,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1123,14 +1156,15 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     @Override
     public java.util.concurrent.Future<PutConfigRuleResult> putConfigRuleAsync(final PutConfigRuleRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutConfigRuleRequest, PutConfigRuleResult> asyncHandler) {
+        final PutConfigRuleRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PutConfigRuleResult>() {
             @Override
             public PutConfigRuleResult call() throws Exception {
-                PutConfigRuleResult result;
+                PutConfigRuleResult result = null;
 
                 try {
-                    result = putConfigRule(request);
+                    result = executePutConfigRule(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1139,7 +1173,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1155,14 +1189,15 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     @Override
     public java.util.concurrent.Future<PutConfigurationRecorderResult> putConfigurationRecorderAsync(final PutConfigurationRecorderRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutConfigurationRecorderRequest, PutConfigurationRecorderResult> asyncHandler) {
+        final PutConfigurationRecorderRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PutConfigurationRecorderResult>() {
             @Override
             public PutConfigurationRecorderResult call() throws Exception {
-                PutConfigurationRecorderResult result;
+                PutConfigurationRecorderResult result = null;
 
                 try {
-                    result = putConfigurationRecorder(request);
+                    result = executePutConfigurationRecorder(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1171,7 +1206,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1187,14 +1222,15 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     @Override
     public java.util.concurrent.Future<PutDeliveryChannelResult> putDeliveryChannelAsync(final PutDeliveryChannelRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutDeliveryChannelRequest, PutDeliveryChannelResult> asyncHandler) {
+        final PutDeliveryChannelRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PutDeliveryChannelResult>() {
             @Override
             public PutDeliveryChannelResult call() throws Exception {
-                PutDeliveryChannelResult result;
+                PutDeliveryChannelResult result = null;
 
                 try {
-                    result = putDeliveryChannel(request);
+                    result = executePutDeliveryChannel(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1203,7 +1239,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1219,14 +1255,15 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     @Override
     public java.util.concurrent.Future<PutEvaluationsResult> putEvaluationsAsync(final PutEvaluationsRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutEvaluationsRequest, PutEvaluationsResult> asyncHandler) {
+        final PutEvaluationsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PutEvaluationsResult>() {
             @Override
             public PutEvaluationsResult call() throws Exception {
-                PutEvaluationsResult result;
+                PutEvaluationsResult result = null;
 
                 try {
-                    result = putEvaluations(request);
+                    result = executePutEvaluations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1235,7 +1272,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1251,14 +1288,15 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     @Override
     public java.util.concurrent.Future<StartConfigRulesEvaluationResult> startConfigRulesEvaluationAsync(final StartConfigRulesEvaluationRequest request,
             final com.amazonaws.handlers.AsyncHandler<StartConfigRulesEvaluationRequest, StartConfigRulesEvaluationResult> asyncHandler) {
+        final StartConfigRulesEvaluationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<StartConfigRulesEvaluationResult>() {
             @Override
             public StartConfigRulesEvaluationResult call() throws Exception {
-                StartConfigRulesEvaluationResult result;
+                StartConfigRulesEvaluationResult result = null;
 
                 try {
-                    result = startConfigRulesEvaluation(request);
+                    result = executeStartConfigRulesEvaluation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1267,7 +1305,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1283,14 +1321,15 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     @Override
     public java.util.concurrent.Future<StartConfigurationRecorderResult> startConfigurationRecorderAsync(final StartConfigurationRecorderRequest request,
             final com.amazonaws.handlers.AsyncHandler<StartConfigurationRecorderRequest, StartConfigurationRecorderResult> asyncHandler) {
+        final StartConfigurationRecorderRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<StartConfigurationRecorderResult>() {
             @Override
             public StartConfigurationRecorderResult call() throws Exception {
-                StartConfigurationRecorderResult result;
+                StartConfigurationRecorderResult result = null;
 
                 try {
-                    result = startConfigurationRecorder(request);
+                    result = executeStartConfigurationRecorder(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1299,7 +1338,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1315,14 +1354,15 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     @Override
     public java.util.concurrent.Future<StopConfigurationRecorderResult> stopConfigurationRecorderAsync(final StopConfigurationRecorderRequest request,
             final com.amazonaws.handlers.AsyncHandler<StopConfigurationRecorderRequest, StopConfigurationRecorderResult> asyncHandler) {
+        final StopConfigurationRecorderRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<StopConfigurationRecorderResult>() {
             @Override
             public StopConfigurationRecorderResult call() throws Exception {
-                StopConfigurationRecorderResult result;
+                StopConfigurationRecorderResult result = null;
 
                 try {
-                    result = stopConfigurationRecorder(request);
+                    result = executeStopConfigurationRecorder(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1331,7 +1371,7 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

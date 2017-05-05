@@ -12,65 +12,44 @@
  */
 package com.amazonaws.services.gamelift.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.gamelift.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeEC2InstanceLimitsRequest Marshaller
+ * DescribeEC2InstanceLimitsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeEC2InstanceLimitsRequestMarshaller implements Marshaller<Request<DescribeEC2InstanceLimitsRequest>, DescribeEC2InstanceLimitsRequest> {
+@SdkInternalApi
+public class DescribeEC2InstanceLimitsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> EC2INSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EC2InstanceType").build();
 
-    public DescribeEC2InstanceLimitsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeEC2InstanceLimitsRequestMarshaller instance = new DescribeEC2InstanceLimitsRequestMarshaller();
+
+    public static DescribeEC2InstanceLimitsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeEC2InstanceLimitsRequest> marshall(DescribeEC2InstanceLimitsRequest describeEC2InstanceLimitsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeEC2InstanceLimitsRequest describeEC2InstanceLimitsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeEC2InstanceLimitsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeEC2InstanceLimitsRequest> request = new DefaultRequest<DescribeEC2InstanceLimitsRequest>(describeEC2InstanceLimitsRequest,
-                "AmazonGameLift");
-        request.addHeader("X-Amz-Target", "GameLift.DescribeEC2InstanceLimits");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeEC2InstanceLimitsRequest.getEC2InstanceType() != null) {
-                jsonGenerator.writeFieldName("EC2InstanceType").writeValue(describeEC2InstanceLimitsRequest.getEC2InstanceType());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeEC2InstanceLimitsRequest.getEC2InstanceType(), EC2INSTANCETYPE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

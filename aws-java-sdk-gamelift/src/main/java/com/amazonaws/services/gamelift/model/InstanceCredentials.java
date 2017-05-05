@@ -14,6 +14,8 @@ package com.amazonaws.services.gamelift.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -25,7 +27,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InstanceCredentials implements Serializable, Cloneable {
+public class InstanceCredentials implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -35,7 +37,8 @@ public class InstanceCredentials implements Serializable, Cloneable {
     private String userName;
     /**
      * <p>
-     * Secret string. For Windows instances, the secret is a password. For Linux instances, it is a private key.
+     * Secret string. For Windows instances, the secret is a password for use with Windows Remote Desktop. For Linux
+     * instances, it is a private key (which must be saved as a <code>.pem</code> file) for use with SSH.
      * </p>
      */
     private String secret;
@@ -82,11 +85,13 @@ public class InstanceCredentials implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Secret string. For Windows instances, the secret is a password. For Linux instances, it is a private key.
+     * Secret string. For Windows instances, the secret is a password for use with Windows Remote Desktop. For Linux
+     * instances, it is a private key (which must be saved as a <code>.pem</code> file) for use with SSH.
      * </p>
      * 
      * @param secret
-     *        Secret string. For Windows instances, the secret is a password. For Linux instances, it is a private key.
+     *        Secret string. For Windows instances, the secret is a password for use with Windows Remote Desktop. For
+     *        Linux instances, it is a private key (which must be saved as a <code>.pem</code> file) for use with SSH.
      */
 
     public void setSecret(String secret) {
@@ -95,10 +100,12 @@ public class InstanceCredentials implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Secret string. For Windows instances, the secret is a password. For Linux instances, it is a private key.
+     * Secret string. For Windows instances, the secret is a password for use with Windows Remote Desktop. For Linux
+     * instances, it is a private key (which must be saved as a <code>.pem</code> file) for use with SSH.
      * </p>
      * 
-     * @return Secret string. For Windows instances, the secret is a password. For Linux instances, it is a private key.
+     * @return Secret string. For Windows instances, the secret is a password for use with Windows Remote Desktop. For
+     *         Linux instances, it is a private key (which must be saved as a <code>.pem</code> file) for use with SSH.
      */
 
     public String getSecret() {
@@ -107,11 +114,13 @@ public class InstanceCredentials implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Secret string. For Windows instances, the secret is a password. For Linux instances, it is a private key.
+     * Secret string. For Windows instances, the secret is a password for use with Windows Remote Desktop. For Linux
+     * instances, it is a private key (which must be saved as a <code>.pem</code> file) for use with SSH.
      * </p>
      * 
      * @param secret
-     *        Secret string. For Windows instances, the secret is a password. For Linux instances, it is a private key.
+     *        Secret string. For Windows instances, the secret is a password for use with Windows Remote Desktop. For
+     *        Linux instances, it is a private key (which must be saved as a <code>.pem</code> file) for use with SSH.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -177,5 +186,11 @@ public class InstanceCredentials implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.gamelift.model.transform.InstanceCredentialsMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

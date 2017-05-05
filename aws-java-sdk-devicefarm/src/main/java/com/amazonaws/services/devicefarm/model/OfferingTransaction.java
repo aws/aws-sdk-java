@@ -14,6 +14,8 @@ package com.amazonaws.services.devicefarm.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class OfferingTransaction implements Serializable, Cloneable {
+public class OfferingTransaction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -38,6 +40,12 @@ public class OfferingTransaction implements Serializable, Cloneable {
      * </p>
      */
     private String transactionId;
+    /**
+     * <p>
+     * The ID that corresponds to a device offering promotion.
+     * </p>
+     */
+    private String offeringPromotionId;
     /**
      * <p>
      * The date on which an offering transaction was created.
@@ -128,6 +136,46 @@ public class OfferingTransaction implements Serializable, Cloneable {
 
     public OfferingTransaction withTransactionId(String transactionId) {
         setTransactionId(transactionId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID that corresponds to a device offering promotion.
+     * </p>
+     * 
+     * @param offeringPromotionId
+     *        The ID that corresponds to a device offering promotion.
+     */
+
+    public void setOfferingPromotionId(String offeringPromotionId) {
+        this.offeringPromotionId = offeringPromotionId;
+    }
+
+    /**
+     * <p>
+     * The ID that corresponds to a device offering promotion.
+     * </p>
+     * 
+     * @return The ID that corresponds to a device offering promotion.
+     */
+
+    public String getOfferingPromotionId() {
+        return this.offeringPromotionId;
+    }
+
+    /**
+     * <p>
+     * The ID that corresponds to a device offering promotion.
+     * </p>
+     * 
+     * @param offeringPromotionId
+     *        The ID that corresponds to a device offering promotion.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OfferingTransaction withOfferingPromotionId(String offeringPromotionId) {
+        setOfferingPromotionId(offeringPromotionId);
         return this;
     }
 
@@ -226,6 +274,8 @@ public class OfferingTransaction implements Serializable, Cloneable {
             sb.append("OfferingStatus: ").append(getOfferingStatus()).append(",");
         if (getTransactionId() != null)
             sb.append("TransactionId: ").append(getTransactionId()).append(",");
+        if (getOfferingPromotionId() != null)
+            sb.append("OfferingPromotionId: ").append(getOfferingPromotionId()).append(",");
         if (getCreatedOn() != null)
             sb.append("CreatedOn: ").append(getCreatedOn()).append(",");
         if (getCost() != null)
@@ -252,6 +302,10 @@ public class OfferingTransaction implements Serializable, Cloneable {
             return false;
         if (other.getTransactionId() != null && other.getTransactionId().equals(this.getTransactionId()) == false)
             return false;
+        if (other.getOfferingPromotionId() == null ^ this.getOfferingPromotionId() == null)
+            return false;
+        if (other.getOfferingPromotionId() != null && other.getOfferingPromotionId().equals(this.getOfferingPromotionId()) == false)
+            return false;
         if (other.getCreatedOn() == null ^ this.getCreatedOn() == null)
             return false;
         if (other.getCreatedOn() != null && other.getCreatedOn().equals(this.getCreatedOn()) == false)
@@ -270,6 +324,7 @@ public class OfferingTransaction implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getOfferingStatus() == null) ? 0 : getOfferingStatus().hashCode());
         hashCode = prime * hashCode + ((getTransactionId() == null) ? 0 : getTransactionId().hashCode());
+        hashCode = prime * hashCode + ((getOfferingPromotionId() == null) ? 0 : getOfferingPromotionId().hashCode());
         hashCode = prime * hashCode + ((getCreatedOn() == null) ? 0 : getCreatedOn().hashCode());
         hashCode = prime * hashCode + ((getCost() == null) ? 0 : getCost().hashCode());
         return hashCode;
@@ -282,5 +337,11 @@ public class OfferingTransaction implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.devicefarm.model.transform.OfferingTransactionMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

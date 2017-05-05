@@ -48,6 +48,12 @@ public class GeneratePresignedUrlRequest extends AmazonWebServiceRequest
     /** The key of the object involved in this request */
     private String key;
 
+    /**
+     * The version ID of the object, only present if versioning has been
+     * enabled for the bucket.
+     */
+    private String versionId;
+
     /** The optional Content-Type header that will be sent when the presigned URL is accessed */
     private String contentType;
 
@@ -322,6 +328,45 @@ public class GeneratePresignedUrlRequest extends AmazonWebServiceRequest
      */
     public GeneratePresignedUrlRequest withKey(String key) {
         setKey(key);
+        return this;
+    }
+
+    /**
+     * Returns the version ID of the object, only present if versioning has
+     * been enabled for the bucket.
+     *
+     * @return The version ID of the object, only present if versioning has
+     *         been enabled for the bucket.
+     */
+    public String getVersionId() {
+        return versionId;
+    }
+
+    /**
+     * Sets the version ID of the object, only present if versioning has
+     * been enabled for the bucket.
+     *
+     * @param versionId
+     *            The version ID of the object, only present if versioning
+     *            has been enabled for the bucket.
+     */
+    public void setVersionId(String versionId) {
+        this.versionId = versionId;
+    }
+
+    /**
+     * Sets the version ID of the object, only present if versioning has
+     * been enabled for the bucket. Returns the {@link GeneratePresignedUrlRequest}
+     * object for method chanining.
+     *
+     * @param versionId
+     *            The version ID of the object, only present if versioning
+     *            has been enabled for the bucket.
+     *
+     * @return This object for method chaining.
+     */
+    public GeneratePresignedUrlRequest withVersionId(String versionId) {
+        setVersionId(versionId);
         return this;
     }
 

@@ -59,7 +59,8 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * <li>
      * <p>
      * <code>association.main</code> - Indicates whether the route table is the main route table for the VPC (
-     * <code>true</code> | <code>false</code>).
+     * <code>true</code> | <code>false</code>). Route tables that do not have an association ID are not returned in the
+     * response.
      * </p>
      * </li>
      * <li>
@@ -272,7 +273,8 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * <li>
      * <p>
      * <code>association.main</code> - Indicates whether the route table is the main route table for the VPC (
-     * <code>true</code> | <code>false</code>).
+     * <code>true</code> | <code>false</code>). Route tables that do not have an association ID are not returned in the
+     * response.
      * </p>
      * </li>
      * <li>
@@ -387,7 +389,8 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      *         <li>
      *         <p>
      *         <code>association.main</code> - Indicates whether the route table is the main route table for the VPC (
-     *         <code>true</code> | <code>false</code>).
+     *         <code>true</code> | <code>false</code>). Route tables that do not have an association ID are not returned
+     *         in the response.
      *         </p>
      *         </li>
      *         <li>
@@ -515,7 +518,8 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * <li>
      * <p>
      * <code>association.main</code> - Indicates whether the route table is the main route table for the VPC (
-     * <code>true</code> | <code>false</code>).
+     * <code>true</code> | <code>false</code>). Route tables that do not have an association ID are not returned in the
+     * response.
      * </p>
      * </li>
      * <li>
@@ -631,7 +635,8 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      *        <li>
      *        <p>
      *        <code>association.main</code> - Indicates whether the route table is the main route table for the VPC (
-     *        <code>true</code> | <code>false</code>).
+     *        <code>true</code> | <code>false</code>). Route tables that do not have an association ID are not returned
+     *        in the response.
      *        </p>
      *        </li>
      *        <li>
@@ -761,7 +766,8 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * <li>
      * <p>
      * <code>association.main</code> - Indicates whether the route table is the main route table for the VPC (
-     * <code>true</code> | <code>false</code>).
+     * <code>true</code> | <code>false</code>). Route tables that do not have an association ID are not returned in the
+     * response.
      * </p>
      * </li>
      * <li>
@@ -882,7 +888,8 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      *        <li>
      *        <p>
      *        <code>association.main</code> - Indicates whether the route table is the main route table for the VPC (
-     *        <code>true</code> | <code>false</code>).
+     *        <code>true</code> | <code>false</code>). Route tables that do not have an association ID are not returned
+     *        in the response.
      *        </p>
      *        </li>
      *        <li>
@@ -1014,7 +1021,8 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      * <li>
      * <p>
      * <code>association.main</code> - Indicates whether the route table is the main route table for the VPC (
-     * <code>true</code> | <code>false</code>).
+     * <code>true</code> | <code>false</code>). Route tables that do not have an association ID are not returned in the
+     * response.
      * </p>
      * </li>
      * <li>
@@ -1130,7 +1138,8 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest implemen
      *        <li>
      *        <p>
      *        <code>association.main</code> - Indicates whether the route table is the main route table for the VPC (
-     *        <code>true</code> | <code>false</code>).
+     *        <code>true</code> | <code>false</code>). Route tables that do not have an association ID are not returned
+     *        in the response.
      *        </p>
      *        </li>
      *        <li>

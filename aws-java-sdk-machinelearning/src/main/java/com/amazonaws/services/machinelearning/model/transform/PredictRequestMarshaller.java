@@ -12,85 +12,52 @@
  */
 package com.amazonaws.services.machinelearning.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.Map;
 
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.machinelearning.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * PredictRequest Marshaller
+ * PredictRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PredictRequestMarshaller implements Marshaller<Request<PredictRequest>, PredictRequest> {
+@SdkInternalApi
+public class PredictRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> MLMODELID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("MLModelId").build();
+    private static final MarshallingInfo<Map> RECORD_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Record").build();
+    private static final MarshallingInfo<String> PREDICTENDPOINT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PredictEndpoint").build();
 
-    public PredictRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final PredictRequestMarshaller instance = new PredictRequestMarshaller();
+
+    public static PredictRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<PredictRequest> marshall(PredictRequest predictRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(PredictRequest predictRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (predictRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<PredictRequest> request = new DefaultRequest<PredictRequest>(predictRequest, "AmazonMachineLearning");
-        request.addHeader("X-Amz-Target", "AmazonML_20141212.Predict");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (predictRequest.getMLModelId() != null) {
-                jsonGenerator.writeFieldName("MLModelId").writeValue(predictRequest.getMLModelId());
-            }
-
-            com.amazonaws.internal.SdkInternalMap<String, String> recordMap = (com.amazonaws.internal.SdkInternalMap<String, String>) predictRequest
-                    .getRecord();
-            if (!recordMap.isEmpty() || !recordMap.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("Record");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, String> recordMapValue : recordMap.entrySet()) {
-                    if (recordMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(recordMapValue.getKey());
-
-                        jsonGenerator.writeValue(recordMapValue.getValue());
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-            if (predictRequest.getPredictEndpoint() != null) {
-                jsonGenerator.writeFieldName("PredictEndpoint").writeValue(predictRequest.getPredictEndpoint());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(predictRequest.getMLModelId(), MLMODELID_BINDING);
+            protocolMarshaller.marshall(predictRequest.getRecord(), RECORD_BINDING);
+            protocolMarshaller.marshall(predictRequest.getPredictEndpoint(), PREDICTENDPOINT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

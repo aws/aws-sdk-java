@@ -92,6 +92,11 @@ public class StackEventStaxUnmarshaller implements Unmarshaller<StackEvent, Stax
                     stackEvent.setResourceProperties(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("ClientRequestToken", targetDepth)) {
+                    stackEvent.setClientRequestToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return stackEvent;

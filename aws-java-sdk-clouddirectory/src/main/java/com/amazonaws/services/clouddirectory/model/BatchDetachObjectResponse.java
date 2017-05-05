@@ -14,32 +14,34 @@ package com.amazonaws.services.clouddirectory.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents the output of a DetachObject response operation.
+ * Represents the output of a <code>DetachObject</code> response operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchDetachObjectResponse"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class BatchDetachObjectResponse implements Serializable, Cloneable {
+public class BatchDetachObjectResponse implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ObjectIdentifier of the detached object.
+     * The <code>ObjectIdentifier</code> of the detached object.
      * </p>
      */
     private String detachedObjectIdentifier;
 
     /**
      * <p>
-     * The ObjectIdentifier of the detached object.
+     * The <code>ObjectIdentifier</code> of the detached object.
      * </p>
      * 
      * @param detachedObjectIdentifier
-     *        The ObjectIdentifier of the detached object.
+     *        The <code>ObjectIdentifier</code> of the detached object.
      */
 
     public void setDetachedObjectIdentifier(String detachedObjectIdentifier) {
@@ -48,10 +50,10 @@ public class BatchDetachObjectResponse implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ObjectIdentifier of the detached object.
+     * The <code>ObjectIdentifier</code> of the detached object.
      * </p>
      * 
-     * @return The ObjectIdentifier of the detached object.
+     * @return The <code>ObjectIdentifier</code> of the detached object.
      */
 
     public String getDetachedObjectIdentifier() {
@@ -60,11 +62,11 @@ public class BatchDetachObjectResponse implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ObjectIdentifier of the detached object.
+     * The <code>ObjectIdentifier</code> of the detached object.
      * </p>
      * 
      * @param detachedObjectIdentifier
-     *        The ObjectIdentifier of the detached object.
+     *        The <code>ObjectIdentifier</code> of the detached object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -123,5 +125,11 @@ public class BatchDetachObjectResponse implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.clouddirectory.model.transform.BatchDetachObjectResponseMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -14,6 +14,8 @@ package com.amazonaws.services.batch.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class JobDetail implements Serializable, Cloneable {
+public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -52,6 +54,12 @@ public class JobDetail implements Serializable, Cloneable {
     private String status;
     /**
      * <p>
+     * A list of job attempts associated with this job.
+     * </p>
+     */
+    private java.util.List<AttemptDetail> attempts;
+    /**
+     * <p>
      * A short, human-readable string to provide additional details about the current status of the job.
      * </p>
      */
@@ -62,6 +70,12 @@ public class JobDetail implements Serializable, Cloneable {
      * </p>
      */
     private Long createdAt;
+    /**
+     * <p>
+     * The retry strategy to use for this job if an attempt fails.
+     * </p>
+     */
+    private RetryStrategy retryStrategy;
     /**
      * <p>
      * The Unix timestamp for when the job was started (when the task transitioned from the <code>PENDING</code> state
@@ -297,6 +311,76 @@ public class JobDetail implements Serializable, Cloneable {
 
     /**
      * <p>
+     * A list of job attempts associated with this job.
+     * </p>
+     * 
+     * @return A list of job attempts associated with this job.
+     */
+
+    public java.util.List<AttemptDetail> getAttempts() {
+        return attempts;
+    }
+
+    /**
+     * <p>
+     * A list of job attempts associated with this job.
+     * </p>
+     * 
+     * @param attempts
+     *        A list of job attempts associated with this job.
+     */
+
+    public void setAttempts(java.util.Collection<AttemptDetail> attempts) {
+        if (attempts == null) {
+            this.attempts = null;
+            return;
+        }
+
+        this.attempts = new java.util.ArrayList<AttemptDetail>(attempts);
+    }
+
+    /**
+     * <p>
+     * A list of job attempts associated with this job.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAttempts(java.util.Collection)} or {@link #withAttempts(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param attempts
+     *        A list of job attempts associated with this job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDetail withAttempts(AttemptDetail... attempts) {
+        if (this.attempts == null) {
+            setAttempts(new java.util.ArrayList<AttemptDetail>(attempts.length));
+        }
+        for (AttemptDetail ele : attempts) {
+            this.attempts.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of job attempts associated with this job.
+     * </p>
+     * 
+     * @param attempts
+     *        A list of job attempts associated with this job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDetail withAttempts(java.util.Collection<AttemptDetail> attempts) {
+        setAttempts(attempts);
+        return this;
+    }
+
+    /**
+     * <p>
      * A short, human-readable string to provide additional details about the current status of the job.
      * </p>
      * 
@@ -372,6 +456,46 @@ public class JobDetail implements Serializable, Cloneable {
 
     public JobDetail withCreatedAt(Long createdAt) {
         setCreatedAt(createdAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The retry strategy to use for this job if an attempt fails.
+     * </p>
+     * 
+     * @param retryStrategy
+     *        The retry strategy to use for this job if an attempt fails.
+     */
+
+    public void setRetryStrategy(RetryStrategy retryStrategy) {
+        this.retryStrategy = retryStrategy;
+    }
+
+    /**
+     * <p>
+     * The retry strategy to use for this job if an attempt fails.
+     * </p>
+     * 
+     * @return The retry strategy to use for this job if an attempt fails.
+     */
+
+    public RetryStrategy getRetryStrategy() {
+        return this.retryStrategy;
+    }
+
+    /**
+     * <p>
+     * The retry strategy to use for this job if an attempt fails.
+     * </p>
+     * 
+     * @param retryStrategy
+     *        The retry strategy to use for this job if an attempt fails.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDetail withRetryStrategy(RetryStrategy retryStrategy) {
+        setRetryStrategy(retryStrategy);
         return this;
     }
 
@@ -703,10 +827,14 @@ public class JobDetail implements Serializable, Cloneable {
             sb.append("JobQueue: ").append(getJobQueue()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getAttempts() != null)
+            sb.append("Attempts: ").append(getAttempts()).append(",");
         if (getStatusReason() != null)
             sb.append("StatusReason: ").append(getStatusReason()).append(",");
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
+        if (getRetryStrategy() != null)
+            sb.append("RetryStrategy: ").append(getRetryStrategy()).append(",");
         if (getStartedAt() != null)
             sb.append("StartedAt: ").append(getStartedAt()).append(",");
         if (getStoppedAt() != null)
@@ -749,6 +877,10 @@ public class JobDetail implements Serializable, Cloneable {
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getAttempts() == null ^ this.getAttempts() == null)
+            return false;
+        if (other.getAttempts() != null && other.getAttempts().equals(this.getAttempts()) == false)
+            return false;
         if (other.getStatusReason() == null ^ this.getStatusReason() == null)
             return false;
         if (other.getStatusReason() != null && other.getStatusReason().equals(this.getStatusReason()) == false)
@@ -756,6 +888,10 @@ public class JobDetail implements Serializable, Cloneable {
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
         if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+            return false;
+        if (other.getRetryStrategy() == null ^ this.getRetryStrategy() == null)
+            return false;
+        if (other.getRetryStrategy() != null && other.getRetryStrategy().equals(this.getRetryStrategy()) == false)
             return false;
         if (other.getStartedAt() == null ^ this.getStartedAt() == null)
             return false;
@@ -793,8 +929,10 @@ public class JobDetail implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
         hashCode = prime * hashCode + ((getJobQueue() == null) ? 0 : getJobQueue().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getAttempts() == null) ? 0 : getAttempts().hashCode());
         hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getRetryStrategy() == null) ? 0 : getRetryStrategy().hashCode());
         hashCode = prime * hashCode + ((getStartedAt() == null) ? 0 : getStartedAt().hashCode());
         hashCode = prime * hashCode + ((getStoppedAt() == null) ? 0 : getStoppedAt().hashCode());
         hashCode = prime * hashCode + ((getDependsOn() == null) ? 0 : getDependsOn().hashCode());
@@ -811,5 +949,11 @@ public class JobDetail implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.batch.model.transform.JobDetailMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

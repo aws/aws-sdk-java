@@ -34,7 +34,7 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
      * You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name
      * (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS
      * Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the
-     * length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character
+     * length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters
      * in length.
      * </p>
      */
@@ -75,6 +75,15 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private Boolean publish;
+    /**
+     * <p>
+     * This boolean parameter can be used to test your request to AWS Lambda to update the Lambda function and publish a
+     * version as an atomic operation. It will do all necessary computation and validation of your code but will not
+     * upload it or a publish a version. Each time this operation is invoked, the <code>CodeSha256</code> hash value the
+     * provided code will also be computed and returned in the response.
+     * </p>
+     */
+    private Boolean dryRun;
 
     /**
      * <p>
@@ -84,7 +93,7 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
      * You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name
      * (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS
      * Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the
-     * length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character
+     * length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters
      * in length.
      * </p>
      * 
@@ -95,7 +104,7 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
      *        Name (ARN) of the function (for example,
      *        <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to
      *        specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint
-     *        applies only to the ARN. If you specify only the function name, it is limited to 64 character in length.
+     *        applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.
      */
 
     public void setFunctionName(String functionName) {
@@ -110,7 +119,7 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
      * You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name
      * (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS
      * Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the
-     * length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character
+     * length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters
      * in length.
      * </p>
      * 
@@ -120,7 +129,7 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
      *         Name (ARN) of the function (for example,
      *         <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to
      *         specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint
-     *         applies only to the ARN. If you specify only the function name, it is limited to 64 character in length.
+     *         applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.
      */
 
     public String getFunctionName() {
@@ -135,7 +144,7 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
      * You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name
      * (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS
      * Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the
-     * length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 character
+     * length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters
      * in length.
      * </p>
      * 
@@ -146,7 +155,7 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
      *        Name (ARN) of the function (for example,
      *        <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to
      *        specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint
-     *        applies only to the ARN. If you specify only the function name, it is limited to 64 character in length.
+     *        applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -164,7 +173,7 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
      * >Execution Permissions</a> in the <i>AWS Lambda Developer Guide</i>.
      * </p>
      * <p>
-     * AWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default.
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
      * <p>
@@ -220,6 +229,16 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
      * will do the encoding for you. For more information about creating a .zip file, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
      * >Execution Permissions</a> in the <i>AWS Lambda Developer Guide</i>.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
      * </p>
      * 
      * @param zipFile
@@ -423,6 +442,82 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * This boolean parameter can be used to test your request to AWS Lambda to update the Lambda function and publish a
+     * version as an atomic operation. It will do all necessary computation and validation of your code but will not
+     * upload it or a publish a version. Each time this operation is invoked, the <code>CodeSha256</code> hash value the
+     * provided code will also be computed and returned in the response.
+     * </p>
+     * 
+     * @param dryRun
+     *        This boolean parameter can be used to test your request to AWS Lambda to update the Lambda function and
+     *        publish a version as an atomic operation. It will do all necessary computation and validation of your code
+     *        but will not upload it or a publish a version. Each time this operation is invoked, the
+     *        <code>CodeSha256</code> hash value the provided code will also be computed and returned in the response.
+     */
+
+    public void setDryRun(Boolean dryRun) {
+        this.dryRun = dryRun;
+    }
+
+    /**
+     * <p>
+     * This boolean parameter can be used to test your request to AWS Lambda to update the Lambda function and publish a
+     * version as an atomic operation. It will do all necessary computation and validation of your code but will not
+     * upload it or a publish a version. Each time this operation is invoked, the <code>CodeSha256</code> hash value the
+     * provided code will also be computed and returned in the response.
+     * </p>
+     * 
+     * @return This boolean parameter can be used to test your request to AWS Lambda to update the Lambda function and
+     *         publish a version as an atomic operation. It will do all necessary computation and validation of your
+     *         code but will not upload it or a publish a version. Each time this operation is invoked, the
+     *         <code>CodeSha256</code> hash value the provided code will also be computed and returned in the response.
+     */
+
+    public Boolean getDryRun() {
+        return this.dryRun;
+    }
+
+    /**
+     * <p>
+     * This boolean parameter can be used to test your request to AWS Lambda to update the Lambda function and publish a
+     * version as an atomic operation. It will do all necessary computation and validation of your code but will not
+     * upload it or a publish a version. Each time this operation is invoked, the <code>CodeSha256</code> hash value the
+     * provided code will also be computed and returned in the response.
+     * </p>
+     * 
+     * @param dryRun
+     *        This boolean parameter can be used to test your request to AWS Lambda to update the Lambda function and
+     *        publish a version as an atomic operation. It will do all necessary computation and validation of your code
+     *        but will not upload it or a publish a version. Each time this operation is invoked, the
+     *        <code>CodeSha256</code> hash value the provided code will also be computed and returned in the response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFunctionCodeRequest withDryRun(Boolean dryRun) {
+        setDryRun(dryRun);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This boolean parameter can be used to test your request to AWS Lambda to update the Lambda function and publish a
+     * version as an atomic operation. It will do all necessary computation and validation of your code but will not
+     * upload it or a publish a version. Each time this operation is invoked, the <code>CodeSha256</code> hash value the
+     * provided code will also be computed and returned in the response.
+     * </p>
+     * 
+     * @return This boolean parameter can be used to test your request to AWS Lambda to update the Lambda function and
+     *         publish a version as an atomic operation. It will do all necessary computation and validation of your
+     *         code but will not upload it or a publish a version. Each time this operation is invoked, the
+     *         <code>CodeSha256</code> hash value the provided code will also be computed and returned in the response.
+     */
+
+    public Boolean isDryRun() {
+        return this.dryRun;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -444,7 +539,9 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
         if (getS3ObjectVersion() != null)
             sb.append("S3ObjectVersion: ").append(getS3ObjectVersion()).append(",");
         if (getPublish() != null)
-            sb.append("Publish: ").append(getPublish());
+            sb.append("Publish: ").append(getPublish()).append(",");
+        if (getDryRun() != null)
+            sb.append("DryRun: ").append(getDryRun());
         sb.append("}");
         return sb.toString();
     }
@@ -483,6 +580,10 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getPublish() != null && other.getPublish().equals(this.getPublish()) == false)
             return false;
+        if (other.getDryRun() == null ^ this.getDryRun() == null)
+            return false;
+        if (other.getDryRun() != null && other.getDryRun().equals(this.getDryRun()) == false)
+            return false;
         return true;
     }
 
@@ -497,6 +598,7 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getS3Key() == null) ? 0 : getS3Key().hashCode());
         hashCode = prime * hashCode + ((getS3ObjectVersion() == null) ? 0 : getS3ObjectVersion().hashCode());
         hashCode = prime * hashCode + ((getPublish() == null) ? 0 : getPublish().hashCode());
+        hashCode = prime * hashCode + ((getDryRun() == null) ? 0 : getDryRun().hashCode());
         return hashCode;
     }
 

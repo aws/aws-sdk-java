@@ -68,8 +68,8 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2016.03</code>,
-     * <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
+     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2016.09</code>,
+     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
      * </p>
      * </li>
      * <li>
@@ -80,7 +80,7 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>CentOS 7</code>
+     * <code>CentOS Linux 7</code>
      * </p>
      * </li>
      * <li>
@@ -99,8 +99,8 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * <p>
      * For more information on the supported operating systems, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Operating
-     * Systems</a>.
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
+     * Operating Systems</a>.
      * </p>
      * <p>
      * The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you
@@ -164,7 +164,7 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
     private Boolean ebsOptimized;
     /**
      * <p>
-     * The default AWS OpsWorks agent version. You have the following options:
+     * The default AWS OpsWorks Stacks agent version. You have the following options:
      * </p>
      * <ul>
      * <li>
@@ -175,8 +175,8 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To
-     * update the agent version, you must edit the instance configuration and specify a new version. AWS OpsWorks then
-     * automatically installs that version on the instance.
+     * update the agent version, you must edit the instance configuration and specify a new version. AWS OpsWorks Stacks
+     * then automatically installs that version on the instance.
      * </p>
      * </li>
      * </ul>
@@ -184,6 +184,9 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version
      * number, not the abbreviated number shown on the console. For a list of available agent version numbers, call
      * <a>DescribeAgentVersions</a>.
+     * </p>
+     * <p>
+     * AgentVersion cannot be set to Chef 12.2.
      * </p>
      */
     private String agentVersion;
@@ -492,8 +495,8 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2016.03</code>,
-     * <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
+     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2016.09</code>,
+     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
      * </p>
      * </li>
      * <li>
@@ -504,7 +507,7 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>CentOS 7</code>
+     * <code>CentOS Linux 7</code>
      * </p>
      * </li>
      * <li>
@@ -523,8 +526,8 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * <p>
      * For more information on the supported operating systems, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Operating
-     * Systems</a>.
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
+     * Operating Systems</a>.
      * </p>
      * <p>
      * The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you
@@ -548,8 +551,9 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2016.03</code>,
-     *        <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
+     *        A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2016.09</code>,
+     *        <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>
+     *        .
      *        </p>
      *        </li>
      *        <li>
@@ -560,7 +564,7 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CentOS 7</code>
+     *        <code>CentOS Linux 7</code>
      *        </p>
      *        </li>
      *        <li>
@@ -579,7 +583,7 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </ul>
      *        <p>
      *        For more information on the supported operating systems, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks
+     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
      *        Operating Systems</a>.
      *        </p>
      *        <p>
@@ -610,8 +614,8 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2016.03</code>,
-     * <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
+     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2016.09</code>,
+     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
      * </p>
      * </li>
      * <li>
@@ -622,7 +626,7 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>CentOS 7</code>
+     * <code>CentOS Linux 7</code>
      * </p>
      * </li>
      * <li>
@@ -641,8 +645,8 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * <p>
      * For more information on the supported operating systems, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Operating
-     * Systems</a>.
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
+     * Operating Systems</a>.
      * </p>
      * <p>
      * The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you
@@ -665,8 +669,9 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <ul>
      *         <li>
      *         <p>
-     *         A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2016.03</code>,
-     *         <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
+     *         A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2016.09</code>,
+     *         <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
+     *         <code>Amazon Linux 2015.03</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -677,7 +682,7 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *         </li>
      *         <li>
      *         <p>
-     *         <code>CentOS 7</code>
+     *         <code>CentOS Linux 7</code>
      *         </p>
      *         </li>
      *         <li>
@@ -696,7 +701,7 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *         </ul>
      *         <p>
      *         For more information on the supported operating systems, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
      *         Operating Systems</a>.
      *         </p>
      *         <p>
@@ -727,8 +732,8 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2016.03</code>,
-     * <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
+     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2016.09</code>,
+     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
      * </p>
      * </li>
      * <li>
@@ -739,7 +744,7 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>CentOS 7</code>
+     * <code>CentOS Linux 7</code>
      * </p>
      * </li>
      * <li>
@@ -758,8 +763,8 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * <p>
      * For more information on the supported operating systems, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Operating
-     * Systems</a>.
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
+     * Operating Systems</a>.
      * </p>
      * <p>
      * The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you
@@ -783,8 +788,9 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2016.03</code>,
-     *        <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
+     *        A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2016.09</code>,
+     *        <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>
+     *        .
      *        </p>
      *        </li>
      *        <li>
@@ -795,7 +801,7 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>CentOS 7</code>
+     *        <code>CentOS Linux 7</code>
      *        </p>
      *        </li>
      *        <li>
@@ -814,7 +820,7 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </ul>
      *        <p>
      *        For more information on the supported operating systems, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks
+     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
      *        Operating Systems</a>.
      *        </p>
      *        <p>
@@ -1203,7 +1209,7 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The default AWS OpsWorks agent version. You have the following options:
+     * The default AWS OpsWorks Stacks agent version. You have the following options:
      * </p>
      * <ul>
      * <li>
@@ -1214,8 +1220,8 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To
-     * update the agent version, you must edit the instance configuration and specify a new version. AWS OpsWorks then
-     * automatically installs that version on the instance.
+     * update the agent version, you must edit the instance configuration and specify a new version. AWS OpsWorks Stacks
+     * then automatically installs that version on the instance.
      * </p>
      * </li>
      * </ul>
@@ -1224,9 +1230,12 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * number, not the abbreviated number shown on the console. For a list of available agent version numbers, call
      * <a>DescribeAgentVersions</a>.
      * </p>
+     * <p>
+     * AgentVersion cannot be set to Chef 12.2.
+     * </p>
      * 
      * @param agentVersion
-     *        The default AWS OpsWorks agent version. You have the following options:</p>
+     *        The default AWS OpsWorks Stacks agent version. You have the following options:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1237,7 +1246,7 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting.
      *        To update the agent version, you must edit the instance configuration and specify a new version. AWS
-     *        OpsWorks then automatically installs that version on the instance.
+     *        OpsWorks Stacks then automatically installs that version on the instance.
      *        </p>
      *        </li>
      *        </ul>
@@ -1245,6 +1254,9 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete
      *        version number, not the abbreviated number shown on the console. For a list of available agent version
      *        numbers, call <a>DescribeAgentVersions</a>.
+     *        </p>
+     *        <p>
+     *        AgentVersion cannot be set to Chef 12.2.
      */
 
     public void setAgentVersion(String agentVersion) {
@@ -1253,7 +1265,7 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The default AWS OpsWorks agent version. You have the following options:
+     * The default AWS OpsWorks Stacks agent version. You have the following options:
      * </p>
      * <ul>
      * <li>
@@ -1264,8 +1276,8 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To
-     * update the agent version, you must edit the instance configuration and specify a new version. AWS OpsWorks then
-     * automatically installs that version on the instance.
+     * update the agent version, you must edit the instance configuration and specify a new version. AWS OpsWorks Stacks
+     * then automatically installs that version on the instance.
      * </p>
      * </li>
      * </ul>
@@ -1274,8 +1286,11 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * number, not the abbreviated number shown on the console. For a list of available agent version numbers, call
      * <a>DescribeAgentVersions</a>.
      * </p>
+     * <p>
+     * AgentVersion cannot be set to Chef 12.2.
+     * </p>
      * 
-     * @return The default AWS OpsWorks agent version. You have the following options:</p>
+     * @return The default AWS OpsWorks Stacks agent version. You have the following options:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -1286,7 +1301,7 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <p>
      *         <i>version_number</i> - Use the specified agent version. This value overrides the stack's default
      *         setting. To update the agent version, you must edit the instance configuration and specify a new version.
-     *         AWS OpsWorks then automatically installs that version on the instance.
+     *         AWS OpsWorks Stacks then automatically installs that version on the instance.
      *         </p>
      *         </li>
      *         </ul>
@@ -1294,6 +1309,9 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *         The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete
      *         version number, not the abbreviated number shown on the console. For a list of available agent version
      *         numbers, call <a>DescribeAgentVersions</a>.
+     *         </p>
+     *         <p>
+     *         AgentVersion cannot be set to Chef 12.2.
      */
 
     public String getAgentVersion() {
@@ -1302,7 +1320,7 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The default AWS OpsWorks agent version. You have the following options:
+     * The default AWS OpsWorks Stacks agent version. You have the following options:
      * </p>
      * <ul>
      * <li>
@@ -1313,8 +1331,8 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting. To
-     * update the agent version, you must edit the instance configuration and specify a new version. AWS OpsWorks then
-     * automatically installs that version on the instance.
+     * update the agent version, you must edit the instance configuration and specify a new version. AWS OpsWorks Stacks
+     * then automatically installs that version on the instance.
      * </p>
      * </li>
      * </ul>
@@ -1323,9 +1341,12 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * number, not the abbreviated number shown on the console. For a list of available agent version numbers, call
      * <a>DescribeAgentVersions</a>.
      * </p>
+     * <p>
+     * AgentVersion cannot be set to Chef 12.2.
+     * </p>
      * 
      * @param agentVersion
-     *        The default AWS OpsWorks agent version. You have the following options:</p>
+     *        The default AWS OpsWorks Stacks agent version. You have the following options:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1336,7 +1357,7 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        <i>version_number</i> - Use the specified agent version. This value overrides the stack's default setting.
      *        To update the agent version, you must edit the instance configuration and specify a new version. AWS
-     *        OpsWorks then automatically installs that version on the instance.
+     *        OpsWorks Stacks then automatically installs that version on the instance.
      *        </p>
      *        </li>
      *        </ul>
@@ -1344,6 +1365,9 @@ public class UpdateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete
      *        version number, not the abbreviated number shown on the console. For a list of available agent version
      *        numbers, call <a>DescribeAgentVersions</a>.
+     *        </p>
+     *        <p>
+     *        AgentVersion cannot be set to Chef 12.2.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -287,6 +288,10 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         init();
     }
 
+    public static AmazonIdentityManagementClientBuilder builder() {
+        return AmazonIdentityManagementClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on IAM using the specified parameters.
      *
@@ -305,6 +310,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
     private void init() {
         exceptionUnmarshallers.add(new MalformedPolicyDocumentExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new UnmodifiableEntityExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DeleteConflictExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidCertificateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new PasswordPolicyViolationExceptionUnmarshaller());
@@ -365,7 +371,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AddClientIDToOpenIDConnectProviderResult addClientIDToOpenIDConnectProvider(
+    public AddClientIDToOpenIDConnectProviderResult addClientIDToOpenIDConnectProvider(AddClientIDToOpenIDConnectProviderRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddClientIDToOpenIDConnectProvider(request);
+    }
+
+    @SdkInternalApi
+    final AddClientIDToOpenIDConnectProviderResult executeAddClientIDToOpenIDConnectProvider(
             AddClientIDToOpenIDConnectProviderRequest addClientIDToOpenIDConnectProviderRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addClientIDToOpenIDConnectProviderRequest);
@@ -399,7 +411,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Adds the specified IAM role to the specified instance profile.
+     * Adds the specified IAM role to the specified instance profile. An instance profile can contain only one role, and
+     * this limit cannot be increased.
      * </p>
      * <note>
      * <p>
@@ -424,6 +437,10 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
+     * @throws UnmodifiableEntityException
+     *         The request was rejected because only the service that depends on the service-linked role can modify or
+     *         delete the role on your behalf. The error message includes the name of the service that depends on this
+     *         service-linked role. You must request the change through that service.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.AddRoleToInstanceProfile
@@ -431,7 +448,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      API Documentation</a>
      */
     @Override
-    public AddRoleToInstanceProfileResult addRoleToInstanceProfile(AddRoleToInstanceProfileRequest addRoleToInstanceProfileRequest) {
+    public AddRoleToInstanceProfileResult addRoleToInstanceProfile(AddRoleToInstanceProfileRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddRoleToInstanceProfile(request);
+    }
+
+    @SdkInternalApi
+    final AddRoleToInstanceProfileResult executeAddRoleToInstanceProfile(AddRoleToInstanceProfileRequest addRoleToInstanceProfileRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addRoleToInstanceProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -481,7 +504,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public AddUserToGroupResult addUserToGroup(AddUserToGroupRequest addUserToGroupRequest) {
+    public AddUserToGroupResult addUserToGroup(AddUserToGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddUserToGroup(request);
+    }
+
+    @SdkInternalApi
+    final AddUserToGroupResult executeAddUserToGroup(AddUserToGroupRequest addUserToGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addUserToGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -542,7 +571,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public AttachGroupPolicyResult attachGroupPolicy(AttachGroupPolicyRequest attachGroupPolicyRequest) {
+    public AttachGroupPolicyResult attachGroupPolicy(AttachGroupPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeAttachGroupPolicy(request);
+    }
+
+    @SdkInternalApi
+    final AttachGroupPolicyResult executeAttachGroupPolicy(AttachGroupPolicyRequest attachGroupPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(attachGroupPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -574,14 +609,15 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Attaches the specified managed policy to the specified IAM role.
+     * Attaches the specified managed policy to the specified IAM role. When you attach a managed policy to a role, the
+     * managed policy becomes part of the role's permission (access) policy.
      * </p>
+     * <note>
      * <p>
-     * When you attach a managed policy to a role, the managed policy becomes part of the role's permission (access)
-     * policy. You cannot use a managed policy as the role's trust policy. The role's trust policy is created at the
-     * same time as the role, using <a>CreateRole</a>. You can update a role's trust policy using
-     * <a>UpdateAssumeRolePolicy</a>.
+     * You cannot use a managed policy as the role's trust policy. The role's trust policy is created at the same time
+     * as the role, using <a>CreateRole</a>. You can update a role's trust policy using <a>UpdateAssumeRolePolicy</a>.
      * </p>
+     * </note>
      * <p>
      * Use this API to attach a <i>managed</i> policy to a role. To embed an inline policy in a role, use
      * <a>PutRolePolicy</a>. For more information about policies, see <a
@@ -599,6 +635,10 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The error message describes the limit exceeded.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
+     * @throws UnmodifiableEntityException
+     *         The request was rejected because only the service that depends on the service-linked role can modify or
+     *         delete the role on your behalf. The error message includes the name of the service that depends on this
+     *         service-linked role. You must request the change through that service.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.AttachRolePolicy
@@ -606,7 +646,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public AttachRolePolicyResult attachRolePolicy(AttachRolePolicyRequest attachRolePolicyRequest) {
+    public AttachRolePolicyResult attachRolePolicy(AttachRolePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeAttachRolePolicy(request);
+    }
+
+    @SdkInternalApi
+    final AttachRolePolicyResult executeAttachRolePolicy(AttachRolePolicyRequest attachRolePolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(attachRolePolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -667,7 +713,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public AttachUserPolicyResult attachUserPolicy(AttachUserPolicyRequest attachUserPolicyRequest) {
+    public AttachUserPolicyResult attachUserPolicy(AttachUserPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeAttachUserPolicy(request);
+    }
+
+    @SdkInternalApi
+    final AttachUserPolicyResult executeAttachUserPolicy(AttachUserPolicyRequest attachUserPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(attachUserPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -732,7 +784,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public ChangePasswordResult changePassword(ChangePasswordRequest changePasswordRequest) {
+    public ChangePasswordResult changePassword(ChangePasswordRequest request) {
+        request = beforeClientExecution(request);
+        return executeChangePassword(request);
+    }
+
+    @SdkInternalApi
+    final ChangePasswordResult executeChangePassword(ChangePasswordRequest changePasswordRequest) {
 
         ExecutionContext executionContext = createExecutionContext(changePasswordRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -800,7 +858,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public CreateAccessKeyResult createAccessKey(CreateAccessKeyRequest createAccessKeyRequest) {
+    public CreateAccessKeyResult createAccessKey(CreateAccessKeyRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAccessKey(request);
+    }
+
+    @SdkInternalApi
+    final CreateAccessKeyResult executeCreateAccessKey(CreateAccessKeyRequest createAccessKeyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createAccessKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -856,7 +920,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public CreateAccountAliasResult createAccountAlias(CreateAccountAliasRequest createAccountAliasRequest) {
+    public CreateAccountAliasResult createAccountAlias(CreateAccountAliasRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAccountAlias(request);
+    }
+
+    @SdkInternalApi
+    final CreateAccountAliasResult executeCreateAccountAlias(CreateAccountAliasRequest createAccountAliasRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createAccountAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -913,7 +983,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public CreateGroupResult createGroup(CreateGroupRequest createGroupRequest) {
+    public CreateGroupResult createGroup(CreateGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateGroup(request);
+    }
+
+    @SdkInternalApi
+    final CreateGroupResult executeCreateGroup(CreateGroupRequest createGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -967,7 +1043,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public CreateInstanceProfileResult createInstanceProfile(CreateInstanceProfileRequest createInstanceProfileRequest) {
+    public CreateInstanceProfileResult createInstanceProfile(CreateInstanceProfileRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateInstanceProfile(request);
+    }
+
+    @SdkInternalApi
+    final CreateInstanceProfileResult executeCreateInstanceProfile(CreateInstanceProfileRequest createInstanceProfileRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createInstanceProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1025,7 +1107,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public CreateLoginProfileResult createLoginProfile(CreateLoginProfileRequest createLoginProfileRequest) {
+    public CreateLoginProfileResult createLoginProfile(CreateLoginProfileRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateLoginProfile(request);
+    }
+
+    @SdkInternalApi
+    final CreateLoginProfileResult executeCreateLoginProfile(CreateLoginProfileRequest createLoginProfileRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createLoginProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1093,7 +1181,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateOpenIDConnectProviderResult createOpenIDConnectProvider(CreateOpenIDConnectProviderRequest createOpenIDConnectProviderRequest) {
+    public CreateOpenIDConnectProviderResult createOpenIDConnectProvider(CreateOpenIDConnectProviderRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateOpenIDConnectProvider(request);
+    }
+
+    @SdkInternalApi
+    final CreateOpenIDConnectProviderResult executeCreateOpenIDConnectProvider(CreateOpenIDConnectProviderRequest createOpenIDConnectProviderRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createOpenIDConnectProviderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1158,7 +1252,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public CreatePolicyResult createPolicy(CreatePolicyRequest createPolicyRequest) {
+    public CreatePolicyResult createPolicy(CreatePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreatePolicy(request);
+    }
+
+    @SdkInternalApi
+    final CreatePolicyResult executeCreatePolicy(CreatePolicyRequest createPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1223,7 +1323,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public CreatePolicyVersionResult createPolicyVersion(CreatePolicyVersionRequest createPolicyVersionRequest) {
+    public CreatePolicyVersionResult createPolicyVersion(CreatePolicyVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreatePolicyVersion(request);
+    }
+
+    @SdkInternalApi
+    final CreatePolicyVersionResult executeCreatePolicyVersion(CreatePolicyVersionRequest createPolicyVersionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createPolicyVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1267,6 +1373,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
+     * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
      * @throws EntityAlreadyExistsException
      *         The request was rejected because it attempted to create a resource that already exists.
      * @throws MalformedPolicyDocumentException
@@ -1279,7 +1387,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public CreateRoleResult createRole(CreateRoleRequest createRoleRequest) {
+    public CreateRoleResult createRole(CreateRoleRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateRole(request);
+    }
+
+    @SdkInternalApi
+    final CreateRoleResult executeCreateRole(CreateRoleRequest createRoleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createRoleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1354,7 +1468,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public CreateSAMLProviderResult createSAMLProvider(CreateSAMLProviderRequest createSAMLProviderRequest) {
+    public CreateSAMLProviderResult createSAMLProvider(CreateSAMLProviderRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSAMLProvider(request);
+    }
+
+    @SdkInternalApi
+    final CreateSAMLProviderResult executeCreateSAMLProvider(CreateSAMLProviderRequest createSAMLProviderRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createSAMLProviderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1374,6 +1494,76 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<CreateSAMLProviderResult> responseHandler = new StaxResponseHandler<CreateSAMLProviderResult>(
                     new CreateSAMLProviderResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an IAM role that is linked to a specific AWS service. The service controls the attached policies and when
+     * the role can be deleted. This helps ensure that the service is not broken by an unexpectedly changed or deleted
+     * role, which could put your AWS resources into an unknown state. Allowing the service to control the role helps
+     * improve service stability and proper cleanup when a service and its role are no longer needed.
+     * </p>
+     * <p>
+     * The name of the role is autogenerated by combining the string that you specify for the
+     * <code>AWSServiceName</code> parameter with the string that you specify for the <code>CustomSuffix</code>
+     * parameter. The resulting name must be unique in your account or the request fails.
+     * </p>
+     * <p>
+     * To attach a policy to this service-linked role, you must make the request using the AWS service that depends on
+     * this role.
+     * </p>
+     * 
+     * @param createServiceLinkedRoleRequest
+     * @return Result of the CreateServiceLinkedRole operation returned by the service.
+     * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
+     * @throws LimitExceededException
+     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
+     *         The error message describes the limit exceeded.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced an entity that does not exist. The error message describes
+     *         the entity.
+     * @throws ServiceFailureException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @sample AmazonIdentityManagement.CreateServiceLinkedRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateServiceLinkedRole" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateServiceLinkedRoleResult createServiceLinkedRole(CreateServiceLinkedRoleRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateServiceLinkedRole(request);
+    }
+
+    @SdkInternalApi
+    final CreateServiceLinkedRoleResult executeCreateServiceLinkedRole(CreateServiceLinkedRoleRequest createServiceLinkedRoleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createServiceLinkedRoleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateServiceLinkedRoleRequest> request = null;
+        Response<CreateServiceLinkedRoleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateServiceLinkedRoleRequestMarshaller().marshall(super.beforeMarshalling(createServiceLinkedRoleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateServiceLinkedRoleResult> responseHandler = new StaxResponseHandler<CreateServiceLinkedRoleResult>(
+                    new CreateServiceLinkedRoleResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1419,7 +1609,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateServiceSpecificCredentialResult createServiceSpecificCredential(CreateServiceSpecificCredentialRequest createServiceSpecificCredentialRequest) {
+    public CreateServiceSpecificCredentialResult createServiceSpecificCredential(CreateServiceSpecificCredentialRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateServiceSpecificCredential(request);
+    }
+
+    @SdkInternalApi
+    final CreateServiceSpecificCredentialResult executeCreateServiceSpecificCredential(
+            CreateServiceSpecificCredentialRequest createServiceSpecificCredentialRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createServiceSpecificCredentialRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1476,7 +1673,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public CreateUserResult createUser(CreateUserRequest createUserRequest) {
+    public CreateUserResult createUser(CreateUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateUser(request);
+    }
+
+    @SdkInternalApi
+    final CreateUserResult executeCreateUser(CreateUserRequest createUserRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createUserRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1539,7 +1742,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public CreateVirtualMFADeviceResult createVirtualMFADevice(CreateVirtualMFADeviceRequest createVirtualMFADeviceRequest) {
+    public CreateVirtualMFADeviceResult createVirtualMFADevice(CreateVirtualMFADeviceRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateVirtualMFADevice(request);
+    }
+
+    @SdkInternalApi
+    final CreateVirtualMFADeviceResult executeCreateVirtualMFADevice(CreateVirtualMFADeviceRequest createVirtualMFADeviceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createVirtualMFADeviceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1599,7 +1808,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public DeactivateMFADeviceResult deactivateMFADevice(DeactivateMFADeviceRequest deactivateMFADeviceRequest) {
+    public DeactivateMFADeviceResult deactivateMFADevice(DeactivateMFADeviceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeactivateMFADevice(request);
+    }
+
+    @SdkInternalApi
+    final DeactivateMFADeviceResult executeDeactivateMFADevice(DeactivateMFADeviceRequest deactivateMFADeviceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deactivateMFADeviceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1654,7 +1869,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public DeleteAccessKeyResult deleteAccessKey(DeleteAccessKeyRequest deleteAccessKeyRequest) {
+    public DeleteAccessKeyResult deleteAccessKey(DeleteAccessKeyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAccessKey(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAccessKeyResult executeDeleteAccessKey(DeleteAccessKeyRequest deleteAccessKeyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteAccessKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1706,7 +1927,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public DeleteAccountAliasResult deleteAccountAlias(DeleteAccountAliasRequest deleteAccountAliasRequest) {
+    public DeleteAccountAliasResult deleteAccountAlias(DeleteAccountAliasRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAccountAlias(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAccountAliasResult executeDeleteAccountAlias(DeleteAccountAliasRequest deleteAccountAliasRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteAccountAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1756,7 +1983,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteAccountPasswordPolicyResult deleteAccountPasswordPolicy(DeleteAccountPasswordPolicyRequest deleteAccountPasswordPolicyRequest) {
+    public DeleteAccountPasswordPolicyResult deleteAccountPasswordPolicy(DeleteAccountPasswordPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAccountPasswordPolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAccountPasswordPolicyResult executeDeleteAccountPasswordPolicy(DeleteAccountPasswordPolicyRequest deleteAccountPasswordPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteAccountPasswordPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1814,7 +2047,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public DeleteGroupResult deleteGroup(DeleteGroupRequest deleteGroupRequest) {
+    public DeleteGroupResult deleteGroup(DeleteGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteGroup(request);
+    }
+
+    @SdkInternalApi
+    final DeleteGroupResult executeDeleteGroup(DeleteGroupRequest deleteGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1869,7 +2108,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public DeleteGroupPolicyResult deleteGroupPolicy(DeleteGroupPolicyRequest deleteGroupPolicyRequest) {
+    public DeleteGroupPolicyResult deleteGroupPolicy(DeleteGroupPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteGroupPolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeleteGroupPolicyResult executeDeleteGroupPolicy(DeleteGroupPolicyRequest deleteGroupPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteGroupPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1933,7 +2178,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public DeleteInstanceProfileResult deleteInstanceProfile(DeleteInstanceProfileRequest deleteInstanceProfileRequest) {
+    public DeleteInstanceProfileResult deleteInstanceProfile(DeleteInstanceProfileRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteInstanceProfile(request);
+    }
+
+    @SdkInternalApi
+    final DeleteInstanceProfileResult executeDeleteInstanceProfile(DeleteInstanceProfileRequest deleteInstanceProfileRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteInstanceProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1995,7 +2246,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public DeleteLoginProfileResult deleteLoginProfile(DeleteLoginProfileRequest deleteLoginProfileRequest) {
+    public DeleteLoginProfileResult deleteLoginProfile(DeleteLoginProfileRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteLoginProfile(request);
+    }
+
+    @SdkInternalApi
+    final DeleteLoginProfileResult executeDeleteLoginProfile(DeleteLoginProfileRequest deleteLoginProfileRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteLoginProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2052,7 +2309,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteOpenIDConnectProviderResult deleteOpenIDConnectProvider(DeleteOpenIDConnectProviderRequest deleteOpenIDConnectProviderRequest) {
+    public DeleteOpenIDConnectProviderResult deleteOpenIDConnectProvider(DeleteOpenIDConnectProviderRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteOpenIDConnectProvider(request);
+    }
+
+    @SdkInternalApi
+    final DeleteOpenIDConnectProviderResult executeDeleteOpenIDConnectProvider(DeleteOpenIDConnectProviderRequest deleteOpenIDConnectProviderRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteOpenIDConnectProviderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2138,7 +2401,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public DeletePolicyResult deletePolicy(DeletePolicyRequest deletePolicyRequest) {
+    public DeletePolicyResult deletePolicy(DeletePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeletePolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeletePolicyResult executeDeletePolicy(DeletePolicyRequest deletePolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deletePolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2202,7 +2471,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public DeletePolicyVersionResult deletePolicyVersion(DeletePolicyVersionRequest deletePolicyVersionRequest) {
+    public DeletePolicyVersionResult deletePolicyVersion(DeletePolicyVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeletePolicyVersion(request);
+    }
+
+    @SdkInternalApi
+    final DeletePolicyVersionResult executeDeletePolicyVersion(DeletePolicyVersionRequest deletePolicyVersionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deletePolicyVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2256,6 +2531,10 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
+     * @throws UnmodifiableEntityException
+     *         The request was rejected because only the service that depends on the service-linked role can modify or
+     *         delete the role on your behalf. The error message includes the name of the service that depends on this
+     *         service-linked role. You must request the change through that service.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteRole
@@ -2263,7 +2542,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public DeleteRoleResult deleteRole(DeleteRoleRequest deleteRoleRequest) {
+    public DeleteRoleResult deleteRole(DeleteRoleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteRole(request);
+    }
+
+    @SdkInternalApi
+    final DeleteRoleResult executeDeleteRole(DeleteRoleRequest deleteRoleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteRoleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2311,6 +2596,10 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
+     * @throws UnmodifiableEntityException
+     *         The request was rejected because only the service that depends on the service-linked role can modify or
+     *         delete the role on your behalf. The error message includes the name of the service that depends on this
+     *         service-linked role. You must request the change through that service.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DeleteRolePolicy
@@ -2318,7 +2607,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public DeleteRolePolicyResult deleteRolePolicy(DeleteRolePolicyRequest deleteRolePolicyRequest) {
+    public DeleteRolePolicyResult deleteRolePolicy(DeleteRolePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteRolePolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeleteRolePolicyResult executeDeleteRolePolicy(DeleteRolePolicyRequest deleteRolePolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteRolePolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2381,7 +2676,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public DeleteSAMLProviderResult deleteSAMLProvider(DeleteSAMLProviderRequest deleteSAMLProviderRequest) {
+    public DeleteSAMLProviderResult deleteSAMLProvider(DeleteSAMLProviderRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteSAMLProvider(request);
+    }
+
+    @SdkInternalApi
+    final DeleteSAMLProviderResult executeDeleteSAMLProvider(DeleteSAMLProviderRequest deleteSAMLProviderRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteSAMLProviderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2432,7 +2733,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public DeleteSSHPublicKeyResult deleteSSHPublicKey(DeleteSSHPublicKeyRequest deleteSSHPublicKeyRequest) {
+    public DeleteSSHPublicKeyResult deleteSSHPublicKey(DeleteSSHPublicKeyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteSSHPublicKey(request);
+    }
+
+    @SdkInternalApi
+    final DeleteSSHPublicKeyResult executeDeleteSSHPublicKey(DeleteSSHPublicKeyRequest deleteSSHPublicKeyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteSSHPublicKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2502,7 +2809,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      API Documentation</a>
      */
     @Override
-    public DeleteServerCertificateResult deleteServerCertificate(DeleteServerCertificateRequest deleteServerCertificateRequest) {
+    public DeleteServerCertificateResult deleteServerCertificate(DeleteServerCertificateRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteServerCertificate(request);
+    }
+
+    @SdkInternalApi
+    final DeleteServerCertificateResult executeDeleteServerCertificate(DeleteServerCertificateRequest deleteServerCertificateRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteServerCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2547,7 +2860,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteServiceSpecificCredentialResult deleteServiceSpecificCredential(DeleteServiceSpecificCredentialRequest deleteServiceSpecificCredentialRequest) {
+    public DeleteServiceSpecificCredentialResult deleteServiceSpecificCredential(DeleteServiceSpecificCredentialRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteServiceSpecificCredential(request);
+    }
+
+    @SdkInternalApi
+    final DeleteServiceSpecificCredentialResult executeDeleteServiceSpecificCredential(
+            DeleteServiceSpecificCredentialRequest deleteServiceSpecificCredentialRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteServiceSpecificCredentialRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2602,7 +2922,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      API Documentation</a>
      */
     @Override
-    public DeleteSigningCertificateResult deleteSigningCertificate(DeleteSigningCertificateRequest deleteSigningCertificateRequest) {
+    public DeleteSigningCertificateResult deleteSigningCertificate(DeleteSigningCertificateRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteSigningCertificate(request);
+    }
+
+    @SdkInternalApi
+    final DeleteSigningCertificateResult executeDeleteSigningCertificate(DeleteSigningCertificateRequest deleteSigningCertificateRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteSigningCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2656,7 +2982,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public DeleteUserResult deleteUser(DeleteUserRequest deleteUserRequest) {
+    public DeleteUserResult deleteUser(DeleteUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteUser(request);
+    }
+
+    @SdkInternalApi
+    final DeleteUserResult executeDeleteUser(DeleteUserRequest deleteUserRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteUserRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2711,7 +3043,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public DeleteUserPolicyResult deleteUserPolicy(DeleteUserPolicyRequest deleteUserPolicyRequest) {
+    public DeleteUserPolicyResult deleteUserPolicy(DeleteUserPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteUserPolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeleteUserPolicyResult executeDeleteUserPolicy(DeleteUserPolicyRequest deleteUserPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteUserPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2770,7 +3108,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public DeleteVirtualMFADeviceResult deleteVirtualMFADevice(DeleteVirtualMFADeviceRequest deleteVirtualMFADeviceRequest) {
+    public DeleteVirtualMFADeviceResult deleteVirtualMFADevice(DeleteVirtualMFADeviceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteVirtualMFADevice(request);
+    }
+
+    @SdkInternalApi
+    final DeleteVirtualMFADeviceResult executeDeleteVirtualMFADevice(DeleteVirtualMFADeviceRequest deleteVirtualMFADeviceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteVirtualMFADeviceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2828,7 +3172,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public DetachGroupPolicyResult detachGroupPolicy(DetachGroupPolicyRequest detachGroupPolicyRequest) {
+    public DetachGroupPolicyResult detachGroupPolicy(DetachGroupPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDetachGroupPolicy(request);
+    }
+
+    @SdkInternalApi
+    final DetachGroupPolicyResult executeDetachGroupPolicy(DetachGroupPolicyRequest detachGroupPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(detachGroupPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2879,6 +3229,10 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *         The error message describes the limit exceeded.
      * @throws InvalidInputException
      *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
+     * @throws UnmodifiableEntityException
+     *         The request was rejected because only the service that depends on the service-linked role can modify or
+     *         delete the role on your behalf. The error message includes the name of the service that depends on this
+     *         service-linked role. You must request the change through that service.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.DetachRolePolicy
@@ -2886,7 +3240,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public DetachRolePolicyResult detachRolePolicy(DetachRolePolicyRequest detachRolePolicyRequest) {
+    public DetachRolePolicyResult detachRolePolicy(DetachRolePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDetachRolePolicy(request);
+    }
+
+    @SdkInternalApi
+    final DetachRolePolicyResult executeDetachRolePolicy(DetachRolePolicyRequest detachRolePolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(detachRolePolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2944,7 +3304,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public DetachUserPolicyResult detachUserPolicy(DetachUserPolicyRequest detachUserPolicyRequest) {
+    public DetachUserPolicyResult detachUserPolicy(DetachUserPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDetachUserPolicy(request);
+    }
+
+    @SdkInternalApi
+    final DetachUserPolicyResult executeDetachUserPolicy(DetachUserPolicyRequest detachUserPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(detachUserPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3004,7 +3370,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public EnableMFADeviceResult enableMFADevice(EnableMFADeviceRequest enableMFADeviceRequest) {
+    public EnableMFADeviceResult enableMFADevice(EnableMFADeviceRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnableMFADevice(request);
+    }
+
+    @SdkInternalApi
+    final EnableMFADeviceResult executeEnableMFADevice(EnableMFADeviceRequest enableMFADeviceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(enableMFADeviceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3053,7 +3425,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      API Documentation</a>
      */
     @Override
-    public GenerateCredentialReportResult generateCredentialReport(GenerateCredentialReportRequest generateCredentialReportRequest) {
+    public GenerateCredentialReportResult generateCredentialReport(GenerateCredentialReportRequest request) {
+        request = beforeClientExecution(request);
+        return executeGenerateCredentialReport(request);
+    }
+
+    @SdkInternalApi
+    final GenerateCredentialReportResult executeGenerateCredentialReport(GenerateCredentialReportRequest generateCredentialReportRequest) {
 
         ExecutionContext executionContext = createExecutionContext(generateCredentialReportRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3105,7 +3483,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public GetAccessKeyLastUsedResult getAccessKeyLastUsed(GetAccessKeyLastUsedRequest getAccessKeyLastUsedRequest) {
+    public GetAccessKeyLastUsedResult getAccessKeyLastUsed(GetAccessKeyLastUsedRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAccessKeyLastUsed(request);
+    }
+
+    @SdkInternalApi
+    final GetAccessKeyLastUsedResult executeGetAccessKeyLastUsed(GetAccessKeyLastUsedRequest getAccessKeyLastUsedRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getAccessKeyLastUsedRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3155,7 +3539,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetAccountAuthorizationDetailsResult getAccountAuthorizationDetails(GetAccountAuthorizationDetailsRequest getAccountAuthorizationDetailsRequest) {
+    public GetAccountAuthorizationDetailsResult getAccountAuthorizationDetails(GetAccountAuthorizationDetailsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAccountAuthorizationDetails(request);
+    }
+
+    @SdkInternalApi
+    final GetAccountAuthorizationDetailsResult executeGetAccountAuthorizationDetails(GetAccountAuthorizationDetailsRequest getAccountAuthorizationDetailsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getAccountAuthorizationDetailsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3209,7 +3599,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      API Documentation</a>
      */
     @Override
-    public GetAccountPasswordPolicyResult getAccountPasswordPolicy(GetAccountPasswordPolicyRequest getAccountPasswordPolicyRequest) {
+    public GetAccountPasswordPolicyResult getAccountPasswordPolicy(GetAccountPasswordPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAccountPasswordPolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetAccountPasswordPolicyResult executeGetAccountPasswordPolicy(GetAccountPasswordPolicyRequest getAccountPasswordPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getAccountPasswordPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3263,7 +3659,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public GetAccountSummaryResult getAccountSummary(GetAccountSummaryRequest getAccountSummaryRequest) {
+    public GetAccountSummaryResult getAccountSummary(GetAccountSummaryRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAccountSummary(request);
+    }
+
+    @SdkInternalApi
+    final GetAccountSummaryResult executeGetAccountSummary(GetAccountSummaryRequest getAccountSummaryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getAccountSummaryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3321,7 +3723,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetContextKeysForCustomPolicyResult getContextKeysForCustomPolicy(GetContextKeysForCustomPolicyRequest getContextKeysForCustomPolicyRequest) {
+    public GetContextKeysForCustomPolicyResult getContextKeysForCustomPolicy(GetContextKeysForCustomPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetContextKeysForCustomPolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetContextKeysForCustomPolicyResult executeGetContextKeysForCustomPolicy(GetContextKeysForCustomPolicyRequest getContextKeysForCustomPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getContextKeysForCustomPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3385,7 +3793,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetContextKeysForPrincipalPolicyResult getContextKeysForPrincipalPolicy(
+    public GetContextKeysForPrincipalPolicyResult getContextKeysForPrincipalPolicy(GetContextKeysForPrincipalPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetContextKeysForPrincipalPolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetContextKeysForPrincipalPolicyResult executeGetContextKeysForPrincipalPolicy(
             GetContextKeysForPrincipalPolicyRequest getContextKeysForPrincipalPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getContextKeysForPrincipalPolicyRequest);
@@ -3442,7 +3856,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public GetCredentialReportResult getCredentialReport(GetCredentialReportRequest getCredentialReportRequest) {
+    public GetCredentialReportResult getCredentialReport(GetCredentialReportRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCredentialReport(request);
+    }
+
+    @SdkInternalApi
+    final GetCredentialReportResult executeGetCredentialReport(GetCredentialReportRequest getCredentialReportRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getCredentialReportRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3495,7 +3915,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public GetGroupResult getGroup(GetGroupRequest getGroupRequest) {
+    public GetGroupResult getGroup(GetGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetGroup(request);
+    }
+
+    @SdkInternalApi
+    final GetGroupResult executeGetGroup(GetGroupRequest getGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3559,7 +3985,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public GetGroupPolicyResult getGroupPolicy(GetGroupPolicyRequest getGroupPolicyRequest) {
+    public GetGroupPolicyResult getGroupPolicy(GetGroupPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetGroupPolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetGroupPolicyResult executeGetGroupPolicy(GetGroupPolicyRequest getGroupPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getGroupPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3609,7 +4041,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public GetInstanceProfileResult getInstanceProfile(GetInstanceProfileRequest getInstanceProfileRequest) {
+    public GetInstanceProfileResult getInstanceProfile(GetInstanceProfileRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetInstanceProfile(request);
+    }
+
+    @SdkInternalApi
+    final GetInstanceProfileResult executeGetInstanceProfile(GetInstanceProfileRequest getInstanceProfileRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getInstanceProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3657,7 +4095,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public GetLoginProfileResult getLoginProfile(GetLoginProfileRequest getLoginProfileRequest) {
+    public GetLoginProfileResult getLoginProfile(GetLoginProfileRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetLoginProfile(request);
+    }
+
+    @SdkInternalApi
+    final GetLoginProfileResult executeGetLoginProfile(GetLoginProfileRequest getLoginProfileRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getLoginProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3706,7 +4150,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      API Documentation</a>
      */
     @Override
-    public GetOpenIDConnectProviderResult getOpenIDConnectProvider(GetOpenIDConnectProviderRequest getOpenIDConnectProviderRequest) {
+    public GetOpenIDConnectProviderResult getOpenIDConnectProvider(GetOpenIDConnectProviderRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetOpenIDConnectProvider(request);
+    }
+
+    @SdkInternalApi
+    final GetOpenIDConnectProviderResult executeGetOpenIDConnectProvider(GetOpenIDConnectProviderRequest getOpenIDConnectProviderRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getOpenIDConnectProviderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3769,7 +4219,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public GetPolicyResult getPolicy(GetPolicyRequest getPolicyRequest) {
+    public GetPolicyResult getPolicy(GetPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetPolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetPolicyResult executeGetPolicy(GetPolicyRequest getPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3843,7 +4299,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public GetPolicyVersionResult getPolicyVersion(GetPolicyVersionRequest getPolicyVersionRequest) {
+    public GetPolicyVersionResult getPolicyVersion(GetPolicyVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetPolicyVersion(request);
+    }
+
+    @SdkInternalApi
+    final GetPolicyVersionResult executeGetPolicyVersion(GetPolicyVersionRequest getPolicyVersionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getPolicyVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3900,7 +4362,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public GetRoleResult getRole(GetRoleRequest getRoleRequest) {
+    public GetRoleResult getRole(GetRoleRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetRole(request);
+    }
+
+    @SdkInternalApi
+    final GetRoleResult executeGetRole(GetRoleRequest getRoleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getRoleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3969,7 +4437,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public GetRolePolicyResult getRolePolicy(GetRolePolicyRequest getRolePolicyRequest) {
+    public GetRolePolicyResult getRolePolicy(GetRolePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetRolePolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetRolePolicyResult executeGetRolePolicy(GetRolePolicyRequest getRolePolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getRolePolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4024,7 +4498,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public GetSAMLProviderResult getSAMLProvider(GetSAMLProviderRequest getSAMLProviderRequest) {
+    public GetSAMLProviderResult getSAMLProvider(GetSAMLProviderRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSAMLProvider(request);
+    }
+
+    @SdkInternalApi
+    final GetSAMLProviderResult executeGetSAMLProvider(GetSAMLProviderRequest getSAMLProviderRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getSAMLProviderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4077,7 +4557,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public GetSSHPublicKeyResult getSSHPublicKey(GetSSHPublicKeyRequest getSSHPublicKeyRequest) {
+    public GetSSHPublicKeyResult getSSHPublicKey(GetSSHPublicKeyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSSHPublicKey(request);
+    }
+
+    @SdkInternalApi
+    final GetSSHPublicKeyResult executeGetSSHPublicKey(GetSSHPublicKeyRequest getSSHPublicKeyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getSSHPublicKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4130,7 +4616,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public GetServerCertificateResult getServerCertificate(GetServerCertificateRequest getServerCertificateRequest) {
+    public GetServerCertificateResult getServerCertificate(GetServerCertificateRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetServerCertificate(request);
+    }
+
+    @SdkInternalApi
+    final GetServerCertificateResult executeGetServerCertificate(GetServerCertificateRequest getServerCertificateRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getServerCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4181,7 +4673,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public GetUserResult getUser(GetUserRequest getUserRequest) {
+    public GetUserResult getUser(GetUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetUser(request);
+    }
+
+    @SdkInternalApi
+    final GetUserResult executeGetUser(GetUserRequest getUserRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getUserRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4250,7 +4748,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public GetUserPolicyResult getUserPolicy(GetUserPolicyRequest getUserPolicyRequest) {
+    public GetUserPolicyResult getUserPolicy(GetUserPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetUserPolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetUserPolicyResult executeGetUserPolicy(GetUserPolicyRequest getUserPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getUserPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4312,7 +4816,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public ListAccessKeysResult listAccessKeys(ListAccessKeysRequest listAccessKeysRequest) {
+    public ListAccessKeysResult listAccessKeys(ListAccessKeysRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAccessKeys(request);
+    }
+
+    @SdkInternalApi
+    final ListAccessKeysResult executeListAccessKeys(ListAccessKeysRequest listAccessKeysRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listAccessKeysRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4363,7 +4873,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public ListAccountAliasesResult listAccountAliases(ListAccountAliasesRequest listAccountAliasesRequest) {
+    public ListAccountAliasesResult listAccountAliases(ListAccountAliasesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAccountAliases(request);
+    }
+
+    @SdkInternalApi
+    final ListAccountAliasesResult executeListAccountAliases(ListAccountAliasesRequest listAccountAliasesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listAccountAliasesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4429,7 +4945,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      API Documentation</a>
      */
     @Override
-    public ListAttachedGroupPoliciesResult listAttachedGroupPolicies(ListAttachedGroupPoliciesRequest listAttachedGroupPoliciesRequest) {
+    public ListAttachedGroupPoliciesResult listAttachedGroupPolicies(ListAttachedGroupPoliciesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAttachedGroupPolicies(request);
+    }
+
+    @SdkInternalApi
+    final ListAttachedGroupPoliciesResult executeListAttachedGroupPolicies(ListAttachedGroupPoliciesRequest listAttachedGroupPoliciesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listAttachedGroupPoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4490,7 +5012,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      API Documentation</a>
      */
     @Override
-    public ListAttachedRolePoliciesResult listAttachedRolePolicies(ListAttachedRolePoliciesRequest listAttachedRolePoliciesRequest) {
+    public ListAttachedRolePoliciesResult listAttachedRolePolicies(ListAttachedRolePoliciesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAttachedRolePolicies(request);
+    }
+
+    @SdkInternalApi
+    final ListAttachedRolePoliciesResult executeListAttachedRolePolicies(ListAttachedRolePoliciesRequest listAttachedRolePoliciesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listAttachedRolePoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4551,7 +5079,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      API Documentation</a>
      */
     @Override
-    public ListAttachedUserPoliciesResult listAttachedUserPolicies(ListAttachedUserPoliciesRequest listAttachedUserPoliciesRequest) {
+    public ListAttachedUserPoliciesResult listAttachedUserPolicies(ListAttachedUserPoliciesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAttachedUserPolicies(request);
+    }
+
+    @SdkInternalApi
+    final ListAttachedUserPoliciesResult executeListAttachedUserPolicies(ListAttachedUserPoliciesRequest listAttachedUserPoliciesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listAttachedUserPoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4608,7 +5142,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public ListEntitiesForPolicyResult listEntitiesForPolicy(ListEntitiesForPolicyRequest listEntitiesForPolicyRequest) {
+    public ListEntitiesForPolicyResult listEntitiesForPolicy(ListEntitiesForPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeListEntitiesForPolicy(request);
+    }
+
+    @SdkInternalApi
+    final ListEntitiesForPolicyResult executeListEntitiesForPolicy(ListEntitiesForPolicyRequest listEntitiesForPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listEntitiesForPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4665,7 +5205,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public ListGroupPoliciesResult listGroupPolicies(ListGroupPoliciesRequest listGroupPoliciesRequest) {
+    public ListGroupPoliciesResult listGroupPolicies(ListGroupPoliciesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListGroupPolicies(request);
+    }
+
+    @SdkInternalApi
+    final ListGroupPoliciesResult executeListGroupPolicies(ListGroupPoliciesRequest listGroupPoliciesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listGroupPoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4712,7 +5258,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public ListGroupsResult listGroups(ListGroupsRequest listGroupsRequest) {
+    public ListGroupsResult listGroups(ListGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListGroups(request);
+    }
+
+    @SdkInternalApi
+    final ListGroupsResult executeListGroups(ListGroupsRequest listGroupsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4766,7 +5318,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public ListGroupsForUserResult listGroupsForUser(ListGroupsForUserRequest listGroupsForUserRequest) {
+    public ListGroupsForUserResult listGroupsForUser(ListGroupsForUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeListGroupsForUser(request);
+    }
+
+    @SdkInternalApi
+    final ListGroupsForUserResult executeListGroupsForUser(ListGroupsForUserRequest listGroupsForUserRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listGroupsForUserRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4815,7 +5373,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public ListInstanceProfilesResult listInstanceProfiles(ListInstanceProfilesRequest listInstanceProfilesRequest) {
+    public ListInstanceProfilesResult listInstanceProfiles(ListInstanceProfilesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListInstanceProfiles(request);
+    }
+
+    @SdkInternalApi
+    final ListInstanceProfilesResult executeListInstanceProfiles(ListInstanceProfilesRequest listInstanceProfilesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listInstanceProfilesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4872,7 +5436,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListInstanceProfilesForRoleResult listInstanceProfilesForRole(ListInstanceProfilesForRoleRequest listInstanceProfilesForRoleRequest) {
+    public ListInstanceProfilesForRoleResult listInstanceProfilesForRole(ListInstanceProfilesForRoleRequest request) {
+        request = beforeClientExecution(request);
+        return executeListInstanceProfilesForRole(request);
+    }
+
+    @SdkInternalApi
+    final ListInstanceProfilesForRoleResult executeListInstanceProfilesForRole(ListInstanceProfilesForRoleRequest listInstanceProfilesForRoleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listInstanceProfilesForRoleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4924,7 +5494,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public ListMFADevicesResult listMFADevices(ListMFADevicesRequest listMFADevicesRequest) {
+    public ListMFADevicesResult listMFADevices(ListMFADevicesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListMFADevices(request);
+    }
+
+    @SdkInternalApi
+    final ListMFADevicesResult executeListMFADevices(ListMFADevicesRequest listMFADevicesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listMFADevicesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4973,7 +5549,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      API Documentation</a>
      */
     @Override
-    public ListOpenIDConnectProvidersResult listOpenIDConnectProviders(ListOpenIDConnectProvidersRequest listOpenIDConnectProvidersRequest) {
+    public ListOpenIDConnectProvidersResult listOpenIDConnectProviders(ListOpenIDConnectProvidersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListOpenIDConnectProviders(request);
+    }
+
+    @SdkInternalApi
+    final ListOpenIDConnectProvidersResult executeListOpenIDConnectProviders(ListOpenIDConnectProvidersRequest listOpenIDConnectProvidersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listOpenIDConnectProvidersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -5037,7 +5619,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public ListPoliciesResult listPolicies(ListPoliciesRequest listPoliciesRequest) {
+    public ListPoliciesResult listPolicies(ListPoliciesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPolicies(request);
+    }
+
+    @SdkInternalApi
+    final ListPoliciesResult executeListPolicies(ListPoliciesRequest listPoliciesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listPoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -5096,7 +5684,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public ListPolicyVersionsResult listPolicyVersions(ListPolicyVersionsRequest listPolicyVersionsRequest) {
+    public ListPolicyVersionsResult listPolicyVersions(ListPolicyVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPolicyVersions(request);
+    }
+
+    @SdkInternalApi
+    final ListPolicyVersionsResult executeListPolicyVersions(ListPolicyVersionsRequest listPolicyVersionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listPolicyVersionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -5153,7 +5747,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public ListRolePoliciesResult listRolePolicies(ListRolePoliciesRequest listRolePoliciesRequest) {
+    public ListRolePoliciesResult listRolePolicies(ListRolePoliciesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRolePolicies(request);
+    }
+
+    @SdkInternalApi
+    final ListRolePoliciesResult executeListRolePolicies(ListRolePoliciesRequest listRolePoliciesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listRolePoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -5202,7 +5802,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public ListRolesResult listRoles(ListRolesRequest listRolesRequest) {
+    public ListRolesResult listRoles(ListRolesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRoles(request);
+    }
+
+    @SdkInternalApi
+    final ListRolesResult executeListRoles(ListRolesRequest listRolesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listRolesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -5256,7 +5862,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public ListSAMLProvidersResult listSAMLProviders(ListSAMLProvidersRequest listSAMLProvidersRequest) {
+    public ListSAMLProvidersResult listSAMLProviders(ListSAMLProvidersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSAMLProviders(request);
+    }
+
+    @SdkInternalApi
+    final ListSAMLProvidersResult executeListSAMLProviders(ListSAMLProvidersRequest listSAMLProvidersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listSAMLProvidersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -5317,7 +5929,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public ListSSHPublicKeysResult listSSHPublicKeys(ListSSHPublicKeysRequest listSSHPublicKeysRequest) {
+    public ListSSHPublicKeysResult listSSHPublicKeys(ListSSHPublicKeysRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSSHPublicKeys(request);
+    }
+
+    @SdkInternalApi
+    final ListSSHPublicKeysResult executeListSSHPublicKeys(ListSSHPublicKeysRequest listSSHPublicKeysRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listSSHPublicKeysRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -5376,7 +5994,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public ListServerCertificatesResult listServerCertificates(ListServerCertificatesRequest listServerCertificatesRequest) {
+    public ListServerCertificatesResult listServerCertificates(ListServerCertificatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListServerCertificates(request);
+    }
+
+    @SdkInternalApi
+    final ListServerCertificatesResult executeListServerCertificates(ListServerCertificatesRequest listServerCertificatesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listServerCertificatesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -5433,7 +6057,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListServiceSpecificCredentialsResult listServiceSpecificCredentials(ListServiceSpecificCredentialsRequest listServiceSpecificCredentialsRequest) {
+    public ListServiceSpecificCredentialsResult listServiceSpecificCredentials(ListServiceSpecificCredentialsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListServiceSpecificCredentials(request);
+    }
+
+    @SdkInternalApi
+    final ListServiceSpecificCredentialsResult executeListServiceSpecificCredentials(ListServiceSpecificCredentialsRequest listServiceSpecificCredentialsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listServiceSpecificCredentialsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -5490,7 +6120,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      API Documentation</a>
      */
     @Override
-    public ListSigningCertificatesResult listSigningCertificates(ListSigningCertificatesRequest listSigningCertificatesRequest) {
+    public ListSigningCertificatesResult listSigningCertificates(ListSigningCertificatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSigningCertificates(request);
+    }
+
+    @SdkInternalApi
+    final ListSigningCertificatesResult executeListSigningCertificates(ListSigningCertificatesRequest listSigningCertificatesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listSigningCertificatesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -5552,7 +6188,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public ListUserPoliciesResult listUserPolicies(ListUserPoliciesRequest listUserPoliciesRequest) {
+    public ListUserPoliciesResult listUserPolicies(ListUserPoliciesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListUserPolicies(request);
+    }
+
+    @SdkInternalApi
+    final ListUserPoliciesResult executeListUserPolicies(ListUserPoliciesRequest listUserPoliciesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listUserPoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -5600,7 +6242,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public ListUsersResult listUsers(ListUsersRequest listUsersRequest) {
+    public ListUsersResult listUsers(ListUsersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListUsers(request);
+    }
+
+    @SdkInternalApi
+    final ListUsersResult executeListUsers(ListUsersRequest listUsersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listUsersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -5651,7 +6299,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public ListVirtualMFADevicesResult listVirtualMFADevices(ListVirtualMFADevicesRequest listVirtualMFADevicesRequest) {
+    public ListVirtualMFADevicesResult listVirtualMFADevices(ListVirtualMFADevicesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListVirtualMFADevices(request);
+    }
+
+    @SdkInternalApi
+    final ListVirtualMFADevicesResult executeListVirtualMFADevices(ListVirtualMFADevicesRequest listVirtualMFADevicesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listVirtualMFADevicesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -5728,7 +6382,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public PutGroupPolicyResult putGroupPolicy(PutGroupPolicyRequest putGroupPolicyRequest) {
+    public PutGroupPolicyResult putGroupPolicy(PutGroupPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutGroupPolicy(request);
+    }
+
+    @SdkInternalApi
+    final PutGroupPolicyResult executePutGroupPolicy(PutGroupPolicyRequest putGroupPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putGroupPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -5800,6 +6460,10 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that does not exist. The error message describes
      *         the entity.
+     * @throws UnmodifiableEntityException
+     *         The request was rejected because only the service that depends on the service-linked role can modify or
+     *         delete the role on your behalf. The error message includes the name of the service that depends on this
+     *         service-linked role. You must request the change through that service.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.PutRolePolicy
@@ -5807,7 +6471,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public PutRolePolicyResult putRolePolicy(PutRolePolicyRequest putRolePolicyRequest) {
+    public PutRolePolicyResult putRolePolicy(PutRolePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutRolePolicy(request);
+    }
+
+    @SdkInternalApi
+    final PutRolePolicyResult executePutRolePolicy(PutRolePolicyRequest putRolePolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putRolePolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -5878,7 +6548,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public PutUserPolicyResult putUserPolicy(PutUserPolicyRequest putUserPolicyRequest) {
+    public PutUserPolicyResult putUserPolicy(PutUserPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutUserPolicy(request);
+    }
+
+    @SdkInternalApi
+    final PutUserPolicyResult executePutUserPolicy(PutUserPolicyRequest putUserPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putUserPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -5931,7 +6607,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RemoveClientIDFromOpenIDConnectProviderResult removeClientIDFromOpenIDConnectProvider(
+    public RemoveClientIDFromOpenIDConnectProviderResult removeClientIDFromOpenIDConnectProvider(RemoveClientIDFromOpenIDConnectProviderRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveClientIDFromOpenIDConnectProvider(request);
+    }
+
+    @SdkInternalApi
+    final RemoveClientIDFromOpenIDConnectProviderResult executeRemoveClientIDFromOpenIDConnectProvider(
             RemoveClientIDFromOpenIDConnectProviderRequest removeClientIDFromOpenIDConnectProviderRequest) {
 
         ExecutionContext executionContext = createExecutionContext(removeClientIDFromOpenIDConnectProviderRequest);
@@ -5970,8 +6652,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <important>
      * <p>
      * Make sure you do not have any Amazon EC2 instances running with the role you are about to remove from the
-     * instance profile. Removing a role from an instance profile that is associated with a running instance break any
-     * applications running on the instance.
+     * instance profile. Removing a role from an instance profile that is associated with a running instance might break
+     * any applications running on the instance.
      * </p>
      * </important>
      * <p>
@@ -5989,6 +6671,10 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
+     * @throws UnmodifiableEntityException
+     *         The request was rejected because only the service that depends on the service-linked role can modify or
+     *         delete the role on your behalf. The error message includes the name of the service that depends on this
+     *         service-linked role. You must request the change through that service.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.RemoveRoleFromInstanceProfile
@@ -5996,7 +6682,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RemoveRoleFromInstanceProfileResult removeRoleFromInstanceProfile(RemoveRoleFromInstanceProfileRequest removeRoleFromInstanceProfileRequest) {
+    public RemoveRoleFromInstanceProfileResult removeRoleFromInstanceProfile(RemoveRoleFromInstanceProfileRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveRoleFromInstanceProfile(request);
+    }
+
+    @SdkInternalApi
+    final RemoveRoleFromInstanceProfileResult executeRemoveRoleFromInstanceProfile(RemoveRoleFromInstanceProfileRequest removeRoleFromInstanceProfileRequest) {
 
         ExecutionContext executionContext = createExecutionContext(removeRoleFromInstanceProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -6046,7 +6738,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public RemoveUserFromGroupResult removeUserFromGroup(RemoveUserFromGroupRequest removeUserFromGroupRequest) {
+    public RemoveUserFromGroupResult removeUserFromGroup(RemoveUserFromGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveUserFromGroup(request);
+    }
+
+    @SdkInternalApi
+    final RemoveUserFromGroupResult executeRemoveUserFromGroup(RemoveUserFromGroupRequest removeUserFromGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(removeUserFromGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -6093,7 +6791,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ResetServiceSpecificCredentialResult resetServiceSpecificCredential(ResetServiceSpecificCredentialRequest resetServiceSpecificCredentialRequest) {
+    public ResetServiceSpecificCredentialResult resetServiceSpecificCredential(ResetServiceSpecificCredentialRequest request) {
+        request = beforeClientExecution(request);
+        return executeResetServiceSpecificCredential(request);
+    }
+
+    @SdkInternalApi
+    final ResetServiceSpecificCredentialResult executeResetServiceSpecificCredential(ResetServiceSpecificCredentialRequest resetServiceSpecificCredentialRequest) {
 
         ExecutionContext executionContext = createExecutionContext(resetServiceSpecificCredentialRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -6151,7 +6855,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public ResyncMFADeviceResult resyncMFADevice(ResyncMFADeviceRequest resyncMFADeviceRequest) {
+    public ResyncMFADeviceResult resyncMFADevice(ResyncMFADeviceRequest request) {
+        request = beforeClientExecution(request);
+        return executeResyncMFADevice(request);
+    }
+
+    @SdkInternalApi
+    final ResyncMFADeviceResult executeResyncMFADevice(ResyncMFADeviceRequest resyncMFADeviceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(resyncMFADeviceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -6212,7 +6922,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      API Documentation</a>
      */
     @Override
-    public SetDefaultPolicyVersionResult setDefaultPolicyVersion(SetDefaultPolicyVersionRequest setDefaultPolicyVersionRequest) {
+    public SetDefaultPolicyVersionResult setDefaultPolicyVersion(SetDefaultPolicyVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetDefaultPolicyVersion(request);
+    }
+
+    @SdkInternalApi
+    final SetDefaultPolicyVersionResult executeSetDefaultPolicyVersion(SetDefaultPolicyVersionRequest setDefaultPolicyVersionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(setDefaultPolicyVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -6278,7 +6994,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public SimulateCustomPolicyResult simulateCustomPolicy(SimulateCustomPolicyRequest simulateCustomPolicyRequest) {
+    public SimulateCustomPolicyResult simulateCustomPolicy(SimulateCustomPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeSimulateCustomPolicy(request);
+    }
+
+    @SdkInternalApi
+    final SimulateCustomPolicyResult executeSimulateCustomPolicy(SimulateCustomPolicyRequest simulateCustomPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(simulateCustomPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -6357,7 +7079,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      API Documentation</a>
      */
     @Override
-    public SimulatePrincipalPolicyResult simulatePrincipalPolicy(SimulatePrincipalPolicyRequest simulatePrincipalPolicyRequest) {
+    public SimulatePrincipalPolicyResult simulatePrincipalPolicy(SimulatePrincipalPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeSimulatePrincipalPolicy(request);
+    }
+
+    @SdkInternalApi
+    final SimulatePrincipalPolicyResult executeSimulatePrincipalPolicy(SimulatePrincipalPolicyRequest simulatePrincipalPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(simulatePrincipalPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -6418,7 +7146,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public UpdateAccessKeyResult updateAccessKey(UpdateAccessKeyRequest updateAccessKeyRequest) {
+    public UpdateAccessKeyResult updateAccessKey(UpdateAccessKeyRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAccessKey(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAccessKeyResult executeUpdateAccessKey(UpdateAccessKeyRequest updateAccessKeyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateAccessKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -6483,7 +7217,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateAccountPasswordPolicyResult updateAccountPasswordPolicy(UpdateAccountPasswordPolicyRequest updateAccountPasswordPolicyRequest) {
+    public UpdateAccountPasswordPolicyResult updateAccountPasswordPolicy(UpdateAccountPasswordPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAccountPasswordPolicy(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAccountPasswordPolicyResult executeUpdateAccountPasswordPolicy(UpdateAccountPasswordPolicyRequest updateAccountPasswordPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateAccountPasswordPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -6532,6 +7272,10 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * @throws LimitExceededException
      *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
      *         The error message describes the limit exceeded.
+     * @throws UnmodifiableEntityException
+     *         The request was rejected because only the service that depends on the service-linked role can modify or
+     *         delete the role on your behalf. The error message includes the name of the service that depends on this
+     *         service-linked role. You must request the change through that service.
      * @throws ServiceFailureException
      *         The request processing has failed because of an unknown error, exception or failure.
      * @sample AmazonIdentityManagement.UpdateAssumeRolePolicy
@@ -6539,7 +7283,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public UpdateAssumeRolePolicyResult updateAssumeRolePolicy(UpdateAssumeRolePolicyRequest updateAssumeRolePolicyRequest) {
+    public UpdateAssumeRolePolicyResult updateAssumeRolePolicy(UpdateAssumeRolePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAssumeRolePolicy(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAssumeRolePolicyResult executeUpdateAssumeRolePolicy(UpdateAssumeRolePolicyRequest updateAssumeRolePolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateAssumeRolePolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -6605,7 +7355,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public UpdateGroupResult updateGroup(UpdateGroupRequest updateGroupRequest) {
+    public UpdateGroupResult updateGroup(UpdateGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateGroup(request);
+    }
+
+    @SdkInternalApi
+    final UpdateGroupResult executeUpdateGroup(UpdateGroupRequest updateGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -6666,7 +7422,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public UpdateLoginProfileResult updateLoginProfile(UpdateLoginProfileRequest updateLoginProfileRequest) {
+    public UpdateLoginProfileResult updateLoginProfile(UpdateLoginProfileRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateLoginProfile(request);
+    }
+
+    @SdkInternalApi
+    final UpdateLoginProfileResult executeUpdateLoginProfile(UpdateLoginProfileRequest updateLoginProfileRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateLoginProfileRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -6732,7 +7494,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateOpenIDConnectProviderThumbprintResult updateOpenIDConnectProviderThumbprint(
+    public UpdateOpenIDConnectProviderThumbprintResult updateOpenIDConnectProviderThumbprint(UpdateOpenIDConnectProviderThumbprintRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateOpenIDConnectProviderThumbprint(request);
+    }
+
+    @SdkInternalApi
+    final UpdateOpenIDConnectProviderThumbprintResult executeUpdateOpenIDConnectProviderThumbprint(
             UpdateOpenIDConnectProviderThumbprintRequest updateOpenIDConnectProviderThumbprintRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateOpenIDConnectProviderThumbprintRequest);
@@ -6754,6 +7522,63 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<UpdateOpenIDConnectProviderThumbprintResult> responseHandler = new StaxResponseHandler<UpdateOpenIDConnectProviderThumbprintResult>(
                     new UpdateOpenIDConnectProviderThumbprintResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies the description of a role.
+     * </p>
+     * 
+     * @param updateRoleDescriptionRequest
+     * @return Result of the UpdateRoleDescription operation returned by the service.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced an entity that does not exist. The error message describes
+     *         the entity.
+     * @throws UnmodifiableEntityException
+     *         The request was rejected because only the service that depends on the service-linked role can modify or
+     *         delete the role on your behalf. The error message includes the name of the service that depends on this
+     *         service-linked role. You must request the change through that service.
+     * @throws ServiceFailureException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @sample AmazonIdentityManagement.UpdateRoleDescription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateRoleDescription" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateRoleDescriptionResult updateRoleDescription(UpdateRoleDescriptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateRoleDescription(request);
+    }
+
+    @SdkInternalApi
+    final UpdateRoleDescriptionResult executeUpdateRoleDescription(UpdateRoleDescriptionRequest updateRoleDescriptionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateRoleDescriptionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateRoleDescriptionRequest> request = null;
+        Response<UpdateRoleDescriptionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateRoleDescriptionRequestMarshaller().marshall(super.beforeMarshalling(updateRoleDescriptionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<UpdateRoleDescriptionResult> responseHandler = new StaxResponseHandler<UpdateRoleDescriptionResult>(
+                    new UpdateRoleDescriptionResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6792,7 +7617,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public UpdateSAMLProviderResult updateSAMLProvider(UpdateSAMLProviderRequest updateSAMLProviderRequest) {
+    public UpdateSAMLProviderResult updateSAMLProvider(UpdateSAMLProviderRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateSAMLProvider(request);
+    }
+
+    @SdkInternalApi
+    final UpdateSAMLProviderResult executeUpdateSAMLProvider(UpdateSAMLProviderRequest updateSAMLProviderRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateSAMLProviderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -6845,7 +7676,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public UpdateSSHPublicKeyResult updateSSHPublicKey(UpdateSSHPublicKeyRequest updateSSHPublicKeyRequest) {
+    public UpdateSSHPublicKeyResult updateSSHPublicKey(UpdateSSHPublicKeyRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateSSHPublicKey(request);
+    }
+
+    @SdkInternalApi
+    final UpdateSSHPublicKeyResult executeUpdateSSHPublicKey(UpdateSSHPublicKeyRequest updateSSHPublicKeyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateSSHPublicKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -6919,7 +7756,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      API Documentation</a>
      */
     @Override
-    public UpdateServerCertificateResult updateServerCertificate(UpdateServerCertificateRequest updateServerCertificateRequest) {
+    public UpdateServerCertificateResult updateServerCertificate(UpdateServerCertificateRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateServerCertificate(request);
+    }
+
+    @SdkInternalApi
+    final UpdateServerCertificateResult executeUpdateServerCertificate(UpdateServerCertificateRequest updateServerCertificateRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateServerCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -6966,7 +7809,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateServiceSpecificCredentialResult updateServiceSpecificCredential(UpdateServiceSpecificCredentialRequest updateServiceSpecificCredentialRequest) {
+    public UpdateServiceSpecificCredentialResult updateServiceSpecificCredential(UpdateServiceSpecificCredentialRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateServiceSpecificCredential(request);
+    }
+
+    @SdkInternalApi
+    final UpdateServiceSpecificCredentialResult executeUpdateServiceSpecificCredential(
+            UpdateServiceSpecificCredentialRequest updateServiceSpecificCredentialRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateServiceSpecificCredentialRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -7022,7 +7872,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      API Documentation</a>
      */
     @Override
-    public UpdateSigningCertificateResult updateSigningCertificate(UpdateSigningCertificateRequest updateSigningCertificateRequest) {
+    public UpdateSigningCertificateResult updateSigningCertificate(UpdateSigningCertificateRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateSigningCertificate(request);
+    }
+
+    @SdkInternalApi
+    final UpdateSigningCertificateResult executeUpdateSigningCertificate(UpdateSigningCertificateRequest updateSigningCertificateRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateSigningCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -7093,7 +7949,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public UpdateUserResult updateUser(UpdateUserRequest updateUserRequest) {
+    public UpdateUserResult updateUser(UpdateUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateUser(request);
+    }
+
+    @SdkInternalApi
+    final UpdateUserResult executeUpdateUser(UpdateUserRequest updateUserRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateUserRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -7152,7 +8014,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public UploadSSHPublicKeyResult uploadSSHPublicKey(UploadSSHPublicKeyRequest uploadSSHPublicKeyRequest) {
+    public UploadSSHPublicKeyResult uploadSSHPublicKey(UploadSSHPublicKeyRequest request) {
+        request = beforeClientExecution(request);
+        return executeUploadSSHPublicKey(request);
+    }
+
+    @SdkInternalApi
+    final UploadSSHPublicKeyResult executeUploadSSHPublicKey(UploadSSHPublicKeyRequest uploadSSHPublicKeyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(uploadSSHPublicKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -7186,6 +8054,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <p>
      * Uploads a server certificate entity for the AWS account. The server certificate entity includes a public key
      * certificate, a private key, and an optional certificate chain, which should all be PEM-encoded.
+     * </p>
+     * <p>
+     * We recommend that you use <a href="https://aws.amazon.com/certificate-manager/">AWS Certificate Manager</a> to
+     * provision, manage, and deploy your server certificates. With ACM you can request a certificate, deploy it to AWS
+     * resources, and let ACM handle certificate renewals for you. Certificates provided by ACM are free. For more
+     * information about using ACM, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate
+     * Manager User Guide</a>.
      * </p>
      * <p>
      * For more information about working with server certificates, including a list of AWS services that can use the
@@ -7229,7 +8104,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      API Documentation</a>
      */
     @Override
-    public UploadServerCertificateResult uploadServerCertificate(UploadServerCertificateRequest uploadServerCertificateRequest) {
+    public UploadServerCertificateResult uploadServerCertificate(UploadServerCertificateRequest request) {
+        request = beforeClientExecution(request);
+        return executeUploadServerCertificate(request);
+    }
+
+    @SdkInternalApi
+    final UploadServerCertificateResult executeUploadServerCertificate(UploadServerCertificateRequest uploadServerCertificateRequest) {
 
         ExecutionContext executionContext = createExecutionContext(uploadServerCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -7305,7 +8186,13 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *      API Documentation</a>
      */
     @Override
-    public UploadSigningCertificateResult uploadSigningCertificate(UploadSigningCertificateRequest uploadSigningCertificateRequest) {
+    public UploadSigningCertificateResult uploadSigningCertificate(UploadSigningCertificateRequest request) {
+        request = beforeClientExecution(request);
+        return executeUploadSigningCertificate(request);
+    }
+
+    @SdkInternalApi
+    final UploadSigningCertificateResult executeUploadSigningCertificate(UploadSigningCertificateRequest uploadSigningCertificateRequest) {
 
         ExecutionContext executionContext = createExecutionContext(uploadSigningCertificateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -7398,6 +8285,14 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             }
         }
         return waiters;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
 
 }

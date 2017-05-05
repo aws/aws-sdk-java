@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -47,7 +48,9 @@ import com.amazonaws.services.route53domains.model.transform.*;
  * Client for accessing Amazon Route 53 Domains. All service calls made using this client are blocking, and will not
  * return until the service call completes.
  * <p>
- * 
+ * <p>
+ * Amazon Route 53 API actions let you register domain names and perform related operations.
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -240,6 +243,10 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         init();
     }
 
+    public static AmazonRoute53DomainsClientBuilder builder() {
+        return AmazonRoute53DomainsClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon Route 53 Domains using the specified parameters.
      *
@@ -287,7 +294,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CheckDomainAvailabilityResult checkDomainAvailability(CheckDomainAvailabilityRequest checkDomainAvailabilityRequest) {
+    public CheckDomainAvailabilityResult checkDomainAvailability(CheckDomainAvailabilityRequest request) {
+        request = beforeClientExecution(request);
+        return executeCheckDomainAvailability(request);
+    }
+
+    @SdkInternalApi
+    final CheckDomainAvailabilityResult executeCheckDomainAvailability(CheckDomainAvailabilityRequest checkDomainAvailabilityRequest) {
 
         ExecutionContext executionContext = createExecutionContext(checkDomainAvailabilityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -298,7 +311,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CheckDomainAvailabilityRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(checkDomainAvailabilityRequest));
+                request = new CheckDomainAvailabilityRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(checkDomainAvailabilityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -343,7 +357,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteTagsForDomainResult deleteTagsForDomain(DeleteTagsForDomainRequest deleteTagsForDomainRequest) {
+    public DeleteTagsForDomainResult deleteTagsForDomain(DeleteTagsForDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTagsForDomain(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTagsForDomainResult executeDeleteTagsForDomain(DeleteTagsForDomainRequest deleteTagsForDomainRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteTagsForDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -354,7 +374,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteTagsForDomainRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTagsForDomainRequest));
+                request = new DeleteTagsForDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTagsForDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -391,7 +411,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DisableDomainAutoRenewResult disableDomainAutoRenew(DisableDomainAutoRenewRequest disableDomainAutoRenewRequest) {
+    public DisableDomainAutoRenewResult disableDomainAutoRenew(DisableDomainAutoRenewRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisableDomainAutoRenew(request);
+    }
+
+    @SdkInternalApi
+    final DisableDomainAutoRenewResult executeDisableDomainAutoRenew(DisableDomainAutoRenewRequest disableDomainAutoRenewRequest) {
 
         ExecutionContext executionContext = createExecutionContext(disableDomainAutoRenewRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -402,7 +428,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisableDomainAutoRenewRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableDomainAutoRenewRequest));
+                request = new DisableDomainAutoRenewRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableDomainAutoRenewRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -451,7 +477,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DisableDomainTransferLockResult disableDomainTransferLock(DisableDomainTransferLockRequest disableDomainTransferLockRequest) {
+    public DisableDomainTransferLockResult disableDomainTransferLock(DisableDomainTransferLockRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisableDomainTransferLock(request);
+    }
+
+    @SdkInternalApi
+    final DisableDomainTransferLockResult executeDisableDomainTransferLock(DisableDomainTransferLockRequest disableDomainTransferLockRequest) {
 
         ExecutionContext executionContext = createExecutionContext(disableDomainTransferLockRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -462,7 +494,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisableDomainTransferLockRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableDomainTransferLockRequest));
+                request = new DisableDomainTransferLockRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disableDomainTransferLockRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -510,7 +543,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public EnableDomainAutoRenewResult enableDomainAutoRenew(EnableDomainAutoRenewRequest enableDomainAutoRenewRequest) {
+    public EnableDomainAutoRenewResult enableDomainAutoRenew(EnableDomainAutoRenewRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnableDomainAutoRenew(request);
+    }
+
+    @SdkInternalApi
+    final EnableDomainAutoRenewResult executeEnableDomainAutoRenew(EnableDomainAutoRenewRequest enableDomainAutoRenewRequest) {
 
         ExecutionContext executionContext = createExecutionContext(enableDomainAutoRenewRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -521,7 +560,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EnableDomainAutoRenewRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableDomainAutoRenewRequest));
+                request = new EnableDomainAutoRenewRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableDomainAutoRenewRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -550,7 +589,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * </p>
      * 
      * @param enableDomainTransferLockRequest
-     *        The EnableDomainTransferLock request includes the following element.
+     *        A request to set the transfer lock for the specified domain.
      * @return Result of the EnableDomainTransferLock operation returned by the service.
      * @throws InvalidInputException
      *         The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an
@@ -569,7 +608,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public EnableDomainTransferLockResult enableDomainTransferLock(EnableDomainTransferLockRequest enableDomainTransferLockRequest) {
+    public EnableDomainTransferLockResult enableDomainTransferLock(EnableDomainTransferLockRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnableDomainTransferLock(request);
+    }
+
+    @SdkInternalApi
+    final EnableDomainTransferLockResult executeEnableDomainTransferLock(EnableDomainTransferLockRequest enableDomainTransferLockRequest) {
 
         ExecutionContext executionContext = createExecutionContext(enableDomainTransferLockRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -580,7 +625,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EnableDomainTransferLockRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableDomainTransferLockRequest));
+                request = new EnableDomainTransferLockRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(enableDomainTransferLockRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -624,7 +670,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetContactReachabilityStatusResult getContactReachabilityStatus(GetContactReachabilityStatusRequest getContactReachabilityStatusRequest) {
+    public GetContactReachabilityStatusResult getContactReachabilityStatus(GetContactReachabilityStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetContactReachabilityStatus(request);
+    }
+
+    @SdkInternalApi
+    final GetContactReachabilityStatusResult executeGetContactReachabilityStatus(GetContactReachabilityStatusRequest getContactReachabilityStatusRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getContactReachabilityStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -635,7 +687,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetContactReachabilityStatusRequestMarshaller(protocolFactory).marshall(super
+                request = new GetContactReachabilityStatusRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(getContactReachabilityStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -658,8 +710,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * This operation returns detailed information about the domain. The domain's contact information is also returned
-     * as part of the output.
+     * This operation returns detailed information about a specified domain that is associated with the current AWS
+     * account. Contact information for the domain is also returned as part of the output.
      * </p>
      * 
      * @param getDomainDetailRequest
@@ -676,7 +728,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public GetDomainDetailResult getDomainDetail(GetDomainDetailRequest getDomainDetailRequest) {
+    public GetDomainDetailResult getDomainDetail(GetDomainDetailRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDomainDetail(request);
+    }
+
+    @SdkInternalApi
+    final GetDomainDetailResult executeGetDomainDetail(GetDomainDetailRequest getDomainDetailRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getDomainDetailRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -687,7 +745,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDomainDetailRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDomainDetailRequest));
+                request = new GetDomainDetailRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDomainDetailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -711,18 +769,6 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * The GetDomainSuggestions operation returns a list of suggested domain names given a string, which can either be a
      * domain name or simply a word or phrase (without spaces).
      * </p>
-     * <p>
-     * Parameters:
-     * <ul>
-     * <li>DomainName (string): The basis for your domain suggestion search, a string with (or without) top-level domain
-     * specified.</li>
-     * <li>SuggestionCount (int): The number of domain suggestions to be returned, maximum 50, minimum 1.</li>
-     * <li>OnlyAvailable (bool): If true, availability check will be performed on suggestion results, and only available
-     * domains will be returned. If false, suggestions will be returned without checking whether the domain is actually
-     * available, and caller will have to call checkDomainAvailability for each suggestion to determine availability for
-     * registration.</li>
-     * </ul>
-     * </p>
      * 
      * @param getDomainSuggestionsRequest
      * @return Result of the GetDomainSuggestions operation returned by the service.
@@ -737,7 +783,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetDomainSuggestionsResult getDomainSuggestions(GetDomainSuggestionsRequest getDomainSuggestionsRequest) {
+    public GetDomainSuggestionsResult getDomainSuggestions(GetDomainSuggestionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDomainSuggestions(request);
+    }
+
+    @SdkInternalApi
+    final GetDomainSuggestionsResult executeGetDomainSuggestions(GetDomainSuggestionsRequest getDomainSuggestionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getDomainSuggestionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -748,7 +800,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDomainSuggestionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDomainSuggestionsRequest));
+                request = new GetDomainSuggestionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDomainSuggestionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -773,7 +825,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * </p>
      * 
      * @param getOperationDetailRequest
-     *        The GetOperationDetail request includes the following element.
+     *        The <a>GetOperationDetail</a> request includes the following element.
      * @return Result of the GetOperationDetail operation returned by the service.
      * @throws InvalidInputException
      *         The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an
@@ -784,7 +836,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetOperationDetailResult getOperationDetail(GetOperationDetailRequest getOperationDetailRequest) {
+    public GetOperationDetailResult getOperationDetail(GetOperationDetailRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetOperationDetail(request);
+    }
+
+    @SdkInternalApi
+    final GetOperationDetailResult executeGetOperationDetail(GetOperationDetailRequest getOperationDetailRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getOperationDetailRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -795,7 +853,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetOperationDetailRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getOperationDetailRequest));
+                request = new GetOperationDetailRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getOperationDetailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -831,7 +889,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      Documentation</a>
      */
     @Override
-    public ListDomainsResult listDomains(ListDomainsRequest listDomainsRequest) {
+    public ListDomainsResult listDomains(ListDomainsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDomains(request);
+    }
+
+    @SdkInternalApi
+    final ListDomainsResult executeListDomains(ListDomainsRequest listDomainsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listDomainsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -842,7 +906,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListDomainsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDomainsRequest));
+                request = new ListDomainsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDomainsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -883,7 +947,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public ListOperationsResult listOperations(ListOperationsRequest listOperationsRequest) {
+    public ListOperationsResult listOperations(ListOperationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListOperations(request);
+    }
+
+    @SdkInternalApi
+    final ListOperationsResult executeListOperations(ListOperationsRequest listOperationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listOperationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -894,7 +964,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListOperationsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listOperationsRequest));
+                request = new ListOperationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listOperationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -943,7 +1013,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListTagsForDomainResult listTagsForDomain(ListTagsForDomainRequest listTagsForDomainRequest) {
+    public ListTagsForDomainResult listTagsForDomain(ListTagsForDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForDomain(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForDomainResult executeListTagsForDomain(ListTagsForDomainRequest listTagsForDomainRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTagsForDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -954,7 +1030,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTagsForDomainRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForDomainRequest));
+                request = new ListTagsForDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -982,17 +1058,37 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * When you register a domain, Amazon Route 53 does the following:
      * </p>
      * <ul>
-     * <li>Creates a Amazon Route 53 hosted zone that has the same name as the domain. Amazon Route 53 assigns four name
+     * <li>
+     * <p>
+     * Creates a Amazon Route 53 hosted zone that has the same name as the domain. Amazon Route 53 assigns four name
      * servers to your hosted zone and automatically updates your domain registration with the names of these name
-     * servers.</li>
-     * <li>Enables autorenew, so your domain registration will renew automatically each year. We'll notify you in
-     * advance of the renewal date so you can choose whether to renew the registration.</li>
-     * <li>Optionally enables privacy protection, so WHOIS queries return contact information for our registrar partner,
-     * Gandi, instead of the information you entered for registrant, admin, and tech contacts.</li>
-     * <li>If registration is successful, returns an operation ID that you can use to track the progress and completion
-     * of the action. If the request is not completed successfully, the domain registrant is notified by email.</li>
-     * <li>Charges your AWS account an amount based on the top-level domain. For more information, see <a
-     * href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</li>
+     * servers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Enables autorenew, so your domain registration will renew automatically each year. We'll notify you in advance of
+     * the renewal date so you can choose whether to renew the registration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Optionally enables privacy protection, so WHOIS queries return contact information for our registrar partner,
+     * Gandi, instead of the information you entered for registrant, admin, and tech contacts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If registration is successful, returns an operation ID that you can use to track the progress and completion of
+     * the action. If the request is not completed successfully, the domain registrant is notified by email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Charges your AWS account an amount based on the top-level domain. For more information, see <a
+     * href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param registerDomainRequest
@@ -1017,7 +1113,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public RegisterDomainResult registerDomain(RegisterDomainRequest registerDomainRequest) {
+    public RegisterDomainResult registerDomain(RegisterDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterDomain(request);
+    }
+
+    @SdkInternalApi
+    final RegisterDomainResult executeRegisterDomain(RegisterDomainRequest registerDomainRequest) {
 
         ExecutionContext executionContext = createExecutionContext(registerDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1028,7 +1130,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterDomainRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerDomainRequest));
+                request = new RegisterDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1055,8 +1157,9 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * <p>
      * We recommend that you renew your domain several weeks before the expiration date. Some TLD registries delete
      * domains before the expiration date if you haven't renewed far enough in advance. For more information about
-     * renewing domain registration, see <a href="http://docs.aws.amazon.com/console/route53/domain-renew">Renewing
-     * Registration for a Domain</a> in the Amazon Route 53 documentation.
+     * renewing domain registration, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-renew.html">Renewing Registration for a
+     * Domain</a> in the Amazon Route 53 Developer Guide.
      * </p>
      * 
      * @param renewDomainRequest
@@ -1080,7 +1183,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      Documentation</a>
      */
     @Override
-    public RenewDomainResult renewDomain(RenewDomainRequest renewDomainRequest) {
+    public RenewDomainResult renewDomain(RenewDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeRenewDomain(request);
+    }
+
+    @SdkInternalApi
+    final RenewDomainResult executeRenewDomain(RenewDomainRequest renewDomainRequest) {
 
         ExecutionContext executionContext = createExecutionContext(renewDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1091,7 +1200,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RenewDomainRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(renewDomainRequest));
+                request = new RenewDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(renewDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1132,7 +1241,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ResendContactReachabilityEmailResult resendContactReachabilityEmail(ResendContactReachabilityEmailRequest resendContactReachabilityEmailRequest) {
+    public ResendContactReachabilityEmailResult resendContactReachabilityEmail(ResendContactReachabilityEmailRequest request) {
+        request = beforeClientExecution(request);
+        return executeResendContactReachabilityEmail(request);
+    }
+
+    @SdkInternalApi
+    final ResendContactReachabilityEmailResult executeResendContactReachabilityEmail(ResendContactReachabilityEmailRequest resendContactReachabilityEmailRequest) {
 
         ExecutionContext executionContext = createExecutionContext(resendContactReachabilityEmailRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1143,7 +1258,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ResendContactReachabilityEmailRequestMarshaller(protocolFactory).marshall(super
+                request = new ResendContactReachabilityEmailRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(resendContactReachabilityEmailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1171,7 +1286,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * </p>
      * 
      * @param retrieveDomainAuthCodeRequest
-     *        The RetrieveDomainAuthCode request includes the following element.
+     *        A request for the authorization code for the specified domain. To transfer a domain to another registrar,
+     *        you provide this value to the new registrar.
      * @return Result of the RetrieveDomainAuthCode operation returned by the service.
      * @throws InvalidInputException
      *         The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an
@@ -1184,7 +1300,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RetrieveDomainAuthCodeResult retrieveDomainAuthCode(RetrieveDomainAuthCodeRequest retrieveDomainAuthCodeRequest) {
+    public RetrieveDomainAuthCodeResult retrieveDomainAuthCode(RetrieveDomainAuthCodeRequest request) {
+        request = beforeClientExecution(request);
+        return executeRetrieveDomainAuthCode(request);
+    }
+
+    @SdkInternalApi
+    final RetrieveDomainAuthCodeResult executeRetrieveDomainAuthCode(RetrieveDomainAuthCodeRequest retrieveDomainAuthCodeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(retrieveDomainAuthCodeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1195,7 +1317,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RetrieveDomainAuthCodeRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(retrieveDomainAuthCodeRequest));
+                request = new RetrieveDomainAuthCodeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(retrieveDomainAuthCodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1224,7 +1346,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * For transfer requirements, a detailed procedure, and information about viewing the status of a domain transfer,
      * see <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-transfer-to-route-53.html">Transferring
-     * Registration for a Domain to Amazon Route 53</a> in the Amazon Route 53 Developer Guide.
+     * Registration for a Domain to Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
      * If the registrar for your domain is also the DNS service provider for the domain, we highly recommend that you
@@ -1233,9 +1355,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * transfer the registration, the previous registrar will not renew your domain registration and could end your DNS
      * service at any time.
      * </p>
-     * <note>Caution! If the registrar for your domain is also the DNS service provider for the domain and you don't
-     * transfer DNS service to another provider, your website, email, and the web applications associated with the
-     * domain might become unavailable.</note>
+     * <important>
+     * <p>
+     * If the registrar for your domain is also the DNS service provider for the domain and you don't transfer DNS
+     * service to another provider, your website, email, and the web applications associated with the domain might
+     * become unavailable.
+     * </p>
+     * </important>
      * <p>
      * If the transfer is successful, this method returns an operation ID that you can use to track the progress and
      * completion of the action. If the transfer doesn't complete successfully, the domain registrant will be notified
@@ -1264,7 +1390,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      API Documentation</a>
      */
     @Override
-    public TransferDomainResult transferDomain(TransferDomainRequest transferDomainRequest) {
+    public TransferDomainResult transferDomain(TransferDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeTransferDomain(request);
+    }
+
+    @SdkInternalApi
+    final TransferDomainResult executeTransferDomain(TransferDomainRequest transferDomainRequest) {
 
         ExecutionContext executionContext = createExecutionContext(transferDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1275,7 +1407,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new TransferDomainRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(transferDomainRequest));
+                request = new TransferDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(transferDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1325,7 +1457,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateDomainContactResult updateDomainContact(UpdateDomainContactRequest updateDomainContactRequest) {
+    public UpdateDomainContactResult updateDomainContact(UpdateDomainContactRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDomainContact(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDomainContactResult executeUpdateDomainContact(UpdateDomainContactRequest updateDomainContactRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateDomainContactRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1336,7 +1474,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateDomainContactRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDomainContactRequest));
+                request = new UpdateDomainContactRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDomainContactRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1364,9 +1502,9 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * </p>
      * <p>
      * This operation only affects the privacy of the specified contact type (registrant, administrator, or tech).
-     * Successful acceptance returns an operation ID that you can use with GetOperationDetail to track the progress and
-     * completion of the action. If the request is not completed successfully, the domain registrant will be notified by
-     * email.
+     * Successful acceptance returns an operation ID that you can use with <a>GetOperationDetail</a> to track the
+     * progress and completion of the action. If the request is not completed successfully, the domain registrant will
+     * be notified by email.
      * </p>
      * 
      * @param updateDomainContactPrivacyRequest
@@ -1389,7 +1527,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateDomainContactPrivacyResult updateDomainContactPrivacy(UpdateDomainContactPrivacyRequest updateDomainContactPrivacyRequest) {
+    public UpdateDomainContactPrivacyResult updateDomainContactPrivacy(UpdateDomainContactPrivacyRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDomainContactPrivacy(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDomainContactPrivacyResult executeUpdateDomainContactPrivacy(UpdateDomainContactPrivacyRequest updateDomainContactPrivacyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateDomainContactPrivacyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1400,7 +1544,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateDomainContactPrivacyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDomainContactPrivacyRequest));
+                request = new UpdateDomainContactPrivacyRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateDomainContactPrivacyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1432,7 +1577,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * </p>
      * 
      * @param updateDomainNameserversRequest
-     *        The UpdateDomainNameserver request includes the following elements.
+     *        Replaces the current set of name servers for the domain with the specified set of name servers. If you use
+     *        Amazon Route 53 as your DNS service, specify the four name servers in the delegation set for the hosted
+     *        zone for the domain.</p>
+     *        <p>
+     *        If successful, this operation returns an operation ID that you can use to track the progress and
+     *        completion of the action. If the request is not completed successfully, the domain registrant will be
+     *        notified by email.
      * @return Result of the UpdateDomainNameservers operation returned by the service.
      * @throws InvalidInputException
      *         The requested item is not acceptable. For example, for an OperationId it may refer to the ID of an
@@ -1451,7 +1602,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateDomainNameserversResult updateDomainNameservers(UpdateDomainNameserversRequest updateDomainNameserversRequest) {
+    public UpdateDomainNameserversResult updateDomainNameservers(UpdateDomainNameserversRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDomainNameservers(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDomainNameserversResult executeUpdateDomainNameservers(UpdateDomainNameserversRequest updateDomainNameserversRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateDomainNameserversRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1462,7 +1619,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateDomainNameserversRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDomainNameserversRequest));
+                request = new UpdateDomainNameserversRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateDomainNameserversRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1507,7 +1665,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateTagsForDomainResult updateTagsForDomain(UpdateTagsForDomainRequest updateTagsForDomainRequest) {
+    public UpdateTagsForDomainResult updateTagsForDomain(UpdateTagsForDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateTagsForDomain(request);
+    }
+
+    @SdkInternalApi
+    final UpdateTagsForDomainResult executeUpdateTagsForDomain(UpdateTagsForDomainRequest updateTagsForDomainRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateTagsForDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1518,7 +1682,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateTagsForDomainRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateTagsForDomainRequest));
+                request = new UpdateTagsForDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateTagsForDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1539,7 +1703,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * This operation returns all the domain-related billing records for the current AWS account for a specified period
+     * Returns all the domain-related billing records for the current AWS account for a specified period
      * </p>
      * 
      * @param viewBillingRequest
@@ -1554,7 +1718,13 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      *      Documentation</a>
      */
     @Override
-    public ViewBillingResult viewBilling(ViewBillingRequest viewBillingRequest) {
+    public ViewBillingResult viewBilling(ViewBillingRequest request) {
+        request = beforeClientExecution(request);
+        return executeViewBilling(request);
+    }
+
+    @SdkInternalApi
+    final ViewBillingResult executeViewBilling(ViewBillingRequest viewBillingRequest) {
 
         ExecutionContext executionContext = createExecutionContext(viewBillingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1565,7 +1735,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ViewBillingRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(viewBillingRequest));
+                request = new ViewBillingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(viewBillingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

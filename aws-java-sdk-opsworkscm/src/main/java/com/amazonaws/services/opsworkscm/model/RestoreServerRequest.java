@@ -40,15 +40,16 @@ public class RestoreServerRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The type of the instance to create. Valid values must be specified in the following format:
-     * <code>^([cm][34]|t2).*</code> For example, <code>c3.large</code>. If you do not specify this parameter,
-     * RestoreServer uses the instance type from the specified backup.
+     * <code>^([cm][34]|t2).*</code> For example, <code>m4.large</code>. Valid values are <code>t2.medium</code>,
+     * <code>m4.large</code>, and <code>m4.2xlarge</code>. If you do not specify this parameter, RestoreServer uses the
+     * instance type from the specified backup.
      * </p>
      */
     private String instanceType;
     /**
      * <p>
-     * The name of the key pair to set on the new EC2 instance. This can be helpful if any of the administrators who
-     * manage the server no longer have the SSH key.
+     * The name of the key pair to set on the new EC2 instance. This can be helpful if the administrator no longer has
+     * the SSH key.
      * </p>
      */
     private String keyPair;
@@ -136,14 +137,16 @@ public class RestoreServerRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The type of the instance to create. Valid values must be specified in the following format:
-     * <code>^([cm][34]|t2).*</code> For example, <code>c3.large</code>. If you do not specify this parameter,
-     * RestoreServer uses the instance type from the specified backup.
+     * <code>^([cm][34]|t2).*</code> For example, <code>m4.large</code>. Valid values are <code>t2.medium</code>,
+     * <code>m4.large</code>, and <code>m4.2xlarge</code>. If you do not specify this parameter, RestoreServer uses the
+     * instance type from the specified backup.
      * </p>
      * 
      * @param instanceType
      *        The type of the instance to create. Valid values must be specified in the following format:
-     *        <code>^([cm][34]|t2).*</code> For example, <code>c3.large</code>. If you do not specify this parameter,
-     *        RestoreServer uses the instance type from the specified backup.
+     *        <code>^([cm][34]|t2).*</code> For example, <code>m4.large</code>. Valid values are <code>t2.medium</code>,
+     *        <code>m4.large</code>, and <code>m4.2xlarge</code>. If you do not specify this parameter, RestoreServer
+     *        uses the instance type from the specified backup.
      */
 
     public void setInstanceType(String instanceType) {
@@ -153,13 +156,15 @@ public class RestoreServerRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The type of the instance to create. Valid values must be specified in the following format:
-     * <code>^([cm][34]|t2).*</code> For example, <code>c3.large</code>. If you do not specify this parameter,
-     * RestoreServer uses the instance type from the specified backup.
+     * <code>^([cm][34]|t2).*</code> For example, <code>m4.large</code>. Valid values are <code>t2.medium</code>,
+     * <code>m4.large</code>, and <code>m4.2xlarge</code>. If you do not specify this parameter, RestoreServer uses the
+     * instance type from the specified backup.
      * </p>
      * 
      * @return The type of the instance to create. Valid values must be specified in the following format:
-     *         <code>^([cm][34]|t2).*</code> For example, <code>c3.large</code>. If you do not specify this parameter,
-     *         RestoreServer uses the instance type from the specified backup.
+     *         <code>^([cm][34]|t2).*</code> For example, <code>m4.large</code>. Valid values are <code>t2.medium</code>
+     *         , <code>m4.large</code>, and <code>m4.2xlarge</code>. If you do not specify this parameter, RestoreServer
+     *         uses the instance type from the specified backup.
      */
 
     public String getInstanceType() {
@@ -169,14 +174,16 @@ public class RestoreServerRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The type of the instance to create. Valid values must be specified in the following format:
-     * <code>^([cm][34]|t2).*</code> For example, <code>c3.large</code>. If you do not specify this parameter,
-     * RestoreServer uses the instance type from the specified backup.
+     * <code>^([cm][34]|t2).*</code> For example, <code>m4.large</code>. Valid values are <code>t2.medium</code>,
+     * <code>m4.large</code>, and <code>m4.2xlarge</code>. If you do not specify this parameter, RestoreServer uses the
+     * instance type from the specified backup.
      * </p>
      * 
      * @param instanceType
      *        The type of the instance to create. Valid values must be specified in the following format:
-     *        <code>^([cm][34]|t2).*</code> For example, <code>c3.large</code>. If you do not specify this parameter,
-     *        RestoreServer uses the instance type from the specified backup.
+     *        <code>^([cm][34]|t2).*</code> For example, <code>m4.large</code>. Valid values are <code>t2.medium</code>,
+     *        <code>m4.large</code>, and <code>m4.2xlarge</code>. If you do not specify this parameter, RestoreServer
+     *        uses the instance type from the specified backup.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,13 +194,13 @@ public class RestoreServerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the key pair to set on the new EC2 instance. This can be helpful if any of the administrators who
-     * manage the server no longer have the SSH key.
+     * The name of the key pair to set on the new EC2 instance. This can be helpful if the administrator no longer has
+     * the SSH key.
      * </p>
      * 
      * @param keyPair
-     *        The name of the key pair to set on the new EC2 instance. This can be helpful if any of the administrators
-     *        who manage the server no longer have the SSH key.
+     *        The name of the key pair to set on the new EC2 instance. This can be helpful if the administrator no
+     *        longer has the SSH key.
      */
 
     public void setKeyPair(String keyPair) {
@@ -202,12 +209,12 @@ public class RestoreServerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the key pair to set on the new EC2 instance. This can be helpful if any of the administrators who
-     * manage the server no longer have the SSH key.
+     * The name of the key pair to set on the new EC2 instance. This can be helpful if the administrator no longer has
+     * the SSH key.
      * </p>
      * 
-     * @return The name of the key pair to set on the new EC2 instance. This can be helpful if any of the administrators
-     *         who manage the server no longer have the SSH key.
+     * @return The name of the key pair to set on the new EC2 instance. This can be helpful if the administrator no
+     *         longer has the SSH key.
      */
 
     public String getKeyPair() {
@@ -216,13 +223,13 @@ public class RestoreServerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the key pair to set on the new EC2 instance. This can be helpful if any of the administrators who
-     * manage the server no longer have the SSH key.
+     * The name of the key pair to set on the new EC2 instance. This can be helpful if the administrator no longer has
+     * the SSH key.
      * </p>
      * 
      * @param keyPair
-     *        The name of the key pair to set on the new EC2 instance. This can be helpful if any of the administrators
-     *        who manage the server no longer have the SSH key.
+     *        The name of the key pair to set on the new EC2 instance. This can be helpful if the administrator no
+     *        longer has the SSH key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

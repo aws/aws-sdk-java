@@ -45,8 +45,7 @@ public class UpdateRestApiResult extends com.amazonaws.AmazonWebServiceResult<co
     private String description;
     /**
      * <p>
-     * The date when the API was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The timestamp when the API was created.
      * </p>
      */
     private java.util.Date createdDate;
@@ -192,13 +191,11 @@ public class UpdateRestApiResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The date when the API was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The timestamp when the API was created.
      * </p>
      * 
      * @param createdDate
-     *        The date when the API was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     *        target="_blank">ISO 8601 format</a>.
+     *        The timestamp when the API was created.
      */
 
     public void setCreatedDate(java.util.Date createdDate) {
@@ -207,12 +204,10 @@ public class UpdateRestApiResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The date when the API was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The timestamp when the API was created.
      * </p>
      * 
-     * @return The date when the API was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     *         target="_blank">ISO 8601 format</a>.
+     * @return The timestamp when the API was created.
      */
 
     public java.util.Date getCreatedDate() {
@@ -221,13 +216,11 @@ public class UpdateRestApiResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The date when the API was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The timestamp when the API was created.
      * </p>
      * 
      * @param createdDate
-     *        The date when the API was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     *        target="_blank">ISO 8601 format</a>.
+     *        The timestamp when the API was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -517,4 +510,5 @@ public class UpdateRestApiResult extends com.amazonaws.AmazonWebServiceResult<co
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

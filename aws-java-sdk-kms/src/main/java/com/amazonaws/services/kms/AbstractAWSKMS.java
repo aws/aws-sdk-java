@@ -178,6 +178,11 @@ public class AbstractAWSKMS implements AWSKMS {
     }
 
     @Override
+    public ListResourceTagsResult listResourceTags(ListResourceTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListRetirableGrantsResult listRetirableGrants(ListRetirableGrantsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -209,6 +214,16 @@ public class AbstractAWSKMS implements AWSKMS {
 
     @Override
     public ScheduleKeyDeletionResult scheduleKeyDeletion(ScheduleKeyDeletionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

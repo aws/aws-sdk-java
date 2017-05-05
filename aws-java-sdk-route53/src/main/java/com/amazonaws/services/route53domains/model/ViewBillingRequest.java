@@ -33,30 +33,12 @@ public class ViewBillingRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The beginning date and time for the time period for which you want a list of billing records. Specify the date in
      * Unix time format.
      * </p>
-     * <p>
-     * Type: Double
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      */
     private java.util.Date start;
     /**
      * <p>
      * The end date and time for the time period for which you want a list of billing records. Specify the date in Unix
      * time format.
-     * </p>
-     * <p>
-     * Type: Double
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Required: Yes
      * </p>
      */
     private java.util.Date end;
@@ -69,17 +51,8 @@ public class ViewBillingRequest extends com.amazonaws.AmazonWebServiceRequest im
      * value of <code>NextPageMarker</code> in the <code>Marker</code> element.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
      * Constraints: The marker must match the value of <code>NextPageMarker</code> that was returned in the previous
      * response.
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      */
     private String marker;
@@ -88,16 +61,7 @@ public class ViewBillingRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The number of billing records to be returned.
      * </p>
      * <p>
-     * Type: Integer
-     * </p>
-     * <p>
      * Default: 20
-     * </p>
-     * <p>
-     * Constraints: A value between 1 and 100.
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      */
     private Integer maxItems;
@@ -107,27 +71,10 @@ public class ViewBillingRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The beginning date and time for the time period for which you want a list of billing records. Specify the date in
      * Unix time format.
      * </p>
-     * <p>
-     * Type: Double
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param start
      *        The beginning date and time for the time period for which you want a list of billing records. Specify the
-     *        date in Unix time format.</p>
-     *        <p>
-     *        Type: Double
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        date in Unix time format.
      */
 
     public void setStart(java.util.Date start) {
@@ -139,26 +86,9 @@ public class ViewBillingRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The beginning date and time for the time period for which you want a list of billing records. Specify the date in
      * Unix time format.
      * </p>
-     * <p>
-     * Type: Double
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @return The beginning date and time for the time period for which you want a list of billing records. Specify the
-     *         date in Unix time format.</p>
-     *         <p>
-     *         Type: Double
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Required: Yes
+     *         date in Unix time format.
      */
 
     public java.util.Date getStart() {
@@ -170,27 +100,10 @@ public class ViewBillingRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The beginning date and time for the time period for which you want a list of billing records. Specify the date in
      * Unix time format.
      * </p>
-     * <p>
-     * Type: Double
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param start
      *        The beginning date and time for the time period for which you want a list of billing records. Specify the
-     *        date in Unix time format.</p>
-     *        <p>
-     *        Type: Double
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        date in Unix time format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,27 +117,10 @@ public class ViewBillingRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The end date and time for the time period for which you want a list of billing records. Specify the date in Unix
      * time format.
      * </p>
-     * <p>
-     * Type: Double
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param end
      *        The end date and time for the time period for which you want a list of billing records. Specify the date
-     *        in Unix time format.</p>
-     *        <p>
-     *        Type: Double
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        in Unix time format.
      */
 
     public void setEnd(java.util.Date end) {
@@ -236,26 +132,9 @@ public class ViewBillingRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The end date and time for the time period for which you want a list of billing records. Specify the date in Unix
      * time format.
      * </p>
-     * <p>
-     * Type: Double
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @return The end date and time for the time period for which you want a list of billing records. Specify the date
-     *         in Unix time format.</p>
-     *         <p>
-     *         Type: Double
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Required: Yes
+     *         in Unix time format.
      */
 
     public java.util.Date getEnd() {
@@ -267,27 +146,10 @@ public class ViewBillingRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The end date and time for the time period for which you want a list of billing records. Specify the date in Unix
      * time format.
      * </p>
-     * <p>
-     * Type: Double
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param end
      *        The end date and time for the time period for which you want a list of billing records. Specify the date
-     *        in Unix time format.</p>
-     *        <p>
-     *        Type: Double
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        in Unix time format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -305,17 +167,8 @@ public class ViewBillingRequest extends com.amazonaws.AmazonWebServiceRequest im
      * value of <code>NextPageMarker</code> in the <code>Marker</code> element.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
      * Constraints: The marker must match the value of <code>NextPageMarker</code> that was returned in the previous
      * response.
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      * 
      * @param marker
@@ -325,17 +178,8 @@ public class ViewBillingRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        records. Get the value of <code>NextPageMarker</code> from the previous response, and submit another
      *        request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element. </p>
      *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
      *        Constraints: The marker must match the value of <code>NextPageMarker</code> that was returned in the
      *        previous response.
-     *        </p>
-     *        <p>
-     *        Required: No
      */
 
     public void setMarker(String marker) {
@@ -351,17 +195,8 @@ public class ViewBillingRequest extends com.amazonaws.AmazonWebServiceRequest im
      * value of <code>NextPageMarker</code> in the <code>Marker</code> element.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
      * Constraints: The marker must match the value of <code>NextPageMarker</code> that was returned in the previous
      * response.
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      * 
      * @return For an initial request for a list of billing records, omit this element. If the number of billing records
@@ -371,17 +206,8 @@ public class ViewBillingRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code>
      *         element. </p>
      *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
      *         Constraints: The marker must match the value of <code>NextPageMarker</code> that was returned in the
      *         previous response.
-     *         </p>
-     *         <p>
-     *         Required: No
      */
 
     public String getMarker() {
@@ -397,17 +223,8 @@ public class ViewBillingRequest extends com.amazonaws.AmazonWebServiceRequest im
      * value of <code>NextPageMarker</code> in the <code>Marker</code> element.
      * </p>
      * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
      * Constraints: The marker must match the value of <code>NextPageMarker</code> that was returned in the previous
      * response.
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      * 
      * @param marker
@@ -417,17 +234,8 @@ public class ViewBillingRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        records. Get the value of <code>NextPageMarker</code> from the previous response, and submit another
      *        request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element. </p>
      *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
      *        Constraints: The marker must match the value of <code>NextPageMarker</code> that was returned in the
      *        previous response.
-     *        </p>
-     *        <p>
-     *        Required: No
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -441,31 +249,13 @@ public class ViewBillingRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The number of billing records to be returned.
      * </p>
      * <p>
-     * Type: Integer
-     * </p>
-     * <p>
      * Default: 20
-     * </p>
-     * <p>
-     * Constraints: A value between 1 and 100.
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      * 
      * @param maxItems
      *        The number of billing records to be returned.</p>
      *        <p>
-     *        Type: Integer
-     *        </p>
-     *        <p>
      *        Default: 20
-     *        </p>
-     *        <p>
-     *        Constraints: A value between 1 and 100.
-     *        </p>
-     *        <p>
-     *        Required: No
      */
 
     public void setMaxItems(Integer maxItems) {
@@ -477,30 +267,12 @@ public class ViewBillingRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The number of billing records to be returned.
      * </p>
      * <p>
-     * Type: Integer
-     * </p>
-     * <p>
      * Default: 20
-     * </p>
-     * <p>
-     * Constraints: A value between 1 and 100.
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      * 
      * @return The number of billing records to be returned.</p>
      *         <p>
-     *         Type: Integer
-     *         </p>
-     *         <p>
      *         Default: 20
-     *         </p>
-     *         <p>
-     *         Constraints: A value between 1 and 100.
-     *         </p>
-     *         <p>
-     *         Required: No
      */
 
     public Integer getMaxItems() {
@@ -512,31 +284,13 @@ public class ViewBillingRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The number of billing records to be returned.
      * </p>
      * <p>
-     * Type: Integer
-     * </p>
-     * <p>
      * Default: 20
-     * </p>
-     * <p>
-     * Constraints: A value between 1 and 100.
-     * </p>
-     * <p>
-     * Required: No
      * </p>
      * 
      * @param maxItems
      *        The number of billing records to be returned.</p>
      *        <p>
-     *        Type: Integer
-     *        </p>
-     *        <p>
      *        Default: 20
-     *        </p>
-     *        <p>
-     *        Constraints: A value between 1 and 100.
-     *        </p>
-     *        <p>
-     *        Required: No
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

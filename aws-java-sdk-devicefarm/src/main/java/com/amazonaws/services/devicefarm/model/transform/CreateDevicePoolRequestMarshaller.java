@@ -12,85 +12,54 @@
  */
 package com.amazonaws.services.devicefarm.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.devicefarm.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateDevicePoolRequest Marshaller
+ * CreateDevicePoolRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateDevicePoolRequestMarshaller implements Marshaller<Request<CreateDevicePoolRequest>, CreateDevicePoolRequest> {
+@SdkInternalApi
+public class CreateDevicePoolRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> PROJECTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("projectArn").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<List> RULES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("rules").build();
 
-    public CreateDevicePoolRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateDevicePoolRequestMarshaller instance = new CreateDevicePoolRequestMarshaller();
+
+    public static CreateDevicePoolRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateDevicePoolRequest> marshall(CreateDevicePoolRequest createDevicePoolRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateDevicePoolRequest createDevicePoolRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createDevicePoolRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateDevicePoolRequest> request = new DefaultRequest<CreateDevicePoolRequest>(createDevicePoolRequest, "AWSDeviceFarm");
-        request.addHeader("X-Amz-Target", "DeviceFarm_20150623.CreateDevicePool");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createDevicePoolRequest.getProjectArn() != null) {
-                jsonGenerator.writeFieldName("projectArn").writeValue(createDevicePoolRequest.getProjectArn());
-            }
-            if (createDevicePoolRequest.getName() != null) {
-                jsonGenerator.writeFieldName("name").writeValue(createDevicePoolRequest.getName());
-            }
-            if (createDevicePoolRequest.getDescription() != null) {
-                jsonGenerator.writeFieldName("description").writeValue(createDevicePoolRequest.getDescription());
-            }
-
-            java.util.List<Rule> rulesList = createDevicePoolRequest.getRules();
-            if (rulesList != null) {
-                jsonGenerator.writeFieldName("rules");
-                jsonGenerator.writeStartArray();
-                for (Rule rulesListValue : rulesList) {
-                    if (rulesListValue != null) {
-
-                        RuleJsonMarshaller.getInstance().marshall(rulesListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createDevicePoolRequest.getProjectArn(), PROJECTARN_BINDING);
+            protocolMarshaller.marshall(createDevicePoolRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createDevicePoolRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createDevicePoolRequest.getRules(), RULES_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

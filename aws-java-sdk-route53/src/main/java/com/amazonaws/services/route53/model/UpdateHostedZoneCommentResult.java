@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A complex type that contains the response to the UpdateHostedZoneCommentRequest.
+ * A complex type that contains the response to the <code>UpdateHostedZoneComment</code> request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHostedZoneComment" target="_top">AWS
@@ -105,4 +105,5 @@ public class UpdateHostedZoneCommentResult extends com.amazonaws.AmazonWebServic
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

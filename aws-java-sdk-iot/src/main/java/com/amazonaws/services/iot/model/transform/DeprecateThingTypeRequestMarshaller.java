@@ -12,68 +12,47 @@
  */
 package com.amazonaws.services.iot.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.iot.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeprecateThingTypeRequest Marshaller
+ * DeprecateThingTypeRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeprecateThingTypeRequestMarshaller implements Marshaller<Request<DeprecateThingTypeRequest>, DeprecateThingTypeRequest> {
+@SdkInternalApi
+public class DeprecateThingTypeRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> THINGTYPENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("thingTypeName").build();
+    private static final MarshallingInfo<Boolean> UNDODEPRECATE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("undoDeprecate").build();
 
-    public DeprecateThingTypeRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeprecateThingTypeRequestMarshaller instance = new DeprecateThingTypeRequestMarshaller();
+
+    public static DeprecateThingTypeRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeprecateThingTypeRequest> marshall(DeprecateThingTypeRequest deprecateThingTypeRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeprecateThingTypeRequest deprecateThingTypeRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deprecateThingTypeRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeprecateThingTypeRequest> request = new DefaultRequest<DeprecateThingTypeRequest>(deprecateThingTypeRequest, "AWSIot");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/thing-types/{thingTypeName}/deprecate";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "thingTypeName",
-                deprecateThingTypeRequest.getThingTypeName());
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (deprecateThingTypeRequest.getUndoDeprecate() != null) {
-                jsonGenerator.writeFieldName("undoDeprecate").writeValue(deprecateThingTypeRequest.getUndoDeprecate());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deprecateThingTypeRequest.getThingTypeName(), THINGTYPENAME_BINDING);
+            protocolMarshaller.marshall(deprecateThingTypeRequest.getUndoDeprecate(), UNDODEPRECATE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * The response to a request to list the distributions that are associated with a specified AWS WAF web ACL.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/ListDistributionsByWebACLId"
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributionsByWebACLId"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -124,4 +124,5 @@ public class ListDistributionsByWebACLIdResult extends com.amazonaws.AmazonWebSe
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

@@ -33,7 +33,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     private String resourceArn;
     /**
      * <p>
-     * Next token used for pagination. This is for future use. Currently pagination is not supported for tagging.
+     * The pagination token. This is for future use. Currently pagination is not supported for tagging.
      * </p>
      */
     private String nextToken;
@@ -87,11 +87,11 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Next token used for pagination. This is for future use. Currently pagination is not supported for tagging.
+     * The pagination token. This is for future use. Currently pagination is not supported for tagging.
      * </p>
      * 
      * @param nextToken
-     *        Next token used for pagination. This is for future use. Currently pagination is not supported for tagging.
+     *        The pagination token. This is for future use. Currently pagination is not supported for tagging.
      */
 
     public void setNextToken(String nextToken) {
@@ -100,11 +100,10 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Next token used for pagination. This is for future use. Currently pagination is not supported for tagging.
+     * The pagination token. This is for future use. Currently pagination is not supported for tagging.
      * </p>
      * 
-     * @return Next token used for pagination. This is for future use. Currently pagination is not supported for
-     *         tagging.
+     * @return The pagination token. This is for future use. Currently pagination is not supported for tagging.
      */
 
     public String getNextToken() {
@@ -113,11 +112,11 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Next token used for pagination. This is for future use. Currently pagination is not supported for tagging.
+     * The pagination token. This is for future use. Currently pagination is not supported for tagging.
      * </p>
      * 
      * @param nextToken
-     *        Next token used for pagination. This is for future use. Currently pagination is not supported for tagging.
+     *        The pagination token. This is for future use. Currently pagination is not supported for tagging.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

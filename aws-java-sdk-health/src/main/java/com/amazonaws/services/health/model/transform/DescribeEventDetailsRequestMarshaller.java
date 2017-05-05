@@ -12,77 +12,48 @@
  */
 package com.amazonaws.services.health.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.health.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeEventDetailsRequest Marshaller
+ * DescribeEventDetailsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeEventDetailsRequestMarshaller implements Marshaller<Request<DescribeEventDetailsRequest>, DescribeEventDetailsRequest> {
+@SdkInternalApi
+public class DescribeEventDetailsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<List> EVENTARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("eventArns").build();
+    private static final MarshallingInfo<String> LOCALE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("locale").build();
 
-    public DescribeEventDetailsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeEventDetailsRequestMarshaller instance = new DescribeEventDetailsRequestMarshaller();
+
+    public static DescribeEventDetailsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeEventDetailsRequest> marshall(DescribeEventDetailsRequest describeEventDetailsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeEventDetailsRequest describeEventDetailsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeEventDetailsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeEventDetailsRequest> request = new DefaultRequest<DescribeEventDetailsRequest>(describeEventDetailsRequest, "AWSHealth");
-        request.addHeader("X-Amz-Target", "AWSHealth_20160804.DescribeEventDetails");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            java.util.List<String> eventArnsList = describeEventDetailsRequest.getEventArns();
-            if (eventArnsList != null) {
-                jsonGenerator.writeFieldName("eventArns");
-                jsonGenerator.writeStartArray();
-                for (String eventArnsListValue : eventArnsList) {
-                    if (eventArnsListValue != null) {
-                        jsonGenerator.writeValue(eventArnsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (describeEventDetailsRequest.getLocale() != null) {
-                jsonGenerator.writeFieldName("locale").writeValue(describeEventDetailsRequest.getLocale());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeEventDetailsRequest.getEventArns(), EVENTARNS_BINDING);
+            protocolMarshaller.marshall(describeEventDetailsRequest.getLocale(), LOCALE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -284,6 +284,11 @@ public class AbstractAmazonElastiCache implements AmazonElastiCache {
     }
 
     @Override
+    public ReplicationGroup testFailover(TestFailoverRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public void shutdown() {
         throw new java.lang.UnsupportedOperationException();
     }

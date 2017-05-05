@@ -238,6 +238,10 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
         this.executorService = executorService;
     }
 
+    public static AmazonCognitoSyncAsyncClientBuilder asyncBuilder() {
+        return AmazonCognitoSyncAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon Cognito Sync using the specified
      * parameters.
@@ -268,14 +272,15 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
     @Override
     public java.util.concurrent.Future<BulkPublishResult> bulkPublishAsync(final BulkPublishRequest request,
             final com.amazonaws.handlers.AsyncHandler<BulkPublishRequest, BulkPublishResult> asyncHandler) {
+        final BulkPublishRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<BulkPublishResult>() {
             @Override
             public BulkPublishResult call() throws Exception {
-                BulkPublishResult result;
+                BulkPublishResult result = null;
 
                 try {
-                    result = bulkPublish(request);
+                    result = executeBulkPublish(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -284,7 +289,7 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -300,14 +305,15 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
     @Override
     public java.util.concurrent.Future<DeleteDatasetResult> deleteDatasetAsync(final DeleteDatasetRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteDatasetRequest, DeleteDatasetResult> asyncHandler) {
+        final DeleteDatasetRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteDatasetResult>() {
             @Override
             public DeleteDatasetResult call() throws Exception {
-                DeleteDatasetResult result;
+                DeleteDatasetResult result = null;
 
                 try {
-                    result = deleteDataset(request);
+                    result = executeDeleteDataset(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -316,7 +322,7 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -332,14 +338,15 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
     @Override
     public java.util.concurrent.Future<DescribeDatasetResult> describeDatasetAsync(final DescribeDatasetRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeDatasetRequest, DescribeDatasetResult> asyncHandler) {
+        final DescribeDatasetRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeDatasetResult>() {
             @Override
             public DescribeDatasetResult call() throws Exception {
-                DescribeDatasetResult result;
+                DescribeDatasetResult result = null;
 
                 try {
-                    result = describeDataset(request);
+                    result = executeDescribeDataset(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -348,7 +355,7 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -364,14 +371,15 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
     @Override
     public java.util.concurrent.Future<DescribeIdentityPoolUsageResult> describeIdentityPoolUsageAsync(final DescribeIdentityPoolUsageRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeIdentityPoolUsageRequest, DescribeIdentityPoolUsageResult> asyncHandler) {
+        final DescribeIdentityPoolUsageRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeIdentityPoolUsageResult>() {
             @Override
             public DescribeIdentityPoolUsageResult call() throws Exception {
-                DescribeIdentityPoolUsageResult result;
+                DescribeIdentityPoolUsageResult result = null;
 
                 try {
-                    result = describeIdentityPoolUsage(request);
+                    result = executeDescribeIdentityPoolUsage(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -380,7 +388,7 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -396,14 +404,15 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
     @Override
     public java.util.concurrent.Future<DescribeIdentityUsageResult> describeIdentityUsageAsync(final DescribeIdentityUsageRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeIdentityUsageRequest, DescribeIdentityUsageResult> asyncHandler) {
+        final DescribeIdentityUsageRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeIdentityUsageResult>() {
             @Override
             public DescribeIdentityUsageResult call() throws Exception {
-                DescribeIdentityUsageResult result;
+                DescribeIdentityUsageResult result = null;
 
                 try {
-                    result = describeIdentityUsage(request);
+                    result = executeDescribeIdentityUsage(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -412,7 +421,7 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -428,14 +437,15 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
     @Override
     public java.util.concurrent.Future<GetBulkPublishDetailsResult> getBulkPublishDetailsAsync(final GetBulkPublishDetailsRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetBulkPublishDetailsRequest, GetBulkPublishDetailsResult> asyncHandler) {
+        final GetBulkPublishDetailsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetBulkPublishDetailsResult>() {
             @Override
             public GetBulkPublishDetailsResult call() throws Exception {
-                GetBulkPublishDetailsResult result;
+                GetBulkPublishDetailsResult result = null;
 
                 try {
-                    result = getBulkPublishDetails(request);
+                    result = executeGetBulkPublishDetails(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -444,7 +454,7 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -460,14 +470,15 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
     @Override
     public java.util.concurrent.Future<GetCognitoEventsResult> getCognitoEventsAsync(final GetCognitoEventsRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetCognitoEventsRequest, GetCognitoEventsResult> asyncHandler) {
+        final GetCognitoEventsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetCognitoEventsResult>() {
             @Override
             public GetCognitoEventsResult call() throws Exception {
-                GetCognitoEventsResult result;
+                GetCognitoEventsResult result = null;
 
                 try {
-                    result = getCognitoEvents(request);
+                    result = executeGetCognitoEvents(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -476,7 +487,7 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -492,14 +503,15 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
     @Override
     public java.util.concurrent.Future<GetIdentityPoolConfigurationResult> getIdentityPoolConfigurationAsync(final GetIdentityPoolConfigurationRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetIdentityPoolConfigurationRequest, GetIdentityPoolConfigurationResult> asyncHandler) {
+        final GetIdentityPoolConfigurationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetIdentityPoolConfigurationResult>() {
             @Override
             public GetIdentityPoolConfigurationResult call() throws Exception {
-                GetIdentityPoolConfigurationResult result;
+                GetIdentityPoolConfigurationResult result = null;
 
                 try {
-                    result = getIdentityPoolConfiguration(request);
+                    result = executeGetIdentityPoolConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -508,7 +520,7 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -524,14 +536,15 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
     @Override
     public java.util.concurrent.Future<ListDatasetsResult> listDatasetsAsync(final ListDatasetsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListDatasetsRequest, ListDatasetsResult> asyncHandler) {
+        final ListDatasetsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListDatasetsResult>() {
             @Override
             public ListDatasetsResult call() throws Exception {
-                ListDatasetsResult result;
+                ListDatasetsResult result = null;
 
                 try {
-                    result = listDatasets(request);
+                    result = executeListDatasets(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -540,7 +553,7 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -556,14 +569,15 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
     @Override
     public java.util.concurrent.Future<ListIdentityPoolUsageResult> listIdentityPoolUsageAsync(final ListIdentityPoolUsageRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListIdentityPoolUsageRequest, ListIdentityPoolUsageResult> asyncHandler) {
+        final ListIdentityPoolUsageRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListIdentityPoolUsageResult>() {
             @Override
             public ListIdentityPoolUsageResult call() throws Exception {
-                ListIdentityPoolUsageResult result;
+                ListIdentityPoolUsageResult result = null;
 
                 try {
-                    result = listIdentityPoolUsage(request);
+                    result = executeListIdentityPoolUsage(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -572,7 +586,7 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -588,14 +602,15 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
     @Override
     public java.util.concurrent.Future<ListRecordsResult> listRecordsAsync(final ListRecordsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListRecordsRequest, ListRecordsResult> asyncHandler) {
+        final ListRecordsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListRecordsResult>() {
             @Override
             public ListRecordsResult call() throws Exception {
-                ListRecordsResult result;
+                ListRecordsResult result = null;
 
                 try {
-                    result = listRecords(request);
+                    result = executeListRecords(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -604,7 +619,7 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -620,14 +635,15 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
     @Override
     public java.util.concurrent.Future<RegisterDeviceResult> registerDeviceAsync(final RegisterDeviceRequest request,
             final com.amazonaws.handlers.AsyncHandler<RegisterDeviceRequest, RegisterDeviceResult> asyncHandler) {
+        final RegisterDeviceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<RegisterDeviceResult>() {
             @Override
             public RegisterDeviceResult call() throws Exception {
-                RegisterDeviceResult result;
+                RegisterDeviceResult result = null;
 
                 try {
-                    result = registerDevice(request);
+                    result = executeRegisterDevice(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -636,7 +652,7 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -652,14 +668,15 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
     @Override
     public java.util.concurrent.Future<SetCognitoEventsResult> setCognitoEventsAsync(final SetCognitoEventsRequest request,
             final com.amazonaws.handlers.AsyncHandler<SetCognitoEventsRequest, SetCognitoEventsResult> asyncHandler) {
+        final SetCognitoEventsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<SetCognitoEventsResult>() {
             @Override
             public SetCognitoEventsResult call() throws Exception {
-                SetCognitoEventsResult result;
+                SetCognitoEventsResult result = null;
 
                 try {
-                    result = setCognitoEvents(request);
+                    result = executeSetCognitoEvents(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -668,7 +685,7 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -684,14 +701,15 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
     @Override
     public java.util.concurrent.Future<SetIdentityPoolConfigurationResult> setIdentityPoolConfigurationAsync(final SetIdentityPoolConfigurationRequest request,
             final com.amazonaws.handlers.AsyncHandler<SetIdentityPoolConfigurationRequest, SetIdentityPoolConfigurationResult> asyncHandler) {
+        final SetIdentityPoolConfigurationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<SetIdentityPoolConfigurationResult>() {
             @Override
             public SetIdentityPoolConfigurationResult call() throws Exception {
-                SetIdentityPoolConfigurationResult result;
+                SetIdentityPoolConfigurationResult result = null;
 
                 try {
-                    result = setIdentityPoolConfiguration(request);
+                    result = executeSetIdentityPoolConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -700,7 +718,7 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -716,14 +734,15 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
     @Override
     public java.util.concurrent.Future<SubscribeToDatasetResult> subscribeToDatasetAsync(final SubscribeToDatasetRequest request,
             final com.amazonaws.handlers.AsyncHandler<SubscribeToDatasetRequest, SubscribeToDatasetResult> asyncHandler) {
+        final SubscribeToDatasetRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<SubscribeToDatasetResult>() {
             @Override
             public SubscribeToDatasetResult call() throws Exception {
-                SubscribeToDatasetResult result;
+                SubscribeToDatasetResult result = null;
 
                 try {
-                    result = subscribeToDataset(request);
+                    result = executeSubscribeToDataset(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -732,7 +751,7 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -748,14 +767,15 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
     @Override
     public java.util.concurrent.Future<UnsubscribeFromDatasetResult> unsubscribeFromDatasetAsync(final UnsubscribeFromDatasetRequest request,
             final com.amazonaws.handlers.AsyncHandler<UnsubscribeFromDatasetRequest, UnsubscribeFromDatasetResult> asyncHandler) {
+        final UnsubscribeFromDatasetRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UnsubscribeFromDatasetResult>() {
             @Override
             public UnsubscribeFromDatasetResult call() throws Exception {
-                UnsubscribeFromDatasetResult result;
+                UnsubscribeFromDatasetResult result = null;
 
                 try {
-                    result = unsubscribeFromDataset(request);
+                    result = executeUnsubscribeFromDataset(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -764,7 +784,7 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -780,14 +800,15 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
     @Override
     public java.util.concurrent.Future<UpdateRecordsResult> updateRecordsAsync(final UpdateRecordsRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateRecordsRequest, UpdateRecordsResult> asyncHandler) {
+        final UpdateRecordsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateRecordsResult>() {
             @Override
             public UpdateRecordsResult call() throws Exception {
-                UpdateRecordsResult result;
+                UpdateRecordsResult result = null;
 
                 try {
-                    result = updateRecords(request);
+                    result = executeUpdateRecords(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -796,7 +817,7 @@ public class AmazonCognitoSyncAsyncClient extends AmazonCognitoSyncClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

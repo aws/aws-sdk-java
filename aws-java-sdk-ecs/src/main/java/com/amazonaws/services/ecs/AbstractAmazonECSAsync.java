@@ -55,6 +55,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
      *
      * @see #createClusterAsync(CreateClusterRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<CreateClusterResult> createClusterAsync(
             com.amazonaws.handlers.AsyncHandler<CreateClusterRequest, CreateClusterResult> asyncHandler) {
 
@@ -168,6 +169,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
      *
      * @see #describeClustersAsync(DescribeClustersRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeClustersResult> describeClustersAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeClustersRequest, DescribeClustersResult> asyncHandler) {
 
@@ -255,6 +257,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
      *
      * @see #discoverPollEndpointAsync(DiscoverPollEndpointRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DiscoverPollEndpointResult> discoverPollEndpointAsync(
             com.amazonaws.handlers.AsyncHandler<DiscoverPollEndpointRequest, DiscoverPollEndpointResult> asyncHandler) {
 
@@ -303,6 +306,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
      *
      * @see #listClustersAsync(ListClustersRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListClustersResult> listClustersAsync(
             com.amazonaws.handlers.AsyncHandler<ListClustersRequest, ListClustersResult> asyncHandler) {
 
@@ -338,6 +342,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
      *
      * @see #listContainerInstancesAsync(ListContainerInstancesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListContainerInstancesResult> listContainerInstancesAsync(
             com.amazonaws.handlers.AsyncHandler<ListContainerInstancesRequest, ListContainerInstancesResult> asyncHandler) {
 
@@ -373,6 +378,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
      *
      * @see #listServicesAsync(ListServicesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListServicesResult> listServicesAsync(
             com.amazonaws.handlers.AsyncHandler<ListServicesRequest, ListServicesResult> asyncHandler) {
 
@@ -408,6 +414,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
      *
      * @see #listTaskDefinitionFamiliesAsync(ListTaskDefinitionFamiliesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListTaskDefinitionFamiliesResult> listTaskDefinitionFamiliesAsync(
             com.amazonaws.handlers.AsyncHandler<ListTaskDefinitionFamiliesRequest, ListTaskDefinitionFamiliesResult> asyncHandler) {
 
@@ -443,6 +450,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
      *
      * @see #listTaskDefinitionsAsync(ListTaskDefinitionsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListTaskDefinitionsResult> listTaskDefinitionsAsync(
             com.amazonaws.handlers.AsyncHandler<ListTaskDefinitionsRequest, ListTaskDefinitionsResult> asyncHandler) {
 
@@ -478,6 +486,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
      *
      * @see #listTasksAsync(ListTasksRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListTasksResult> listTasksAsync(com.amazonaws.handlers.AsyncHandler<ListTasksRequest, ListTasksResult> asyncHandler) {
 
         return listTasksAsync(new ListTasksRequest(), asyncHandler);
@@ -590,6 +599,7 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
      *
      * @see #submitContainerStateChangeAsync(SubmitContainerStateChangeRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<SubmitContainerStateChangeResult> submitContainerStateChangeAsync(
             com.amazonaws.handlers.AsyncHandler<SubmitContainerStateChangeRequest, SubmitContainerStateChangeResult> asyncHandler) {
 

@@ -286,6 +286,10 @@ public class AWSHealthAsyncClient extends AWSHealthClient implements AWSHealthAs
         this.executorService = executorService;
     }
 
+    public static AWSHealthAsyncClientBuilder asyncBuilder() {
+        return AWSHealthAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on AWSHealth using the specified parameters.
      *
@@ -315,14 +319,15 @@ public class AWSHealthAsyncClient extends AWSHealthClient implements AWSHealthAs
     @Override
     public java.util.concurrent.Future<DescribeAffectedEntitiesResult> describeAffectedEntitiesAsync(final DescribeAffectedEntitiesRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeAffectedEntitiesRequest, DescribeAffectedEntitiesResult> asyncHandler) {
+        final DescribeAffectedEntitiesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeAffectedEntitiesResult>() {
             @Override
             public DescribeAffectedEntitiesResult call() throws Exception {
-                DescribeAffectedEntitiesResult result;
+                DescribeAffectedEntitiesResult result = null;
 
                 try {
-                    result = describeAffectedEntities(request);
+                    result = executeDescribeAffectedEntities(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -331,7 +336,7 @@ public class AWSHealthAsyncClient extends AWSHealthClient implements AWSHealthAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -347,14 +352,15 @@ public class AWSHealthAsyncClient extends AWSHealthClient implements AWSHealthAs
     @Override
     public java.util.concurrent.Future<DescribeEntityAggregatesResult> describeEntityAggregatesAsync(final DescribeEntityAggregatesRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeEntityAggregatesRequest, DescribeEntityAggregatesResult> asyncHandler) {
+        final DescribeEntityAggregatesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeEntityAggregatesResult>() {
             @Override
             public DescribeEntityAggregatesResult call() throws Exception {
-                DescribeEntityAggregatesResult result;
+                DescribeEntityAggregatesResult result = null;
 
                 try {
-                    result = describeEntityAggregates(request);
+                    result = executeDescribeEntityAggregates(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -363,7 +369,7 @@ public class AWSHealthAsyncClient extends AWSHealthClient implements AWSHealthAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -379,14 +385,15 @@ public class AWSHealthAsyncClient extends AWSHealthClient implements AWSHealthAs
     @Override
     public java.util.concurrent.Future<DescribeEventAggregatesResult> describeEventAggregatesAsync(final DescribeEventAggregatesRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeEventAggregatesRequest, DescribeEventAggregatesResult> asyncHandler) {
+        final DescribeEventAggregatesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeEventAggregatesResult>() {
             @Override
             public DescribeEventAggregatesResult call() throws Exception {
-                DescribeEventAggregatesResult result;
+                DescribeEventAggregatesResult result = null;
 
                 try {
-                    result = describeEventAggregates(request);
+                    result = executeDescribeEventAggregates(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -395,7 +402,7 @@ public class AWSHealthAsyncClient extends AWSHealthClient implements AWSHealthAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -411,14 +418,15 @@ public class AWSHealthAsyncClient extends AWSHealthClient implements AWSHealthAs
     @Override
     public java.util.concurrent.Future<DescribeEventDetailsResult> describeEventDetailsAsync(final DescribeEventDetailsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeEventDetailsRequest, DescribeEventDetailsResult> asyncHandler) {
+        final DescribeEventDetailsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeEventDetailsResult>() {
             @Override
             public DescribeEventDetailsResult call() throws Exception {
-                DescribeEventDetailsResult result;
+                DescribeEventDetailsResult result = null;
 
                 try {
-                    result = describeEventDetails(request);
+                    result = executeDescribeEventDetails(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -427,7 +435,7 @@ public class AWSHealthAsyncClient extends AWSHealthClient implements AWSHealthAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -443,14 +451,15 @@ public class AWSHealthAsyncClient extends AWSHealthClient implements AWSHealthAs
     @Override
     public java.util.concurrent.Future<DescribeEventTypesResult> describeEventTypesAsync(final DescribeEventTypesRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeEventTypesRequest, DescribeEventTypesResult> asyncHandler) {
+        final DescribeEventTypesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeEventTypesResult>() {
             @Override
             public DescribeEventTypesResult call() throws Exception {
-                DescribeEventTypesResult result;
+                DescribeEventTypesResult result = null;
 
                 try {
-                    result = describeEventTypes(request);
+                    result = executeDescribeEventTypes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -459,7 +468,7 @@ public class AWSHealthAsyncClient extends AWSHealthClient implements AWSHealthAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -475,14 +484,15 @@ public class AWSHealthAsyncClient extends AWSHealthClient implements AWSHealthAs
     @Override
     public java.util.concurrent.Future<DescribeEventsResult> describeEventsAsync(final DescribeEventsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeEventsRequest, DescribeEventsResult> asyncHandler) {
+        final DescribeEventsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeEventsResult>() {
             @Override
             public DescribeEventsResult call() throws Exception {
-                DescribeEventsResult result;
+                DescribeEventsResult result = null;
 
                 try {
-                    result = describeEvents(request);
+                    result = executeDescribeEvents(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -491,7 +501,7 @@ public class AWSHealthAsyncClient extends AWSHealthClient implements AWSHealthAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

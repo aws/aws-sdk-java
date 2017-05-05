@@ -40,6 +40,20 @@ public class PutEvaluationsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String resultToken;
+    /**
+     * <p>
+     * Use this parameter to specify a test run for <code>PutEvaluations</code>. You can verify whether your AWS Lambda
+     * function will deliver evaluation results to AWS Config. No updates occur to your existing evaluations, and
+     * evaluation results are not sent to AWS Config.
+     * </p>
+     * <note>
+     * <p>
+     * When <code>TestMode</code> is <code>true</code>, <code>PutEvaluations</code> doesn't require a valid value for
+     * the <code>ResultToken</code> parameter, but the value cannot be null.
+     * </p>
+     * </note>
+     */
+    private Boolean testMode;
 
     /**
      * <p>
@@ -169,6 +183,114 @@ public class PutEvaluationsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Use this parameter to specify a test run for <code>PutEvaluations</code>. You can verify whether your AWS Lambda
+     * function will deliver evaluation results to AWS Config. No updates occur to your existing evaluations, and
+     * evaluation results are not sent to AWS Config.
+     * </p>
+     * <note>
+     * <p>
+     * When <code>TestMode</code> is <code>true</code>, <code>PutEvaluations</code> doesn't require a valid value for
+     * the <code>ResultToken</code> parameter, but the value cannot be null.
+     * </p>
+     * </note>
+     * 
+     * @param testMode
+     *        Use this parameter to specify a test run for <code>PutEvaluations</code>. You can verify whether your AWS
+     *        Lambda function will deliver evaluation results to AWS Config. No updates occur to your existing
+     *        evaluations, and evaluation results are not sent to AWS Config.</p> <note>
+     *        <p>
+     *        When <code>TestMode</code> is <code>true</code>, <code>PutEvaluations</code> doesn't require a valid value
+     *        for the <code>ResultToken</code> parameter, but the value cannot be null.
+     *        </p>
+     */
+
+    public void setTestMode(Boolean testMode) {
+        this.testMode = testMode;
+    }
+
+    /**
+     * <p>
+     * Use this parameter to specify a test run for <code>PutEvaluations</code>. You can verify whether your AWS Lambda
+     * function will deliver evaluation results to AWS Config. No updates occur to your existing evaluations, and
+     * evaluation results are not sent to AWS Config.
+     * </p>
+     * <note>
+     * <p>
+     * When <code>TestMode</code> is <code>true</code>, <code>PutEvaluations</code> doesn't require a valid value for
+     * the <code>ResultToken</code> parameter, but the value cannot be null.
+     * </p>
+     * </note>
+     * 
+     * @return Use this parameter to specify a test run for <code>PutEvaluations</code>. You can verify whether your AWS
+     *         Lambda function will deliver evaluation results to AWS Config. No updates occur to your existing
+     *         evaluations, and evaluation results are not sent to AWS Config.</p> <note>
+     *         <p>
+     *         When <code>TestMode</code> is <code>true</code>, <code>PutEvaluations</code> doesn't require a valid
+     *         value for the <code>ResultToken</code> parameter, but the value cannot be null.
+     *         </p>
+     */
+
+    public Boolean getTestMode() {
+        return this.testMode;
+    }
+
+    /**
+     * <p>
+     * Use this parameter to specify a test run for <code>PutEvaluations</code>. You can verify whether your AWS Lambda
+     * function will deliver evaluation results to AWS Config. No updates occur to your existing evaluations, and
+     * evaluation results are not sent to AWS Config.
+     * </p>
+     * <note>
+     * <p>
+     * When <code>TestMode</code> is <code>true</code>, <code>PutEvaluations</code> doesn't require a valid value for
+     * the <code>ResultToken</code> parameter, but the value cannot be null.
+     * </p>
+     * </note>
+     * 
+     * @param testMode
+     *        Use this parameter to specify a test run for <code>PutEvaluations</code>. You can verify whether your AWS
+     *        Lambda function will deliver evaluation results to AWS Config. No updates occur to your existing
+     *        evaluations, and evaluation results are not sent to AWS Config.</p> <note>
+     *        <p>
+     *        When <code>TestMode</code> is <code>true</code>, <code>PutEvaluations</code> doesn't require a valid value
+     *        for the <code>ResultToken</code> parameter, but the value cannot be null.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutEvaluationsRequest withTestMode(Boolean testMode) {
+        setTestMode(testMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Use this parameter to specify a test run for <code>PutEvaluations</code>. You can verify whether your AWS Lambda
+     * function will deliver evaluation results to AWS Config. No updates occur to your existing evaluations, and
+     * evaluation results are not sent to AWS Config.
+     * </p>
+     * <note>
+     * <p>
+     * When <code>TestMode</code> is <code>true</code>, <code>PutEvaluations</code> doesn't require a valid value for
+     * the <code>ResultToken</code> parameter, but the value cannot be null.
+     * </p>
+     * </note>
+     * 
+     * @return Use this parameter to specify a test run for <code>PutEvaluations</code>. You can verify whether your AWS
+     *         Lambda function will deliver evaluation results to AWS Config. No updates occur to your existing
+     *         evaluations, and evaluation results are not sent to AWS Config.</p> <note>
+     *         <p>
+     *         When <code>TestMode</code> is <code>true</code>, <code>PutEvaluations</code> doesn't require a valid
+     *         value for the <code>ResultToken</code> parameter, but the value cannot be null.
+     *         </p>
+     */
+
+    public Boolean isTestMode() {
+        return this.testMode;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -182,7 +304,9 @@ public class PutEvaluationsRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getEvaluations() != null)
             sb.append("Evaluations: ").append(getEvaluations()).append(",");
         if (getResultToken() != null)
-            sb.append("ResultToken: ").append(getResultToken());
+            sb.append("ResultToken: ").append(getResultToken()).append(",");
+        if (getTestMode() != null)
+            sb.append("TestMode: ").append(getTestMode());
         sb.append("}");
         return sb.toString();
     }
@@ -205,6 +329,10 @@ public class PutEvaluationsRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getResultToken() != null && other.getResultToken().equals(this.getResultToken()) == false)
             return false;
+        if (other.getTestMode() == null ^ this.getTestMode() == null)
+            return false;
+        if (other.getTestMode() != null && other.getTestMode().equals(this.getTestMode()) == false)
+            return false;
         return true;
     }
 
@@ -215,6 +343,7 @@ public class PutEvaluationsRequest extends com.amazonaws.AmazonWebServiceRequest
 
         hashCode = prime * hashCode + ((getEvaluations() == null) ? 0 : getEvaluations().hashCode());
         hashCode = prime * hashCode + ((getResultToken() == null) ? 0 : getResultToken().hashCode());
+        hashCode = prime * hashCode + ((getTestMode() == null) ? 0 : getTestMode().hashCode());
         return hashCode;
     }
 

@@ -12,71 +12,50 @@
  */
 package com.amazonaws.services.cognitoidp.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cognitoidp.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * AdminRemoveUserFromGroupRequest Marshaller
+ * AdminRemoveUserFromGroupRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AdminRemoveUserFromGroupRequestMarshaller implements Marshaller<Request<AdminRemoveUserFromGroupRequest>, AdminRemoveUserFromGroupRequest> {
+@SdkInternalApi
+public class AdminRemoveUserFromGroupRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> USERPOOLID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserPoolId").build();
+    private static final MarshallingInfo<String> USERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Username").build();
+    private static final MarshallingInfo<String> GROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("GroupName").build();
 
-    public AdminRemoveUserFromGroupRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final AdminRemoveUserFromGroupRequestMarshaller instance = new AdminRemoveUserFromGroupRequestMarshaller();
+
+    public static AdminRemoveUserFromGroupRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<AdminRemoveUserFromGroupRequest> marshall(AdminRemoveUserFromGroupRequest adminRemoveUserFromGroupRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(AdminRemoveUserFromGroupRequest adminRemoveUserFromGroupRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (adminRemoveUserFromGroupRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<AdminRemoveUserFromGroupRequest> request = new DefaultRequest<AdminRemoveUserFromGroupRequest>(adminRemoveUserFromGroupRequest,
-                "AWSCognitoIdentityProvider");
-        request.addHeader("X-Amz-Target", "AWSCognitoIdentityProviderService.AdminRemoveUserFromGroup");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (adminRemoveUserFromGroupRequest.getUserPoolId() != null) {
-                jsonGenerator.writeFieldName("UserPoolId").writeValue(adminRemoveUserFromGroupRequest.getUserPoolId());
-            }
-            if (adminRemoveUserFromGroupRequest.getUsername() != null) {
-                jsonGenerator.writeFieldName("Username").writeValue(adminRemoveUserFromGroupRequest.getUsername());
-            }
-            if (adminRemoveUserFromGroupRequest.getGroupName() != null) {
-                jsonGenerator.writeFieldName("GroupName").writeValue(adminRemoveUserFromGroupRequest.getGroupName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(adminRemoveUserFromGroupRequest.getUserPoolId(), USERPOOLID_BINDING);
+            protocolMarshaller.marshall(adminRemoveUserFromGroupRequest.getUsername(), USERNAME_BINDING);
+            protocolMarshaller.marshall(adminRemoveUserFromGroupRequest.getGroupName(), GROUPNAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

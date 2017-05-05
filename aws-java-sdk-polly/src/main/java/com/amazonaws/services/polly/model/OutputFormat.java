@@ -20,6 +20,7 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum OutputFormat {
 
+    Json("json"),
     Mp3("mp3"),
     Ogg_vorbis("ogg_vorbis"),
     Pcm("pcm");

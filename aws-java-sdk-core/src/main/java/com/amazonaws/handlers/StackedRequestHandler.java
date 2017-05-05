@@ -14,17 +14,16 @@
  */
 package com.amazonaws.handlers;
 
-import java.util.List;
-import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.Collections;
-
-import com.amazonaws.util.ValidationUtils;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
 import com.amazonaws.Response;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.http.HttpResponse;
+import com.amazonaws.util.ValidationUtils;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Composite {@link RequestHandler2} to execute a chain of {@link RequestHandler2} implementations
@@ -69,6 +68,15 @@ public class StackedRequestHandler implements IRequestHandler2 {
     }
 
     @Override
+    public AmazonWebServiceRequest beforeExecution(AmazonWebServiceRequest origRequest) {
+        AmazonWebServiceRequest toReturn = origRequest;
+        for (RequestHandler2 handler : inOrderRequestHandlers) {
+            toReturn = handler.beforeExecution(toReturn);
+        }
+        return toReturn;
+    }
+
+    @Override
     public AmazonWebServiceRequest beforeMarshalling(AmazonWebServiceRequest origRequest) {
         AmazonWebServiceRequest toReturn = origRequest;
         for (RequestHandler2 handler : inOrderRequestHandlers) {
@@ -106,5 +114,4 @@ public class StackedRequestHandler implements IRequestHandler2 {
             handler.afterError(request, response, e);
         }
     }
-
 }

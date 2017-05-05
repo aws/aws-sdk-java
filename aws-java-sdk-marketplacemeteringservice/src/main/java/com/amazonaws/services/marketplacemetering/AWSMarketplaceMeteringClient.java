@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -286,6 +287,10 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
         init();
     }
 
+    public static AWSMarketplaceMeteringClientBuilder builder() {
+        return AWSMarketplaceMeteringClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWSMarketplace Metering using the specified parameters.
      *
@@ -352,7 +357,13 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public BatchMeterUsageResult batchMeterUsage(BatchMeterUsageRequest batchMeterUsageRequest) {
+    public BatchMeterUsageResult batchMeterUsage(BatchMeterUsageRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchMeterUsage(request);
+    }
+
+    @SdkInternalApi
+    final BatchMeterUsageResult executeBatchMeterUsage(BatchMeterUsageRequest batchMeterUsageRequest) {
 
         ExecutionContext executionContext = createExecutionContext(batchMeterUsageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -363,7 +374,7 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new BatchMeterUsageRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchMeterUsageRequest));
+                request = new BatchMeterUsageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchMeterUsageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -416,7 +427,13 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
-    public MeterUsageResult meterUsage(MeterUsageRequest meterUsageRequest) {
+    public MeterUsageResult meterUsage(MeterUsageRequest request) {
+        request = beforeClientExecution(request);
+        return executeMeterUsage(request);
+    }
+
+    @SdkInternalApi
+    final MeterUsageResult executeMeterUsage(MeterUsageRequest meterUsageRequest) {
 
         ExecutionContext executionContext = createExecutionContext(meterUsageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -427,7 +444,7 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new MeterUsageRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(meterUsageRequest));
+                request = new MeterUsageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(meterUsageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -472,7 +489,13 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ResolveCustomerResult resolveCustomer(ResolveCustomerRequest resolveCustomerRequest) {
+    public ResolveCustomerResult resolveCustomer(ResolveCustomerRequest request) {
+        request = beforeClientExecution(request);
+        return executeResolveCustomer(request);
+    }
+
+    @SdkInternalApi
+    final ResolveCustomerResult executeResolveCustomer(ResolveCustomerRequest resolveCustomerRequest) {
 
         ExecutionContext executionContext = createExecutionContext(resolveCustomerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -483,7 +506,7 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ResolveCustomerRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(resolveCustomerRequest));
+                request = new ResolveCustomerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(resolveCustomerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

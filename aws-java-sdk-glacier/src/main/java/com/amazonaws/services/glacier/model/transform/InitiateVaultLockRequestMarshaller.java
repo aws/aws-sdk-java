@@ -12,71 +12,50 @@
  */
 package com.amazonaws.services.glacier.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.glacier.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * InitiateVaultLockRequest Marshaller
+ * InitiateVaultLockRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InitiateVaultLockRequestMarshaller implements Marshaller<Request<InitiateVaultLockRequest>, InitiateVaultLockRequest> {
+@SdkInternalApi
+public class InitiateVaultLockRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("accountId").defaultValueSupplier(DefaultAccountIdSupplier.getInstance()).build();
+    private static final MarshallingInfo<String> VAULTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("vaultName").build();
+    private static final MarshallingInfo<StructuredPojo> POLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).isExplicitPayloadMember(true).build();
 
-    public InitiateVaultLockRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final InitiateVaultLockRequestMarshaller instance = new InitiateVaultLockRequestMarshaller();
+
+    public static InitiateVaultLockRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<InitiateVaultLockRequest> marshall(InitiateVaultLockRequest initiateVaultLockRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(InitiateVaultLockRequest initiateVaultLockRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (initiateVaultLockRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<InitiateVaultLockRequest> request = new DefaultRequest<InitiateVaultLockRequest>(initiateVaultLockRequest, "AmazonGlacier");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/{accountId}/vaults/{vaultName}/lock-policy";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
-                initiateVaultLockRequest.getAccountId() == null ? "-" : initiateVaultLockRequest.getAccountId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "vaultName", initiateVaultLockRequest.getVaultName());
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            VaultLockPolicy policy = initiateVaultLockRequest.getPolicy();
-            if (policy != null) {
-                jsonGenerator.writeStartObject();
-                if (policy.getPolicy() != null) {
-                    jsonGenerator.writeFieldName("Policy").writeValue(policy.getPolicy());
-                }
-                jsonGenerator.writeEndObject();
-            }
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(initiateVaultLockRequest.getAccountId(), ACCOUNTID_BINDING);
+            protocolMarshaller.marshall(initiateVaultLockRequest.getVaultName(), VAULTNAME_BINDING);
+            protocolMarshaller.marshall(initiateVaultLockRequest.getPolicy(), POLICY_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

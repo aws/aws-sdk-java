@@ -12,82 +12,51 @@
  */
 package com.amazonaws.services.opsworkscm.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.opsworkscm.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DisassociateNodeRequest Marshaller
+ * DisassociateNodeRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DisassociateNodeRequestMarshaller implements Marshaller<Request<DisassociateNodeRequest>, DisassociateNodeRequest> {
+@SdkInternalApi
+public class DisassociateNodeRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> SERVERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServerName").build();
+    private static final MarshallingInfo<String> NODENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NodeName").build();
+    private static final MarshallingInfo<List> ENGINEATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EngineAttributes").build();
 
-    public DisassociateNodeRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DisassociateNodeRequestMarshaller instance = new DisassociateNodeRequestMarshaller();
+
+    public static DisassociateNodeRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DisassociateNodeRequest> marshall(DisassociateNodeRequest disassociateNodeRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DisassociateNodeRequest disassociateNodeRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (disassociateNodeRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DisassociateNodeRequest> request = new DefaultRequest<DisassociateNodeRequest>(disassociateNodeRequest, "AWSOpsWorksCM");
-        request.addHeader("X-Amz-Target", "OpsWorksCM_V2016_11_01.DisassociateNode");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (disassociateNodeRequest.getServerName() != null) {
-                jsonGenerator.writeFieldName("ServerName").writeValue(disassociateNodeRequest.getServerName());
-            }
-            if (disassociateNodeRequest.getNodeName() != null) {
-                jsonGenerator.writeFieldName("NodeName").writeValue(disassociateNodeRequest.getNodeName());
-            }
-
-            java.util.List<EngineAttribute> engineAttributesList = disassociateNodeRequest.getEngineAttributes();
-            if (engineAttributesList != null) {
-                jsonGenerator.writeFieldName("EngineAttributes");
-                jsonGenerator.writeStartArray();
-                for (EngineAttribute engineAttributesListValue : engineAttributesList) {
-                    if (engineAttributesListValue != null) {
-
-                        EngineAttributeJsonMarshaller.getInstance().marshall(engineAttributesListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(disassociateNodeRequest.getServerName(), SERVERNAME_BINDING);
+            protocolMarshaller.marshall(disassociateNodeRequest.getNodeName(), NODENAME_BINDING);
+            protocolMarshaller.marshall(disassociateNodeRequest.getEngineAttributes(), ENGINEATTRIBUTES_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

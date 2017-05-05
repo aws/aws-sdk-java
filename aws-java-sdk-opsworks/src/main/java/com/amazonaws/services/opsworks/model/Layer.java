@@ -14,6 +14,8 @@ package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Layer implements Serializable, Cloneable {
+public class Layer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -62,13 +64,20 @@ public class Layer implements Serializable, Cloneable {
      * </p>
      * <p>
      * For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code>
-     * attributes, AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value
+     * attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value
      * </p>
      * <p>
-     * For an ECS Cluster layer, AWS OpsWorks the <code>EcsClusterArn</code> attribute is set to the cluster's ARN.
+     * For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's
+     * ARN.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> attributes;
+    /**
+     * <p>
+     * The Amazon CloudWatch Logs configuration settings for the layer.
+     * </p>
+     */
+    private CloudWatchLogsConfiguration cloudWatchLogsConfiguration;
     /**
      * <p>
      * The ARN of the default IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs,
@@ -412,21 +421,22 @@ public class Layer implements Serializable, Cloneable {
      * </p>
      * <p>
      * For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code>
-     * attributes, AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value
+     * attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value
      * </p>
      * <p>
-     * For an ECS Cluster layer, AWS OpsWorks the <code>EcsClusterArn</code> attribute is set to the cluster's ARN.
+     * For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's
+     * ARN.
      * </p>
      * 
      * @return The layer attributes.</p>
      *         <p>
      *         For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and
-     *         <code>GangliaPassword</code> attributes, AWS OpsWorks returns <code>*****FILTERED*****</code> instead of
-     *         the actual value
+     *         <code>GangliaPassword</code> attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code>
+     *         instead of the actual value
      *         </p>
      *         <p>
-     *         For an ECS Cluster layer, AWS OpsWorks the <code>EcsClusterArn</code> attribute is set to the cluster's
-     *         ARN.
+     *         For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the
+     *         cluster's ARN.
      */
 
     public java.util.Map<String, String> getAttributes() {
@@ -442,22 +452,23 @@ public class Layer implements Serializable, Cloneable {
      * </p>
      * <p>
      * For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code>
-     * attributes, AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value
+     * attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value
      * </p>
      * <p>
-     * For an ECS Cluster layer, AWS OpsWorks the <code>EcsClusterArn</code> attribute is set to the cluster's ARN.
+     * For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's
+     * ARN.
      * </p>
      * 
      * @param attributes
      *        The layer attributes.</p>
      *        <p>
      *        For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and
-     *        <code>GangliaPassword</code> attributes, AWS OpsWorks returns <code>*****FILTERED*****</code> instead of
-     *        the actual value
+     *        <code>GangliaPassword</code> attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code>
+     *        instead of the actual value
      *        </p>
      *        <p>
-     *        For an ECS Cluster layer, AWS OpsWorks the <code>EcsClusterArn</code> attribute is set to the cluster's
-     *        ARN.
+     *        For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the
+     *        cluster's ARN.
      */
 
     public void setAttributes(java.util.Map<String, String> attributes) {
@@ -470,22 +481,23 @@ public class Layer implements Serializable, Cloneable {
      * </p>
      * <p>
      * For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and <code>GangliaPassword</code>
-     * attributes, AWS OpsWorks returns <code>*****FILTERED*****</code> instead of the actual value
+     * attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual value
      * </p>
      * <p>
-     * For an ECS Cluster layer, AWS OpsWorks the <code>EcsClusterArn</code> attribute is set to the cluster's ARN.
+     * For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the cluster's
+     * ARN.
      * </p>
      * 
      * @param attributes
      *        The layer attributes.</p>
      *        <p>
      *        For the <code>HaproxyStatsPassword</code>, <code>MysqlRootPassword</code>, and
-     *        <code>GangliaPassword</code> attributes, AWS OpsWorks returns <code>*****FILTERED*****</code> instead of
-     *        the actual value
+     *        <code>GangliaPassword</code> attributes, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code>
+     *        instead of the actual value
      *        </p>
      *        <p>
-     *        For an ECS Cluster layer, AWS OpsWorks the <code>EcsClusterArn</code> attribute is set to the cluster's
-     *        ARN.
+     *        For an ECS Cluster layer, AWS OpsWorks Stacks the <code>EcsClusterArn</code> attribute is set to the
+     *        cluster's ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -512,6 +524,46 @@ public class Layer implements Serializable, Cloneable {
 
     public Layer clearAttributesEntries() {
         this.attributes = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon CloudWatch Logs configuration settings for the layer.
+     * </p>
+     * 
+     * @param cloudWatchLogsConfiguration
+     *        The Amazon CloudWatch Logs configuration settings for the layer.
+     */
+
+    public void setCloudWatchLogsConfiguration(CloudWatchLogsConfiguration cloudWatchLogsConfiguration) {
+        this.cloudWatchLogsConfiguration = cloudWatchLogsConfiguration;
+    }
+
+    /**
+     * <p>
+     * The Amazon CloudWatch Logs configuration settings for the layer.
+     * </p>
+     * 
+     * @return The Amazon CloudWatch Logs configuration settings for the layer.
+     */
+
+    public CloudWatchLogsConfiguration getCloudWatchLogsConfiguration() {
+        return this.cloudWatchLogsConfiguration;
+    }
+
+    /**
+     * <p>
+     * The Amazon CloudWatch Logs configuration settings for the layer.
+     * </p>
+     * 
+     * @param cloudWatchLogsConfiguration
+     *        The Amazon CloudWatch Logs configuration settings for the layer.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Layer withCloudWatchLogsConfiguration(CloudWatchLogsConfiguration cloudWatchLogsConfiguration) {
+        setCloudWatchLogsConfiguration(cloudWatchLogsConfiguration);
         return this;
     }
 
@@ -1449,6 +1501,8 @@ public class Layer implements Serializable, Cloneable {
             sb.append("Shortname: ").append(getShortname()).append(",");
         if (getAttributes() != null)
             sb.append("Attributes: ").append(getAttributes()).append(",");
+        if (getCloudWatchLogsConfiguration() != null)
+            sb.append("CloudWatchLogsConfiguration: ").append(getCloudWatchLogsConfiguration()).append(",");
         if (getCustomInstanceProfileArn() != null)
             sb.append("CustomInstanceProfileArn: ").append(getCustomInstanceProfileArn()).append(",");
         if (getCustomJson() != null)
@@ -1516,6 +1570,10 @@ public class Layer implements Serializable, Cloneable {
         if (other.getAttributes() == null ^ this.getAttributes() == null)
             return false;
         if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false)
+            return false;
+        if (other.getCloudWatchLogsConfiguration() == null ^ this.getCloudWatchLogsConfiguration() == null)
+            return false;
+        if (other.getCloudWatchLogsConfiguration() != null && other.getCloudWatchLogsConfiguration().equals(this.getCloudWatchLogsConfiguration()) == false)
             return false;
         if (other.getCustomInstanceProfileArn() == null ^ this.getCustomInstanceProfileArn() == null)
             return false;
@@ -1591,6 +1649,7 @@ public class Layer implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getShortname() == null) ? 0 : getShortname().hashCode());
         hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
+        hashCode = prime * hashCode + ((getCloudWatchLogsConfiguration() == null) ? 0 : getCloudWatchLogsConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCustomInstanceProfileArn() == null) ? 0 : getCustomInstanceProfileArn().hashCode());
         hashCode = prime * hashCode + ((getCustomJson() == null) ? 0 : getCustomJson().hashCode());
         hashCode = prime * hashCode + ((getCustomSecurityGroupIds() == null) ? 0 : getCustomSecurityGroupIds().hashCode());
@@ -1616,5 +1675,11 @@ public class Layer implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.opsworks.model.transform.LayerMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

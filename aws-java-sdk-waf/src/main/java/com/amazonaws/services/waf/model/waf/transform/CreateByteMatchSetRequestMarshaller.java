@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.waf.model.waf.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.waf.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateByteMatchSetRequest Marshaller
+ * CreateByteMatchSetRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateByteMatchSetRequestMarshaller implements Marshaller<Request<CreateByteMatchSetRequest>, CreateByteMatchSetRequest> {
+@SdkInternalApi
+public class CreateByteMatchSetRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> CHANGETOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ChangeToken").build();
 
-    public CreateByteMatchSetRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateByteMatchSetRequestMarshaller instance = new CreateByteMatchSetRequestMarshaller();
+
+    public static CreateByteMatchSetRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateByteMatchSetRequest> marshall(CreateByteMatchSetRequest createByteMatchSetRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateByteMatchSetRequest createByteMatchSetRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createByteMatchSetRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateByteMatchSetRequest> request = new DefaultRequest<CreateByteMatchSetRequest>(createByteMatchSetRequest, "AWSWAF");
-        request.addHeader("X-Amz-Target", "AWSWAF_20150824.CreateByteMatchSet");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createByteMatchSetRequest.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(createByteMatchSetRequest.getName());
-            }
-            if (createByteMatchSetRequest.getChangeToken() != null) {
-                jsonGenerator.writeFieldName("ChangeToken").writeValue(createByteMatchSetRequest.getChangeToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createByteMatchSetRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createByteMatchSetRequest.getChangeToken(), CHANGETOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

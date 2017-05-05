@@ -152,10 +152,8 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
         S3ObjectWrapper ifile = fetchInstructionFile(req.getS3ObjectId(), null);
         if (ifile != null) {
             try {
-                if (ifile.isInstructionFile()) {
-                    return decipherWithInstructionFile(req, desiredRange,
-                            cryptoRange, wrapped, ifile);
-                }
+                return decipherWithInstructionFile(req, desiredRange,
+                        cryptoRange, wrapped, ifile);
             } finally {
                 closeQuietly(ifile, log);
             }
@@ -196,14 +194,8 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
                     + instFileSuffix + " is not found for " + retrieved);
         }
         try {
-            if (ifile.isInstructionFile()) {
-                return decipherWithInstructionFile(req, desiredRange,
-                        cryptoRange, new S3ObjectWrapper(retrieved, id), ifile);
-            } else {
-                throw new SdkClientException(
-                        "Invalid Instruction file with suffix "
-                                + instFileSuffix + " detected for " + retrieved);
-            }
+            return decipherWithInstructionFile(req, desiredRange,
+                    cryptoRange, new S3ObjectWrapper(retrieved, id), ifile);
         } finally {
             closeQuietly(ifile, log);
         }

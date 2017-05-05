@@ -25,17 +25,17 @@ public class GenerateRandomResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The unpredictable byte string.
+     * The random byte string.
      * </p>
      */
     private java.nio.ByteBuffer plaintext;
 
     /**
      * <p>
-     * The unpredictable byte string.
+     * The random byte string.
      * </p>
      * <p>
-     * AWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default.
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
      * <p>
@@ -46,7 +46,7 @@ public class GenerateRandomResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param plaintext
-     *        The unpredictable byte string.
+     *        The random byte string.
      */
 
     public void setPlaintext(java.nio.ByteBuffer plaintext) {
@@ -55,7 +55,7 @@ public class GenerateRandomResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The unpredictable byte string.
+     * The random byte string.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -65,7 +65,7 @@ public class GenerateRandomResult extends com.amazonaws.AmazonWebServiceResult<c
      * {@code position}.
      * </p>
      * 
-     * @return The unpredictable byte string.
+     * @return The random byte string.
      */
 
     public java.nio.ByteBuffer getPlaintext() {
@@ -74,11 +74,21 @@ public class GenerateRandomResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The unpredictable byte string.
+     * The random byte string.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
      * </p>
      * 
      * @param plaintext
-     *        The unpredictable byte string.
+     *        The random byte string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,4 +148,5 @@ public class GenerateRandomResult extends com.amazonaws.AmazonWebServiceResult<c
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

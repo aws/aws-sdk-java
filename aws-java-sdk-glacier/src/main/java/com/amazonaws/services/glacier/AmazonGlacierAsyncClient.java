@@ -256,6 +256,10 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
         this.executorService = executorService;
     }
 
+    public static AmazonGlacierAsyncClientBuilder asyncBuilder() {
+        return AmazonGlacierAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon Glacier using the specified parameters.
      *
@@ -285,14 +289,15 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
     @Override
     public java.util.concurrent.Future<AbortMultipartUploadResult> abortMultipartUploadAsync(final AbortMultipartUploadRequest request,
             final com.amazonaws.handlers.AsyncHandler<AbortMultipartUploadRequest, AbortMultipartUploadResult> asyncHandler) {
+        final AbortMultipartUploadRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AbortMultipartUploadResult>() {
             @Override
             public AbortMultipartUploadResult call() throws Exception {
-                AbortMultipartUploadResult result;
+                AbortMultipartUploadResult result = null;
 
                 try {
-                    result = abortMultipartUpload(request);
+                    result = executeAbortMultipartUpload(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -301,7 +306,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -317,14 +322,15 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
     @Override
     public java.util.concurrent.Future<AbortVaultLockResult> abortVaultLockAsync(final AbortVaultLockRequest request,
             final com.amazonaws.handlers.AsyncHandler<AbortVaultLockRequest, AbortVaultLockResult> asyncHandler) {
+        final AbortVaultLockRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AbortVaultLockResult>() {
             @Override
             public AbortVaultLockResult call() throws Exception {
-                AbortVaultLockResult result;
+                AbortVaultLockResult result = null;
 
                 try {
-                    result = abortVaultLock(request);
+                    result = executeAbortVaultLock(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -333,7 +339,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -349,14 +355,15 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
     @Override
     public java.util.concurrent.Future<AddTagsToVaultResult> addTagsToVaultAsync(final AddTagsToVaultRequest request,
             final com.amazonaws.handlers.AsyncHandler<AddTagsToVaultRequest, AddTagsToVaultResult> asyncHandler) {
+        final AddTagsToVaultRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AddTagsToVaultResult>() {
             @Override
             public AddTagsToVaultResult call() throws Exception {
-                AddTagsToVaultResult result;
+                AddTagsToVaultResult result = null;
 
                 try {
-                    result = addTagsToVault(request);
+                    result = executeAddTagsToVault(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -365,7 +372,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -381,14 +388,15 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
     @Override
     public java.util.concurrent.Future<CompleteMultipartUploadResult> completeMultipartUploadAsync(final CompleteMultipartUploadRequest request,
             final com.amazonaws.handlers.AsyncHandler<CompleteMultipartUploadRequest, CompleteMultipartUploadResult> asyncHandler) {
+        final CompleteMultipartUploadRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CompleteMultipartUploadResult>() {
             @Override
             public CompleteMultipartUploadResult call() throws Exception {
-                CompleteMultipartUploadResult result;
+                CompleteMultipartUploadResult result = null;
 
                 try {
-                    result = completeMultipartUpload(request);
+                    result = executeCompleteMultipartUpload(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -397,7 +405,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -413,14 +421,15 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
     @Override
     public java.util.concurrent.Future<CompleteVaultLockResult> completeVaultLockAsync(final CompleteVaultLockRequest request,
             final com.amazonaws.handlers.AsyncHandler<CompleteVaultLockRequest, CompleteVaultLockResult> asyncHandler) {
+        final CompleteVaultLockRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CompleteVaultLockResult>() {
             @Override
             public CompleteVaultLockResult call() throws Exception {
-                CompleteVaultLockResult result;
+                CompleteVaultLockResult result = null;
 
                 try {
-                    result = completeVaultLock(request);
+                    result = executeCompleteVaultLock(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -429,7 +438,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -445,14 +454,15 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
     @Override
     public java.util.concurrent.Future<CreateVaultResult> createVaultAsync(final CreateVaultRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateVaultRequest, CreateVaultResult> asyncHandler) {
+        final CreateVaultRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateVaultResult>() {
             @Override
             public CreateVaultResult call() throws Exception {
-                CreateVaultResult result;
+                CreateVaultResult result = null;
 
                 try {
-                    result = createVault(request);
+                    result = executeCreateVault(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -461,7 +471,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -477,14 +487,15 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
     @Override
     public java.util.concurrent.Future<DeleteArchiveResult> deleteArchiveAsync(final DeleteArchiveRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteArchiveRequest, DeleteArchiveResult> asyncHandler) {
+        final DeleteArchiveRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteArchiveResult>() {
             @Override
             public DeleteArchiveResult call() throws Exception {
-                DeleteArchiveResult result;
+                DeleteArchiveResult result = null;
 
                 try {
-                    result = deleteArchive(request);
+                    result = executeDeleteArchive(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -493,7 +504,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -509,14 +520,15 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
     @Override
     public java.util.concurrent.Future<DeleteVaultResult> deleteVaultAsync(final DeleteVaultRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteVaultRequest, DeleteVaultResult> asyncHandler) {
+        final DeleteVaultRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteVaultResult>() {
             @Override
             public DeleteVaultResult call() throws Exception {
-                DeleteVaultResult result;
+                DeleteVaultResult result = null;
 
                 try {
-                    result = deleteVault(request);
+                    result = executeDeleteVault(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -525,7 +537,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -541,14 +553,15 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
     @Override
     public java.util.concurrent.Future<DeleteVaultAccessPolicyResult> deleteVaultAccessPolicyAsync(final DeleteVaultAccessPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteVaultAccessPolicyRequest, DeleteVaultAccessPolicyResult> asyncHandler) {
+        final DeleteVaultAccessPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteVaultAccessPolicyResult>() {
             @Override
             public DeleteVaultAccessPolicyResult call() throws Exception {
-                DeleteVaultAccessPolicyResult result;
+                DeleteVaultAccessPolicyResult result = null;
 
                 try {
-                    result = deleteVaultAccessPolicy(request);
+                    result = executeDeleteVaultAccessPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -557,7 +570,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -573,14 +586,15 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
     @Override
     public java.util.concurrent.Future<DeleteVaultNotificationsResult> deleteVaultNotificationsAsync(final DeleteVaultNotificationsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteVaultNotificationsRequest, DeleteVaultNotificationsResult> asyncHandler) {
+        final DeleteVaultNotificationsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteVaultNotificationsResult>() {
             @Override
             public DeleteVaultNotificationsResult call() throws Exception {
-                DeleteVaultNotificationsResult result;
+                DeleteVaultNotificationsResult result = null;
 
                 try {
-                    result = deleteVaultNotifications(request);
+                    result = executeDeleteVaultNotifications(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -589,7 +603,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -605,14 +619,15 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
     @Override
     public java.util.concurrent.Future<DescribeJobResult> describeJobAsync(final DescribeJobRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeJobRequest, DescribeJobResult> asyncHandler) {
+        final DescribeJobRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeJobResult>() {
             @Override
             public DescribeJobResult call() throws Exception {
-                DescribeJobResult result;
+                DescribeJobResult result = null;
 
                 try {
-                    result = describeJob(request);
+                    result = executeDescribeJob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -621,7 +636,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -637,14 +652,15 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
     @Override
     public java.util.concurrent.Future<DescribeVaultResult> describeVaultAsync(final DescribeVaultRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeVaultRequest, DescribeVaultResult> asyncHandler) {
+        final DescribeVaultRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeVaultResult>() {
             @Override
             public DescribeVaultResult call() throws Exception {
-                DescribeVaultResult result;
+                DescribeVaultResult result = null;
 
                 try {
-                    result = describeVault(request);
+                    result = executeDescribeVault(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -653,7 +669,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -669,14 +685,15 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
     @Override
     public java.util.concurrent.Future<GetDataRetrievalPolicyResult> getDataRetrievalPolicyAsync(final GetDataRetrievalPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetDataRetrievalPolicyRequest, GetDataRetrievalPolicyResult> asyncHandler) {
+        final GetDataRetrievalPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetDataRetrievalPolicyResult>() {
             @Override
             public GetDataRetrievalPolicyResult call() throws Exception {
-                GetDataRetrievalPolicyResult result;
+                GetDataRetrievalPolicyResult result = null;
 
                 try {
-                    result = getDataRetrievalPolicy(request);
+                    result = executeGetDataRetrievalPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -685,7 +702,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -701,14 +718,15 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
     @Override
     public java.util.concurrent.Future<GetJobOutputResult> getJobOutputAsync(final GetJobOutputRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetJobOutputRequest, GetJobOutputResult> asyncHandler) {
+        final GetJobOutputRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetJobOutputResult>() {
             @Override
             public GetJobOutputResult call() throws Exception {
-                GetJobOutputResult result;
+                GetJobOutputResult result = null;
 
                 try {
-                    result = getJobOutput(request);
+                    result = executeGetJobOutput(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -717,7 +735,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -733,14 +751,15 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
     @Override
     public java.util.concurrent.Future<GetVaultAccessPolicyResult> getVaultAccessPolicyAsync(final GetVaultAccessPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetVaultAccessPolicyRequest, GetVaultAccessPolicyResult> asyncHandler) {
+        final GetVaultAccessPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetVaultAccessPolicyResult>() {
             @Override
             public GetVaultAccessPolicyResult call() throws Exception {
-                GetVaultAccessPolicyResult result;
+                GetVaultAccessPolicyResult result = null;
 
                 try {
-                    result = getVaultAccessPolicy(request);
+                    result = executeGetVaultAccessPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -749,7 +768,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -765,14 +784,15 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
     @Override
     public java.util.concurrent.Future<GetVaultLockResult> getVaultLockAsync(final GetVaultLockRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetVaultLockRequest, GetVaultLockResult> asyncHandler) {
+        final GetVaultLockRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetVaultLockResult>() {
             @Override
             public GetVaultLockResult call() throws Exception {
-                GetVaultLockResult result;
+                GetVaultLockResult result = null;
 
                 try {
-                    result = getVaultLock(request);
+                    result = executeGetVaultLock(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -781,7 +801,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -797,14 +817,15 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
     @Override
     public java.util.concurrent.Future<GetVaultNotificationsResult> getVaultNotificationsAsync(final GetVaultNotificationsRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetVaultNotificationsRequest, GetVaultNotificationsResult> asyncHandler) {
+        final GetVaultNotificationsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetVaultNotificationsResult>() {
             @Override
             public GetVaultNotificationsResult call() throws Exception {
-                GetVaultNotificationsResult result;
+                GetVaultNotificationsResult result = null;
 
                 try {
-                    result = getVaultNotifications(request);
+                    result = executeGetVaultNotifications(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -813,7 +834,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -829,14 +850,15 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
     @Override
     public java.util.concurrent.Future<InitiateJobResult> initiateJobAsync(final InitiateJobRequest request,
             final com.amazonaws.handlers.AsyncHandler<InitiateJobRequest, InitiateJobResult> asyncHandler) {
+        final InitiateJobRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<InitiateJobResult>() {
             @Override
             public InitiateJobResult call() throws Exception {
-                InitiateJobResult result;
+                InitiateJobResult result = null;
 
                 try {
-                    result = initiateJob(request);
+                    result = executeInitiateJob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -845,7 +867,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -861,14 +883,15 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
     @Override
     public java.util.concurrent.Future<InitiateMultipartUploadResult> initiateMultipartUploadAsync(final InitiateMultipartUploadRequest request,
             final com.amazonaws.handlers.AsyncHandler<InitiateMultipartUploadRequest, InitiateMultipartUploadResult> asyncHandler) {
+        final InitiateMultipartUploadRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<InitiateMultipartUploadResult>() {
             @Override
             public InitiateMultipartUploadResult call() throws Exception {
-                InitiateMultipartUploadResult result;
+                InitiateMultipartUploadResult result = null;
 
                 try {
-                    result = initiateMultipartUpload(request);
+                    result = executeInitiateMultipartUpload(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -877,7 +900,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -893,14 +916,15 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
     @Override
     public java.util.concurrent.Future<InitiateVaultLockResult> initiateVaultLockAsync(final InitiateVaultLockRequest request,
             final com.amazonaws.handlers.AsyncHandler<InitiateVaultLockRequest, InitiateVaultLockResult> asyncHandler) {
+        final InitiateVaultLockRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<InitiateVaultLockResult>() {
             @Override
             public InitiateVaultLockResult call() throws Exception {
-                InitiateVaultLockResult result;
+                InitiateVaultLockResult result = null;
 
                 try {
-                    result = initiateVaultLock(request);
+                    result = executeInitiateVaultLock(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -909,7 +933,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -925,14 +949,15 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
     @Override
     public java.util.concurrent.Future<ListJobsResult> listJobsAsync(final ListJobsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListJobsRequest, ListJobsResult> asyncHandler) {
+        final ListJobsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListJobsResult>() {
             @Override
             public ListJobsResult call() throws Exception {
-                ListJobsResult result;
+                ListJobsResult result = null;
 
                 try {
-                    result = listJobs(request);
+                    result = executeListJobs(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -941,7 +966,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -957,14 +982,15 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
     @Override
     public java.util.concurrent.Future<ListMultipartUploadsResult> listMultipartUploadsAsync(final ListMultipartUploadsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListMultipartUploadsRequest, ListMultipartUploadsResult> asyncHandler) {
+        final ListMultipartUploadsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListMultipartUploadsResult>() {
             @Override
             public ListMultipartUploadsResult call() throws Exception {
-                ListMultipartUploadsResult result;
+                ListMultipartUploadsResult result = null;
 
                 try {
-                    result = listMultipartUploads(request);
+                    result = executeListMultipartUploads(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -973,7 +999,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -989,14 +1015,15 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
     @Override
     public java.util.concurrent.Future<ListPartsResult> listPartsAsync(final ListPartsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListPartsRequest, ListPartsResult> asyncHandler) {
+        final ListPartsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListPartsResult>() {
             @Override
             public ListPartsResult call() throws Exception {
-                ListPartsResult result;
+                ListPartsResult result = null;
 
                 try {
-                    result = listParts(request);
+                    result = executeListParts(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1005,7 +1032,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1021,14 +1048,15 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
     @Override
     public java.util.concurrent.Future<ListProvisionedCapacityResult> listProvisionedCapacityAsync(final ListProvisionedCapacityRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListProvisionedCapacityRequest, ListProvisionedCapacityResult> asyncHandler) {
+        final ListProvisionedCapacityRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListProvisionedCapacityResult>() {
             @Override
             public ListProvisionedCapacityResult call() throws Exception {
-                ListProvisionedCapacityResult result;
+                ListProvisionedCapacityResult result = null;
 
                 try {
-                    result = listProvisionedCapacity(request);
+                    result = executeListProvisionedCapacity(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1037,7 +1065,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1053,14 +1081,15 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
     @Override
     public java.util.concurrent.Future<ListTagsForVaultResult> listTagsForVaultAsync(final ListTagsForVaultRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListTagsForVaultRequest, ListTagsForVaultResult> asyncHandler) {
+        final ListTagsForVaultRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListTagsForVaultResult>() {
             @Override
             public ListTagsForVaultResult call() throws Exception {
-                ListTagsForVaultResult result;
+                ListTagsForVaultResult result = null;
 
                 try {
-                    result = listTagsForVault(request);
+                    result = executeListTagsForVault(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1069,7 +1098,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1085,14 +1114,15 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
     @Override
     public java.util.concurrent.Future<ListVaultsResult> listVaultsAsync(final ListVaultsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListVaultsRequest, ListVaultsResult> asyncHandler) {
+        final ListVaultsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListVaultsResult>() {
             @Override
             public ListVaultsResult call() throws Exception {
-                ListVaultsResult result;
+                ListVaultsResult result = null;
 
                 try {
-                    result = listVaults(request);
+                    result = executeListVaults(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1101,7 +1131,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1117,14 +1147,15 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
     @Override
     public java.util.concurrent.Future<PurchaseProvisionedCapacityResult> purchaseProvisionedCapacityAsync(final PurchaseProvisionedCapacityRequest request,
             final com.amazonaws.handlers.AsyncHandler<PurchaseProvisionedCapacityRequest, PurchaseProvisionedCapacityResult> asyncHandler) {
+        final PurchaseProvisionedCapacityRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PurchaseProvisionedCapacityResult>() {
             @Override
             public PurchaseProvisionedCapacityResult call() throws Exception {
-                PurchaseProvisionedCapacityResult result;
+                PurchaseProvisionedCapacityResult result = null;
 
                 try {
-                    result = purchaseProvisionedCapacity(request);
+                    result = executePurchaseProvisionedCapacity(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1133,7 +1164,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1149,14 +1180,15 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
     @Override
     public java.util.concurrent.Future<RemoveTagsFromVaultResult> removeTagsFromVaultAsync(final RemoveTagsFromVaultRequest request,
             final com.amazonaws.handlers.AsyncHandler<RemoveTagsFromVaultRequest, RemoveTagsFromVaultResult> asyncHandler) {
+        final RemoveTagsFromVaultRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<RemoveTagsFromVaultResult>() {
             @Override
             public RemoveTagsFromVaultResult call() throws Exception {
-                RemoveTagsFromVaultResult result;
+                RemoveTagsFromVaultResult result = null;
 
                 try {
-                    result = removeTagsFromVault(request);
+                    result = executeRemoveTagsFromVault(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1165,7 +1197,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1181,14 +1213,15 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
     @Override
     public java.util.concurrent.Future<SetDataRetrievalPolicyResult> setDataRetrievalPolicyAsync(final SetDataRetrievalPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<SetDataRetrievalPolicyRequest, SetDataRetrievalPolicyResult> asyncHandler) {
+        final SetDataRetrievalPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<SetDataRetrievalPolicyResult>() {
             @Override
             public SetDataRetrievalPolicyResult call() throws Exception {
-                SetDataRetrievalPolicyResult result;
+                SetDataRetrievalPolicyResult result = null;
 
                 try {
-                    result = setDataRetrievalPolicy(request);
+                    result = executeSetDataRetrievalPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1197,7 +1230,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1213,14 +1246,15 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
     @Override
     public java.util.concurrent.Future<SetVaultAccessPolicyResult> setVaultAccessPolicyAsync(final SetVaultAccessPolicyRequest request,
             final com.amazonaws.handlers.AsyncHandler<SetVaultAccessPolicyRequest, SetVaultAccessPolicyResult> asyncHandler) {
+        final SetVaultAccessPolicyRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<SetVaultAccessPolicyResult>() {
             @Override
             public SetVaultAccessPolicyResult call() throws Exception {
-                SetVaultAccessPolicyResult result;
+                SetVaultAccessPolicyResult result = null;
 
                 try {
-                    result = setVaultAccessPolicy(request);
+                    result = executeSetVaultAccessPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1229,7 +1263,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1245,14 +1279,15 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
     @Override
     public java.util.concurrent.Future<SetVaultNotificationsResult> setVaultNotificationsAsync(final SetVaultNotificationsRequest request,
             final com.amazonaws.handlers.AsyncHandler<SetVaultNotificationsRequest, SetVaultNotificationsResult> asyncHandler) {
+        final SetVaultNotificationsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<SetVaultNotificationsResult>() {
             @Override
             public SetVaultNotificationsResult call() throws Exception {
-                SetVaultNotificationsResult result;
+                SetVaultNotificationsResult result = null;
 
                 try {
-                    result = setVaultNotifications(request);
+                    result = executeSetVaultNotifications(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1261,7 +1296,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1277,14 +1312,15 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
     @Override
     public java.util.concurrent.Future<UploadArchiveResult> uploadArchiveAsync(final UploadArchiveRequest request,
             final com.amazonaws.handlers.AsyncHandler<UploadArchiveRequest, UploadArchiveResult> asyncHandler) {
+        final UploadArchiveRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UploadArchiveResult>() {
             @Override
             public UploadArchiveResult call() throws Exception {
-                UploadArchiveResult result;
+                UploadArchiveResult result = null;
 
                 try {
-                    result = uploadArchive(request);
+                    result = executeUploadArchive(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1293,7 +1329,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1309,14 +1345,15 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
     @Override
     public java.util.concurrent.Future<UploadMultipartPartResult> uploadMultipartPartAsync(final UploadMultipartPartRequest request,
             final com.amazonaws.handlers.AsyncHandler<UploadMultipartPartRequest, UploadMultipartPartResult> asyncHandler) {
+        final UploadMultipartPartRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UploadMultipartPartResult>() {
             @Override
             public UploadMultipartPartResult call() throws Exception {
-                UploadMultipartPartResult result;
+                UploadMultipartPartResult result = null;
 
                 try {
-                    result = uploadMultipartPart(request);
+                    result = executeUploadMultipartPart(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1325,7 +1362,7 @@ public class AmazonGlacierAsyncClient extends AmazonGlacierClient implements Ama
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

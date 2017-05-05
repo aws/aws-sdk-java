@@ -101,6 +101,12 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * </p>
      */
     private Boolean supportsEnhancedMonitoring;
+    /**
+     * <p>
+     * Indicates whether this orderable DB instance supports IAM database authentication.
+     * </p>
+     */
+    private Boolean supportsIAMDatabaseAuthentication;
 
     /**
      * <p>
@@ -688,6 +694,58 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether this orderable DB instance supports IAM database authentication.
+     * </p>
+     * 
+     * @param supportsIAMDatabaseAuthentication
+     *        Indicates whether this orderable DB instance supports IAM database authentication.
+     */
+
+    public void setSupportsIAMDatabaseAuthentication(Boolean supportsIAMDatabaseAuthentication) {
+        this.supportsIAMDatabaseAuthentication = supportsIAMDatabaseAuthentication;
+    }
+
+    /**
+     * <p>
+     * Indicates whether this orderable DB instance supports IAM database authentication.
+     * </p>
+     * 
+     * @return Indicates whether this orderable DB instance supports IAM database authentication.
+     */
+
+    public Boolean getSupportsIAMDatabaseAuthentication() {
+        return this.supportsIAMDatabaseAuthentication;
+    }
+
+    /**
+     * <p>
+     * Indicates whether this orderable DB instance supports IAM database authentication.
+     * </p>
+     * 
+     * @param supportsIAMDatabaseAuthentication
+     *        Indicates whether this orderable DB instance supports IAM database authentication.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OrderableDBInstanceOption withSupportsIAMDatabaseAuthentication(Boolean supportsIAMDatabaseAuthentication) {
+        setSupportsIAMDatabaseAuthentication(supportsIAMDatabaseAuthentication);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether this orderable DB instance supports IAM database authentication.
+     * </p>
+     * 
+     * @return Indicates whether this orderable DB instance supports IAM database authentication.
+     */
+
+    public Boolean isSupportsIAMDatabaseAuthentication() {
+        return this.supportsIAMDatabaseAuthentication;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -721,7 +779,9 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
         if (getSupportsIops() != null)
             sb.append("SupportsIops: ").append(getSupportsIops()).append(",");
         if (getSupportsEnhancedMonitoring() != null)
-            sb.append("SupportsEnhancedMonitoring: ").append(getSupportsEnhancedMonitoring());
+            sb.append("SupportsEnhancedMonitoring: ").append(getSupportsEnhancedMonitoring()).append(",");
+        if (getSupportsIAMDatabaseAuthentication() != null)
+            sb.append("SupportsIAMDatabaseAuthentication: ").append(getSupportsIAMDatabaseAuthentication());
         sb.append("}");
         return sb.toString();
     }
@@ -784,6 +844,11 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
             return false;
         if (other.getSupportsEnhancedMonitoring() != null && other.getSupportsEnhancedMonitoring().equals(this.getSupportsEnhancedMonitoring()) == false)
             return false;
+        if (other.getSupportsIAMDatabaseAuthentication() == null ^ this.getSupportsIAMDatabaseAuthentication() == null)
+            return false;
+        if (other.getSupportsIAMDatabaseAuthentication() != null
+                && other.getSupportsIAMDatabaseAuthentication().equals(this.getSupportsIAMDatabaseAuthentication()) == false)
+            return false;
         return true;
     }
 
@@ -804,6 +869,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode());
         hashCode = prime * hashCode + ((getSupportsIops() == null) ? 0 : getSupportsIops().hashCode());
         hashCode = prime * hashCode + ((getSupportsEnhancedMonitoring() == null) ? 0 : getSupportsEnhancedMonitoring().hashCode());
+        hashCode = prime * hashCode + ((getSupportsIAMDatabaseAuthentication() == null) ? 0 : getSupportsIAMDatabaseAuthentication().hashCode());
         return hashCode;
     }
 
@@ -815,4 +881,5 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

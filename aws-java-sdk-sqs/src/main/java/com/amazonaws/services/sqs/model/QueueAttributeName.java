@@ -35,7 +35,9 @@ public enum QueueAttributeName {
     ReceiveMessageWaitTimeSeconds("ReceiveMessageWaitTimeSeconds"),
     RedrivePolicy("RedrivePolicy"),
     FifoQueue("FifoQueue"),
-    ContentBasedDeduplication("ContentBasedDeduplication");
+    ContentBasedDeduplication("ContentBasedDeduplication"),
+    KmsMasterKeyId("KmsMasterKeyId"),
+    KmsDataKeyReusePeriodSeconds("KmsDataKeyReusePeriodSeconds");
 
     private String value;
 

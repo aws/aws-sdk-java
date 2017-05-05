@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -235,6 +236,10 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         init();
     }
 
+    public static AmazonSimpleEmailServiceClientBuilder builder() {
+        return AmazonSimpleEmailServiceClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon SES using the specified parameters.
      *
@@ -315,7 +320,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public CloneReceiptRuleSetResult cloneReceiptRuleSet(CloneReceiptRuleSetRequest cloneReceiptRuleSetRequest) {
+    public CloneReceiptRuleSetResult cloneReceiptRuleSet(CloneReceiptRuleSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeCloneReceiptRuleSet(request);
+    }
+
+    @SdkInternalApi
+    final CloneReceiptRuleSetResult executeCloneReceiptRuleSet(CloneReceiptRuleSetRequest cloneReceiptRuleSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(cloneReceiptRuleSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -377,7 +388,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      API Documentation</a>
      */
     @Override
-    public CreateConfigurationSetResult createConfigurationSet(CreateConfigurationSetRequest createConfigurationSetRequest) {
+    public CreateConfigurationSetResult createConfigurationSet(CreateConfigurationSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateConfigurationSet(request);
+    }
+
+    @SdkInternalApi
+    final CreateConfigurationSetResult executeCreateConfigurationSet(CreateConfigurationSetRequest createConfigurationSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createConfigurationSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -452,7 +469,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateConfigurationSetEventDestinationResult createConfigurationSetEventDestination(
+    public CreateConfigurationSetEventDestinationResult createConfigurationSetEventDestination(CreateConfigurationSetEventDestinationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateConfigurationSetEventDestination(request);
+    }
+
+    @SdkInternalApi
+    final CreateConfigurationSetEventDestinationResult executeCreateConfigurationSetEventDestination(
             CreateConfigurationSetEventDestinationRequest createConfigurationSetEventDestinationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createConfigurationSetEventDestinationRequest);
@@ -514,7 +537,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public CreateReceiptFilterResult createReceiptFilter(CreateReceiptFilterRequest createReceiptFilterRequest) {
+    public CreateReceiptFilterResult createReceiptFilter(CreateReceiptFilterRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateReceiptFilter(request);
+    }
+
+    @SdkInternalApi
+    final CreateReceiptFilterResult executeCreateReceiptFilter(CreateReceiptFilterRequest createReceiptFilterRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createReceiptFilterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -594,7 +623,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public CreateReceiptRuleResult createReceiptRule(CreateReceiptRuleRequest createReceiptRuleRequest) {
+    public CreateReceiptRuleResult createReceiptRule(CreateReceiptRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateReceiptRule(request);
+    }
+
+    @SdkInternalApi
+    final CreateReceiptRuleResult executeCreateReceiptRule(CreateReceiptRuleRequest createReceiptRuleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createReceiptRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -654,7 +689,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public CreateReceiptRuleSetResult createReceiptRuleSet(CreateReceiptRuleSetRequest createReceiptRuleSetRequest) {
+    public CreateReceiptRuleSetResult createReceiptRuleSet(CreateReceiptRuleSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateReceiptRuleSet(request);
+    }
+
+    @SdkInternalApi
+    final CreateReceiptRuleSetResult executeCreateReceiptRuleSet(CreateReceiptRuleSetRequest createReceiptRuleSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createReceiptRuleSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -710,7 +751,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      API Documentation</a>
      */
     @Override
-    public DeleteConfigurationSetResult deleteConfigurationSet(DeleteConfigurationSetRequest deleteConfigurationSetRequest) {
+    public DeleteConfigurationSetResult deleteConfigurationSet(DeleteConfigurationSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteConfigurationSet(request);
+    }
+
+    @SdkInternalApi
+    final DeleteConfigurationSetResult executeDeleteConfigurationSet(DeleteConfigurationSetRequest deleteConfigurationSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteConfigurationSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -770,7 +817,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteConfigurationSetEventDestinationResult deleteConfigurationSetEventDestination(
+    public DeleteConfigurationSetEventDestinationResult deleteConfigurationSetEventDestination(DeleteConfigurationSetEventDestinationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteConfigurationSetEventDestination(request);
+    }
+
+    @SdkInternalApi
+    final DeleteConfigurationSetEventDestinationResult executeDeleteConfigurationSetEventDestination(
             DeleteConfigurationSetEventDestinationRequest deleteConfigurationSetEventDestinationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteConfigurationSetEventDestinationRequest);
@@ -818,7 +871,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public DeleteIdentityResult deleteIdentity(DeleteIdentityRequest deleteIdentityRequest) {
+    public DeleteIdentityResult deleteIdentity(DeleteIdentityRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteIdentity(request);
+    }
+
+    @SdkInternalApi
+    final DeleteIdentityResult executeDeleteIdentity(DeleteIdentityRequest deleteIdentityRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteIdentityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -879,7 +938,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public DeleteIdentityPolicyResult deleteIdentityPolicy(DeleteIdentityPolicyRequest deleteIdentityPolicyRequest) {
+    public DeleteIdentityPolicyResult deleteIdentityPolicy(DeleteIdentityPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteIdentityPolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeleteIdentityPolicyResult executeDeleteIdentityPolicy(DeleteIdentityPolicyRequest deleteIdentityPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteIdentityPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -933,7 +998,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public DeleteReceiptFilterResult deleteReceiptFilter(DeleteReceiptFilterRequest deleteReceiptFilterRequest) {
+    public DeleteReceiptFilterResult deleteReceiptFilter(DeleteReceiptFilterRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteReceiptFilter(request);
+    }
+
+    @SdkInternalApi
+    final DeleteReceiptFilterResult executeDeleteReceiptFilter(DeleteReceiptFilterRequest deleteReceiptFilterRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteReceiptFilterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -989,7 +1060,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public DeleteReceiptRuleResult deleteReceiptRule(DeleteReceiptRuleRequest deleteReceiptRuleRequest) {
+    public DeleteReceiptRuleResult deleteReceiptRule(DeleteReceiptRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteReceiptRule(request);
+    }
+
+    @SdkInternalApi
+    final DeleteReceiptRuleResult executeDeleteReceiptRule(DeleteReceiptRuleRequest deleteReceiptRuleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteReceiptRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1050,7 +1127,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public DeleteReceiptRuleSetResult deleteReceiptRuleSet(DeleteReceiptRuleSetRequest deleteReceiptRuleSetRequest) {
+    public DeleteReceiptRuleSetResult deleteReceiptRuleSet(DeleteReceiptRuleSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteReceiptRuleSet(request);
+    }
+
+    @SdkInternalApi
+    final DeleteReceiptRuleSetResult executeDeleteReceiptRuleSet(DeleteReceiptRuleSetRequest deleteReceiptRuleSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteReceiptRuleSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1103,7 +1186,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteVerifiedEmailAddressResult deleteVerifiedEmailAddress(DeleteVerifiedEmailAddressRequest deleteVerifiedEmailAddressRequest) {
+    public DeleteVerifiedEmailAddressResult deleteVerifiedEmailAddress(DeleteVerifiedEmailAddressRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteVerifiedEmailAddress(request);
+    }
+
+    @SdkInternalApi
+    final DeleteVerifiedEmailAddressResult executeDeleteVerifiedEmailAddress(DeleteVerifiedEmailAddressRequest deleteVerifiedEmailAddressRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteVerifiedEmailAddressRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1157,7 +1246,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeActiveReceiptRuleSetResult describeActiveReceiptRuleSet(DescribeActiveReceiptRuleSetRequest describeActiveReceiptRuleSetRequest) {
+    public DescribeActiveReceiptRuleSetResult describeActiveReceiptRuleSet(DescribeActiveReceiptRuleSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeActiveReceiptRuleSet(request);
+    }
+
+    @SdkInternalApi
+    final DescribeActiveReceiptRuleSetResult executeDescribeActiveReceiptRuleSet(DescribeActiveReceiptRuleSetRequest describeActiveReceiptRuleSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeActiveReceiptRuleSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1213,7 +1308,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      API Documentation</a>
      */
     @Override
-    public DescribeConfigurationSetResult describeConfigurationSet(DescribeConfigurationSetRequest describeConfigurationSetRequest) {
+    public DescribeConfigurationSetResult describeConfigurationSet(DescribeConfigurationSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeConfigurationSet(request);
+    }
+
+    @SdkInternalApi
+    final DescribeConfigurationSetResult executeDescribeConfigurationSet(DescribeConfigurationSetRequest describeConfigurationSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeConfigurationSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1271,7 +1372,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public DescribeReceiptRuleResult describeReceiptRule(DescribeReceiptRuleRequest describeReceiptRuleRequest) {
+    public DescribeReceiptRuleResult describeReceiptRule(DescribeReceiptRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeReceiptRule(request);
+    }
+
+    @SdkInternalApi
+    final DescribeReceiptRuleResult executeDescribeReceiptRule(DescribeReceiptRuleRequest describeReceiptRuleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeReceiptRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1327,7 +1434,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      API Documentation</a>
      */
     @Override
-    public DescribeReceiptRuleSetResult describeReceiptRuleSet(DescribeReceiptRuleSetRequest describeReceiptRuleSetRequest) {
+    public DescribeReceiptRuleSetResult describeReceiptRuleSet(DescribeReceiptRuleSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeReceiptRuleSet(request);
+    }
+
+    @SdkInternalApi
+    final DescribeReceiptRuleSetResult executeDescribeReceiptRuleSet(DescribeReceiptRuleSetRequest describeReceiptRuleSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeReceiptRuleSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1407,7 +1520,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetIdentityDkimAttributesResult getIdentityDkimAttributes(GetIdentityDkimAttributesRequest getIdentityDkimAttributesRequest) {
+    public GetIdentityDkimAttributesResult getIdentityDkimAttributes(GetIdentityDkimAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetIdentityDkimAttributes(request);
+    }
+
+    @SdkInternalApi
+    final GetIdentityDkimAttributesResult executeGetIdentityDkimAttributes(GetIdentityDkimAttributesRequest getIdentityDkimAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getIdentityDkimAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1456,7 +1575,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetIdentityMailFromDomainAttributesResult getIdentityMailFromDomainAttributes(
+    public GetIdentityMailFromDomainAttributesResult getIdentityMailFromDomainAttributes(GetIdentityMailFromDomainAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetIdentityMailFromDomainAttributes(request);
+    }
+
+    @SdkInternalApi
+    final GetIdentityMailFromDomainAttributesResult executeGetIdentityMailFromDomainAttributes(
             GetIdentityMailFromDomainAttributesRequest getIdentityMailFromDomainAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getIdentityMailFromDomainAttributesRequest);
@@ -1513,7 +1638,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetIdentityNotificationAttributesResult getIdentityNotificationAttributes(
+    public GetIdentityNotificationAttributesResult getIdentityNotificationAttributes(GetIdentityNotificationAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetIdentityNotificationAttributes(request);
+    }
+
+    @SdkInternalApi
+    final GetIdentityNotificationAttributesResult executeGetIdentityNotificationAttributes(
             GetIdentityNotificationAttributesRequest getIdentityNotificationAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getIdentityNotificationAttributesRequest);
@@ -1577,7 +1708,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public GetIdentityPoliciesResult getIdentityPolicies(GetIdentityPoliciesRequest getIdentityPoliciesRequest) {
+    public GetIdentityPoliciesResult getIdentityPolicies(GetIdentityPoliciesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetIdentityPolicies(request);
+    }
+
+    @SdkInternalApi
+    final GetIdentityPoliciesResult executeGetIdentityPolicies(GetIdentityPoliciesRequest getIdentityPoliciesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getIdentityPoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1629,7 +1766,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetIdentityVerificationAttributesResult getIdentityVerificationAttributes(
+    public GetIdentityVerificationAttributesResult getIdentityVerificationAttributes(GetIdentityVerificationAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetIdentityVerificationAttributes(request);
+    }
+
+    @SdkInternalApi
+    final GetIdentityVerificationAttributesResult executeGetIdentityVerificationAttributes(
             GetIdentityVerificationAttributesRequest getIdentityVerificationAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getIdentityVerificationAttributesRequest);
@@ -1675,7 +1818,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public GetSendQuotaResult getSendQuota(GetSendQuotaRequest getSendQuotaRequest) {
+    public GetSendQuotaResult getSendQuota(GetSendQuotaRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSendQuota(request);
+    }
+
+    @SdkInternalApi
+    final GetSendQuotaResult executeGetSendQuota(GetSendQuotaRequest getSendQuotaRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getSendQuotaRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1728,7 +1877,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public GetSendStatisticsResult getSendStatistics(GetSendStatisticsRequest getSendStatisticsRequest) {
+    public GetSendStatisticsResult getSendStatistics(GetSendStatisticsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSendStatistics(request);
+    }
+
+    @SdkInternalApi
+    final GetSendStatisticsResult executeGetSendStatistics(GetSendStatisticsRequest getSendStatisticsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getSendStatisticsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1787,7 +1942,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      API Documentation</a>
      */
     @Override
-    public ListConfigurationSetsResult listConfigurationSets(ListConfigurationSetsRequest listConfigurationSetsRequest) {
+    public ListConfigurationSetsResult listConfigurationSets(ListConfigurationSetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListConfigurationSets(request);
+    }
+
+    @SdkInternalApi
+    final ListConfigurationSetsResult executeListConfigurationSets(ListConfigurationSetsRequest listConfigurationSetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listConfigurationSetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1835,7 +1996,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public ListIdentitiesResult listIdentities(ListIdentitiesRequest listIdentitiesRequest) {
+    public ListIdentitiesResult listIdentities(ListIdentitiesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListIdentities(request);
+    }
+
+    @SdkInternalApi
+    final ListIdentitiesResult executeListIdentities(ListIdentitiesRequest listIdentitiesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listIdentitiesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1903,7 +2070,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public ListIdentityPoliciesResult listIdentityPolicies(ListIdentityPoliciesRequest listIdentityPoliciesRequest) {
+    public ListIdentityPoliciesResult listIdentityPolicies(ListIdentityPoliciesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListIdentityPolicies(request);
+    }
+
+    @SdkInternalApi
+    final ListIdentityPoliciesResult executeListIdentityPolicies(ListIdentityPoliciesRequest listIdentityPoliciesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listIdentityPoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1957,7 +2130,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public ListReceiptFiltersResult listReceiptFilters(ListReceiptFiltersRequest listReceiptFiltersRequest) {
+    public ListReceiptFiltersResult listReceiptFilters(ListReceiptFiltersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListReceiptFilters(request);
+    }
+
+    @SdkInternalApi
+    final ListReceiptFiltersResult executeListReceiptFilters(ListReceiptFiltersRequest listReceiptFiltersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listReceiptFiltersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2013,7 +2192,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public ListReceiptRuleSetsResult listReceiptRuleSets(ListReceiptRuleSetsRequest listReceiptRuleSetsRequest) {
+    public ListReceiptRuleSetsResult listReceiptRuleSets(ListReceiptRuleSetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListReceiptRuleSets(request);
+    }
+
+    @SdkInternalApi
+    final ListReceiptRuleSetsResult executeListReceiptRuleSets(ListReceiptRuleSetsRequest listReceiptRuleSetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listReceiptRuleSetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2064,7 +2249,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListVerifiedEmailAddressesResult listVerifiedEmailAddresses(ListVerifiedEmailAddressesRequest listVerifiedEmailAddressesRequest) {
+    public ListVerifiedEmailAddressesResult listVerifiedEmailAddresses(ListVerifiedEmailAddressesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListVerifiedEmailAddresses(request);
+    }
+
+    @SdkInternalApi
+    final ListVerifiedEmailAddressesResult executeListVerifiedEmailAddresses(ListVerifiedEmailAddressesRequest listVerifiedEmailAddressesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listVerifiedEmailAddressesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2133,7 +2324,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public PutIdentityPolicyResult putIdentityPolicy(PutIdentityPolicyRequest putIdentityPolicyRequest) {
+    public PutIdentityPolicyResult putIdentityPolicy(PutIdentityPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutIdentityPolicy(request);
+    }
+
+    @SdkInternalApi
+    final PutIdentityPolicyResult executePutIdentityPolicy(PutIdentityPolicyRequest putIdentityPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putIdentityPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2197,7 +2394,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      API Documentation</a>
      */
     @Override
-    public ReorderReceiptRuleSetResult reorderReceiptRuleSet(ReorderReceiptRuleSetRequest reorderReceiptRuleSetRequest) {
+    public ReorderReceiptRuleSetResult reorderReceiptRuleSet(ReorderReceiptRuleSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeReorderReceiptRuleSet(request);
+    }
+
+    @SdkInternalApi
+    final ReorderReceiptRuleSetResult executeReorderReceiptRuleSet(ReorderReceiptRuleSetRequest reorderReceiptRuleSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(reorderReceiptRuleSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2256,7 +2459,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public SendBounceResult sendBounce(SendBounceRequest sendBounceRequest) {
+    public SendBounceResult sendBounce(SendBounceRequest request) {
+        request = beforeClientExecution(request);
+        return executeSendBounce(request);
+    }
+
+    @SdkInternalApi
+    final SendBounceResult executeSendBounce(SendBounceRequest sendBounceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(sendBounceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2346,7 +2555,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public SendEmailResult sendEmail(SendEmailRequest sendEmailRequest) {
+    public SendEmailResult sendEmail(SendEmailRequest request) {
+        request = beforeClientExecution(request);
+        return executeSendEmail(request);
+    }
+
+    @SdkInternalApi
+    final SendEmailResult executeSendEmail(SendEmailRequest sendEmailRequest) {
 
         ExecutionContext executionContext = createExecutionContext(sendEmailRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2490,7 +2705,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public SendRawEmailResult sendRawEmail(SendRawEmailRequest sendRawEmailRequest) {
+    public SendRawEmailResult sendRawEmail(SendRawEmailRequest request) {
+        request = beforeClientExecution(request);
+        return executeSendRawEmail(request);
+    }
+
+    @SdkInternalApi
+    final SendRawEmailResult executeSendRawEmail(SendRawEmailRequest sendRawEmailRequest) {
 
         ExecutionContext executionContext = createExecutionContext(sendRawEmailRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2551,7 +2772,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      API Documentation</a>
      */
     @Override
-    public SetActiveReceiptRuleSetResult setActiveReceiptRuleSet(SetActiveReceiptRuleSetRequest setActiveReceiptRuleSetRequest) {
+    public SetActiveReceiptRuleSetResult setActiveReceiptRuleSet(SetActiveReceiptRuleSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetActiveReceiptRuleSet(request);
+    }
+
+    @SdkInternalApi
+    final SetActiveReceiptRuleSetResult executeSetActiveReceiptRuleSet(SetActiveReceiptRuleSetRequest setActiveReceiptRuleSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(setActiveReceiptRuleSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2622,7 +2849,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      API Documentation</a>
      */
     @Override
-    public SetIdentityDkimEnabledResult setIdentityDkimEnabled(SetIdentityDkimEnabledRequest setIdentityDkimEnabledRequest) {
+    public SetIdentityDkimEnabledResult setIdentityDkimEnabled(SetIdentityDkimEnabledRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetIdentityDkimEnabled(request);
+    }
+
+    @SdkInternalApi
+    final SetIdentityDkimEnabledResult executeSetIdentityDkimEnabled(SetIdentityDkimEnabledRequest setIdentityDkimEnabledRequest) {
 
         ExecutionContext executionContext = createExecutionContext(setIdentityDkimEnabledRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2683,7 +2916,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public SetIdentityFeedbackForwardingEnabledResult setIdentityFeedbackForwardingEnabled(
+    public SetIdentityFeedbackForwardingEnabledResult setIdentityFeedbackForwardingEnabled(SetIdentityFeedbackForwardingEnabledRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetIdentityFeedbackForwardingEnabled(request);
+    }
+
+    @SdkInternalApi
+    final SetIdentityFeedbackForwardingEnabledResult executeSetIdentityFeedbackForwardingEnabled(
             SetIdentityFeedbackForwardingEnabledRequest setIdentityFeedbackForwardingEnabledRequest) {
 
         ExecutionContext executionContext = createExecutionContext(setIdentityFeedbackForwardingEnabledRequest);
@@ -2739,7 +2978,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public SetIdentityHeadersInNotificationsEnabledResult setIdentityHeadersInNotificationsEnabled(
+    public SetIdentityHeadersInNotificationsEnabledResult setIdentityHeadersInNotificationsEnabled(SetIdentityHeadersInNotificationsEnabledRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetIdentityHeadersInNotificationsEnabled(request);
+    }
+
+    @SdkInternalApi
+    final SetIdentityHeadersInNotificationsEnabledResult executeSetIdentityHeadersInNotificationsEnabled(
             SetIdentityHeadersInNotificationsEnabledRequest setIdentityHeadersInNotificationsEnabledRequest) {
 
         ExecutionContext executionContext = createExecutionContext(setIdentityHeadersInNotificationsEnabledRequest);
@@ -2797,7 +3042,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public SetIdentityMailFromDomainResult setIdentityMailFromDomain(SetIdentityMailFromDomainRequest setIdentityMailFromDomainRequest) {
+    public SetIdentityMailFromDomainResult setIdentityMailFromDomain(SetIdentityMailFromDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetIdentityMailFromDomain(request);
+    }
+
+    @SdkInternalApi
+    final SetIdentityMailFromDomainResult executeSetIdentityMailFromDomain(SetIdentityMailFromDomainRequest setIdentityMailFromDomainRequest) {
 
         ExecutionContext executionContext = createExecutionContext(setIdentityMailFromDomainRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2859,7 +3110,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public SetIdentityNotificationTopicResult setIdentityNotificationTopic(SetIdentityNotificationTopicRequest setIdentityNotificationTopicRequest) {
+    public SetIdentityNotificationTopicResult setIdentityNotificationTopic(SetIdentityNotificationTopicRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetIdentityNotificationTopic(request);
+    }
+
+    @SdkInternalApi
+    final SetIdentityNotificationTopicResult executeSetIdentityNotificationTopic(SetIdentityNotificationTopicRequest setIdentityNotificationTopicRequest) {
 
         ExecutionContext executionContext = createExecutionContext(setIdentityNotificationTopicRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2917,7 +3174,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      API Documentation</a>
      */
     @Override
-    public SetReceiptRulePositionResult setReceiptRulePosition(SetReceiptRulePositionRequest setReceiptRulePositionRequest) {
+    public SetReceiptRulePositionResult setReceiptRulePosition(SetReceiptRulePositionRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetReceiptRulePosition(request);
+    }
+
+    @SdkInternalApi
+    final SetReceiptRulePositionResult executeSetReceiptRulePosition(SetReceiptRulePositionRequest setReceiptRulePositionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(setReceiptRulePositionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2986,7 +3249,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateConfigurationSetEventDestinationResult updateConfigurationSetEventDestination(
+    public UpdateConfigurationSetEventDestinationResult updateConfigurationSetEventDestination(UpdateConfigurationSetEventDestinationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateConfigurationSetEventDestination(request);
+    }
+
+    @SdkInternalApi
+    final UpdateConfigurationSetEventDestinationResult executeUpdateConfigurationSetEventDestination(
             UpdateConfigurationSetEventDestinationRequest updateConfigurationSetEventDestinationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateConfigurationSetEventDestinationRequest);
@@ -3066,7 +3335,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public UpdateReceiptRuleResult updateReceiptRule(UpdateReceiptRuleRequest updateReceiptRuleRequest) {
+    public UpdateReceiptRuleResult updateReceiptRule(UpdateReceiptRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateReceiptRule(request);
+    }
+
+    @SdkInternalApi
+    final UpdateReceiptRuleResult executeUpdateReceiptRule(UpdateReceiptRuleRequest updateReceiptRuleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateReceiptRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3126,7 +3401,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public VerifyDomainDkimResult verifyDomainDkim(VerifyDomainDkimRequest verifyDomainDkimRequest) {
+    public VerifyDomainDkimResult verifyDomainDkim(VerifyDomainDkimRequest request) {
+        request = beforeClientExecution(request);
+        return executeVerifyDomainDkim(request);
+    }
+
+    @SdkInternalApi
+    final VerifyDomainDkimResult executeVerifyDomainDkim(VerifyDomainDkimRequest verifyDomainDkimRequest) {
 
         ExecutionContext executionContext = createExecutionContext(verifyDomainDkimRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3176,7 +3457,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public VerifyDomainIdentityResult verifyDomainIdentity(VerifyDomainIdentityRequest verifyDomainIdentityRequest) {
+    public VerifyDomainIdentityResult verifyDomainIdentity(VerifyDomainIdentityRequest request) {
+        request = beforeClientExecution(request);
+        return executeVerifyDomainIdentity(request);
+    }
+
+    @SdkInternalApi
+    final VerifyDomainIdentityResult executeVerifyDomainIdentity(VerifyDomainIdentityRequest verifyDomainIdentityRequest) {
 
         ExecutionContext executionContext = createExecutionContext(verifyDomainIdentityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3231,7 +3518,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public VerifyEmailAddressResult verifyEmailAddress(VerifyEmailAddressRequest verifyEmailAddressRequest) {
+    public VerifyEmailAddressResult verifyEmailAddress(VerifyEmailAddressRequest request) {
+        request = beforeClientExecution(request);
+        return executeVerifyEmailAddress(request);
+    }
+
+    @SdkInternalApi
+    final VerifyEmailAddressResult executeVerifyEmailAddress(VerifyEmailAddressRequest verifyEmailAddressRequest) {
 
         ExecutionContext executionContext = createExecutionContext(verifyEmailAddressRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3280,7 +3573,13 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *      Documentation</a>
      */
     @Override
-    public VerifyEmailIdentityResult verifyEmailIdentity(VerifyEmailIdentityRequest verifyEmailIdentityRequest) {
+    public VerifyEmailIdentityResult verifyEmailIdentity(VerifyEmailIdentityRequest request) {
+        request = beforeClientExecution(request);
+        return executeVerifyEmailIdentity(request);
+    }
+
+    @SdkInternalApi
+    final VerifyEmailIdentityResult executeVerifyEmailIdentity(VerifyEmailIdentityRequest verifyEmailIdentityRequest) {
 
         ExecutionContext executionContext = createExecutionContext(verifyEmailIdentityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3373,6 +3672,14 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             }
         }
         return waiters;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
 
 }

@@ -12,74 +12,53 @@
  */
 package com.amazonaws.services.rekognition.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.rekognition.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * SearchFacesByImageRequest Marshaller
+ * SearchFacesByImageRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SearchFacesByImageRequestMarshaller implements Marshaller<Request<SearchFacesByImageRequest>, SearchFacesByImageRequest> {
+@SdkInternalApi
+public class SearchFacesByImageRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> COLLECTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CollectionId").build();
+    private static final MarshallingInfo<StructuredPojo> IMAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Image").build();
+    private static final MarshallingInfo<Integer> MAXFACES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxFaces").build();
+    private static final MarshallingInfo<Float> FACEMATCHTHRESHOLD_BINDING = MarshallingInfo.builder(MarshallingType.FLOAT)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FaceMatchThreshold").build();
 
-    public SearchFacesByImageRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final SearchFacesByImageRequestMarshaller instance = new SearchFacesByImageRequestMarshaller();
+
+    public static SearchFacesByImageRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<SearchFacesByImageRequest> marshall(SearchFacesByImageRequest searchFacesByImageRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(SearchFacesByImageRequest searchFacesByImageRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (searchFacesByImageRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<SearchFacesByImageRequest> request = new DefaultRequest<SearchFacesByImageRequest>(searchFacesByImageRequest, "AmazonRekognition");
-        request.addHeader("X-Amz-Target", "RekognitionService.SearchFacesByImage");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (searchFacesByImageRequest.getCollectionId() != null) {
-                jsonGenerator.writeFieldName("CollectionId").writeValue(searchFacesByImageRequest.getCollectionId());
-            }
-            if (searchFacesByImageRequest.getImage() != null) {
-                jsonGenerator.writeFieldName("Image");
-                ImageJsonMarshaller.getInstance().marshall(searchFacesByImageRequest.getImage(), jsonGenerator);
-            }
-            if (searchFacesByImageRequest.getMaxFaces() != null) {
-                jsonGenerator.writeFieldName("MaxFaces").writeValue(searchFacesByImageRequest.getMaxFaces());
-            }
-            if (searchFacesByImageRequest.getFaceMatchThreshold() != null) {
-                jsonGenerator.writeFieldName("FaceMatchThreshold").writeValue(searchFacesByImageRequest.getFaceMatchThreshold());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(searchFacesByImageRequest.getCollectionId(), COLLECTIONID_BINDING);
+            protocolMarshaller.marshall(searchFacesByImageRequest.getImage(), IMAGE_BINDING);
+            protocolMarshaller.marshall(searchFacesByImageRequest.getMaxFaces(), MAXFACES_BINDING);
+            protocolMarshaller.marshall(searchFacesByImageRequest.getFaceMatchThreshold(), FACEMATCHTHRESHOLD_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

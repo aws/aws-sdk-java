@@ -19,8 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * This action deletes a health check. Send a <code>DELETE</code> request to the
- * <code>/2013-04-01/DeleteHealthCheckRequest</code> resource.
+ * This action deletes a health check.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHealthCheck" target="_top">AWS API

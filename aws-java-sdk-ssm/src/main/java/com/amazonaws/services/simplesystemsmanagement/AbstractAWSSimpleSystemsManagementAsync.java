@@ -849,6 +849,7 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
      *
      * @see #listDocumentsAsync(ListDocumentsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListDocumentsResult> listDocumentsAsync(
             com.amazonaws.handlers.AsyncHandler<ListDocumentsRequest, ListDocumentsResult> asyncHandler) {
 

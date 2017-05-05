@@ -17,66 +17,53 @@ import java.util.Map;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.BinaryUtils;
-import com.amazonaws.util.StringUtils;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * PutRestApiRequest Marshaller
+ * PutRestApiRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PutRestApiRequestMarshaller implements Marshaller<Request<PutRestApiRequest>, PutRestApiRequest> {
+@SdkInternalApi
+public class PutRestApiRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> RESTAPIID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("restapi_id").build();
+    private static final MarshallingInfo<String> MODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("mode").build();
+    private static final MarshallingInfo<Boolean> FAILONWARNINGS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("failonwarnings").build();
+    private static final MarshallingInfo<Map> PARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("parameters").build();
+    private static final MarshallingInfo<java.nio.ByteBuffer> BODY_BINDING = MarshallingInfo.builder(MarshallingType.BYTE_BUFFER)
+            .marshallLocation(MarshallLocation.PAYLOAD).isExplicitPayloadMember(true).isBinary(true).build();
 
-    public PutRestApiRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final PutRestApiRequestMarshaller instance = new PutRestApiRequestMarshaller();
+
+    public static PutRestApiRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<PutRestApiRequest> marshall(PutRestApiRequest putRestApiRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(PutRestApiRequest putRestApiRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (putRestApiRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<PutRestApiRequest> request = new DefaultRequest<PutRestApiRequest>(putRestApiRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.PUT);
-
-        String uriResourcePath = "/restapis/{restapi_id}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id", putRestApiRequest.getRestApiId());
-        request.setResourcePath(uriResourcePath);
-
-        if (putRestApiRequest.getMode() != null) {
-            request.addParameter("mode", StringUtils.fromString(putRestApiRequest.getMode()));
+        try {
+            protocolMarshaller.marshall(putRestApiRequest.getRestApiId(), RESTAPIID_BINDING);
+            protocolMarshaller.marshall(putRestApiRequest.getMode(), MODE_BINDING);
+            protocolMarshaller.marshall(putRestApiRequest.getFailOnWarnings(), FAILONWARNINGS_BINDING);
+            protocolMarshaller.marshall(putRestApiRequest.getParameters(), PARAMETERS_BINDING);
+            protocolMarshaller.marshall(putRestApiRequest.getBody(), BODY_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (putRestApiRequest.getFailOnWarnings() != null) {
-            request.addParameter("failonwarnings", StringUtils.fromBoolean(putRestApiRequest.getFailOnWarnings()));
-        }
-
-        java.util.Map<String, String> parameters = putRestApiRequest.getParameters();
-        if (parameters != null) {
-            for (Map.Entry<String, String> entry : parameters.entrySet()) {
-                if (entry.getValue() != null) {
-                    request.addParameter(StringUtils.fromString(entry.getKey()), StringUtils.fromString(entry.getValue()));
-                }
-            }
-        }
-
-        request.setContent(BinaryUtils.toStream(putRestApiRequest.getBody()));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

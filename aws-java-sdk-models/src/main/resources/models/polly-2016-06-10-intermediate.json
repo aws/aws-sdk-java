@@ -13,6 +13,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
+    "deprecatedSuppressions" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
     "presignersFqcn" : "com.amazonaws.services.polly.presign.AmazonPollyPresigners",
@@ -295,6 +296,14 @@
         "exceptionName" : "ServiceFailureException",
         "documentation" : "<p>An unknown condition has caused a service failure.</p>",
         "httpStatusCode" : 500
+      }, {
+        "exceptionName" : "MarksNotSupportedForFormatException",
+        "documentation" : "<p>Speech marks are not supported for the <code>OutputFormat</code> selected. Speech marks are only available for content in <code>json</code> format.</p>",
+        "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "SsmlMarksNotSupportedForTextTypeException",
+        "documentation" : "<p>SSML speech marks are not supported for plain text-type input.</p>",
+        "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : true,
       "input" : {
@@ -363,6 +372,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : "uri",
+          "marshallLocation" : "PATH",
           "marshallLocationName" : "LexiconName",
           "queryString" : false,
           "statusCode" : false,
@@ -370,10 +380,14 @@
           "uri" : true
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "Name",
         "setterDocumentation" : "/**<p>The name of the lexicon to delete. Must be an existing lexicon in the region.</p>\n@param name The name of the lexicon to delete. Must be an existing lexicon in the region.*/",
         "setterMethodName" : "setName",
@@ -386,6 +400,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the lexicon to delete. Must be an existing lexicon in the region.</p>\n@param name The name of the lexicon to delete. Must be an existing lexicon in the region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -421,6 +436,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : "uri",
+            "marshallLocation" : "PATH",
             "marshallLocationName" : "LexiconName",
             "queryString" : false,
             "statusCode" : false,
@@ -428,10 +444,14 @@
             "uri" : true
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "Name",
           "setterDocumentation" : "/**<p>The name of the lexicon to delete. Must be an existing lexicon in the region.</p>\n@param name The name of the lexicon to delete. Must be an existing lexicon in the region.*/",
           "setterMethodName" : "setName",
@@ -444,6 +464,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the lexicon to delete. Must be an existing lexicon in the region.</p>\n@param name The name of the lexicon to delete. Must be an existing lexicon in the region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -460,6 +481,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Name" ],
       "shapeName" : "DeleteLexiconRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DeleteLexiconRequest",
@@ -494,6 +517,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DeleteLexiconResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -555,6 +580,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : "querystring",
+          "marshallLocation" : "QUERY_PARAM",
           "marshallLocationName" : "LanguageCode",
           "queryString" : true,
           "statusCode" : false,
@@ -562,10 +588,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "LanguageCode",
         "setterDocumentation" : "/**<p> The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list of voices returned. If you don't specify this optional parameter, all available voices are returned. </p>\n@param languageCode The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list of voices returned. If you don't specify this optional parameter, all available voices are returned.\n@see LanguageCode*/",
         "setterMethodName" : "setLanguageCode",
@@ -578,6 +608,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list of voices returned. If you don't specify this optional parameter, all available voices are returned. </p>\n@param languageCode The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list of voices returned. If you don't specify this optional parameter, all available voices are returned.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LanguageCode*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -611,6 +642,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : "querystring",
+          "marshallLocation" : "QUERY_PARAM",
           "marshallLocationName" : "NextToken",
           "queryString" : true,
           "statusCode" : false,
@@ -618,10 +650,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "NextToken",
         "setterDocumentation" : "/**<p>An opaque pagination token returned from the previous <code>DescribeVoices</code> operation. If present, this indicates where to continue the listing.</p>\n@param nextToken An opaque pagination token returned from the previous <code>DescribeVoices</code> operation. If present, this indicates where to continue the listing.*/",
         "setterMethodName" : "setNextToken",
@@ -634,6 +670,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An opaque pagination token returned from the previous <code>DescribeVoices</code> operation. If present, this indicates where to continue the listing.</p>\n@param nextToken An opaque pagination token returned from the previous <code>DescribeVoices</code> operation. If present, this indicates where to continue the listing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -669,6 +706,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : "querystring",
+            "marshallLocation" : "QUERY_PARAM",
             "marshallLocationName" : "LanguageCode",
             "queryString" : true,
             "statusCode" : false,
@@ -676,10 +714,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "LanguageCode",
           "setterDocumentation" : "/**<p> The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list of voices returned. If you don't specify this optional parameter, all available voices are returned. </p>\n@param languageCode The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list of voices returned. If you don't specify this optional parameter, all available voices are returned.\n@see LanguageCode*/",
           "setterMethodName" : "setLanguageCode",
@@ -692,6 +734,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list of voices returned. If you don't specify this optional parameter, all available voices are returned. </p>\n@param languageCode The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list of voices returned. If you don't specify this optional parameter, all available voices are returned.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LanguageCode*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -726,6 +769,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : "querystring",
+            "marshallLocation" : "QUERY_PARAM",
             "marshallLocationName" : "NextToken",
             "queryString" : true,
             "statusCode" : false,
@@ -733,10 +777,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "NextToken",
           "setterDocumentation" : "/**<p>An opaque pagination token returned from the previous <code>DescribeVoices</code> operation. If present, this indicates where to continue the listing.</p>\n@param nextToken An opaque pagination token returned from the previous <code>DescribeVoices</code> operation. If present, this indicates where to continue the listing.*/",
           "setterMethodName" : "setNextToken",
@@ -749,6 +797,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An opaque pagination token returned from the previous <code>DescribeVoices</code> operation. If present, this indicates where to continue the listing.</p>\n@param nextToken An opaque pagination token returned from the previous <code>DescribeVoices</code> operation. If present, this indicates where to continue the listing.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -765,6 +814,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeVoicesRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "DescribeVoicesRequest",
@@ -816,6 +867,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Voices",
           "queryString" : false,
           "statusCode" : false,
@@ -823,6 +875,8 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : true,
         "listModel" : {
           "implType" : "java.util.ArrayList",
@@ -850,6 +904,7 @@
               "isPayload" : false,
               "isStreaming" : false,
               "location" : null,
+              "marshallLocation" : "PAYLOAD",
               "marshallLocationName" : "member",
               "queryString" : false,
               "statusCode" : false,
@@ -857,10 +912,14 @@
               "uri" : false
             },
             "idempotencyToken" : false,
+            "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
             "mapModel" : null,
+            "marshallingTargetClass" : "StructuredPojo",
+            "marshallingType" : "STRUCTURED",
             "name" : "Member",
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
@@ -873,6 +932,7 @@
               "variableSetterType" : "Voice"
             },
             "simple" : false,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
               "variableDeclarationType" : "Voice",
@@ -898,6 +958,8 @@
         },
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "List",
+        "marshallingType" : "LIST",
         "name" : "Voices",
         "setterDocumentation" : "/**<p>A list of voices with their properties.</p>\n@param voices A list of voices with their properties.*/",
         "setterMethodName" : "setVoices",
@@ -910,6 +972,7 @@
           "variableSetterType" : "java.util.Collection<Voice>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of voices with their properties.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setVoices(java.util.Collection)} or {@link #withVoices(java.util.Collection)} if you want to override the existing values.</p>\n@param voices A list of voices with their properties.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<Voice>",
@@ -943,6 +1006,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "NextToken",
           "queryString" : false,
           "statusCode" : false,
@@ -950,10 +1014,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "NextToken",
         "setterDocumentation" : "/**<p>The pagination token to use in the next request to continue the listing of voices. <code>NextToken</code> is returned only if the response is truncated.</p>\n@param nextToken The pagination token to use in the next request to continue the listing of voices. <code>NextToken</code> is returned only if the response is truncated.*/",
         "setterMethodName" : "setNextToken",
@@ -966,6 +1034,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The pagination token to use in the next request to continue the listing of voices. <code>NextToken</code> is returned only if the response is truncated.</p>\n@param nextToken The pagination token to use in the next request to continue the listing of voices. <code>NextToken</code> is returned only if the response is truncated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -1001,6 +1070,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "NextToken",
             "queryString" : false,
             "statusCode" : false,
@@ -1008,10 +1078,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "NextToken",
           "setterDocumentation" : "/**<p>The pagination token to use in the next request to continue the listing of voices. <code>NextToken</code> is returned only if the response is truncated.</p>\n@param nextToken The pagination token to use in the next request to continue the listing of voices. <code>NextToken</code> is returned only if the response is truncated.*/",
           "setterMethodName" : "setNextToken",
@@ -1024,6 +1098,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The pagination token to use in the next request to continue the listing of voices. <code>NextToken</code> is returned only if the response is truncated.</p>\n@param nextToken The pagination token to use in the next request to continue the listing of voices. <code>NextToken</code> is returned only if the response is truncated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -1058,6 +1133,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Voices",
             "queryString" : false,
             "statusCode" : false,
@@ -1065,6 +1141,8 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : true,
           "listModel" : {
             "implType" : "java.util.ArrayList",
@@ -1092,6 +1170,7 @@
                 "isPayload" : false,
                 "isStreaming" : false,
                 "location" : null,
+                "marshallLocation" : "PAYLOAD",
                 "marshallLocationName" : "member",
                 "queryString" : false,
                 "statusCode" : false,
@@ -1099,10 +1178,14 @@
                 "uri" : false
               },
               "idempotencyToken" : false,
+              "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
               "mapModel" : null,
+              "marshallingTargetClass" : "StructuredPojo",
+              "marshallingType" : "STRUCTURED",
               "name" : "Member",
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
@@ -1115,6 +1198,7 @@
                 "variableSetterType" : "Voice"
               },
               "simple" : false,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
                 "variableDeclarationType" : "Voice",
@@ -1140,6 +1224,8 @@
           },
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "List",
+          "marshallingType" : "LIST",
           "name" : "Voices",
           "setterDocumentation" : "/**<p>A list of voices with their properties.</p>\n@param voices A list of voices with their properties.*/",
           "setterMethodName" : "setVoices",
@@ -1152,6 +1238,7 @@
             "variableSetterType" : "java.util.Collection<Voice>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of voices with their properties.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setVoices(java.util.Collection)} or {@link #withVoices(java.util.Collection)} if you want to override the existing values.</p>\n@param voices A list of voices with their properties.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<Voice>",
@@ -1168,6 +1255,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "DescribeVoicesResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -1211,6 +1300,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Gender",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -1272,6 +1363,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : "uri",
+          "marshallLocation" : "PATH",
           "marshallLocationName" : "LexiconName",
           "queryString" : false,
           "statusCode" : false,
@@ -1279,10 +1371,14 @@
           "uri" : true
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "Name",
         "setterDocumentation" : "/**<p>Name of the lexicon.</p>\n@param name Name of the lexicon.*/",
         "setterMethodName" : "setName",
@@ -1295,6 +1391,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Name of the lexicon.</p>\n@param name Name of the lexicon.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -1330,6 +1427,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : "uri",
+            "marshallLocation" : "PATH",
             "marshallLocationName" : "LexiconName",
             "queryString" : false,
             "statusCode" : false,
@@ -1337,10 +1435,14 @@
             "uri" : true
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "Name",
           "setterDocumentation" : "/**<p>Name of the lexicon.</p>\n@param name Name of the lexicon.*/",
           "setterMethodName" : "setName",
@@ -1353,6 +1455,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Name of the lexicon.</p>\n@param name Name of the lexicon.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -1369,6 +1472,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Name" ],
       "shapeName" : "GetLexiconRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "GetLexiconRequest",
@@ -1420,6 +1525,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Lexicon",
           "queryString" : false,
           "statusCode" : false,
@@ -1427,10 +1533,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "StructuredPojo",
+        "marshallingType" : "STRUCTURED",
         "name" : "Lexicon",
         "setterDocumentation" : "/**<p>Lexicon object that provides name and the string content of the lexicon. </p>\n@param lexicon Lexicon object that provides name and the string content of the lexicon.*/",
         "setterMethodName" : "setLexicon",
@@ -1443,6 +1553,7 @@
           "variableSetterType" : "Lexicon"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Lexicon object that provides name and the string content of the lexicon. </p>\n@param lexicon Lexicon object that provides name and the string content of the lexicon.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Lexicon",
@@ -1476,6 +1587,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "LexiconAttributes",
           "queryString" : false,
           "statusCode" : false,
@@ -1483,10 +1595,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "StructuredPojo",
+        "marshallingType" : "STRUCTURED",
         "name" : "LexiconAttributes",
         "setterDocumentation" : "/**<p>Metadata of the lexicon, including phonetic alphabetic used, language code, lexicon ARN, number of lexemes defined in the lexicon, and size of lexicon in bytes.</p>\n@param lexiconAttributes Metadata of the lexicon, including phonetic alphabetic used, language code, lexicon ARN, number of lexemes defined in the lexicon, and size of lexicon in bytes.*/",
         "setterMethodName" : "setLexiconAttributes",
@@ -1499,6 +1615,7 @@
           "variableSetterType" : "LexiconAttributes"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Metadata of the lexicon, including phonetic alphabetic used, language code, lexicon ARN, number of lexemes defined in the lexicon, and size of lexicon in bytes.</p>\n@param lexiconAttributes Metadata of the lexicon, including phonetic alphabetic used, language code, lexicon ARN, number of lexemes defined in the lexicon, and size of lexicon in bytes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "LexiconAttributes",
@@ -1534,6 +1651,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Lexicon",
             "queryString" : false,
             "statusCode" : false,
@@ -1541,10 +1659,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "StructuredPojo",
+          "marshallingType" : "STRUCTURED",
           "name" : "Lexicon",
           "setterDocumentation" : "/**<p>Lexicon object that provides name and the string content of the lexicon. </p>\n@param lexicon Lexicon object that provides name and the string content of the lexicon.*/",
           "setterMethodName" : "setLexicon",
@@ -1557,6 +1679,7 @@
             "variableSetterType" : "Lexicon"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Lexicon object that provides name and the string content of the lexicon. </p>\n@param lexicon Lexicon object that provides name and the string content of the lexicon.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Lexicon",
@@ -1591,6 +1714,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "LexiconAttributes",
             "queryString" : false,
             "statusCode" : false,
@@ -1598,10 +1722,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "StructuredPojo",
+          "marshallingType" : "STRUCTURED",
           "name" : "LexiconAttributes",
           "setterDocumentation" : "/**<p>Metadata of the lexicon, including phonetic alphabetic used, language code, lexicon ARN, number of lexemes defined in the lexicon, and size of lexicon in bytes.</p>\n@param lexiconAttributes Metadata of the lexicon, including phonetic alphabetic used, language code, lexicon ARN, number of lexemes defined in the lexicon, and size of lexicon in bytes.*/",
           "setterMethodName" : "setLexiconAttributes",
@@ -1614,6 +1742,7 @@
             "variableSetterType" : "LexiconAttributes"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Metadata of the lexicon, including phonetic alphabetic used, language code, lexicon ARN, number of lexemes defined in the lexicon, and size of lexicon in bytes.</p>\n@param lexiconAttributes Metadata of the lexicon, including phonetic alphabetic used, language code, lexicon ARN, number of lexemes defined in the lexicon, and size of lexicon in bytes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "LexiconAttributes",
@@ -1630,6 +1759,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "GetLexiconResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -1667,6 +1798,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidLexiconException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidLexiconException",
@@ -1701,6 +1834,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidNextTokenException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidNextTokenException",
@@ -1735,6 +1870,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidSampleRateException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidSampleRateException",
@@ -1769,6 +1906,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "InvalidSsmlException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "InvalidSsmlException",
@@ -1875,6 +2014,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LanguageCode",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -1929,6 +2070,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Content",
           "queryString" : false,
           "statusCode" : false,
@@ -1936,10 +2078,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "Content",
         "setterDocumentation" : "/**<p>Lexicon content in string format. The content of a lexicon must be in PLS format.</p>\n@param content Lexicon content in string format. The content of a lexicon must be in PLS format.*/",
         "setterMethodName" : "setContent",
@@ -1952,6 +2098,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Lexicon content in string format. The content of a lexicon must be in PLS format.</p>\n@param content Lexicon content in string format. The content of a lexicon must be in PLS format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -1985,6 +2132,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Name",
           "queryString" : false,
           "statusCode" : false,
@@ -1992,10 +2140,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "Name",
         "setterDocumentation" : "/**<p>Name of the lexicon.</p>\n@param name Name of the lexicon.*/",
         "setterMethodName" : "setName",
@@ -2008,6 +2160,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Name of the lexicon.</p>\n@param name Name of the lexicon.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -2043,6 +2196,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Content",
             "queryString" : false,
             "statusCode" : false,
@@ -2050,10 +2204,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "Content",
           "setterDocumentation" : "/**<p>Lexicon content in string format. The content of a lexicon must be in PLS format.</p>\n@param content Lexicon content in string format. The content of a lexicon must be in PLS format.*/",
           "setterMethodName" : "setContent",
@@ -2066,6 +2224,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Lexicon content in string format. The content of a lexicon must be in PLS format.</p>\n@param content Lexicon content in string format. The content of a lexicon must be in PLS format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -2100,6 +2259,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Name",
             "queryString" : false,
             "statusCode" : false,
@@ -2107,10 +2267,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "Name",
           "setterDocumentation" : "/**<p>Name of the lexicon.</p>\n@param name Name of the lexicon.*/",
           "setterMethodName" : "setName",
@@ -2123,6 +2287,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Name of the lexicon.</p>\n@param name Name of the lexicon.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -2139,6 +2304,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Lexicon",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -2193,6 +2360,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Alphabet",
           "queryString" : false,
           "statusCode" : false,
@@ -2200,10 +2368,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "Alphabet",
         "setterDocumentation" : "/**<p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and <code>x-sampa</code>.</p>\n@param alphabet Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and <code>x-sampa</code>.*/",
         "setterMethodName" : "setAlphabet",
@@ -2216,6 +2388,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and <code>x-sampa</code>.</p>\n@param alphabet Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and <code>x-sampa</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -2249,6 +2422,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "LanguageCode",
           "queryString" : false,
           "statusCode" : false,
@@ -2256,10 +2430,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "LanguageCode",
         "setterDocumentation" : "/**<p>Language code that the lexicon applies to. A lexicon with a language code such as \"en\" would be applied to all English languages (en-GB, en-US, en-AUS, en-WLS, and so on.</p>\n@param languageCode Language code that the lexicon applies to. A lexicon with a language code such as \"en\" would be applied to all English languages (en-GB, en-US, en-AUS, en-WLS, and so on.\n@see LanguageCode*/",
         "setterMethodName" : "setLanguageCode",
@@ -2272,6 +2450,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Language code that the lexicon applies to. A lexicon with a language code such as \"en\" would be applied to all English languages (en-GB, en-US, en-AUS, en-WLS, and so on.</p>\n@param languageCode Language code that the lexicon applies to. A lexicon with a language code such as \"en\" would be applied to all English languages (en-GB, en-US, en-AUS, en-WLS, and so on.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LanguageCode*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -2305,6 +2484,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "LastModified",
           "queryString" : false,
           "statusCode" : false,
@@ -2312,10 +2492,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "java.util.Date",
+        "marshallingType" : "DATE",
         "name" : "LastModified",
         "setterDocumentation" : "/**<p>Date lexicon was last modified (a timestamp value).</p>\n@param lastModified Date lexicon was last modified (a timestamp value).*/",
         "setterMethodName" : "setLastModified",
@@ -2328,6 +2512,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Date lexicon was last modified (a timestamp value).</p>\n@param lastModified Date lexicon was last modified (a timestamp value).\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.Date",
@@ -2361,6 +2546,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "LexiconArn",
           "queryString" : false,
           "statusCode" : false,
@@ -2368,10 +2554,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "LexiconArn",
         "setterDocumentation" : "/**<p>Amazon Resource Name (ARN) of the lexicon.</p>\n@param lexiconArn Amazon Resource Name (ARN) of the lexicon.*/",
         "setterMethodName" : "setLexiconArn",
@@ -2384,6 +2574,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Amazon Resource Name (ARN) of the lexicon.</p>\n@param lexiconArn Amazon Resource Name (ARN) of the lexicon.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -2417,6 +2608,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "LexemesCount",
           "queryString" : false,
           "statusCode" : false,
@@ -2424,10 +2616,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "Integer",
+        "marshallingType" : "INTEGER",
         "name" : "LexemesCount",
         "setterDocumentation" : "/**<p>Number of lexemes in the lexicon.</p>\n@param lexemesCount Number of lexemes in the lexicon.*/",
         "setterMethodName" : "setLexemesCount",
@@ -2440,6 +2636,7 @@
           "variableSetterType" : "Integer"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Number of lexemes in the lexicon.</p>\n@param lexemesCount Number of lexemes in the lexicon.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Integer",
@@ -2473,6 +2670,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Size",
           "queryString" : false,
           "statusCode" : false,
@@ -2480,10 +2678,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "Integer",
+        "marshallingType" : "INTEGER",
         "name" : "Size",
         "setterDocumentation" : "/**<p>Total size of the lexicon, in characters.</p>\n@param size Total size of the lexicon, in characters.*/",
         "setterMethodName" : "setSize",
@@ -2496,6 +2698,7 @@
           "variableSetterType" : "Integer"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Total size of the lexicon, in characters.</p>\n@param size Total size of the lexicon, in characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Integer",
@@ -2531,6 +2734,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Alphabet",
             "queryString" : false,
             "statusCode" : false,
@@ -2538,10 +2742,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "Alphabet",
           "setterDocumentation" : "/**<p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and <code>x-sampa</code>.</p>\n@param alphabet Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and <code>x-sampa</code>.*/",
           "setterMethodName" : "setAlphabet",
@@ -2554,6 +2762,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and <code>x-sampa</code>.</p>\n@param alphabet Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and <code>x-sampa</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -2588,6 +2797,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "LanguageCode",
             "queryString" : false,
             "statusCode" : false,
@@ -2595,10 +2805,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "LanguageCode",
           "setterDocumentation" : "/**<p>Language code that the lexicon applies to. A lexicon with a language code such as \"en\" would be applied to all English languages (en-GB, en-US, en-AUS, en-WLS, and so on.</p>\n@param languageCode Language code that the lexicon applies to. A lexicon with a language code such as \"en\" would be applied to all English languages (en-GB, en-US, en-AUS, en-WLS, and so on.\n@see LanguageCode*/",
           "setterMethodName" : "setLanguageCode",
@@ -2611,6 +2825,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Language code that the lexicon applies to. A lexicon with a language code such as \"en\" would be applied to all English languages (en-GB, en-US, en-AUS, en-WLS, and so on.</p>\n@param languageCode Language code that the lexicon applies to. A lexicon with a language code such as \"en\" would be applied to all English languages (en-GB, en-US, en-AUS, en-WLS, and so on.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LanguageCode*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -2645,6 +2860,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "LastModified",
             "queryString" : false,
             "statusCode" : false,
@@ -2652,10 +2868,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "java.util.Date",
+          "marshallingType" : "DATE",
           "name" : "LastModified",
           "setterDocumentation" : "/**<p>Date lexicon was last modified (a timestamp value).</p>\n@param lastModified Date lexicon was last modified (a timestamp value).*/",
           "setterMethodName" : "setLastModified",
@@ -2668,6 +2888,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Date lexicon was last modified (a timestamp value).</p>\n@param lastModified Date lexicon was last modified (a timestamp value).\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.Date",
@@ -2702,6 +2923,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "LexemesCount",
             "queryString" : false,
             "statusCode" : false,
@@ -2709,10 +2931,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "Integer",
+          "marshallingType" : "INTEGER",
           "name" : "LexemesCount",
           "setterDocumentation" : "/**<p>Number of lexemes in the lexicon.</p>\n@param lexemesCount Number of lexemes in the lexicon.*/",
           "setterMethodName" : "setLexemesCount",
@@ -2725,6 +2951,7 @@
             "variableSetterType" : "Integer"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Number of lexemes in the lexicon.</p>\n@param lexemesCount Number of lexemes in the lexicon.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Integer",
@@ -2759,6 +2986,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "LexiconArn",
             "queryString" : false,
             "statusCode" : false,
@@ -2766,10 +2994,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "LexiconArn",
           "setterDocumentation" : "/**<p>Amazon Resource Name (ARN) of the lexicon.</p>\n@param lexiconArn Amazon Resource Name (ARN) of the lexicon.*/",
           "setterMethodName" : "setLexiconArn",
@@ -2782,6 +3014,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Amazon Resource Name (ARN) of the lexicon.</p>\n@param lexiconArn Amazon Resource Name (ARN) of the lexicon.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -2816,6 +3049,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Size",
             "queryString" : false,
             "statusCode" : false,
@@ -2823,10 +3057,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "Integer",
+          "marshallingType" : "INTEGER",
           "name" : "Size",
           "setterDocumentation" : "/**<p>Total size of the lexicon, in characters.</p>\n@param size Total size of the lexicon, in characters.*/",
           "setterMethodName" : "setSize",
@@ -2839,6 +3077,7 @@
             "variableSetterType" : "Integer"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Total size of the lexicon, in characters.</p>\n@param size Total size of the lexicon, in characters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Integer",
@@ -2855,6 +3094,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LexiconAttributes",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -2909,6 +3150,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Name",
           "queryString" : false,
           "statusCode" : false,
@@ -2916,10 +3158,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "Name",
         "setterDocumentation" : "/**<p>Name of the lexicon.</p>\n@param name Name of the lexicon.*/",
         "setterMethodName" : "setName",
@@ -2932,6 +3178,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Name of the lexicon.</p>\n@param name Name of the lexicon.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -2965,6 +3212,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Attributes",
           "queryString" : false,
           "statusCode" : false,
@@ -2972,10 +3220,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "StructuredPojo",
+        "marshallingType" : "STRUCTURED",
         "name" : "Attributes",
         "setterDocumentation" : "/**<p>Provides lexicon metadata.</p>\n@param attributes Provides lexicon metadata.*/",
         "setterMethodName" : "setAttributes",
@@ -2988,6 +3240,7 @@
           "variableSetterType" : "LexiconAttributes"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Provides lexicon metadata.</p>\n@param attributes Provides lexicon metadata.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "LexiconAttributes",
@@ -3023,6 +3276,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Attributes",
             "queryString" : false,
             "statusCode" : false,
@@ -3030,10 +3284,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "StructuredPojo",
+          "marshallingType" : "STRUCTURED",
           "name" : "Attributes",
           "setterDocumentation" : "/**<p>Provides lexicon metadata.</p>\n@param attributes Provides lexicon metadata.*/",
           "setterMethodName" : "setAttributes",
@@ -3046,6 +3304,7 @@
             "variableSetterType" : "LexiconAttributes"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Provides lexicon metadata.</p>\n@param attributes Provides lexicon metadata.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "LexiconAttributes",
@@ -3080,6 +3339,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Name",
             "queryString" : false,
             "statusCode" : false,
@@ -3087,10 +3347,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "Name",
           "setterDocumentation" : "/**<p>Name of the lexicon.</p>\n@param name Name of the lexicon.*/",
           "setterMethodName" : "setName",
@@ -3103,6 +3367,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Name of the lexicon.</p>\n@param name Name of the lexicon.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -3119,6 +3384,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LexiconDescription",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3156,6 +3423,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LexiconNotFoundException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "LexiconNotFoundException",
@@ -3190,6 +3459,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "LexiconSizeExceededException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "LexiconSizeExceededException",
@@ -3248,6 +3519,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : "querystring",
+          "marshallLocation" : "QUERY_PARAM",
           "marshallLocationName" : "NextToken",
           "queryString" : true,
           "statusCode" : false,
@@ -3255,10 +3527,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "NextToken",
         "setterDocumentation" : "/**<p>An opaque pagination token returned from previous <code>ListLexicons</code> operation. If present, indicates where to continue the list of lexicons.</p>\n@param nextToken An opaque pagination token returned from previous <code>ListLexicons</code> operation. If present, indicates where to continue the list of lexicons.*/",
         "setterMethodName" : "setNextToken",
@@ -3271,6 +3547,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An opaque pagination token returned from previous <code>ListLexicons</code> operation. If present, indicates where to continue the list of lexicons.</p>\n@param nextToken An opaque pagination token returned from previous <code>ListLexicons</code> operation. If present, indicates where to continue the list of lexicons.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -3306,6 +3583,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : "querystring",
+            "marshallLocation" : "QUERY_PARAM",
             "marshallLocationName" : "NextToken",
             "queryString" : true,
             "statusCode" : false,
@@ -3313,10 +3591,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "NextToken",
           "setterDocumentation" : "/**<p>An opaque pagination token returned from previous <code>ListLexicons</code> operation. If present, indicates where to continue the list of lexicons.</p>\n@param nextToken An opaque pagination token returned from previous <code>ListLexicons</code> operation. If present, indicates where to continue the list of lexicons.*/",
           "setterMethodName" : "setNextToken",
@@ -3329,6 +3611,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An opaque pagination token returned from previous <code>ListLexicons</code> operation. If present, indicates where to continue the list of lexicons.</p>\n@param nextToken An opaque pagination token returned from previous <code>ListLexicons</code> operation. If present, indicates where to continue the list of lexicons.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -3345,6 +3628,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListLexiconsRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ListLexiconsRequest",
@@ -3396,6 +3681,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Lexicons",
           "queryString" : false,
           "statusCode" : false,
@@ -3403,6 +3689,8 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : true,
         "listModel" : {
           "implType" : "java.util.ArrayList",
@@ -3430,6 +3718,7 @@
               "isPayload" : false,
               "isStreaming" : false,
               "location" : null,
+              "marshallLocation" : "PAYLOAD",
               "marshallLocationName" : "member",
               "queryString" : false,
               "statusCode" : false,
@@ -3437,10 +3726,14 @@
               "uri" : false
             },
             "idempotencyToken" : false,
+            "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
             "mapModel" : null,
+            "marshallingTargetClass" : "StructuredPojo",
+            "marshallingType" : "STRUCTURED",
             "name" : "Member",
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
@@ -3453,6 +3746,7 @@
               "variableSetterType" : "LexiconDescription"
             },
             "simple" : false,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
               "variableDeclarationType" : "LexiconDescription",
@@ -3478,6 +3772,8 @@
         },
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "List",
+        "marshallingType" : "LIST",
         "name" : "Lexicons",
         "setterDocumentation" : "/**<p>A list of lexicon names and attributes.</p>\n@param lexicons A list of lexicon names and attributes.*/",
         "setterMethodName" : "setLexicons",
@@ -3490,6 +3786,7 @@
           "variableSetterType" : "java.util.Collection<LexiconDescription>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of lexicon names and attributes.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setLexicons(java.util.Collection)} or {@link #withLexicons(java.util.Collection)} if you want to override the existing values.</p>\n@param lexicons A list of lexicon names and attributes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<LexiconDescription>",
@@ -3523,6 +3820,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "NextToken",
           "queryString" : false,
           "statusCode" : false,
@@ -3530,10 +3828,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "NextToken",
         "setterDocumentation" : "/**<p>The pagination token to use in the next request to continue the listing of lexicons. <code>NextToken</code> is returned only if the response is truncated.</p>\n@param nextToken The pagination token to use in the next request to continue the listing of lexicons. <code>NextToken</code> is returned only if the response is truncated.*/",
         "setterMethodName" : "setNextToken",
@@ -3546,6 +3848,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The pagination token to use in the next request to continue the listing of lexicons. <code>NextToken</code> is returned only if the response is truncated.</p>\n@param nextToken The pagination token to use in the next request to continue the listing of lexicons. <code>NextToken</code> is returned only if the response is truncated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -3581,6 +3884,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Lexicons",
             "queryString" : false,
             "statusCode" : false,
@@ -3588,6 +3892,8 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : true,
           "listModel" : {
             "implType" : "java.util.ArrayList",
@@ -3615,6 +3921,7 @@
                 "isPayload" : false,
                 "isStreaming" : false,
                 "location" : null,
+                "marshallLocation" : "PAYLOAD",
                 "marshallLocationName" : "member",
                 "queryString" : false,
                 "statusCode" : false,
@@ -3622,10 +3929,14 @@
                 "uri" : false
               },
               "idempotencyToken" : false,
+              "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
               "mapModel" : null,
+              "marshallingTargetClass" : "StructuredPojo",
+              "marshallingType" : "STRUCTURED",
               "name" : "Member",
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
@@ -3638,6 +3949,7 @@
                 "variableSetterType" : "LexiconDescription"
               },
               "simple" : false,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
                 "variableDeclarationType" : "LexiconDescription",
@@ -3663,6 +3975,8 @@
           },
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "List",
+          "marshallingType" : "LIST",
           "name" : "Lexicons",
           "setterDocumentation" : "/**<p>A list of lexicon names and attributes.</p>\n@param lexicons A list of lexicon names and attributes.*/",
           "setterMethodName" : "setLexicons",
@@ -3675,6 +3989,7 @@
             "variableSetterType" : "java.util.Collection<LexiconDescription>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of lexicon names and attributes.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setLexicons(java.util.Collection)} or {@link #withLexicons(java.util.Collection)} if you want to override the existing values.</p>\n@param lexicons A list of lexicon names and attributes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<LexiconDescription>",
@@ -3709,6 +4024,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "NextToken",
             "queryString" : false,
             "statusCode" : false,
@@ -3716,10 +4032,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "NextToken",
           "setterDocumentation" : "/**<p>The pagination token to use in the next request to continue the listing of lexicons. <code>NextToken</code> is returned only if the response is truncated.</p>\n@param nextToken The pagination token to use in the next request to continue the listing of lexicons. <code>NextToken</code> is returned only if the response is truncated.*/",
           "setterMethodName" : "setNextToken",
@@ -3732,6 +4052,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The pagination token to use in the next request to continue the listing of lexicons. <code>NextToken</code> is returned only if the response is truncated.</p>\n@param nextToken The pagination token to use in the next request to continue the listing of lexicons. <code>NextToken</code> is returned only if the response is truncated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -3748,6 +4069,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ListLexiconsResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3759,6 +4082,42 @@
         "documentation" : null,
         "simpleType" : "ListLexiconsResult",
         "variableSetterType" : "ListLexiconsResult"
+      },
+      "wrapper" : false
+    },
+    "MarksNotSupportedForFormatException" : {
+      "c2jName" : "MarksNotSupportedForFormatException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>Speech marks are not supported for the <code>OutputFormat</code> selected. Speech marks are only available for content in <code>json</code> format.</p>",
+      "enums" : null,
+      "errorCode" : "MarksNotSupportedForFormatException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ ],
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "MarksNotSupportedForFormatException",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "MarksNotSupportedForFormatException",
+        "variableName" : "marksNotSupportedForFormatException",
+        "variableType" : "MarksNotSupportedForFormatException",
+        "documentation" : null,
+        "simpleType" : "MarksNotSupportedForFormatException",
+        "variableSetterType" : "MarksNotSupportedForFormatException"
       },
       "wrapper" : false
     },
@@ -3785,6 +4144,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MaxLexemeLengthExceededException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "MaxLexemeLengthExceededException",
@@ -3819,6 +4180,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "MaxLexiconsNumberExceededException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "MaxLexiconsNumberExceededException",
@@ -3841,6 +4204,9 @@
       "deprecated" : false,
       "documentation" : "",
       "enums" : [ {
+        "name" : "Json",
+        "value" : "json"
+      }, {
         "name" : "Mp3",
         "value" : "mp3"
       }, {
@@ -3862,6 +4228,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "OutputFormat",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -3923,6 +4291,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : "uri",
+          "marshallLocation" : "PATH",
           "marshallLocationName" : "LexiconName",
           "queryString" : false,
           "statusCode" : false,
@@ -3930,10 +4299,14 @@
           "uri" : true
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "Name",
         "setterDocumentation" : "/**<p>Name of the lexicon. The name must follow the regular express format [0-9A-Za-z]{1,20}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long. </p>\n@param name Name of the lexicon. The name must follow the regular express format [0-9A-Za-z]{1,20}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long.*/",
         "setterMethodName" : "setName",
@@ -3946,6 +4319,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Name of the lexicon. The name must follow the regular express format [0-9A-Za-z]{1,20}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long. </p>\n@param name Name of the lexicon. The name must follow the regular express format [0-9A-Za-z]{1,20}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -3979,6 +4353,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Content",
           "queryString" : false,
           "statusCode" : false,
@@ -3986,10 +4361,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "Content",
         "setterDocumentation" : "/**<p>Content of the PLS lexicon as string data.</p>\n@param content Content of the PLS lexicon as string data.*/",
         "setterMethodName" : "setContent",
@@ -4002,6 +4381,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Content of the PLS lexicon as string data.</p>\n@param content Content of the PLS lexicon as string data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -4037,6 +4417,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Content",
             "queryString" : false,
             "statusCode" : false,
@@ -4044,10 +4425,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "Content",
           "setterDocumentation" : "/**<p>Content of the PLS lexicon as string data.</p>\n@param content Content of the PLS lexicon as string data.*/",
           "setterMethodName" : "setContent",
@@ -4060,6 +4445,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Content of the PLS lexicon as string data.</p>\n@param content Content of the PLS lexicon as string data.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -4094,6 +4480,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : "uri",
+            "marshallLocation" : "PATH",
             "marshallLocationName" : "LexiconName",
             "queryString" : false,
             "statusCode" : false,
@@ -4101,10 +4488,14 @@
             "uri" : true
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "Name",
           "setterDocumentation" : "/**<p>Name of the lexicon. The name must follow the regular express format [0-9A-Za-z]{1,20}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long. </p>\n@param name Name of the lexicon. The name must follow the regular express format [0-9A-Za-z]{1,20}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long.*/",
           "setterMethodName" : "setName",
@@ -4117,6 +4508,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Name of the lexicon. The name must follow the regular express format [0-9A-Za-z]{1,20}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long. </p>\n@param name Name of the lexicon. The name must follow the regular express format [0-9A-Za-z]{1,20}. That is, the name is a case-sensitive alphanumeric string up to 20 characters long.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -4133,6 +4525,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "Name", "Content" ],
       "shapeName" : "PutLexiconRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "PutLexiconRequest",
@@ -4167,6 +4561,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "PutLexiconResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -4204,6 +4600,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "ServiceFailureException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "ServiceFailureException",
@@ -4212,6 +4610,93 @@
         "documentation" : null,
         "simpleType" : "ServiceFailureException",
         "variableSetterType" : "ServiceFailureException"
+      },
+      "wrapper" : false
+    },
+    "SpeechMarkType" : {
+      "c2jName" : "SpeechMarkType",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : [ {
+        "name" : "Sentence",
+        "value" : "sentence"
+      }, {
+        "name" : "Ssml",
+        "value" : "ssml"
+      }, {
+        "name" : "Viseme",
+        "value" : "viseme"
+      }, {
+        "name" : "Word",
+        "value" : "word"
+      } ],
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "SpeechMarkType",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "SpeechMarkType",
+        "variableName" : "speechMarkType",
+        "variableType" : "SpeechMarkType",
+        "documentation" : null,
+        "simpleType" : "SpeechMarkType",
+        "variableSetterType" : "SpeechMarkType"
+      },
+      "wrapper" : false
+    },
+    "SsmlMarksNotSupportedForTextTypeException" : {
+      "c2jName" : "SsmlMarksNotSupportedForTextTypeException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>SSML speech marks are not supported for plain text-type input.</p>",
+      "enums" : null,
+      "errorCode" : "SsmlMarksNotSupportedForTextTypeException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ ],
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "SsmlMarksNotSupportedForTextTypeException",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "SsmlMarksNotSupportedForTextTypeException",
+        "variableName" : "ssmlMarksNotSupportedForTextTypeException",
+        "variableType" : "SsmlMarksNotSupportedForTextTypeException",
+        "documentation" : null,
+        "simpleType" : "SsmlMarksNotSupportedForTextTypeException",
+        "variableSetterType" : "SsmlMarksNotSupportedForTextTypeException"
       },
       "wrapper" : false
     },
@@ -4262,6 +4747,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "LexiconNames",
           "queryString" : false,
           "statusCode" : false,
@@ -4269,6 +4755,8 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : true,
         "listModel" : {
           "implType" : "java.util.ArrayList",
@@ -4296,6 +4784,7 @@
               "isPayload" : false,
               "isStreaming" : false,
               "location" : null,
+              "marshallLocation" : "PAYLOAD",
               "marshallLocationName" : "member",
               "queryString" : false,
               "statusCode" : false,
@@ -4303,10 +4792,14 @@
               "uri" : false
             },
             "idempotencyToken" : false,
+            "isBinary" : false,
+            "jsonValue" : false,
             "list" : false,
             "listModel" : null,
             "map" : false,
             "mapModel" : null,
+            "marshallingTargetClass" : "String",
+            "marshallingType" : "STRING",
             "name" : "Member",
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
@@ -4319,6 +4812,7 @@
               "variableSetterType" : "String"
             },
             "simple" : true,
+            "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
             "variable" : {
               "variableDeclarationType" : "String",
@@ -4344,6 +4838,8 @@
         },
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "List",
+        "marshallingType" : "LIST",
         "name" : "LexiconNames",
         "setterDocumentation" : "/**<p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. For information about storing lexicons, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html\">PutLexicon</a>.</p>\n@param lexiconNames List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. For information about storing lexicons, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html\">PutLexicon</a>.*/",
         "setterMethodName" : "setLexiconNames",
@@ -4356,6 +4852,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "simple" : false,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. For information about storing lexicons, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html\">PutLexicon</a>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setLexiconNames(java.util.Collection)} or {@link #withLexiconNames(java.util.Collection)} if you want to override the existing values.</p>\n@param lexiconNames List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. For information about storing lexicons, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html\">PutLexicon</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<String>",
@@ -4370,11 +4867,11 @@
         "c2jName" : "OutputFormat",
         "c2jShape" : "OutputFormat",
         "deprecated" : false,
-        "documentation" : "<p> The audio format in which the resulting stream will be encoded. </p>",
+        "documentation" : "<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>",
         "enumType" : "OutputFormat",
-        "fluentSetterDocumentation" : "/**<p> The audio format in which the resulting stream will be encoded. </p>\n@param outputFormat The audio format in which the resulting stream will be encoded.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OutputFormat*/",
+        "fluentSetterDocumentation" : "/**<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>\n@param outputFormat The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OutputFormat*/",
         "fluentSetterMethodName" : "withOutputFormat",
-        "getterDocumentation" : "/**<p> The audio format in which the resulting stream will be encoded. </p>\n@return The audio format in which the resulting stream will be encoded.\n@see OutputFormat*/",
+        "getterDocumentation" : "/**<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>\n@return The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json.\n@see OutputFormat*/",
         "getterMethodName" : "getOutputFormat",
         "getterModel" : {
           "returnType" : "String",
@@ -4389,6 +4886,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "OutputFormat",
           "queryString" : false,
           "statusCode" : false,
@@ -4396,12 +4894,16 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "OutputFormat",
-        "setterDocumentation" : "/**<p> The audio format in which the resulting stream will be encoded. </p>\n@param outputFormat The audio format in which the resulting stream will be encoded.\n@see OutputFormat*/",
+        "setterDocumentation" : "/**<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>\n@param outputFormat The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json.\n@see OutputFormat*/",
         "setterMethodName" : "setOutputFormat",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -4412,12 +4914,13 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p> The audio format in which the resulting stream will be encoded. </p>\n@param outputFormat The audio format in which the resulting stream will be encoded.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OutputFormat*/",
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>\n@param outputFormat The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OutputFormat*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "outputFormat",
           "variableType" : "String",
-          "documentation" : "<p> The audio format in which the resulting stream will be encoded. </p>",
+          "documentation" : "<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -4445,6 +4948,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "SampleRate",
           "queryString" : false,
           "statusCode" : false,
@@ -4452,10 +4956,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "SampleRate",
         "setterDocumentation" : "/**<p> The audio frequency specified in Hz. </p> <p>The valid values for <code>mp3</code> and <code>ogg_vorbis</code> are \"8000\", \"16000\", and \"22050\". The default value is \"22050\". </p> <p> Valid values for <code>pcm</code> are \"8000\" and \"16000\" The default value is \"16000\". </p>\n@param sampleRate The audio frequency specified in Hz. </p> <p>The valid values for <code>mp3</code> and <code>ogg_vorbis</code> are \"8000\", \"16000\", and \"22050\". The default value is \"22050\". </p> <p> Valid values for <code>pcm</code> are \"8000\" and \"16000\" The default value is \"16000\".*/",
         "setterMethodName" : "setSampleRate",
@@ -4468,6 +4976,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The audio frequency specified in Hz. </p> <p>The valid values for <code>mp3</code> and <code>ogg_vorbis</code> are \"8000\", \"16000\", and \"22050\". The default value is \"22050\". </p> <p> Valid values for <code>pcm</code> are \"8000\" and \"16000\" The default value is \"16000\". </p>\n@param sampleRate The audio frequency specified in Hz. </p> <p>The valid values for <code>mp3</code> and <code>ogg_vorbis</code> are \"8000\", \"16000\", and \"22050\". The default value is \"22050\". </p> <p> Valid values for <code>pcm</code> are \"8000\" and \"16000\" The default value is \"16000\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -4476,6 +4985,145 @@
           "documentation" : "<p> The audio frequency specified in Hz. </p> <p>The valid values for <code>mp3</code> and <code>ogg_vorbis</code> are \"8000\", \"16000\", and \"22050\". The default value is \"22050\". </p> <p> Valid values for <code>pcm</code> are \"8000\" and \"16000\" The default value is \"16000\". </p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "SpeechMarkTypes",
+        "c2jShape" : "SpeechMarkTypeList",
+        "deprecated" : false,
+        "documentation" : "<p>The type of speech marks returned for the input text.</p>",
+        "enumType" : "SpeechMarkType",
+        "fluentSetterDocumentation" : "/**<p>The type of speech marks returned for the input text.</p>\n@param speechMarkTypes The type of speech marks returned for the input text.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SpeechMarkType*/",
+        "fluentSetterMethodName" : "withSpeechMarkTypes",
+        "getterDocumentation" : "/**<p>The type of speech marks returned for the input text.</p>\n@return The type of speech marks returned for the input text.\n@see SpeechMarkType*/",
+        "getterMethodName" : "getSpeechMarkTypes",
+        "getterModel" : {
+          "returnType" : "java.util.List<String>",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "SpeechMarkTypes",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "SpeechMarkTypes",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : true,
+        "listModel" : {
+          "implType" : "java.util.ArrayList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "c2jName" : "member",
+            "c2jShape" : "SpeechMarkType",
+            "deprecated" : false,
+            "documentation" : "",
+            "enumType" : "SpeechMarkType",
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see SpeechMarkType*/",
+            "fluentSetterMethodName" : "withMember",
+            "getterDocumentation" : "/**\n@return \n@see SpeechMarkType*/",
+            "getterMethodName" : "getMember",
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "additionalMarshallingPath" : null,
+              "additionalUnmarshallingPath" : null,
+              "flattened" : false,
+              "greedy" : false,
+              "header" : false,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "marshallLocation" : "PAYLOAD",
+              "marshallLocationName" : "member",
+              "queryString" : false,
+              "statusCode" : false,
+              "unmarshallLocationName" : "member",
+              "uri" : false
+            },
+            "idempotencyToken" : false,
+            "isBinary" : false,
+            "jsonValue" : false,
+            "list" : false,
+            "listModel" : null,
+            "map" : false,
+            "mapModel" : null,
+            "marshallingTargetClass" : "String",
+            "marshallingType" : "STRING",
+            "name" : "Member",
+            "setterDocumentation" : "/**\n@param member \n@see SpeechMarkType*/",
+            "setterMethodName" : "setMember",
+            "setterModel" : {
+              "variableDeclarationType" : "String",
+              "variableName" : "member",
+              "variableType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "simple" : true,
+            "unmarshallingType" : null,
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see SpeechMarkType*/",
+            "variable" : {
+              "variableDeclarationType" : "String",
+              "variableName" : "member",
+              "variableType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "xmlNameSpaceUri" : null
+          },
+          "memberLocationName" : null,
+          "memberType" : "String",
+          "map" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : true,
+          "simpleType" : "String",
+          "templateImplType" : "java.util.ArrayList<String>",
+          "templateType" : "java.util.List<String>"
+        },
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "List",
+        "marshallingType" : "LIST",
+        "name" : "SpeechMarkTypes",
+        "setterDocumentation" : "/**<p>The type of speech marks returned for the input text.</p>\n@param speechMarkTypes The type of speech marks returned for the input text.\n@see SpeechMarkType*/",
+        "setterMethodName" : "setSpeechMarkTypes",
+        "setterModel" : {
+          "variableDeclarationType" : "java.util.List<String>",
+          "variableName" : "speechMarkTypes",
+          "variableType" : "java.util.List<String>",
+          "documentation" : "",
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
+        },
+        "simple" : false,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The type of speech marks returned for the input text.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSpeechMarkTypes(java.util.Collection)} or {@link #withSpeechMarkTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param speechMarkTypes The type of speech marks returned for the input text.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SpeechMarkType*/",
+        "variable" : {
+          "variableDeclarationType" : "java.util.List<String>",
+          "variableName" : "speechMarkTypes",
+          "variableType" : "java.util.List<String>",
+          "documentation" : "<p>The type of speech marks returned for the input text.</p>",
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
         },
         "xmlNameSpaceUri" : null
       }, {
@@ -4501,6 +5149,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Text",
           "queryString" : false,
           "statusCode" : false,
@@ -4508,10 +5157,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "Text",
         "setterDocumentation" : "/**<p> Input text to synthesize. If you specify <code>ssml</code> as the <code>TextType</code>, follow the SSML format for the input text. </p>\n@param text Input text to synthesize. If you specify <code>ssml</code> as the <code>TextType</code>, follow the SSML format for the input text.*/",
         "setterMethodName" : "setText",
@@ -4524,6 +5177,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Input text to synthesize. If you specify <code>ssml</code> as the <code>TextType</code>, follow the SSML format for the input text. </p>\n@param text Input text to synthesize. If you specify <code>ssml</code> as the <code>TextType</code>, follow the SSML format for the input text.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -4557,6 +5211,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "TextType",
           "queryString" : false,
           "statusCode" : false,
@@ -4564,10 +5219,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "TextType",
         "setterDocumentation" : "/**<p> Specifies whether the input text is plain text or SSML. The default value is plain text. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/ssml.html\">Using SSML</a>.</p>\n@param textType Specifies whether the input text is plain text or SSML. The default value is plain text. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/ssml.html\">Using SSML</a>.\n@see TextType*/",
         "setterMethodName" : "setTextType",
@@ -4580,6 +5239,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Specifies whether the input text is plain text or SSML. The default value is plain text. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/ssml.html\">Using SSML</a>.</p>\n@param textType Specifies whether the input text is plain text or SSML. The default value is plain text. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/ssml.html\">Using SSML</a>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TextType*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -4613,6 +5273,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "VoiceId",
           "queryString" : false,
           "statusCode" : false,
@@ -4620,10 +5281,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "VoiceId",
         "setterDocumentation" : "/**<p> Voice ID to use for the synthesis. You can get a list of available voice IDs by calling the <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html\">DescribeVoices</a> operation. </p>\n@param voiceId Voice ID to use for the synthesis. You can get a list of available voice IDs by calling the <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html\">DescribeVoices</a> operation.\n@see VoiceId*/",
         "setterMethodName" : "setVoiceId",
@@ -4636,6 +5301,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Voice ID to use for the synthesis. You can get a list of available voice IDs by calling the <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html\">DescribeVoices</a> operation. </p>\n@param voiceId Voice ID to use for the synthesis. You can get a list of available voice IDs by calling the <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html\">DescribeVoices</a> operation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see VoiceId*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -4671,6 +5337,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "LexiconNames",
             "queryString" : false,
             "statusCode" : false,
@@ -4678,6 +5345,8 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : true,
           "listModel" : {
             "implType" : "java.util.ArrayList",
@@ -4705,6 +5374,7 @@
                 "isPayload" : false,
                 "isStreaming" : false,
                 "location" : null,
+                "marshallLocation" : "PAYLOAD",
                 "marshallLocationName" : "member",
                 "queryString" : false,
                 "statusCode" : false,
@@ -4712,10 +5382,14 @@
                 "uri" : false
               },
               "idempotencyToken" : false,
+              "isBinary" : false,
+              "jsonValue" : false,
               "list" : false,
               "listModel" : null,
               "map" : false,
               "mapModel" : null,
+              "marshallingTargetClass" : "String",
+              "marshallingType" : "STRING",
               "name" : "Member",
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
@@ -4728,6 +5402,7 @@
                 "variableSetterType" : "String"
               },
               "simple" : true,
+              "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
               "variable" : {
                 "variableDeclarationType" : "String",
@@ -4753,6 +5428,8 @@
           },
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "List",
+          "marshallingType" : "LIST",
           "name" : "LexiconNames",
           "setterDocumentation" : "/**<p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. For information about storing lexicons, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html\">PutLexicon</a>.</p>\n@param lexiconNames List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. For information about storing lexicons, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html\">PutLexicon</a>.*/",
           "setterMethodName" : "setLexiconNames",
@@ -4765,6 +5442,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "simple" : false,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. For information about storing lexicons, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html\">PutLexicon</a>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setLexiconNames(java.util.Collection)} or {@link #withLexiconNames(java.util.Collection)} if you want to override the existing values.</p>\n@param lexiconNames List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. For information about storing lexicons, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html\">PutLexicon</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<String>",
@@ -4780,11 +5458,11 @@
           "c2jName" : "OutputFormat",
           "c2jShape" : "OutputFormat",
           "deprecated" : false,
-          "documentation" : "<p> The audio format in which the resulting stream will be encoded. </p>",
+          "documentation" : "<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>",
           "enumType" : "OutputFormat",
-          "fluentSetterDocumentation" : "/**<p> The audio format in which the resulting stream will be encoded. </p>\n@param outputFormat The audio format in which the resulting stream will be encoded.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OutputFormat*/",
+          "fluentSetterDocumentation" : "/**<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>\n@param outputFormat The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OutputFormat*/",
           "fluentSetterMethodName" : "withOutputFormat",
-          "getterDocumentation" : "/**<p> The audio format in which the resulting stream will be encoded. </p>\n@return The audio format in which the resulting stream will be encoded.\n@see OutputFormat*/",
+          "getterDocumentation" : "/**<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>\n@return The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json.\n@see OutputFormat*/",
           "getterMethodName" : "getOutputFormat",
           "getterModel" : {
             "returnType" : "String",
@@ -4799,6 +5477,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "OutputFormat",
             "queryString" : false,
             "statusCode" : false,
@@ -4806,12 +5485,16 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "OutputFormat",
-          "setterDocumentation" : "/**<p> The audio format in which the resulting stream will be encoded. </p>\n@param outputFormat The audio format in which the resulting stream will be encoded.\n@see OutputFormat*/",
+          "setterDocumentation" : "/**<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>\n@param outputFormat The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json.\n@see OutputFormat*/",
           "setterMethodName" : "setOutputFormat",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -4822,12 +5505,13 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p> The audio format in which the resulting stream will be encoded. </p>\n@param outputFormat The audio format in which the resulting stream will be encoded.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OutputFormat*/",
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>\n@param outputFormat The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OutputFormat*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "outputFormat",
             "variableType" : "String",
-            "documentation" : "<p> The audio format in which the resulting stream will be encoded. </p>",
+            "documentation" : "<p> The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -4856,6 +5540,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "SampleRate",
             "queryString" : false,
             "statusCode" : false,
@@ -4863,10 +5548,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "SampleRate",
           "setterDocumentation" : "/**<p> The audio frequency specified in Hz. </p> <p>The valid values for <code>mp3</code> and <code>ogg_vorbis</code> are \"8000\", \"16000\", and \"22050\". The default value is \"22050\". </p> <p> Valid values for <code>pcm</code> are \"8000\" and \"16000\" The default value is \"16000\". </p>\n@param sampleRate The audio frequency specified in Hz. </p> <p>The valid values for <code>mp3</code> and <code>ogg_vorbis</code> are \"8000\", \"16000\", and \"22050\". The default value is \"22050\". </p> <p> Valid values for <code>pcm</code> are \"8000\" and \"16000\" The default value is \"16000\".*/",
           "setterMethodName" : "setSampleRate",
@@ -4879,6 +5568,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The audio frequency specified in Hz. </p> <p>The valid values for <code>mp3</code> and <code>ogg_vorbis</code> are \"8000\", \"16000\", and \"22050\". The default value is \"22050\". </p> <p> Valid values for <code>pcm</code> are \"8000\" and \"16000\" The default value is \"16000\". </p>\n@param sampleRate The audio frequency specified in Hz. </p> <p>The valid values for <code>mp3</code> and <code>ogg_vorbis</code> are \"8000\", \"16000\", and \"22050\". The default value is \"22050\". </p> <p> Valid values for <code>pcm</code> are \"8000\" and \"16000\" The default value is \"16000\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -4887,6 +5577,146 @@
             "documentation" : "<p> The audio frequency specified in Hz. </p> <p>The valid values for <code>mp3</code> and <code>ogg_vorbis</code> are \"8000\", \"16000\", and \"22050\". The default value is \"22050\". </p> <p> Valid values for <code>pcm</code> are \"8000\" and \"16000\" The default value is \"16000\". </p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "SpeechMarkTypes" : {
+          "c2jName" : "SpeechMarkTypes",
+          "c2jShape" : "SpeechMarkTypeList",
+          "deprecated" : false,
+          "documentation" : "<p>The type of speech marks returned for the input text.</p>",
+          "enumType" : "SpeechMarkType",
+          "fluentSetterDocumentation" : "/**<p>The type of speech marks returned for the input text.</p>\n@param speechMarkTypes The type of speech marks returned for the input text.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SpeechMarkType*/",
+          "fluentSetterMethodName" : "withSpeechMarkTypes",
+          "getterDocumentation" : "/**<p>The type of speech marks returned for the input text.</p>\n@return The type of speech marks returned for the input text.\n@see SpeechMarkType*/",
+          "getterMethodName" : "getSpeechMarkTypes",
+          "getterModel" : {
+            "returnType" : "java.util.List<String>",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "SpeechMarkTypes",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "SpeechMarkTypes",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : true,
+          "listModel" : {
+            "implType" : "java.util.ArrayList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "c2jName" : "member",
+              "c2jShape" : "SpeechMarkType",
+              "deprecated" : false,
+              "documentation" : "",
+              "enumType" : "SpeechMarkType",
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see SpeechMarkType*/",
+              "fluentSetterMethodName" : "withMember",
+              "getterDocumentation" : "/**\n@return \n@see SpeechMarkType*/",
+              "getterMethodName" : "getMember",
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "additionalMarshallingPath" : null,
+                "additionalUnmarshallingPath" : null,
+                "flattened" : false,
+                "greedy" : false,
+                "header" : false,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "marshallLocation" : "PAYLOAD",
+                "marshallLocationName" : "member",
+                "queryString" : false,
+                "statusCode" : false,
+                "unmarshallLocationName" : "member",
+                "uri" : false
+              },
+              "idempotencyToken" : false,
+              "isBinary" : false,
+              "jsonValue" : false,
+              "list" : false,
+              "listModel" : null,
+              "map" : false,
+              "mapModel" : null,
+              "marshallingTargetClass" : "String",
+              "marshallingType" : "STRING",
+              "name" : "Member",
+              "setterDocumentation" : "/**\n@param member \n@see SpeechMarkType*/",
+              "setterMethodName" : "setMember",
+              "setterModel" : {
+                "variableDeclarationType" : "String",
+                "variableName" : "member",
+                "variableType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "simple" : true,
+              "unmarshallingType" : null,
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see SpeechMarkType*/",
+              "variable" : {
+                "variableDeclarationType" : "String",
+                "variableName" : "member",
+                "variableType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "xmlNameSpaceUri" : null
+            },
+            "memberLocationName" : null,
+            "memberType" : "String",
+            "map" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : true,
+            "simpleType" : "String",
+            "templateImplType" : "java.util.ArrayList<String>",
+            "templateType" : "java.util.List<String>"
+          },
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "List",
+          "marshallingType" : "LIST",
+          "name" : "SpeechMarkTypes",
+          "setterDocumentation" : "/**<p>The type of speech marks returned for the input text.</p>\n@param speechMarkTypes The type of speech marks returned for the input text.\n@see SpeechMarkType*/",
+          "setterMethodName" : "setSpeechMarkTypes",
+          "setterModel" : {
+            "variableDeclarationType" : "java.util.List<String>",
+            "variableName" : "speechMarkTypes",
+            "variableType" : "java.util.List<String>",
+            "documentation" : "",
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
+          },
+          "simple" : false,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The type of speech marks returned for the input text.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setSpeechMarkTypes(java.util.Collection)} or {@link #withSpeechMarkTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param speechMarkTypes The type of speech marks returned for the input text.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SpeechMarkType*/",
+          "variable" : {
+            "variableDeclarationType" : "java.util.List<String>",
+            "variableName" : "speechMarkTypes",
+            "variableType" : "java.util.List<String>",
+            "documentation" : "<p>The type of speech marks returned for the input text.</p>",
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "xmlNameSpaceUri" : null
         },
@@ -4913,6 +5743,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Text",
             "queryString" : false,
             "statusCode" : false,
@@ -4920,10 +5751,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "Text",
           "setterDocumentation" : "/**<p> Input text to synthesize. If you specify <code>ssml</code> as the <code>TextType</code>, follow the SSML format for the input text. </p>\n@param text Input text to synthesize. If you specify <code>ssml</code> as the <code>TextType</code>, follow the SSML format for the input text.*/",
           "setterMethodName" : "setText",
@@ -4936,6 +5771,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Input text to synthesize. If you specify <code>ssml</code> as the <code>TextType</code>, follow the SSML format for the input text. </p>\n@param text Input text to synthesize. If you specify <code>ssml</code> as the <code>TextType</code>, follow the SSML format for the input text.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -4970,6 +5806,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "TextType",
             "queryString" : false,
             "statusCode" : false,
@@ -4977,10 +5814,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "TextType",
           "setterDocumentation" : "/**<p> Specifies whether the input text is plain text or SSML. The default value is plain text. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/ssml.html\">Using SSML</a>.</p>\n@param textType Specifies whether the input text is plain text or SSML. The default value is plain text. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/ssml.html\">Using SSML</a>.\n@see TextType*/",
           "setterMethodName" : "setTextType",
@@ -4993,6 +5834,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Specifies whether the input text is plain text or SSML. The default value is plain text. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/ssml.html\">Using SSML</a>.</p>\n@param textType Specifies whether the input text is plain text or SSML. The default value is plain text. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/ssml.html\">Using SSML</a>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TextType*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -5027,6 +5869,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "VoiceId",
             "queryString" : false,
             "statusCode" : false,
@@ -5034,10 +5877,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "VoiceId",
           "setterDocumentation" : "/**<p> Voice ID to use for the synthesis. You can get a list of available voice IDs by calling the <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html\">DescribeVoices</a> operation. </p>\n@param voiceId Voice ID to use for the synthesis. You can get a list of available voice IDs by calling the <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html\">DescribeVoices</a> operation.\n@see VoiceId*/",
           "setterMethodName" : "setVoiceId",
@@ -5050,6 +5897,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Voice ID to use for the synthesis. You can get a list of available voice IDs by calling the <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html\">DescribeVoices</a> operation. </p>\n@param voiceId Voice ID to use for the synthesis. You can get a list of available voice IDs by calling the <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html\">DescribeVoices</a> operation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see VoiceId*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -5066,6 +5914,8 @@
       "requestSignerClassFqcn" : null,
       "required" : [ "OutputFormat", "Text", "VoiceId" ],
       "shapeName" : "SynthesizeSpeechRequest",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "SynthesizeSpeechRequest",
@@ -5117,6 +5967,7 @@
           "isPayload" : true,
           "isStreaming" : true,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "AudioStream",
           "queryString" : false,
           "statusCode" : false,
@@ -5124,10 +5975,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : true,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "java.io.InputStream",
+        "marshallingType" : "STREAM",
         "name" : "AudioStream",
         "setterDocumentation" : "/**<p> Stream containing the synthesized speech. </p>\n@param audioStream Stream containing the synthesized speech.*/",
         "setterMethodName" : "setAudioStream",
@@ -5140,6 +5995,7 @@
           "variableSetterType" : "java.io.InputStream"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Stream containing the synthesized speech. </p>\n@param audioStream Stream containing the synthesized speech.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.io.InputStream",
@@ -5154,11 +6010,11 @@
         "c2jName" : "ContentType",
         "c2jShape" : "ContentType",
         "deprecated" : false,
-        "documentation" : "<p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> </ul> <p> </p>",
+        "documentation" : "<p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/json.</p> </li> </ul> <p> </p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> </ul> <p> </p>\n@param contentType Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> </ul> <p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/json.</p> </li> </ul> <p> </p>\n@param contentType Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/json.</p> </li> </ul> <p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withContentType",
-        "getterDocumentation" : "/**<p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> </ul> <p> </p>\n@return Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> </ul> <p>*/",
+        "getterDocumentation" : "/**<p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/json.</p> </li> </ul> <p> </p>\n@return Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/json.</p> </li> </ul> <p>*/",
         "getterMethodName" : "getContentType",
         "getterModel" : {
           "returnType" : "String",
@@ -5173,6 +6029,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : "header",
+          "marshallLocation" : "HEADER",
           "marshallLocationName" : "Content-Type",
           "queryString" : false,
           "statusCode" : false,
@@ -5180,12 +6037,16 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "ContentType",
-        "setterDocumentation" : "/**<p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> </ul> <p> </p>\n@param contentType Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> </ul> <p>*/",
+        "setterDocumentation" : "/**<p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/json.</p> </li> </ul> <p> </p>\n@param contentType Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/json.</p> </li> </ul> <p>*/",
         "setterMethodName" : "setContentType",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -5196,12 +6057,13 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
-        "varargSetterDocumentation" : "/**<p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> </ul> <p> </p>\n@param contentType Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> </ul> <p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/json.</p> </li> </ul> <p> </p>\n@param contentType Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/json.</p> </li> </ul> <p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "contentType",
           "variableType" : "String",
-          "documentation" : "<p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> </ul> <p> </p>",
+          "documentation" : "<p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/json.</p> </li> </ul> <p> </p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -5229,6 +6091,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : "header",
+          "marshallLocation" : "HEADER",
           "marshallLocationName" : "x-amzn-RequestCharacters",
           "queryString" : false,
           "statusCode" : false,
@@ -5236,10 +6099,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "Integer",
+        "marshallingType" : "INTEGER",
         "name" : "RequestCharacters",
         "setterDocumentation" : "/**<p>Number of characters synthesized.</p>\n@param requestCharacters Number of characters synthesized.*/",
         "setterMethodName" : "setRequestCharacters",
@@ -5252,6 +6119,7 @@
           "variableSetterType" : "Integer"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Number of characters synthesized.</p>\n@param requestCharacters Number of characters synthesized.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Integer",
@@ -5287,6 +6155,7 @@
             "isPayload" : true,
             "isStreaming" : true,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "AudioStream",
             "queryString" : false,
             "statusCode" : false,
@@ -5294,10 +6163,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : true,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "java.io.InputStream",
+          "marshallingType" : "STREAM",
           "name" : "AudioStream",
           "setterDocumentation" : "/**<p> Stream containing the synthesized speech. </p>\n@param audioStream Stream containing the synthesized speech.*/",
           "setterMethodName" : "setAudioStream",
@@ -5310,6 +6183,7 @@
             "variableSetterType" : "java.io.InputStream"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Stream containing the synthesized speech. </p>\n@param audioStream Stream containing the synthesized speech.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.io.InputStream",
@@ -5325,11 +6199,11 @@
           "c2jName" : "ContentType",
           "c2jShape" : "ContentType",
           "deprecated" : false,
-          "documentation" : "<p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> </ul> <p> </p>",
+          "documentation" : "<p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/json.</p> </li> </ul> <p> </p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> </ul> <p> </p>\n@param contentType Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> </ul> <p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/json.</p> </li> </ul> <p> </p>\n@param contentType Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/json.</p> </li> </ul> <p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withContentType",
-          "getterDocumentation" : "/**<p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> </ul> <p> </p>\n@return Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> </ul> <p>*/",
+          "getterDocumentation" : "/**<p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/json.</p> </li> </ul> <p> </p>\n@return Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/json.</p> </li> </ul> <p>*/",
           "getterMethodName" : "getContentType",
           "getterModel" : {
             "returnType" : "String",
@@ -5344,6 +6218,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : "header",
+            "marshallLocation" : "HEADER",
             "marshallLocationName" : "Content-Type",
             "queryString" : false,
             "statusCode" : false,
@@ -5351,12 +6226,16 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "ContentType",
-          "setterDocumentation" : "/**<p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> </ul> <p> </p>\n@param contentType Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> </ul> <p>*/",
+          "setterDocumentation" : "/**<p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/json.</p> </li> </ul> <p> </p>\n@param contentType Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/json.</p> </li> </ul> <p>*/",
           "setterMethodName" : "setContentType",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -5367,12 +6246,13 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
-          "varargSetterDocumentation" : "/**<p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> </ul> <p> </p>\n@param contentType Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> </ul> <p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/json.</p> </li> </ul> <p> </p>\n@param contentType Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/json.</p> </li> </ul> <p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "contentType",
             "variableType" : "String",
-            "documentation" : "<p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> </ul> <p> </p>",
+            "documentation" : "<p> Specifies the type audio stream. This should reflect the <code>OutputFormat</code> parameter in your request. </p> <ul> <li> <p> If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/mpeg. </p> </li> <li> <p> If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/ogg. </p> </li> <li> <p> If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. </p> </li> <li> <p>If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code> returned is audio/json.</p> </li> </ul> <p> </p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -5401,6 +6281,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : "header",
+            "marshallLocation" : "HEADER",
             "marshallLocationName" : "x-amzn-RequestCharacters",
             "queryString" : false,
             "statusCode" : false,
@@ -5408,10 +6289,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "Integer",
+          "marshallingType" : "INTEGER",
           "name" : "RequestCharacters",
           "setterDocumentation" : "/**<p>Number of characters synthesized.</p>\n@param requestCharacters Number of characters synthesized.*/",
           "setterMethodName" : "setRequestCharacters",
@@ -5424,6 +6309,7 @@
             "variableSetterType" : "Integer"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Number of characters synthesized.</p>\n@param requestCharacters Number of characters synthesized.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Integer",
@@ -5440,6 +6326,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "SynthesizeSpeechResult",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -5477,6 +6365,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TextLengthExceededException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "TextLengthExceededException",
@@ -5517,6 +6407,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "TextType",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -5554,6 +6446,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UnsupportedPlsAlphabetException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UnsupportedPlsAlphabetException",
@@ -5588,6 +6482,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "UnsupportedPlsLanguageException",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : null,
       "variable" : {
         "variableDeclarationType" : "UnsupportedPlsLanguageException",
@@ -5639,6 +6535,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Gender",
           "queryString" : false,
           "statusCode" : false,
@@ -5646,10 +6543,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "Gender",
         "setterDocumentation" : "/**<p>Gender of the voice.</p>\n@param gender Gender of the voice.\n@see Gender*/",
         "setterMethodName" : "setGender",
@@ -5662,6 +6563,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Gender of the voice.</p>\n@param gender Gender of the voice.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Gender*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -5695,6 +6597,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Id",
           "queryString" : false,
           "statusCode" : false,
@@ -5702,10 +6605,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "Id",
         "setterDocumentation" : "/**<p>Amazon Polly assigned voice ID. This is the ID that you specify when calling the <code>SynthesizeSpeech</code> operation.</p>\n@param id Amazon Polly assigned voice ID. This is the ID that you specify when calling the <code>SynthesizeSpeech</code> operation.\n@see VoiceId*/",
         "setterMethodName" : "setId",
@@ -5718,6 +6625,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Amazon Polly assigned voice ID. This is the ID that you specify when calling the <code>SynthesizeSpeech</code> operation.</p>\n@param id Amazon Polly assigned voice ID. This is the ID that you specify when calling the <code>SynthesizeSpeech</code> operation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see VoiceId*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -5751,6 +6659,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "LanguageCode",
           "queryString" : false,
           "statusCode" : false,
@@ -5758,10 +6667,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "LanguageCode",
         "setterDocumentation" : "/**<p>Language code of the voice.</p>\n@param languageCode Language code of the voice.\n@see LanguageCode*/",
         "setterMethodName" : "setLanguageCode",
@@ -5774,6 +6687,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Language code of the voice.</p>\n@param languageCode Language code of the voice.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LanguageCode*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -5807,6 +6721,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "LanguageName",
           "queryString" : false,
           "statusCode" : false,
@@ -5814,10 +6729,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "LanguageName",
         "setterDocumentation" : "/**<p>Human readable name of the language in English.</p>\n@param languageName Human readable name of the language in English.*/",
         "setterMethodName" : "setLanguageName",
@@ -5830,6 +6749,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Human readable name of the language in English.</p>\n@param languageName Human readable name of the language in English.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -5863,6 +6783,7 @@
           "isPayload" : false,
           "isStreaming" : false,
           "location" : null,
+          "marshallLocation" : "PAYLOAD",
           "marshallLocationName" : "Name",
           "queryString" : false,
           "statusCode" : false,
@@ -5870,10 +6791,14 @@
           "uri" : false
         },
         "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
         "list" : false,
         "listModel" : null,
         "map" : false,
         "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
         "name" : "Name",
         "setterDocumentation" : "/**<p>Name of the voice (for example, Salli, Kendra, etc.). This provides a human readable voice name that you might display in your application.</p>\n@param name Name of the voice (for example, Salli, Kendra, etc.). This provides a human readable voice name that you might display in your application.*/",
         "setterMethodName" : "setName",
@@ -5886,6 +6811,7 @@
           "variableSetterType" : "String"
         },
         "simple" : true,
+        "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Name of the voice (for example, Salli, Kendra, etc.). This provides a human readable voice name that you might display in your application.</p>\n@param name Name of the voice (for example, Salli, Kendra, etc.). This provides a human readable voice name that you might display in your application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
@@ -5921,6 +6847,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Gender",
             "queryString" : false,
             "statusCode" : false,
@@ -5928,10 +6855,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "Gender",
           "setterDocumentation" : "/**<p>Gender of the voice.</p>\n@param gender Gender of the voice.\n@see Gender*/",
           "setterMethodName" : "setGender",
@@ -5944,6 +6875,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Gender of the voice.</p>\n@param gender Gender of the voice.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Gender*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -5978,6 +6910,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Id",
             "queryString" : false,
             "statusCode" : false,
@@ -5985,10 +6918,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "Id",
           "setterDocumentation" : "/**<p>Amazon Polly assigned voice ID. This is the ID that you specify when calling the <code>SynthesizeSpeech</code> operation.</p>\n@param id Amazon Polly assigned voice ID. This is the ID that you specify when calling the <code>SynthesizeSpeech</code> operation.\n@see VoiceId*/",
           "setterMethodName" : "setId",
@@ -6001,6 +6938,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Amazon Polly assigned voice ID. This is the ID that you specify when calling the <code>SynthesizeSpeech</code> operation.</p>\n@param id Amazon Polly assigned voice ID. This is the ID that you specify when calling the <code>SynthesizeSpeech</code> operation.\n@return Returns a reference to this object so that method calls can be chained together.\n@see VoiceId*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -6035,6 +6973,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "LanguageCode",
             "queryString" : false,
             "statusCode" : false,
@@ -6042,10 +6981,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "LanguageCode",
           "setterDocumentation" : "/**<p>Language code of the voice.</p>\n@param languageCode Language code of the voice.\n@see LanguageCode*/",
           "setterMethodName" : "setLanguageCode",
@@ -6058,6 +7001,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Language code of the voice.</p>\n@param languageCode Language code of the voice.\n@return Returns a reference to this object so that method calls can be chained together.\n@see LanguageCode*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -6092,6 +7036,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "LanguageName",
             "queryString" : false,
             "statusCode" : false,
@@ -6099,10 +7044,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "LanguageName",
           "setterDocumentation" : "/**<p>Human readable name of the language in English.</p>\n@param languageName Human readable name of the language in English.*/",
           "setterMethodName" : "setLanguageName",
@@ -6115,6 +7064,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Human readable name of the language in English.</p>\n@param languageName Human readable name of the language in English.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -6149,6 +7099,7 @@
             "isPayload" : false,
             "isStreaming" : false,
             "location" : null,
+            "marshallLocation" : "PAYLOAD",
             "marshallLocationName" : "Name",
             "queryString" : false,
             "statusCode" : false,
@@ -6156,10 +7107,14 @@
             "uri" : false
           },
           "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
           "list" : false,
           "listModel" : null,
           "map" : false,
           "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
           "name" : "Name",
           "setterDocumentation" : "/**<p>Name of the voice (for example, Salli, Kendra, etc.). This provides a human readable voice name that you might display in your application.</p>\n@param name Name of the voice (for example, Salli, Kendra, etc.). This provides a human readable voice name that you might display in your application.*/",
           "setterMethodName" : "setName",
@@ -6172,6 +7127,7 @@
             "variableSetterType" : "String"
           },
           "simple" : true,
+          "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Name of the voice (for example, Salli, Kendra, etc.). This provides a human readable voice name that you might display in your application.</p>\n@param name Name of the voice (for example, Salli, Kendra, etc.). This provides a human readable voice name that you might display in your application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
@@ -6188,6 +7144,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "Voice",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null
@@ -6366,6 +7324,8 @@
       "requestSignerClassFqcn" : null,
       "required" : null,
       "shapeName" : "VoiceId",
+      "signerAware" : false,
+      "signerType" : null,
       "unmarshaller" : {
         "flattened" : false,
         "resultWrapper" : null

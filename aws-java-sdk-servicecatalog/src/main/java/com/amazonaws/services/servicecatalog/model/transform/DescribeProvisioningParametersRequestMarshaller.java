@@ -12,75 +12,53 @@
  */
 package com.amazonaws.services.servicecatalog.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.servicecatalog.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeProvisioningParametersRequest Marshaller
+ * DescribeProvisioningParametersRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeProvisioningParametersRequestMarshaller implements
-        Marshaller<Request<DescribeProvisioningParametersRequest>, DescribeProvisioningParametersRequest> {
+@SdkInternalApi
+public class DescribeProvisioningParametersRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ACCEPTLANGUAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AcceptLanguage").build();
+    private static final MarshallingInfo<String> PRODUCTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ProductId").build();
+    private static final MarshallingInfo<String> PROVISIONINGARTIFACTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisioningArtifactId").build();
+    private static final MarshallingInfo<String> PATHID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("PathId").build();
 
-    public DescribeProvisioningParametersRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeProvisioningParametersRequestMarshaller instance = new DescribeProvisioningParametersRequestMarshaller();
+
+    public static DescribeProvisioningParametersRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeProvisioningParametersRequest> marshall(DescribeProvisioningParametersRequest describeProvisioningParametersRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeProvisioningParametersRequest describeProvisioningParametersRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeProvisioningParametersRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeProvisioningParametersRequest> request = new DefaultRequest<DescribeProvisioningParametersRequest>(
-                describeProvisioningParametersRequest, "AWSServiceCatalog");
-        request.addHeader("X-Amz-Target", "AWS242ServiceCatalogService.DescribeProvisioningParameters");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeProvisioningParametersRequest.getAcceptLanguage() != null) {
-                jsonGenerator.writeFieldName("AcceptLanguage").writeValue(describeProvisioningParametersRequest.getAcceptLanguage());
-            }
-            if (describeProvisioningParametersRequest.getProductId() != null) {
-                jsonGenerator.writeFieldName("ProductId").writeValue(describeProvisioningParametersRequest.getProductId());
-            }
-            if (describeProvisioningParametersRequest.getProvisioningArtifactId() != null) {
-                jsonGenerator.writeFieldName("ProvisioningArtifactId").writeValue(describeProvisioningParametersRequest.getProvisioningArtifactId());
-            }
-            if (describeProvisioningParametersRequest.getPathId() != null) {
-                jsonGenerator.writeFieldName("PathId").writeValue(describeProvisioningParametersRequest.getPathId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeProvisioningParametersRequest.getAcceptLanguage(), ACCEPTLANGUAGE_BINDING);
+            protocolMarshaller.marshall(describeProvisioningParametersRequest.getProductId(), PRODUCTID_BINDING);
+            protocolMarshaller.marshall(describeProvisioningParametersRequest.getProvisioningArtifactId(), PROVISIONINGARTIFACTID_BINDING);
+            protocolMarshaller.marshall(describeProvisioningParametersRequest.getPathId(), PATHID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

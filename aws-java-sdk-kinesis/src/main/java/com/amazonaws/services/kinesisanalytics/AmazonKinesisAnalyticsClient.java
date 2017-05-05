@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -249,6 +250,10 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
         init();
     }
 
+    public static AmazonKinesisAnalyticsClientBuilder builder() {
+        return AmazonKinesisAnalyticsClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Kinesis Analytics using the specified parameters.
      *
@@ -310,7 +315,13 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AddApplicationInputResult addApplicationInput(AddApplicationInputRequest addApplicationInputRequest) {
+    public AddApplicationInputResult addApplicationInput(AddApplicationInputRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddApplicationInput(request);
+    }
+
+    @SdkInternalApi
+    final AddApplicationInputResult executeAddApplicationInput(AddApplicationInputRequest addApplicationInputRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addApplicationInputRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -321,7 +332,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddApplicationInputRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(addApplicationInputRequest));
+                request = new AddApplicationInputRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addApplicationInputRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -385,7 +396,13 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AddApplicationOutputResult addApplicationOutput(AddApplicationOutputRequest addApplicationOutputRequest) {
+    public AddApplicationOutputResult addApplicationOutput(AddApplicationOutputRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddApplicationOutput(request);
+    }
+
+    @SdkInternalApi
+    final AddApplicationOutputResult executeAddApplicationOutput(AddApplicationOutputRequest addApplicationOutputRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addApplicationOutputRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -396,7 +413,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddApplicationOutputRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(addApplicationOutputRequest));
+                request = new AddApplicationOutputRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addApplicationOutputRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -452,7 +469,13 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AddApplicationReferenceDataSourceResult addApplicationReferenceDataSource(
+    public AddApplicationReferenceDataSourceResult addApplicationReferenceDataSource(AddApplicationReferenceDataSourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddApplicationReferenceDataSource(request);
+    }
+
+    @SdkInternalApi
+    final AddApplicationReferenceDataSourceResult executeAddApplicationReferenceDataSource(
             AddApplicationReferenceDataSourceRequest addApplicationReferenceDataSourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addApplicationReferenceDataSourceRequest);
@@ -464,7 +487,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddApplicationReferenceDataSourceRequestMarshaller(protocolFactory).marshall(super
+                request = new AddApplicationReferenceDataSourceRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(addApplicationReferenceDataSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -532,7 +555,13 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateApplicationResult createApplication(CreateApplicationRequest createApplicationRequest) {
+    public CreateApplicationResult createApplication(CreateApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateApplication(request);
+    }
+
+    @SdkInternalApi
+    final CreateApplicationResult executeCreateApplication(CreateApplicationRequest createApplicationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -543,7 +572,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateApplicationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createApplicationRequest));
+                request = new CreateApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -586,7 +615,13 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteApplicationResult deleteApplication(DeleteApplicationRequest deleteApplicationRequest) {
+    public DeleteApplicationResult deleteApplication(DeleteApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteApplication(request);
+    }
+
+    @SdkInternalApi
+    final DeleteApplicationResult executeDeleteApplication(DeleteApplicationRequest deleteApplicationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -597,7 +632,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteApplicationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteApplicationRequest));
+                request = new DeleteApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -639,7 +674,13 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteApplicationOutputResult deleteApplicationOutput(DeleteApplicationOutputRequest deleteApplicationOutputRequest) {
+    public DeleteApplicationOutputResult deleteApplicationOutput(DeleteApplicationOutputRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteApplicationOutput(request);
+    }
+
+    @SdkInternalApi
+    final DeleteApplicationOutputResult executeDeleteApplicationOutput(DeleteApplicationOutputRequest deleteApplicationOutputRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteApplicationOutputRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -650,7 +691,8 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteApplicationOutputRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteApplicationOutputRequest));
+                request = new DeleteApplicationOutputRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteApplicationOutputRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -700,7 +742,13 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteApplicationReferenceDataSourceResult deleteApplicationReferenceDataSource(
+    public DeleteApplicationReferenceDataSourceResult deleteApplicationReferenceDataSource(DeleteApplicationReferenceDataSourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteApplicationReferenceDataSource(request);
+    }
+
+    @SdkInternalApi
+    final DeleteApplicationReferenceDataSourceResult executeDeleteApplicationReferenceDataSource(
             DeleteApplicationReferenceDataSourceRequest deleteApplicationReferenceDataSourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteApplicationReferenceDataSourceRequest);
@@ -712,7 +760,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteApplicationReferenceDataSourceRequestMarshaller(protocolFactory).marshall(super
+                request = new DeleteApplicationReferenceDataSourceRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(deleteApplicationReferenceDataSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -755,7 +803,13 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeApplicationResult describeApplication(DescribeApplicationRequest describeApplicationRequest) {
+    public DescribeApplicationResult describeApplication(DescribeApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeApplication(request);
+    }
+
+    @SdkInternalApi
+    final DescribeApplicationResult executeDescribeApplication(DescribeApplicationRequest describeApplicationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -766,7 +820,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeApplicationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeApplicationRequest));
+                request = new DescribeApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -816,7 +870,13 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DiscoverInputSchemaResult discoverInputSchema(DiscoverInputSchemaRequest discoverInputSchemaRequest) {
+    public DiscoverInputSchemaResult discoverInputSchema(DiscoverInputSchemaRequest request) {
+        request = beforeClientExecution(request);
+        return executeDiscoverInputSchema(request);
+    }
+
+    @SdkInternalApi
+    final DiscoverInputSchemaResult executeDiscoverInputSchema(DiscoverInputSchemaRequest discoverInputSchemaRequest) {
 
         ExecutionContext executionContext = createExecutionContext(discoverInputSchemaRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -827,7 +887,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DiscoverInputSchemaRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(discoverInputSchemaRequest));
+                request = new DiscoverInputSchemaRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(discoverInputSchemaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -868,7 +928,13 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListApplicationsResult listApplications(ListApplicationsRequest listApplicationsRequest) {
+    public ListApplicationsResult listApplications(ListApplicationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListApplications(request);
+    }
+
+    @SdkInternalApi
+    final ListApplicationsResult executeListApplications(ListApplicationsRequest listApplicationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listApplicationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -879,7 +945,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListApplicationsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listApplicationsRequest));
+                request = new ListApplicationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listApplicationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -934,7 +1000,13 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public StartApplicationResult startApplication(StartApplicationRequest startApplicationRequest) {
+    public StartApplicationResult startApplication(StartApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartApplication(request);
+    }
+
+    @SdkInternalApi
+    final StartApplicationResult executeStartApplication(StartApplicationRequest startApplicationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(startApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -945,7 +1017,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartApplicationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(startApplicationRequest));
+                request = new StartApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -986,7 +1058,13 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public StopApplicationResult stopApplication(StopApplicationRequest stopApplicationRequest) {
+    public StopApplicationResult stopApplication(StopApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopApplication(request);
+    }
+
+    @SdkInternalApi
+    final StopApplicationResult executeStopApplication(StopApplicationRequest stopApplicationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(stopApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -997,7 +1075,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopApplicationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopApplicationRequest));
+                request = new StopApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1047,7 +1125,13 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateApplicationResult updateApplication(UpdateApplicationRequest updateApplicationRequest) {
+    public UpdateApplicationResult updateApplication(UpdateApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateApplication(request);
+    }
+
+    @SdkInternalApi
+    final UpdateApplicationResult executeUpdateApplication(UpdateApplicationRequest updateApplicationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateApplicationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1058,7 +1142,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateApplicationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateApplicationRequest));
+                request = new UpdateApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

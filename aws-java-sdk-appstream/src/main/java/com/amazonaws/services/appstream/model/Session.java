@@ -14,6 +14,8 @@ package com.amazonaws.services.appstream.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Session implements Serializable, Cloneable {
+public class Session implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -56,6 +58,13 @@ public class Session implements Serializable, Cloneable {
      * </p>
      */
     private String state;
+    /**
+     * <p>
+     * The authentication method of the user for whom the session was created. It can be <code>API</code> for a user
+     * authenticated using a streaming url or <code>SAML</code> for a SAML federated user.
+     * </p>
+     */
+    private String authenticationType;
 
     /**
      * <p>
@@ -291,6 +300,89 @@ public class Session implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The authentication method of the user for whom the session was created. It can be <code>API</code> for a user
+     * authenticated using a streaming url or <code>SAML</code> for a SAML federated user.
+     * </p>
+     * 
+     * @param authenticationType
+     *        The authentication method of the user for whom the session was created. It can be <code>API</code> for a
+     *        user authenticated using a streaming url or <code>SAML</code> for a SAML federated user.
+     * @see AuthenticationType
+     */
+
+    public void setAuthenticationType(String authenticationType) {
+        this.authenticationType = authenticationType;
+    }
+
+    /**
+     * <p>
+     * The authentication method of the user for whom the session was created. It can be <code>API</code> for a user
+     * authenticated using a streaming url or <code>SAML</code> for a SAML federated user.
+     * </p>
+     * 
+     * @return The authentication method of the user for whom the session was created. It can be <code>API</code> for a
+     *         user authenticated using a streaming url or <code>SAML</code> for a SAML federated user.
+     * @see AuthenticationType
+     */
+
+    public String getAuthenticationType() {
+        return this.authenticationType;
+    }
+
+    /**
+     * <p>
+     * The authentication method of the user for whom the session was created. It can be <code>API</code> for a user
+     * authenticated using a streaming url or <code>SAML</code> for a SAML federated user.
+     * </p>
+     * 
+     * @param authenticationType
+     *        The authentication method of the user for whom the session was created. It can be <code>API</code> for a
+     *        user authenticated using a streaming url or <code>SAML</code> for a SAML federated user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AuthenticationType
+     */
+
+    public Session withAuthenticationType(String authenticationType) {
+        setAuthenticationType(authenticationType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The authentication method of the user for whom the session was created. It can be <code>API</code> for a user
+     * authenticated using a streaming url or <code>SAML</code> for a SAML federated user.
+     * </p>
+     * 
+     * @param authenticationType
+     *        The authentication method of the user for whom the session was created. It can be <code>API</code> for a
+     *        user authenticated using a streaming url or <code>SAML</code> for a SAML federated user.
+     * @see AuthenticationType
+     */
+
+    public void setAuthenticationType(AuthenticationType authenticationType) {
+        this.authenticationType = authenticationType.toString();
+    }
+
+    /**
+     * <p>
+     * The authentication method of the user for whom the session was created. It can be <code>API</code> for a user
+     * authenticated using a streaming url or <code>SAML</code> for a SAML federated user.
+     * </p>
+     * 
+     * @param authenticationType
+     *        The authentication method of the user for whom the session was created. It can be <code>API</code> for a
+     *        user authenticated using a streaming url or <code>SAML</code> for a SAML federated user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AuthenticationType
+     */
+
+    public Session withAuthenticationType(AuthenticationType authenticationType) {
+        setAuthenticationType(authenticationType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -310,7 +402,9 @@ public class Session implements Serializable, Cloneable {
         if (getFleetName() != null)
             sb.append("FleetName: ").append(getFleetName()).append(",");
         if (getState() != null)
-            sb.append("State: ").append(getState());
+            sb.append("State: ").append(getState()).append(",");
+        if (getAuthenticationType() != null)
+            sb.append("AuthenticationType: ").append(getAuthenticationType());
         sb.append("}");
         return sb.toString();
     }
@@ -345,6 +439,10 @@ public class Session implements Serializable, Cloneable {
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
+        if (other.getAuthenticationType() == null ^ this.getAuthenticationType() == null)
+            return false;
+        if (other.getAuthenticationType() != null && other.getAuthenticationType().equals(this.getAuthenticationType()) == false)
+            return false;
         return true;
     }
 
@@ -358,6 +456,7 @@ public class Session implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getStackName() == null) ? 0 : getStackName().hashCode());
         hashCode = prime * hashCode + ((getFleetName() == null) ? 0 : getFleetName().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getAuthenticationType() == null) ? 0 : getAuthenticationType().hashCode());
         return hashCode;
     }
 
@@ -368,5 +467,11 @@ public class Session implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.appstream.model.transform.SessionMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

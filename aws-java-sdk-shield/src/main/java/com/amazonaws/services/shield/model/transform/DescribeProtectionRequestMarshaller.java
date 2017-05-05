@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.shield.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.shield.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeProtectionRequest Marshaller
+ * DescribeProtectionRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeProtectionRequestMarshaller implements Marshaller<Request<DescribeProtectionRequest>, DescribeProtectionRequest> {
+@SdkInternalApi
+public class DescribeProtectionRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> PROTECTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProtectionId").build();
 
-    public DescribeProtectionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeProtectionRequestMarshaller instance = new DescribeProtectionRequestMarshaller();
+
+    public static DescribeProtectionRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeProtectionRequest> marshall(DescribeProtectionRequest describeProtectionRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeProtectionRequest describeProtectionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeProtectionRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeProtectionRequest> request = new DefaultRequest<DescribeProtectionRequest>(describeProtectionRequest, "AWSShield");
-        request.addHeader("X-Amz-Target", "AWSShield_20160616.DescribeProtection");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeProtectionRequest.getProtectionId() != null) {
-                jsonGenerator.writeFieldName("ProtectionId").writeValue(describeProtectionRequest.getProtectionId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeProtectionRequest.getProtectionId(), PROTECTIONID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

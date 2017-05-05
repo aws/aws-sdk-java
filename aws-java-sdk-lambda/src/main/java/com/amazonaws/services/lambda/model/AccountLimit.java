@@ -14,6 +14,8 @@ package com.amazonaws.services.lambda.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,11 +26,11 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AccountLimit implements Serializable, Cloneable {
+public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB.
+     * Maximum size, in bytes, of a code package you can upload per region. The default size is 75 GB.
      * </p>
      */
     private Long totalCodeSize;
@@ -58,11 +60,11 @@ public class AccountLimit implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB.
+     * Maximum size, in bytes, of a code package you can upload per region. The default size is 75 GB.
      * </p>
      * 
      * @param totalCodeSize
-     *        Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB.
+     *        Maximum size, in bytes, of a code package you can upload per region. The default size is 75 GB.
      */
 
     public void setTotalCodeSize(Long totalCodeSize) {
@@ -71,10 +73,10 @@ public class AccountLimit implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB.
+     * Maximum size, in bytes, of a code package you can upload per region. The default size is 75 GB.
      * </p>
      * 
-     * @return Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB.
+     * @return Maximum size, in bytes, of a code package you can upload per region. The default size is 75 GB.
      */
 
     public Long getTotalCodeSize() {
@@ -83,11 +85,11 @@ public class AccountLimit implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB.
+     * Maximum size, in bytes, of a code package you can upload per region. The default size is 75 GB.
      * </p>
      * 
      * @param totalCodeSize
-     *        Maximum size, in megabytes, of a code package you can upload per region. The default size is 75 GB.
+     *        Maximum size, in bytes, of a code package you can upload per region. The default size is 75 GB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -317,5 +319,11 @@ public class AccountLimit implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.lambda.model.transform.AccountLimitMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

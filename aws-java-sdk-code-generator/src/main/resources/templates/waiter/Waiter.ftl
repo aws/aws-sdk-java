@@ -66,4 +66,8 @@ public class ${className}{
     }
 
     </#list>
+
+    public void shutdown() {
+        executorService.shutdown();
+    }
 }

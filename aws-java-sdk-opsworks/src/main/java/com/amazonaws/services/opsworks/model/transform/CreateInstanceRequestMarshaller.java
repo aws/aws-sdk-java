@@ -12,135 +12,96 @@
  */
 package com.amazonaws.services.opsworks.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.opsworks.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateInstanceRequest Marshaller
+ * CreateInstanceRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateInstanceRequestMarshaller implements Marshaller<Request<CreateInstanceRequest>, CreateInstanceRequest> {
+@SdkInternalApi
+public class CreateInstanceRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> STACKID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("StackId").build();
+    private static final MarshallingInfo<List> LAYERIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("LayerIds").build();
+    private static final MarshallingInfo<String> INSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceType").build();
+    private static final MarshallingInfo<String> AUTOSCALINGTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoScalingType").build();
+    private static final MarshallingInfo<String> HOSTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Hostname").build();
+    private static final MarshallingInfo<String> OS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Os").build();
+    private static final MarshallingInfo<String> AMIID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AmiId").build();
+    private static final MarshallingInfo<String> SSHKEYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SshKeyName").build();
+    private static final MarshallingInfo<String> AVAILABILITYZONE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AvailabilityZone").build();
+    private static final MarshallingInfo<String> VIRTUALIZATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VirtualizationType").build();
+    private static final MarshallingInfo<String> SUBNETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SubnetId").build();
+    private static final MarshallingInfo<String> ARCHITECTURE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Architecture").build();
+    private static final MarshallingInfo<String> ROOTDEVICETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RootDeviceType").build();
+    private static final MarshallingInfo<List> BLOCKDEVICEMAPPINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BlockDeviceMappings").build();
+    private static final MarshallingInfo<Boolean> INSTALLUPDATESONBOOT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstallUpdatesOnBoot").build();
+    private static final MarshallingInfo<Boolean> EBSOPTIMIZED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EbsOptimized").build();
+    private static final MarshallingInfo<String> AGENTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AgentVersion").build();
+    private static final MarshallingInfo<String> TENANCY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tenancy").build();
 
-    public CreateInstanceRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateInstanceRequestMarshaller instance = new CreateInstanceRequestMarshaller();
+
+    public static CreateInstanceRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateInstanceRequest> marshall(CreateInstanceRequest createInstanceRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateInstanceRequest createInstanceRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createInstanceRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateInstanceRequest> request = new DefaultRequest<CreateInstanceRequest>(createInstanceRequest, "AWSOpsWorks");
-        request.addHeader("X-Amz-Target", "OpsWorks_20130218.CreateInstance");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createInstanceRequest.getStackId() != null) {
-                jsonGenerator.writeFieldName("StackId").writeValue(createInstanceRequest.getStackId());
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> layerIdsList = (com.amazonaws.internal.SdkInternalList<String>) createInstanceRequest.getLayerIds();
-            if (!layerIdsList.isEmpty() || !layerIdsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("LayerIds");
-                jsonGenerator.writeStartArray();
-                for (String layerIdsListValue : layerIdsList) {
-                    if (layerIdsListValue != null) {
-                        jsonGenerator.writeValue(layerIdsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (createInstanceRequest.getInstanceType() != null) {
-                jsonGenerator.writeFieldName("InstanceType").writeValue(createInstanceRequest.getInstanceType());
-            }
-            if (createInstanceRequest.getAutoScalingType() != null) {
-                jsonGenerator.writeFieldName("AutoScalingType").writeValue(createInstanceRequest.getAutoScalingType());
-            }
-            if (createInstanceRequest.getHostname() != null) {
-                jsonGenerator.writeFieldName("Hostname").writeValue(createInstanceRequest.getHostname());
-            }
-            if (createInstanceRequest.getOs() != null) {
-                jsonGenerator.writeFieldName("Os").writeValue(createInstanceRequest.getOs());
-            }
-            if (createInstanceRequest.getAmiId() != null) {
-                jsonGenerator.writeFieldName("AmiId").writeValue(createInstanceRequest.getAmiId());
-            }
-            if (createInstanceRequest.getSshKeyName() != null) {
-                jsonGenerator.writeFieldName("SshKeyName").writeValue(createInstanceRequest.getSshKeyName());
-            }
-            if (createInstanceRequest.getAvailabilityZone() != null) {
-                jsonGenerator.writeFieldName("AvailabilityZone").writeValue(createInstanceRequest.getAvailabilityZone());
-            }
-            if (createInstanceRequest.getVirtualizationType() != null) {
-                jsonGenerator.writeFieldName("VirtualizationType").writeValue(createInstanceRequest.getVirtualizationType());
-            }
-            if (createInstanceRequest.getSubnetId() != null) {
-                jsonGenerator.writeFieldName("SubnetId").writeValue(createInstanceRequest.getSubnetId());
-            }
-            if (createInstanceRequest.getArchitecture() != null) {
-                jsonGenerator.writeFieldName("Architecture").writeValue(createInstanceRequest.getArchitecture());
-            }
-            if (createInstanceRequest.getRootDeviceType() != null) {
-                jsonGenerator.writeFieldName("RootDeviceType").writeValue(createInstanceRequest.getRootDeviceType());
-            }
-
-            com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappingsList = (com.amazonaws.internal.SdkInternalList<BlockDeviceMapping>) createInstanceRequest
-                    .getBlockDeviceMappings();
-            if (!blockDeviceMappingsList.isEmpty() || !blockDeviceMappingsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("BlockDeviceMappings");
-                jsonGenerator.writeStartArray();
-                for (BlockDeviceMapping blockDeviceMappingsListValue : blockDeviceMappingsList) {
-                    if (blockDeviceMappingsListValue != null) {
-
-                        BlockDeviceMappingJsonMarshaller.getInstance().marshall(blockDeviceMappingsListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (createInstanceRequest.getInstallUpdatesOnBoot() != null) {
-                jsonGenerator.writeFieldName("InstallUpdatesOnBoot").writeValue(createInstanceRequest.getInstallUpdatesOnBoot());
-            }
-            if (createInstanceRequest.getEbsOptimized() != null) {
-                jsonGenerator.writeFieldName("EbsOptimized").writeValue(createInstanceRequest.getEbsOptimized());
-            }
-            if (createInstanceRequest.getAgentVersion() != null) {
-                jsonGenerator.writeFieldName("AgentVersion").writeValue(createInstanceRequest.getAgentVersion());
-            }
-            if (createInstanceRequest.getTenancy() != null) {
-                jsonGenerator.writeFieldName("Tenancy").writeValue(createInstanceRequest.getTenancy());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createInstanceRequest.getStackId(), STACKID_BINDING);
+            protocolMarshaller.marshall(createInstanceRequest.getLayerIds(), LAYERIDS_BINDING);
+            protocolMarshaller.marshall(createInstanceRequest.getInstanceType(), INSTANCETYPE_BINDING);
+            protocolMarshaller.marshall(createInstanceRequest.getAutoScalingType(), AUTOSCALINGTYPE_BINDING);
+            protocolMarshaller.marshall(createInstanceRequest.getHostname(), HOSTNAME_BINDING);
+            protocolMarshaller.marshall(createInstanceRequest.getOs(), OS_BINDING);
+            protocolMarshaller.marshall(createInstanceRequest.getAmiId(), AMIID_BINDING);
+            protocolMarshaller.marshall(createInstanceRequest.getSshKeyName(), SSHKEYNAME_BINDING);
+            protocolMarshaller.marshall(createInstanceRequest.getAvailabilityZone(), AVAILABILITYZONE_BINDING);
+            protocolMarshaller.marshall(createInstanceRequest.getVirtualizationType(), VIRTUALIZATIONTYPE_BINDING);
+            protocolMarshaller.marshall(createInstanceRequest.getSubnetId(), SUBNETID_BINDING);
+            protocolMarshaller.marshall(createInstanceRequest.getArchitecture(), ARCHITECTURE_BINDING);
+            protocolMarshaller.marshall(createInstanceRequest.getRootDeviceType(), ROOTDEVICETYPE_BINDING);
+            protocolMarshaller.marshall(createInstanceRequest.getBlockDeviceMappings(), BLOCKDEVICEMAPPINGS_BINDING);
+            protocolMarshaller.marshall(createInstanceRequest.getInstallUpdatesOnBoot(), INSTALLUPDATESONBOOT_BINDING);
+            protocolMarshaller.marshall(createInstanceRequest.getEbsOptimized(), EBSOPTIMIZED_BINDING);
+            protocolMarshaller.marshall(createInstanceRequest.getAgentVersion(), AGENTVERSION_BINDING);
+            protocolMarshaller.marshall(createInstanceRequest.getTenancy(), TENANCY_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

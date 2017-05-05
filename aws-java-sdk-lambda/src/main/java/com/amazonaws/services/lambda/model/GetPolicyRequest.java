@@ -36,7 +36,7 @@ public class GetPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * are using versioning, you can also provide a qualified function ARN (ARN that is qualified with function version
      * or alias name as suffix). AWS Lambda also allows you to specify only the function name with the account ID
      * qualifier (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the
-     * ARN. If you specify only the function name, it is limited to 64 character in length.
+     * ARN. If you specify only the function name, it is limited to 64 characters in length.
      * </p>
      */
     private String functionName;
@@ -59,7 +59,7 @@ public class GetPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * are using versioning, you can also provide a qualified function ARN (ARN that is qualified with function version
      * or alias name as suffix). AWS Lambda also allows you to specify only the function name with the account ID
      * qualifier (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the
-     * ARN. If you specify only the function name, it is limited to 64 character in length.
+     * ARN. If you specify only the function name, it is limited to 64 characters in length.
      * </p>
      * 
      * @param functionName
@@ -71,7 +71,7 @@ public class GetPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        also provide a qualified function ARN (ARN that is qualified with function version or alias name as
      *        suffix). AWS Lambda also allows you to specify only the function name with the account ID qualifier (for
      *        example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If
-     *        you specify only the function name, it is limited to 64 character in length.
+     *        you specify only the function name, it is limited to 64 characters in length.
      */
 
     public void setFunctionName(String functionName) {
@@ -88,7 +88,7 @@ public class GetPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * are using versioning, you can also provide a qualified function ARN (ARN that is qualified with function version
      * or alias name as suffix). AWS Lambda also allows you to specify only the function name with the account ID
      * qualifier (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the
-     * ARN. If you specify only the function name, it is limited to 64 character in length.
+     * ARN. If you specify only the function name, it is limited to 64 characters in length.
      * </p>
      * 
      * @return Function name whose resource policy you want to retrieve.</p>
@@ -99,7 +99,7 @@ public class GetPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         can also provide a qualified function ARN (ARN that is qualified with function version or alias name as
      *         suffix). AWS Lambda also allows you to specify only the function name with the account ID qualifier (for
      *         example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If
-     *         you specify only the function name, it is limited to 64 character in length.
+     *         you specify only the function name, it is limited to 64 characters in length.
      */
 
     public String getFunctionName() {
@@ -116,7 +116,7 @@ public class GetPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * are using versioning, you can also provide a qualified function ARN (ARN that is qualified with function version
      * or alias name as suffix). AWS Lambda also allows you to specify only the function name with the account ID
      * qualifier (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the
-     * ARN. If you specify only the function name, it is limited to 64 character in length.
+     * ARN. If you specify only the function name, it is limited to 64 characters in length.
      * </p>
      * 
      * @param functionName
@@ -128,7 +128,7 @@ public class GetPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        also provide a qualified function ARN (ARN that is qualified with function version or alias name as
      *        suffix). AWS Lambda also allows you to specify only the function name with the account ID qualifier (for
      *        example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If
-     *        you specify only the function name, it is limited to 64 character in length.
+     *        you specify only the function name, it is limited to 64 characters in length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

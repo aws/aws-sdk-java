@@ -14,8 +14,16 @@
  */
 package com.amazonaws.services.s3;
 
+import static com.amazonaws.event.SDKProgressPublisher.publishProgress;
+import static com.amazonaws.internal.ResettableInputStream.newResettableInputStream;
+import static com.amazonaws.services.s3.model.S3DataSource.Utils.cleanupDataSource;
+import static com.amazonaws.util.LengthCheckInputStream.EXCLUDE_SKIPPED_BYTES;
+import static com.amazonaws.util.LengthCheckInputStream.INCLUDE_SKIPPED_BYTES;
+import static com.amazonaws.util.Throwables.failure;
+import static com.amazonaws.util.ValidationUtils.assertNotNull;
+import static com.amazonaws.util.ValidationUtils.assertStringNotEmpty;
+
 import com.amazonaws.AmazonClientException;
-import com.amazonaws.SdkClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonServiceException.ErrorType;
 import com.amazonaws.AmazonWebServiceClient;
@@ -28,8 +36,11 @@ import com.amazonaws.Protocol;
 import com.amazonaws.Request;
 import com.amazonaws.ResetException;
 import com.amazonaws.Response;
+import com.amazonaws.SDKGlobalConfiguration;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.annotation.SdkTestInternalApi;
+import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
@@ -55,6 +66,7 @@ import com.amazonaws.internal.auth.SignerProvider;
 import com.amazonaws.metrics.AwsSdkMetrics;
 import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.regions.RegionUtils;
+import com.amazonaws.regions.Regions;
 import com.amazonaws.retry.PredefinedRetryPolicies;
 import com.amazonaws.retry.RetryPolicy;
 import com.amazonaws.services.s3.internal.AWSS3V4Signer;
@@ -114,8 +126,11 @@ import com.amazonaws.services.s3.model.CopyObjectResult;
 import com.amazonaws.services.s3.model.CopyPartRequest;
 import com.amazonaws.services.s3.model.CopyPartResult;
 import com.amazonaws.services.s3.model.CreateBucketRequest;
+import com.amazonaws.services.s3.model.DeleteBucketAnalyticsConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteBucketAnalyticsConfigurationResult;
 import com.amazonaws.services.s3.model.DeleteBucketCrossOriginConfigurationRequest;
+import com.amazonaws.services.s3.model.DeleteBucketInventoryConfigurationRequest;
+import com.amazonaws.services.s3.model.DeleteBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.DeleteBucketLifecycleConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteBucketMetricsConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteBucketMetricsConfigurationResult;
@@ -124,8 +139,6 @@ import com.amazonaws.services.s3.model.DeleteBucketReplicationConfigurationReque
 import com.amazonaws.services.s3.model.DeleteBucketRequest;
 import com.amazonaws.services.s3.model.DeleteBucketTaggingConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteBucketWebsiteConfigurationRequest;
-import com.amazonaws.services.s3.model.DeleteBucketInventoryConfigurationRequest;
-import com.amazonaws.services.s3.model.DeleteBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.DeleteObjectRequest;
 import com.amazonaws.services.s3.model.DeleteObjectTaggingRequest;
 import com.amazonaws.services.s3.model.DeleteObjectTaggingResult;
@@ -136,7 +149,11 @@ import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
 import com.amazonaws.services.s3.model.GenericBucketRequest;
 import com.amazonaws.services.s3.model.GetBucketAccelerateConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketAclRequest;
+import com.amazonaws.services.s3.model.GetBucketAnalyticsConfigurationRequest;
+import com.amazonaws.services.s3.model.GetBucketAnalyticsConfigurationResult;
 import com.amazonaws.services.s3.model.GetBucketCrossOriginConfigurationRequest;
+import com.amazonaws.services.s3.model.GetBucketInventoryConfigurationRequest;
+import com.amazonaws.services.s3.model.GetBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.GetBucketLifecycleConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketLocationRequest;
 import com.amazonaws.services.s3.model.GetBucketLoggingConfigurationRequest;
@@ -148,8 +165,6 @@ import com.amazonaws.services.s3.model.GetBucketReplicationConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketTaggingConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketVersioningConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketWebsiteConfigurationRequest;
-import com.amazonaws.services.s3.model.GetBucketInventoryConfigurationRequest;
-import com.amazonaws.services.s3.model.GetBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.GetObjectAclRequest;
 import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
 import com.amazonaws.services.s3.model.GetObjectRequest;
@@ -164,14 +179,13 @@ import com.amazonaws.services.s3.model.HeadBucketRequest;
 import com.amazonaws.services.s3.model.HeadBucketResult;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadRequest;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadResult;
-import com.amazonaws.services.s3.model.ListBucketMetricsConfigurationsRequest;
-import com.amazonaws.services.s3.model.ListBucketMetricsConfigurationsResult;
-import com.amazonaws.services.s3.model.SetBucketInventoryConfigurationRequest;
-import com.amazonaws.services.s3.model.SetBucketInventoryConfigurationResult;
-import com.amazonaws.services.s3.model.inventory.InventoryConfiguration;
-import com.amazonaws.services.s3.model.ListBucketsRequest;
+import com.amazonaws.services.s3.model.ListBucketAnalyticsConfigurationsRequest;
+import com.amazonaws.services.s3.model.ListBucketAnalyticsConfigurationsResult;
 import com.amazonaws.services.s3.model.ListBucketInventoryConfigurationsRequest;
 import com.amazonaws.services.s3.model.ListBucketInventoryConfigurationsResult;
+import com.amazonaws.services.s3.model.ListBucketMetricsConfigurationsRequest;
+import com.amazonaws.services.s3.model.ListBucketMetricsConfigurationsResult;
+import com.amazonaws.services.s3.model.ListBucketsRequest;
 import com.amazonaws.services.s3.model.ListMultipartUploadsRequest;
 import com.amazonaws.services.s3.model.ListNextBatchOfObjectsRequest;
 import com.amazonaws.services.s3.model.ListNextBatchOfVersionsRequest;
@@ -206,8 +220,11 @@ import com.amazonaws.services.s3.model.SSECustomerKey;
 import com.amazonaws.services.s3.model.SSECustomerKeyProvider;
 import com.amazonaws.services.s3.model.SetBucketAccelerateConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketAclRequest;
+import com.amazonaws.services.s3.model.SetBucketAnalyticsConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketAnalyticsConfigurationResult;
 import com.amazonaws.services.s3.model.SetBucketCrossOriginConfigurationRequest;
+import com.amazonaws.services.s3.model.SetBucketInventoryConfigurationRequest;
+import com.amazonaws.services.s3.model.SetBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.SetBucketLifecycleConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketLoggingConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketMetricsConfigurationRequest;
@@ -228,14 +245,9 @@ import com.amazonaws.services.s3.model.UploadObjectRequest;
 import com.amazonaws.services.s3.model.UploadPartRequest;
 import com.amazonaws.services.s3.model.UploadPartResult;
 import com.amazonaws.services.s3.model.VersionListing;
-import com.amazonaws.services.s3.model.metrics.MetricsConfiguration;
 import com.amazonaws.services.s3.model.analytics.AnalyticsConfiguration;
-import com.amazonaws.services.s3.model.DeleteBucketAnalyticsConfigurationRequest;
-import com.amazonaws.services.s3.model.GetBucketAnalyticsConfigurationRequest;
-import com.amazonaws.services.s3.model.GetBucketAnalyticsConfigurationResult;
-import com.amazonaws.services.s3.model.ListBucketAnalyticsConfigurationsRequest;
-import com.amazonaws.services.s3.model.ListBucketAnalyticsConfigurationsResult;
-import com.amazonaws.services.s3.model.SetBucketAnalyticsConfigurationRequest;
+import com.amazonaws.services.s3.model.inventory.InventoryConfiguration;
+import com.amazonaws.services.s3.model.metrics.MetricsConfiguration;
 import com.amazonaws.services.s3.model.transform.AclXmlFactory;
 import com.amazonaws.services.s3.model.transform.BucketConfigurationXmlFactory;
 import com.amazonaws.services.s3.model.transform.BucketNotificationConfigurationStaxUnmarshaller;
@@ -265,11 +277,6 @@ import com.amazonaws.util.RuntimeHttpUtils;
 import com.amazonaws.util.SdkHttpUtils;
 import com.amazonaws.util.ServiceClientHolderInputStream;
 import com.amazonaws.util.StringUtils;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.apache.http.client.methods.HttpRequestBase;
-
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -297,15 +304,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.regex.Matcher;
-
-import static com.amazonaws.event.SDKProgressPublisher.publishProgress;
-import static com.amazonaws.internal.ResettableInputStream.newResettableInputStream;
-import static com.amazonaws.services.s3.model.S3DataSource.Utils.cleanupDataSource;
-import static com.amazonaws.util.LengthCheckInputStream.EXCLUDE_SKIPPED_BYTES;
-import static com.amazonaws.util.LengthCheckInputStream.INCLUDE_SKIPPED_BYTES;
-import static com.amazonaws.util.Throwables.failure;
-import static com.amazonaws.util.ValidationUtils.assertNotNull;
-import static com.amazonaws.util.ValidationUtils.assertStringNotEmpty;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.http.client.methods.HttpRequestBase;
 
 /**
  * <p>
@@ -330,6 +331,8 @@ import static com.amazonaws.util.ValidationUtils.assertStringNotEmpty;
  * http://aws.amazon.com/s3</a>
  * </p>
  */
+
+@ThreadSafe
 public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
     public static final String S3_SERVICE_NAME = "s3";
@@ -370,7 +373,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     private static final RequestPaymentConfigurationXmlFactory requestPaymentConfigurationXmlFactory = new RequestPaymentConfigurationXmlFactory();
 
     /** S3 specific client configuration options */
-    private volatile S3ClientOptions clientOptions = new S3ClientOptions();
+    private volatile S3ClientOptions clientOptions = S3ClientOptions.builder().build();
 
     /**
      * The S3 client region that is set by either (a) calling
@@ -400,26 +403,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
     private final CompleteMultipartUploadRetryCondition
             completeMultipartUploadRetryCondition = new CompleteMultipartUploadRetryCondition();
-
-    /**
-     * AWS credentials provider chain for Amazon S3 that looks for credentials in
-     * the {@link DefaultAWSCredentialsProviderChain}. If the {@link DefaultAWSCredentialsProviderChain}
-     * returns null, S3 falls back to anonymous access.
-     */
-    private static class S3CredentialsProviderChain extends DefaultAWSCredentialsProviderChain {
-
-        @Override
-        public AWSCredentials getCredentials() {
-            try {
-                return super.getCredentials();
-            } catch (AmazonClientException ace) {
-
-            }
-
-            log.debug("No credentials available; falling back to anonymous access");
-            return null;
-        }
-    }
 
     /**
      * Constructs a new client to invoke service methods on Amazon S3. A
@@ -649,6 +632,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         init();
     }
 
+    public static AmazonS3ClientBuilder builder() {
+        return AmazonS3ClientBuilder.standard();
+    }
+
     private void init() {
 
         // calling this.setEndpoint(...) will also modify the signer accordingly
@@ -662,19 +649,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         requestHandler2s.addAll(chainFactory.getGlobalHandlers());
     }
 
-    /**
-     * Validates whether the supplied client options are a valid instantiation
-     * of an AmazonS3Client.
-     */
-    private void validateClientOptions() {
-
-        /** Dualstack mode requires setting the region */
-        if (clientOptions.isDualstackEnabled()) {
-            if (getRegion() == null) {
-                throw new IllegalStateException("The dualstack mode of Amazon S3 cannot be used without specifying a region");
-            }
-        }
-    }
 
     /**
      * @deprecated use {@link AmazonS3ClientBuilder#setEndpointConfiguration(AwsClientBuilder.EndpointConfiguration)}
@@ -805,7 +779,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         addParameterIfNotNull(request, "version-id-marker", listVersionsRequest.getVersionIdMarker());
         addParameterIfNotNull(request, "delimiter", listVersionsRequest.getDelimiter());
 
-        if (listVersionsRequest.getMaxResults() != null && listVersionsRequest.getMaxResults().intValue() >= 0) request.addParameter("max-keys", listVersionsRequest.getMaxResults().toString());
+        if (listVersionsRequest.getMaxResults() != null && listVersionsRequest.getMaxResults() >= 0) request.addParameter("max-keys", listVersionsRequest.getMaxResults().toString());
         request.addParameter("encoding-type", shouldSDKDecodeResponse ? Constants.URL_ENCODING : listVersionsRequest.getEncodingType());
 
         return invoke(request, new Unmarshallers.VersionListUnmarshaller(shouldSDKDecodeResponse), listVersionsRequest.getBucketName(), null);
@@ -983,21 +957,22 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     public Bucket createBucket(CreateBucketRequest createBucketRequest)
             throws SdkClientException, AmazonServiceException {
         rejectNull(createBucketRequest,
-                "The CreateBucketRequest parameter must be specified when creating a bucket");
+                   "The CreateBucketRequest parameter must be specified when creating a bucket");
 
         String bucketName = createBucketRequest.getBucketName();
-        String region = createBucketRequest.getRegion();
-        rejectNull(bucketName,
-                "The bucket name parameter must be specified when creating a bucket");
+        rejectNull(bucketName, "The bucket name parameter must be specified when creating a bucket");
+        bucketName = bucketName.trim();
 
-        if (bucketName != null) bucketName = bucketName.trim();
+        String requestRegion = createBucketRequest.getRegion();
+        URI requestEndpoint = getCreateBucketEndpoint(requestRegion);
+
         BucketNameUtils.validateBucketName(bucketName);
 
-        Request<CreateBucketRequest> request = createRequest(bucketName, null, createBucketRequest, HttpMethodName.PUT);
+        Request<CreateBucketRequest> request = createRequest(bucketName, null, createBucketRequest, HttpMethodName.PUT, requestEndpoint);
 
-        if ( createBucketRequest.getAccessControlList() != null ) {
+        if (createBucketRequest.getAccessControlList() != null) {
             addAclHeaders(request, createBucketRequest.getAccessControlList());
-        } else if ( createBucketRequest.getCannedAcl() != null ) {
+        } else if (createBucketRequest.getCannedAcl() != null) {
             request.addHeader(Headers.S3_CANNED_ACL, createBucketRequest.getCannedAcl().toString());
         }
 
@@ -1006,18 +981,18 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
          * *must* specify a location constraint. Try to derive the region from
          * the endpoint.
          */
-        if (!(getSignerRegion() == null || getSignerRegion().equals("us-east-1")) && StringUtils.isNullOrEmpty(region)) {
-            region = AwsHostNameUtils.parseRegion(endpoint.getHost(), S3_SERVICE_NAME);
+        if (getSignerRegion() != null && !getSignerRegion().equals("us-east-1") && StringUtils.isNullOrEmpty(requestRegion)) {
+            requestRegion = AwsHostNameUtils.parseRegion(requestEndpoint.getHost(), S3_SERVICE_NAME);
         }
 
         /*
          * We can only send the CreateBucketConfiguration if we're *not*
          * creating a bucket in the US region.
          */
-        if (region != null && !StringUtils.upperCase(region).equals(Region.US_Standard.toString())) {
+        if (requestRegion != null && !StringUtils.upperCase(requestRegion).equals(Region.US_Standard.toString())) {
             XmlWriter xml = new XmlWriter();
             xml.start("CreateBucketConfiguration", "xmlns", Constants.XML_NAMESPACE);
-            xml.start("LocationConstraint").value(region).end();
+            xml.start("LocationConstraint").value(requestRegion).end();
             xml.end();
 
             request.setContent(new ByteArrayInputStream(xml.getBytes()));
@@ -1026,6 +1001,23 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         invoke(request, voidResponseHandler, bucketName, null);
 
         return new Bucket(bucketName);
+    }
+
+    private URI getCreateBucketEndpoint(String requestRegion) {
+        // Route to the default endpoint if they're not trying to specify a different one in the request.
+        if(requestRegion == null || requestRegion.equals(clientRegion) || !clientOptions.isForceGlobalBucketAccessEnabled()) {
+            return endpoint;
+        }
+
+        // If they enabled global bucket access and they're trying to create a bucket in a region different than the default
+        // one specified when they created the client, it will probably fail because only us-east-1 (actually the global
+        // endpoint) is capable of creating buckets outside of its region. Override the endpoint to which the request
+        // is routed so that it will succeed.
+
+        com.amazonaws.regions.Region targetRegion = com.amazonaws.regions.Region.getRegion(Regions.fromName(requestRegion));
+        return new DefaultServiceEndpointBuilder(getEndpointPrefix(),
+                                                 clientConfiguration.getProtocol().toString()).withRegion(targetRegion)
+                                                                                              .getServiceEndpoint();
     }
 
     @Override
@@ -1418,11 +1410,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                     INCLUDE_SKIPPED_BYTES); // bytes received from S3 are all included even if skipped
             }
 
-            // Re-wrap within an S3ObjectInputStream. Explicitly do not collect
-            // metrics here because we know we're ultimately wrapping another
-            // S3ObjectInputStream which will take care of that.
             s3Object.setObjectContent(new S3ObjectInputStream(is, httpRequest, false));
-
             return s3Object;
         } catch (AmazonS3Exception ase) {
             /*
@@ -2809,6 +2797,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         Request<GeneratePresignedUrlRequest> request = createRequest(
                 bucketName, key, req, httpMethod);
 
+        addParameterIfNotNull(request, "versionId", req.getVersionId());
+
         if (req.isZeroByteContent())
             request.setContent(new ByteArrayInputStream(new byte[0]));
 
@@ -3090,10 +3080,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             "The key parameter must be specified when uploading a part");
         rejectNull(uploadId,
             "The upload ID parameter must be specified when uploading a part");
-        rejectNull(partNumber,
-            "The part number parameter must be specified when uploading a part");
-        rejectNull(partSize,
-            "The part size parameter must be specified when uploading a part");
         Request<UploadPartRequest> request = createRequest(bucketName, key, uploadPartRequest, HttpMethodName.PUT);
         request.addParameter("uploadId", uploadId);
         request.addParameter("partNumber", Integer.toString(partNumber));
@@ -3433,7 +3419,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         if (!isSignerOverridden()) {
 
-            if ((signer instanceof AWSS3V4Signer) && noExplicitRegionProvided(request)) {
+            if ((signer instanceof AWSS3V4Signer) && bucketRegionShouldBeCached(request)) {
 
                 String region = bucketRegionCache.get(bucketName);
                 if (region != null) {
@@ -4071,9 +4057,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             }
         }
 
-        /** Validates the specified client options before creating the request */
-        validateClientOptions();
-
         Request<X> request = new DefaultRequest<X>(originalRequest, Constants.S3_SERVICE_DISPLAY_NAME);
         request.setHttpMethod(httpMethod);
         request.addHandlerContext(S3HandlerContextKeys.IS_CHUNKED_ENCODING_DISABLED,
@@ -4081,6 +4064,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         request.addHandlerContext(S3HandlerContextKeys.IS_PAYLOAD_SIGNING_ENABLED,
                 Boolean.valueOf(clientOptions.isPayloadSigningEnabled()));
         resolveRequestEndpoint(request, bucketName, key, endpoint);
+
         return request;
     }
 
@@ -4165,8 +4149,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             }
 
             // Update the bucketRegionCache if we can't find region for the request
-            if (bucket != null && !(request.getOriginalRequest() instanceof CreateBucketRequest)
-                    && !isAdditionalHeadRequestToFindRegion && noExplicitRegionProvided(request)) {
+            if (!isAdditionalHeadRequestToFindRegion && shouldPerformHeadRequestToFindRegion(request, bucket)) {
                 fetchRegionFromCache(bucket);
             }
 
@@ -4182,8 +4165,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
             executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
 
-            response = client.execute(request, responseHandler,
-                    errorResponseHandler, executionContext);
+            validateRequestBeforeTransmit(request);
+            response = client.execute(request, responseHandler, errorResponseHandler, executionContext);
 
             return response.getAwsResponse();
         } catch (ResetException ex) {
@@ -4210,6 +4193,42 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         } finally {
             endClientExecution(awsRequestMetrics, request, response);
         }
+    }
+
+    private void validateRequestBeforeTransmit(Request<?> request) {
+        boolean implicitCrossRegionForbidden = areImplicitGlobalClientsDisabled();
+        boolean explicitCrossRegionEnabled = clientOptions.isForceGlobalBucketAccessEnabled();
+
+        // The region must be set if implicit cross region clients are not allowed
+        if (noExplicitRegionProvided(request) && implicitCrossRegionForbidden && !explicitCrossRegionEnabled) {
+            String error = String.format("While the %s system property is enabled, Amazon S3 clients cannot be used without " +
+                                         "first configuring a region or explicitly enabling global bucket access discovery " +
+                                         "in the S3 client builder.",
+                                         SDKGlobalConfiguration.DISABLE_S3_IMPLICIT_GLOBAL_CLIENTS_SYSTEM_PROPERTY);
+            throw new IllegalStateException(error);
+        }
+    }
+
+    /**
+     * Returns true in the event that the {@link SDKGlobalConfiguration#DISABLE_S3_IMPLICIT_GLOBAL_CLIENTS_SYSTEM_PROPERTY}
+     * is non-null and not "false".
+     *
+     * If this system property is set, S3 clients may not act in a cross-region manner unless cross-region behavior is
+     * explicitly enabled, using options like {@link AmazonS3ClientBuilder#enableForceGlobalBucketAccess()}.
+     */
+    private boolean areImplicitGlobalClientsDisabled() {
+        String setting = System.getProperty(SDKGlobalConfiguration.DISABLE_S3_IMPLICIT_GLOBAL_CLIENTS_SYSTEM_PROPERTY);
+        return setting != null && !setting.equals("false");
+    }
+
+    private boolean shouldPerformHeadRequestToFindRegion(Request<?> request, String bucket) {
+        return bucket != null &&
+               !(request.getOriginalRequest() instanceof CreateBucketRequest) &&
+               bucketRegionShouldBeCached(request);
+    }
+
+    private boolean bucketRegionShouldBeCached(Request<?> request) {
+        return clientOptions.isForceGlobalBucketAccessEnabled() || noExplicitRegionProvided(request);
     }
 
     @Override
@@ -4875,7 +4894,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 log.debug("Bucket region cache doesn't have an entry for " + bucketName
                         + ". Trying to get bucket region from Amazon S3.");
             }
+
             bucketRegion = getBucketRegionViaHeadRequest(bucketName);
+
             if (bucketRegion != null) {
                 bucketRegionCache.put(bucketName, bucketRegion);
             }

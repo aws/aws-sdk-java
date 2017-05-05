@@ -14,6 +14,8 @@ package com.amazonaws.services.snowball.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -27,7 +29,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Address implements Serializable, Cloneable {
+public class Address implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -79,13 +81,13 @@ public class Address implements Serializable, Cloneable {
     private String stateOrProvince;
     /**
      * <p>
-     * The prefecture or district that the appliance will be shipped to.
+     * This field is no longer used and the value is ignored.
      * </p>
      */
     private String prefectureOrDistrict;
     /**
      * <p>
-     * The landmark identifying the address that the appliance will be shipped to.
+     * This field is no longer used and the value is ignored.
      * </p>
      */
     private String landmark;
@@ -107,6 +109,13 @@ public class Address implements Serializable, Cloneable {
      * </p>
      */
     private String phoneNumber;
+    /**
+     * <p>
+     * If the address you are creating is a primary address, then set this option to true. This field is not supported
+     * in most regions.
+     * </p>
+     */
+    private Boolean isRestricted;
 
     /**
      * <p>
@@ -430,11 +439,11 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The prefecture or district that the appliance will be shipped to.
+     * This field is no longer used and the value is ignored.
      * </p>
      * 
      * @param prefectureOrDistrict
-     *        The prefecture or district that the appliance will be shipped to.
+     *        This field is no longer used and the value is ignored.
      */
 
     public void setPrefectureOrDistrict(String prefectureOrDistrict) {
@@ -443,10 +452,10 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The prefecture or district that the appliance will be shipped to.
+     * This field is no longer used and the value is ignored.
      * </p>
      * 
-     * @return The prefecture or district that the appliance will be shipped to.
+     * @return This field is no longer used and the value is ignored.
      */
 
     public String getPrefectureOrDistrict() {
@@ -455,11 +464,11 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The prefecture or district that the appliance will be shipped to.
+     * This field is no longer used and the value is ignored.
      * </p>
      * 
      * @param prefectureOrDistrict
-     *        The prefecture or district that the appliance will be shipped to.
+     *        This field is no longer used and the value is ignored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -470,11 +479,11 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The landmark identifying the address that the appliance will be shipped to.
+     * This field is no longer used and the value is ignored.
      * </p>
      * 
      * @param landmark
-     *        The landmark identifying the address that the appliance will be shipped to.
+     *        This field is no longer used and the value is ignored.
      */
 
     public void setLandmark(String landmark) {
@@ -483,10 +492,10 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The landmark identifying the address that the appliance will be shipped to.
+     * This field is no longer used and the value is ignored.
      * </p>
      * 
-     * @return The landmark identifying the address that the appliance will be shipped to.
+     * @return This field is no longer used and the value is ignored.
      */
 
     public String getLandmark() {
@@ -495,11 +504,11 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The landmark identifying the address that the appliance will be shipped to.
+     * This field is no longer used and the value is ignored.
      * </p>
      * 
      * @param landmark
-     *        The landmark identifying the address that the appliance will be shipped to.
+     *        This field is no longer used and the value is ignored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -629,6 +638,66 @@ public class Address implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * If the address you are creating is a primary address, then set this option to true. This field is not supported
+     * in most regions.
+     * </p>
+     * 
+     * @param isRestricted
+     *        If the address you are creating is a primary address, then set this option to true. This field is not
+     *        supported in most regions.
+     */
+
+    public void setIsRestricted(Boolean isRestricted) {
+        this.isRestricted = isRestricted;
+    }
+
+    /**
+     * <p>
+     * If the address you are creating is a primary address, then set this option to true. This field is not supported
+     * in most regions.
+     * </p>
+     * 
+     * @return If the address you are creating is a primary address, then set this option to true. This field is not
+     *         supported in most regions.
+     */
+
+    public Boolean getIsRestricted() {
+        return this.isRestricted;
+    }
+
+    /**
+     * <p>
+     * If the address you are creating is a primary address, then set this option to true. This field is not supported
+     * in most regions.
+     * </p>
+     * 
+     * @param isRestricted
+     *        If the address you are creating is a primary address, then set this option to true. This field is not
+     *        supported in most regions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Address withIsRestricted(Boolean isRestricted) {
+        setIsRestricted(isRestricted);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If the address you are creating is a primary address, then set this option to true. This field is not supported
+     * in most regions.
+     * </p>
+     * 
+     * @return If the address you are creating is a primary address, then set this option to true. This field is not
+     *         supported in most regions.
+     */
+
+    public Boolean isRestricted() {
+        return this.isRestricted;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -664,7 +733,9 @@ public class Address implements Serializable, Cloneable {
         if (getPostalCode() != null)
             sb.append("PostalCode: ").append(getPostalCode()).append(",");
         if (getPhoneNumber() != null)
-            sb.append("PhoneNumber: ").append(getPhoneNumber());
+            sb.append("PhoneNumber: ").append(getPhoneNumber()).append(",");
+        if (getIsRestricted() != null)
+            sb.append("IsRestricted: ").append(getIsRestricted());
         sb.append("}");
         return sb.toString();
     }
@@ -731,6 +802,10 @@ public class Address implements Serializable, Cloneable {
             return false;
         if (other.getPhoneNumber() != null && other.getPhoneNumber().equals(this.getPhoneNumber()) == false)
             return false;
+        if (other.getIsRestricted() == null ^ this.getIsRestricted() == null)
+            return false;
+        if (other.getIsRestricted() != null && other.getIsRestricted().equals(this.getIsRestricted()) == false)
+            return false;
         return true;
     }
 
@@ -752,6 +827,7 @@ public class Address implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCountry() == null) ? 0 : getCountry().hashCode());
         hashCode = prime * hashCode + ((getPostalCode() == null) ? 0 : getPostalCode().hashCode());
         hashCode = prime * hashCode + ((getPhoneNumber() == null) ? 0 : getPhoneNumber().hashCode());
+        hashCode = prime * hashCode + ((getIsRestricted() == null) ? 0 : getIsRestricted().hashCode());
         return hashCode;
     }
 
@@ -762,5 +838,11 @@ public class Address implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.snowball.model.transform.AddressMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

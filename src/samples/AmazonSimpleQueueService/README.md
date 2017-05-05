@@ -28,4 +28,4 @@ The basic steps for running the Amazon SQS sample are:
 
 **NOTE:** The sample also includes an Ant build.xml file to run the sample.
 
-See the [Amazon SQS Getting Started Guide](http://docs.amazonwebservices.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/) for step-by-step instructions on running this sample.
+For detailed descriptions on how to work with Amazon SQS using Java, see the [tutorials](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-tutorials.html) in the _Amazon SQS Developer Guide_.

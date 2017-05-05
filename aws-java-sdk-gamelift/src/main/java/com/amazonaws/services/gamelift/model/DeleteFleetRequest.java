@@ -30,18 +30,18 @@ public class DeleteFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier for the fleet you want to delete.
+     * Unique identifier for a fleet to be deleted.
      * </p>
      */
     private String fleetId;
 
     /**
      * <p>
-     * Unique identifier for the fleet you want to delete.
+     * Unique identifier for a fleet to be deleted.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for the fleet you want to delete.
+     *        Unique identifier for a fleet to be deleted.
      */
 
     public void setFleetId(String fleetId) {
@@ -50,10 +50,10 @@ public class DeleteFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier for the fleet you want to delete.
+     * Unique identifier for a fleet to be deleted.
      * </p>
      * 
-     * @return Unique identifier for the fleet you want to delete.
+     * @return Unique identifier for a fleet to be deleted.
      */
 
     public String getFleetId() {
@@ -62,11 +62,11 @@ public class DeleteFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier for the fleet you want to delete.
+     * Unique identifier for a fleet to be deleted.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for the fleet you want to delete.
+     *        Unique identifier for a fleet to be deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

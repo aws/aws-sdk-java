@@ -219,6 +219,10 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
         this.executorService = executorService;
     }
 
+    public static AmazonRekognitionAsyncClientBuilder asyncBuilder() {
+        return AmazonRekognitionAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon Rekognition using the specified
      * parameters.
@@ -249,14 +253,15 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
     @Override
     public java.util.concurrent.Future<CompareFacesResult> compareFacesAsync(final CompareFacesRequest request,
             final com.amazonaws.handlers.AsyncHandler<CompareFacesRequest, CompareFacesResult> asyncHandler) {
+        final CompareFacesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CompareFacesResult>() {
             @Override
             public CompareFacesResult call() throws Exception {
-                CompareFacesResult result;
+                CompareFacesResult result = null;
 
                 try {
-                    result = compareFaces(request);
+                    result = executeCompareFaces(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -265,7 +270,7 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -281,14 +286,15 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
     @Override
     public java.util.concurrent.Future<CreateCollectionResult> createCollectionAsync(final CreateCollectionRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateCollectionRequest, CreateCollectionResult> asyncHandler) {
+        final CreateCollectionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateCollectionResult>() {
             @Override
             public CreateCollectionResult call() throws Exception {
-                CreateCollectionResult result;
+                CreateCollectionResult result = null;
 
                 try {
-                    result = createCollection(request);
+                    result = executeCreateCollection(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -297,7 +303,7 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -313,14 +319,15 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
     @Override
     public java.util.concurrent.Future<DeleteCollectionResult> deleteCollectionAsync(final DeleteCollectionRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteCollectionRequest, DeleteCollectionResult> asyncHandler) {
+        final DeleteCollectionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteCollectionResult>() {
             @Override
             public DeleteCollectionResult call() throws Exception {
-                DeleteCollectionResult result;
+                DeleteCollectionResult result = null;
 
                 try {
-                    result = deleteCollection(request);
+                    result = executeDeleteCollection(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -329,7 +336,7 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -345,14 +352,15 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
     @Override
     public java.util.concurrent.Future<DeleteFacesResult> deleteFacesAsync(final DeleteFacesRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteFacesRequest, DeleteFacesResult> asyncHandler) {
+        final DeleteFacesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteFacesResult>() {
             @Override
             public DeleteFacesResult call() throws Exception {
-                DeleteFacesResult result;
+                DeleteFacesResult result = null;
 
                 try {
-                    result = deleteFaces(request);
+                    result = executeDeleteFaces(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -361,7 +369,7 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -377,14 +385,15 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
     @Override
     public java.util.concurrent.Future<DetectFacesResult> detectFacesAsync(final DetectFacesRequest request,
             final com.amazonaws.handlers.AsyncHandler<DetectFacesRequest, DetectFacesResult> asyncHandler) {
+        final DetectFacesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DetectFacesResult>() {
             @Override
             public DetectFacesResult call() throws Exception {
-                DetectFacesResult result;
+                DetectFacesResult result = null;
 
                 try {
-                    result = detectFaces(request);
+                    result = executeDetectFaces(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -393,7 +402,7 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -409,14 +418,15 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
     @Override
     public java.util.concurrent.Future<DetectLabelsResult> detectLabelsAsync(final DetectLabelsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DetectLabelsRequest, DetectLabelsResult> asyncHandler) {
+        final DetectLabelsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DetectLabelsResult>() {
             @Override
             public DetectLabelsResult call() throws Exception {
-                DetectLabelsResult result;
+                DetectLabelsResult result = null;
 
                 try {
-                    result = detectLabels(request);
+                    result = executeDetectLabels(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -425,7 +435,40 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetectModerationLabelsResult> detectModerationLabelsAsync(DetectModerationLabelsRequest request) {
+
+        return detectModerationLabelsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetectModerationLabelsResult> detectModerationLabelsAsync(final DetectModerationLabelsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DetectModerationLabelsRequest, DetectModerationLabelsResult> asyncHandler) {
+        final DetectModerationLabelsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DetectModerationLabelsResult>() {
+            @Override
+            public DetectModerationLabelsResult call() throws Exception {
+                DetectModerationLabelsResult result = null;
+
+                try {
+                    result = executeDetectModerationLabels(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -441,14 +484,15 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
     @Override
     public java.util.concurrent.Future<IndexFacesResult> indexFacesAsync(final IndexFacesRequest request,
             final com.amazonaws.handlers.AsyncHandler<IndexFacesRequest, IndexFacesResult> asyncHandler) {
+        final IndexFacesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<IndexFacesResult>() {
             @Override
             public IndexFacesResult call() throws Exception {
-                IndexFacesResult result;
+                IndexFacesResult result = null;
 
                 try {
-                    result = indexFaces(request);
+                    result = executeIndexFaces(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -457,7 +501,7 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -473,14 +517,15 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
     @Override
     public java.util.concurrent.Future<ListCollectionsResult> listCollectionsAsync(final ListCollectionsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListCollectionsRequest, ListCollectionsResult> asyncHandler) {
+        final ListCollectionsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListCollectionsResult>() {
             @Override
             public ListCollectionsResult call() throws Exception {
-                ListCollectionsResult result;
+                ListCollectionsResult result = null;
 
                 try {
-                    result = listCollections(request);
+                    result = executeListCollections(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -489,7 +534,7 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -505,14 +550,15 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
     @Override
     public java.util.concurrent.Future<ListFacesResult> listFacesAsync(final ListFacesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListFacesRequest, ListFacesResult> asyncHandler) {
+        final ListFacesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListFacesResult>() {
             @Override
             public ListFacesResult call() throws Exception {
-                ListFacesResult result;
+                ListFacesResult result = null;
 
                 try {
-                    result = listFaces(request);
+                    result = executeListFaces(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -521,7 +567,7 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -537,14 +583,15 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
     @Override
     public java.util.concurrent.Future<SearchFacesResult> searchFacesAsync(final SearchFacesRequest request,
             final com.amazonaws.handlers.AsyncHandler<SearchFacesRequest, SearchFacesResult> asyncHandler) {
+        final SearchFacesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<SearchFacesResult>() {
             @Override
             public SearchFacesResult call() throws Exception {
-                SearchFacesResult result;
+                SearchFacesResult result = null;
 
                 try {
-                    result = searchFaces(request);
+                    result = executeSearchFaces(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -553,7 +600,7 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -569,14 +616,15 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
     @Override
     public java.util.concurrent.Future<SearchFacesByImageResult> searchFacesByImageAsync(final SearchFacesByImageRequest request,
             final com.amazonaws.handlers.AsyncHandler<SearchFacesByImageRequest, SearchFacesByImageResult> asyncHandler) {
+        final SearchFacesByImageRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<SearchFacesByImageResult>() {
             @Override
             public SearchFacesByImageResult call() throws Exception {
-                SearchFacesByImageResult result;
+                SearchFacesByImageResult result = null;
 
                 try {
-                    result = searchFacesByImage(request);
+                    result = executeSearchFacesByImage(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -585,7 +633,7 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

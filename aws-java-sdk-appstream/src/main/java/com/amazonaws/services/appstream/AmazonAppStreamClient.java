@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -75,6 +76,9 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withModeledClass(
+                                    com.amazonaws.services.appstream.model.ConcurrentModificationException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
                                     com.amazonaws.services.appstream.model.ResourceInUseException.class))
                     .addErrorMetadata(
@@ -83,6 +87,9 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidRoleException").withModeledClass(
                                     com.amazonaws.services.appstream.model.InvalidRoleException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterCombinationException").withModeledClass(
+                                    com.amazonaws.services.appstream.model.InvalidParameterCombinationException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotAvailableException").withModeledClass(
                                     com.amazonaws.services.appstream.model.ResourceNotAvailableException.class))
@@ -249,6 +256,10 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         init();
     }
 
+    public static AmazonAppStreamClientBuilder builder() {
+        return AmazonAppStreamClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon AppStream using the specified parameters.
      *
@@ -287,12 +298,20 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *         The requested limit exceeds the permitted limit for an account.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
+     * @throws ConcurrentModificationException
+     *         An API error occurred, please try again.
      * @sample AmazonAppStream.AssociateFleet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateFleet" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
-    public AssociateFleetResult associateFleet(AssociateFleetRequest associateFleetRequest) {
+    public AssociateFleetResult associateFleet(AssociateFleetRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateFleet(request);
+    }
+
+    @SdkInternalApi
+    final AssociateFleetResult executeAssociateFleet(AssociateFleetRequest associateFleetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(associateFleetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -303,7 +322,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AssociateFleetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateFleetRequest));
+                request = new AssociateFleetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateFleetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -340,12 +359,20 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *         The requested limit exceeds the permitted limit for an account.
      * @throws InvalidRoleException
      *         The specified role is invalid.
+     * @throws ConcurrentModificationException
+     *         An API error occurred, please try again.
      * @sample AmazonAppStream.CreateFleet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
-    public CreateFleetResult createFleet(CreateFleetRequest createFleetRequest) {
+    public CreateFleetResult createFleet(CreateFleetRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateFleet(request);
+    }
+
+    @SdkInternalApi
+    final CreateFleetResult executeCreateFleet(CreateFleetRequest createFleetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createFleetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -356,7 +383,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateFleetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createFleetRequest));
+                request = new CreateFleetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createFleetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -386,12 +413,20 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *         The requested limit exceeds the permitted limit for an account.
      * @throws ResourceAlreadyExistsException
      *         The specified resource already exists.
+     * @throws ConcurrentModificationException
+     *         An API error occurred, please try again.
      * @sample AmazonAppStream.CreateStack
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStack" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
-    public CreateStackResult createStack(CreateStackRequest createStackRequest) {
+    public CreateStackResult createStack(CreateStackRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateStack(request);
+    }
+
+    @SdkInternalApi
+    final CreateStackResult executeCreateStack(CreateStackRequest createStackRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createStackRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -402,7 +437,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateStackRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createStackRequest));
+                request = new CreateStackRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createStackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -435,12 +470,20 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *         The specified resource exists and is not in use, but isn't available.
      * @throws OperationNotPermittedException
      *         The attempted operation is not permitted.
+     * @throws InvalidParameterCombinationException
+     *         Indicates an incorrect combination of parameters, or a missing parameter.
      * @sample AmazonAppStream.CreateStreamingURL
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStreamingURL" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
-    public CreateStreamingURLResult createStreamingURL(CreateStreamingURLRequest createStreamingURLRequest) {
+    public CreateStreamingURLResult createStreamingURL(CreateStreamingURLRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateStreamingURL(request);
+    }
+
+    @SdkInternalApi
+    final CreateStreamingURLResult executeCreateStreamingURL(CreateStreamingURLRequest createStreamingURLRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createStreamingURLRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -451,7 +494,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateStreamingURLRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createStreamingURLRequest));
+                request = new CreateStreamingURLRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createStreamingURLRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -481,12 +524,20 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *         The specified resource is in use.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
+     * @throws ConcurrentModificationException
+     *         An API error occurred, please try again.
      * @sample AmazonAppStream.DeleteFleet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteFleet" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
-    public DeleteFleetResult deleteFleet(DeleteFleetRequest deleteFleetRequest) {
+    public DeleteFleetResult deleteFleet(DeleteFleetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteFleet(request);
+    }
+
+    @SdkInternalApi
+    final DeleteFleetResult executeDeleteFleet(DeleteFleetRequest deleteFleetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteFleetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -497,7 +548,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteFleetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFleetRequest));
+                request = new DeleteFleetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFleetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -528,12 +579,20 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *         The specified resource is in use.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
+     * @throws ConcurrentModificationException
+     *         An API error occurred, please try again.
      * @sample AmazonAppStream.DeleteStack
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteStack" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
-    public DeleteStackResult deleteStack(DeleteStackRequest deleteStackRequest) {
+    public DeleteStackResult deleteStack(DeleteStackRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteStack(request);
+    }
+
+    @SdkInternalApi
+    final DeleteStackResult executeDeleteStack(DeleteStackRequest deleteStackRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteStackRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -544,7 +603,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteStackRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteStackRequest));
+                request = new DeleteStackRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteStackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -578,7 +637,13 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public DescribeFleetsResult describeFleets(DescribeFleetsRequest describeFleetsRequest) {
+    public DescribeFleetsResult describeFleets(DescribeFleetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeFleets(request);
+    }
+
+    @SdkInternalApi
+    final DescribeFleetsResult executeDescribeFleets(DescribeFleetsRequest describeFleetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeFleetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -589,7 +654,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeFleetsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFleetsRequest));
+                request = new DescribeFleetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFleetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -623,7 +688,13 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public DescribeImagesResult describeImages(DescribeImagesRequest describeImagesRequest) {
+    public DescribeImagesResult describeImages(DescribeImagesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeImages(request);
+    }
+
+    @SdkInternalApi
+    final DescribeImagesResult executeDescribeImages(DescribeImagesRequest describeImagesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeImagesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -634,7 +705,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeImagesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeImagesRequest));
+                request = new DescribeImagesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeImagesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -657,17 +728,26 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * <p>
      * Describes the streaming sessions for a stack and a fleet. If a user ID is provided, this operation returns
      * streaming sessions for only that user. Pass this value for the <code>nextToken</code> parameter in a subsequent
-     * call to this operation to retrieve the next set of items.
+     * call to this operation to retrieve the next set of items. If an authentication type is not provided, the
+     * operation defaults to users authenticated using a streaming url.
      * </p>
      * 
      * @param describeSessionsRequest
      * @return Result of the DescribeSessions operation returned by the service.
+     * @throws InvalidParameterCombinationException
+     *         Indicates an incorrect combination of parameters, or a missing parameter.
      * @sample AmazonAppStream.DescribeSessions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
-    public DescribeSessionsResult describeSessions(DescribeSessionsRequest describeSessionsRequest) {
+    public DescribeSessionsResult describeSessions(DescribeSessionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeSessions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeSessionsResult executeDescribeSessions(DescribeSessionsRequest describeSessionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeSessionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -678,7 +758,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeSessionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeSessionsRequest));
+                request = new DescribeSessionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeSessionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -713,7 +793,13 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public DescribeStacksResult describeStacks(DescribeStacksRequest describeStacksRequest) {
+    public DescribeStacksResult describeStacks(DescribeStacksRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeStacks(request);
+    }
+
+    @SdkInternalApi
+    final DescribeStacksResult executeDescribeStacks(DescribeStacksRequest describeStacksRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeStacksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -724,7 +810,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeStacksRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeStacksRequest));
+                request = new DescribeStacksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeStacksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -754,12 +840,20 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *         The specified resource is in use.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
+     * @throws ConcurrentModificationException
+     *         An API error occurred, please try again.
      * @sample AmazonAppStream.DisassociateFleet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateFleet" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
-    public DisassociateFleetResult disassociateFleet(DisassociateFleetRequest disassociateFleetRequest) {
+    public DisassociateFleetResult disassociateFleet(DisassociateFleetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateFleet(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateFleetResult executeDisassociateFleet(DisassociateFleetRequest disassociateFleetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(disassociateFleetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -770,7 +864,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisassociateFleetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(disassociateFleetRequest));
+                request = new DisassociateFleetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disassociateFleetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -801,7 +895,13 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public ExpireSessionResult expireSession(ExpireSessionRequest expireSessionRequest) {
+    public ExpireSessionResult expireSession(ExpireSessionRequest request) {
+        request = beforeClientExecution(request);
+        return executeExpireSession(request);
+    }
+
+    @SdkInternalApi
+    final ExpireSessionResult executeExpireSession(ExpireSessionRequest expireSessionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(expireSessionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -812,7 +912,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ExpireSessionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(expireSessionRequest));
+                request = new ExpireSessionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(expireSessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -843,7 +943,13 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *      API Documentation</a>
      */
     @Override
-    public ListAssociatedFleetsResult listAssociatedFleets(ListAssociatedFleetsRequest listAssociatedFleetsRequest) {
+    public ListAssociatedFleetsResult listAssociatedFleets(ListAssociatedFleetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAssociatedFleets(request);
+    }
+
+    @SdkInternalApi
+    final ListAssociatedFleetsResult executeListAssociatedFleets(ListAssociatedFleetsRequest listAssociatedFleetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listAssociatedFleetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -854,7 +960,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAssociatedFleetsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssociatedFleetsRequest));
+                request = new ListAssociatedFleetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssociatedFleetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -885,7 +991,13 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *      API Documentation</a>
      */
     @Override
-    public ListAssociatedStacksResult listAssociatedStacks(ListAssociatedStacksRequest listAssociatedStacksRequest) {
+    public ListAssociatedStacksResult listAssociatedStacks(ListAssociatedStacksRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAssociatedStacks(request);
+    }
+
+    @SdkInternalApi
+    final ListAssociatedStacksResult executeListAssociatedStacks(ListAssociatedStacksRequest listAssociatedStacksRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listAssociatedStacksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -896,7 +1008,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAssociatedStacksRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssociatedStacksRequest));
+                request = new ListAssociatedStacksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssociatedStacksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -924,14 +1036,24 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @return Result of the StartFleet operation returned by the service.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
+     * @throws OperationNotPermittedException
+     *         The attempted operation is not permitted.
      * @throws LimitExceededException
      *         The requested limit exceeds the permitted limit for an account.
+     * @throws ConcurrentModificationException
+     *         An API error occurred, please try again.
      * @sample AmazonAppStream.StartFleet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartFleet" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
-    public StartFleetResult startFleet(StartFleetRequest startFleetRequest) {
+    public StartFleetResult startFleet(StartFleetRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartFleet(request);
+    }
+
+    @SdkInternalApi
+    final StartFleetResult executeStartFleet(StartFleetRequest startFleetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(startFleetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -942,7 +1064,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartFleetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(startFleetRequest));
+                request = new StartFleetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startFleetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -970,12 +1092,20 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @return Result of the StopFleet operation returned by the service.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
+     * @throws ConcurrentModificationException
+     *         An API error occurred, please try again.
      * @sample AmazonAppStream.StopFleet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopFleet" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
-    public StopFleetResult stopFleet(StopFleetRequest stopFleetRequest) {
+    public StopFleetResult stopFleet(StopFleetRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopFleet(request);
+    }
+
+    @SdkInternalApi
+    final StopFleetResult executeStopFleet(StopFleetRequest stopFleetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(stopFleetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -986,7 +1116,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopFleetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopFleetRequest));
+                request = new StopFleetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopFleetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1008,7 +1138,8 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
     /**
      * <p>
      * Updates an existing fleet. All the attributes except the fleet name can be updated in the <b>STOPPED</b> state.
-     * Only <b>ComputeCapacity</b> and <b>ImageName</b> can be updated in any other state.
+     * When a fleet is in the <b>RUNNING</b> state, only <code>DisplayName</code> and <code>ComputeCapacity</code> can
+     * be updated. A fleet cannot be updated in a status of <b>STARTING</b> or <b>STOPPING</b>.
      * </p>
      * 
      * @param updateFleetRequest
@@ -1021,12 +1152,24 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *         The specified role is invalid.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
+     * @throws ResourceNotAvailableException
+     *         The specified resource exists and is not in use, but isn't available.
+     * @throws InvalidParameterCombinationException
+     *         Indicates an incorrect combination of parameters, or a missing parameter.
+     * @throws ConcurrentModificationException
+     *         An API error occurred, please try again.
      * @sample AmazonAppStream.UpdateFleet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
-    public UpdateFleetResult updateFleet(UpdateFleetRequest updateFleetRequest) {
+    public UpdateFleetResult updateFleet(UpdateFleetRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateFleet(request);
+    }
+
+    @SdkInternalApi
+    final UpdateFleetResult executeUpdateFleet(UpdateFleetRequest updateFleetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateFleetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1037,7 +1180,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateFleetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFleetRequest));
+                request = new UpdateFleetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFleetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1072,7 +1215,13 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public UpdateStackResult updateStack(UpdateStackRequest updateStackRequest) {
+    public UpdateStackResult updateStack(UpdateStackRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateStack(request);
+    }
+
+    @SdkInternalApi
+    final UpdateStackResult executeUpdateStack(UpdateStackRequest updateStackRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateStackRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1083,7 +1232,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateStackRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateStackRequest));
+                request = new UpdateStackRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateStackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1165,6 +1314,14 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
             }
         }
         return waiters;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
 
 }

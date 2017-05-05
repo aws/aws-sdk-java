@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -345,6 +346,10 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         init();
     }
 
+    public static AWSCloudTrailClientBuilder builder() {
+        return AWSCloudTrailClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on CloudTrail using the specified parameters.
      *
@@ -437,7 +442,13 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *      Documentation</a>
      */
     @Override
-    public AddTagsResult addTags(AddTagsRequest addTagsRequest) {
+    public AddTagsResult addTags(AddTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddTags(request);
+    }
+
+    @SdkInternalApi
+    final AddTagsResult executeAddTags(AddTagsRequest addTagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -448,7 +459,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddTagsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(addTagsRequest));
+                request = new AddTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -553,7 +564,13 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *      Documentation</a>
      */
     @Override
-    public CreateTrailResult createTrail(CreateTrailRequest createTrailRequest) {
+    public CreateTrailResult createTrail(CreateTrailRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTrail(request);
+    }
+
+    @SdkInternalApi
+    final CreateTrailResult executeCreateTrail(CreateTrailRequest createTrailRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createTrailRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -564,7 +581,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateTrailRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTrailRequest));
+                request = new CreateTrailRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTrailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -633,7 +650,13 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *      Documentation</a>
      */
     @Override
-    public DeleteTrailResult deleteTrail(DeleteTrailRequest deleteTrailRequest) {
+    public DeleteTrailResult deleteTrail(DeleteTrailRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTrail(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTrailResult executeDeleteTrail(DeleteTrailRequest deleteTrailRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteTrailRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -644,7 +667,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteTrailRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTrailRequest));
+                request = new DeleteTrailRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTrailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -680,7 +703,13 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *      Documentation</a>
      */
     @Override
-    public DescribeTrailsResult describeTrails(DescribeTrailsRequest describeTrailsRequest) {
+    public DescribeTrailsResult describeTrails(DescribeTrailsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTrails(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTrailsResult executeDescribeTrails(DescribeTrailsRequest describeTrailsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTrailsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -691,7 +720,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTrailsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTrailsRequest));
+                request = new DescribeTrailsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTrailsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -738,9 +767,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * </li>
      * </ul>
      * <p>
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html"
-     * >Configuring Event Selectors for Trails</a> in the <i>AWS CloudTrail User Guide</i>.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html"
+     * >Logging Data and Management Events for Trails </a> in the <i>AWS CloudTrail User Guide</i>.
      * </p>
      * 
      * @param getEventSelectorsRequest
@@ -786,7 +815,13 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *      API Documentation</a>
      */
     @Override
-    public GetEventSelectorsResult getEventSelectors(GetEventSelectorsRequest getEventSelectorsRequest) {
+    public GetEventSelectorsResult getEventSelectors(GetEventSelectorsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetEventSelectors(request);
+    }
+
+    @SdkInternalApi
+    final GetEventSelectorsResult executeGetEventSelectors(GetEventSelectorsRequest getEventSelectorsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getEventSelectorsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -797,7 +832,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetEventSelectorsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getEventSelectorsRequest));
+                request = new GetEventSelectorsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getEventSelectorsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -864,7 +899,13 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *      Documentation</a>
      */
     @Override
-    public GetTrailStatusResult getTrailStatus(GetTrailStatusRequest getTrailStatusRequest) {
+    public GetTrailStatusResult getTrailStatus(GetTrailStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetTrailStatus(request);
+    }
+
+    @SdkInternalApi
+    final GetTrailStatusResult executeGetTrailStatus(GetTrailStatusRequest getTrailStatusRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getTrailStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -875,7 +916,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetTrailStatusRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getTrailStatusRequest));
+                request = new GetTrailStatusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getTrailStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -924,7 +965,13 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *      Documentation</a>
      */
     @Override
-    public ListPublicKeysResult listPublicKeys(ListPublicKeysRequest listPublicKeysRequest) {
+    public ListPublicKeysResult listPublicKeys(ListPublicKeysRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPublicKeys(request);
+    }
+
+    @SdkInternalApi
+    final ListPublicKeysResult executeListPublicKeys(ListPublicKeysRequest listPublicKeysRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listPublicKeysRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -935,7 +982,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListPublicKeysRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPublicKeysRequest));
+                request = new ListPublicKeysRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPublicKeysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1018,7 +1065,13 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *      Documentation</a>
      */
     @Override
-    public ListTagsResult listTags(ListTagsRequest listTagsRequest) {
+    public ListTagsResult listTags(ListTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTags(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsResult executeListTags(ListTagsRequest listTagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1029,7 +1082,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTagsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsRequest));
+                request = new ListTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1063,6 +1116,11 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * <li>
      * <p>
      * Event name
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Event source
      * </p>
      * </li>
      * <li>
@@ -1115,7 +1173,13 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *      Documentation</a>
      */
     @Override
-    public LookupEventsResult lookupEvents(LookupEventsRequest lookupEventsRequest) {
+    public LookupEventsResult lookupEvents(LookupEventsRequest request) {
+        request = beforeClientExecution(request);
+        return executeLookupEvents(request);
+    }
+
+    @SdkInternalApi
+    final LookupEventsResult executeLookupEvents(LookupEventsRequest lookupEventsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(lookupEventsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1126,7 +1190,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new LookupEventsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(lookupEventsRequest));
+                request = new LookupEventsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(lookupEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1152,10 +1216,10 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
 
     /**
      * <p>
-     * Configures an event selector for your trail. Use event selectors to specify the type of events that you want your
-     * trail to log. When an event occurs in your account, CloudTrail evaluates the event selectors in all trails. For
-     * each trail, if the event matches any event selector, the trail processes and logs the event. If the event doesn't
-     * match any event selector, the trail doesn't log the event.
+     * Configures an event selector for your trail. Use event selectors to specify whether you want your trail to log
+     * management and/or data events. When an event occurs in your account, CloudTrail evaluates the event selectors in
+     * all trails. For each trail, if the event matches any event selector, the trail processes and logs the event. If
+     * the event doesn't match any event selector, the trail doesn't log the event.
      * </p>
      * <p>
      * Example
@@ -1193,9 +1257,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * otherwise, an <code>InvalidHomeRegionException</code> is thrown.
      * </p>
      * <p>
-     * You can configure up to five event selectors for each trail. For more information, see <a
-     * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/create-event-selectors-for-a-trail.html"
-     * >Configuring Event Selectors for Trails</a> in the <i>AWS CloudTrail User Guide</i>.
+     * You can configure up to five event selectors for each trail. For more information, see <a href=
+     * "http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html"
+     * >Logging Data and Management Events for Trails </a> in the <i>AWS CloudTrail User Guide</i>.
      * </p>
      * 
      * @param putEventSelectorsRequest
@@ -1246,7 +1310,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         </li>
      *         <li>
      *         <p>
-     *         Specify a valid number of data resources (1 to 50) for an event selector.
+     *         Specify a valid number of data resources (1 to 250) for an event selector.
      *         </p>
      *         </li>
      *         <li>
@@ -1264,7 +1328,13 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *      API Documentation</a>
      */
     @Override
-    public PutEventSelectorsResult putEventSelectors(PutEventSelectorsRequest putEventSelectorsRequest) {
+    public PutEventSelectorsResult putEventSelectors(PutEventSelectorsRequest request) {
+        request = beforeClientExecution(request);
+        return executePutEventSelectors(request);
+    }
+
+    @SdkInternalApi
+    final PutEventSelectorsResult executePutEventSelectors(PutEventSelectorsRequest putEventSelectorsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putEventSelectorsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1275,7 +1345,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutEventSelectorsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(putEventSelectorsRequest));
+                request = new PutEventSelectorsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putEventSelectorsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1354,7 +1424,13 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *      Documentation</a>
      */
     @Override
-    public RemoveTagsResult removeTags(RemoveTagsRequest removeTagsRequest) {
+    public RemoveTagsResult removeTags(RemoveTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveTags(request);
+    }
+
+    @SdkInternalApi
+    final RemoveTagsResult executeRemoveTags(RemoveTagsRequest removeTagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(removeTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1365,7 +1441,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RemoveTagsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeTagsRequest));
+                request = new RemoveTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1434,7 +1510,13 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *      Documentation</a>
      */
     @Override
-    public StartLoggingResult startLogging(StartLoggingRequest startLoggingRequest) {
+    public StartLoggingResult startLogging(StartLoggingRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartLogging(request);
+    }
+
+    @SdkInternalApi
+    final StartLoggingResult executeStartLogging(StartLoggingRequest startLoggingRequest) {
 
         ExecutionContext executionContext = createExecutionContext(startLoggingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1445,7 +1527,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartLoggingRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(startLoggingRequest));
+                request = new StartLoggingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startLoggingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1516,7 +1598,13 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *      Documentation</a>
      */
     @Override
-    public StopLoggingResult stopLogging(StopLoggingRequest stopLoggingRequest) {
+    public StopLoggingResult stopLogging(StopLoggingRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopLogging(request);
+    }
+
+    @SdkInternalApi
+    final StopLoggingResult executeStopLogging(StopLoggingRequest stopLoggingRequest) {
 
         ExecutionContext executionContext = createExecutionContext(stopLoggingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1527,7 +1615,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopLoggingRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopLoggingRequest));
+                request = new StopLoggingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopLoggingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1636,7 +1724,13 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *      Documentation</a>
      */
     @Override
-    public UpdateTrailResult updateTrail(UpdateTrailRequest updateTrailRequest) {
+    public UpdateTrailResult updateTrail(UpdateTrailRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateTrail(request);
+    }
+
+    @SdkInternalApi
+    final UpdateTrailResult executeUpdateTrail(UpdateTrailRequest updateTrailRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateTrailRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1647,7 +1741,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateTrailRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateTrailRequest));
+                request = new UpdateTrailRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateTrailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

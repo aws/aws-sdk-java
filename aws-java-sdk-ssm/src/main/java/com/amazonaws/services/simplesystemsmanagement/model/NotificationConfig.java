@@ -14,6 +14,8 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NotificationConfig implements Serializable, Cloneable {
+public class NotificationConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -37,8 +39,8 @@ public class NotificationConfig implements Serializable, Cloneable {
      * <p>
      * The different events for which you can receive notifications. These events include the following: All (events),
      * InProgress, Success, TimedOut, Cancelled, Failed. To learn more about these events, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitoring Commands</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide </i>.
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Setting Up Events and
+     * Notifications</a> in the <i>Amazon EC2 Systems Manager User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> notificationEvents;
@@ -100,14 +102,14 @@ public class NotificationConfig implements Serializable, Cloneable {
      * <p>
      * The different events for which you can receive notifications. These events include the following: All (events),
      * InProgress, Success, TimedOut, Cancelled, Failed. To learn more about these events, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitoring Commands</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide </i>.
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Setting Up Events and
+     * Notifications</a> in the <i>Amazon EC2 Systems Manager User Guide</i>.
      * </p>
      * 
      * @return The different events for which you can receive notifications. These events include the following: All
      *         (events), InProgress, Success, TimedOut, Cancelled, Failed. To learn more about these events, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitoring Commands</a>
-     *         in the <i>Amazon Elastic Compute Cloud User Guide </i>.
+     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Setting Up
+     *         Events and Notifications</a> in the <i>Amazon EC2 Systems Manager User Guide</i>.
      * @see NotificationEvent
      */
 
@@ -122,15 +124,15 @@ public class NotificationConfig implements Serializable, Cloneable {
      * <p>
      * The different events for which you can receive notifications. These events include the following: All (events),
      * InProgress, Success, TimedOut, Cancelled, Failed. To learn more about these events, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitoring Commands</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide </i>.
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Setting Up Events and
+     * Notifications</a> in the <i>Amazon EC2 Systems Manager User Guide</i>.
      * </p>
      * 
      * @param notificationEvents
      *        The different events for which you can receive notifications. These events include the following: All
      *        (events), InProgress, Success, TimedOut, Cancelled, Failed. To learn more about these events, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitoring Commands</a> in
-     *        the <i>Amazon Elastic Compute Cloud User Guide </i>.
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Setting Up Events
+     *        and Notifications</a> in the <i>Amazon EC2 Systems Manager User Guide</i>.
      * @see NotificationEvent
      */
 
@@ -147,8 +149,8 @@ public class NotificationConfig implements Serializable, Cloneable {
      * <p>
      * The different events for which you can receive notifications. These events include the following: All (events),
      * InProgress, Success, TimedOut, Cancelled, Failed. To learn more about these events, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitoring Commands</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide </i>.
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Setting Up Events and
+     * Notifications</a> in the <i>Amazon EC2 Systems Manager User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -159,8 +161,8 @@ public class NotificationConfig implements Serializable, Cloneable {
      * @param notificationEvents
      *        The different events for which you can receive notifications. These events include the following: All
      *        (events), InProgress, Success, TimedOut, Cancelled, Failed. To learn more about these events, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitoring Commands</a> in
-     *        the <i>Amazon Elastic Compute Cloud User Guide </i>.
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Setting Up Events
+     *        and Notifications</a> in the <i>Amazon EC2 Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NotificationEvent
      */
@@ -179,15 +181,15 @@ public class NotificationConfig implements Serializable, Cloneable {
      * <p>
      * The different events for which you can receive notifications. These events include the following: All (events),
      * InProgress, Success, TimedOut, Cancelled, Failed. To learn more about these events, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitoring Commands</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide </i>.
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Setting Up Events and
+     * Notifications</a> in the <i>Amazon EC2 Systems Manager User Guide</i>.
      * </p>
      * 
      * @param notificationEvents
      *        The different events for which you can receive notifications. These events include the following: All
      *        (events), InProgress, Success, TimedOut, Cancelled, Failed. To learn more about these events, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitoring Commands</a> in
-     *        the <i>Amazon Elastic Compute Cloud User Guide </i>.
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Setting Up Events
+     *        and Notifications</a> in the <i>Amazon EC2 Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NotificationEvent
      */
@@ -201,15 +203,15 @@ public class NotificationConfig implements Serializable, Cloneable {
      * <p>
      * The different events for which you can receive notifications. These events include the following: All (events),
      * InProgress, Success, TimedOut, Cancelled, Failed. To learn more about these events, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitoring Commands</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide </i>.
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Setting Up Events and
+     * Notifications</a> in the <i>Amazon EC2 Systems Manager User Guide</i>.
      * </p>
      * 
      * @param notificationEvents
      *        The different events for which you can receive notifications. These events include the following: All
      *        (events), InProgress, Success, TimedOut, Cancelled, Failed. To learn more about these events, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitoring Commands</a> in
-     *        the <i>Amazon Elastic Compute Cloud User Guide </i>.
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Setting Up Events
+     *        and Notifications</a> in the <i>Amazon EC2 Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NotificationEvent
      */
@@ -374,5 +376,11 @@ public class NotificationConfig implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.simplesystemsmanagement.model.transform.NotificationConfigMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

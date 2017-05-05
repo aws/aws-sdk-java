@@ -12,70 +12,50 @@
  */
 package com.amazonaws.services.gamelift.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.gamelift.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateBuildRequest Marshaller
+ * UpdateBuildRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateBuildRequestMarshaller implements Marshaller<Request<UpdateBuildRequest>, UpdateBuildRequest> {
+@SdkInternalApi
+public class UpdateBuildRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> BUILDID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("BuildId").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Version").build();
 
-    public UpdateBuildRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateBuildRequestMarshaller instance = new UpdateBuildRequestMarshaller();
+
+    public static UpdateBuildRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateBuildRequest> marshall(UpdateBuildRequest updateBuildRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateBuildRequest updateBuildRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateBuildRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateBuildRequest> request = new DefaultRequest<UpdateBuildRequest>(updateBuildRequest, "AmazonGameLift");
-        request.addHeader("X-Amz-Target", "GameLift.UpdateBuild");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (updateBuildRequest.getBuildId() != null) {
-                jsonGenerator.writeFieldName("BuildId").writeValue(updateBuildRequest.getBuildId());
-            }
-            if (updateBuildRequest.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(updateBuildRequest.getName());
-            }
-            if (updateBuildRequest.getVersion() != null) {
-                jsonGenerator.writeFieldName("Version").writeValue(updateBuildRequest.getVersion());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateBuildRequest.getBuildId(), BUILDID_BINDING);
+            protocolMarshaller.marshall(updateBuildRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(updateBuildRequest.getVersion(), VERSION_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

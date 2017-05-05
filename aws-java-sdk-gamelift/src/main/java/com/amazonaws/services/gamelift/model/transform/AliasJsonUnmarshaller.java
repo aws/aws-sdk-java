@@ -56,6 +56,10 @@ public class AliasJsonUnmarshaller implements Unmarshaller<Alias, JsonUnmarshall
                     context.nextToken();
                     alias.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AliasArn", targetDepth)) {
+                    context.nextToken();
+                    alias.setAliasArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();
                     alias.setDescription(context.getUnmarshaller(String.class).unmarshall(context));

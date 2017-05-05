@@ -12,66 +12,44 @@
  */
 package com.amazonaws.services.batch.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.batch.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteComputeEnvironmentRequest Marshaller
+ * DeleteComputeEnvironmentRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteComputeEnvironmentRequestMarshaller implements Marshaller<Request<DeleteComputeEnvironmentRequest>, DeleteComputeEnvironmentRequest> {
+@SdkInternalApi
+public class DeleteComputeEnvironmentRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> COMPUTEENVIRONMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("computeEnvironment").build();
 
-    public DeleteComputeEnvironmentRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteComputeEnvironmentRequestMarshaller instance = new DeleteComputeEnvironmentRequestMarshaller();
+
+    public static DeleteComputeEnvironmentRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteComputeEnvironmentRequest> marshall(DeleteComputeEnvironmentRequest deleteComputeEnvironmentRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteComputeEnvironmentRequest deleteComputeEnvironmentRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteComputeEnvironmentRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteComputeEnvironmentRequest> request = new DefaultRequest<DeleteComputeEnvironmentRequest>(deleteComputeEnvironmentRequest, "AWSBatch");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/v1/deletecomputeenvironment";
-
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (deleteComputeEnvironmentRequest.getComputeEnvironment() != null) {
-                jsonGenerator.writeFieldName("computeEnvironment").writeValue(deleteComputeEnvironmentRequest.getComputeEnvironment());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteComputeEnvironmentRequest.getComputeEnvironment(), COMPUTEENVIRONMENT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

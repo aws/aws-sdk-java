@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -257,6 +258,10 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
         init();
     }
 
+    public static AmazonRekognitionClientBuilder builder() {
+        return AmazonRekognitionClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon Rekognition using the specified parameters.
      *
@@ -344,7 +349,13 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @sample AmazonRekognition.CompareFaces
      */
     @Override
-    public CompareFacesResult compareFaces(CompareFacesRequest compareFacesRequest) {
+    public CompareFacesResult compareFaces(CompareFacesRequest request) {
+        request = beforeClientExecution(request);
+        return executeCompareFaces(request);
+    }
+
+    @SdkInternalApi
+    final CompareFacesResult executeCompareFaces(CompareFacesRequest compareFacesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(compareFacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -355,7 +366,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CompareFacesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(compareFacesRequest));
+                request = new CompareFacesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(compareFacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -408,7 +419,13 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @sample AmazonRekognition.CreateCollection
      */
     @Override
-    public CreateCollectionResult createCollection(CreateCollectionRequest createCollectionRequest) {
+    public CreateCollectionResult createCollection(CreateCollectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCollection(request);
+    }
+
+    @SdkInternalApi
+    final CreateCollectionResult executeCreateCollection(CreateCollectionRequest createCollectionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createCollectionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -419,7 +436,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateCollectionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createCollectionRequest));
+                request = new CreateCollectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createCollectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -465,7 +482,13 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @sample AmazonRekognition.DeleteCollection
      */
     @Override
-    public DeleteCollectionResult deleteCollection(DeleteCollectionRequest deleteCollectionRequest) {
+    public DeleteCollectionResult deleteCollection(DeleteCollectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteCollection(request);
+    }
+
+    @SdkInternalApi
+    final DeleteCollectionResult executeDeleteCollection(DeleteCollectionRequest deleteCollectionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteCollectionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -476,7 +499,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteCollectionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteCollectionRequest));
+                request = new DeleteCollectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteCollectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -522,7 +545,13 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @sample AmazonRekognition.DeleteFaces
      */
     @Override
-    public DeleteFacesResult deleteFaces(DeleteFacesRequest deleteFacesRequest) {
+    public DeleteFacesResult deleteFaces(DeleteFacesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteFaces(request);
+    }
+
+    @SdkInternalApi
+    final DeleteFacesResult executeDeleteFaces(DeleteFacesRequest deleteFacesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteFacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -533,7 +562,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteFacesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFacesRequest));
+                request = new DeleteFacesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -599,7 +628,13 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @sample AmazonRekognition.DetectFaces
      */
     @Override
-    public DetectFacesResult detectFaces(DetectFacesRequest detectFacesRequest) {
+    public DetectFacesResult detectFaces(DetectFacesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDetectFaces(request);
+    }
+
+    @SdkInternalApi
+    final DetectFacesResult executeDetectFaces(DetectFacesRequest detectFacesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(detectFacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -610,7 +645,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DetectFacesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(detectFacesRequest));
+                request = new DetectFacesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(detectFacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -707,7 +742,13 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @sample AmazonRekognition.DetectLabels
      */
     @Override
-    public DetectLabelsResult detectLabels(DetectLabelsRequest detectLabelsRequest) {
+    public DetectLabelsResult detectLabels(DetectLabelsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDetectLabels(request);
+    }
+
+    @SdkInternalApi
+    final DetectLabelsResult executeDetectLabels(DetectLabelsRequest detectLabelsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(detectLabelsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -718,7 +759,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DetectLabelsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(detectLabelsRequest));
+                request = new DetectLabelsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(detectLabelsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -727,6 +768,76 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<DetectLabelsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DetectLabelsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Detects explicit or suggestive adult content in a specified .jpeg or .png image. Use
+     * <code>DetectModerationLabels</code> to moderate images depending on your requirements. For example, you might
+     * want to filter images that contain nudity, but not images containing suggestive content.
+     * </p>
+     * <p>
+     * To filter images, use the labels returned by <code>DetectModerationLabels</code> to determine which types of
+     * content are appropriate. For information about moderation labels, see <a>howitworks-moderateimage</a>.
+     * </p>
+     * 
+     * @param detectModerationLabelsRequest
+     * @return Result of the DetectModerationLabels operation returned by the service.
+     * @throws InvalidS3ObjectException
+     *         Amazon Rekognition is unable to access the S3 object specified in the request.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws ImageTooLargeException
+     *         The input image size exceeds the allowed limit. For more information, see <a>limits</a>.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @throws InvalidImageFormatException
+     *         The provided image format is not supported.
+     * @sample AmazonRekognition.DetectModerationLabels
+     */
+    @Override
+    public DetectModerationLabelsResult detectModerationLabels(DetectModerationLabelsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDetectModerationLabels(request);
+    }
+
+    @SdkInternalApi
+    final DetectModerationLabelsResult executeDetectModerationLabels(DetectModerationLabelsRequest detectModerationLabelsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(detectModerationLabelsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DetectModerationLabelsRequest> request = null;
+        Response<DetectModerationLabelsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DetectModerationLabelsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(detectModerationLabelsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DetectModerationLabelsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DetectModerationLabelsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -793,7 +904,13 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @sample AmazonRekognition.IndexFaces
      */
     @Override
-    public IndexFacesResult indexFaces(IndexFacesRequest indexFacesRequest) {
+    public IndexFacesResult indexFaces(IndexFacesRequest request) {
+        request = beforeClientExecution(request);
+        return executeIndexFaces(request);
+    }
+
+    @SdkInternalApi
+    final IndexFacesResult executeIndexFaces(IndexFacesRequest indexFacesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(indexFacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -804,7 +921,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new IndexFacesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(indexFacesRequest));
+                request = new IndexFacesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(indexFacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -855,7 +972,13 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @sample AmazonRekognition.ListCollections
      */
     @Override
-    public ListCollectionsResult listCollections(ListCollectionsRequest listCollectionsRequest) {
+    public ListCollectionsResult listCollections(ListCollectionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCollections(request);
+    }
+
+    @SdkInternalApi
+    final ListCollectionsResult executeListCollections(ListCollectionsRequest listCollectionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listCollectionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -866,7 +989,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListCollectionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCollectionsRequest));
+                request = new ListCollectionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCollectionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -915,7 +1038,13 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @sample AmazonRekognition.ListFaces
      */
     @Override
-    public ListFacesResult listFaces(ListFacesRequest listFacesRequest) {
+    public ListFacesResult listFaces(ListFacesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListFaces(request);
+    }
+
+    @SdkInternalApi
+    final ListFacesResult executeListFaces(ListFacesRequest listFacesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listFacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -926,7 +1055,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListFacesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFacesRequest));
+                request = new ListFacesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -987,7 +1116,13 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @sample AmazonRekognition.SearchFaces
      */
     @Override
-    public SearchFacesResult searchFaces(SearchFacesRequest searchFacesRequest) {
+    public SearchFacesResult searchFaces(SearchFacesRequest request) {
+        request = beforeClientExecution(request);
+        return executeSearchFaces(request);
+    }
+
+    @SdkInternalApi
+    final SearchFacesResult executeSearchFaces(SearchFacesRequest searchFacesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(searchFacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -998,7 +1133,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SearchFacesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchFacesRequest));
+                request = new SearchFacesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchFacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1070,7 +1205,13 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @sample AmazonRekognition.SearchFacesByImage
      */
     @Override
-    public SearchFacesByImageResult searchFacesByImage(SearchFacesByImageRequest searchFacesByImageRequest) {
+    public SearchFacesByImageResult searchFacesByImage(SearchFacesByImageRequest request) {
+        request = beforeClientExecution(request);
+        return executeSearchFacesByImage(request);
+    }
+
+    @SdkInternalApi
+    final SearchFacesByImageResult executeSearchFacesByImage(SearchFacesByImageRequest searchFacesByImageRequest) {
 
         ExecutionContext executionContext = createExecutionContext(searchFacesByImageRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1081,7 +1222,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SearchFacesByImageRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchFacesByImageRequest));
+                request = new SearchFacesByImageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchFacesByImageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

@@ -14,11 +14,16 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * Endpoint update request
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EndpointBatchItem implements Serializable, Cloneable {
+public class EndpointBatchItem implements Serializable, Cloneable, StructuredPojo {
 
-    /** The address or token of the endpoint. */
+    /** The address or token of the endpoint as provided by your push provider (e.g. DeviceToken or RegistrationId). */
     private String address;
     /**
      * Custom attributes that your app reports to Amazon Pinpoint. You can use these attributes as selection criteria
@@ -40,7 +45,7 @@ public class EndpointBatchItem implements Serializable, Cloneable {
      * to ACTIVE if the address is updated.
      */
     private String endpointStatus;
-
+    /** The unique Id for the Endpoint in the batch. */
     private String id;
     /** The endpoint location attributes. */
     private EndpointLocation location;
@@ -58,10 +63,11 @@ public class EndpointBatchItem implements Serializable, Cloneable {
     private EndpointUser user;
 
     /**
-     * The address or token of the endpoint.
+     * The address or token of the endpoint as provided by your push provider (e.g. DeviceToken or RegistrationId).
      * 
      * @param address
-     *        The address or token of the endpoint.
+     *        The address or token of the endpoint as provided by your push provider (e.g. DeviceToken or
+     *        RegistrationId).
      */
 
     public void setAddress(String address) {
@@ -69,9 +75,10 @@ public class EndpointBatchItem implements Serializable, Cloneable {
     }
 
     /**
-     * The address or token of the endpoint.
+     * The address or token of the endpoint as provided by your push provider (e.g. DeviceToken or RegistrationId).
      * 
-     * @return The address or token of the endpoint.
+     * @return The address or token of the endpoint as provided by your push provider (e.g. DeviceToken or
+     *         RegistrationId).
      */
 
     public String getAddress() {
@@ -79,10 +86,11 @@ public class EndpointBatchItem implements Serializable, Cloneable {
     }
 
     /**
-     * The address or token of the endpoint.
+     * The address or token of the endpoint as provided by your push provider (e.g. DeviceToken or RegistrationId).
      * 
      * @param address
-     *        The address or token of the endpoint.
+     *        The address or token of the endpoint as provided by your push provider (e.g. DeviceToken or
+     *        RegistrationId).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -344,7 +352,10 @@ public class EndpointBatchItem implements Serializable, Cloneable {
     }
 
     /**
+     * The unique Id for the Endpoint in the batch.
+     * 
      * @param id
+     *        The unique Id for the Endpoint in the batch.
      */
 
     public void setId(String id) {
@@ -352,7 +363,9 @@ public class EndpointBatchItem implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * The unique Id for the Endpoint in the batch.
+     * 
+     * @return The unique Id for the Endpoint in the batch.
      */
 
     public String getId() {
@@ -360,7 +373,10 @@ public class EndpointBatchItem implements Serializable, Cloneable {
     }
 
     /**
+     * The unique Id for the Endpoint in the batch.
+     * 
      * @param id
+     *        The unique Id for the Endpoint in the batch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -699,5 +715,11 @@ public class EndpointBatchItem implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.pinpoint.model.transform.EndpointBatchItemMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -12,70 +12,50 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simplesystemsmanagement.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteAssociationRequest Marshaller
+ * DeleteAssociationRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteAssociationRequestMarshaller implements Marshaller<Request<DeleteAssociationRequest>, DeleteAssociationRequest> {
+@SdkInternalApi
+public class DeleteAssociationRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> INSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceId").build();
+    private static final MarshallingInfo<String> ASSOCIATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssociationId").build();
 
-    public DeleteAssociationRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteAssociationRequestMarshaller instance = new DeleteAssociationRequestMarshaller();
+
+    public static DeleteAssociationRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteAssociationRequest> marshall(DeleteAssociationRequest deleteAssociationRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteAssociationRequest deleteAssociationRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteAssociationRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteAssociationRequest> request = new DefaultRequest<DeleteAssociationRequest>(deleteAssociationRequest, "AWSSimpleSystemsManagement");
-        request.addHeader("X-Amz-Target", "AmazonSSM.DeleteAssociation");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteAssociationRequest.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(deleteAssociationRequest.getName());
-            }
-            if (deleteAssociationRequest.getInstanceId() != null) {
-                jsonGenerator.writeFieldName("InstanceId").writeValue(deleteAssociationRequest.getInstanceId());
-            }
-            if (deleteAssociationRequest.getAssociationId() != null) {
-                jsonGenerator.writeFieldName("AssociationId").writeValue(deleteAssociationRequest.getAssociationId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteAssociationRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(deleteAssociationRequest.getInstanceId(), INSTANCEID_BINDING);
+            protocolMarshaller.marshall(deleteAssociationRequest.getAssociationId(), ASSOCIATIONID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

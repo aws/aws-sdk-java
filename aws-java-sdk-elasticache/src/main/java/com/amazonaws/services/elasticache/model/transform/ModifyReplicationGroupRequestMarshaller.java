@@ -127,6 +127,10 @@ public class ModifyReplicationGroupRequestMarshaller implements Marshaller<Reque
             request.addParameter("CacheNodeType", StringUtils.fromString(modifyReplicationGroupRequest.getCacheNodeType()));
         }
 
+        if (modifyReplicationGroupRequest.getNodeGroupId() != null) {
+            request.addParameter("NodeGroupId", StringUtils.fromString(modifyReplicationGroupRequest.getNodeGroupId()));
+        }
+
         return request;
     }
 

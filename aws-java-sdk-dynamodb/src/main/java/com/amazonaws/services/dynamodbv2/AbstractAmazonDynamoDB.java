@@ -116,6 +116,11 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
     }
 
     @Override
+    public DescribeTimeToLiveResult describeTimeToLive(DescribeTimeToLiveRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetItemResult getItem(GetItemRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -234,6 +239,11 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
     @Override
     public UpdateTableResult updateTable(String tableName, ProvisionedThroughput provisionedThroughput) {
         return updateTable(new UpdateTableRequest().withTableName(tableName).withProvisionedThroughput(provisionedThroughput));
+    }
+
+    @Override
+    public UpdateTimeToLiveResult updateTimeToLive(UpdateTimeToLiveRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

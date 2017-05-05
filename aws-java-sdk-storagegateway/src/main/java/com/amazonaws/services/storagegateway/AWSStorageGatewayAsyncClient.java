@@ -292,6 +292,10 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
         this.executorService = executorService;
     }
 
+    public static AWSStorageGatewayAsyncClientBuilder asyncBuilder() {
+        return AWSStorageGatewayAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on AWS Storage Gateway using the specified
      * parameters.
@@ -322,14 +326,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<ActivateGatewayResult> activateGatewayAsync(final ActivateGatewayRequest request,
             final com.amazonaws.handlers.AsyncHandler<ActivateGatewayRequest, ActivateGatewayResult> asyncHandler) {
+        final ActivateGatewayRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ActivateGatewayResult>() {
             @Override
             public ActivateGatewayResult call() throws Exception {
-                ActivateGatewayResult result;
+                ActivateGatewayResult result = null;
 
                 try {
-                    result = activateGateway(request);
+                    result = executeActivateGateway(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -338,7 +343,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -354,14 +359,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<AddCacheResult> addCacheAsync(final AddCacheRequest request,
             final com.amazonaws.handlers.AsyncHandler<AddCacheRequest, AddCacheResult> asyncHandler) {
+        final AddCacheRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AddCacheResult>() {
             @Override
             public AddCacheResult call() throws Exception {
-                AddCacheResult result;
+                AddCacheResult result = null;
 
                 try {
-                    result = addCache(request);
+                    result = executeAddCache(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -370,7 +376,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -386,14 +392,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<AddTagsToResourceResult> addTagsToResourceAsync(final AddTagsToResourceRequest request,
             final com.amazonaws.handlers.AsyncHandler<AddTagsToResourceRequest, AddTagsToResourceResult> asyncHandler) {
+        final AddTagsToResourceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AddTagsToResourceResult>() {
             @Override
             public AddTagsToResourceResult call() throws Exception {
-                AddTagsToResourceResult result;
+                AddTagsToResourceResult result = null;
 
                 try {
-                    result = addTagsToResource(request);
+                    result = executeAddTagsToResource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -402,7 +409,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -418,14 +425,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<AddUploadBufferResult> addUploadBufferAsync(final AddUploadBufferRequest request,
             final com.amazonaws.handlers.AsyncHandler<AddUploadBufferRequest, AddUploadBufferResult> asyncHandler) {
+        final AddUploadBufferRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AddUploadBufferResult>() {
             @Override
             public AddUploadBufferResult call() throws Exception {
-                AddUploadBufferResult result;
+                AddUploadBufferResult result = null;
 
                 try {
-                    result = addUploadBuffer(request);
+                    result = executeAddUploadBuffer(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -434,7 +442,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -450,14 +458,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<AddWorkingStorageResult> addWorkingStorageAsync(final AddWorkingStorageRequest request,
             final com.amazonaws.handlers.AsyncHandler<AddWorkingStorageRequest, AddWorkingStorageResult> asyncHandler) {
+        final AddWorkingStorageRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AddWorkingStorageResult>() {
             @Override
             public AddWorkingStorageResult call() throws Exception {
-                AddWorkingStorageResult result;
+                AddWorkingStorageResult result = null;
 
                 try {
-                    result = addWorkingStorage(request);
+                    result = executeAddWorkingStorage(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -466,7 +475,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -482,14 +491,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<CancelArchivalResult> cancelArchivalAsync(final CancelArchivalRequest request,
             final com.amazonaws.handlers.AsyncHandler<CancelArchivalRequest, CancelArchivalResult> asyncHandler) {
+        final CancelArchivalRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CancelArchivalResult>() {
             @Override
             public CancelArchivalResult call() throws Exception {
-                CancelArchivalResult result;
+                CancelArchivalResult result = null;
 
                 try {
-                    result = cancelArchival(request);
+                    result = executeCancelArchival(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -498,7 +508,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -514,14 +524,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<CancelRetrievalResult> cancelRetrievalAsync(final CancelRetrievalRequest request,
             final com.amazonaws.handlers.AsyncHandler<CancelRetrievalRequest, CancelRetrievalResult> asyncHandler) {
+        final CancelRetrievalRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CancelRetrievalResult>() {
             @Override
             public CancelRetrievalResult call() throws Exception {
-                CancelRetrievalResult result;
+                CancelRetrievalResult result = null;
 
                 try {
-                    result = cancelRetrieval(request);
+                    result = executeCancelRetrieval(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -530,7 +541,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -546,14 +557,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<CreateCachediSCSIVolumeResult> createCachediSCSIVolumeAsync(final CreateCachediSCSIVolumeRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateCachediSCSIVolumeRequest, CreateCachediSCSIVolumeResult> asyncHandler) {
+        final CreateCachediSCSIVolumeRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateCachediSCSIVolumeResult>() {
             @Override
             public CreateCachediSCSIVolumeResult call() throws Exception {
-                CreateCachediSCSIVolumeResult result;
+                CreateCachediSCSIVolumeResult result = null;
 
                 try {
-                    result = createCachediSCSIVolume(request);
+                    result = executeCreateCachediSCSIVolume(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -562,7 +574,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -578,14 +590,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<CreateNFSFileShareResult> createNFSFileShareAsync(final CreateNFSFileShareRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateNFSFileShareRequest, CreateNFSFileShareResult> asyncHandler) {
+        final CreateNFSFileShareRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateNFSFileShareResult>() {
             @Override
             public CreateNFSFileShareResult call() throws Exception {
-                CreateNFSFileShareResult result;
+                CreateNFSFileShareResult result = null;
 
                 try {
-                    result = createNFSFileShare(request);
+                    result = executeCreateNFSFileShare(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -594,7 +607,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -610,14 +623,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<CreateSnapshotResult> createSnapshotAsync(final CreateSnapshotRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateSnapshotRequest, CreateSnapshotResult> asyncHandler) {
+        final CreateSnapshotRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateSnapshotResult>() {
             @Override
             public CreateSnapshotResult call() throws Exception {
-                CreateSnapshotResult result;
+                CreateSnapshotResult result = null;
 
                 try {
-                    result = createSnapshot(request);
+                    result = executeCreateSnapshot(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -626,7 +640,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -644,14 +658,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     public java.util.concurrent.Future<CreateSnapshotFromVolumeRecoveryPointResult> createSnapshotFromVolumeRecoveryPointAsync(
             final CreateSnapshotFromVolumeRecoveryPointRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateSnapshotFromVolumeRecoveryPointRequest, CreateSnapshotFromVolumeRecoveryPointResult> asyncHandler) {
+        final CreateSnapshotFromVolumeRecoveryPointRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateSnapshotFromVolumeRecoveryPointResult>() {
             @Override
             public CreateSnapshotFromVolumeRecoveryPointResult call() throws Exception {
-                CreateSnapshotFromVolumeRecoveryPointResult result;
+                CreateSnapshotFromVolumeRecoveryPointResult result = null;
 
                 try {
-                    result = createSnapshotFromVolumeRecoveryPoint(request);
+                    result = executeCreateSnapshotFromVolumeRecoveryPoint(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -660,7 +675,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -676,14 +691,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<CreateStorediSCSIVolumeResult> createStorediSCSIVolumeAsync(final CreateStorediSCSIVolumeRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateStorediSCSIVolumeRequest, CreateStorediSCSIVolumeResult> asyncHandler) {
+        final CreateStorediSCSIVolumeRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateStorediSCSIVolumeResult>() {
             @Override
             public CreateStorediSCSIVolumeResult call() throws Exception {
-                CreateStorediSCSIVolumeResult result;
+                CreateStorediSCSIVolumeResult result = null;
 
                 try {
-                    result = createStorediSCSIVolume(request);
+                    result = executeCreateStorediSCSIVolume(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -692,7 +708,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -708,14 +724,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<CreateTapeWithBarcodeResult> createTapeWithBarcodeAsync(final CreateTapeWithBarcodeRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateTapeWithBarcodeRequest, CreateTapeWithBarcodeResult> asyncHandler) {
+        final CreateTapeWithBarcodeRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateTapeWithBarcodeResult>() {
             @Override
             public CreateTapeWithBarcodeResult call() throws Exception {
-                CreateTapeWithBarcodeResult result;
+                CreateTapeWithBarcodeResult result = null;
 
                 try {
-                    result = createTapeWithBarcode(request);
+                    result = executeCreateTapeWithBarcode(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -724,7 +741,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -740,14 +757,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<CreateTapesResult> createTapesAsync(final CreateTapesRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateTapesRequest, CreateTapesResult> asyncHandler) {
+        final CreateTapesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateTapesResult>() {
             @Override
             public CreateTapesResult call() throws Exception {
-                CreateTapesResult result;
+                CreateTapesResult result = null;
 
                 try {
-                    result = createTapes(request);
+                    result = executeCreateTapes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -756,7 +774,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -772,14 +790,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<DeleteBandwidthRateLimitResult> deleteBandwidthRateLimitAsync(final DeleteBandwidthRateLimitRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteBandwidthRateLimitRequest, DeleteBandwidthRateLimitResult> asyncHandler) {
+        final DeleteBandwidthRateLimitRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteBandwidthRateLimitResult>() {
             @Override
             public DeleteBandwidthRateLimitResult call() throws Exception {
-                DeleteBandwidthRateLimitResult result;
+                DeleteBandwidthRateLimitResult result = null;
 
                 try {
-                    result = deleteBandwidthRateLimit(request);
+                    result = executeDeleteBandwidthRateLimit(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -788,7 +807,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -804,14 +823,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<DeleteChapCredentialsResult> deleteChapCredentialsAsync(final DeleteChapCredentialsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteChapCredentialsRequest, DeleteChapCredentialsResult> asyncHandler) {
+        final DeleteChapCredentialsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteChapCredentialsResult>() {
             @Override
             public DeleteChapCredentialsResult call() throws Exception {
-                DeleteChapCredentialsResult result;
+                DeleteChapCredentialsResult result = null;
 
                 try {
-                    result = deleteChapCredentials(request);
+                    result = executeDeleteChapCredentials(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -820,7 +840,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -836,14 +856,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<DeleteFileShareResult> deleteFileShareAsync(final DeleteFileShareRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteFileShareRequest, DeleteFileShareResult> asyncHandler) {
+        final DeleteFileShareRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteFileShareResult>() {
             @Override
             public DeleteFileShareResult call() throws Exception {
-                DeleteFileShareResult result;
+                DeleteFileShareResult result = null;
 
                 try {
-                    result = deleteFileShare(request);
+                    result = executeDeleteFileShare(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -852,7 +873,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -868,14 +889,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<DeleteGatewayResult> deleteGatewayAsync(final DeleteGatewayRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteGatewayRequest, DeleteGatewayResult> asyncHandler) {
+        final DeleteGatewayRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteGatewayResult>() {
             @Override
             public DeleteGatewayResult call() throws Exception {
-                DeleteGatewayResult result;
+                DeleteGatewayResult result = null;
 
                 try {
-                    result = deleteGateway(request);
+                    result = executeDeleteGateway(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -884,7 +906,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -900,14 +922,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<DeleteSnapshotScheduleResult> deleteSnapshotScheduleAsync(final DeleteSnapshotScheduleRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteSnapshotScheduleRequest, DeleteSnapshotScheduleResult> asyncHandler) {
+        final DeleteSnapshotScheduleRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteSnapshotScheduleResult>() {
             @Override
             public DeleteSnapshotScheduleResult call() throws Exception {
-                DeleteSnapshotScheduleResult result;
+                DeleteSnapshotScheduleResult result = null;
 
                 try {
-                    result = deleteSnapshotSchedule(request);
+                    result = executeDeleteSnapshotSchedule(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -916,7 +939,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -932,14 +955,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<DeleteTapeResult> deleteTapeAsync(final DeleteTapeRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteTapeRequest, DeleteTapeResult> asyncHandler) {
+        final DeleteTapeRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteTapeResult>() {
             @Override
             public DeleteTapeResult call() throws Exception {
-                DeleteTapeResult result;
+                DeleteTapeResult result = null;
 
                 try {
-                    result = deleteTape(request);
+                    result = executeDeleteTape(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -948,7 +972,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -964,14 +988,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<DeleteTapeArchiveResult> deleteTapeArchiveAsync(final DeleteTapeArchiveRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteTapeArchiveRequest, DeleteTapeArchiveResult> asyncHandler) {
+        final DeleteTapeArchiveRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteTapeArchiveResult>() {
             @Override
             public DeleteTapeArchiveResult call() throws Exception {
-                DeleteTapeArchiveResult result;
+                DeleteTapeArchiveResult result = null;
 
                 try {
-                    result = deleteTapeArchive(request);
+                    result = executeDeleteTapeArchive(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -980,7 +1005,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -996,14 +1021,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<DeleteVolumeResult> deleteVolumeAsync(final DeleteVolumeRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteVolumeRequest, DeleteVolumeResult> asyncHandler) {
+        final DeleteVolumeRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteVolumeResult>() {
             @Override
             public DeleteVolumeResult call() throws Exception {
-                DeleteVolumeResult result;
+                DeleteVolumeResult result = null;
 
                 try {
-                    result = deleteVolume(request);
+                    result = executeDeleteVolume(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1012,7 +1038,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1028,14 +1054,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<DescribeBandwidthRateLimitResult> describeBandwidthRateLimitAsync(final DescribeBandwidthRateLimitRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeBandwidthRateLimitRequest, DescribeBandwidthRateLimitResult> asyncHandler) {
+        final DescribeBandwidthRateLimitRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeBandwidthRateLimitResult>() {
             @Override
             public DescribeBandwidthRateLimitResult call() throws Exception {
-                DescribeBandwidthRateLimitResult result;
+                DescribeBandwidthRateLimitResult result = null;
 
                 try {
-                    result = describeBandwidthRateLimit(request);
+                    result = executeDescribeBandwidthRateLimit(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1044,7 +1071,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1060,14 +1087,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<DescribeCacheResult> describeCacheAsync(final DescribeCacheRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeCacheRequest, DescribeCacheResult> asyncHandler) {
+        final DescribeCacheRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeCacheResult>() {
             @Override
             public DescribeCacheResult call() throws Exception {
-                DescribeCacheResult result;
+                DescribeCacheResult result = null;
 
                 try {
-                    result = describeCache(request);
+                    result = executeDescribeCache(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1076,7 +1104,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1092,14 +1120,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<DescribeCachediSCSIVolumesResult> describeCachediSCSIVolumesAsync(final DescribeCachediSCSIVolumesRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeCachediSCSIVolumesRequest, DescribeCachediSCSIVolumesResult> asyncHandler) {
+        final DescribeCachediSCSIVolumesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeCachediSCSIVolumesResult>() {
             @Override
             public DescribeCachediSCSIVolumesResult call() throws Exception {
-                DescribeCachediSCSIVolumesResult result;
+                DescribeCachediSCSIVolumesResult result = null;
 
                 try {
-                    result = describeCachediSCSIVolumes(request);
+                    result = executeDescribeCachediSCSIVolumes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1108,7 +1137,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1124,14 +1153,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<DescribeChapCredentialsResult> describeChapCredentialsAsync(final DescribeChapCredentialsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeChapCredentialsRequest, DescribeChapCredentialsResult> asyncHandler) {
+        final DescribeChapCredentialsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeChapCredentialsResult>() {
             @Override
             public DescribeChapCredentialsResult call() throws Exception {
-                DescribeChapCredentialsResult result;
+                DescribeChapCredentialsResult result = null;
 
                 try {
-                    result = describeChapCredentials(request);
+                    result = executeDescribeChapCredentials(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1140,7 +1170,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1156,14 +1186,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<DescribeGatewayInformationResult> describeGatewayInformationAsync(final DescribeGatewayInformationRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeGatewayInformationRequest, DescribeGatewayInformationResult> asyncHandler) {
+        final DescribeGatewayInformationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeGatewayInformationResult>() {
             @Override
             public DescribeGatewayInformationResult call() throws Exception {
-                DescribeGatewayInformationResult result;
+                DescribeGatewayInformationResult result = null;
 
                 try {
-                    result = describeGatewayInformation(request);
+                    result = executeDescribeGatewayInformation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1172,7 +1203,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1188,14 +1219,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<DescribeMaintenanceStartTimeResult> describeMaintenanceStartTimeAsync(final DescribeMaintenanceStartTimeRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeMaintenanceStartTimeRequest, DescribeMaintenanceStartTimeResult> asyncHandler) {
+        final DescribeMaintenanceStartTimeRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeMaintenanceStartTimeResult>() {
             @Override
             public DescribeMaintenanceStartTimeResult call() throws Exception {
-                DescribeMaintenanceStartTimeResult result;
+                DescribeMaintenanceStartTimeResult result = null;
 
                 try {
-                    result = describeMaintenanceStartTime(request);
+                    result = executeDescribeMaintenanceStartTime(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1204,7 +1236,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1220,14 +1252,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<DescribeNFSFileSharesResult> describeNFSFileSharesAsync(final DescribeNFSFileSharesRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeNFSFileSharesRequest, DescribeNFSFileSharesResult> asyncHandler) {
+        final DescribeNFSFileSharesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeNFSFileSharesResult>() {
             @Override
             public DescribeNFSFileSharesResult call() throws Exception {
-                DescribeNFSFileSharesResult result;
+                DescribeNFSFileSharesResult result = null;
 
                 try {
-                    result = describeNFSFileShares(request);
+                    result = executeDescribeNFSFileShares(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1236,7 +1269,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1252,14 +1285,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<DescribeSnapshotScheduleResult> describeSnapshotScheduleAsync(final DescribeSnapshotScheduleRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeSnapshotScheduleRequest, DescribeSnapshotScheduleResult> asyncHandler) {
+        final DescribeSnapshotScheduleRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeSnapshotScheduleResult>() {
             @Override
             public DescribeSnapshotScheduleResult call() throws Exception {
-                DescribeSnapshotScheduleResult result;
+                DescribeSnapshotScheduleResult result = null;
 
                 try {
-                    result = describeSnapshotSchedule(request);
+                    result = executeDescribeSnapshotSchedule(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1268,7 +1302,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1284,14 +1318,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<DescribeStorediSCSIVolumesResult> describeStorediSCSIVolumesAsync(final DescribeStorediSCSIVolumesRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeStorediSCSIVolumesRequest, DescribeStorediSCSIVolumesResult> asyncHandler) {
+        final DescribeStorediSCSIVolumesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeStorediSCSIVolumesResult>() {
             @Override
             public DescribeStorediSCSIVolumesResult call() throws Exception {
-                DescribeStorediSCSIVolumesResult result;
+                DescribeStorediSCSIVolumesResult result = null;
 
                 try {
-                    result = describeStorediSCSIVolumes(request);
+                    result = executeDescribeStorediSCSIVolumes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1300,7 +1335,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1316,14 +1351,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<DescribeTapeArchivesResult> describeTapeArchivesAsync(final DescribeTapeArchivesRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeTapeArchivesRequest, DescribeTapeArchivesResult> asyncHandler) {
+        final DescribeTapeArchivesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeTapeArchivesResult>() {
             @Override
             public DescribeTapeArchivesResult call() throws Exception {
-                DescribeTapeArchivesResult result;
+                DescribeTapeArchivesResult result = null;
 
                 try {
-                    result = describeTapeArchives(request);
+                    result = executeDescribeTapeArchives(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1332,7 +1368,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1355,6 +1391,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
      *
      * @see #describeTapeArchivesAsync(DescribeTapeArchivesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeTapeArchivesResult> describeTapeArchivesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeTapeArchivesRequest, DescribeTapeArchivesResult> asyncHandler) {
 
@@ -1370,14 +1407,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<DescribeTapeRecoveryPointsResult> describeTapeRecoveryPointsAsync(final DescribeTapeRecoveryPointsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeTapeRecoveryPointsRequest, DescribeTapeRecoveryPointsResult> asyncHandler) {
+        final DescribeTapeRecoveryPointsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeTapeRecoveryPointsResult>() {
             @Override
             public DescribeTapeRecoveryPointsResult call() throws Exception {
-                DescribeTapeRecoveryPointsResult result;
+                DescribeTapeRecoveryPointsResult result = null;
 
                 try {
-                    result = describeTapeRecoveryPoints(request);
+                    result = executeDescribeTapeRecoveryPoints(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1386,7 +1424,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1402,14 +1440,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<DescribeTapesResult> describeTapesAsync(final DescribeTapesRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeTapesRequest, DescribeTapesResult> asyncHandler) {
+        final DescribeTapesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeTapesResult>() {
             @Override
             public DescribeTapesResult call() throws Exception {
-                DescribeTapesResult result;
+                DescribeTapesResult result = null;
 
                 try {
-                    result = describeTapes(request);
+                    result = executeDescribeTapes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1418,7 +1457,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1434,14 +1473,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<DescribeUploadBufferResult> describeUploadBufferAsync(final DescribeUploadBufferRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeUploadBufferRequest, DescribeUploadBufferResult> asyncHandler) {
+        final DescribeUploadBufferRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeUploadBufferResult>() {
             @Override
             public DescribeUploadBufferResult call() throws Exception {
-                DescribeUploadBufferResult result;
+                DescribeUploadBufferResult result = null;
 
                 try {
-                    result = describeUploadBuffer(request);
+                    result = executeDescribeUploadBuffer(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1450,7 +1490,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1466,14 +1506,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<DescribeVTLDevicesResult> describeVTLDevicesAsync(final DescribeVTLDevicesRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeVTLDevicesRequest, DescribeVTLDevicesResult> asyncHandler) {
+        final DescribeVTLDevicesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeVTLDevicesResult>() {
             @Override
             public DescribeVTLDevicesResult call() throws Exception {
-                DescribeVTLDevicesResult result;
+                DescribeVTLDevicesResult result = null;
 
                 try {
-                    result = describeVTLDevices(request);
+                    result = executeDescribeVTLDevices(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1482,7 +1523,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1498,14 +1539,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<DescribeWorkingStorageResult> describeWorkingStorageAsync(final DescribeWorkingStorageRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeWorkingStorageRequest, DescribeWorkingStorageResult> asyncHandler) {
+        final DescribeWorkingStorageRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeWorkingStorageResult>() {
             @Override
             public DescribeWorkingStorageResult call() throws Exception {
-                DescribeWorkingStorageResult result;
+                DescribeWorkingStorageResult result = null;
 
                 try {
-                    result = describeWorkingStorage(request);
+                    result = executeDescribeWorkingStorage(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1514,7 +1556,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1530,14 +1572,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<DisableGatewayResult> disableGatewayAsync(final DisableGatewayRequest request,
             final com.amazonaws.handlers.AsyncHandler<DisableGatewayRequest, DisableGatewayResult> asyncHandler) {
+        final DisableGatewayRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DisableGatewayResult>() {
             @Override
             public DisableGatewayResult call() throws Exception {
-                DisableGatewayResult result;
+                DisableGatewayResult result = null;
 
                 try {
-                    result = disableGateway(request);
+                    result = executeDisableGateway(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1546,7 +1589,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1562,14 +1605,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<ListFileSharesResult> listFileSharesAsync(final ListFileSharesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListFileSharesRequest, ListFileSharesResult> asyncHandler) {
+        final ListFileSharesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListFileSharesResult>() {
             @Override
             public ListFileSharesResult call() throws Exception {
-                ListFileSharesResult result;
+                ListFileSharesResult result = null;
 
                 try {
-                    result = listFileShares(request);
+                    result = executeListFileShares(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1578,7 +1622,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1594,14 +1638,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<ListGatewaysResult> listGatewaysAsync(final ListGatewaysRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListGatewaysRequest, ListGatewaysResult> asyncHandler) {
+        final ListGatewaysRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListGatewaysResult>() {
             @Override
             public ListGatewaysResult call() throws Exception {
-                ListGatewaysResult result;
+                ListGatewaysResult result = null;
 
                 try {
-                    result = listGateways(request);
+                    result = executeListGateways(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1610,7 +1655,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1633,6 +1678,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
      *
      * @see #listGatewaysAsync(ListGatewaysRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListGatewaysResult> listGatewaysAsync(
             com.amazonaws.handlers.AsyncHandler<ListGatewaysRequest, ListGatewaysResult> asyncHandler) {
 
@@ -1648,14 +1694,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<ListLocalDisksResult> listLocalDisksAsync(final ListLocalDisksRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListLocalDisksRequest, ListLocalDisksResult> asyncHandler) {
+        final ListLocalDisksRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListLocalDisksResult>() {
             @Override
             public ListLocalDisksResult call() throws Exception {
-                ListLocalDisksResult result;
+                ListLocalDisksResult result = null;
 
                 try {
-                    result = listLocalDisks(request);
+                    result = executeListLocalDisks(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1664,7 +1711,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1680,14 +1727,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(final ListTagsForResourceRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+        final ListTagsForResourceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListTagsForResourceResult>() {
             @Override
             public ListTagsForResourceResult call() throws Exception {
-                ListTagsForResourceResult result;
+                ListTagsForResourceResult result = null;
 
                 try {
-                    result = listTagsForResource(request);
+                    result = executeListTagsForResource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1696,7 +1744,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1719,6 +1767,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
      *
      * @see #listTagsForResourceAsync(ListTagsForResourceRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
@@ -1734,14 +1783,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<ListTapesResult> listTapesAsync(final ListTapesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListTapesRequest, ListTapesResult> asyncHandler) {
+        final ListTapesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListTapesResult>() {
             @Override
             public ListTapesResult call() throws Exception {
-                ListTapesResult result;
+                ListTapesResult result = null;
 
                 try {
-                    result = listTapes(request);
+                    result = executeListTapes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1750,7 +1800,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1766,14 +1816,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<ListVolumeInitiatorsResult> listVolumeInitiatorsAsync(final ListVolumeInitiatorsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListVolumeInitiatorsRequest, ListVolumeInitiatorsResult> asyncHandler) {
+        final ListVolumeInitiatorsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListVolumeInitiatorsResult>() {
             @Override
             public ListVolumeInitiatorsResult call() throws Exception {
-                ListVolumeInitiatorsResult result;
+                ListVolumeInitiatorsResult result = null;
 
                 try {
-                    result = listVolumeInitiators(request);
+                    result = executeListVolumeInitiators(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1782,7 +1833,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1798,14 +1849,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<ListVolumeRecoveryPointsResult> listVolumeRecoveryPointsAsync(final ListVolumeRecoveryPointsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListVolumeRecoveryPointsRequest, ListVolumeRecoveryPointsResult> asyncHandler) {
+        final ListVolumeRecoveryPointsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListVolumeRecoveryPointsResult>() {
             @Override
             public ListVolumeRecoveryPointsResult call() throws Exception {
-                ListVolumeRecoveryPointsResult result;
+                ListVolumeRecoveryPointsResult result = null;
 
                 try {
-                    result = listVolumeRecoveryPoints(request);
+                    result = executeListVolumeRecoveryPoints(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1814,7 +1866,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1830,14 +1882,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<ListVolumesResult> listVolumesAsync(final ListVolumesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListVolumesRequest, ListVolumesResult> asyncHandler) {
+        final ListVolumesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListVolumesResult>() {
             @Override
             public ListVolumesResult call() throws Exception {
-                ListVolumesResult result;
+                ListVolumesResult result = null;
 
                 try {
-                    result = listVolumes(request);
+                    result = executeListVolumes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1846,7 +1899,40 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RefreshCacheResult> refreshCacheAsync(RefreshCacheRequest request) {
+
+        return refreshCacheAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RefreshCacheResult> refreshCacheAsync(final RefreshCacheRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RefreshCacheRequest, RefreshCacheResult> asyncHandler) {
+        final RefreshCacheRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RefreshCacheResult>() {
+            @Override
+            public RefreshCacheResult call() throws Exception {
+                RefreshCacheResult result = null;
+
+                try {
+                    result = executeRefreshCache(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1862,14 +1948,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<RemoveTagsFromResourceResult> removeTagsFromResourceAsync(final RemoveTagsFromResourceRequest request,
             final com.amazonaws.handlers.AsyncHandler<RemoveTagsFromResourceRequest, RemoveTagsFromResourceResult> asyncHandler) {
+        final RemoveTagsFromResourceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<RemoveTagsFromResourceResult>() {
             @Override
             public RemoveTagsFromResourceResult call() throws Exception {
-                RemoveTagsFromResourceResult result;
+                RemoveTagsFromResourceResult result = null;
 
                 try {
-                    result = removeTagsFromResource(request);
+                    result = executeRemoveTagsFromResource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1878,7 +1965,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1901,6 +1988,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
      *
      * @see #removeTagsFromResourceAsync(RemoveTagsFromResourceRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<RemoveTagsFromResourceResult> removeTagsFromResourceAsync(
             com.amazonaws.handlers.AsyncHandler<RemoveTagsFromResourceRequest, RemoveTagsFromResourceResult> asyncHandler) {
 
@@ -1916,14 +2004,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<ResetCacheResult> resetCacheAsync(final ResetCacheRequest request,
             final com.amazonaws.handlers.AsyncHandler<ResetCacheRequest, ResetCacheResult> asyncHandler) {
+        final ResetCacheRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ResetCacheResult>() {
             @Override
             public ResetCacheResult call() throws Exception {
-                ResetCacheResult result;
+                ResetCacheResult result = null;
 
                 try {
-                    result = resetCache(request);
+                    result = executeResetCache(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1932,7 +2021,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1948,14 +2037,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<RetrieveTapeArchiveResult> retrieveTapeArchiveAsync(final RetrieveTapeArchiveRequest request,
             final com.amazonaws.handlers.AsyncHandler<RetrieveTapeArchiveRequest, RetrieveTapeArchiveResult> asyncHandler) {
+        final RetrieveTapeArchiveRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<RetrieveTapeArchiveResult>() {
             @Override
             public RetrieveTapeArchiveResult call() throws Exception {
-                RetrieveTapeArchiveResult result;
+                RetrieveTapeArchiveResult result = null;
 
                 try {
-                    result = retrieveTapeArchive(request);
+                    result = executeRetrieveTapeArchive(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1964,7 +2054,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1980,14 +2070,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<RetrieveTapeRecoveryPointResult> retrieveTapeRecoveryPointAsync(final RetrieveTapeRecoveryPointRequest request,
             final com.amazonaws.handlers.AsyncHandler<RetrieveTapeRecoveryPointRequest, RetrieveTapeRecoveryPointResult> asyncHandler) {
+        final RetrieveTapeRecoveryPointRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<RetrieveTapeRecoveryPointResult>() {
             @Override
             public RetrieveTapeRecoveryPointResult call() throws Exception {
-                RetrieveTapeRecoveryPointResult result;
+                RetrieveTapeRecoveryPointResult result = null;
 
                 try {
-                    result = retrieveTapeRecoveryPoint(request);
+                    result = executeRetrieveTapeRecoveryPoint(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1996,7 +2087,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2012,14 +2103,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<SetLocalConsolePasswordResult> setLocalConsolePasswordAsync(final SetLocalConsolePasswordRequest request,
             final com.amazonaws.handlers.AsyncHandler<SetLocalConsolePasswordRequest, SetLocalConsolePasswordResult> asyncHandler) {
+        final SetLocalConsolePasswordRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<SetLocalConsolePasswordResult>() {
             @Override
             public SetLocalConsolePasswordResult call() throws Exception {
-                SetLocalConsolePasswordResult result;
+                SetLocalConsolePasswordResult result = null;
 
                 try {
-                    result = setLocalConsolePassword(request);
+                    result = executeSetLocalConsolePassword(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2028,7 +2120,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2044,14 +2136,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<ShutdownGatewayResult> shutdownGatewayAsync(final ShutdownGatewayRequest request,
             final com.amazonaws.handlers.AsyncHandler<ShutdownGatewayRequest, ShutdownGatewayResult> asyncHandler) {
+        final ShutdownGatewayRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ShutdownGatewayResult>() {
             @Override
             public ShutdownGatewayResult call() throws Exception {
-                ShutdownGatewayResult result;
+                ShutdownGatewayResult result = null;
 
                 try {
-                    result = shutdownGateway(request);
+                    result = executeShutdownGateway(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2060,7 +2153,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2076,14 +2169,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<StartGatewayResult> startGatewayAsync(final StartGatewayRequest request,
             final com.amazonaws.handlers.AsyncHandler<StartGatewayRequest, StartGatewayResult> asyncHandler) {
+        final StartGatewayRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<StartGatewayResult>() {
             @Override
             public StartGatewayResult call() throws Exception {
-                StartGatewayResult result;
+                StartGatewayResult result = null;
 
                 try {
-                    result = startGateway(request);
+                    result = executeStartGateway(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2092,7 +2186,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2108,14 +2202,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<UpdateBandwidthRateLimitResult> updateBandwidthRateLimitAsync(final UpdateBandwidthRateLimitRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateBandwidthRateLimitRequest, UpdateBandwidthRateLimitResult> asyncHandler) {
+        final UpdateBandwidthRateLimitRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateBandwidthRateLimitResult>() {
             @Override
             public UpdateBandwidthRateLimitResult call() throws Exception {
-                UpdateBandwidthRateLimitResult result;
+                UpdateBandwidthRateLimitResult result = null;
 
                 try {
-                    result = updateBandwidthRateLimit(request);
+                    result = executeUpdateBandwidthRateLimit(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2124,7 +2219,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2140,14 +2235,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<UpdateChapCredentialsResult> updateChapCredentialsAsync(final UpdateChapCredentialsRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateChapCredentialsRequest, UpdateChapCredentialsResult> asyncHandler) {
+        final UpdateChapCredentialsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateChapCredentialsResult>() {
             @Override
             public UpdateChapCredentialsResult call() throws Exception {
-                UpdateChapCredentialsResult result;
+                UpdateChapCredentialsResult result = null;
 
                 try {
-                    result = updateChapCredentials(request);
+                    result = executeUpdateChapCredentials(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2156,7 +2252,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2172,14 +2268,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<UpdateGatewayInformationResult> updateGatewayInformationAsync(final UpdateGatewayInformationRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateGatewayInformationRequest, UpdateGatewayInformationResult> asyncHandler) {
+        final UpdateGatewayInformationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateGatewayInformationResult>() {
             @Override
             public UpdateGatewayInformationResult call() throws Exception {
-                UpdateGatewayInformationResult result;
+                UpdateGatewayInformationResult result = null;
 
                 try {
-                    result = updateGatewayInformation(request);
+                    result = executeUpdateGatewayInformation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2188,7 +2285,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2204,14 +2301,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<UpdateGatewaySoftwareNowResult> updateGatewaySoftwareNowAsync(final UpdateGatewaySoftwareNowRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateGatewaySoftwareNowRequest, UpdateGatewaySoftwareNowResult> asyncHandler) {
+        final UpdateGatewaySoftwareNowRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateGatewaySoftwareNowResult>() {
             @Override
             public UpdateGatewaySoftwareNowResult call() throws Exception {
-                UpdateGatewaySoftwareNowResult result;
+                UpdateGatewaySoftwareNowResult result = null;
 
                 try {
-                    result = updateGatewaySoftwareNow(request);
+                    result = executeUpdateGatewaySoftwareNow(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2220,7 +2318,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2236,14 +2334,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<UpdateMaintenanceStartTimeResult> updateMaintenanceStartTimeAsync(final UpdateMaintenanceStartTimeRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateMaintenanceStartTimeRequest, UpdateMaintenanceStartTimeResult> asyncHandler) {
+        final UpdateMaintenanceStartTimeRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateMaintenanceStartTimeResult>() {
             @Override
             public UpdateMaintenanceStartTimeResult call() throws Exception {
-                UpdateMaintenanceStartTimeResult result;
+                UpdateMaintenanceStartTimeResult result = null;
 
                 try {
-                    result = updateMaintenanceStartTime(request);
+                    result = executeUpdateMaintenanceStartTime(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2252,7 +2351,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2268,14 +2367,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<UpdateNFSFileShareResult> updateNFSFileShareAsync(final UpdateNFSFileShareRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateNFSFileShareRequest, UpdateNFSFileShareResult> asyncHandler) {
+        final UpdateNFSFileShareRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateNFSFileShareResult>() {
             @Override
             public UpdateNFSFileShareResult call() throws Exception {
-                UpdateNFSFileShareResult result;
+                UpdateNFSFileShareResult result = null;
 
                 try {
-                    result = updateNFSFileShare(request);
+                    result = executeUpdateNFSFileShare(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2284,7 +2384,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2300,14 +2400,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<UpdateSnapshotScheduleResult> updateSnapshotScheduleAsync(final UpdateSnapshotScheduleRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateSnapshotScheduleRequest, UpdateSnapshotScheduleResult> asyncHandler) {
+        final UpdateSnapshotScheduleRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateSnapshotScheduleResult>() {
             @Override
             public UpdateSnapshotScheduleResult call() throws Exception {
-                UpdateSnapshotScheduleResult result;
+                UpdateSnapshotScheduleResult result = null;
 
                 try {
-                    result = updateSnapshotSchedule(request);
+                    result = executeUpdateSnapshotSchedule(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2316,7 +2417,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2332,14 +2433,15 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     @Override
     public java.util.concurrent.Future<UpdateVTLDeviceTypeResult> updateVTLDeviceTypeAsync(final UpdateVTLDeviceTypeRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateVTLDeviceTypeRequest, UpdateVTLDeviceTypeResult> asyncHandler) {
+        final UpdateVTLDeviceTypeRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateVTLDeviceTypeResult>() {
             @Override
             public UpdateVTLDeviceTypeResult call() throws Exception {
-                UpdateVTLDeviceTypeResult result;
+                UpdateVTLDeviceTypeResult result = null;
 
                 try {
-                    result = updateVTLDeviceType(request);
+                    result = executeUpdateVTLDeviceType(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2348,7 +2450,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

@@ -14,6 +14,8 @@ package com.amazonaws.services.gamelift.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -29,16 +31,16 @@ import javax.annotation.Generated;
  * same server executable but with different launch parameters.
  * </p>
  * <p>
- * A GameLift instance is limited to 50 processes running simultaneously. To calculate the total number of processes
- * specified in a runtime configuration, add the values of the <code>ConcurrentExecutions</code> parameter for each
- * <code> <a>ServerProcess</a> </code> object in the runtime configuration.
+ * A Amazon GameLift instance is limited to 50 processes running simultaneously. To calculate the total number of
+ * processes specified in a runtime configuration, add the values of the <code>ConcurrentExecutions</code> parameter for
+ * each <code> <a>ServerProcess</a> </code> object in the runtime configuration.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RuntimeConfiguration" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RuntimeConfiguration implements Serializable, Cloneable {
+public class RuntimeConfiguration implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -171,5 +173,11 @@ public class RuntimeConfiguration implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.gamelift.model.transform.RuntimeConfigurationMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

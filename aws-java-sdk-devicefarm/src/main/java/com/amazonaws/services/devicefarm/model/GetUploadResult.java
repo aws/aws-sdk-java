@@ -26,10 +26,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetUploadResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * An app or a set of one or more tests to upload or that have been uploaded.
+     * </p>
+     */
     private Upload upload;
 
     /**
+     * <p>
+     * An app or a set of one or more tests to upload or that have been uploaded.
+     * </p>
+     * 
      * @param upload
+     *        An app or a set of one or more tests to upload or that have been uploaded.
      */
 
     public void setUpload(Upload upload) {
@@ -37,7 +47,11 @@ public class GetUploadResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
-     * @return
+     * <p>
+     * An app or a set of one or more tests to upload or that have been uploaded.
+     * </p>
+     * 
+     * @return An app or a set of one or more tests to upload or that have been uploaded.
      */
 
     public Upload getUpload() {
@@ -45,7 +59,12 @@ public class GetUploadResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
+     * <p>
+     * An app or a set of one or more tests to upload or that have been uploaded.
+     * </p>
+     * 
      * @param upload
+     *        An app or a set of one or more tests to upload or that have been uploaded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,4 +124,5 @@ public class GetUploadResult extends com.amazonaws.AmazonWebServiceResult<com.am
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

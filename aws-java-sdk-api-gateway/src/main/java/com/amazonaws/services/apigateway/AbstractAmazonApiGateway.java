@@ -78,6 +78,11 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
     }
 
     @Override
+    public CreateRequestValidatorResult createRequestValidator(CreateRequestValidatorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateResourceResult createResource(CreateResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -164,6 +169,11 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
 
     @Override
     public DeleteModelResult deleteModel(DeleteModelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteRequestValidatorResult deleteRequestValidator(DeleteRequestValidatorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -329,6 +339,16 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
 
     @Override
     public GetModelsResult getModels(GetModelsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetRequestValidatorResult getRequestValidator(GetRequestValidatorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetRequestValidatorsResult getRequestValidators(GetRequestValidatorsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -519,6 +539,11 @@ public class AbstractAmazonApiGateway implements AmazonApiGateway {
 
     @Override
     public UpdateModelResult updateModel(UpdateModelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateRequestValidatorResult updateRequestValidator(UpdateRequestValidatorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

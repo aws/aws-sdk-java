@@ -12,52 +12,44 @@
  */
 package com.amazonaws.services.elastictranscoder.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.elastictranscoder.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ReadPipelineRequest Marshaller
+ * ReadPipelineRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ReadPipelineRequestMarshaller implements Marshaller<Request<ReadPipelineRequest>, ReadPipelineRequest> {
+@SdkInternalApi
+public class ReadPipelineRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("Id").build();
 
-    public ReadPipelineRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ReadPipelineRequestMarshaller instance = new ReadPipelineRequestMarshaller();
+
+    public static ReadPipelineRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ReadPipelineRequest> marshall(ReadPipelineRequest readPipelineRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ReadPipelineRequest readPipelineRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (readPipelineRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ReadPipelineRequest> request = new DefaultRequest<ReadPipelineRequest>(readPipelineRequest, "AmazonElasticTranscoder");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/2012-09-25/pipelines/{Id}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", readPipelineRequest.getId());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(readPipelineRequest.getId(), ID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

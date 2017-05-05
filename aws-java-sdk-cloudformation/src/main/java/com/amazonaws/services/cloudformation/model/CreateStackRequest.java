@@ -96,7 +96,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The Simple Notification Service (SNS) topic ARNs to publish stack related events. You can find your SNS topic
-     * ARNs using the <a href="https://console.aws.amazon.com/sns">SNS console</a> or your Command Line Interface (CLI).
+     * ARNs using the SNS console or your Command Line Interface (CLI).
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> notificationARNs;
@@ -204,6 +204,14 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * A unique identifier for this <code>CreateStack</code> request. Specify this token if you plan to retry requests
+     * so that AWS CloudFormation knows that you're not attempting to create a stack with the same name. You might retry
+     * <code>CreateStack</code> requests to ensure that AWS CloudFormation successfully received them.
+     * </p>
+     */
+    private String clientRequestToken;
 
     /**
      * <p>
@@ -665,12 +673,11 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The Simple Notification Service (SNS) topic ARNs to publish stack related events. You can find your SNS topic
-     * ARNs using the <a href="https://console.aws.amazon.com/sns">SNS console</a> or your Command Line Interface (CLI).
+     * ARNs using the SNS console or your Command Line Interface (CLI).
      * </p>
      * 
      * @return The Simple Notification Service (SNS) topic ARNs to publish stack related events. You can find your SNS
-     *         topic ARNs using the <a href="https://console.aws.amazon.com/sns">SNS console</a> or your Command Line
-     *         Interface (CLI).
+     *         topic ARNs using the SNS console or your Command Line Interface (CLI).
      */
 
     public java.util.List<String> getNotificationARNs() {
@@ -683,13 +690,12 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The Simple Notification Service (SNS) topic ARNs to publish stack related events. You can find your SNS topic
-     * ARNs using the <a href="https://console.aws.amazon.com/sns">SNS console</a> or your Command Line Interface (CLI).
+     * ARNs using the SNS console or your Command Line Interface (CLI).
      * </p>
      * 
      * @param notificationARNs
      *        The Simple Notification Service (SNS) topic ARNs to publish stack related events. You can find your SNS
-     *        topic ARNs using the <a href="https://console.aws.amazon.com/sns">SNS console</a> or your Command Line
-     *        Interface (CLI).
+     *        topic ARNs using the SNS console or your Command Line Interface (CLI).
      */
 
     public void setNotificationARNs(java.util.Collection<String> notificationARNs) {
@@ -704,7 +710,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The Simple Notification Service (SNS) topic ARNs to publish stack related events. You can find your SNS topic
-     * ARNs using the <a href="https://console.aws.amazon.com/sns">SNS console</a> or your Command Line Interface (CLI).
+     * ARNs using the SNS console or your Command Line Interface (CLI).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -714,8 +720,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @param notificationARNs
      *        The Simple Notification Service (SNS) topic ARNs to publish stack related events. You can find your SNS
-     *        topic ARNs using the <a href="https://console.aws.amazon.com/sns">SNS console</a> or your Command Line
-     *        Interface (CLI).
+     *        topic ARNs using the SNS console or your Command Line Interface (CLI).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -732,13 +737,12 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The Simple Notification Service (SNS) topic ARNs to publish stack related events. You can find your SNS topic
-     * ARNs using the <a href="https://console.aws.amazon.com/sns">SNS console</a> or your Command Line Interface (CLI).
+     * ARNs using the SNS console or your Command Line Interface (CLI).
      * </p>
      * 
      * @param notificationARNs
      *        The Simple Notification Service (SNS) topic ARNs to publish stack related events. You can find your SNS
-     *        topic ARNs using the <a href="https://console.aws.amazon.com/sns">SNS console</a> or your Command Line
-     *        Interface (CLI).
+     *        topic ARNs using the SNS console or your Command Line Interface (CLI).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1729,6 +1733,61 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * A unique identifier for this <code>CreateStack</code> request. Specify this token if you plan to retry requests
+     * so that AWS CloudFormation knows that you're not attempting to create a stack with the same name. You might retry
+     * <code>CreateStack</code> requests to ensure that AWS CloudFormation successfully received them.
+     * </p>
+     * 
+     * @param clientRequestToken
+     *        A unique identifier for this <code>CreateStack</code> request. Specify this token if you plan to retry
+     *        requests so that AWS CloudFormation knows that you're not attempting to create a stack with the same name.
+     *        You might retry <code>CreateStack</code> requests to ensure that AWS CloudFormation successfully received
+     *        them.
+     */
+
+    public void setClientRequestToken(String clientRequestToken) {
+        this.clientRequestToken = clientRequestToken;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for this <code>CreateStack</code> request. Specify this token if you plan to retry requests
+     * so that AWS CloudFormation knows that you're not attempting to create a stack with the same name. You might retry
+     * <code>CreateStack</code> requests to ensure that AWS CloudFormation successfully received them.
+     * </p>
+     * 
+     * @return A unique identifier for this <code>CreateStack</code> request. Specify this token if you plan to retry
+     *         requests so that AWS CloudFormation knows that you're not attempting to create a stack with the same
+     *         name. You might retry <code>CreateStack</code> requests to ensure that AWS CloudFormation successfully
+     *         received them.
+     */
+
+    public String getClientRequestToken() {
+        return this.clientRequestToken;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for this <code>CreateStack</code> request. Specify this token if you plan to retry requests
+     * so that AWS CloudFormation knows that you're not attempting to create a stack with the same name. You might retry
+     * <code>CreateStack</code> requests to ensure that AWS CloudFormation successfully received them.
+     * </p>
+     * 
+     * @param clientRequestToken
+     *        A unique identifier for this <code>CreateStack</code> request. Specify this token if you plan to retry
+     *        requests so that AWS CloudFormation knows that you're not attempting to create a stack with the same name.
+     *        You might retry <code>CreateStack</code> requests to ensure that AWS CloudFormation successfully received
+     *        them.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStackRequest withClientRequestToken(String clientRequestToken) {
+        setClientRequestToken(clientRequestToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1766,7 +1825,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getStackPolicyURL() != null)
             sb.append("StackPolicyURL: ").append(getStackPolicyURL()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getClientRequestToken() != null)
+            sb.append("ClientRequestToken: ").append(getClientRequestToken());
         sb.append("}");
         return sb.toString();
     }
@@ -1837,6 +1898,10 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getClientRequestToken() == null ^ this.getClientRequestToken() == null)
+            return false;
+        if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
+            return false;
         return true;
     }
 
@@ -1859,6 +1924,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getStackPolicyBody() == null) ? 0 : getStackPolicyBody().hashCode());
         hashCode = prime * hashCode + ((getStackPolicyURL() == null) ? 0 : getStackPolicyURL().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         return hashCode;
     }
 

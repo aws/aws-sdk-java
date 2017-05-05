@@ -12,69 +12,47 @@
  */
 package com.amazonaws.services.kinesis.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.kinesis.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * IncreaseStreamRetentionPeriodRequest Marshaller
+ * IncreaseStreamRetentionPeriodRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class IncreaseStreamRetentionPeriodRequestMarshaller implements
-        Marshaller<Request<IncreaseStreamRetentionPeriodRequest>, IncreaseStreamRetentionPeriodRequest> {
+@SdkInternalApi
+public class IncreaseStreamRetentionPeriodRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> STREAMNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StreamName").build();
+    private static final MarshallingInfo<Integer> RETENTIONPERIODHOURS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RetentionPeriodHours").build();
 
-    public IncreaseStreamRetentionPeriodRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final IncreaseStreamRetentionPeriodRequestMarshaller instance = new IncreaseStreamRetentionPeriodRequestMarshaller();
+
+    public static IncreaseStreamRetentionPeriodRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<IncreaseStreamRetentionPeriodRequest> marshall(IncreaseStreamRetentionPeriodRequest increaseStreamRetentionPeriodRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(IncreaseStreamRetentionPeriodRequest increaseStreamRetentionPeriodRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (increaseStreamRetentionPeriodRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<IncreaseStreamRetentionPeriodRequest> request = new DefaultRequest<IncreaseStreamRetentionPeriodRequest>(increaseStreamRetentionPeriodRequest,
-                "AmazonKinesis");
-        request.addHeader("X-Amz-Target", "Kinesis_20131202.IncreaseStreamRetentionPeriod");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (increaseStreamRetentionPeriodRequest.getStreamName() != null) {
-                jsonGenerator.writeFieldName("StreamName").writeValue(increaseStreamRetentionPeriodRequest.getStreamName());
-            }
-            if (increaseStreamRetentionPeriodRequest.getRetentionPeriodHours() != null) {
-                jsonGenerator.writeFieldName("RetentionPeriodHours").writeValue(increaseStreamRetentionPeriodRequest.getRetentionPeriodHours());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(increaseStreamRetentionPeriodRequest.getStreamName(), STREAMNAME_BINDING);
+            protocolMarshaller.marshall(increaseStreamRetentionPeriodRequest.getRetentionPeriodHours(), RETENTIONPERIODHOURS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

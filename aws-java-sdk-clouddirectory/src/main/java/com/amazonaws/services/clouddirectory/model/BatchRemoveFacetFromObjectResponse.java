@@ -14,6 +14,8 @@ package com.amazonaws.services.clouddirectory.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class BatchRemoveFacetFromObjectResponse implements Serializable, Cloneable {
+public class BatchRemoveFacetFromObjectResponse implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Returns a string representation of this object; useful for testing and debugging.
@@ -69,5 +71,11 @@ public class BatchRemoveFacetFromObjectResponse implements Serializable, Cloneab
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.clouddirectory.model.transform.BatchRemoveFacetFromObjectResponseMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

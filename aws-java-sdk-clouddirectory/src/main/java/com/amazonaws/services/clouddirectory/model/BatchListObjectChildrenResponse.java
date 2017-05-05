@@ -14,37 +14,42 @@ package com.amazonaws.services.clouddirectory.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents the output of a ListObjectChildren response operation.
+ * Represents the output of a <code>ListObjectChildren</code> response operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchListObjectChildrenResponse"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class BatchListObjectChildrenResponse implements Serializable, Cloneable {
+public class BatchListObjectChildrenResponse implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Children structure, which is a map with key as the LinkName and ObjectIdentifier as the value.
+     * Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the
+     * value.
      * </p>
      */
     private java.util.Map<String, String> children;
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Children structure, which is a map with key as the LinkName and ObjectIdentifier as the value.
+     * Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the
+     * value.
      * </p>
      * 
-     * @return Children structure, which is a map with key as the LinkName and ObjectIdentifier as the value.
+     * @return Children structure, which is a map with key as the <code>LinkName</code> and
+     *         <code>ObjectIdentifier</code> as the value.
      */
 
     public java.util.Map<String, String> getChildren() {
@@ -53,11 +58,13 @@ public class BatchListObjectChildrenResponse implements Serializable, Cloneable 
 
     /**
      * <p>
-     * Children structure, which is a map with key as the LinkName and ObjectIdentifier as the value.
+     * Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the
+     * value.
      * </p>
      * 
      * @param children
-     *        Children structure, which is a map with key as the LinkName and ObjectIdentifier as the value.
+     *        Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code>
+     *        as the value.
      */
 
     public void setChildren(java.util.Map<String, String> children) {
@@ -66,11 +73,13 @@ public class BatchListObjectChildrenResponse implements Serializable, Cloneable 
 
     /**
      * <p>
-     * Children structure, which is a map with key as the LinkName and ObjectIdentifier as the value.
+     * Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the
+     * value.
      * </p>
      * 
      * @param children
-     *        Children structure, which is a map with key as the LinkName and ObjectIdentifier as the value.
+     *        Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code>
+     *        as the value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,11 +111,11 @@ public class BatchListObjectChildrenResponse implements Serializable, Cloneable 
 
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      * 
      * @param nextToken
-     *        Token used for pagination.
+     *        The pagination token.
      */
 
     public void setNextToken(String nextToken) {
@@ -115,10 +124,10 @@ public class BatchListObjectChildrenResponse implements Serializable, Cloneable 
 
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      * 
-     * @return Token used for pagination.
+     * @return The pagination token.
      */
 
     public String getNextToken() {
@@ -127,11 +136,11 @@ public class BatchListObjectChildrenResponse implements Serializable, Cloneable 
 
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      * 
      * @param nextToken
-     *        Token used for pagination.
+     *        The pagination token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -197,5 +206,11 @@ public class BatchListObjectChildrenResponse implements Serializable, Cloneable 
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.clouddirectory.model.transform.BatchListObjectChildrenResponseMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

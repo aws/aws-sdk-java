@@ -12,71 +12,50 @@
  */
 package com.amazonaws.services.storagegateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.storagegateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeTapeRecoveryPointsRequest Marshaller
+ * DescribeTapeRecoveryPointsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeTapeRecoveryPointsRequestMarshaller implements Marshaller<Request<DescribeTapeRecoveryPointsRequest>, DescribeTapeRecoveryPointsRequest> {
+@SdkInternalApi
+public class DescribeTapeRecoveryPointsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> GATEWAYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GatewayARN").build();
+    private static final MarshallingInfo<String> MARKER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Marker").build();
+    private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Limit").build();
 
-    public DescribeTapeRecoveryPointsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeTapeRecoveryPointsRequestMarshaller instance = new DescribeTapeRecoveryPointsRequestMarshaller();
+
+    public static DescribeTapeRecoveryPointsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeTapeRecoveryPointsRequest> marshall(DescribeTapeRecoveryPointsRequest describeTapeRecoveryPointsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeTapeRecoveryPointsRequest describeTapeRecoveryPointsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeTapeRecoveryPointsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeTapeRecoveryPointsRequest> request = new DefaultRequest<DescribeTapeRecoveryPointsRequest>(describeTapeRecoveryPointsRequest,
-                "AWSStorageGateway");
-        request.addHeader("X-Amz-Target", "StorageGateway_20130630.DescribeTapeRecoveryPoints");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeTapeRecoveryPointsRequest.getGatewayARN() != null) {
-                jsonGenerator.writeFieldName("GatewayARN").writeValue(describeTapeRecoveryPointsRequest.getGatewayARN());
-            }
-            if (describeTapeRecoveryPointsRequest.getMarker() != null) {
-                jsonGenerator.writeFieldName("Marker").writeValue(describeTapeRecoveryPointsRequest.getMarker());
-            }
-            if (describeTapeRecoveryPointsRequest.getLimit() != null) {
-                jsonGenerator.writeFieldName("Limit").writeValue(describeTapeRecoveryPointsRequest.getLimit());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeTapeRecoveryPointsRequest.getGatewayARN(), GATEWAYARN_BINDING);
+            protocolMarshaller.marshall(describeTapeRecoveryPointsRequest.getMarker(), MARKER_BINDING);
+            protocolMarshaller.marshall(describeTapeRecoveryPointsRequest.getLimit(), LIMIT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

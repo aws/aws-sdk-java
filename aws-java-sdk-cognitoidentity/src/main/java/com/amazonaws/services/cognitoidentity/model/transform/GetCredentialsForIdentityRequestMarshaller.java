@@ -12,85 +12,52 @@
  */
 package com.amazonaws.services.cognitoidentity.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.Map;
 
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cognitoidentity.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetCredentialsForIdentityRequest Marshaller
+ * GetCredentialsForIdentityRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetCredentialsForIdentityRequestMarshaller implements Marshaller<Request<GetCredentialsForIdentityRequest>, GetCredentialsForIdentityRequest> {
+@SdkInternalApi
+public class GetCredentialsForIdentityRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> IDENTITYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentityId").build();
+    private static final MarshallingInfo<Map> LOGINS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Logins").build();
+    private static final MarshallingInfo<String> CUSTOMROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomRoleArn").build();
 
-    public GetCredentialsForIdentityRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetCredentialsForIdentityRequestMarshaller instance = new GetCredentialsForIdentityRequestMarshaller();
+
+    public static GetCredentialsForIdentityRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetCredentialsForIdentityRequest> marshall(GetCredentialsForIdentityRequest getCredentialsForIdentityRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetCredentialsForIdentityRequest getCredentialsForIdentityRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getCredentialsForIdentityRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetCredentialsForIdentityRequest> request = new DefaultRequest<GetCredentialsForIdentityRequest>(getCredentialsForIdentityRequest,
-                "AmazonCognitoIdentity");
-        request.addHeader("X-Amz-Target", "AWSCognitoIdentityService.GetCredentialsForIdentity");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (getCredentialsForIdentityRequest.getIdentityId() != null) {
-                jsonGenerator.writeFieldName("IdentityId").writeValue(getCredentialsForIdentityRequest.getIdentityId());
-            }
-
-            java.util.Map<String, String> loginsMap = getCredentialsForIdentityRequest.getLogins();
-            if (loginsMap != null) {
-                jsonGenerator.writeFieldName("Logins");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, String> loginsMapValue : loginsMap.entrySet()) {
-                    if (loginsMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(loginsMapValue.getKey());
-
-                        jsonGenerator.writeValue(loginsMapValue.getValue());
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-            if (getCredentialsForIdentityRequest.getCustomRoleArn() != null) {
-                jsonGenerator.writeFieldName("CustomRoleArn").writeValue(getCredentialsForIdentityRequest.getCustomRoleArn());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getCredentialsForIdentityRequest.getIdentityId(), IDENTITYID_BINDING);
+            protocolMarshaller.marshall(getCredentialsForIdentityRequest.getLogins(), LOGINS_BINDING);
+            protocolMarshaller.marshall(getCredentialsForIdentityRequest.getCustomRoleArn(), CUSTOMROLEARN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

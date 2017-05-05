@@ -86,6 +86,12 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String displayName;
+    /**
+     * <p>
+     * Enable/Disable default Internet access from fleet.
+     * </p>
+     */
+    private Boolean enableDefaultInternetAccess;
 
     /**
      * <p>
@@ -509,6 +515,58 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * Enable/Disable default Internet access from fleet.
+     * </p>
+     * 
+     * @param enableDefaultInternetAccess
+     *        Enable/Disable default Internet access from fleet.
+     */
+
+    public void setEnableDefaultInternetAccess(Boolean enableDefaultInternetAccess) {
+        this.enableDefaultInternetAccess = enableDefaultInternetAccess;
+    }
+
+    /**
+     * <p>
+     * Enable/Disable default Internet access from fleet.
+     * </p>
+     * 
+     * @return Enable/Disable default Internet access from fleet.
+     */
+
+    public Boolean getEnableDefaultInternetAccess() {
+        return this.enableDefaultInternetAccess;
+    }
+
+    /**
+     * <p>
+     * Enable/Disable default Internet access from fleet.
+     * </p>
+     * 
+     * @param enableDefaultInternetAccess
+     *        Enable/Disable default Internet access from fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFleetRequest withEnableDefaultInternetAccess(Boolean enableDefaultInternetAccess) {
+        setEnableDefaultInternetAccess(enableDefaultInternetAccess);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enable/Disable default Internet access from fleet.
+     * </p>
+     * 
+     * @return Enable/Disable default Internet access from fleet.
+     */
+
+    public Boolean isEnableDefaultInternetAccess() {
+        return this.enableDefaultInternetAccess;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -538,7 +596,9 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getDisplayName() != null)
-            sb.append("DisplayName: ").append(getDisplayName());
+            sb.append("DisplayName: ").append(getDisplayName()).append(",");
+        if (getEnableDefaultInternetAccess() != null)
+            sb.append("EnableDefaultInternetAccess: ").append(getEnableDefaultInternetAccess());
         sb.append("}");
         return sb.toString();
     }
@@ -593,6 +653,10 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
             return false;
+        if (other.getEnableDefaultInternetAccess() == null ^ this.getEnableDefaultInternetAccess() == null)
+            return false;
+        if (other.getEnableDefaultInternetAccess() != null && other.getEnableDefaultInternetAccess().equals(this.getEnableDefaultInternetAccess()) == false)
+            return false;
         return true;
     }
 
@@ -611,6 +675,7 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getDeleteVpcConfig() == null) ? 0 : getDeleteVpcConfig().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
+        hashCode = prime * hashCode + ((getEnableDefaultInternetAccess() == null) ? 0 : getEnableDefaultInternetAccess().hashCode());
         return hashCode;
     }
 

@@ -337,6 +337,36 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * </p>
      */
     private String domainIAMRoleName;
+    /**
+     * <p>
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts; otherwise
+     * false.
+     * </p>
+     * <p>
+     * You can enable IAM database authentication for the following database engines
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For MySQL 5.6, minor version 5.6.34 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For MySQL 5.7, minor version 5.7.16 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aurora 5.6 or higher.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     */
+    private Boolean enableIAMDatabaseAuthentication;
 
     /**
      * Default constructor for RestoreDBInstanceToPointInTimeRequest object. Callers should use the setter or fluent
@@ -2484,6 +2514,246 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
     }
 
     /**
+     * <p>
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts; otherwise
+     * false.
+     * </p>
+     * <p>
+     * You can enable IAM database authentication for the following database engines
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For MySQL 5.6, minor version 5.6.34 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For MySQL 5.7, minor version 5.7.16 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aurora 5.6 or higher.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @param enableIAMDatabaseAuthentication
+     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts;
+     *        otherwise false.</p>
+     *        <p>
+     *        You can enable IAM database authentication for the following database engines
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For MySQL 5.6, minor version 5.6.34 or higher
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For MySQL 5.7, minor version 5.7.16 or higher
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Aurora 5.6 or higher.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Default: <code>false</code>
+     */
+
+    public void setEnableIAMDatabaseAuthentication(Boolean enableIAMDatabaseAuthentication) {
+        this.enableIAMDatabaseAuthentication = enableIAMDatabaseAuthentication;
+    }
+
+    /**
+     * <p>
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts; otherwise
+     * false.
+     * </p>
+     * <p>
+     * You can enable IAM database authentication for the following database engines
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For MySQL 5.6, minor version 5.6.34 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For MySQL 5.7, minor version 5.7.16 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aurora 5.6 or higher.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts;
+     *         otherwise false.</p>
+     *         <p>
+     *         You can enable IAM database authentication for the following database engines
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For MySQL 5.6, minor version 5.6.34 or higher
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For MySQL 5.7, minor version 5.7.16 or higher
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Aurora 5.6 or higher.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Default: <code>false</code>
+     */
+
+    public Boolean getEnableIAMDatabaseAuthentication() {
+        return this.enableIAMDatabaseAuthentication;
+    }
+
+    /**
+     * <p>
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts; otherwise
+     * false.
+     * </p>
+     * <p>
+     * You can enable IAM database authentication for the following database engines
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For MySQL 5.6, minor version 5.6.34 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For MySQL 5.7, minor version 5.7.16 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aurora 5.6 or higher.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @param enableIAMDatabaseAuthentication
+     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts;
+     *        otherwise false.</p>
+     *        <p>
+     *        You can enable IAM database authentication for the following database engines
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For MySQL 5.6, minor version 5.6.34 or higher
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For MySQL 5.7, minor version 5.7.16 or higher
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Aurora 5.6 or higher.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Default: <code>false</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBInstanceToPointInTimeRequest withEnableIAMDatabaseAuthentication(Boolean enableIAMDatabaseAuthentication) {
+        setEnableIAMDatabaseAuthentication(enableIAMDatabaseAuthentication);
+        return this;
+    }
+
+    /**
+     * <p>
+     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts; otherwise
+     * false.
+     * </p>
+     * <p>
+     * You can enable IAM database authentication for the following database engines
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For MySQL 5.6, minor version 5.6.34 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For MySQL 5.7, minor version 5.7.16 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aurora 5.6 or higher.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts;
+     *         otherwise false.</p>
+     *         <p>
+     *         You can enable IAM database authentication for the following database engines
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For MySQL 5.6, minor version 5.6.34 or higher
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For MySQL 5.7, minor version 5.7.16 or higher
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Aurora 5.6 or higher.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Default: <code>false</code>
+     */
+
+    public Boolean isEnableIAMDatabaseAuthentication() {
+        return this.enableIAMDatabaseAuthentication;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -2539,7 +2809,9 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
         if (getDomain() != null)
             sb.append("Domain: ").append(getDomain()).append(",");
         if (getDomainIAMRoleName() != null)
-            sb.append("DomainIAMRoleName: ").append(getDomainIAMRoleName());
+            sb.append("DomainIAMRoleName: ").append(getDomainIAMRoleName()).append(",");
+        if (getEnableIAMDatabaseAuthentication() != null)
+            sb.append("EnableIAMDatabaseAuthentication: ").append(getEnableIAMDatabaseAuthentication());
         sb.append("}");
         return sb.toString();
     }
@@ -2646,6 +2918,11 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
             return false;
         if (other.getDomainIAMRoleName() != null && other.getDomainIAMRoleName().equals(this.getDomainIAMRoleName()) == false)
             return false;
+        if (other.getEnableIAMDatabaseAuthentication() == null ^ this.getEnableIAMDatabaseAuthentication() == null)
+            return false;
+        if (other.getEnableIAMDatabaseAuthentication() != null
+                && other.getEnableIAMDatabaseAuthentication().equals(this.getEnableIAMDatabaseAuthentication()) == false)
+            return false;
         return true;
     }
 
@@ -2677,6 +2954,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
         hashCode = prime * hashCode + ((getTdeCredentialPassword() == null) ? 0 : getTdeCredentialPassword().hashCode());
         hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
         hashCode = prime * hashCode + ((getDomainIAMRoleName() == null) ? 0 : getDomainIAMRoleName().hashCode());
+        hashCode = prime * hashCode + ((getEnableIAMDatabaseAuthentication() == null) ? 0 : getEnableIAMDatabaseAuthentication().hashCode());
         return hashCode;
     }
 

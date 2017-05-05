@@ -3,7 +3,7 @@
     <#list operationModel.simpleMethodForms as form>
 
         @Override
-        <#if operationModel.deprecated>
+        <#if operationModel.deprecated || form.deprecated>
           @Deprecated
         </#if>
         public ${operationModel.syncReturnType} ${operationModel.methodName}(${form.argumentsDeclaration}) {

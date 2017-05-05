@@ -12,92 +12,52 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.Map;
-import java.util.List;
 
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simplesystemsmanagement.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * StartAutomationExecutionRequest Marshaller
+ * StartAutomationExecutionRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class StartAutomationExecutionRequestMarshaller implements Marshaller<Request<StartAutomationExecutionRequest>, StartAutomationExecutionRequest> {
+@SdkInternalApi
+public class StartAutomationExecutionRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DOCUMENTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentName").build();
+    private static final MarshallingInfo<String> DOCUMENTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentVersion").build();
+    private static final MarshallingInfo<Map> PARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Parameters").build();
 
-    public StartAutomationExecutionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final StartAutomationExecutionRequestMarshaller instance = new StartAutomationExecutionRequestMarshaller();
+
+    public static StartAutomationExecutionRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<StartAutomationExecutionRequest> marshall(StartAutomationExecutionRequest startAutomationExecutionRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(StartAutomationExecutionRequest startAutomationExecutionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (startAutomationExecutionRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<StartAutomationExecutionRequest> request = new DefaultRequest<StartAutomationExecutionRequest>(startAutomationExecutionRequest,
-                "AWSSimpleSystemsManagement");
-        request.addHeader("X-Amz-Target", "AmazonSSM.StartAutomationExecution");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (startAutomationExecutionRequest.getDocumentName() != null) {
-                jsonGenerator.writeFieldName("DocumentName").writeValue(startAutomationExecutionRequest.getDocumentName());
-            }
-            if (startAutomationExecutionRequest.getDocumentVersion() != null) {
-                jsonGenerator.writeFieldName("DocumentVersion").writeValue(startAutomationExecutionRequest.getDocumentVersion());
-            }
-
-            java.util.Map<String, java.util.List<String>> parametersMap = startAutomationExecutionRequest.getParameters();
-            if (parametersMap != null) {
-                jsonGenerator.writeFieldName("Parameters");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, java.util.List<String>> parametersMapValue : parametersMap.entrySet()) {
-                    if (parametersMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(parametersMapValue.getKey());
-
-                        jsonGenerator.writeStartArray();
-                        for (String parametersMapValueList : parametersMapValue.getValue()) {
-                            if (parametersMapValueList != null) {
-                                jsonGenerator.writeValue(parametersMapValueList);
-                            }
-                        }
-                        jsonGenerator.writeEndArray();
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(startAutomationExecutionRequest.getDocumentName(), DOCUMENTNAME_BINDING);
+            protocolMarshaller.marshall(startAutomationExecutionRequest.getDocumentVersion(), DOCUMENTVERSION_BINDING);
+            protocolMarshaller.marshall(startAutomationExecutionRequest.getParameters(), PARAMETERS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -12,73 +12,53 @@
  */
 package com.amazonaws.services.ecr.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.ecr.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * PutImageRequest Marshaller
+ * PutImageRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PutImageRequestMarshaller implements Marshaller<Request<PutImageRequest>, PutImageRequest> {
+@SdkInternalApi
+public class PutImageRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> REGISTRYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("registryId").build();
+    private static final MarshallingInfo<String> REPOSITORYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("repositoryName").build();
+    private static final MarshallingInfo<String> IMAGEMANIFEST_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageManifest").build();
+    private static final MarshallingInfo<String> IMAGETAG_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("imageTag").build();
 
-    public PutImageRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final PutImageRequestMarshaller instance = new PutImageRequestMarshaller();
+
+    public static PutImageRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<PutImageRequest> marshall(PutImageRequest putImageRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(PutImageRequest putImageRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (putImageRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<PutImageRequest> request = new DefaultRequest<PutImageRequest>(putImageRequest, "AmazonECR");
-        request.addHeader("X-Amz-Target", "AmazonEC2ContainerRegistry_V20150921.PutImage");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (putImageRequest.getRegistryId() != null) {
-                jsonGenerator.writeFieldName("registryId").writeValue(putImageRequest.getRegistryId());
-            }
-            if (putImageRequest.getRepositoryName() != null) {
-                jsonGenerator.writeFieldName("repositoryName").writeValue(putImageRequest.getRepositoryName());
-            }
-            if (putImageRequest.getImageManifest() != null) {
-                jsonGenerator.writeFieldName("imageManifest").writeValue(putImageRequest.getImageManifest());
-            }
-            if (putImageRequest.getImageTag() != null) {
-                jsonGenerator.writeFieldName("imageTag").writeValue(putImageRequest.getImageTag());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(putImageRequest.getRegistryId(), REGISTRYID_BINDING);
+            protocolMarshaller.marshall(putImageRequest.getRepositoryName(), REPOSITORYNAME_BINDING);
+            protocolMarshaller.marshall(putImageRequest.getImageManifest(), IMAGEMANIFEST_BINDING);
+            protocolMarshaller.marshall(putImageRequest.getImageTag(), IMAGETAG_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

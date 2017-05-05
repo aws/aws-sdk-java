@@ -25,18 +25,18 @@ public class DetachFromIndexResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The ObjectIdentifier of the object that was detached from the index.
+     * The <code>ObjectIdentifier</code> of the object that was detached from the index.
      * </p>
      */
     private String detachedObjectIdentifier;
 
     /**
      * <p>
-     * The ObjectIdentifier of the object that was detached from the index.
+     * The <code>ObjectIdentifier</code> of the object that was detached from the index.
      * </p>
      * 
      * @param detachedObjectIdentifier
-     *        The ObjectIdentifier of the object that was detached from the index.
+     *        The <code>ObjectIdentifier</code> of the object that was detached from the index.
      */
 
     public void setDetachedObjectIdentifier(String detachedObjectIdentifier) {
@@ -45,10 +45,10 @@ public class DetachFromIndexResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The ObjectIdentifier of the object that was detached from the index.
+     * The <code>ObjectIdentifier</code> of the object that was detached from the index.
      * </p>
      * 
-     * @return The ObjectIdentifier of the object that was detached from the index.
+     * @return The <code>ObjectIdentifier</code> of the object that was detached from the index.
      */
 
     public String getDetachedObjectIdentifier() {
@@ -57,11 +57,11 @@ public class DetachFromIndexResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The ObjectIdentifier of the object that was detached from the index.
+     * The <code>ObjectIdentifier</code> of the object that was detached from the index.
      * </p>
      * 
      * @param detachedObjectIdentifier
-     *        The ObjectIdentifier of the object that was detached from the index.
+     *        The <code>ObjectIdentifier</code> of the object that was detached from the index.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -121,4 +121,5 @@ public class DetachFromIndexResult extends com.amazonaws.AmazonWebServiceResult<
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

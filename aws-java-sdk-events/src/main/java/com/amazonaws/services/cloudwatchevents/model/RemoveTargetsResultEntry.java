@@ -14,44 +14,46 @@ package com.amazonaws.services.cloudwatchevents.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The ID of the target requested to be removed from the rule by Amazon CloudWatch Events.
+ * Represents a target that failed to be removed from a rule.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemoveTargetsResultEntry" target="_top">AWS
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RemoveTargetsResultEntry implements Serializable, Cloneable {
+public class RemoveTargetsResultEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the target requested to be removed by Amazon CloudWatch Events.
+     * The ID of the target.
      * </p>
      */
     private String targetId;
     /**
      * <p>
-     * The error code representing why the target removal failed on this entry.
+     * The error code that indicates why the target removal failed.
      * </p>
      */
     private String errorCode;
     /**
      * <p>
-     * The error message explaining why the target removal failed on this entry.
+     * The error message that explains why the target removal failed.
      * </p>
      */
     private String errorMessage;
 
     /**
      * <p>
-     * The ID of the target requested to be removed by Amazon CloudWatch Events.
+     * The ID of the target.
      * </p>
      * 
      * @param targetId
-     *        The ID of the target requested to be removed by Amazon CloudWatch Events.
+     *        The ID of the target.
      */
 
     public void setTargetId(String targetId) {
@@ -60,10 +62,10 @@ public class RemoveTargetsResultEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the target requested to be removed by Amazon CloudWatch Events.
+     * The ID of the target.
      * </p>
      * 
-     * @return The ID of the target requested to be removed by Amazon CloudWatch Events.
+     * @return The ID of the target.
      */
 
     public String getTargetId() {
@@ -72,11 +74,11 @@ public class RemoveTargetsResultEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the target requested to be removed by Amazon CloudWatch Events.
+     * The ID of the target.
      * </p>
      * 
      * @param targetId
-     *        The ID of the target requested to be removed by Amazon CloudWatch Events.
+     *        The ID of the target.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +89,11 @@ public class RemoveTargetsResultEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The error code representing why the target removal failed on this entry.
+     * The error code that indicates why the target removal failed.
      * </p>
      * 
      * @param errorCode
-     *        The error code representing why the target removal failed on this entry.
+     *        The error code that indicates why the target removal failed.
      */
 
     public void setErrorCode(String errorCode) {
@@ -100,10 +102,10 @@ public class RemoveTargetsResultEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The error code representing why the target removal failed on this entry.
+     * The error code that indicates why the target removal failed.
      * </p>
      * 
-     * @return The error code representing why the target removal failed on this entry.
+     * @return The error code that indicates why the target removal failed.
      */
 
     public String getErrorCode() {
@@ -112,11 +114,11 @@ public class RemoveTargetsResultEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The error code representing why the target removal failed on this entry.
+     * The error code that indicates why the target removal failed.
      * </p>
      * 
      * @param errorCode
-     *        The error code representing why the target removal failed on this entry.
+     *        The error code that indicates why the target removal failed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,11 +129,11 @@ public class RemoveTargetsResultEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The error message explaining why the target removal failed on this entry.
+     * The error message that explains why the target removal failed.
      * </p>
      * 
      * @param errorMessage
-     *        The error message explaining why the target removal failed on this entry.
+     *        The error message that explains why the target removal failed.
      */
 
     public void setErrorMessage(String errorMessage) {
@@ -140,10 +142,10 @@ public class RemoveTargetsResultEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The error message explaining why the target removal failed on this entry.
+     * The error message that explains why the target removal failed.
      * </p>
      * 
-     * @return The error message explaining why the target removal failed on this entry.
+     * @return The error message that explains why the target removal failed.
      */
 
     public String getErrorMessage() {
@@ -152,11 +154,11 @@ public class RemoveTargetsResultEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The error message explaining why the target removal failed on this entry.
+     * The error message that explains why the target removal failed.
      * </p>
      * 
      * @param errorMessage
-     *        The error message explaining why the target removal failed on this entry.
+     *        The error message that explains why the target removal failed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -229,5 +231,11 @@ public class RemoveTargetsResultEntry implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.cloudwatchevents.model.transform.RemoveTargetsResultEntryMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -250,6 +251,10 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
         init();
     }
 
+    public static AWSServerMigrationClientBuilder builder() {
+        return AWSServerMigrationClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on SMS using the specified parameters.
      *
@@ -308,7 +313,13 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      *      Documentation</a>
      */
     @Override
-    public CreateReplicationJobResult createReplicationJob(CreateReplicationJobRequest createReplicationJobRequest) {
+    public CreateReplicationJobResult createReplicationJob(CreateReplicationJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateReplicationJob(request);
+    }
+
+    @SdkInternalApi
+    final CreateReplicationJobResult executeCreateReplicationJob(CreateReplicationJobRequest createReplicationJobRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createReplicationJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -319,7 +330,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateReplicationJobRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createReplicationJobRequest));
+                request = new CreateReplicationJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createReplicationJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -362,7 +373,13 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      *      Documentation</a>
      */
     @Override
-    public DeleteReplicationJobResult deleteReplicationJob(DeleteReplicationJobRequest deleteReplicationJobRequest) {
+    public DeleteReplicationJobResult deleteReplicationJob(DeleteReplicationJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteReplicationJob(request);
+    }
+
+    @SdkInternalApi
+    final DeleteReplicationJobResult executeDeleteReplicationJob(DeleteReplicationJobRequest deleteReplicationJobRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteReplicationJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -373,7 +390,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteReplicationJobRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteReplicationJobRequest));
+                request = new DeleteReplicationJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteReplicationJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -413,7 +430,13 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      *      Documentation</a>
      */
     @Override
-    public DeleteServerCatalogResult deleteServerCatalog(DeleteServerCatalogRequest deleteServerCatalogRequest) {
+    public DeleteServerCatalogResult deleteServerCatalog(DeleteServerCatalogRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteServerCatalog(request);
+    }
+
+    @SdkInternalApi
+    final DeleteServerCatalogResult executeDeleteServerCatalog(DeleteServerCatalogRequest deleteServerCatalogRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteServerCatalogRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -424,7 +447,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteServerCatalogRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteServerCatalogRequest));
+                request = new DeleteServerCatalogRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteServerCatalogRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -464,7 +487,13 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      *      Documentation</a>
      */
     @Override
-    public DisassociateConnectorResult disassociateConnector(DisassociateConnectorRequest disassociateConnectorRequest) {
+    public DisassociateConnectorResult disassociateConnector(DisassociateConnectorRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateConnector(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateConnectorResult executeDisassociateConnector(DisassociateConnectorRequest disassociateConnectorRequest) {
 
         ExecutionContext executionContext = createExecutionContext(disassociateConnectorRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -475,7 +504,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisassociateConnectorRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(disassociateConnectorRequest));
+                request = new DisassociateConnectorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disassociateConnectorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -507,7 +536,13 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      *      Documentation</a>
      */
     @Override
-    public GetConnectorsResult getConnectors(GetConnectorsRequest getConnectorsRequest) {
+    public GetConnectorsResult getConnectors(GetConnectorsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetConnectors(request);
+    }
+
+    @SdkInternalApi
+    final GetConnectorsResult executeGetConnectors(GetConnectorsRequest getConnectorsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getConnectorsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -518,7 +553,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetConnectorsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getConnectorsRequest));
+                request = new GetConnectorsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getConnectorsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -555,7 +590,13 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      *      Documentation</a>
      */
     @Override
-    public GetReplicationJobsResult getReplicationJobs(GetReplicationJobsRequest getReplicationJobsRequest) {
+    public GetReplicationJobsResult getReplicationJobs(GetReplicationJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetReplicationJobs(request);
+    }
+
+    @SdkInternalApi
+    final GetReplicationJobsResult executeGetReplicationJobs(GetReplicationJobsRequest getReplicationJobsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getReplicationJobsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -566,7 +607,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetReplicationJobsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getReplicationJobsRequest));
+                request = new GetReplicationJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getReplicationJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -604,7 +645,13 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      *      Documentation</a>
      */
     @Override
-    public GetReplicationRunsResult getReplicationRuns(GetReplicationRunsRequest getReplicationRunsRequest) {
+    public GetReplicationRunsResult getReplicationRuns(GetReplicationRunsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetReplicationRuns(request);
+    }
+
+    @SdkInternalApi
+    final GetReplicationRunsResult executeGetReplicationRuns(GetReplicationRunsRequest getReplicationRunsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getReplicationRunsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -615,7 +662,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetReplicationRunsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getReplicationRunsRequest));
+                request = new GetReplicationRunsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getReplicationRunsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -647,7 +694,13 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      *      Documentation</a>
      */
     @Override
-    public GetServersResult getServers(GetServersRequest getServersRequest) {
+    public GetServersResult getServers(GetServersRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetServers(request);
+    }
+
+    @SdkInternalApi
+    final GetServersResult executeGetServers(GetServersRequest getServersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getServersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -658,7 +711,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetServersRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getServersRequest));
+                request = new GetServersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getServersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -702,7 +755,13 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      *      Documentation</a>
      */
     @Override
-    public ImportServerCatalogResult importServerCatalog(ImportServerCatalogRequest importServerCatalogRequest) {
+    public ImportServerCatalogResult importServerCatalog(ImportServerCatalogRequest request) {
+        request = beforeClientExecution(request);
+        return executeImportServerCatalog(request);
+    }
+
+    @SdkInternalApi
+    final ImportServerCatalogResult executeImportServerCatalog(ImportServerCatalogRequest importServerCatalogRequest) {
 
         ExecutionContext executionContext = createExecutionContext(importServerCatalogRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -713,7 +772,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ImportServerCatalogRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(importServerCatalogRequest));
+                request = new ImportServerCatalogRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(importServerCatalogRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -756,7 +815,13 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public StartOnDemandReplicationRunResult startOnDemandReplicationRun(StartOnDemandReplicationRunRequest startOnDemandReplicationRunRequest) {
+    public StartOnDemandReplicationRunResult startOnDemandReplicationRun(StartOnDemandReplicationRunRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartOnDemandReplicationRun(request);
+    }
+
+    @SdkInternalApi
+    final StartOnDemandReplicationRunResult executeStartOnDemandReplicationRun(StartOnDemandReplicationRunRequest startOnDemandReplicationRunRequest) {
 
         ExecutionContext executionContext = createExecutionContext(startOnDemandReplicationRunRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -767,7 +832,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartOnDemandReplicationRunRequestMarshaller(protocolFactory).marshall(super
+                request = new StartOnDemandReplicationRunRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(startOnDemandReplicationRunRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -815,7 +880,13 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      *      Documentation</a>
      */
     @Override
-    public UpdateReplicationJobResult updateReplicationJob(UpdateReplicationJobRequest updateReplicationJobRequest) {
+    public UpdateReplicationJobResult updateReplicationJob(UpdateReplicationJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateReplicationJob(request);
+    }
+
+    @SdkInternalApi
+    final UpdateReplicationJobResult executeUpdateReplicationJob(UpdateReplicationJobRequest updateReplicationJobRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateReplicationJobRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -826,7 +897,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateReplicationJobRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateReplicationJobRequest));
+                request = new UpdateReplicationJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateReplicationJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

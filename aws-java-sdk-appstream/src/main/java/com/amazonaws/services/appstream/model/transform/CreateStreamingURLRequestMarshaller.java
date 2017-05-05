@@ -12,79 +12,59 @@
  */
 package com.amazonaws.services.appstream.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.appstream.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateStreamingURLRequest Marshaller
+ * CreateStreamingURLRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateStreamingURLRequestMarshaller implements Marshaller<Request<CreateStreamingURLRequest>, CreateStreamingURLRequest> {
+@SdkInternalApi
+public class CreateStreamingURLRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> STACKNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("StackName").build();
+    private static final MarshallingInfo<String> FLEETNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("FleetName").build();
+    private static final MarshallingInfo<String> USERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("UserId").build();
+    private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationId").build();
+    private static final MarshallingInfo<Long> VALIDITY_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Validity").build();
+    private static final MarshallingInfo<String> SESSIONCONTEXT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SessionContext").build();
 
-    public CreateStreamingURLRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateStreamingURLRequestMarshaller instance = new CreateStreamingURLRequestMarshaller();
+
+    public static CreateStreamingURLRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateStreamingURLRequest> marshall(CreateStreamingURLRequest createStreamingURLRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateStreamingURLRequest createStreamingURLRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createStreamingURLRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateStreamingURLRequest> request = new DefaultRequest<CreateStreamingURLRequest>(createStreamingURLRequest, "AmazonAppStream");
-        request.addHeader("X-Amz-Target", "PhotonAdminProxyService.CreateStreamingURL");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createStreamingURLRequest.getStackName() != null) {
-                jsonGenerator.writeFieldName("StackName").writeValue(createStreamingURLRequest.getStackName());
-            }
-            if (createStreamingURLRequest.getFleetName() != null) {
-                jsonGenerator.writeFieldName("FleetName").writeValue(createStreamingURLRequest.getFleetName());
-            }
-            if (createStreamingURLRequest.getUserId() != null) {
-                jsonGenerator.writeFieldName("UserId").writeValue(createStreamingURLRequest.getUserId());
-            }
-            if (createStreamingURLRequest.getApplicationId() != null) {
-                jsonGenerator.writeFieldName("ApplicationId").writeValue(createStreamingURLRequest.getApplicationId());
-            }
-            if (createStreamingURLRequest.getValidity() != null) {
-                jsonGenerator.writeFieldName("Validity").writeValue(createStreamingURLRequest.getValidity());
-            }
-            if (createStreamingURLRequest.getSessionContext() != null) {
-                jsonGenerator.writeFieldName("SessionContext").writeValue(createStreamingURLRequest.getSessionContext());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createStreamingURLRequest.getStackName(), STACKNAME_BINDING);
+            protocolMarshaller.marshall(createStreamingURLRequest.getFleetName(), FLEETNAME_BINDING);
+            protocolMarshaller.marshall(createStreamingURLRequest.getUserId(), USERID_BINDING);
+            protocolMarshaller.marshall(createStreamingURLRequest.getApplicationId(), APPLICATIONID_BINDING);
+            protocolMarshaller.marshall(createStreamingURLRequest.getValidity(), VALIDITY_BINDING);
+            protocolMarshaller.marshall(createStreamingURLRequest.getSessionContext(), SESSIONCONTEXT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

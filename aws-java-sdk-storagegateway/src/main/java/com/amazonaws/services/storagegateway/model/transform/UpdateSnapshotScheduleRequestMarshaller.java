@@ -12,73 +12,53 @@
  */
 package com.amazonaws.services.storagegateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.storagegateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateSnapshotScheduleRequest Marshaller
+ * UpdateSnapshotScheduleRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateSnapshotScheduleRequestMarshaller implements Marshaller<Request<UpdateSnapshotScheduleRequest>, UpdateSnapshotScheduleRequest> {
+@SdkInternalApi
+public class UpdateSnapshotScheduleRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> VOLUMEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("VolumeARN").build();
+    private static final MarshallingInfo<Integer> STARTAT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("StartAt").build();
+    private static final MarshallingInfo<Integer> RECURRENCEINHOURS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RecurrenceInHours").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
 
-    public UpdateSnapshotScheduleRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateSnapshotScheduleRequestMarshaller instance = new UpdateSnapshotScheduleRequestMarshaller();
+
+    public static UpdateSnapshotScheduleRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateSnapshotScheduleRequest> marshall(UpdateSnapshotScheduleRequest updateSnapshotScheduleRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateSnapshotScheduleRequest updateSnapshotScheduleRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateSnapshotScheduleRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateSnapshotScheduleRequest> request = new DefaultRequest<UpdateSnapshotScheduleRequest>(updateSnapshotScheduleRequest, "AWSStorageGateway");
-        request.addHeader("X-Amz-Target", "StorageGateway_20130630.UpdateSnapshotSchedule");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (updateSnapshotScheduleRequest.getVolumeARN() != null) {
-                jsonGenerator.writeFieldName("VolumeARN").writeValue(updateSnapshotScheduleRequest.getVolumeARN());
-            }
-            if (updateSnapshotScheduleRequest.getStartAt() != null) {
-                jsonGenerator.writeFieldName("StartAt").writeValue(updateSnapshotScheduleRequest.getStartAt());
-            }
-            if (updateSnapshotScheduleRequest.getRecurrenceInHours() != null) {
-                jsonGenerator.writeFieldName("RecurrenceInHours").writeValue(updateSnapshotScheduleRequest.getRecurrenceInHours());
-            }
-            if (updateSnapshotScheduleRequest.getDescription() != null) {
-                jsonGenerator.writeFieldName("Description").writeValue(updateSnapshotScheduleRequest.getDescription());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateSnapshotScheduleRequest.getVolumeARN(), VOLUMEARN_BINDING);
+            protocolMarshaller.marshall(updateSnapshotScheduleRequest.getStartAt(), STARTAT_BINDING);
+            protocolMarshaller.marshall(updateSnapshotScheduleRequest.getRecurrenceInHours(), RECURRENCEINHOURS_BINDING);
+            protocolMarshaller.marshall(updateSnapshotScheduleRequest.getDescription(), DESCRIPTION_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -1516,6 +1516,7 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
 
         QueryResult queryResult = db.query(applyUserAgent(queryRequest));
         QueryResultPage<T> result = new QueryResultPage<T>();
+
         List<AttributeTransformer.Parameters<T>> parameters =
             toParameters(queryResult.getItems(), clazz, queryRequest.getTableName(), config);
 
@@ -1971,9 +1972,11 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
             final String tableName,
             final DynamoDBMapperConfig mapperConfig
     ) {
-        List<AttributeTransformer.Parameters<T>> rval =
-            new ArrayList<AttributeTransformer.Parameters<T>>(
-                attributeValues.size());
+        if(attributeValues == null) {
+            return Collections.emptyList();
+        }
+
+        List<AttributeTransformer.Parameters<T>> rval = new ArrayList<AttributeTransformer.Parameters<T>>(attributeValues.size());
 
         for (Map<String, AttributeValue> item : attributeValues) {
             rval.add(toParameters(item, modelClass, tableName, mapperConfig));

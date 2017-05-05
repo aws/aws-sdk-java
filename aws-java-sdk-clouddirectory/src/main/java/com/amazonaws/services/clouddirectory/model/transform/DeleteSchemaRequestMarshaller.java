@@ -12,57 +12,44 @@
  */
 package com.amazonaws.services.clouddirectory.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.clouddirectory.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteSchemaRequest Marshaller
+ * DeleteSchemaRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteSchemaRequestMarshaller implements Marshaller<Request<DeleteSchemaRequest>, DeleteSchemaRequest> {
+@SdkInternalApi
+public class DeleteSchemaRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> SCHEMAARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.HEADER)
+            .marshallLocationName("x-amz-data-partition").build();
 
-    public DeleteSchemaRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteSchemaRequestMarshaller instance = new DeleteSchemaRequestMarshaller();
+
+    public static DeleteSchemaRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteSchemaRequest> marshall(DeleteSchemaRequest deleteSchemaRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteSchemaRequest deleteSchemaRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteSchemaRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteSchemaRequest> request = new DefaultRequest<DeleteSchemaRequest>(deleteSchemaRequest, "AmazonCloudDirectory");
-
-        request.setHttpMethod(HttpMethodName.PUT);
-
-        if (deleteSchemaRequest.getSchemaArn() != null) {
-            request.addHeader("x-amz-data-partition", StringUtils.fromString(deleteSchemaRequest.getSchemaArn()));
+        try {
+            protocolMarshaller.marshall(deleteSchemaRequest.getSchemaArn(), SCHEMAARN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        String uriResourcePath = "/amazonclouddirectory/2017-01-11/schema";
-
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

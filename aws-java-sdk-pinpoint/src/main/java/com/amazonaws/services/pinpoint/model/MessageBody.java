@@ -14,16 +14,25 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * Simple message object.
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MessageBody implements Serializable, Cloneable {
+public class MessageBody implements Serializable, Cloneable, StructuredPojo {
 
+    /** The error message returned from the API. */
     private String message;
-
+    /** The unique message body ID. */
     private String requestID;
 
     /**
+     * The error message returned from the API.
+     * 
      * @param message
+     *        The error message returned from the API.
      */
 
     public void setMessage(String message) {
@@ -31,7 +40,9 @@ public class MessageBody implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * The error message returned from the API.
+     * 
+     * @return The error message returned from the API.
      */
 
     public String getMessage() {
@@ -39,7 +50,10 @@ public class MessageBody implements Serializable, Cloneable {
     }
 
     /**
+     * The error message returned from the API.
+     * 
      * @param message
+     *        The error message returned from the API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -49,7 +63,10 @@ public class MessageBody implements Serializable, Cloneable {
     }
 
     /**
+     * The unique message body ID.
+     * 
      * @param requestID
+     *        The unique message body ID.
      */
 
     public void setRequestID(String requestID) {
@@ -57,7 +74,9 @@ public class MessageBody implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * The unique message body ID.
+     * 
+     * @return The unique message body ID.
      */
 
     public String getRequestID() {
@@ -65,7 +84,10 @@ public class MessageBody implements Serializable, Cloneable {
     }
 
     /**
+     * The unique message body ID.
+     * 
      * @param requestID
+     *        The unique message body ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -131,5 +153,11 @@ public class MessageBody implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.pinpoint.model.transform.MessageBodyMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

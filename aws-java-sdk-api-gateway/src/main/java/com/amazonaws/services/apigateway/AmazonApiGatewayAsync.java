@@ -263,6 +263,35 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
 
     /**
      * <p>
+     * Creates a <a>ReqeustValidator</a> of a given <a>RestApi</a>.
+     * </p>
+     * 
+     * @param createRequestValidatorRequest
+     *        Creates a <a>RequestValidator</a> of a given <a>RestApi</a>.
+     * @return A Java Future containing the result of the CreateRequestValidator operation returned by the service.
+     * @sample AmazonApiGatewayAsync.CreateRequestValidator
+     */
+    java.util.concurrent.Future<CreateRequestValidatorResult> createRequestValidatorAsync(CreateRequestValidatorRequest createRequestValidatorRequest);
+
+    /**
+     * <p>
+     * Creates a <a>ReqeustValidator</a> of a given <a>RestApi</a>.
+     * </p>
+     * 
+     * @param createRequestValidatorRequest
+     *        Creates a <a>RequestValidator</a> of a given <a>RestApi</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateRequestValidator operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.CreateRequestValidator
+     */
+    java.util.concurrent.Future<CreateRequestValidatorResult> createRequestValidatorAsync(CreateRequestValidatorRequest createRequestValidatorRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateRequestValidatorRequest, CreateRequestValidatorResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a <a>Resource</a> resource.
      * </p>
      * 
@@ -780,6 +809,35 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      */
     java.util.concurrent.Future<DeleteModelResult> deleteModelAsync(DeleteModelRequest deleteModelRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteModelRequest, DeleteModelResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a <a>RequestValidator</a> of a given <a>RestApi</a>.
+     * </p>
+     * 
+     * @param deleteRequestValidatorRequest
+     *        Deletes a specified <a>RequestValidator</a> of a given <a>RestApi</a>.
+     * @return A Java Future containing the result of the DeleteRequestValidator operation returned by the service.
+     * @sample AmazonApiGatewayAsync.DeleteRequestValidator
+     */
+    java.util.concurrent.Future<DeleteRequestValidatorResult> deleteRequestValidatorAsync(DeleteRequestValidatorRequest deleteRequestValidatorRequest);
+
+    /**
+     * <p>
+     * Deletes a <a>RequestValidator</a> of a given <a>RestApi</a>.
+     * </p>
+     * 
+     * @param deleteRequestValidatorRequest
+     *        Deletes a specified <a>RequestValidator</a> of a given <a>RestApi</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRequestValidator operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.DeleteRequestValidator
+     */
+    java.util.concurrent.Future<DeleteRequestValidatorResult> deleteRequestValidatorAsync(DeleteRequestValidatorRequest deleteRequestValidatorRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRequestValidatorRequest, DeleteRequestValidatorResult> asyncHandler);
 
     /**
      * <p>
@@ -1721,6 +1779,64 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      */
     java.util.concurrent.Future<GetModelsResult> getModelsAsync(GetModelsRequest getModelsRequest,
             com.amazonaws.handlers.AsyncHandler<GetModelsRequest, GetModelsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a <a>RequestValidator</a> of a given <a>RestApi</a>.
+     * </p>
+     * 
+     * @param getRequestValidatorRequest
+     *        Gets a <a>RequestValidator</a> of a given <a>RestApi</a>.
+     * @return A Java Future containing the result of the GetRequestValidator operation returned by the service.
+     * @sample AmazonApiGatewayAsync.GetRequestValidator
+     */
+    java.util.concurrent.Future<GetRequestValidatorResult> getRequestValidatorAsync(GetRequestValidatorRequest getRequestValidatorRequest);
+
+    /**
+     * <p>
+     * Gets a <a>RequestValidator</a> of a given <a>RestApi</a>.
+     * </p>
+     * 
+     * @param getRequestValidatorRequest
+     *        Gets a <a>RequestValidator</a> of a given <a>RestApi</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRequestValidator operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetRequestValidator
+     */
+    java.util.concurrent.Future<GetRequestValidatorResult> getRequestValidatorAsync(GetRequestValidatorRequest getRequestValidatorRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRequestValidatorRequest, GetRequestValidatorResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the <a>RequestValidators</a> collection of a given <a>RestApi</a>.
+     * </p>
+     * 
+     * @param getRequestValidatorsRequest
+     *        Gets the <a>RequestValidators</a> collection of a given <a>RestApi</a>.
+     * @return A Java Future containing the result of the GetRequestValidators operation returned by the service.
+     * @sample AmazonApiGatewayAsync.GetRequestValidators
+     */
+    java.util.concurrent.Future<GetRequestValidatorsResult> getRequestValidatorsAsync(GetRequestValidatorsRequest getRequestValidatorsRequest);
+
+    /**
+     * <p>
+     * Gets the <a>RequestValidators</a> collection of a given <a>RestApi</a>.
+     * </p>
+     * 
+     * @param getRequestValidatorsRequest
+     *        Gets the <a>RequestValidators</a> collection of a given <a>RestApi</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRequestValidators operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.GetRequestValidators
+     */
+    java.util.concurrent.Future<GetRequestValidatorsResult> getRequestValidatorsAsync(GetRequestValidatorsRequest getRequestValidatorsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRequestValidatorsRequest, GetRequestValidatorsResult> asyncHandler);
 
     /**
      * <p>
@@ -2805,6 +2921,35 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
      */
     java.util.concurrent.Future<UpdateModelResult> updateModelAsync(UpdateModelRequest updateModelRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateModelRequest, UpdateModelResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a <a>RequestValidator</a> of a given <a>RestApi</a>.
+     * </p>
+     * 
+     * @param updateRequestValidatorRequest
+     *        Updates a <a>RequestValidator</a> of a given <a>RestApi</a>.
+     * @return A Java Future containing the result of the UpdateRequestValidator operation returned by the service.
+     * @sample AmazonApiGatewayAsync.UpdateRequestValidator
+     */
+    java.util.concurrent.Future<UpdateRequestValidatorResult> updateRequestValidatorAsync(UpdateRequestValidatorRequest updateRequestValidatorRequest);
+
+    /**
+     * <p>
+     * Updates a <a>RequestValidator</a> of a given <a>RestApi</a>.
+     * </p>
+     * 
+     * @param updateRequestValidatorRequest
+     *        Updates a <a>RequestValidator</a> of a given <a>RestApi</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateRequestValidator operation returned by the service.
+     * @sample AmazonApiGatewayAsyncHandler.UpdateRequestValidator
+     */
+    java.util.concurrent.Future<UpdateRequestValidatorResult> updateRequestValidatorAsync(UpdateRequestValidatorRequest updateRequestValidatorRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateRequestValidatorRequest, UpdateRequestValidatorResult> asyncHandler);
 
     /**
      * <p>

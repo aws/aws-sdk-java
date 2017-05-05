@@ -12,73 +12,45 @@
  */
 package com.amazonaws.services.opsworks.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.opsworks.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeUserProfilesRequest Marshaller
+ * DescribeUserProfilesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeUserProfilesRequestMarshaller implements Marshaller<Request<DescribeUserProfilesRequest>, DescribeUserProfilesRequest> {
+@SdkInternalApi
+public class DescribeUserProfilesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<List> IAMUSERARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("IamUserArns").build();
 
-    public DescribeUserProfilesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeUserProfilesRequestMarshaller instance = new DescribeUserProfilesRequestMarshaller();
+
+    public static DescribeUserProfilesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeUserProfilesRequest> marshall(DescribeUserProfilesRequest describeUserProfilesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeUserProfilesRequest describeUserProfilesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeUserProfilesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeUserProfilesRequest> request = new DefaultRequest<DescribeUserProfilesRequest>(describeUserProfilesRequest, "AWSOpsWorks");
-        request.addHeader("X-Amz-Target", "OpsWorks_20130218.DescribeUserProfiles");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            com.amazonaws.internal.SdkInternalList<String> iamUserArnsList = (com.amazonaws.internal.SdkInternalList<String>) describeUserProfilesRequest
-                    .getIamUserArns();
-            if (!iamUserArnsList.isEmpty() || !iamUserArnsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("IamUserArns");
-                jsonGenerator.writeStartArray();
-                for (String iamUserArnsListValue : iamUserArnsList) {
-                    if (iamUserArnsListValue != null) {
-                        jsonGenerator.writeValue(iamUserArnsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeUserProfilesRequest.getIamUserArns(), IAMUSERARNS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

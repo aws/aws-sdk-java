@@ -14,17 +14,19 @@ package com.amazonaws.services.clouddirectory.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents the output of a ListObjectChildren operation.
+ * Represents the output of a <code>ListObjectChildren</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchListObjectChildren"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class BatchListObjectChildren implements Serializable, Cloneable {
+public class BatchListObjectChildren implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -34,7 +36,7 @@ public class BatchListObjectChildren implements Serializable, Cloneable {
     private ObjectReference objectReference;
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      */
     private String nextToken;
@@ -87,11 +89,11 @@ public class BatchListObjectChildren implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      * 
      * @param nextToken
-     *        Token used for pagination.
+     *        The pagination token.
      */
 
     public void setNextToken(String nextToken) {
@@ -100,10 +102,10 @@ public class BatchListObjectChildren implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      * 
-     * @return Token used for pagination.
+     * @return The pagination token.
      */
 
     public String getNextToken() {
@@ -112,11 +114,11 @@ public class BatchListObjectChildren implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      * 
      * @param nextToken
-     *        Token used for pagination.
+     *        The pagination token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -229,5 +231,11 @@ public class BatchListObjectChildren implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.clouddirectory.model.transform.BatchListObjectChildrenMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

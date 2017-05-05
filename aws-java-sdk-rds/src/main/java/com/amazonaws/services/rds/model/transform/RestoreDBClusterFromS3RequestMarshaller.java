@@ -148,6 +148,10 @@ public class RestoreDBClusterFromS3RequestMarshaller implements Marshaller<Reque
             request.addParameter("KmsKeyId", StringUtils.fromString(restoreDBClusterFromS3Request.getKmsKeyId()));
         }
 
+        if (restoreDBClusterFromS3Request.getEnableIAMDatabaseAuthentication() != null) {
+            request.addParameter("EnableIAMDatabaseAuthentication", StringUtils.fromBoolean(restoreDBClusterFromS3Request.getEnableIAMDatabaseAuthentication()));
+        }
+
         if (restoreDBClusterFromS3Request.getSourceEngine() != null) {
             request.addParameter("SourceEngine", StringUtils.fromString(restoreDBClusterFromS3Request.getSourceEngine()));
         }

@@ -30,7 +30,7 @@ public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Unique identifier for the fleet to get event logs for.
+     * Unique identifier for a fleet to get event logs for.
      * </p>
      */
     private String fleetId;
@@ -59,19 +59,19 @@ public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRe
     private Integer limit;
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. Use the token that is returned with a previous
-     * call to this action. To specify the start of the result set, do not specify a value.
+     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * previous call to this action. To specify the start of the result set, do not specify a value.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Unique identifier for the fleet to get event logs for.
+     * Unique identifier for a fleet to get event logs for.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for the fleet to get event logs for.
+     *        Unique identifier for a fleet to get event logs for.
      */
 
     public void setFleetId(String fleetId) {
@@ -80,10 +80,10 @@ public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Unique identifier for the fleet to get event logs for.
+     * Unique identifier for a fleet to get event logs for.
      * </p>
      * 
-     * @return Unique identifier for the fleet to get event logs for.
+     * @return Unique identifier for a fleet to get event logs for.
      */
 
     public String getFleetId() {
@@ -92,11 +92,11 @@ public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Unique identifier for the fleet to get event logs for.
+     * Unique identifier for a fleet to get event logs for.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for the fleet to get event logs for.
+     *        Unique identifier for a fleet to get event logs for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -257,13 +257,13 @@ public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. Use the token that is returned with a previous
-     * call to this action. To specify the start of the result set, do not specify a value.
+     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * previous call to this action. To specify the start of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
-     *        Token indicating the start of the next sequential page of results. Use the token that is returned with a
-     *        previous call to this action. To specify the start of the result set, do not specify a value.
+     *        Token that indicates the start of the next sequential page of results. Use the token that is returned with
+     *        a previous call to this action. To specify the start of the result set, do not specify a value.
      */
 
     public void setNextToken(String nextToken) {
@@ -272,12 +272,12 @@ public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. Use the token that is returned with a previous
-     * call to this action. To specify the start of the result set, do not specify a value.
+     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * previous call to this action. To specify the start of the result set, do not specify a value.
      * </p>
      * 
-     * @return Token indicating the start of the next sequential page of results. Use the token that is returned with a
-     *         previous call to this action. To specify the start of the result set, do not specify a value.
+     * @return Token that indicates the start of the next sequential page of results. Use the token that is returned
+     *         with a previous call to this action. To specify the start of the result set, do not specify a value.
      */
 
     public String getNextToken() {
@@ -286,13 +286,13 @@ public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. Use the token that is returned with a previous
-     * call to this action. To specify the start of the result set, do not specify a value.
+     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * previous call to this action. To specify the start of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
-     *        Token indicating the start of the next sequential page of results. Use the token that is returned with a
-     *        previous call to this action. To specify the start of the result set, do not specify a value.
+     *        Token that indicates the start of the next sequential page of results. Use the token that is returned with
+     *        a previous call to this action. To specify the start of the result set, do not specify a value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

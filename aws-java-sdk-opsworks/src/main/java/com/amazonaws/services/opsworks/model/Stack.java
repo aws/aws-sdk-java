@@ -14,6 +14,8 @@ package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Stack implements Serializable, Cloneable {
+public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -140,7 +142,8 @@ public class Stack implements Serializable, Cloneable {
     private Boolean useCustomCookbooks;
     /**
      * <p>
-     * Whether the stack automatically associates the AWS OpsWorks built-in security groups with the stack's layers.
+     * Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the stack's
+     * layers.
      * </p>
      */
     private Boolean useOpsworksSecurityGroups;
@@ -950,12 +953,13 @@ public class Stack implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the stack automatically associates the AWS OpsWorks built-in security groups with the stack's layers.
+     * Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the stack's
+     * layers.
      * </p>
      * 
      * @param useOpsworksSecurityGroups
-     *        Whether the stack automatically associates the AWS OpsWorks built-in security groups with the stack's
-     *        layers.
+     *        Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the
+     *        stack's layers.
      */
 
     public void setUseOpsworksSecurityGroups(Boolean useOpsworksSecurityGroups) {
@@ -964,11 +968,12 @@ public class Stack implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the stack automatically associates the AWS OpsWorks built-in security groups with the stack's layers.
+     * Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the stack's
+     * layers.
      * </p>
      * 
-     * @return Whether the stack automatically associates the AWS OpsWorks built-in security groups with the stack's
-     *         layers.
+     * @return Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the
+     *         stack's layers.
      */
 
     public Boolean getUseOpsworksSecurityGroups() {
@@ -977,12 +982,13 @@ public class Stack implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the stack automatically associates the AWS OpsWorks built-in security groups with the stack's layers.
+     * Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the stack's
+     * layers.
      * </p>
      * 
      * @param useOpsworksSecurityGroups
-     *        Whether the stack automatically associates the AWS OpsWorks built-in security groups with the stack's
-     *        layers.
+     *        Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the
+     *        stack's layers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -993,11 +999,12 @@ public class Stack implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the stack automatically associates the AWS OpsWorks built-in security groups with the stack's layers.
+     * Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the stack's
+     * layers.
      * </p>
      * 
-     * @return Whether the stack automatically associates the AWS OpsWorks built-in security groups with the stack's
-     *         layers.
+     * @return Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the
+     *         stack's layers.
      */
 
     public Boolean isUseOpsworksSecurityGroups() {
@@ -1462,5 +1469,11 @@ public class Stack implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.opsworks.model.transform.StackMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

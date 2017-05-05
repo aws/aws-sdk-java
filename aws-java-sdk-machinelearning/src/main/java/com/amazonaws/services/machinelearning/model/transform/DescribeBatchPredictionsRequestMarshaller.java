@@ -12,95 +12,74 @@
  */
 package com.amazonaws.services.machinelearning.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.machinelearning.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeBatchPredictionsRequest Marshaller
+ * DescribeBatchPredictionsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeBatchPredictionsRequestMarshaller implements Marshaller<Request<DescribeBatchPredictionsRequest>, DescribeBatchPredictionsRequest> {
+@SdkInternalApi
+public class DescribeBatchPredictionsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> FILTERVARIABLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FilterVariable").build();
+    private static final MarshallingInfo<String> EQ_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("EQ").build();
+    private static final MarshallingInfo<String> GT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("GT").build();
+    private static final MarshallingInfo<String> LT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("LT").build();
+    private static final MarshallingInfo<String> GE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("GE").build();
+    private static final MarshallingInfo<String> LE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("LE").build();
+    private static final MarshallingInfo<String> NE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NE").build();
+    private static final MarshallingInfo<String> PREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Prefix").build();
+    private static final MarshallingInfo<String> SORTORDER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SortOrder").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
+    private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Limit").build();
 
-    public DescribeBatchPredictionsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeBatchPredictionsRequestMarshaller instance = new DescribeBatchPredictionsRequestMarshaller();
+
+    public static DescribeBatchPredictionsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeBatchPredictionsRequest> marshall(DescribeBatchPredictionsRequest describeBatchPredictionsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeBatchPredictionsRequest describeBatchPredictionsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeBatchPredictionsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeBatchPredictionsRequest> request = new DefaultRequest<DescribeBatchPredictionsRequest>(describeBatchPredictionsRequest,
-                "AmazonMachineLearning");
-        request.addHeader("X-Amz-Target", "AmazonML_20141212.DescribeBatchPredictions");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeBatchPredictionsRequest.getFilterVariable() != null) {
-                jsonGenerator.writeFieldName("FilterVariable").writeValue(describeBatchPredictionsRequest.getFilterVariable());
-            }
-            if (describeBatchPredictionsRequest.getEQ() != null) {
-                jsonGenerator.writeFieldName("EQ").writeValue(describeBatchPredictionsRequest.getEQ());
-            }
-            if (describeBatchPredictionsRequest.getGT() != null) {
-                jsonGenerator.writeFieldName("GT").writeValue(describeBatchPredictionsRequest.getGT());
-            }
-            if (describeBatchPredictionsRequest.getLT() != null) {
-                jsonGenerator.writeFieldName("LT").writeValue(describeBatchPredictionsRequest.getLT());
-            }
-            if (describeBatchPredictionsRequest.getGE() != null) {
-                jsonGenerator.writeFieldName("GE").writeValue(describeBatchPredictionsRequest.getGE());
-            }
-            if (describeBatchPredictionsRequest.getLE() != null) {
-                jsonGenerator.writeFieldName("LE").writeValue(describeBatchPredictionsRequest.getLE());
-            }
-            if (describeBatchPredictionsRequest.getNE() != null) {
-                jsonGenerator.writeFieldName("NE").writeValue(describeBatchPredictionsRequest.getNE());
-            }
-            if (describeBatchPredictionsRequest.getPrefix() != null) {
-                jsonGenerator.writeFieldName("Prefix").writeValue(describeBatchPredictionsRequest.getPrefix());
-            }
-            if (describeBatchPredictionsRequest.getSortOrder() != null) {
-                jsonGenerator.writeFieldName("SortOrder").writeValue(describeBatchPredictionsRequest.getSortOrder());
-            }
-            if (describeBatchPredictionsRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(describeBatchPredictionsRequest.getNextToken());
-            }
-            if (describeBatchPredictionsRequest.getLimit() != null) {
-                jsonGenerator.writeFieldName("Limit").writeValue(describeBatchPredictionsRequest.getLimit());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeBatchPredictionsRequest.getFilterVariable(), FILTERVARIABLE_BINDING);
+            protocolMarshaller.marshall(describeBatchPredictionsRequest.getEQ(), EQ_BINDING);
+            protocolMarshaller.marshall(describeBatchPredictionsRequest.getGT(), GT_BINDING);
+            protocolMarshaller.marshall(describeBatchPredictionsRequest.getLT(), LT_BINDING);
+            protocolMarshaller.marshall(describeBatchPredictionsRequest.getGE(), GE_BINDING);
+            protocolMarshaller.marshall(describeBatchPredictionsRequest.getLE(), LE_BINDING);
+            protocolMarshaller.marshall(describeBatchPredictionsRequest.getNE(), NE_BINDING);
+            protocolMarshaller.marshall(describeBatchPredictionsRequest.getPrefix(), PREFIX_BINDING);
+            protocolMarshaller.marshall(describeBatchPredictionsRequest.getSortOrder(), SORTORDER_BINDING);
+            protocolMarshaller.marshall(describeBatchPredictionsRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(describeBatchPredictionsRequest.getLimit(), LIMIT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

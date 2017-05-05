@@ -139,6 +139,16 @@ public class DBClusterSnapshotStaxUnmarshaller implements Unmarshaller<DBCluster
                     dBClusterSnapshot.setDBClusterSnapshotArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("SourceDBClusterSnapshotArn", targetDepth)) {
+                    dBClusterSnapshot.setSourceDBClusterSnapshotArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("IAMDatabaseAuthenticationEnabled", targetDepth)) {
+                    dBClusterSnapshot.setIAMDatabaseAuthenticationEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return dBClusterSnapshot;

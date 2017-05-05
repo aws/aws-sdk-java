@@ -12,73 +12,53 @@
  */
 package com.amazonaws.services.stepfunctions.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.stepfunctions.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListExecutionsRequest Marshaller
+ * ListExecutionsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListExecutionsRequestMarshaller implements Marshaller<Request<ListExecutionsRequest>, ListExecutionsRequest> {
+@SdkInternalApi
+public class ListExecutionsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> STATEMACHINEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stateMachineArn").build();
+    private static final MarshallingInfo<String> STATUSFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statusFilter").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxResults").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("nextToken").build();
 
-    public ListExecutionsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListExecutionsRequestMarshaller instance = new ListExecutionsRequestMarshaller();
+
+    public static ListExecutionsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListExecutionsRequest> marshall(ListExecutionsRequest listExecutionsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListExecutionsRequest listExecutionsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listExecutionsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListExecutionsRequest> request = new DefaultRequest<ListExecutionsRequest>(listExecutionsRequest, "AWSStepFunctions");
-        request.addHeader("X-Amz-Target", "AWSStepFunctions.ListExecutions");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (listExecutionsRequest.getStateMachineArn() != null) {
-                jsonGenerator.writeFieldName("stateMachineArn").writeValue(listExecutionsRequest.getStateMachineArn());
-            }
-            if (listExecutionsRequest.getStatusFilter() != null) {
-                jsonGenerator.writeFieldName("statusFilter").writeValue(listExecutionsRequest.getStatusFilter());
-            }
-            if (listExecutionsRequest.getMaxResults() != null) {
-                jsonGenerator.writeFieldName("maxResults").writeValue(listExecutionsRequest.getMaxResults());
-            }
-            if (listExecutionsRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("nextToken").writeValue(listExecutionsRequest.getNextToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listExecutionsRequest.getStateMachineArn(), STATEMACHINEARN_BINDING);
+            protocolMarshaller.marshall(listExecutionsRequest.getStatusFilter(), STATUSFILTER_BINDING);
+            protocolMarshaller.marshall(listExecutionsRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listExecutionsRequest.getNextToken(), NEXTTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

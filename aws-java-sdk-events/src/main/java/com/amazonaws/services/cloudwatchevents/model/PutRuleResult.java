@@ -16,9 +16,6 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * The result of the <a>PutRule</a> operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutRule" target="_top">AWS API
  *      Documentation</a>
@@ -28,18 +25,18 @@ public class PutRuleResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the rule.
+     * The Amazon Resource Name (ARN) of the rule.
      * </p>
      */
     private String ruleArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the rule.
+     * The Amazon Resource Name (ARN) of the rule.
      * </p>
      * 
      * @param ruleArn
-     *        The Amazon Resource Name (ARN) that identifies the rule.
+     *        The Amazon Resource Name (ARN) of the rule.
      */
 
     public void setRuleArn(String ruleArn) {
@@ -48,10 +45,10 @@ public class PutRuleResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the rule.
+     * The Amazon Resource Name (ARN) of the rule.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that identifies the rule.
+     * @return The Amazon Resource Name (ARN) of the rule.
      */
 
     public String getRuleArn() {
@@ -60,11 +57,11 @@ public class PutRuleResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the rule.
+     * The Amazon Resource Name (ARN) of the rule.
      * </p>
      * 
      * @param ruleArn
-     *        The Amazon Resource Name (ARN) that identifies the rule.
+     *        The Amazon Resource Name (ARN) of the rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,4 +121,5 @@ public class PutRuleResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

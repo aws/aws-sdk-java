@@ -14,6 +14,8 @@ package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -23,7 +25,7 @@ import javax.annotation.Generated;
  * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-deploy-api.html">Deploy an API</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Stage implements Serializable, Cloneable {
+public class Stage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -91,15 +93,13 @@ public class Stage implements Serializable, Cloneable {
     private String documentationVersion;
     /**
      * <p>
-     * The date and time that the stage was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The timestamp when the stage was created.
      * </p>
      */
     private java.util.Date createdDate;
     /**
      * <p>
-     * The date and time that information about the stage was last updated, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     * The timestamp when the stage last updated.
      * </p>
      */
     private java.util.Date lastUpdatedDate;
@@ -620,13 +620,11 @@ public class Stage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time that the stage was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The timestamp when the stage was created.
      * </p>
      * 
      * @param createdDate
-     *        The date and time that the stage was created, in <a
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     *        The timestamp when the stage was created.
      */
 
     public void setCreatedDate(java.util.Date createdDate) {
@@ -635,12 +633,10 @@ public class Stage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time that the stage was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The timestamp when the stage was created.
      * </p>
      * 
-     * @return The date and time that the stage was created, in <a
-     *         href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     * @return The timestamp when the stage was created.
      */
 
     public java.util.Date getCreatedDate() {
@@ -649,13 +645,11 @@ public class Stage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time that the stage was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The timestamp when the stage was created.
      * </p>
      * 
      * @param createdDate
-     *        The date and time that the stage was created, in <a
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     *        The timestamp when the stage was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -666,13 +660,11 @@ public class Stage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time that information about the stage was last updated, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     * The timestamp when the stage last updated.
      * </p>
      * 
      * @param lastUpdatedDate
-     *        The date and time that information about the stage was last updated, in <a
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     *        The timestamp when the stage last updated.
      */
 
     public void setLastUpdatedDate(java.util.Date lastUpdatedDate) {
@@ -681,12 +673,10 @@ public class Stage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time that information about the stage was last updated, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     * The timestamp when the stage last updated.
      * </p>
      * 
-     * @return The date and time that information about the stage was last updated, in <a
-     *         href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     * @return The timestamp when the stage last updated.
      */
 
     public java.util.Date getLastUpdatedDate() {
@@ -695,13 +685,11 @@ public class Stage implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time that information about the stage was last updated, in <a
-     * href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     * The timestamp when the stage last updated.
      * </p>
      * 
      * @param lastUpdatedDate
-     *        The date and time that information about the stage was last updated, in <a
-     *        href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     *        The timestamp when the stage last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -837,5 +825,11 @@ public class Stage implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.apigateway.model.transform.StageMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

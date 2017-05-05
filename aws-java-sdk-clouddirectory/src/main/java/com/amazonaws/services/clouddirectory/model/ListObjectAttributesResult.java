@@ -31,7 +31,7 @@ public class ListObjectAttributesResult extends com.amazonaws.AmazonWebServiceRe
     private java.util.List<AttributeKeyAndValue> attributes;
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      */
     private String nextToken;
@@ -108,11 +108,11 @@ public class ListObjectAttributesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      * 
      * @param nextToken
-     *        Token used for pagination.
+     *        The pagination token.
      */
 
     public void setNextToken(String nextToken) {
@@ -121,10 +121,10 @@ public class ListObjectAttributesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      * 
-     * @return Token used for pagination.
+     * @return The pagination token.
      */
 
     public String getNextToken() {
@@ -133,11 +133,11 @@ public class ListObjectAttributesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      * 
      * @param nextToken
-     *        Token used for pagination.
+     *        The pagination token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,4 +204,5 @@ public class ListObjectAttributesResult extends com.amazonaws.AmazonWebServiceRe
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

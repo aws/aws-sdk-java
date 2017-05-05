@@ -12,80 +12,51 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateBasePathMappingRequest Marshaller
+ * UpdateBasePathMappingRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateBasePathMappingRequestMarshaller implements Marshaller<Request<UpdateBasePathMappingRequest>, UpdateBasePathMappingRequest> {
+@SdkInternalApi
+public class UpdateBasePathMappingRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DOMAINNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("domain_name").build();
+    private static final MarshallingInfo<String> BASEPATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("base_path").build();
+    private static final MarshallingInfo<List> PATCHOPERATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("patchOperations").build();
 
-    public UpdateBasePathMappingRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateBasePathMappingRequestMarshaller instance = new UpdateBasePathMappingRequestMarshaller();
+
+    public static UpdateBasePathMappingRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateBasePathMappingRequest> marshall(UpdateBasePathMappingRequest updateBasePathMappingRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateBasePathMappingRequest updateBasePathMappingRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateBasePathMappingRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateBasePathMappingRequest> request = new DefaultRequest<UpdateBasePathMappingRequest>(updateBasePathMappingRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.PATCH);
-
-        String uriResourcePath = "/domainnames/{domain_name}/basepathmappings/{base_path}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "domain_name",
-                updateBasePathMappingRequest.getDomainName());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "base_path", updateBasePathMappingRequest.getBasePath());
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            java.util.List<PatchOperation> patchOperationsList = updateBasePathMappingRequest.getPatchOperations();
-            if (patchOperationsList != null) {
-                jsonGenerator.writeFieldName("patchOperations");
-                jsonGenerator.writeStartArray();
-                for (PatchOperation patchOperationsListValue : patchOperationsList) {
-                    if (patchOperationsListValue != null) {
-
-                        PatchOperationJsonMarshaller.getInstance().marshall(patchOperationsListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateBasePathMappingRequest.getDomainName(), DOMAINNAME_BINDING);
+            protocolMarshaller.marshall(updateBasePathMappingRequest.getBasePath(), BASEPATH_BINDING);
+            protocolMarshaller.marshall(updateBasePathMappingRequest.getPatchOperations(), PATCHOPERATIONS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

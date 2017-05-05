@@ -12,70 +12,50 @@
  */
 package com.amazonaws.services.codecommit.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.codecommit.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListRepositoriesRequest Marshaller
+ * ListRepositoriesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListRepositoriesRequestMarshaller implements Marshaller<Request<ListRepositoriesRequest>, ListRepositoriesRequest> {
+@SdkInternalApi
+public class ListRepositoriesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<String> SORTBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("sortBy").build();
+    private static final MarshallingInfo<String> ORDER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("order").build();
 
-    public ListRepositoriesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListRepositoriesRequestMarshaller instance = new ListRepositoriesRequestMarshaller();
+
+    public static ListRepositoriesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListRepositoriesRequest> marshall(ListRepositoriesRequest listRepositoriesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListRepositoriesRequest listRepositoriesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listRepositoriesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListRepositoriesRequest> request = new DefaultRequest<ListRepositoriesRequest>(listRepositoriesRequest, "AWSCodeCommit");
-        request.addHeader("X-Amz-Target", "CodeCommit_20150413.ListRepositories");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (listRepositoriesRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("nextToken").writeValue(listRepositoriesRequest.getNextToken());
-            }
-            if (listRepositoriesRequest.getSortBy() != null) {
-                jsonGenerator.writeFieldName("sortBy").writeValue(listRepositoriesRequest.getSortBy());
-            }
-            if (listRepositoriesRequest.getOrder() != null) {
-                jsonGenerator.writeFieldName("order").writeValue(listRepositoriesRequest.getOrder());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listRepositoriesRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listRepositoriesRequest.getSortBy(), SORTBY_BINDING);
+            protocolMarshaller.marshall(listRepositoriesRequest.getOrder(), ORDER_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

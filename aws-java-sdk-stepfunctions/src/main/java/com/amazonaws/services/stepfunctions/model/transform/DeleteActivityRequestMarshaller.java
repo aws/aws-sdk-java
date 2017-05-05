@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.stepfunctions.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.stepfunctions.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteActivityRequest Marshaller
+ * DeleteActivityRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteActivityRequestMarshaller implements Marshaller<Request<DeleteActivityRequest>, DeleteActivityRequest> {
+@SdkInternalApi
+public class DeleteActivityRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ACTIVITYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("activityArn").build();
 
-    public DeleteActivityRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteActivityRequestMarshaller instance = new DeleteActivityRequestMarshaller();
+
+    public static DeleteActivityRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteActivityRequest> marshall(DeleteActivityRequest deleteActivityRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteActivityRequest deleteActivityRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteActivityRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteActivityRequest> request = new DefaultRequest<DeleteActivityRequest>(deleteActivityRequest, "AWSStepFunctions");
-        request.addHeader("X-Amz-Target", "AWSStepFunctions.DeleteActivity");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteActivityRequest.getActivityArn() != null) {
-                jsonGenerator.writeFieldName("activityArn").writeValue(deleteActivityRequest.getActivityArn());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteActivityRequest.getActivityArn(), ACTIVITYARN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

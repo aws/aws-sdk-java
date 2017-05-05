@@ -46,9 +46,9 @@ public class ActiveInstance implements Serializable, Cloneable {
     private String spotInstanceRequestId;
     /**
      * <p>
-     * The health status of the instance. If the status of both the instance status check and the system status check is
-     * <code>impaired</code>, the health status of the instance is <code>unhealthy</code>. Otherwise, the health status
-     * is <code>healthy</code>.
+     * The health status of the instance. If the status of either the instance status check or the system status check
+     * is <code>impaired</code>, the health status of the instance is <code>unhealthy</code>. Otherwise, the health
+     * status is <code>healthy</code>.
      * </p>
      */
     private String instanceHealth;
@@ -175,13 +175,13 @@ public class ActiveInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The health status of the instance. If the status of both the instance status check and the system status check is
-     * <code>impaired</code>, the health status of the instance is <code>unhealthy</code>. Otherwise, the health status
-     * is <code>healthy</code>.
+     * The health status of the instance. If the status of either the instance status check or the system status check
+     * is <code>impaired</code>, the health status of the instance is <code>unhealthy</code>. Otherwise, the health
+     * status is <code>healthy</code>.
      * </p>
      * 
      * @param instanceHealth
-     *        The health status of the instance. If the status of both the instance status check and the system status
+     *        The health status of the instance. If the status of either the instance status check or the system status
      *        check is <code>impaired</code>, the health status of the instance is <code>unhealthy</code>. Otherwise,
      *        the health status is <code>healthy</code>.
      * @see InstanceHealthStatus
@@ -193,12 +193,12 @@ public class ActiveInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The health status of the instance. If the status of both the instance status check and the system status check is
-     * <code>impaired</code>, the health status of the instance is <code>unhealthy</code>. Otherwise, the health status
-     * is <code>healthy</code>.
+     * The health status of the instance. If the status of either the instance status check or the system status check
+     * is <code>impaired</code>, the health status of the instance is <code>unhealthy</code>. Otherwise, the health
+     * status is <code>healthy</code>.
      * </p>
      * 
-     * @return The health status of the instance. If the status of both the instance status check and the system status
+     * @return The health status of the instance. If the status of either the instance status check or the system status
      *         check is <code>impaired</code>, the health status of the instance is <code>unhealthy</code>. Otherwise,
      *         the health status is <code>healthy</code>.
      * @see InstanceHealthStatus
@@ -210,13 +210,13 @@ public class ActiveInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The health status of the instance. If the status of both the instance status check and the system status check is
-     * <code>impaired</code>, the health status of the instance is <code>unhealthy</code>. Otherwise, the health status
-     * is <code>healthy</code>.
+     * The health status of the instance. If the status of either the instance status check or the system status check
+     * is <code>impaired</code>, the health status of the instance is <code>unhealthy</code>. Otherwise, the health
+     * status is <code>healthy</code>.
      * </p>
      * 
      * @param instanceHealth
-     *        The health status of the instance. If the status of both the instance status check and the system status
+     *        The health status of the instance. If the status of either the instance status check or the system status
      *        check is <code>impaired</code>, the health status of the instance is <code>unhealthy</code>. Otherwise,
      *        the health status is <code>healthy</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -230,13 +230,13 @@ public class ActiveInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The health status of the instance. If the status of both the instance status check and the system status check is
-     * <code>impaired</code>, the health status of the instance is <code>unhealthy</code>. Otherwise, the health status
-     * is <code>healthy</code>.
+     * The health status of the instance. If the status of either the instance status check or the system status check
+     * is <code>impaired</code>, the health status of the instance is <code>unhealthy</code>. Otherwise, the health
+     * status is <code>healthy</code>.
      * </p>
      * 
      * @param instanceHealth
-     *        The health status of the instance. If the status of both the instance status check and the system status
+     *        The health status of the instance. If the status of either the instance status check or the system status
      *        check is <code>impaired</code>, the health status of the instance is <code>unhealthy</code>. Otherwise,
      *        the health status is <code>healthy</code>.
      * @see InstanceHealthStatus
@@ -248,13 +248,13 @@ public class ActiveInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The health status of the instance. If the status of both the instance status check and the system status check is
-     * <code>impaired</code>, the health status of the instance is <code>unhealthy</code>. Otherwise, the health status
-     * is <code>healthy</code>.
+     * The health status of the instance. If the status of either the instance status check or the system status check
+     * is <code>impaired</code>, the health status of the instance is <code>unhealthy</code>. Otherwise, the health
+     * status is <code>healthy</code>.
      * </p>
      * 
      * @param instanceHealth
-     *        The health status of the instance. If the status of both the instance status check and the system status
+     *        The health status of the instance. If the status of either the instance status check or the system status
      *        check is <code>impaired</code>, the health status of the instance is <code>unhealthy</code>. Otherwise,
      *        the health status is <code>healthy</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -338,4 +338,5 @@ public class ActiveInstance implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

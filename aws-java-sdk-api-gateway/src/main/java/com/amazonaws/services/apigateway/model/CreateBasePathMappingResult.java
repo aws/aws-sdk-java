@@ -231,4 +231,5 @@ public class CreateBasePathMappingResult extends com.amazonaws.AmazonWebServiceR
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

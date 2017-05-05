@@ -31,59 +31,48 @@ public class ListTrafficPoliciesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * (Conditional) For your first request to <code>ListTrafficPolicies</code>, do not include the
+     * (Conditional) For your first request to <code>ListTrafficPolicies</code>, don't include the
      * <code>TrafficPolicyIdMarker</code> parameter.
      * </p>
      * <p>
      * If you have more traffic policies than the value of <code>MaxItems</code>, <code>ListTrafficPolicies</code>
-     * returns only the first <code>MaxItems</code> traffic policies. To get the next group of <code>MaxItems</code>
-     * policies, submit another request to <code>ListTrafficPolicies</code>. For the value of
-     * <code>TrafficPolicyIdMarker</code>, specify the value of the <code>TrafficPolicyIdMarker</code> element that was
-     * returned in the previous response.
-     * </p>
-     * <p>
-     * Policies are listed in the order in which they were created.
+     * returns only the first <code>MaxItems</code> traffic policies. To get the next group of policies, submit another
+     * request to <code>ListTrafficPolicies</code>. For the value of <code>TrafficPolicyIdMarker</code>, specify the
+     * value of <code>TrafficPolicyIdMarker</code> that was returned in the previous response.
      * </p>
      */
     private String trafficPolicyIdMarker;
     /**
      * <p>
-     * (Optional) The maximum number of traffic policies to be included in the response body for this request. If you
-     * have more than <code>MaxItems</code> traffic policies, the value of the <code>IsTruncated</code> element in the
-     * response is <code>true</code>, and the value of the <code>TrafficPolicyIdMarker</code> element is the ID of the
-     * first traffic policy in the next group of <code>MaxItems</code> traffic policies.
+     * (Optional) The maximum number of traffic policies that you want Amazon Route 53 to return in response to this
+     * request. If you have more than <code>MaxItems</code> traffic policies, the value of <code>IsTruncated</code> in
+     * the response is <code>true</code>, and the value of <code>TrafficPolicyIdMarker</code> is the ID of the first
+     * traffic policy that Amazon Route 53 will return if you submit another request.
      * </p>
      */
     private String maxItems;
 
     /**
      * <p>
-     * (Conditional) For your first request to <code>ListTrafficPolicies</code>, do not include the
+     * (Conditional) For your first request to <code>ListTrafficPolicies</code>, don't include the
      * <code>TrafficPolicyIdMarker</code> parameter.
      * </p>
      * <p>
      * If you have more traffic policies than the value of <code>MaxItems</code>, <code>ListTrafficPolicies</code>
-     * returns only the first <code>MaxItems</code> traffic policies. To get the next group of <code>MaxItems</code>
-     * policies, submit another request to <code>ListTrafficPolicies</code>. For the value of
-     * <code>TrafficPolicyIdMarker</code>, specify the value of the <code>TrafficPolicyIdMarker</code> element that was
-     * returned in the previous response.
-     * </p>
-     * <p>
-     * Policies are listed in the order in which they were created.
+     * returns only the first <code>MaxItems</code> traffic policies. To get the next group of policies, submit another
+     * request to <code>ListTrafficPolicies</code>. For the value of <code>TrafficPolicyIdMarker</code>, specify the
+     * value of <code>TrafficPolicyIdMarker</code> that was returned in the previous response.
      * </p>
      * 
      * @param trafficPolicyIdMarker
-     *        (Conditional) For your first request to <code>ListTrafficPolicies</code>, do not include the
+     *        (Conditional) For your first request to <code>ListTrafficPolicies</code>, don't include the
      *        <code>TrafficPolicyIdMarker</code> parameter.</p>
      *        <p>
      *        If you have more traffic policies than the value of <code>MaxItems</code>,
      *        <code>ListTrafficPolicies</code> returns only the first <code>MaxItems</code> traffic policies. To get the
-     *        next group of <code>MaxItems</code> policies, submit another request to <code>ListTrafficPolicies</code>.
-     *        For the value of <code>TrafficPolicyIdMarker</code>, specify the value of the
-     *        <code>TrafficPolicyIdMarker</code> element that was returned in the previous response.
-     *        </p>
-     *        <p>
-     *        Policies are listed in the order in which they were created.
+     *        next group of policies, submit another request to <code>ListTrafficPolicies</code>. For the value of
+     *        <code>TrafficPolicyIdMarker</code>, specify the value of <code>TrafficPolicyIdMarker</code> that was
+     *        returned in the previous response.
      */
 
     public void setTrafficPolicyIdMarker(String trafficPolicyIdMarker) {
@@ -92,31 +81,24 @@ public class ListTrafficPoliciesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * (Conditional) For your first request to <code>ListTrafficPolicies</code>, do not include the
+     * (Conditional) For your first request to <code>ListTrafficPolicies</code>, don't include the
      * <code>TrafficPolicyIdMarker</code> parameter.
      * </p>
      * <p>
      * If you have more traffic policies than the value of <code>MaxItems</code>, <code>ListTrafficPolicies</code>
-     * returns only the first <code>MaxItems</code> traffic policies. To get the next group of <code>MaxItems</code>
-     * policies, submit another request to <code>ListTrafficPolicies</code>. For the value of
-     * <code>TrafficPolicyIdMarker</code>, specify the value of the <code>TrafficPolicyIdMarker</code> element that was
-     * returned in the previous response.
-     * </p>
-     * <p>
-     * Policies are listed in the order in which they were created.
+     * returns only the first <code>MaxItems</code> traffic policies. To get the next group of policies, submit another
+     * request to <code>ListTrafficPolicies</code>. For the value of <code>TrafficPolicyIdMarker</code>, specify the
+     * value of <code>TrafficPolicyIdMarker</code> that was returned in the previous response.
      * </p>
      * 
-     * @return (Conditional) For your first request to <code>ListTrafficPolicies</code>, do not include the
+     * @return (Conditional) For your first request to <code>ListTrafficPolicies</code>, don't include the
      *         <code>TrafficPolicyIdMarker</code> parameter.</p>
      *         <p>
      *         If you have more traffic policies than the value of <code>MaxItems</code>,
      *         <code>ListTrafficPolicies</code> returns only the first <code>MaxItems</code> traffic policies. To get
-     *         the next group of <code>MaxItems</code> policies, submit another request to
-     *         <code>ListTrafficPolicies</code>. For the value of <code>TrafficPolicyIdMarker</code>, specify the value
-     *         of the <code>TrafficPolicyIdMarker</code> element that was returned in the previous response.
-     *         </p>
-     *         <p>
-     *         Policies are listed in the order in which they were created.
+     *         the next group of policies, submit another request to <code>ListTrafficPolicies</code>. For the value of
+     *         <code>TrafficPolicyIdMarker</code>, specify the value of <code>TrafficPolicyIdMarker</code> that was
+     *         returned in the previous response.
      */
 
     public String getTrafficPolicyIdMarker() {
@@ -125,32 +107,25 @@ public class ListTrafficPoliciesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * (Conditional) For your first request to <code>ListTrafficPolicies</code>, do not include the
+     * (Conditional) For your first request to <code>ListTrafficPolicies</code>, don't include the
      * <code>TrafficPolicyIdMarker</code> parameter.
      * </p>
      * <p>
      * If you have more traffic policies than the value of <code>MaxItems</code>, <code>ListTrafficPolicies</code>
-     * returns only the first <code>MaxItems</code> traffic policies. To get the next group of <code>MaxItems</code>
-     * policies, submit another request to <code>ListTrafficPolicies</code>. For the value of
-     * <code>TrafficPolicyIdMarker</code>, specify the value of the <code>TrafficPolicyIdMarker</code> element that was
-     * returned in the previous response.
-     * </p>
-     * <p>
-     * Policies are listed in the order in which they were created.
+     * returns only the first <code>MaxItems</code> traffic policies. To get the next group of policies, submit another
+     * request to <code>ListTrafficPolicies</code>. For the value of <code>TrafficPolicyIdMarker</code>, specify the
+     * value of <code>TrafficPolicyIdMarker</code> that was returned in the previous response.
      * </p>
      * 
      * @param trafficPolicyIdMarker
-     *        (Conditional) For your first request to <code>ListTrafficPolicies</code>, do not include the
+     *        (Conditional) For your first request to <code>ListTrafficPolicies</code>, don't include the
      *        <code>TrafficPolicyIdMarker</code> parameter.</p>
      *        <p>
      *        If you have more traffic policies than the value of <code>MaxItems</code>,
      *        <code>ListTrafficPolicies</code> returns only the first <code>MaxItems</code> traffic policies. To get the
-     *        next group of <code>MaxItems</code> policies, submit another request to <code>ListTrafficPolicies</code>.
-     *        For the value of <code>TrafficPolicyIdMarker</code>, specify the value of the
-     *        <code>TrafficPolicyIdMarker</code> element that was returned in the previous response.
-     *        </p>
-     *        <p>
-     *        Policies are listed in the order in which they were created.
+     *        next group of policies, submit another request to <code>ListTrafficPolicies</code>. For the value of
+     *        <code>TrafficPolicyIdMarker</code>, specify the value of <code>TrafficPolicyIdMarker</code> that was
+     *        returned in the previous response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -161,17 +136,18 @@ public class ListTrafficPoliciesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * (Optional) The maximum number of traffic policies to be included in the response body for this request. If you
-     * have more than <code>MaxItems</code> traffic policies, the value of the <code>IsTruncated</code> element in the
-     * response is <code>true</code>, and the value of the <code>TrafficPolicyIdMarker</code> element is the ID of the
-     * first traffic policy in the next group of <code>MaxItems</code> traffic policies.
+     * (Optional) The maximum number of traffic policies that you want Amazon Route 53 to return in response to this
+     * request. If you have more than <code>MaxItems</code> traffic policies, the value of <code>IsTruncated</code> in
+     * the response is <code>true</code>, and the value of <code>TrafficPolicyIdMarker</code> is the ID of the first
+     * traffic policy that Amazon Route 53 will return if you submit another request.
      * </p>
      * 
      * @param maxItems
-     *        (Optional) The maximum number of traffic policies to be included in the response body for this request. If
-     *        you have more than <code>MaxItems</code> traffic policies, the value of the <code>IsTruncated</code>
-     *        element in the response is <code>true</code>, and the value of the <code>TrafficPolicyIdMarker</code>
-     *        element is the ID of the first traffic policy in the next group of <code>MaxItems</code> traffic policies.
+     *        (Optional) The maximum number of traffic policies that you want Amazon Route 53 to return in response to
+     *        this request. If you have more than <code>MaxItems</code> traffic policies, the value of
+     *        <code>IsTruncated</code> in the response is <code>true</code>, and the value of
+     *        <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy that Amazon Route 53 will return
+     *        if you submit another request.
      */
 
     public void setMaxItems(String maxItems) {
@@ -180,17 +156,17 @@ public class ListTrafficPoliciesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * (Optional) The maximum number of traffic policies to be included in the response body for this request. If you
-     * have more than <code>MaxItems</code> traffic policies, the value of the <code>IsTruncated</code> element in the
-     * response is <code>true</code>, and the value of the <code>TrafficPolicyIdMarker</code> element is the ID of the
-     * first traffic policy in the next group of <code>MaxItems</code> traffic policies.
+     * (Optional) The maximum number of traffic policies that you want Amazon Route 53 to return in response to this
+     * request. If you have more than <code>MaxItems</code> traffic policies, the value of <code>IsTruncated</code> in
+     * the response is <code>true</code>, and the value of <code>TrafficPolicyIdMarker</code> is the ID of the first
+     * traffic policy that Amazon Route 53 will return if you submit another request.
      * </p>
      * 
-     * @return (Optional) The maximum number of traffic policies to be included in the response body for this request.
-     *         If you have more than <code>MaxItems</code> traffic policies, the value of the <code>IsTruncated</code>
-     *         element in the response is <code>true</code>, and the value of the <code>TrafficPolicyIdMarker</code>
-     *         element is the ID of the first traffic policy in the next group of <code>MaxItems</code> traffic
-     *         policies.
+     * @return (Optional) The maximum number of traffic policies that you want Amazon Route 53 to return in response to
+     *         this request. If you have more than <code>MaxItems</code> traffic policies, the value of
+     *         <code>IsTruncated</code> in the response is <code>true</code>, and the value of
+     *         <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy that Amazon Route 53 will return
+     *         if you submit another request.
      */
 
     public String getMaxItems() {
@@ -199,17 +175,18 @@ public class ListTrafficPoliciesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * (Optional) The maximum number of traffic policies to be included in the response body for this request. If you
-     * have more than <code>MaxItems</code> traffic policies, the value of the <code>IsTruncated</code> element in the
-     * response is <code>true</code>, and the value of the <code>TrafficPolicyIdMarker</code> element is the ID of the
-     * first traffic policy in the next group of <code>MaxItems</code> traffic policies.
+     * (Optional) The maximum number of traffic policies that you want Amazon Route 53 to return in response to this
+     * request. If you have more than <code>MaxItems</code> traffic policies, the value of <code>IsTruncated</code> in
+     * the response is <code>true</code>, and the value of <code>TrafficPolicyIdMarker</code> is the ID of the first
+     * traffic policy that Amazon Route 53 will return if you submit another request.
      * </p>
      * 
      * @param maxItems
-     *        (Optional) The maximum number of traffic policies to be included in the response body for this request. If
-     *        you have more than <code>MaxItems</code> traffic policies, the value of the <code>IsTruncated</code>
-     *        element in the response is <code>true</code>, and the value of the <code>TrafficPolicyIdMarker</code>
-     *        element is the ID of the first traffic policy in the next group of <code>MaxItems</code> traffic policies.
+     *        (Optional) The maximum number of traffic policies that you want Amazon Route 53 to return in response to
+     *        this request. If you have more than <code>MaxItems</code> traffic policies, the value of
+     *        <code>IsTruncated</code> in the response is <code>true</code>, and the value of
+     *        <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy that Amazon Route 53 will return
+     *        if you submit another request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -16,9 +16,6 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * The result of the <a>DescribeRule</a> operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeRule" target="_top">AWS API
  *      Documentation</a>
@@ -28,13 +25,13 @@ public class DescribeRuleResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The rule's name.
+     * The name of the rule.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) associated with the rule.
+     * The Amazon Resource Name (ARN) of the rule.
      * </p>
      */
     private String arn;
@@ -58,7 +55,7 @@ public class DescribeRuleResult extends com.amazonaws.AmazonWebServiceResult<com
     private String state;
     /**
      * <p>
-     * The rule's description.
+     * The description of the rule.
      * </p>
      */
     private String description;
@@ -71,11 +68,11 @@ public class DescribeRuleResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The rule's name.
+     * The name of the rule.
      * </p>
      * 
      * @param name
-     *        The rule's name.
+     *        The name of the rule.
      */
 
     public void setName(String name) {
@@ -84,10 +81,10 @@ public class DescribeRuleResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The rule's name.
+     * The name of the rule.
      * </p>
      * 
-     * @return The rule's name.
+     * @return The name of the rule.
      */
 
     public String getName() {
@@ -96,11 +93,11 @@ public class DescribeRuleResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The rule's name.
+     * The name of the rule.
      * </p>
      * 
      * @param name
-     *        The rule's name.
+     *        The name of the rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,11 +108,11 @@ public class DescribeRuleResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) associated with the rule.
+     * The Amazon Resource Name (ARN) of the rule.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) associated with the rule.
+     *        The Amazon Resource Name (ARN) of the rule.
      */
 
     public void setArn(String arn) {
@@ -124,10 +121,10 @@ public class DescribeRuleResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) associated with the rule.
+     * The Amazon Resource Name (ARN) of the rule.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) associated with the rule.
+     * @return The Amazon Resource Name (ARN) of the rule.
      */
 
     public String getArn() {
@@ -136,11 +133,11 @@ public class DescribeRuleResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) associated with the rule.
+     * The Amazon Resource Name (ARN) of the rule.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) associated with the rule.
+     *        The Amazon Resource Name (ARN) of the rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -304,11 +301,11 @@ public class DescribeRuleResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The rule's description.
+     * The description of the rule.
      * </p>
      * 
      * @param description
-     *        The rule's description.
+     *        The description of the rule.
      */
 
     public void setDescription(String description) {
@@ -317,10 +314,10 @@ public class DescribeRuleResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The rule's description.
+     * The description of the rule.
      * </p>
      * 
-     * @return The rule's description.
+     * @return The description of the rule.
      */
 
     public String getDescription() {
@@ -329,11 +326,11 @@ public class DescribeRuleResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The rule's description.
+     * The description of the rule.
      * </p>
      * 
      * @param description
-     *        The rule's description.
+     *        The description of the rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -475,4 +472,5 @@ public class DescribeRuleResult extends com.amazonaws.AmazonWebServiceResult<com
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

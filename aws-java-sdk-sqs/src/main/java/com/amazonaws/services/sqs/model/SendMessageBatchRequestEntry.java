@@ -45,9 +45,9 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
     private String messageBody;
     /**
      * <p>
-     * The number of seconds for which a specific message is delayed. Valid values: 0 to 900. Maximum: 15 minutes.
-     * Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay period
-     * is finished. If you don't specify a value, the default value for the queue is applied.
+     * The length of time, in seconds, for which a specific message is delayed. Valid values: 0 to 900. Maximum: 15
+     * minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay
+     * period is finished. If you don't specify a value, the default value for the queue is applied.
      * </p>
      * <note>
      * <p>
@@ -118,12 +118,6 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * You can also use <code>ContentBasedDeduplication</code> for messages with identical content to be treated as
-     * duplicates.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a
      * <code>MessageDeduplicationId</code> that is the same as the one generated for the first
      * <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message
@@ -188,6 +182,11 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagegroupid-property"
      * >Using the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
+     * <important>
+     * <p>
+     * <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.
+     * </p>
+     * </important>
      */
     private String messageGroupId;
 
@@ -321,9 +320,9 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of seconds for which a specific message is delayed. Valid values: 0 to 900. Maximum: 15 minutes.
-     * Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay period
-     * is finished. If you don't specify a value, the default value for the queue is applied.
+     * The length of time, in seconds, for which a specific message is delayed. Valid values: 0 to 900. Maximum: 15
+     * minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay
+     * period is finished. If you don't specify a value, the default value for the queue is applied.
      * </p>
      * <note>
      * <p>
@@ -333,8 +332,8 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </note>
      * 
      * @param delaySeconds
-     *        The number of seconds for which a specific message is delayed. Valid values: 0 to 900. Maximum: 15
-     *        minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after
+     *        The length of time, in seconds, for which a specific message is delayed. Valid values: 0 to 900. Maximum:
+     *        15 minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after
      *        the delay period is finished. If you don't specify a value, the default value for the queue is applied.
      *        </p> <note>
      *        <p>
@@ -349,9 +348,9 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of seconds for which a specific message is delayed. Valid values: 0 to 900. Maximum: 15 minutes.
-     * Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay period
-     * is finished. If you don't specify a value, the default value for the queue is applied.
+     * The length of time, in seconds, for which a specific message is delayed. Valid values: 0 to 900. Maximum: 15
+     * minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay
+     * period is finished. If you don't specify a value, the default value for the queue is applied.
      * </p>
      * <note>
      * <p>
@@ -360,10 +359,10 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </p>
      * </note>
      * 
-     * @return The number of seconds for which a specific message is delayed. Valid values: 0 to 900. Maximum: 15
-     *         minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after
-     *         the delay period is finished. If you don't specify a value, the default value for the queue is applied.
-     *         </p> <note>
+     * @return The length of time, in seconds, for which a specific message is delayed. Valid values: 0 to 900. Maximum:
+     *         15 minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing
+     *         after the delay period is finished. If you don't specify a value, the default value for the queue is
+     *         applied. </p> <note>
      *         <p>
      *         When you set <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per message. You can set
      *         this parameter only on a queue level.
@@ -376,9 +375,9 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of seconds for which a specific message is delayed. Valid values: 0 to 900. Maximum: 15 minutes.
-     * Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay period
-     * is finished. If you don't specify a value, the default value for the queue is applied.
+     * The length of time, in seconds, for which a specific message is delayed. Valid values: 0 to 900. Maximum: 15
+     * minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after the delay
+     * period is finished. If you don't specify a value, the default value for the queue is applied.
      * </p>
      * <note>
      * <p>
@@ -388,8 +387,8 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </note>
      * 
      * @param delaySeconds
-     *        The number of seconds for which a specific message is delayed. Valid values: 0 to 900. Maximum: 15
-     *        minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after
+     *        The length of time, in seconds, for which a specific message is delayed. Valid values: 0 to 900. Maximum:
+     *        15 minutes. Messages with a positive <code>DelaySeconds</code> value become available for processing after
      *        the delay period is finished. If you don't specify a value, the default value for the queue is applied.
      *        </p> <note>
      *        <p>
@@ -538,12 +537,6 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * You can also use <code>ContentBasedDeduplication</code> for messages with identical content to be treated as
-     * duplicates.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a
      * <code>MessageDeduplicationId</code> that is the same as the one generated for the first
      * <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message
@@ -618,12 +611,6 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *        <p>
      *        When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the
      *        deduplication interval are treated as duplicates and only one copy of the message is delivered.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        You can also use <code>ContentBasedDeduplication</code> for messages with identical content to be treated
-     *        as duplicates.
      *        </p>
      *        </li>
      *        <li>
@@ -713,12 +700,6 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * You can also use <code>ContentBasedDeduplication</code> for messages with identical content to be treated as
-     * duplicates.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a
      * <code>MessageDeduplicationId</code> that is the same as the one generated for the first
      * <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message
@@ -793,12 +774,6 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *         <p>
      *         When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the
      *         deduplication interval are treated as duplicates and only one copy of the message is delivered.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         You can also use <code>ContentBasedDeduplication</code> for messages with identical content to be treated
-     *         as duplicates.
      *         </p>
      *         </li>
      *         <li>
@@ -888,12 +863,6 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * You can also use <code>ContentBasedDeduplication</code> for messages with identical content to be treated as
-     * duplicates.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a
      * <code>MessageDeduplicationId</code> that is the same as the one generated for the first
      * <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message
@@ -972,12 +941,6 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        You can also use <code>ContentBasedDeduplication</code> for messages with identical content to be treated
-     *        as duplicates.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with
      *        a <code>MessageDeduplicationId</code> that is the same as the one generated for the first
      *        <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the
@@ -1048,6 +1011,11 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagegroupid-property"
      * >Using the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
+     * <important>
+     * <p>
+     * <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.
+     * </p>
+     * </important>
      * 
      * @param messageGroupId
      *        This parameter applies only to FIFO (first-in-first-out) queues.</p>
@@ -1081,6 +1049,11 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *        For best practices of using <code>MessageGroupId</code>, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagegroupid-property"
      *        >Using the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        </p>
+     *        <important>
+     *        <p>
+     *        <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.
+     *        </p>
      */
 
     public void setMessageGroupId(String messageGroupId) {
@@ -1122,6 +1095,11 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagegroupid-property"
      * >Using the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
+     * <important>
+     * <p>
+     * <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.
+     * </p>
+     * </important>
      * 
      * @return This parameter applies only to FIFO (first-in-first-out) queues.</p>
      *         <p>
@@ -1154,6 +1132,11 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *         For best practices of using <code>MessageGroupId</code>, see <a href=
      *         "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagegroupid-property"
      *         >Using the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *         </p>
+     *         <important>
+     *         <p>
+     *         <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.
+     *         </p>
      */
 
     public String getMessageGroupId() {
@@ -1195,6 +1178,11 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagegroupid-property"
      * >Using the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
+     * <important>
+     * <p>
+     * <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.
+     * </p>
+     * </important>
      * 
      * @param messageGroupId
      *        This parameter applies only to FIFO (first-in-first-out) queues.</p>
@@ -1228,6 +1216,11 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *        For best practices of using <code>MessageGroupId</code>, see <a href=
      *        "http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-messagegroupid-property"
      *        >Using the MessageGroupId Property</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        </p>
+     *        <important>
+     *        <p>
+     *        <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1322,4 +1315,5 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

@@ -30,12 +30,18 @@ public class ProgressEvent extends com.amazonaws.event.ProgressEvent {
         super(bytesTransferred);
     }
 
+    public ProgressEvent(long bytesTransferred) {
+        super(ProgressEventType.BYTE_TRANSFER_EVENT, bytesTransferred);
+    }
+
     public ProgressEvent(ProgressEventType eventType) {
         super(eventType);
     }
 
     /**
-     * @deprecated Replaced by {@link #getBytesTransferred()}
+     * @deprecated Replaced by {@link #getBytesTransferred()}. This method
+     * <b>SHOULD NEVER</b> be used as it can lead to integer overflow if the
+     * number of bytes transferred was greater than {@link Integer#MAX_VALUE}.
      */
     @Deprecated
     public int getBytesTransfered() {

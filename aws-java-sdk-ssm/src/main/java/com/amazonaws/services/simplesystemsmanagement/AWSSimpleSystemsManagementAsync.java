@@ -25,22 +25,22 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
  * {@link com.amazonaws.services.simplesystemsmanagement.AbstractAWSSimpleSystemsManagementAsync} instead.
  * </p>
  * <p>
+ * <fullname>Amazon EC2 Systems Manager</fullname>
  * <p>
  * Amazon EC2 Systems Manager is a collection of capabilities that helps you automate management tasks such as
  * collecting system inventory, applying operating system (OS) patches, automating the creation of Amazon Machine Images
- * (AMIs), and configuring operating systems (OSs) and applications at scale. Systems Manager works with managed
- * instances: Amazon EC2 instances and servers or virtual machines (VMs) in your on-premises environment that are
- * configured for Systems Manager.
+ * (AMIs), and configuring operating systems (OSs) and applications at scale. Systems Manager lets you remotely and
+ * securely manage the configuration of your managed instances. A <i>managed instance</i> is any Amazon EC2 instance or
+ * on-premises machine in your hybrid environment that has been configured for Systems Manager.
  * </p>
  * <p>
- * This references is intended to be used with the EC2 Systems Manager User Guide (<a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/systems-manager.html">Linux</a>) (<a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/systems-manager.html">Windows</a>).
+ * This reference is intended to be used with the <a
+ * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/">Amazon EC2 Systems Manager User Guide</a>.
  * </p>
  * <p>
- * To get started, verify prerequisites and configure managed instances (<a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/systems-manager-prereqs.html">Linux</a>) (<a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/systems-manager-prereqs.html">Windows</a>).
+ * To get started, verify prerequisites and configure managed instances. For more information, see <a
+ * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-prereqs.html">Systems Manager
+ * Prerequisites</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -64,7 +64,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * For more information about tags, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a>
-     * in the Amazon EC2 User Guide.
+     * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param addTagsToResourceRequest
@@ -93,7 +93,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * For more information about tags, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a>
-     * in the Amazon EC2 User Guide.
+     * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param addTagsToResourceRequest
@@ -147,9 +147,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * Registers your on-premises server or virtual machine with Amazon EC2 so that you can manage these resources using
      * Run Command. An on-premises server or virtual machine that has been registered with EC2 is called a managed
      * instance. For more information about activations, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managed-instances.html">Setting Up Managed Instances
-     * (Linux)</a> or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/managed-instances.html">Setting Up
-     * Managed Instances (Windows)</a> in the Amazon EC2 User Guide.
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
+     * Up Systems Manager in Hybrid Environments</a>.
      * </p>
      * 
      * @param createActivationRequest
@@ -165,9 +164,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * Registers your on-premises server or virtual machine with Amazon EC2 so that you can manage these resources using
      * Run Command. An on-premises server or virtual machine that has been registered with EC2 is called a managed
      * instance. For more information about activations, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managed-instances.html">Setting Up Managed Instances
-     * (Linux)</a> or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/managed-instances.html">Setting Up
-     * Managed Instances (Windows)</a> in the Amazon EC2 User Guide.
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
+     * Up Systems Manager in Hybrid Environments</a>.
      * </p>
      * 
      * @param createActivationRequest
@@ -185,11 +183,11 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Associates the specified SSM document with the specified instances or targets.
+     * Associates the specified Systems Manager document with the specified instances or targets.
      * </p>
      * <p>
-     * When you associate an SSM document with one or more instances using instance IDs or tags, the SSM agent running
-     * on the instance processes the document and configures the instance as specified.
+     * When you associate a document with one or more instances using instance IDs or tags, the SSM Agent running on the
+     * instance processes the document and configures the instance as specified.
      * </p>
      * <p>
      * If you associate a document with an instance that already has an associated document, the system throws the
@@ -206,11 +204,11 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Associates the specified SSM document with the specified instances or targets.
+     * Associates the specified Systems Manager document with the specified instances or targets.
      * </p>
      * <p>
-     * When you associate an SSM document with one or more instances using instance IDs or tags, the SSM agent running
-     * on the instance processes the document and configures the instance as specified.
+     * When you associate a document with one or more instances using instance IDs or tags, the SSM Agent running on the
+     * instance processes the document and configures the instance as specified.
      * </p>
      * <p>
      * If you associate a document with an instance that already has an associated document, the system throws the
@@ -232,11 +230,11 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Associates the specified SSM document with the specified instances or targets.
+     * Associates the specified Systems Manager document with the specified instances or targets.
      * </p>
      * <p>
-     * When you associate an SSM document with one or more instances using instance IDs or tags, the SSM agent running
-     * on the instance processes the document and configures the instance as specified.
+     * When you associate a document with one or more instances using instance IDs or tags, the SSM Agent running on the
+     * instance processes the document and configures the instance as specified.
      * </p>
      * <p>
      * If you associate a document with an instance that already has an associated document, the system throws the
@@ -253,11 +251,11 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Associates the specified SSM document with the specified instances or targets.
+     * Associates the specified Systems Manager document with the specified instances or targets.
      * </p>
      * <p>
-     * When you associate an SSM document with one or more instances using instance IDs or tags, the SSM agent running
-     * on the instance processes the document and configures the instance as specified.
+     * When you associate a document with one or more instances using instance IDs or tags, the SSM Agent running on the
+     * instance processes the document and configures the instance as specified.
      * </p>
      * <p>
      * If you associate a document with an instance that already has an associated document, the system throws the
@@ -279,11 +277,10 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Creates an SSM document.
+     * Creates a Systems Manager document.
      * </p>
      * <p>
-     * After you create an SSM document, you can use CreateAssociation to associate it with one or more running
-     * instances.
+     * After you create a document, you can use CreateAssociation to associate it with one or more running instances.
      * </p>
      * 
      * @param createDocumentRequest
@@ -296,11 +293,10 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Creates an SSM document.
+     * Creates a Systems Manager document.
      * </p>
      * <p>
-     * After you create an SSM document, you can use CreateAssociation to associate it with one or more running
-     * instances.
+     * After you create a document, you can use CreateAssociation to associate it with one or more running instances.
      * </p>
      * 
      * @param createDocumentRequest
@@ -415,10 +411,10 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Disassociates the specified SSM document from the specified instance.
+     * Disassociates the specified Systems Manager document from the specified instance.
      * </p>
      * <p>
-     * When you disassociate an SSM document from an instance, it does not change the configuration of the instance. To
+     * When you disassociate a document from an instance, it does not change the configuration of the instance. To
      * change the configuration state of an instance after you disassociate a document, you must create a new document
      * with the desired configuration and associate it with the instance.
      * </p>
@@ -433,10 +429,10 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Disassociates the specified SSM document from the specified instance.
+     * Disassociates the specified Systems Manager document from the specified instance.
      * </p>
      * <p>
-     * When you disassociate an SSM document from an instance, it does not change the configuration of the instance. To
+     * When you disassociate a document from an instance, it does not change the configuration of the instance. To
      * change the configuration state of an instance after you disassociate a document, you must create a new document
      * with the desired configuration and associate it with the instance.
      * </p>
@@ -456,10 +452,10 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Deletes the SSM document and all instance associations to the document.
+     * Deletes the Systems Manager document and all instance associations to the document.
      * </p>
      * <p>
-     * Before you delete the SSM document, we recommend that you use DeleteAssociation to disassociate all instances
+     * Before you delete the document, we recommend that you use <a>DeleteAssociation</a> to disassociate all instances
      * that are associated with the document.
      * </p>
      * 
@@ -473,10 +469,10 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Deletes the SSM document and all instance associations to the document.
+     * Deletes the Systems Manager document and all instance associations to the document.
      * </p>
      * <p>
-     * Before you delete the SSM document, we recommend that you use DeleteAssociation to disassociate all instances
+     * Before you delete the document, we recommend that you use <a>DeleteAssociation</a> to disassociate all instances
      * that are associated with the document.
      * </p>
      * 
@@ -589,7 +585,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
     /**
      * <p>
      * Removes the server or virtual machine from the list of registered servers. You can reregister the instance again
-     * at any time. If you don’t plan to use Run Command on the server, we suggest uninstalling the SSM agent first.
+     * at any time. If you don’t plan to use Run Command on the server, we suggest uninstalling the SSM Agent first.
      * </p>
      * 
      * @param deregisterManagedInstanceRequest
@@ -604,7 +600,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
     /**
      * <p>
      * Removes the server or virtual machine from the list of registered servers. You can reregister the instance again
-     * at any time. If you don’t plan to use Run Command on the server, we suggest uninstalling the SSM agent first.
+     * at any time. If you don’t plan to use Run Command on the server, we suggest uninstalling the SSM Agent first.
      * </p>
      * 
      * @param deregisterManagedInstanceRequest
@@ -761,7 +757,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Describes the associations for the specified SSM document or instance.
+     * Describes the associations for the specified Systems Manager document or instance.
      * </p>
      * 
      * @param describeAssociationRequest
@@ -774,7 +770,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Describes the associations for the specified SSM document or instance.
+     * Describes the associations for the specified Systems Manager document or instance.
      * </p>
      * 
      * @param describeAssociationRequest
@@ -889,8 +885,9 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Describes the permissions for an SSM document. If you created the document, you are the owner. If a document is
-     * shared, it can either be shared privately (by specifying a user’s AWS account ID) or publicly (<i>All</i>).
+     * Describes the permissions for a Systems Manager document. If you created the document, you are the owner. If a
+     * document is shared, it can either be shared privately (by specifying a user’s AWS account ID) or publicly
+     * (<i>All</i>).
      * </p>
      * 
      * @param describeDocumentPermissionRequest
@@ -904,8 +901,9 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Describes the permissions for an SSM document. If you created the document, you are the owner. If a document is
-     * shared, it can either be shared privately (by specifying a user’s AWS account ID) or publicly (<i>All</i>).
+     * Describes the permissions for a Systems Manager document. If you created the document, you are the owner. If a
+     * document is shared, it can either be shared privately (by specifying a user’s AWS account ID) or publicly
+     * (<i>All</i>).
      * </p>
      * 
      * @param describeDocumentPermissionRequest
@@ -1030,7 +1028,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
     /**
      * <p>
      * Describes one or more of your instances. You can use this to get information about instances like the operating
-     * system platform, the SSM agent version (Linux), status etc. If you specify one or more instance IDs, it returns
+     * system platform, the SSM Agent version (Linux), status etc. If you specify one or more instance IDs, it returns
      * information for those instances. If you do not specify instance IDs, it returns information for all your
      * instances. If you specify an instance ID that is not valid or an instance that you do not own, you receive an
      * error.
@@ -1048,7 +1046,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
     /**
      * <p>
      * Describes one or more of your instances. You can use this to get information about instances like the operating
-     * system platform, the SSM agent version (Linux), status etc. If you specify one or more instance IDs, it returns
+     * system platform, the SSM Agent version (Linux), status etc. If you specify one or more instance IDs, it returns
      * information for those instances. If you do not specify instance IDs, it returns information for all your
      * instances. If you specify an instance ID that is not valid or an instance that you do not own, you receive an
      * error.
@@ -1866,7 +1864,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Get a list of parameters used by the AWS account.&gt;
+     * Get details of a parameter.
      * </p>
      * 
      * @param getParametersRequest
@@ -1879,7 +1877,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Get a list of parameters used by the AWS account.&gt;
+     * Get details of a parameter.
      * </p>
      * 
      * @param getParametersRequest
@@ -1963,7 +1961,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Lists the associations for the specified SSM document or instance.
+     * Lists the associations for the specified Systems Manager document or instance.
      * </p>
      * 
      * @param listAssociationsRequest
@@ -1976,7 +1974,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Lists the associations for the specified SSM document or instance.
+     * Lists the associations for the specified Systems Manager document or instance.
      * </p>
      * 
      * @param listAssociationsRequest
@@ -2201,9 +2199,9 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Share a document publicly or privately. If you share a document privately, you must specify the AWS user account
-     * IDs for those people who can use the document. If you share a document publicly, you must specify <i>All</i> as
-     * the account ID.
+     * Shares a Systems Manager document publicly or privately. If you share a document privately, you must specify the
+     * AWS user account IDs for those people who can use the document. If you share a document publicly, you must
+     * specify <i>All</i> as the account ID.
      * </p>
      * 
      * @param modifyDocumentPermissionRequest
@@ -2216,9 +2214,9 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Share a document publicly or privately. If you share a document privately, you must specify the AWS user account
-     * IDs for those people who can use the document. If you share a document publicly, you must specify <i>All</i> as
-     * the account ID.
+     * Shares a Systems Manager document publicly or privately. If you share a document privately, you must specify the
+     * AWS user account IDs for those people who can use the document. If you share a document publicly, you must
+     * specify <i>All</i> as the account ID.
      * </p>
      * 
      * @param modifyDocumentPermissionRequest
@@ -2597,7 +2595,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Updates the status of the SSM document associated with the specified instance.
+     * Updates the status of the Systems Manager document associated with the specified instance.
      * </p>
      * 
      * @param updateAssociationStatusRequest
@@ -2610,7 +2608,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Updates the status of the SSM document associated with the specified instance.
+     * Updates the status of the Systems Manager document associated with the specified instance.
      * </p>
      * 
      * @param updateAssociationStatusRequest

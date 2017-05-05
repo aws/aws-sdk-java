@@ -12,73 +12,53 @@
  */
 package com.amazonaws.services.applicationautoscaling.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.applicationautoscaling.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteScalingPolicyRequest Marshaller
+ * DeleteScalingPolicyRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteScalingPolicyRequestMarshaller implements Marshaller<Request<DeleteScalingPolicyRequest>, DeleteScalingPolicyRequest> {
+@SdkInternalApi
+public class DeleteScalingPolicyRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> POLICYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PolicyName").build();
+    private static final MarshallingInfo<String> SERVICENAMESPACE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServiceNamespace").build();
+    private static final MarshallingInfo<String> RESOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceId").build();
+    private static final MarshallingInfo<String> SCALABLEDIMENSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScalableDimension").build();
 
-    public DeleteScalingPolicyRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteScalingPolicyRequestMarshaller instance = new DeleteScalingPolicyRequestMarshaller();
+
+    public static DeleteScalingPolicyRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteScalingPolicyRequest> marshall(DeleteScalingPolicyRequest deleteScalingPolicyRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteScalingPolicyRequest deleteScalingPolicyRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteScalingPolicyRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteScalingPolicyRequest> request = new DefaultRequest<DeleteScalingPolicyRequest>(deleteScalingPolicyRequest, "AWSApplicationAutoScaling");
-        request.addHeader("X-Amz-Target", "AnyScaleFrontendService.DeleteScalingPolicy");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteScalingPolicyRequest.getPolicyName() != null) {
-                jsonGenerator.writeFieldName("PolicyName").writeValue(deleteScalingPolicyRequest.getPolicyName());
-            }
-            if (deleteScalingPolicyRequest.getServiceNamespace() != null) {
-                jsonGenerator.writeFieldName("ServiceNamespace").writeValue(deleteScalingPolicyRequest.getServiceNamespace());
-            }
-            if (deleteScalingPolicyRequest.getResourceId() != null) {
-                jsonGenerator.writeFieldName("ResourceId").writeValue(deleteScalingPolicyRequest.getResourceId());
-            }
-            if (deleteScalingPolicyRequest.getScalableDimension() != null) {
-                jsonGenerator.writeFieldName("ScalableDimension").writeValue(deleteScalingPolicyRequest.getScalableDimension());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteScalingPolicyRequest.getPolicyName(), POLICYNAME_BINDING);
+            protocolMarshaller.marshall(deleteScalingPolicyRequest.getServiceNamespace(), SERVICENAMESPACE_BINDING);
+            protocolMarshaller.marshall(deleteScalingPolicyRequest.getResourceId(), RESOURCEID_BINDING);
+            protocolMarshaller.marshall(deleteScalingPolicyRequest.getScalableDimension(), SCALABLEDIMENSION_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

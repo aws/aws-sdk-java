@@ -14,9 +14,14 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * Apple Push Notification Service channel definition.
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class APNSChannelRequest implements Serializable, Cloneable {
+public class APNSChannelRequest implements Serializable, Cloneable, StructuredPojo {
 
     /** The distribution certificate from Apple. */
     private String certificate;
@@ -148,5 +153,11 @@ public class APNSChannelRequest implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.pinpoint.model.transform.APNSChannelRequestMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

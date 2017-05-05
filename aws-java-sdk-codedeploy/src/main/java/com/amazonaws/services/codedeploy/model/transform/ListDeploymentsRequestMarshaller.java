@@ -12,87 +12,57 @@
  */
 package com.amazonaws.services.codedeploy.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.codedeploy.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListDeploymentsRequest Marshaller
+ * ListDeploymentsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListDeploymentsRequestMarshaller implements Marshaller<Request<ListDeploymentsRequest>, ListDeploymentsRequest> {
+@SdkInternalApi
+public class ListDeploymentsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> APPLICATIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("applicationName").build();
+    private static final MarshallingInfo<String> DEPLOYMENTGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deploymentGroupName").build();
+    private static final MarshallingInfo<List> INCLUDEONLYSTATUSES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("includeOnlyStatuses").build();
+    private static final MarshallingInfo<StructuredPojo> CREATETIMERANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createTimeRange").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("nextToken").build();
 
-    public ListDeploymentsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListDeploymentsRequestMarshaller instance = new ListDeploymentsRequestMarshaller();
+
+    public static ListDeploymentsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListDeploymentsRequest> marshall(ListDeploymentsRequest listDeploymentsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListDeploymentsRequest listDeploymentsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listDeploymentsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListDeploymentsRequest> request = new DefaultRequest<ListDeploymentsRequest>(listDeploymentsRequest, "AmazonCodeDeploy");
-        request.addHeader("X-Amz-Target", "CodeDeploy_20141006.ListDeployments");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (listDeploymentsRequest.getApplicationName() != null) {
-                jsonGenerator.writeFieldName("applicationName").writeValue(listDeploymentsRequest.getApplicationName());
-            }
-            if (listDeploymentsRequest.getDeploymentGroupName() != null) {
-                jsonGenerator.writeFieldName("deploymentGroupName").writeValue(listDeploymentsRequest.getDeploymentGroupName());
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> includeOnlyStatusesList = (com.amazonaws.internal.SdkInternalList<String>) listDeploymentsRequest
-                    .getIncludeOnlyStatuses();
-            if (!includeOnlyStatusesList.isEmpty() || !includeOnlyStatusesList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("includeOnlyStatuses");
-                jsonGenerator.writeStartArray();
-                for (String includeOnlyStatusesListValue : includeOnlyStatusesList) {
-                    if (includeOnlyStatusesListValue != null) {
-                        jsonGenerator.writeValue(includeOnlyStatusesListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (listDeploymentsRequest.getCreateTimeRange() != null) {
-                jsonGenerator.writeFieldName("createTimeRange");
-                TimeRangeJsonMarshaller.getInstance().marshall(listDeploymentsRequest.getCreateTimeRange(), jsonGenerator);
-            }
-            if (listDeploymentsRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("nextToken").writeValue(listDeploymentsRequest.getNextToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listDeploymentsRequest.getApplicationName(), APPLICATIONNAME_BINDING);
+            protocolMarshaller.marshall(listDeploymentsRequest.getDeploymentGroupName(), DEPLOYMENTGROUPNAME_BINDING);
+            protocolMarshaller.marshall(listDeploymentsRequest.getIncludeOnlyStatuses(), INCLUDEONLYSTATUSES_BINDING);
+            protocolMarshaller.marshall(listDeploymentsRequest.getCreateTimeRange(), CREATETIMERANGE_BINDING);
+            protocolMarshaller.marshall(listDeploymentsRequest.getNextToken(), NEXTTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

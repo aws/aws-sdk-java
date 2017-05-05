@@ -69,6 +69,12 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
     private String solutionStackName;
     /**
      * <p>
+     * The ARN of the custome platform.
+     * </p>
+     */
+    private String platformArn;
+    /**
+     * <p>
      * If specified, AWS Elastic Beanstalk uses the configuration values from the specified configuration template to
      * create a new configuration.
      * </p>
@@ -376,6 +382,46 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
+     * The ARN of the custome platform.
+     * </p>
+     * 
+     * @param platformArn
+     *        The ARN of the custome platform.
+     */
+
+    public void setPlatformArn(String platformArn) {
+        this.platformArn = platformArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the custome platform.
+     * </p>
+     * 
+     * @return The ARN of the custome platform.
+     */
+
+    public String getPlatformArn() {
+        return this.platformArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the custome platform.
+     * </p>
+     * 
+     * @param platformArn
+     *        The ARN of the custome platform.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateConfigurationTemplateRequest withPlatformArn(String platformArn) {
+        setPlatformArn(platformArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * If specified, AWS Elastic Beanstalk uses the configuration values from the specified configuration template to
      * create a new configuration.
      * </p>
@@ -667,6 +713,8 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
             sb.append("TemplateName: ").append(getTemplateName()).append(",");
         if (getSolutionStackName() != null)
             sb.append("SolutionStackName: ").append(getSolutionStackName()).append(",");
+        if (getPlatformArn() != null)
+            sb.append("PlatformArn: ").append(getPlatformArn()).append(",");
         if (getSourceConfiguration() != null)
             sb.append("SourceConfiguration: ").append(getSourceConfiguration()).append(",");
         if (getEnvironmentId() != null)
@@ -701,6 +749,10 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
             return false;
         if (other.getSolutionStackName() != null && other.getSolutionStackName().equals(this.getSolutionStackName()) == false)
             return false;
+        if (other.getPlatformArn() == null ^ this.getPlatformArn() == null)
+            return false;
+        if (other.getPlatformArn() != null && other.getPlatformArn().equals(this.getPlatformArn()) == false)
+            return false;
         if (other.getSourceConfiguration() == null ^ this.getSourceConfiguration() == null)
             return false;
         if (other.getSourceConfiguration() != null && other.getSourceConfiguration().equals(this.getSourceConfiguration()) == false)
@@ -728,6 +780,7 @@ public class CreateConfigurationTemplateRequest extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
         hashCode = prime * hashCode + ((getTemplateName() == null) ? 0 : getTemplateName().hashCode());
         hashCode = prime * hashCode + ((getSolutionStackName() == null) ? 0 : getSolutionStackName().hashCode());
+        hashCode = prime * hashCode + ((getPlatformArn() == null) ? 0 : getPlatformArn().hashCode());
         hashCode = prime * hashCode + ((getSourceConfiguration() == null) ? 0 : getSourceConfiguration().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentId() == null) ? 0 : getEnvironmentId().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());

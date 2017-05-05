@@ -54,6 +54,10 @@ public class CreateConfigurationTemplateRequestMarshaller implements
             request.addParameter("SolutionStackName", StringUtils.fromString(createConfigurationTemplateRequest.getSolutionStackName()));
         }
 
+        if (createConfigurationTemplateRequest.getPlatformArn() != null) {
+            request.addParameter("PlatformArn", StringUtils.fromString(createConfigurationTemplateRequest.getPlatformArn()));
+        }
+
         SourceConfiguration sourceConfiguration = createConfigurationTemplateRequest.getSourceConfiguration();
         if (sourceConfiguration != null) {
 

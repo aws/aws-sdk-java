@@ -27,24 +27,24 @@ public class GetSdkTypesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The position of the last fetched element in the <a>SdkTypes</a> collection.
+     * The current pagination position in the paged result set.
      * </p>
      */
     private String position;
     /**
      * <p>
-     * The maximum number of <a>SdkType</a> instances to be returned.
+     * The maximum number of returned results per page.
      * </p>
      */
     private Integer limit;
 
     /**
      * <p>
-     * The position of the last fetched element in the <a>SdkTypes</a> collection.
+     * The current pagination position in the paged result set.
      * </p>
      * 
      * @param position
-     *        The position of the last fetched element in the <a>SdkTypes</a> collection.
+     *        The current pagination position in the paged result set.
      */
 
     public void setPosition(String position) {
@@ -53,10 +53,10 @@ public class GetSdkTypesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The position of the last fetched element in the <a>SdkTypes</a> collection.
+     * The current pagination position in the paged result set.
      * </p>
      * 
-     * @return The position of the last fetched element in the <a>SdkTypes</a> collection.
+     * @return The current pagination position in the paged result set.
      */
 
     public String getPosition() {
@@ -65,11 +65,11 @@ public class GetSdkTypesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The position of the last fetched element in the <a>SdkTypes</a> collection.
+     * The current pagination position in the paged result set.
      * </p>
      * 
      * @param position
-     *        The position of the last fetched element in the <a>SdkTypes</a> collection.
+     *        The current pagination position in the paged result set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class GetSdkTypesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum number of <a>SdkType</a> instances to be returned.
+     * The maximum number of returned results per page.
      * </p>
      * 
      * @param limit
-     *        The maximum number of <a>SdkType</a> instances to be returned.
+     *        The maximum number of returned results per page.
      */
 
     public void setLimit(Integer limit) {
@@ -93,10 +93,10 @@ public class GetSdkTypesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum number of <a>SdkType</a> instances to be returned.
+     * The maximum number of returned results per page.
      * </p>
      * 
-     * @return The maximum number of <a>SdkType</a> instances to be returned.
+     * @return The maximum number of returned results per page.
      */
 
     public Integer getLimit() {
@@ -105,11 +105,11 @@ public class GetSdkTypesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum number of <a>SdkType</a> instances to be returned.
+     * The maximum number of returned results per page.
      * </p>
      * 
      * @param limit
-     *        The maximum number of <a>SdkType</a> instances to be returned.
+     *        The maximum number of returned results per page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

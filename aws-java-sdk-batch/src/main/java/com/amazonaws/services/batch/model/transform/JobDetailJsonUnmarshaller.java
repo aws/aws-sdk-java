@@ -64,6 +64,10 @@ public class JobDetailJsonUnmarshaller implements Unmarshaller<JobDetail, JsonUn
                     context.nextToken();
                     jobDetail.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("attempts", targetDepth)) {
+                    context.nextToken();
+                    jobDetail.setAttempts(new ListUnmarshaller<AttemptDetail>(AttemptDetailJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("statusReason", targetDepth)) {
                     context.nextToken();
                     jobDetail.setStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
@@ -71,6 +75,10 @@ public class JobDetailJsonUnmarshaller implements Unmarshaller<JobDetail, JsonUn
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
                     jobDetail.setCreatedAt(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("retryStrategy", targetDepth)) {
+                    context.nextToken();
+                    jobDetail.setRetryStrategy(RetryStrategyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("startedAt", targetDepth)) {
                     context.nextToken();

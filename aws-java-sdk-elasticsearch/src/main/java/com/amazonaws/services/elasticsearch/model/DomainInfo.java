@@ -14,9 +14,11 @@ package com.amazonaws.services.elasticsearch.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DomainInfo implements Serializable, Cloneable {
+public class DomainInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -115,5 +117,11 @@ public class DomainInfo implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.elasticsearch.model.transform.DomainInfoMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

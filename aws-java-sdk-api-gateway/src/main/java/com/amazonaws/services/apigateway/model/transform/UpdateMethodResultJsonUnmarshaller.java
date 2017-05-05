@@ -64,6 +64,10 @@ public class UpdateMethodResultJsonUnmarshaller implements Unmarshaller<UpdateMe
                     context.nextToken();
                     updateMethodResult.setApiKeyRequired(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("requestValidatorId", targetDepth)) {
+                    context.nextToken();
+                    updateMethodResult.setRequestValidatorId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("operationName", targetDepth)) {
                     context.nextToken();
                     updateMethodResult.setOperationName(context.getUnmarshaller(String.class).unmarshall(context));

@@ -247,6 +247,21 @@ public class AmazonEC2Waiters {
     }
 
     /**
+     * Builds a VpcPeeringConnectionDeleted waiter by using custom parameters waiterParameters and other parameters
+     * defined in the waiters specification, and then polls until it determines whether the resource entered the desired
+     * state or not, where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<DescribeVpcPeeringConnectionsRequest> vpcPeeringConnectionDeleted() {
+
+        return new WaiterBuilder<DescribeVpcPeeringConnectionsRequest, DescribeVpcPeeringConnectionsResult>()
+                .withSdkFunction(new DescribeVpcPeeringConnectionsFunction(client))
+                .withAcceptors(new VpcPeeringConnectionDeleted.IsDeletedMatcher(),
+                        new VpcPeeringConnectionDeleted.IsInvalidVpcPeeringConnectionIDNotFoundMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(40), new FixedDelayStrategy(15)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
      * Builds a ConversionTaskCancelled waiter by using custom parameters waiterParameters and other parameters defined
      * in the waiters specification, and then polls until it determines whether the resource entered the desired state
      * or not, where polling criteria is bound by either default polling strategy or custom polling strategy.
@@ -452,4 +467,7 @@ public class AmazonEC2Waiters {
                 .withExecutorService(executorService).build();
     }
 
+    public void shutdown() {
+        executorService.shutdown();
+    }
 }

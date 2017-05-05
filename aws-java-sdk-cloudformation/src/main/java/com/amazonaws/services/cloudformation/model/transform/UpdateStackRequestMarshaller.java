@@ -171,6 +171,10 @@ public class UpdateStackRequestMarshaller implements Marshaller<Request<UpdateSt
             }
         }
 
+        if (updateStackRequest.getClientRequestToken() != null) {
+            request.addParameter("ClientRequestToken", StringUtils.fromString(updateStackRequest.getClientRequestToken()));
+        }
+
         return request;
     }
 

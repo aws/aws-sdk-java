@@ -14,15 +14,6 @@
  */
 package com.amazonaws.services.stepfunctions.builder;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import org.joda.time.DateTime;
-import org.junit.Test;
-
-import java.io.IOException;
-import java.util.Date;
-
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.and;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.branch;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.catcher;
@@ -50,6 +41,13 @@ import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.t
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.timestampPath;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.waitState;
 import static org.junit.Assert.assertEquals;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.IOException;
+import java.util.Date;
+import org.joda.time.DateTime;
+import org.junit.Test;
 
 public class StepFunctionBuilderTest {
 
@@ -500,6 +498,20 @@ public class StepFunctionBuilderTest {
                 .build();
 
         assertStateMachine(stateMachine, "ParallelStateWithCatchers.json");
+    }
+
+    @Test
+    public void choiceStateWithEmptyStringInExpectedValue_DoesNotExcludeExpectedValueFromJson() {
+        final StateMachine stateMachine = stateMachine()
+                .startAt("InitialState")
+                .state("InitialState", choiceState()
+                        .comment("My choice state")
+                        .choice(choice().transition(next("FinalState"))
+                                        .condition(eq("$.var", ""))))
+                .state("FinalState", succeedState())
+                .build();
+
+        assertStateMachine(stateMachine, "ChoiceStateWithEmptyStringInExpectedValue.json");
     }
 
     @Test(expected = Exception.class)

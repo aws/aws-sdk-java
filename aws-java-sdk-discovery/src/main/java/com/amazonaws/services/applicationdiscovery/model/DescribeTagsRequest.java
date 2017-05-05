@@ -25,11 +25,6 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical
      * operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>.
      * </p>
-     * <p>
-     * For a complete list of filter options and guidance about using them with this action, see <a
-     * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/managing-agents.html">Managing AWS
-     * Application Discovery Service Agents and the AWS Application Discovery Connector </a>.
-     * </p>
      */
     private java.util.List<TagFilter> filters;
     /**
@@ -50,19 +45,10 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical
      * operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>.
      * </p>
-     * <p>
-     * For a complete list of filter options and guidance about using them with this action, see <a
-     * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/managing-agents.html">Managing AWS
-     * Application Discovery Service Agents and the AWS Application Discovery Connector </a>.
-     * </p>
      * 
      * @return You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using
      *         logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and
-     *         <code>configurationId</code>. </p>
-     *         <p>
-     *         For a complete list of filter options and guidance about using them with this action, see <a
-     *         href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/managing-agents.html">Managing
-     *         AWS Application Discovery Service Agents and the AWS Application Discovery Connector </a>.
+     *         <code>configurationId</code>.
      */
 
     public java.util.List<TagFilter> getFilters() {
@@ -74,20 +60,11 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical
      * operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>.
      * </p>
-     * <p>
-     * For a complete list of filter options and guidance about using them with this action, see <a
-     * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/managing-agents.html">Managing AWS
-     * Application Discovery Service Agents and the AWS Application Discovery Connector </a>.
-     * </p>
      * 
      * @param filters
      *        You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using
      *        logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and
-     *        <code>configurationId</code>. </p>
-     *        <p>
-     *        For a complete list of filter options and guidance about using them with this action, see <a
-     *        href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/managing-agents.html">Managing
-     *        AWS Application Discovery Service Agents and the AWS Application Discovery Connector </a>.
+     *        <code>configurationId</code>.
      */
 
     public void setFilters(java.util.Collection<TagFilter> filters) {
@@ -105,11 +82,6 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>.
      * </p>
      * <p>
-     * For a complete list of filter options and guidance about using them with this action, see <a
-     * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/managing-agents.html">Managing AWS
-     * Application Discovery Service Agents and the AWS Application Discovery Connector </a>.
-     * </p>
-     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
      * the existing values.
@@ -118,11 +90,7 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param filters
      *        You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using
      *        logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and
-     *        <code>configurationId</code>. </p>
-     *        <p>
-     *        For a complete list of filter options and guidance about using them with this action, see <a
-     *        href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/managing-agents.html">Managing
-     *        AWS Application Discovery Service Agents and the AWS Application Discovery Connector </a>.
+     *        <code>configurationId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,20 +109,11 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical
      * operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>.
      * </p>
-     * <p>
-     * For a complete list of filter options and guidance about using them with this action, see <a
-     * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/managing-agents.html">Managing AWS
-     * Application Discovery Service Agents and the AWS Application Discovery Connector </a>.
-     * </p>
      * 
      * @param filters
      *        You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using
      *        logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and
-     *        <code>configurationId</code>. </p>
-     *        <p>
-     *        For a complete list of filter options and guidance about using them with this action, see <a
-     *        href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/managing-agents.html">Managing
-     *        AWS Application Discovery Service Agents and the AWS Application Discovery Connector </a>.
+     *        <code>configurationId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

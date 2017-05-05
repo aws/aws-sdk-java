@@ -14,6 +14,8 @@ package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TemporaryCredential implements Serializable, Cloneable {
+public class TemporaryCredential implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -48,7 +50,7 @@ public class TemporaryCredential implements Serializable, Cloneable {
     private Integer validForInMinutes;
     /**
      * <p>
-     * The instance's AWS OpsWorks ID.
+     * The instance's AWS OpsWorks Stacks ID.
      * </p>
      */
     private String instanceId;
@@ -187,11 +189,11 @@ public class TemporaryCredential implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance's AWS OpsWorks ID.
+     * The instance's AWS OpsWorks Stacks ID.
      * </p>
      * 
      * @param instanceId
-     *        The instance's AWS OpsWorks ID.
+     *        The instance's AWS OpsWorks Stacks ID.
      */
 
     public void setInstanceId(String instanceId) {
@@ -200,10 +202,10 @@ public class TemporaryCredential implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance's AWS OpsWorks ID.
+     * The instance's AWS OpsWorks Stacks ID.
      * </p>
      * 
-     * @return The instance's AWS OpsWorks ID.
+     * @return The instance's AWS OpsWorks Stacks ID.
      */
 
     public String getInstanceId() {
@@ -212,11 +214,11 @@ public class TemporaryCredential implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance's AWS OpsWorks ID.
+     * The instance's AWS OpsWorks Stacks ID.
      * </p>
      * 
      * @param instanceId
-     *        The instance's AWS OpsWorks ID.
+     *        The instance's AWS OpsWorks Stacks ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -296,5 +298,11 @@ public class TemporaryCredential implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.opsworks.model.transform.TemporaryCredentialMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

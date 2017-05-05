@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -242,6 +243,10 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
         init();
     }
 
+    public static AWSBudgetsClientBuilder builder() {
+        return AWSBudgetsClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWSBudgets using the specified parameters.
      *
@@ -288,7 +293,13 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      * @sample AWSBudgets.CreateBudget
      */
     @Override
-    public CreateBudgetResult createBudget(CreateBudgetRequest createBudgetRequest) {
+    public CreateBudgetResult createBudget(CreateBudgetRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateBudget(request);
+    }
+
+    @SdkInternalApi
+    final CreateBudgetResult executeCreateBudget(CreateBudgetRequest createBudgetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createBudgetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -299,7 +310,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateBudgetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBudgetRequest));
+                request = new CreateBudgetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBudgetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -340,7 +351,13 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      * @sample AWSBudgets.CreateNotification
      */
     @Override
-    public CreateNotificationResult createNotification(CreateNotificationRequest createNotificationRequest) {
+    public CreateNotificationResult createNotification(CreateNotificationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateNotification(request);
+    }
+
+    @SdkInternalApi
+    final CreateNotificationResult executeCreateNotification(CreateNotificationRequest createNotificationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createNotificationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -351,7 +368,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateNotificationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createNotificationRequest));
+                request = new CreateNotificationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createNotificationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -386,10 +403,19 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      *         already exceeds the limitation.
      * @throws DuplicateRecordException
      *         The exception is thrown when customer tries to create a record (e.g. budget) that already exists.
+     * @throws NotFoundException
+     *         This exception is thrown if a requested entity is not found. E.g., if a budget id doesn't exist for an
+     *         account ID.
      * @sample AWSBudgets.CreateSubscriber
      */
     @Override
-    public CreateSubscriberResult createSubscriber(CreateSubscriberRequest createSubscriberRequest) {
+    public CreateSubscriberResult createSubscriber(CreateSubscriberRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSubscriber(request);
+    }
+
+    @SdkInternalApi
+    final CreateSubscriberResult executeCreateSubscriber(CreateSubscriberRequest createSubscriberRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createSubscriberRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -400,7 +426,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateSubscriberRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSubscriberRequest));
+                request = new CreateSubscriberRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSubscriberRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -436,7 +462,13 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      * @sample AWSBudgets.DeleteBudget
      */
     @Override
-    public DeleteBudgetResult deleteBudget(DeleteBudgetRequest deleteBudgetRequest) {
+    public DeleteBudgetResult deleteBudget(DeleteBudgetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteBudget(request);
+    }
+
+    @SdkInternalApi
+    final DeleteBudgetResult executeDeleteBudget(DeleteBudgetRequest deleteBudgetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteBudgetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -447,7 +479,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteBudgetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBudgetRequest));
+                request = new DeleteBudgetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBudgetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -483,7 +515,13 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      * @sample AWSBudgets.DeleteNotification
      */
     @Override
-    public DeleteNotificationResult deleteNotification(DeleteNotificationRequest deleteNotificationRequest) {
+    public DeleteNotificationResult deleteNotification(DeleteNotificationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteNotification(request);
+    }
+
+    @SdkInternalApi
+    final DeleteNotificationResult executeDeleteNotification(DeleteNotificationRequest deleteNotificationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteNotificationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -494,7 +532,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteNotificationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteNotificationRequest));
+                request = new DeleteNotificationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteNotificationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -530,7 +568,13 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      * @sample AWSBudgets.DeleteSubscriber
      */
     @Override
-    public DeleteSubscriberResult deleteSubscriber(DeleteSubscriberRequest deleteSubscriberRequest) {
+    public DeleteSubscriberResult deleteSubscriber(DeleteSubscriberRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteSubscriber(request);
+    }
+
+    @SdkInternalApi
+    final DeleteSubscriberResult executeDeleteSubscriber(DeleteSubscriberRequest deleteSubscriberRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteSubscriberRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -541,7 +585,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteSubscriberRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSubscriberRequest));
+                request = new DeleteSubscriberRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSubscriberRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -577,7 +621,13 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      * @sample AWSBudgets.DescribeBudget
      */
     @Override
-    public DescribeBudgetResult describeBudget(DescribeBudgetRequest describeBudgetRequest) {
+    public DescribeBudgetResult describeBudget(DescribeBudgetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeBudget(request);
+    }
+
+    @SdkInternalApi
+    final DescribeBudgetResult executeDescribeBudget(DescribeBudgetRequest describeBudgetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeBudgetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -588,7 +638,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeBudgetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeBudgetRequest));
+                request = new DescribeBudgetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeBudgetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -629,7 +679,13 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      * @sample AWSBudgets.DescribeBudgets
      */
     @Override
-    public DescribeBudgetsResult describeBudgets(DescribeBudgetsRequest describeBudgetsRequest) {
+    public DescribeBudgetsResult describeBudgets(DescribeBudgetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeBudgets(request);
+    }
+
+    @SdkInternalApi
+    final DescribeBudgetsResult executeDescribeBudgets(DescribeBudgetsRequest describeBudgetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeBudgetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -640,7 +696,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeBudgetsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeBudgetsRequest));
+                request = new DescribeBudgetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeBudgetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -681,7 +737,13 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      * @sample AWSBudgets.DescribeNotificationsForBudget
      */
     @Override
-    public DescribeNotificationsForBudgetResult describeNotificationsForBudget(DescribeNotificationsForBudgetRequest describeNotificationsForBudgetRequest) {
+    public DescribeNotificationsForBudgetResult describeNotificationsForBudget(DescribeNotificationsForBudgetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeNotificationsForBudget(request);
+    }
+
+    @SdkInternalApi
+    final DescribeNotificationsForBudgetResult executeDescribeNotificationsForBudget(DescribeNotificationsForBudgetRequest describeNotificationsForBudgetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeNotificationsForBudgetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -692,7 +754,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeNotificationsForBudgetRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeNotificationsForBudgetRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeNotificationsForBudgetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -735,7 +797,13 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      * @sample AWSBudgets.DescribeSubscribersForNotification
      */
     @Override
-    public DescribeSubscribersForNotificationResult describeSubscribersForNotification(
+    public DescribeSubscribersForNotificationResult describeSubscribersForNotification(DescribeSubscribersForNotificationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeSubscribersForNotification(request);
+    }
+
+    @SdkInternalApi
+    final DescribeSubscribersForNotificationResult executeDescribeSubscribersForNotification(
             DescribeSubscribersForNotificationRequest describeSubscribersForNotificationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeSubscribersForNotificationRequest);
@@ -747,7 +815,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeSubscribersForNotificationRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeSubscribersForNotificationRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeSubscribersForNotificationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -785,7 +853,13 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      * @sample AWSBudgets.UpdateBudget
      */
     @Override
-    public UpdateBudgetResult updateBudget(UpdateBudgetRequest updateBudgetRequest) {
+    public UpdateBudgetResult updateBudget(UpdateBudgetRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateBudget(request);
+    }
+
+    @SdkInternalApi
+    final UpdateBudgetResult executeUpdateBudget(UpdateBudgetRequest updateBudgetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateBudgetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -796,7 +870,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateBudgetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateBudgetRequest));
+                request = new UpdateBudgetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateBudgetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -832,7 +906,13 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      * @sample AWSBudgets.UpdateNotification
      */
     @Override
-    public UpdateNotificationResult updateNotification(UpdateNotificationRequest updateNotificationRequest) {
+    public UpdateNotificationResult updateNotification(UpdateNotificationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateNotification(request);
+    }
+
+    @SdkInternalApi
+    final UpdateNotificationResult executeUpdateNotification(UpdateNotificationRequest updateNotificationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateNotificationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -843,7 +923,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateNotificationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateNotificationRequest));
+                request = new UpdateNotificationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateNotificationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -879,7 +959,13 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
      * @sample AWSBudgets.UpdateSubscriber
      */
     @Override
-    public UpdateSubscriberResult updateSubscriber(UpdateSubscriberRequest updateSubscriberRequest) {
+    public UpdateSubscriberResult updateSubscriber(UpdateSubscriberRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateSubscriber(request);
+    }
+
+    @SdkInternalApi
+    final UpdateSubscriberResult executeUpdateSubscriber(UpdateSubscriberRequest updateSubscriberRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateSubscriberRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -890,7 +976,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateSubscriberRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateSubscriberRequest));
+                request = new UpdateSubscriberRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateSubscriberRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

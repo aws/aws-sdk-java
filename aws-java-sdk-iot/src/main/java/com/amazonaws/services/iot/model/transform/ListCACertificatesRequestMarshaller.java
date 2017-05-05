@@ -12,65 +12,50 @@
  */
 package com.amazonaws.services.iot.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.iot.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListCACertificatesRequest Marshaller
+ * ListCACertificatesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListCACertificatesRequestMarshaller implements Marshaller<Request<ListCACertificatesRequest>, ListCACertificatesRequest> {
+@SdkInternalApi
+public class ListCACertificatesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<Integer> PAGESIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("pageSize").build();
+    private static final MarshallingInfo<String> MARKER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("marker").build();
+    private static final MarshallingInfo<Boolean> ASCENDINGORDER_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("isAscendingOrder").build();
 
-    public ListCACertificatesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListCACertificatesRequestMarshaller instance = new ListCACertificatesRequestMarshaller();
+
+    public static ListCACertificatesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListCACertificatesRequest> marshall(ListCACertificatesRequest listCACertificatesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListCACertificatesRequest listCACertificatesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listCACertificatesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListCACertificatesRequest> request = new DefaultRequest<ListCACertificatesRequest>(listCACertificatesRequest, "AWSIot");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/cacertificates";
-
-        request.setResourcePath(uriResourcePath);
-
-        if (listCACertificatesRequest.getPageSize() != null) {
-            request.addParameter("pageSize", StringUtils.fromInteger(listCACertificatesRequest.getPageSize()));
+        try {
+            protocolMarshaller.marshall(listCACertificatesRequest.getPageSize(), PAGESIZE_BINDING);
+            protocolMarshaller.marshall(listCACertificatesRequest.getMarker(), MARKER_BINDING);
+            protocolMarshaller.marshall(listCACertificatesRequest.getAscendingOrder(), ASCENDINGORDER_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (listCACertificatesRequest.getMarker() != null) {
-            request.addParameter("marker", StringUtils.fromString(listCACertificatesRequest.getMarker()));
-        }
-
-        if (listCACertificatesRequest.getAscendingOrder() != null) {
-            request.addParameter("isAscendingOrder", StringUtils.fromBoolean(listCACertificatesRequest.getAscendingOrder()));
-        }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.kms.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.kms.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetKeyRotationStatusRequest Marshaller
+ * GetKeyRotationStatusRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetKeyRotationStatusRequestMarshaller implements Marshaller<Request<GetKeyRotationStatusRequest>, GetKeyRotationStatusRequest> {
+@SdkInternalApi
+public class GetKeyRotationStatusRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> KEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KeyId").build();
 
-    public GetKeyRotationStatusRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetKeyRotationStatusRequestMarshaller instance = new GetKeyRotationStatusRequestMarshaller();
+
+    public static GetKeyRotationStatusRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetKeyRotationStatusRequest> marshall(GetKeyRotationStatusRequest getKeyRotationStatusRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetKeyRotationStatusRequest getKeyRotationStatusRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getKeyRotationStatusRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetKeyRotationStatusRequest> request = new DefaultRequest<GetKeyRotationStatusRequest>(getKeyRotationStatusRequest, "AWSKMS");
-        request.addHeader("X-Amz-Target", "TrentService.GetKeyRotationStatus");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (getKeyRotationStatusRequest.getKeyId() != null) {
-                jsonGenerator.writeFieldName("KeyId").writeValue(getKeyRotationStatusRequest.getKeyId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getKeyRotationStatusRequest.getKeyId(), KEYID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

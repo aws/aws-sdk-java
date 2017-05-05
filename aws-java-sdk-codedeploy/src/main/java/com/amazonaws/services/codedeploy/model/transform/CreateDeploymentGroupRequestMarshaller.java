@@ -12,149 +12,81 @@
  */
 package com.amazonaws.services.codedeploy.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.codedeploy.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateDeploymentGroupRequest Marshaller
+ * CreateDeploymentGroupRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateDeploymentGroupRequestMarshaller implements Marshaller<Request<CreateDeploymentGroupRequest>, CreateDeploymentGroupRequest> {
+@SdkInternalApi
+public class CreateDeploymentGroupRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> APPLICATIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("applicationName").build();
+    private static final MarshallingInfo<String> DEPLOYMENTGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deploymentGroupName").build();
+    private static final MarshallingInfo<String> DEPLOYMENTCONFIGNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deploymentConfigName").build();
+    private static final MarshallingInfo<List> EC2TAGFILTERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ec2TagFilters").build();
+    private static final MarshallingInfo<List> ONPREMISESINSTANCETAGFILTERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("onPremisesInstanceTagFilters").build();
+    private static final MarshallingInfo<List> AUTOSCALINGGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("autoScalingGroups").build();
+    private static final MarshallingInfo<String> SERVICEROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("serviceRoleArn").build();
+    private static final MarshallingInfo<List> TRIGGERCONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("triggerConfigurations").build();
+    private static final MarshallingInfo<StructuredPojo> ALARMCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("alarmConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> AUTOROLLBACKCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("autoRollbackConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> DEPLOYMENTSTYLE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deploymentStyle").build();
+    private static final MarshallingInfo<StructuredPojo> BLUEGREENDEPLOYMENTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("blueGreenDeploymentConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> LOADBALANCERINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("loadBalancerInfo").build();
 
-    public CreateDeploymentGroupRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateDeploymentGroupRequestMarshaller instance = new CreateDeploymentGroupRequestMarshaller();
+
+    public static CreateDeploymentGroupRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateDeploymentGroupRequest> marshall(CreateDeploymentGroupRequest createDeploymentGroupRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateDeploymentGroupRequest createDeploymentGroupRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createDeploymentGroupRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateDeploymentGroupRequest> request = new DefaultRequest<CreateDeploymentGroupRequest>(createDeploymentGroupRequest, "AmazonCodeDeploy");
-        request.addHeader("X-Amz-Target", "CodeDeploy_20141006.CreateDeploymentGroup");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createDeploymentGroupRequest.getApplicationName() != null) {
-                jsonGenerator.writeFieldName("applicationName").writeValue(createDeploymentGroupRequest.getApplicationName());
-            }
-            if (createDeploymentGroupRequest.getDeploymentGroupName() != null) {
-                jsonGenerator.writeFieldName("deploymentGroupName").writeValue(createDeploymentGroupRequest.getDeploymentGroupName());
-            }
-            if (createDeploymentGroupRequest.getDeploymentConfigName() != null) {
-                jsonGenerator.writeFieldName("deploymentConfigName").writeValue(createDeploymentGroupRequest.getDeploymentConfigName());
-            }
-
-            com.amazonaws.internal.SdkInternalList<EC2TagFilter> ec2TagFiltersList = (com.amazonaws.internal.SdkInternalList<EC2TagFilter>) createDeploymentGroupRequest
-                    .getEc2TagFilters();
-            if (!ec2TagFiltersList.isEmpty() || !ec2TagFiltersList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("ec2TagFilters");
-                jsonGenerator.writeStartArray();
-                for (EC2TagFilter ec2TagFiltersListValue : ec2TagFiltersList) {
-                    if (ec2TagFiltersListValue != null) {
-
-                        EC2TagFilterJsonMarshaller.getInstance().marshall(ec2TagFiltersListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            com.amazonaws.internal.SdkInternalList<TagFilter> onPremisesInstanceTagFiltersList = (com.amazonaws.internal.SdkInternalList<TagFilter>) createDeploymentGroupRequest
-                    .getOnPremisesInstanceTagFilters();
-            if (!onPremisesInstanceTagFiltersList.isEmpty() || !onPremisesInstanceTagFiltersList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("onPremisesInstanceTagFilters");
-                jsonGenerator.writeStartArray();
-                for (TagFilter onPremisesInstanceTagFiltersListValue : onPremisesInstanceTagFiltersList) {
-                    if (onPremisesInstanceTagFiltersListValue != null) {
-
-                        TagFilterJsonMarshaller.getInstance().marshall(onPremisesInstanceTagFiltersListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> autoScalingGroupsList = (com.amazonaws.internal.SdkInternalList<String>) createDeploymentGroupRequest
-                    .getAutoScalingGroups();
-            if (!autoScalingGroupsList.isEmpty() || !autoScalingGroupsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("autoScalingGroups");
-                jsonGenerator.writeStartArray();
-                for (String autoScalingGroupsListValue : autoScalingGroupsList) {
-                    if (autoScalingGroupsListValue != null) {
-                        jsonGenerator.writeValue(autoScalingGroupsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (createDeploymentGroupRequest.getServiceRoleArn() != null) {
-                jsonGenerator.writeFieldName("serviceRoleArn").writeValue(createDeploymentGroupRequest.getServiceRoleArn());
-            }
-
-            com.amazonaws.internal.SdkInternalList<TriggerConfig> triggerConfigurationsList = (com.amazonaws.internal.SdkInternalList<TriggerConfig>) createDeploymentGroupRequest
-                    .getTriggerConfigurations();
-            if (!triggerConfigurationsList.isEmpty() || !triggerConfigurationsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("triggerConfigurations");
-                jsonGenerator.writeStartArray();
-                for (TriggerConfig triggerConfigurationsListValue : triggerConfigurationsList) {
-                    if (triggerConfigurationsListValue != null) {
-
-                        TriggerConfigJsonMarshaller.getInstance().marshall(triggerConfigurationsListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (createDeploymentGroupRequest.getAlarmConfiguration() != null) {
-                jsonGenerator.writeFieldName("alarmConfiguration");
-                AlarmConfigurationJsonMarshaller.getInstance().marshall(createDeploymentGroupRequest.getAlarmConfiguration(), jsonGenerator);
-            }
-            if (createDeploymentGroupRequest.getAutoRollbackConfiguration() != null) {
-                jsonGenerator.writeFieldName("autoRollbackConfiguration");
-                AutoRollbackConfigurationJsonMarshaller.getInstance().marshall(createDeploymentGroupRequest.getAutoRollbackConfiguration(), jsonGenerator);
-            }
-            if (createDeploymentGroupRequest.getDeploymentStyle() != null) {
-                jsonGenerator.writeFieldName("deploymentStyle");
-                DeploymentStyleJsonMarshaller.getInstance().marshall(createDeploymentGroupRequest.getDeploymentStyle(), jsonGenerator);
-            }
-            if (createDeploymentGroupRequest.getBlueGreenDeploymentConfiguration() != null) {
-                jsonGenerator.writeFieldName("blueGreenDeploymentConfiguration");
-                BlueGreenDeploymentConfigurationJsonMarshaller.getInstance().marshall(createDeploymentGroupRequest.getBlueGreenDeploymentConfiguration(),
-                        jsonGenerator);
-            }
-            if (createDeploymentGroupRequest.getLoadBalancerInfo() != null) {
-                jsonGenerator.writeFieldName("loadBalancerInfo");
-                LoadBalancerInfoJsonMarshaller.getInstance().marshall(createDeploymentGroupRequest.getLoadBalancerInfo(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createDeploymentGroupRequest.getApplicationName(), APPLICATIONNAME_BINDING);
+            protocolMarshaller.marshall(createDeploymentGroupRequest.getDeploymentGroupName(), DEPLOYMENTGROUPNAME_BINDING);
+            protocolMarshaller.marshall(createDeploymentGroupRequest.getDeploymentConfigName(), DEPLOYMENTCONFIGNAME_BINDING);
+            protocolMarshaller.marshall(createDeploymentGroupRequest.getEc2TagFilters(), EC2TAGFILTERS_BINDING);
+            protocolMarshaller.marshall(createDeploymentGroupRequest.getOnPremisesInstanceTagFilters(), ONPREMISESINSTANCETAGFILTERS_BINDING);
+            protocolMarshaller.marshall(createDeploymentGroupRequest.getAutoScalingGroups(), AUTOSCALINGGROUPS_BINDING);
+            protocolMarshaller.marshall(createDeploymentGroupRequest.getServiceRoleArn(), SERVICEROLEARN_BINDING);
+            protocolMarshaller.marshall(createDeploymentGroupRequest.getTriggerConfigurations(), TRIGGERCONFIGURATIONS_BINDING);
+            protocolMarshaller.marshall(createDeploymentGroupRequest.getAlarmConfiguration(), ALARMCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createDeploymentGroupRequest.getAutoRollbackConfiguration(), AUTOROLLBACKCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createDeploymentGroupRequest.getDeploymentStyle(), DEPLOYMENTSTYLE_BINDING);
+            protocolMarshaller.marshall(createDeploymentGroupRequest.getBlueGreenDeploymentConfiguration(), BLUEGREENDEPLOYMENTCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createDeploymentGroupRequest.getLoadBalancerInfo(), LOADBALANCERINFO_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

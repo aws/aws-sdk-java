@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Container for the parameters to the <a>PutTargets</a> operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutTargets" target="_top">AWS API
  *      Documentation</a>
@@ -30,24 +27,24 @@ public class PutTargetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the rule you want to add targets to.
+     * The name of the rule.
      * </p>
      */
     private String rule;
     /**
      * <p>
-     * List of targets you want to update or add to the rule.
+     * The targets to update or add to the rule.
      * </p>
      */
     private java.util.List<Target> targets;
 
     /**
      * <p>
-     * The name of the rule you want to add targets to.
+     * The name of the rule.
      * </p>
      * 
      * @param rule
-     *        The name of the rule you want to add targets to.
+     *        The name of the rule.
      */
 
     public void setRule(String rule) {
@@ -56,10 +53,10 @@ public class PutTargetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the rule you want to add targets to.
+     * The name of the rule.
      * </p>
      * 
-     * @return The name of the rule you want to add targets to.
+     * @return The name of the rule.
      */
 
     public String getRule() {
@@ -68,11 +65,11 @@ public class PutTargetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the rule you want to add targets to.
+     * The name of the rule.
      * </p>
      * 
      * @param rule
-     *        The name of the rule you want to add targets to.
+     *        The name of the rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,10 +80,10 @@ public class PutTargetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * List of targets you want to update or add to the rule.
+     * The targets to update or add to the rule.
      * </p>
      * 
-     * @return List of targets you want to update or add to the rule.
+     * @return The targets to update or add to the rule.
      */
 
     public java.util.List<Target> getTargets() {
@@ -95,11 +92,11 @@ public class PutTargetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * List of targets you want to update or add to the rule.
+     * The targets to update or add to the rule.
      * </p>
      * 
      * @param targets
-     *        List of targets you want to update or add to the rule.
+     *        The targets to update or add to the rule.
      */
 
     public void setTargets(java.util.Collection<Target> targets) {
@@ -113,7 +110,7 @@ public class PutTargetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * List of targets you want to update or add to the rule.
+     * The targets to update or add to the rule.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -122,7 +119,7 @@ public class PutTargetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param targets
-     *        List of targets you want to update or add to the rule.
+     *        The targets to update or add to the rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +135,11 @@ public class PutTargetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * List of targets you want to update or add to the rule.
+     * The targets to update or add to the rule.
      * </p>
      * 
      * @param targets
-     *        List of targets you want to update or add to the rule.
+     *        The targets to update or add to the rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -12,73 +12,53 @@
  */
 package com.amazonaws.services.dynamodbv2.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.dynamodbv2.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetShardIteratorRequest Marshaller
+ * GetShardIteratorRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetShardIteratorRequestMarshaller implements Marshaller<Request<GetShardIteratorRequest>, GetShardIteratorRequest> {
+@SdkInternalApi
+public class GetShardIteratorRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> STREAMARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("StreamArn").build();
+    private static final MarshallingInfo<String> SHARDID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ShardId").build();
+    private static final MarshallingInfo<String> SHARDITERATORTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ShardIteratorType").build();
+    private static final MarshallingInfo<String> SEQUENCENUMBER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SequenceNumber").build();
 
-    public GetShardIteratorRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetShardIteratorRequestMarshaller instance = new GetShardIteratorRequestMarshaller();
+
+    public static GetShardIteratorRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetShardIteratorRequest> marshall(GetShardIteratorRequest getShardIteratorRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetShardIteratorRequest getShardIteratorRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getShardIteratorRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetShardIteratorRequest> request = new DefaultRequest<GetShardIteratorRequest>(getShardIteratorRequest, "AmazonDynamoDBStreams");
-        request.addHeader("X-Amz-Target", "DynamoDBStreams_20120810.GetShardIterator");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (getShardIteratorRequest.getStreamArn() != null) {
-                jsonGenerator.writeFieldName("StreamArn").writeValue(getShardIteratorRequest.getStreamArn());
-            }
-            if (getShardIteratorRequest.getShardId() != null) {
-                jsonGenerator.writeFieldName("ShardId").writeValue(getShardIteratorRequest.getShardId());
-            }
-            if (getShardIteratorRequest.getShardIteratorType() != null) {
-                jsonGenerator.writeFieldName("ShardIteratorType").writeValue(getShardIteratorRequest.getShardIteratorType());
-            }
-            if (getShardIteratorRequest.getSequenceNumber() != null) {
-                jsonGenerator.writeFieldName("SequenceNumber").writeValue(getShardIteratorRequest.getSequenceNumber());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getShardIteratorRequest.getStreamArn(), STREAMARN_BINDING);
+            protocolMarshaller.marshall(getShardIteratorRequest.getShardId(), SHARDID_BINDING);
+            protocolMarshaller.marshall(getShardIteratorRequest.getShardIteratorType(), SHARDITERATORTYPE_BINDING);
+            protocolMarshaller.marshall(getShardIteratorRequest.getSequenceNumber(), SEQUENCENUMBER_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

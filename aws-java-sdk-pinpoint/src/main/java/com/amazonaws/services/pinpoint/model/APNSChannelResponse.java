@@ -14,14 +14,20 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * Apple Distribution Push Notification Service channel definition.
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class APNSChannelResponse implements Serializable, Cloneable {
+public class APNSChannelResponse implements Serializable, Cloneable, StructuredPojo {
 
+    /** The ID of the application to which the channel applies. */
     private String applicationId;
     /** When was this segment created */
     private String creationDate;
-
+    /** The unique channel ID. */
     private String id;
     /** Is this channel archived */
     private Boolean isArchived;
@@ -35,7 +41,10 @@ public class APNSChannelResponse implements Serializable, Cloneable {
     private Integer version;
 
     /**
+     * The ID of the application to which the channel applies.
+     * 
      * @param applicationId
+     *        The ID of the application to which the channel applies.
      */
 
     public void setApplicationId(String applicationId) {
@@ -43,7 +52,9 @@ public class APNSChannelResponse implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * The ID of the application to which the channel applies.
+     * 
+     * @return The ID of the application to which the channel applies.
      */
 
     public String getApplicationId() {
@@ -51,7 +62,10 @@ public class APNSChannelResponse implements Serializable, Cloneable {
     }
 
     /**
+     * The ID of the application to which the channel applies.
+     * 
      * @param applicationId
+     *        The ID of the application to which the channel applies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,7 +109,10 @@ public class APNSChannelResponse implements Serializable, Cloneable {
     }
 
     /**
+     * The unique channel ID.
+     * 
      * @param id
+     *        The unique channel ID.
      */
 
     public void setId(String id) {
@@ -103,7 +120,9 @@ public class APNSChannelResponse implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * The unique channel ID.
+     * 
+     * @return The unique channel ID.
      */
 
     public String getId() {
@@ -111,7 +130,10 @@ public class APNSChannelResponse implements Serializable, Cloneable {
     }
 
     /**
+     * The unique channel ID.
+     * 
      * @param id
+     *        The unique channel ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -399,5 +421,11 @@ public class APNSChannelResponse implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.pinpoint.model.transform.APNSChannelResponseMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -27,8 +27,8 @@ public class DeleteServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the cluster that hosts the service to delete. If you do not specify a cluster, the default cluster is
-     * assumed.
+     * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to delete. If you do not
+     * specify a cluster, the default cluster is assumed.
      * </p>
      */
     private String cluster;
@@ -41,13 +41,13 @@ public class DeleteServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the cluster that hosts the service to delete. If you do not specify a cluster, the default cluster is
-     * assumed.
+     * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to delete. If you do not
+     * specify a cluster, the default cluster is assumed.
      * </p>
      * 
      * @param cluster
-     *        The name of the cluster that hosts the service to delete. If you do not specify a cluster, the default
-     *        cluster is assumed.
+     *        The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to delete. If you
+     *        do not specify a cluster, the default cluster is assumed.
      */
 
     public void setCluster(String cluster) {
@@ -56,12 +56,12 @@ public class DeleteServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the cluster that hosts the service to delete. If you do not specify a cluster, the default cluster is
-     * assumed.
+     * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to delete. If you do not
+     * specify a cluster, the default cluster is assumed.
      * </p>
      * 
-     * @return The name of the cluster that hosts the service to delete. If you do not specify a cluster, the default
-     *         cluster is assumed.
+     * @return The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to delete. If you
+     *         do not specify a cluster, the default cluster is assumed.
      */
 
     public String getCluster() {
@@ -70,13 +70,13 @@ public class DeleteServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the cluster that hosts the service to delete. If you do not specify a cluster, the default cluster is
-     * assumed.
+     * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to delete. If you do not
+     * specify a cluster, the default cluster is assumed.
      * </p>
      * 
      * @param cluster
-     *        The name of the cluster that hosts the service to delete. If you do not specify a cluster, the default
-     *        cluster is assumed.
+     *        The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to delete. If you
+     *        do not specify a cluster, the default cluster is assumed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

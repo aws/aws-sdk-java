@@ -12,93 +12,57 @@
  */
 package com.amazonaws.services.clouddirectory.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.clouddirectory.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateIndexRequest Marshaller
+ * CreateIndexRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateIndexRequestMarshaller implements Marshaller<Request<CreateIndexRequest>, CreateIndexRequest> {
+@SdkInternalApi
+public class CreateIndexRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DIRECTORYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("x-amz-data-partition").build();
+    private static final MarshallingInfo<List> ORDEREDINDEXEDATTRIBUTELIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OrderedIndexedAttributeList").build();
+    private static final MarshallingInfo<Boolean> ISUNIQUE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IsUnique").build();
+    private static final MarshallingInfo<StructuredPojo> PARENTREFERENCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ParentReference").build();
+    private static final MarshallingInfo<String> LINKNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("LinkName").build();
 
-    public CreateIndexRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateIndexRequestMarshaller instance = new CreateIndexRequestMarshaller();
+
+    public static CreateIndexRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateIndexRequest> marshall(CreateIndexRequest createIndexRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateIndexRequest createIndexRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createIndexRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateIndexRequest> request = new DefaultRequest<CreateIndexRequest>(createIndexRequest, "AmazonCloudDirectory");
-
-        request.setHttpMethod(HttpMethodName.PUT);
-
-        if (createIndexRequest.getDirectoryArn() != null) {
-            request.addHeader("x-amz-data-partition", StringUtils.fromString(createIndexRequest.getDirectoryArn()));
-        }
-
-        String uriResourcePath = "/amazonclouddirectory/2017-01-11/index";
-
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            java.util.List<AttributeKey> orderedIndexedAttributeListList = createIndexRequest.getOrderedIndexedAttributeList();
-            if (orderedIndexedAttributeListList != null) {
-                jsonGenerator.writeFieldName("OrderedIndexedAttributeList");
-                jsonGenerator.writeStartArray();
-                for (AttributeKey orderedIndexedAttributeListListValue : orderedIndexedAttributeListList) {
-                    if (orderedIndexedAttributeListListValue != null) {
-
-                        AttributeKeyJsonMarshaller.getInstance().marshall(orderedIndexedAttributeListListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (createIndexRequest.getIsUnique() != null) {
-                jsonGenerator.writeFieldName("IsUnique").writeValue(createIndexRequest.getIsUnique());
-            }
-            if (createIndexRequest.getParentReference() != null) {
-                jsonGenerator.writeFieldName("ParentReference");
-                ObjectReferenceJsonMarshaller.getInstance().marshall(createIndexRequest.getParentReference(), jsonGenerator);
-            }
-            if (createIndexRequest.getLinkName() != null) {
-                jsonGenerator.writeFieldName("LinkName").writeValue(createIndexRequest.getLinkName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createIndexRequest.getDirectoryArn(), DIRECTORYARN_BINDING);
+            protocolMarshaller.marshall(createIndexRequest.getOrderedIndexedAttributeList(), ORDEREDINDEXEDATTRIBUTELIST_BINDING);
+            protocolMarshaller.marshall(createIndexRequest.getIsUnique(), ISUNIQUE_BINDING);
+            protocolMarshaller.marshall(createIndexRequest.getParentReference(), PARENTREFERENCE_BINDING);
+            protocolMarshaller.marshall(createIndexRequest.getLinkName(), LINKNAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

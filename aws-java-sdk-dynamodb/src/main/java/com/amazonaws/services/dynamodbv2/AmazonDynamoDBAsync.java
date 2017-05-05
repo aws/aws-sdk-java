@@ -998,6 +998,37 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
 
     /**
      * <p>
+     * Gives a description of the Time to Live (TTL) status on the specified table.
+     * </p>
+     * 
+     * @param describeTimeToLiveRequest
+     * @return A Java Future containing the result of the DescribeTimeToLive operation returned by the service.
+     * @sample AmazonDynamoDBAsync.DescribeTimeToLive
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTimeToLive" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTimeToLiveResult> describeTimeToLiveAsync(DescribeTimeToLiveRequest describeTimeToLiveRequest);
+
+    /**
+     * <p>
+     * Gives a description of the Time to Live (TTL) status on the specified table.
+     * </p>
+     * 
+     * @param describeTimeToLiveRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeTimeToLive operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.DescribeTimeToLive
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTimeToLive" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTimeToLiveResult> describeTimeToLiveAsync(DescribeTimeToLiveRequest describeTimeToLiveRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeTimeToLiveRequest, DescribeTimeToLiveResult> asyncHandler);
+
+    /**
+     * <p>
      * The <code>GetItem</code> operation returns a set of attributes for the item with the given primary key. If there
      * is no matching item, <code>GetItem</code> does not return any data and there will be no <code>Item</code> element
      * in the response.
@@ -1807,5 +1838,102 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      */
     java.util.concurrent.Future<UpdateTableResult> updateTableAsync(String tableName, ProvisionedThroughput provisionedThroughput,
             com.amazonaws.handlers.AsyncHandler<UpdateTableRequest, UpdateTableResult> asyncHandler);
+
+    /**
+     * <p>
+     * Specify the lifetime of individual table items. The database automatically removes the item at the expiration of
+     * the item. The UpdateTimeToLive method will enable or disable TTL for the specified table. A successful
+     * <code>UpdateTimeToLive</code> call returns the current <code>TimeToLiveSpecification</code>; it may take up to
+     * one hour for the change to fully process.
+     * </p>
+     * <p>
+     * TTL compares the current time in epoch time format to the time stored in the TTL attribute of an item. If the
+     * epoch time value stored in the attribute is less than the current time, the item is marked as expired and
+     * subsequently deleted.
+     * </p>
+     * <note>
+     * <p>
+     * The epoch time format is the number of seconds elapsed since 12:00:00 AM January 1st, 1970 UTC.
+     * </p>
+     * </note>
+     * <p>
+     * DynamoDB deletes expired items on a best-effort basis to ensure availability of throughput for other data
+     * operations.
+     * </p>
+     * <important>
+     * <p>
+     * DynamoDB typically deletes expired items within two days of expiration. The exact duration within which an item
+     * gets deleted after expiration is specific to the nature of the workload. Items that have expired and not been
+     * deleted will still show up in reads, queries, and scans.
+     * </p>
+     * </important>
+     * <p>
+     * As items are deleted, they are removed from any Local Secondary Index and Global Secondary Index immediately in
+     * the same eventually consistent way as a standard delete operation.
+     * </p>
+     * <p>
+     * For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html">Time
+     * To Live</a> in the Amazon DynamoDB Developer Guide.
+     * </p>
+     * 
+     * @param updateTimeToLiveRequest
+     *        Represents the input of an <code>UpdateTimeToLive</code> operation.
+     * @return A Java Future containing the result of the UpdateTimeToLive operation returned by the service.
+     * @sample AmazonDynamoDBAsync.UpdateTimeToLive
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTimeToLive" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTimeToLiveResult> updateTimeToLiveAsync(UpdateTimeToLiveRequest updateTimeToLiveRequest);
+
+    /**
+     * <p>
+     * Specify the lifetime of individual table items. The database automatically removes the item at the expiration of
+     * the item. The UpdateTimeToLive method will enable or disable TTL for the specified table. A successful
+     * <code>UpdateTimeToLive</code> call returns the current <code>TimeToLiveSpecification</code>; it may take up to
+     * one hour for the change to fully process.
+     * </p>
+     * <p>
+     * TTL compares the current time in epoch time format to the time stored in the TTL attribute of an item. If the
+     * epoch time value stored in the attribute is less than the current time, the item is marked as expired and
+     * subsequently deleted.
+     * </p>
+     * <note>
+     * <p>
+     * The epoch time format is the number of seconds elapsed since 12:00:00 AM January 1st, 1970 UTC.
+     * </p>
+     * </note>
+     * <p>
+     * DynamoDB deletes expired items on a best-effort basis to ensure availability of throughput for other data
+     * operations.
+     * </p>
+     * <important>
+     * <p>
+     * DynamoDB typically deletes expired items within two days of expiration. The exact duration within which an item
+     * gets deleted after expiration is specific to the nature of the workload. Items that have expired and not been
+     * deleted will still show up in reads, queries, and scans.
+     * </p>
+     * </important>
+     * <p>
+     * As items are deleted, they are removed from any Local Secondary Index and Global Secondary Index immediately in
+     * the same eventually consistent way as a standard delete operation.
+     * </p>
+     * <p>
+     * For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html">Time
+     * To Live</a> in the Amazon DynamoDB Developer Guide.
+     * </p>
+     * 
+     * @param updateTimeToLiveRequest
+     *        Represents the input of an <code>UpdateTimeToLive</code> operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateTimeToLive operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.UpdateTimeToLive
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTimeToLive" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTimeToLiveResult> updateTimeToLiveAsync(UpdateTimeToLiveRequest updateTimeToLiveRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateTimeToLiveRequest, UpdateTimeToLiveResult> asyncHandler);
 
 }

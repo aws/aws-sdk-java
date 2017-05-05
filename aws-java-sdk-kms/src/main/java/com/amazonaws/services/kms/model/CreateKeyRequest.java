@@ -36,17 +36,17 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * It must allow the principal making the <code>CreateKey</code> request to make a subsequent <a>PutKeyPolicy</a>
-     * request on the CMK. This reduces the likelihood that the CMK becomes unmanageable. For more information, refer to
-     * the scenario in the <a href=
+     * It must allow the principal that is making the <code>CreateKey</code> request to make a subsequent
+     * <a>PutKeyPolicy</a> request on the CMK. This reduces the likelihood that the CMK becomes unmanageable. For more
+     * information, refer to the scenario in the <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
      * >Default Key Policy</a> section in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The principal(s) specified in the key policy must exist and be visible to AWS KMS. When you create a new AWS
-     * principal (for example, an IAM user or role), you might need to enforce a delay before specifying the new
+     * The principals that are specified in the key policy must exist and be visible to AWS KMS. When you create a new
+     * AWS principal (for example, an IAM user or role), you might need to enforce a delay before specifying the new
      * principal in a key policy because the new principal might not immediately be visible to AWS KMS. For more
      * information, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency"
@@ -114,14 +114,25 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * </important>
      * <p>
-     * Use this parameter only when you include a policy in the request and you intend to prevent the principal making
-     * the request from making a subsequent <a>PutKeyPolicy</a> request on the CMK.
+     * Use this parameter only when you include a policy in the request and you intend to prevent the principal that is
+     * making the request from making a subsequent <a>PutKeyPolicy</a> request on the CMK.
      * </p>
      * <p>
      * The default value is false.
      * </p>
      */
     private Boolean bypassPolicyLockoutSafetyCheck;
+    /**
+     * <p>
+     * One or more tags. Each tag consists of a tag key and a tag value. Tag keys and tag values are both required, but
+     * tag values can be empty (null) strings.
+     * </p>
+     * <p>
+     * Use this parameter to tag the CMK when it is created. Alternately, you can omit this parameter and instead tag
+     * the CMK after it is created using <a>TagResource</a>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -134,17 +145,17 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * It must allow the principal making the <code>CreateKey</code> request to make a subsequent <a>PutKeyPolicy</a>
-     * request on the CMK. This reduces the likelihood that the CMK becomes unmanageable. For more information, refer to
-     * the scenario in the <a href=
+     * It must allow the principal that is making the <code>CreateKey</code> request to make a subsequent
+     * <a>PutKeyPolicy</a> request on the CMK. This reduces the likelihood that the CMK becomes unmanageable. For more
+     * information, refer to the scenario in the <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
      * >Default Key Policy</a> section in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The principal(s) specified in the key policy must exist and be visible to AWS KMS. When you create a new AWS
-     * principal (for example, an IAM user or role), you might need to enforce a delay before specifying the new
+     * The principals that are specified in the key policy must exist and be visible to AWS KMS. When you create a new
+     * AWS principal (for example, an IAM user or role), you might need to enforce a delay before specifying the new
      * principal in a key policy because the new principal might not immediately be visible to AWS KMS. For more
      * information, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency"
@@ -170,7 +181,7 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <ul>
      *        <li>
      *        <p>
-     *        It must allow the principal making the <code>CreateKey</code> request to make a subsequent
+     *        It must allow the principal that is making the <code>CreateKey</code> request to make a subsequent
      *        <a>PutKeyPolicy</a> request on the CMK. This reduces the likelihood that the CMK becomes unmanageable. For
      *        more information, refer to the scenario in the <a href=
      *        "http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
@@ -179,10 +190,10 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        The principal(s) specified in the key policy must exist and be visible to AWS KMS. When you create a new
-     *        AWS principal (for example, an IAM user or role), you might need to enforce a delay before specifying the
-     *        new principal in a key policy because the new principal might not immediately be visible to AWS KMS. For
-     *        more information, see <a href=
+     *        The principals that are specified in the key policy must exist and be visible to AWS KMS. When you create
+     *        a new AWS principal (for example, an IAM user or role), you might need to enforce a delay before
+     *        specifying the new principal in a key policy because the new principal might not immediately be visible to
+     *        AWS KMS. For more information, see <a href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency"
      *        >Changes that I make are not always immediately visible</a> in the <i>IAM User Guide</i>.
      *        </p>
@@ -213,17 +224,17 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * It must allow the principal making the <code>CreateKey</code> request to make a subsequent <a>PutKeyPolicy</a>
-     * request on the CMK. This reduces the likelihood that the CMK becomes unmanageable. For more information, refer to
-     * the scenario in the <a href=
+     * It must allow the principal that is making the <code>CreateKey</code> request to make a subsequent
+     * <a>PutKeyPolicy</a> request on the CMK. This reduces the likelihood that the CMK becomes unmanageable. For more
+     * information, refer to the scenario in the <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
      * >Default Key Policy</a> section in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The principal(s) specified in the key policy must exist and be visible to AWS KMS. When you create a new AWS
-     * principal (for example, an IAM user or role), you might need to enforce a delay before specifying the new
+     * The principals that are specified in the key policy must exist and be visible to AWS KMS. When you create a new
+     * AWS principal (for example, an IAM user or role), you might need to enforce a delay before specifying the new
      * principal in a key policy because the new principal might not immediately be visible to AWS KMS. For more
      * information, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency"
@@ -248,7 +259,7 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         <ul>
      *         <li>
      *         <p>
-     *         It must allow the principal making the <code>CreateKey</code> request to make a subsequent
+     *         It must allow the principal that is making the <code>CreateKey</code> request to make a subsequent
      *         <a>PutKeyPolicy</a> request on the CMK. This reduces the likelihood that the CMK becomes unmanageable.
      *         For more information, refer to the scenario in the <a href=
      *         "http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
@@ -257,10 +268,10 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         </li>
      *         <li>
      *         <p>
-     *         The principal(s) specified in the key policy must exist and be visible to AWS KMS. When you create a new
-     *         AWS principal (for example, an IAM user or role), you might need to enforce a delay before specifying the
-     *         new principal in a key policy because the new principal might not immediately be visible to AWS KMS. For
-     *         more information, see <a href=
+     *         The principals that are specified in the key policy must exist and be visible to AWS KMS. When you create
+     *         a new AWS principal (for example, an IAM user or role), you might need to enforce a delay before
+     *         specifying the new principal in a key policy because the new principal might not immediately be visible
+     *         to AWS KMS. For more information, see <a href=
      *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency"
      *         >Changes that I make are not always immediately visible</a> in the <i>IAM User Guide</i>.
      *         </p>
@@ -290,17 +301,17 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * It must allow the principal making the <code>CreateKey</code> request to make a subsequent <a>PutKeyPolicy</a>
-     * request on the CMK. This reduces the likelihood that the CMK becomes unmanageable. For more information, refer to
-     * the scenario in the <a href=
+     * It must allow the principal that is making the <code>CreateKey</code> request to make a subsequent
+     * <a>PutKeyPolicy</a> request on the CMK. This reduces the likelihood that the CMK becomes unmanageable. For more
+     * information, refer to the scenario in the <a href=
      * "http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
      * >Default Key Policy</a> section in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The principal(s) specified in the key policy must exist and be visible to AWS KMS. When you create a new AWS
-     * principal (for example, an IAM user or role), you might need to enforce a delay before specifying the new
+     * The principals that are specified in the key policy must exist and be visible to AWS KMS. When you create a new
+     * AWS principal (for example, an IAM user or role), you might need to enforce a delay before specifying the new
      * principal in a key policy because the new principal might not immediately be visible to AWS KMS. For more
      * information, see <a href=
      * "http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency"
@@ -326,7 +337,7 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <ul>
      *        <li>
      *        <p>
-     *        It must allow the principal making the <code>CreateKey</code> request to make a subsequent
+     *        It must allow the principal that is making the <code>CreateKey</code> request to make a subsequent
      *        <a>PutKeyPolicy</a> request on the CMK. This reduces the likelihood that the CMK becomes unmanageable. For
      *        more information, refer to the scenario in the <a href=
      *        "http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
@@ -335,10 +346,10 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        The principal(s) specified in the key policy must exist and be visible to AWS KMS. When you create a new
-     *        AWS principal (for example, an IAM user or role), you might need to enforce a delay before specifying the
-     *        new principal in a key policy because the new principal might not immediately be visible to AWS KMS. For
-     *        more information, see <a href=
+     *        The principals that are specified in the key policy must exist and be visible to AWS KMS. When you create
+     *        a new AWS principal (for example, an IAM user or role), you might need to enforce a delay before
+     *        specifying the new principal in a key policy because the new principal might not immediately be visible to
+     *        AWS KMS. For more information, see <a href=
      *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency"
      *        >Changes that I make are not always immediately visible</a> in the <i>IAM User Guide</i>.
      *        </p>
@@ -702,8 +713,8 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * </important>
      * <p>
-     * Use this parameter only when you include a policy in the request and you intend to prevent the principal making
-     * the request from making a subsequent <a>PutKeyPolicy</a> request on the CMK.
+     * Use this parameter only when you include a policy in the request and you intend to prevent the principal that is
+     * making the request from making a subsequent <a>PutKeyPolicy</a> request on the CMK.
      * </p>
      * <p>
      * The default value is false.
@@ -723,7 +734,7 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </important>
      *        <p>
      *        Use this parameter only when you include a policy in the request and you intend to prevent the principal
-     *        making the request from making a subsequent <a>PutKeyPolicy</a> request on the CMK.
+     *        that is making the request from making a subsequent <a>PutKeyPolicy</a> request on the CMK.
      *        </p>
      *        <p>
      *        The default value is false.
@@ -749,8 +760,8 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * </important>
      * <p>
-     * Use this parameter only when you include a policy in the request and you intend to prevent the principal making
-     * the request from making a subsequent <a>PutKeyPolicy</a> request on the CMK.
+     * Use this parameter only when you include a policy in the request and you intend to prevent the principal that is
+     * making the request from making a subsequent <a>PutKeyPolicy</a> request on the CMK.
      * </p>
      * <p>
      * The default value is false.
@@ -769,7 +780,7 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         </important>
      *         <p>
      *         Use this parameter only when you include a policy in the request and you intend to prevent the principal
-     *         making the request from making a subsequent <a>PutKeyPolicy</a> request on the CMK.
+     *         that is making the request from making a subsequent <a>PutKeyPolicy</a> request on the CMK.
      *         </p>
      *         <p>
      *         The default value is false.
@@ -795,8 +806,8 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * </important>
      * <p>
-     * Use this parameter only when you include a policy in the request and you intend to prevent the principal making
-     * the request from making a subsequent <a>PutKeyPolicy</a> request on the CMK.
+     * Use this parameter only when you include a policy in the request and you intend to prevent the principal that is
+     * making the request from making a subsequent <a>PutKeyPolicy</a> request on the CMK.
      * </p>
      * <p>
      * The default value is false.
@@ -816,7 +827,7 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </important>
      *        <p>
      *        Use this parameter only when you include a policy in the request and you intend to prevent the principal
-     *        making the request from making a subsequent <a>PutKeyPolicy</a> request on the CMK.
+     *        that is making the request from making a subsequent <a>PutKeyPolicy</a> request on the CMK.
      *        </p>
      *        <p>
      *        The default value is false.
@@ -844,8 +855,8 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * </important>
      * <p>
-     * Use this parameter only when you include a policy in the request and you intend to prevent the principal making
-     * the request from making a subsequent <a>PutKeyPolicy</a> request on the CMK.
+     * Use this parameter only when you include a policy in the request and you intend to prevent the principal that is
+     * making the request from making a subsequent <a>PutKeyPolicy</a> request on the CMK.
      * </p>
      * <p>
      * The default value is false.
@@ -864,7 +875,7 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         </important>
      *         <p>
      *         Use this parameter only when you include a policy in the request and you intend to prevent the principal
-     *         making the request from making a subsequent <a>PutKeyPolicy</a> request on the CMK.
+     *         that is making the request from making a subsequent <a>PutKeyPolicy</a> request on the CMK.
      *         </p>
      *         <p>
      *         The default value is false.
@@ -872,6 +883,115 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     public Boolean isBypassPolicyLockoutSafetyCheck() {
         return this.bypassPolicyLockoutSafetyCheck;
+    }
+
+    /**
+     * <p>
+     * One or more tags. Each tag consists of a tag key and a tag value. Tag keys and tag values are both required, but
+     * tag values can be empty (null) strings.
+     * </p>
+     * <p>
+     * Use this parameter to tag the CMK when it is created. Alternately, you can omit this parameter and instead tag
+     * the CMK after it is created using <a>TagResource</a>.
+     * </p>
+     * 
+     * @return One or more tags. Each tag consists of a tag key and a tag value. Tag keys and tag values are both
+     *         required, but tag values can be empty (null) strings.</p>
+     *         <p>
+     *         Use this parameter to tag the CMK when it is created. Alternately, you can omit this parameter and
+     *         instead tag the CMK after it is created using <a>TagResource</a>.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * One or more tags. Each tag consists of a tag key and a tag value. Tag keys and tag values are both required, but
+     * tag values can be empty (null) strings.
+     * </p>
+     * <p>
+     * Use this parameter to tag the CMK when it is created. Alternately, you can omit this parameter and instead tag
+     * the CMK after it is created using <a>TagResource</a>.
+     * </p>
+     * 
+     * @param tags
+     *        One or more tags. Each tag consists of a tag key and a tag value. Tag keys and tag values are both
+     *        required, but tag values can be empty (null) strings.</p>
+     *        <p>
+     *        Use this parameter to tag the CMK when it is created. Alternately, you can omit this parameter and instead
+     *        tag the CMK after it is created using <a>TagResource</a>.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * One or more tags. Each tag consists of a tag key and a tag value. Tag keys and tag values are both required, but
+     * tag values can be empty (null) strings.
+     * </p>
+     * <p>
+     * Use this parameter to tag the CMK when it is created. Alternately, you can omit this parameter and instead tag
+     * the CMK after it is created using <a>TagResource</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        One or more tags. Each tag consists of a tag key and a tag value. Tag keys and tag values are both
+     *        required, but tag values can be empty (null) strings.</p>
+     *        <p>
+     *        Use this parameter to tag the CMK when it is created. Alternately, you can omit this parameter and instead
+     *        tag the CMK after it is created using <a>TagResource</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateKeyRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more tags. Each tag consists of a tag key and a tag value. Tag keys and tag values are both required, but
+     * tag values can be empty (null) strings.
+     * </p>
+     * <p>
+     * Use this parameter to tag the CMK when it is created. Alternately, you can omit this parameter and instead tag
+     * the CMK after it is created using <a>TagResource</a>.
+     * </p>
+     * 
+     * @param tags
+     *        One or more tags. Each tag consists of a tag key and a tag value. Tag keys and tag values are both
+     *        required, but tag values can be empty (null) strings.</p>
+     *        <p>
+     *        Use this parameter to tag the CMK when it is created. Alternately, you can omit this parameter and instead
+     *        tag the CMK after it is created using <a>TagResource</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateKeyRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
     }
 
     /**
@@ -894,7 +1014,9 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getOrigin() != null)
             sb.append("Origin: ").append(getOrigin()).append(",");
         if (getBypassPolicyLockoutSafetyCheck() != null)
-            sb.append("BypassPolicyLockoutSafetyCheck: ").append(getBypassPolicyLockoutSafetyCheck());
+            sb.append("BypassPolicyLockoutSafetyCheck: ").append(getBypassPolicyLockoutSafetyCheck()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -930,6 +1052,10 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (other.getBypassPolicyLockoutSafetyCheck() != null
                 && other.getBypassPolicyLockoutSafetyCheck().equals(this.getBypassPolicyLockoutSafetyCheck()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -943,6 +1069,7 @@ public class CreateKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getKeyUsage() == null) ? 0 : getKeyUsage().hashCode());
         hashCode = prime * hashCode + ((getOrigin() == null) ? 0 : getOrigin().hashCode());
         hashCode = prime * hashCode + ((getBypassPolicyLockoutSafetyCheck() == null) ? 0 : getBypassPolicyLockoutSafetyCheck().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

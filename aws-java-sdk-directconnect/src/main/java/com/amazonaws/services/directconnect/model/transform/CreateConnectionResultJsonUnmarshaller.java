@@ -88,6 +88,14 @@ public class CreateConnectionResultJsonUnmarshaller implements Unmarshaller<Crea
                     context.nextToken();
                     createConnectionResult.setLoaIssueTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
+                if (context.testExpression("lagId", targetDepth)) {
+                    context.nextToken();
+                    createConnectionResult.setLagId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("awsDevice", targetDepth)) {
+                    context.nextToken();
+                    createConnectionResult.setAwsDevice(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -30,22 +30,22 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
+ * <fullname>Amazon EC2 Systems Manager</fullname>
  * <p>
  * Amazon EC2 Systems Manager is a collection of capabilities that helps you automate management tasks such as
  * collecting system inventory, applying operating system (OS) patches, automating the creation of Amazon Machine Images
- * (AMIs), and configuring operating systems (OSs) and applications at scale. Systems Manager works with managed
- * instances: Amazon EC2 instances and servers or virtual machines (VMs) in your on-premises environment that are
- * configured for Systems Manager.
+ * (AMIs), and configuring operating systems (OSs) and applications at scale. Systems Manager lets you remotely and
+ * securely manage the configuration of your managed instances. A <i>managed instance</i> is any Amazon EC2 instance or
+ * on-premises machine in your hybrid environment that has been configured for Systems Manager.
  * </p>
  * <p>
- * This references is intended to be used with the EC2 Systems Manager User Guide (<a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/systems-manager.html">Linux</a>) (<a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/systems-manager.html">Windows</a>).
+ * This reference is intended to be used with the <a
+ * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/">Amazon EC2 Systems Manager User Guide</a>.
  * </p>
  * <p>
- * To get started, verify prerequisites and configure managed instances (<a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/systems-manager-prereqs.html">Linux</a>) (<a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/systems-manager-prereqs.html">Windows</a>).
+ * To get started, verify prerequisites and configure managed instances. For more information, see <a
+ * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-prereqs.html">Systems Manager
+ * Prerequisites</a>.
  * </p>
  */
 @ThreadSafe
@@ -234,6 +234,10 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
         this.executorService = executorService;
     }
 
+    public static AWSSimpleSystemsManagementAsyncClientBuilder asyncBuilder() {
+        return AWSSimpleSystemsManagementAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon SSM using the specified parameters.
      *
@@ -263,14 +267,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<AddTagsToResourceResult> addTagsToResourceAsync(final AddTagsToResourceRequest request,
             final com.amazonaws.handlers.AsyncHandler<AddTagsToResourceRequest, AddTagsToResourceResult> asyncHandler) {
+        final AddTagsToResourceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AddTagsToResourceResult>() {
             @Override
             public AddTagsToResourceResult call() throws Exception {
-                AddTagsToResourceResult result;
+                AddTagsToResourceResult result = null;
 
                 try {
-                    result = addTagsToResource(request);
+                    result = executeAddTagsToResource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -279,7 +284,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -295,14 +300,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<CancelCommandResult> cancelCommandAsync(final CancelCommandRequest request,
             final com.amazonaws.handlers.AsyncHandler<CancelCommandRequest, CancelCommandResult> asyncHandler) {
+        final CancelCommandRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CancelCommandResult>() {
             @Override
             public CancelCommandResult call() throws Exception {
-                CancelCommandResult result;
+                CancelCommandResult result = null;
 
                 try {
-                    result = cancelCommand(request);
+                    result = executeCancelCommand(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -311,7 +317,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -327,14 +333,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<CreateActivationResult> createActivationAsync(final CreateActivationRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateActivationRequest, CreateActivationResult> asyncHandler) {
+        final CreateActivationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateActivationResult>() {
             @Override
             public CreateActivationResult call() throws Exception {
-                CreateActivationResult result;
+                CreateActivationResult result = null;
 
                 try {
-                    result = createActivation(request);
+                    result = executeCreateActivation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -343,7 +350,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -359,14 +366,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<CreateAssociationResult> createAssociationAsync(final CreateAssociationRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateAssociationRequest, CreateAssociationResult> asyncHandler) {
+        final CreateAssociationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateAssociationResult>() {
             @Override
             public CreateAssociationResult call() throws Exception {
-                CreateAssociationResult result;
+                CreateAssociationResult result = null;
 
                 try {
-                    result = createAssociation(request);
+                    result = executeCreateAssociation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -375,7 +383,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -391,14 +399,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<CreateAssociationBatchResult> createAssociationBatchAsync(final CreateAssociationBatchRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateAssociationBatchRequest, CreateAssociationBatchResult> asyncHandler) {
+        final CreateAssociationBatchRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateAssociationBatchResult>() {
             @Override
             public CreateAssociationBatchResult call() throws Exception {
-                CreateAssociationBatchResult result;
+                CreateAssociationBatchResult result = null;
 
                 try {
-                    result = createAssociationBatch(request);
+                    result = executeCreateAssociationBatch(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -407,7 +416,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -423,14 +432,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<CreateDocumentResult> createDocumentAsync(final CreateDocumentRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateDocumentRequest, CreateDocumentResult> asyncHandler) {
+        final CreateDocumentRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateDocumentResult>() {
             @Override
             public CreateDocumentResult call() throws Exception {
-                CreateDocumentResult result;
+                CreateDocumentResult result = null;
 
                 try {
-                    result = createDocument(request);
+                    result = executeCreateDocument(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -439,7 +449,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -455,14 +465,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<CreateMaintenanceWindowResult> createMaintenanceWindowAsync(final CreateMaintenanceWindowRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateMaintenanceWindowRequest, CreateMaintenanceWindowResult> asyncHandler) {
+        final CreateMaintenanceWindowRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateMaintenanceWindowResult>() {
             @Override
             public CreateMaintenanceWindowResult call() throws Exception {
-                CreateMaintenanceWindowResult result;
+                CreateMaintenanceWindowResult result = null;
 
                 try {
-                    result = createMaintenanceWindow(request);
+                    result = executeCreateMaintenanceWindow(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -471,7 +482,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -487,14 +498,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<CreatePatchBaselineResult> createPatchBaselineAsync(final CreatePatchBaselineRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreatePatchBaselineRequest, CreatePatchBaselineResult> asyncHandler) {
+        final CreatePatchBaselineRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreatePatchBaselineResult>() {
             @Override
             public CreatePatchBaselineResult call() throws Exception {
-                CreatePatchBaselineResult result;
+                CreatePatchBaselineResult result = null;
 
                 try {
-                    result = createPatchBaseline(request);
+                    result = executeCreatePatchBaseline(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -503,7 +515,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -519,14 +531,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<DeleteActivationResult> deleteActivationAsync(final DeleteActivationRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteActivationRequest, DeleteActivationResult> asyncHandler) {
+        final DeleteActivationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteActivationResult>() {
             @Override
             public DeleteActivationResult call() throws Exception {
-                DeleteActivationResult result;
+                DeleteActivationResult result = null;
 
                 try {
-                    result = deleteActivation(request);
+                    result = executeDeleteActivation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -535,7 +548,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -551,14 +564,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<DeleteAssociationResult> deleteAssociationAsync(final DeleteAssociationRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteAssociationRequest, DeleteAssociationResult> asyncHandler) {
+        final DeleteAssociationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteAssociationResult>() {
             @Override
             public DeleteAssociationResult call() throws Exception {
-                DeleteAssociationResult result;
+                DeleteAssociationResult result = null;
 
                 try {
-                    result = deleteAssociation(request);
+                    result = executeDeleteAssociation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -567,7 +581,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -583,14 +597,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<DeleteDocumentResult> deleteDocumentAsync(final DeleteDocumentRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteDocumentRequest, DeleteDocumentResult> asyncHandler) {
+        final DeleteDocumentRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteDocumentResult>() {
             @Override
             public DeleteDocumentResult call() throws Exception {
-                DeleteDocumentResult result;
+                DeleteDocumentResult result = null;
 
                 try {
-                    result = deleteDocument(request);
+                    result = executeDeleteDocument(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -599,7 +614,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -615,14 +630,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<DeleteMaintenanceWindowResult> deleteMaintenanceWindowAsync(final DeleteMaintenanceWindowRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteMaintenanceWindowRequest, DeleteMaintenanceWindowResult> asyncHandler) {
+        final DeleteMaintenanceWindowRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteMaintenanceWindowResult>() {
             @Override
             public DeleteMaintenanceWindowResult call() throws Exception {
-                DeleteMaintenanceWindowResult result;
+                DeleteMaintenanceWindowResult result = null;
 
                 try {
-                    result = deleteMaintenanceWindow(request);
+                    result = executeDeleteMaintenanceWindow(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -631,7 +647,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -647,14 +663,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<DeleteParameterResult> deleteParameterAsync(final DeleteParameterRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteParameterRequest, DeleteParameterResult> asyncHandler) {
+        final DeleteParameterRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteParameterResult>() {
             @Override
             public DeleteParameterResult call() throws Exception {
-                DeleteParameterResult result;
+                DeleteParameterResult result = null;
 
                 try {
-                    result = deleteParameter(request);
+                    result = executeDeleteParameter(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -663,7 +680,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -679,14 +696,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<DeletePatchBaselineResult> deletePatchBaselineAsync(final DeletePatchBaselineRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeletePatchBaselineRequest, DeletePatchBaselineResult> asyncHandler) {
+        final DeletePatchBaselineRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeletePatchBaselineResult>() {
             @Override
             public DeletePatchBaselineResult call() throws Exception {
-                DeletePatchBaselineResult result;
+                DeletePatchBaselineResult result = null;
 
                 try {
-                    result = deletePatchBaseline(request);
+                    result = executeDeletePatchBaseline(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -695,7 +713,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -711,14 +729,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<DeregisterManagedInstanceResult> deregisterManagedInstanceAsync(final DeregisterManagedInstanceRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeregisterManagedInstanceRequest, DeregisterManagedInstanceResult> asyncHandler) {
+        final DeregisterManagedInstanceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeregisterManagedInstanceResult>() {
             @Override
             public DeregisterManagedInstanceResult call() throws Exception {
-                DeregisterManagedInstanceResult result;
+                DeregisterManagedInstanceResult result = null;
 
                 try {
-                    result = deregisterManagedInstance(request);
+                    result = executeDeregisterManagedInstance(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -727,7 +746,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -745,14 +764,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     public java.util.concurrent.Future<DeregisterPatchBaselineForPatchGroupResult> deregisterPatchBaselineForPatchGroupAsync(
             final DeregisterPatchBaselineForPatchGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeregisterPatchBaselineForPatchGroupRequest, DeregisterPatchBaselineForPatchGroupResult> asyncHandler) {
+        final DeregisterPatchBaselineForPatchGroupRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeregisterPatchBaselineForPatchGroupResult>() {
             @Override
             public DeregisterPatchBaselineForPatchGroupResult call() throws Exception {
-                DeregisterPatchBaselineForPatchGroupResult result;
+                DeregisterPatchBaselineForPatchGroupResult result = null;
 
                 try {
-                    result = deregisterPatchBaselineForPatchGroup(request);
+                    result = executeDeregisterPatchBaselineForPatchGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -761,7 +781,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -779,14 +799,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     public java.util.concurrent.Future<DeregisterTargetFromMaintenanceWindowResult> deregisterTargetFromMaintenanceWindowAsync(
             final DeregisterTargetFromMaintenanceWindowRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeregisterTargetFromMaintenanceWindowRequest, DeregisterTargetFromMaintenanceWindowResult> asyncHandler) {
+        final DeregisterTargetFromMaintenanceWindowRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeregisterTargetFromMaintenanceWindowResult>() {
             @Override
             public DeregisterTargetFromMaintenanceWindowResult call() throws Exception {
-                DeregisterTargetFromMaintenanceWindowResult result;
+                DeregisterTargetFromMaintenanceWindowResult result = null;
 
                 try {
-                    result = deregisterTargetFromMaintenanceWindow(request);
+                    result = executeDeregisterTargetFromMaintenanceWindow(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -795,7 +816,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -813,14 +834,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     public java.util.concurrent.Future<DeregisterTaskFromMaintenanceWindowResult> deregisterTaskFromMaintenanceWindowAsync(
             final DeregisterTaskFromMaintenanceWindowRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeregisterTaskFromMaintenanceWindowRequest, DeregisterTaskFromMaintenanceWindowResult> asyncHandler) {
+        final DeregisterTaskFromMaintenanceWindowRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeregisterTaskFromMaintenanceWindowResult>() {
             @Override
             public DeregisterTaskFromMaintenanceWindowResult call() throws Exception {
-                DeregisterTaskFromMaintenanceWindowResult result;
+                DeregisterTaskFromMaintenanceWindowResult result = null;
 
                 try {
-                    result = deregisterTaskFromMaintenanceWindow(request);
+                    result = executeDeregisterTaskFromMaintenanceWindow(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -829,7 +851,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -845,14 +867,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<DescribeActivationsResult> describeActivationsAsync(final DescribeActivationsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeActivationsRequest, DescribeActivationsResult> asyncHandler) {
+        final DescribeActivationsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeActivationsResult>() {
             @Override
             public DescribeActivationsResult call() throws Exception {
-                DescribeActivationsResult result;
+                DescribeActivationsResult result = null;
 
                 try {
-                    result = describeActivations(request);
+                    result = executeDescribeActivations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -861,7 +884,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -877,14 +900,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<DescribeAssociationResult> describeAssociationAsync(final DescribeAssociationRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeAssociationRequest, DescribeAssociationResult> asyncHandler) {
+        final DescribeAssociationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeAssociationResult>() {
             @Override
             public DescribeAssociationResult call() throws Exception {
-                DescribeAssociationResult result;
+                DescribeAssociationResult result = null;
 
                 try {
-                    result = describeAssociation(request);
+                    result = executeDescribeAssociation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -893,7 +917,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -909,14 +933,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<DescribeAutomationExecutionsResult> describeAutomationExecutionsAsync(final DescribeAutomationExecutionsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeAutomationExecutionsRequest, DescribeAutomationExecutionsResult> asyncHandler) {
+        final DescribeAutomationExecutionsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeAutomationExecutionsResult>() {
             @Override
             public DescribeAutomationExecutionsResult call() throws Exception {
-                DescribeAutomationExecutionsResult result;
+                DescribeAutomationExecutionsResult result = null;
 
                 try {
-                    result = describeAutomationExecutions(request);
+                    result = executeDescribeAutomationExecutions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -925,7 +950,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -941,14 +966,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<DescribeAvailablePatchesResult> describeAvailablePatchesAsync(final DescribeAvailablePatchesRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeAvailablePatchesRequest, DescribeAvailablePatchesResult> asyncHandler) {
+        final DescribeAvailablePatchesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeAvailablePatchesResult>() {
             @Override
             public DescribeAvailablePatchesResult call() throws Exception {
-                DescribeAvailablePatchesResult result;
+                DescribeAvailablePatchesResult result = null;
 
                 try {
-                    result = describeAvailablePatches(request);
+                    result = executeDescribeAvailablePatches(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -957,7 +983,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -973,14 +999,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<DescribeDocumentResult> describeDocumentAsync(final DescribeDocumentRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeDocumentRequest, DescribeDocumentResult> asyncHandler) {
+        final DescribeDocumentRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeDocumentResult>() {
             @Override
             public DescribeDocumentResult call() throws Exception {
-                DescribeDocumentResult result;
+                DescribeDocumentResult result = null;
 
                 try {
-                    result = describeDocument(request);
+                    result = executeDescribeDocument(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -989,7 +1016,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1005,14 +1032,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<DescribeDocumentPermissionResult> describeDocumentPermissionAsync(final DescribeDocumentPermissionRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeDocumentPermissionRequest, DescribeDocumentPermissionResult> asyncHandler) {
+        final DescribeDocumentPermissionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeDocumentPermissionResult>() {
             @Override
             public DescribeDocumentPermissionResult call() throws Exception {
-                DescribeDocumentPermissionResult result;
+                DescribeDocumentPermissionResult result = null;
 
                 try {
-                    result = describeDocumentPermission(request);
+                    result = executeDescribeDocumentPermission(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1021,7 +1049,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1039,14 +1067,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     public java.util.concurrent.Future<DescribeEffectiveInstanceAssociationsResult> describeEffectiveInstanceAssociationsAsync(
             final DescribeEffectiveInstanceAssociationsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeEffectiveInstanceAssociationsRequest, DescribeEffectiveInstanceAssociationsResult> asyncHandler) {
+        final DescribeEffectiveInstanceAssociationsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeEffectiveInstanceAssociationsResult>() {
             @Override
             public DescribeEffectiveInstanceAssociationsResult call() throws Exception {
-                DescribeEffectiveInstanceAssociationsResult result;
+                DescribeEffectiveInstanceAssociationsResult result = null;
 
                 try {
-                    result = describeEffectiveInstanceAssociations(request);
+                    result = executeDescribeEffectiveInstanceAssociations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1055,7 +1084,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1073,14 +1102,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     public java.util.concurrent.Future<DescribeEffectivePatchesForPatchBaselineResult> describeEffectivePatchesForPatchBaselineAsync(
             final DescribeEffectivePatchesForPatchBaselineRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeEffectivePatchesForPatchBaselineRequest, DescribeEffectivePatchesForPatchBaselineResult> asyncHandler) {
+        final DescribeEffectivePatchesForPatchBaselineRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeEffectivePatchesForPatchBaselineResult>() {
             @Override
             public DescribeEffectivePatchesForPatchBaselineResult call() throws Exception {
-                DescribeEffectivePatchesForPatchBaselineResult result;
+                DescribeEffectivePatchesForPatchBaselineResult result = null;
 
                 try {
-                    result = describeEffectivePatchesForPatchBaseline(request);
+                    result = executeDescribeEffectivePatchesForPatchBaseline(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1089,7 +1119,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1107,14 +1137,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     public java.util.concurrent.Future<DescribeInstanceAssociationsStatusResult> describeInstanceAssociationsStatusAsync(
             final DescribeInstanceAssociationsStatusRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeInstanceAssociationsStatusRequest, DescribeInstanceAssociationsStatusResult> asyncHandler) {
+        final DescribeInstanceAssociationsStatusRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeInstanceAssociationsStatusResult>() {
             @Override
             public DescribeInstanceAssociationsStatusResult call() throws Exception {
-                DescribeInstanceAssociationsStatusResult result;
+                DescribeInstanceAssociationsStatusResult result = null;
 
                 try {
-                    result = describeInstanceAssociationsStatus(request);
+                    result = executeDescribeInstanceAssociationsStatus(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1123,7 +1154,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1139,14 +1170,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<DescribeInstanceInformationResult> describeInstanceInformationAsync(final DescribeInstanceInformationRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeInstanceInformationRequest, DescribeInstanceInformationResult> asyncHandler) {
+        final DescribeInstanceInformationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeInstanceInformationResult>() {
             @Override
             public DescribeInstanceInformationResult call() throws Exception {
-                DescribeInstanceInformationResult result;
+                DescribeInstanceInformationResult result = null;
 
                 try {
-                    result = describeInstanceInformation(request);
+                    result = executeDescribeInstanceInformation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1155,7 +1187,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1171,14 +1203,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<DescribeInstancePatchStatesResult> describeInstancePatchStatesAsync(final DescribeInstancePatchStatesRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeInstancePatchStatesRequest, DescribeInstancePatchStatesResult> asyncHandler) {
+        final DescribeInstancePatchStatesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeInstancePatchStatesResult>() {
             @Override
             public DescribeInstancePatchStatesResult call() throws Exception {
-                DescribeInstancePatchStatesResult result;
+                DescribeInstancePatchStatesResult result = null;
 
                 try {
-                    result = describeInstancePatchStates(request);
+                    result = executeDescribeInstancePatchStates(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1187,7 +1220,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1205,14 +1238,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     public java.util.concurrent.Future<DescribeInstancePatchStatesForPatchGroupResult> describeInstancePatchStatesForPatchGroupAsync(
             final DescribeInstancePatchStatesForPatchGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeInstancePatchStatesForPatchGroupRequest, DescribeInstancePatchStatesForPatchGroupResult> asyncHandler) {
+        final DescribeInstancePatchStatesForPatchGroupRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeInstancePatchStatesForPatchGroupResult>() {
             @Override
             public DescribeInstancePatchStatesForPatchGroupResult call() throws Exception {
-                DescribeInstancePatchStatesForPatchGroupResult result;
+                DescribeInstancePatchStatesForPatchGroupResult result = null;
 
                 try {
-                    result = describeInstancePatchStatesForPatchGroup(request);
+                    result = executeDescribeInstancePatchStatesForPatchGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1221,7 +1255,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1237,14 +1271,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<DescribeInstancePatchesResult> describeInstancePatchesAsync(final DescribeInstancePatchesRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeInstancePatchesRequest, DescribeInstancePatchesResult> asyncHandler) {
+        final DescribeInstancePatchesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeInstancePatchesResult>() {
             @Override
             public DescribeInstancePatchesResult call() throws Exception {
-                DescribeInstancePatchesResult result;
+                DescribeInstancePatchesResult result = null;
 
                 try {
-                    result = describeInstancePatches(request);
+                    result = executeDescribeInstancePatches(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1253,7 +1288,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1271,14 +1306,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     public java.util.concurrent.Future<DescribeMaintenanceWindowExecutionTaskInvocationsResult> describeMaintenanceWindowExecutionTaskInvocationsAsync(
             final DescribeMaintenanceWindowExecutionTaskInvocationsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeMaintenanceWindowExecutionTaskInvocationsRequest, DescribeMaintenanceWindowExecutionTaskInvocationsResult> asyncHandler) {
+        final DescribeMaintenanceWindowExecutionTaskInvocationsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeMaintenanceWindowExecutionTaskInvocationsResult>() {
             @Override
             public DescribeMaintenanceWindowExecutionTaskInvocationsResult call() throws Exception {
-                DescribeMaintenanceWindowExecutionTaskInvocationsResult result;
+                DescribeMaintenanceWindowExecutionTaskInvocationsResult result = null;
 
                 try {
-                    result = describeMaintenanceWindowExecutionTaskInvocations(request);
+                    result = executeDescribeMaintenanceWindowExecutionTaskInvocations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1287,7 +1323,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1305,14 +1341,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     public java.util.concurrent.Future<DescribeMaintenanceWindowExecutionTasksResult> describeMaintenanceWindowExecutionTasksAsync(
             final DescribeMaintenanceWindowExecutionTasksRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeMaintenanceWindowExecutionTasksRequest, DescribeMaintenanceWindowExecutionTasksResult> asyncHandler) {
+        final DescribeMaintenanceWindowExecutionTasksRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeMaintenanceWindowExecutionTasksResult>() {
             @Override
             public DescribeMaintenanceWindowExecutionTasksResult call() throws Exception {
-                DescribeMaintenanceWindowExecutionTasksResult result;
+                DescribeMaintenanceWindowExecutionTasksResult result = null;
 
                 try {
-                    result = describeMaintenanceWindowExecutionTasks(request);
+                    result = executeDescribeMaintenanceWindowExecutionTasks(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1321,7 +1358,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1339,14 +1376,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     public java.util.concurrent.Future<DescribeMaintenanceWindowExecutionsResult> describeMaintenanceWindowExecutionsAsync(
             final DescribeMaintenanceWindowExecutionsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeMaintenanceWindowExecutionsRequest, DescribeMaintenanceWindowExecutionsResult> asyncHandler) {
+        final DescribeMaintenanceWindowExecutionsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeMaintenanceWindowExecutionsResult>() {
             @Override
             public DescribeMaintenanceWindowExecutionsResult call() throws Exception {
-                DescribeMaintenanceWindowExecutionsResult result;
+                DescribeMaintenanceWindowExecutionsResult result = null;
 
                 try {
-                    result = describeMaintenanceWindowExecutions(request);
+                    result = executeDescribeMaintenanceWindowExecutions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1355,7 +1393,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1373,14 +1411,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     public java.util.concurrent.Future<DescribeMaintenanceWindowTargetsResult> describeMaintenanceWindowTargetsAsync(
             final DescribeMaintenanceWindowTargetsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeMaintenanceWindowTargetsRequest, DescribeMaintenanceWindowTargetsResult> asyncHandler) {
+        final DescribeMaintenanceWindowTargetsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeMaintenanceWindowTargetsResult>() {
             @Override
             public DescribeMaintenanceWindowTargetsResult call() throws Exception {
-                DescribeMaintenanceWindowTargetsResult result;
+                DescribeMaintenanceWindowTargetsResult result = null;
 
                 try {
-                    result = describeMaintenanceWindowTargets(request);
+                    result = executeDescribeMaintenanceWindowTargets(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1389,7 +1428,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1406,14 +1445,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     public java.util.concurrent.Future<DescribeMaintenanceWindowTasksResult> describeMaintenanceWindowTasksAsync(
             final DescribeMaintenanceWindowTasksRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeMaintenanceWindowTasksRequest, DescribeMaintenanceWindowTasksResult> asyncHandler) {
+        final DescribeMaintenanceWindowTasksRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeMaintenanceWindowTasksResult>() {
             @Override
             public DescribeMaintenanceWindowTasksResult call() throws Exception {
-                DescribeMaintenanceWindowTasksResult result;
+                DescribeMaintenanceWindowTasksResult result = null;
 
                 try {
-                    result = describeMaintenanceWindowTasks(request);
+                    result = executeDescribeMaintenanceWindowTasks(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1422,7 +1462,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1438,14 +1478,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<DescribeMaintenanceWindowsResult> describeMaintenanceWindowsAsync(final DescribeMaintenanceWindowsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeMaintenanceWindowsRequest, DescribeMaintenanceWindowsResult> asyncHandler) {
+        final DescribeMaintenanceWindowsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeMaintenanceWindowsResult>() {
             @Override
             public DescribeMaintenanceWindowsResult call() throws Exception {
-                DescribeMaintenanceWindowsResult result;
+                DescribeMaintenanceWindowsResult result = null;
 
                 try {
-                    result = describeMaintenanceWindows(request);
+                    result = executeDescribeMaintenanceWindows(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1454,7 +1495,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1470,14 +1511,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<DescribeParametersResult> describeParametersAsync(final DescribeParametersRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeParametersRequest, DescribeParametersResult> asyncHandler) {
+        final DescribeParametersRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeParametersResult>() {
             @Override
             public DescribeParametersResult call() throws Exception {
-                DescribeParametersResult result;
+                DescribeParametersResult result = null;
 
                 try {
-                    result = describeParameters(request);
+                    result = executeDescribeParameters(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1486,7 +1528,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1502,14 +1544,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<DescribePatchBaselinesResult> describePatchBaselinesAsync(final DescribePatchBaselinesRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribePatchBaselinesRequest, DescribePatchBaselinesResult> asyncHandler) {
+        final DescribePatchBaselinesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribePatchBaselinesResult>() {
             @Override
             public DescribePatchBaselinesResult call() throws Exception {
-                DescribePatchBaselinesResult result;
+                DescribePatchBaselinesResult result = null;
 
                 try {
-                    result = describePatchBaselines(request);
+                    result = executeDescribePatchBaselines(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1518,7 +1561,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1534,14 +1577,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<DescribePatchGroupStateResult> describePatchGroupStateAsync(final DescribePatchGroupStateRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribePatchGroupStateRequest, DescribePatchGroupStateResult> asyncHandler) {
+        final DescribePatchGroupStateRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribePatchGroupStateResult>() {
             @Override
             public DescribePatchGroupStateResult call() throws Exception {
-                DescribePatchGroupStateResult result;
+                DescribePatchGroupStateResult result = null;
 
                 try {
-                    result = describePatchGroupState(request);
+                    result = executeDescribePatchGroupState(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1550,7 +1594,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1566,14 +1610,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<DescribePatchGroupsResult> describePatchGroupsAsync(final DescribePatchGroupsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribePatchGroupsRequest, DescribePatchGroupsResult> asyncHandler) {
+        final DescribePatchGroupsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribePatchGroupsResult>() {
             @Override
             public DescribePatchGroupsResult call() throws Exception {
-                DescribePatchGroupsResult result;
+                DescribePatchGroupsResult result = null;
 
                 try {
-                    result = describePatchGroups(request);
+                    result = executeDescribePatchGroups(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1582,7 +1627,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1598,14 +1643,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<GetAutomationExecutionResult> getAutomationExecutionAsync(final GetAutomationExecutionRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetAutomationExecutionRequest, GetAutomationExecutionResult> asyncHandler) {
+        final GetAutomationExecutionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetAutomationExecutionResult>() {
             @Override
             public GetAutomationExecutionResult call() throws Exception {
-                GetAutomationExecutionResult result;
+                GetAutomationExecutionResult result = null;
 
                 try {
-                    result = getAutomationExecution(request);
+                    result = executeGetAutomationExecution(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1614,7 +1660,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1630,14 +1676,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<GetCommandInvocationResult> getCommandInvocationAsync(final GetCommandInvocationRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetCommandInvocationRequest, GetCommandInvocationResult> asyncHandler) {
+        final GetCommandInvocationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetCommandInvocationResult>() {
             @Override
             public GetCommandInvocationResult call() throws Exception {
-                GetCommandInvocationResult result;
+                GetCommandInvocationResult result = null;
 
                 try {
-                    result = getCommandInvocation(request);
+                    result = executeGetCommandInvocation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1646,7 +1693,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1662,14 +1709,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<GetDefaultPatchBaselineResult> getDefaultPatchBaselineAsync(final GetDefaultPatchBaselineRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetDefaultPatchBaselineRequest, GetDefaultPatchBaselineResult> asyncHandler) {
+        final GetDefaultPatchBaselineRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetDefaultPatchBaselineResult>() {
             @Override
             public GetDefaultPatchBaselineResult call() throws Exception {
-                GetDefaultPatchBaselineResult result;
+                GetDefaultPatchBaselineResult result = null;
 
                 try {
-                    result = getDefaultPatchBaseline(request);
+                    result = executeGetDefaultPatchBaseline(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1678,7 +1726,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1696,14 +1744,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     public java.util.concurrent.Future<GetDeployablePatchSnapshotForInstanceResult> getDeployablePatchSnapshotForInstanceAsync(
             final GetDeployablePatchSnapshotForInstanceRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetDeployablePatchSnapshotForInstanceRequest, GetDeployablePatchSnapshotForInstanceResult> asyncHandler) {
+        final GetDeployablePatchSnapshotForInstanceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetDeployablePatchSnapshotForInstanceResult>() {
             @Override
             public GetDeployablePatchSnapshotForInstanceResult call() throws Exception {
-                GetDeployablePatchSnapshotForInstanceResult result;
+                GetDeployablePatchSnapshotForInstanceResult result = null;
 
                 try {
-                    result = getDeployablePatchSnapshotForInstance(request);
+                    result = executeGetDeployablePatchSnapshotForInstance(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1712,7 +1761,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1728,14 +1777,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<GetDocumentResult> getDocumentAsync(final GetDocumentRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetDocumentRequest, GetDocumentResult> asyncHandler) {
+        final GetDocumentRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetDocumentResult>() {
             @Override
             public GetDocumentResult call() throws Exception {
-                GetDocumentResult result;
+                GetDocumentResult result = null;
 
                 try {
-                    result = getDocument(request);
+                    result = executeGetDocument(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1744,7 +1794,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1760,14 +1810,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<GetInventoryResult> getInventoryAsync(final GetInventoryRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetInventoryRequest, GetInventoryResult> asyncHandler) {
+        final GetInventoryRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetInventoryResult>() {
             @Override
             public GetInventoryResult call() throws Exception {
-                GetInventoryResult result;
+                GetInventoryResult result = null;
 
                 try {
-                    result = getInventory(request);
+                    result = executeGetInventory(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1776,7 +1827,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1792,14 +1843,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<GetInventorySchemaResult> getInventorySchemaAsync(final GetInventorySchemaRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetInventorySchemaRequest, GetInventorySchemaResult> asyncHandler) {
+        final GetInventorySchemaRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetInventorySchemaResult>() {
             @Override
             public GetInventorySchemaResult call() throws Exception {
-                GetInventorySchemaResult result;
+                GetInventorySchemaResult result = null;
 
                 try {
-                    result = getInventorySchema(request);
+                    result = executeGetInventorySchema(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1808,7 +1860,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1824,14 +1876,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<GetMaintenanceWindowResult> getMaintenanceWindowAsync(final GetMaintenanceWindowRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetMaintenanceWindowRequest, GetMaintenanceWindowResult> asyncHandler) {
+        final GetMaintenanceWindowRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetMaintenanceWindowResult>() {
             @Override
             public GetMaintenanceWindowResult call() throws Exception {
-                GetMaintenanceWindowResult result;
+                GetMaintenanceWindowResult result = null;
 
                 try {
-                    result = getMaintenanceWindow(request);
+                    result = executeGetMaintenanceWindow(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1840,7 +1893,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1857,14 +1910,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     public java.util.concurrent.Future<GetMaintenanceWindowExecutionResult> getMaintenanceWindowExecutionAsync(
             final GetMaintenanceWindowExecutionRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetMaintenanceWindowExecutionRequest, GetMaintenanceWindowExecutionResult> asyncHandler) {
+        final GetMaintenanceWindowExecutionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetMaintenanceWindowExecutionResult>() {
             @Override
             public GetMaintenanceWindowExecutionResult call() throws Exception {
-                GetMaintenanceWindowExecutionResult result;
+                GetMaintenanceWindowExecutionResult result = null;
 
                 try {
-                    result = getMaintenanceWindowExecution(request);
+                    result = executeGetMaintenanceWindowExecution(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1873,7 +1927,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1891,14 +1945,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     public java.util.concurrent.Future<GetMaintenanceWindowExecutionTaskResult> getMaintenanceWindowExecutionTaskAsync(
             final GetMaintenanceWindowExecutionTaskRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetMaintenanceWindowExecutionTaskRequest, GetMaintenanceWindowExecutionTaskResult> asyncHandler) {
+        final GetMaintenanceWindowExecutionTaskRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetMaintenanceWindowExecutionTaskResult>() {
             @Override
             public GetMaintenanceWindowExecutionTaskResult call() throws Exception {
-                GetMaintenanceWindowExecutionTaskResult result;
+                GetMaintenanceWindowExecutionTaskResult result = null;
 
                 try {
-                    result = getMaintenanceWindowExecutionTask(request);
+                    result = executeGetMaintenanceWindowExecutionTask(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1907,7 +1962,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1923,14 +1978,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<GetParameterHistoryResult> getParameterHistoryAsync(final GetParameterHistoryRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetParameterHistoryRequest, GetParameterHistoryResult> asyncHandler) {
+        final GetParameterHistoryRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetParameterHistoryResult>() {
             @Override
             public GetParameterHistoryResult call() throws Exception {
-                GetParameterHistoryResult result;
+                GetParameterHistoryResult result = null;
 
                 try {
-                    result = getParameterHistory(request);
+                    result = executeGetParameterHistory(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1939,7 +1995,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1955,14 +2011,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<GetParametersResult> getParametersAsync(final GetParametersRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetParametersRequest, GetParametersResult> asyncHandler) {
+        final GetParametersRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetParametersResult>() {
             @Override
             public GetParametersResult call() throws Exception {
-                GetParametersResult result;
+                GetParametersResult result = null;
 
                 try {
-                    result = getParameters(request);
+                    result = executeGetParameters(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1971,7 +2028,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -1987,14 +2044,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<GetPatchBaselineResult> getPatchBaselineAsync(final GetPatchBaselineRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetPatchBaselineRequest, GetPatchBaselineResult> asyncHandler) {
+        final GetPatchBaselineRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetPatchBaselineResult>() {
             @Override
             public GetPatchBaselineResult call() throws Exception {
-                GetPatchBaselineResult result;
+                GetPatchBaselineResult result = null;
 
                 try {
-                    result = getPatchBaseline(request);
+                    result = executeGetPatchBaseline(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2003,7 +2061,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2020,14 +2078,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     public java.util.concurrent.Future<GetPatchBaselineForPatchGroupResult> getPatchBaselineForPatchGroupAsync(
             final GetPatchBaselineForPatchGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetPatchBaselineForPatchGroupRequest, GetPatchBaselineForPatchGroupResult> asyncHandler) {
+        final GetPatchBaselineForPatchGroupRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetPatchBaselineForPatchGroupResult>() {
             @Override
             public GetPatchBaselineForPatchGroupResult call() throws Exception {
-                GetPatchBaselineForPatchGroupResult result;
+                GetPatchBaselineForPatchGroupResult result = null;
 
                 try {
-                    result = getPatchBaselineForPatchGroup(request);
+                    result = executeGetPatchBaselineForPatchGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2036,7 +2095,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2052,14 +2111,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<ListAssociationsResult> listAssociationsAsync(final ListAssociationsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListAssociationsRequest, ListAssociationsResult> asyncHandler) {
+        final ListAssociationsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListAssociationsResult>() {
             @Override
             public ListAssociationsResult call() throws Exception {
-                ListAssociationsResult result;
+                ListAssociationsResult result = null;
 
                 try {
-                    result = listAssociations(request);
+                    result = executeListAssociations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2068,7 +2128,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2084,14 +2144,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<ListCommandInvocationsResult> listCommandInvocationsAsync(final ListCommandInvocationsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListCommandInvocationsRequest, ListCommandInvocationsResult> asyncHandler) {
+        final ListCommandInvocationsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListCommandInvocationsResult>() {
             @Override
             public ListCommandInvocationsResult call() throws Exception {
-                ListCommandInvocationsResult result;
+                ListCommandInvocationsResult result = null;
 
                 try {
-                    result = listCommandInvocations(request);
+                    result = executeListCommandInvocations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2100,7 +2161,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2116,14 +2177,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<ListCommandsResult> listCommandsAsync(final ListCommandsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListCommandsRequest, ListCommandsResult> asyncHandler) {
+        final ListCommandsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListCommandsResult>() {
             @Override
             public ListCommandsResult call() throws Exception {
-                ListCommandsResult result;
+                ListCommandsResult result = null;
 
                 try {
-                    result = listCommands(request);
+                    result = executeListCommands(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2132,7 +2194,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2148,14 +2210,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<ListDocumentVersionsResult> listDocumentVersionsAsync(final ListDocumentVersionsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListDocumentVersionsRequest, ListDocumentVersionsResult> asyncHandler) {
+        final ListDocumentVersionsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListDocumentVersionsResult>() {
             @Override
             public ListDocumentVersionsResult call() throws Exception {
-                ListDocumentVersionsResult result;
+                ListDocumentVersionsResult result = null;
 
                 try {
-                    result = listDocumentVersions(request);
+                    result = executeListDocumentVersions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2164,7 +2227,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2180,14 +2243,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<ListDocumentsResult> listDocumentsAsync(final ListDocumentsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListDocumentsRequest, ListDocumentsResult> asyncHandler) {
+        final ListDocumentsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListDocumentsResult>() {
             @Override
             public ListDocumentsResult call() throws Exception {
-                ListDocumentsResult result;
+                ListDocumentsResult result = null;
 
                 try {
-                    result = listDocuments(request);
+                    result = executeListDocuments(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2196,7 +2260,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2219,6 +2283,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
      *
      * @see #listDocumentsAsync(ListDocumentsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListDocumentsResult> listDocumentsAsync(
             com.amazonaws.handlers.AsyncHandler<ListDocumentsRequest, ListDocumentsResult> asyncHandler) {
 
@@ -2234,14 +2299,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<ListInventoryEntriesResult> listInventoryEntriesAsync(final ListInventoryEntriesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListInventoryEntriesRequest, ListInventoryEntriesResult> asyncHandler) {
+        final ListInventoryEntriesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListInventoryEntriesResult>() {
             @Override
             public ListInventoryEntriesResult call() throws Exception {
-                ListInventoryEntriesResult result;
+                ListInventoryEntriesResult result = null;
 
                 try {
-                    result = listInventoryEntries(request);
+                    result = executeListInventoryEntries(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2250,7 +2316,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2266,14 +2332,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(final ListTagsForResourceRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+        final ListTagsForResourceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListTagsForResourceResult>() {
             @Override
             public ListTagsForResourceResult call() throws Exception {
-                ListTagsForResourceResult result;
+                ListTagsForResourceResult result = null;
 
                 try {
-                    result = listTagsForResource(request);
+                    result = executeListTagsForResource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2282,7 +2349,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2298,14 +2365,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<ModifyDocumentPermissionResult> modifyDocumentPermissionAsync(final ModifyDocumentPermissionRequest request,
             final com.amazonaws.handlers.AsyncHandler<ModifyDocumentPermissionRequest, ModifyDocumentPermissionResult> asyncHandler) {
+        final ModifyDocumentPermissionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ModifyDocumentPermissionResult>() {
             @Override
             public ModifyDocumentPermissionResult call() throws Exception {
-                ModifyDocumentPermissionResult result;
+                ModifyDocumentPermissionResult result = null;
 
                 try {
-                    result = modifyDocumentPermission(request);
+                    result = executeModifyDocumentPermission(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2314,7 +2382,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2330,14 +2398,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<PutInventoryResult> putInventoryAsync(final PutInventoryRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutInventoryRequest, PutInventoryResult> asyncHandler) {
+        final PutInventoryRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PutInventoryResult>() {
             @Override
             public PutInventoryResult call() throws Exception {
-                PutInventoryResult result;
+                PutInventoryResult result = null;
 
                 try {
-                    result = putInventory(request);
+                    result = executePutInventory(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2346,7 +2415,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2362,14 +2431,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<PutParameterResult> putParameterAsync(final PutParameterRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutParameterRequest, PutParameterResult> asyncHandler) {
+        final PutParameterRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PutParameterResult>() {
             @Override
             public PutParameterResult call() throws Exception {
-                PutParameterResult result;
+                PutParameterResult result = null;
 
                 try {
-                    result = putParameter(request);
+                    result = executePutParameter(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2378,7 +2448,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2394,14 +2464,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<RegisterDefaultPatchBaselineResult> registerDefaultPatchBaselineAsync(final RegisterDefaultPatchBaselineRequest request,
             final com.amazonaws.handlers.AsyncHandler<RegisterDefaultPatchBaselineRequest, RegisterDefaultPatchBaselineResult> asyncHandler) {
+        final RegisterDefaultPatchBaselineRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<RegisterDefaultPatchBaselineResult>() {
             @Override
             public RegisterDefaultPatchBaselineResult call() throws Exception {
-                RegisterDefaultPatchBaselineResult result;
+                RegisterDefaultPatchBaselineResult result = null;
 
                 try {
-                    result = registerDefaultPatchBaseline(request);
+                    result = executeRegisterDefaultPatchBaseline(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2410,7 +2481,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2428,14 +2499,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     public java.util.concurrent.Future<RegisterPatchBaselineForPatchGroupResult> registerPatchBaselineForPatchGroupAsync(
             final RegisterPatchBaselineForPatchGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<RegisterPatchBaselineForPatchGroupRequest, RegisterPatchBaselineForPatchGroupResult> asyncHandler) {
+        final RegisterPatchBaselineForPatchGroupRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<RegisterPatchBaselineForPatchGroupResult>() {
             @Override
             public RegisterPatchBaselineForPatchGroupResult call() throws Exception {
-                RegisterPatchBaselineForPatchGroupResult result;
+                RegisterPatchBaselineForPatchGroupResult result = null;
 
                 try {
-                    result = registerPatchBaselineForPatchGroup(request);
+                    result = executeRegisterPatchBaselineForPatchGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2444,7 +2516,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2462,14 +2534,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     public java.util.concurrent.Future<RegisterTargetWithMaintenanceWindowResult> registerTargetWithMaintenanceWindowAsync(
             final RegisterTargetWithMaintenanceWindowRequest request,
             final com.amazonaws.handlers.AsyncHandler<RegisterTargetWithMaintenanceWindowRequest, RegisterTargetWithMaintenanceWindowResult> asyncHandler) {
+        final RegisterTargetWithMaintenanceWindowRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<RegisterTargetWithMaintenanceWindowResult>() {
             @Override
             public RegisterTargetWithMaintenanceWindowResult call() throws Exception {
-                RegisterTargetWithMaintenanceWindowResult result;
+                RegisterTargetWithMaintenanceWindowResult result = null;
 
                 try {
-                    result = registerTargetWithMaintenanceWindow(request);
+                    result = executeRegisterTargetWithMaintenanceWindow(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2478,7 +2551,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2496,14 +2569,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     public java.util.concurrent.Future<RegisterTaskWithMaintenanceWindowResult> registerTaskWithMaintenanceWindowAsync(
             final RegisterTaskWithMaintenanceWindowRequest request,
             final com.amazonaws.handlers.AsyncHandler<RegisterTaskWithMaintenanceWindowRequest, RegisterTaskWithMaintenanceWindowResult> asyncHandler) {
+        final RegisterTaskWithMaintenanceWindowRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<RegisterTaskWithMaintenanceWindowResult>() {
             @Override
             public RegisterTaskWithMaintenanceWindowResult call() throws Exception {
-                RegisterTaskWithMaintenanceWindowResult result;
+                RegisterTaskWithMaintenanceWindowResult result = null;
 
                 try {
-                    result = registerTaskWithMaintenanceWindow(request);
+                    result = executeRegisterTaskWithMaintenanceWindow(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2512,7 +2586,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2528,14 +2602,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<RemoveTagsFromResourceResult> removeTagsFromResourceAsync(final RemoveTagsFromResourceRequest request,
             final com.amazonaws.handlers.AsyncHandler<RemoveTagsFromResourceRequest, RemoveTagsFromResourceResult> asyncHandler) {
+        final RemoveTagsFromResourceRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<RemoveTagsFromResourceResult>() {
             @Override
             public RemoveTagsFromResourceResult call() throws Exception {
-                RemoveTagsFromResourceResult result;
+                RemoveTagsFromResourceResult result = null;
 
                 try {
-                    result = removeTagsFromResource(request);
+                    result = executeRemoveTagsFromResource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2544,7 +2619,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2560,14 +2635,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<SendCommandResult> sendCommandAsync(final SendCommandRequest request,
             final com.amazonaws.handlers.AsyncHandler<SendCommandRequest, SendCommandResult> asyncHandler) {
+        final SendCommandRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<SendCommandResult>() {
             @Override
             public SendCommandResult call() throws Exception {
-                SendCommandResult result;
+                SendCommandResult result = null;
 
                 try {
-                    result = sendCommand(request);
+                    result = executeSendCommand(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2576,7 +2652,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2592,14 +2668,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<StartAutomationExecutionResult> startAutomationExecutionAsync(final StartAutomationExecutionRequest request,
             final com.amazonaws.handlers.AsyncHandler<StartAutomationExecutionRequest, StartAutomationExecutionResult> asyncHandler) {
+        final StartAutomationExecutionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<StartAutomationExecutionResult>() {
             @Override
             public StartAutomationExecutionResult call() throws Exception {
-                StartAutomationExecutionResult result;
+                StartAutomationExecutionResult result = null;
 
                 try {
-                    result = startAutomationExecution(request);
+                    result = executeStartAutomationExecution(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2608,7 +2685,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2624,14 +2701,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<StopAutomationExecutionResult> stopAutomationExecutionAsync(final StopAutomationExecutionRequest request,
             final com.amazonaws.handlers.AsyncHandler<StopAutomationExecutionRequest, StopAutomationExecutionResult> asyncHandler) {
+        final StopAutomationExecutionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<StopAutomationExecutionResult>() {
             @Override
             public StopAutomationExecutionResult call() throws Exception {
-                StopAutomationExecutionResult result;
+                StopAutomationExecutionResult result = null;
 
                 try {
-                    result = stopAutomationExecution(request);
+                    result = executeStopAutomationExecution(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2640,7 +2718,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2656,14 +2734,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<UpdateAssociationResult> updateAssociationAsync(final UpdateAssociationRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateAssociationRequest, UpdateAssociationResult> asyncHandler) {
+        final UpdateAssociationRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateAssociationResult>() {
             @Override
             public UpdateAssociationResult call() throws Exception {
-                UpdateAssociationResult result;
+                UpdateAssociationResult result = null;
 
                 try {
-                    result = updateAssociation(request);
+                    result = executeUpdateAssociation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2672,7 +2751,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2688,14 +2767,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<UpdateAssociationStatusResult> updateAssociationStatusAsync(final UpdateAssociationStatusRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateAssociationStatusRequest, UpdateAssociationStatusResult> asyncHandler) {
+        final UpdateAssociationStatusRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateAssociationStatusResult>() {
             @Override
             public UpdateAssociationStatusResult call() throws Exception {
-                UpdateAssociationStatusResult result;
+                UpdateAssociationStatusResult result = null;
 
                 try {
-                    result = updateAssociationStatus(request);
+                    result = executeUpdateAssociationStatus(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2704,7 +2784,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2720,14 +2800,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<UpdateDocumentResult> updateDocumentAsync(final UpdateDocumentRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateDocumentRequest, UpdateDocumentResult> asyncHandler) {
+        final UpdateDocumentRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateDocumentResult>() {
             @Override
             public UpdateDocumentResult call() throws Exception {
-                UpdateDocumentResult result;
+                UpdateDocumentResult result = null;
 
                 try {
-                    result = updateDocument(request);
+                    result = executeUpdateDocument(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2736,7 +2817,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2752,14 +2833,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<UpdateDocumentDefaultVersionResult> updateDocumentDefaultVersionAsync(final UpdateDocumentDefaultVersionRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateDocumentDefaultVersionRequest, UpdateDocumentDefaultVersionResult> asyncHandler) {
+        final UpdateDocumentDefaultVersionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateDocumentDefaultVersionResult>() {
             @Override
             public UpdateDocumentDefaultVersionResult call() throws Exception {
-                UpdateDocumentDefaultVersionResult result;
+                UpdateDocumentDefaultVersionResult result = null;
 
                 try {
-                    result = updateDocumentDefaultVersion(request);
+                    result = executeUpdateDocumentDefaultVersion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2768,7 +2850,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2784,14 +2866,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<UpdateMaintenanceWindowResult> updateMaintenanceWindowAsync(final UpdateMaintenanceWindowRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateMaintenanceWindowRequest, UpdateMaintenanceWindowResult> asyncHandler) {
+        final UpdateMaintenanceWindowRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateMaintenanceWindowResult>() {
             @Override
             public UpdateMaintenanceWindowResult call() throws Exception {
-                UpdateMaintenanceWindowResult result;
+                UpdateMaintenanceWindowResult result = null;
 
                 try {
-                    result = updateMaintenanceWindow(request);
+                    result = executeUpdateMaintenanceWindow(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2800,7 +2883,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2816,14 +2899,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<UpdateManagedInstanceRoleResult> updateManagedInstanceRoleAsync(final UpdateManagedInstanceRoleRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateManagedInstanceRoleRequest, UpdateManagedInstanceRoleResult> asyncHandler) {
+        final UpdateManagedInstanceRoleRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateManagedInstanceRoleResult>() {
             @Override
             public UpdateManagedInstanceRoleResult call() throws Exception {
-                UpdateManagedInstanceRoleResult result;
+                UpdateManagedInstanceRoleResult result = null;
 
                 try {
-                    result = updateManagedInstanceRole(request);
+                    result = executeUpdateManagedInstanceRole(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2832,7 +2916,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -2848,14 +2932,15 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     @Override
     public java.util.concurrent.Future<UpdatePatchBaselineResult> updatePatchBaselineAsync(final UpdatePatchBaselineRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdatePatchBaselineRequest, UpdatePatchBaselineResult> asyncHandler) {
+        final UpdatePatchBaselineRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdatePatchBaselineResult>() {
             @Override
             public UpdatePatchBaselineResult call() throws Exception {
-                UpdatePatchBaselineResult result;
+                UpdatePatchBaselineResult result = null;
 
                 try {
-                    result = updatePatchBaseline(request);
+                    result = executeUpdatePatchBaseline(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2864,7 +2949,7 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

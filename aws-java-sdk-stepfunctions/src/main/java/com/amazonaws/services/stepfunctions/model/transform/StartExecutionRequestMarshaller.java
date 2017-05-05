@@ -12,70 +12,50 @@
  */
 package com.amazonaws.services.stepfunctions.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.stepfunctions.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * StartExecutionRequest Marshaller
+ * StartExecutionRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class StartExecutionRequestMarshaller implements Marshaller<Request<StartExecutionRequest>, StartExecutionRequest> {
+@SdkInternalApi
+public class StartExecutionRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> STATEMACHINEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stateMachineArn").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> INPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("input").build();
 
-    public StartExecutionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final StartExecutionRequestMarshaller instance = new StartExecutionRequestMarshaller();
+
+    public static StartExecutionRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<StartExecutionRequest> marshall(StartExecutionRequest startExecutionRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(StartExecutionRequest startExecutionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (startExecutionRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<StartExecutionRequest> request = new DefaultRequest<StartExecutionRequest>(startExecutionRequest, "AWSStepFunctions");
-        request.addHeader("X-Amz-Target", "AWSStepFunctions.StartExecution");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (startExecutionRequest.getStateMachineArn() != null) {
-                jsonGenerator.writeFieldName("stateMachineArn").writeValue(startExecutionRequest.getStateMachineArn());
-            }
-            if (startExecutionRequest.getName() != null) {
-                jsonGenerator.writeFieldName("name").writeValue(startExecutionRequest.getName());
-            }
-            if (startExecutionRequest.getInput() != null) {
-                jsonGenerator.writeFieldName("input").writeValue(startExecutionRequest.getInput());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(startExecutionRequest.getStateMachineArn(), STATEMACHINEARN_BINDING);
+            protocolMarshaller.marshall(startExecutionRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(startExecutionRequest.getInput(), INPUT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

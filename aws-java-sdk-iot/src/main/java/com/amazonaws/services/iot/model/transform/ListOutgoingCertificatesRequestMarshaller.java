@@ -12,65 +12,50 @@
  */
 package com.amazonaws.services.iot.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.iot.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListOutgoingCertificatesRequest Marshaller
+ * ListOutgoingCertificatesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListOutgoingCertificatesRequestMarshaller implements Marshaller<Request<ListOutgoingCertificatesRequest>, ListOutgoingCertificatesRequest> {
+@SdkInternalApi
+public class ListOutgoingCertificatesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<Integer> PAGESIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("pageSize").build();
+    private static final MarshallingInfo<String> MARKER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("marker").build();
+    private static final MarshallingInfo<Boolean> ASCENDINGORDER_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("isAscendingOrder").build();
 
-    public ListOutgoingCertificatesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListOutgoingCertificatesRequestMarshaller instance = new ListOutgoingCertificatesRequestMarshaller();
+
+    public static ListOutgoingCertificatesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListOutgoingCertificatesRequest> marshall(ListOutgoingCertificatesRequest listOutgoingCertificatesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListOutgoingCertificatesRequest listOutgoingCertificatesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listOutgoingCertificatesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListOutgoingCertificatesRequest> request = new DefaultRequest<ListOutgoingCertificatesRequest>(listOutgoingCertificatesRequest, "AWSIot");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/certificates-out-going";
-
-        request.setResourcePath(uriResourcePath);
-
-        if (listOutgoingCertificatesRequest.getPageSize() != null) {
-            request.addParameter("pageSize", StringUtils.fromInteger(listOutgoingCertificatesRequest.getPageSize()));
+        try {
+            protocolMarshaller.marshall(listOutgoingCertificatesRequest.getPageSize(), PAGESIZE_BINDING);
+            protocolMarshaller.marshall(listOutgoingCertificatesRequest.getMarker(), MARKER_BINDING);
+            protocolMarshaller.marshall(listOutgoingCertificatesRequest.getAscendingOrder(), ASCENDINGORDER_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (listOutgoingCertificatesRequest.getMarker() != null) {
-            request.addParameter("marker", StringUtils.fromString(listOutgoingCertificatesRequest.getMarker()));
-        }
-
-        if (listOutgoingCertificatesRequest.getAscendingOrder() != null) {
-            request.addParameter("isAscendingOrder", StringUtils.fromBoolean(listOutgoingCertificatesRequest.getAscendingOrder()));
-        }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

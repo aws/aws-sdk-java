@@ -373,6 +373,40 @@ public interface AmazonRekognition {
 
     /**
      * <p>
+     * Detects explicit or suggestive adult content in a specified .jpeg or .png image. Use
+     * <code>DetectModerationLabels</code> to moderate images depending on your requirements. For example, you might
+     * want to filter images that contain nudity, but not images containing suggestive content.
+     * </p>
+     * <p>
+     * To filter images, use the labels returned by <code>DetectModerationLabels</code> to determine which types of
+     * content are appropriate. For information about moderation labels, see <a>howitworks-moderateimage</a>.
+     * </p>
+     * 
+     * @param detectModerationLabelsRequest
+     * @return Result of the DetectModerationLabels operation returned by the service.
+     * @throws InvalidS3ObjectException
+     *         Amazon Rekognition is unable to access the S3 object specified in the request.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws ImageTooLargeException
+     *         The input image size exceeds the allowed limit. For more information, see <a>limits</a>.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @throws InvalidImageFormatException
+     *         The provided image format is not supported.
+     * @sample AmazonRekognition.DetectModerationLabels
+     */
+    DetectModerationLabelsResult detectModerationLabels(DetectModerationLabelsRequest detectModerationLabelsRequest);
+
+    /**
+     * <p>
      * Detects faces in the input image and adds them to the specified collection.
      * </p>
      * <p>

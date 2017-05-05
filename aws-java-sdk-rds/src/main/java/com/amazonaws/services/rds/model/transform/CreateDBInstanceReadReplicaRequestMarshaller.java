@@ -123,6 +123,11 @@ public class CreateDBInstanceReadReplicaRequestMarshaller implements
             request.addParameter("PreSignedUrl", StringUtils.fromString(createDBInstanceReadReplicaRequest.getPreSignedUrl()));
         }
 
+        if (createDBInstanceReadReplicaRequest.getEnableIAMDatabaseAuthentication() != null) {
+            request.addParameter("EnableIAMDatabaseAuthentication",
+                    StringUtils.fromBoolean(createDBInstanceReadReplicaRequest.getEnableIAMDatabaseAuthentication()));
+        }
+
         if (createDBInstanceReadReplicaRequest.getSourceRegion() != null) {
             request.addParameter("SourceRegion", StringUtils.fromString(createDBInstanceReadReplicaRequest.getSourceRegion()));
         }

@@ -12,52 +12,44 @@
  */
 package com.amazonaws.services.iot.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.iot.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListThingPrincipalsRequest Marshaller
+ * ListThingPrincipalsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListThingPrincipalsRequestMarshaller implements Marshaller<Request<ListThingPrincipalsRequest>, ListThingPrincipalsRequest> {
+@SdkInternalApi
+public class ListThingPrincipalsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> THINGNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("thingName").build();
 
-    public ListThingPrincipalsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListThingPrincipalsRequestMarshaller instance = new ListThingPrincipalsRequestMarshaller();
+
+    public static ListThingPrincipalsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListThingPrincipalsRequest> marshall(ListThingPrincipalsRequest listThingPrincipalsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListThingPrincipalsRequest listThingPrincipalsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listThingPrincipalsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListThingPrincipalsRequest> request = new DefaultRequest<ListThingPrincipalsRequest>(listThingPrincipalsRequest, "AWSIot");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/things/{thingName}/principals";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "thingName", listThingPrincipalsRequest.getThingName());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(listThingPrincipalsRequest.getThingName(), THINGNAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

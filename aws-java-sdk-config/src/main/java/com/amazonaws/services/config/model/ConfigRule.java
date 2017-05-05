@@ -14,6 +14,8 @@ package com.amazonaws.services.config.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -38,7 +40,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ConfigRule implements Serializable, Cloneable {
+public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -99,13 +101,17 @@ public class ConfigRule implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Your custom rule is triggered when AWS Config delivers the configuration snapshot.
+     * Your custom rule is triggered when AWS Config delivers the configuration snapshot. For more information, see
+     * <a>ConfigSnapshotDeliveryProperties</a>.
      * </p>
      * </li>
      * </ul>
+     * <note>
      * <p>
-     * For more information, see <a>ConfigSnapshotDeliveryProperties</a>.
+     * By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid
+     * value for the <code>MaximumExecutionFrequency</code> parameter.
      * </p>
+     * </note>
      */
     private String maximumExecutionFrequency;
     /**
@@ -446,13 +452,17 @@ public class ConfigRule implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Your custom rule is triggered when AWS Config delivers the configuration snapshot.
+     * Your custom rule is triggered when AWS Config delivers the configuration snapshot. For more information, see
+     * <a>ConfigSnapshotDeliveryProperties</a>.
      * </p>
      * </li>
      * </ul>
+     * <note>
      * <p>
-     * For more information, see <a>ConfigSnapshotDeliveryProperties</a>.
+     * By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid
+     * value for the <code>MaximumExecutionFrequency</code> parameter.
      * </p>
+     * </note>
      * 
      * @param maximumExecutionFrequency
      *        The maximum frequency with which AWS Config runs evaluations for a rule. You can specify a value for
@@ -465,12 +475,16 @@ public class ConfigRule implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        Your custom rule is triggered when AWS Config delivers the configuration snapshot.
+     *        Your custom rule is triggered when AWS Config delivers the configuration snapshot. For more information,
+     *        see <a>ConfigSnapshotDeliveryProperties</a>.
      *        </p>
      *        </li>
      *        </ul>
+     *        <note>
      *        <p>
-     *        For more information, see <a>ConfigSnapshotDeliveryProperties</a>.
+     *        By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a
+     *        valid value for the <code>MaximumExecutionFrequency</code> parameter.
+     *        </p>
      * @see MaximumExecutionFrequency
      */
 
@@ -491,13 +505,17 @@ public class ConfigRule implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Your custom rule is triggered when AWS Config delivers the configuration snapshot.
+     * Your custom rule is triggered when AWS Config delivers the configuration snapshot. For more information, see
+     * <a>ConfigSnapshotDeliveryProperties</a>.
      * </p>
      * </li>
      * </ul>
+     * <note>
      * <p>
-     * For more information, see <a>ConfigSnapshotDeliveryProperties</a>.
+     * By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid
+     * value for the <code>MaximumExecutionFrequency</code> parameter.
      * </p>
+     * </note>
      * 
      * @return The maximum frequency with which AWS Config runs evaluations for a rule. You can specify a value for
      *         <code>MaximumExecutionFrequency</code> when:</p>
@@ -509,12 +527,16 @@ public class ConfigRule implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         Your custom rule is triggered when AWS Config delivers the configuration snapshot.
+     *         Your custom rule is triggered when AWS Config delivers the configuration snapshot. For more information,
+     *         see <a>ConfigSnapshotDeliveryProperties</a>.
      *         </p>
      *         </li>
      *         </ul>
+     *         <note>
      *         <p>
-     *         For more information, see <a>ConfigSnapshotDeliveryProperties</a>.
+     *         By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify
+     *         a valid value for the <code>MaximumExecutionFrequency</code> parameter.
+     *         </p>
      * @see MaximumExecutionFrequency
      */
 
@@ -535,13 +557,17 @@ public class ConfigRule implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Your custom rule is triggered when AWS Config delivers the configuration snapshot.
+     * Your custom rule is triggered when AWS Config delivers the configuration snapshot. For more information, see
+     * <a>ConfigSnapshotDeliveryProperties</a>.
      * </p>
      * </li>
      * </ul>
+     * <note>
      * <p>
-     * For more information, see <a>ConfigSnapshotDeliveryProperties</a>.
+     * By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid
+     * value for the <code>MaximumExecutionFrequency</code> parameter.
      * </p>
+     * </note>
      * 
      * @param maximumExecutionFrequency
      *        The maximum frequency with which AWS Config runs evaluations for a rule. You can specify a value for
@@ -554,12 +580,16 @@ public class ConfigRule implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        Your custom rule is triggered when AWS Config delivers the configuration snapshot.
+     *        Your custom rule is triggered when AWS Config delivers the configuration snapshot. For more information,
+     *        see <a>ConfigSnapshotDeliveryProperties</a>.
      *        </p>
      *        </li>
      *        </ul>
+     *        <note>
      *        <p>
-     *        For more information, see <a>ConfigSnapshotDeliveryProperties</a>.
+     *        By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a
+     *        valid value for the <code>MaximumExecutionFrequency</code> parameter.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaximumExecutionFrequency
      */
@@ -582,13 +612,17 @@ public class ConfigRule implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Your custom rule is triggered when AWS Config delivers the configuration snapshot.
+     * Your custom rule is triggered when AWS Config delivers the configuration snapshot. For more information, see
+     * <a>ConfigSnapshotDeliveryProperties</a>.
      * </p>
      * </li>
      * </ul>
+     * <note>
      * <p>
-     * For more information, see <a>ConfigSnapshotDeliveryProperties</a>.
+     * By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid
+     * value for the <code>MaximumExecutionFrequency</code> parameter.
      * </p>
+     * </note>
      * 
      * @param maximumExecutionFrequency
      *        The maximum frequency with which AWS Config runs evaluations for a rule. You can specify a value for
@@ -601,12 +635,16 @@ public class ConfigRule implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        Your custom rule is triggered when AWS Config delivers the configuration snapshot.
+     *        Your custom rule is triggered when AWS Config delivers the configuration snapshot. For more information,
+     *        see <a>ConfigSnapshotDeliveryProperties</a>.
      *        </p>
      *        </li>
      *        </ul>
+     *        <note>
      *        <p>
-     *        For more information, see <a>ConfigSnapshotDeliveryProperties</a>.
+     *        By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a
+     *        valid value for the <code>MaximumExecutionFrequency</code> parameter.
+     *        </p>
      * @see MaximumExecutionFrequency
      */
 
@@ -627,13 +665,17 @@ public class ConfigRule implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * Your custom rule is triggered when AWS Config delivers the configuration snapshot.
+     * Your custom rule is triggered when AWS Config delivers the configuration snapshot. For more information, see
+     * <a>ConfigSnapshotDeliveryProperties</a>.
      * </p>
      * </li>
      * </ul>
+     * <note>
      * <p>
-     * For more information, see <a>ConfigSnapshotDeliveryProperties</a>.
+     * By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid
+     * value for the <code>MaximumExecutionFrequency</code> parameter.
      * </p>
+     * </note>
      * 
      * @param maximumExecutionFrequency
      *        The maximum frequency with which AWS Config runs evaluations for a rule. You can specify a value for
@@ -646,12 +688,16 @@ public class ConfigRule implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        Your custom rule is triggered when AWS Config delivers the configuration snapshot.
+     *        Your custom rule is triggered when AWS Config delivers the configuration snapshot. For more information,
+     *        see <a>ConfigSnapshotDeliveryProperties</a>.
      *        </p>
      *        </li>
      *        </ul>
+     *        <note>
      *        <p>
-     *        For more information, see <a>ConfigSnapshotDeliveryProperties</a>.
+     *        By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a
+     *        valid value for the <code>MaximumExecutionFrequency</code> parameter.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaximumExecutionFrequency
      */
@@ -976,5 +1022,11 @@ public class ConfigRule implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.config.model.transform.ConfigRuleMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

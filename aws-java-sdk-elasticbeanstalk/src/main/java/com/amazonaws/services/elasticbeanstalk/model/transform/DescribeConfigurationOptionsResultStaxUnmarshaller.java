@@ -50,6 +50,11 @@ public class DescribeConfigurationOptionsResultStaxUnmarshaller implements Unmar
                     continue;
                 }
 
+                if (context.testExpression("PlatformArn", targetDepth)) {
+                    describeConfigurationOptionsResult.setPlatformArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("Options", targetDepth)) {
                     describeConfigurationOptionsResult.withOptions(new ArrayList<ConfigurationOptionDescription>());
                     continue;

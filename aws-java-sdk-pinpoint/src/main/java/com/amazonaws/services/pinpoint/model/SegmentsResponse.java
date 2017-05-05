@@ -14,9 +14,14 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * Segments in your account.
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SegmentsResponse implements Serializable, Cloneable {
+public class SegmentsResponse implements Serializable, Cloneable, StructuredPojo {
 
     /** The list of segments. */
     private java.util.List<SegmentResponse> item;
@@ -176,5 +181,11 @@ public class SegmentsResponse implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.pinpoint.model.transform.SegmentsResponseMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

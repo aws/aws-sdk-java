@@ -12,80 +12,48 @@
  */
 package com.amazonaws.services.elasticsearch.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.elasticsearch.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * RemoveTagsRequest Marshaller
+ * RemoveTagsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RemoveTagsRequestMarshaller implements Marshaller<Request<RemoveTagsRequest>, RemoveTagsRequest> {
+@SdkInternalApi
+public class RemoveTagsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ARN").build();
+    private static final MarshallingInfo<List> TAGKEYS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TagKeys").build();
 
-    public RemoveTagsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final RemoveTagsRequestMarshaller instance = new RemoveTagsRequestMarshaller();
+
+    public static RemoveTagsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<RemoveTagsRequest> marshall(RemoveTagsRequest removeTagsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(RemoveTagsRequest removeTagsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (removeTagsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<RemoveTagsRequest> request = new DefaultRequest<RemoveTagsRequest>(removeTagsRequest, "AWSElasticsearch");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/2015-01-01/tags-removal";
-
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (removeTagsRequest.getARN() != null) {
-                jsonGenerator.writeFieldName("ARN").writeValue(removeTagsRequest.getARN());
-            }
-
-            java.util.List<String> tagKeysList = removeTagsRequest.getTagKeys();
-            if (tagKeysList != null) {
-                jsonGenerator.writeFieldName("TagKeys");
-                jsonGenerator.writeStartArray();
-                for (String tagKeysListValue : tagKeysList) {
-                    if (tagKeysListValue != null) {
-                        jsonGenerator.writeValue(tagKeysListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(removeTagsRequest.getARN(), ARN_BINDING);
+            protocolMarshaller.marshall(removeTagsRequest.getTagKeys(), TAGKEYS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

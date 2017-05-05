@@ -97,19 +97,19 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String releaseLabel;
     /**
      * <p>
-     * A specification of the number and type of Amazon EC2 instances on which to run the job flow.
+     * A specification of the number and type of Amazon EC2 instances.
      * </p>
      */
     private JobFlowInstancesConfig instances;
     /**
      * <p>
-     * A list of steps to be executed by the job flow.
+     * A list of steps to run.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<StepConfig> steps;
     /**
      * <p>
-     * A list of bootstrap actions that will be run before Hadoop is started on the cluster nodes.
+     * A list of bootstrap actions to run before Hadoop starts on the cluster nodes.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<BootstrapActionConfig> bootstrapActions;
@@ -120,7 +120,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </note>
      * <p>
-     * A list of strings that indicates third-party software to use with the job flow. For more information, see <a
+     * A list of strings that indicates third-party software to use. For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use Third
      * Party Applications with Amazon EMR</a>. Currently supported values are:
      * </p>
@@ -147,9 +147,9 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A list of strings that indicates third-party software to use with the job flow that accepts a user argument list.
      * EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action
-     * arguments. For more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch a Job Flow on the
-     * MapR Distribution for Hadoop</a>. Currently supported values are:
+     * arguments. For more information, see "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR
+     * Developer Guide</a>. Supported values are:
      * </p>
      * <ul>
      * <li>
@@ -221,10 +221,10 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private com.amazonaws.internal.SdkInternalList<Configuration> configurations;
     /**
      * <p>
-     * Whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If this value
-     * is set to <code>true</code>, all IAM users of that AWS account can view and (if they have the proper policy
-     * permissions set) manage the job flow. If it is set to <code>false</code>, only the IAM user that created the job
-     * flow can view and manage it.
+     * Whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this value is
+     * set to <code>true</code>, all IAM users of that AWS account can view and (if they have the proper policy
+     * permissions set) manage the cluster. If it is set to <code>false</code>, only the IAM user that created the
+     * cluster can view and manage it.
      * </p>
      */
     private Boolean visibleToAllUsers;
@@ -291,7 +291,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @param name
      *        The name of the job flow.
      * @param instances
-     *        A specification of the number and type of Amazon EC2 instances on which to run the job flow.
+     *        A specification of the number and type of Amazon EC2 instances.
      */
     public RunJobFlowRequest(String name, JobFlowInstancesConfig instances) {
         setName(name);
@@ -725,11 +725,11 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A specification of the number and type of Amazon EC2 instances on which to run the job flow.
+     * A specification of the number and type of Amazon EC2 instances.
      * </p>
      * 
      * @param instances
-     *        A specification of the number and type of Amazon EC2 instances on which to run the job flow.
+     *        A specification of the number and type of Amazon EC2 instances.
      */
 
     public void setInstances(JobFlowInstancesConfig instances) {
@@ -738,10 +738,10 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A specification of the number and type of Amazon EC2 instances on which to run the job flow.
+     * A specification of the number and type of Amazon EC2 instances.
      * </p>
      * 
-     * @return A specification of the number and type of Amazon EC2 instances on which to run the job flow.
+     * @return A specification of the number and type of Amazon EC2 instances.
      */
 
     public JobFlowInstancesConfig getInstances() {
@@ -750,11 +750,11 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A specification of the number and type of Amazon EC2 instances on which to run the job flow.
+     * A specification of the number and type of Amazon EC2 instances.
      * </p>
      * 
      * @param instances
-     *        A specification of the number and type of Amazon EC2 instances on which to run the job flow.
+     *        A specification of the number and type of Amazon EC2 instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -765,10 +765,10 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of steps to be executed by the job flow.
+     * A list of steps to run.
      * </p>
      * 
-     * @return A list of steps to be executed by the job flow.
+     * @return A list of steps to run.
      */
 
     public java.util.List<StepConfig> getSteps() {
@@ -780,11 +780,11 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of steps to be executed by the job flow.
+     * A list of steps to run.
      * </p>
      * 
      * @param steps
-     *        A list of steps to be executed by the job flow.
+     *        A list of steps to run.
      */
 
     public void setSteps(java.util.Collection<StepConfig> steps) {
@@ -798,7 +798,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of steps to be executed by the job flow.
+     * A list of steps to run.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -807,7 +807,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param steps
-     *        A list of steps to be executed by the job flow.
+     *        A list of steps to run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -823,11 +823,11 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of steps to be executed by the job flow.
+     * A list of steps to run.
      * </p>
      * 
      * @param steps
-     *        A list of steps to be executed by the job flow.
+     *        A list of steps to run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -838,10 +838,10 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of bootstrap actions that will be run before Hadoop is started on the cluster nodes.
+     * A list of bootstrap actions to run before Hadoop starts on the cluster nodes.
      * </p>
      * 
-     * @return A list of bootstrap actions that will be run before Hadoop is started on the cluster nodes.
+     * @return A list of bootstrap actions to run before Hadoop starts on the cluster nodes.
      */
 
     public java.util.List<BootstrapActionConfig> getBootstrapActions() {
@@ -853,11 +853,11 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of bootstrap actions that will be run before Hadoop is started on the cluster nodes.
+     * A list of bootstrap actions to run before Hadoop starts on the cluster nodes.
      * </p>
      * 
      * @param bootstrapActions
-     *        A list of bootstrap actions that will be run before Hadoop is started on the cluster nodes.
+     *        A list of bootstrap actions to run before Hadoop starts on the cluster nodes.
      */
 
     public void setBootstrapActions(java.util.Collection<BootstrapActionConfig> bootstrapActions) {
@@ -871,7 +871,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of bootstrap actions that will be run before Hadoop is started on the cluster nodes.
+     * A list of bootstrap actions to run before Hadoop starts on the cluster nodes.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -880,7 +880,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param bootstrapActions
-     *        A list of bootstrap actions that will be run before Hadoop is started on the cluster nodes.
+     *        A list of bootstrap actions to run before Hadoop starts on the cluster nodes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -896,11 +896,11 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of bootstrap actions that will be run before Hadoop is started on the cluster nodes.
+     * A list of bootstrap actions to run before Hadoop starts on the cluster nodes.
      * </p>
      * 
      * @param bootstrapActions
-     *        A list of bootstrap actions that will be run before Hadoop is started on the cluster nodes.
+     *        A list of bootstrap actions to run before Hadoop starts on the cluster nodes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -916,7 +916,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </note>
      * <p>
-     * A list of strings that indicates third-party software to use with the job flow. For more information, see <a
+     * A list of strings that indicates third-party software to use. For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use Third
      * Party Applications with Amazon EMR</a>. Currently supported values are:
      * </p>
@@ -938,9 +938,9 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         </p>
      *         </note>
      *         <p>
-     *         A list of strings that indicates third-party software to use with the job flow. For more information, see
-     *         <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">
-     *         Use Third Party Applications with Amazon EMR</a>. Currently supported values are:
+     *         A list of strings that indicates third-party software to use. For more information, see <a
+     *         href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
+     *         Third Party Applications with Amazon EMR</a>. Currently supported values are:
      *         </p>
      *         <ul>
      *         <li>
@@ -969,7 +969,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </note>
      * <p>
-     * A list of strings that indicates third-party software to use with the job flow. For more information, see <a
+     * A list of strings that indicates third-party software to use. For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use Third
      * Party Applications with Amazon EMR</a>. Currently supported values are:
      * </p>
@@ -992,8 +992,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        </note>
      *        <p>
-     *        A list of strings that indicates third-party software to use with the job flow. For more information, see
-     *        <a
+     *        A list of strings that indicates third-party software to use. For more information, see <a
      *        href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      *        Third Party Applications with Amazon EMR</a>. Currently supported values are:
      *        </p>
@@ -1026,7 +1025,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </note>
      * <p>
-     * A list of strings that indicates third-party software to use with the job flow. For more information, see <a
+     * A list of strings that indicates third-party software to use. For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use Third
      * Party Applications with Amazon EMR</a>. Currently supported values are:
      * </p>
@@ -1054,8 +1053,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        </note>
      *        <p>
-     *        A list of strings that indicates third-party software to use with the job flow. For more information, see
-     *        <a
+     *        A list of strings that indicates third-party software to use. For more information, see <a
      *        href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      *        Third Party Applications with Amazon EMR</a>. Currently supported values are:
      *        </p>
@@ -1090,7 +1088,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </note>
      * <p>
-     * A list of strings that indicates third-party software to use with the job flow. For more information, see <a
+     * A list of strings that indicates third-party software to use. For more information, see <a
      * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use Third
      * Party Applications with Amazon EMR</a>. Currently supported values are:
      * </p>
@@ -1113,8 +1111,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        </note>
      *        <p>
-     *        A list of strings that indicates third-party software to use with the job flow. For more information, see
-     *        <a
+     *        A list of strings that indicates third-party software to use. For more information, see <a
      *        href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      *        Third Party Applications with Amazon EMR</a>. Currently supported values are:
      *        </p>
@@ -1146,9 +1143,9 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A list of strings that indicates third-party software to use with the job flow that accepts a user argument list.
      * EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action
-     * arguments. For more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch a Job Flow on the
-     * MapR Distribution for Hadoop</a>. Currently supported values are:
+     * arguments. For more information, see "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR
+     * Developer Guide</a>. Supported values are:
      * </p>
      * <ul>
      * <li>
@@ -1201,9 +1198,10 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <p>
      *         A list of strings that indicates third-party software to use with the job flow that accepts a user
      *         argument list. EMR accepts and forwards the argument list to the corresponding installation script as
-     *         bootstrap action arguments. For more information, see <a
-     *         href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch a Job Flow
-     *         on the MapR Distribution for Hadoop</a>. Currently supported values are:
+     *         bootstrap action arguments. For more information, see
+     *         "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a
+     *         href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     *         EMR Developer Guide</a>. Supported values are:
      *         </p>
      *         <ul>
      *         <li>
@@ -1265,9 +1263,9 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A list of strings that indicates third-party software to use with the job flow that accepts a user argument list.
      * EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action
-     * arguments. For more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch a Job Flow on the
-     * MapR Distribution for Hadoop</a>. Currently supported values are:
+     * arguments. For more information, see "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR
+     * Developer Guide</a>. Supported values are:
      * </p>
      * <ul>
      * <li>
@@ -1321,9 +1319,10 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        A list of strings that indicates third-party software to use with the job flow that accepts a user
      *        argument list. EMR accepts and forwards the argument list to the corresponding installation script as
-     *        bootstrap action arguments. For more information, see <a
-     *        href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch a Job Flow
-     *        on the MapR Distribution for Hadoop</a>. Currently supported values are:
+     *        bootstrap action arguments. For more information, see
+     *        "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a
+     *        href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     *        EMR Developer Guide</a>. Supported values are:
      *        </p>
      *        <ul>
      *        <li>
@@ -1387,9 +1386,9 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A list of strings that indicates third-party software to use with the job flow that accepts a user argument list.
      * EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action
-     * arguments. For more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch a Job Flow on the
-     * MapR Distribution for Hadoop</a>. Currently supported values are:
+     * arguments. For more information, see "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR
+     * Developer Guide</a>. Supported values are:
      * </p>
      * <ul>
      * <li>
@@ -1448,9 +1447,10 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        A list of strings that indicates third-party software to use with the job flow that accepts a user
      *        argument list. EMR accepts and forwards the argument list to the corresponding installation script as
-     *        bootstrap action arguments. For more information, see <a
-     *        href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch a Job Flow
-     *        on the MapR Distribution for Hadoop</a>. Currently supported values are:
+     *        bootstrap action arguments. For more information, see
+     *        "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a
+     *        href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     *        EMR Developer Guide</a>. Supported values are:
      *        </p>
      *        <ul>
      *        <li>
@@ -1516,9 +1516,9 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A list of strings that indicates third-party software to use with the job flow that accepts a user argument list.
      * EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action
-     * arguments. For more information, see <a
-     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch a Job Flow on the
-     * MapR Distribution for Hadoop</a>. Currently supported values are:
+     * arguments. For more information, see "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR
+     * Developer Guide</a>. Supported values are:
      * </p>
      * <ul>
      * <li>
@@ -1572,9 +1572,10 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        A list of strings that indicates third-party software to use with the job flow that accepts a user
      *        argument list. EMR accepts and forwards the argument list to the corresponding installation script as
-     *        bootstrap action arguments. For more information, see <a
-     *        href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-mapr.html">Launch a Job Flow
-     *        on the MapR Distribution for Hadoop</a>. Currently supported values are:
+     *        bootstrap action arguments. For more information, see
+     *        "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a
+     *        href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     *        EMR Developer Guide</a>. Supported values are:
      *        </p>
      *        <ul>
      *        <li>
@@ -1862,17 +1863,17 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If this value
-     * is set to <code>true</code>, all IAM users of that AWS account can view and (if they have the proper policy
-     * permissions set) manage the job flow. If it is set to <code>false</code>, only the IAM user that created the job
-     * flow can view and manage it.
+     * Whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this value is
+     * set to <code>true</code>, all IAM users of that AWS account can view and (if they have the proper policy
+     * permissions set) manage the cluster. If it is set to <code>false</code>, only the IAM user that created the
+     * cluster can view and manage it.
      * </p>
      * 
      * @param visibleToAllUsers
-     *        Whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If this
+     *        Whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this
      *        value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have the proper
-     *        policy permissions set) manage the job flow. If it is set to <code>false</code>, only the IAM user that
-     *        created the job flow can view and manage it.
+     *        policy permissions set) manage the cluster. If it is set to <code>false</code>, only the IAM user that
+     *        created the cluster can view and manage it.
      */
 
     public void setVisibleToAllUsers(Boolean visibleToAllUsers) {
@@ -1881,16 +1882,16 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If this value
-     * is set to <code>true</code>, all IAM users of that AWS account can view and (if they have the proper policy
-     * permissions set) manage the job flow. If it is set to <code>false</code>, only the IAM user that created the job
-     * flow can view and manage it.
+     * Whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this value is
+     * set to <code>true</code>, all IAM users of that AWS account can view and (if they have the proper policy
+     * permissions set) manage the cluster. If it is set to <code>false</code>, only the IAM user that created the
+     * cluster can view and manage it.
      * </p>
      * 
-     * @return Whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If this
+     * @return Whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this
      *         value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have the
-     *         proper policy permissions set) manage the job flow. If it is set to <code>false</code>, only the IAM user
-     *         that created the job flow can view and manage it.
+     *         proper policy permissions set) manage the cluster. If it is set to <code>false</code>, only the IAM user
+     *         that created the cluster can view and manage it.
      */
 
     public Boolean getVisibleToAllUsers() {
@@ -1899,17 +1900,17 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If this value
-     * is set to <code>true</code>, all IAM users of that AWS account can view and (if they have the proper policy
-     * permissions set) manage the job flow. If it is set to <code>false</code>, only the IAM user that created the job
-     * flow can view and manage it.
+     * Whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this value is
+     * set to <code>true</code>, all IAM users of that AWS account can view and (if they have the proper policy
+     * permissions set) manage the cluster. If it is set to <code>false</code>, only the IAM user that created the
+     * cluster can view and manage it.
      * </p>
      * 
      * @param visibleToAllUsers
-     *        Whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If this
+     *        Whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this
      *        value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have the proper
-     *        policy permissions set) manage the job flow. If it is set to <code>false</code>, only the IAM user that
-     *        created the job flow can view and manage it.
+     *        policy permissions set) manage the cluster. If it is set to <code>false</code>, only the IAM user that
+     *        created the cluster can view and manage it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1920,16 +1921,16 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If this value
-     * is set to <code>true</code>, all IAM users of that AWS account can view and (if they have the proper policy
-     * permissions set) manage the job flow. If it is set to <code>false</code>, only the IAM user that created the job
-     * flow can view and manage it.
+     * Whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this value is
+     * set to <code>true</code>, all IAM users of that AWS account can view and (if they have the proper policy
+     * permissions set) manage the cluster. If it is set to <code>false</code>, only the IAM user that created the
+     * cluster can view and manage it.
      * </p>
      * 
-     * @return Whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If this
+     * @return Whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this
      *         value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have the
-     *         proper policy permissions set) manage the job flow. If it is set to <code>false</code>, only the IAM user
-     *         that created the job flow can view and manage it.
+     *         proper policy permissions set) manage the cluster. If it is set to <code>false</code>, only the IAM user
+     *         that created the cluster can view and manage it.
      */
 
     public Boolean isVisibleToAllUsers() {

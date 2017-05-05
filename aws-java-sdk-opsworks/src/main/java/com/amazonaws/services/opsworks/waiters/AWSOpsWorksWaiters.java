@@ -137,4 +137,7 @@ public class AWSOpsWorksWaiters {
                 .withExecutorService(executorService).build();
     }
 
+    public void shutdown() {
+        executorService.shutdown();
+    }
 }

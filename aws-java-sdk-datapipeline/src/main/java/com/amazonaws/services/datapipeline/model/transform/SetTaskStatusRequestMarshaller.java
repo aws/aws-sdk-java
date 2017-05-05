@@ -12,76 +12,56 @@
  */
 package com.amazonaws.services.datapipeline.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.datapipeline.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * SetTaskStatusRequest Marshaller
+ * SetTaskStatusRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SetTaskStatusRequestMarshaller implements Marshaller<Request<SetTaskStatusRequest>, SetTaskStatusRequest> {
+@SdkInternalApi
+public class SetTaskStatusRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> TASKID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("taskId").build();
+    private static final MarshallingInfo<String> TASKSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("taskStatus").build();
+    private static final MarshallingInfo<String> ERRORID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("errorId").build();
+    private static final MarshallingInfo<String> ERRORMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("errorMessage").build();
+    private static final MarshallingInfo<String> ERRORSTACKTRACE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("errorStackTrace").build();
 
-    public SetTaskStatusRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final SetTaskStatusRequestMarshaller instance = new SetTaskStatusRequestMarshaller();
+
+    public static SetTaskStatusRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<SetTaskStatusRequest> marshall(SetTaskStatusRequest setTaskStatusRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(SetTaskStatusRequest setTaskStatusRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (setTaskStatusRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<SetTaskStatusRequest> request = new DefaultRequest<SetTaskStatusRequest>(setTaskStatusRequest, "DataPipeline");
-        request.addHeader("X-Amz-Target", "DataPipeline.SetTaskStatus");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (setTaskStatusRequest.getTaskId() != null) {
-                jsonGenerator.writeFieldName("taskId").writeValue(setTaskStatusRequest.getTaskId());
-            }
-            if (setTaskStatusRequest.getTaskStatus() != null) {
-                jsonGenerator.writeFieldName("taskStatus").writeValue(setTaskStatusRequest.getTaskStatus());
-            }
-            if (setTaskStatusRequest.getErrorId() != null) {
-                jsonGenerator.writeFieldName("errorId").writeValue(setTaskStatusRequest.getErrorId());
-            }
-            if (setTaskStatusRequest.getErrorMessage() != null) {
-                jsonGenerator.writeFieldName("errorMessage").writeValue(setTaskStatusRequest.getErrorMessage());
-            }
-            if (setTaskStatusRequest.getErrorStackTrace() != null) {
-                jsonGenerator.writeFieldName("errorStackTrace").writeValue(setTaskStatusRequest.getErrorStackTrace());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(setTaskStatusRequest.getTaskId(), TASKID_BINDING);
+            protocolMarshaller.marshall(setTaskStatusRequest.getTaskStatus(), TASKSTATUS_BINDING);
+            protocolMarshaller.marshall(setTaskStatusRequest.getErrorId(), ERRORID_BINDING);
+            protocolMarshaller.marshall(setTaskStatusRequest.getErrorMessage(), ERRORMESSAGE_BINDING);
+            protocolMarshaller.marshall(setTaskStatusRequest.getErrorStackTrace(), ERRORSTACKTRACE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

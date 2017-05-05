@@ -12,74 +12,53 @@
  */
 package com.amazonaws.services.health.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.health.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeEventAggregatesRequest Marshaller
+ * DescribeEventAggregatesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeEventAggregatesRequestMarshaller implements Marshaller<Request<DescribeEventAggregatesRequest>, DescribeEventAggregatesRequest> {
+@SdkInternalApi
+public class DescribeEventAggregatesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<StructuredPojo> FILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("filter").build();
+    private static final MarshallingInfo<String> AGGREGATEFIELD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("aggregateField").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxResults").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("nextToken").build();
 
-    public DescribeEventAggregatesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeEventAggregatesRequestMarshaller instance = new DescribeEventAggregatesRequestMarshaller();
+
+    public static DescribeEventAggregatesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeEventAggregatesRequest> marshall(DescribeEventAggregatesRequest describeEventAggregatesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeEventAggregatesRequest describeEventAggregatesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeEventAggregatesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeEventAggregatesRequest> request = new DefaultRequest<DescribeEventAggregatesRequest>(describeEventAggregatesRequest, "AWSHealth");
-        request.addHeader("X-Amz-Target", "AWSHealth_20160804.DescribeEventAggregates");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeEventAggregatesRequest.getFilter() != null) {
-                jsonGenerator.writeFieldName("filter");
-                EventFilterJsonMarshaller.getInstance().marshall(describeEventAggregatesRequest.getFilter(), jsonGenerator);
-            }
-            if (describeEventAggregatesRequest.getAggregateField() != null) {
-                jsonGenerator.writeFieldName("aggregateField").writeValue(describeEventAggregatesRequest.getAggregateField());
-            }
-            if (describeEventAggregatesRequest.getMaxResults() != null) {
-                jsonGenerator.writeFieldName("maxResults").writeValue(describeEventAggregatesRequest.getMaxResults());
-            }
-            if (describeEventAggregatesRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("nextToken").writeValue(describeEventAggregatesRequest.getNextToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeEventAggregatesRequest.getFilter(), FILTER_BINDING);
+            protocolMarshaller.marshall(describeEventAggregatesRequest.getAggregateField(), AGGREGATEFIELD_BINDING);
+            protocolMarshaller.marshall(describeEventAggregatesRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(describeEventAggregatesRequest.getNextToken(), NEXTTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

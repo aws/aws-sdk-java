@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -226,6 +227,10 @@ public class AWSMarketplaceCommerceAnalyticsClient extends AmazonWebServiceClien
         init();
     }
 
+    public static AWSMarketplaceCommerceAnalyticsClientBuilder builder() {
+        return AWSMarketplaceCommerceAnalyticsClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWS Marketplace Commerce Analytics using the specified
      * parameters.
@@ -273,7 +278,13 @@ public class AWSMarketplaceCommerceAnalyticsClient extends AmazonWebServiceClien
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GenerateDataSetResult generateDataSet(GenerateDataSetRequest generateDataSetRequest) {
+    public GenerateDataSetResult generateDataSet(GenerateDataSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeGenerateDataSet(request);
+    }
+
+    @SdkInternalApi
+    final GenerateDataSetResult executeGenerateDataSet(GenerateDataSetRequest generateDataSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(generateDataSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -284,7 +295,7 @@ public class AWSMarketplaceCommerceAnalyticsClient extends AmazonWebServiceClien
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GenerateDataSetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(generateDataSetRequest));
+                request = new GenerateDataSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(generateDataSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -324,7 +335,13 @@ public class AWSMarketplaceCommerceAnalyticsClient extends AmazonWebServiceClien
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public StartSupportDataExportResult startSupportDataExport(StartSupportDataExportRequest startSupportDataExportRequest) {
+    public StartSupportDataExportResult startSupportDataExport(StartSupportDataExportRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartSupportDataExport(request);
+    }
+
+    @SdkInternalApi
+    final StartSupportDataExportResult executeStartSupportDataExport(StartSupportDataExportRequest startSupportDataExportRequest) {
 
         ExecutionContext executionContext = createExecutionContext(startSupportDataExportRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -335,7 +352,7 @@ public class AWSMarketplaceCommerceAnalyticsClient extends AmazonWebServiceClien
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartSupportDataExportRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(startSupportDataExportRequest));
+                request = new StartSupportDataExportRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startSupportDataExportRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

@@ -12,72 +12,50 @@
  */
 package com.amazonaws.services.ecs.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.ecs.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeregisterContainerInstanceRequest Marshaller
+ * DeregisterContainerInstanceRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeregisterContainerInstanceRequestMarshaller implements
-        Marshaller<Request<DeregisterContainerInstanceRequest>, DeregisterContainerInstanceRequest> {
+@SdkInternalApi
+public class DeregisterContainerInstanceRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CLUSTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("cluster").build();
+    private static final MarshallingInfo<String> CONTAINERINSTANCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("containerInstance").build();
+    private static final MarshallingInfo<Boolean> FORCE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("force").build();
 
-    public DeregisterContainerInstanceRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeregisterContainerInstanceRequestMarshaller instance = new DeregisterContainerInstanceRequestMarshaller();
+
+    public static DeregisterContainerInstanceRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeregisterContainerInstanceRequest> marshall(DeregisterContainerInstanceRequest deregisterContainerInstanceRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeregisterContainerInstanceRequest deregisterContainerInstanceRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deregisterContainerInstanceRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeregisterContainerInstanceRequest> request = new DefaultRequest<DeregisterContainerInstanceRequest>(deregisterContainerInstanceRequest,
-                "AmazonECS");
-        request.addHeader("X-Amz-Target", "AmazonEC2ContainerServiceV20141113.DeregisterContainerInstance");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deregisterContainerInstanceRequest.getCluster() != null) {
-                jsonGenerator.writeFieldName("cluster").writeValue(deregisterContainerInstanceRequest.getCluster());
-            }
-            if (deregisterContainerInstanceRequest.getContainerInstance() != null) {
-                jsonGenerator.writeFieldName("containerInstance").writeValue(deregisterContainerInstanceRequest.getContainerInstance());
-            }
-            if (deregisterContainerInstanceRequest.getForce() != null) {
-                jsonGenerator.writeFieldName("force").writeValue(deregisterContainerInstanceRequest.getForce());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deregisterContainerInstanceRequest.getCluster(), CLUSTER_BINDING);
+            protocolMarshaller.marshall(deregisterContainerInstanceRequest.getContainerInstance(), CONTAINERINSTANCE_BINDING);
+            protocolMarshaller.marshall(deregisterContainerInstanceRequest.getForce(), FORCE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

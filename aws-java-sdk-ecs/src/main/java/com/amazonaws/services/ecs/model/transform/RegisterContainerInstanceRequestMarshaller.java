@@ -12,106 +12,63 @@
  */
 package com.amazonaws.services.ecs.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.ecs.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * RegisterContainerInstanceRequest Marshaller
+ * RegisterContainerInstanceRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RegisterContainerInstanceRequestMarshaller implements Marshaller<Request<RegisterContainerInstanceRequest>, RegisterContainerInstanceRequest> {
+@SdkInternalApi
+public class RegisterContainerInstanceRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CLUSTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("cluster").build();
+    private static final MarshallingInfo<String> INSTANCEIDENTITYDOCUMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceIdentityDocument").build();
+    private static final MarshallingInfo<String> INSTANCEIDENTITYDOCUMENTSIGNATURE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceIdentityDocumentSignature").build();
+    private static final MarshallingInfo<List> TOTALRESOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("totalResources").build();
+    private static final MarshallingInfo<StructuredPojo> VERSIONINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("versionInfo").build();
+    private static final MarshallingInfo<String> CONTAINERINSTANCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("containerInstanceArn").build();
+    private static final MarshallingInfo<List> ATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("attributes").build();
 
-    public RegisterContainerInstanceRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final RegisterContainerInstanceRequestMarshaller instance = new RegisterContainerInstanceRequestMarshaller();
+
+    public static RegisterContainerInstanceRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<RegisterContainerInstanceRequest> marshall(RegisterContainerInstanceRequest registerContainerInstanceRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(RegisterContainerInstanceRequest registerContainerInstanceRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (registerContainerInstanceRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<RegisterContainerInstanceRequest> request = new DefaultRequest<RegisterContainerInstanceRequest>(registerContainerInstanceRequest, "AmazonECS");
-        request.addHeader("X-Amz-Target", "AmazonEC2ContainerServiceV20141113.RegisterContainerInstance");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (registerContainerInstanceRequest.getCluster() != null) {
-                jsonGenerator.writeFieldName("cluster").writeValue(registerContainerInstanceRequest.getCluster());
-            }
-            if (registerContainerInstanceRequest.getInstanceIdentityDocument() != null) {
-                jsonGenerator.writeFieldName("instanceIdentityDocument").writeValue(registerContainerInstanceRequest.getInstanceIdentityDocument());
-            }
-            if (registerContainerInstanceRequest.getInstanceIdentityDocumentSignature() != null) {
-                jsonGenerator.writeFieldName("instanceIdentityDocumentSignature").writeValue(
-                        registerContainerInstanceRequest.getInstanceIdentityDocumentSignature());
-            }
-
-            com.amazonaws.internal.SdkInternalList<Resource> totalResourcesList = (com.amazonaws.internal.SdkInternalList<Resource>) registerContainerInstanceRequest
-                    .getTotalResources();
-            if (!totalResourcesList.isEmpty() || !totalResourcesList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("totalResources");
-                jsonGenerator.writeStartArray();
-                for (Resource totalResourcesListValue : totalResourcesList) {
-                    if (totalResourcesListValue != null) {
-
-                        ResourceJsonMarshaller.getInstance().marshall(totalResourcesListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (registerContainerInstanceRequest.getVersionInfo() != null) {
-                jsonGenerator.writeFieldName("versionInfo");
-                VersionInfoJsonMarshaller.getInstance().marshall(registerContainerInstanceRequest.getVersionInfo(), jsonGenerator);
-            }
-            if (registerContainerInstanceRequest.getContainerInstanceArn() != null) {
-                jsonGenerator.writeFieldName("containerInstanceArn").writeValue(registerContainerInstanceRequest.getContainerInstanceArn());
-            }
-
-            com.amazonaws.internal.SdkInternalList<Attribute> attributesList = (com.amazonaws.internal.SdkInternalList<Attribute>) registerContainerInstanceRequest
-                    .getAttributes();
-            if (!attributesList.isEmpty() || !attributesList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("attributes");
-                jsonGenerator.writeStartArray();
-                for (Attribute attributesListValue : attributesList) {
-                    if (attributesListValue != null) {
-
-                        AttributeJsonMarshaller.getInstance().marshall(attributesListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(registerContainerInstanceRequest.getCluster(), CLUSTER_BINDING);
+            protocolMarshaller.marshall(registerContainerInstanceRequest.getInstanceIdentityDocument(), INSTANCEIDENTITYDOCUMENT_BINDING);
+            protocolMarshaller.marshall(registerContainerInstanceRequest.getInstanceIdentityDocumentSignature(), INSTANCEIDENTITYDOCUMENTSIGNATURE_BINDING);
+            protocolMarshaller.marshall(registerContainerInstanceRequest.getTotalResources(), TOTALRESOURCES_BINDING);
+            protocolMarshaller.marshall(registerContainerInstanceRequest.getVersionInfo(), VERSIONINFO_BINDING);
+            protocolMarshaller.marshall(registerContainerInstanceRequest.getContainerInstanceArn(), CONTAINERINSTANCEARN_BINDING);
+            protocolMarshaller.marshall(registerContainerInstanceRequest.getAttributes(), ATTRIBUTES_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

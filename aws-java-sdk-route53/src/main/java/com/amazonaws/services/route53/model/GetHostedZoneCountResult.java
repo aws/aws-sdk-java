@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A complex type that contains the response to a <code>hostedzonecount</code> request.
+ * A complex type that contains the response to a <code>GetHostedZoneCount</code> request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneCount" target="_top">AWS API
@@ -28,18 +28,18 @@ public class GetHostedZoneCountResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The total number of public and private hosted zones associated with the current AWS account.
+     * The total number of public and private hosted zones that are associated with the current AWS account.
      * </p>
      */
     private Long hostedZoneCount;
 
     /**
      * <p>
-     * The total number of public and private hosted zones associated with the current AWS account.
+     * The total number of public and private hosted zones that are associated with the current AWS account.
      * </p>
      * 
      * @param hostedZoneCount
-     *        The total number of public and private hosted zones associated with the current AWS account.
+     *        The total number of public and private hosted zones that are associated with the current AWS account.
      */
 
     public void setHostedZoneCount(Long hostedZoneCount) {
@@ -48,10 +48,10 @@ public class GetHostedZoneCountResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The total number of public and private hosted zones associated with the current AWS account.
+     * The total number of public and private hosted zones that are associated with the current AWS account.
      * </p>
      * 
-     * @return The total number of public and private hosted zones associated with the current AWS account.
+     * @return The total number of public and private hosted zones that are associated with the current AWS account.
      */
 
     public Long getHostedZoneCount() {
@@ -60,11 +60,11 @@ public class GetHostedZoneCountResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The total number of public and private hosted zones associated with the current AWS account.
+     * The total number of public and private hosted zones that are associated with the current AWS account.
      * </p>
      * 
      * @param hostedZoneCount
-     *        The total number of public and private hosted zones associated with the current AWS account.
+     *        The total number of public and private hosted zones that are associated with the current AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,4 +124,5 @@ public class GetHostedZoneCountResult extends com.amazonaws.AmazonWebServiceResu
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

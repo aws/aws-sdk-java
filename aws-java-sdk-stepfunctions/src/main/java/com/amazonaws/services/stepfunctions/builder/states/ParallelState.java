@@ -16,6 +16,7 @@ package com.amazonaws.services.stepfunctions.builder.states;
 
 import com.amazonaws.services.stepfunctions.builder.internal.Buildable;
 import com.amazonaws.services.stepfunctions.builder.internal.PropertyNames;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
@@ -50,9 +51,11 @@ public final class ParallelState extends TransitionState {
     private final Transition transition;
 
     @JsonProperty(PropertyNames.RETRY)
+    @JsonInclude(JsonInclude.Include.NON_EMPTY)
     private final List<Retrier> retriers;
 
     @JsonProperty(PropertyNames.CATCH)
+    @JsonInclude(JsonInclude.Include.NON_EMPTY)
     private final List<Catcher> catchers;
 
     private ParallelState(Builder builder) {

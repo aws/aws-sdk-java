@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.lightsail.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.lightsail.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * StartInstanceRequest Marshaller
+ * StartInstanceRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class StartInstanceRequestMarshaller implements Marshaller<Request<StartInstanceRequest>, StartInstanceRequest> {
+@SdkInternalApi
+public class StartInstanceRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> INSTANCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceName").build();
 
-    public StartInstanceRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final StartInstanceRequestMarshaller instance = new StartInstanceRequestMarshaller();
+
+    public static StartInstanceRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<StartInstanceRequest> marshall(StartInstanceRequest startInstanceRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(StartInstanceRequest startInstanceRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (startInstanceRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<StartInstanceRequest> request = new DefaultRequest<StartInstanceRequest>(startInstanceRequest, "AmazonLightsail");
-        request.addHeader("X-Amz-Target", "Lightsail_20161128.StartInstance");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (startInstanceRequest.getInstanceName() != null) {
-                jsonGenerator.writeFieldName("instanceName").writeValue(startInstanceRequest.getInstanceName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(startInstanceRequest.getInstanceName(), INSTANCENAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

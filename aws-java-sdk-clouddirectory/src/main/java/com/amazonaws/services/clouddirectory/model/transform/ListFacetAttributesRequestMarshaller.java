@@ -12,78 +12,53 @@
  */
 package com.amazonaws.services.clouddirectory.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.clouddirectory.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListFacetAttributesRequest Marshaller
+ * ListFacetAttributesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListFacetAttributesRequestMarshaller implements Marshaller<Request<ListFacetAttributesRequest>, ListFacetAttributesRequest> {
+@SdkInternalApi
+public class ListFacetAttributesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> SCHEMAARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.HEADER)
+            .marshallLocationName("x-amz-data-partition").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
 
-    public ListFacetAttributesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListFacetAttributesRequestMarshaller instance = new ListFacetAttributesRequestMarshaller();
+
+    public static ListFacetAttributesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListFacetAttributesRequest> marshall(ListFacetAttributesRequest listFacetAttributesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListFacetAttributesRequest listFacetAttributesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listFacetAttributesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListFacetAttributesRequest> request = new DefaultRequest<ListFacetAttributesRequest>(listFacetAttributesRequest, "AmazonCloudDirectory");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        if (listFacetAttributesRequest.getSchemaArn() != null) {
-            request.addHeader("x-amz-data-partition", StringUtils.fromString(listFacetAttributesRequest.getSchemaArn()));
-        }
-
-        String uriResourcePath = "/amazonclouddirectory/2017-01-11/facet/attributes";
-
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (listFacetAttributesRequest.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(listFacetAttributesRequest.getName());
-            }
-            if (listFacetAttributesRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(listFacetAttributesRequest.getNextToken());
-            }
-            if (listFacetAttributesRequest.getMaxResults() != null) {
-                jsonGenerator.writeFieldName("MaxResults").writeValue(listFacetAttributesRequest.getMaxResults());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listFacetAttributesRequest.getSchemaArn(), SCHEMAARN_BINDING);
+            protocolMarshaller.marshall(listFacetAttributesRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(listFacetAttributesRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listFacetAttributesRequest.getMaxResults(), MAXRESULTS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

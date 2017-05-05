@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -49,20 +50,32 @@ import com.amazonaws.services.cloudwatchevents.model.transform.*;
  * <p>
  * <p>
  * Amazon CloudWatch Events helps you to respond to state changes in your AWS resources. When your resources change
- * state they automatically send events into an event stream. You can create rules that match selected events in the
+ * state, they automatically send events into an event stream. You can create rules that match selected events in the
  * stream and route them to targets to take action. You can also use rules to take action on a pre-determined schedule.
  * For example, you can configure rules to:
  * </p>
  * <ul>
- * <li>Automatically invoke an AWS Lambda function to update DNS entries when an event notifies you that Amazon EC2
- * instance enters the running state.</li>
- * <li>Direct specific API records from CloudTrail to an Amazon Kinesis stream for detailed analysis of potential
- * security or availability risks.</li>
- * <li>Periodically invoke a built-in target to create a snapshot of an Amazon EBS volume.</li>
+ * <li>
+ * <p>
+ * Automatically invoke an AWS Lambda function to update DNS entries when an event notifies you that Amazon EC2 instance
+ * enters the running state.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Direct specific API records from CloudTrail to an Amazon Kinesis stream for detailed analysis of potential security
+ * or availability risks.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Periodically invoke a built-in target to create a snapshot of an Amazon EBS volume.
+ * </p>
+ * </li>
  * </ul>
  * <p>
- * For more information about Amazon CloudWatch Events features, see the <a
- * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide">Amazon CloudWatch Developer Guide</a>.
+ * For more information about the features of Amazon CloudWatch Events, see the <a
+ * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events">Amazon CloudWatch Events User Guide</a>.
  * </p>
  */
 @ThreadSafe
@@ -253,6 +266,10 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
         init();
     }
 
+    public static AmazonCloudWatchEventsClientBuilder builder() {
+        return AmazonCloudWatchEventsClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon CloudWatch Events using the specified parameters.
      *
@@ -282,19 +299,20 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Deletes a rule. You must remove all targets from a rule using <a>RemoveTargets</a> before you can delete the
-     * rule.
+     * Deletes the specified rule.
      * </p>
      * <p>
-     * <b>Note:</b> When you delete a rule, incoming events might still continue to match to the deleted rule. Please
-     * allow a short period of time for changes to take effect.
+     * You must remove all targets from a rule using <a>RemoveTargets</a> before you can delete the rule.
+     * </p>
+     * <p>
+     * When you delete a rule, incoming events might continue to match to the deleted rule. Please allow a short period
+     * of time for changes to take effect.
      * </p>
      * 
      * @param deleteRuleRequest
-     *        Container for the parameters to the <a>DeleteRule</a> operation.
      * @return Result of the DeleteRule operation returned by the service.
      * @throws ConcurrentModificationException
-     *         This exception occurs if there is concurrent modification on rule or target.
+     *         There is concurrent modification on a rule or target.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.DeleteRule
@@ -302,7 +320,13 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *      Documentation</a>
      */
     @Override
-    public DeleteRuleResult deleteRule(DeleteRuleRequest deleteRuleRequest) {
+    public DeleteRuleResult deleteRule(DeleteRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteRule(request);
+    }
+
+    @SdkInternalApi
+    final DeleteRuleResult executeDeleteRule(DeleteRuleRequest deleteRuleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -313,7 +337,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteRuleRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRuleRequest));
+                request = new DeleteRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -334,11 +358,10 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Describes the details of the specified rule.
+     * Describes the specified rule.
      * </p>
      * 
      * @param describeRuleRequest
-     *        Container for the parameters to the <a>DescribeRule</a> operation.
      * @return Result of the DescribeRule operation returned by the service.
      * @throws ResourceNotFoundException
      *         The rule does not exist.
@@ -349,7 +372,13 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *      Documentation</a>
      */
     @Override
-    public DescribeRuleResult describeRule(DescribeRuleRequest describeRuleRequest) {
+    public DescribeRuleResult describeRule(DescribeRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeRule(request);
+    }
+
+    @SdkInternalApi
+    final DescribeRuleResult executeDescribeRule(DescribeRuleRequest describeRuleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -360,7 +389,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeRuleRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeRuleRequest));
+                request = new DescribeRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -381,20 +410,20 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Disables a rule. A disabled rule won't match any events, and won't self-trigger if it has a schedule expression.
+     * Disables the specified rule. A disabled rule won't match any events, and won't self-trigger if it has a schedule
+     * expression.
      * </p>
      * <p>
-     * <b>Note:</b> When you disable a rule, incoming events might still continue to match to the disabled rule. Please
-     * allow a short period of time for changes to take effect.
+     * When you disable a rule, incoming events might continue to match to the disabled rule. Please allow a short
+     * period of time for changes to take effect.
      * </p>
      * 
      * @param disableRuleRequest
-     *        Container for the parameters to the <a>DisableRule</a> operation.
      * @return Result of the DisableRule operation returned by the service.
      * @throws ResourceNotFoundException
      *         The rule does not exist.
      * @throws ConcurrentModificationException
-     *         This exception occurs if there is concurrent modification on rule or target.
+     *         There is concurrent modification on a rule or target.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.DisableRule
@@ -402,7 +431,13 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *      Documentation</a>
      */
     @Override
-    public DisableRuleResult disableRule(DisableRuleRequest disableRuleRequest) {
+    public DisableRuleResult disableRule(DisableRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisableRule(request);
+    }
+
+    @SdkInternalApi
+    final DisableRuleResult executeDisableRule(DisableRuleRequest disableRuleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(disableRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -413,7 +448,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisableRuleRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableRuleRequest));
+                request = new DisableRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -434,20 +469,19 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Enables a rule. If the rule does not exist, the operation fails.
+     * Enables the specified rule. If the rule does not exist, the operation fails.
      * </p>
      * <p>
-     * <b>Note:</b> When you enable a rule, incoming events might not immediately start matching to a newly enabled
-     * rule. Please allow a short period of time for changes to take effect.
+     * When you enable a rule, incoming events might not immediately start matching to a newly enabled rule. Please
+     * allow a short period of time for changes to take effect.
      * </p>
      * 
      * @param enableRuleRequest
-     *        Container for the parameters to the <a>EnableRule</a> operation.
      * @return Result of the EnableRule operation returned by the service.
      * @throws ResourceNotFoundException
      *         The rule does not exist.
      * @throws ConcurrentModificationException
-     *         This exception occurs if there is concurrent modification on rule or target.
+     *         There is concurrent modification on a rule or target.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.EnableRule
@@ -455,7 +489,13 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *      Documentation</a>
      */
     @Override
-    public EnableRuleResult enableRule(EnableRuleRequest enableRuleRequest) {
+    public EnableRuleResult enableRule(EnableRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnableRule(request);
+    }
+
+    @SdkInternalApi
+    final EnableRuleResult executeEnableRule(EnableRuleRequest enableRuleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(enableRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -466,7 +506,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EnableRuleRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableRuleRequest));
+                request = new EnableRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -487,14 +527,11 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Lists the names of the rules that the given target is put to. You can see which of the rules in Amazon CloudWatch
-     * Events can invoke a specific target in your account. If you have more rules in your account than the given limit,
-     * the results will be paginated. In that case, use the next token returned in the response and repeat
-     * ListRulesByTarget until the NextToken in the response is returned as null.
+     * Lists the rules for the specified target. You can see which of the rules in Amazon CloudWatch Events can invoke a
+     * specific target in your account.
      * </p>
      * 
      * @param listRuleNamesByTargetRequest
-     *        Container for the parameters to the <a>ListRuleNamesByTarget</a> operation.
      * @return Result of the ListRuleNamesByTarget operation returned by the service.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
@@ -503,7 +540,13 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
-    public ListRuleNamesByTargetResult listRuleNamesByTarget(ListRuleNamesByTargetRequest listRuleNamesByTargetRequest) {
+    public ListRuleNamesByTargetResult listRuleNamesByTarget(ListRuleNamesByTargetRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRuleNamesByTarget(request);
+    }
+
+    @SdkInternalApi
+    final ListRuleNamesByTargetResult executeListRuleNamesByTarget(ListRuleNamesByTargetRequest listRuleNamesByTargetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listRuleNamesByTargetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -514,7 +557,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListRuleNamesByTargetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRuleNamesByTargetRequest));
+                request = new ListRuleNamesByTargetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRuleNamesByTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -536,14 +579,11 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Lists the Amazon CloudWatch Events rules in your account. You can either list all the rules or you can provide a
-     * prefix to match to the rule names. If you have more rules in your account than the given limit, the results will
-     * be paginated. In that case, use the next token returned in the response and repeat ListRules until the NextToken
-     * in the response is returned as null.
+     * Lists your Amazon CloudWatch Events rules. You can either list all the rules or you can provide a prefix to match
+     * to the rule names.
      * </p>
      * 
      * @param listRulesRequest
-     *        Container for the parameters to the <a>ListRules</a> operation.
      * @return Result of the ListRules operation returned by the service.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
@@ -552,7 +592,13 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *      Documentation</a>
      */
     @Override
-    public ListRulesResult listRules(ListRulesRequest listRulesRequest) {
+    public ListRulesResult listRules(ListRulesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRules(request);
+    }
+
+    @SdkInternalApi
+    final ListRulesResult executeListRules(ListRulesRequest listRulesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listRulesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -563,7 +609,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListRulesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRulesRequest));
+                request = new ListRulesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRulesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -584,11 +630,10 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Lists of targets assigned to the rule.
+     * Lists the targets assigned to the specified rule.
      * </p>
      * 
      * @param listTargetsByRuleRequest
-     *        Container for the parameters to the <a>ListTargetsByRule</a> operation.
      * @return Result of the ListTargetsByRule operation returned by the service.
      * @throws ResourceNotFoundException
      *         The rule does not exist.
@@ -599,7 +644,13 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *      Documentation</a>
      */
     @Override
-    public ListTargetsByRuleResult listTargetsByRule(ListTargetsByRuleRequest listTargetsByRuleRequest) {
+    public ListTargetsByRuleResult listTargetsByRule(ListTargetsByRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTargetsByRule(request);
+    }
+
+    @SdkInternalApi
+    final ListTargetsByRuleResult executeListTargetsByRule(ListTargetsByRuleRequest listTargetsByRuleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTargetsByRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -610,7 +661,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTargetsByRuleRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTargetsByRuleRequest));
+                request = new ListTargetsByRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTargetsByRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -635,7 +686,6 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * </p>
      * 
      * @param putEventsRequest
-     *        Container for the parameters to the <a>PutEvents</a> operation.
      * @return Result of the PutEvents operation returned by the service.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
@@ -644,7 +694,13 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *      Documentation</a>
      */
     @Override
-    public PutEventsResult putEvents(PutEventsRequest putEventsRequest) {
+    public PutEventsResult putEvents(PutEventsRequest request) {
+        request = beforeClientExecution(request);
+        return executePutEvents(request);
+    }
+
+    @SdkInternalApi
+    final PutEventsResult executePutEvents(PutEventsRequest putEventsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putEventsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -655,7 +711,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutEventsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(putEventsRequest));
+                request = new PutEventsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -676,35 +732,33 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Creates or updates a rule. Rules are enabled by default, or based on value of the State parameter. You can
+     * Creates or updates the specified rule. Rules are enabled by default, or based on value of the state. You can
      * disable a rule using <a>DisableRule</a>.
      * </p>
      * <p>
-     * <b>Note:</b> When you create or update a rule, incoming events might not immediately start matching to new or
-     * updated rules. Please allow a short period of time for changes to take effect.
+     * When you create or update a rule, incoming events might not immediately start matching to new or updated rules.
+     * Please allow a short period of time for changes to take effect.
      * </p>
      * <p>
      * A rule must contain at least an EventPattern or ScheduleExpression. Rules with EventPatterns are triggered when a
      * matching event is observed. Rules with ScheduleExpressions self-trigger based on the given schedule. A rule can
-     * have both an EventPattern and a ScheduleExpression, in which case the rule will trigger on matching events as
-     * well as on a schedule.
+     * have both an EventPattern and a ScheduleExpression, in which case the rule triggers on matching events as well as
+     * on a schedule.
      * </p>
      * <p>
-     * <b>Note:</b> Most services in AWS treat : or / as the same character in Amazon Resource Names (ARNs). However,
-     * CloudWatch Events uses an exact match in event patterns and rules. Be sure to use the correct ARN characters when
-     * creating event patterns so that they match the ARN syntax in the event you want to match.
+     * Most services in AWS treat : or / as the same character in Amazon Resource Names (ARNs). However, CloudWatch
+     * Events uses an exact match in event patterns and rules. Be sure to use the correct ARN characters when creating
+     * event patterns so that they match the ARN syntax in the event you want to match.
      * </p>
      * 
      * @param putRuleRequest
-     *        Container for the parameters to the <a>PutRule</a> operation.
      * @return Result of the PutRule operation returned by the service.
      * @throws InvalidEventPatternException
-     *         The event pattern is invalid.
+     *         The event pattern is not valid.
      * @throws LimitExceededException
-     *         This exception occurs if you try to create more rules or add more targets to a rule than allowed by
-     *         default.
+     *         You tried to create more rules or add more targets to a rule than is allowed.
      * @throws ConcurrentModificationException
-     *         This exception occurs if there is concurrent modification on rule or target.
+     *         There is concurrent modification on a rule or target.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.PutRule
@@ -712,7 +766,13 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *      Documentation</a>
      */
     @Override
-    public PutRuleResult putRule(PutRuleRequest putRuleRequest) {
+    public PutRuleResult putRule(PutRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executePutRule(request);
+    }
+
+    @SdkInternalApi
+    final PutRuleResult executePutRule(PutRuleRequest putRuleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -723,7 +783,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutRuleRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(putRuleRequest));
+                request = new PutRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -744,45 +804,72 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Adds target(s) to a rule. Targets are the resources that can be invoked when a rule is triggered. For example,
-     * AWS Lambda functions, Amazon Kinesis streams, and built-in targets. Updates the target(s) if they are already
-     * associated with the role. In other words, if there is already a target with the given target ID, then the target
-     * associated with that ID is updated.
+     * Adds the specified targets to the specified rule, or updates the targets if they are already associated with the
+     * rule.
      * </p>
      * <p>
-     * In order to be able to make API calls against the resources you own, Amazon CloudWatch Events needs the
-     * appropriate permissions. For AWS Lambda and Amazon SNS resources, CloudWatch Events relies on resource-based
-     * policies. For Amazon Kinesis streams, CloudWatch Events relies on IAM roles. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/EventsTargetPermissions.html">Permissions
-     * for Sending Events to Targets</a> in the <b><i>Amazon CloudWatch Developer Guide</i></b>.
+     * Targets are the resources that are invoked when a rule is triggered. Example targets include EC2 instances, AWS
+     * Lambda functions, Amazon Kinesis streams, Amazon ECS tasks, AWS Step Functions state machines, and built-in
+     * targets. Note that creating rules with built-in targets is supported only in the AWS Management Console.
      * </p>
      * <p>
-     * <b>Input</b> and <b>InputPath</b> are mutually-exclusive and optional parameters of a target. When a rule is
-     * triggered due to a matched event, if for a target:
+     * For some target types, <code>PutTargets</code> provides target-specific parameters. If the target is an Amazon
+     * Kinesis stream, you can optionally specify which shard the event goes to by using the
+     * <code>KinesisParameters</code> argument. To invoke a command on multiple EC2 instances with one rule, you can use
+     * the <code>RunCommandParameters</code> field.
+     * </p>
+     * <p>
+     * To be able to make API calls against the resources that you own, Amazon CloudWatch Events needs the appropriate
+     * permissions. For AWS Lambda and Amazon SNS resources, CloudWatch Events relies on resource-based policies. For
+     * EC2 instances, Amazon Kinesis streams, and AWS Step Functions state machines, CloudWatch Events relies on IAM
+     * roles that you specify in the <code>RoleARN</code> argument in <code>PutTarget</code>. For more information, see
+     * <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html">
+     * Authentication and Access Control</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+     * </p>
+     * <p>
+     * <b>Input</b>, <b>InputPath</b> and <b>InputTransformer</b> are mutually exclusive and optional parameters of a
+     * target. When a rule is triggered due to a matched event:
      * </p>
      * <ul>
-     * <li>Neither <b>Input</b> nor <b>InputPath</b> is specified, then the entire event is passed to the target in JSON
-     * form.</li>
-     * <li><b>InputPath</b> is specified in the form of JSONPath (e.g. <b>$.detail</b>), then only the part of the event
-     * specified in the path is passed to the target (e.g. only the detail part of the event is passed).</li>
-     * <li><b>Input</b> is specified in the form of a valid JSON, then the matched event is overridden with this
-     * constant.</li>
+     * <li>
+     * <p>
+     * If none of the following arguments are specified for a target, then the entire event is passed to the target in
+     * JSON form (unless the target is Amazon EC2 Run Command or Amazon ECS task, in which case nothing from the event
+     * is passed to the target).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <b>Input</b> is specified in the form of valid JSON, then the matched event is overridden with this constant.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <b>InputPath</b> is specified in the form of JSONPath (for example, <code>$.detail</code>), then only the part
+     * of the event specified in the path is passed to the target (for example, only the detail part of the event is
+     * passed).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <b>InputTransformer</b> is specified, then one or more specified JSONPaths are extracted from the event and
+     * used as values in a template that you specify as the input to the target.
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * <b>Note:</b> When you add targets to a rule, when the associated rule triggers, new or updated targets might not
-     * be immediately invoked. Please allow a short period of time for changes to take effect.
+     * When you add targets to a rule and the associated rule triggers soon after, new or updated targets might not be
+     * immediately invoked. Please allow a short period of time for changes to take effect.
      * </p>
      * 
      * @param putTargetsRequest
-     *        Container for the parameters to the <a>PutTargets</a> operation.
      * @return Result of the PutTargets operation returned by the service.
      * @throws ResourceNotFoundException
      *         The rule does not exist.
      * @throws ConcurrentModificationException
-     *         This exception occurs if there is concurrent modification on rule or target.
+     *         There is concurrent modification on a rule or target.
      * @throws LimitExceededException
-     *         This exception occurs if you try to create more rules or add more targets to a rule than allowed by
-     *         default.
+     *         You tried to create more rules or add more targets to a rule than is allowed.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.PutTargets
@@ -790,7 +877,13 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *      Documentation</a>
      */
     @Override
-    public PutTargetsResult putTargets(PutTargetsRequest putTargetsRequest) {
+    public PutTargetsResult putTargets(PutTargetsRequest request) {
+        request = beforeClientExecution(request);
+        return executePutTargets(request);
+    }
+
+    @SdkInternalApi
+    final PutTargetsResult executePutTargets(PutTargetsRequest putTargetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putTargetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -801,7 +894,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutTargetsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(putTargetsRequest));
+                request = new PutTargetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putTargetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -822,20 +915,20 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Removes target(s) from a rule so that when the rule is triggered, those targets will no longer be invoked.
+     * Removes the specified targets from the specified rule. When the rule is triggered, those targets are no longer be
+     * invoked.
      * </p>
      * <p>
-     * <b>Note:</b> When you remove a target, when the associated rule triggers, removed targets might still continue to
-     * be invoked. Please allow a short period of time for changes to take effect.
+     * When you remove a target, when the associated rule triggers, removed targets might continue to be invoked. Please
+     * allow a short period of time for changes to take effect.
      * </p>
      * 
      * @param removeTargetsRequest
-     *        Container for the parameters to the <a>RemoveTargets</a> operation.
      * @return Result of the RemoveTargets operation returned by the service.
      * @throws ResourceNotFoundException
      *         The rule does not exist.
      * @throws ConcurrentModificationException
-     *         This exception occurs if there is concurrent modification on rule or target.
+     *         There is concurrent modification on a rule or target.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.RemoveTargets
@@ -843,7 +936,13 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *      Documentation</a>
      */
     @Override
-    public RemoveTargetsResult removeTargets(RemoveTargetsRequest removeTargetsRequest) {
+    public RemoveTargetsResult removeTargets(RemoveTargetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveTargets(request);
+    }
+
+    @SdkInternalApi
+    final RemoveTargetsResult executeRemoveTargets(RemoveTargetsRequest removeTargetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(removeTargetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -854,7 +953,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RemoveTargetsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeTargetsRequest));
+                request = new RemoveTargetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeTargetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -875,19 +974,18 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Tests whether an event pattern matches the provided event.
+     * Tests whether the specified event pattern matches the provided event.
      * </p>
      * <p>
-     * <b>Note:</b> Most services in AWS treat : or / as the same character in Amazon Resource Names (ARNs). However,
-     * CloudWatch Events uses an exact match in event patterns and rules. Be sure to use the correct ARN characters when
-     * creating event patterns so that they match the ARN syntax in the event you want to match.
+     * Most services in AWS treat : or / as the same character in Amazon Resource Names (ARNs). However, CloudWatch
+     * Events uses an exact match in event patterns and rules. Be sure to use the correct ARN characters when creating
+     * event patterns so that they match the ARN syntax in the event you want to match.
      * </p>
      * 
      * @param testEventPatternRequest
-     *        Container for the parameters to the <a>TestEventPattern</a> operation.
      * @return Result of the TestEventPattern operation returned by the service.
      * @throws InvalidEventPatternException
-     *         The event pattern is invalid.
+     *         The event pattern is not valid.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @sample AmazonCloudWatchEvents.TestEventPattern
@@ -895,7 +993,13 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      *      Documentation</a>
      */
     @Override
-    public TestEventPatternResult testEventPattern(TestEventPatternRequest testEventPatternRequest) {
+    public TestEventPatternResult testEventPattern(TestEventPatternRequest request) {
+        request = beforeClientExecution(request);
+        return executeTestEventPattern(request);
+    }
+
+    @SdkInternalApi
+    final TestEventPatternResult executeTestEventPattern(TestEventPatternRequest testEventPatternRequest) {
 
         ExecutionContext executionContext = createExecutionContext(testEventPatternRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -906,7 +1010,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new TestEventPatternRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(testEventPatternRequest));
+                request = new TestEventPatternRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(testEventPatternRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

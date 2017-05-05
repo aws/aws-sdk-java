@@ -14,19 +14,20 @@ package com.amazonaws.services.gamelift.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * AWS access credentials required to upload game build files to Amazon GameLift. These credentials are generated with
- * <a>CreateBuild</a>, and are valid for a limited time. If they expire before you upload your game build, get a new set
- * by calling <a>RequestUploadCredentials</a>.
+ * AWS access credentials sometimes used for uploading game build files to Amazon GameLift. They are valid for a limited
+ * time. If they expire before you upload your game build, get a new set by calling <a>RequestUploadCredentials</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Credentials" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Credentials implements Serializable, Cloneable {
+public class Credentials implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -231,5 +232,11 @@ public class Credentials implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.gamelift.model.transform.CredentialsMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

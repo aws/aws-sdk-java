@@ -14,17 +14,19 @@ package com.amazonaws.services.clouddirectory.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents the output of a ListObjectAttributes operation.
+ * Represents the output of a <code>ListObjectAttributes</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchListObjectAttributes"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class BatchListObjectAttributes implements Serializable, Cloneable {
+public class BatchListObjectAttributes implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -34,7 +36,7 @@ public class BatchListObjectAttributes implements Serializable, Cloneable {
     private ObjectReference objectReference;
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      */
     private String nextToken;
@@ -44,6 +46,12 @@ public class BatchListObjectAttributes implements Serializable, Cloneable {
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * Used to filter the list of object attributes associated with a certain facet.
+     * </p>
+     */
+    private SchemaFacet facetFilter;
 
     /**
      * <p>
@@ -87,11 +95,11 @@ public class BatchListObjectAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      * 
      * @param nextToken
-     *        Token used for pagination.
+     *        The pagination token.
      */
 
     public void setNextToken(String nextToken) {
@@ -100,10 +108,10 @@ public class BatchListObjectAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      * 
-     * @return Token used for pagination.
+     * @return The pagination token.
      */
 
     public String getNextToken() {
@@ -112,11 +120,11 @@ public class BatchListObjectAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      * 
      * @param nextToken
-     *        Token used for pagination.
+     *        The pagination token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -166,6 +174,46 @@ public class BatchListObjectAttributes implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Used to filter the list of object attributes associated with a certain facet.
+     * </p>
+     * 
+     * @param facetFilter
+     *        Used to filter the list of object attributes associated with a certain facet.
+     */
+
+    public void setFacetFilter(SchemaFacet facetFilter) {
+        this.facetFilter = facetFilter;
+    }
+
+    /**
+     * <p>
+     * Used to filter the list of object attributes associated with a certain facet.
+     * </p>
+     * 
+     * @return Used to filter the list of object attributes associated with a certain facet.
+     */
+
+    public SchemaFacet getFacetFilter() {
+        return this.facetFilter;
+    }
+
+    /**
+     * <p>
+     * Used to filter the list of object attributes associated with a certain facet.
+     * </p>
+     * 
+     * @param facetFilter
+     *        Used to filter the list of object attributes associated with a certain facet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchListObjectAttributes withFacetFilter(SchemaFacet facetFilter) {
+        setFacetFilter(facetFilter);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -181,7 +229,9 @@ public class BatchListObjectAttributes implements Serializable, Cloneable {
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getFacetFilter() != null)
+            sb.append("FacetFilter: ").append(getFacetFilter());
         sb.append("}");
         return sb.toString();
     }
@@ -208,6 +258,10 @@ public class BatchListObjectAttributes implements Serializable, Cloneable {
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getFacetFilter() == null ^ this.getFacetFilter() == null)
+            return false;
+        if (other.getFacetFilter() != null && other.getFacetFilter().equals(this.getFacetFilter()) == false)
+            return false;
         return true;
     }
 
@@ -219,6 +273,7 @@ public class BatchListObjectAttributes implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getObjectReference() == null) ? 0 : getObjectReference().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getFacetFilter() == null) ? 0 : getFacetFilter().hashCode());
         return hashCode;
     }
 
@@ -229,5 +284,11 @@ public class BatchListObjectAttributes implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.clouddirectory.model.transform.BatchListObjectAttributesMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

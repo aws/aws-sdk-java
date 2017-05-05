@@ -12,94 +12,54 @@
  */
 package com.amazonaws.services.ecr.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.ecr.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * BatchGetImageRequest Marshaller
+ * BatchGetImageRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class BatchGetImageRequestMarshaller implements Marshaller<Request<BatchGetImageRequest>, BatchGetImageRequest> {
+@SdkInternalApi
+public class BatchGetImageRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> REGISTRYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("registryId").build();
+    private static final MarshallingInfo<String> REPOSITORYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("repositoryName").build();
+    private static final MarshallingInfo<List> IMAGEIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("imageIds").build();
+    private static final MarshallingInfo<List> ACCEPTEDMEDIATYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("acceptedMediaTypes").build();
 
-    public BatchGetImageRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final BatchGetImageRequestMarshaller instance = new BatchGetImageRequestMarshaller();
+
+    public static BatchGetImageRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<BatchGetImageRequest> marshall(BatchGetImageRequest batchGetImageRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(BatchGetImageRequest batchGetImageRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (batchGetImageRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<BatchGetImageRequest> request = new DefaultRequest<BatchGetImageRequest>(batchGetImageRequest, "AmazonECR");
-        request.addHeader("X-Amz-Target", "AmazonEC2ContainerRegistry_V20150921.BatchGetImage");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (batchGetImageRequest.getRegistryId() != null) {
-                jsonGenerator.writeFieldName("registryId").writeValue(batchGetImageRequest.getRegistryId());
-            }
-            if (batchGetImageRequest.getRepositoryName() != null) {
-                jsonGenerator.writeFieldName("repositoryName").writeValue(batchGetImageRequest.getRepositoryName());
-            }
-
-            java.util.List<ImageIdentifier> imageIdsList = batchGetImageRequest.getImageIds();
-            if (imageIdsList != null) {
-                jsonGenerator.writeFieldName("imageIds");
-                jsonGenerator.writeStartArray();
-                for (ImageIdentifier imageIdsListValue : imageIdsList) {
-                    if (imageIdsListValue != null) {
-
-                        ImageIdentifierJsonMarshaller.getInstance().marshall(imageIdsListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            java.util.List<String> acceptedMediaTypesList = batchGetImageRequest.getAcceptedMediaTypes();
-            if (acceptedMediaTypesList != null) {
-                jsonGenerator.writeFieldName("acceptedMediaTypes");
-                jsonGenerator.writeStartArray();
-                for (String acceptedMediaTypesListValue : acceptedMediaTypesList) {
-                    if (acceptedMediaTypesListValue != null) {
-                        jsonGenerator.writeValue(acceptedMediaTypesListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(batchGetImageRequest.getRegistryId(), REGISTRYID_BINDING);
+            protocolMarshaller.marshall(batchGetImageRequest.getRepositoryName(), REPOSITORYNAME_BINDING);
+            protocolMarshaller.marshall(batchGetImageRequest.getImageIds(), IMAGEIDS_BINDING);
+            protocolMarshaller.marshall(batchGetImageRequest.getAcceptedMediaTypes(), ACCEPTEDMEDIATYPES_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -333,6 +334,10 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         init();
     }
 
+    public static AmazonConfigClientBuilder builder() {
+        return AmazonConfigClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Config Service using the specified parameters.
      *
@@ -386,7 +391,13 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *      Documentation</a>
      */
     @Override
-    public DeleteConfigRuleResult deleteConfigRule(DeleteConfigRuleRequest deleteConfigRuleRequest) {
+    public DeleteConfigRuleResult deleteConfigRule(DeleteConfigRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteConfigRule(request);
+    }
+
+    @SdkInternalApi
+    final DeleteConfigRuleResult executeDeleteConfigRule(DeleteConfigRuleRequest deleteConfigRuleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteConfigRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -397,7 +408,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteConfigRuleRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteConfigRuleRequest));
+                request = new DeleteConfigRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteConfigRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -441,7 +452,13 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteConfigurationRecorderResult deleteConfigurationRecorder(DeleteConfigurationRecorderRequest deleteConfigurationRecorderRequest) {
+    public DeleteConfigurationRecorderResult deleteConfigurationRecorder(DeleteConfigurationRecorderRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteConfigurationRecorder(request);
+    }
+
+    @SdkInternalApi
+    final DeleteConfigurationRecorderResult executeDeleteConfigurationRecorder(DeleteConfigurationRecorderRequest deleteConfigurationRecorderRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteConfigurationRecorderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -452,7 +469,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteConfigurationRecorderRequestMarshaller(protocolFactory).marshall(super
+                request = new DeleteConfigurationRecorderRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(deleteConfigurationRecorderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -495,7 +512,13 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *      API Documentation</a>
      */
     @Override
-    public DeleteDeliveryChannelResult deleteDeliveryChannel(DeleteDeliveryChannelRequest deleteDeliveryChannelRequest) {
+    public DeleteDeliveryChannelResult deleteDeliveryChannel(DeleteDeliveryChannelRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDeliveryChannel(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDeliveryChannelResult executeDeleteDeliveryChannel(DeleteDeliveryChannelRequest deleteDeliveryChannelRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteDeliveryChannelRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -506,7 +529,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteDeliveryChannelRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDeliveryChannelRequest));
+                request = new DeleteDeliveryChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDeliveryChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -546,7 +569,13 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *      API Documentation</a>
      */
     @Override
-    public DeleteEvaluationResultsResult deleteEvaluationResults(DeleteEvaluationResultsRequest deleteEvaluationResultsRequest) {
+    public DeleteEvaluationResultsResult deleteEvaluationResults(DeleteEvaluationResultsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteEvaluationResults(request);
+    }
+
+    @SdkInternalApi
+    final DeleteEvaluationResultsResult executeDeleteEvaluationResults(DeleteEvaluationResultsRequest deleteEvaluationResultsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteEvaluationResultsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -557,7 +586,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteEvaluationResultsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteEvaluationResultsRequest));
+                request = new DeleteEvaluationResultsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteEvaluationResultsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -616,7 +646,13 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *      API Documentation</a>
      */
     @Override
-    public DeliverConfigSnapshotResult deliverConfigSnapshot(DeliverConfigSnapshotRequest deliverConfigSnapshotRequest) {
+    public DeliverConfigSnapshotResult deliverConfigSnapshot(DeliverConfigSnapshotRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeliverConfigSnapshot(request);
+    }
+
+    @SdkInternalApi
+    final DeliverConfigSnapshotResult executeDeliverConfigSnapshot(DeliverConfigSnapshotRequest deliverConfigSnapshotRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deliverConfigSnapshotRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -627,7 +663,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeliverConfigSnapshotRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deliverConfigSnapshotRequest));
+                request = new DeliverConfigSnapshotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deliverConfigSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -699,7 +735,13 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeComplianceByConfigRuleResult describeComplianceByConfigRule(DescribeComplianceByConfigRuleRequest describeComplianceByConfigRuleRequest) {
+    public DescribeComplianceByConfigRuleResult describeComplianceByConfigRule(DescribeComplianceByConfigRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeComplianceByConfigRule(request);
+    }
+
+    @SdkInternalApi
+    final DescribeComplianceByConfigRuleResult executeDescribeComplianceByConfigRule(DescribeComplianceByConfigRuleRequest describeComplianceByConfigRuleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeComplianceByConfigRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -710,7 +752,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeComplianceByConfigRuleRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeComplianceByConfigRuleRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeComplianceByConfigRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -785,7 +827,13 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeComplianceByResourceResult describeComplianceByResource(DescribeComplianceByResourceRequest describeComplianceByResourceRequest) {
+    public DescribeComplianceByResourceResult describeComplianceByResource(DescribeComplianceByResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeComplianceByResource(request);
+    }
+
+    @SdkInternalApi
+    final DescribeComplianceByResourceResult executeDescribeComplianceByResource(DescribeComplianceByResourceRequest describeComplianceByResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeComplianceByResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -796,7 +844,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeComplianceByResourceRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeComplianceByResourceRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeComplianceByResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -844,7 +892,13 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeConfigRuleEvaluationStatusResult describeConfigRuleEvaluationStatus(
+    public DescribeConfigRuleEvaluationStatusResult describeConfigRuleEvaluationStatus(DescribeConfigRuleEvaluationStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeConfigRuleEvaluationStatus(request);
+    }
+
+    @SdkInternalApi
+    final DescribeConfigRuleEvaluationStatusResult executeDescribeConfigRuleEvaluationStatus(
             DescribeConfigRuleEvaluationStatusRequest describeConfigRuleEvaluationStatusRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeConfigRuleEvaluationStatusRequest);
@@ -856,7 +910,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeConfigRuleEvaluationStatusRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeConfigRuleEvaluationStatusRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeConfigRuleEvaluationStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -900,7 +954,13 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *      Documentation</a>
      */
     @Override
-    public DescribeConfigRulesResult describeConfigRules(DescribeConfigRulesRequest describeConfigRulesRequest) {
+    public DescribeConfigRulesResult describeConfigRules(DescribeConfigRulesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeConfigRules(request);
+    }
+
+    @SdkInternalApi
+    final DescribeConfigRulesResult executeDescribeConfigRules(DescribeConfigRulesRequest describeConfigRulesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeConfigRulesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -911,7 +971,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeConfigRulesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeConfigRulesRequest));
+                request = new DescribeConfigRulesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeConfigRulesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -956,7 +1016,13 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeConfigurationRecorderStatusResult describeConfigurationRecorderStatus(
+    public DescribeConfigurationRecorderStatusResult describeConfigurationRecorderStatus(DescribeConfigurationRecorderStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeConfigurationRecorderStatus(request);
+    }
+
+    @SdkInternalApi
+    final DescribeConfigurationRecorderStatusResult executeDescribeConfigurationRecorderStatus(
             DescribeConfigurationRecorderStatusRequest describeConfigurationRecorderStatusRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeConfigurationRecorderStatusRequest);
@@ -968,7 +1034,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeConfigurationRecorderStatusRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeConfigurationRecorderStatusRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeConfigurationRecorderStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1015,7 +1081,13 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeConfigurationRecordersResult describeConfigurationRecorders(DescribeConfigurationRecordersRequest describeConfigurationRecordersRequest) {
+    public DescribeConfigurationRecordersResult describeConfigurationRecorders(DescribeConfigurationRecordersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeConfigurationRecorders(request);
+    }
+
+    @SdkInternalApi
+    final DescribeConfigurationRecordersResult executeDescribeConfigurationRecorders(DescribeConfigurationRecordersRequest describeConfigurationRecordersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeConfigurationRecordersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1026,7 +1098,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeConfigurationRecordersRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeConfigurationRecordersRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeConfigurationRecordersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1073,7 +1145,13 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeDeliveryChannelStatusResult describeDeliveryChannelStatus(DescribeDeliveryChannelStatusRequest describeDeliveryChannelStatusRequest) {
+    public DescribeDeliveryChannelStatusResult describeDeliveryChannelStatus(DescribeDeliveryChannelStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDeliveryChannelStatus(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDeliveryChannelStatusResult executeDescribeDeliveryChannelStatus(DescribeDeliveryChannelStatusRequest describeDeliveryChannelStatusRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeDeliveryChannelStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1084,7 +1162,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeDeliveryChannelStatusRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeDeliveryChannelStatusRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeDeliveryChannelStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1131,7 +1209,13 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeDeliveryChannelsResult describeDeliveryChannels(DescribeDeliveryChannelsRequest describeDeliveryChannelsRequest) {
+    public DescribeDeliveryChannelsResult describeDeliveryChannels(DescribeDeliveryChannelsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDeliveryChannels(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDeliveryChannelsResult executeDescribeDeliveryChannels(DescribeDeliveryChannelsRequest describeDeliveryChannelsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeDeliveryChannelsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1142,7 +1226,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeDeliveryChannelsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDeliveryChannelsRequest));
+                request = new DescribeDeliveryChannelsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeDeliveryChannelsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1188,7 +1273,13 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetComplianceDetailsByConfigRuleResult getComplianceDetailsByConfigRule(
+    public GetComplianceDetailsByConfigRuleResult getComplianceDetailsByConfigRule(GetComplianceDetailsByConfigRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetComplianceDetailsByConfigRule(request);
+    }
+
+    @SdkInternalApi
+    final GetComplianceDetailsByConfigRuleResult executeGetComplianceDetailsByConfigRule(
             GetComplianceDetailsByConfigRuleRequest getComplianceDetailsByConfigRuleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getComplianceDetailsByConfigRuleRequest);
@@ -1200,7 +1291,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetComplianceDetailsByConfigRuleRequestMarshaller(protocolFactory).marshall(super
+                request = new GetComplianceDetailsByConfigRuleRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(getComplianceDetailsByConfigRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1236,7 +1327,13 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetComplianceDetailsByResourceResult getComplianceDetailsByResource(GetComplianceDetailsByResourceRequest getComplianceDetailsByResourceRequest) {
+    public GetComplianceDetailsByResourceResult getComplianceDetailsByResource(GetComplianceDetailsByResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetComplianceDetailsByResource(request);
+    }
+
+    @SdkInternalApi
+    final GetComplianceDetailsByResourceResult executeGetComplianceDetailsByResource(GetComplianceDetailsByResourceRequest getComplianceDetailsByResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getComplianceDetailsByResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1247,7 +1344,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetComplianceDetailsByResourceRequestMarshaller(protocolFactory).marshall(super
+                request = new GetComplianceDetailsByResourceRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(getComplianceDetailsByResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1280,7 +1377,13 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetComplianceSummaryByConfigRuleResult getComplianceSummaryByConfigRule(
+    public GetComplianceSummaryByConfigRuleResult getComplianceSummaryByConfigRule(GetComplianceSummaryByConfigRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetComplianceSummaryByConfigRule(request);
+    }
+
+    @SdkInternalApi
+    final GetComplianceSummaryByConfigRuleResult executeGetComplianceSummaryByConfigRule(
             GetComplianceSummaryByConfigRuleRequest getComplianceSummaryByConfigRuleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getComplianceSummaryByConfigRuleRequest);
@@ -1292,7 +1395,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetComplianceSummaryByConfigRuleRequestMarshaller(protocolFactory).marshall(super
+                request = new GetComplianceSummaryByConfigRuleRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(getComplianceSummaryByConfigRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1333,7 +1436,13 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetComplianceSummaryByResourceTypeResult getComplianceSummaryByResourceType(
+    public GetComplianceSummaryByResourceTypeResult getComplianceSummaryByResourceType(GetComplianceSummaryByResourceTypeRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetComplianceSummaryByResourceType(request);
+    }
+
+    @SdkInternalApi
+    final GetComplianceSummaryByResourceTypeResult executeGetComplianceSummaryByResourceType(
             GetComplianceSummaryByResourceTypeRequest getComplianceSummaryByResourceTypeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getComplianceSummaryByResourceTypeRequest);
@@ -1345,7 +1454,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetComplianceSummaryByResourceTypeRequestMarshaller(protocolFactory).marshall(super
+                request = new GetComplianceSummaryByResourceTypeRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(getComplianceSummaryByResourceTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1412,7 +1521,13 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetResourceConfigHistoryResult getResourceConfigHistory(GetResourceConfigHistoryRequest getResourceConfigHistoryRequest) {
+    public GetResourceConfigHistoryResult getResourceConfigHistory(GetResourceConfigHistoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetResourceConfigHistory(request);
+    }
+
+    @SdkInternalApi
+    final GetResourceConfigHistoryResult executeGetResourceConfigHistory(GetResourceConfigHistoryRequest getResourceConfigHistoryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getResourceConfigHistoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1423,7 +1538,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetResourceConfigHistoryRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getResourceConfigHistoryRequest));
+                request = new GetResourceConfigHistoryRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getResourceConfigHistoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1479,7 +1595,13 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *      API Documentation</a>
      */
     @Override
-    public ListDiscoveredResourcesResult listDiscoveredResources(ListDiscoveredResourcesRequest listDiscoveredResourcesRequest) {
+    public ListDiscoveredResourcesResult listDiscoveredResources(ListDiscoveredResourcesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDiscoveredResources(request);
+    }
+
+    @SdkInternalApi
+    final ListDiscoveredResourcesResult executeListDiscoveredResources(ListDiscoveredResourcesRequest listDiscoveredResourcesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listDiscoveredResourcesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1490,7 +1612,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListDiscoveredResourcesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDiscoveredResourcesRequest));
+                request = new ListDiscoveredResourcesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listDiscoveredResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1527,9 +1650,9 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * <code>ConfigRule</code> object.
      * </p>
      * <p>
-     * If you are adding a new AWS managed Config rule, specify the rule's identifier for the
-     * <code>SourceIdentifier</code> key. To reference AWS managed Config rule identifiers, see <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using AWS
+     * If you are adding an AWS managed Config rule, specify the rule's identifier for the <code>SourceIdentifier</code>
+     * key. To reference AWS managed Config rule identifiers, see <a
+     * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">About AWS
      * Managed Config Rules</a>.
      * </p>
      * <p>
@@ -1588,7 +1711,13 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *      Documentation</a>
      */
     @Override
-    public PutConfigRuleResult putConfigRule(PutConfigRuleRequest putConfigRuleRequest) {
+    public PutConfigRuleResult putConfigRule(PutConfigRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executePutConfigRule(request);
+    }
+
+    @SdkInternalApi
+    final PutConfigRuleResult executePutConfigRule(PutConfigRuleRequest putConfigRuleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putConfigRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1599,7 +1728,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutConfigRuleRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(putConfigRuleRequest));
+                request = new PutConfigRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putConfigRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1653,7 +1782,13 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public PutConfigurationRecorderResult putConfigurationRecorder(PutConfigurationRecorderRequest putConfigurationRecorderRequest) {
+    public PutConfigurationRecorderResult putConfigurationRecorder(PutConfigurationRecorderRequest request) {
+        request = beforeClientExecution(request);
+        return executePutConfigurationRecorder(request);
+    }
+
+    @SdkInternalApi
+    final PutConfigurationRecorderResult executePutConfigurationRecorder(PutConfigurationRecorderRequest putConfigurationRecorderRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putConfigurationRecorderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1664,7 +1799,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutConfigurationRecorderRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(putConfigurationRecorderRequest));
+                request = new PutConfigurationRecorderRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putConfigurationRecorderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1727,7 +1863,13 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *      Documentation</a>
      */
     @Override
-    public PutDeliveryChannelResult putDeliveryChannel(PutDeliveryChannelRequest putDeliveryChannelRequest) {
+    public PutDeliveryChannelResult putDeliveryChannel(PutDeliveryChannelRequest request) {
+        request = beforeClientExecution(request);
+        return executePutDeliveryChannel(request);
+    }
+
+    @SdkInternalApi
+    final PutDeliveryChannelResult executePutDeliveryChannel(PutDeliveryChannelRequest putDeliveryChannelRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putDeliveryChannelRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1738,7 +1880,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutDeliveryChannelRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(putDeliveryChannelRequest));
+                request = new PutDeliveryChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putDeliveryChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1768,7 +1910,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws InvalidParameterValueException
      *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
      * @throws InvalidResultTokenException
-     *         The speNexcified token is invalid.
+     *         The specified <code>ResultToken</code> is invalid.
      * @throws NoSuchConfigRuleException
      *         One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try
      *         again.
@@ -1777,7 +1919,13 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *      Documentation</a>
      */
     @Override
-    public PutEvaluationsResult putEvaluations(PutEvaluationsRequest putEvaluationsRequest) {
+    public PutEvaluationsResult putEvaluations(PutEvaluationsRequest request) {
+        request = beforeClientExecution(request);
+        return executePutEvaluations(request);
+    }
+
+    @SdkInternalApi
+    final PutEvaluationsResult executePutEvaluations(PutEvaluationsRequest putEvaluationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putEvaluationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1788,7 +1936,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutEvaluationsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(putEvaluationsRequest));
+                request = new PutEvaluationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putEvaluationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1878,7 +2026,13 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public StartConfigRulesEvaluationResult startConfigRulesEvaluation(StartConfigRulesEvaluationRequest startConfigRulesEvaluationRequest) {
+    public StartConfigRulesEvaluationResult startConfigRulesEvaluation(StartConfigRulesEvaluationRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartConfigRulesEvaluation(request);
+    }
+
+    @SdkInternalApi
+    final StartConfigRulesEvaluationResult executeStartConfigRulesEvaluation(StartConfigRulesEvaluationRequest startConfigRulesEvaluationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(startConfigRulesEvaluationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1889,7 +2043,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartConfigRulesEvaluationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(startConfigRulesEvaluationRequest));
+                request = new StartConfigRulesEvaluationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startConfigRulesEvaluationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1929,7 +2084,13 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public StartConfigurationRecorderResult startConfigurationRecorder(StartConfigurationRecorderRequest startConfigurationRecorderRequest) {
+    public StartConfigurationRecorderResult startConfigurationRecorder(StartConfigurationRecorderRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartConfigurationRecorder(request);
+    }
+
+    @SdkInternalApi
+    final StartConfigurationRecorderResult executeStartConfigurationRecorder(StartConfigurationRecorderRequest startConfigurationRecorderRequest) {
 
         ExecutionContext executionContext = createExecutionContext(startConfigurationRecorderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1940,7 +2101,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartConfigurationRecorderRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(startConfigurationRecorderRequest));
+                request = new StartConfigurationRecorderRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startConfigurationRecorderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1975,7 +2137,13 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public StopConfigurationRecorderResult stopConfigurationRecorder(StopConfigurationRecorderRequest stopConfigurationRecorderRequest) {
+    public StopConfigurationRecorderResult stopConfigurationRecorder(StopConfigurationRecorderRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopConfigurationRecorder(request);
+    }
+
+    @SdkInternalApi
+    final StopConfigurationRecorderResult executeStopConfigurationRecorder(StopConfigurationRecorderRequest stopConfigurationRecorderRequest) {
 
         ExecutionContext executionContext = createExecutionContext(stopConfigurationRecorderRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1986,7 +2154,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopConfigurationRecorderRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopConfigurationRecorderRequest));
+                request = new StopConfigurationRecorderRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(stopConfigurationRecorderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

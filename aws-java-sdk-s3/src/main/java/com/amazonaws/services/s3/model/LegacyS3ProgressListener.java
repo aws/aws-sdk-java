@@ -50,7 +50,7 @@ public class LegacyS3ProgressListener implements
     private ProgressEvent adaptToLegacyEvent(com.amazonaws.event.ProgressEvent event) {
         long bytes = event.getBytesTransferred();
         if (bytes != 0) {
-            return new ProgressEvent((int)bytes);
+            return new ProgressEvent(bytes);
         } else {
             return new ProgressEvent(event.getEventType());
         }

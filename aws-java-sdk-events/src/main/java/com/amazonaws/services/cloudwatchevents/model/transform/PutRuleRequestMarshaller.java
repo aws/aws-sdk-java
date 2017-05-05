@@ -12,79 +12,59 @@
  */
 package com.amazonaws.services.cloudwatchevents.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cloudwatchevents.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * PutRuleRequest Marshaller
+ * PutRuleRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PutRuleRequestMarshaller implements Marshaller<Request<PutRuleRequest>, PutRuleRequest> {
+@SdkInternalApi
+public class PutRuleRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> SCHEDULEEXPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScheduleExpression").build();
+    private static final MarshallingInfo<String> EVENTPATTERN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventPattern").build();
+    private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("State").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("RoleArn").build();
 
-    public PutRuleRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final PutRuleRequestMarshaller instance = new PutRuleRequestMarshaller();
+
+    public static PutRuleRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<PutRuleRequest> marshall(PutRuleRequest putRuleRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(PutRuleRequest putRuleRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (putRuleRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<PutRuleRequest> request = new DefaultRequest<PutRuleRequest>(putRuleRequest, "AmazonCloudWatchEvents");
-        request.addHeader("X-Amz-Target", "AWSEvents.PutRule");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (putRuleRequest.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(putRuleRequest.getName());
-            }
-            if (putRuleRequest.getScheduleExpression() != null) {
-                jsonGenerator.writeFieldName("ScheduleExpression").writeValue(putRuleRequest.getScheduleExpression());
-            }
-            if (putRuleRequest.getEventPattern() != null) {
-                jsonGenerator.writeFieldName("EventPattern").writeValue(putRuleRequest.getEventPattern());
-            }
-            if (putRuleRequest.getState() != null) {
-                jsonGenerator.writeFieldName("State").writeValue(putRuleRequest.getState());
-            }
-            if (putRuleRequest.getDescription() != null) {
-                jsonGenerator.writeFieldName("Description").writeValue(putRuleRequest.getDescription());
-            }
-            if (putRuleRequest.getRoleArn() != null) {
-                jsonGenerator.writeFieldName("RoleArn").writeValue(putRuleRequest.getRoleArn());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(putRuleRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(putRuleRequest.getScheduleExpression(), SCHEDULEEXPRESSION_BINDING);
+            protocolMarshaller.marshall(putRuleRequest.getEventPattern(), EVENTPATTERN_BINDING);
+            protocolMarshaller.marshall(putRuleRequest.getState(), STATE_BINDING);
+            protocolMarshaller.marshall(putRuleRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(putRuleRequest.getRoleArn(), ROLEARN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

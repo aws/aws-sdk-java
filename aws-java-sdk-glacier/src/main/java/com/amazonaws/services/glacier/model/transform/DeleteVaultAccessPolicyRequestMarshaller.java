@@ -12,55 +12,47 @@
  */
 package com.amazonaws.services.glacier.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.glacier.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteVaultAccessPolicyRequest Marshaller
+ * DeleteVaultAccessPolicyRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteVaultAccessPolicyRequestMarshaller implements Marshaller<Request<DeleteVaultAccessPolicyRequest>, DeleteVaultAccessPolicyRequest> {
+@SdkInternalApi
+public class DeleteVaultAccessPolicyRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("accountId").defaultValueSupplier(DefaultAccountIdSupplier.getInstance()).build();
+    private static final MarshallingInfo<String> VAULTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("vaultName").build();
 
-    public DeleteVaultAccessPolicyRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteVaultAccessPolicyRequestMarshaller instance = new DeleteVaultAccessPolicyRequestMarshaller();
+
+    public static DeleteVaultAccessPolicyRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteVaultAccessPolicyRequest> marshall(DeleteVaultAccessPolicyRequest deleteVaultAccessPolicyRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteVaultAccessPolicyRequest deleteVaultAccessPolicyRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteVaultAccessPolicyRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteVaultAccessPolicyRequest> request = new DefaultRequest<DeleteVaultAccessPolicyRequest>(deleteVaultAccessPolicyRequest, "AmazonGlacier");
-
-        request.setHttpMethod(HttpMethodName.DELETE);
-
-        String uriResourcePath = "/{accountId}/vaults/{vaultName}/access-policy";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
-                deleteVaultAccessPolicyRequest.getAccountId() == null ? "-" : deleteVaultAccessPolicyRequest.getAccountId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "vaultName",
-                deleteVaultAccessPolicyRequest.getVaultName());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(deleteVaultAccessPolicyRequest.getAccountId(), ACCOUNTID_BINDING);
+            protocolMarshaller.marshall(deleteVaultAccessPolicyRequest.getVaultName(), VAULTNAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

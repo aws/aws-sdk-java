@@ -69,4 +69,7 @@ public class AmazonAppStreamWaiters {
                 .withExecutorService(executorService).build();
     }
 
+    public void shutdown() {
+        executorService.shutdown();
+    }
 }

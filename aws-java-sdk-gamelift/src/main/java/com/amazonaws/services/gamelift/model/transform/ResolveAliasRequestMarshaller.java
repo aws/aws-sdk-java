@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.gamelift.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.gamelift.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ResolveAliasRequest Marshaller
+ * ResolveAliasRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ResolveAliasRequestMarshaller implements Marshaller<Request<ResolveAliasRequest>, ResolveAliasRequest> {
+@SdkInternalApi
+public class ResolveAliasRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ALIASID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AliasId").build();
 
-    public ResolveAliasRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ResolveAliasRequestMarshaller instance = new ResolveAliasRequestMarshaller();
+
+    public static ResolveAliasRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ResolveAliasRequest> marshall(ResolveAliasRequest resolveAliasRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ResolveAliasRequest resolveAliasRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (resolveAliasRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ResolveAliasRequest> request = new DefaultRequest<ResolveAliasRequest>(resolveAliasRequest, "AmazonGameLift");
-        request.addHeader("X-Amz-Target", "GameLift.ResolveAlias");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (resolveAliasRequest.getAliasId() != null) {
-                jsonGenerator.writeFieldName("AliasId").writeValue(resolveAliasRequest.getAliasId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(resolveAliasRequest.getAliasId(), ALIASID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

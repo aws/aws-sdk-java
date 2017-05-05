@@ -15,12 +15,13 @@
 package com.amazonaws;
 
 import com.amazonaws.annotation.NotThreadSafe;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.event.ProgressListener;
+import com.amazonaws.handlers.HandlerContextKey;
 import com.amazonaws.internal.StaticCredentialsProvider;
 import com.amazonaws.metrics.RequestMetricCollector;
-
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -31,7 +32,7 @@ import java.util.Map;
  * Base class for all user facing web service requests.
  */
 @NotThreadSafe
-public abstract class AmazonWebServiceRequest implements Cloneable, ReadLimitInfo {
+public abstract class AmazonWebServiceRequest implements Cloneable, ReadLimitInfo, HandlerContextAware {
 
     public static final AmazonWebServiceRequest NOOP = new AmazonWebServiceRequest() {
     };
@@ -69,6 +70,11 @@ public abstract class AmazonWebServiceRequest implements Cloneable, ReadLimitInf
      * Custom query parameters for the request.
      */
     private Map<String, List<String>> customQueryParameters;
+
+    /**
+     * User-defined context for the request.
+     */
+    private transient Map<HandlerContextKey<?>, Object> handlerContext = new HashMap<HandlerContextKey<?>, Object>();
 
     /**
      * The source object from which the current object was cloned; or null if there isn't one.
@@ -531,9 +537,32 @@ public abstract class AmazonWebServiceRequest implements Cloneable, ReadLimitInf
         return t;
     }
 
+    @Override
+    public <X> void addHandlerContext(HandlerContextKey<X> key, X value) {
+        this.handlerContext.put(key, value);
+    }
+
+    @Override
+    @SuppressWarnings("unchecked")
+    public <X> X getHandlerContext(HandlerContextKey<X> key) {
+        return (X) this.handlerContext.get(key);
+    }
+
     /**
-     * Creates a shallow clone of this request. Explicitly does <em>not</em> clone the deep
-     * structure of the request object.
+     * Retrieve an unmodifiable collection of all handler context objects. This allows a {@link Request} derived from a
+     * {@link AmazonWebServiceRequest} to inherit its context. This does not protect the objects within the map from being
+     * modified.
+     *
+     * <p>This should not be used by customers.</p>
+     */
+    @SdkInternalApi
+    Map<HandlerContextKey<?>, Object> getHandlerContext() {
+        return Collections.unmodifiableMap(this.handlerContext);
+    }
+
+    /**
+     * Creates a shallow clone of this object for all fields except the handler context. Explicitly does <em>not</em> clone the
+     * deep structure of the other fields in the message.
      *
      * @see Object#clone()
      */
@@ -542,6 +571,11 @@ public abstract class AmazonWebServiceRequest implements Cloneable, ReadLimitInf
         try {
             AmazonWebServiceRequest cloned = (AmazonWebServiceRequest) super.clone();
             cloned.setCloneSource(this);
+
+            // Deep-copy context to ensure modifications made by the handlers do not leak back to the caller or other uses of the
+            // same request.
+            cloned.handlerContext = new HashMap<HandlerContextKey<?>, Object>(cloned.handlerContext);
+
             return cloned;
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException(

@@ -295,7 +295,8 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      * <p>
      * Describes the streaming sessions for a stack and a fleet. If a user ID is provided, this operation returns
      * streaming sessions for only that user. Pass this value for the <code>nextToken</code> parameter in a subsequent
-     * call to this operation to retrieve the next set of items.
+     * call to this operation to retrieve the next set of items. If an authentication type is not provided, the
+     * operation defaults to users authenticated using a streaming url.
      * </p>
      * 
      * @param describeSessionsRequest
@@ -310,7 +311,8 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      * <p>
      * Describes the streaming sessions for a stack and a fleet. If a user ID is provided, this operation returns
      * streaming sessions for only that user. Pass this value for the <code>nextToken</code> parameter in a subsequent
-     * call to this operation to retrieve the next set of items.
+     * call to this operation to retrieve the next set of items. If an authentication type is not provided, the
+     * operation defaults to users authenticated using a streaming url.
      * </p>
      * 
      * @param describeSessionsRequest
@@ -550,7 +552,8 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
     /**
      * <p>
      * Updates an existing fleet. All the attributes except the fleet name can be updated in the <b>STOPPED</b> state.
-     * Only <b>ComputeCapacity</b> and <b>ImageName</b> can be updated in any other state.
+     * When a fleet is in the <b>RUNNING</b> state, only <code>DisplayName</code> and <code>ComputeCapacity</code> can
+     * be updated. A fleet cannot be updated in a status of <b>STARTING</b> or <b>STOPPING</b>.
      * </p>
      * 
      * @param updateFleetRequest
@@ -564,7 +567,8 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
     /**
      * <p>
      * Updates an existing fleet. All the attributes except the fleet name can be updated in the <b>STOPPED</b> state.
-     * Only <b>ComputeCapacity</b> and <b>ImageName</b> can be updated in any other state.
+     * When a fleet is in the <b>RUNNING</b> state, only <code>DisplayName</code> and <code>ComputeCapacity</code> can
+     * be updated. A fleet cannot be updated in a status of <b>STARTING</b> or <b>STOPPING</b>.
      * </p>
      * 
      * @param updateFleetRequest

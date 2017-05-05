@@ -12,94 +12,74 @@
  */
 package com.amazonaws.services.machinelearning.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.machinelearning.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeDataSourcesRequest Marshaller
+ * DescribeDataSourcesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeDataSourcesRequestMarshaller implements Marshaller<Request<DescribeDataSourcesRequest>, DescribeDataSourcesRequest> {
+@SdkInternalApi
+public class DescribeDataSourcesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> FILTERVARIABLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FilterVariable").build();
+    private static final MarshallingInfo<String> EQ_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("EQ").build();
+    private static final MarshallingInfo<String> GT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("GT").build();
+    private static final MarshallingInfo<String> LT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("LT").build();
+    private static final MarshallingInfo<String> GE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("GE").build();
+    private static final MarshallingInfo<String> LE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("LE").build();
+    private static final MarshallingInfo<String> NE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NE").build();
+    private static final MarshallingInfo<String> PREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Prefix").build();
+    private static final MarshallingInfo<String> SORTORDER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SortOrder").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
+    private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Limit").build();
 
-    public DescribeDataSourcesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeDataSourcesRequestMarshaller instance = new DescribeDataSourcesRequestMarshaller();
+
+    public static DescribeDataSourcesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeDataSourcesRequest> marshall(DescribeDataSourcesRequest describeDataSourcesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeDataSourcesRequest describeDataSourcesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeDataSourcesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeDataSourcesRequest> request = new DefaultRequest<DescribeDataSourcesRequest>(describeDataSourcesRequest, "AmazonMachineLearning");
-        request.addHeader("X-Amz-Target", "AmazonML_20141212.DescribeDataSources");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeDataSourcesRequest.getFilterVariable() != null) {
-                jsonGenerator.writeFieldName("FilterVariable").writeValue(describeDataSourcesRequest.getFilterVariable());
-            }
-            if (describeDataSourcesRequest.getEQ() != null) {
-                jsonGenerator.writeFieldName("EQ").writeValue(describeDataSourcesRequest.getEQ());
-            }
-            if (describeDataSourcesRequest.getGT() != null) {
-                jsonGenerator.writeFieldName("GT").writeValue(describeDataSourcesRequest.getGT());
-            }
-            if (describeDataSourcesRequest.getLT() != null) {
-                jsonGenerator.writeFieldName("LT").writeValue(describeDataSourcesRequest.getLT());
-            }
-            if (describeDataSourcesRequest.getGE() != null) {
-                jsonGenerator.writeFieldName("GE").writeValue(describeDataSourcesRequest.getGE());
-            }
-            if (describeDataSourcesRequest.getLE() != null) {
-                jsonGenerator.writeFieldName("LE").writeValue(describeDataSourcesRequest.getLE());
-            }
-            if (describeDataSourcesRequest.getNE() != null) {
-                jsonGenerator.writeFieldName("NE").writeValue(describeDataSourcesRequest.getNE());
-            }
-            if (describeDataSourcesRequest.getPrefix() != null) {
-                jsonGenerator.writeFieldName("Prefix").writeValue(describeDataSourcesRequest.getPrefix());
-            }
-            if (describeDataSourcesRequest.getSortOrder() != null) {
-                jsonGenerator.writeFieldName("SortOrder").writeValue(describeDataSourcesRequest.getSortOrder());
-            }
-            if (describeDataSourcesRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(describeDataSourcesRequest.getNextToken());
-            }
-            if (describeDataSourcesRequest.getLimit() != null) {
-                jsonGenerator.writeFieldName("Limit").writeValue(describeDataSourcesRequest.getLimit());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeDataSourcesRequest.getFilterVariable(), FILTERVARIABLE_BINDING);
+            protocolMarshaller.marshall(describeDataSourcesRequest.getEQ(), EQ_BINDING);
+            protocolMarshaller.marshall(describeDataSourcesRequest.getGT(), GT_BINDING);
+            protocolMarshaller.marshall(describeDataSourcesRequest.getLT(), LT_BINDING);
+            protocolMarshaller.marshall(describeDataSourcesRequest.getGE(), GE_BINDING);
+            protocolMarshaller.marshall(describeDataSourcesRequest.getLE(), LE_BINDING);
+            protocolMarshaller.marshall(describeDataSourcesRequest.getNE(), NE_BINDING);
+            protocolMarshaller.marshall(describeDataSourcesRequest.getPrefix(), PREFIX_BINDING);
+            protocolMarshaller.marshall(describeDataSourcesRequest.getSortOrder(), SORTORDER_BINDING);
+            protocolMarshaller.marshall(describeDataSourcesRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(describeDataSourcesRequest.getLimit(), LIMIT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

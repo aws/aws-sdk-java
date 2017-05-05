@@ -16,9 +16,6 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * The result of the <a>ListRuleNamesByTarget</a> operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRuleNamesByTarget" target="_top">AWS API
  *      Documentation</a>
@@ -28,23 +25,23 @@ public class ListRuleNamesByTargetResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * List of rules names that can invoke the given target.
+     * The names of the rules that can invoke the given target.
      * </p>
      */
     private java.util.List<String> ruleNames;
     /**
      * <p>
-     * Indicates that there are additional results to retrieve.
+     * Indicates whether there are additional results to retrieve. If there are no more results, the value is null.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * List of rules names that can invoke the given target.
+     * The names of the rules that can invoke the given target.
      * </p>
      * 
-     * @return List of rules names that can invoke the given target.
+     * @return The names of the rules that can invoke the given target.
      */
 
     public java.util.List<String> getRuleNames() {
@@ -53,11 +50,11 @@ public class ListRuleNamesByTargetResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * List of rules names that can invoke the given target.
+     * The names of the rules that can invoke the given target.
      * </p>
      * 
      * @param ruleNames
-     *        List of rules names that can invoke the given target.
+     *        The names of the rules that can invoke the given target.
      */
 
     public void setRuleNames(java.util.Collection<String> ruleNames) {
@@ -71,7 +68,7 @@ public class ListRuleNamesByTargetResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * List of rules names that can invoke the given target.
+     * The names of the rules that can invoke the given target.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -80,7 +77,7 @@ public class ListRuleNamesByTargetResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param ruleNames
-     *        List of rules names that can invoke the given target.
+     *        The names of the rules that can invoke the given target.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +93,11 @@ public class ListRuleNamesByTargetResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * List of rules names that can invoke the given target.
+     * The names of the rules that can invoke the given target.
      * </p>
      * 
      * @param ruleNames
-     *        List of rules names that can invoke the given target.
+     *        The names of the rules that can invoke the given target.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,11 +108,12 @@ public class ListRuleNamesByTargetResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Indicates that there are additional results to retrieve.
+     * Indicates whether there are additional results to retrieve. If there are no more results, the value is null.
      * </p>
      * 
      * @param nextToken
-     *        Indicates that there are additional results to retrieve.
+     *        Indicates whether there are additional results to retrieve. If there are no more results, the value is
+     *        null.
      */
 
     public void setNextToken(String nextToken) {
@@ -124,10 +122,11 @@ public class ListRuleNamesByTargetResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Indicates that there are additional results to retrieve.
+     * Indicates whether there are additional results to retrieve. If there are no more results, the value is null.
      * </p>
      * 
-     * @return Indicates that there are additional results to retrieve.
+     * @return Indicates whether there are additional results to retrieve. If there are no more results, the value is
+     *         null.
      */
 
     public String getNextToken() {
@@ -136,11 +135,12 @@ public class ListRuleNamesByTargetResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Indicates that there are additional results to retrieve.
+     * Indicates whether there are additional results to retrieve. If there are no more results, the value is null.
      * </p>
      * 
      * @param nextToken
-     *        Indicates that there are additional results to retrieve.
+     *        Indicates whether there are additional results to retrieve. If there are no more results, the value is
+     *        null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -207,4 +207,5 @@ public class ListRuleNamesByTargetResult extends com.amazonaws.AmazonWebServiceR
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

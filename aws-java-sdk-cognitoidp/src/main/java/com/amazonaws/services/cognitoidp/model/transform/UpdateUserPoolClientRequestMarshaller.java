@@ -12,112 +12,63 @@
  */
 package com.amazonaws.services.cognitoidp.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cognitoidp.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateUserPoolClientRequest Marshaller
+ * UpdateUserPoolClientRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateUserPoolClientRequestMarshaller implements Marshaller<Request<UpdateUserPoolClientRequest>, UpdateUserPoolClientRequest> {
+@SdkInternalApi
+public class UpdateUserPoolClientRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> USERPOOLID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserPoolId").build();
+    private static final MarshallingInfo<String> CLIENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ClientId").build();
+    private static final MarshallingInfo<String> CLIENTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientName").build();
+    private static final MarshallingInfo<Integer> REFRESHTOKENVALIDITY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RefreshTokenValidity").build();
+    private static final MarshallingInfo<List> READATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReadAttributes").build();
+    private static final MarshallingInfo<List> WRITEATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WriteAttributes").build();
+    private static final MarshallingInfo<List> EXPLICITAUTHFLOWS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExplicitAuthFlows").build();
 
-    public UpdateUserPoolClientRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateUserPoolClientRequestMarshaller instance = new UpdateUserPoolClientRequestMarshaller();
+
+    public static UpdateUserPoolClientRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateUserPoolClientRequest> marshall(UpdateUserPoolClientRequest updateUserPoolClientRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateUserPoolClientRequest updateUserPoolClientRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateUserPoolClientRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateUserPoolClientRequest> request = new DefaultRequest<UpdateUserPoolClientRequest>(updateUserPoolClientRequest,
-                "AWSCognitoIdentityProvider");
-        request.addHeader("X-Amz-Target", "AWSCognitoIdentityProviderService.UpdateUserPoolClient");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (updateUserPoolClientRequest.getUserPoolId() != null) {
-                jsonGenerator.writeFieldName("UserPoolId").writeValue(updateUserPoolClientRequest.getUserPoolId());
-            }
-            if (updateUserPoolClientRequest.getClientId() != null) {
-                jsonGenerator.writeFieldName("ClientId").writeValue(updateUserPoolClientRequest.getClientId());
-            }
-            if (updateUserPoolClientRequest.getClientName() != null) {
-                jsonGenerator.writeFieldName("ClientName").writeValue(updateUserPoolClientRequest.getClientName());
-            }
-            if (updateUserPoolClientRequest.getRefreshTokenValidity() != null) {
-                jsonGenerator.writeFieldName("RefreshTokenValidity").writeValue(updateUserPoolClientRequest.getRefreshTokenValidity());
-            }
-
-            java.util.List<String> readAttributesList = updateUserPoolClientRequest.getReadAttributes();
-            if (readAttributesList != null) {
-                jsonGenerator.writeFieldName("ReadAttributes");
-                jsonGenerator.writeStartArray();
-                for (String readAttributesListValue : readAttributesList) {
-                    if (readAttributesListValue != null) {
-                        jsonGenerator.writeValue(readAttributesListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            java.util.List<String> writeAttributesList = updateUserPoolClientRequest.getWriteAttributes();
-            if (writeAttributesList != null) {
-                jsonGenerator.writeFieldName("WriteAttributes");
-                jsonGenerator.writeStartArray();
-                for (String writeAttributesListValue : writeAttributesList) {
-                    if (writeAttributesListValue != null) {
-                        jsonGenerator.writeValue(writeAttributesListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            java.util.List<String> explicitAuthFlowsList = updateUserPoolClientRequest.getExplicitAuthFlows();
-            if (explicitAuthFlowsList != null) {
-                jsonGenerator.writeFieldName("ExplicitAuthFlows");
-                jsonGenerator.writeStartArray();
-                for (String explicitAuthFlowsListValue : explicitAuthFlowsList) {
-                    if (explicitAuthFlowsListValue != null) {
-                        jsonGenerator.writeValue(explicitAuthFlowsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateUserPoolClientRequest.getUserPoolId(), USERPOOLID_BINDING);
+            protocolMarshaller.marshall(updateUserPoolClientRequest.getClientId(), CLIENTID_BINDING);
+            protocolMarshaller.marshall(updateUserPoolClientRequest.getClientName(), CLIENTNAME_BINDING);
+            protocolMarshaller.marshall(updateUserPoolClientRequest.getRefreshTokenValidity(), REFRESHTOKENVALIDITY_BINDING);
+            protocolMarshaller.marshall(updateUserPoolClientRequest.getReadAttributes(), READATTRIBUTES_BINDING);
+            protocolMarshaller.marshall(updateUserPoolClientRequest.getWriteAttributes(), WRITEATTRIBUTES_BINDING);
+            protocolMarshaller.marshall(updateUserPoolClientRequest.getExplicitAuthFlows(), EXPLICITAUTHFLOWS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

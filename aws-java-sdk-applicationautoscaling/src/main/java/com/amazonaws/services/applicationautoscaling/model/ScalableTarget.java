@@ -14,6 +14,8 @@ package com.amazonaws.services.applicationautoscaling.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ScalableTarget implements Serializable, Cloneable {
+public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -58,6 +60,12 @@ public class ScalableTarget implements Serializable, Cloneable {
      * instance group ID. Example: <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique identifier is the fleet name.
+     * Example: <code>fleet/sample-fleet</code>.
+     * </p>
+     * </li>
      * </ul>
      */
     private String resourceId;
@@ -80,6 +88,11 @@ public class ScalableTarget implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
      * </p>
      * </li>
      * </ul>
@@ -227,6 +240,12 @@ public class ScalableTarget implements Serializable, Cloneable {
      * instance group ID. Example: <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique identifier is the fleet name.
+     * Example: <code>fleet/sample-fleet</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -249,6 +268,12 @@ public class ScalableTarget implements Serializable, Cloneable {
      *        <p>
      *        EMR cluster - The resource type is <code>instancegroup</code> and the unique identifier is the cluster ID
      *        and instance group ID. Example: <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique identifier is the fleet name.
+     *        Example: <code>fleet/sample-fleet</code>.
      *        </p>
      *        </li>
      */
@@ -281,6 +306,12 @@ public class ScalableTarget implements Serializable, Cloneable {
      * instance group ID. Example: <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique identifier is the fleet name.
+     * Example: <code>fleet/sample-fleet</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The identifier of the resource associated with the scalable target. This string consists of the resource
@@ -303,6 +334,12 @@ public class ScalableTarget implements Serializable, Cloneable {
      *         <p>
      *         EMR cluster - The resource type is <code>instancegroup</code> and the unique identifier is the cluster ID
      *         and instance group ID. Example: <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique identifier is the fleet
+     *         name. Example: <code>fleet/sample-fleet</code>.
      *         </p>
      *         </li>
      */
@@ -335,6 +372,12 @@ public class ScalableTarget implements Serializable, Cloneable {
      * instance group ID. Example: <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique identifier is the fleet name.
+     * Example: <code>fleet/sample-fleet</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -357,6 +400,12 @@ public class ScalableTarget implements Serializable, Cloneable {
      *        <p>
      *        EMR cluster - The resource type is <code>instancegroup</code> and the unique identifier is the cluster ID
      *        and instance group ID. Example: <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique identifier is the fleet name.
+     *        Example: <code>fleet/sample-fleet</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -388,6 +437,11 @@ public class ScalableTarget implements Serializable, Cloneable {
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -407,6 +461,11 @@ public class ScalableTarget implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -437,6 +496,11 @@ public class ScalableTarget implements Serializable, Cloneable {
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The scalable dimension associated with the scalable target. This string consists of the service
@@ -455,6 +519,11 @@ public class ScalableTarget implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
      *         </p>
      *         </li>
      * @see ScalableDimension
@@ -485,6 +554,11 @@ public class ScalableTarget implements Serializable, Cloneable {
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -504,6 +578,11 @@ public class ScalableTarget implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -536,6 +615,11 @@ public class ScalableTarget implements Serializable, Cloneable {
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -555,6 +639,11 @@ public class ScalableTarget implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -585,6 +674,11 @@ public class ScalableTarget implements Serializable, Cloneable {
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -604,6 +698,11 @@ public class ScalableTarget implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -867,5 +966,11 @@ public class ScalableTarget implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.applicationautoscaling.model.transform.ScalableTargetMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

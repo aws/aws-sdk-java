@@ -39,7 +39,7 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * with confidence lower than this specified value.
      * </p>
      * <p>
-     * If <code>minConfidence</code> is not specified, the operation returns labels with a confidence values greater
+     * If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater
      * than or equal to 50 percent.
      * </p>
      */
@@ -137,7 +137,7 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * with confidence lower than this specified value.
      * </p>
      * <p>
-     * If <code>minConfidence</code> is not specified, the operation returns labels with a confidence values greater
+     * If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater
      * than or equal to 50 percent.
      * </p>
      * 
@@ -145,7 +145,7 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't return any
      *        labels with confidence lower than this specified value.</p>
      *        <p>
-     *        If <code>minConfidence</code> is not specified, the operation returns labels with a confidence values
+     *        If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values
      *        greater than or equal to 50 percent.
      */
 
@@ -159,14 +159,14 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * with confidence lower than this specified value.
      * </p>
      * <p>
-     * If <code>minConfidence</code> is not specified, the operation returns labels with a confidence values greater
+     * If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater
      * than or equal to 50 percent.
      * </p>
      * 
      * @return Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't return any
      *         labels with confidence lower than this specified value.</p>
      *         <p>
-     *         If <code>minConfidence</code> is not specified, the operation returns labels with a confidence values
+     *         If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values
      *         greater than or equal to 50 percent.
      */
 
@@ -180,7 +180,7 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * with confidence lower than this specified value.
      * </p>
      * <p>
-     * If <code>minConfidence</code> is not specified, the operation returns labels with a confidence values greater
+     * If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater
      * than or equal to 50 percent.
      * </p>
      * 
@@ -188,7 +188,7 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't return any
      *        labels with confidence lower than this specified value.</p>
      *        <p>
-     *        If <code>minConfidence</code> is not specified, the operation returns labels with a confidence values
+     *        If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values
      *        greater than or equal to 50 percent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

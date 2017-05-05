@@ -58,6 +58,12 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
     private String solutionStackName;
     /**
      * <p>
+     * The ARN of the custom platform.
+     * </p>
+     */
+    private String platformArn;
+    /**
+     * <p>
      * The name of the configuration template used to originally launch this environment.
      * </p>
      */
@@ -400,6 +406,46 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
 
     public CreateEnvironmentResult withSolutionStackName(String solutionStackName) {
         setSolutionStackName(solutionStackName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the custom platform.
+     * </p>
+     * 
+     * @param platformArn
+     *        The ARN of the custom platform.
+     */
+
+    public void setPlatformArn(String platformArn) {
+        this.platformArn = platformArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the custom platform.
+     * </p>
+     * 
+     * @return The ARN of the custom platform.
+     */
+
+    public String getPlatformArn() {
+        return this.platformArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the custom platform.
+     * </p>
+     * 
+     * @param platformArn
+     *        The ARN of the custom platform.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEnvironmentResult withPlatformArn(String platformArn) {
+        setPlatformArn(platformArn);
         return this;
     }
 
@@ -1741,6 +1787,8 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
             sb.append("VersionLabel: ").append(getVersionLabel()).append(",");
         if (getSolutionStackName() != null)
             sb.append("SolutionStackName: ").append(getSolutionStackName()).append(",");
+        if (getPlatformArn() != null)
+            sb.append("PlatformArn: ").append(getPlatformArn()).append(",");
         if (getTemplateName() != null)
             sb.append("TemplateName: ").append(getTemplateName()).append(",");
         if (getDescription() != null)
@@ -1800,6 +1848,10 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
         if (other.getSolutionStackName() == null ^ this.getSolutionStackName() == null)
             return false;
         if (other.getSolutionStackName() != null && other.getSolutionStackName().equals(this.getSolutionStackName()) == false)
+            return false;
+        if (other.getPlatformArn() == null ^ this.getPlatformArn() == null)
+            return false;
+        if (other.getPlatformArn() != null && other.getPlatformArn().equals(this.getPlatformArn()) == false)
             return false;
         if (other.getTemplateName() == null ^ this.getTemplateName() == null)
             return false;
@@ -1866,6 +1918,7 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
         hashCode = prime * hashCode + ((getVersionLabel() == null) ? 0 : getVersionLabel().hashCode());
         hashCode = prime * hashCode + ((getSolutionStackName() == null) ? 0 : getSolutionStackName().hashCode());
+        hashCode = prime * hashCode + ((getPlatformArn() == null) ? 0 : getPlatformArn().hashCode());
         hashCode = prime * hashCode + ((getTemplateName() == null) ? 0 : getTemplateName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getEndpointURL() == null) ? 0 : getEndpointURL().hashCode());
@@ -1890,4 +1943,5 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

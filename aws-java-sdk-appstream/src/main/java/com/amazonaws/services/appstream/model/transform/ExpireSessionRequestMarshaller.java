@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.appstream.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.appstream.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ExpireSessionRequest Marshaller
+ * ExpireSessionRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ExpireSessionRequestMarshaller implements Marshaller<Request<ExpireSessionRequest>, ExpireSessionRequest> {
+@SdkInternalApi
+public class ExpireSessionRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> SESSIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SessionId").build();
 
-    public ExpireSessionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ExpireSessionRequestMarshaller instance = new ExpireSessionRequestMarshaller();
+
+    public static ExpireSessionRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ExpireSessionRequest> marshall(ExpireSessionRequest expireSessionRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ExpireSessionRequest expireSessionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (expireSessionRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ExpireSessionRequest> request = new DefaultRequest<ExpireSessionRequest>(expireSessionRequest, "AmazonAppStream");
-        request.addHeader("X-Amz-Target", "PhotonAdminProxyService.ExpireSession");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (expireSessionRequest.getSessionId() != null) {
-                jsonGenerator.writeFieldName("SessionId").writeValue(expireSessionRequest.getSessionId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(expireSessionRequest.getSessionId(), SESSIONID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

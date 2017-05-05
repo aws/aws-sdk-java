@@ -1085,6 +1085,11 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
     }
 
     @Override
+    public void shutdown() {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
     public com.amazonaws.services.s3.model.Region getRegion() {
         throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
     }

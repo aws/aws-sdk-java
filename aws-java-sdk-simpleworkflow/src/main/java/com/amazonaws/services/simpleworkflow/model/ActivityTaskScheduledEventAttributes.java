@@ -14,6 +14,8 @@ package com.amazonaws.services.simpleworkflow.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -21,7 +23,7 @@ import javax.annotation.Generated;
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ActivityTaskScheduledEventAttributes implements Serializable, Cloneable {
+public class ActivityTaskScheduledEventAttributes implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -749,5 +751,11 @@ public class ActivityTaskScheduledEventAttributes implements Serializable, Clone
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.simpleworkflow.model.transform.ActivityTaskScheduledEventAttributesMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

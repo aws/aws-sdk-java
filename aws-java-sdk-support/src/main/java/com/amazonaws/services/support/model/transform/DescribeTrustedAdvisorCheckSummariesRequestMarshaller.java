@@ -12,75 +12,45 @@
  */
 package com.amazonaws.services.support.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.support.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeTrustedAdvisorCheckSummariesRequest Marshaller
+ * DescribeTrustedAdvisorCheckSummariesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeTrustedAdvisorCheckSummariesRequestMarshaller implements
-        Marshaller<Request<DescribeTrustedAdvisorCheckSummariesRequest>, DescribeTrustedAdvisorCheckSummariesRequest> {
+@SdkInternalApi
+public class DescribeTrustedAdvisorCheckSummariesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<List> CHECKIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("checkIds").build();
 
-    public DescribeTrustedAdvisorCheckSummariesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeTrustedAdvisorCheckSummariesRequestMarshaller instance = new DescribeTrustedAdvisorCheckSummariesRequestMarshaller();
+
+    public static DescribeTrustedAdvisorCheckSummariesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeTrustedAdvisorCheckSummariesRequest> marshall(DescribeTrustedAdvisorCheckSummariesRequest describeTrustedAdvisorCheckSummariesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeTrustedAdvisorCheckSummariesRequest describeTrustedAdvisorCheckSummariesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeTrustedAdvisorCheckSummariesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeTrustedAdvisorCheckSummariesRequest> request = new DefaultRequest<DescribeTrustedAdvisorCheckSummariesRequest>(
-                describeTrustedAdvisorCheckSummariesRequest, "AWSSupport");
-        request.addHeader("X-Amz-Target", "AWSSupport_20130415.DescribeTrustedAdvisorCheckSummaries");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            com.amazonaws.internal.SdkInternalList<String> checkIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeTrustedAdvisorCheckSummariesRequest
-                    .getCheckIds();
-            if (!checkIdsList.isEmpty() || !checkIdsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("checkIds");
-                jsonGenerator.writeStartArray();
-                for (String checkIdsListValue : checkIdsList) {
-                    if (checkIdsListValue != null) {
-                        jsonGenerator.writeValue(checkIdsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeTrustedAdvisorCheckSummariesRequest.getCheckIds(), CHECKIDS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

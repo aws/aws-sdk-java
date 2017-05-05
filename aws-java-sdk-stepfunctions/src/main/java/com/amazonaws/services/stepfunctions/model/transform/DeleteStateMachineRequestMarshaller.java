@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.stepfunctions.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.stepfunctions.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteStateMachineRequest Marshaller
+ * DeleteStateMachineRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteStateMachineRequestMarshaller implements Marshaller<Request<DeleteStateMachineRequest>, DeleteStateMachineRequest> {
+@SdkInternalApi
+public class DeleteStateMachineRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> STATEMACHINEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stateMachineArn").build();
 
-    public DeleteStateMachineRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteStateMachineRequestMarshaller instance = new DeleteStateMachineRequestMarshaller();
+
+    public static DeleteStateMachineRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteStateMachineRequest> marshall(DeleteStateMachineRequest deleteStateMachineRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteStateMachineRequest deleteStateMachineRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteStateMachineRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteStateMachineRequest> request = new DefaultRequest<DeleteStateMachineRequest>(deleteStateMachineRequest, "AWSStepFunctions");
-        request.addHeader("X-Amz-Target", "AWSStepFunctions.DeleteStateMachine");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteStateMachineRequest.getStateMachineArn() != null) {
-                jsonGenerator.writeFieldName("stateMachineArn").writeValue(deleteStateMachineRequest.getStateMachineArn());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteStateMachineRequest.getStateMachineArn(), STATEMACHINEARN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

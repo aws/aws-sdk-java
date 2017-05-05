@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A complex type containing the response information for the request.
+ * A complex type that contains the response to a <code>DeleteHostedZone</code> request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHostedZone" target="_top">AWS API
@@ -28,18 +28,19 @@ public class DeleteHostedZoneResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A complex type that contains the ID, the status, and the date and time of your delete request.
+     * A complex type that contains the ID, the status, and the date and time of a request to delete a hosted zone.
      * </p>
      */
     private ChangeInfo changeInfo;
 
     /**
      * <p>
-     * A complex type that contains the ID, the status, and the date and time of your delete request.
+     * A complex type that contains the ID, the status, and the date and time of a request to delete a hosted zone.
      * </p>
      * 
      * @param changeInfo
-     *        A complex type that contains the ID, the status, and the date and time of your delete request.
+     *        A complex type that contains the ID, the status, and the date and time of a request to delete a hosted
+     *        zone.
      */
 
     public void setChangeInfo(ChangeInfo changeInfo) {
@@ -48,10 +49,11 @@ public class DeleteHostedZoneResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A complex type that contains the ID, the status, and the date and time of your delete request.
+     * A complex type that contains the ID, the status, and the date and time of a request to delete a hosted zone.
      * </p>
      * 
-     * @return A complex type that contains the ID, the status, and the date and time of your delete request.
+     * @return A complex type that contains the ID, the status, and the date and time of a request to delete a hosted
+     *         zone.
      */
 
     public ChangeInfo getChangeInfo() {
@@ -60,11 +62,12 @@ public class DeleteHostedZoneResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A complex type that contains the ID, the status, and the date and time of your delete request.
+     * A complex type that contains the ID, the status, and the date and time of a request to delete a hosted zone.
      * </p>
      * 
      * @param changeInfo
-     *        A complex type that contains the ID, the status, and the date and time of your delete request.
+     *        A complex type that contains the ID, the status, and the date and time of a request to delete a hosted
+     *        zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,4 +127,5 @@ public class DeleteHostedZoneResult extends com.amazonaws.AmazonWebServiceResult
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

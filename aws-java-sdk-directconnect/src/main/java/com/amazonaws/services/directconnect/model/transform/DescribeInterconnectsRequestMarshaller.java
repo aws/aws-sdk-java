@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.directconnect.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.directconnect.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeInterconnectsRequest Marshaller
+ * DescribeInterconnectsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeInterconnectsRequestMarshaller implements Marshaller<Request<DescribeInterconnectsRequest>, DescribeInterconnectsRequest> {
+@SdkInternalApi
+public class DescribeInterconnectsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> INTERCONNECTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("interconnectId").build();
 
-    public DescribeInterconnectsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeInterconnectsRequestMarshaller instance = new DescribeInterconnectsRequestMarshaller();
+
+    public static DescribeInterconnectsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeInterconnectsRequest> marshall(DescribeInterconnectsRequest describeInterconnectsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeInterconnectsRequest describeInterconnectsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeInterconnectsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeInterconnectsRequest> request = new DefaultRequest<DescribeInterconnectsRequest>(describeInterconnectsRequest, "AmazonDirectConnect");
-        request.addHeader("X-Amz-Target", "OvertureService.DescribeInterconnects");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeInterconnectsRequest.getInterconnectId() != null) {
-                jsonGenerator.writeFieldName("interconnectId").writeValue(describeInterconnectsRequest.getInterconnectId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeInterconnectsRequest.getInterconnectId(), INTERCONNECTID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

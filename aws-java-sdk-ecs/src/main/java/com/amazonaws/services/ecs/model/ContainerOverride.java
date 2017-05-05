@@ -14,6 +14,8 @@ package com.amazonaws.services.ecs.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,18 +26,19 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ContainerOverride implements Serializable, Cloneable {
+public class ContainerOverride implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the container that receives the override.
+     * The name of the container that receives the override. This parameter is required if a command or environment
+     * variable is specified.
      * </p>
      */
     private String name;
     /**
      * <p>
      * The command to send to the container that overrides the default command from the Docker image or the task
-     * definition.
+     * definition. You must also specify a container name.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> command;
@@ -43,18 +46,20 @@ public class ContainerOverride implements Serializable, Cloneable {
      * <p>
      * The environment variables to send to the container. You can add new environment variables, which are added to the
      * container at launch, or you can override the existing environment variables from the Docker image or the task
-     * definition.
+     * definition. You must also specify a container name.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<KeyValuePair> environment;
 
     /**
      * <p>
-     * The name of the container that receives the override.
+     * The name of the container that receives the override. This parameter is required if a command or environment
+     * variable is specified.
      * </p>
      * 
      * @param name
-     *        The name of the container that receives the override.
+     *        The name of the container that receives the override. This parameter is required if a command or
+     *        environment variable is specified.
      */
 
     public void setName(String name) {
@@ -63,10 +68,12 @@ public class ContainerOverride implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the container that receives the override.
+     * The name of the container that receives the override. This parameter is required if a command or environment
+     * variable is specified.
      * </p>
      * 
-     * @return The name of the container that receives the override.
+     * @return The name of the container that receives the override. This parameter is required if a command or
+     *         environment variable is specified.
      */
 
     public String getName() {
@@ -75,11 +82,13 @@ public class ContainerOverride implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the container that receives the override.
+     * The name of the container that receives the override. This parameter is required if a command or environment
+     * variable is specified.
      * </p>
      * 
      * @param name
-     *        The name of the container that receives the override.
+     *        The name of the container that receives the override. This parameter is required if a command or
+     *        environment variable is specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -91,11 +100,11 @@ public class ContainerOverride implements Serializable, Cloneable {
     /**
      * <p>
      * The command to send to the container that overrides the default command from the Docker image or the task
-     * definition.
+     * definition. You must also specify a container name.
      * </p>
      * 
      * @return The command to send to the container that overrides the default command from the Docker image or the task
-     *         definition.
+     *         definition. You must also specify a container name.
      */
 
     public java.util.List<String> getCommand() {
@@ -108,12 +117,12 @@ public class ContainerOverride implements Serializable, Cloneable {
     /**
      * <p>
      * The command to send to the container that overrides the default command from the Docker image or the task
-     * definition.
+     * definition. You must also specify a container name.
      * </p>
      * 
      * @param command
      *        The command to send to the container that overrides the default command from the Docker image or the task
-     *        definition.
+     *        definition. You must also specify a container name.
      */
 
     public void setCommand(java.util.Collection<String> command) {
@@ -128,7 +137,7 @@ public class ContainerOverride implements Serializable, Cloneable {
     /**
      * <p>
      * The command to send to the container that overrides the default command from the Docker image or the task
-     * definition.
+     * definition. You must also specify a container name.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -138,7 +147,7 @@ public class ContainerOverride implements Serializable, Cloneable {
      * 
      * @param command
      *        The command to send to the container that overrides the default command from the Docker image or the task
-     *        definition.
+     *        definition. You must also specify a container name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -155,12 +164,12 @@ public class ContainerOverride implements Serializable, Cloneable {
     /**
      * <p>
      * The command to send to the container that overrides the default command from the Docker image or the task
-     * definition.
+     * definition. You must also specify a container name.
      * </p>
      * 
      * @param command
      *        The command to send to the container that overrides the default command from the Docker image or the task
-     *        definition.
+     *        definition. You must also specify a container name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,12 +182,12 @@ public class ContainerOverride implements Serializable, Cloneable {
      * <p>
      * The environment variables to send to the container. You can add new environment variables, which are added to the
      * container at launch, or you can override the existing environment variables from the Docker image or the task
-     * definition.
+     * definition. You must also specify a container name.
      * </p>
      * 
      * @return The environment variables to send to the container. You can add new environment variables, which are
      *         added to the container at launch, or you can override the existing environment variables from the Docker
-     *         image or the task definition.
+     *         image or the task definition. You must also specify a container name.
      */
 
     public java.util.List<KeyValuePair> getEnvironment() {
@@ -192,13 +201,13 @@ public class ContainerOverride implements Serializable, Cloneable {
      * <p>
      * The environment variables to send to the container. You can add new environment variables, which are added to the
      * container at launch, or you can override the existing environment variables from the Docker image or the task
-     * definition.
+     * definition. You must also specify a container name.
      * </p>
      * 
      * @param environment
      *        The environment variables to send to the container. You can add new environment variables, which are added
      *        to the container at launch, or you can override the existing environment variables from the Docker image
-     *        or the task definition.
+     *        or the task definition. You must also specify a container name.
      */
 
     public void setEnvironment(java.util.Collection<KeyValuePair> environment) {
@@ -214,7 +223,7 @@ public class ContainerOverride implements Serializable, Cloneable {
      * <p>
      * The environment variables to send to the container. You can add new environment variables, which are added to the
      * container at launch, or you can override the existing environment variables from the Docker image or the task
-     * definition.
+     * definition. You must also specify a container name.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -225,7 +234,7 @@ public class ContainerOverride implements Serializable, Cloneable {
      * @param environment
      *        The environment variables to send to the container. You can add new environment variables, which are added
      *        to the container at launch, or you can override the existing environment variables from the Docker image
-     *        or the task definition.
+     *        or the task definition. You must also specify a container name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -243,13 +252,13 @@ public class ContainerOverride implements Serializable, Cloneable {
      * <p>
      * The environment variables to send to the container. You can add new environment variables, which are added to the
      * container at launch, or you can override the existing environment variables from the Docker image or the task
-     * definition.
+     * definition. You must also specify a container name.
      * </p>
      * 
      * @param environment
      *        The environment variables to send to the container. You can add new environment variables, which are added
      *        to the container at launch, or you can override the existing environment variables from the Docker image
-     *        or the task definition.
+     *        or the task definition. You must also specify a container name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -322,5 +331,11 @@ public class ContainerOverride implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.ecs.model.transform.ContainerOverrideMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

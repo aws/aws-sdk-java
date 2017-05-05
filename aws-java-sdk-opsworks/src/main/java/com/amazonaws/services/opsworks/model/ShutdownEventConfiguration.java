@@ -14,6 +14,8 @@ package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,12 +26,12 @@ import javax.annotation.Generated;
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ShutdownEventConfiguration implements Serializable, Cloneable {
+public class ShutdownEventConfiguration implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time, in seconds, that AWS OpsWorks will wait after triggering a Shutdown event before shutting down an
-     * instance.
+     * The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a Shutdown event before shutting down
+     * an instance.
      * </p>
      */
     private Integer executionTimeout;
@@ -44,13 +46,13 @@ public class ShutdownEventConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time, in seconds, that AWS OpsWorks will wait after triggering a Shutdown event before shutting down an
-     * instance.
+     * The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a Shutdown event before shutting down
+     * an instance.
      * </p>
      * 
      * @param executionTimeout
-     *        The time, in seconds, that AWS OpsWorks will wait after triggering a Shutdown event before shutting down
-     *        an instance.
+     *        The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a Shutdown event before shutting
+     *        down an instance.
      */
 
     public void setExecutionTimeout(Integer executionTimeout) {
@@ -59,12 +61,12 @@ public class ShutdownEventConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time, in seconds, that AWS OpsWorks will wait after triggering a Shutdown event before shutting down an
-     * instance.
+     * The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a Shutdown event before shutting down
+     * an instance.
      * </p>
      * 
-     * @return The time, in seconds, that AWS OpsWorks will wait after triggering a Shutdown event before shutting down
-     *         an instance.
+     * @return The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a Shutdown event before
+     *         shutting down an instance.
      */
 
     public Integer getExecutionTimeout() {
@@ -73,13 +75,13 @@ public class ShutdownEventConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The time, in seconds, that AWS OpsWorks will wait after triggering a Shutdown event before shutting down an
-     * instance.
+     * The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a Shutdown event before shutting down
+     * an instance.
      * </p>
      * 
      * @param executionTimeout
-     *        The time, in seconds, that AWS OpsWorks will wait after triggering a Shutdown event before shutting down
-     *        an instance.
+     *        The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a Shutdown event before shutting
+     *        down an instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -214,5 +216,11 @@ public class ShutdownEventConfiguration implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.opsworks.model.transform.ShutdownEventConfigurationMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

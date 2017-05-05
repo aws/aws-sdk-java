@@ -12,68 +12,47 @@
  */
 package com.amazonaws.services.directory.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.directory.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateRadiusRequest Marshaller
+ * UpdateRadiusRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateRadiusRequestMarshaller implements Marshaller<Request<UpdateRadiusRequest>, UpdateRadiusRequest> {
+@SdkInternalApi
+public class UpdateRadiusRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DIRECTORYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DirectoryId").build();
+    private static final MarshallingInfo<StructuredPojo> RADIUSSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RadiusSettings").build();
 
-    public UpdateRadiusRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateRadiusRequestMarshaller instance = new UpdateRadiusRequestMarshaller();
+
+    public static UpdateRadiusRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateRadiusRequest> marshall(UpdateRadiusRequest updateRadiusRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateRadiusRequest updateRadiusRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateRadiusRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateRadiusRequest> request = new DefaultRequest<UpdateRadiusRequest>(updateRadiusRequest, "AWSDirectoryService");
-        request.addHeader("X-Amz-Target", "DirectoryService_20150416.UpdateRadius");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (updateRadiusRequest.getDirectoryId() != null) {
-                jsonGenerator.writeFieldName("DirectoryId").writeValue(updateRadiusRequest.getDirectoryId());
-            }
-            if (updateRadiusRequest.getRadiusSettings() != null) {
-                jsonGenerator.writeFieldName("RadiusSettings");
-                RadiusSettingsJsonMarshaller.getInstance().marshall(updateRadiusRequest.getRadiusSettings(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateRadiusRequest.getDirectoryId(), DIRECTORYID_BINDING);
+            protocolMarshaller.marshall(updateRadiusRequest.getRadiusSettings(), RADIUSSETTINGS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

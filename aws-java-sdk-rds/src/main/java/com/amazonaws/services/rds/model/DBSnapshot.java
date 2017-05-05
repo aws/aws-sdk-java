@@ -194,6 +194,13 @@ public class DBSnapshot implements Serializable, Cloneable {
      * </p>
      */
     private String timezone;
+    /**
+     * <p>
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
+     * false.
+     * </p>
+     */
+    private Boolean iAMDatabaseAuthenticationEnabled;
 
     /**
      * <p>
@@ -1230,6 +1237,66 @@ public class DBSnapshot implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
+     * false.
+     * </p>
+     * 
+     * @param iAMDatabaseAuthenticationEnabled
+     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled;
+     *        otherwise false.
+     */
+
+    public void setIAMDatabaseAuthenticationEnabled(Boolean iAMDatabaseAuthenticationEnabled) {
+        this.iAMDatabaseAuthenticationEnabled = iAMDatabaseAuthenticationEnabled;
+    }
+
+    /**
+     * <p>
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
+     * false.
+     * </p>
+     * 
+     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled;
+     *         otherwise false.
+     */
+
+    public Boolean getIAMDatabaseAuthenticationEnabled() {
+        return this.iAMDatabaseAuthenticationEnabled;
+    }
+
+    /**
+     * <p>
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
+     * false.
+     * </p>
+     * 
+     * @param iAMDatabaseAuthenticationEnabled
+     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled;
+     *        otherwise false.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBSnapshot withIAMDatabaseAuthenticationEnabled(Boolean iAMDatabaseAuthenticationEnabled) {
+        setIAMDatabaseAuthenticationEnabled(iAMDatabaseAuthenticationEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
+     * false.
+     * </p>
+     * 
+     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled;
+     *         otherwise false.
+     */
+
+    public Boolean isIAMDatabaseAuthenticationEnabled() {
+        return this.iAMDatabaseAuthenticationEnabled;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1289,7 +1356,9 @@ public class DBSnapshot implements Serializable, Cloneable {
         if (getDBSnapshotArn() != null)
             sb.append("DBSnapshotArn: ").append(getDBSnapshotArn()).append(",");
         if (getTimezone() != null)
-            sb.append("Timezone: ").append(getTimezone());
+            sb.append("Timezone: ").append(getTimezone()).append(",");
+        if (getIAMDatabaseAuthenticationEnabled() != null)
+            sb.append("IAMDatabaseAuthenticationEnabled: ").append(getIAMDatabaseAuthenticationEnabled());
         sb.append("}");
         return sb.toString();
     }
@@ -1404,6 +1473,11 @@ public class DBSnapshot implements Serializable, Cloneable {
             return false;
         if (other.getTimezone() != null && other.getTimezone().equals(this.getTimezone()) == false)
             return false;
+        if (other.getIAMDatabaseAuthenticationEnabled() == null ^ this.getIAMDatabaseAuthenticationEnabled() == null)
+            return false;
+        if (other.getIAMDatabaseAuthenticationEnabled() != null
+                && other.getIAMDatabaseAuthenticationEnabled().equals(this.getIAMDatabaseAuthenticationEnabled()) == false)
+            return false;
         return true;
     }
 
@@ -1437,6 +1511,7 @@ public class DBSnapshot implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getDBSnapshotArn() == null) ? 0 : getDBSnapshotArn().hashCode());
         hashCode = prime * hashCode + ((getTimezone() == null) ? 0 : getTimezone().hashCode());
+        hashCode = prime * hashCode + ((getIAMDatabaseAuthenticationEnabled() == null) ? 0 : getIAMDatabaseAuthenticationEnabled().hashCode());
         return hashCode;
     }
 
@@ -1448,4 +1523,5 @@ public class DBSnapshot implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

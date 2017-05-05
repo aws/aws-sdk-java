@@ -14,6 +14,8 @@ package com.amazonaws.services.route53domains.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,14 +26,11 @@ import javax.annotation.Generated;
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class OperationSummary implements Serializable, Cloneable {
+public class OperationSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
      * Identifier returned to track the requested action.
-     * </p>
-     * <p>
-     * Type: String
      * </p>
      */
     private String operationId;
@@ -39,22 +38,11 @@ public class OperationSummary implements Serializable, Cloneable {
      * <p>
      * The current status of the requested operation in the system.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      */
     private String status;
     /**
      * <p>
      * Type of the action requested.
-     * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Valid values: <code>REGISTER_DOMAIN</code> | <code>DELETE_DOMAIN</code> | <code>TRANSFER_IN_DOMAIN</code> |
-     * <code>UPDATE_DOMAIN_CONTACT</code> | <code>UPDATE_NAMESERVER</code> | <code>CHANGE_PRIVACY_PROTECTION</code> |
-     * <code>DOMAIN_LOCK</code>
      * </p>
      */
     private String type;
@@ -69,14 +57,9 @@ public class OperationSummary implements Serializable, Cloneable {
      * <p>
      * Identifier returned to track the requested action.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param operationId
-     *        Identifier returned to track the requested action.</p>
-     *        <p>
-     *        Type: String
+     *        Identifier returned to track the requested action.
      */
 
     public void setOperationId(String operationId) {
@@ -87,13 +70,8 @@ public class OperationSummary implements Serializable, Cloneable {
      * <p>
      * Identifier returned to track the requested action.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
-     * @return Identifier returned to track the requested action.</p>
-     *         <p>
-     *         Type: String
+     * @return Identifier returned to track the requested action.
      */
 
     public String getOperationId() {
@@ -104,14 +82,9 @@ public class OperationSummary implements Serializable, Cloneable {
      * <p>
      * Identifier returned to track the requested action.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param operationId
-     *        Identifier returned to track the requested action.</p>
-     *        <p>
-     *        Type: String
+     *        Identifier returned to track the requested action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,14 +97,9 @@ public class OperationSummary implements Serializable, Cloneable {
      * <p>
      * The current status of the requested operation in the system.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param status
-     *        The current status of the requested operation in the system.</p>
-     *        <p>
-     *        Type: String
+     *        The current status of the requested operation in the system.
      * @see OperationStatus
      */
 
@@ -143,13 +111,8 @@ public class OperationSummary implements Serializable, Cloneable {
      * <p>
      * The current status of the requested operation in the system.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
-     * @return The current status of the requested operation in the system.</p>
-     *         <p>
-     *         Type: String
+     * @return The current status of the requested operation in the system.
      * @see OperationStatus
      */
 
@@ -161,14 +124,9 @@ public class OperationSummary implements Serializable, Cloneable {
      * <p>
      * The current status of the requested operation in the system.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param status
-     *        The current status of the requested operation in the system.</p>
-     *        <p>
-     *        Type: String
+     *        The current status of the requested operation in the system.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperationStatus
      */
@@ -182,14 +140,9 @@ public class OperationSummary implements Serializable, Cloneable {
      * <p>
      * The current status of the requested operation in the system.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param status
-     *        The current status of the requested operation in the system.</p>
-     *        <p>
-     *        Type: String
+     *        The current status of the requested operation in the system.
      * @see OperationStatus
      */
 
@@ -201,14 +154,9 @@ public class OperationSummary implements Serializable, Cloneable {
      * <p>
      * The current status of the requested operation in the system.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
      * 
      * @param status
-     *        The current status of the requested operation in the system.</p>
-     *        <p>
-     *        Type: String
+     *        The current status of the requested operation in the system.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperationStatus
      */
@@ -222,24 +170,9 @@ public class OperationSummary implements Serializable, Cloneable {
      * <p>
      * Type of the action requested.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Valid values: <code>REGISTER_DOMAIN</code> | <code>DELETE_DOMAIN</code> | <code>TRANSFER_IN_DOMAIN</code> |
-     * <code>UPDATE_DOMAIN_CONTACT</code> | <code>UPDATE_NAMESERVER</code> | <code>CHANGE_PRIVACY_PROTECTION</code> |
-     * <code>DOMAIN_LOCK</code>
-     * </p>
      * 
      * @param type
-     *        Type of the action requested.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Valid values: <code>REGISTER_DOMAIN</code> | <code>DELETE_DOMAIN</code> | <code>TRANSFER_IN_DOMAIN</code>
-     *        | <code>UPDATE_DOMAIN_CONTACT</code> | <code>UPDATE_NAMESERVER</code> |
-     *        <code>CHANGE_PRIVACY_PROTECTION</code> | <code>DOMAIN_LOCK</code>
+     *        Type of the action requested.
      * @see OperationType
      */
 
@@ -251,23 +184,8 @@ public class OperationSummary implements Serializable, Cloneable {
      * <p>
      * Type of the action requested.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Valid values: <code>REGISTER_DOMAIN</code> | <code>DELETE_DOMAIN</code> | <code>TRANSFER_IN_DOMAIN</code> |
-     * <code>UPDATE_DOMAIN_CONTACT</code> | <code>UPDATE_NAMESERVER</code> | <code>CHANGE_PRIVACY_PROTECTION</code> |
-     * <code>DOMAIN_LOCK</code>
-     * </p>
      * 
-     * @return Type of the action requested.</p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Valid values: <code>REGISTER_DOMAIN</code> | <code>DELETE_DOMAIN</code> | <code>TRANSFER_IN_DOMAIN</code>
-     *         | <code>UPDATE_DOMAIN_CONTACT</code> | <code>UPDATE_NAMESERVER</code> |
-     *         <code>CHANGE_PRIVACY_PROTECTION</code> | <code>DOMAIN_LOCK</code>
+     * @return Type of the action requested.
      * @see OperationType
      */
 
@@ -279,24 +197,9 @@ public class OperationSummary implements Serializable, Cloneable {
      * <p>
      * Type of the action requested.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Valid values: <code>REGISTER_DOMAIN</code> | <code>DELETE_DOMAIN</code> | <code>TRANSFER_IN_DOMAIN</code> |
-     * <code>UPDATE_DOMAIN_CONTACT</code> | <code>UPDATE_NAMESERVER</code> | <code>CHANGE_PRIVACY_PROTECTION</code> |
-     * <code>DOMAIN_LOCK</code>
-     * </p>
      * 
      * @param type
-     *        Type of the action requested.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Valid values: <code>REGISTER_DOMAIN</code> | <code>DELETE_DOMAIN</code> | <code>TRANSFER_IN_DOMAIN</code>
-     *        | <code>UPDATE_DOMAIN_CONTACT</code> | <code>UPDATE_NAMESERVER</code> |
-     *        <code>CHANGE_PRIVACY_PROTECTION</code> | <code>DOMAIN_LOCK</code>
+     *        Type of the action requested.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperationType
      */
@@ -310,24 +213,9 @@ public class OperationSummary implements Serializable, Cloneable {
      * <p>
      * Type of the action requested.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Valid values: <code>REGISTER_DOMAIN</code> | <code>DELETE_DOMAIN</code> | <code>TRANSFER_IN_DOMAIN</code> |
-     * <code>UPDATE_DOMAIN_CONTACT</code> | <code>UPDATE_NAMESERVER</code> | <code>CHANGE_PRIVACY_PROTECTION</code> |
-     * <code>DOMAIN_LOCK</code>
-     * </p>
      * 
      * @param type
-     *        Type of the action requested.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Valid values: <code>REGISTER_DOMAIN</code> | <code>DELETE_DOMAIN</code> | <code>TRANSFER_IN_DOMAIN</code>
-     *        | <code>UPDATE_DOMAIN_CONTACT</code> | <code>UPDATE_NAMESERVER</code> |
-     *        <code>CHANGE_PRIVACY_PROTECTION</code> | <code>DOMAIN_LOCK</code>
+     *        Type of the action requested.
      * @see OperationType
      */
 
@@ -339,24 +227,9 @@ public class OperationSummary implements Serializable, Cloneable {
      * <p>
      * Type of the action requested.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Valid values: <code>REGISTER_DOMAIN</code> | <code>DELETE_DOMAIN</code> | <code>TRANSFER_IN_DOMAIN</code> |
-     * <code>UPDATE_DOMAIN_CONTACT</code> | <code>UPDATE_NAMESERVER</code> | <code>CHANGE_PRIVACY_PROTECTION</code> |
-     * <code>DOMAIN_LOCK</code>
-     * </p>
      * 
      * @param type
-     *        Type of the action requested.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Valid values: <code>REGISTER_DOMAIN</code> | <code>DELETE_DOMAIN</code> | <code>TRANSFER_IN_DOMAIN</code>
-     *        | <code>UPDATE_DOMAIN_CONTACT</code> | <code>UPDATE_NAMESERVER</code> |
-     *        <code>CHANGE_PRIVACY_PROTECTION</code> | <code>DOMAIN_LOCK</code>
+     *        Type of the action requested.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperationType
      */
@@ -477,5 +350,11 @@ public class OperationSummary implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.route53domains.model.transform.OperationSummaryMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -12,54 +12,47 @@
  */
 package com.amazonaws.services.glacier.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.glacier.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetVaultAccessPolicyRequest Marshaller
+ * GetVaultAccessPolicyRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetVaultAccessPolicyRequestMarshaller implements Marshaller<Request<GetVaultAccessPolicyRequest>, GetVaultAccessPolicyRequest> {
+@SdkInternalApi
+public class GetVaultAccessPolicyRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("accountId").defaultValueSupplier(DefaultAccountIdSupplier.getInstance()).build();
+    private static final MarshallingInfo<String> VAULTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("vaultName").build();
 
-    public GetVaultAccessPolicyRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetVaultAccessPolicyRequestMarshaller instance = new GetVaultAccessPolicyRequestMarshaller();
+
+    public static GetVaultAccessPolicyRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetVaultAccessPolicyRequest> marshall(GetVaultAccessPolicyRequest getVaultAccessPolicyRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetVaultAccessPolicyRequest getVaultAccessPolicyRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getVaultAccessPolicyRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetVaultAccessPolicyRequest> request = new DefaultRequest<GetVaultAccessPolicyRequest>(getVaultAccessPolicyRequest, "AmazonGlacier");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/{accountId}/vaults/{vaultName}/access-policy";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "accountId",
-                getVaultAccessPolicyRequest.getAccountId() == null ? "-" : getVaultAccessPolicyRequest.getAccountId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "vaultName", getVaultAccessPolicyRequest.getVaultName());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(getVaultAccessPolicyRequest.getAccountId(), ACCOUNTID_BINDING);
+            protocolMarshaller.marshall(getVaultAccessPolicyRequest.getVaultName(), VAULTNAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

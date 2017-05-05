@@ -12,81 +12,51 @@
  */
 package com.amazonaws.services.config.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.config.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeConfigRuleEvaluationStatusRequest Marshaller
+ * DescribeConfigRuleEvaluationStatusRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeConfigRuleEvaluationStatusRequestMarshaller implements
-        Marshaller<Request<DescribeConfigRuleEvaluationStatusRequest>, DescribeConfigRuleEvaluationStatusRequest> {
+@SdkInternalApi
+public class DescribeConfigRuleEvaluationStatusRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<List> CONFIGRULENAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConfigRuleNames").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
+    private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Limit").build();
 
-    public DescribeConfigRuleEvaluationStatusRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeConfigRuleEvaluationStatusRequestMarshaller instance = new DescribeConfigRuleEvaluationStatusRequestMarshaller();
+
+    public static DescribeConfigRuleEvaluationStatusRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeConfigRuleEvaluationStatusRequest> marshall(DescribeConfigRuleEvaluationStatusRequest describeConfigRuleEvaluationStatusRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeConfigRuleEvaluationStatusRequest describeConfigRuleEvaluationStatusRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeConfigRuleEvaluationStatusRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeConfigRuleEvaluationStatusRequest> request = new DefaultRequest<DescribeConfigRuleEvaluationStatusRequest>(
-                describeConfigRuleEvaluationStatusRequest, "AmazonConfig");
-        request.addHeader("X-Amz-Target", "StarlingDoveService.DescribeConfigRuleEvaluationStatus");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            com.amazonaws.internal.SdkInternalList<String> configRuleNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeConfigRuleEvaluationStatusRequest
-                    .getConfigRuleNames();
-            if (!configRuleNamesList.isEmpty() || !configRuleNamesList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("ConfigRuleNames");
-                jsonGenerator.writeStartArray();
-                for (String configRuleNamesListValue : configRuleNamesList) {
-                    if (configRuleNamesListValue != null) {
-                        jsonGenerator.writeValue(configRuleNamesListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (describeConfigRuleEvaluationStatusRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(describeConfigRuleEvaluationStatusRequest.getNextToken());
-            }
-            if (describeConfigRuleEvaluationStatusRequest.getLimit() != null) {
-                jsonGenerator.writeFieldName("Limit").writeValue(describeConfigRuleEvaluationStatusRequest.getLimit());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeConfigRuleEvaluationStatusRequest.getConfigRuleNames(), CONFIGRULENAMES_BINDING);
+            protocolMarshaller.marshall(describeConfigRuleEvaluationStatusRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(describeConfigRuleEvaluationStatusRequest.getLimit(), LIMIT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

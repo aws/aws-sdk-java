@@ -232,6 +232,10 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
         this.executorService = executorService;
     }
 
+    public static AmazonCloudWatchAsyncClientBuilder asyncBuilder() {
+        return AmazonCloudWatchAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on CloudWatch using the specified parameters.
      *
@@ -261,14 +265,15 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
     @Override
     public java.util.concurrent.Future<DeleteAlarmsResult> deleteAlarmsAsync(final DeleteAlarmsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteAlarmsRequest, DeleteAlarmsResult> asyncHandler) {
+        final DeleteAlarmsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteAlarmsResult>() {
             @Override
             public DeleteAlarmsResult call() throws Exception {
-                DeleteAlarmsResult result;
+                DeleteAlarmsResult result = null;
 
                 try {
-                    result = deleteAlarms(request);
+                    result = executeDeleteAlarms(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -277,7 +282,7 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -293,14 +298,15 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
     @Override
     public java.util.concurrent.Future<DescribeAlarmHistoryResult> describeAlarmHistoryAsync(final DescribeAlarmHistoryRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeAlarmHistoryRequest, DescribeAlarmHistoryResult> asyncHandler) {
+        final DescribeAlarmHistoryRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeAlarmHistoryResult>() {
             @Override
             public DescribeAlarmHistoryResult call() throws Exception {
-                DescribeAlarmHistoryResult result;
+                DescribeAlarmHistoryResult result = null;
 
                 try {
-                    result = describeAlarmHistory(request);
+                    result = executeDescribeAlarmHistory(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -309,7 +315,7 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -332,6 +338,7 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
      *
      * @see #describeAlarmHistoryAsync(DescribeAlarmHistoryRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeAlarmHistoryResult> describeAlarmHistoryAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeAlarmHistoryRequest, DescribeAlarmHistoryResult> asyncHandler) {
 
@@ -347,14 +354,15 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
     @Override
     public java.util.concurrent.Future<DescribeAlarmsResult> describeAlarmsAsync(final DescribeAlarmsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeAlarmsRequest, DescribeAlarmsResult> asyncHandler) {
+        final DescribeAlarmsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeAlarmsResult>() {
             @Override
             public DescribeAlarmsResult call() throws Exception {
-                DescribeAlarmsResult result;
+                DescribeAlarmsResult result = null;
 
                 try {
-                    result = describeAlarms(request);
+                    result = executeDescribeAlarms(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -363,7 +371,7 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -386,6 +394,7 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
      *
      * @see #describeAlarmsAsync(DescribeAlarmsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeAlarmsResult> describeAlarmsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeAlarmsRequest, DescribeAlarmsResult> asyncHandler) {
 
@@ -401,14 +410,15 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
     @Override
     public java.util.concurrent.Future<DescribeAlarmsForMetricResult> describeAlarmsForMetricAsync(final DescribeAlarmsForMetricRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeAlarmsForMetricRequest, DescribeAlarmsForMetricResult> asyncHandler) {
+        final DescribeAlarmsForMetricRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeAlarmsForMetricResult>() {
             @Override
             public DescribeAlarmsForMetricResult call() throws Exception {
-                DescribeAlarmsForMetricResult result;
+                DescribeAlarmsForMetricResult result = null;
 
                 try {
-                    result = describeAlarmsForMetric(request);
+                    result = executeDescribeAlarmsForMetric(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -417,7 +427,7 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -433,14 +443,15 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
     @Override
     public java.util.concurrent.Future<DisableAlarmActionsResult> disableAlarmActionsAsync(final DisableAlarmActionsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DisableAlarmActionsRequest, DisableAlarmActionsResult> asyncHandler) {
+        final DisableAlarmActionsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DisableAlarmActionsResult>() {
             @Override
             public DisableAlarmActionsResult call() throws Exception {
-                DisableAlarmActionsResult result;
+                DisableAlarmActionsResult result = null;
 
                 try {
-                    result = disableAlarmActions(request);
+                    result = executeDisableAlarmActions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -449,7 +460,7 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -465,14 +476,15 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
     @Override
     public java.util.concurrent.Future<EnableAlarmActionsResult> enableAlarmActionsAsync(final EnableAlarmActionsRequest request,
             final com.amazonaws.handlers.AsyncHandler<EnableAlarmActionsRequest, EnableAlarmActionsResult> asyncHandler) {
+        final EnableAlarmActionsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<EnableAlarmActionsResult>() {
             @Override
             public EnableAlarmActionsResult call() throws Exception {
-                EnableAlarmActionsResult result;
+                EnableAlarmActionsResult result = null;
 
                 try {
-                    result = enableAlarmActions(request);
+                    result = executeEnableAlarmActions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -481,7 +493,7 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -497,14 +509,15 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
     @Override
     public java.util.concurrent.Future<GetMetricStatisticsResult> getMetricStatisticsAsync(final GetMetricStatisticsRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetMetricStatisticsRequest, GetMetricStatisticsResult> asyncHandler) {
+        final GetMetricStatisticsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetMetricStatisticsResult>() {
             @Override
             public GetMetricStatisticsResult call() throws Exception {
-                GetMetricStatisticsResult result;
+                GetMetricStatisticsResult result = null;
 
                 try {
-                    result = getMetricStatistics(request);
+                    result = executeGetMetricStatistics(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -513,7 +526,7 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -529,14 +542,15 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
     @Override
     public java.util.concurrent.Future<ListMetricsResult> listMetricsAsync(final ListMetricsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListMetricsRequest, ListMetricsResult> asyncHandler) {
+        final ListMetricsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListMetricsResult>() {
             @Override
             public ListMetricsResult call() throws Exception {
-                ListMetricsResult result;
+                ListMetricsResult result = null;
 
                 try {
-                    result = listMetrics(request);
+                    result = executeListMetrics(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -545,7 +559,7 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -568,6 +582,7 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
      *
      * @see #listMetricsAsync(ListMetricsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListMetricsResult> listMetricsAsync(
             com.amazonaws.handlers.AsyncHandler<ListMetricsRequest, ListMetricsResult> asyncHandler) {
 
@@ -583,14 +598,15 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
     @Override
     public java.util.concurrent.Future<PutMetricAlarmResult> putMetricAlarmAsync(final PutMetricAlarmRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutMetricAlarmRequest, PutMetricAlarmResult> asyncHandler) {
+        final PutMetricAlarmRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PutMetricAlarmResult>() {
             @Override
             public PutMetricAlarmResult call() throws Exception {
-                PutMetricAlarmResult result;
+                PutMetricAlarmResult result = null;
 
                 try {
-                    result = putMetricAlarm(request);
+                    result = executePutMetricAlarm(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -599,7 +615,7 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -615,14 +631,15 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
     @Override
     public java.util.concurrent.Future<PutMetricDataResult> putMetricDataAsync(final PutMetricDataRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutMetricDataRequest, PutMetricDataResult> asyncHandler) {
+        final PutMetricDataRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PutMetricDataResult>() {
             @Override
             public PutMetricDataResult call() throws Exception {
-                PutMetricDataResult result;
+                PutMetricDataResult result = null;
 
                 try {
-                    result = putMetricData(request);
+                    result = executePutMetricData(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -631,7 +648,7 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -647,14 +664,15 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
     @Override
     public java.util.concurrent.Future<SetAlarmStateResult> setAlarmStateAsync(final SetAlarmStateRequest request,
             final com.amazonaws.handlers.AsyncHandler<SetAlarmStateRequest, SetAlarmStateResult> asyncHandler) {
+        final SetAlarmStateRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<SetAlarmStateResult>() {
             @Override
             public SetAlarmStateResult call() throws Exception {
-                SetAlarmStateResult result;
+                SetAlarmStateResult result = null;
 
                 try {
-                    result = setAlarmState(request);
+                    result = executeSetAlarmState(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -663,7 +681,7 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

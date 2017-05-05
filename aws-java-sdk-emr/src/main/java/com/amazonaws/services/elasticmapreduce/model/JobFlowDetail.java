@@ -14,17 +14,19 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A description of a job flow.
+ * A description of a cluster (job flow).
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/JobFlowDetail" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class JobFlowDetail implements Serializable, Cloneable {
+public class JobFlowDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -86,10 +88,10 @@ public class JobFlowDetail implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> supportedProducts;
     /**
      * <p>
-     * Specifies whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If
-     * this value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have the proper
-     * policy permissions set) manage the job flow. If it is set to <code>false</code>, only the IAM user that created
-     * the job flow can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
+     * Specifies whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this
+     * value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have the proper policy
+     * permissions set) manage the cluster. If it is set to <code>false</code>, only the IAM user that created the
+     * cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
      * </p>
      */
     private Boolean visibleToAllUsers;
@@ -643,17 +645,17 @@ public class JobFlowDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If
-     * this value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have the proper
-     * policy permissions set) manage the job flow. If it is set to <code>false</code>, only the IAM user that created
-     * the job flow can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
+     * Specifies whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this
+     * value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have the proper policy
+     * permissions set) manage the cluster. If it is set to <code>false</code>, only the IAM user that created the
+     * cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
      * </p>
      * 
      * @param visibleToAllUsers
-     *        Specifies whether the job flow is visible to all IAM users of the AWS account associated with the job
-     *        flow. If this value is set to <code>true</code>, all IAM users of that AWS account can view and (if they
-     *        have the proper policy permissions set) manage the job flow. If it is set to <code>false</code>, only the
-     *        IAM user that created the job flow can view and manage it. This value can be changed using the
+     *        Specifies whether the cluster is visible to all IAM users of the AWS account associated with the cluster.
+     *        If this value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have
+     *        the proper policy permissions set) manage the cluster. If it is set to <code>false</code>, only the IAM
+     *        user that created the cluster can view and manage it. This value can be changed using the
      *        <a>SetVisibleToAllUsers</a> action.
      */
 
@@ -663,16 +665,16 @@ public class JobFlowDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If
-     * this value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have the proper
-     * policy permissions set) manage the job flow. If it is set to <code>false</code>, only the IAM user that created
-     * the job flow can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
+     * Specifies whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this
+     * value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have the proper policy
+     * permissions set) manage the cluster. If it is set to <code>false</code>, only the IAM user that created the
+     * cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
      * </p>
      * 
-     * @return Specifies whether the job flow is visible to all IAM users of the AWS account associated with the job
-     *         flow. If this value is set to <code>true</code>, all IAM users of that AWS account can view and (if they
-     *         have the proper policy permissions set) manage the job flow. If it is set to <code>false</code>, only the
-     *         IAM user that created the job flow can view and manage it. This value can be changed using the
+     * @return Specifies whether the cluster is visible to all IAM users of the AWS account associated with the cluster.
+     *         If this value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have
+     *         the proper policy permissions set) manage the cluster. If it is set to <code>false</code>, only the IAM
+     *         user that created the cluster can view and manage it. This value can be changed using the
      *         <a>SetVisibleToAllUsers</a> action.
      */
 
@@ -682,17 +684,17 @@ public class JobFlowDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If
-     * this value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have the proper
-     * policy permissions set) manage the job flow. If it is set to <code>false</code>, only the IAM user that created
-     * the job flow can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
+     * Specifies whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this
+     * value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have the proper policy
+     * permissions set) manage the cluster. If it is set to <code>false</code>, only the IAM user that created the
+     * cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
      * </p>
      * 
      * @param visibleToAllUsers
-     *        Specifies whether the job flow is visible to all IAM users of the AWS account associated with the job
-     *        flow. If this value is set to <code>true</code>, all IAM users of that AWS account can view and (if they
-     *        have the proper policy permissions set) manage the job flow. If it is set to <code>false</code>, only the
-     *        IAM user that created the job flow can view and manage it. This value can be changed using the
+     *        Specifies whether the cluster is visible to all IAM users of the AWS account associated with the cluster.
+     *        If this value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have
+     *        the proper policy permissions set) manage the cluster. If it is set to <code>false</code>, only the IAM
+     *        user that created the cluster can view and manage it. This value can be changed using the
      *        <a>SetVisibleToAllUsers</a> action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -704,16 +706,16 @@ public class JobFlowDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the job flow is visible to all IAM users of the AWS account associated with the job flow. If
-     * this value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have the proper
-     * policy permissions set) manage the job flow. If it is set to <code>false</code>, only the IAM user that created
-     * the job flow can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
+     * Specifies whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this
+     * value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have the proper policy
+     * permissions set) manage the cluster. If it is set to <code>false</code>, only the IAM user that created the
+     * cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
      * </p>
      * 
-     * @return Specifies whether the job flow is visible to all IAM users of the AWS account associated with the job
-     *         flow. If this value is set to <code>true</code>, all IAM users of that AWS account can view and (if they
-     *         have the proper policy permissions set) manage the job flow. If it is set to <code>false</code>, only the
-     *         IAM user that created the job flow can view and manage it. This value can be changed using the
+     * @return Specifies whether the cluster is visible to all IAM users of the AWS account associated with the cluster.
+     *         If this value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have
+     *         the proper policy permissions set) manage the cluster. If it is set to <code>false</code>, only the IAM
+     *         user that created the cluster can view and manage it. This value can be changed using the
      *         <a>SetVisibleToAllUsers</a> action.
      */
 
@@ -1154,5 +1156,11 @@ public class JobFlowDetail implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.elasticmapreduce.model.transform.JobFlowDetailMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

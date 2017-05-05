@@ -63,6 +63,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
     }
 
     @Override
+    public DeleteEventStreamResult deleteEventStream(DeleteEventStreamRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteGcmChannelResult deleteGcmChannel(DeleteGcmChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -113,6 +118,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
     }
 
     @Override
+    public GetEventStreamResult getEventStream(GetEventStreamRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetGcmChannelResult getGcmChannel(GetGcmChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -149,6 +159,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
 
     @Override
     public GetSegmentsResult getSegments(GetSegmentsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutEventStreamResult putEventStream(PutEventStreamRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

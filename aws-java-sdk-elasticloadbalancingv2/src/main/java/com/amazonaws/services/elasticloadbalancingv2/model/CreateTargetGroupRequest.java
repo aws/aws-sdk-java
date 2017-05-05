@@ -29,6 +29,10 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The name of the target group.
      * </p>
+     * <p>
+     * This name must be unique per region per account, can have a maximum of 32 characters, must contain only
+     * alphanumeric characters or hyphens, and must not begin or end with a hyphen.
+     * </p>
      */
     private String name;
     /**
@@ -107,9 +111,16 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The name of the target group.
      * </p>
+     * <p>
+     * This name must be unique per region per account, can have a maximum of 32 characters, must contain only
+     * alphanumeric characters or hyphens, and must not begin or end with a hyphen.
+     * </p>
      * 
      * @param name
-     *        The name of the target group.
+     *        The name of the target group.</p>
+     *        <p>
+     *        This name must be unique per region per account, can have a maximum of 32 characters, must contain only
+     *        alphanumeric characters or hyphens, and must not begin or end with a hyphen.
      */
 
     public void setName(String name) {
@@ -120,8 +131,15 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The name of the target group.
      * </p>
+     * <p>
+     * This name must be unique per region per account, can have a maximum of 32 characters, must contain only
+     * alphanumeric characters or hyphens, and must not begin or end with a hyphen.
+     * </p>
      * 
-     * @return The name of the target group.
+     * @return The name of the target group.</p>
+     *         <p>
+     *         This name must be unique per region per account, can have a maximum of 32 characters, must contain only
+     *         alphanumeric characters or hyphens, and must not begin or end with a hyphen.
      */
 
     public String getName() {
@@ -132,9 +150,16 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The name of the target group.
      * </p>
+     * <p>
+     * This name must be unique per region per account, can have a maximum of 32 characters, must contain only
+     * alphanumeric characters or hyphens, and must not begin or end with a hyphen.
+     * </p>
      * 
      * @param name
-     *        The name of the target group.
+     *        The name of the target group.</p>
+     *        <p>
+     *        This name must be unique per region per account, can have a maximum of 32 characters, must contain only
+     *        alphanumeric characters or hyphens, and must not begin or end with a hyphen.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

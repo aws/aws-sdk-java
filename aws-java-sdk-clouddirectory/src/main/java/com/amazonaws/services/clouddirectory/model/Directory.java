@@ -14,6 +14,8 @@ package com.amazonaws.services.clouddirectory.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Directory implements Serializable, Cloneable {
+public class Directory implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -40,7 +42,7 @@ public class Directory implements Serializable, Cloneable {
     private String directoryArn;
     /**
      * <p>
-     * The state of the directory. Can be either Enabled, Disabled, or Deleted.
+     * The state of the directory. Can be either <code>Enabled</code>, <code>Disabled</code>, or <code>Deleted</code>.
      * </p>
      */
     private String state;
@@ -133,11 +135,12 @@ public class Directory implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the directory. Can be either Enabled, Disabled, or Deleted.
+     * The state of the directory. Can be either <code>Enabled</code>, <code>Disabled</code>, or <code>Deleted</code>.
      * </p>
      * 
      * @param state
-     *        The state of the directory. Can be either Enabled, Disabled, or Deleted.
+     *        The state of the directory. Can be either <code>Enabled</code>, <code>Disabled</code>, or
+     *        <code>Deleted</code>.
      * @see DirectoryState
      */
 
@@ -147,10 +150,11 @@ public class Directory implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the directory. Can be either Enabled, Disabled, or Deleted.
+     * The state of the directory. Can be either <code>Enabled</code>, <code>Disabled</code>, or <code>Deleted</code>.
      * </p>
      * 
-     * @return The state of the directory. Can be either Enabled, Disabled, or Deleted.
+     * @return The state of the directory. Can be either <code>Enabled</code>, <code>Disabled</code>, or
+     *         <code>Deleted</code>.
      * @see DirectoryState
      */
 
@@ -160,11 +164,12 @@ public class Directory implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the directory. Can be either Enabled, Disabled, or Deleted.
+     * The state of the directory. Can be either <code>Enabled</code>, <code>Disabled</code>, or <code>Deleted</code>.
      * </p>
      * 
      * @param state
-     *        The state of the directory. Can be either Enabled, Disabled, or Deleted.
+     *        The state of the directory. Can be either <code>Enabled</code>, <code>Disabled</code>, or
+     *        <code>Deleted</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DirectoryState
      */
@@ -176,11 +181,12 @@ public class Directory implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the directory. Can be either Enabled, Disabled, or Deleted.
+     * The state of the directory. Can be either <code>Enabled</code>, <code>Disabled</code>, or <code>Deleted</code>.
      * </p>
      * 
      * @param state
-     *        The state of the directory. Can be either Enabled, Disabled, or Deleted.
+     *        The state of the directory. Can be either <code>Enabled</code>, <code>Disabled</code>, or
+     *        <code>Deleted</code>.
      * @see DirectoryState
      */
 
@@ -190,11 +196,12 @@ public class Directory implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the directory. Can be either Enabled, Disabled, or Deleted.
+     * The state of the directory. Can be either <code>Enabled</code>, <code>Disabled</code>, or <code>Deleted</code>.
      * </p>
      * 
      * @param state
-     *        The state of the directory. Can be either Enabled, Disabled, or Deleted.
+     *        The state of the directory. Can be either <code>Enabled</code>, <code>Disabled</code>, or
+     *        <code>Deleted</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DirectoryState
      */
@@ -315,5 +322,11 @@ public class Directory implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.clouddirectory.model.transform.DirectoryMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

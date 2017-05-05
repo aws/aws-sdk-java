@@ -14,6 +14,8 @@ package com.amazonaws.services.storagegateway.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TapeArchive implements Serializable, Cloneable {
+public class TapeArchive implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -57,7 +59,7 @@ public class TapeArchive implements Serializable, Cloneable {
     private java.util.Date completionTime;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is being retrieved to.
+     * The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being retrieved to.
      * </p>
      * <p>
      * The virtual tape is retrieved from the virtual tape shelf (VTS).
@@ -274,14 +276,14 @@ public class TapeArchive implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is being retrieved to.
+     * The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being retrieved to.
      * </p>
      * <p>
      * The virtual tape is retrieved from the virtual tape shelf (VTS).
      * </p>
      * 
      * @param retrievedTo
-     *        The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is being retrieved to.</p>
+     *        The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being retrieved to.</p>
      *        <p>
      *        The virtual tape is retrieved from the virtual tape shelf (VTS).
      */
@@ -292,13 +294,13 @@ public class TapeArchive implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is being retrieved to.
+     * The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being retrieved to.
      * </p>
      * <p>
      * The virtual tape is retrieved from the virtual tape shelf (VTS).
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is being retrieved to.</p>
+     * @return The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being retrieved to.</p>
      *         <p>
      *         The virtual tape is retrieved from the virtual tape shelf (VTS).
      */
@@ -309,14 +311,14 @@ public class TapeArchive implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is being retrieved to.
+     * The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being retrieved to.
      * </p>
      * <p>
      * The virtual tape is retrieved from the virtual tape shelf (VTS).
      * </p>
      * 
      * @param retrievedTo
-     *        The Amazon Resource Name (ARN) of the gateway-VTL that the virtual tape is being retrieved to.</p>
+     *        The Amazon Resource Name (ARN) of the tape gateway that the virtual tape is being retrieved to.</p>
      *        <p>
      *        The virtual tape is retrieved from the virtual tape shelf (VTS).
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -459,5 +461,11 @@ public class TapeArchive implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.storagegateway.model.transform.TapeArchiveMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -47,22 +48,22 @@ import com.amazonaws.services.simplesystemsmanagement.model.transform.*;
  * Client for accessing Amazon SSM. All service calls made using this client are blocking, and will not return until the
  * service call completes.
  * <p>
+ * <fullname>Amazon EC2 Systems Manager</fullname>
  * <p>
  * Amazon EC2 Systems Manager is a collection of capabilities that helps you automate management tasks such as
  * collecting system inventory, applying operating system (OS) patches, automating the creation of Amazon Machine Images
- * (AMIs), and configuring operating systems (OSs) and applications at scale. Systems Manager works with managed
- * instances: Amazon EC2 instances and servers or virtual machines (VMs) in your on-premises environment that are
- * configured for Systems Manager.
+ * (AMIs), and configuring operating systems (OSs) and applications at scale. Systems Manager lets you remotely and
+ * securely manage the configuration of your managed instances. A <i>managed instance</i> is any Amazon EC2 instance or
+ * on-premises machine in your hybrid environment that has been configured for Systems Manager.
  * </p>
  * <p>
- * This references is intended to be used with the EC2 Systems Manager User Guide (<a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/systems-manager.html">Linux</a>) (<a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/systems-manager.html">Windows</a>).
+ * This reference is intended to be used with the <a
+ * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/">Amazon EC2 Systems Manager User Guide</a>.
  * </p>
  * <p>
- * To get started, verify prerequisites and configure managed instances (<a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/systems-manager-prereqs.html">Linux</a>) (<a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/systems-manager-prereqs.html">Windows</a>).
+ * To get started, verify prerequisites and configure managed instances. For more information, see <a
+ * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-prereqs.html">Systems Manager
+ * Prerequisites</a>.
  * </p>
  */
 @ThreadSafe
@@ -436,6 +437,10 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         init();
     }
 
+    public static AWSSimpleSystemsManagementClientBuilder builder() {
+        return AWSSimpleSystemsManagementClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon SSM using the specified parameters.
      *
@@ -481,7 +486,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * <p>
      * For more information about tags, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a>
-     * in the Amazon EC2 User Guide.
+     * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param addTagsToResourceRequest
@@ -501,7 +506,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public AddTagsToResourceResult addTagsToResource(AddTagsToResourceRequest addTagsToResourceRequest) {
+    public AddTagsToResourceResult addTagsToResource(AddTagsToResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddTagsToResource(request);
+    }
+
+    @SdkInternalApi
+    final AddTagsToResourceResult executeAddTagsToResource(AddTagsToResourceRequest addTagsToResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addTagsToResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -512,7 +523,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddTagsToResourceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(addTagsToResourceRequest));
+                request = new AddTagsToResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addTagsToResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -548,11 +559,11 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         You do not have permission to access the instance.
      *         </p>
      *         <p>
-     *         The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is
+     *         The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is
      *         running. On EC2 Windows instances, verify that the EC2Config service is running.
      *         </p>
      *         <p>
-     *         The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent
+     *         The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent
      *         or EC2Config service.
      *         </p>
      *         <p>
@@ -565,7 +576,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public CancelCommandResult cancelCommand(CancelCommandRequest cancelCommandRequest) {
+    public CancelCommandResult cancelCommand(CancelCommandRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelCommand(request);
+    }
+
+    @SdkInternalApi
+    final CancelCommandResult executeCancelCommand(CancelCommandRequest cancelCommandRequest) {
 
         ExecutionContext executionContext = createExecutionContext(cancelCommandRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -576,7 +593,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CancelCommandRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelCommandRequest));
+                request = new CancelCommandRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelCommandRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -600,9 +617,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * Registers your on-premises server or virtual machine with Amazon EC2 so that you can manage these resources using
      * Run Command. An on-premises server or virtual machine that has been registered with EC2 is called a managed
      * instance. For more information about activations, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managed-instances.html">Setting Up Managed Instances
-     * (Linux)</a> or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/managed-instances.html">Setting Up
-     * Managed Instances (Windows)</a> in the Amazon EC2 User Guide.
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
+     * Up Systems Manager in Hybrid Environments</a>.
      * </p>
      * 
      * @param createActivationRequest
@@ -614,7 +630,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public CreateActivationResult createActivation(CreateActivationRequest createActivationRequest) {
+    public CreateActivationResult createActivation(CreateActivationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateActivation(request);
+    }
+
+    @SdkInternalApi
+    final CreateActivationResult executeCreateActivation(CreateActivationRequest createActivationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createActivationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -625,7 +647,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateActivationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createActivationRequest));
+                request = new CreateActivationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createActivationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -646,11 +668,11 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Associates the specified SSM document with the specified instances or targets.
+     * Associates the specified Systems Manager document with the specified instances or targets.
      * </p>
      * <p>
-     * When you associate an SSM document with one or more instances using instance IDs or tags, the SSM agent running
-     * on the instance processes the document and configures the instance as specified.
+     * When you associate a document with one or more instances using instance IDs or tags, the SSM Agent running on the
+     * instance processes the document and configures the instance as specified.
      * </p>
      * <p>
      * If you associate a document with an instance that already has an associated document, the system throws the
@@ -675,18 +697,18 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         You do not have permission to access the instance.
      *         </p>
      *         <p>
-     *         The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is
+     *         The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is
      *         running. On EC2 Windows instances, verify that the EC2Config service is running.
      *         </p>
      *         <p>
-     *         The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent
+     *         The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent
      *         or EC2Config service.
      *         </p>
      *         <p>
      *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
      *         are: Shutting-down and Terminated.
      * @throws UnsupportedPlatformTypeException
-     *         The document does not support the platform type of the given instance ID(s). For example, you sent an SSM
+     *         The document does not support the platform type of the given instance ID(s). For example, you sent an
      *         document for a Windows instance to a Linux instance.
      * @throws InvalidOutputLocationException
      *         The output location is not valid or does not exist.
@@ -703,7 +725,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public CreateAssociationResult createAssociation(CreateAssociationRequest createAssociationRequest) {
+    public CreateAssociationResult createAssociation(CreateAssociationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAssociation(request);
+    }
+
+    @SdkInternalApi
+    final CreateAssociationResult executeCreateAssociation(CreateAssociationRequest createAssociationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createAssociationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -714,7 +742,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateAssociationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAssociationRequest));
+                request = new CreateAssociationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAssociationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -735,11 +763,11 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Associates the specified SSM document with the specified instances or targets.
+     * Associates the specified Systems Manager document with the specified instances or targets.
      * </p>
      * <p>
-     * When you associate an SSM document with one or more instances using instance IDs or tags, the SSM agent running
-     * on the instance processes the document and configures the instance as specified.
+     * When you associate a document with one or more instances using instance IDs or tags, the SSM Agent running on the
+     * instance processes the document and configures the instance as specified.
      * </p>
      * <p>
      * If you associate a document with an instance that already has an associated document, the system throws the
@@ -760,11 +788,11 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         You do not have permission to access the instance.
      *         </p>
      *         <p>
-     *         The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is
+     *         The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is
      *         running. On EC2 Windows instances, verify that the EC2Config service is running.
      *         </p>
      *         <p>
-     *         The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent
+     *         The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent
      *         or EC2Config service.
      *         </p>
      *         <p>
@@ -778,7 +806,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @throws AssociationLimitExceededException
      *         You can have at most 2,000 active associations.
      * @throws UnsupportedPlatformTypeException
-     *         The document does not support the platform type of the given instance ID(s). For example, you sent an SSM
+     *         The document does not support the platform type of the given instance ID(s). For example, you sent an
      *         document for a Windows instance to a Linux instance.
      * @throws InvalidOutputLocationException
      *         The output location is not valid or does not exist.
@@ -792,7 +820,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public CreateAssociationBatchResult createAssociationBatch(CreateAssociationBatchRequest createAssociationBatchRequest) {
+    public CreateAssociationBatchResult createAssociationBatch(CreateAssociationBatchRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAssociationBatch(request);
+    }
+
+    @SdkInternalApi
+    final CreateAssociationBatchResult executeCreateAssociationBatch(CreateAssociationBatchRequest createAssociationBatchRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createAssociationBatchRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -803,7 +837,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateAssociationBatchRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAssociationBatchRequest));
+                request = new CreateAssociationBatchRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAssociationBatchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -825,23 +859,22 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Creates an SSM document.
+     * Creates a Systems Manager document.
      * </p>
      * <p>
-     * After you create an SSM document, you can use CreateAssociation to associate it with one or more running
-     * instances.
+     * After you create a document, you can use CreateAssociation to associate it with one or more running instances.
      * </p>
      * 
      * @param createDocumentRequest
      * @return Result of the CreateDocument operation returned by the service.
      * @throws DocumentAlreadyExistsException
-     *         The specified SSM document already exists.
+     *         The specified document already exists.
      * @throws MaxDocumentSizeExceededException
-     *         The size limit of an SSM document is 64 KB.
+     *         The size limit of a document is 64 KB.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @throws InvalidDocumentContentException
-     *         The content for the SSM document is not valid.
+     *         The content for the document is not valid.
      * @throws DocumentLimitExceededException
      *         You can have at most 200 active SSM documents.
      * @throws InvalidDocumentSchemaVersionException
@@ -851,7 +884,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public CreateDocumentResult createDocument(CreateDocumentRequest createDocumentRequest) {
+    public CreateDocumentResult createDocument(CreateDocumentRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDocument(request);
+    }
+
+    @SdkInternalApi
+    final CreateDocumentResult executeCreateDocument(CreateDocumentRequest createDocumentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createDocumentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -862,7 +901,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateDocumentRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDocumentRequest));
+                request = new CreateDocumentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDocumentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -901,7 +940,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public CreateMaintenanceWindowResult createMaintenanceWindow(CreateMaintenanceWindowRequest createMaintenanceWindowRequest) {
+    public CreateMaintenanceWindowResult createMaintenanceWindow(CreateMaintenanceWindowRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateMaintenanceWindow(request);
+    }
+
+    @SdkInternalApi
+    final CreateMaintenanceWindowResult executeCreateMaintenanceWindow(CreateMaintenanceWindowRequest createMaintenanceWindowRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createMaintenanceWindowRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -912,7 +957,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateMaintenanceWindowRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createMaintenanceWindowRequest));
+                request = new CreateMaintenanceWindowRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createMaintenanceWindowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -952,7 +998,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public CreatePatchBaselineResult createPatchBaseline(CreatePatchBaselineRequest createPatchBaselineRequest) {
+    public CreatePatchBaselineResult createPatchBaseline(CreatePatchBaselineRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreatePatchBaseline(request);
+    }
+
+    @SdkInternalApi
+    final CreatePatchBaselineResult executeCreatePatchBaseline(CreatePatchBaselineRequest createPatchBaselineRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createPatchBaselineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -963,7 +1015,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreatePatchBaselineRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPatchBaselineRequest));
+                request = new CreatePatchBaselineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPatchBaselineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1004,7 +1056,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public DeleteActivationResult deleteActivation(DeleteActivationRequest deleteActivationRequest) {
+    public DeleteActivationResult deleteActivation(DeleteActivationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteActivation(request);
+    }
+
+    @SdkInternalApi
+    final DeleteActivationResult executeDeleteActivation(DeleteActivationRequest deleteActivationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteActivationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1015,7 +1073,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteActivationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteActivationRequest));
+                request = new DeleteActivationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteActivationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1036,10 +1094,10 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Disassociates the specified SSM document from the specified instance.
+     * Disassociates the specified Systems Manager document from the specified instance.
      * </p>
      * <p>
-     * When you disassociate an SSM document from an instance, it does not change the configuration of the instance. To
+     * When you disassociate a document from an instance, it does not change the configuration of the instance. To
      * change the configuration state of an instance after you disassociate a document, you must create a new document
      * with the desired configuration and associate it with the instance.
      * </p>
@@ -1058,11 +1116,11 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         You do not have permission to access the instance.
      *         </p>
      *         <p>
-     *         The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is
+     *         The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is
      *         running. On EC2 Windows instances, verify that the EC2Config service is running.
      *         </p>
      *         <p>
-     *         The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent
+     *         The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent
      *         or EC2Config service.
      *         </p>
      *         <p>
@@ -1075,7 +1133,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public DeleteAssociationResult deleteAssociation(DeleteAssociationRequest deleteAssociationRequest) {
+    public DeleteAssociationResult deleteAssociation(DeleteAssociationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAssociation(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAssociationResult executeDeleteAssociation(DeleteAssociationRequest deleteAssociationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteAssociationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1086,7 +1150,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteAssociationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAssociationRequest));
+                request = new DeleteAssociationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAssociationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1107,10 +1171,10 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Deletes the SSM document and all instance associations to the document.
+     * Deletes the Systems Manager document and all instance associations to the document.
      * </p>
      * <p>
-     * Before you delete the SSM document, we recommend that you use DeleteAssociation to disassociate all instances
+     * Before you delete the document, we recommend that you use <a>DeleteAssociation</a> to disassociate all instances
      * that are associated with the document.
      * </p>
      * 
@@ -1124,13 +1188,19 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         You attempted to delete a document while it is still shared. You must stop sharing the document before
      *         you can delete it.
      * @throws AssociatedInstancesException
-     *         You must disassociate an SSM document from all instances before you can delete it.
+     *         You must disassociate a document from all instances before you can delete it.
      * @sample AWSSimpleSystemsManagement.DeleteDocument
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteDocument" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
-    public DeleteDocumentResult deleteDocument(DeleteDocumentRequest deleteDocumentRequest) {
+    public DeleteDocumentResult deleteDocument(DeleteDocumentRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDocument(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDocumentResult executeDeleteDocument(DeleteDocumentRequest deleteDocumentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteDocumentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1141,7 +1211,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteDocumentRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDocumentRequest));
+                request = new DeleteDocumentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDocumentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1174,7 +1244,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public DeleteMaintenanceWindowResult deleteMaintenanceWindow(DeleteMaintenanceWindowRequest deleteMaintenanceWindowRequest) {
+    public DeleteMaintenanceWindowResult deleteMaintenanceWindow(DeleteMaintenanceWindowRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteMaintenanceWindow(request);
+    }
+
+    @SdkInternalApi
+    final DeleteMaintenanceWindowResult executeDeleteMaintenanceWindow(DeleteMaintenanceWindowRequest deleteMaintenanceWindowRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteMaintenanceWindowRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1185,7 +1261,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteMaintenanceWindowRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteMaintenanceWindowRequest));
+                request = new DeleteMaintenanceWindowRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteMaintenanceWindowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1221,7 +1298,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public DeleteParameterResult deleteParameter(DeleteParameterRequest deleteParameterRequest) {
+    public DeleteParameterResult deleteParameter(DeleteParameterRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteParameter(request);
+    }
+
+    @SdkInternalApi
+    final DeleteParameterResult executeDeleteParameter(DeleteParameterRequest deleteParameterRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteParameterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1232,7 +1315,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteParameterRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteParameterRequest));
+                request = new DeleteParameterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteParameterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1267,7 +1350,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public DeletePatchBaselineResult deletePatchBaseline(DeletePatchBaselineRequest deletePatchBaselineRequest) {
+    public DeletePatchBaselineResult deletePatchBaseline(DeletePatchBaselineRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeletePatchBaseline(request);
+    }
+
+    @SdkInternalApi
+    final DeletePatchBaselineResult executeDeletePatchBaseline(DeletePatchBaselineRequest deletePatchBaselineRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deletePatchBaselineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1278,7 +1367,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeletePatchBaselineRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePatchBaselineRequest));
+                request = new DeletePatchBaselineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePatchBaselineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1300,7 +1389,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
     /**
      * <p>
      * Removes the server or virtual machine from the list of registered servers. You can reregister the instance again
-     * at any time. If you don’t plan to use Run Command on the server, we suggest uninstalling the SSM agent first.
+     * at any time. If you don’t plan to use Run Command on the server, we suggest uninstalling the SSM Agent first.
      * </p>
      * 
      * @param deregisterManagedInstanceRequest
@@ -1311,11 +1400,11 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         You do not have permission to access the instance.
      *         </p>
      *         <p>
-     *         The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is
+     *         The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is
      *         running. On EC2 Windows instances, verify that the EC2Config service is running.
      *         </p>
      *         <p>
-     *         The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent
+     *         The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent
      *         or EC2Config service.
      *         </p>
      *         <p>
@@ -1328,7 +1417,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public DeregisterManagedInstanceResult deregisterManagedInstance(DeregisterManagedInstanceRequest deregisterManagedInstanceRequest) {
+    public DeregisterManagedInstanceResult deregisterManagedInstance(DeregisterManagedInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeregisterManagedInstance(request);
+    }
+
+    @SdkInternalApi
+    final DeregisterManagedInstanceResult executeDeregisterManagedInstance(DeregisterManagedInstanceRequest deregisterManagedInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deregisterManagedInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1339,7 +1434,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeregisterManagedInstanceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deregisterManagedInstanceRequest));
+                request = new DeregisterManagedInstanceRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deregisterManagedInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1375,7 +1471,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeregisterPatchBaselineForPatchGroupResult deregisterPatchBaselineForPatchGroup(
+    public DeregisterPatchBaselineForPatchGroupResult deregisterPatchBaselineForPatchGroup(DeregisterPatchBaselineForPatchGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeregisterPatchBaselineForPatchGroup(request);
+    }
+
+    @SdkInternalApi
+    final DeregisterPatchBaselineForPatchGroupResult executeDeregisterPatchBaselineForPatchGroup(
             DeregisterPatchBaselineForPatchGroupRequest deregisterPatchBaselineForPatchGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deregisterPatchBaselineForPatchGroupRequest);
@@ -1387,7 +1489,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeregisterPatchBaselineForPatchGroupRequestMarshaller(protocolFactory).marshall(super
+                request = new DeregisterPatchBaselineForPatchGroupRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(deregisterPatchBaselineForPatchGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1424,7 +1526,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeregisterTargetFromMaintenanceWindowResult deregisterTargetFromMaintenanceWindow(
+    public DeregisterTargetFromMaintenanceWindowResult deregisterTargetFromMaintenanceWindow(DeregisterTargetFromMaintenanceWindowRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeregisterTargetFromMaintenanceWindow(request);
+    }
+
+    @SdkInternalApi
+    final DeregisterTargetFromMaintenanceWindowResult executeDeregisterTargetFromMaintenanceWindow(
             DeregisterTargetFromMaintenanceWindowRequest deregisterTargetFromMaintenanceWindowRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deregisterTargetFromMaintenanceWindowRequest);
@@ -1436,7 +1544,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeregisterTargetFromMaintenanceWindowRequestMarshaller(protocolFactory).marshall(super
+                request = new DeregisterTargetFromMaintenanceWindowRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(deregisterTargetFromMaintenanceWindowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1473,7 +1581,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeregisterTaskFromMaintenanceWindowResult deregisterTaskFromMaintenanceWindow(
+    public DeregisterTaskFromMaintenanceWindowResult deregisterTaskFromMaintenanceWindow(DeregisterTaskFromMaintenanceWindowRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeregisterTaskFromMaintenanceWindow(request);
+    }
+
+    @SdkInternalApi
+    final DeregisterTaskFromMaintenanceWindowResult executeDeregisterTaskFromMaintenanceWindow(
             DeregisterTaskFromMaintenanceWindowRequest deregisterTaskFromMaintenanceWindowRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deregisterTaskFromMaintenanceWindowRequest);
@@ -1485,7 +1599,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeregisterTaskFromMaintenanceWindowRequestMarshaller(protocolFactory).marshall(super
+                request = new DeregisterTaskFromMaintenanceWindowRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(deregisterTaskFromMaintenanceWindowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1525,7 +1639,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public DescribeActivationsResult describeActivations(DescribeActivationsRequest describeActivationsRequest) {
+    public DescribeActivationsResult describeActivations(DescribeActivationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeActivations(request);
+    }
+
+    @SdkInternalApi
+    final DescribeActivationsResult executeDescribeActivations(DescribeActivationsRequest describeActivationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeActivationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1536,7 +1656,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeActivationsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeActivationsRequest));
+                request = new DescribeActivationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeActivationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1557,7 +1677,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Describes the associations for the specified SSM document or instance.
+     * Describes the associations for the specified Systems Manager document or instance.
      * </p>
      * 
      * @param describeAssociationRequest
@@ -1574,11 +1694,11 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         You do not have permission to access the instance.
      *         </p>
      *         <p>
-     *         The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is
+     *         The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is
      *         running. On EC2 Windows instances, verify that the EC2Config service is running.
      *         </p>
      *         <p>
-     *         The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent
+     *         The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent
      *         or EC2Config service.
      *         </p>
      *         <p>
@@ -1589,7 +1709,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public DescribeAssociationResult describeAssociation(DescribeAssociationRequest describeAssociationRequest) {
+    public DescribeAssociationResult describeAssociation(DescribeAssociationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAssociation(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAssociationResult executeDescribeAssociation(DescribeAssociationRequest describeAssociationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAssociationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1600,7 +1726,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAssociationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAssociationRequest));
+                request = new DescribeAssociationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAssociationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1635,7 +1761,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeAutomationExecutionsResult describeAutomationExecutions(DescribeAutomationExecutionsRequest describeAutomationExecutionsRequest) {
+    public DescribeAutomationExecutionsResult describeAutomationExecutions(DescribeAutomationExecutionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAutomationExecutions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAutomationExecutionsResult executeDescribeAutomationExecutions(DescribeAutomationExecutionsRequest describeAutomationExecutionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAutomationExecutionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1646,7 +1778,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAutomationExecutionsRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeAutomationExecutionsRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeAutomationExecutionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1681,7 +1813,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public DescribeAvailablePatchesResult describeAvailablePatches(DescribeAvailablePatchesRequest describeAvailablePatchesRequest) {
+    public DescribeAvailablePatchesResult describeAvailablePatches(DescribeAvailablePatchesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAvailablePatches(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAvailablePatchesResult executeDescribeAvailablePatches(DescribeAvailablePatchesRequest describeAvailablePatchesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAvailablePatchesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1692,7 +1830,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAvailablePatchesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAvailablePatchesRequest));
+                request = new DescribeAvailablePatchesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeAvailablePatchesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1730,7 +1869,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public DescribeDocumentResult describeDocument(DescribeDocumentRequest describeDocumentRequest) {
+    public DescribeDocumentResult describeDocument(DescribeDocumentRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDocument(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDocumentResult executeDescribeDocument(DescribeDocumentRequest describeDocumentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeDocumentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1741,7 +1886,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeDocumentRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDocumentRequest));
+                request = new DescribeDocumentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDocumentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1762,8 +1907,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Describes the permissions for an SSM document. If you created the document, you are the owner. If a document is
-     * shared, it can either be shared privately (by specifying a user’s AWS account ID) or publicly (<i>All</i>).
+     * Describes the permissions for a Systems Manager document. If you created the document, you are the owner. If a
+     * document is shared, it can either be shared privately (by specifying a user’s AWS account ID) or publicly
+     * (<i>All</i>).
      * </p>
      * 
      * @param describeDocumentPermissionRequest
@@ -1779,7 +1925,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public DescribeDocumentPermissionResult describeDocumentPermission(DescribeDocumentPermissionRequest describeDocumentPermissionRequest) {
+    public DescribeDocumentPermissionResult describeDocumentPermission(DescribeDocumentPermissionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDocumentPermission(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDocumentPermissionResult executeDescribeDocumentPermission(DescribeDocumentPermissionRequest describeDocumentPermissionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeDocumentPermissionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1790,7 +1942,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeDocumentPermissionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDocumentPermissionRequest));
+                request = new DescribeDocumentPermissionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeDocumentPermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1825,11 +1978,11 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         You do not have permission to access the instance.
      *         </p>
      *         <p>
-     *         The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is
+     *         The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is
      *         running. On EC2 Windows instances, verify that the EC2Config service is running.
      *         </p>
      *         <p>
-     *         The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent
+     *         The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent
      *         or EC2Config service.
      *         </p>
      *         <p>
@@ -1842,7 +1995,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeEffectiveInstanceAssociationsResult describeEffectiveInstanceAssociations(
+    public DescribeEffectiveInstanceAssociationsResult describeEffectiveInstanceAssociations(DescribeEffectiveInstanceAssociationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEffectiveInstanceAssociations(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEffectiveInstanceAssociationsResult executeDescribeEffectiveInstanceAssociations(
             DescribeEffectiveInstanceAssociationsRequest describeEffectiveInstanceAssociationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEffectiveInstanceAssociationsRequest);
@@ -1854,7 +2013,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeEffectiveInstanceAssociationsRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeEffectiveInstanceAssociationsRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeEffectiveInstanceAssociationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1893,7 +2052,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeEffectivePatchesForPatchBaselineResult describeEffectivePatchesForPatchBaseline(
+    public DescribeEffectivePatchesForPatchBaselineResult describeEffectivePatchesForPatchBaseline(DescribeEffectivePatchesForPatchBaselineRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEffectivePatchesForPatchBaseline(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEffectivePatchesForPatchBaselineResult executeDescribeEffectivePatchesForPatchBaseline(
             DescribeEffectivePatchesForPatchBaselineRequest describeEffectivePatchesForPatchBaselineRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEffectivePatchesForPatchBaselineRequest);
@@ -1905,7 +2070,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeEffectivePatchesForPatchBaselineRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeEffectivePatchesForPatchBaselineRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeEffectivePatchesForPatchBaselineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1941,11 +2106,11 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         You do not have permission to access the instance.
      *         </p>
      *         <p>
-     *         The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is
+     *         The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is
      *         running. On EC2 Windows instances, verify that the EC2Config service is running.
      *         </p>
      *         <p>
-     *         The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent
+     *         The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent
      *         or EC2Config service.
      *         </p>
      *         <p>
@@ -1958,7 +2123,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeInstanceAssociationsStatusResult describeInstanceAssociationsStatus(
+    public DescribeInstanceAssociationsStatusResult describeInstanceAssociationsStatus(DescribeInstanceAssociationsStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeInstanceAssociationsStatus(request);
+    }
+
+    @SdkInternalApi
+    final DescribeInstanceAssociationsStatusResult executeDescribeInstanceAssociationsStatus(
             DescribeInstanceAssociationsStatusRequest describeInstanceAssociationsStatusRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeInstanceAssociationsStatusRequest);
@@ -1970,7 +2141,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeInstanceAssociationsStatusRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeInstanceAssociationsStatusRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeInstanceAssociationsStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1994,7 +2165,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
     /**
      * <p>
      * Describes one or more of your instances. You can use this to get information about instances like the operating
-     * system platform, the SSM agent version (Linux), status etc. If you specify one or more instance IDs, it returns
+     * system platform, the SSM Agent version (Linux), status etc. If you specify one or more instance IDs, it returns
      * information for those instances. If you do not specify instance IDs, it returns information for all your
      * instances. If you specify an instance ID that is not valid or an instance that you do not own, you receive an
      * error.
@@ -2010,11 +2181,11 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         You do not have permission to access the instance.
      *         </p>
      *         <p>
-     *         The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is
+     *         The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is
      *         running. On EC2 Windows instances, verify that the EC2Config service is running.
      *         </p>
      *         <p>
-     *         The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent
+     *         The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent
      *         or EC2Config service.
      *         </p>
      *         <p>
@@ -2031,7 +2202,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeInstanceInformationResult describeInstanceInformation(DescribeInstanceInformationRequest describeInstanceInformationRequest) {
+    public DescribeInstanceInformationResult describeInstanceInformation(DescribeInstanceInformationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeInstanceInformation(request);
+    }
+
+    @SdkInternalApi
+    final DescribeInstanceInformationResult executeDescribeInstanceInformation(DescribeInstanceInformationRequest describeInstanceInformationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeInstanceInformationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2042,7 +2219,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeInstanceInformationRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeInstanceInformationRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeInstanceInformationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -2079,7 +2256,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeInstancePatchStatesResult describeInstancePatchStates(DescribeInstancePatchStatesRequest describeInstancePatchStatesRequest) {
+    public DescribeInstancePatchStatesResult describeInstancePatchStates(DescribeInstancePatchStatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeInstancePatchStates(request);
+    }
+
+    @SdkInternalApi
+    final DescribeInstancePatchStatesResult executeDescribeInstancePatchStates(DescribeInstancePatchStatesRequest describeInstancePatchStatesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeInstancePatchStatesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2090,7 +2273,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeInstancePatchStatesRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeInstancePatchStatesRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeInstancePatchStatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -2129,7 +2312,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeInstancePatchStatesForPatchGroupResult describeInstancePatchStatesForPatchGroup(
+    public DescribeInstancePatchStatesForPatchGroupResult describeInstancePatchStatesForPatchGroup(DescribeInstancePatchStatesForPatchGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeInstancePatchStatesForPatchGroup(request);
+    }
+
+    @SdkInternalApi
+    final DescribeInstancePatchStatesForPatchGroupResult executeDescribeInstancePatchStatesForPatchGroup(
             DescribeInstancePatchStatesForPatchGroupRequest describeInstancePatchStatesForPatchGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeInstancePatchStatesForPatchGroupRequest);
@@ -2141,7 +2330,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeInstancePatchStatesForPatchGroupRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeInstancePatchStatesForPatchGroupRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeInstancePatchStatesForPatchGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -2178,11 +2367,11 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         You do not have permission to access the instance.
      *         </p>
      *         <p>
-     *         The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is
+     *         The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is
      *         running. On EC2 Windows instances, verify that the EC2Config service is running.
      *         </p>
      *         <p>
-     *         The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent
+     *         The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent
      *         or EC2Config service.
      *         </p>
      *         <p>
@@ -2197,7 +2386,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public DescribeInstancePatchesResult describeInstancePatches(DescribeInstancePatchesRequest describeInstancePatchesRequest) {
+    public DescribeInstancePatchesResult describeInstancePatches(DescribeInstancePatchesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeInstancePatches(request);
+    }
+
+    @SdkInternalApi
+    final DescribeInstancePatchesResult executeDescribeInstancePatches(DescribeInstancePatchesRequest describeInstancePatchesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeInstancePatchesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2208,7 +2403,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeInstancePatchesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeInstancePatchesRequest));
+                request = new DescribeInstancePatchesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeInstancePatchesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2247,6 +2443,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      */
     @Override
     public DescribeMaintenanceWindowExecutionTaskInvocationsResult describeMaintenanceWindowExecutionTaskInvocations(
+            DescribeMaintenanceWindowExecutionTaskInvocationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeMaintenanceWindowExecutionTaskInvocations(request);
+    }
+
+    @SdkInternalApi
+    final DescribeMaintenanceWindowExecutionTaskInvocationsResult executeDescribeMaintenanceWindowExecutionTaskInvocations(
             DescribeMaintenanceWindowExecutionTaskInvocationsRequest describeMaintenanceWindowExecutionTaskInvocationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeMaintenanceWindowExecutionTaskInvocationsRequest);
@@ -2258,7 +2461,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeMaintenanceWindowExecutionTaskInvocationsRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeMaintenanceWindowExecutionTaskInvocationsRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeMaintenanceWindowExecutionTaskInvocationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -2295,7 +2498,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeMaintenanceWindowExecutionTasksResult describeMaintenanceWindowExecutionTasks(
+    public DescribeMaintenanceWindowExecutionTasksResult describeMaintenanceWindowExecutionTasks(DescribeMaintenanceWindowExecutionTasksRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeMaintenanceWindowExecutionTasks(request);
+    }
+
+    @SdkInternalApi
+    final DescribeMaintenanceWindowExecutionTasksResult executeDescribeMaintenanceWindowExecutionTasks(
             DescribeMaintenanceWindowExecutionTasksRequest describeMaintenanceWindowExecutionTasksRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeMaintenanceWindowExecutionTasksRequest);
@@ -2307,7 +2516,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeMaintenanceWindowExecutionTasksRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeMaintenanceWindowExecutionTasksRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeMaintenanceWindowExecutionTasksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -2343,7 +2552,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeMaintenanceWindowExecutionsResult describeMaintenanceWindowExecutions(
+    public DescribeMaintenanceWindowExecutionsResult describeMaintenanceWindowExecutions(DescribeMaintenanceWindowExecutionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeMaintenanceWindowExecutions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeMaintenanceWindowExecutionsResult executeDescribeMaintenanceWindowExecutions(
             DescribeMaintenanceWindowExecutionsRequest describeMaintenanceWindowExecutionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeMaintenanceWindowExecutionsRequest);
@@ -2355,7 +2570,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeMaintenanceWindowExecutionsRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeMaintenanceWindowExecutionsRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeMaintenanceWindowExecutionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -2392,7 +2607,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeMaintenanceWindowTargetsResult describeMaintenanceWindowTargets(
+    public DescribeMaintenanceWindowTargetsResult describeMaintenanceWindowTargets(DescribeMaintenanceWindowTargetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeMaintenanceWindowTargets(request);
+    }
+
+    @SdkInternalApi
+    final DescribeMaintenanceWindowTargetsResult executeDescribeMaintenanceWindowTargets(
             DescribeMaintenanceWindowTargetsRequest describeMaintenanceWindowTargetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeMaintenanceWindowTargetsRequest);
@@ -2404,7 +2625,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeMaintenanceWindowTargetsRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeMaintenanceWindowTargetsRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeMaintenanceWindowTargetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -2441,7 +2662,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeMaintenanceWindowTasksResult describeMaintenanceWindowTasks(DescribeMaintenanceWindowTasksRequest describeMaintenanceWindowTasksRequest) {
+    public DescribeMaintenanceWindowTasksResult describeMaintenanceWindowTasks(DescribeMaintenanceWindowTasksRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeMaintenanceWindowTasks(request);
+    }
+
+    @SdkInternalApi
+    final DescribeMaintenanceWindowTasksResult executeDescribeMaintenanceWindowTasks(DescribeMaintenanceWindowTasksRequest describeMaintenanceWindowTasksRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeMaintenanceWindowTasksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2452,7 +2679,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeMaintenanceWindowTasksRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeMaintenanceWindowTasksRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeMaintenanceWindowTasksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -2487,7 +2714,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public DescribeMaintenanceWindowsResult describeMaintenanceWindows(DescribeMaintenanceWindowsRequest describeMaintenanceWindowsRequest) {
+    public DescribeMaintenanceWindowsResult describeMaintenanceWindows(DescribeMaintenanceWindowsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeMaintenanceWindows(request);
+    }
+
+    @SdkInternalApi
+    final DescribeMaintenanceWindowsResult executeDescribeMaintenanceWindows(DescribeMaintenanceWindowsRequest describeMaintenanceWindowsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeMaintenanceWindowsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2498,7 +2731,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeMaintenanceWindowsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeMaintenanceWindowsRequest));
+                request = new DescribeMaintenanceWindowsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeMaintenanceWindowsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2536,7 +2770,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public DescribeParametersResult describeParameters(DescribeParametersRequest describeParametersRequest) {
+    public DescribeParametersResult describeParameters(DescribeParametersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeParameters(request);
+    }
+
+    @SdkInternalApi
+    final DescribeParametersResult executeDescribeParameters(DescribeParametersRequest describeParametersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeParametersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2547,7 +2787,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeParametersRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeParametersRequest));
+                request = new DescribeParametersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeParametersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2580,7 +2820,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public DescribePatchBaselinesResult describePatchBaselines(DescribePatchBaselinesRequest describePatchBaselinesRequest) {
+    public DescribePatchBaselinesResult describePatchBaselines(DescribePatchBaselinesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribePatchBaselines(request);
+    }
+
+    @SdkInternalApi
+    final DescribePatchBaselinesResult executeDescribePatchBaselines(DescribePatchBaselinesRequest describePatchBaselinesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describePatchBaselinesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2591,7 +2837,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribePatchBaselinesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describePatchBaselinesRequest));
+                request = new DescribePatchBaselinesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describePatchBaselinesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2627,7 +2873,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public DescribePatchGroupStateResult describePatchGroupState(DescribePatchGroupStateRequest describePatchGroupStateRequest) {
+    public DescribePatchGroupStateResult describePatchGroupState(DescribePatchGroupStateRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribePatchGroupState(request);
+    }
+
+    @SdkInternalApi
+    final DescribePatchGroupStateResult executeDescribePatchGroupState(DescribePatchGroupStateRequest describePatchGroupStateRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describePatchGroupStateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2638,7 +2890,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribePatchGroupStateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describePatchGroupStateRequest));
+                request = new DescribePatchGroupStateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describePatchGroupStateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2672,7 +2925,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public DescribePatchGroupsResult describePatchGroups(DescribePatchGroupsRequest describePatchGroupsRequest) {
+    public DescribePatchGroupsResult describePatchGroups(DescribePatchGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribePatchGroups(request);
+    }
+
+    @SdkInternalApi
+    final DescribePatchGroupsResult executeDescribePatchGroups(DescribePatchGroupsRequest describePatchGroupsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describePatchGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2683,7 +2942,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribePatchGroupsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describePatchGroupsRequest));
+                request = new DescribePatchGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describePatchGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2718,7 +2977,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public GetAutomationExecutionResult getAutomationExecution(GetAutomationExecutionRequest getAutomationExecutionRequest) {
+    public GetAutomationExecutionResult getAutomationExecution(GetAutomationExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAutomationExecution(request);
+    }
+
+    @SdkInternalApi
+    final GetAutomationExecutionResult executeGetAutomationExecution(GetAutomationExecutionRequest getAutomationExecutionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getAutomationExecutionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2729,7 +2994,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetAutomationExecutionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAutomationExecutionRequest));
+                request = new GetAutomationExecutionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAutomationExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2765,11 +3030,11 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         You do not have permission to access the instance.
      *         </p>
      *         <p>
-     *         The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is
+     *         The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is
      *         running. On EC2 Windows instances, verify that the EC2Config service is running.
      *         </p>
      *         <p>
-     *         The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent
+     *         The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent
      *         or EC2Config service.
      *         </p>
      *         <p>
@@ -2785,7 +3050,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public GetCommandInvocationResult getCommandInvocation(GetCommandInvocationRequest getCommandInvocationRequest) {
+    public GetCommandInvocationResult getCommandInvocation(GetCommandInvocationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCommandInvocation(request);
+    }
+
+    @SdkInternalApi
+    final GetCommandInvocationResult executeGetCommandInvocation(GetCommandInvocationRequest getCommandInvocationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getCommandInvocationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2796,7 +3067,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetCommandInvocationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCommandInvocationRequest));
+                request = new GetCommandInvocationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCommandInvocationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2829,7 +3100,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public GetDefaultPatchBaselineResult getDefaultPatchBaseline(GetDefaultPatchBaselineRequest getDefaultPatchBaselineRequest) {
+    public GetDefaultPatchBaselineResult getDefaultPatchBaseline(GetDefaultPatchBaselineRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDefaultPatchBaseline(request);
+    }
+
+    @SdkInternalApi
+    final GetDefaultPatchBaselineResult executeGetDefaultPatchBaseline(GetDefaultPatchBaselineRequest getDefaultPatchBaselineRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getDefaultPatchBaselineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2840,7 +3117,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDefaultPatchBaselineRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDefaultPatchBaselineRequest));
+                request = new GetDefaultPatchBaselineRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getDefaultPatchBaselineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2875,7 +3153,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetDeployablePatchSnapshotForInstanceResult getDeployablePatchSnapshotForInstance(
+    public GetDeployablePatchSnapshotForInstanceResult getDeployablePatchSnapshotForInstance(GetDeployablePatchSnapshotForInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDeployablePatchSnapshotForInstance(request);
+    }
+
+    @SdkInternalApi
+    final GetDeployablePatchSnapshotForInstanceResult executeGetDeployablePatchSnapshotForInstance(
             GetDeployablePatchSnapshotForInstanceRequest getDeployablePatchSnapshotForInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getDeployablePatchSnapshotForInstanceRequest);
@@ -2887,7 +3171,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDeployablePatchSnapshotForInstanceRequestMarshaller(protocolFactory).marshall(super
+                request = new GetDeployablePatchSnapshotForInstanceRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(getDeployablePatchSnapshotForInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -2926,7 +3210,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public GetDocumentResult getDocument(GetDocumentRequest getDocumentRequest) {
+    public GetDocumentResult getDocument(GetDocumentRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDocument(request);
+    }
+
+    @SdkInternalApi
+    final GetDocumentResult executeGetDocument(GetDocumentRequest getDocumentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getDocumentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2937,7 +3227,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetDocumentRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDocumentRequest));
+                request = new GetDocumentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDocumentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2978,7 +3268,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public GetInventoryResult getInventory(GetInventoryRequest getInventoryRequest) {
+    public GetInventoryResult getInventory(GetInventoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetInventory(request);
+    }
+
+    @SdkInternalApi
+    final GetInventoryResult executeGetInventory(GetInventoryRequest getInventoryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getInventoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2989,7 +3285,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetInventoryRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInventoryRequest));
+                request = new GetInventoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInventoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3027,7 +3323,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public GetInventorySchemaResult getInventorySchema(GetInventorySchemaRequest getInventorySchemaRequest) {
+    public GetInventorySchemaResult getInventorySchema(GetInventorySchemaRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetInventorySchema(request);
+    }
+
+    @SdkInternalApi
+    final GetInventorySchemaResult executeGetInventorySchema(GetInventorySchemaRequest getInventorySchemaRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getInventorySchemaRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3038,7 +3340,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetInventorySchemaRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInventorySchemaRequest));
+                request = new GetInventorySchemaRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInventorySchemaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3073,7 +3375,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public GetMaintenanceWindowResult getMaintenanceWindow(GetMaintenanceWindowRequest getMaintenanceWindowRequest) {
+    public GetMaintenanceWindowResult getMaintenanceWindow(GetMaintenanceWindowRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetMaintenanceWindow(request);
+    }
+
+    @SdkInternalApi
+    final GetMaintenanceWindowResult executeGetMaintenanceWindow(GetMaintenanceWindowRequest getMaintenanceWindowRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getMaintenanceWindowRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3084,7 +3392,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetMaintenanceWindowRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMaintenanceWindowRequest));
+                request = new GetMaintenanceWindowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMaintenanceWindowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3119,7 +3427,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetMaintenanceWindowExecutionResult getMaintenanceWindowExecution(GetMaintenanceWindowExecutionRequest getMaintenanceWindowExecutionRequest) {
+    public GetMaintenanceWindowExecutionResult getMaintenanceWindowExecution(GetMaintenanceWindowExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetMaintenanceWindowExecution(request);
+    }
+
+    @SdkInternalApi
+    final GetMaintenanceWindowExecutionResult executeGetMaintenanceWindowExecution(GetMaintenanceWindowExecutionRequest getMaintenanceWindowExecutionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getMaintenanceWindowExecutionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3130,7 +3444,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetMaintenanceWindowExecutionRequestMarshaller(protocolFactory).marshall(super
+                request = new GetMaintenanceWindowExecutionRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(getMaintenanceWindowExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -3167,7 +3481,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetMaintenanceWindowExecutionTaskResult getMaintenanceWindowExecutionTask(
+    public GetMaintenanceWindowExecutionTaskResult getMaintenanceWindowExecutionTask(GetMaintenanceWindowExecutionTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetMaintenanceWindowExecutionTask(request);
+    }
+
+    @SdkInternalApi
+    final GetMaintenanceWindowExecutionTaskResult executeGetMaintenanceWindowExecutionTask(
             GetMaintenanceWindowExecutionTaskRequest getMaintenanceWindowExecutionTaskRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getMaintenanceWindowExecutionTaskRequest);
@@ -3179,7 +3499,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetMaintenanceWindowExecutionTaskRequestMarshaller(protocolFactory).marshall(super
+                request = new GetMaintenanceWindowExecutionTaskRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(getMaintenanceWindowExecutionTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -3218,7 +3538,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public GetParameterHistoryResult getParameterHistory(GetParameterHistoryRequest getParameterHistoryRequest) {
+    public GetParameterHistoryResult getParameterHistory(GetParameterHistoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetParameterHistory(request);
+    }
+
+    @SdkInternalApi
+    final GetParameterHistoryResult executeGetParameterHistory(GetParameterHistoryRequest getParameterHistoryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getParameterHistoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3229,7 +3555,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetParameterHistoryRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getParameterHistoryRequest));
+                request = new GetParameterHistoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getParameterHistoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3250,7 +3576,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Get a list of parameters used by the AWS account.&gt;
+     * Get details of a parameter.
      * </p>
      * 
      * @param getParametersRequest
@@ -3262,7 +3588,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public GetParametersResult getParameters(GetParametersRequest getParametersRequest) {
+    public GetParametersResult getParameters(GetParametersRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetParameters(request);
+    }
+
+    @SdkInternalApi
+    final GetParametersResult executeGetParameters(GetParametersRequest getParametersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getParametersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3273,7 +3605,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetParametersRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getParametersRequest));
+                request = new GetParametersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getParametersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3310,7 +3642,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public GetPatchBaselineResult getPatchBaseline(GetPatchBaselineRequest getPatchBaselineRequest) {
+    public GetPatchBaselineResult getPatchBaseline(GetPatchBaselineRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetPatchBaseline(request);
+    }
+
+    @SdkInternalApi
+    final GetPatchBaselineResult executeGetPatchBaseline(GetPatchBaselineRequest getPatchBaselineRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getPatchBaselineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3321,7 +3659,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetPatchBaselineRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPatchBaselineRequest));
+                request = new GetPatchBaselineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPatchBaselineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3354,7 +3692,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetPatchBaselineForPatchGroupResult getPatchBaselineForPatchGroup(GetPatchBaselineForPatchGroupRequest getPatchBaselineForPatchGroupRequest) {
+    public GetPatchBaselineForPatchGroupResult getPatchBaselineForPatchGroup(GetPatchBaselineForPatchGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetPatchBaselineForPatchGroup(request);
+    }
+
+    @SdkInternalApi
+    final GetPatchBaselineForPatchGroupResult executeGetPatchBaselineForPatchGroup(GetPatchBaselineForPatchGroupRequest getPatchBaselineForPatchGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getPatchBaselineForPatchGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3365,7 +3709,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetPatchBaselineForPatchGroupRequestMarshaller(protocolFactory).marshall(super
+                request = new GetPatchBaselineForPatchGroupRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(getPatchBaselineForPatchGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -3388,7 +3732,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Lists the associations for the specified SSM document or instance.
+     * Lists the associations for the specified Systems Manager document or instance.
      * </p>
      * 
      * @param listAssociationsRequest
@@ -3402,7 +3746,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public ListAssociationsResult listAssociations(ListAssociationsRequest listAssociationsRequest) {
+    public ListAssociationsResult listAssociations(ListAssociationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAssociations(request);
+    }
+
+    @SdkInternalApi
+    final ListAssociationsResult executeListAssociations(ListAssociationsRequest listAssociationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listAssociationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3413,7 +3763,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAssociationsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssociationsRequest));
+                request = new ListAssociationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssociationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3451,11 +3801,11 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         You do not have permission to access the instance.
      *         </p>
      *         <p>
-     *         The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is
+     *         The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is
      *         running. On EC2 Windows instances, verify that the EC2Config service is running.
      *         </p>
      *         <p>
-     *         The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent
+     *         The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent
      *         or EC2Config service.
      *         </p>
      *         <p>
@@ -3470,7 +3820,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public ListCommandInvocationsResult listCommandInvocations(ListCommandInvocationsRequest listCommandInvocationsRequest) {
+    public ListCommandInvocationsResult listCommandInvocations(ListCommandInvocationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCommandInvocations(request);
+    }
+
+    @SdkInternalApi
+    final ListCommandInvocationsResult executeListCommandInvocations(ListCommandInvocationsRequest listCommandInvocationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listCommandInvocationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3481,7 +3837,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListCommandInvocationsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCommandInvocationsRequest));
+                request = new ListCommandInvocationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCommandInvocationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3517,11 +3873,11 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         You do not have permission to access the instance.
      *         </p>
      *         <p>
-     *         The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is
+     *         The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is
      *         running. On EC2 Windows instances, verify that the EC2Config service is running.
      *         </p>
      *         <p>
-     *         The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent
+     *         The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent
      *         or EC2Config service.
      *         </p>
      *         <p>
@@ -3536,7 +3892,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public ListCommandsResult listCommands(ListCommandsRequest listCommandsRequest) {
+    public ListCommandsResult listCommands(ListCommandsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCommands(request);
+    }
+
+    @SdkInternalApi
+    final ListCommandsResult executeListCommands(ListCommandsRequest listCommandsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listCommandsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3547,7 +3909,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListCommandsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCommandsRequest));
+                request = new ListCommandsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCommandsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3584,7 +3946,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public ListDocumentVersionsResult listDocumentVersions(ListDocumentVersionsRequest listDocumentVersionsRequest) {
+    public ListDocumentVersionsResult listDocumentVersions(ListDocumentVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDocumentVersions(request);
+    }
+
+    @SdkInternalApi
+    final ListDocumentVersionsResult executeListDocumentVersions(ListDocumentVersionsRequest listDocumentVersionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listDocumentVersionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3595,7 +3963,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListDocumentVersionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDocumentVersionsRequest));
+                request = new ListDocumentVersionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDocumentVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3632,7 +4000,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public ListDocumentsResult listDocuments(ListDocumentsRequest listDocumentsRequest) {
+    public ListDocumentsResult listDocuments(ListDocumentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDocuments(request);
+    }
+
+    @SdkInternalApi
+    final ListDocumentsResult executeListDocuments(ListDocumentsRequest listDocumentsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listDocumentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3643,7 +4017,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListDocumentsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDocumentsRequest));
+                request = new ListDocumentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDocumentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3682,11 +4056,11 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         You do not have permission to access the instance.
      *         </p>
      *         <p>
-     *         The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is
+     *         The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is
      *         running. On EC2 Windows instances, verify that the EC2Config service is running.
      *         </p>
      *         <p>
-     *         The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent
+     *         The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent
      *         or EC2Config service.
      *         </p>
      *         <p>
@@ -3703,7 +4077,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public ListInventoryEntriesResult listInventoryEntries(ListInventoryEntriesRequest listInventoryEntriesRequest) {
+    public ListInventoryEntriesResult listInventoryEntries(ListInventoryEntriesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListInventoryEntries(request);
+    }
+
+    @SdkInternalApi
+    final ListInventoryEntriesResult executeListInventoryEntries(ListInventoryEntriesRequest listInventoryEntriesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listInventoryEntriesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3714,7 +4094,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListInventoryEntriesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listInventoryEntriesRequest));
+                request = new ListInventoryEntriesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listInventoryEntriesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3752,7 +4132,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3763,7 +4149,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTagsForResourceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3784,9 +4170,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Share a document publicly or privately. If you share a document privately, you must specify the AWS user account
-     * IDs for those people who can use the document. If you share a document publicly, you must specify <i>All</i> as
-     * the account ID.
+     * Shares a Systems Manager document publicly or privately. If you share a document privately, you must specify the
+     * AWS user account IDs for those people who can use the document. If you share a document publicly, you must
+     * specify <i>All</i> as the account ID.
      * </p>
      * 
      * @param modifyDocumentPermissionRequest
@@ -3808,7 +4194,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public ModifyDocumentPermissionResult modifyDocumentPermission(ModifyDocumentPermissionRequest modifyDocumentPermissionRequest) {
+    public ModifyDocumentPermissionResult modifyDocumentPermission(ModifyDocumentPermissionRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyDocumentPermission(request);
+    }
+
+    @SdkInternalApi
+    final ModifyDocumentPermissionResult executeModifyDocumentPermission(ModifyDocumentPermissionRequest modifyDocumentPermissionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(modifyDocumentPermissionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3819,7 +4211,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ModifyDocumentPermissionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(modifyDocumentPermissionRequest));
+                request = new ModifyDocumentPermissionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(modifyDocumentPermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3855,11 +4248,11 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         You do not have permission to access the instance.
      *         </p>
      *         <p>
-     *         The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is
+     *         The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is
      *         running. On EC2 Windows instances, verify that the EC2Config service is running.
      *         </p>
      *         <p>
-     *         The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent
+     *         The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent
      *         or EC2Config service.
      *         </p>
      *         <p>
@@ -3885,7 +4278,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public PutInventoryResult putInventory(PutInventoryRequest putInventoryRequest) {
+    public PutInventoryResult putInventory(PutInventoryRequest request) {
+        request = beforeClientExecution(request);
+        return executePutInventory(request);
+    }
+
+    @SdkInternalApi
+    final PutInventoryResult executePutInventory(PutInventoryRequest putInventoryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putInventoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3896,7 +4295,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutInventoryRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(putInventoryRequest));
+                request = new PutInventoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putInventoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3940,7 +4339,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public PutParameterResult putParameter(PutParameterRequest putParameterRequest) {
+    public PutParameterResult putParameter(PutParameterRequest request) {
+        request = beforeClientExecution(request);
+        return executePutParameter(request);
+    }
+
+    @SdkInternalApi
+    final PutParameterResult executePutParameter(PutParameterRequest putParameterRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putParameterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3951,7 +4356,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutParameterRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(putParameterRequest));
+                request = new PutParameterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putParameterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -3988,7 +4393,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RegisterDefaultPatchBaselineResult registerDefaultPatchBaseline(RegisterDefaultPatchBaselineRequest registerDefaultPatchBaselineRequest) {
+    public RegisterDefaultPatchBaselineResult registerDefaultPatchBaseline(RegisterDefaultPatchBaselineRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterDefaultPatchBaseline(request);
+    }
+
+    @SdkInternalApi
+    final RegisterDefaultPatchBaselineResult executeRegisterDefaultPatchBaseline(RegisterDefaultPatchBaselineRequest registerDefaultPatchBaselineRequest) {
 
         ExecutionContext executionContext = createExecutionContext(registerDefaultPatchBaselineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3999,7 +4410,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterDefaultPatchBaselineRequestMarshaller(protocolFactory).marshall(super
+                request = new RegisterDefaultPatchBaselineRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(registerDefaultPatchBaselineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -4044,7 +4455,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RegisterPatchBaselineForPatchGroupResult registerPatchBaselineForPatchGroup(
+    public RegisterPatchBaselineForPatchGroupResult registerPatchBaselineForPatchGroup(RegisterPatchBaselineForPatchGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterPatchBaselineForPatchGroup(request);
+    }
+
+    @SdkInternalApi
+    final RegisterPatchBaselineForPatchGroupResult executeRegisterPatchBaselineForPatchGroup(
             RegisterPatchBaselineForPatchGroupRequest registerPatchBaselineForPatchGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(registerPatchBaselineForPatchGroupRequest);
@@ -4056,7 +4473,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterPatchBaselineForPatchGroupRequestMarshaller(protocolFactory).marshall(super
+                request = new RegisterPatchBaselineForPatchGroupRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(registerPatchBaselineForPatchGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -4099,7 +4516,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RegisterTargetWithMaintenanceWindowResult registerTargetWithMaintenanceWindow(
+    public RegisterTargetWithMaintenanceWindowResult registerTargetWithMaintenanceWindow(RegisterTargetWithMaintenanceWindowRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterTargetWithMaintenanceWindow(request);
+    }
+
+    @SdkInternalApi
+    final RegisterTargetWithMaintenanceWindowResult executeRegisterTargetWithMaintenanceWindow(
             RegisterTargetWithMaintenanceWindowRequest registerTargetWithMaintenanceWindowRequest) {
 
         ExecutionContext executionContext = createExecutionContext(registerTargetWithMaintenanceWindowRequest);
@@ -4111,7 +4534,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterTargetWithMaintenanceWindowRequestMarshaller(protocolFactory).marshall(super
+                request = new RegisterTargetWithMaintenanceWindowRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(registerTargetWithMaintenanceWindowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -4154,7 +4577,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RegisterTaskWithMaintenanceWindowResult registerTaskWithMaintenanceWindow(
+    public RegisterTaskWithMaintenanceWindowResult registerTaskWithMaintenanceWindow(RegisterTaskWithMaintenanceWindowRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterTaskWithMaintenanceWindow(request);
+    }
+
+    @SdkInternalApi
+    final RegisterTaskWithMaintenanceWindowResult executeRegisterTaskWithMaintenanceWindow(
             RegisterTaskWithMaintenanceWindowRequest registerTaskWithMaintenanceWindowRequest) {
 
         ExecutionContext executionContext = createExecutionContext(registerTaskWithMaintenanceWindowRequest);
@@ -4166,7 +4595,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterTaskWithMaintenanceWindowRequestMarshaller(protocolFactory).marshall(super
+                request = new RegisterTaskWithMaintenanceWindowRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(registerTaskWithMaintenanceWindowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -4206,7 +4635,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public RemoveTagsFromResourceResult removeTagsFromResource(RemoveTagsFromResourceRequest removeTagsFromResourceRequest) {
+    public RemoveTagsFromResourceResult removeTagsFromResource(RemoveTagsFromResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveTagsFromResource(request);
+    }
+
+    @SdkInternalApi
+    final RemoveTagsFromResourceResult executeRemoveTagsFromResource(RemoveTagsFromResourceRequest removeTagsFromResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(removeTagsFromResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4217,7 +4652,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RemoveTagsFromResourceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeTagsFromResourceRequest));
+                request = new RemoveTagsFromResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeTagsFromResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4254,11 +4689,11 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         You do not have permission to access the instance.
      *         </p>
      *         <p>
-     *         The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is
+     *         The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is
      *         running. On EC2 Windows instances, verify that the EC2Config service is running.
      *         </p>
      *         <p>
-     *         The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent
+     *         The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent
      *         or EC2Config service.
      *         </p>
      *         <p>
@@ -4272,16 +4707,16 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         You must specify values for all required parameters in the SSM document. You can only supply values to
      *         parameters defined in the SSM document.
      * @throws UnsupportedPlatformTypeException
-     *         The document does not support the platform type of the given instance ID(s). For example, you sent an SSM
+     *         The document does not support the platform type of the given instance ID(s). For example, you sent an
      *         document for a Windows instance to a Linux instance.
      * @throws MaxDocumentSizeExceededException
-     *         The size limit of an SSM document is 64 KB.
+     *         The size limit of a document is 64 KB.
      * @throws InvalidRoleException
      *         The role name can't contain invalid characters. Also verify that you specified an IAM role for
      *         notifications that includes the required trust policy. For information about configuring the IAM role for
      *         Run Command notifications, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/rc-sns.html">Getting Amazon SNS Notifications
-     *         When a Command Changes Status</a> in the <i>Amazon Elastic Compute Cloud User Guide </i>.
+     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html">Configuring
+     *         Amazon SNS Notifications for Run Command</a> in the <i>Amazon EC2 Systems Manager User Guide</i>.
      * @throws InvalidNotificationConfigException
      *         One or more configuration items is not valid. Verify that a valid Amazon Resource Name (ARN) was provided
      *         for an Amazon SNS topic.
@@ -4290,7 +4725,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public SendCommandResult sendCommand(SendCommandRequest sendCommandRequest) {
+    public SendCommandResult sendCommand(SendCommandRequest request) {
+        request = beforeClientExecution(request);
+        return executeSendCommand(request);
+    }
+
+    @SdkInternalApi
+    final SendCommandResult executeSendCommand(SendCommandRequest sendCommandRequest) {
 
         ExecutionContext executionContext = createExecutionContext(sendCommandRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4301,7 +4742,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SendCommandRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(sendCommandRequest));
+                request = new SendCommandRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(sendCommandRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4343,7 +4784,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public StartAutomationExecutionResult startAutomationExecution(StartAutomationExecutionRequest startAutomationExecutionRequest) {
+    public StartAutomationExecutionResult startAutomationExecution(StartAutomationExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartAutomationExecution(request);
+    }
+
+    @SdkInternalApi
+    final StartAutomationExecutionResult executeStartAutomationExecution(StartAutomationExecutionRequest startAutomationExecutionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(startAutomationExecutionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4354,7 +4801,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartAutomationExecutionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(startAutomationExecutionRequest));
+                request = new StartAutomationExecutionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startAutomationExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4390,7 +4838,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public StopAutomationExecutionResult stopAutomationExecution(StopAutomationExecutionRequest stopAutomationExecutionRequest) {
+    public StopAutomationExecutionResult stopAutomationExecution(StopAutomationExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopAutomationExecution(request);
+    }
+
+    @SdkInternalApi
+    final StopAutomationExecutionResult executeStopAutomationExecution(StopAutomationExecutionRequest stopAutomationExecutionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(stopAutomationExecutionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4401,7 +4855,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopAutomationExecutionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopAutomationExecutionRequest));
+                request = new StopAutomationExecutionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(stopAutomationExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4451,7 +4906,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public UpdateAssociationResult updateAssociation(UpdateAssociationRequest updateAssociationRequest) {
+    public UpdateAssociationResult updateAssociation(UpdateAssociationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAssociation(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAssociationResult executeUpdateAssociation(UpdateAssociationRequest updateAssociationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateAssociationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4462,7 +4923,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateAssociationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAssociationRequest));
+                request = new UpdateAssociationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAssociationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4483,7 +4944,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Updates the status of the SSM document associated with the specified instance.
+     * Updates the status of the Systems Manager document associated with the specified instance.
      * </p>
      * 
      * @param updateAssociationStatusRequest
@@ -4496,11 +4957,11 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         You do not have permission to access the instance.
      *         </p>
      *         <p>
-     *         The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is
+     *         The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is
      *         running. On EC2 Windows instances, verify that the EC2Config service is running.
      *         </p>
      *         <p>
-     *         The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent
+     *         The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent
      *         or EC2Config service.
      *         </p>
      *         <p>
@@ -4519,7 +4980,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public UpdateAssociationStatusResult updateAssociationStatus(UpdateAssociationStatusRequest updateAssociationStatusRequest) {
+    public UpdateAssociationStatusResult updateAssociationStatus(UpdateAssociationStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAssociationStatus(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAssociationStatusResult executeUpdateAssociationStatus(UpdateAssociationStatusRequest updateAssociationStatusRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateAssociationStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4530,7 +4997,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateAssociationStatusRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAssociationStatusRequest));
+                request = new UpdateAssociationStatusRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateAssociationStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4558,7 +5026,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @param updateDocumentRequest
      * @return Result of the UpdateDocument operation returned by the service.
      * @throws MaxDocumentSizeExceededException
-     *         The size limit of an SSM document is 64 KB.
+     *         The size limit of a document is 64 KB.
      * @throws DocumentVersionLimitExceededException
      *         The document has too many versions. Delete one or more document versions and try again.
      * @throws InternalServerErrorException
@@ -4567,7 +5035,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         The content of the association document matches another document. Change the content of the document and
      *         try again.
      * @throws InvalidDocumentContentException
-     *         The content for the SSM document is not valid.
+     *         The content for the document is not valid.
      * @throws InvalidDocumentVersionException
      *         The document version is not valid or does not exist.
      * @throws InvalidDocumentSchemaVersionException
@@ -4579,7 +5047,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public UpdateDocumentResult updateDocument(UpdateDocumentRequest updateDocumentRequest) {
+    public UpdateDocumentResult updateDocument(UpdateDocumentRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDocument(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDocumentResult executeUpdateDocument(UpdateDocumentRequest updateDocumentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateDocumentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4590,7 +5064,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateDocumentRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDocumentRequest));
+                request = new UpdateDocumentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDocumentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4629,7 +5103,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateDocumentDefaultVersionResult updateDocumentDefaultVersion(UpdateDocumentDefaultVersionRequest updateDocumentDefaultVersionRequest) {
+    public UpdateDocumentDefaultVersionResult updateDocumentDefaultVersion(UpdateDocumentDefaultVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDocumentDefaultVersion(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDocumentDefaultVersionResult executeUpdateDocumentDefaultVersion(UpdateDocumentDefaultVersionRequest updateDocumentDefaultVersionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateDocumentDefaultVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4640,7 +5120,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateDocumentDefaultVersionRequestMarshaller(protocolFactory).marshall(super
+                request = new UpdateDocumentDefaultVersionRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(updateDocumentDefaultVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -4677,7 +5157,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public UpdateMaintenanceWindowResult updateMaintenanceWindow(UpdateMaintenanceWindowRequest updateMaintenanceWindowRequest) {
+    public UpdateMaintenanceWindowResult updateMaintenanceWindow(UpdateMaintenanceWindowRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateMaintenanceWindow(request);
+    }
+
+    @SdkInternalApi
+    final UpdateMaintenanceWindowResult executeUpdateMaintenanceWindow(UpdateMaintenanceWindowRequest updateMaintenanceWindowRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateMaintenanceWindowRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4688,7 +5174,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateMaintenanceWindowRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateMaintenanceWindowRequest));
+                request = new UpdateMaintenanceWindowRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateMaintenanceWindowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4721,11 +5208,11 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         You do not have permission to access the instance.
      *         </p>
      *         <p>
-     *         The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is
+     *         The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is
      *         running. On EC2 Windows instances, verify that the EC2Config service is running.
      *         </p>
      *         <p>
-     *         The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent
+     *         The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent
      *         or EC2Config service.
      *         </p>
      *         <p>
@@ -4738,7 +5225,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public UpdateManagedInstanceRoleResult updateManagedInstanceRole(UpdateManagedInstanceRoleRequest updateManagedInstanceRoleRequest) {
+    public UpdateManagedInstanceRoleResult updateManagedInstanceRole(UpdateManagedInstanceRoleRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateManagedInstanceRole(request);
+    }
+
+    @SdkInternalApi
+    final UpdateManagedInstanceRoleResult executeUpdateManagedInstanceRole(UpdateManagedInstanceRoleRequest updateManagedInstanceRoleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateManagedInstanceRoleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4749,7 +5242,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateManagedInstanceRoleRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateManagedInstanceRoleRequest));
+                request = new UpdateManagedInstanceRoleRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateManagedInstanceRoleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -4785,7 +5279,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *      Documentation</a>
      */
     @Override
-    public UpdatePatchBaselineResult updatePatchBaseline(UpdatePatchBaselineRequest updatePatchBaselineRequest) {
+    public UpdatePatchBaselineResult updatePatchBaseline(UpdatePatchBaselineRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdatePatchBaseline(request);
+    }
+
+    @SdkInternalApi
+    final UpdatePatchBaselineResult executeUpdatePatchBaseline(UpdatePatchBaselineRequest updatePatchBaselineRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updatePatchBaselineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4796,7 +5296,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdatePatchBaselineRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updatePatchBaselineRequest));
+                request = new UpdatePatchBaselineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updatePatchBaselineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

@@ -37,6 +37,18 @@ public class GetDeploymentRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String deploymentId;
+    /**
+     * <p>
+     * A query parameter to retrieve the specified embedded resources of the returned <a>Deployment</a> resource in the
+     * response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated strings, as in
+     * <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The SDK and other
+     * platform-dependent libraries might use a different format for the list. Currently, this request supports only
+     * retrieval of the embedded API summary this way. Hence, the parameter value must be a single-valued list
+     * containing only the <code>"apisummary"</code> string. For example,
+     * <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.
+     * </p>
+     */
+    private java.util.List<String> embed;
 
     /**
      * <p>
@@ -120,6 +132,124 @@ public class GetDeploymentRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * A query parameter to retrieve the specified embedded resources of the returned <a>Deployment</a> resource in the
+     * response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated strings, as in
+     * <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The SDK and other
+     * platform-dependent libraries might use a different format for the list. Currently, this request supports only
+     * retrieval of the embedded API summary this way. Hence, the parameter value must be a single-valued list
+     * containing only the <code>"apisummary"</code> string. For example,
+     * <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.
+     * </p>
+     * 
+     * @return A query parameter to retrieve the specified embedded resources of the returned <a>Deployment</a> resource
+     *         in the response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated
+     *         strings, as in <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The
+     *         SDK and other platform-dependent libraries might use a different format for the list. Currently, this
+     *         request supports only retrieval of the embedded API summary this way. Hence, the parameter value must be
+     *         a single-valued list containing only the <code>"apisummary"</code> string. For example,
+     *         <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.
+     */
+
+    public java.util.List<String> getEmbed() {
+        return embed;
+    }
+
+    /**
+     * <p>
+     * A query parameter to retrieve the specified embedded resources of the returned <a>Deployment</a> resource in the
+     * response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated strings, as in
+     * <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The SDK and other
+     * platform-dependent libraries might use a different format for the list. Currently, this request supports only
+     * retrieval of the embedded API summary this way. Hence, the parameter value must be a single-valued list
+     * containing only the <code>"apisummary"</code> string. For example,
+     * <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.
+     * </p>
+     * 
+     * @param embed
+     *        A query parameter to retrieve the specified embedded resources of the returned <a>Deployment</a> resource
+     *        in the response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated
+     *        strings, as in <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The
+     *        SDK and other platform-dependent libraries might use a different format for the list. Currently, this
+     *        request supports only retrieval of the embedded API summary this way. Hence, the parameter value must be a
+     *        single-valued list containing only the <code>"apisummary"</code> string. For example,
+     *        <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.
+     */
+
+    public void setEmbed(java.util.Collection<String> embed) {
+        if (embed == null) {
+            this.embed = null;
+            return;
+        }
+
+        this.embed = new java.util.ArrayList<String>(embed);
+    }
+
+    /**
+     * <p>
+     * A query parameter to retrieve the specified embedded resources of the returned <a>Deployment</a> resource in the
+     * response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated strings, as in
+     * <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The SDK and other
+     * platform-dependent libraries might use a different format for the list. Currently, this request supports only
+     * retrieval of the embedded API summary this way. Hence, the parameter value must be a single-valued list
+     * containing only the <code>"apisummary"</code> string. For example,
+     * <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEmbed(java.util.Collection)} or {@link #withEmbed(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param embed
+     *        A query parameter to retrieve the specified embedded resources of the returned <a>Deployment</a> resource
+     *        in the response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated
+     *        strings, as in <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The
+     *        SDK and other platform-dependent libraries might use a different format for the list. Currently, this
+     *        request supports only retrieval of the embedded API summary this way. Hence, the parameter value must be a
+     *        single-valued list containing only the <code>"apisummary"</code> string. For example,
+     *        <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDeploymentRequest withEmbed(String... embed) {
+        if (this.embed == null) {
+            setEmbed(new java.util.ArrayList<String>(embed.length));
+        }
+        for (String ele : embed) {
+            this.embed.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A query parameter to retrieve the specified embedded resources of the returned <a>Deployment</a> resource in the
+     * response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated strings, as in
+     * <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The SDK and other
+     * platform-dependent libraries might use a different format for the list. Currently, this request supports only
+     * retrieval of the embedded API summary this way. Hence, the parameter value must be a single-valued list
+     * containing only the <code>"apisummary"</code> string. For example,
+     * <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.
+     * </p>
+     * 
+     * @param embed
+     *        A query parameter to retrieve the specified embedded resources of the returned <a>Deployment</a> resource
+     *        in the response. In a REST API call, this <code>embed</code> parameter value is a list of comma-separated
+     *        strings, as in <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The
+     *        SDK and other platform-dependent libraries might use a different format for the list. Currently, this
+     *        request supports only retrieval of the embedded API summary this way. Hence, the parameter value must be a
+     *        single-valued list containing only the <code>"apisummary"</code> string. For example,
+     *        <code>GET /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDeploymentRequest withEmbed(java.util.Collection<String> embed) {
+        setEmbed(embed);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -133,7 +263,9 @@ public class GetDeploymentRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getRestApiId() != null)
             sb.append("RestApiId: ").append(getRestApiId()).append(",");
         if (getDeploymentId() != null)
-            sb.append("DeploymentId: ").append(getDeploymentId());
+            sb.append("DeploymentId: ").append(getDeploymentId()).append(",");
+        if (getEmbed() != null)
+            sb.append("Embed: ").append(getEmbed());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +288,10 @@ public class GetDeploymentRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getDeploymentId() != null && other.getDeploymentId().equals(this.getDeploymentId()) == false)
             return false;
+        if (other.getEmbed() == null ^ this.getEmbed() == null)
+            return false;
+        if (other.getEmbed() != null && other.getEmbed().equals(this.getEmbed()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +302,7 @@ public class GetDeploymentRequest extends com.amazonaws.AmazonWebServiceRequest 
 
         hashCode = prime * hashCode + ((getRestApiId() == null) ? 0 : getRestApiId().hashCode());
         hashCode = prime * hashCode + ((getDeploymentId() == null) ? 0 : getDeploymentId().hashCode());
+        hashCode = prime * hashCode + ((getEmbed() == null) ? 0 : getEmbed().hashCode());
         return hashCode;
     }
 

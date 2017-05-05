@@ -26,7 +26,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DescribeNodeAssociationStatusRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private String nodeAssociationStatusToken;
-
+    /**
+     * <p>
+     * The name of the server from which to disassociate the node.
+     * </p>
+     */
     private String serverName;
 
     /**
@@ -56,7 +60,12 @@ public class DescribeNodeAssociationStatusRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * The name of the server from which to disassociate the node.
+     * </p>
+     * 
      * @param serverName
+     *        The name of the server from which to disassociate the node.
      */
 
     public void setServerName(String serverName) {
@@ -64,7 +73,11 @@ public class DescribeNodeAssociationStatusRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the server from which to disassociate the node.
+     * </p>
+     * 
+     * @return The name of the server from which to disassociate the node.
      */
 
     public String getServerName() {
@@ -72,7 +85,12 @@ public class DescribeNodeAssociationStatusRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * The name of the server from which to disassociate the node.
+     * </p>
+     * 
      * @param serverName
+     *        The name of the server from which to disassociate the node.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

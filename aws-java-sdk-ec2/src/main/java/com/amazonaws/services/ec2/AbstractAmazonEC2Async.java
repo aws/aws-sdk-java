@@ -70,6 +70,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #acceptVpcPeeringConnectionAsync(AcceptVpcPeeringConnectionRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<AcceptVpcPeeringConnectionResult> acceptVpcPeeringConnectionAsync(
             com.amazonaws.handlers.AsyncHandler<AcceptVpcPeeringConnectionRequest, AcceptVpcPeeringConnectionResult> asyncHandler) {
 
@@ -105,6 +106,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #allocateAddressAsync(AllocateAddressRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<AllocateAddressResult> allocateAddressAsync(
             com.amazonaws.handlers.AsyncHandler<AllocateAddressRequest, AllocateAddressResult> asyncHandler) {
 
@@ -172,6 +174,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     @Override
     public java.util.concurrent.Future<AssociateDhcpOptionsResult> associateDhcpOptionsAsync(AssociateDhcpOptionsRequest request,
             com.amazonaws.handlers.AsyncHandler<AssociateDhcpOptionsRequest, AssociateDhcpOptionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateIamInstanceProfileResult> associateIamInstanceProfileAsync(AssociateIamInstanceProfileRequest request) {
+
+        return associateIamInstanceProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateIamInstanceProfileResult> associateIamInstanceProfileAsync(AssociateIamInstanceProfileRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateIamInstanceProfileRequest, AssociateIamInstanceProfileResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -387,6 +402,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #cancelImportTaskAsync(CancelImportTaskRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<CancelImportTaskResult> cancelImportTaskAsync(
             com.amazonaws.handlers.AsyncHandler<CancelImportTaskRequest, CancelImportTaskResult> asyncHandler) {
 
@@ -526,6 +542,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<CreateFpgaImageResult> createFpgaImageAsync(CreateFpgaImageRequest request) {
+
+        return createFpgaImageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateFpgaImageResult> createFpgaImageAsync(CreateFpgaImageRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateFpgaImageRequest, CreateFpgaImageResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateImageResult> createImageAsync(CreateImageRequest request) {
 
         return createImageAsync(request, null);
@@ -580,6 +609,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #createInternetGatewayAsync(CreateInternetGatewayRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<CreateInternetGatewayResult> createInternetGatewayAsync(
             com.amazonaws.handlers.AsyncHandler<CreateInternetGatewayRequest, CreateInternetGatewayResult> asyncHandler) {
 
@@ -836,6 +866,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #createVpcPeeringConnectionAsync(CreateVpcPeeringConnectionRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<CreateVpcPeeringConnectionResult> createVpcPeeringConnectionAsync(
             com.amazonaws.handlers.AsyncHandler<CreateVpcPeeringConnectionRequest, CreateVpcPeeringConnectionResult> asyncHandler) {
 
@@ -1108,6 +1139,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      * @see #deleteSpotDatafeedSubscriptionAsync(DeleteSpotDatafeedSubscriptionRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DeleteSpotDatafeedSubscriptionResult> deleteSpotDatafeedSubscriptionAsync(
             com.amazonaws.handlers.AsyncHandler<DeleteSpotDatafeedSubscriptionRequest, DeleteSpotDatafeedSubscriptionResult> asyncHandler) {
 
@@ -1273,6 +1305,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeAccountAttributesAsync(DescribeAccountAttributesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeAccountAttributesResult> describeAccountAttributesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeAccountAttributesRequest, DescribeAccountAttributesResult> asyncHandler) {
 
@@ -1308,6 +1341,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeAddressesAsync(DescribeAddressesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeAddressesResult> describeAddressesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeAddressesRequest, DescribeAddressesResult> asyncHandler) {
 
@@ -1343,6 +1377,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeAvailabilityZonesAsync(DescribeAvailabilityZonesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeAvailabilityZonesResult> describeAvailabilityZonesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeAvailabilityZonesRequest, DescribeAvailabilityZonesResult> asyncHandler) {
 
@@ -1378,6 +1413,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeBundleTasksAsync(DescribeBundleTasksRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeBundleTasksResult> describeBundleTasksAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeBundleTasksRequest, DescribeBundleTasksResult> asyncHandler) {
 
@@ -1413,6 +1449,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeClassicLinkInstancesAsync(DescribeClassicLinkInstancesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeClassicLinkInstancesResult> describeClassicLinkInstancesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeClassicLinkInstancesRequest, DescribeClassicLinkInstancesResult> asyncHandler) {
 
@@ -1448,6 +1485,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeConversionTasksAsync(DescribeConversionTasksRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeConversionTasksResult> describeConversionTasksAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeConversionTasksRequest, DescribeConversionTasksResult> asyncHandler) {
 
@@ -1483,6 +1521,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeCustomerGatewaysAsync(DescribeCustomerGatewaysRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeCustomerGatewaysResult> describeCustomerGatewaysAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeCustomerGatewaysRequest, DescribeCustomerGatewaysResult> asyncHandler) {
 
@@ -1518,6 +1557,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeDhcpOptionsAsync(DescribeDhcpOptionsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeDhcpOptionsResult> describeDhcpOptionsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeDhcpOptionsRequest, DescribeDhcpOptionsResult> asyncHandler) {
 
@@ -1568,6 +1608,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeExportTasksAsync(DescribeExportTasksRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeExportTasksResult> describeExportTasksAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeExportTasksRequest, DescribeExportTasksResult> asyncHandler) {
 
@@ -1603,6 +1644,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeFlowLogsAsync(DescribeFlowLogsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeFlowLogsResult> describeFlowLogsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeFlowLogsRequest, DescribeFlowLogsResult> asyncHandler) {
 
@@ -1666,10 +1708,26 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeHostsAsync(DescribeHostsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeHostsResult> describeHostsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeHostsRequest, DescribeHostsResult> asyncHandler) {
 
         return describeHostsAsync(new DescribeHostsRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeIamInstanceProfileAssociationsResult> describeIamInstanceProfileAssociationsAsync(
+            DescribeIamInstanceProfileAssociationsRequest request) {
+
+        return describeIamInstanceProfileAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeIamInstanceProfileAssociationsResult> describeIamInstanceProfileAssociationsAsync(
+            DescribeIamInstanceProfileAssociationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeIamInstanceProfileAssociationsRequest, DescribeIamInstanceProfileAssociationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -1701,6 +1759,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeIdFormatAsync(DescribeIdFormatRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeIdFormatResult> describeIdFormatAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeIdFormatRequest, DescribeIdFormatResult> asyncHandler) {
 
@@ -1762,6 +1821,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeImagesAsync(DescribeImagesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeImagesResult> describeImagesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeImagesRequest, DescribeImagesResult> asyncHandler) {
 
@@ -1797,6 +1857,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeImportImageTasksAsync(DescribeImportImageTasksRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeImportImageTasksResult> describeImportImageTasksAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeImportImageTasksRequest, DescribeImportImageTasksResult> asyncHandler) {
 
@@ -1832,6 +1893,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeImportSnapshotTasksAsync(DescribeImportSnapshotTasksRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeImportSnapshotTasksResult> describeImportSnapshotTasksAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeImportSnapshotTasksRequest, DescribeImportSnapshotTasksResult> asyncHandler) {
 
@@ -1880,6 +1942,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeInstanceStatusAsync(DescribeInstanceStatusRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeInstanceStatusResult> describeInstanceStatusAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeInstanceStatusRequest, DescribeInstanceStatusResult> asyncHandler) {
 
@@ -1915,6 +1978,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeInstancesAsync(DescribeInstancesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeInstancesResult> describeInstancesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeInstancesRequest, DescribeInstancesResult> asyncHandler) {
 
@@ -1950,6 +2014,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeInternetGatewaysAsync(DescribeInternetGatewaysRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeInternetGatewaysResult> describeInternetGatewaysAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeInternetGatewaysRequest, DescribeInternetGatewaysResult> asyncHandler) {
 
@@ -1985,6 +2050,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeKeyPairsAsync(DescribeKeyPairsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeKeyPairsResult> describeKeyPairsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeKeyPairsRequest, DescribeKeyPairsResult> asyncHandler) {
 
@@ -2020,6 +2086,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeMovingAddressesAsync(DescribeMovingAddressesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeMovingAddressesResult> describeMovingAddressesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeMovingAddressesRequest, DescribeMovingAddressesResult> asyncHandler) {
 
@@ -2068,6 +2135,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeNetworkAclsAsync(DescribeNetworkAclsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeNetworkAclsResult> describeNetworkAclsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeNetworkAclsRequest, DescribeNetworkAclsResult> asyncHandler) {
 
@@ -2118,6 +2186,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeNetworkInterfacesAsync(DescribeNetworkInterfacesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeNetworkInterfacesResult> describeNetworkInterfacesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeNetworkInterfacesRequest, DescribeNetworkInterfacesResult> asyncHandler) {
 
@@ -2153,6 +2222,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describePlacementGroupsAsync(DescribePlacementGroupsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribePlacementGroupsResult> describePlacementGroupsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribePlacementGroupsRequest, DescribePlacementGroupsResult> asyncHandler) {
 
@@ -2188,6 +2258,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describePrefixListsAsync(DescribePrefixListsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribePrefixListsResult> describePrefixListsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribePrefixListsRequest, DescribePrefixListsResult> asyncHandler) {
 
@@ -2223,6 +2294,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeRegionsAsync(DescribeRegionsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeRegionsResult> describeRegionsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeRegionsRequest, DescribeRegionsResult> asyncHandler) {
 
@@ -2258,6 +2330,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeReservedInstancesAsync(DescribeReservedInstancesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeReservedInstancesResult> describeReservedInstancesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeReservedInstancesRequest, DescribeReservedInstancesResult> asyncHandler) {
 
@@ -2296,6 +2369,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      * @see #describeReservedInstancesListingsAsync(DescribeReservedInstancesListingsRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeReservedInstancesListingsResult> describeReservedInstancesListingsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeReservedInstancesListingsRequest, DescribeReservedInstancesListingsResult> asyncHandler) {
 
@@ -2334,6 +2408,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      * @see #describeReservedInstancesModificationsAsync(DescribeReservedInstancesModificationsRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeReservedInstancesModificationsResult> describeReservedInstancesModificationsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeReservedInstancesModificationsRequest, DescribeReservedInstancesModificationsResult> asyncHandler) {
 
@@ -2372,6 +2447,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      * @see #describeReservedInstancesOfferingsAsync(DescribeReservedInstancesOfferingsRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeReservedInstancesOfferingsResult> describeReservedInstancesOfferingsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeReservedInstancesOfferingsRequest, DescribeReservedInstancesOfferingsResult> asyncHandler) {
 
@@ -2407,6 +2483,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeRouteTablesAsync(DescribeRouteTablesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeRouteTablesResult> describeRouteTablesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeRouteTablesRequest, DescribeRouteTablesResult> asyncHandler) {
 
@@ -2485,6 +2562,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeSecurityGroupsAsync(DescribeSecurityGroupsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeSecurityGroupsResult> describeSecurityGroupsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeSecurityGroupsRequest, DescribeSecurityGroupsResult> asyncHandler) {
 
@@ -2533,6 +2611,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeSnapshotsAsync(DescribeSnapshotsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeSnapshotsResult> describeSnapshotsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeSnapshotsRequest, DescribeSnapshotsResult> asyncHandler) {
 
@@ -2571,6 +2650,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      * @see #describeSpotDatafeedSubscriptionAsync(DescribeSpotDatafeedSubscriptionRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeSpotDatafeedSubscriptionResult> describeSpotDatafeedSubscriptionAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeSpotDatafeedSubscriptionRequest, DescribeSpotDatafeedSubscriptionResult> asyncHandler) {
 
@@ -2634,6 +2714,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeSpotFleetRequestsAsync(DescribeSpotFleetRequestsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeSpotFleetRequestsResult> describeSpotFleetRequestsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeSpotFleetRequestsRequest, DescribeSpotFleetRequestsResult> asyncHandler) {
 
@@ -2669,6 +2750,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeSpotInstanceRequestsAsync(DescribeSpotInstanceRequestsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeSpotInstanceRequestsResult> describeSpotInstanceRequestsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeSpotInstanceRequestsRequest, DescribeSpotInstanceRequestsResult> asyncHandler) {
 
@@ -2704,6 +2786,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeSpotPriceHistoryAsync(DescribeSpotPriceHistoryRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeSpotPriceHistoryResult> describeSpotPriceHistoryAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeSpotPriceHistoryRequest, DescribeSpotPriceHistoryResult> asyncHandler) {
 
@@ -2752,6 +2835,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeSubnetsAsync(DescribeSubnetsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeSubnetsResult> describeSubnetsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeSubnetsRequest, DescribeSubnetsResult> asyncHandler) {
 
@@ -2787,6 +2871,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeTagsAsync(DescribeTagsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeTagsResult> describeTagsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeTagsRequest, DescribeTagsResult> asyncHandler) {
 
@@ -2835,6 +2920,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeVolumeStatusAsync(DescribeVolumeStatusRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeVolumeStatusResult> describeVolumeStatusAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeVolumeStatusRequest, DescribeVolumeStatusResult> asyncHandler) {
 
@@ -2870,10 +2956,24 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeVolumesAsync(DescribeVolumesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeVolumesResult> describeVolumesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeVolumesRequest, DescribeVolumesResult> asyncHandler) {
 
         return describeVolumesAsync(new DescribeVolumesRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeVolumesModificationsResult> describeVolumesModificationsAsync(DescribeVolumesModificationsRequest request) {
+
+        return describeVolumesModificationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeVolumesModificationsResult> describeVolumesModificationsAsync(DescribeVolumesModificationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeVolumesModificationsRequest, DescribeVolumesModificationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -2918,6 +3018,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeVpcClassicLinkAsync(DescribeVpcClassicLinkRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeVpcClassicLinkResult> describeVpcClassicLinkAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeVpcClassicLinkRequest, DescribeVpcClassicLinkResult> asyncHandler) {
 
@@ -2968,6 +3069,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeVpcEndpointServicesAsync(DescribeVpcEndpointServicesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeVpcEndpointServicesResult> describeVpcEndpointServicesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeVpcEndpointServicesRequest, DescribeVpcEndpointServicesResult> asyncHandler) {
 
@@ -3003,6 +3105,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeVpcEndpointsAsync(DescribeVpcEndpointsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeVpcEndpointsResult> describeVpcEndpointsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeVpcEndpointsRequest, DescribeVpcEndpointsResult> asyncHandler) {
 
@@ -3039,6 +3142,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      * @see #describeVpcPeeringConnectionsAsync(DescribeVpcPeeringConnectionsRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeVpcPeeringConnectionsResult> describeVpcPeeringConnectionsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeVpcPeeringConnectionsRequest, DescribeVpcPeeringConnectionsResult> asyncHandler) {
 
@@ -3074,6 +3178,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeVpcsAsync(DescribeVpcsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeVpcsResult> describeVpcsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeVpcsRequest, DescribeVpcsResult> asyncHandler) {
 
@@ -3109,6 +3214,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeVpnConnectionsAsync(DescribeVpnConnectionsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeVpnConnectionsResult> describeVpnConnectionsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeVpnConnectionsRequest, DescribeVpnConnectionsResult> asyncHandler) {
 
@@ -3144,6 +3250,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #describeVpnGatewaysAsync(DescribeVpnGatewaysRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeVpnGatewaysResult> describeVpnGatewaysAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeVpnGatewaysRequest, DescribeVpnGatewaysResult> asyncHandler) {
 
@@ -3265,6 +3372,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     @Override
     public java.util.concurrent.Future<DisassociateAddressResult> disassociateAddressAsync(DisassociateAddressRequest request,
             com.amazonaws.handlers.AsyncHandler<DisassociateAddressRequest, DisassociateAddressResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateIamInstanceProfileResult> disassociateIamInstanceProfileAsync(DisassociateIamInstanceProfileRequest request) {
+
+        return disassociateIamInstanceProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateIamInstanceProfileResult> disassociateIamInstanceProfileAsync(DisassociateIamInstanceProfileRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateIamInstanceProfileRequest, DisassociateIamInstanceProfileResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -3458,6 +3578,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #importImageAsync(ImportImageRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ImportImageResult> importImageAsync(
             com.amazonaws.handlers.AsyncHandler<ImportImageRequest, ImportImageResult> asyncHandler) {
 
@@ -3519,6 +3640,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #importSnapshotAsync(ImportSnapshotRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ImportSnapshotResult> importSnapshotAsync(
             com.amazonaws.handlers.AsyncHandler<ImportSnapshotRequest, ImportSnapshotResult> asyncHandler) {
 
@@ -3679,6 +3801,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     @Override
     public java.util.concurrent.Future<ModifySubnetAttributeResult> modifySubnetAttributeAsync(ModifySubnetAttributeRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifySubnetAttributeRequest, ModifySubnetAttributeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyVolumeResult> modifyVolumeAsync(ModifyVolumeRequest request) {
+
+        return modifyVolumeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyVolumeResult> modifyVolumeAsync(ModifyVolumeRequest request,
+            com.amazonaws.handlers.AsyncHandler<ModifyVolumeRequest, ModifyVolumeResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -3865,6 +4000,21 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     @Override
     public java.util.concurrent.Future<ReleaseHostsResult> releaseHostsAsync(ReleaseHostsRequest request,
             com.amazonaws.handlers.AsyncHandler<ReleaseHostsRequest, ReleaseHostsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReplaceIamInstanceProfileAssociationResult> replaceIamInstanceProfileAssociationAsync(
+            ReplaceIamInstanceProfileAssociationRequest request) {
+
+        return replaceIamInstanceProfileAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReplaceIamInstanceProfileAssociationResult> replaceIamInstanceProfileAssociationAsync(
+            ReplaceIamInstanceProfileAssociationRequest request,
+            com.amazonaws.handlers.AsyncHandler<ReplaceIamInstanceProfileAssociationRequest, ReplaceIamInstanceProfileAssociationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -4057,6 +4207,7 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      * @see #revokeSecurityGroupIngressAsync(RevokeSecurityGroupIngressRequest)
      */
     @Override
+    @Deprecated
     public java.util.concurrent.Future<RevokeSecurityGroupIngressResult> revokeSecurityGroupIngressAsync() {
 
         return revokeSecurityGroupIngressAsync(new RevokeSecurityGroupIngressRequest());
@@ -4067,6 +4218,8 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
      *
      * @see #revokeSecurityGroupIngressAsync(RevokeSecurityGroupIngressRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
+    @Deprecated
     public java.util.concurrent.Future<RevokeSecurityGroupIngressResult> revokeSecurityGroupIngressAsync(
             com.amazonaws.handlers.AsyncHandler<RevokeSecurityGroupIngressRequest, RevokeSecurityGroupIngressResult> asyncHandler) {
 

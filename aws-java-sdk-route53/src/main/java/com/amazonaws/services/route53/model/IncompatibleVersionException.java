@@ -16,8 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The resource you are trying to access is unsupported on this Amazon Route 53 endpoint. Please consider using a newer
- * endpoint or a tool that does so.
+ * The resource you're trying to access is unsupported on this Amazon Route 53 endpoint.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

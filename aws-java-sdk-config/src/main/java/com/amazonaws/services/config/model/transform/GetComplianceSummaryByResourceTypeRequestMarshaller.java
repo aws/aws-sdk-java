@@ -12,75 +12,45 @@
  */
 package com.amazonaws.services.config.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.config.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetComplianceSummaryByResourceTypeRequest Marshaller
+ * GetComplianceSummaryByResourceTypeRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetComplianceSummaryByResourceTypeRequestMarshaller implements
-        Marshaller<Request<GetComplianceSummaryByResourceTypeRequest>, GetComplianceSummaryByResourceTypeRequest> {
+@SdkInternalApi
+public class GetComplianceSummaryByResourceTypeRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<List> RESOURCETYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ResourceTypes").build();
 
-    public GetComplianceSummaryByResourceTypeRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetComplianceSummaryByResourceTypeRequestMarshaller instance = new GetComplianceSummaryByResourceTypeRequestMarshaller();
+
+    public static GetComplianceSummaryByResourceTypeRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetComplianceSummaryByResourceTypeRequest> marshall(GetComplianceSummaryByResourceTypeRequest getComplianceSummaryByResourceTypeRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetComplianceSummaryByResourceTypeRequest getComplianceSummaryByResourceTypeRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getComplianceSummaryByResourceTypeRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetComplianceSummaryByResourceTypeRequest> request = new DefaultRequest<GetComplianceSummaryByResourceTypeRequest>(
-                getComplianceSummaryByResourceTypeRequest, "AmazonConfig");
-        request.addHeader("X-Amz-Target", "StarlingDoveService.GetComplianceSummaryByResourceType");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            com.amazonaws.internal.SdkInternalList<String> resourceTypesList = (com.amazonaws.internal.SdkInternalList<String>) getComplianceSummaryByResourceTypeRequest
-                    .getResourceTypes();
-            if (!resourceTypesList.isEmpty() || !resourceTypesList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("ResourceTypes");
-                jsonGenerator.writeStartArray();
-                for (String resourceTypesListValue : resourceTypesList) {
-                    if (resourceTypesListValue != null) {
-                        jsonGenerator.writeValue(resourceTypesListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getComplianceSummaryByResourceTypeRequest.getResourceTypes(), RESOURCETYPES_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

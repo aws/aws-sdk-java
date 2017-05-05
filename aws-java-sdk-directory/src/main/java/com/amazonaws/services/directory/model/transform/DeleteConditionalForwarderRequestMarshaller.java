@@ -12,68 +12,47 @@
  */
 package com.amazonaws.services.directory.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.directory.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteConditionalForwarderRequest Marshaller
+ * DeleteConditionalForwarderRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteConditionalForwarderRequestMarshaller implements Marshaller<Request<DeleteConditionalForwarderRequest>, DeleteConditionalForwarderRequest> {
+@SdkInternalApi
+public class DeleteConditionalForwarderRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DIRECTORYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DirectoryId").build();
+    private static final MarshallingInfo<String> REMOTEDOMAINNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RemoteDomainName").build();
 
-    public DeleteConditionalForwarderRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteConditionalForwarderRequestMarshaller instance = new DeleteConditionalForwarderRequestMarshaller();
+
+    public static DeleteConditionalForwarderRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteConditionalForwarderRequest> marshall(DeleteConditionalForwarderRequest deleteConditionalForwarderRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteConditionalForwarderRequest deleteConditionalForwarderRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteConditionalForwarderRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteConditionalForwarderRequest> request = new DefaultRequest<DeleteConditionalForwarderRequest>(deleteConditionalForwarderRequest,
-                "AWSDirectoryService");
-        request.addHeader("X-Amz-Target", "DirectoryService_20150416.DeleteConditionalForwarder");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteConditionalForwarderRequest.getDirectoryId() != null) {
-                jsonGenerator.writeFieldName("DirectoryId").writeValue(deleteConditionalForwarderRequest.getDirectoryId());
-            }
-            if (deleteConditionalForwarderRequest.getRemoteDomainName() != null) {
-                jsonGenerator.writeFieldName("RemoteDomainName").writeValue(deleteConditionalForwarderRequest.getRemoteDomainName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteConditionalForwarderRequest.getDirectoryId(), DIRECTORYID_BINDING);
+            protocolMarshaller.marshall(deleteConditionalForwarderRequest.getRemoteDomainName(), REMOTEDOMAINNAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  * </p>
  * <note>
  * <p>
- * If you are creating an alias resource record set, omit <code>ResourceRecord</code>.
+ * If you're creating an alias resource record set, omit <code>ResourceRecord</code>.
  * </p>
  * </note>
  * 
@@ -44,7 +44,7 @@ public class ResourceRecord implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you are creating an alias resource record set, omit <code>Value</code>.
+     * If you're creating an alias resource record set, omit <code>Value</code>.
      * </p>
      * </note>
      */
@@ -72,7 +72,7 @@ public class ResourceRecord implements Serializable, Cloneable {
      *        </p>
      *        <note>
      *        <p>
-     *        If you are creating an alias resource record set, omit <code>Value</code>.
+     *        If you're creating an alias resource record set, omit <code>Value</code>.
      *        </p>
      */
     public ResourceRecord(String value) {
@@ -92,7 +92,7 @@ public class ResourceRecord implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you are creating an alias resource record set, omit <code>Value</code>.
+     * If you're creating an alias resource record set, omit <code>Value</code>.
      * </p>
      * </note>
      * 
@@ -107,7 +107,7 @@ public class ResourceRecord implements Serializable, Cloneable {
      *        </p>
      *        <note>
      *        <p>
-     *        If you are creating an alias resource record set, omit <code>Value</code>.
+     *        If you're creating an alias resource record set, omit <code>Value</code>.
      *        </p>
      */
 
@@ -128,7 +128,7 @@ public class ResourceRecord implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you are creating an alias resource record set, omit <code>Value</code>.
+     * If you're creating an alias resource record set, omit <code>Value</code>.
      * </p>
      * </note>
      * 
@@ -142,7 +142,7 @@ public class ResourceRecord implements Serializable, Cloneable {
      *         </p>
      *         <note>
      *         <p>
-     *         If you are creating an alias resource record set, omit <code>Value</code>.
+     *         If you're creating an alias resource record set, omit <code>Value</code>.
      *         </p>
      */
 
@@ -163,7 +163,7 @@ public class ResourceRecord implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you are creating an alias resource record set, omit <code>Value</code>.
+     * If you're creating an alias resource record set, omit <code>Value</code>.
      * </p>
      * </note>
      * 
@@ -178,7 +178,7 @@ public class ResourceRecord implements Serializable, Cloneable {
      *        </p>
      *        <note>
      *        <p>
-     *        If you are creating an alias resource record set, omit <code>Value</code>.
+     *        If you're creating an alias resource record set, omit <code>Value</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -239,4 +239,5 @@ public class ResourceRecord implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

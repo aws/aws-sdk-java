@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.route53domains.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.route53domains.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListOperationsRequest Marshaller
+ * ListOperationsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListOperationsRequestMarshaller implements Marshaller<Request<ListOperationsRequest>, ListOperationsRequest> {
+@SdkInternalApi
+public class ListOperationsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> MARKER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Marker").build();
+    private static final MarshallingInfo<Integer> MAXITEMS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxItems").build();
 
-    public ListOperationsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListOperationsRequestMarshaller instance = new ListOperationsRequestMarshaller();
+
+    public static ListOperationsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListOperationsRequest> marshall(ListOperationsRequest listOperationsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListOperationsRequest listOperationsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listOperationsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListOperationsRequest> request = new DefaultRequest<ListOperationsRequest>(listOperationsRequest, "AmazonRoute53Domains");
-        request.addHeader("X-Amz-Target", "Route53Domains_v20140515.ListOperations");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (listOperationsRequest.getMarker() != null) {
-                jsonGenerator.writeFieldName("Marker").writeValue(listOperationsRequest.getMarker());
-            }
-            if (listOperationsRequest.getMaxItems() != null) {
-                jsonGenerator.writeFieldName("MaxItems").writeValue(listOperationsRequest.getMaxItems());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listOperationsRequest.getMarker(), MARKER_BINDING);
+            protocolMarshaller.marshall(listOperationsRequest.getMaxItems(), MAXITEMS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

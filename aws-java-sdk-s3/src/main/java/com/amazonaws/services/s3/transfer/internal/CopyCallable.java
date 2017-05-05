@@ -166,9 +166,6 @@ public class CopyCallable implements Callable<CopyResult> {
      *             Any Exception that occurs while carrying out the request.
      */
     private void copyInParts() throws Exception {
-        final String bucketName = copyObjectRequest.getDestinationBucketName();
-        final String key = copyObjectRequest.getDestinationKey();
-
         multipartUploadId = initiateMultipartUpload(copyObjectRequest);
 
         long optimalPartSize = getOptimalPartSize(metadata.getContentLength());
@@ -180,15 +177,8 @@ public class CopyCallable implements Callable<CopyResult> {
             copyPartsInParallel(requestFactory);
         } catch (Exception e) {
             publishProgress(listenerChain, ProgressEventType.TRANSFER_FAILED_EVENT);
-            try {
-                s3.abortMultipartUpload(new AbortMultipartUploadRequest(
-                        bucketName, key, multipartUploadId));
-            } catch (Exception e2) {
-                log.info(
-                        "Unable to abort multipart upload, you may need to manually remove uploaded parts: "
-                                + e2.getMessage(), e2);
-            }
-            throw e;
+            abortMultipartCopy();
+            throw new RuntimeException("Unable to perform multipart copy", e);
         }
     }
 
@@ -226,14 +216,14 @@ public class CopyCallable implements Callable<CopyResult> {
         InitiateMultipartUploadRequest req = new InitiateMultipartUploadRequest(
                 origReq.getDestinationBucketName(),
                 origReq.getDestinationKey()).withCannedACL(
-                origReq.getCannedAccessControlList());
-
-        req.withAccessControlList(origReq.getAccessControlList())
-           .withStorageClass(origReq.getStorageClass())
-           .withSSECustomerKey(origReq.getDestinationSSECustomerKey())
-           .withSSEAwsKeyManagementParams(origReq.getSSEAwsKeyManagementParams())
-           .withGeneralProgressListener(origReq.getGeneralProgressListener())
-           .withRequestMetricCollector(origReq.getRequestMetricCollector())
+                origReq.getCannedAccessControlList())
+                .withRequesterPays(origReq.isRequesterPays())
+                .withAccessControlList(origReq.getAccessControlList())
+                .withStorageClass(origReq.getStorageClass())
+                .withSSECustomerKey(origReq.getDestinationSSECustomerKey())
+                .withSSEAwsKeyManagementParams(origReq.getSSEAwsKeyManagementParams())
+                .withGeneralProgressListener(origReq.getGeneralProgressListener())
+                .withRequestMetricCollector(origReq.getRequestMetricCollector())
            ;
 
         ObjectMetadata newObjectMetadata = origReq.getNewObjectMetadata();
@@ -278,6 +268,20 @@ public class CopyCallable implements Callable<CopyResult> {
                     userMetadataDestination.put(header, headerValue);
                 }
             }
+        }
+    }
+
+    private void abortMultipartCopy() {
+        try {
+            AbortMultipartUploadRequest abortRequest = new AbortMultipartUploadRequest(
+                    copyObjectRequest.getDestinationBucketName(),
+                    copyObjectRequest.getDestinationKey(), multipartUploadId)
+                    .withRequesterPays(copyObjectRequest.isRequesterPays());
+            s3.abortMultipartUpload(abortRequest);
+        } catch (Exception e) {
+            log.info(
+                    "Unable to abort multipart upload, you may need to manually remove uploaded parts: "
+                            + e.getMessage(), e);
         }
     }
 }

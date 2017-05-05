@@ -12,106 +12,78 @@
  */
 package com.amazonaws.services.opsworks.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.opsworks.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateInstanceRequest Marshaller
+ * UpdateInstanceRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateInstanceRequestMarshaller implements Marshaller<Request<UpdateInstanceRequest>, UpdateInstanceRequest> {
+@SdkInternalApi
+public class UpdateInstanceRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> INSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceId").build();
+    private static final MarshallingInfo<List> LAYERIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("LayerIds").build();
+    private static final MarshallingInfo<String> INSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceType").build();
+    private static final MarshallingInfo<String> AUTOSCALINGTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoScalingType").build();
+    private static final MarshallingInfo<String> HOSTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Hostname").build();
+    private static final MarshallingInfo<String> OS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Os").build();
+    private static final MarshallingInfo<String> AMIID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AmiId").build();
+    private static final MarshallingInfo<String> SSHKEYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SshKeyName").build();
+    private static final MarshallingInfo<String> ARCHITECTURE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Architecture").build();
+    private static final MarshallingInfo<Boolean> INSTALLUPDATESONBOOT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstallUpdatesOnBoot").build();
+    private static final MarshallingInfo<Boolean> EBSOPTIMIZED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EbsOptimized").build();
+    private static final MarshallingInfo<String> AGENTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AgentVersion").build();
 
-    public UpdateInstanceRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateInstanceRequestMarshaller instance = new UpdateInstanceRequestMarshaller();
+
+    public static UpdateInstanceRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateInstanceRequest> marshall(UpdateInstanceRequest updateInstanceRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateInstanceRequest updateInstanceRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateInstanceRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateInstanceRequest> request = new DefaultRequest<UpdateInstanceRequest>(updateInstanceRequest, "AWSOpsWorks");
-        request.addHeader("X-Amz-Target", "OpsWorks_20130218.UpdateInstance");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (updateInstanceRequest.getInstanceId() != null) {
-                jsonGenerator.writeFieldName("InstanceId").writeValue(updateInstanceRequest.getInstanceId());
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> layerIdsList = (com.amazonaws.internal.SdkInternalList<String>) updateInstanceRequest.getLayerIds();
-            if (!layerIdsList.isEmpty() || !layerIdsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("LayerIds");
-                jsonGenerator.writeStartArray();
-                for (String layerIdsListValue : layerIdsList) {
-                    if (layerIdsListValue != null) {
-                        jsonGenerator.writeValue(layerIdsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (updateInstanceRequest.getInstanceType() != null) {
-                jsonGenerator.writeFieldName("InstanceType").writeValue(updateInstanceRequest.getInstanceType());
-            }
-            if (updateInstanceRequest.getAutoScalingType() != null) {
-                jsonGenerator.writeFieldName("AutoScalingType").writeValue(updateInstanceRequest.getAutoScalingType());
-            }
-            if (updateInstanceRequest.getHostname() != null) {
-                jsonGenerator.writeFieldName("Hostname").writeValue(updateInstanceRequest.getHostname());
-            }
-            if (updateInstanceRequest.getOs() != null) {
-                jsonGenerator.writeFieldName("Os").writeValue(updateInstanceRequest.getOs());
-            }
-            if (updateInstanceRequest.getAmiId() != null) {
-                jsonGenerator.writeFieldName("AmiId").writeValue(updateInstanceRequest.getAmiId());
-            }
-            if (updateInstanceRequest.getSshKeyName() != null) {
-                jsonGenerator.writeFieldName("SshKeyName").writeValue(updateInstanceRequest.getSshKeyName());
-            }
-            if (updateInstanceRequest.getArchitecture() != null) {
-                jsonGenerator.writeFieldName("Architecture").writeValue(updateInstanceRequest.getArchitecture());
-            }
-            if (updateInstanceRequest.getInstallUpdatesOnBoot() != null) {
-                jsonGenerator.writeFieldName("InstallUpdatesOnBoot").writeValue(updateInstanceRequest.getInstallUpdatesOnBoot());
-            }
-            if (updateInstanceRequest.getEbsOptimized() != null) {
-                jsonGenerator.writeFieldName("EbsOptimized").writeValue(updateInstanceRequest.getEbsOptimized());
-            }
-            if (updateInstanceRequest.getAgentVersion() != null) {
-                jsonGenerator.writeFieldName("AgentVersion").writeValue(updateInstanceRequest.getAgentVersion());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateInstanceRequest.getInstanceId(), INSTANCEID_BINDING);
+            protocolMarshaller.marshall(updateInstanceRequest.getLayerIds(), LAYERIDS_BINDING);
+            protocolMarshaller.marshall(updateInstanceRequest.getInstanceType(), INSTANCETYPE_BINDING);
+            protocolMarshaller.marshall(updateInstanceRequest.getAutoScalingType(), AUTOSCALINGTYPE_BINDING);
+            protocolMarshaller.marshall(updateInstanceRequest.getHostname(), HOSTNAME_BINDING);
+            protocolMarshaller.marshall(updateInstanceRequest.getOs(), OS_BINDING);
+            protocolMarshaller.marshall(updateInstanceRequest.getAmiId(), AMIID_BINDING);
+            protocolMarshaller.marshall(updateInstanceRequest.getSshKeyName(), SSHKEYNAME_BINDING);
+            protocolMarshaller.marshall(updateInstanceRequest.getArchitecture(), ARCHITECTURE_BINDING);
+            protocolMarshaller.marshall(updateInstanceRequest.getInstallUpdatesOnBoot(), INSTALLUPDATESONBOOT_BINDING);
+            protocolMarshaller.marshall(updateInstanceRequest.getEbsOptimized(), EBSOPTIMIZED_BINDING);
+            protocolMarshaller.marshall(updateInstanceRequest.getAgentVersion(), AGENTVERSION_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.stepfunctions.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.stepfunctions.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetActivityTaskRequest Marshaller
+ * GetActivityTaskRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetActivityTaskRequestMarshaller implements Marshaller<Request<GetActivityTaskRequest>, GetActivityTaskRequest> {
+@SdkInternalApi
+public class GetActivityTaskRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ACTIVITYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("activityArn").build();
+    private static final MarshallingInfo<String> WORKERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("workerName").build();
 
-    public GetActivityTaskRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetActivityTaskRequestMarshaller instance = new GetActivityTaskRequestMarshaller();
+
+    public static GetActivityTaskRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetActivityTaskRequest> marshall(GetActivityTaskRequest getActivityTaskRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetActivityTaskRequest getActivityTaskRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getActivityTaskRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetActivityTaskRequest> request = new DefaultRequest<GetActivityTaskRequest>(getActivityTaskRequest, "AWSStepFunctions");
-        request.addHeader("X-Amz-Target", "AWSStepFunctions.GetActivityTask");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (getActivityTaskRequest.getActivityArn() != null) {
-                jsonGenerator.writeFieldName("activityArn").writeValue(getActivityTaskRequest.getActivityArn());
-            }
-            if (getActivityTaskRequest.getWorkerName() != null) {
-                jsonGenerator.writeFieldName("workerName").writeValue(getActivityTaskRequest.getWorkerName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getActivityTaskRequest.getActivityArn(), ACTIVITYARN_BINDING);
+            protocolMarshaller.marshall(getActivityTaskRequest.getWorkerName(), WORKERNAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

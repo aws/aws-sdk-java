@@ -14,6 +14,8 @@ package com.amazonaws.services.polly.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -23,7 +25,7 @@ import javax.annotation.Generated;
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/Voice" target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Voice implements Serializable, Cloneable {
+public class Voice implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -451,5 +453,11 @@ public class Voice implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.polly.model.transform.VoiceMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

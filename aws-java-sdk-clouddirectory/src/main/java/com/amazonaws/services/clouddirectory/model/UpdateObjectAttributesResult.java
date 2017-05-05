@@ -25,18 +25,18 @@ public class UpdateObjectAttributesResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * ObjectIdentifier of the updated object.
+     * <code>ObjectIdentifier</code> of the updated object.
      * </p>
      */
     private String objectIdentifier;
 
     /**
      * <p>
-     * ObjectIdentifier of the updated object.
+     * <code>ObjectIdentifier</code> of the updated object.
      * </p>
      * 
      * @param objectIdentifier
-     *        ObjectIdentifier of the updated object.
+     *        <code>ObjectIdentifier</code> of the updated object.
      */
 
     public void setObjectIdentifier(String objectIdentifier) {
@@ -45,10 +45,10 @@ public class UpdateObjectAttributesResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * ObjectIdentifier of the updated object.
+     * <code>ObjectIdentifier</code> of the updated object.
      * </p>
      * 
-     * @return ObjectIdentifier of the updated object.
+     * @return <code>ObjectIdentifier</code> of the updated object.
      */
 
     public String getObjectIdentifier() {
@@ -57,11 +57,11 @@ public class UpdateObjectAttributesResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * ObjectIdentifier of the updated object.
+     * <code>ObjectIdentifier</code> of the updated object.
      * </p>
      * 
      * @param objectIdentifier
-     *        ObjectIdentifier of the updated object.
+     *        <code>ObjectIdentifier</code> of the updated object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -121,4 +121,5 @@ public class UpdateObjectAttributesResult extends com.amazonaws.AmazonWebService
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

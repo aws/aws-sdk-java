@@ -54,7 +54,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * If the source snapshot is in a different region than the copy, specify a valid DB snapshot ARN. For more
      * information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
-     * Copying a DB Snapshot</a>.
+     * Copying a DB Snapshot or DB Cluster Snapshot</a>.
      * </p>
      * </li>
      * </ul>
@@ -174,7 +174,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>SourceDBSnapshotIdentifier</code> - The DB snapshot identifier for the encrypted snapshot to be copied.
      * This identifier must be in the Amazon Resource Name (ARN) format for the source region. For example, if you are
      * copying an encrypted DB snapshot from the us-west-2 region, then your <code>SourceDBSnapshotIdentifier</code>
-     * would look like Example:
+     * looks like the following example:
      * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.
      * </p>
      * </li>
@@ -219,7 +219,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * If the source snapshot is in a different region than the copy, specify a valid DB snapshot ARN. For more
      * information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
-     * Copying a DB Snapshot</a>.
+     * Copying a DB Snapshot or DB Cluster Snapshot</a>.
      * </p>
      * </li>
      * </ul>
@@ -256,7 +256,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        If the source snapshot is in a different region than the copy, specify a valid DB snapshot ARN. For more
      *        information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
-     *        Copying a DB Snapshot</a>.
+     *        Copying a DB Snapshot or DB Cluster Snapshot</a>.
      *        </p>
      *        </li>
      *        </ul>
@@ -299,7 +299,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * If the source snapshot is in a different region than the copy, specify a valid DB snapshot ARN. For more
      * information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
-     * Copying a DB Snapshot</a>.
+     * Copying a DB Snapshot or DB Cluster Snapshot</a>.
      * </p>
      * </li>
      * </ul>
@@ -336,7 +336,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      *         If the source snapshot is in a different region than the copy, specify a valid DB snapshot ARN. For more
      *         information, go to <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html"> Copying a DB
-     *         Snapshot</a>.
+     *         Snapshot or DB Cluster Snapshot</a>.
      *         </p>
      *         </li>
      *         </ul>
@@ -379,7 +379,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * If the source snapshot is in a different region than the copy, specify a valid DB snapshot ARN. For more
      * information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
-     * Copying a DB Snapshot</a>.
+     * Copying a DB Snapshot or DB Cluster Snapshot</a>.
      * </p>
      * </li>
      * </ul>
@@ -416,7 +416,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        If the source snapshot is in a different region than the copy, specify a valid DB snapshot ARN. For more
      *        information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
-     *        Copying a DB Snapshot</a>.
+     *        Copying a DB Snapshot or DB Cluster Snapshot</a>.
      *        </p>
      *        </li>
      *        </ul>
@@ -968,7 +968,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>SourceDBSnapshotIdentifier</code> - The DB snapshot identifier for the encrypted snapshot to be copied.
      * This identifier must be in the Amazon Resource Name (ARN) format for the source region. For example, if you are
      * copying an encrypted DB snapshot from the us-west-2 region, then your <code>SourceDBSnapshotIdentifier</code>
-     * would look like Example:
+     * looks like the following example:
      * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.
      * </p>
      * </li>
@@ -1016,7 +1016,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>SourceDBSnapshotIdentifier</code> - The DB snapshot identifier for the encrypted snapshot to be
      *        copied. This identifier must be in the Amazon Resource Name (ARN) format for the source region. For
      *        example, if you are copying an encrypted DB snapshot from the us-west-2 region, then your
-     *        <code>SourceDBSnapshotIdentifier</code> would look like Example:
+     *        <code>SourceDBSnapshotIdentifier</code> looks like the following example:
      *        <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.
      *        </p>
      *        </li>
@@ -1069,7 +1069,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>SourceDBSnapshotIdentifier</code> - The DB snapshot identifier for the encrypted snapshot to be copied.
      * This identifier must be in the Amazon Resource Name (ARN) format for the source region. For example, if you are
      * copying an encrypted DB snapshot from the us-west-2 region, then your <code>SourceDBSnapshotIdentifier</code>
-     * would look like Example:
+     * looks like the following example:
      * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.
      * </p>
      * </li>
@@ -1116,7 +1116,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <code>SourceDBSnapshotIdentifier</code> - The DB snapshot identifier for the encrypted snapshot to be
      *         copied. This identifier must be in the Amazon Resource Name (ARN) format for the source region. For
      *         example, if you are copying an encrypted DB snapshot from the us-west-2 region, then your
-     *         <code>SourceDBSnapshotIdentifier</code> would look like Example:
+     *         <code>SourceDBSnapshotIdentifier</code> looks like the following example:
      *         <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.
      *         </p>
      *         </li>
@@ -1169,7 +1169,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>SourceDBSnapshotIdentifier</code> - The DB snapshot identifier for the encrypted snapshot to be copied.
      * This identifier must be in the Amazon Resource Name (ARN) format for the source region. For example, if you are
      * copying an encrypted DB snapshot from the us-west-2 region, then your <code>SourceDBSnapshotIdentifier</code>
-     * would look like Example:
+     * looks like the following example:
      * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.
      * </p>
      * </li>
@@ -1217,7 +1217,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>SourceDBSnapshotIdentifier</code> - The DB snapshot identifier for the encrypted snapshot to be
      *        copied. This identifier must be in the Amazon Resource Name (ARN) format for the source region. For
      *        example, if you are copying an encrypted DB snapshot from the us-west-2 region, then your
-     *        <code>SourceDBSnapshotIdentifier</code> would look like Example:
+     *        <code>SourceDBSnapshotIdentifier</code> looks like the following example:
      *        <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.
      *        </p>
      *        </li>

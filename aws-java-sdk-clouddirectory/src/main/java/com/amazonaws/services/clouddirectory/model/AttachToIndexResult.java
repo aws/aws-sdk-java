@@ -25,18 +25,18 @@ public class AttachToIndexResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ObjectIdentifier of the object that was attached to the index.
+     * The <code>ObjectIdentifier</code> of the object that was attached to the index.
      * </p>
      */
     private String attachedObjectIdentifier;
 
     /**
      * <p>
-     * The ObjectIdentifier of the object that was attached to the index.
+     * The <code>ObjectIdentifier</code> of the object that was attached to the index.
      * </p>
      * 
      * @param attachedObjectIdentifier
-     *        The ObjectIdentifier of the object that was attached to the index.
+     *        The <code>ObjectIdentifier</code> of the object that was attached to the index.
      */
 
     public void setAttachedObjectIdentifier(String attachedObjectIdentifier) {
@@ -45,10 +45,10 @@ public class AttachToIndexResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ObjectIdentifier of the object that was attached to the index.
+     * The <code>ObjectIdentifier</code> of the object that was attached to the index.
      * </p>
      * 
-     * @return The ObjectIdentifier of the object that was attached to the index.
+     * @return The <code>ObjectIdentifier</code> of the object that was attached to the index.
      */
 
     public String getAttachedObjectIdentifier() {
@@ -57,11 +57,11 @@ public class AttachToIndexResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ObjectIdentifier of the object that was attached to the index.
+     * The <code>ObjectIdentifier</code> of the object that was attached to the index.
      * </p>
      * 
      * @param attachedObjectIdentifier
-     *        The ObjectIdentifier of the object that was attached to the index.
+     *        The <code>ObjectIdentifier</code> of the object that was attached to the index.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -121,4 +121,5 @@ public class AttachToIndexResult extends com.amazonaws.AmazonWebServiceResult<co
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

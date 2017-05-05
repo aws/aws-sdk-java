@@ -57,6 +57,14 @@ public class DeleteStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String roleARN;
+    /**
+     * <p>
+     * A unique identifier for this <code>DeleteStack</code> request. Specify this token if you plan to retry requests
+     * so that AWS CloudFormation knows that you're not attempting to delete a stack with the same name. You might retry
+     * <code>DeleteStack</code> requests to ensure that AWS CloudFormation successfully received them.
+     * </p>
+     */
+    private String clientRequestToken;
 
     /**
      * <p>
@@ -289,6 +297,61 @@ public class DeleteStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * A unique identifier for this <code>DeleteStack</code> request. Specify this token if you plan to retry requests
+     * so that AWS CloudFormation knows that you're not attempting to delete a stack with the same name. You might retry
+     * <code>DeleteStack</code> requests to ensure that AWS CloudFormation successfully received them.
+     * </p>
+     * 
+     * @param clientRequestToken
+     *        A unique identifier for this <code>DeleteStack</code> request. Specify this token if you plan to retry
+     *        requests so that AWS CloudFormation knows that you're not attempting to delete a stack with the same name.
+     *        You might retry <code>DeleteStack</code> requests to ensure that AWS CloudFormation successfully received
+     *        them.
+     */
+
+    public void setClientRequestToken(String clientRequestToken) {
+        this.clientRequestToken = clientRequestToken;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for this <code>DeleteStack</code> request. Specify this token if you plan to retry requests
+     * so that AWS CloudFormation knows that you're not attempting to delete a stack with the same name. You might retry
+     * <code>DeleteStack</code> requests to ensure that AWS CloudFormation successfully received them.
+     * </p>
+     * 
+     * @return A unique identifier for this <code>DeleteStack</code> request. Specify this token if you plan to retry
+     *         requests so that AWS CloudFormation knows that you're not attempting to delete a stack with the same
+     *         name. You might retry <code>DeleteStack</code> requests to ensure that AWS CloudFormation successfully
+     *         received them.
+     */
+
+    public String getClientRequestToken() {
+        return this.clientRequestToken;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for this <code>DeleteStack</code> request. Specify this token if you plan to retry requests
+     * so that AWS CloudFormation knows that you're not attempting to delete a stack with the same name. You might retry
+     * <code>DeleteStack</code> requests to ensure that AWS CloudFormation successfully received them.
+     * </p>
+     * 
+     * @param clientRequestToken
+     *        A unique identifier for this <code>DeleteStack</code> request. Specify this token if you plan to retry
+     *        requests so that AWS CloudFormation knows that you're not attempting to delete a stack with the same name.
+     *        You might retry <code>DeleteStack</code> requests to ensure that AWS CloudFormation successfully received
+     *        them.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteStackRequest withClientRequestToken(String clientRequestToken) {
+        setClientRequestToken(clientRequestToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -304,7 +367,9 @@ public class DeleteStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getRetainResources() != null)
             sb.append("RetainResources: ").append(getRetainResources()).append(",");
         if (getRoleARN() != null)
-            sb.append("RoleARN: ").append(getRoleARN());
+            sb.append("RoleARN: ").append(getRoleARN()).append(",");
+        if (getClientRequestToken() != null)
+            sb.append("ClientRequestToken: ").append(getClientRequestToken());
         sb.append("}");
         return sb.toString();
     }
@@ -331,6 +396,10 @@ public class DeleteStackRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getRoleARN() != null && other.getRoleARN().equals(this.getRoleARN()) == false)
             return false;
+        if (other.getClientRequestToken() == null ^ this.getClientRequestToken() == null)
+            return false;
+        if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
+            return false;
         return true;
     }
 
@@ -342,6 +411,7 @@ public class DeleteStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getStackName() == null) ? 0 : getStackName().hashCode());
         hashCode = prime * hashCode + ((getRetainResources() == null) ? 0 : getRetainResources().hashCode());
         hashCode = prime * hashCode + ((getRoleARN() == null) ? 0 : getRoleARN().hashCode());
+        hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         return hashCode;
     }
 

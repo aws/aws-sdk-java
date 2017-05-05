@@ -56,9 +56,18 @@ public class Ec2InstanceAttributesJsonUnmarshaller implements Unmarshaller<Ec2In
                     context.nextToken();
                     ec2InstanceAttributes.setEc2SubnetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("RequestedEc2SubnetIds", targetDepth)) {
+                    context.nextToken();
+                    ec2InstanceAttributes.setRequestedEc2SubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("Ec2AvailabilityZone", targetDepth)) {
                     context.nextToken();
                     ec2InstanceAttributes.setEc2AvailabilityZone(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("RequestedEc2AvailabilityZones", targetDepth)) {
+                    context.nextToken();
+                    ec2InstanceAttributes.setRequestedEc2AvailabilityZones(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+                            .unmarshall(context));
                 }
                 if (context.testExpression("IamInstanceProfile", targetDepth)) {
                     context.nextToken();

@@ -14,6 +14,8 @@ package com.amazonaws.services.dynamodbv2.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -25,7 +27,7 @@ import javax.annotation.Generated;
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ProvisionedThroughputDescription implements Serializable, Cloneable {
+public class ProvisionedThroughputDescription implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -381,5 +383,11 @@ public class ProvisionedThroughputDescription implements Serializable, Cloneable
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.dynamodbv2.model.transform.ProvisionedThroughputDescriptionMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

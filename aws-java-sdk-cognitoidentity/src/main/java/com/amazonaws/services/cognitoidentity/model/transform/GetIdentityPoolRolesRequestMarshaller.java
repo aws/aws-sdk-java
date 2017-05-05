@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.cognitoidentity.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cognitoidentity.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetIdentityPoolRolesRequest Marshaller
+ * GetIdentityPoolRolesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetIdentityPoolRolesRequestMarshaller implements Marshaller<Request<GetIdentityPoolRolesRequest>, GetIdentityPoolRolesRequest> {
+@SdkInternalApi
+public class GetIdentityPoolRolesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> IDENTITYPOOLID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentityPoolId").build();
 
-    public GetIdentityPoolRolesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetIdentityPoolRolesRequestMarshaller instance = new GetIdentityPoolRolesRequestMarshaller();
+
+    public static GetIdentityPoolRolesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetIdentityPoolRolesRequest> marshall(GetIdentityPoolRolesRequest getIdentityPoolRolesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetIdentityPoolRolesRequest getIdentityPoolRolesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getIdentityPoolRolesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetIdentityPoolRolesRequest> request = new DefaultRequest<GetIdentityPoolRolesRequest>(getIdentityPoolRolesRequest, "AmazonCognitoIdentity");
-        request.addHeader("X-Amz-Target", "AWSCognitoIdentityService.GetIdentityPoolRoles");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (getIdentityPoolRolesRequest.getIdentityPoolId() != null) {
-                jsonGenerator.writeFieldName("IdentityPoolId").writeValue(getIdentityPoolRolesRequest.getIdentityPoolId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getIdentityPoolRolesRequest.getIdentityPoolId(), IDENTITYPOOLID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

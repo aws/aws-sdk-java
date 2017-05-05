@@ -149,6 +149,20 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
      * </p>
      */
     private String dBClusterSnapshotArn;
+    /**
+     * <p>
+     * If the DB cluster snapshot was copied from a source DB cluster snapshot, the Amazon Resource Name (ARN) for the
+     * source DB cluster snapshot; otherwise, a null value.
+     * </p>
+     */
+    private String sourceDBClusterSnapshotArn;
+    /**
+     * <p>
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
+     * false.
+     * </p>
+     */
+    private Boolean iAMDatabaseAuthenticationEnabled;
 
     /**
      * <p>
@@ -916,6 +930,112 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * If the DB cluster snapshot was copied from a source DB cluster snapshot, the Amazon Resource Name (ARN) for the
+     * source DB cluster snapshot; otherwise, a null value.
+     * </p>
+     * 
+     * @param sourceDBClusterSnapshotArn
+     *        If the DB cluster snapshot was copied from a source DB cluster snapshot, the Amazon Resource Name (ARN)
+     *        for the source DB cluster snapshot; otherwise, a null value.
+     */
+
+    public void setSourceDBClusterSnapshotArn(String sourceDBClusterSnapshotArn) {
+        this.sourceDBClusterSnapshotArn = sourceDBClusterSnapshotArn;
+    }
+
+    /**
+     * <p>
+     * If the DB cluster snapshot was copied from a source DB cluster snapshot, the Amazon Resource Name (ARN) for the
+     * source DB cluster snapshot; otherwise, a null value.
+     * </p>
+     * 
+     * @return If the DB cluster snapshot was copied from a source DB cluster snapshot, the Amazon Resource Name (ARN)
+     *         for the source DB cluster snapshot; otherwise, a null value.
+     */
+
+    public String getSourceDBClusterSnapshotArn() {
+        return this.sourceDBClusterSnapshotArn;
+    }
+
+    /**
+     * <p>
+     * If the DB cluster snapshot was copied from a source DB cluster snapshot, the Amazon Resource Name (ARN) for the
+     * source DB cluster snapshot; otherwise, a null value.
+     * </p>
+     * 
+     * @param sourceDBClusterSnapshotArn
+     *        If the DB cluster snapshot was copied from a source DB cluster snapshot, the Amazon Resource Name (ARN)
+     *        for the source DB cluster snapshot; otherwise, a null value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBClusterSnapshot withSourceDBClusterSnapshotArn(String sourceDBClusterSnapshotArn) {
+        setSourceDBClusterSnapshotArn(sourceDBClusterSnapshotArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
+     * false.
+     * </p>
+     * 
+     * @param iAMDatabaseAuthenticationEnabled
+     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled;
+     *        otherwise false.
+     */
+
+    public void setIAMDatabaseAuthenticationEnabled(Boolean iAMDatabaseAuthenticationEnabled) {
+        this.iAMDatabaseAuthenticationEnabled = iAMDatabaseAuthenticationEnabled;
+    }
+
+    /**
+     * <p>
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
+     * false.
+     * </p>
+     * 
+     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled;
+     *         otherwise false.
+     */
+
+    public Boolean getIAMDatabaseAuthenticationEnabled() {
+        return this.iAMDatabaseAuthenticationEnabled;
+    }
+
+    /**
+     * <p>
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
+     * false.
+     * </p>
+     * 
+     * @param iAMDatabaseAuthenticationEnabled
+     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled;
+     *        otherwise false.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBClusterSnapshot withIAMDatabaseAuthenticationEnabled(Boolean iAMDatabaseAuthenticationEnabled) {
+        setIAMDatabaseAuthenticationEnabled(iAMDatabaseAuthenticationEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled; otherwise
+     * false.
+     * </p>
+     * 
+     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled;
+     *         otherwise false.
+     */
+
+    public Boolean isIAMDatabaseAuthenticationEnabled() {
+        return this.iAMDatabaseAuthenticationEnabled;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -961,7 +1081,11 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getDBClusterSnapshotArn() != null)
-            sb.append("DBClusterSnapshotArn: ").append(getDBClusterSnapshotArn());
+            sb.append("DBClusterSnapshotArn: ").append(getDBClusterSnapshotArn()).append(",");
+        if (getSourceDBClusterSnapshotArn() != null)
+            sb.append("SourceDBClusterSnapshotArn: ").append(getSourceDBClusterSnapshotArn()).append(",");
+        if (getIAMDatabaseAuthenticationEnabled() != null)
+            sb.append("IAMDatabaseAuthenticationEnabled: ").append(getIAMDatabaseAuthenticationEnabled());
         sb.append("}");
         return sb.toString();
     }
@@ -1048,6 +1172,15 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
             return false;
         if (other.getDBClusterSnapshotArn() != null && other.getDBClusterSnapshotArn().equals(this.getDBClusterSnapshotArn()) == false)
             return false;
+        if (other.getSourceDBClusterSnapshotArn() == null ^ this.getSourceDBClusterSnapshotArn() == null)
+            return false;
+        if (other.getSourceDBClusterSnapshotArn() != null && other.getSourceDBClusterSnapshotArn().equals(this.getSourceDBClusterSnapshotArn()) == false)
+            return false;
+        if (other.getIAMDatabaseAuthenticationEnabled() == null ^ this.getIAMDatabaseAuthenticationEnabled() == null)
+            return false;
+        if (other.getIAMDatabaseAuthenticationEnabled() != null
+                && other.getIAMDatabaseAuthenticationEnabled().equals(this.getIAMDatabaseAuthenticationEnabled()) == false)
+            return false;
         return true;
     }
 
@@ -1074,6 +1207,8 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getStorageEncrypted() == null) ? 0 : getStorageEncrypted().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getDBClusterSnapshotArn() == null) ? 0 : getDBClusterSnapshotArn().hashCode());
+        hashCode = prime * hashCode + ((getSourceDBClusterSnapshotArn() == null) ? 0 : getSourceDBClusterSnapshotArn().hashCode());
+        hashCode = prime * hashCode + ((getIAMDatabaseAuthenticationEnabled() == null) ? 0 : getIAMDatabaseAuthenticationEnabled().hashCode());
         return hashCode;
     }
 
@@ -1085,4 +1220,5 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

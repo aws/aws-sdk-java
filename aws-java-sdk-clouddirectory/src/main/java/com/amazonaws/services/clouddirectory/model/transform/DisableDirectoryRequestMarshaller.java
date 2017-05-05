@@ -12,57 +12,44 @@
  */
 package com.amazonaws.services.clouddirectory.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.clouddirectory.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DisableDirectoryRequest Marshaller
+ * DisableDirectoryRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DisableDirectoryRequestMarshaller implements Marshaller<Request<DisableDirectoryRequest>, DisableDirectoryRequest> {
+@SdkInternalApi
+public class DisableDirectoryRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DIRECTORYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("x-amz-data-partition").build();
 
-    public DisableDirectoryRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DisableDirectoryRequestMarshaller instance = new DisableDirectoryRequestMarshaller();
+
+    public static DisableDirectoryRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DisableDirectoryRequest> marshall(DisableDirectoryRequest disableDirectoryRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DisableDirectoryRequest disableDirectoryRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (disableDirectoryRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DisableDirectoryRequest> request = new DefaultRequest<DisableDirectoryRequest>(disableDirectoryRequest, "AmazonCloudDirectory");
-
-        request.setHttpMethod(HttpMethodName.PUT);
-
-        if (disableDirectoryRequest.getDirectoryArn() != null) {
-            request.addHeader("x-amz-data-partition", StringUtils.fromString(disableDirectoryRequest.getDirectoryArn()));
+        try {
+            protocolMarshaller.marshall(disableDirectoryRequest.getDirectoryArn(), DIRECTORYARN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        String uriResourcePath = "/amazonclouddirectory/2017-01-11/directory/disable";
-
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

@@ -63,7 +63,7 @@ import com.amazonaws.services.applicationdiscovery.model.*;
  * </ul>
  * <p>
  * Application Discovery Service integrates with application discovery solutions from AWS Partner Network (APN)
- * partners. Third-party application discovery tools can query the Application Discovery Service and write to the
+ * partners. Third-party application discovery tools can query Application Discovery Service and write to the
  * Application Discovery Service database using a public API. You can then import the data into either a visualization
  * tool or cloud-migration solution.
  * </p>
@@ -76,12 +76,12 @@ import com.amazonaws.services.applicationdiscovery.model.*;
  * </important>
  * <p>
  * Your AWS account must be granted access to Application Discovery Service, a process called <i>whitelisting</i>. This
- * is true for AWS partners and customers alike. To request access, sign up for the AWS Application Discovery Service <a
- * href="http://aws.amazon.com/application-discovery/preview/">here</a>. We will send you information about how to get
+ * is true for AWS partners and customers alike. To request access, sign up for AWS Application Discovery Service <a
+ * href="http://aws.amazon.com/application-discovery/preview/">here</a>. We send you information about how to get
  * started.
  * </p>
  * <p>
- * This API reference provides descriptions, syntax, and usage examples for each of the actions and data types for the
+ * This API reference provides descriptions, syntax, and usage examples for each of the actions and data types for
  * Application Discovery Service. The topic for each action shows the API request parameters and the response.
  * Alternatively, you can use one of the AWS SDKs to access an API that is tailored to the programming language or
  * platform that you're using. For more information, see <a href="http://aws.amazon.com/tools/#SDKs">AWS SDKs</a>.
@@ -275,8 +275,8 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
      * </p>
      * <p>
      * For a complete list of outputs for each asset type, see <a href=
-     * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#DescribeConfigurations"
-     * >Querying Discovered Configuration Items</a>.
+     * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#DescribeConfigurations"
+     * >Using the DescribeConfigurations Action</a>.
      * </p>
      * 
      * @param describeConfigurationsRequest
@@ -294,8 +294,8 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
      * </p>
      * <p>
      * For a complete list of outputs for each asset type, see <a href=
-     * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#DescribeConfigurations"
-     * >Querying Discovered Configuration Items</a>.
+     * "http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#DescribeConfigurations"
+     * >Using the DescribeConfigurations Action</a>.
      * </p>
      * 
      * @param describeConfigurationsRequest
@@ -311,6 +311,9 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
 
     /**
      * <p>
+     * Deprecated. Use <code>DescribeExportTasks</code> instead.
+     * </p>
+     * <p>
      * Retrieves the status of a given export process. You can retrieve status from a maximum of 100 processes.
      * </p>
      * 
@@ -319,10 +322,14 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
      *         service.
      * @sample AWSApplicationDiscoveryAsync.DescribeExportConfigurations
      */
+    @Deprecated
     java.util.concurrent.Future<DescribeExportConfigurationsResult> describeExportConfigurationsAsync(
             DescribeExportConfigurationsRequest describeExportConfigurationsRequest);
 
     /**
+     * <p>
+     * Deprecated. Use <code>DescribeExportTasks</code> instead.
+     * </p>
      * <p>
      * Retrieves the status of a given export process. You can retrieve status from a maximum of 100 processes.
      * </p>
@@ -336,9 +343,37 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
      *         service.
      * @sample AWSApplicationDiscoveryAsyncHandler.DescribeExportConfigurations
      */
+    @Deprecated
     java.util.concurrent.Future<DescribeExportConfigurationsResult> describeExportConfigurationsAsync(
             DescribeExportConfigurationsRequest describeExportConfigurationsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeExportConfigurationsRequest, DescribeExportConfigurationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieve status of one or more export tasks. You can retrieve the status of up to 100 export tasks.
+     * </p>
+     * 
+     * @param describeExportTasksRequest
+     * @return A Java Future containing the result of the DescribeExportTasks operation returned by the service.
+     * @sample AWSApplicationDiscoveryAsync.DescribeExportTasks
+     */
+    java.util.concurrent.Future<DescribeExportTasksResult> describeExportTasksAsync(DescribeExportTasksRequest describeExportTasksRequest);
+
+    /**
+     * <p>
+     * Retrieve status of one or more export tasks. You can retrieve the status of up to 100 export tasks.
+     * </p>
+     * 
+     * @param describeExportTasksRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeExportTasks operation returned by the service.
+     * @sample AWSApplicationDiscoveryAsyncHandler.DescribeExportTasks
+     */
+    java.util.concurrent.Future<DescribeExportTasksResult> describeExportTasksAsync(DescribeExportTasksRequest describeExportTasksRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeExportTasksRequest, DescribeExportTasksResult> asyncHandler);
 
     /**
      * <p>
@@ -402,9 +437,12 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
 
     /**
      * <p>
+     * Deprecated. Use <code>StartExportTask</code> instead.
+     * </p>
+     * <p>
      * Exports all discovered configuration data to an Amazon S3 bucket or an application that enables you to view and
      * evaluate the data. Data includes tags and tag associations, processes, connections, servers, and system
-     * performance. This API returns an export ID which you can query using the <i>DescribeExportConfigurations</i> API.
+     * performance. This API returns an export ID that you can query using the <i>DescribeExportConfigurations</i> API.
      * The system imposes a limit of two configuration exports in six hours.
      * </p>
      * 
@@ -412,13 +450,17 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
      * @return A Java Future containing the result of the ExportConfigurations operation returned by the service.
      * @sample AWSApplicationDiscoveryAsync.ExportConfigurations
      */
+    @Deprecated
     java.util.concurrent.Future<ExportConfigurationsResult> exportConfigurationsAsync(ExportConfigurationsRequest exportConfigurationsRequest);
 
     /**
      * <p>
+     * Deprecated. Use <code>StartExportTask</code> instead.
+     * </p>
+     * <p>
      * Exports all discovered configuration data to an Amazon S3 bucket or an application that enables you to view and
      * evaluate the data. Data includes tags and tag associations, processes, connections, servers, and system
-     * performance. This API returns an export ID which you can query using the <i>DescribeExportConfigurations</i> API.
+     * performance. This API returns an export ID that you can query using the <i>DescribeExportConfigurations</i> API.
      * The system imposes a limit of two configuration exports in six hours.
      * </p>
      * 
@@ -430,6 +472,7 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
      * @return A Java Future containing the result of the ExportConfigurations operation returned by the service.
      * @sample AWSApplicationDiscoveryAsyncHandler.ExportConfigurations
      */
+    @Deprecated
     java.util.concurrent.Future<ExportConfigurationsResult> exportConfigurationsAsync(ExportConfigurationsRequest exportConfigurationsRequest,
             com.amazonaws.handlers.AsyncHandler<ExportConfigurationsRequest, ExportConfigurationsResult> asyncHandler);
 
@@ -462,8 +505,8 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
 
     /**
      * <p>
-     * Retrieves a list of configuration items according to criteria you specify in a filter. The filter criteria
-     * identify relationship requirements.
+     * Retrieves a list of configuration items according to criteria that you specify in a filter. The filter criteria
+     * identifies the relationship requirements.
      * </p>
      * 
      * @param listConfigurationsRequest
@@ -474,8 +517,8 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
 
     /**
      * <p>
-     * Retrieves a list of configuration items according to criteria you specify in a filter. The filter criteria
-     * identify relationship requirements.
+     * Retrieves a list of configuration items according to criteria that you specify in a filter. The filter criteria
+     * identifies the relationship requirements.
      * </p>
      * 
      * @param listConfigurationsRequest
@@ -491,7 +534,7 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
 
     /**
      * <p>
-     * Retrieves a list of servers which are one network hop away from a specified server.
+     * Retrieves a list of servers that are one network hop away from a specified server.
      * </p>
      * 
      * @param listServerNeighborsRequest
@@ -502,7 +545,7 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
 
     /**
      * <p>
-     * Retrieves a list of servers which are one network hop away from a specified server.
+     * Retrieves a list of servers that are one network hop away from a specified server.
      * </p>
      * 
      * @param listServerNeighborsRequest
@@ -518,7 +561,7 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
 
     /**
      * <p>
-     * Instructs the specified agents or Connectors to start collecting data.
+     * Instructs the specified agents or connectors to start collecting data.
      * </p>
      * 
      * @param startDataCollectionByAgentIdsRequest
@@ -531,7 +574,7 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
 
     /**
      * <p>
-     * Instructs the specified agents or Connectors to start collecting data.
+     * Instructs the specified agents or connectors to start collecting data.
      * </p>
      * 
      * @param startDataCollectionByAgentIdsRequest
@@ -549,7 +592,36 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
 
     /**
      * <p>
-     * Instructs the specified agents or Connectors to stop collecting data.
+     * Export the configuration data about discovered configuration items and relationships to an S3 bucket in a
+     * specified format.
+     * </p>
+     * 
+     * @param startExportTaskRequest
+     * @return A Java Future containing the result of the StartExportTask operation returned by the service.
+     * @sample AWSApplicationDiscoveryAsync.StartExportTask
+     */
+    java.util.concurrent.Future<StartExportTaskResult> startExportTaskAsync(StartExportTaskRequest startExportTaskRequest);
+
+    /**
+     * <p>
+     * Export the configuration data about discovered configuration items and relationships to an S3 bucket in a
+     * specified format.
+     * </p>
+     * 
+     * @param startExportTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartExportTask operation returned by the service.
+     * @sample AWSApplicationDiscoveryAsyncHandler.StartExportTask
+     */
+    java.util.concurrent.Future<StartExportTaskResult> startExportTaskAsync(StartExportTaskRequest startExportTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<StartExportTaskRequest, StartExportTaskResult> asyncHandler);
+
+    /**
+     * <p>
+     * Instructs the specified agents or connectors to stop collecting data.
      * </p>
      * 
      * @param stopDataCollectionByAgentIdsRequest
@@ -562,7 +634,7 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
 
     /**
      * <p>
-     * Instructs the specified agents or Connectors to stop collecting data.
+     * Instructs the specified agents or connectors to stop collecting data.
      * </p>
      * 
      * @param stopDataCollectionByAgentIdsRequest

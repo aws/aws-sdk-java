@@ -105,6 +105,11 @@ public class RestoreDBClusterToPointInTimeRequestMarshaller implements
             request.addParameter("KmsKeyId", StringUtils.fromString(restoreDBClusterToPointInTimeRequest.getKmsKeyId()));
         }
 
+        if (restoreDBClusterToPointInTimeRequest.getEnableIAMDatabaseAuthentication() != null) {
+            request.addParameter("EnableIAMDatabaseAuthentication",
+                    StringUtils.fromBoolean(restoreDBClusterToPointInTimeRequest.getEnableIAMDatabaseAuthentication()));
+        }
+
         return request;
     }
 

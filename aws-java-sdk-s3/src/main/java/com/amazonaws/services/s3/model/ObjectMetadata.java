@@ -464,7 +464,7 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
      * @return The HTTP Content-Encoding header.
      * Returns <code>null</code> if it hasn't been set.
      *
-     * @see ObjectMetadata#setContentType(String)
+     * @see ObjectMetadata#setContentEncoding(String)
      */
     public String getContentEncoding() {
         return (String)metadata.get(Headers.CONTENT_ENCODING);
@@ -491,7 +491,7 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
      *      href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11"
      *      >http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11</a>
      *
-     * @see ObjectMetadata#getContentType()
+     * @see ObjectMetadata#getContentEncoding()
      */
     public void setContentEncoding(String encoding) {
         metadata.put(Headers.CONTENT_ENCODING, encoding);

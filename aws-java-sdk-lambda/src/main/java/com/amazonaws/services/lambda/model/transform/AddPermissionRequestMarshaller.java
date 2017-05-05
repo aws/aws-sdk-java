@@ -12,88 +12,65 @@
  */
 package com.amazonaws.services.lambda.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.lambda.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * AddPermissionRequest Marshaller
+ * AddPermissionRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AddPermissionRequestMarshaller implements Marshaller<Request<AddPermissionRequest>, AddPermissionRequest> {
+@SdkInternalApi
+public class AddPermissionRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> FUNCTIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("FunctionName").build();
+    private static final MarshallingInfo<String> STATEMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatementId").build();
+    private static final MarshallingInfo<String> ACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Action").build();
+    private static final MarshallingInfo<String> PRINCIPAL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Principal").build();
+    private static final MarshallingInfo<String> SOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SourceArn").build();
+    private static final MarshallingInfo<String> SOURCEACCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceAccount").build();
+    private static final MarshallingInfo<String> EVENTSOURCETOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventSourceToken").build();
+    private static final MarshallingInfo<String> QUALIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("Qualifier").build();
 
-    public AddPermissionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final AddPermissionRequestMarshaller instance = new AddPermissionRequestMarshaller();
+
+    public static AddPermissionRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<AddPermissionRequest> marshall(AddPermissionRequest addPermissionRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(AddPermissionRequest addPermissionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (addPermissionRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<AddPermissionRequest> request = new DefaultRequest<AddPermissionRequest>(addPermissionRequest, "AWSLambda");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/2015-03-31/functions/{FunctionName}/policy";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "FunctionName", addPermissionRequest.getFunctionName());
-        request.setResourcePath(uriResourcePath);
-
-        if (addPermissionRequest.getQualifier() != null) {
-            request.addParameter("Qualifier", StringUtils.fromString(addPermissionRequest.getQualifier()));
-        }
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (addPermissionRequest.getStatementId() != null) {
-                jsonGenerator.writeFieldName("StatementId").writeValue(addPermissionRequest.getStatementId());
-            }
-            if (addPermissionRequest.getAction() != null) {
-                jsonGenerator.writeFieldName("Action").writeValue(addPermissionRequest.getAction());
-            }
-            if (addPermissionRequest.getPrincipal() != null) {
-                jsonGenerator.writeFieldName("Principal").writeValue(addPermissionRequest.getPrincipal());
-            }
-            if (addPermissionRequest.getSourceArn() != null) {
-                jsonGenerator.writeFieldName("SourceArn").writeValue(addPermissionRequest.getSourceArn());
-            }
-            if (addPermissionRequest.getSourceAccount() != null) {
-                jsonGenerator.writeFieldName("SourceAccount").writeValue(addPermissionRequest.getSourceAccount());
-            }
-            if (addPermissionRequest.getEventSourceToken() != null) {
-                jsonGenerator.writeFieldName("EventSourceToken").writeValue(addPermissionRequest.getEventSourceToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(addPermissionRequest.getFunctionName(), FUNCTIONNAME_BINDING);
+            protocolMarshaller.marshall(addPermissionRequest.getStatementId(), STATEMENTID_BINDING);
+            protocolMarshaller.marshall(addPermissionRequest.getAction(), ACTION_BINDING);
+            protocolMarshaller.marshall(addPermissionRequest.getPrincipal(), PRINCIPAL_BINDING);
+            protocolMarshaller.marshall(addPermissionRequest.getSourceArn(), SOURCEARN_BINDING);
+            protocolMarshaller.marshall(addPermissionRequest.getSourceAccount(), SOURCEACCOUNT_BINDING);
+            protocolMarshaller.marshall(addPermissionRequest.getEventSourceToken(), EVENTSOURCETOKEN_BINDING);
+            protocolMarshaller.marshall(addPermissionRequest.getQualifier(), QUALIFIER_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

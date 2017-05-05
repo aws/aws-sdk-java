@@ -81,10 +81,12 @@
           "endpoints": {
             "ap-northeast-1": {},
             "ap-northeast-2": {},
+            "ap-south-1": {},
             "ap-southeast-1": {},
             "ap-southeast-2": {},
             "eu-central-1": {},
             "eu-west-1": {},
+            "eu-west-2": {},
             "us-east-1": {},
             "us-east-2": {},
             "us-west-1": {},
@@ -117,12 +119,6 @@
             "us-east-2": {},
             "us-west-1": {},
             "us-west-2": {}
-          }
-        },
-        "appstream": {
-          "endpoints": {
-            "ap-northeast-1": {},
-            "us-east-1": {}
           }
         },
         "appstream2": {
@@ -181,6 +177,17 @@
           },
           "isRegionalized": false,
           "partitionEndpoint": "aws-global"
+        },
+        "clouddirectory": {
+          "endpoints": {
+            "ap-southeast-1": {},
+            "ap-southeast-2": {},
+            "eu-west-1": {},
+            "eu-west-2": {},
+            "us-east-1": {},
+            "us-east-2": {},
+            "us-west-2": {}
+          }
         },
         "cloudformation": {
           "endpoints": {
@@ -264,6 +271,10 @@
         },
         "codebuild": {
           "endpoints": {
+            "ap-northeast-1": {},
+            "ap-southeast-1": {},
+            "ap-southeast-2": {},
+            "eu-central-1": {},
             "eu-west-1": {},
             "us-east-1": {},
             "us-east-2": {},
@@ -316,6 +327,7 @@
             "ap-southeast-2": {},
             "eu-central-1": {},
             "eu-west-1": {},
+            "eu-west-2": {},
             "us-east-1": {},
             "us-east-2": {},
             "us-west-2": {}
@@ -328,6 +340,7 @@
             "ap-southeast-2": {},
             "eu-central-1": {},
             "eu-west-1": {},
+            "eu-west-2": {},
             "us-east-1": {},
             "us-east-2": {},
             "us-west-2": {}
@@ -340,6 +353,7 @@
             "ap-southeast-2": {},
             "eu-central-1": {},
             "eu-west-1": {},
+            "eu-west-2": {},
             "us-east-1": {},
             "us-east-2": {},
             "us-west-2": {}
@@ -579,6 +593,7 @@
         },
         "elasticfilesystem": {
           "endpoints": {
+            "ap-southeast-2": {},
             "eu-west-1": {},
             "us-east-1": {},
             "us-east-2": {},
@@ -664,8 +679,10 @@
             "ap-south-1": {},
             "ap-southeast-1": {},
             "ap-southeast-2": {},
+            "ca-central-1": {},
             "eu-central-1": {},
             "eu-west-1": {},
+            "eu-west-2": {},
             "sa-east-1": {},
             "us-east-1": {},
             "us-east-2": {},
@@ -680,8 +697,10 @@
             "ap-south-1": {},
             "ap-southeast-1": {},
             "ap-southeast-2": {},
+            "ca-central-1": {},
             "eu-central-1": {},
             "eu-west-1": {},
+            "eu-west-2": {},
             "sa-east-1": {},
             "us-east-1": {},
             "us-east-2": {},
@@ -789,6 +808,7 @@
             "ap-southeast-2": {},
             "eu-central-1": {},
             "eu-west-1": {},
+            "eu-west-2": {},
             "us-east-1": {},
             "us-east-2": {},
             "us-west-2": {}
@@ -841,10 +861,12 @@
           "endpoints": {
             "ap-northeast-1": {},
             "ap-northeast-2": {},
+            "ap-south-1": {},
             "ap-southeast-1": {},
             "ap-southeast-2": {},
             "eu-central-1": {},
             "eu-west-1": {},
+            "eu-west-2": {},
             "us-east-1": {},
             "us-east-2": {},
             "us-west-1": {},
@@ -893,16 +915,32 @@
           },
           "endpoints": {
             "ap-northeast-1": {},
+            "ap-northeast-2": {},
+            "ap-south-1": {},
             "ap-southeast-1": {},
             "ap-southeast-2": {},
+            "ca-central-1": {},
             "eu-central-1": {},
             "eu-west-1": {},
+            "eu-west-2": {},
+            "sa-east-1": {},
             "us-east-1": {},
+            "us-east-2": {},
             "us-west-1": {},
             "us-west-2": {}
           }
         },
         "mobileanalytics": {
+          "endpoints": {
+            "us-east-1": {}
+          }
+        },
+        "models.lex": {
+          "defaults": {
+            "credentialScope": {
+              "service": "lex"
+            }
+          },
           "endpoints": {
             "us-east-1": {}
           }
@@ -931,6 +969,15 @@
             "us-west-2": {}
           }
         },
+        "mturk-requester": {
+          "endpoints": {
+            "sandbox": {
+              "hostname": "mturk-requester-sandbox.us-east-1.amazonaws.com"
+            },
+            "us-east-1": {}
+          },
+          "isRegionalized": false
+        },
         "opsworks": {
           "endpoints": {
             "ap-northeast-1": {},
@@ -954,6 +1001,18 @@
             "us-east-1": {},
             "us-west-2": {}
           }
+        },
+        "organizations": {
+          "endpoints": {
+            "aws-global": {
+              "credentialScope": {
+                "region": "us-east-1"
+              },
+              "hostname": "organizations.us-east-1.amazonaws.com"
+            }
+          },
+          "isRegionalized": false,
+          "partitionEndpoint": "aws-global"
         },
         "pinpoint": {
           "defaults": {
@@ -1031,6 +1090,16 @@
           "partitionEndpoint": "aws-global"
         },
         "route53domains": {
+          "endpoints": {
+            "us-east-1": {}
+          }
+        },
+        "runtime.lex": {
+          "defaults": {
+            "credentialScope": {
+              "service": "lex"
+            }
+          },
           "endpoints": {
             "us-east-1": {}
           }
@@ -1182,7 +1251,6 @@
           "endpoints": {
             "ap-south-1": {},
             "ap-southeast-2": {},
-            "ca-central-1": {},
             "eu-central-1": {},
             "eu-west-1": {},
             "eu-west-2": {},
@@ -1261,6 +1329,7 @@
         "states": {
           "endpoints": {
             "ap-northeast-1": {},
+            "eu-central-1": {},
             "eu-west-1": {},
             "us-east-1": {},
             "us-east-2": {},
@@ -1376,6 +1445,24 @@
             "us-west-2": {}
           }
         },
+        "tagging": {
+          "endpoints": {
+            "ap-northeast-1": {},
+            "ap-northeast-2": {},
+            "ap-south-1": {},
+            "ap-southeast-1": {},
+            "ap-southeast-2": {},
+            "ca-central-1": {},
+            "eu-central-1": {},
+            "eu-west-1": {},
+            "eu-west-2": {},
+            "sa-east-1": {},
+            "us-east-1": {},
+            "us-east-2": {},
+            "us-west-1": {},
+            "us-west-2": {}
+          }
+        },
         "waf": {
           "endpoints": {
             "aws-global": {
@@ -1391,6 +1478,16 @@
         "waf-regional": {
           "endpoints": {
             "ap-northeast-1": {},
+            "eu-west-1": {},
+            "us-east-1": {},
+            "us-west-2": {}
+          }
+        },
+        "workdocs": {
+          "endpoints": {
+            "ap-northeast-1": {},
+            "ap-southeast-1": {},
+            "ap-southeast-2": {},
             "eu-west-1": {},
             "us-east-1": {},
             "us-west-2": {}
@@ -1462,6 +1559,11 @@
           }
         },
         "cloudtrail": {
+          "endpoints": {
+            "cn-north-1": {}
+          }
+        },
+        "codedeploy": {
           "endpoints": {
             "cn-north-1": {}
           }
@@ -1656,6 +1758,11 @@
           "endpoints": {
             "cn-north-1": {}
           }
+        },
+        "tagging": {
+          "endpoints": {
+            "cn-north-1": {}
+          }
         }
       }
     },
@@ -1770,6 +1877,11 @@
           },
           "isRegionalized": false,
           "partitionEndpoint": "aws-us-gov-global"
+        },
+        "kinesis": {
+          "endpoints": {
+            "us-gov-west-1": {}
+          }
         },
         "kms": {
           "endpoints": {

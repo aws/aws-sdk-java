@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A complex type containing the hosted zone request information.
+ * A complex type that contains information about the request to create a hosted zone.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHostedZone" target="_top">AWS API
@@ -38,14 +38,18 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If your
      * domain name is registered with a registrar other than Amazon Route 53, change the name servers for your domain to
-     * the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in the DelegationSet element.
+     * the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The VPC that you want your hosted zone to be associated with. By providing this parameter, your newly created
-     * hosted can't be resolved anywhere other than the given VPC.
+     * (Private hosted zones only) A complex type that contains information about the Amazon VPC that you're associating
+     * with this hosted zone.
+     * </p>
+     * <p>
+     * You can specify only one Amazon VPC when you create a private hosted zone. To associate additional Amazon VPCs
+     * with the hosted zone, use <a>AssociateVPCWithHostedZone</a> after you create a hosted zone.
      * </p>
      */
     private VPC vPC;
@@ -53,15 +57,30 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * A unique string that identifies the request and that allows failed <code>CreateHostedZone</code> requests to be
      * retried without the risk of executing the operation twice. You must use a unique <code>CallerReference</code>
-     * string every time you create a hosted zone. <code>CallerReference</code> can be any unique string, for example, a
-     * date/time stamp.
+     * string every time you submit a <code>CreateHostedZone</code> request. <code>CallerReference</code> can be any
+     * unique string, for example, a date/time stamp.
      * </p>
      */
     private String callerReference;
     /**
      * <p>
-     * (Optional) A complex type that contains an optional comment about your hosted zone. If you don't want to specify
-     * a comment, omit both the <code>HostedZoneConfig</code> and <code>Comment</code> elements.
+     * (Optional) A complex type that contains the following optional values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For public and private hosted zones, an optional comment
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For private hosted zones, an optional <code>PrivateZone</code> element
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you don't specify a comment or the <code>PrivateZone</code> element, omit <code>HostedZoneConfig</code> and
+     * the other elements.
      * </p>
      */
     private HostedZoneConfig hostedZoneConfig;
@@ -71,26 +90,6 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
      * the reusable delegation set when you created it. For more information about reusable delegation sets, see
      * <a>CreateReusableDelegationSet</a>.
      * </p>
-     * <dl>
-     * <dt>Type</dt>
-     * <dd>
-     * <p>
-     * String
-     * </p>
-     * </dd>
-     * <dt>Default</dt>
-     * <dd>
-     * <p>
-     * None
-     * </p>
-     * </dd>
-     * <dt>Parent</dt>
-     * <dd>
-     * <p>
-     * <code>CreatedHostedZoneRequest</code>
-     * </p>
-     * </dd>
-     * </dl>
      */
     private String delegationSetId;
 
@@ -113,13 +112,13 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
      *        <p>
      *        If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If
      *        your domain name is registered with a registrar other than Amazon Route 53, change the name servers for
-     *        your domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in the
-     *        DelegationSet element.
+     *        your domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in
+     *        <code>DelegationSet</code>.
      * @param callerReference
      *        A unique string that identifies the request and that allows failed <code>CreateHostedZone</code> requests
      *        to be retried without the risk of executing the operation twice. You must use a unique
-     *        <code>CallerReference</code> string every time you create a hosted zone. <code>CallerReference</code> can
-     *        be any unique string, for example, a date/time stamp.
+     *        <code>CallerReference</code> string every time you submit a <code>CreateHostedZone</code> request.
+     *        <code>CallerReference</code> can be any unique string, for example, a date/time stamp.
      */
     public CreateHostedZoneRequest(String name, String callerReference) {
         setName(name);
@@ -136,7 +135,7 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If your
      * domain name is registered with a registrar other than Amazon Route 53, change the name servers for your domain to
-     * the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in the DelegationSet element.
+     * the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.
      * </p>
      * 
      * @param name
@@ -147,8 +146,8 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
      *        <p>
      *        If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If
      *        your domain name is registered with a registrar other than Amazon Route 53, change the name servers for
-     *        your domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in the
-     *        DelegationSet element.
+     *        your domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in
+     *        <code>DelegationSet</code>.
      */
 
     public void setName(String name) {
@@ -165,7 +164,7 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If your
      * domain name is registered with a registrar other than Amazon Route 53, change the name servers for your domain to
-     * the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in the DelegationSet element.
+     * the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.
      * </p>
      * 
      * @return The name of the domain. For resource record types that include a domain name, specify a fully qualified
@@ -175,8 +174,8 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
      *         <p>
      *         If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If
      *         your domain name is registered with a registrar other than Amazon Route 53, change the name servers for
-     *         your domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in the
-     *         DelegationSet element.
+     *         your domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in
+     *         <code>DelegationSet</code>.
      */
 
     public String getName() {
@@ -193,7 +192,7 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If your
      * domain name is registered with a registrar other than Amazon Route 53, change the name servers for your domain to
-     * the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in the DelegationSet element.
+     * the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.
      * </p>
      * 
      * @param name
@@ -204,8 +203,8 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
      *        <p>
      *        If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If
      *        your domain name is registered with a registrar other than Amazon Route 53, change the name servers for
-     *        your domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in the
-     *        DelegationSet element.
+     *        your domain to the set of <code>NameServers</code> that <code>CreateHostedZone</code> returns in
+     *        <code>DelegationSet</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -216,13 +215,20 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The VPC that you want your hosted zone to be associated with. By providing this parameter, your newly created
-     * hosted can't be resolved anywhere other than the given VPC.
+     * (Private hosted zones only) A complex type that contains information about the Amazon VPC that you're associating
+     * with this hosted zone.
+     * </p>
+     * <p>
+     * You can specify only one Amazon VPC when you create a private hosted zone. To associate additional Amazon VPCs
+     * with the hosted zone, use <a>AssociateVPCWithHostedZone</a> after you create a hosted zone.
      * </p>
      * 
      * @param vPC
-     *        The VPC that you want your hosted zone to be associated with. By providing this parameter, your newly
-     *        created hosted can't be resolved anywhere other than the given VPC.
+     *        (Private hosted zones only) A complex type that contains information about the Amazon VPC that you're
+     *        associating with this hosted zone.</p>
+     *        <p>
+     *        You can specify only one Amazon VPC when you create a private hosted zone. To associate additional Amazon
+     *        VPCs with the hosted zone, use <a>AssociateVPCWithHostedZone</a> after you create a hosted zone.
      */
 
     public void setVPC(VPC vPC) {
@@ -231,12 +237,19 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The VPC that you want your hosted zone to be associated with. By providing this parameter, your newly created
-     * hosted can't be resolved anywhere other than the given VPC.
+     * (Private hosted zones only) A complex type that contains information about the Amazon VPC that you're associating
+     * with this hosted zone.
+     * </p>
+     * <p>
+     * You can specify only one Amazon VPC when you create a private hosted zone. To associate additional Amazon VPCs
+     * with the hosted zone, use <a>AssociateVPCWithHostedZone</a> after you create a hosted zone.
      * </p>
      * 
-     * @return The VPC that you want your hosted zone to be associated with. By providing this parameter, your newly
-     *         created hosted can't be resolved anywhere other than the given VPC.
+     * @return (Private hosted zones only) A complex type that contains information about the Amazon VPC that you're
+     *         associating with this hosted zone.</p>
+     *         <p>
+     *         You can specify only one Amazon VPC when you create a private hosted zone. To associate additional Amazon
+     *         VPCs with the hosted zone, use <a>AssociateVPCWithHostedZone</a> after you create a hosted zone.
      */
 
     public VPC getVPC() {
@@ -245,13 +258,20 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The VPC that you want your hosted zone to be associated with. By providing this parameter, your newly created
-     * hosted can't be resolved anywhere other than the given VPC.
+     * (Private hosted zones only) A complex type that contains information about the Amazon VPC that you're associating
+     * with this hosted zone.
+     * </p>
+     * <p>
+     * You can specify only one Amazon VPC when you create a private hosted zone. To associate additional Amazon VPCs
+     * with the hosted zone, use <a>AssociateVPCWithHostedZone</a> after you create a hosted zone.
      * </p>
      * 
      * @param vPC
-     *        The VPC that you want your hosted zone to be associated with. By providing this parameter, your newly
-     *        created hosted can't be resolved anywhere other than the given VPC.
+     *        (Private hosted zones only) A complex type that contains information about the Amazon VPC that you're
+     *        associating with this hosted zone.</p>
+     *        <p>
+     *        You can specify only one Amazon VPC when you create a private hosted zone. To associate additional Amazon
+     *        VPCs with the hosted zone, use <a>AssociateVPCWithHostedZone</a> after you create a hosted zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -264,15 +284,15 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * A unique string that identifies the request and that allows failed <code>CreateHostedZone</code> requests to be
      * retried without the risk of executing the operation twice. You must use a unique <code>CallerReference</code>
-     * string every time you create a hosted zone. <code>CallerReference</code> can be any unique string, for example, a
-     * date/time stamp.
+     * string every time you submit a <code>CreateHostedZone</code> request. <code>CallerReference</code> can be any
+     * unique string, for example, a date/time stamp.
      * </p>
      * 
      * @param callerReference
      *        A unique string that identifies the request and that allows failed <code>CreateHostedZone</code> requests
      *        to be retried without the risk of executing the operation twice. You must use a unique
-     *        <code>CallerReference</code> string every time you create a hosted zone. <code>CallerReference</code> can
-     *        be any unique string, for example, a date/time stamp.
+     *        <code>CallerReference</code> string every time you submit a <code>CreateHostedZone</code> request.
+     *        <code>CallerReference</code> can be any unique string, for example, a date/time stamp.
      */
 
     public void setCallerReference(String callerReference) {
@@ -283,14 +303,14 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * A unique string that identifies the request and that allows failed <code>CreateHostedZone</code> requests to be
      * retried without the risk of executing the operation twice. You must use a unique <code>CallerReference</code>
-     * string every time you create a hosted zone. <code>CallerReference</code> can be any unique string, for example, a
-     * date/time stamp.
+     * string every time you submit a <code>CreateHostedZone</code> request. <code>CallerReference</code> can be any
+     * unique string, for example, a date/time stamp.
      * </p>
      * 
      * @return A unique string that identifies the request and that allows failed <code>CreateHostedZone</code> requests
      *         to be retried without the risk of executing the operation twice. You must use a unique
-     *         <code>CallerReference</code> string every time you create a hosted zone. <code>CallerReference</code> can
-     *         be any unique string, for example, a date/time stamp.
+     *         <code>CallerReference</code> string every time you submit a <code>CreateHostedZone</code> request.
+     *         <code>CallerReference</code> can be any unique string, for example, a date/time stamp.
      */
 
     public String getCallerReference() {
@@ -301,15 +321,15 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * A unique string that identifies the request and that allows failed <code>CreateHostedZone</code> requests to be
      * retried without the risk of executing the operation twice. You must use a unique <code>CallerReference</code>
-     * string every time you create a hosted zone. <code>CallerReference</code> can be any unique string, for example, a
-     * date/time stamp.
+     * string every time you submit a <code>CreateHostedZone</code> request. <code>CallerReference</code> can be any
+     * unique string, for example, a date/time stamp.
      * </p>
      * 
      * @param callerReference
      *        A unique string that identifies the request and that allows failed <code>CreateHostedZone</code> requests
      *        to be retried without the risk of executing the operation twice. You must use a unique
-     *        <code>CallerReference</code> string every time you create a hosted zone. <code>CallerReference</code> can
-     *        be any unique string, for example, a date/time stamp.
+     *        <code>CallerReference</code> string every time you submit a <code>CreateHostedZone</code> request.
+     *        <code>CallerReference</code> can be any unique string, for example, a date/time stamp.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -320,13 +340,42 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * (Optional) A complex type that contains an optional comment about your hosted zone. If you don't want to specify
-     * a comment, omit both the <code>HostedZoneConfig</code> and <code>Comment</code> elements.
+     * (Optional) A complex type that contains the following optional values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For public and private hosted zones, an optional comment
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For private hosted zones, an optional <code>PrivateZone</code> element
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you don't specify a comment or the <code>PrivateZone</code> element, omit <code>HostedZoneConfig</code> and
+     * the other elements.
      * </p>
      * 
      * @param hostedZoneConfig
-     *        (Optional) A complex type that contains an optional comment about your hosted zone. If you don't want to
-     *        specify a comment, omit both the <code>HostedZoneConfig</code> and <code>Comment</code> elements.
+     *        (Optional) A complex type that contains the following optional values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For public and private hosted zones, an optional comment
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For private hosted zones, an optional <code>PrivateZone</code> element
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you don't specify a comment or the <code>PrivateZone</code> element, omit <code>HostedZoneConfig</code>
+     *        and the other elements.
      */
 
     public void setHostedZoneConfig(HostedZoneConfig hostedZoneConfig) {
@@ -335,12 +384,41 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * (Optional) A complex type that contains an optional comment about your hosted zone. If you don't want to specify
-     * a comment, omit both the <code>HostedZoneConfig</code> and <code>Comment</code> elements.
+     * (Optional) A complex type that contains the following optional values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For public and private hosted zones, an optional comment
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For private hosted zones, an optional <code>PrivateZone</code> element
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you don't specify a comment or the <code>PrivateZone</code> element, omit <code>HostedZoneConfig</code> and
+     * the other elements.
      * </p>
      * 
-     * @return (Optional) A complex type that contains an optional comment about your hosted zone. If you don't want to
-     *         specify a comment, omit both the <code>HostedZoneConfig</code> and <code>Comment</code> elements.
+     * @return (Optional) A complex type that contains the following optional values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For public and private hosted zones, an optional comment
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For private hosted zones, an optional <code>PrivateZone</code> element
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         If you don't specify a comment or the <code>PrivateZone</code> element, omit
+     *         <code>HostedZoneConfig</code> and the other elements.
      */
 
     public HostedZoneConfig getHostedZoneConfig() {
@@ -349,13 +427,42 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * (Optional) A complex type that contains an optional comment about your hosted zone. If you don't want to specify
-     * a comment, omit both the <code>HostedZoneConfig</code> and <code>Comment</code> elements.
+     * (Optional) A complex type that contains the following optional values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For public and private hosted zones, an optional comment
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For private hosted zones, an optional <code>PrivateZone</code> element
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you don't specify a comment or the <code>PrivateZone</code> element, omit <code>HostedZoneConfig</code> and
+     * the other elements.
      * </p>
      * 
      * @param hostedZoneConfig
-     *        (Optional) A complex type that contains an optional comment about your hosted zone. If you don't want to
-     *        specify a comment, omit both the <code>HostedZoneConfig</code> and <code>Comment</code> elements.
+     *        (Optional) A complex type that contains the following optional values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For public and private hosted zones, an optional comment
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For private hosted zones, an optional <code>PrivateZone</code> element
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you don't specify a comment or the <code>PrivateZone</code> element, omit <code>HostedZoneConfig</code>
+     *        and the other elements.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -370,50 +477,11 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
      * the reusable delegation set when you created it. For more information about reusable delegation sets, see
      * <a>CreateReusableDelegationSet</a>.
      * </p>
-     * <dl>
-     * <dt>Type</dt>
-     * <dd>
-     * <p>
-     * String
-     * </p>
-     * </dd>
-     * <dt>Default</dt>
-     * <dd>
-     * <p>
-     * None
-     * </p>
-     * </dd>
-     * <dt>Parent</dt>
-     * <dd>
-     * <p>
-     * <code>CreatedHostedZoneRequest</code>
-     * </p>
-     * </dd>
-     * </dl>
      * 
      * @param delegationSetId
      *        If you want to associate a reusable delegation set with this hosted zone, the ID that Amazon Route 53
      *        assigned to the reusable delegation set when you created it. For more information about reusable
-     *        delegation sets, see <a>CreateReusableDelegationSet</a>.</p>
-     *        <dl>
-     *        <dt>Type</dt>
-     *        <dd>
-     *        <p>
-     *        String
-     *        </p>
-     *        </dd>
-     *        <dt>Default</dt>
-     *        <dd>
-     *        <p>
-     *        None
-     *        </p>
-     *        </dd>
-     *        <dt>Parent</dt>
-     *        <dd>
-     *        <p>
-     *        <code>CreatedHostedZoneRequest</code>
-     *        </p>
-     *        </dd>
+     *        delegation sets, see <a>CreateReusableDelegationSet</a>.
      */
 
     public void setDelegationSetId(String delegationSetId) {
@@ -426,49 +494,10 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
      * the reusable delegation set when you created it. For more information about reusable delegation sets, see
      * <a>CreateReusableDelegationSet</a>.
      * </p>
-     * <dl>
-     * <dt>Type</dt>
-     * <dd>
-     * <p>
-     * String
-     * </p>
-     * </dd>
-     * <dt>Default</dt>
-     * <dd>
-     * <p>
-     * None
-     * </p>
-     * </dd>
-     * <dt>Parent</dt>
-     * <dd>
-     * <p>
-     * <code>CreatedHostedZoneRequest</code>
-     * </p>
-     * </dd>
-     * </dl>
      * 
      * @return If you want to associate a reusable delegation set with this hosted zone, the ID that Amazon Route 53
      *         assigned to the reusable delegation set when you created it. For more information about reusable
-     *         delegation sets, see <a>CreateReusableDelegationSet</a>.</p>
-     *         <dl>
-     *         <dt>Type</dt>
-     *         <dd>
-     *         <p>
-     *         String
-     *         </p>
-     *         </dd>
-     *         <dt>Default</dt>
-     *         <dd>
-     *         <p>
-     *         None
-     *         </p>
-     *         </dd>
-     *         <dt>Parent</dt>
-     *         <dd>
-     *         <p>
-     *         <code>CreatedHostedZoneRequest</code>
-     *         </p>
-     *         </dd>
+     *         delegation sets, see <a>CreateReusableDelegationSet</a>.
      */
 
     public String getDelegationSetId() {
@@ -481,50 +510,11 @@ public class CreateHostedZoneRequest extends com.amazonaws.AmazonWebServiceReque
      * the reusable delegation set when you created it. For more information about reusable delegation sets, see
      * <a>CreateReusableDelegationSet</a>.
      * </p>
-     * <dl>
-     * <dt>Type</dt>
-     * <dd>
-     * <p>
-     * String
-     * </p>
-     * </dd>
-     * <dt>Default</dt>
-     * <dd>
-     * <p>
-     * None
-     * </p>
-     * </dd>
-     * <dt>Parent</dt>
-     * <dd>
-     * <p>
-     * <code>CreatedHostedZoneRequest</code>
-     * </p>
-     * </dd>
-     * </dl>
      * 
      * @param delegationSetId
      *        If you want to associate a reusable delegation set with this hosted zone, the ID that Amazon Route 53
      *        assigned to the reusable delegation set when you created it. For more information about reusable
-     *        delegation sets, see <a>CreateReusableDelegationSet</a>.</p>
-     *        <dl>
-     *        <dt>Type</dt>
-     *        <dd>
-     *        <p>
-     *        String
-     *        </p>
-     *        </dd>
-     *        <dt>Default</dt>
-     *        <dd>
-     *        <p>
-     *        None
-     *        </p>
-     *        </dd>
-     *        <dt>Parent</dt>
-     *        <dd>
-     *        <p>
-     *        <code>CreatedHostedZoneRequest</code>
-     *        </p>
-     *        </dd>
+     *        delegation sets, see <a>CreateReusableDelegationSet</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

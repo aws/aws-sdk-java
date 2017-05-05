@@ -82,11 +82,8 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
     private com.amazonaws.internal.SdkInternalList<String> operations;
     /**
      * <p>
-     * The conditions under which the operations permitted by the grant are allowed.
-     * </p>
-     * <p>
-     * You can use this value to allow the operations permitted by the grant only when a specified encryption context is
-     * present. For more information, see <a
+     * A structure that you can use to allow certain operations in the grant only when the desired encryption context is
+     * present. For more information about encryption context, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a> in the
      * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
@@ -525,20 +522,15 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The conditions under which the operations permitted by the grant are allowed.
-     * </p>
-     * <p>
-     * You can use this value to allow the operations permitted by the grant only when a specified encryption context is
-     * present. For more information, see <a
+     * A structure that you can use to allow certain operations in the grant only when the desired encryption context is
+     * present. For more information about encryption context, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a> in the
      * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param constraints
-     *        The conditions under which the operations permitted by the grant are allowed.</p>
-     *        <p>
-     *        You can use this value to allow the operations permitted by the grant only when a specified encryption
-     *        context is present. For more information, see <a
+     *        A structure that you can use to allow certain operations in the grant only when the desired encryption
+     *        context is present. For more information about encryption context, see <a
      *        href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a>
      *        in the <i>AWS Key Management Service Developer Guide</i>.
      */
@@ -549,19 +541,14 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The conditions under which the operations permitted by the grant are allowed.
-     * </p>
-     * <p>
-     * You can use this value to allow the operations permitted by the grant only when a specified encryption context is
-     * present. For more information, see <a
+     * A structure that you can use to allow certain operations in the grant only when the desired encryption context is
+     * present. For more information about encryption context, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a> in the
      * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
-     * @return The conditions under which the operations permitted by the grant are allowed.</p>
-     *         <p>
-     *         You can use this value to allow the operations permitted by the grant only when a specified encryption
-     *         context is present. For more information, see <a
+     * @return A structure that you can use to allow certain operations in the grant only when the desired encryption
+     *         context is present. For more information about encryption context, see <a
      *         href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
      *         Context</a> in the <i>AWS Key Management Service Developer Guide</i>.
      */
@@ -572,20 +559,15 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The conditions under which the operations permitted by the grant are allowed.
-     * </p>
-     * <p>
-     * You can use this value to allow the operations permitted by the grant only when a specified encryption context is
-     * present. For more information, see <a
+     * A structure that you can use to allow certain operations in the grant only when the desired encryption context is
+     * present. For more information about encryption context, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a> in the
      * <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param constraints
-     *        The conditions under which the operations permitted by the grant are allowed.</p>
-     *        <p>
-     *        You can use this value to allow the operations permitted by the grant only when a specified encryption
-     *        context is present. For more information, see <a
+     *        A structure that you can use to allow certain operations in the grant only when the desired encryption
+     *        context is present. For more information about encryption context, see <a
      *        href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption Context</a>
      *        in the <i>AWS Key Management Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.

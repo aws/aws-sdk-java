@@ -84,23 +84,23 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>ALL_OLD</code> - If <code>UpdateItem</code> overwrote an attribute name-value pair, then the content of the
-     * old item is returned.
+     * <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem
+     * operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATED_OLD</code> - The old versions of only the updated attributes are returned.
+     * <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ALL_NEW</code> - All of the attributes of the new version of the item are returned.
+     * <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATED_NEW</code> - The new versions of only the updated attributes are returned.
+     * <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem operation.
      * </p>
      * </li>
      * </ul>
@@ -256,7 +256,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * Comparison operators: <code> = | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN</code>
+     * Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code>
      * </p>
      * </li>
      * <li>
@@ -434,23 +434,26 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ALL_OLD</code> - If <code>UpdateItem</code> overwrote an attribute name-value pair, then the content
-     *        of the old item is returned.
+     *        <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATED_OLD</code> - The old versions of only the updated attributes are returned.
+     *        <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ALL_NEW</code> - All of the attributes of the new version of the item are returned.
+     *        <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATED_NEW</code> - The new versions of only the updated attributes are returned.
+     *        <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        </ul>
@@ -499,23 +502,26 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ALL_OLD</code> - If <code>UpdateItem</code> overwrote an attribute name-value pair, then the content
-     *        of the old item is returned.
+     *        <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATED_OLD</code> - The old versions of only the updated attributes are returned.
+     *        <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ALL_NEW</code> - All of the attributes of the new version of the item are returned.
+     *        <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATED_NEW</code> - The new versions of only the updated attributes are returned.
+     *        <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        </ul>
@@ -929,23 +935,23 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>ALL_OLD</code> - If <code>UpdateItem</code> overwrote an attribute name-value pair, then the content of the
-     * old item is returned.
+     * <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem
+     * operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATED_OLD</code> - The old versions of only the updated attributes are returned.
+     * <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ALL_NEW</code> - All of the attributes of the new version of the item are returned.
+     * <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATED_NEW</code> - The new versions of only the updated attributes are returned.
+     * <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem operation.
      * </p>
      * </li>
      * </ul>
@@ -969,23 +975,26 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ALL_OLD</code> - If <code>UpdateItem</code> overwrote an attribute name-value pair, then the content
-     *        of the old item is returned.
+     *        <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATED_OLD</code> - The old versions of only the updated attributes are returned.
+     *        <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ALL_NEW</code> - All of the attributes of the new version of the item are returned.
+     *        <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATED_NEW</code> - The new versions of only the updated attributes are returned.
+     *        <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        </ul>
@@ -1016,23 +1025,23 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>ALL_OLD</code> - If <code>UpdateItem</code> overwrote an attribute name-value pair, then the content of the
-     * old item is returned.
+     * <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem
+     * operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATED_OLD</code> - The old versions of only the updated attributes are returned.
+     * <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ALL_NEW</code> - All of the attributes of the new version of the item are returned.
+     * <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATED_NEW</code> - The new versions of only the updated attributes are returned.
+     * <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem operation.
      * </p>
      * </li>
      * </ul>
@@ -1055,23 +1064,26 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ALL_OLD</code> - If <code>UpdateItem</code> overwrote an attribute name-value pair, then the
-     *         content of the old item is returned.
+     *         <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem
+     *         operation.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>UPDATED_OLD</code> - The old versions of only the updated attributes are returned.
+     *         <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem
+     *         operation.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ALL_NEW</code> - All of the attributes of the new version of the item are returned.
+     *         <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem
+     *         operation.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>UPDATED_NEW</code> - The new versions of only the updated attributes are returned.
+     *         <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem
+     *         operation.
      *         </p>
      *         </li>
      *         </ul>
@@ -1102,23 +1114,23 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>ALL_OLD</code> - If <code>UpdateItem</code> overwrote an attribute name-value pair, then the content of the
-     * old item is returned.
+     * <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem
+     * operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATED_OLD</code> - The old versions of only the updated attributes are returned.
+     * <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ALL_NEW</code> - All of the attributes of the new version of the item are returned.
+     * <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATED_NEW</code> - The new versions of only the updated attributes are returned.
+     * <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem operation.
      * </p>
      * </li>
      * </ul>
@@ -1142,23 +1154,26 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ALL_OLD</code> - If <code>UpdateItem</code> overwrote an attribute name-value pair, then the content
-     *        of the old item is returned.
+     *        <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATED_OLD</code> - The old versions of only the updated attributes are returned.
+     *        <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ALL_NEW</code> - All of the attributes of the new version of the item are returned.
+     *        <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATED_NEW</code> - The new versions of only the updated attributes are returned.
+     *        <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        </ul>
@@ -1191,23 +1206,23 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>ALL_OLD</code> - If <code>UpdateItem</code> overwrote an attribute name-value pair, then the content of the
-     * old item is returned.
+     * <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem
+     * operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATED_OLD</code> - The old versions of only the updated attributes are returned.
+     * <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ALL_NEW</code> - All of the attributes of the new version of the item are returned.
+     * <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATED_NEW</code> - The new versions of only the updated attributes are returned.
+     * <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem operation.
      * </p>
      * </li>
      * </ul>
@@ -1231,23 +1246,26 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ALL_OLD</code> - If <code>UpdateItem</code> overwrote an attribute name-value pair, then the content
-     *        of the old item is returned.
+     *        <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATED_OLD</code> - The old versions of only the updated attributes are returned.
+     *        <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ALL_NEW</code> - All of the attributes of the new version of the item are returned.
+     *        <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATED_NEW</code> - The new versions of only the updated attributes are returned.
+     *        <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        </ul>
@@ -1278,23 +1296,23 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>ALL_OLD</code> - If <code>UpdateItem</code> overwrote an attribute name-value pair, then the content of the
-     * old item is returned.
+     * <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem
+     * operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATED_OLD</code> - The old versions of only the updated attributes are returned.
+     * <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ALL_NEW</code> - All of the attributes of the new version of the item are returned.
+     * <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem operation.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATED_NEW</code> - The new versions of only the updated attributes are returned.
+     * <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem operation.
      * </p>
      * </li>
      * </ul>
@@ -1318,23 +1336,26 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ALL_OLD</code> - If <code>UpdateItem</code> overwrote an attribute name-value pair, then the content
-     *        of the old item is returned.
+     *        <code>ALL_OLD</code> - Returns all of the attributes of the item, as they appeared before the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATED_OLD</code> - The old versions of only the updated attributes are returned.
+     *        <code>UPDATED_OLD</code> - Returns only the updated attributes, as they appeared before the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ALL_NEW</code> - All of the attributes of the new version of the item are returned.
+     *        <code>ALL_NEW</code> - Returns all of the attributes of the item, as they appear after the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATED_NEW</code> - The new versions of only the updated attributes are returned.
+     *        <code>UPDATED_NEW</code> - Returns only the updated attributes, as they appear after the UpdateItem
+     *        operation.
      *        </p>
      *        </li>
      *        </ul>
@@ -2207,7 +2228,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * Comparison operators: <code> = | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN</code>
+     * Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code>
      * </p>
      * </li>
      * <li>
@@ -2239,7 +2260,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </li>
      *        <li>
      *        <p>
-     *        Comparison operators: <code> = | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN</code>
+     *        Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code>
      *        </p>
      *        </li>
      *        <li>
@@ -2276,7 +2297,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * Comparison operators: <code> = | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN</code>
+     * Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code>
      * </p>
      * </li>
      * <li>
@@ -2307,7 +2328,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         </li>
      *         <li>
      *         <p>
-     *         Comparison operators: <code> = | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN</code>
+     *         Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code>
      *         </p>
      *         </li>
      *         <li>
@@ -2344,7 +2365,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * Comparison operators: <code> = | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN</code>
+     * Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code>
      * </p>
      * </li>
      * <li>
@@ -2376,7 +2397,7 @@ public class UpdateItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </li>
      *        <li>
      *        <p>
-     *        Comparison operators: <code> = | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN</code>
+     *        Comparison operators: <code>= | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN | IN </code>
      *        </p>
      *        </li>
      *        <li>

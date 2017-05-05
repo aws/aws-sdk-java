@@ -51,7 +51,7 @@ public class VirtualMFADevice implements Serializable, Cloneable {
     private java.nio.ByteBuffer qRCodePNG;
     /**
      * <p>
-     * The user to whom the MFA device is assigned.
+     * The IAM user associated with this virtual MFA device.
      * </p>
      */
     private User user;
@@ -108,7 +108,7 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      * <code>Base32StringSeed</code> is Base64-encoded.
      * </p>
      * <p>
-     * AWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default.
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
      * <p>
@@ -153,6 +153,16 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      * The Base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
      * <code>Base32StringSeed</code> is Base64-encoded.
      * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
+     * </p>
      * 
      * @param base32StringSeed
      *        The Base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
@@ -174,7 +184,7 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      * <code>Base32String</code> value is Base64-encoded.
      * </p>
      * <p>
-     * AWS SDK for Java performs a Base64 encoding on this field before sending this request to AWS service by default.
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
      * <p>
@@ -231,6 +241,16 @@ public class VirtualMFADevice implements Serializable, Cloneable {
      * if set (otherwise, the account ID otherwise), and <code>Base32String</code> is the seed in Base32 format. The
      * <code>Base32String</code> value is Base64-encoded.
      * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
+     * </p>
      * 
      * @param qRCodePNG
      *        A QR code PNG image that encodes
@@ -248,11 +268,11 @@ public class VirtualMFADevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user to whom the MFA device is assigned.
+     * The IAM user associated with this virtual MFA device.
      * </p>
      * 
      * @param user
-     *        The user to whom the MFA device is assigned.
+     *        The IAM user associated with this virtual MFA device.
      */
 
     public void setUser(User user) {
@@ -261,10 +281,10 @@ public class VirtualMFADevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user to whom the MFA device is assigned.
+     * The IAM user associated with this virtual MFA device.
      * </p>
      * 
-     * @return The user to whom the MFA device is assigned.
+     * @return The IAM user associated with this virtual MFA device.
      */
 
     public User getUser() {
@@ -273,11 +293,11 @@ public class VirtualMFADevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user to whom the MFA device is assigned.
+     * The IAM user associated with this virtual MFA device.
      * </p>
      * 
      * @param user
-     *        The user to whom the MFA device is assigned.
+     *        The IAM user associated with this virtual MFA device.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -405,4 +425,5 @@ public class VirtualMFADevice implements Serializable, Cloneable {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

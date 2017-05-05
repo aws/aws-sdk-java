@@ -12,66 +12,53 @@
  */
 package com.amazonaws.services.lambda.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.lambda.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListAliasesRequest Marshaller
+ * ListAliasesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListAliasesRequestMarshaller implements Marshaller<Request<ListAliasesRequest>, ListAliasesRequest> {
+@SdkInternalApi
+public class ListAliasesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> FUNCTIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("FunctionName").build();
+    private static final MarshallingInfo<String> FUNCTIONVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("FunctionVersion").build();
+    private static final MarshallingInfo<String> MARKER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("Marker").build();
+    private static final MarshallingInfo<Integer> MAXITEMS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("MaxItems").build();
 
-    public ListAliasesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListAliasesRequestMarshaller instance = new ListAliasesRequestMarshaller();
+
+    public static ListAliasesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListAliasesRequest> marshall(ListAliasesRequest listAliasesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListAliasesRequest listAliasesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listAliasesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListAliasesRequest> request = new DefaultRequest<ListAliasesRequest>(listAliasesRequest, "AWSLambda");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/2015-03-31/functions/{FunctionName}/aliases";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "FunctionName", listAliasesRequest.getFunctionName());
-        request.setResourcePath(uriResourcePath);
-
-        if (listAliasesRequest.getFunctionVersion() != null) {
-            request.addParameter("FunctionVersion", StringUtils.fromString(listAliasesRequest.getFunctionVersion()));
+        try {
+            protocolMarshaller.marshall(listAliasesRequest.getFunctionName(), FUNCTIONNAME_BINDING);
+            protocolMarshaller.marshall(listAliasesRequest.getFunctionVersion(), FUNCTIONVERSION_BINDING);
+            protocolMarshaller.marshall(listAliasesRequest.getMarker(), MARKER_BINDING);
+            protocolMarshaller.marshall(listAliasesRequest.getMaxItems(), MAXITEMS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (listAliasesRequest.getMarker() != null) {
-            request.addParameter("Marker", StringUtils.fromString(listAliasesRequest.getMarker()));
-        }
-
-        if (listAliasesRequest.getMaxItems() != null) {
-            request.addParameter("MaxItems", StringUtils.fromInteger(listAliasesRequest.getMaxItems()));
-        }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

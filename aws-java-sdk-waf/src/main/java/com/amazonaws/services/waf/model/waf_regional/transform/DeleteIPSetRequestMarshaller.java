@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.waf.model.waf_regional.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.waf.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteIPSetRequest Marshaller
+ * DeleteIPSetRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteIPSetRequestMarshaller implements Marshaller<Request<DeleteIPSetRequest>, DeleteIPSetRequest> {
+@SdkInternalApi
+public class DeleteIPSetRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> IPSETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("IPSetId").build();
+    private static final MarshallingInfo<String> CHANGETOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ChangeToken").build();
 
-    public DeleteIPSetRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteIPSetRequestMarshaller instance = new DeleteIPSetRequestMarshaller();
+
+    public static DeleteIPSetRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteIPSetRequest> marshall(DeleteIPSetRequest deleteIPSetRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteIPSetRequest deleteIPSetRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteIPSetRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteIPSetRequest> request = new DefaultRequest<DeleteIPSetRequest>(deleteIPSetRequest, "AWSWAFRegional");
-        request.addHeader("X-Amz-Target", "AWSWAF_Regional_20161128.DeleteIPSet");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteIPSetRequest.getIPSetId() != null) {
-                jsonGenerator.writeFieldName("IPSetId").writeValue(deleteIPSetRequest.getIPSetId());
-            }
-            if (deleteIPSetRequest.getChangeToken() != null) {
-                jsonGenerator.writeFieldName("ChangeToken").writeValue(deleteIPSetRequest.getChangeToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteIPSetRequest.getIPSetId(), IPSETID_BINDING);
+            protocolMarshaller.marshall(deleteIPSetRequest.getChangeToken(), CHANGETOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

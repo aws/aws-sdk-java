@@ -14,6 +14,8 @@ package com.amazonaws.services.clouddirectory.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class FacetAttribute implements Serializable, Cloneable {
+public class FacetAttribute implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -51,7 +53,7 @@ public class FacetAttribute implements Serializable, Cloneable {
     private FacetAttributeReference attributeReference;
     /**
      * <p>
-     * The required behavior of the FacetAttribute.
+     * The required behavior of the <code>FacetAttribute</code>.
      * </p>
      */
     private String requiredBehavior;
@@ -208,11 +210,11 @@ public class FacetAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The required behavior of the FacetAttribute.
+     * The required behavior of the <code>FacetAttribute</code>.
      * </p>
      * 
      * @param requiredBehavior
-     *        The required behavior of the FacetAttribute.
+     *        The required behavior of the <code>FacetAttribute</code>.
      * @see RequiredAttributeBehavior
      */
 
@@ -222,10 +224,10 @@ public class FacetAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The required behavior of the FacetAttribute.
+     * The required behavior of the <code>FacetAttribute</code>.
      * </p>
      * 
-     * @return The required behavior of the FacetAttribute.
+     * @return The required behavior of the <code>FacetAttribute</code>.
      * @see RequiredAttributeBehavior
      */
 
@@ -235,11 +237,11 @@ public class FacetAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The required behavior of the FacetAttribute.
+     * The required behavior of the <code>FacetAttribute</code>.
      * </p>
      * 
      * @param requiredBehavior
-     *        The required behavior of the FacetAttribute.
+     *        The required behavior of the <code>FacetAttribute</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RequiredAttributeBehavior
      */
@@ -251,11 +253,11 @@ public class FacetAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The required behavior of the FacetAttribute.
+     * The required behavior of the <code>FacetAttribute</code>.
      * </p>
      * 
      * @param requiredBehavior
-     *        The required behavior of the FacetAttribute.
+     *        The required behavior of the <code>FacetAttribute</code>.
      * @see RequiredAttributeBehavior
      */
 
@@ -265,11 +267,11 @@ public class FacetAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The required behavior of the FacetAttribute.
+     * The required behavior of the <code>FacetAttribute</code>.
      * </p>
      * 
      * @param requiredBehavior
-     *        The required behavior of the FacetAttribute.
+     *        The required behavior of the <code>FacetAttribute</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RequiredAttributeBehavior
      */
@@ -350,5 +352,11 @@ public class FacetAttribute implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.clouddirectory.model.transform.FacetAttributeMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

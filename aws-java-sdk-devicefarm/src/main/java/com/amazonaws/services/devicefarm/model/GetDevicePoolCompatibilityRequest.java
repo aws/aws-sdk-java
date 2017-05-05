@@ -122,6 +122,12 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      * </ul>
      */
     private String testType;
+    /**
+     * <p>
+     * Information about the uploaded test to be run against the device pool.
+     * </p>
+     */
+    private ScheduleRunTest test;
 
     /**
      * <p>
@@ -1032,6 +1038,46 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * Information about the uploaded test to be run against the device pool.
+     * </p>
+     * 
+     * @param test
+     *        Information about the uploaded test to be run against the device pool.
+     */
+
+    public void setTest(ScheduleRunTest test) {
+        this.test = test;
+    }
+
+    /**
+     * <p>
+     * Information about the uploaded test to be run against the device pool.
+     * </p>
+     * 
+     * @return Information about the uploaded test to be run against the device pool.
+     */
+
+    public ScheduleRunTest getTest() {
+        return this.test;
+    }
+
+    /**
+     * <p>
+     * Information about the uploaded test to be run against the device pool.
+     * </p>
+     * 
+     * @param test
+     *        Information about the uploaded test to be run against the device pool.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDevicePoolCompatibilityRequest withTest(ScheduleRunTest test) {
+        setTest(test);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1047,7 +1093,9 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
         if (getAppArn() != null)
             sb.append("AppArn: ").append(getAppArn()).append(",");
         if (getTestType() != null)
-            sb.append("TestType: ").append(getTestType());
+            sb.append("TestType: ").append(getTestType()).append(",");
+        if (getTest() != null)
+            sb.append("Test: ").append(getTest());
         sb.append("}");
         return sb.toString();
     }
@@ -1074,6 +1122,10 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getTestType() != null && other.getTestType().equals(this.getTestType()) == false)
             return false;
+        if (other.getTest() == null ^ this.getTest() == null)
+            return false;
+        if (other.getTest() != null && other.getTest().equals(this.getTest()) == false)
+            return false;
         return true;
     }
 
@@ -1085,6 +1137,7 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getDevicePoolArn() == null) ? 0 : getDevicePoolArn().hashCode());
         hashCode = prime * hashCode + ((getAppArn() == null) ? 0 : getAppArn().hashCode());
         hashCode = prime * hashCode + ((getTestType() == null) ? 0 : getTestType().hashCode());
+        hashCode = prime * hashCode + ((getTest() == null) ? 0 : getTest().hashCode());
         return hashCode;
     }
 

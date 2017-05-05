@@ -12,57 +12,44 @@
  */
 package com.amazonaws.services.elasticsearch.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.elasticsearch.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListTagsRequest Marshaller
+ * ListTagsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListTagsRequestMarshaller implements Marshaller<Request<ListTagsRequest>, ListTagsRequest> {
+@SdkInternalApi
+public class ListTagsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("arn").build();
 
-    public ListTagsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListTagsRequestMarshaller instance = new ListTagsRequestMarshaller();
+
+    public static ListTagsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListTagsRequest> marshall(ListTagsRequest listTagsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListTagsRequest listTagsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listTagsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListTagsRequest> request = new DefaultRequest<ListTagsRequest>(listTagsRequest, "AWSElasticsearch");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/2015-01-01/tags/";
-
-        request.setResourcePath(uriResourcePath);
-
-        if (listTagsRequest.getARN() != null) {
-            request.addParameter("arn", StringUtils.fromString(listTagsRequest.getARN()));
+        try {
+            protocolMarshaller.marshall(listTagsRequest.getARN(), ARN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

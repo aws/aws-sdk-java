@@ -12,52 +12,44 @@
  */
 package com.amazonaws.services.polly.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.polly.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteLexiconRequest Marshaller
+ * DeleteLexiconRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteLexiconRequestMarshaller implements Marshaller<Request<DeleteLexiconRequest>, DeleteLexiconRequest> {
+@SdkInternalApi
+public class DeleteLexiconRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("LexiconName").build();
 
-    public DeleteLexiconRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteLexiconRequestMarshaller instance = new DeleteLexiconRequestMarshaller();
+
+    public static DeleteLexiconRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteLexiconRequest> marshall(DeleteLexiconRequest deleteLexiconRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteLexiconRequest deleteLexiconRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteLexiconRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteLexiconRequest> request = new DefaultRequest<DeleteLexiconRequest>(deleteLexiconRequest, "AmazonPolly");
-
-        request.setHttpMethod(HttpMethodName.DELETE);
-
-        String uriResourcePath = "/v1/lexicons/{LexiconName}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "LexiconName", deleteLexiconRequest.getName());
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
+        try {
+            protocolMarshaller.marshall(deleteLexiconRequest.getName(), NAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

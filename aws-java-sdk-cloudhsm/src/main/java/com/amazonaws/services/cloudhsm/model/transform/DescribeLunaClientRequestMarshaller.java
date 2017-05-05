@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.cloudhsm.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cloudhsm.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeLunaClientRequest Marshaller
+ * DescribeLunaClientRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeLunaClientRequestMarshaller implements Marshaller<Request<DescribeLunaClientRequest>, DescribeLunaClientRequest> {
+@SdkInternalApi
+public class DescribeLunaClientRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CLIENTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ClientArn").build();
+    private static final MarshallingInfo<String> CERTIFICATEFINGERPRINT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CertificateFingerprint").build();
 
-    public DescribeLunaClientRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeLunaClientRequestMarshaller instance = new DescribeLunaClientRequestMarshaller();
+
+    public static DescribeLunaClientRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeLunaClientRequest> marshall(DescribeLunaClientRequest describeLunaClientRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeLunaClientRequest describeLunaClientRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeLunaClientRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeLunaClientRequest> request = new DefaultRequest<DescribeLunaClientRequest>(describeLunaClientRequest, "AWSCloudHSM");
-        request.addHeader("X-Amz-Target", "CloudHsmFrontendService.DescribeLunaClient");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeLunaClientRequest.getClientArn() != null) {
-                jsonGenerator.writeFieldName("ClientArn").writeValue(describeLunaClientRequest.getClientArn());
-            }
-            if (describeLunaClientRequest.getCertificateFingerprint() != null) {
-                jsonGenerator.writeFieldName("CertificateFingerprint").writeValue(describeLunaClientRequest.getCertificateFingerprint());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeLunaClientRequest.getClientArn(), CLIENTARN_BINDING);
+            protocolMarshaller.marshall(describeLunaClientRequest.getCertificateFingerprint(), CERTIFICATEFINGERPRINT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

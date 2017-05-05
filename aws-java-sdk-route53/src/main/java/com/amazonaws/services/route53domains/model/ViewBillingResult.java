@@ -31,24 +31,11 @@ public class ViewBillingResult extends com.amazonaws.AmazonWebServiceResult<com.
      * If there are more billing records than you specified for <code>MaxItems</code> in the request, submit another
      * request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Parent: <code>BillingRecords</code>
-     * </p>
      */
     private String nextPageMarker;
     /**
      * <p>
      * A summary of billing records.
-     * </p>
-     * <p>
-     * Type: Complex type containing a list of billing record summaries.
-     * </p>
-     * <p>
-     * Children: <code>DomainName</code>, <code>Operation</code>, <code>InvoiceId</code>, <code>BillDate</code> and
-     * <code>Price</code>
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<BillingRecord> billingRecords;
@@ -58,22 +45,10 @@ public class ViewBillingResult extends com.amazonaws.AmazonWebServiceResult<com.
      * If there are more billing records than you specified for <code>MaxItems</code> in the request, submit another
      * request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Parent: <code>BillingRecords</code>
-     * </p>
      * 
      * @param nextPageMarker
      *        If there are more billing records than you specified for <code>MaxItems</code> in the request, submit
-     *        another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>
-     *        .</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Parent: <code>BillingRecords</code>
+     *        another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.
      */
 
     public void setNextPageMarker(String nextPageMarker) {
@@ -85,21 +60,9 @@ public class ViewBillingResult extends com.amazonaws.AmazonWebServiceResult<com.
      * If there are more billing records than you specified for <code>MaxItems</code> in the request, submit another
      * request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Parent: <code>BillingRecords</code>
-     * </p>
      * 
      * @return If there are more billing records than you specified for <code>MaxItems</code> in the request, submit
-     *         another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>
-     *         .</p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Parent: <code>BillingRecords</code>
+     *         another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.
      */
 
     public String getNextPageMarker() {
@@ -111,22 +74,10 @@ public class ViewBillingResult extends com.amazonaws.AmazonWebServiceResult<com.
      * If there are more billing records than you specified for <code>MaxItems</code> in the request, submit another
      * request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Parent: <code>BillingRecords</code>
-     * </p>
      * 
      * @param nextPageMarker
      *        If there are more billing records than you specified for <code>MaxItems</code> in the request, submit
-     *        another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>
-     *        .</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Parent: <code>BillingRecords</code>
+     *        another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,21 +90,8 @@ public class ViewBillingResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * A summary of billing records.
      * </p>
-     * <p>
-     * Type: Complex type containing a list of billing record summaries.
-     * </p>
-     * <p>
-     * Children: <code>DomainName</code>, <code>Operation</code>, <code>InvoiceId</code>, <code>BillDate</code> and
-     * <code>Price</code>
-     * </p>
      * 
-     * @return A summary of billing records.</p>
-     *         <p>
-     *         Type: Complex type containing a list of billing record summaries.
-     *         </p>
-     *         <p>
-     *         Children: <code>DomainName</code>, <code>Operation</code>, <code>InvoiceId</code>, <code>BillDate</code>
-     *         and <code>Price</code>
+     * @return A summary of billing records.
      */
 
     public java.util.List<BillingRecord> getBillingRecords() {
@@ -167,22 +105,9 @@ public class ViewBillingResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * A summary of billing records.
      * </p>
-     * <p>
-     * Type: Complex type containing a list of billing record summaries.
-     * </p>
-     * <p>
-     * Children: <code>DomainName</code>, <code>Operation</code>, <code>InvoiceId</code>, <code>BillDate</code> and
-     * <code>Price</code>
-     * </p>
      * 
      * @param billingRecords
-     *        A summary of billing records.</p>
-     *        <p>
-     *        Type: Complex type containing a list of billing record summaries.
-     *        </p>
-     *        <p>
-     *        Children: <code>DomainName</code>, <code>Operation</code>, <code>InvoiceId</code>, <code>BillDate</code>
-     *        and <code>Price</code>
+     *        A summary of billing records.
      */
 
     public void setBillingRecords(java.util.Collection<BillingRecord> billingRecords) {
@@ -199,26 +124,13 @@ public class ViewBillingResult extends com.amazonaws.AmazonWebServiceResult<com.
      * A summary of billing records.
      * </p>
      * <p>
-     * Type: Complex type containing a list of billing record summaries.
-     * </p>
-     * <p>
-     * Children: <code>DomainName</code>, <code>Operation</code>, <code>InvoiceId</code>, <code>BillDate</code> and
-     * <code>Price</code>
-     * </p>
-     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setBillingRecords(java.util.Collection)} or {@link #withBillingRecords(java.util.Collection)} if you want
      * to override the existing values.
      * </p>
      * 
      * @param billingRecords
-     *        A summary of billing records.</p>
-     *        <p>
-     *        Type: Complex type containing a list of billing record summaries.
-     *        </p>
-     *        <p>
-     *        Children: <code>DomainName</code>, <code>Operation</code>, <code>InvoiceId</code>, <code>BillDate</code>
-     *        and <code>Price</code>
+     *        A summary of billing records.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -236,22 +148,9 @@ public class ViewBillingResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * A summary of billing records.
      * </p>
-     * <p>
-     * Type: Complex type containing a list of billing record summaries.
-     * </p>
-     * <p>
-     * Children: <code>DomainName</code>, <code>Operation</code>, <code>InvoiceId</code>, <code>BillDate</code> and
-     * <code>Price</code>
-     * </p>
      * 
      * @param billingRecords
-     *        A summary of billing records.</p>
-     *        <p>
-     *        Type: Complex type containing a list of billing record summaries.
-     *        </p>
-     *        <p>
-     *        Children: <code>DomainName</code>, <code>Operation</code>, <code>InvoiceId</code>, <code>BillDate</code>
-     *        and <code>Price</code>
+     *        A summary of billing records.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -318,4 +217,5 @@ public class ViewBillingResult extends com.amazonaws.AmazonWebServiceResult<com.
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

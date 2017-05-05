@@ -265,6 +265,7 @@ public class AbstractAWSLambdaAsync extends AbstractAWSLambda implements AWSLamb
      *
      * @see #listEventSourceMappingsAsync(ListEventSourceMappingsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListEventSourceMappingsResult> listEventSourceMappingsAsync(
             com.amazonaws.handlers.AsyncHandler<ListEventSourceMappingsRequest, ListEventSourceMappingsResult> asyncHandler) {
 
@@ -300,10 +301,24 @@ public class AbstractAWSLambdaAsync extends AbstractAWSLambda implements AWSLamb
      *
      * @see #listFunctionsAsync(ListFunctionsRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<ListFunctionsResult> listFunctionsAsync(
             com.amazonaws.handlers.AsyncHandler<ListFunctionsRequest, ListFunctionsResult> asyncHandler) {
 
         return listFunctionsAsync(new ListFunctionsRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsResult> listTagsAsync(ListTagsRequest request) {
+
+        return listTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsResult> listTagsAsync(ListTagsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTagsRequest, ListTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -341,6 +356,32 @@ public class AbstractAWSLambdaAsync extends AbstractAWSLambda implements AWSLamb
     @Override
     public java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(RemovePermissionRequest request,
             com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, RemovePermissionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

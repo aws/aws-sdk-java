@@ -14,6 +14,8 @@ package com.amazonaws.services.opsworks.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class LoadBasedAutoScalingConfiguration implements Serializable, Cloneable {
+public class LoadBasedAutoScalingConfiguration implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -41,14 +43,14 @@ public class LoadBasedAutoScalingConfiguration implements Serializable, Cloneabl
     /**
      * <p>
      * An <code>AutoScalingThresholds</code> object that describes the upscaling configuration, which defines how and
-     * when AWS OpsWorks increases the number of instances.
+     * when AWS OpsWorks Stacks increases the number of instances.
      * </p>
      */
     private AutoScalingThresholds upScaling;
     /**
      * <p>
      * An <code>AutoScalingThresholds</code> object that describes the downscaling configuration, which defines how and
-     * when AWS OpsWorks reduces the number of instances.
+     * when AWS OpsWorks Stacks reduces the number of instances.
      * </p>
      */
     private AutoScalingThresholds downScaling;
@@ -148,12 +150,12 @@ public class LoadBasedAutoScalingConfiguration implements Serializable, Cloneabl
     /**
      * <p>
      * An <code>AutoScalingThresholds</code> object that describes the upscaling configuration, which defines how and
-     * when AWS OpsWorks increases the number of instances.
+     * when AWS OpsWorks Stacks increases the number of instances.
      * </p>
      * 
      * @param upScaling
      *        An <code>AutoScalingThresholds</code> object that describes the upscaling configuration, which defines how
-     *        and when AWS OpsWorks increases the number of instances.
+     *        and when AWS OpsWorks Stacks increases the number of instances.
      */
 
     public void setUpScaling(AutoScalingThresholds upScaling) {
@@ -163,11 +165,11 @@ public class LoadBasedAutoScalingConfiguration implements Serializable, Cloneabl
     /**
      * <p>
      * An <code>AutoScalingThresholds</code> object that describes the upscaling configuration, which defines how and
-     * when AWS OpsWorks increases the number of instances.
+     * when AWS OpsWorks Stacks increases the number of instances.
      * </p>
      * 
      * @return An <code>AutoScalingThresholds</code> object that describes the upscaling configuration, which defines
-     *         how and when AWS OpsWorks increases the number of instances.
+     *         how and when AWS OpsWorks Stacks increases the number of instances.
      */
 
     public AutoScalingThresholds getUpScaling() {
@@ -177,12 +179,12 @@ public class LoadBasedAutoScalingConfiguration implements Serializable, Cloneabl
     /**
      * <p>
      * An <code>AutoScalingThresholds</code> object that describes the upscaling configuration, which defines how and
-     * when AWS OpsWorks increases the number of instances.
+     * when AWS OpsWorks Stacks increases the number of instances.
      * </p>
      * 
      * @param upScaling
      *        An <code>AutoScalingThresholds</code> object that describes the upscaling configuration, which defines how
-     *        and when AWS OpsWorks increases the number of instances.
+     *        and when AWS OpsWorks Stacks increases the number of instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -194,12 +196,12 @@ public class LoadBasedAutoScalingConfiguration implements Serializable, Cloneabl
     /**
      * <p>
      * An <code>AutoScalingThresholds</code> object that describes the downscaling configuration, which defines how and
-     * when AWS OpsWorks reduces the number of instances.
+     * when AWS OpsWorks Stacks reduces the number of instances.
      * </p>
      * 
      * @param downScaling
      *        An <code>AutoScalingThresholds</code> object that describes the downscaling configuration, which defines
-     *        how and when AWS OpsWorks reduces the number of instances.
+     *        how and when AWS OpsWorks Stacks reduces the number of instances.
      */
 
     public void setDownScaling(AutoScalingThresholds downScaling) {
@@ -209,11 +211,11 @@ public class LoadBasedAutoScalingConfiguration implements Serializable, Cloneabl
     /**
      * <p>
      * An <code>AutoScalingThresholds</code> object that describes the downscaling configuration, which defines how and
-     * when AWS OpsWorks reduces the number of instances.
+     * when AWS OpsWorks Stacks reduces the number of instances.
      * </p>
      * 
      * @return An <code>AutoScalingThresholds</code> object that describes the downscaling configuration, which defines
-     *         how and when AWS OpsWorks reduces the number of instances.
+     *         how and when AWS OpsWorks Stacks reduces the number of instances.
      */
 
     public AutoScalingThresholds getDownScaling() {
@@ -223,12 +225,12 @@ public class LoadBasedAutoScalingConfiguration implements Serializable, Cloneabl
     /**
      * <p>
      * An <code>AutoScalingThresholds</code> object that describes the downscaling configuration, which defines how and
-     * when AWS OpsWorks reduces the number of instances.
+     * when AWS OpsWorks Stacks reduces the number of instances.
      * </p>
      * 
      * @param downScaling
      *        An <code>AutoScalingThresholds</code> object that describes the downscaling configuration, which defines
-     *        how and when AWS OpsWorks reduces the number of instances.
+     *        how and when AWS OpsWorks Stacks reduces the number of instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -308,5 +310,11 @@ public class LoadBasedAutoScalingConfiguration implements Serializable, Cloneabl
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.opsworks.model.transform.LoadBasedAutoScalingConfigurationMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

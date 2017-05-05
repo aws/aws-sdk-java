@@ -37,26 +37,29 @@ public class StaticEncryptionMaterialsProvider implements EncryptionMaterialsPro
 
     public EncryptionMaterials getEncryptionMaterials(
             final Map<String, String> materialDescIn) {
+        if (materials == null) {
+            return null;  // nothing to match descriptions against, and no accessor
+        }
         final Map<String,String> materialDesc =
             materials.getMaterialsDescription();
-        if (materialDescIn != null 
-        &&  materialDescIn.equals(materialDesc)) {
+        if (materialDescIn != null &&  materialDescIn.equals(materialDesc)) {
             return materials;   // matching description
         }
         EncryptionMaterialsAccessor accessor = materials.getAccessor();
         if (accessor != null) {
             EncryptionMaterials accessorMaterials =
                 accessor.getEncryptionMaterials(materialDescIn);
-            if (accessorMaterials != null)
+            if (accessorMaterials != null) {
                 return accessorMaterials;   // accessor decided materials
+            }
         }
         // The condition that there are
-        // 1) no input materials description (typically from S3); and
-        // 2) no materials description for the current client-side materials; and
-        // 3) the client's material accessor has no corresponding materials
-        //    for null or empty materials description;
-        // implies that the only sensible materials is
-        // the current client-side materials (which has no description).
+        //   1) no input materials description (typically from S3); and
+        //   2) no materials description for the current client-side materials; and
+        //   3) the client's material accessor has no corresponding materials
+        //      for null or empty materials description;
+        // implies that the only sensible materials is the current client-side materials
+        // (which has no description).
         boolean noMaterialDescIn = materialDescIn == null || materialDescIn.size() == 0;
         boolean noMaterialDesc = materialDesc == null || materialDesc.size() == 0;
         return noMaterialDescIn && noMaterialDesc ? materials : null;

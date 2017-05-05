@@ -85,4 +85,7 @@ public class AmazonAutoScalingWaiters {
                 .withExecutorService(executorService).build();
     }
 
+    public void shutdown() {
+        executorService.shutdown();
+    }
 }

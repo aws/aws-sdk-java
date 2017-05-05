@@ -12,85 +12,54 @@
  */
 package com.amazonaws.services.rekognition.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.rekognition.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * IndexFacesRequest Marshaller
+ * IndexFacesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class IndexFacesRequestMarshaller implements Marshaller<Request<IndexFacesRequest>, IndexFacesRequest> {
+@SdkInternalApi
+public class IndexFacesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> COLLECTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CollectionId").build();
+    private static final MarshallingInfo<StructuredPojo> IMAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Image").build();
+    private static final MarshallingInfo<String> EXTERNALIMAGEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExternalImageId").build();
+    private static final MarshallingInfo<List> DETECTIONATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DetectionAttributes").build();
 
-    public IndexFacesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final IndexFacesRequestMarshaller instance = new IndexFacesRequestMarshaller();
+
+    public static IndexFacesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<IndexFacesRequest> marshall(IndexFacesRequest indexFacesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(IndexFacesRequest indexFacesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (indexFacesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<IndexFacesRequest> request = new DefaultRequest<IndexFacesRequest>(indexFacesRequest, "AmazonRekognition");
-        request.addHeader("X-Amz-Target", "RekognitionService.IndexFaces");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (indexFacesRequest.getCollectionId() != null) {
-                jsonGenerator.writeFieldName("CollectionId").writeValue(indexFacesRequest.getCollectionId());
-            }
-            if (indexFacesRequest.getImage() != null) {
-                jsonGenerator.writeFieldName("Image");
-                ImageJsonMarshaller.getInstance().marshall(indexFacesRequest.getImage(), jsonGenerator);
-            }
-            if (indexFacesRequest.getExternalImageId() != null) {
-                jsonGenerator.writeFieldName("ExternalImageId").writeValue(indexFacesRequest.getExternalImageId());
-            }
-
-            java.util.List<String> detectionAttributesList = indexFacesRequest.getDetectionAttributes();
-            if (detectionAttributesList != null) {
-                jsonGenerator.writeFieldName("DetectionAttributes");
-                jsonGenerator.writeStartArray();
-                for (String detectionAttributesListValue : detectionAttributesList) {
-                    if (detectionAttributesListValue != null) {
-                        jsonGenerator.writeValue(detectionAttributesListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(indexFacesRequest.getCollectionId(), COLLECTIONID_BINDING);
+            protocolMarshaller.marshall(indexFacesRequest.getImage(), IMAGE_BINDING);
+            protocolMarshaller.marshall(indexFacesRequest.getExternalImageId(), EXTERNALIMAGEID_BINDING);
+            protocolMarshaller.marshall(indexFacesRequest.getDetectionAttributes(), DETECTIONATTRIBUTES_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

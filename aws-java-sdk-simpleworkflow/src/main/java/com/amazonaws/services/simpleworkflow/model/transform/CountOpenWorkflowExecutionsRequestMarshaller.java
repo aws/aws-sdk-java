@@ -12,82 +12,56 @@
  */
 package com.amazonaws.services.simpleworkflow.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simpleworkflow.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CountOpenWorkflowExecutionsRequest Marshaller
+ * CountOpenWorkflowExecutionsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CountOpenWorkflowExecutionsRequestMarshaller implements
-        Marshaller<Request<CountOpenWorkflowExecutionsRequest>, CountOpenWorkflowExecutionsRequest> {
+@SdkInternalApi
+public class CountOpenWorkflowExecutionsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DOMAIN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("domain").build();
+    private static final MarshallingInfo<StructuredPojo> STARTTIMEFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startTimeFilter").build();
+    private static final MarshallingInfo<StructuredPojo> TYPEFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("typeFilter").build();
+    private static final MarshallingInfo<StructuredPojo> TAGFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("tagFilter").build();
+    private static final MarshallingInfo<StructuredPojo> EXECUTIONFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionFilter").build();
 
-    public CountOpenWorkflowExecutionsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CountOpenWorkflowExecutionsRequestMarshaller instance = new CountOpenWorkflowExecutionsRequestMarshaller();
+
+    public static CountOpenWorkflowExecutionsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CountOpenWorkflowExecutionsRequest> marshall(CountOpenWorkflowExecutionsRequest countOpenWorkflowExecutionsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CountOpenWorkflowExecutionsRequest countOpenWorkflowExecutionsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (countOpenWorkflowExecutionsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CountOpenWorkflowExecutionsRequest> request = new DefaultRequest<CountOpenWorkflowExecutionsRequest>(countOpenWorkflowExecutionsRequest,
-                "AmazonSimpleWorkflow");
-        request.addHeader("X-Amz-Target", "SimpleWorkflowService.CountOpenWorkflowExecutions");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (countOpenWorkflowExecutionsRequest.getDomain() != null) {
-                jsonGenerator.writeFieldName("domain").writeValue(countOpenWorkflowExecutionsRequest.getDomain());
-            }
-            if (countOpenWorkflowExecutionsRequest.getStartTimeFilter() != null) {
-                jsonGenerator.writeFieldName("startTimeFilter");
-                ExecutionTimeFilterJsonMarshaller.getInstance().marshall(countOpenWorkflowExecutionsRequest.getStartTimeFilter(), jsonGenerator);
-            }
-            if (countOpenWorkflowExecutionsRequest.getTypeFilter() != null) {
-                jsonGenerator.writeFieldName("typeFilter");
-                WorkflowTypeFilterJsonMarshaller.getInstance().marshall(countOpenWorkflowExecutionsRequest.getTypeFilter(), jsonGenerator);
-            }
-            if (countOpenWorkflowExecutionsRequest.getTagFilter() != null) {
-                jsonGenerator.writeFieldName("tagFilter");
-                TagFilterJsonMarshaller.getInstance().marshall(countOpenWorkflowExecutionsRequest.getTagFilter(), jsonGenerator);
-            }
-            if (countOpenWorkflowExecutionsRequest.getExecutionFilter() != null) {
-                jsonGenerator.writeFieldName("executionFilter");
-                WorkflowExecutionFilterJsonMarshaller.getInstance().marshall(countOpenWorkflowExecutionsRequest.getExecutionFilter(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(countOpenWorkflowExecutionsRequest.getDomain(), DOMAIN_BINDING);
+            protocolMarshaller.marshall(countOpenWorkflowExecutionsRequest.getStartTimeFilter(), STARTTIMEFILTER_BINDING);
+            protocolMarshaller.marshall(countOpenWorkflowExecutionsRequest.getTypeFilter(), TYPEFILTER_BINDING);
+            protocolMarshaller.marshall(countOpenWorkflowExecutionsRequest.getTagFilter(), TAGFILTER_BINDING);
+            protocolMarshaller.marshall(countOpenWorkflowExecutionsRequest.getExecutionFilter(), EXECUTIONFILTER_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  * <code>/<i>CloudFront API version</i>/CloudFront/identity ID/config</code> resource.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2016-11-25/CloudFrontOriginAccessIdentityConfig"
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CloudFrontOriginAccessIdentityConfig"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -304,4 +304,5 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable, Clone
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

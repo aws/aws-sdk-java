@@ -28,18 +28,18 @@ public class CreateAliasResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Object containing the newly created alias record.
+     * Object that describes the newly created alias record.
      * </p>
      */
     private Alias alias;
 
     /**
      * <p>
-     * Object containing the newly created alias record.
+     * Object that describes the newly created alias record.
      * </p>
      * 
      * @param alias
-     *        Object containing the newly created alias record.
+     *        Object that describes the newly created alias record.
      */
 
     public void setAlias(Alias alias) {
@@ -48,10 +48,10 @@ public class CreateAliasResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Object containing the newly created alias record.
+     * Object that describes the newly created alias record.
      * </p>
      * 
-     * @return Object containing the newly created alias record.
+     * @return Object that describes the newly created alias record.
      */
 
     public Alias getAlias() {
@@ -60,11 +60,11 @@ public class CreateAliasResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Object containing the newly created alias record.
+     * Object that describes the newly created alias record.
      * </p>
      * 
      * @param alias
-     *        Object containing the newly created alias record.
+     *        Object that describes the newly created alias record.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,4 +124,5 @@ public class CreateAliasResult extends com.amazonaws.AmazonWebServiceResult<com.
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

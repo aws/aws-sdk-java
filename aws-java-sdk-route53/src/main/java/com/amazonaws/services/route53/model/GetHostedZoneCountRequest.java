@@ -19,8 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * To retrieve a count of all your hosted zones, send a <code>GET</code> request to the
- * <code>/2013-04-01/hostedzonecount</code> resource.
+ * A request to retrieve a count of all the hosted zones that are associated with the current AWS account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneCount" target="_top">AWS API

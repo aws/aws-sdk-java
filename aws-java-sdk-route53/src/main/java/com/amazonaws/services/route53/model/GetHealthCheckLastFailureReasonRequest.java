@@ -19,16 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * This action gets the reason that a specified health check failed most recently.
- * </p>
- * <p>
- * To get the reason for the last failure of a health check, send a GET request to the /2013-04-01/healthcheck/health
- * check ID/lastfailurereason resource.
- * </p>
- * <p>
- * For information about viewing the last failure reason for a health check using the Amazon Route 53 console, see <a
- * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-monitor-view-status.html">Viewing Health
- * Check Status and the Reason for Health Check Failures</a> in the <i>Amazon Route 53 Developer Guide</i>.
+ * A request for the reason that a health check failed most recently.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckLastFailureReason"

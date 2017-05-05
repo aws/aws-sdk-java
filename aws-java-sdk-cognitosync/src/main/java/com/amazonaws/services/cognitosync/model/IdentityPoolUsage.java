@@ -14,6 +14,8 @@ package com.amazonaws.services.cognitosync.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * Usage information for the identity pool.
@@ -22,7 +24,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class IdentityPoolUsage implements Serializable, Cloneable {
+public class IdentityPoolUsage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID
@@ -249,5 +251,11 @@ public class IdentityPoolUsage implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.cognitosync.model.transform.IdentityPoolUsageMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

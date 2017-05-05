@@ -664,9 +664,6 @@ public interface AWSLambdaAsync extends AWSLambda {
      * Aliases</a>.
      * </p>
      * <p>
-     * For information about adding permissions, see <a>AddPermission</a>.
-     * </p>
-     * <p>
      * You need permission for the <code>lambda:GetPolicy action.</code>
      * </p>
      * 
@@ -688,9 +685,6 @@ public interface AWSLambdaAsync extends AWSLambda {
      * more information about versioning, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS Lambda Function Versioning and
      * Aliases</a>.
-     * </p>
-     * <p>
-     * For information about adding permissions, see <a>AddPermission</a>.
      * </p>
      * <p>
      * You need permission for the <code>lambda:GetPolicy action.</code>
@@ -1002,6 +996,37 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
+     * Returns a list of tags assigned to a function when supplied the function ARN (Amazon Resource Name).
+     * </p>
+     * 
+     * @param listTagsRequest
+     * @return A Java Future containing the result of the ListTags operation returned by the service.
+     * @sample AWSLambdaAsync.ListTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListTags" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsResult> listTagsAsync(ListTagsRequest listTagsRequest);
+
+    /**
+     * <p>
+     * Returns a list of tags assigned to a function when supplied the function ARN (Amazon Resource Name).
+     * </p>
+     * 
+     * @param listTagsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTags operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.ListTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListTags" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsResult> listTagsAsync(ListTagsRequest listTagsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsRequest, ListTagsResult> asyncHandler);
+
+    /**
+     * <p>
      * List all versions of a function. For information about the versioning feature, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS Lambda Function Versioning and
      * Aliases</a>.
@@ -1130,6 +1155,72 @@ public interface AWSLambdaAsync extends AWSLambda {
      */
     java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(RemovePermissionRequest removePermissionRequest,
             com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, RemovePermissionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a list of tags (key-value pairs) on the Lambda function. Requires the Lambda function ARN (Amazon
+     * Resource Name). If a key is specified without a value, Lambda creates a tag with the specified key and a value of
+     * null.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSLambdaAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Creates a list of tags (key-value pairs) on the Lambda function. Requires the Lambda function ARN (Amazon
+     * Resource Name). If a key is specified without a value, Lambda creates a tag with the specified key and a value of
+     * null.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes tags from a Lambda function. Requires the function ARN (Amazon Resource Name).
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSLambdaAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Removes tags from a Lambda function. Requires the function ARN (Amazon Resource Name).
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
     /**
      * <p>

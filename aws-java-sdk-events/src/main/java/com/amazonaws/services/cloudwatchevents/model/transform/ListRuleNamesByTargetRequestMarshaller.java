@@ -12,70 +12,50 @@
  */
 package com.amazonaws.services.cloudwatchevents.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cloudwatchevents.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListRuleNamesByTargetRequest Marshaller
+ * ListRuleNamesByTargetRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListRuleNamesByTargetRequestMarshaller implements Marshaller<Request<ListRuleNamesByTargetRequest>, ListRuleNamesByTargetRequest> {
+@SdkInternalApi
+public class ListRuleNamesByTargetRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> TARGETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TargetArn").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
+    private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Limit").build();
 
-    public ListRuleNamesByTargetRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListRuleNamesByTargetRequestMarshaller instance = new ListRuleNamesByTargetRequestMarshaller();
+
+    public static ListRuleNamesByTargetRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListRuleNamesByTargetRequest> marshall(ListRuleNamesByTargetRequest listRuleNamesByTargetRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListRuleNamesByTargetRequest listRuleNamesByTargetRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listRuleNamesByTargetRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListRuleNamesByTargetRequest> request = new DefaultRequest<ListRuleNamesByTargetRequest>(listRuleNamesByTargetRequest, "AmazonCloudWatchEvents");
-        request.addHeader("X-Amz-Target", "AWSEvents.ListRuleNamesByTarget");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (listRuleNamesByTargetRequest.getTargetArn() != null) {
-                jsonGenerator.writeFieldName("TargetArn").writeValue(listRuleNamesByTargetRequest.getTargetArn());
-            }
-            if (listRuleNamesByTargetRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(listRuleNamesByTargetRequest.getNextToken());
-            }
-            if (listRuleNamesByTargetRequest.getLimit() != null) {
-                jsonGenerator.writeFieldName("Limit").writeValue(listRuleNamesByTargetRequest.getLimit());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listRuleNamesByTargetRequest.getTargetArn(), TARGETARN_BINDING);
+            protocolMarshaller.marshall(listRuleNamesByTargetRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listRuleNamesByTargetRequest.getLimit(), LIMIT_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

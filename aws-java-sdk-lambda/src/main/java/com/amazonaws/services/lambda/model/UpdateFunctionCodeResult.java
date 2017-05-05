@@ -28,7 +28,8 @@ public class UpdateFunctionCodeResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The name of the function.
+     * The name of the function. Note that the length constraint applies only to the ARN. If you specify only the
+     * function name, it is limited to 64 characters in length.
      * </p>
      */
     private String functionName;
@@ -41,10 +42,6 @@ public class UpdateFunctionCodeResult extends com.amazonaws.AmazonWebServiceResu
     /**
      * <p>
      * The runtime environment for the Lambda function.
-     * </p>
-     * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
-     * to "nodejs".
      * </p>
      */
     private String runtime;
@@ -112,7 +109,7 @@ public class UpdateFunctionCodeResult extends com.amazonaws.AmazonWebServiceResu
     private VpcConfigResponse vpcConfig;
     /**
      * <p>
-     * The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
+     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
      * </p>
      */
     private DeadLetterConfig deadLetterConfig;
@@ -129,14 +126,22 @@ public class UpdateFunctionCodeResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private String kMSKeyArn;
+    /**
+     * <p>
+     * The parent object that contains your function's tracing settings.
+     * </p>
+     */
+    private TracingConfigResponse tracingConfig;
 
     /**
      * <p>
-     * The name of the function.
+     * The name of the function. Note that the length constraint applies only to the ARN. If you specify only the
+     * function name, it is limited to 64 characters in length.
      * </p>
      * 
      * @param functionName
-     *        The name of the function.
+     *        The name of the function. Note that the length constraint applies only to the ARN. If you specify only the
+     *        function name, it is limited to 64 characters in length.
      */
 
     public void setFunctionName(String functionName) {
@@ -145,10 +150,12 @@ public class UpdateFunctionCodeResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The name of the function.
+     * The name of the function. Note that the length constraint applies only to the ARN. If you specify only the
+     * function name, it is limited to 64 characters in length.
      * </p>
      * 
-     * @return The name of the function.
+     * @return The name of the function. Note that the length constraint applies only to the ARN. If you specify only
+     *         the function name, it is limited to 64 characters in length.
      */
 
     public String getFunctionName() {
@@ -157,11 +164,13 @@ public class UpdateFunctionCodeResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The name of the function.
+     * The name of the function. Note that the length constraint applies only to the ARN. If you specify only the
+     * function name, it is limited to 64 characters in length.
      * </p>
      * 
      * @param functionName
-     *        The name of the function.
+     *        The name of the function. Note that the length constraint applies only to the ARN. If you specify only the
+     *        function name, it is limited to 64 characters in length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -214,16 +223,9 @@ public class UpdateFunctionCodeResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * The runtime environment for the Lambda function.
      * </p>
-     * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
-     * to "nodejs".
-     * </p>
      * 
      * @param runtime
-     *        The runtime environment for the Lambda function.</p>
-     *        <p>
-     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
-     *        value to "nodejs".
+     *        The runtime environment for the Lambda function.
      * @see Runtime
      */
 
@@ -235,15 +237,8 @@ public class UpdateFunctionCodeResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * The runtime environment for the Lambda function.
      * </p>
-     * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
-     * to "nodejs".
-     * </p>
      * 
-     * @return The runtime environment for the Lambda function.</p>
-     *         <p>
-     *         To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
-     *         value to "nodejs".
+     * @return The runtime environment for the Lambda function.
      * @see Runtime
      */
 
@@ -255,16 +250,9 @@ public class UpdateFunctionCodeResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * The runtime environment for the Lambda function.
      * </p>
-     * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
-     * to "nodejs".
-     * </p>
      * 
      * @param runtime
-     *        The runtime environment for the Lambda function.</p>
-     *        <p>
-     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
-     *        value to "nodejs".
+     *        The runtime environment for the Lambda function.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Runtime
      */
@@ -278,16 +266,9 @@ public class UpdateFunctionCodeResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * The runtime environment for the Lambda function.
      * </p>
-     * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
-     * to "nodejs".
-     * </p>
      * 
      * @param runtime
-     *        The runtime environment for the Lambda function.</p>
-     *        <p>
-     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
-     *        value to "nodejs".
+     *        The runtime environment for the Lambda function.
      * @see Runtime
      */
 
@@ -299,16 +280,9 @@ public class UpdateFunctionCodeResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * The runtime environment for the Lambda function.
      * </p>
-     * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
-     * to "nodejs".
-     * </p>
      * 
      * @param runtime
-     *        The runtime environment for the Lambda function.</p>
-     *        <p>
-     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
-     *        value to "nodejs".
+     *        The runtime environment for the Lambda function.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Runtime
      */
@@ -735,11 +709,11 @@ public class UpdateFunctionCodeResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
+     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
      * </p>
      * 
      * @param deadLetterConfig
-     *        The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS
+     *        The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS
      *        topic.
      */
 
@@ -749,10 +723,10 @@ public class UpdateFunctionCodeResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
+     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
      * </p>
      * 
-     * @return The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon
+     * @return The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon
      *         SNS topic.
      */
 
@@ -762,11 +736,11 @@ public class UpdateFunctionCodeResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
+     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
      * </p>
      * 
      * @param deadLetterConfig
-     *        The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS
+     *        The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS
      *        topic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -863,6 +837,46 @@ public class UpdateFunctionCodeResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * The parent object that contains your function's tracing settings.
+     * </p>
+     * 
+     * @param tracingConfig
+     *        The parent object that contains your function's tracing settings.
+     */
+
+    public void setTracingConfig(TracingConfigResponse tracingConfig) {
+        this.tracingConfig = tracingConfig;
+    }
+
+    /**
+     * <p>
+     * The parent object that contains your function's tracing settings.
+     * </p>
+     * 
+     * @return The parent object that contains your function's tracing settings.
+     */
+
+    public TracingConfigResponse getTracingConfig() {
+        return this.tracingConfig;
+    }
+
+    /**
+     * <p>
+     * The parent object that contains your function's tracing settings.
+     * </p>
+     * 
+     * @param tracingConfig
+     *        The parent object that contains your function's tracing settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFunctionCodeResult withTracingConfig(TracingConfigResponse tracingConfig) {
+        setTracingConfig(tracingConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -904,7 +918,9 @@ public class UpdateFunctionCodeResult extends com.amazonaws.AmazonWebServiceResu
         if (getEnvironment() != null)
             sb.append("Environment: ").append(getEnvironment()).append(",");
         if (getKMSKeyArn() != null)
-            sb.append("KMSKeyArn: ").append(getKMSKeyArn());
+            sb.append("KMSKeyArn: ").append(getKMSKeyArn()).append(",");
+        if (getTracingConfig() != null)
+            sb.append("TracingConfig: ").append(getTracingConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -983,6 +999,10 @@ public class UpdateFunctionCodeResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getKMSKeyArn() != null && other.getKMSKeyArn().equals(this.getKMSKeyArn()) == false)
             return false;
+        if (other.getTracingConfig() == null ^ this.getTracingConfig() == null)
+            return false;
+        if (other.getTracingConfig() != null && other.getTracingConfig().equals(this.getTracingConfig()) == false)
+            return false;
         return true;
     }
 
@@ -1007,6 +1027,7 @@ public class UpdateFunctionCodeResult extends com.amazonaws.AmazonWebServiceResu
         hashCode = prime * hashCode + ((getDeadLetterConfig() == null) ? 0 : getDeadLetterConfig().hashCode());
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
         hashCode = prime * hashCode + ((getKMSKeyArn() == null) ? 0 : getKMSKeyArn().hashCode());
+        hashCode = prime * hashCode + ((getTracingConfig() == null) ? 0 : getTracingConfig().hashCode());
         return hashCode;
     }
 
@@ -1018,4 +1039,5 @@ public class UpdateFunctionCodeResult extends com.amazonaws.AmazonWebServiceResu
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

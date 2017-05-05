@@ -73,6 +73,13 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
     private String ramdiskId;
     /**
      * <p>
+     * The billing product codes. Your account must be authorized to specify billing product codes. Otherwise, you can
+     * use the AWS Marketplace to bill for the use of an AMI.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> billingProducts;
+    /**
+     * <p>
      * The name of the root device (for example, <code>/dev/sda1</code>, or <code>/dev/xvda</code>).
      * </p>
      */
@@ -467,6 +474,87 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
+     * The billing product codes. Your account must be authorized to specify billing product codes. Otherwise, you can
+     * use the AWS Marketplace to bill for the use of an AMI.
+     * </p>
+     * 
+     * @return The billing product codes. Your account must be authorized to specify billing product codes. Otherwise,
+     *         you can use the AWS Marketplace to bill for the use of an AMI.
+     */
+
+    public java.util.List<String> getBillingProducts() {
+        if (billingProducts == null) {
+            billingProducts = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return billingProducts;
+    }
+
+    /**
+     * <p>
+     * The billing product codes. Your account must be authorized to specify billing product codes. Otherwise, you can
+     * use the AWS Marketplace to bill for the use of an AMI.
+     * </p>
+     * 
+     * @param billingProducts
+     *        The billing product codes. Your account must be authorized to specify billing product codes. Otherwise,
+     *        you can use the AWS Marketplace to bill for the use of an AMI.
+     */
+
+    public void setBillingProducts(java.util.Collection<String> billingProducts) {
+        if (billingProducts == null) {
+            this.billingProducts = null;
+            return;
+        }
+
+        this.billingProducts = new com.amazonaws.internal.SdkInternalList<String>(billingProducts);
+    }
+
+    /**
+     * <p>
+     * The billing product codes. Your account must be authorized to specify billing product codes. Otherwise, you can
+     * use the AWS Marketplace to bill for the use of an AMI.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setBillingProducts(java.util.Collection)} or {@link #withBillingProducts(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param billingProducts
+     *        The billing product codes. Your account must be authorized to specify billing product codes. Otherwise,
+     *        you can use the AWS Marketplace to bill for the use of an AMI.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterImageRequest withBillingProducts(String... billingProducts) {
+        if (this.billingProducts == null) {
+            setBillingProducts(new com.amazonaws.internal.SdkInternalList<String>(billingProducts.length));
+        }
+        for (String ele : billingProducts) {
+            this.billingProducts.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The billing product codes. Your account must be authorized to specify billing product codes. Otherwise, you can
+     * use the AWS Marketplace to bill for the use of an AMI.
+     * </p>
+     * 
+     * @param billingProducts
+     *        The billing product codes. Your account must be authorized to specify billing product codes. Otherwise,
+     *        you can use the AWS Marketplace to bill for the use of an AMI.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterImageRequest withBillingProducts(java.util.Collection<String> billingProducts) {
+        setBillingProducts(billingProducts);
+        return this;
+    }
+
+    /**
+     * <p>
      * The name of the root device (for example, <code>/dev/sda1</code>, or <code>/dev/xvda</code>).
      * </p>
      * 
@@ -840,6 +928,8 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
             sb.append("KernelId: ").append(getKernelId()).append(",");
         if (getRamdiskId() != null)
             sb.append("RamdiskId: ").append(getRamdiskId()).append(",");
+        if (getBillingProducts() != null)
+            sb.append("BillingProducts: ").append(getBillingProducts()).append(",");
         if (getRootDeviceName() != null)
             sb.append("RootDeviceName: ").append(getRootDeviceName()).append(",");
         if (getBlockDeviceMappings() != null)
@@ -888,6 +978,10 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
             return false;
         if (other.getRamdiskId() != null && other.getRamdiskId().equals(this.getRamdiskId()) == false)
             return false;
+        if (other.getBillingProducts() == null ^ this.getBillingProducts() == null)
+            return false;
+        if (other.getBillingProducts() != null && other.getBillingProducts().equals(this.getBillingProducts()) == false)
+            return false;
         if (other.getRootDeviceName() == null ^ this.getRootDeviceName() == null)
             return false;
         if (other.getRootDeviceName() != null && other.getRootDeviceName().equals(this.getRootDeviceName()) == false)
@@ -922,6 +1016,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
         hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode());
         hashCode = prime * hashCode + ((getKernelId() == null) ? 0 : getKernelId().hashCode());
         hashCode = prime * hashCode + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode());
+        hashCode = prime * hashCode + ((getBillingProducts() == null) ? 0 : getBillingProducts().hashCode());
         hashCode = prime * hashCode + ((getRootDeviceName() == null) ? 0 : getRootDeviceName().hashCode());
         hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode());
         hashCode = prime * hashCode + ((getVirtualizationType() == null) ? 0 : getVirtualizationType().hashCode());

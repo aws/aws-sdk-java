@@ -30,20 +30,22 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Unique identifier for a fleet. Each request must reference either a fleet ID or alias ID, but not both.
+     * Unique identifier for a fleet to search for active game sessions. Each request must reference either a fleet ID
+     * or alias ID, but not both.
      * </p>
      */
     private String fleetId;
     /**
      * <p>
-     * Unique identifier for a fleet alias. Each request must reference either a fleet ID or alias ID, but not both.
+     * Unique identifier for an alias associated with the fleet to search for active game sessions. Each request must
+     * reference either a fleet ID or alias ID, but not both.
      * </p>
      */
     private String aliasId;
     /**
      * <p>
      * String containing the search criteria for the session search. If no filter expression is included, the request
-     * returns results for all game sessions in the fleet that are in ACTIVE status.
+     * returns results for all game sessions in the fleet that are in <code>ACTIVE</code> status.
      * </p>
      * <p>
      * A filter expression can contain one or multiple conditions. Each condition consists of the following:
@@ -150,19 +152,21 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
     private Integer limit;
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. Use the token that is returned with a previous
-     * call to this action. To specify the start of the result set, do not specify a value.
+     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * previous call to this action. To specify the start of the result set, do not specify a value.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Unique identifier for a fleet. Each request must reference either a fleet ID or alias ID, but not both.
+     * Unique identifier for a fleet to search for active game sessions. Each request must reference either a fleet ID
+     * or alias ID, but not both.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet. Each request must reference either a fleet ID or alias ID, but not both.
+     *        Unique identifier for a fleet to search for active game sessions. Each request must reference either a
+     *        fleet ID or alias ID, but not both.
      */
 
     public void setFleetId(String fleetId) {
@@ -171,10 +175,12 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Unique identifier for a fleet. Each request must reference either a fleet ID or alias ID, but not both.
+     * Unique identifier for a fleet to search for active game sessions. Each request must reference either a fleet ID
+     * or alias ID, but not both.
      * </p>
      * 
-     * @return Unique identifier for a fleet. Each request must reference either a fleet ID or alias ID, but not both.
+     * @return Unique identifier for a fleet to search for active game sessions. Each request must reference either a
+     *         fleet ID or alias ID, but not both.
      */
 
     public String getFleetId() {
@@ -183,11 +189,13 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Unique identifier for a fleet. Each request must reference either a fleet ID or alias ID, but not both.
+     * Unique identifier for a fleet to search for active game sessions. Each request must reference either a fleet ID
+     * or alias ID, but not both.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for a fleet. Each request must reference either a fleet ID or alias ID, but not both.
+     *        Unique identifier for a fleet to search for active game sessions. Each request must reference either a
+     *        fleet ID or alias ID, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -198,12 +206,13 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Unique identifier for a fleet alias. Each request must reference either a fleet ID or alias ID, but not both.
+     * Unique identifier for an alias associated with the fleet to search for active game sessions. Each request must
+     * reference either a fleet ID or alias ID, but not both.
      * </p>
      * 
      * @param aliasId
-     *        Unique identifier for a fleet alias. Each request must reference either a fleet ID or alias ID, but not
-     *        both.
+     *        Unique identifier for an alias associated with the fleet to search for active game sessions. Each request
+     *        must reference either a fleet ID or alias ID, but not both.
      */
 
     public void setAliasId(String aliasId) {
@@ -212,11 +221,12 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Unique identifier for a fleet alias. Each request must reference either a fleet ID or alias ID, but not both.
+     * Unique identifier for an alias associated with the fleet to search for active game sessions. Each request must
+     * reference either a fleet ID or alias ID, but not both.
      * </p>
      * 
-     * @return Unique identifier for a fleet alias. Each request must reference either a fleet ID or alias ID, but not
-     *         both.
+     * @return Unique identifier for an alias associated with the fleet to search for active game sessions. Each request
+     *         must reference either a fleet ID or alias ID, but not both.
      */
 
     public String getAliasId() {
@@ -225,12 +235,13 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Unique identifier for a fleet alias. Each request must reference either a fleet ID or alias ID, but not both.
+     * Unique identifier for an alias associated with the fleet to search for active game sessions. Each request must
+     * reference either a fleet ID or alias ID, but not both.
      * </p>
      * 
      * @param aliasId
-     *        Unique identifier for a fleet alias. Each request must reference either a fleet ID or alias ID, but not
-     *        both.
+     *        Unique identifier for an alias associated with the fleet to search for active game sessions. Each request
+     *        must reference either a fleet ID or alias ID, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -242,7 +253,7 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * String containing the search criteria for the session search. If no filter expression is included, the request
-     * returns results for all game sessions in the fleet that are in ACTIVE status.
+     * returns results for all game sessions in the fleet that are in <code>ACTIVE</code> status.
      * </p>
      * <p>
      * A filter expression can contain one or multiple conditions. Each condition consists of the following:
@@ -314,7 +325,7 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @param filterExpression
      *        String containing the search criteria for the session search. If no filter expression is included, the
-     *        request returns results for all game sessions in the fleet that are in ACTIVE status.</p>
+     *        request returns results for all game sessions in the fleet that are in <code>ACTIVE</code> status.</p>
      *        <p>
      *        A filter expression can contain one or multiple conditions. Each condition consists of the following:
      *        </p>
@@ -390,7 +401,7 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * String containing the search criteria for the session search. If no filter expression is included, the request
-     * returns results for all game sessions in the fleet that are in ACTIVE status.
+     * returns results for all game sessions in the fleet that are in <code>ACTIVE</code> status.
      * </p>
      * <p>
      * A filter expression can contain one or multiple conditions. Each condition consists of the following:
@@ -461,7 +472,7 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @return String containing the search criteria for the session search. If no filter expression is included, the
-     *         request returns results for all game sessions in the fleet that are in ACTIVE status.</p>
+     *         request returns results for all game sessions in the fleet that are in <code>ACTIVE</code> status.</p>
      *         <p>
      *         A filter expression can contain one or multiple conditions. Each condition consists of the following:
      *         </p>
@@ -537,7 +548,7 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * String containing the search criteria for the session search. If no filter expression is included, the request
-     * returns results for all game sessions in the fleet that are in ACTIVE status.
+     * returns results for all game sessions in the fleet that are in <code>ACTIVE</code> status.
      * </p>
      * <p>
      * A filter expression can contain one or multiple conditions. Each condition consists of the following:
@@ -609,7 +620,7 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @param filterExpression
      *        String containing the search criteria for the session search. If no filter expression is included, the
-     *        request returns results for all game sessions in the fleet that are in ACTIVE status.</p>
+     *        request returns results for all game sessions in the fleet that are in <code>ACTIVE</code> status.</p>
      *        <p>
      *        A filter expression can contain one or multiple conditions. Each condition consists of the following:
      *        </p>
@@ -895,13 +906,13 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. Use the token that is returned with a previous
-     * call to this action. To specify the start of the result set, do not specify a value.
+     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * previous call to this action. To specify the start of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
-     *        Token indicating the start of the next sequential page of results. Use the token that is returned with a
-     *        previous call to this action. To specify the start of the result set, do not specify a value.
+     *        Token that indicates the start of the next sequential page of results. Use the token that is returned with
+     *        a previous call to this action. To specify the start of the result set, do not specify a value.
      */
 
     public void setNextToken(String nextToken) {
@@ -910,12 +921,12 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. Use the token that is returned with a previous
-     * call to this action. To specify the start of the result set, do not specify a value.
+     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * previous call to this action. To specify the start of the result set, do not specify a value.
      * </p>
      * 
-     * @return Token indicating the start of the next sequential page of results. Use the token that is returned with a
-     *         previous call to this action. To specify the start of the result set, do not specify a value.
+     * @return Token that indicates the start of the next sequential page of results. Use the token that is returned
+     *         with a previous call to this action. To specify the start of the result set, do not specify a value.
      */
 
     public String getNextToken() {
@@ -924,13 +935,13 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Token indicating the start of the next sequential page of results. Use the token that is returned with a previous
-     * call to this action. To specify the start of the result set, do not specify a value.
+     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * previous call to this action. To specify the start of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
-     *        Token indicating the start of the next sequential page of results. Use the token that is returned with a
-     *        previous call to this action. To specify the start of the result set, do not specify a value.
+     *        Token that indicates the start of the next sequential page of results. Use the token that is returned with
+     *        a previous call to this action. To specify the start of the result set, do not specify a value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

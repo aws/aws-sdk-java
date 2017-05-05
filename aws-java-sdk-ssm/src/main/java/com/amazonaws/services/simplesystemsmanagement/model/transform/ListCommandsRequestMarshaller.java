@@ -12,87 +12,57 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simplesystemsmanagement.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListCommandsRequest Marshaller
+ * ListCommandsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListCommandsRequestMarshaller implements Marshaller<Request<ListCommandsRequest>, ListCommandsRequest> {
+@SdkInternalApi
+public class ListCommandsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> COMMANDID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("CommandId").build();
+    private static final MarshallingInfo<String> INSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceId").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
+    private static final MarshallingInfo<List> FILTERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Filters").build();
 
-    public ListCommandsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListCommandsRequestMarshaller instance = new ListCommandsRequestMarshaller();
+
+    public static ListCommandsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListCommandsRequest> marshall(ListCommandsRequest listCommandsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListCommandsRequest listCommandsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listCommandsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListCommandsRequest> request = new DefaultRequest<ListCommandsRequest>(listCommandsRequest, "AWSSimpleSystemsManagement");
-        request.addHeader("X-Amz-Target", "AmazonSSM.ListCommands");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (listCommandsRequest.getCommandId() != null) {
-                jsonGenerator.writeFieldName("CommandId").writeValue(listCommandsRequest.getCommandId());
-            }
-            if (listCommandsRequest.getInstanceId() != null) {
-                jsonGenerator.writeFieldName("InstanceId").writeValue(listCommandsRequest.getInstanceId());
-            }
-            if (listCommandsRequest.getMaxResults() != null) {
-                jsonGenerator.writeFieldName("MaxResults").writeValue(listCommandsRequest.getMaxResults());
-            }
-            if (listCommandsRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(listCommandsRequest.getNextToken());
-            }
-
-            com.amazonaws.internal.SdkInternalList<CommandFilter> filtersList = (com.amazonaws.internal.SdkInternalList<CommandFilter>) listCommandsRequest
-                    .getFilters();
-            if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("Filters");
-                jsonGenerator.writeStartArray();
-                for (CommandFilter filtersListValue : filtersList) {
-                    if (filtersListValue != null) {
-
-                        CommandFilterJsonMarshaller.getInstance().marshall(filtersListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listCommandsRequest.getCommandId(), COMMANDID_BINDING);
+            protocolMarshaller.marshall(listCommandsRequest.getInstanceId(), INSTANCEID_BINDING);
+            protocolMarshaller.marshall(listCommandsRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listCommandsRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listCommandsRequest.getFilters(), FILTERS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

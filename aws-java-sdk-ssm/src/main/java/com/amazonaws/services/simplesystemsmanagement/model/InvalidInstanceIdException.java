@@ -22,11 +22,11 @@ import javax.annotation.Generated;
  * You do not have permission to access the instance.
  * </p>
  * <p>
- * The SSM agent is not running. On managed instances and Linux instances, verify that the SSM agent is running. On EC2
+ * The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is running. On EC2
  * Windows instances, verify that the EC2Config service is running.
  * </p>
  * <p>
- * The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM agent or EC2Config
+ * The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent or EC2Config
  * service.
  * </p>
  * <p>

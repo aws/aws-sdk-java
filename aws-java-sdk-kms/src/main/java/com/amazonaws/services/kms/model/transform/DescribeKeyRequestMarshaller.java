@@ -12,77 +12,48 @@
  */
 package com.amazonaws.services.kms.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.kms.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeKeyRequest Marshaller
+ * DescribeKeyRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeKeyRequestMarshaller implements Marshaller<Request<DescribeKeyRequest>, DescribeKeyRequest> {
+@SdkInternalApi
+public class DescribeKeyRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> KEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KeyId").build();
+    private static final MarshallingInfo<List> GRANTTOKENS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("GrantTokens").build();
 
-    public DescribeKeyRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeKeyRequestMarshaller instance = new DescribeKeyRequestMarshaller();
+
+    public static DescribeKeyRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeKeyRequest> marshall(DescribeKeyRequest describeKeyRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeKeyRequest describeKeyRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeKeyRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeKeyRequest> request = new DefaultRequest<DescribeKeyRequest>(describeKeyRequest, "AWSKMS");
-        request.addHeader("X-Amz-Target", "TrentService.DescribeKey");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeKeyRequest.getKeyId() != null) {
-                jsonGenerator.writeFieldName("KeyId").writeValue(describeKeyRequest.getKeyId());
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> grantTokensList = (com.amazonaws.internal.SdkInternalList<String>) describeKeyRequest
-                    .getGrantTokens();
-            if (!grantTokensList.isEmpty() || !grantTokensList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("GrantTokens");
-                jsonGenerator.writeStartArray();
-                for (String grantTokensListValue : grantTokensList) {
-                    if (grantTokensListValue != null) {
-                        jsonGenerator.writeValue(grantTokensListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeKeyRequest.getKeyId(), KEYID_BINDING);
+            protocolMarshaller.marshall(describeKeyRequest.getGrantTokens(), GRANTTOKENS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

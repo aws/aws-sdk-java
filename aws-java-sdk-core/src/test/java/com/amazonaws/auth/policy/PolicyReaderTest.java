@@ -22,6 +22,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -429,5 +430,45 @@ public class PolicyReaderTest {
         assertTrue(denyEveryOneButRootAndTestAllKmsActions.getNotPrincipals().contains(testUser));
         assertEquals(1, denyEveryOneButRootAndTestAllKmsActions.getResources().size());
         assertEquals("*", denyEveryOneButRootAndTestAllKmsActions.getResources().get(0).getId());
+    }
+
+    @Test
+    public void testAccountNamePrincipalWithDashesAreStrippedByDefault() {
+        String jsonString =
+                  "{" +
+                    "\"Version\": \"2012-10-17\"," +
+                    "\"Statement\": [" +
+                      "{" +
+                        "\"Effect\": \"Allow\"," +
+                        "\"Principal\": {" +
+                        "\"AWS\": \"test-string\"" +
+                        "}" +
+                      "}" +
+                    "]" +
+                 "}" ;
+        Policy policy = Policy.fromJson(jsonString);
+        List<Statement> statements = new ArrayList<Statement>(policy.getStatements());
+
+        assertEquals("teststring", statements.get(0).getPrincipals().get(0).getId());
+    }
+
+    @Test
+    public void testAccountNamePrincipalWithDashesAreNotStrippedWhenDisabled() {
+        String jsonString =
+                  "{" +
+                    "\"Version\": \"2012-10-17\"," +
+                    "\"Statement\": [" +
+                      "{" +
+                        "\"Effect\": \"Allow\"," +
+                        "\"Principal\": {" +
+                        "\"AWS\": \"test-string\"" +
+                        "}" +
+                      "}" +
+                    "]" +
+                 "}" ;
+        Policy policy = Policy.fromJson(jsonString, new PolicyReaderOptions().withStripAwsPrincipalIdHyphensEnabled(false));
+        List<Statement> statements = new ArrayList<Statement>(policy.getStatements());
+
+        assertEquals("test-string", statements.get(0).getPrincipals().get(0).getId());
     }
 }

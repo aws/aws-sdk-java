@@ -89,8 +89,10 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * The runtime environment for the Lambda function.
      * </p>
      * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
-     * to "nodejs".
+     * To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the value to
+     * "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js runtime v4.3,
+     * set the value to "nodejs4.3". To use the Python runtime v3.6, set the value to "python3.6". To use the Python
+     * runtime v2.7, set the value to "python2.7".
      * </p>
      * <note>
      * <p>
@@ -102,7 +104,7 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
     private String runtime;
     /**
      * <p>
-     * The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
+     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
      * </p>
      */
     private DeadLetterConfig deadLetterConfig;
@@ -113,6 +115,12 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * </p>
      */
     private String kMSKeyArn;
+    /**
+     * <p>
+     * The parent object that contains your function's tracing settings.
+     * </p>
+     */
+    private TracingConfig tracingConfig;
 
     /**
      * <p>
@@ -506,8 +514,10 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * The runtime environment for the Lambda function.
      * </p>
      * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
-     * to "nodejs".
+     * To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the value to
+     * "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js runtime v4.3,
+     * set the value to "nodejs4.3". To use the Python runtime v3.6, set the value to "python3.6". To use the Python
+     * runtime v2.7, set the value to "python2.7".
      * </p>
      * <note>
      * <p>
@@ -519,8 +529,10 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * @param runtime
      *        The runtime environment for the Lambda function.</p>
      *        <p>
-     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
-     *        value to "nodejs".
+     *        To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the
+     *        value to "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js
+     *        runtime v4.3, set the value to "nodejs4.3". To use the Python runtime v3.6, set the value to "python3.6".
+     *        To use the Python runtime v2.7, set the value to "python2.7".
      *        </p>
      *        <note>
      *        <p>
@@ -539,8 +551,10 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * The runtime environment for the Lambda function.
      * </p>
      * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
-     * to "nodejs".
+     * To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the value to
+     * "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js runtime v4.3,
+     * set the value to "nodejs4.3". To use the Python runtime v3.6, set the value to "python3.6". To use the Python
+     * runtime v2.7, set the value to "python2.7".
      * </p>
      * <note>
      * <p>
@@ -551,8 +565,10 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * 
      * @return The runtime environment for the Lambda function.</p>
      *         <p>
-     *         To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
-     *         value to "nodejs".
+     *         To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the
+     *         value to "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js
+     *         runtime v4.3, set the value to "nodejs4.3". To use the Python runtime v3.6, set the value to "python3.6".
+     *         To use the Python runtime v2.7, set the value to "python2.7".
      *         </p>
      *         <note>
      *         <p>
@@ -571,8 +587,10 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * The runtime environment for the Lambda function.
      * </p>
      * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
-     * to "nodejs".
+     * To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the value to
+     * "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js runtime v4.3,
+     * set the value to "nodejs4.3". To use the Python runtime v3.6, set the value to "python3.6". To use the Python
+     * runtime v2.7, set the value to "python2.7".
      * </p>
      * <note>
      * <p>
@@ -584,8 +602,10 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * @param runtime
      *        The runtime environment for the Lambda function.</p>
      *        <p>
-     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
-     *        value to "nodejs".
+     *        To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the
+     *        value to "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js
+     *        runtime v4.3, set the value to "nodejs4.3". To use the Python runtime v3.6, set the value to "python3.6".
+     *        To use the Python runtime v2.7, set the value to "python2.7".
      *        </p>
      *        <note>
      *        <p>
@@ -606,8 +626,10 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * The runtime environment for the Lambda function.
      * </p>
      * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
-     * to "nodejs".
+     * To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the value to
+     * "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js runtime v4.3,
+     * set the value to "nodejs4.3". To use the Python runtime v3.6, set the value to "python3.6". To use the Python
+     * runtime v2.7, set the value to "python2.7".
      * </p>
      * <note>
      * <p>
@@ -619,8 +641,10 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * @param runtime
      *        The runtime environment for the Lambda function.</p>
      *        <p>
-     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
-     *        value to "nodejs".
+     *        To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the
+     *        value to "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js
+     *        runtime v4.3, set the value to "nodejs4.3". To use the Python runtime v3.6, set the value to "python3.6".
+     *        To use the Python runtime v2.7, set the value to "python2.7".
      *        </p>
      *        <note>
      *        <p>
@@ -639,8 +663,10 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * The runtime environment for the Lambda function.
      * </p>
      * <p>
-     * To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the value
-     * to "nodejs".
+     * To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the value to
+     * "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js runtime v4.3,
+     * set the value to "nodejs4.3". To use the Python runtime v3.6, set the value to "python3.6". To use the Python
+     * runtime v2.7, set the value to "python2.7".
      * </p>
      * <note>
      * <p>
@@ -652,8 +678,10 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * @param runtime
      *        The runtime environment for the Lambda function.</p>
      *        <p>
-     *        To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime (v0.10.42), set the
-     *        value to "nodejs".
+     *        To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the
+     *        value to "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js
+     *        runtime v4.3, set the value to "nodejs4.3". To use the Python runtime v3.6, set the value to "python3.6".
+     *        To use the Python runtime v2.7, set the value to "python2.7".
      *        </p>
      *        <note>
      *        <p>
@@ -671,11 +699,11 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
+     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
      * </p>
      * 
      * @param deadLetterConfig
-     *        The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS
+     *        The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS
      *        topic.
      */
 
@@ -685,10 +713,10 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
+     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
      * </p>
      * 
-     * @return The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon
+     * @return The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon
      *         SNS topic.
      */
 
@@ -698,11 +726,11 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
+     * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
      * </p>
      * 
      * @param deadLetterConfig
-     *        The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS
+     *        The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS
      *        topic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -759,6 +787,46 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * The parent object that contains your function's tracing settings.
+     * </p>
+     * 
+     * @param tracingConfig
+     *        The parent object that contains your function's tracing settings.
+     */
+
+    public void setTracingConfig(TracingConfig tracingConfig) {
+        this.tracingConfig = tracingConfig;
+    }
+
+    /**
+     * <p>
+     * The parent object that contains your function's tracing settings.
+     * </p>
+     * 
+     * @return The parent object that contains your function's tracing settings.
+     */
+
+    public TracingConfig getTracingConfig() {
+        return this.tracingConfig;
+    }
+
+    /**
+     * <p>
+     * The parent object that contains your function's tracing settings.
+     * </p>
+     * 
+     * @param tracingConfig
+     *        The parent object that contains your function's tracing settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFunctionConfigurationRequest withTracingConfig(TracingConfig tracingConfig) {
+        setTracingConfig(tracingConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -790,7 +858,9 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
         if (getDeadLetterConfig() != null)
             sb.append("DeadLetterConfig: ").append(getDeadLetterConfig()).append(",");
         if (getKMSKeyArn() != null)
-            sb.append("KMSKeyArn: ").append(getKMSKeyArn());
+            sb.append("KMSKeyArn: ").append(getKMSKeyArn()).append(",");
+        if (getTracingConfig() != null)
+            sb.append("TracingConfig: ").append(getTracingConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -849,6 +919,10 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
             return false;
         if (other.getKMSKeyArn() != null && other.getKMSKeyArn().equals(this.getKMSKeyArn()) == false)
             return false;
+        if (other.getTracingConfig() == null ^ this.getTracingConfig() == null)
+            return false;
+        if (other.getTracingConfig() != null && other.getTracingConfig().equals(this.getTracingConfig()) == false)
+            return false;
         return true;
     }
 
@@ -868,6 +942,7 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getRuntime() == null) ? 0 : getRuntime().hashCode());
         hashCode = prime * hashCode + ((getDeadLetterConfig() == null) ? 0 : getDeadLetterConfig().hashCode());
         hashCode = prime * hashCode + ((getKMSKeyArn() == null) ? 0 : getKMSKeyArn().hashCode());
+        hashCode = prime * hashCode + ((getTracingConfig() == null) ? 0 : getTracingConfig().hashCode());
         return hashCode;
     }
 

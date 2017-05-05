@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This exception occurs if you try to create more rules or add more targets to a rule than allowed by default.
+ * You tried to create more rules or add more targets to a rule than is allowed.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

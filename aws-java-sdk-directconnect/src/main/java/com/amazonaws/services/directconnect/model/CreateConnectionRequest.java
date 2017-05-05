@@ -34,6 +34,8 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
 
     private String connectionName;
 
+    private String lagId;
+
     /**
      * @param location
      */
@@ -113,6 +115,32 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * @param lagId
+     */
+
+    public void setLagId(String lagId) {
+        this.lagId = lagId;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getLagId() {
+        return this.lagId;
+    }
+
+    /**
+     * @param lagId
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateConnectionRequest withLagId(String lagId) {
+        setLagId(lagId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -128,7 +156,9 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
         if (getBandwidth() != null)
             sb.append("Bandwidth: ").append(getBandwidth()).append(",");
         if (getConnectionName() != null)
-            sb.append("ConnectionName: ").append(getConnectionName());
+            sb.append("ConnectionName: ").append(getConnectionName()).append(",");
+        if (getLagId() != null)
+            sb.append("LagId: ").append(getLagId());
         sb.append("}");
         return sb.toString();
     }
@@ -155,6 +185,10 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getConnectionName() != null && other.getConnectionName().equals(this.getConnectionName()) == false)
             return false;
+        if (other.getLagId() == null ^ this.getLagId() == null)
+            return false;
+        if (other.getLagId() != null && other.getLagId().equals(this.getLagId()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +200,7 @@ public class CreateConnectionRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         hashCode = prime * hashCode + ((getBandwidth() == null) ? 0 : getBandwidth().hashCode());
         hashCode = prime * hashCode + ((getConnectionName() == null) ? 0 : getConnectionName().hashCode());
+        hashCode = prime * hashCode + ((getLagId() == null) ? 0 : getLagId().hashCode());
         return hashCode;
     }
 

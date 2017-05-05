@@ -12,73 +12,56 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetApiKeysRequest Marshaller
+ * GetApiKeysRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetApiKeysRequestMarshaller implements Marshaller<Request<GetApiKeysRequest>, GetApiKeysRequest> {
+@SdkInternalApi
+public class GetApiKeysRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> POSITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("position").build();
+    private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("limit").build();
+    private static final MarshallingInfo<String> NAMEQUERY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("name").build();
+    private static final MarshallingInfo<String> CUSTOMERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("customerId").build();
+    private static final MarshallingInfo<Boolean> INCLUDEVALUES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("includeValues").build();
 
-    public GetApiKeysRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetApiKeysRequestMarshaller instance = new GetApiKeysRequestMarshaller();
+
+    public static GetApiKeysRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetApiKeysRequest> marshall(GetApiKeysRequest getApiKeysRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetApiKeysRequest getApiKeysRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getApiKeysRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetApiKeysRequest> request = new DefaultRequest<GetApiKeysRequest>(getApiKeysRequest, "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/apikeys";
-
-        request.setResourcePath(uriResourcePath);
-
-        if (getApiKeysRequest.getPosition() != null) {
-            request.addParameter("position", StringUtils.fromString(getApiKeysRequest.getPosition()));
+        try {
+            protocolMarshaller.marshall(getApiKeysRequest.getPosition(), POSITION_BINDING);
+            protocolMarshaller.marshall(getApiKeysRequest.getLimit(), LIMIT_BINDING);
+            protocolMarshaller.marshall(getApiKeysRequest.getNameQuery(), NAMEQUERY_BINDING);
+            protocolMarshaller.marshall(getApiKeysRequest.getCustomerId(), CUSTOMERID_BINDING);
+            protocolMarshaller.marshall(getApiKeysRequest.getIncludeValues(), INCLUDEVALUES_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (getApiKeysRequest.getLimit() != null) {
-            request.addParameter("limit", StringUtils.fromInteger(getApiKeysRequest.getLimit()));
-        }
-
-        if (getApiKeysRequest.getNameQuery() != null) {
-            request.addParameter("name", StringUtils.fromString(getApiKeysRequest.getNameQuery()));
-        }
-
-        if (getApiKeysRequest.getCustomerId() != null) {
-            request.addParameter("customerId", StringUtils.fromString(getApiKeysRequest.getCustomerId()));
-        }
-
-        if (getApiKeysRequest.getIncludeValues() != null) {
-            request.addParameter("includeValues", StringUtils.fromBoolean(getApiKeysRequest.getIncludeValues()));
-        }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

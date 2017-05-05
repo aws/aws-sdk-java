@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -249,6 +250,10 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
         init();
     }
 
+    public static AmazonWorkspacesClientBuilder builder() {
+        return AmazonWorkspacesClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon WorkSpaces using the specified parameters.
      *
@@ -295,7 +300,13 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      *      Documentation</a>
      */
     @Override
-    public CreateTagsResult createTags(CreateTagsRequest createTagsRequest) {
+    public CreateTagsResult createTags(CreateTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTags(request);
+    }
+
+    @SdkInternalApi
+    final CreateTagsResult executeCreateTags(CreateTagsRequest createTagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -306,7 +317,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateTagsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTagsRequest));
+                request = new CreateTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -347,7 +358,13 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      *      API Documentation</a>
      */
     @Override
-    public CreateWorkspacesResult createWorkspaces(CreateWorkspacesRequest createWorkspacesRequest) {
+    public CreateWorkspacesResult createWorkspaces(CreateWorkspacesRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateWorkspaces(request);
+    }
+
+    @SdkInternalApi
+    final CreateWorkspacesResult executeCreateWorkspaces(CreateWorkspacesRequest createWorkspacesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createWorkspacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -358,7 +375,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateWorkspacesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createWorkspacesRequest));
+                request = new CreateWorkspacesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createWorkspacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -394,7 +411,13 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      *      Documentation</a>
      */
     @Override
-    public DeleteTagsResult deleteTags(DeleteTagsRequest deleteTagsRequest) {
+    public DeleteTagsResult deleteTags(DeleteTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTags(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTagsResult executeDeleteTags(DeleteTagsRequest deleteTagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -405,7 +428,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteTagsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTagsRequest));
+                request = new DeleteTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -439,7 +462,13 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      *      Documentation</a>
      */
     @Override
-    public DescribeTagsResult describeTags(DescribeTagsRequest describeTagsRequest) {
+    public DescribeTagsResult describeTags(DescribeTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTags(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTagsResult executeDescribeTags(DescribeTagsRequest describeTagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -450,7 +479,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeTagsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTagsRequest));
+                request = new DescribeTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -493,7 +522,13 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeWorkspaceBundlesResult describeWorkspaceBundles(DescribeWorkspaceBundlesRequest describeWorkspaceBundlesRequest) {
+    public DescribeWorkspaceBundlesResult describeWorkspaceBundles(DescribeWorkspaceBundlesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeWorkspaceBundles(request);
+    }
+
+    @SdkInternalApi
+    final DescribeWorkspaceBundlesResult executeDescribeWorkspaceBundles(DescribeWorkspaceBundlesRequest describeWorkspaceBundlesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeWorkspaceBundlesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -504,7 +539,8 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeWorkspaceBundlesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeWorkspaceBundlesRequest));
+                request = new DescribeWorkspaceBundlesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeWorkspaceBundlesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -550,7 +586,13 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeWorkspaceDirectoriesResult describeWorkspaceDirectories(DescribeWorkspaceDirectoriesRequest describeWorkspaceDirectoriesRequest) {
+    public DescribeWorkspaceDirectoriesResult describeWorkspaceDirectories(DescribeWorkspaceDirectoriesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeWorkspaceDirectories(request);
+    }
+
+    @SdkInternalApi
+    final DescribeWorkspaceDirectoriesResult executeDescribeWorkspaceDirectories(DescribeWorkspaceDirectoriesRequest describeWorkspaceDirectoriesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeWorkspaceDirectoriesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -561,7 +603,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeWorkspaceDirectoriesRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeWorkspaceDirectoriesRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeWorkspaceDirectoriesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -613,7 +655,13 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      *      API Documentation</a>
      */
     @Override
-    public DescribeWorkspacesResult describeWorkspaces(DescribeWorkspacesRequest describeWorkspacesRequest) {
+    public DescribeWorkspacesResult describeWorkspaces(DescribeWorkspacesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeWorkspaces(request);
+    }
+
+    @SdkInternalApi
+    final DescribeWorkspacesResult executeDescribeWorkspaces(DescribeWorkspacesRequest describeWorkspacesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeWorkspacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -624,7 +672,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeWorkspacesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeWorkspacesRequest));
+                request = new DescribeWorkspacesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeWorkspacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -662,7 +710,13 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeWorkspacesConnectionStatusResult describeWorkspacesConnectionStatus(
+    public DescribeWorkspacesConnectionStatusResult describeWorkspacesConnectionStatus(DescribeWorkspacesConnectionStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeWorkspacesConnectionStatus(request);
+    }
+
+    @SdkInternalApi
+    final DescribeWorkspacesConnectionStatusResult executeDescribeWorkspacesConnectionStatus(
             DescribeWorkspacesConnectionStatusRequest describeWorkspacesConnectionStatusRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeWorkspacesConnectionStatusRequest);
@@ -674,7 +728,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeWorkspacesConnectionStatusRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeWorkspacesConnectionStatusRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeWorkspacesConnectionStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -722,7 +776,13 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ModifyWorkspacePropertiesResult modifyWorkspaceProperties(ModifyWorkspacePropertiesRequest modifyWorkspacePropertiesRequest) {
+    public ModifyWorkspacePropertiesResult modifyWorkspaceProperties(ModifyWorkspacePropertiesRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyWorkspaceProperties(request);
+    }
+
+    @SdkInternalApi
+    final ModifyWorkspacePropertiesResult executeModifyWorkspaceProperties(ModifyWorkspacePropertiesRequest modifyWorkspacePropertiesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(modifyWorkspacePropertiesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -733,7 +793,8 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ModifyWorkspacePropertiesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(modifyWorkspacePropertiesRequest));
+                request = new ModifyWorkspacePropertiesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(modifyWorkspacePropertiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -775,7 +836,13 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      *      API Documentation</a>
      */
     @Override
-    public RebootWorkspacesResult rebootWorkspaces(RebootWorkspacesRequest rebootWorkspacesRequest) {
+    public RebootWorkspacesResult rebootWorkspaces(RebootWorkspacesRequest request) {
+        request = beforeClientExecution(request);
+        return executeRebootWorkspaces(request);
+    }
+
+    @SdkInternalApi
+    final RebootWorkspacesResult executeRebootWorkspaces(RebootWorkspacesRequest rebootWorkspacesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(rebootWorkspacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -786,7 +853,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RebootWorkspacesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(rebootWorkspacesRequest));
+                request = new RebootWorkspacesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(rebootWorkspacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -846,7 +913,13 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      *      API Documentation</a>
      */
     @Override
-    public RebuildWorkspacesResult rebuildWorkspaces(RebuildWorkspacesRequest rebuildWorkspacesRequest) {
+    public RebuildWorkspacesResult rebuildWorkspaces(RebuildWorkspacesRequest request) {
+        request = beforeClientExecution(request);
+        return executeRebuildWorkspaces(request);
+    }
+
+    @SdkInternalApi
+    final RebuildWorkspacesResult executeRebuildWorkspaces(RebuildWorkspacesRequest rebuildWorkspacesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(rebuildWorkspacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -857,7 +930,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RebuildWorkspacesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(rebuildWorkspacesRequest));
+                request = new RebuildWorkspacesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(rebuildWorkspacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -889,7 +962,13 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      *      Documentation</a>
      */
     @Override
-    public StartWorkspacesResult startWorkspaces(StartWorkspacesRequest startWorkspacesRequest) {
+    public StartWorkspacesResult startWorkspaces(StartWorkspacesRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartWorkspaces(request);
+    }
+
+    @SdkInternalApi
+    final StartWorkspacesResult executeStartWorkspaces(StartWorkspacesRequest startWorkspacesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(startWorkspacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -900,7 +979,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartWorkspacesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(startWorkspacesRequest));
+                request = new StartWorkspacesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startWorkspacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -932,7 +1011,13 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      *      Documentation</a>
      */
     @Override
-    public StopWorkspacesResult stopWorkspaces(StopWorkspacesRequest stopWorkspacesRequest) {
+    public StopWorkspacesResult stopWorkspaces(StopWorkspacesRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopWorkspaces(request);
+    }
+
+    @SdkInternalApi
+    final StopWorkspacesResult executeStopWorkspaces(StopWorkspacesRequest stopWorkspacesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(stopWorkspacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -943,7 +1028,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopWorkspacesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopWorkspacesRequest));
+                request = new StopWorkspacesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopWorkspacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -987,7 +1072,13 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      *      API Documentation</a>
      */
     @Override
-    public TerminateWorkspacesResult terminateWorkspaces(TerminateWorkspacesRequest terminateWorkspacesRequest) {
+    public TerminateWorkspacesResult terminateWorkspaces(TerminateWorkspacesRequest request) {
+        request = beforeClientExecution(request);
+        return executeTerminateWorkspaces(request);
+    }
+
+    @SdkInternalApi
+    final TerminateWorkspacesResult executeTerminateWorkspaces(TerminateWorkspacesRequest terminateWorkspacesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(terminateWorkspacesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -998,7 +1089,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new TerminateWorkspacesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(terminateWorkspacesRequest));
+                request = new TerminateWorkspacesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(terminateWorkspacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

@@ -152,6 +152,18 @@ public class CreateDBClusterRequestMarshaller implements Marshaller<Request<Crea
             request.addParameter("KmsKeyId", StringUtils.fromString(createDBClusterRequest.getKmsKeyId()));
         }
 
+        if (createDBClusterRequest.getPreSignedUrl() != null) {
+            request.addParameter("PreSignedUrl", StringUtils.fromString(createDBClusterRequest.getPreSignedUrl()));
+        }
+
+        if (createDBClusterRequest.getEnableIAMDatabaseAuthentication() != null) {
+            request.addParameter("EnableIAMDatabaseAuthentication", StringUtils.fromBoolean(createDBClusterRequest.getEnableIAMDatabaseAuthentication()));
+        }
+
+        if (createDBClusterRequest.getSourceRegion() != null) {
+            request.addParameter("SourceRegion", StringUtils.fromString(createDBClusterRequest.getSourceRegion()));
+        }
+
         return request;
     }
 

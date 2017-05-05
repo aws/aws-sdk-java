@@ -12,79 +12,59 @@
  */
 package com.amazonaws.services.gamelift.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.gamelift.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * SearchGameSessionsRequest Marshaller
+ * SearchGameSessionsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SearchGameSessionsRequestMarshaller implements Marshaller<Request<SearchGameSessionsRequest>, SearchGameSessionsRequest> {
+@SdkInternalApi
+public class SearchGameSessionsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> FLEETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("FleetId").build();
+    private static final MarshallingInfo<String> ALIASID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AliasId").build();
+    private static final MarshallingInfo<String> FILTEREXPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FilterExpression").build();
+    private static final MarshallingInfo<String> SORTEXPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SortExpression").build();
+    private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Limit").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
 
-    public SearchGameSessionsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final SearchGameSessionsRequestMarshaller instance = new SearchGameSessionsRequestMarshaller();
+
+    public static SearchGameSessionsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<SearchGameSessionsRequest> marshall(SearchGameSessionsRequest searchGameSessionsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(SearchGameSessionsRequest searchGameSessionsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (searchGameSessionsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<SearchGameSessionsRequest> request = new DefaultRequest<SearchGameSessionsRequest>(searchGameSessionsRequest, "AmazonGameLift");
-        request.addHeader("X-Amz-Target", "GameLift.SearchGameSessions");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (searchGameSessionsRequest.getFleetId() != null) {
-                jsonGenerator.writeFieldName("FleetId").writeValue(searchGameSessionsRequest.getFleetId());
-            }
-            if (searchGameSessionsRequest.getAliasId() != null) {
-                jsonGenerator.writeFieldName("AliasId").writeValue(searchGameSessionsRequest.getAliasId());
-            }
-            if (searchGameSessionsRequest.getFilterExpression() != null) {
-                jsonGenerator.writeFieldName("FilterExpression").writeValue(searchGameSessionsRequest.getFilterExpression());
-            }
-            if (searchGameSessionsRequest.getSortExpression() != null) {
-                jsonGenerator.writeFieldName("SortExpression").writeValue(searchGameSessionsRequest.getSortExpression());
-            }
-            if (searchGameSessionsRequest.getLimit() != null) {
-                jsonGenerator.writeFieldName("Limit").writeValue(searchGameSessionsRequest.getLimit());
-            }
-            if (searchGameSessionsRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(searchGameSessionsRequest.getNextToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(searchGameSessionsRequest.getFleetId(), FLEETID_BINDING);
+            protocolMarshaller.marshall(searchGameSessionsRequest.getAliasId(), ALIASID_BINDING);
+            protocolMarshaller.marshall(searchGameSessionsRequest.getFilterExpression(), FILTEREXPRESSION_BINDING);
+            protocolMarshaller.marshall(searchGameSessionsRequest.getSortExpression(), SORTEXPRESSION_BINDING);
+            protocolMarshaller.marshall(searchGameSessionsRequest.getLimit(), LIMIT_BINDING);
+            protocolMarshaller.marshall(searchGameSessionsRequest.getNextToken(), NEXTTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

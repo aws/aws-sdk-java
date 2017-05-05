@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The size limit of an SSM document is 64 KB.
+ * The size limit of a document is 64 KB.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

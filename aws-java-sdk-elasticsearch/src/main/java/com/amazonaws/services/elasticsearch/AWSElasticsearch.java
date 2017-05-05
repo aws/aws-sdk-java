@@ -247,6 +247,35 @@ public interface AWSElasticsearch {
 
     /**
      * <p>
+     * Describe Elasticsearch Limits for a given InstanceType and ElasticsearchVersion. When modifying existing Domain,
+     * specify the <code> <a>DomainName</a> </code> to know what Limits are supported for modifying.
+     * </p>
+     * 
+     * @param describeElasticsearchInstanceTypeLimitsRequest
+     *        Container for the parameters to <code> <a>DescribeElasticsearchInstanceTypeLimits</a> </code> operation.
+     * @return Result of the DescribeElasticsearchInstanceTypeLimits operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws InvalidTypeException
+     *         An exception for trying to create or access sub-resource that is either invalid or not supported. Gives
+     *         http status code of 409.
+     * @throws LimitExceededException
+     *         An exception for trying to create more than allowed resources or sub-resources. Gives http status code of
+     *         409.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @sample AWSElasticsearch.DescribeElasticsearchInstanceTypeLimits
+     */
+    DescribeElasticsearchInstanceTypeLimitsResult describeElasticsearchInstanceTypeLimits(
+            DescribeElasticsearchInstanceTypeLimitsRequest describeElasticsearchInstanceTypeLimitsRequest);
+
+    /**
+     * <p>
      * Returns the name of all Elasticsearch domains owned by the current user's account.
      * </p>
      * 
@@ -259,6 +288,56 @@ public interface AWSElasticsearch {
      * @sample AWSElasticsearch.ListDomainNames
      */
     ListDomainNamesResult listDomainNames(ListDomainNamesRequest listDomainNamesRequest);
+
+    /**
+     * <p>
+     * List all Elasticsearch instance types that are supported for given ElasticsearchVersion
+     * </p>
+     * 
+     * @param listElasticsearchInstanceTypesRequest
+     *        Container for the parameters to the <code> <a>ListElasticsearchInstanceTypes</a> </code> operation.
+     * @return Result of the ListElasticsearchInstanceTypes operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @sample AWSElasticsearch.ListElasticsearchInstanceTypes
+     */
+    ListElasticsearchInstanceTypesResult listElasticsearchInstanceTypes(ListElasticsearchInstanceTypesRequest listElasticsearchInstanceTypesRequest);
+
+    /**
+     * <p>
+     * List all supported Elasticsearch versions
+     * </p>
+     * 
+     * @param listElasticsearchVersionsRequest
+     *        Container for the parameters to the <code> <a>ListElasticsearchVersions</a> </code> operation.
+     *        <p>
+     *        Use <code> <a>MaxResults</a> </code> to control the maximum number of results to retrieve in a single
+     *        call.
+     *        </p>
+     *        <p>
+     *        Use <code> <a>NextToken</a> </code> in response to retrieve more results. If the received response does
+     *        not contain a NextToken, then there are no more results to retrieve.
+     *        </p>
+     * @return Result of the ListElasticsearchVersions operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @sample AWSElasticsearch.ListElasticsearchVersions
+     */
+    ListElasticsearchVersionsResult listElasticsearchVersions(ListElasticsearchVersionsRequest listElasticsearchVersionsRequest);
 
     /**
      * <p>

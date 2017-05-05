@@ -117,6 +117,27 @@ public interface AWSDeviceFarm {
 
     /**
      * <p>
+     * Creates a network profile.
+     * </p>
+     * 
+     * @param createNetworkProfileRequest
+     * @return Result of the CreateNetworkProfile operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.CreateNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateNetworkProfileResult createNetworkProfile(CreateNetworkProfileRequest createNetworkProfileRequest);
+
+    /**
+     * <p>
      * Creates a new project.
      * </p>
      * 
@@ -202,6 +223,27 @@ public interface AWSDeviceFarm {
      *      API Documentation</a>
      */
     DeleteDevicePoolResult deleteDevicePool(DeleteDevicePoolRequest deleteDevicePoolRequest);
+
+    /**
+     * <p>
+     * Deletes a network profile.
+     * </p>
+     * 
+     * @param deleteNetworkProfileRequest
+     * @return Result of the DeleteNetworkProfile operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.DeleteNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteNetworkProfileResult deleteNetworkProfile(DeleteNetworkProfileRequest deleteNetworkProfileRequest);
 
     /**
      * <p>
@@ -406,6 +448,27 @@ public interface AWSDeviceFarm {
      *      Documentation</a>
      */
     GetJobResult getJob(GetJobRequest getJobRequest);
+
+    /**
+     * <p>
+     * Returns information about a network profile.
+     * </p>
+     * 
+     * @param getNetworkProfileRequest
+     * @return Result of the GetNetworkProfile operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.GetNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetNetworkProfile" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetNetworkProfileResult getNetworkProfile(GetNetworkProfileRequest getNetworkProfileRequest);
 
     /**
      * <p>
@@ -678,6 +741,53 @@ public interface AWSDeviceFarm {
      *      Documentation</a>
      */
     ListJobsResult listJobs(ListJobsRequest listJobsRequest);
+
+    /**
+     * <p>
+     * Returns the list of available network profiles.
+     * </p>
+     * 
+     * @param listNetworkProfilesRequest
+     * @return Result of the ListNetworkProfiles operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.ListNetworkProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListNetworkProfiles" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListNetworkProfilesResult listNetworkProfiles(ListNetworkProfilesRequest listNetworkProfilesRequest);
+
+    /**
+     * <p>
+     * Returns a list of offering promotions. Each offering promotion record contains the ID and description of the
+     * promotion. The API returns a <code>NotEligible</code> error if the caller is not permitted to invoke the
+     * operation. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if
+     * you believe that you should be able to invoke this operation.
+     * </p>
+     * 
+     * @param listOfferingPromotionsRequest
+     * @return Result of the ListOfferingPromotions operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws NotEligibleException
+     *         Exception gets thrown when a user is not eligible to perform the specified transaction.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.ListOfferingPromotions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingPromotions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListOfferingPromotionsResult listOfferingPromotions(ListOfferingPromotionsRequest listOfferingPromotionsRequest);
 
     /**
      * <p>
@@ -1060,6 +1170,27 @@ public interface AWSDeviceFarm {
      *      API Documentation</a>
      */
     UpdateDevicePoolResult updateDevicePool(UpdateDevicePoolRequest updateDevicePoolRequest);
+
+    /**
+     * <p>
+     * Updates the network profile with specific settings.
+     * </p>
+     * 
+     * @param updateNetworkProfileRequest
+     * @return Result of the UpdateNetworkProfile operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.UpdateNetworkProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateNetworkProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateNetworkProfileResult updateNetworkProfile(UpdateNetworkProfileRequest updateNetworkProfileRequest);
 
     /**
      * <p>

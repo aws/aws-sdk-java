@@ -28,18 +28,18 @@ public class ResolveAliasResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Fleet ID associated with the requested alias.
+     * Fleet identifier that is associated with the requested alias.
      * </p>
      */
     private String fleetId;
 
     /**
      * <p>
-     * Fleet ID associated with the requested alias.
+     * Fleet identifier that is associated with the requested alias.
      * </p>
      * 
      * @param fleetId
-     *        Fleet ID associated with the requested alias.
+     *        Fleet identifier that is associated with the requested alias.
      */
 
     public void setFleetId(String fleetId) {
@@ -48,10 +48,10 @@ public class ResolveAliasResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Fleet ID associated with the requested alias.
+     * Fleet identifier that is associated with the requested alias.
      * </p>
      * 
-     * @return Fleet ID associated with the requested alias.
+     * @return Fleet identifier that is associated with the requested alias.
      */
 
     public String getFleetId() {
@@ -60,11 +60,11 @@ public class ResolveAliasResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Fleet ID associated with the requested alias.
+     * Fleet identifier that is associated with the requested alias.
      * </p>
      * 
      * @param fleetId
-     *        Fleet ID associated with the requested alias.
+     *        Fleet identifier that is associated with the requested alias.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,4 +124,5 @@ public class ResolveAliasResult extends com.amazonaws.AmazonWebServiceResult<com
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

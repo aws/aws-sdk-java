@@ -226,6 +226,10 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
         this.executorService = executorService;
     }
 
+    public static AWSElasticsearchAsyncClientBuilder asyncBuilder() {
+        return AWSElasticsearchAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on Amazon Elasticsearch Service using the
      * specified parameters.
@@ -256,14 +260,15 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
     @Override
     public java.util.concurrent.Future<AddTagsResult> addTagsAsync(final AddTagsRequest request,
             final com.amazonaws.handlers.AsyncHandler<AddTagsRequest, AddTagsResult> asyncHandler) {
+        final AddTagsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<AddTagsResult>() {
             @Override
             public AddTagsResult call() throws Exception {
-                AddTagsResult result;
+                AddTagsResult result = null;
 
                 try {
-                    result = addTags(request);
+                    result = executeAddTags(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -272,7 +277,7 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -288,14 +293,15 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
     @Override
     public java.util.concurrent.Future<CreateElasticsearchDomainResult> createElasticsearchDomainAsync(final CreateElasticsearchDomainRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateElasticsearchDomainRequest, CreateElasticsearchDomainResult> asyncHandler) {
+        final CreateElasticsearchDomainRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateElasticsearchDomainResult>() {
             @Override
             public CreateElasticsearchDomainResult call() throws Exception {
-                CreateElasticsearchDomainResult result;
+                CreateElasticsearchDomainResult result = null;
 
                 try {
-                    result = createElasticsearchDomain(request);
+                    result = executeCreateElasticsearchDomain(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -304,7 +310,7 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -320,14 +326,15 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
     @Override
     public java.util.concurrent.Future<DeleteElasticsearchDomainResult> deleteElasticsearchDomainAsync(final DeleteElasticsearchDomainRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteElasticsearchDomainRequest, DeleteElasticsearchDomainResult> asyncHandler) {
+        final DeleteElasticsearchDomainRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteElasticsearchDomainResult>() {
             @Override
             public DeleteElasticsearchDomainResult call() throws Exception {
-                DeleteElasticsearchDomainResult result;
+                DeleteElasticsearchDomainResult result = null;
 
                 try {
-                    result = deleteElasticsearchDomain(request);
+                    result = executeDeleteElasticsearchDomain(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -336,7 +343,7 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -352,14 +359,15 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
     @Override
     public java.util.concurrent.Future<DescribeElasticsearchDomainResult> describeElasticsearchDomainAsync(final DescribeElasticsearchDomainRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeElasticsearchDomainRequest, DescribeElasticsearchDomainResult> asyncHandler) {
+        final DescribeElasticsearchDomainRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeElasticsearchDomainResult>() {
             @Override
             public DescribeElasticsearchDomainResult call() throws Exception {
-                DescribeElasticsearchDomainResult result;
+                DescribeElasticsearchDomainResult result = null;
 
                 try {
-                    result = describeElasticsearchDomain(request);
+                    result = executeDescribeElasticsearchDomain(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -368,7 +376,7 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -386,14 +394,15 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
     public java.util.concurrent.Future<DescribeElasticsearchDomainConfigResult> describeElasticsearchDomainConfigAsync(
             final DescribeElasticsearchDomainConfigRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeElasticsearchDomainConfigRequest, DescribeElasticsearchDomainConfigResult> asyncHandler) {
+        final DescribeElasticsearchDomainConfigRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeElasticsearchDomainConfigResult>() {
             @Override
             public DescribeElasticsearchDomainConfigResult call() throws Exception {
-                DescribeElasticsearchDomainConfigResult result;
+                DescribeElasticsearchDomainConfigResult result = null;
 
                 try {
-                    result = describeElasticsearchDomainConfig(request);
+                    result = executeDescribeElasticsearchDomainConfig(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -402,7 +411,7 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -418,14 +427,15 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
     @Override
     public java.util.concurrent.Future<DescribeElasticsearchDomainsResult> describeElasticsearchDomainsAsync(final DescribeElasticsearchDomainsRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeElasticsearchDomainsRequest, DescribeElasticsearchDomainsResult> asyncHandler) {
+        final DescribeElasticsearchDomainsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeElasticsearchDomainsResult>() {
             @Override
             public DescribeElasticsearchDomainsResult call() throws Exception {
-                DescribeElasticsearchDomainsResult result;
+                DescribeElasticsearchDomainsResult result = null;
 
                 try {
-                    result = describeElasticsearchDomains(request);
+                    result = executeDescribeElasticsearchDomains(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -434,7 +444,42 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeElasticsearchInstanceTypeLimitsResult> describeElasticsearchInstanceTypeLimitsAsync(
+            DescribeElasticsearchInstanceTypeLimitsRequest request) {
+
+        return describeElasticsearchInstanceTypeLimitsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeElasticsearchInstanceTypeLimitsResult> describeElasticsearchInstanceTypeLimitsAsync(
+            final DescribeElasticsearchInstanceTypeLimitsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeElasticsearchInstanceTypeLimitsRequest, DescribeElasticsearchInstanceTypeLimitsResult> asyncHandler) {
+        final DescribeElasticsearchInstanceTypeLimitsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeElasticsearchInstanceTypeLimitsResult>() {
+            @Override
+            public DescribeElasticsearchInstanceTypeLimitsResult call() throws Exception {
+                DescribeElasticsearchInstanceTypeLimitsResult result = null;
+
+                try {
+                    result = executeDescribeElasticsearchInstanceTypeLimits(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -450,14 +495,15 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
     @Override
     public java.util.concurrent.Future<ListDomainNamesResult> listDomainNamesAsync(final ListDomainNamesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListDomainNamesRequest, ListDomainNamesResult> asyncHandler) {
+        final ListDomainNamesRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListDomainNamesResult>() {
             @Override
             public ListDomainNamesResult call() throws Exception {
-                ListDomainNamesResult result;
+                ListDomainNamesResult result = null;
 
                 try {
-                    result = listDomainNames(request);
+                    result = executeListDomainNames(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -466,7 +512,74 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListElasticsearchInstanceTypesResult> listElasticsearchInstanceTypesAsync(ListElasticsearchInstanceTypesRequest request) {
+
+        return listElasticsearchInstanceTypesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListElasticsearchInstanceTypesResult> listElasticsearchInstanceTypesAsync(
+            final ListElasticsearchInstanceTypesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListElasticsearchInstanceTypesRequest, ListElasticsearchInstanceTypesResult> asyncHandler) {
+        final ListElasticsearchInstanceTypesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListElasticsearchInstanceTypesResult>() {
+            @Override
+            public ListElasticsearchInstanceTypesResult call() throws Exception {
+                ListElasticsearchInstanceTypesResult result = null;
+
+                try {
+                    result = executeListElasticsearchInstanceTypes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListElasticsearchVersionsResult> listElasticsearchVersionsAsync(ListElasticsearchVersionsRequest request) {
+
+        return listElasticsearchVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListElasticsearchVersionsResult> listElasticsearchVersionsAsync(final ListElasticsearchVersionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListElasticsearchVersionsRequest, ListElasticsearchVersionsResult> asyncHandler) {
+        final ListElasticsearchVersionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListElasticsearchVersionsResult>() {
+            @Override
+            public ListElasticsearchVersionsResult call() throws Exception {
+                ListElasticsearchVersionsResult result = null;
+
+                try {
+                    result = executeListElasticsearchVersions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -482,14 +595,15 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
     @Override
     public java.util.concurrent.Future<ListTagsResult> listTagsAsync(final ListTagsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListTagsRequest, ListTagsResult> asyncHandler) {
+        final ListTagsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListTagsResult>() {
             @Override
             public ListTagsResult call() throws Exception {
-                ListTagsResult result;
+                ListTagsResult result = null;
 
                 try {
-                    result = listTags(request);
+                    result = executeListTags(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -498,7 +612,7 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -514,14 +628,15 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
     @Override
     public java.util.concurrent.Future<RemoveTagsResult> removeTagsAsync(final RemoveTagsRequest request,
             final com.amazonaws.handlers.AsyncHandler<RemoveTagsRequest, RemoveTagsResult> asyncHandler) {
+        final RemoveTagsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<RemoveTagsResult>() {
             @Override
             public RemoveTagsResult call() throws Exception {
-                RemoveTagsResult result;
+                RemoveTagsResult result = null;
 
                 try {
-                    result = removeTags(request);
+                    result = executeRemoveTags(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -530,7 +645,7 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -548,14 +663,15 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
     public java.util.concurrent.Future<UpdateElasticsearchDomainConfigResult> updateElasticsearchDomainConfigAsync(
             final UpdateElasticsearchDomainConfigRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateElasticsearchDomainConfigRequest, UpdateElasticsearchDomainConfigResult> asyncHandler) {
+        final UpdateElasticsearchDomainConfigRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateElasticsearchDomainConfigResult>() {
             @Override
             public UpdateElasticsearchDomainConfigResult call() throws Exception {
-                UpdateElasticsearchDomainConfigResult result;
+                UpdateElasticsearchDomainConfigResult result = null;
 
                 try {
-                    result = updateElasticsearchDomainConfig(request);
+                    result = executeUpdateElasticsearchDomainConfig(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -564,7 +680,7 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

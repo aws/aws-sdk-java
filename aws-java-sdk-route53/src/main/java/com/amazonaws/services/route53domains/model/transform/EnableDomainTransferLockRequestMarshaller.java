@@ -12,65 +12,44 @@
  */
 package com.amazonaws.services.route53domains.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.route53domains.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * EnableDomainTransferLockRequest Marshaller
+ * EnableDomainTransferLockRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EnableDomainTransferLockRequestMarshaller implements Marshaller<Request<EnableDomainTransferLockRequest>, EnableDomainTransferLockRequest> {
+@SdkInternalApi
+public class EnableDomainTransferLockRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DOMAINNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DomainName").build();
 
-    public EnableDomainTransferLockRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final EnableDomainTransferLockRequestMarshaller instance = new EnableDomainTransferLockRequestMarshaller();
+
+    public static EnableDomainTransferLockRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<EnableDomainTransferLockRequest> marshall(EnableDomainTransferLockRequest enableDomainTransferLockRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(EnableDomainTransferLockRequest enableDomainTransferLockRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (enableDomainTransferLockRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<EnableDomainTransferLockRequest> request = new DefaultRequest<EnableDomainTransferLockRequest>(enableDomainTransferLockRequest,
-                "AmazonRoute53Domains");
-        request.addHeader("X-Amz-Target", "Route53Domains_v20140515.EnableDomainTransferLock");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (enableDomainTransferLockRequest.getDomainName() != null) {
-                jsonGenerator.writeFieldName("DomainName").writeValue(enableDomainTransferLockRequest.getDomainName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(enableDomainTransferLockRequest.getDomainName(), DOMAINNAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

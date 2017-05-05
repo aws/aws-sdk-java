@@ -257,6 +257,7 @@ public class AbstractAmazonElasticLoadBalancingAsync extends AbstractAmazonElast
      *
      * @see #describeLoadBalancerPoliciesAsync(DescribeLoadBalancerPoliciesRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeLoadBalancerPoliciesResult> describeLoadBalancerPoliciesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeLoadBalancerPoliciesRequest, DescribeLoadBalancerPoliciesResult> asyncHandler) {
 
@@ -295,6 +296,7 @@ public class AbstractAmazonElasticLoadBalancingAsync extends AbstractAmazonElast
      * @see #describeLoadBalancerPolicyTypesAsync(DescribeLoadBalancerPolicyTypesRequest,
      *      com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeLoadBalancerPolicyTypesResult> describeLoadBalancerPolicyTypesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeLoadBalancerPolicyTypesRequest, DescribeLoadBalancerPolicyTypesResult> asyncHandler) {
 
@@ -330,6 +332,7 @@ public class AbstractAmazonElasticLoadBalancingAsync extends AbstractAmazonElast
      *
      * @see #describeLoadBalancersAsync(DescribeLoadBalancersRequest, com.amazonaws.handlers.AsyncHandler)
      */
+    @Override
     public java.util.concurrent.Future<DescribeLoadBalancersResult> describeLoadBalancersAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeLoadBalancersRequest, DescribeLoadBalancersResult> asyncHandler) {
 

@@ -14,22 +14,24 @@ package com.amazonaws.services.cloudwatchevents.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about the event to be used in PutEvents.
+ * Represents an event to be submitted.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutEventsRequestEntry" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PutEventsRequestEntry implements Serializable, Cloneable {
+public class PutEventsRequestEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Timestamp of event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no timestamp is
-     * provided, the timestamp of the <a>PutEvents</a> call will be used.
+     * The timestamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no timestamp
+     * is provided, the timestamp of the <a>PutEvents</a> call is used.
      * </p>
      */
     private java.util.Date time;
@@ -54,7 +56,7 @@ public class PutEventsRequestEntry implements Serializable, Cloneable {
     private String detailType;
     /**
      * <p>
-     * In the JSON sense, an object containing fields, which may also contain nested sub-objects. No constraints are
+     * In the JSON sense, an object containing fields, which may also contain nested subobjects. No constraints are
      * imposed on its contents.
      * </p>
      */
@@ -62,13 +64,13 @@ public class PutEventsRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Timestamp of event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no timestamp is
-     * provided, the timestamp of the <a>PutEvents</a> call will be used.
+     * The timestamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no timestamp
+     * is provided, the timestamp of the <a>PutEvents</a> call is used.
      * </p>
      * 
      * @param time
-     *        Timestamp of event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no timestamp
-     *        is provided, the timestamp of the <a>PutEvents</a> call will be used.
+     *        The timestamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no
+     *        timestamp is provided, the timestamp of the <a>PutEvents</a> call is used.
      */
 
     public void setTime(java.util.Date time) {
@@ -77,12 +79,12 @@ public class PutEventsRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Timestamp of event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no timestamp is
-     * provided, the timestamp of the <a>PutEvents</a> call will be used.
+     * The timestamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no timestamp
+     * is provided, the timestamp of the <a>PutEvents</a> call is used.
      * </p>
      * 
-     * @return Timestamp of event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no timestamp
-     *         is provided, the timestamp of the <a>PutEvents</a> call will be used.
+     * @return The timestamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no
+     *         timestamp is provided, the timestamp of the <a>PutEvents</a> call is used.
      */
 
     public java.util.Date getTime() {
@@ -91,13 +93,13 @@ public class PutEventsRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Timestamp of event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no timestamp is
-     * provided, the timestamp of the <a>PutEvents</a> call will be used.
+     * The timestamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no timestamp
+     * is provided, the timestamp of the <a>PutEvents</a> call is used.
      * </p>
      * 
      * @param time
-     *        Timestamp of event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no timestamp
-     *        is provided, the timestamp of the <a>PutEvents</a> call will be used.
+     *        The timestamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no
+     *        timestamp is provided, the timestamp of the <a>PutEvents</a> call is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -266,12 +268,12 @@ public class PutEventsRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * In the JSON sense, an object containing fields, which may also contain nested sub-objects. No constraints are
+     * In the JSON sense, an object containing fields, which may also contain nested subobjects. No constraints are
      * imposed on its contents.
      * </p>
      * 
      * @param detail
-     *        In the JSON sense, an object containing fields, which may also contain nested sub-objects. No constraints
+     *        In the JSON sense, an object containing fields, which may also contain nested subobjects. No constraints
      *        are imposed on its contents.
      */
 
@@ -281,11 +283,11 @@ public class PutEventsRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * In the JSON sense, an object containing fields, which may also contain nested sub-objects. No constraints are
+     * In the JSON sense, an object containing fields, which may also contain nested subobjects. No constraints are
      * imposed on its contents.
      * </p>
      * 
-     * @return In the JSON sense, an object containing fields, which may also contain nested sub-objects. No constraints
+     * @return In the JSON sense, an object containing fields, which may also contain nested subobjects. No constraints
      *         are imposed on its contents.
      */
 
@@ -295,12 +297,12 @@ public class PutEventsRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * In the JSON sense, an object containing fields, which may also contain nested sub-objects. No constraints are
+     * In the JSON sense, an object containing fields, which may also contain nested subobjects. No constraints are
      * imposed on its contents.
      * </p>
      * 
      * @param detail
-     *        In the JSON sense, an object containing fields, which may also contain nested sub-objects. No constraints
+     *        In the JSON sense, an object containing fields, which may also contain nested subobjects. No constraints
      *        are imposed on its contents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -388,5 +390,11 @@ public class PutEventsRequestEntry implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.cloudwatchevents.model.transform.PutEventsRequestEntryMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

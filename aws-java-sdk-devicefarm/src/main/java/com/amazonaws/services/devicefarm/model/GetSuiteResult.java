@@ -26,10 +26,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetSuiteResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * A collection of one or more tests.
+     * </p>
+     */
     private Suite suite;
 
     /**
+     * <p>
+     * A collection of one or more tests.
+     * </p>
+     * 
      * @param suite
+     *        A collection of one or more tests.
      */
 
     public void setSuite(Suite suite) {
@@ -37,7 +47,11 @@ public class GetSuiteResult extends com.amazonaws.AmazonWebServiceResult<com.ama
     }
 
     /**
-     * @return
+     * <p>
+     * A collection of one or more tests.
+     * </p>
+     * 
+     * @return A collection of one or more tests.
      */
 
     public Suite getSuite() {
@@ -45,7 +59,12 @@ public class GetSuiteResult extends com.amazonaws.AmazonWebServiceResult<com.ama
     }
 
     /**
+     * <p>
+     * A collection of one or more tests.
+     * </p>
+     * 
      * @param suite
+     *        A collection of one or more tests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,4 +124,5 @@ public class GetSuiteResult extends com.amazonaws.AmazonWebServiceResult<com.ama
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

@@ -736,7 +736,9 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * Describes the specified policies or all policies used for SSL negotiation.
      * </p>
      * <p>
-     * Note that the only supported policy at this time is ELBSecurityPolicy-2015-05.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
+     * >Security Policies</a> in the <i>Application Load Balancers Guide</i>.
      * </p>
      * 
      * @param describeSSLPoliciesRequest
@@ -752,7 +754,9 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * Describes the specified policies or all policies used for SSL negotiation.
      * </p>
      * <p>
-     * Note that the only supported policy at this time is ELBSecurityPolicy-2015-05.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
+     * >Security Policies</a> in the <i>Application Load Balancers Guide</i>.
      * </p>
      * 
      * @param describeSSLPoliciesRequest
@@ -770,7 +774,8 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
-     * Describes the tags for the specified resources.
+     * Describes the tags for the specified resources. You can describe the tags for one or more Application Load
+     * Balancers and target groups.
      * </p>
      * 
      * @param describeTagsRequest
@@ -783,7 +788,8 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
-     * Describes the tags for the specified resources.
+     * Describes the tags for the specified resources. You can describe the tags for one or more Application Load
+     * Balancers and target groups.
      * </p>
      * 
      * @param describeTagsRequest
@@ -917,7 +923,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * <p>
      * Any properties that you do not specify retain their current values. However, changing the protocol from HTTPS to
      * HTTP removes the security policy and SSL certificate properties. If you change the protocol from HTTP to HTTPS,
-     * you must add the security policy.
+     * you must add the security policy and server certificate.
      * </p>
      * 
      * @param modifyListenerRequest
@@ -935,7 +941,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * <p>
      * Any properties that you do not specify retain their current values. However, changing the protocol from HTTPS to
      * HTTP removes the security policy and SSL certificate properties. If you change the protocol from HTTP to HTTPS,
-     * you must add the security policy.
+     * you must add the security policy and server certificate.
      * </p>
      * 
      * @param modifyListenerRequest

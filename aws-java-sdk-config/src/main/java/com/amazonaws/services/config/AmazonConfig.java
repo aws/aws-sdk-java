@@ -723,9 +723,9 @@ public interface AmazonConfig {
      * <code>ConfigRule</code> object.
      * </p>
      * <p>
-     * If you are adding a new AWS managed Config rule, specify the rule's identifier for the
-     * <code>SourceIdentifier</code> key. To reference AWS managed Config rule identifiers, see <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using AWS
+     * If you are adding an AWS managed Config rule, specify the rule's identifier for the <code>SourceIdentifier</code>
+     * key. To reference AWS managed Config rule identifiers, see <a
+     * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">About AWS
      * Managed Config Rules</a>.
      * </p>
      * <p>
@@ -876,7 +876,7 @@ public interface AmazonConfig {
      * @throws InvalidParameterValueException
      *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
      * @throws InvalidResultTokenException
-     *         The speNexcified token is invalid.
+     *         The specified <code>ResultToken</code> is invalid.
      * @throws NoSuchConfigRuleException
      *         One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try
      *         again.

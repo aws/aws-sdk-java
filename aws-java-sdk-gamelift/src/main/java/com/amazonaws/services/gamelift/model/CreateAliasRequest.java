@@ -30,7 +30,7 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Descriptive label associated with an alias. Alias names do not need to be unique.
+     * Descriptive label that is associated with an alias. Alias names do not need to be unique.
      * </p>
      */
     private String name;
@@ -42,18 +42,18 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String description;
     /**
      * <p>
-     * Object specifying the fleet and routing type to use for the alias.
+     * Object that specifies the fleet and routing type to use for the alias.
      * </p>
      */
     private RoutingStrategy routingStrategy;
 
     /**
      * <p>
-     * Descriptive label associated with an alias. Alias names do not need to be unique.
+     * Descriptive label that is associated with an alias. Alias names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with an alias. Alias names do not need to be unique.
+     *        Descriptive label that is associated with an alias. Alias names do not need to be unique.
      */
 
     public void setName(String name) {
@@ -62,10 +62,10 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Descriptive label associated with an alias. Alias names do not need to be unique.
+     * Descriptive label that is associated with an alias. Alias names do not need to be unique.
      * </p>
      * 
-     * @return Descriptive label associated with an alias. Alias names do not need to be unique.
+     * @return Descriptive label that is associated with an alias. Alias names do not need to be unique.
      */
 
     public String getName() {
@@ -74,11 +74,11 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Descriptive label associated with an alias. Alias names do not need to be unique.
+     * Descriptive label that is associated with an alias. Alias names do not need to be unique.
      * </p>
      * 
      * @param name
-     *        Descriptive label associated with an alias. Alias names do not need to be unique.
+     *        Descriptive label that is associated with an alias. Alias names do not need to be unique.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +129,11 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Object specifying the fleet and routing type to use for the alias.
+     * Object that specifies the fleet and routing type to use for the alias.
      * </p>
      * 
      * @param routingStrategy
-     *        Object specifying the fleet and routing type to use for the alias.
+     *        Object that specifies the fleet and routing type to use for the alias.
      */
 
     public void setRoutingStrategy(RoutingStrategy routingStrategy) {
@@ -142,10 +142,10 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Object specifying the fleet and routing type to use for the alias.
+     * Object that specifies the fleet and routing type to use for the alias.
      * </p>
      * 
-     * @return Object specifying the fleet and routing type to use for the alias.
+     * @return Object that specifies the fleet and routing type to use for the alias.
      */
 
     public RoutingStrategy getRoutingStrategy() {
@@ -154,11 +154,11 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Object specifying the fleet and routing type to use for the alias.
+     * Object that specifies the fleet and routing type to use for the alias.
      * </p>
      * 
      * @param routingStrategy
-     *        Object specifying the fleet and routing type to use for the alias.
+     *        Object that specifies the fleet and routing type to use for the alias.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

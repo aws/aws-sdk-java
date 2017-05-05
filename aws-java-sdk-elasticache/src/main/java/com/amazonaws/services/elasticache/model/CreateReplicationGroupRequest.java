@@ -117,7 +117,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <code>ReplicasPerNodeGroup</code> instead.
      * </p>
      * <p>
-     * If <code>Multi-AZ</code> is <code>enabled</code>, the value of this parameter must be at least 2.
+     * If <code>AutomaticFailoverEnabled</code> is <code>true</code>, the value of this parameter must be at least 2. If
+     * <code>AutomaticFailoverEnabled</code> is <code>false</code> you can omit this parameter (it will default to 1),
+     * or you can explicitly set it to a value between 2 and 6.
      * </p>
      * <p>
      * The maximum permitted value for <code>NumCacheClusters</code> is 6 (primary plus 5 replicas).
@@ -172,7 +174,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group, you can
-     * use this parameter to configure one node group (shard) or you can omit this parameter.
+     * use this parameter to individually configure each node group (shard), or you can omit this parameter.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<NodeGroupConfiguration> nodeGroupConfiguration;
@@ -346,9 +348,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB snapshot files stored in Amazon S3.
-     * The snapshot files are used to populate the replication group. The Amazon S3 object name in the ARN cannot
-     * contain any commas. The list must match the number of node groups (shards) in the replication group, which means
-     * you cannot repartition.
+     * The snapshot files are used to populate the new replication group. The Amazon S3 object name in the ARN cannot
+     * contain any commas. The new replication group will have the number of node groups (console: shards) specified by
+     * the parameter <i>NumNodeGroups</i> or the number of node groups configured by <i>NodeGroupConfiguration</i>
+     * regardless of the number of ARNs specified here.
      * </p>
      * <note>
      * <p>
@@ -1085,7 +1088,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <code>ReplicasPerNodeGroup</code> instead.
      * </p>
      * <p>
-     * If <code>Multi-AZ</code> is <code>enabled</code>, the value of this parameter must be at least 2.
+     * If <code>AutomaticFailoverEnabled</code> is <code>true</code>, the value of this parameter must be at least 2. If
+     * <code>AutomaticFailoverEnabled</code> is <code>false</code> you can omit this parameter (it will default to 1),
+     * or you can explicitly set it to a value between 2 and 6.
      * </p>
      * <p>
      * The maximum permitted value for <code>NumCacheClusters</code> is 6 (primary plus 5 replicas).
@@ -1098,7 +1103,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        <code>ReplicasPerNodeGroup</code> instead.
      *        </p>
      *        <p>
-     *        If <code>Multi-AZ</code> is <code>enabled</code>, the value of this parameter must be at least 2.
+     *        If <code>AutomaticFailoverEnabled</code> is <code>true</code>, the value of this parameter must be at
+     *        least 2. If <code>AutomaticFailoverEnabled</code> is <code>false</code> you can omit this parameter (it
+     *        will default to 1), or you can explicitly set it to a value between 2 and 6.
      *        </p>
      *        <p>
      *        The maximum permitted value for <code>NumCacheClusters</code> is 6 (primary plus 5 replicas).
@@ -1117,7 +1124,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <code>ReplicasPerNodeGroup</code> instead.
      * </p>
      * <p>
-     * If <code>Multi-AZ</code> is <code>enabled</code>, the value of this parameter must be at least 2.
+     * If <code>AutomaticFailoverEnabled</code> is <code>true</code>, the value of this parameter must be at least 2. If
+     * <code>AutomaticFailoverEnabled</code> is <code>false</code> you can omit this parameter (it will default to 1),
+     * or you can explicitly set it to a value between 2 and 6.
      * </p>
      * <p>
      * The maximum permitted value for <code>NumCacheClusters</code> is 6 (primary plus 5 replicas).
@@ -1129,7 +1138,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *         <code>ReplicasPerNodeGroup</code> instead.
      *         </p>
      *         <p>
-     *         If <code>Multi-AZ</code> is <code>enabled</code>, the value of this parameter must be at least 2.
+     *         If <code>AutomaticFailoverEnabled</code> is <code>true</code>, the value of this parameter must be at
+     *         least 2. If <code>AutomaticFailoverEnabled</code> is <code>false</code> you can omit this parameter (it
+     *         will default to 1), or you can explicitly set it to a value between 2 and 6.
      *         </p>
      *         <p>
      *         The maximum permitted value for <code>NumCacheClusters</code> is 6 (primary plus 5 replicas).
@@ -1148,7 +1159,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <code>ReplicasPerNodeGroup</code> instead.
      * </p>
      * <p>
-     * If <code>Multi-AZ</code> is <code>enabled</code>, the value of this parameter must be at least 2.
+     * If <code>AutomaticFailoverEnabled</code> is <code>true</code>, the value of this parameter must be at least 2. If
+     * <code>AutomaticFailoverEnabled</code> is <code>false</code> you can omit this parameter (it will default to 1),
+     * or you can explicitly set it to a value between 2 and 6.
      * </p>
      * <p>
      * The maximum permitted value for <code>NumCacheClusters</code> is 6 (primary plus 5 replicas).
@@ -1161,7 +1174,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        <code>ReplicasPerNodeGroup</code> instead.
      *        </p>
      *        <p>
-     *        If <code>Multi-AZ</code> is <code>enabled</code>, the value of this parameter must be at least 2.
+     *        If <code>AutomaticFailoverEnabled</code> is <code>true</code>, the value of this parameter must be at
+     *        least 2. If <code>AutomaticFailoverEnabled</code> is <code>false</code> you can omit this parameter (it
+     *        will default to 1), or you can explicitly set it to a value between 2 and 6.
      *        </p>
      *        <p>
      *        The maximum permitted value for <code>NumCacheClusters</code> is 6 (primary plus 5 replicas).
@@ -1503,14 +1518,15 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group, you can
-     * use this parameter to configure one node group (shard) or you can omit this parameter.
+     * use this parameter to individually configure each node group (shard), or you can omit this parameter.
      * </p>
      * 
      * @return A list of node group (shard) configuration options. Each node group (shard) configuration has the
      *         following: Slots, PrimaryAvailabilityZone, ReplicaAvailabilityZones, ReplicaCount.</p>
      *         <p>
      *         If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group,
-     *         you can use this parameter to configure one node group (shard) or you can omit this parameter.
+     *         you can use this parameter to individually configure each node group (shard), or you can omit this
+     *         parameter.
      */
 
     public java.util.List<NodeGroupConfiguration> getNodeGroupConfiguration() {
@@ -1527,7 +1543,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group, you can
-     * use this parameter to configure one node group (shard) or you can omit this parameter.
+     * use this parameter to individually configure each node group (shard), or you can omit this parameter.
      * </p>
      * 
      * @param nodeGroupConfiguration
@@ -1535,7 +1551,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        following: Slots, PrimaryAvailabilityZone, ReplicaAvailabilityZones, ReplicaCount.</p>
      *        <p>
      *        If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group,
-     *        you can use this parameter to configure one node group (shard) or you can omit this parameter.
+     *        you can use this parameter to individually configure each node group (shard), or you can omit this
+     *        parameter.
      */
 
     public void setNodeGroupConfiguration(java.util.Collection<NodeGroupConfiguration> nodeGroupConfiguration) {
@@ -1554,7 +1571,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group, you can
-     * use this parameter to configure one node group (shard) or you can omit this parameter.
+     * use this parameter to individually configure each node group (shard), or you can omit this parameter.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1567,7 +1584,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        following: Slots, PrimaryAvailabilityZone, ReplicaAvailabilityZones, ReplicaCount.</p>
      *        <p>
      *        If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group,
-     *        you can use this parameter to configure one node group (shard) or you can omit this parameter.
+     *        you can use this parameter to individually configure each node group (shard), or you can omit this
+     *        parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1588,7 +1606,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group, you can
-     * use this parameter to configure one node group (shard) or you can omit this parameter.
+     * use this parameter to individually configure each node group (shard), or you can omit this parameter.
      * </p>
      * 
      * @param nodeGroupConfiguration
@@ -1596,7 +1614,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        following: Slots, PrimaryAvailabilityZone, ReplicaAvailabilityZones, ReplicaCount.</p>
      *        <p>
      *        If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group,
-     *        you can use this parameter to configure one node group (shard) or you can omit this parameter.
+     *        you can use this parameter to individually configure each node group (shard), or you can omit this
+     *        parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2734,9 +2753,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB snapshot files stored in Amazon S3.
-     * The snapshot files are used to populate the replication group. The Amazon S3 object name in the ARN cannot
-     * contain any commas. The list must match the number of node groups (shards) in the replication group, which means
-     * you cannot repartition.
+     * The snapshot files are used to populate the new replication group. The Amazon S3 object name in the ARN cannot
+     * contain any commas. The new replication group will have the number of node groups (console: shards) specified by
+     * the parameter <i>NumNodeGroups</i> or the number of node groups configured by <i>NodeGroupConfiguration</i>
+     * regardless of the number of ARNs specified here.
      * </p>
      * <note>
      * <p>
@@ -2748,9 +2768,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @return A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB snapshot files stored in
-     *         Amazon S3. The snapshot files are used to populate the replication group. The Amazon S3 object name in
-     *         the ARN cannot contain any commas. The list must match the number of node groups (shards) in the
-     *         replication group, which means you cannot repartition.</p> <note>
+     *         Amazon S3. The snapshot files are used to populate the new replication group. The Amazon S3 object name
+     *         in the ARN cannot contain any commas. The new replication group will have the number of node groups
+     *         (console: shards) specified by the parameter <i>NumNodeGroups</i> or the number of node groups configured
+     *         by <i>NodeGroupConfiguration</i> regardless of the number of ARNs specified here.</p> <note>
      *         <p>
      *         This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
      *         </p>
@@ -2769,9 +2790,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB snapshot files stored in Amazon S3.
-     * The snapshot files are used to populate the replication group. The Amazon S3 object name in the ARN cannot
-     * contain any commas. The list must match the number of node groups (shards) in the replication group, which means
-     * you cannot repartition.
+     * The snapshot files are used to populate the new replication group. The Amazon S3 object name in the ARN cannot
+     * contain any commas. The new replication group will have the number of node groups (console: shards) specified by
+     * the parameter <i>NumNodeGroups</i> or the number of node groups configured by <i>NodeGroupConfiguration</i>
+     * regardless of the number of ARNs specified here.
      * </p>
      * <note>
      * <p>
@@ -2784,9 +2806,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param snapshotArns
      *        A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB snapshot files stored in Amazon
-     *        S3. The snapshot files are used to populate the replication group. The Amazon S3 object name in the ARN
-     *        cannot contain any commas. The list must match the number of node groups (shards) in the replication
-     *        group, which means you cannot repartition.</p> <note>
+     *        S3. The snapshot files are used to populate the new replication group. The Amazon S3 object name in the
+     *        ARN cannot contain any commas. The new replication group will have the number of node groups (console:
+     *        shards) specified by the parameter <i>NumNodeGroups</i> or the number of node groups configured by
+     *        <i>NodeGroupConfiguration</i> regardless of the number of ARNs specified here.</p> <note>
      *        <p>
      *        This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
      *        </p>
@@ -2807,9 +2830,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB snapshot files stored in Amazon S3.
-     * The snapshot files are used to populate the replication group. The Amazon S3 object name in the ARN cannot
-     * contain any commas. The list must match the number of node groups (shards) in the replication group, which means
-     * you cannot repartition.
+     * The snapshot files are used to populate the new replication group. The Amazon S3 object name in the ARN cannot
+     * contain any commas. The new replication group will have the number of node groups (console: shards) specified by
+     * the parameter <i>NumNodeGroups</i> or the number of node groups configured by <i>NodeGroupConfiguration</i>
+     * regardless of the number of ARNs specified here.
      * </p>
      * <note>
      * <p>
@@ -2827,9 +2851,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param snapshotArns
      *        A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB snapshot files stored in Amazon
-     *        S3. The snapshot files are used to populate the replication group. The Amazon S3 object name in the ARN
-     *        cannot contain any commas. The list must match the number of node groups (shards) in the replication
-     *        group, which means you cannot repartition.</p> <note>
+     *        S3. The snapshot files are used to populate the new replication group. The Amazon S3 object name in the
+     *        ARN cannot contain any commas. The new replication group will have the number of node groups (console:
+     *        shards) specified by the parameter <i>NumNodeGroups</i> or the number of node groups configured by
+     *        <i>NodeGroupConfiguration</i> regardless of the number of ARNs specified here.</p> <note>
      *        <p>
      *        This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
      *        </p>
@@ -2852,9 +2877,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB snapshot files stored in Amazon S3.
-     * The snapshot files are used to populate the replication group. The Amazon S3 object name in the ARN cannot
-     * contain any commas. The list must match the number of node groups (shards) in the replication group, which means
-     * you cannot repartition.
+     * The snapshot files are used to populate the new replication group. The Amazon S3 object name in the ARN cannot
+     * contain any commas. The new replication group will have the number of node groups (console: shards) specified by
+     * the parameter <i>NumNodeGroups</i> or the number of node groups configured by <i>NodeGroupConfiguration</i>
+     * regardless of the number of ARNs specified here.
      * </p>
      * <note>
      * <p>
@@ -2867,9 +2893,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param snapshotArns
      *        A list of Amazon Resource Names (ARN) that uniquely identify the Redis RDB snapshot files stored in Amazon
-     *        S3. The snapshot files are used to populate the replication group. The Amazon S3 object name in the ARN
-     *        cannot contain any commas. The list must match the number of node groups (shards) in the replication
-     *        group, which means you cannot repartition.</p> <note>
+     *        S3. The snapshot files are used to populate the new replication group. The Amazon S3 object name in the
+     *        ARN cannot contain any commas. The new replication group will have the number of node groups (console:
+     *        shards) specified by the parameter <i>NumNodeGroups</i> or the number of node groups configured by
+     *        <i>NodeGroupConfiguration</i> regardless of the number of ARNs specified here.</p> <note>
      *        <p>
      *        This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
      *        </p>

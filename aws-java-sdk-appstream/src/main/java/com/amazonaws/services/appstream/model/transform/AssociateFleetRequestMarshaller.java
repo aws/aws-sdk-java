@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.appstream.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.appstream.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * AssociateFleetRequest Marshaller
+ * AssociateFleetRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AssociateFleetRequestMarshaller implements Marshaller<Request<AssociateFleetRequest>, AssociateFleetRequest> {
+@SdkInternalApi
+public class AssociateFleetRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> FLEETNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("FleetName").build();
+    private static final MarshallingInfo<String> STACKNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("StackName").build();
 
-    public AssociateFleetRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final AssociateFleetRequestMarshaller instance = new AssociateFleetRequestMarshaller();
+
+    public static AssociateFleetRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<AssociateFleetRequest> marshall(AssociateFleetRequest associateFleetRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(AssociateFleetRequest associateFleetRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (associateFleetRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<AssociateFleetRequest> request = new DefaultRequest<AssociateFleetRequest>(associateFleetRequest, "AmazonAppStream");
-        request.addHeader("X-Amz-Target", "PhotonAdminProxyService.AssociateFleet");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (associateFleetRequest.getFleetName() != null) {
-                jsonGenerator.writeFieldName("FleetName").writeValue(associateFleetRequest.getFleetName());
-            }
-            if (associateFleetRequest.getStackName() != null) {
-                jsonGenerator.writeFieldName("StackName").writeValue(associateFleetRequest.getStackName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(associateFleetRequest.getFleetName(), FLEETNAME_BINDING);
+            protocolMarshaller.marshall(associateFleetRequest.getStackName(), STACKNAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

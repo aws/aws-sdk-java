@@ -64,6 +64,10 @@ public class ClusterJsonUnmarshaller implements Unmarshaller<Cluster, JsonUnmars
                     context.nextToken();
                     cluster.setEc2InstanceAttributes(Ec2InstanceAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("InstanceCollectionType", targetDepth)) {
+                    context.nextToken();
+                    cluster.setInstanceCollectionType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("LogUri", targetDepth)) {
                     context.nextToken();
                     cluster.setLogUri(context.getUnmarshaller(String.class).unmarshall(context));

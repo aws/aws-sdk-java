@@ -17,9 +17,6 @@ package com.amazonaws.services.stepfunctions.builder.internal.validation;
 import com.amazonaws.services.stepfunctions.builder.internal.PropertyNames;
 import com.amazonaws.util.CollectionUtils;
 import com.amazonaws.util.StringUtils;
-import com.jayway.jsonpath.InvalidPathException;
-import com.jayway.jsonpath.JsonPath;
-
 import java.util.Collection;
 import java.util.Map;
 
@@ -173,13 +170,6 @@ final class ValidationContext {
             problemReporter.report(new Problem(this, String.format("%s cannot be empty", propertyName)));
             return;
         }
-        try {
-            JsonPath.compile(path);
-        } catch (InvalidPathException e) {
-            problemReporter.report(new Problem(this,
-                                               String.format("%s with value '%s' is not a valid JsonPath. %s", propertyName, path,
-                                                             e.getMessage())));
-        }
     }
 
     /**
@@ -195,17 +185,6 @@ final class ValidationContext {
         if (path.isEmpty()) {
             problemReporter.report(new Problem(this, String.format("%s cannot be empty", propertyName)));
             return;
-        }
-        try {
-            if (!JsonPath.isPathDefinite(path)) {
-                problemReporter.report(new Problem(this,
-                                                   String.format("%s with value '%s' is not a definite reference path.",
-                                                                 propertyName, path)));
-            }
-        } catch (InvalidPathException e) {
-            problemReporter.report(new Problem(this,
-                                               String.format("%s with value '%s' is not a valid JsonPath. %s", propertyName, path,
-                                                             e.getMessage())));
         }
     }
 

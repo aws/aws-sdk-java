@@ -12,78 +12,48 @@
  */
 package com.amazonaws.services.workspaces.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.workspaces.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeWorkspaceDirectoriesRequest Marshaller
+ * DescribeWorkspaceDirectoriesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeWorkspaceDirectoriesRequestMarshaller implements
-        Marshaller<Request<DescribeWorkspaceDirectoriesRequest>, DescribeWorkspaceDirectoriesRequest> {
+@SdkInternalApi
+public class DescribeWorkspaceDirectoriesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<List> DIRECTORYIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("DirectoryIds").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
 
-    public DescribeWorkspaceDirectoriesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeWorkspaceDirectoriesRequestMarshaller instance = new DescribeWorkspaceDirectoriesRequestMarshaller();
+
+    public static DescribeWorkspaceDirectoriesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeWorkspaceDirectoriesRequest> marshall(DescribeWorkspaceDirectoriesRequest describeWorkspaceDirectoriesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeWorkspaceDirectoriesRequest describeWorkspaceDirectoriesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeWorkspaceDirectoriesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeWorkspaceDirectoriesRequest> request = new DefaultRequest<DescribeWorkspaceDirectoriesRequest>(describeWorkspaceDirectoriesRequest,
-                "AmazonWorkspaces");
-        request.addHeader("X-Amz-Target", "WorkspacesService.DescribeWorkspaceDirectories");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            com.amazonaws.internal.SdkInternalList<String> directoryIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeWorkspaceDirectoriesRequest
-                    .getDirectoryIds();
-            if (!directoryIdsList.isEmpty() || !directoryIdsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("DirectoryIds");
-                jsonGenerator.writeStartArray();
-                for (String directoryIdsListValue : directoryIdsList) {
-                    if (directoryIdsListValue != null) {
-                        jsonGenerator.writeValue(directoryIdsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (describeWorkspaceDirectoriesRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(describeWorkspaceDirectoriesRequest.getNextToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeWorkspaceDirectoriesRequest.getDirectoryIds(), DIRECTORYIDS_BINDING);
+            protocolMarshaller.marshall(describeWorkspaceDirectoriesRequest.getNextToken(), NEXTTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

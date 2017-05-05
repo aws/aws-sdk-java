@@ -12,72 +12,50 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simplesystemsmanagement.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeInstanceAssociationsStatusRequest Marshaller
+ * DescribeInstanceAssociationsStatusRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeInstanceAssociationsStatusRequestMarshaller implements
-        Marshaller<Request<DescribeInstanceAssociationsStatusRequest>, DescribeInstanceAssociationsStatusRequest> {
+@SdkInternalApi
+public class DescribeInstanceAssociationsStatusRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> INSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceId").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
 
-    public DescribeInstanceAssociationsStatusRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeInstanceAssociationsStatusRequestMarshaller instance = new DescribeInstanceAssociationsStatusRequestMarshaller();
+
+    public static DescribeInstanceAssociationsStatusRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeInstanceAssociationsStatusRequest> marshall(DescribeInstanceAssociationsStatusRequest describeInstanceAssociationsStatusRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeInstanceAssociationsStatusRequest describeInstanceAssociationsStatusRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeInstanceAssociationsStatusRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeInstanceAssociationsStatusRequest> request = new DefaultRequest<DescribeInstanceAssociationsStatusRequest>(
-                describeInstanceAssociationsStatusRequest, "AWSSimpleSystemsManagement");
-        request.addHeader("X-Amz-Target", "AmazonSSM.DescribeInstanceAssociationsStatus");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (describeInstanceAssociationsStatusRequest.getInstanceId() != null) {
-                jsonGenerator.writeFieldName("InstanceId").writeValue(describeInstanceAssociationsStatusRequest.getInstanceId());
-            }
-            if (describeInstanceAssociationsStatusRequest.getMaxResults() != null) {
-                jsonGenerator.writeFieldName("MaxResults").writeValue(describeInstanceAssociationsStatusRequest.getMaxResults());
-            }
-            if (describeInstanceAssociationsStatusRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("NextToken").writeValue(describeInstanceAssociationsStatusRequest.getNextToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(describeInstanceAssociationsStatusRequest.getInstanceId(), INSTANCEID_BINDING);
+            protocolMarshaller.marshall(describeInstanceAssociationsStatusRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(describeInstanceAssociationsStatusRequest.getNextToken(), NEXTTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

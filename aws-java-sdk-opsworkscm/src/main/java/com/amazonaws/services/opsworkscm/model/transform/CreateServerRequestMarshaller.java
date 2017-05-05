@@ -12,139 +12,93 @@
  */
 package com.amazonaws.services.opsworkscm.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.opsworkscm.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateServerRequest Marshaller
+ * CreateServerRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateServerRequestMarshaller implements Marshaller<Request<CreateServerRequest>, CreateServerRequest> {
+@SdkInternalApi
+public class CreateServerRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<Boolean> ASSOCIATEPUBLICIPADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssociatePublicIpAddress").build();
+    private static final MarshallingInfo<Boolean> DISABLEAUTOMATEDBACKUP_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisableAutomatedBackup").build();
+    private static final MarshallingInfo<String> ENGINE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Engine").build();
+    private static final MarshallingInfo<String> ENGINEMODEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EngineModel").build();
+    private static final MarshallingInfo<String> ENGINEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EngineVersion").build();
+    private static final MarshallingInfo<List> ENGINEATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EngineAttributes").build();
+    private static final MarshallingInfo<Integer> BACKUPRETENTIONCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BackupRetentionCount").build();
+    private static final MarshallingInfo<String> SERVERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServerName").build();
+    private static final MarshallingInfo<String> INSTANCEPROFILEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceProfileArn").build();
+    private static final MarshallingInfo<String> INSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceType").build();
+    private static final MarshallingInfo<String> KEYPAIR_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KeyPair").build();
+    private static final MarshallingInfo<String> PREFERREDMAINTENANCEWINDOW_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreferredMaintenanceWindow").build();
+    private static final MarshallingInfo<String> PREFERREDBACKUPWINDOW_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreferredBackupWindow").build();
+    private static final MarshallingInfo<List> SECURITYGROUPIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecurityGroupIds").build();
+    private static final MarshallingInfo<String> SERVICEROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServiceRoleArn").build();
+    private static final MarshallingInfo<List> SUBNETIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SubnetIds").build();
+    private static final MarshallingInfo<String> BACKUPID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("BackupId").build();
 
-    public CreateServerRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateServerRequestMarshaller instance = new CreateServerRequestMarshaller();
+
+    public static CreateServerRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateServerRequest> marshall(CreateServerRequest createServerRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateServerRequest createServerRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createServerRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateServerRequest> request = new DefaultRequest<CreateServerRequest>(createServerRequest, "AWSOpsWorksCM");
-        request.addHeader("X-Amz-Target", "OpsWorksCM_V2016_11_01.CreateServer");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createServerRequest.getDisableAutomatedBackup() != null) {
-                jsonGenerator.writeFieldName("DisableAutomatedBackup").writeValue(createServerRequest.getDisableAutomatedBackup());
-            }
-            if (createServerRequest.getEngine() != null) {
-                jsonGenerator.writeFieldName("Engine").writeValue(createServerRequest.getEngine());
-            }
-            if (createServerRequest.getEngineModel() != null) {
-                jsonGenerator.writeFieldName("EngineModel").writeValue(createServerRequest.getEngineModel());
-            }
-            if (createServerRequest.getEngineVersion() != null) {
-                jsonGenerator.writeFieldName("EngineVersion").writeValue(createServerRequest.getEngineVersion());
-            }
-
-            java.util.List<EngineAttribute> engineAttributesList = createServerRequest.getEngineAttributes();
-            if (engineAttributesList != null) {
-                jsonGenerator.writeFieldName("EngineAttributes");
-                jsonGenerator.writeStartArray();
-                for (EngineAttribute engineAttributesListValue : engineAttributesList) {
-                    if (engineAttributesListValue != null) {
-
-                        EngineAttributeJsonMarshaller.getInstance().marshall(engineAttributesListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (createServerRequest.getBackupRetentionCount() != null) {
-                jsonGenerator.writeFieldName("BackupRetentionCount").writeValue(createServerRequest.getBackupRetentionCount());
-            }
-            if (createServerRequest.getServerName() != null) {
-                jsonGenerator.writeFieldName("ServerName").writeValue(createServerRequest.getServerName());
-            }
-            if (createServerRequest.getInstanceProfileArn() != null) {
-                jsonGenerator.writeFieldName("InstanceProfileArn").writeValue(createServerRequest.getInstanceProfileArn());
-            }
-            if (createServerRequest.getInstanceType() != null) {
-                jsonGenerator.writeFieldName("InstanceType").writeValue(createServerRequest.getInstanceType());
-            }
-            if (createServerRequest.getKeyPair() != null) {
-                jsonGenerator.writeFieldName("KeyPair").writeValue(createServerRequest.getKeyPair());
-            }
-            if (createServerRequest.getPreferredMaintenanceWindow() != null) {
-                jsonGenerator.writeFieldName("PreferredMaintenanceWindow").writeValue(createServerRequest.getPreferredMaintenanceWindow());
-            }
-            if (createServerRequest.getPreferredBackupWindow() != null) {
-                jsonGenerator.writeFieldName("PreferredBackupWindow").writeValue(createServerRequest.getPreferredBackupWindow());
-            }
-
-            java.util.List<String> securityGroupIdsList = createServerRequest.getSecurityGroupIds();
-            if (securityGroupIdsList != null) {
-                jsonGenerator.writeFieldName("SecurityGroupIds");
-                jsonGenerator.writeStartArray();
-                for (String securityGroupIdsListValue : securityGroupIdsList) {
-                    if (securityGroupIdsListValue != null) {
-                        jsonGenerator.writeValue(securityGroupIdsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (createServerRequest.getServiceRoleArn() != null) {
-                jsonGenerator.writeFieldName("ServiceRoleArn").writeValue(createServerRequest.getServiceRoleArn());
-            }
-
-            java.util.List<String> subnetIdsList = createServerRequest.getSubnetIds();
-            if (subnetIdsList != null) {
-                jsonGenerator.writeFieldName("SubnetIds");
-                jsonGenerator.writeStartArray();
-                for (String subnetIdsListValue : subnetIdsList) {
-                    if (subnetIdsListValue != null) {
-                        jsonGenerator.writeValue(subnetIdsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (createServerRequest.getBackupId() != null) {
-                jsonGenerator.writeFieldName("BackupId").writeValue(createServerRequest.getBackupId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createServerRequest.getAssociatePublicIpAddress(), ASSOCIATEPUBLICIPADDRESS_BINDING);
+            protocolMarshaller.marshall(createServerRequest.getDisableAutomatedBackup(), DISABLEAUTOMATEDBACKUP_BINDING);
+            protocolMarshaller.marshall(createServerRequest.getEngine(), ENGINE_BINDING);
+            protocolMarshaller.marshall(createServerRequest.getEngineModel(), ENGINEMODEL_BINDING);
+            protocolMarshaller.marshall(createServerRequest.getEngineVersion(), ENGINEVERSION_BINDING);
+            protocolMarshaller.marshall(createServerRequest.getEngineAttributes(), ENGINEATTRIBUTES_BINDING);
+            protocolMarshaller.marshall(createServerRequest.getBackupRetentionCount(), BACKUPRETENTIONCOUNT_BINDING);
+            protocolMarshaller.marshall(createServerRequest.getServerName(), SERVERNAME_BINDING);
+            protocolMarshaller.marshall(createServerRequest.getInstanceProfileArn(), INSTANCEPROFILEARN_BINDING);
+            protocolMarshaller.marshall(createServerRequest.getInstanceType(), INSTANCETYPE_BINDING);
+            protocolMarshaller.marshall(createServerRequest.getKeyPair(), KEYPAIR_BINDING);
+            protocolMarshaller.marshall(createServerRequest.getPreferredMaintenanceWindow(), PREFERREDMAINTENANCEWINDOW_BINDING);
+            protocolMarshaller.marshall(createServerRequest.getPreferredBackupWindow(), PREFERREDBACKUPWINDOW_BINDING);
+            protocolMarshaller.marshall(createServerRequest.getSecurityGroupIds(), SECURITYGROUPIDS_BINDING);
+            protocolMarshaller.marshall(createServerRequest.getServiceRoleArn(), SERVICEROLEARN_BINDING);
+            protocolMarshaller.marshall(createServerRequest.getSubnetIds(), SUBNETIDS_BINDING);
+            protocolMarshaller.marshall(createServerRequest.getBackupId(), BACKUPID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

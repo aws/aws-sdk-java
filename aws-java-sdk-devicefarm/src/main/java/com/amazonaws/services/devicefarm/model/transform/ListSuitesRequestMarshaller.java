@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.devicefarm.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.devicefarm.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListSuitesRequest Marshaller
+ * ListSuitesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListSuitesRequestMarshaller implements Marshaller<Request<ListSuitesRequest>, ListSuitesRequest> {
+@SdkInternalApi
+public class ListSuitesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("arn").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("nextToken").build();
 
-    public ListSuitesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListSuitesRequestMarshaller instance = new ListSuitesRequestMarshaller();
+
+    public static ListSuitesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListSuitesRequest> marshall(ListSuitesRequest listSuitesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListSuitesRequest listSuitesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listSuitesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListSuitesRequest> request = new DefaultRequest<ListSuitesRequest>(listSuitesRequest, "AWSDeviceFarm");
-        request.addHeader("X-Amz-Target", "DeviceFarm_20150623.ListSuites");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (listSuitesRequest.getArn() != null) {
-                jsonGenerator.writeFieldName("arn").writeValue(listSuitesRequest.getArn());
-            }
-            if (listSuitesRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("nextToken").writeValue(listSuitesRequest.getNextToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listSuitesRequest.getArn(), ARN_BINDING);
+            protocolMarshaller.marshall(listSuitesRequest.getNextToken(), NEXTTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -41,6 +41,7 @@ import com.amazonaws.services.s3.model.ObjectListing;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
+import com.amazonaws.services.s3.model.ObjectTagging;
 import com.amazonaws.services.s3.transfer.Transfer.TransferState;
 import com.amazonaws.services.s3.transfer.exception.FileLockException;
 import com.amazonaws.services.s3.transfer.internal.CopyCallable;
@@ -65,6 +66,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Date;
@@ -320,6 +322,16 @@ public class TransferManager {
         this.configuration = params.getConfiguration();
         this.shutDownThreadPools = params.getShutDownThreadPools();
         this.isImmutable = true;
+    }
+
+
+    /**
+     * Constructor for use by classes that need to extend the TransferManager.
+     *
+     * @param builder - transfer manager builder with the required configuration
+     */
+    protected TransferManager(TransferManagerBuilder builder) {
+        this(builder.getParams());
     }
 
     /**
@@ -1086,6 +1098,9 @@ public class TransferManager {
                 throw new AmazonClientException("The requested object in bucket " + getObjectRequest.getBucketName()
                         + " with key " + getObjectRequest.getKey() + " is modified on Amazon S3 since the last pause.");
             }
+            // There's still a chance the object is modified while the request
+            // is in flight. Set this header so S3 fails the request if this happens.
+            getObjectRequest.setUnmodifiedSinceConstraint(new Date(lastModifiedTime));
 
             if (!isDownloadParallel) {
                 if (!FileLocks.lock(file)) {
@@ -1135,6 +1150,16 @@ public class TransferManager {
     public MultipleFileDownload downloadDirectory(String bucketName, String keyPrefix, File destinationDirectory) {
         return downloadDirectory(bucketName, keyPrefix, destinationDirectory, false);
     }
+
+    public MultipleFileDownload downloadDirectory(String bucketName, String keyPrefix, File destinationDirectory, KeyFilter filter) {
+        return downloadDirectory(bucketName, keyPrefix, destinationDirectory, false, filter);
+    }
+
+    public MultipleFileDownload downloadDirectory(String bucketName, String keyPrefix, File destinationDirectory,
+                                                  boolean resumeOnRetry) {
+        return downloadDirectory(bucketName, keyPrefix, destinationDirectory, resumeOnRetry, null);
+    }
+
     /**
      * Downloads all objects in the virtual directory designated by the
      * keyPrefix given to the destination directory given. All virtual
@@ -1161,11 +1186,17 @@ public class TransferManager {
      *            If set to true, upon an immediate retry of a failed object
      *            download, the <code>TransferManager</code> will resume the
      *            download from the current end of the file on disk.
+     * @param filter
+     *           If set, applies the filter to determine which keys to include
+     *           in the download request. (default is include all).
      */
     public MultipleFileDownload downloadDirectory(String bucketName, String keyPrefix, File destinationDirectory,
-            boolean resumeOnRetry) {
+                                                  boolean resumeOnRetry, KeyFilter filter) {
         if ( keyPrefix == null )
             keyPrefix = "";
+        if ( filter == null ) {
+            filter = KeyFilter.INCLUDE_ALL;
+        }
         List<S3ObjectSummary> objectSummaries = new LinkedList<S3ObjectSummary>();
         Stack<String> commonPrefixes = new Stack<String>();
         commonPrefixes.add(keyPrefix);
@@ -1189,6 +1220,17 @@ public class TransferManager {
                     // Skip any files that are also virtual directories, since
                     // we can't save both a directory and a file of the same
                     // name.
+
+                    if ( !filter.shouldInclude(s) ) {
+                        log.debug("Skipping " + s.getKey() + " as it does not match filter.");
+                        continue;
+                    }
+
+                    if ( leavesRoot(destinationDirectory, s.getKey()) ) {
+                        throw new RuntimeException("Cannot download key " + s.getKey() +
+                            ", its relative path resolves outside the parent directory.");
+                    }
+
                     if ( !s.getKey().equals(prefix)
                             && !listObjectsResponse.getCommonPrefixes().contains(s.getKey() + DEFAULT_DELIMITER) ) {
                         objectSummaries.add(s);
@@ -1231,6 +1273,7 @@ public class TransferManager {
             // TODO: non-standard delimiters
             File f = new File(destinationDirectory, summary.getKey());
             File parentFile = f.getParentFile();
+
             if ( !parentFile.exists() && !parentFile.mkdirs() ) {
                 throw new RuntimeException("Couldn't create parent directories for " + f.getAbsolutePath());
             }
@@ -1257,6 +1300,14 @@ public class TransferManager {
         // to wake up and continue.
         latch.countDown();
         return multipleFileDownload;
+    }
+
+    private boolean leavesRoot(File localBaseDirectory, String key) {
+        try {
+            return !new File(localBaseDirectory, key).getCanonicalPath().startsWith(localBaseDirectory.getCanonicalPath());
+        } catch (IOException e) {
+            throw new RuntimeException("Unable to canonicalize paths",  e);
+        }
     }
 
     /**
@@ -1321,10 +1372,50 @@ public class TransferManager {
      *            files found in subdirectories will be included with an
      *            appropriate concatenation to the key prefix.
      * @param metadataProvider
-     * 			  A callback of type <code>ObjectMetadataProvider</code> which
+     *            A callback of type <code>ObjectMetadataProvider</code> which
      *            is used to provide metadata for each file being uploaded.
      */
     public MultipleFileUpload uploadDirectory(String bucketName, String virtualDirectoryKeyPrefix, File directory, boolean includeSubdirectories, ObjectMetadataProvider metadataProvider) {
+        return uploadDirectory( bucketName,  virtualDirectoryKeyPrefix,  directory,  includeSubdirectories, metadataProvider, null);
+    }
+
+
+    /**
+     * Uploads all files in the directory given to the bucket named, optionally
+     * recursing for all subdirectories.
+     * <p>
+     * S3 will overwrite any existing objects that happen to have the same key,
+     * just as when uploading individual files, so use with caution.
+     * </p>
+     * <p>
+     * If you are uploading <a href="http://aws.amazon.com/kms/">AWS
+     * KMS</a>-encrypted objects, you need to specify the correct region of the
+     * bucket on your client and configure AWS Signature Version 4 for added
+     * security. For more information on how to do this, see
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#
+     * specify-signature-version
+     * </p>
+     * @param bucketName
+     *            The name of the bucket to upload objects to.
+     * @param virtualDirectoryKeyPrefix
+     *            The key prefix of the virtual directory to upload to. Use the
+     *            null or empty string to upload files to the root of the
+     *            bucket.
+     * @param directory
+     *            The directory to upload.
+     * @param includeSubdirectories
+     *            Whether to include subdirectories in the upload. If true,
+     *            files found in subdirectories will be included with an
+     *            appropriate concatenation to the key prefix.
+     * @param metadataProvider
+     *            A callback of type <code>ObjectMetadataProvider</code> which
+     *            is used to provide metadata for each file being uploaded.
+     * @param taggingProvider
+     *            A callback of type <code>ObjectTaggingProvider</code> which
+     *            is used to provide the tags for each file being uploaded.
+     * @return
+     */
+    public MultipleFileUpload uploadDirectory(String bucketName, String virtualDirectoryKeyPrefix, File directory, boolean includeSubdirectories, ObjectMetadataProvider metadataProvider, ObjectTaggingProvider taggingProvider) {
         if ( directory == null || !directory.exists() || !directory.isDirectory() ) {
             throw new IllegalArgumentException("Must provide a directory to upload");
         }
@@ -1332,7 +1423,7 @@ public class TransferManager {
         List<File> files = new LinkedList<File>();
         listFiles(directory, files, includeSubdirectories);
 
-        return uploadFileList(bucketName, virtualDirectoryKeyPrefix, directory, files, metadataProvider);
+        return uploadFileList(bucketName, virtualDirectoryKeyPrefix, directory, files, metadataProvider, taggingProvider);
     }
 
     /**
@@ -1405,6 +1496,48 @@ public class TransferManager {
      *            is used to provide metadata for each file being uploaded.
      */
     public MultipleFileUpload uploadFileList(String bucketName, String virtualDirectoryKeyPrefix, File directory, List<File> files,ObjectMetadataProvider metadataProvider) {
+        return uploadFileList(bucketName, virtualDirectoryKeyPrefix, directory, files, metadataProvider,null);
+    }
+
+    /**
+     * Uploads all specified files to the bucket named, constructing
+     * relative keys depending on the commonParentDirectory given.
+     * <p>
+     * S3 will overwrite any existing objects that happen to have the same key,
+     * just as when uploading individual files, so use with caution.
+     * </p>
+     * <p>
+     * If you are uploading <a href="http://aws.amazon.com/kms/">AWS
+     * KMS</a>-encrypted objects, you need to specify the correct region of the
+     * bucket on your client and configure AWS Signature Version 4 for added
+     * security. For more information on how to do this, see
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#
+     * specify-signature-version
+     * </p>
+     *
+     * @param bucketName
+     *            The name of the bucket to upload objects to.
+     * @param virtualDirectoryKeyPrefix
+     *            The key prefix of the virtual directory to upload to. Use the
+     *            null or empty string to upload files to the root of the
+     *            bucket.
+     * @param directory
+     *            The common parent directory of files to upload. The keys
+     *            of the files in the list of files are constructed relative to
+     *            this directory and the virtualDirectoryKeyPrefix.
+     * @param files
+     *            A list of files to upload. The keys of the files are
+     *            calculated relative to the common parent directory and the
+     *            virtualDirectoryKeyPrefix.
+     * @param metadataProvider
+     * 			  A callback of type <code>ObjectMetadataProvider</code> which
+     *            is used to provide metadata for each file being uploaded.
+     * @param taggingProvider
+     *             A callback of type <code>ObjectTaggingProvider</code> which
+     *            is used to provide the tags for each file being uploaded.
+     * @return
+     */
+    public MultipleFileUpload uploadFileList(String bucketName, String virtualDirectoryKeyPrefix, File directory, List<File> files, ObjectMetadataProvider metadataProvider, ObjectTaggingProvider taggingProvider) {
 
         if ( directory == null || !directory.exists() || !directory.isDirectory() ) {
             throw new IllegalArgumentException("Must provide a common base directory for uploaded files");
@@ -1432,7 +1565,7 @@ public class TransferManager {
         multipleFileUpload.setMonitor(new MultipleFileTransferMonitor(multipleFileUpload, uploads));
         final CountDownLatch latch = new CountDownLatch(1);
         MultipleFileTransferStateChangeListener transferListener =
-            new MultipleFileTransferStateChangeListener(latch, multipleFileUpload);
+                new MultipleFileTransferStateChangeListener(latch, multipleFileUpload);
         if (files == null || files.isEmpty()) {
             multipleFileUpload.setState(TransferState.Completed);
         } else {
@@ -1457,13 +1590,21 @@ public class TransferManager {
                             .substring(startingPosition)
                             .replaceAll("\\\\", "/");
 
+                    UploadContext uploadContext = new UploadContext(f, bucketName, key);
                     ObjectMetadata metadata = new ObjectMetadata();
+                    ObjectTagging objectTagging = null;
 
                     // Invoke the callback if it's present.
                     // The callback allows the user to customize the metadata
                     // for each file being uploaded.
                     if (metadataProvider != null) {
                         metadataProvider.provideObjectMetadata(f, metadata);
+                    }
+                    // Invoke the callback if it's present.
+                    // The callback allows the user to customize the tags
+                    // for each file being uploaded.
+                    if (taggingProvider != null) {
+                        objectTagging = taggingProvider.provideObjectTags(uploadContext);
                     }
 
                     // All the single-file uploads share the same
@@ -1473,6 +1614,7 @@ public class TransferManager {
                             new PutObjectRequest(bucketName,
                                     virtualDirectoryKeyPrefix + key, f)
                                     .withMetadata(metadata)
+                                    .withTagging(objectTagging)
                                     .<PutObjectRequest> withGeneralProgressListener(
                                             listener), transferListener, null, null));
                 }
@@ -1578,9 +1720,7 @@ public class TransferManager {
         }
 
         if (shutDownS3Client) {
-            if (s3 instanceof AmazonS3Client) {
-                ((AmazonS3Client)s3).shutdown();
-            }
+            s3.shutdown();
         }
     }
 
@@ -1645,6 +1785,11 @@ public class TransferManager {
      * Otherwise, the copy is scheduled and started as soon as resources become
      * available.
      * </p>
+     * <p>
+     * <b>Note:</b> If the {@link TransferManager} is created with a regional S3 client and
+     * the source & destination buckets are in different regions, use the
+     * {@link #copy(CopyObjectRequest, AmazonS3, TransferStateChangeListener)} method.
+     * </p>
      *
      * @param sourceBucketName
      *            The name of the bucket from where the object is to be copied.
@@ -1665,6 +1810,8 @@ public class TransferManager {
      * @throws AmazonServiceException
      *            If any errors occurred in Amazon S3 while processing the
      *            request.
+     *
+     * @see TransferManager#copy(CopyObjectRequest, AmazonS3, TransferStateChangeListener)
      */
 
     public Copy copy(String sourceBucketName, String sourceKey,
@@ -1693,6 +1840,11 @@ public class TransferManager {
      * Otherwise, the copy is scheduled and started as soon as resources become
      * available.
      * </p>
+     * <p>
+     * <b>Note:</b> If the {@link TransferManager} is created with a regional S3 client and
+     * the source & destination buckets are in different regions, use the
+     * {@link #copy(CopyObjectRequest, AmazonS3, TransferStateChangeListener)} method.
+     * </p>
      *
      * @param copyObjectRequest
      *            The request containing all the parameters for the copy.
@@ -1706,6 +1858,8 @@ public class TransferManager {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
+     *
+     * @see TransferManager#copy(CopyObjectRequest, AmazonS3, TransferStateChangeListener)
      */
     public Copy copy(final CopyObjectRequest copyObjectRequest){
         return copy(copyObjectRequest,null);
@@ -1730,6 +1884,11 @@ public class TransferManager {
      * Otherwise, the copy is scheduled and started as soon as resources become
      * available.
      * </p>
+     * <p>
+     * <b>Note:</b> If the {@link TransferManager} is created with a regional S3 client and
+     * the source & destination buckets are in different regions, use the
+     * {@link #copy(CopyObjectRequest, AmazonS3, TransferStateChangeListener)} method.
+     * </p>
      *
      * @param copyObjectRequest
      *            The request containing all the parameters for the copy.
@@ -1744,6 +1903,8 @@ public class TransferManager {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
+     *
+     * @see TransferManager#copy(CopyObjectRequest, AmazonS3, TransferStateChangeListener)
      */
     public Copy copy(final CopyObjectRequest copyObjectRequest,
                      final TransferStateChangeListener stateChangeListener) throws
@@ -1757,6 +1918,10 @@ public class TransferManager {
      * Schedules a new transfer to copy data from one Amazon S3 location to
      * another Amazon S3 location. This method is non-blocking and returns
      * immediately (i.e. before the copy has finished).
+     * </p>
+     * <p>
+     * Note: You need to use this method if the {@link TransferManager} is created with
+     * a regional S3 client and the source & destination buckets are in different regions.
      * </p>
      * <p>
      * <code>TransferManager</code> doesn't support copying of encrypted objects
@@ -1809,7 +1974,8 @@ public class TransferManager {
         GetObjectMetadataRequest getObjectMetadataRequest = new GetObjectMetadataRequest(
                 copyObjectRequest.getSourceBucketName(), copyObjectRequest.getSourceKey())
                 .withSSECustomerKey(copyObjectRequest.getSourceSSECustomerKey())
-                .withRequesterPays(copyObjectRequest.isRequesterPays());
+                .withRequesterPays(copyObjectRequest.isRequesterPays())
+                .withVersionId(copyObjectRequest.getSourceVersionId());
 
         ObjectMetadata metadata = srcS3.getObjectMetadata(getObjectMetadataRequest);
 

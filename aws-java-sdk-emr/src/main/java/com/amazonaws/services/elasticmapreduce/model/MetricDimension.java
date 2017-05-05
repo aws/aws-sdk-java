@@ -14,21 +14,22 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
  * A CloudWatch dimension, which is specified using a <code>Key</code> (known as a <code>Name</code> in CloudWatch),
- * Value pair. By default, Amazon EMR uses one dimension whose <code>Key</code> is <code>JobFlowID</code> and
- * <code>Value</code> is a variable representing the cluster ID, which is <code>${emr:cluster_id}</code>. This enables
- * the rule to bootstrap when the cluster ID becomes available, and also enables a single automatic scaling policy to be
- * reused for multiple clusters and instance groups.
+ * <code>Value</code> pair. By default, Amazon EMR uses one dimension whose <code>Key</code> is <code>JobFlowID</code>
+ * and <code>Value</code> is a variable representing the cluster ID, which is <code>${emr.clusterId}</code>. This
+ * enables the rule to bootstrap when the cluster ID becomes available.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/MetricDimension" target="_top">AWS
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MetricDimension implements Serializable, Cloneable {
+public class MetricDimension implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -180,5 +181,11 @@ public class MetricDimension implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.elasticmapreduce.model.transform.MetricDimensionMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

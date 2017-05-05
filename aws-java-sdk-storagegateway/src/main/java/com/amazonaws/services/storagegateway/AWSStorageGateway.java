@@ -169,8 +169,8 @@ public interface AWSStorageGateway {
      * <p>
      * Activates the gateway you previously deployed on your host. For more information, see <a
      * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedActivateGateway-common.html">
-     * Activate the AWS Storage Gateway</a>. In the activation process, you specify information such as the you want to
-     * use for storing snapshots, the time zone for scheduled snapshots the gateway snapshot schedule window, an
+     * Activate the AWS Storage Gateway</a>. In the activation process, you specify information such as the region you
+     * want to use for storing snapshots, the time zone for scheduled snapshots the gateway snapshot schedule window, an
      * activation key, and a name for your gateway. The activation process also associates your gateway with your
      * account; for more information, see <a>UpdateGatewayInformation</a>.
      * </p>
@@ -233,8 +233,8 @@ public interface AWSStorageGateway {
 
     /**
      * <p>
-     * Configures one or more gateway local disks as cache for a cached-volume gateway. This operation is supported only
-     * for the gateway-cached volume architecture (see <a
+     * Configures one or more gateway local disks as cache for a cached volumes gateway. This operation is only
+     * supported in the cached volumes gateway architecture (see <a
      * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">Storage Gateway
      * Concepts</a>).
      * </p>
@@ -308,7 +308,7 @@ public interface AWSStorageGateway {
     /**
      * <p>
      * Configures one or more gateway local disks as upload buffer for a specified gateway. This operation is supported
-     * for both the gateway-stored and gateway-cached volume architectures.
+     * for both the stored volumes and cached volumes gateway architectures.
      * </p>
      * <p>
      * In the request, you specify the gateway Amazon Resource Name (ARN) to which you want to add upload buffer, and
@@ -331,8 +331,8 @@ public interface AWSStorageGateway {
 
     /**
      * <p>
-     * Configures one or more gateway local disks as working storage for a gateway. This operation is supported only for
-     * the gateway-stored volume architecture. This operation is deprecated in cached-volumes API version 20120630. Use
+     * Configures one or more gateway local disks as working storage for a gateway. This operation is only supported in
+     * the stored volume gateway architecture. This operation is deprecated in cached-volumes API version 20120630. Use
      * <a>AddUploadBuffer</a> instead.
      * </p>
      * <note>
@@ -370,6 +370,7 @@ public interface AWSStorageGateway {
     /**
      * <p>
      * Cancels archiving of a virtual tape to the virtual tape shelf (VTS) after the archiving process is initiated.
+     * This operation is only supported in tape gateways.
      * </p>
      * 
      * @param cancelArchivalRequest
@@ -410,8 +411,8 @@ public interface AWSStorageGateway {
 
     /**
      * <p>
-     * Creates a cached volume on a specified cached gateway. This operation is supported only for the gateway-cached
-     * volume architecture.
+     * Creates a cached volume on a specified cached volumes gateway. This operation is only supported in the cached
+     * volumes gateway architecture.
      * </p>
      * <note>
      * <p>
@@ -449,7 +450,7 @@ public interface AWSStorageGateway {
      * <p>
      * Creates a file share on an existing file gateway. In Storage Gateway, a file share is a file system mount point
      * backed by Amazon S3 cloud storage. Storage Gateway exposes file shares using a Network File System (NFS)
-     * interface.
+     * interface. This operation is only supported in file gateways.
      * </p>
      * 
      * @param createNFSFileShareRequest
@@ -484,7 +485,7 @@ public interface AWSStorageGateway {
      * provide description for the snapshot. When AWS Storage Gateway takes the snapshot of specified volume, the
      * snapshot and description appears in the AWS Storage Gateway Console. In response, AWS Storage Gateway returns you
      * a snapshot ID. You can use this snapshot ID to check the snapshot progress or later use it when you want to
-     * create a volume from a snapshot.
+     * create a volume from a snapshot. This operation is only supported in stored and cached volumes gateways.
      * </p>
      * <note>
      * <p>
@@ -530,12 +531,12 @@ public interface AWSStorageGateway {
 
     /**
      * <p>
-     * Initiates a snapshot of a gateway from a volume recovery point. This operation is supported only for the
-     * gateway-cached volume architecture.
+     * Initiates a snapshot of a gateway from a volume recovery point. This operation is only supported in the cached
+     * volumes gateway architecture.
      * </p>
      * <p>
      * A volume recovery point is a point in time at which all data of the volume is consistent and from which you can
-     * create a snapshot. To get a list of volume recovery point for gateway-cached volumes, use
+     * create a snapshot. To get a list of volume recovery point for cached volumes gateway, use
      * <a>ListVolumeRecoveryPoints</a>.
      * </p>
      * <p>
@@ -573,7 +574,7 @@ public interface AWSStorageGateway {
 
     /**
      * <p>
-     * Creates a volume on a specified gateway. This operation is supported only for the gateway-stored volume
+     * Creates a volume on a specified gateway. This operation is only supported in the stored volumes gateway
      * architecture.
      * </p>
      * <p>
@@ -631,6 +632,7 @@ public interface AWSStorageGateway {
     /**
      * <p>
      * Creates a virtual tape by using your own barcode. You write data to the virtual tape and then archive the tape.
+     * This operation is only supported in tape gateways.
      * </p>
      * <note>
      * <p>
@@ -656,7 +658,8 @@ public interface AWSStorageGateway {
 
     /**
      * <p>
-     * Creates one or more virtual tapes. You write data to the virtual tapes and then archive the tapes.
+     * Creates one or more virtual tapes. You write data to the virtual tapes and then archive the tapes. This operation
+     * is only supported in tape gateways.
      * </p>
      * <note>
      * <p>
@@ -742,7 +745,7 @@ public interface AWSStorageGateway {
 
     /**
      * <p>
-     * Deletes a file share from a file gateway.
+     * Deletes a file share from a file gateway. This operation is only supported in file gateways.
      * </p>
      * 
      * @param deleteFileShareRequest
@@ -830,7 +833,7 @@ public interface AWSStorageGateway {
 
     /**
      * <p>
-     * Deletes the specified virtual tape.
+     * Deletes the specified virtual tape. This operation is only supported in tape gateways.
      * </p>
      * 
      * @param deleteTapeRequest
@@ -850,7 +853,8 @@ public interface AWSStorageGateway {
 
     /**
      * <p>
-     * Deletes the specified virtual tape from the virtual tape shelf (VTS).
+     * Deletes the specified virtual tape from the virtual tape shelf (VTS). This operation is only supported in tape
+     * gateways.
      * </p>
      * 
      * @param deleteTapeArchiveRequest
@@ -871,8 +875,8 @@ public interface AWSStorageGateway {
     /**
      * <p>
      * Deletes the specified gateway volume that you previously created using the <a>CreateCachediSCSIVolume</a> or
-     * <a>CreateStorediSCSIVolume</a> API. For gateway-stored volumes, the local disk that was configured as the storage
-     * volume is not deleted. You can reuse the local disk to create another storage volume.
+     * <a>CreateStorediSCSIVolume</a> API. For stored volumes gateways, the local disk that was configured as the
+     * storage volume is not deleted. You can reuse the local disk to create another storage volume.
      * </p>
      * <p>
      * Before you delete a gateway volume, make sure there are no iSCSI connections to the volume you are deleting. You
@@ -928,7 +932,7 @@ public interface AWSStorageGateway {
 
     /**
      * <p>
-     * Returns information about the cache of a gateway. This operation is supported only for the gateway-cached volume
+     * Returns information about the cache of a gateway. This operation is only supported in the cached volumes gateway
      * architecture.
      * </p>
      * <p>
@@ -952,8 +956,8 @@ public interface AWSStorageGateway {
 
     /**
      * <p>
-     * Returns a description of the gateway volumes specified in the request. This operation is supported only for the
-     * gateway-cached volume architecture.
+     * Returns a description of the gateway volumes specified in the request. This operation is only supported in the
+     * cached volumes gateway architecture.
      * </p>
      * <p>
      * The list of gateway volumes in the request must be from one gateway. In the response Amazon Storage Gateway
@@ -1040,7 +1044,8 @@ public interface AWSStorageGateway {
 
     /**
      * <p>
-     * Gets a description for one or more file shares from a file gateway.
+     * Gets a description for one or more file shares from a file gateway. This operation is only supported in file
+     * gateways.
      * </p>
      * 
      * @param describeNFSFileSharesRequest
@@ -1083,7 +1088,7 @@ public interface AWSStorageGateway {
      * <p>
      * Returns the description of the gateway volumes specified in the request. The list of gateway volumes in the
      * request must be from one gateway. In the response Amazon Storage Gateway returns volume information sorted by
-     * volume ARNs.
+     * volume ARNs. This operation is only supported in stored volumes gateways.
      * </p>
      * 
      * @param describeStorediSCSIVolumesRequest
@@ -1107,7 +1112,7 @@ public interface AWSStorageGateway {
      * </p>
      * <p>
      * If a specific <code>TapeARN</code> is not specified, AWS Storage Gateway returns a description of all virtual
-     * tapes found in the VTS associated with your account.
+     * tapes found in the VTS associated with your account. This operation is only supported in tape gateways.
      * </p>
      * 
      * @param describeTapeArchivesRequest
@@ -1134,11 +1139,12 @@ public interface AWSStorageGateway {
 
     /**
      * <p>
-     * Returns a list of virtual tape recovery points that are available for the specified gateway-VTL.
+     * Returns a list of virtual tape recovery points that are available for the specified tape gateway.
      * </p>
      * <p>
      * A recovery point is a point-in-time view of a virtual tape at which all the data on the virtual tape is
      * consistent. If your gateway crashes, virtual tapes that have recovery points can be recovered to a new gateway.
+     * This operation is only supported in tape gateways.
      * </p>
      * 
      * @param describeTapeRecoveryPointsRequest
@@ -1159,7 +1165,8 @@ public interface AWSStorageGateway {
     /**
      * <p>
      * Returns a description of the specified Amazon Resource Name (ARN) of virtual tapes. If a <code>TapeARN</code> is
-     * not specified, returns a description of all virtual tapes associated with the specified gateway.
+     * not specified, returns a description of all virtual tapes associated with the specified gateway. This operation
+     * is only supported in tape gateways.
      * </p>
      * 
      * @param describeTapesRequest
@@ -1179,8 +1186,8 @@ public interface AWSStorageGateway {
 
     /**
      * <p>
-     * Returns information about the upload buffer of a gateway. This operation is supported for both the gateway-stored
-     * and gateway-cached volume architectures.
+     * Returns information about the upload buffer of a gateway. This operation is supported for both the stored volume
+     * and cached volumes gateway architectures.
      * </p>
      * <p>
      * The response includes disk IDs that are configured as upload buffer space, and it includes the amount of upload
@@ -1203,11 +1210,11 @@ public interface AWSStorageGateway {
 
     /**
      * <p>
-     * Returns a description of virtual tape library (VTL) devices for the specified gateway. In the response, AWS
+     * Returns a description of virtual tape library (VTL) devices for the specified tape gateway. In the response, AWS
      * Storage Gateway returns VTL device information.
      * </p>
      * <p>
-     * The list of VTL devices must be from one gateway.
+     * This operation is only supported in tape gateways.
      * </p>
      * 
      * @param describeVTLDevicesRequest
@@ -1227,8 +1234,8 @@ public interface AWSStorageGateway {
 
     /**
      * <p>
-     * Returns information about the working storage of a gateway. This operation is supported only for the
-     * gateway-stored volume architecture. This operation is deprecated in cached-volumes API version (20120630). Use
+     * Returns information about the working storage of a gateway. This operation is only supported in the stored
+     * volumes gateway architecture. This operation is deprecated in cached-volumes API version (20120630). Use
      * DescribeUploadBuffer instead.
      * </p>
      * <note>
@@ -1263,7 +1270,7 @@ public interface AWSStorageGateway {
      * disable the gateway so you can recover virtual tapes.
      * </p>
      * <p>
-     * Use this operation for a gateway-VTL that is not reachable or not functioning.
+     * Use this operation for a tape gateway that is not reachable or not functioning.
      * </p>
      * <important>
      * <p>
@@ -1289,7 +1296,7 @@ public interface AWSStorageGateway {
     /**
      * <p>
      * Gets a list of the file shares for a specific file gateway, or the list of file shares that belong to the calling
-     * user account.
+     * user account. This operation is only supported in file gateways.
      * </p>
      * 
      * @param listFileSharesRequest
@@ -1419,7 +1426,8 @@ public interface AWSStorageGateway {
      * This operation supports pagination. By default, the operation returns a maximum of up to 100 tapes. You can
      * optionally specify the <code>Limit</code> parameter in the body to limit the number of tapes in the response. If
      * the number of tapes returned in the response is truncated, the response includes a <code>Marker</code> element
-     * that you can use in your subsequent request to retrieve the next set of tapes.
+     * that you can use in your subsequent request to retrieve the next set of tapes. This operation is only supported
+     * in tape gateways.
      * </p>
      * 
      * @param listTapesRequest
@@ -1476,13 +1484,13 @@ public interface AWSStorageGateway {
 
     /**
      * <p>
-     * Lists the recovery points for a specified gateway. This operation is supported only for the gateway-cached volume
+     * Lists the recovery points for a specified gateway. This operation is only supported in the cached volumes gateway
      * architecture.
      * </p>
      * <p>
-     * Each gateway-cached volume has one recovery point. A volume recovery point is a point in time at which all data
-     * of the volume is consistent and from which you can create a snapshot. To create a snapshot from a volume recovery
-     * point use the <a>CreateSnapshotFromVolumeRecoveryPoint</a> operation.
+     * Each cache volume has one recovery point. A volume recovery point is a point in time at which all data of the
+     * volume is consistent and from which you can create a snapshot or clone a new cached volume from a source volume.
+     * To create a snapshot from a volume recovery point use the <a>CreateSnapshotFromVolumeRecoveryPoint</a> operation.
      * </p>
      * 
      * @param listVolumeRecoveryPointsRequest
@@ -1537,6 +1545,26 @@ public interface AWSStorageGateway {
      *      Documentation</a>
      */
     ListVolumesResult listVolumes(ListVolumesRequest listVolumesRequest);
+
+    /**
+     * <p>
+     * Refreshes the cache for the specified file share. This operation finds objects in the Amazon S3 bucket that were
+     * added or removed since the gateway last listed the bucket's contents and cached the results.
+     * </p>
+     * 
+     * @param refreshCacheRequest
+     * @return Result of the RefreshCache operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.RefreshCache
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RefreshCache" target="_top">AWS
+     *      API Documentation</a>
+     */
+    RefreshCacheResult refreshCache(RefreshCacheRequest refreshCacheRequest);
 
     /**
      * <p>
@@ -1596,7 +1624,7 @@ public interface AWSStorageGateway {
 
     /**
      * <p>
-     * Retrieves an archived virtual tape from the virtual tape shelf (VTS) to a gateway-VTL. Virtual tapes archived in
+     * Retrieves an archived virtual tape from the virtual tape shelf (VTS) to a tape gateway. Virtual tapes archived in
      * the VTS are not associated with any gateway. However after a tape is retrieved, it is associated with a gateway,
      * even though it is also listed in the VTS.
      * </p>
@@ -1631,7 +1659,7 @@ public interface AWSStorageGateway {
      * <note>
      * <p>
      * The virtual tape can be retrieved to only one gateway. The retrieved tape is read-only. The virtual tape can be
-     * retrieved to only a gateway-VTL. There is no charge for retrieving recovery points.
+     * retrieved to only a tape gateway. There is no charge for retrieving recovery points.
      * </p>
      * </note>
      * 
@@ -1940,7 +1968,7 @@ public interface AWSStorageGateway {
 
     /**
      * <p>
-     * Updates a file share.
+     * Updates a file share. This operation is only supported in file gateways.
      * </p>
      * <note>
      * <p>
@@ -2014,9 +2042,9 @@ public interface AWSStorageGateway {
 
     /**
      * <p>
-     * Updates the type of medium changer in a gateway-VTL. When you activate a gateway-VTL, you select a medium changer
-     * type for the gateway-VTL. This operation enables you to select a different type of medium changer after a
-     * gateway-VTL is activated.
+     * Updates the type of medium changer in a tape gateway. When you activate a tape gateway, you select a medium
+     * changer type for the tape gateway. This operation enables you to select a different type of medium changer after
+     * a tape gateway is activated. This operation is only supported in tape gateways.
      * </p>
      * 
      * @param updateVTLDeviceTypeRequest

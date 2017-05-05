@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.ecs.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.ecs.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteClusterRequest Marshaller
+ * DeleteClusterRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteClusterRequestMarshaller implements Marshaller<Request<DeleteClusterRequest>, DeleteClusterRequest> {
+@SdkInternalApi
+public class DeleteClusterRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CLUSTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("cluster").build();
 
-    public DeleteClusterRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteClusterRequestMarshaller instance = new DeleteClusterRequestMarshaller();
+
+    public static DeleteClusterRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteClusterRequest> marshall(DeleteClusterRequest deleteClusterRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteClusterRequest deleteClusterRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteClusterRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteClusterRequest> request = new DefaultRequest<DeleteClusterRequest>(deleteClusterRequest, "AmazonECS");
-        request.addHeader("X-Amz-Target", "AmazonEC2ContainerServiceV20141113.DeleteCluster");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteClusterRequest.getCluster() != null) {
-                jsonGenerator.writeFieldName("cluster").writeValue(deleteClusterRequest.getCluster());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteClusterRequest.getCluster(), CLUSTER_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

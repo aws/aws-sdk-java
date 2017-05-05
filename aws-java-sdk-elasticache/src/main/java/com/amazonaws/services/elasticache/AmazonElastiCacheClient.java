@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -236,6 +237,10 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
         init();
     }
 
+    public static AmazonElastiCacheClientBuilder builder() {
+        return AmazonElastiCacheClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon ElastiCache using the specified parameters.
      *
@@ -268,6 +273,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
         exceptionUnmarshallers.add(new CacheParameterGroupQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ReservedCacheNodesOfferingNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CacheParameterGroupAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TestFailoverNotAvailableExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NodeQuotaForCustomerExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CacheParameterGroupNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TagNotFoundExceptionUnmarshaller());
@@ -277,8 +283,10 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
         exceptionUnmarshallers.add(new InvalidVPCNetworkStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CacheSubnetQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SnapshotFeatureNotSupportedExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new NodeGroupNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidSnapshotStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CacheSubnetGroupAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new APICallRateForCustomerExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CacheSubnetGroupQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ReplicationGroupAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InsufficientCacheClusterCapacityExceptionUnmarshaller());
@@ -310,7 +318,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Adds up to 10 cost allocation tags to the named resource. A cost allocation tag is a key-value pair where the key
+     * Adds up to 50 cost allocation tags to the named resource. A cost allocation tag is a key-value pair where the key
      * and value are case-sensitive. You can use cost allocation tags to categorize and track your AWS costs.
      * </p>
      * <p>
@@ -331,7 +339,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *         The requested snapshot name does not refer to an existing snapshot.
      * @throws TagQuotaPerResourceExceededException
      *         The request cannot be processed because it would cause the resource to have more than the allowed number
-     *         of tags. The maximum number of tags permitted on a resource is 10.
+     *         of tags. The maximum number of tags permitted on a resource is 50.
      * @throws InvalidARNException
      *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
      * @sample AmazonElastiCache.AddTagsToResource
@@ -339,7 +347,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public AddTagsToResourceResult addTagsToResource(AddTagsToResourceRequest addTagsToResourceRequest) {
+    public AddTagsToResourceResult addTagsToResource(AddTagsToResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddTagsToResource(request);
+    }
+
+    @SdkInternalApi
+    final AddTagsToResourceResult executeAddTagsToResource(AddTagsToResourceRequest addTagsToResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addTagsToResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -399,7 +413,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CacheSecurityGroup authorizeCacheSecurityGroupIngress(AuthorizeCacheSecurityGroupIngressRequest authorizeCacheSecurityGroupIngressRequest) {
+    public CacheSecurityGroup authorizeCacheSecurityGroupIngress(AuthorizeCacheSecurityGroupIngressRequest request) {
+        request = beforeClientExecution(request);
+        return executeAuthorizeCacheSecurityGroupIngress(request);
+    }
+
+    @SdkInternalApi
+    final CacheSecurityGroup executeAuthorizeCacheSecurityGroupIngress(AuthorizeCacheSecurityGroupIngressRequest authorizeCacheSecurityGroupIngressRequest) {
 
         ExecutionContext executionContext = createExecutionContext(authorizeCacheSecurityGroupIngressRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -558,7 +578,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      Documentation</a>
      */
     @Override
-    public Snapshot copySnapshot(CopySnapshotRequest copySnapshotRequest) {
+    public Snapshot copySnapshot(CopySnapshotRequest request) {
+        request = beforeClientExecution(request);
+        return executeCopySnapshot(request);
+    }
+
+    @SdkInternalApi
+    final Snapshot executeCopySnapshot(CopySnapshotRequest copySnapshotRequest) {
 
         ExecutionContext executionContext = createExecutionContext(copySnapshotRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -628,7 +654,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *         The VPC network is in an invalid state.
      * @throws TagQuotaPerResourceExceededException
      *         The request cannot be processed because it would cause the resource to have more than the allowed number
-     *         of tags. The maximum number of tags permitted on a resource is 10.
+     *         of tags. The maximum number of tags permitted on a resource is 50.
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -638,7 +664,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public CacheCluster createCacheCluster(CreateCacheClusterRequest createCacheClusterRequest) {
+    public CacheCluster createCacheCluster(CreateCacheClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCacheCluster(request);
+    }
+
+    @SdkInternalApi
+    final CacheCluster executeCreateCacheCluster(CreateCacheClusterRequest createCacheClusterRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createCacheClusterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -669,9 +701,29 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Creates a new cache parameter group. A cache parameter group is a collection of parameters that you apply to all
-     * of the nodes in a cache cluster.
+     * Creates a new Amazon ElastiCache cache parameter group. An ElastiCache cache parameter group is a collection of
+     * parameters and their values that are applied to all of the nodes in any cache cluster or replication group using
+     * the CacheParameterGroup.
      * </p>
+     * <p>
+     * A newly created CacheParameterGroup is an exact duplicate of the default parameter group for the
+     * CacheParameterGroupFamily. To customize the newly created CacheParameterGroup you can change the values of
+     * specific parameters. For more information, see:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyCacheParameterGroup.html">
+     * ModifyCacheParameterGroup</a> in the ElastiCache API Reference.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/ParameterGroups.html">Parameters and
+     * Parameter Groups</a> in the ElastiCache User Guide.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param createCacheParameterGroupRequest
      *        Represents the input of a <code>CreateCacheParameterGroup</code> operation.
@@ -691,7 +743,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CacheParameterGroup createCacheParameterGroup(CreateCacheParameterGroupRequest createCacheParameterGroupRequest) {
+    public CacheParameterGroup createCacheParameterGroup(CreateCacheParameterGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCacheParameterGroup(request);
+    }
+
+    @SdkInternalApi
+    final CacheParameterGroup executeCreateCacheParameterGroup(CreateCacheParameterGroupRequest createCacheParameterGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createCacheParameterGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -748,7 +806,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CacheSecurityGroup createCacheSecurityGroup(CreateCacheSecurityGroupRequest createCacheSecurityGroupRequest) {
+    public CacheSecurityGroup createCacheSecurityGroup(CreateCacheSecurityGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCacheSecurityGroup(request);
+    }
+
+    @SdkInternalApi
+    final CacheSecurityGroup executeCreateCacheSecurityGroup(CreateCacheSecurityGroupRequest createCacheSecurityGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createCacheSecurityGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -802,7 +866,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CacheSubnetGroup createCacheSubnetGroup(CreateCacheSubnetGroupRequest createCacheSubnetGroupRequest) {
+    public CacheSubnetGroup createCacheSubnetGroup(CreateCacheSubnetGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCacheSubnetGroup(request);
+    }
+
+    @SdkInternalApi
+    final CacheSubnetGroup executeCreateCacheSubnetGroup(CreateCacheSubnetGroupRequest createCacheSubnetGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createCacheSubnetGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -849,7 +919,11 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      * <p>
      * When a Redis (cluster mode disabled) replication group has been successfully created, you can add one or more
      * read replicas to it, up to a total of 5 read replicas. You cannot alter a Redis (cluster mode enabled)
-     * replication group after it has been created.
+     * replication group after it has been created. However, if you need to increase or decrease the number of node
+     * groups (console: shards), you can avail yourself of ElastiCache for Redis' enhanced backup and restore. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/backups-restoring.html">Restoring From a
+     * Backup with Cluster Resizing</a> in the <i>ElastiCache User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -886,7 +960,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *         The VPC network is in an invalid state.
      * @throws TagQuotaPerResourceExceededException
      *         The request cannot be processed because it would cause the resource to have more than the allowed number
-     *         of tags. The maximum number of tags permitted on a resource is 10.
+     *         of tags. The maximum number of tags permitted on a resource is 50.
      * @throws NodeGroupsPerReplicationGroupQuotaExceededException
      *         The request cannot be processed because it would exceed the maximum of 15 node groups (shards) in a
      *         single replication group.
@@ -899,7 +973,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ReplicationGroup createReplicationGroup(CreateReplicationGroupRequest createReplicationGroupRequest) {
+    public ReplicationGroup createReplicationGroup(CreateReplicationGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateReplicationGroup(request);
+    }
+
+    @SdkInternalApi
+    final ReplicationGroup executeCreateReplicationGroup(CreateReplicationGroupRequest createReplicationGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createReplicationGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -978,7 +1058,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      Documentation</a>
      */
     @Override
-    public Snapshot createSnapshot(CreateSnapshotRequest createSnapshotRequest) {
+    public Snapshot createSnapshot(CreateSnapshotRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSnapshot(request);
+    }
+
+    @SdkInternalApi
+    final Snapshot executeCreateSnapshot(CreateSnapshotRequest createSnapshotRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createSnapshotRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1061,7 +1147,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public CacheCluster deleteCacheCluster(DeleteCacheClusterRequest deleteCacheClusterRequest) {
+    public CacheCluster deleteCacheCluster(DeleteCacheClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteCacheCluster(request);
+    }
+
+    @SdkInternalApi
+    final CacheCluster executeDeleteCacheCluster(DeleteCacheClusterRequest deleteCacheClusterRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteCacheClusterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1112,7 +1204,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteCacheParameterGroupResult deleteCacheParameterGroup(DeleteCacheParameterGroupRequest deleteCacheParameterGroupRequest) {
+    public DeleteCacheParameterGroupResult deleteCacheParameterGroup(DeleteCacheParameterGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteCacheParameterGroup(request);
+    }
+
+    @SdkInternalApi
+    final DeleteCacheParameterGroupResult executeDeleteCacheParameterGroup(DeleteCacheParameterGroupRequest deleteCacheParameterGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteCacheParameterGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1168,7 +1266,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteCacheSecurityGroupResult deleteCacheSecurityGroup(DeleteCacheSecurityGroupRequest deleteCacheSecurityGroupRequest) {
+    public DeleteCacheSecurityGroupResult deleteCacheSecurityGroup(DeleteCacheSecurityGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteCacheSecurityGroup(request);
+    }
+
+    @SdkInternalApi
+    final DeleteCacheSecurityGroupResult executeDeleteCacheSecurityGroup(DeleteCacheSecurityGroupRequest deleteCacheSecurityGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteCacheSecurityGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1220,7 +1324,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteCacheSubnetGroupResult deleteCacheSubnetGroup(DeleteCacheSubnetGroupRequest deleteCacheSubnetGroupRequest) {
+    public DeleteCacheSubnetGroupResult deleteCacheSubnetGroup(DeleteCacheSubnetGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteCacheSubnetGroup(request);
+    }
+
+    @SdkInternalApi
+    final DeleteCacheSubnetGroupResult executeDeleteCacheSubnetGroup(DeleteCacheSubnetGroupRequest deleteCacheSubnetGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteCacheSubnetGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1303,7 +1413,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ReplicationGroup deleteReplicationGroup(DeleteReplicationGroupRequest deleteReplicationGroupRequest) {
+    public ReplicationGroup deleteReplicationGroup(DeleteReplicationGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteReplicationGroup(request);
+    }
+
+    @SdkInternalApi
+    final ReplicationGroup executeDeleteReplicationGroup(DeleteReplicationGroupRequest deleteReplicationGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteReplicationGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1359,7 +1475,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      Documentation</a>
      */
     @Override
-    public Snapshot deleteSnapshot(DeleteSnapshotRequest deleteSnapshotRequest) {
+    public Snapshot deleteSnapshot(DeleteSnapshotRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteSnapshot(request);
+    }
+
+    @SdkInternalApi
+    final Snapshot executeDeleteSnapshot(DeleteSnapshotRequest deleteSnapshotRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteSnapshotRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1394,21 +1516,21 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      * specific cache cluster if a cache cluster identifier is supplied.
      * </p>
      * <p>
-     * By default, abbreviated information about the cache clusters are returned. You can use the optional
-     * <code>ShowDetails</code> flag to retrieve detailed information about the cache nodes associated with the cache
+     * By default, abbreviated information about the cache clusters is returned. You can use the optional
+     * <i>ShowCacheNodeInfo</i> flag to retrieve detailed information about the cache nodes associated with the cache
      * clusters. These details include the DNS address and port for the cache node endpoint.
      * </p>
      * <p>
-     * If the cluster is in the CREATING state, only cluster-level information is displayed until all of the nodes are
-     * successfully provisioned.
+     * If the cluster is in the <i>creating</i> state, only cluster-level information is displayed until all of the
+     * nodes are successfully provisioned.
      * </p>
      * <p>
-     * If the cluster is in the DELETING state, only cluster-level information is displayed.
+     * If the cluster is in the <i>deleting</i> state, only cluster-level information is displayed.
      * </p>
      * <p>
      * If cache nodes are currently being added to the cache cluster, node endpoint information and creation time for
      * the additional nodes are not displayed until they are completely provisioned. When the cache cluster state is
-     * <code>available</code>, the cluster is ready for use.
+     * <i>available</i>, the cluster is ready for use.
      * </p>
      * <p>
      * If cache nodes are currently being removed from the cache cluster, no endpoint information for the removed nodes
@@ -1429,7 +1551,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeCacheClustersResult describeCacheClusters(DescribeCacheClustersRequest describeCacheClustersRequest) {
+    public DescribeCacheClustersResult describeCacheClusters(DescribeCacheClustersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeCacheClusters(request);
+    }
+
+    @SdkInternalApi
+    final DescribeCacheClustersResult executeDescribeCacheClusters(DescribeCacheClustersRequest describeCacheClustersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeCacheClustersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1477,7 +1605,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeCacheEngineVersionsResult describeCacheEngineVersions(DescribeCacheEngineVersionsRequest describeCacheEngineVersionsRequest) {
+    public DescribeCacheEngineVersionsResult describeCacheEngineVersions(DescribeCacheEngineVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeCacheEngineVersions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeCacheEngineVersionsResult executeDescribeCacheEngineVersions(DescribeCacheEngineVersionsRequest describeCacheEngineVersionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeCacheEngineVersionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1532,7 +1666,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeCacheParameterGroupsResult describeCacheParameterGroups(DescribeCacheParameterGroupsRequest describeCacheParameterGroupsRequest) {
+    public DescribeCacheParameterGroupsResult describeCacheParameterGroups(DescribeCacheParameterGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeCacheParameterGroups(request);
+    }
+
+    @SdkInternalApi
+    final DescribeCacheParameterGroupsResult executeDescribeCacheParameterGroups(DescribeCacheParameterGroupsRequest describeCacheParameterGroupsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeCacheParameterGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1586,7 +1726,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeCacheParametersResult describeCacheParameters(DescribeCacheParametersRequest describeCacheParametersRequest) {
+    public DescribeCacheParametersResult describeCacheParameters(DescribeCacheParametersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeCacheParameters(request);
+    }
+
+    @SdkInternalApi
+    final DescribeCacheParametersResult executeDescribeCacheParameters(DescribeCacheParametersRequest describeCacheParametersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeCacheParametersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1636,7 +1782,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeCacheSecurityGroupsResult describeCacheSecurityGroups(DescribeCacheSecurityGroupsRequest describeCacheSecurityGroupsRequest) {
+    public DescribeCacheSecurityGroupsResult describeCacheSecurityGroups(DescribeCacheSecurityGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeCacheSecurityGroups(request);
+    }
+
+    @SdkInternalApi
+    final DescribeCacheSecurityGroupsResult executeDescribeCacheSecurityGroups(DescribeCacheSecurityGroupsRequest describeCacheSecurityGroupsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeCacheSecurityGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1687,7 +1839,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeCacheSubnetGroupsResult describeCacheSubnetGroups(DescribeCacheSubnetGroupsRequest describeCacheSubnetGroupsRequest) {
+    public DescribeCacheSubnetGroupsResult describeCacheSubnetGroups(DescribeCacheSubnetGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeCacheSubnetGroups(request);
+    }
+
+    @SdkInternalApi
+    final DescribeCacheSubnetGroupsResult executeDescribeCacheSubnetGroups(DescribeCacheSubnetGroupsRequest describeCacheSubnetGroupsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeCacheSubnetGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1739,7 +1897,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public EngineDefaults describeEngineDefaultParameters(DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest) {
+    public EngineDefaults describeEngineDefaultParameters(DescribeEngineDefaultParametersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEngineDefaultParameters(request);
+    }
+
+    @SdkInternalApi
+    final EngineDefaults executeDescribeEngineDefaultParameters(DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEngineDefaultParametersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1791,7 +1955,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      Documentation</a>
      */
     @Override
-    public DescribeEventsResult describeEvents(DescribeEventsRequest describeEventsRequest) {
+    public DescribeEventsResult describeEvents(DescribeEventsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEvents(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEventsResult executeDescribeEvents(DescribeEventsRequest describeEventsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeEventsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1851,7 +2021,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeReplicationGroupsResult describeReplicationGroups(DescribeReplicationGroupsRequest describeReplicationGroupsRequest) {
+    public DescribeReplicationGroupsResult describeReplicationGroups(DescribeReplicationGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeReplicationGroups(request);
+    }
+
+    @SdkInternalApi
+    final DescribeReplicationGroupsResult executeDescribeReplicationGroups(DescribeReplicationGroupsRequest describeReplicationGroupsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeReplicationGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1905,7 +2081,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeReservedCacheNodesResult describeReservedCacheNodes(DescribeReservedCacheNodesRequest describeReservedCacheNodesRequest) {
+    public DescribeReservedCacheNodesResult describeReservedCacheNodes(DescribeReservedCacheNodesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeReservedCacheNodes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeReservedCacheNodesResult executeDescribeReservedCacheNodes(DescribeReservedCacheNodesRequest describeReservedCacheNodesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeReservedCacheNodesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1959,7 +2141,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeReservedCacheNodesOfferingsResult describeReservedCacheNodesOfferings(
+    public DescribeReservedCacheNodesOfferingsResult describeReservedCacheNodesOfferings(DescribeReservedCacheNodesOfferingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeReservedCacheNodesOfferings(request);
+    }
+
+    @SdkInternalApi
+    final DescribeReservedCacheNodesOfferingsResult executeDescribeReservedCacheNodesOfferings(
             DescribeReservedCacheNodesOfferingsRequest describeReservedCacheNodesOfferingsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeReservedCacheNodesOfferingsRequest);
@@ -2024,7 +2212,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public DescribeSnapshotsResult describeSnapshots(DescribeSnapshotsRequest describeSnapshotsRequest) {
+    public DescribeSnapshotsResult describeSnapshots(DescribeSnapshotsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeSnapshots(request);
+    }
+
+    @SdkInternalApi
+    final DescribeSnapshotsResult executeDescribeSnapshots(DescribeSnapshotsRequest describeSnapshotsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeSnapshotsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2086,7 +2280,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListAllowedNodeTypeModificationsResult listAllowedNodeTypeModifications(
+    public ListAllowedNodeTypeModificationsResult listAllowedNodeTypeModifications(ListAllowedNodeTypeModificationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAllowedNodeTypeModifications(request);
+    }
+
+    @SdkInternalApi
+    final ListAllowedNodeTypeModificationsResult executeListAllowedNodeTypeModifications(
             ListAllowedNodeTypeModificationsRequest listAllowedNodeTypeModificationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listAllowedNodeTypeModificationsRequest);
@@ -2129,7 +2329,7 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      * and track your AWS costs.
      * </p>
      * <p>
-     * You can have a maximum of 10 cost allocation tags on an ElastiCache resource. For more information, see <a
+     * You can have a maximum of 50 cost allocation tags on an ElastiCache resource. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/BestPractices.html">Using Cost Allocation
      * Tags in Amazon ElastiCache</a>.
      * </p>
@@ -2148,7 +2348,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2215,7 +2421,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public CacheCluster modifyCacheCluster(ModifyCacheClusterRequest modifyCacheClusterRequest) {
+    public CacheCluster modifyCacheCluster(ModifyCacheClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyCacheCluster(request);
+    }
+
+    @SdkInternalApi
+    final CacheCluster executeModifyCacheCluster(ModifyCacheClusterRequest modifyCacheClusterRequest) {
 
         ExecutionContext executionContext = createExecutionContext(modifyCacheClusterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2266,7 +2478,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ModifyCacheParameterGroupResult modifyCacheParameterGroup(ModifyCacheParameterGroupRequest modifyCacheParameterGroupRequest) {
+    public ModifyCacheParameterGroupResult modifyCacheParameterGroup(ModifyCacheParameterGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyCacheParameterGroup(request);
+    }
+
+    @SdkInternalApi
+    final ModifyCacheParameterGroupResult executeModifyCacheParameterGroup(ModifyCacheParameterGroupRequest modifyCacheParameterGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(modifyCacheParameterGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2318,7 +2536,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CacheSubnetGroup modifyCacheSubnetGroup(ModifyCacheSubnetGroupRequest modifyCacheSubnetGroupRequest) {
+    public CacheSubnetGroup modifyCacheSubnetGroup(ModifyCacheSubnetGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyCacheSubnetGroup(request);
+    }
+
+    @SdkInternalApi
+    final CacheSubnetGroup executeModifyCacheSubnetGroup(ModifyCacheSubnetGroupRequest modifyCacheSubnetGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(modifyCacheSubnetGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2397,7 +2621,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ReplicationGroup modifyReplicationGroup(ModifyReplicationGroupRequest modifyReplicationGroupRequest) {
+    public ReplicationGroup modifyReplicationGroup(ModifyReplicationGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyReplicationGroup(request);
+    }
+
+    @SdkInternalApi
+    final ReplicationGroup executeModifyReplicationGroup(ModifyReplicationGroupRequest modifyReplicationGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(modifyReplicationGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2449,7 +2679,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ReservedCacheNode purchaseReservedCacheNodesOffering(PurchaseReservedCacheNodesOfferingRequest purchaseReservedCacheNodesOfferingRequest) {
+    public ReservedCacheNode purchaseReservedCacheNodesOffering(PurchaseReservedCacheNodesOfferingRequest request) {
+        request = beforeClientExecution(request);
+        return executePurchaseReservedCacheNodesOffering(request);
+    }
+
+    @SdkInternalApi
+    final ReservedCacheNode executePurchaseReservedCacheNodesOffering(PurchaseReservedCacheNodesOfferingRequest purchaseReservedCacheNodesOfferingRequest) {
 
         ExecutionContext executionContext = createExecutionContext(purchaseReservedCacheNodesOfferingRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2504,7 +2740,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      API Documentation</a>
      */
     @Override
-    public CacheCluster rebootCacheCluster(RebootCacheClusterRequest rebootCacheClusterRequest) {
+    public CacheCluster rebootCacheCluster(RebootCacheClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeRebootCacheCluster(request);
+    }
+
+    @SdkInternalApi
+    final CacheCluster executeRebootCacheCluster(RebootCacheClusterRequest rebootCacheClusterRequest) {
 
         ExecutionContext executionContext = createExecutionContext(rebootCacheClusterRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2554,7 +2796,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RemoveTagsFromResourceResult removeTagsFromResource(RemoveTagsFromResourceRequest removeTagsFromResourceRequest) {
+    public RemoveTagsFromResourceResult removeTagsFromResource(RemoveTagsFromResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveTagsFromResource(request);
+    }
+
+    @SdkInternalApi
+    final RemoveTagsFromResourceResult executeRemoveTagsFromResource(RemoveTagsFromResourceRequest removeTagsFromResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(removeTagsFromResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2607,7 +2855,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ResetCacheParameterGroupResult resetCacheParameterGroup(ResetCacheParameterGroupRequest resetCacheParameterGroupRequest) {
+    public ResetCacheParameterGroupResult resetCacheParameterGroup(ResetCacheParameterGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeResetCacheParameterGroup(request);
+    }
+
+    @SdkInternalApi
+    final ResetCacheParameterGroupResult executeResetCacheParameterGroup(ResetCacheParameterGroupRequest resetCacheParameterGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(resetCacheParameterGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2661,7 +2915,13 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CacheSecurityGroup revokeCacheSecurityGroupIngress(RevokeCacheSecurityGroupIngressRequest revokeCacheSecurityGroupIngressRequest) {
+    public CacheSecurityGroup revokeCacheSecurityGroupIngress(RevokeCacheSecurityGroupIngressRequest request) {
+        request = beforeClientExecution(request);
+        return executeRevokeCacheSecurityGroupIngress(request);
+    }
+
+    @SdkInternalApi
+    final CacheSecurityGroup executeRevokeCacheSecurityGroupIngress(RevokeCacheSecurityGroupIngressRequest revokeCacheSecurityGroupIngressRequest) {
 
         ExecutionContext executionContext = createExecutionContext(revokeCacheSecurityGroupIngressRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2680,6 +2940,153 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
             }
 
             StaxResponseHandler<CacheSecurityGroup> responseHandler = new StaxResponseHandler<CacheSecurityGroup>(new CacheSecurityGroupStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Represents the input of a <code>TestFailover</code> operation which test automatic failover on a specified node
+     * group (called shard in the console) in a replication group (called cluster in the console).
+     * </p>
+     * <p class="title">
+     * <b>Note the following</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A customer can use this operation to test automatic failover on up to 5 shards (called node groups in the
+     * ElastiCache API and AWS CLI) in any rolling 24-hour period.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If calling this operation on shards in different clusters (called replication groups in the API and CLI), the
+     * calls can be made concurrently.
+     * </p>
+     * <p>
+     * </p></li>
+     * <li>
+     * <p>
+     * If calling this operation multiple times on different shards in the same Redis (cluster mode enabled) replication
+     * group, the first node replacement must complete before a subsequent call can be made.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To determine whether the node replacement is complete you can check Events using the Amazon ElastiCache console,
+     * the AWS CLI, or the ElastiCache API. Look for the following automatic failover related events, listed here in
+     * order of occurrance:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Replication group message: <code>Test Failover API called for node group &lt;node-group-id&gt;</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cache cluster message:
+     * <code>Failover from master node &lt;primary-node-id&gt; to replica node &lt;node-id&gt; completed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Replication group message:
+     * <code>Failover from master node &lt;primary-node-id&gt; to replica node &lt;node-id&gt; completed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cache cluster message: <code>Recovering cache nodes &lt;node-id&gt;</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cache cluster message: <code>Finished recovery for cache nodes &lt;node-id&gt;</code>
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * For more information see:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/ECEvents.Viewing.html">Viewing ElastiCache
+     * Events</a> in the <i>ElastiCache User Guide</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeEvents.html">DescribeEvents<
+     * /a> in the ElastiCache API Reference
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * Also see, <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/AutoFailover.html#auto-failover-test">Testing
+     * Multi-AZ with Automatic Failover</a> in the <i>ElastiCache User Guide</i>.
+     * </p>
+     * 
+     * @param testFailoverRequest
+     * @return Result of the TestFailover operation returned by the service.
+     * @throws APICallRateForCustomerExceededException
+     *         The customer has exceeded the allowed rate of API calls.
+     * @throws InvalidCacheClusterStateException
+     *         The requested cache cluster is not in the <code>available</code> state.
+     * @throws InvalidReplicationGroupStateException
+     *         The requested replication group is not in the <code>available</code> state.
+     * @throws NodeGroupNotFoundException
+     *         The node group specified by the <code>NodeGroupId</code> parameter could not be found. Please verify that
+     *         the node group exists and that you spelled the <code>NodeGroupId</code> value correctly.
+     * @throws ReplicationGroupNotFoundException
+     *         The specified replication group does not exist.
+     * @throws TestFailoverNotAvailableException
+     * @throws InvalidParameterValueException
+     *         The value for a parameter is invalid.
+     * @throws InvalidParameterCombinationException
+     *         Two or more incompatible parameters were specified.
+     * @sample AmazonElastiCache.TestFailover
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/TestFailover" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ReplicationGroup testFailover(TestFailoverRequest request) {
+        request = beforeClientExecution(request);
+        return executeTestFailover(request);
+    }
+
+    @SdkInternalApi
+    final ReplicationGroup executeTestFailover(TestFailoverRequest testFailoverRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(testFailoverRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TestFailoverRequest> request = null;
+        Response<ReplicationGroup> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TestFailoverRequestMarshaller().marshall(super.beforeMarshalling(testFailoverRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ReplicationGroup> responseHandler = new StaxResponseHandler<ReplicationGroup>(new ReplicationGroupStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2753,6 +3160,14 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
             }
         }
         return waiters;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
 
 }

@@ -12,90 +12,71 @@
  */
 package com.amazonaws.services.appstream.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.appstream.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateFleetRequest Marshaller
+ * CreateFleetRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateFleetRequestMarshaller implements Marshaller<Request<CreateFleetRequest>, CreateFleetRequest> {
+@SdkInternalApi
+public class CreateFleetRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> IMAGENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ImageName").build();
+    private static final MarshallingInfo<String> INSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceType").build();
+    private static final MarshallingInfo<StructuredPojo> COMPUTECAPACITY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ComputeCapacity").build();
+    private static final MarshallingInfo<StructuredPojo> VPCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcConfig").build();
+    private static final MarshallingInfo<Integer> MAXUSERDURATIONINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxUserDurationInSeconds").build();
+    private static final MarshallingInfo<Integer> DISCONNECTTIMEOUTINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisconnectTimeoutInSeconds").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisplayName").build();
+    private static final MarshallingInfo<Boolean> ENABLEDEFAULTINTERNETACCESS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableDefaultInternetAccess").build();
 
-    public CreateFleetRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final CreateFleetRequestMarshaller instance = new CreateFleetRequestMarshaller();
+
+    public static CreateFleetRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<CreateFleetRequest> marshall(CreateFleetRequest createFleetRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateFleetRequest createFleetRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createFleetRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateFleetRequest> request = new DefaultRequest<CreateFleetRequest>(createFleetRequest, "AmazonAppStream");
-        request.addHeader("X-Amz-Target", "PhotonAdminProxyService.CreateFleet");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (createFleetRequest.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(createFleetRequest.getName());
-            }
-            if (createFleetRequest.getImageName() != null) {
-                jsonGenerator.writeFieldName("ImageName").writeValue(createFleetRequest.getImageName());
-            }
-            if (createFleetRequest.getInstanceType() != null) {
-                jsonGenerator.writeFieldName("InstanceType").writeValue(createFleetRequest.getInstanceType());
-            }
-            if (createFleetRequest.getComputeCapacity() != null) {
-                jsonGenerator.writeFieldName("ComputeCapacity");
-                ComputeCapacityJsonMarshaller.getInstance().marshall(createFleetRequest.getComputeCapacity(), jsonGenerator);
-            }
-            if (createFleetRequest.getVpcConfig() != null) {
-                jsonGenerator.writeFieldName("VpcConfig");
-                VpcConfigJsonMarshaller.getInstance().marshall(createFleetRequest.getVpcConfig(), jsonGenerator);
-            }
-            if (createFleetRequest.getMaxUserDurationInSeconds() != null) {
-                jsonGenerator.writeFieldName("MaxUserDurationInSeconds").writeValue(createFleetRequest.getMaxUserDurationInSeconds());
-            }
-            if (createFleetRequest.getDisconnectTimeoutInSeconds() != null) {
-                jsonGenerator.writeFieldName("DisconnectTimeoutInSeconds").writeValue(createFleetRequest.getDisconnectTimeoutInSeconds());
-            }
-            if (createFleetRequest.getDescription() != null) {
-                jsonGenerator.writeFieldName("Description").writeValue(createFleetRequest.getDescription());
-            }
-            if (createFleetRequest.getDisplayName() != null) {
-                jsonGenerator.writeFieldName("DisplayName").writeValue(createFleetRequest.getDisplayName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(createFleetRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createFleetRequest.getImageName(), IMAGENAME_BINDING);
+            protocolMarshaller.marshall(createFleetRequest.getInstanceType(), INSTANCETYPE_BINDING);
+            protocolMarshaller.marshall(createFleetRequest.getComputeCapacity(), COMPUTECAPACITY_BINDING);
+            protocolMarshaller.marshall(createFleetRequest.getVpcConfig(), VPCCONFIG_BINDING);
+            protocolMarshaller.marshall(createFleetRequest.getMaxUserDurationInSeconds(), MAXUSERDURATIONINSECONDS_BINDING);
+            protocolMarshaller.marshall(createFleetRequest.getDisconnectTimeoutInSeconds(), DISCONNECTTIMEOUTINSECONDS_BINDING);
+            protocolMarshaller.marshall(createFleetRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createFleetRequest.getDisplayName(), DISPLAYNAME_BINDING);
+            protocolMarshaller.marshall(createFleetRequest.getEnableDefaultInternetAccess(), ENABLEDEFAULTINTERNETACCESS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

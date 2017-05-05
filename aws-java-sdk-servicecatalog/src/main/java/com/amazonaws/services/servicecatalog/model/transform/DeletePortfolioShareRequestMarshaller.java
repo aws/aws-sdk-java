@@ -12,70 +12,50 @@
  */
 package com.amazonaws.services.servicecatalog.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.servicecatalog.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeletePortfolioShareRequest Marshaller
+ * DeletePortfolioShareRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeletePortfolioShareRequestMarshaller implements Marshaller<Request<DeletePortfolioShareRequest>, DeletePortfolioShareRequest> {
+@SdkInternalApi
+public class DeletePortfolioShareRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ACCEPTLANGUAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AcceptLanguage").build();
+    private static final MarshallingInfo<String> PORTFOLIOID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PortfolioId").build();
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AccountId").build();
 
-    public DeletePortfolioShareRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeletePortfolioShareRequestMarshaller instance = new DeletePortfolioShareRequestMarshaller();
+
+    public static DeletePortfolioShareRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeletePortfolioShareRequest> marshall(DeletePortfolioShareRequest deletePortfolioShareRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeletePortfolioShareRequest deletePortfolioShareRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deletePortfolioShareRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeletePortfolioShareRequest> request = new DefaultRequest<DeletePortfolioShareRequest>(deletePortfolioShareRequest, "AWSServiceCatalog");
-        request.addHeader("X-Amz-Target", "AWS242ServiceCatalogService.DeletePortfolioShare");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deletePortfolioShareRequest.getAcceptLanguage() != null) {
-                jsonGenerator.writeFieldName("AcceptLanguage").writeValue(deletePortfolioShareRequest.getAcceptLanguage());
-            }
-            if (deletePortfolioShareRequest.getPortfolioId() != null) {
-                jsonGenerator.writeFieldName("PortfolioId").writeValue(deletePortfolioShareRequest.getPortfolioId());
-            }
-            if (deletePortfolioShareRequest.getAccountId() != null) {
-                jsonGenerator.writeFieldName("AccountId").writeValue(deletePortfolioShareRequest.getAccountId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deletePortfolioShareRequest.getAcceptLanguage(), ACCEPTLANGUAGE_BINDING);
+            protocolMarshaller.marshall(deletePortfolioShareRequest.getPortfolioId(), PORTFOLIOID_BINDING);
+            protocolMarshaller.marshall(deletePortfolioShareRequest.getAccountId(), ACCOUNTID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

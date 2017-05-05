@@ -80,6 +80,18 @@ public class InstanceJsonUnmarshaller implements Unmarshaller<Instance, JsonUnma
                     context.nextToken();
                     instance.setInstanceGroupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("InstanceFleetId", targetDepth)) {
+                    context.nextToken();
+                    instance.setInstanceFleetId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Market", targetDepth)) {
+                    context.nextToken();
+                    instance.setMarket(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("InstanceType", targetDepth)) {
+                    context.nextToken();
+                    instance.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("EbsVolumes", targetDepth)) {
                     context.nextToken();
                     instance.setEbsVolumes(new ListUnmarshaller<EbsVolume>(EbsVolumeJsonUnmarshaller.getInstance()).unmarshall(context));

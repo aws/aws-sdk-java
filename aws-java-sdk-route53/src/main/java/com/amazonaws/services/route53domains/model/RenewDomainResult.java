@@ -23,10 +23,23 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RenewDomainResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The identifier for tracking the progress of the request. To use this ID to query the operation status, use
+     * <a>GetOperationDetail</a>.
+     * </p>
+     */
     private String operationId;
 
     /**
+     * <p>
+     * The identifier for tracking the progress of the request. To use this ID to query the operation status, use
+     * <a>GetOperationDetail</a>.
+     * </p>
+     * 
      * @param operationId
+     *        The identifier for tracking the progress of the request. To use this ID to query the operation status, use
+     *        <a>GetOperationDetail</a>.
      */
 
     public void setOperationId(String operationId) {
@@ -34,7 +47,13 @@ public class RenewDomainResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
-     * @return
+     * <p>
+     * The identifier for tracking the progress of the request. To use this ID to query the operation status, use
+     * <a>GetOperationDetail</a>.
+     * </p>
+     * 
+     * @return The identifier for tracking the progress of the request. To use this ID to query the operation status,
+     *         use <a>GetOperationDetail</a>.
      */
 
     public String getOperationId() {
@@ -42,7 +61,14 @@ public class RenewDomainResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * The identifier for tracking the progress of the request. To use this ID to query the operation status, use
+     * <a>GetOperationDetail</a>.
+     * </p>
+     * 
      * @param operationId
+     *        The identifier for tracking the progress of the request. To use this ID to query the operation status, use
+     *        <a>GetOperationDetail</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,4 +128,5 @@ public class RenewDomainResult extends com.amazonaws.AmazonWebServiceResult<com.
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

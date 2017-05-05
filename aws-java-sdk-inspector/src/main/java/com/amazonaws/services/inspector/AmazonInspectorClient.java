@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -252,6 +253,10 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         init();
     }
 
+    public static AmazonInspectorClientBuilder builder() {
+        return AmazonInspectorClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon Inspector using the specified parameters.
      *
@@ -300,7 +305,13 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AddAttributesToFindingsResult addAttributesToFindings(AddAttributesToFindingsRequest addAttributesToFindingsRequest) {
+    public AddAttributesToFindingsResult addAttributesToFindings(AddAttributesToFindingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddAttributesToFindings(request);
+    }
+
+    @SdkInternalApi
+    final AddAttributesToFindingsResult executeAddAttributesToFindings(AddAttributesToFindingsRequest addAttributesToFindingsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addAttributesToFindingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -311,7 +322,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddAttributesToFindingsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(addAttributesToFindingsRequest));
+                request = new AddAttributesToFindingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(addAttributesToFindingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -359,7 +371,13 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateAssessmentTargetResult createAssessmentTarget(CreateAssessmentTargetRequest createAssessmentTargetRequest) {
+    public CreateAssessmentTargetResult createAssessmentTarget(CreateAssessmentTargetRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAssessmentTarget(request);
+    }
+
+    @SdkInternalApi
+    final CreateAssessmentTargetResult executeCreateAssessmentTarget(CreateAssessmentTargetRequest createAssessmentTargetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createAssessmentTargetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -370,7 +388,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateAssessmentTargetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAssessmentTargetRequest));
+                request = new CreateAssessmentTargetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAssessmentTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -414,7 +432,13 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateAssessmentTemplateResult createAssessmentTemplate(CreateAssessmentTemplateRequest createAssessmentTemplateRequest) {
+    public CreateAssessmentTemplateResult createAssessmentTemplate(CreateAssessmentTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAssessmentTemplate(request);
+    }
+
+    @SdkInternalApi
+    final CreateAssessmentTemplateResult executeCreateAssessmentTemplate(CreateAssessmentTemplateRequest createAssessmentTemplateRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createAssessmentTemplateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -425,7 +449,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateAssessmentTemplateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAssessmentTemplateRequest));
+                request = new CreateAssessmentTemplateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createAssessmentTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -468,7 +493,13 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *      API Documentation</a>
      */
     @Override
-    public CreateResourceGroupResult createResourceGroup(CreateResourceGroupRequest createResourceGroupRequest) {
+    public CreateResourceGroupResult createResourceGroup(CreateResourceGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateResourceGroup(request);
+    }
+
+    @SdkInternalApi
+    final CreateResourceGroupResult executeCreateResourceGroup(CreateResourceGroupRequest createResourceGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createResourceGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -479,7 +510,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateResourceGroupRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createResourceGroupRequest));
+                request = new CreateResourceGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createResourceGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -521,7 +552,13 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *      API Documentation</a>
      */
     @Override
-    public DeleteAssessmentRunResult deleteAssessmentRun(DeleteAssessmentRunRequest deleteAssessmentRunRequest) {
+    public DeleteAssessmentRunResult deleteAssessmentRun(DeleteAssessmentRunRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAssessmentRun(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAssessmentRunResult executeDeleteAssessmentRun(DeleteAssessmentRunRequest deleteAssessmentRunRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteAssessmentRunRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -532,7 +569,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteAssessmentRunRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAssessmentRunRequest));
+                request = new DeleteAssessmentRunRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAssessmentRunRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -574,7 +611,13 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteAssessmentTargetResult deleteAssessmentTarget(DeleteAssessmentTargetRequest deleteAssessmentTargetRequest) {
+    public DeleteAssessmentTargetResult deleteAssessmentTarget(DeleteAssessmentTargetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAssessmentTarget(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAssessmentTargetResult executeDeleteAssessmentTarget(DeleteAssessmentTargetRequest deleteAssessmentTargetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteAssessmentTargetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -585,7 +628,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteAssessmentTargetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAssessmentTargetRequest));
+                request = new DeleteAssessmentTargetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAssessmentTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -628,7 +671,13 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteAssessmentTemplateResult deleteAssessmentTemplate(DeleteAssessmentTemplateRequest deleteAssessmentTemplateRequest) {
+    public DeleteAssessmentTemplateResult deleteAssessmentTemplate(DeleteAssessmentTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAssessmentTemplate(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAssessmentTemplateResult executeDeleteAssessmentTemplate(DeleteAssessmentTemplateRequest deleteAssessmentTemplateRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteAssessmentTemplateRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -639,7 +688,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteAssessmentTemplateRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAssessmentTemplateRequest));
+                request = new DeleteAssessmentTemplateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteAssessmentTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -675,7 +725,13 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeAssessmentRunsResult describeAssessmentRuns(DescribeAssessmentRunsRequest describeAssessmentRunsRequest) {
+    public DescribeAssessmentRunsResult describeAssessmentRuns(DescribeAssessmentRunsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAssessmentRuns(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAssessmentRunsResult executeDescribeAssessmentRuns(DescribeAssessmentRunsRequest describeAssessmentRunsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAssessmentRunsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -686,7 +742,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAssessmentRunsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAssessmentRunsRequest));
+                request = new DescribeAssessmentRunsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAssessmentRunsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -722,7 +778,13 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeAssessmentTargetsResult describeAssessmentTargets(DescribeAssessmentTargetsRequest describeAssessmentTargetsRequest) {
+    public DescribeAssessmentTargetsResult describeAssessmentTargets(DescribeAssessmentTargetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAssessmentTargets(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAssessmentTargetsResult executeDescribeAssessmentTargets(DescribeAssessmentTargetsRequest describeAssessmentTargetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAssessmentTargetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -733,7 +795,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAssessmentTargetsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAssessmentTargetsRequest));
+                request = new DescribeAssessmentTargetsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeAssessmentTargetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -769,7 +832,13 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeAssessmentTemplatesResult describeAssessmentTemplates(DescribeAssessmentTemplatesRequest describeAssessmentTemplatesRequest) {
+    public DescribeAssessmentTemplatesResult describeAssessmentTemplates(DescribeAssessmentTemplatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAssessmentTemplates(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAssessmentTemplatesResult executeDescribeAssessmentTemplates(DescribeAssessmentTemplatesRequest describeAssessmentTemplatesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAssessmentTemplatesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -780,7 +849,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAssessmentTemplatesRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeAssessmentTemplatesRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeAssessmentTemplatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -815,7 +884,13 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeCrossAccountAccessRoleResult describeCrossAccountAccessRole(DescribeCrossAccountAccessRoleRequest describeCrossAccountAccessRoleRequest) {
+    public DescribeCrossAccountAccessRoleResult describeCrossAccountAccessRole(DescribeCrossAccountAccessRoleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeCrossAccountAccessRole(request);
+    }
+
+    @SdkInternalApi
+    final DescribeCrossAccountAccessRoleResult executeDescribeCrossAccountAccessRole(DescribeCrossAccountAccessRoleRequest describeCrossAccountAccessRoleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeCrossAccountAccessRoleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -826,7 +901,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeCrossAccountAccessRoleRequestMarshaller(protocolFactory).marshall(super
+                request = new DescribeCrossAccountAccessRoleRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(describeCrossAccountAccessRoleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -863,7 +938,13 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public DescribeFindingsResult describeFindings(DescribeFindingsRequest describeFindingsRequest) {
+    public DescribeFindingsResult describeFindings(DescribeFindingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeFindings(request);
+    }
+
+    @SdkInternalApi
+    final DescribeFindingsResult executeDescribeFindings(DescribeFindingsRequest describeFindingsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeFindingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -874,7 +955,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeFindingsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFindingsRequest));
+                request = new DescribeFindingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFindingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -909,7 +990,13 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeResourceGroupsResult describeResourceGroups(DescribeResourceGroupsRequest describeResourceGroupsRequest) {
+    public DescribeResourceGroupsResult describeResourceGroups(DescribeResourceGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeResourceGroups(request);
+    }
+
+    @SdkInternalApi
+    final DescribeResourceGroupsResult executeDescribeResourceGroups(DescribeResourceGroupsRequest describeResourceGroupsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeResourceGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -920,7 +1007,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeResourceGroupsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeResourceGroupsRequest));
+                request = new DescribeResourceGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeResourceGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -956,7 +1043,13 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeRulesPackagesResult describeRulesPackages(DescribeRulesPackagesRequest describeRulesPackagesRequest) {
+    public DescribeRulesPackagesResult describeRulesPackages(DescribeRulesPackagesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeRulesPackages(request);
+    }
+
+    @SdkInternalApi
+    final DescribeRulesPackagesResult executeDescribeRulesPackages(DescribeRulesPackagesRequest describeRulesPackagesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeRulesPackagesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -967,7 +1060,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeRulesPackagesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeRulesPackagesRequest));
+                request = new DescribeRulesPackagesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeRulesPackagesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1008,7 +1101,13 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *      API Documentation</a>
      */
     @Override
-    public GetTelemetryMetadataResult getTelemetryMetadata(GetTelemetryMetadataRequest getTelemetryMetadataRequest) {
+    public GetTelemetryMetadataResult getTelemetryMetadata(GetTelemetryMetadataRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetTelemetryMetadata(request);
+    }
+
+    @SdkInternalApi
+    final GetTelemetryMetadataResult executeGetTelemetryMetadata(GetTelemetryMetadataRequest getTelemetryMetadataRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getTelemetryMetadataRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1019,7 +1118,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetTelemetryMetadataRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getTelemetryMetadataRequest));
+                request = new GetTelemetryMetadataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getTelemetryMetadataRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1059,7 +1158,13 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListAssessmentRunAgentsResult listAssessmentRunAgents(ListAssessmentRunAgentsRequest listAssessmentRunAgentsRequest) {
+    public ListAssessmentRunAgentsResult listAssessmentRunAgents(ListAssessmentRunAgentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAssessmentRunAgents(request);
+    }
+
+    @SdkInternalApi
+    final ListAssessmentRunAgentsResult executeListAssessmentRunAgents(ListAssessmentRunAgentsRequest listAssessmentRunAgentsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listAssessmentRunAgentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1070,7 +1175,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAssessmentRunAgentsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssessmentRunAgentsRequest));
+                request = new ListAssessmentRunAgentsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listAssessmentRunAgentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1112,7 +1218,13 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *      API Documentation</a>
      */
     @Override
-    public ListAssessmentRunsResult listAssessmentRuns(ListAssessmentRunsRequest listAssessmentRunsRequest) {
+    public ListAssessmentRunsResult listAssessmentRuns(ListAssessmentRunsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAssessmentRuns(request);
+    }
+
+    @SdkInternalApi
+    final ListAssessmentRunsResult executeListAssessmentRuns(ListAssessmentRunsRequest listAssessmentRunsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listAssessmentRunsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1123,7 +1235,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAssessmentRunsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssessmentRunsRequest));
+                request = new ListAssessmentRunsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssessmentRunsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1162,7 +1274,13 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListAssessmentTargetsResult listAssessmentTargets(ListAssessmentTargetsRequest listAssessmentTargetsRequest) {
+    public ListAssessmentTargetsResult listAssessmentTargets(ListAssessmentTargetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAssessmentTargets(request);
+    }
+
+    @SdkInternalApi
+    final ListAssessmentTargetsResult executeListAssessmentTargets(ListAssessmentTargetsRequest listAssessmentTargetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listAssessmentTargetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1173,7 +1291,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAssessmentTargetsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssessmentTargetsRequest));
+                request = new ListAssessmentTargetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssessmentTargetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1215,7 +1333,13 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListAssessmentTemplatesResult listAssessmentTemplates(ListAssessmentTemplatesRequest listAssessmentTemplatesRequest) {
+    public ListAssessmentTemplatesResult listAssessmentTemplates(ListAssessmentTemplatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAssessmentTemplates(request);
+    }
+
+    @SdkInternalApi
+    final ListAssessmentTemplatesResult executeListAssessmentTemplates(ListAssessmentTemplatesRequest listAssessmentTemplatesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listAssessmentTemplatesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1226,7 +1350,8 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAssessmentTemplatesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssessmentTemplatesRequest));
+                request = new ListAssessmentTemplatesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listAssessmentTemplatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1268,7 +1393,13 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListEventSubscriptionsResult listEventSubscriptions(ListEventSubscriptionsRequest listEventSubscriptionsRequest) {
+    public ListEventSubscriptionsResult listEventSubscriptions(ListEventSubscriptionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListEventSubscriptions(request);
+    }
+
+    @SdkInternalApi
+    final ListEventSubscriptionsResult executeListEventSubscriptions(ListEventSubscriptionsRequest listEventSubscriptionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listEventSubscriptionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1279,7 +1410,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListEventSubscriptionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listEventSubscriptionsRequest));
+                request = new ListEventSubscriptionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listEventSubscriptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1320,7 +1451,13 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public ListFindingsResult listFindings(ListFindingsRequest listFindingsRequest) {
+    public ListFindingsResult listFindings(ListFindingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListFindings(request);
+    }
+
+    @SdkInternalApi
+    final ListFindingsResult executeListFindings(ListFindingsRequest listFindingsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listFindingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1331,7 +1468,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListFindingsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFindingsRequest));
+                request = new ListFindingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFindingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1368,7 +1505,13 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *      API Documentation</a>
      */
     @Override
-    public ListRulesPackagesResult listRulesPackages(ListRulesPackagesRequest listRulesPackagesRequest) {
+    public ListRulesPackagesResult listRulesPackages(ListRulesPackagesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRulesPackages(request);
+    }
+
+    @SdkInternalApi
+    final ListRulesPackagesResult executeListRulesPackages(ListRulesPackagesRequest listRulesPackagesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listRulesPackagesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1379,7 +1522,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListRulesPackagesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRulesPackagesRequest));
+                request = new ListRulesPackagesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRulesPackagesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1419,7 +1562,13 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *      API Documentation</a>
      */
     @Override
-    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1430,7 +1579,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListTagsForResourceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1473,7 +1622,13 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public PreviewAgentsResult previewAgents(PreviewAgentsRequest previewAgentsRequest) {
+    public PreviewAgentsResult previewAgents(PreviewAgentsRequest request) {
+        request = beforeClientExecution(request);
+        return executePreviewAgents(request);
+    }
+
+    @SdkInternalApi
+    final PreviewAgentsResult executePreviewAgents(PreviewAgentsRequest previewAgentsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(previewAgentsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1484,7 +1639,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PreviewAgentsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(previewAgentsRequest));
+                request = new PreviewAgentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(previewAgentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1525,7 +1680,13 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RegisterCrossAccountAccessRoleResult registerCrossAccountAccessRole(RegisterCrossAccountAccessRoleRequest registerCrossAccountAccessRoleRequest) {
+    public RegisterCrossAccountAccessRoleResult registerCrossAccountAccessRole(RegisterCrossAccountAccessRoleRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterCrossAccountAccessRole(request);
+    }
+
+    @SdkInternalApi
+    final RegisterCrossAccountAccessRoleResult executeRegisterCrossAccountAccessRole(RegisterCrossAccountAccessRoleRequest registerCrossAccountAccessRoleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(registerCrossAccountAccessRoleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1536,7 +1697,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RegisterCrossAccountAccessRoleRequestMarshaller(protocolFactory).marshall(super
+                request = new RegisterCrossAccountAccessRoleRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(registerCrossAccountAccessRoleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1579,7 +1740,13 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RemoveAttributesFromFindingsResult removeAttributesFromFindings(RemoveAttributesFromFindingsRequest removeAttributesFromFindingsRequest) {
+    public RemoveAttributesFromFindingsResult removeAttributesFromFindings(RemoveAttributesFromFindingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveAttributesFromFindings(request);
+    }
+
+    @SdkInternalApi
+    final RemoveAttributesFromFindingsResult executeRemoveAttributesFromFindings(RemoveAttributesFromFindingsRequest removeAttributesFromFindingsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(removeAttributesFromFindingsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1590,7 +1757,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RemoveAttributesFromFindingsRequestMarshaller(protocolFactory).marshall(super
+                request = new RemoveAttributesFromFindingsRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(removeAttributesFromFindingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1633,7 +1800,13 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *      API Documentation</a>
      */
     @Override
-    public SetTagsForResourceResult setTagsForResource(SetTagsForResourceRequest setTagsForResourceRequest) {
+    public SetTagsForResourceResult setTagsForResource(SetTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final SetTagsForResourceResult executeSetTagsForResource(SetTagsForResourceRequest setTagsForResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(setTagsForResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1644,7 +1817,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetTagsForResourceRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(setTagsForResourceRequest));
+                request = new SetTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1694,7 +1867,13 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *      API Documentation</a>
      */
     @Override
-    public StartAssessmentRunResult startAssessmentRun(StartAssessmentRunRequest startAssessmentRunRequest) {
+    public StartAssessmentRunResult startAssessmentRun(StartAssessmentRunRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartAssessmentRun(request);
+    }
+
+    @SdkInternalApi
+    final StartAssessmentRunResult executeStartAssessmentRun(StartAssessmentRunRequest startAssessmentRunRequest) {
 
         ExecutionContext executionContext = createExecutionContext(startAssessmentRunRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1705,7 +1884,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartAssessmentRunRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(startAssessmentRunRequest));
+                request = new StartAssessmentRunRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startAssessmentRunRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1745,7 +1924,13 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *      API Documentation</a>
      */
     @Override
-    public StopAssessmentRunResult stopAssessmentRun(StopAssessmentRunRequest stopAssessmentRunRequest) {
+    public StopAssessmentRunResult stopAssessmentRun(StopAssessmentRunRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopAssessmentRun(request);
+    }
+
+    @SdkInternalApi
+    final StopAssessmentRunResult executeStopAssessmentRun(StopAssessmentRunRequest stopAssessmentRunRequest) {
 
         ExecutionContext executionContext = createExecutionContext(stopAssessmentRunRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1756,7 +1941,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopAssessmentRunRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopAssessmentRunRequest));
+                request = new StopAssessmentRunRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopAssessmentRunRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1800,7 +1985,13 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *      Documentation</a>
      */
     @Override
-    public SubscribeToEventResult subscribeToEvent(SubscribeToEventRequest subscribeToEventRequest) {
+    public SubscribeToEventResult subscribeToEvent(SubscribeToEventRequest request) {
+        request = beforeClientExecution(request);
+        return executeSubscribeToEvent(request);
+    }
+
+    @SdkInternalApi
+    final SubscribeToEventResult executeSubscribeToEvent(SubscribeToEventRequest subscribeToEventRequest) {
 
         ExecutionContext executionContext = createExecutionContext(subscribeToEventRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1811,7 +2002,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SubscribeToEventRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(subscribeToEventRequest));
+                request = new SubscribeToEventRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(subscribeToEventRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1852,7 +2043,13 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *      API Documentation</a>
      */
     @Override
-    public UnsubscribeFromEventResult unsubscribeFromEvent(UnsubscribeFromEventRequest unsubscribeFromEventRequest) {
+    public UnsubscribeFromEventResult unsubscribeFromEvent(UnsubscribeFromEventRequest request) {
+        request = beforeClientExecution(request);
+        return executeUnsubscribeFromEvent(request);
+    }
+
+    @SdkInternalApi
+    final UnsubscribeFromEventResult executeUnsubscribeFromEvent(UnsubscribeFromEventRequest unsubscribeFromEventRequest) {
 
         ExecutionContext executionContext = createExecutionContext(unsubscribeFromEventRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1863,7 +2060,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UnsubscribeFromEventRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(unsubscribeFromEventRequest));
+                request = new UnsubscribeFromEventRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(unsubscribeFromEventRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1903,7 +2100,13 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateAssessmentTargetResult updateAssessmentTarget(UpdateAssessmentTargetRequest updateAssessmentTargetRequest) {
+    public UpdateAssessmentTargetResult updateAssessmentTarget(UpdateAssessmentTargetRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAssessmentTarget(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAssessmentTargetResult executeUpdateAssessmentTarget(UpdateAssessmentTargetRequest updateAssessmentTargetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateAssessmentTargetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1914,7 +2117,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateAssessmentTargetRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAssessmentTargetRequest));
+                request = new UpdateAssessmentTargetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAssessmentTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

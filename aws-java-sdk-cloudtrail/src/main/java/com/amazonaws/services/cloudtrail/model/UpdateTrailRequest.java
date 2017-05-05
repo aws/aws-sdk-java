@@ -139,7 +139,7 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String cloudWatchLogsRoleArn;
     /**
      * <p>
-     * Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be a an alias name
+     * Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name
      * prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique
      * identifier.
      * </p>
@@ -921,7 +921,7 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be a an alias name
+     * Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name
      * prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique
      * identifier.
      * </p>
@@ -952,7 +952,7 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * 
      * @param kmsKeyId
-     *        Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be a an alias
+     *        Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias
      *        name prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a
      *        globally unique identifier.</p>
      *        <p>
@@ -987,7 +987,7 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be a an alias name
+     * Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name
      * prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique
      * identifier.
      * </p>
@@ -1017,7 +1017,7 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * 
-     * @return Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be a an alias
+     * @return Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias
      *         name prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a
      *         globally unique identifier.</p>
      *         <p>
@@ -1052,7 +1052,7 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be a an alias name
+     * Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name
      * prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique
      * identifier.
      * </p>
@@ -1083,7 +1083,7 @@ public class UpdateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * 
      * @param kmsKeyId
-     *        Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be a an alias
+     *        Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias
      *        name prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a
      *        globally unique identifier.</p>
      *        <p>

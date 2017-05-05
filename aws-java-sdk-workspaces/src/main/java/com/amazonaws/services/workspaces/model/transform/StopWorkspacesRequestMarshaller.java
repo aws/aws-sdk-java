@@ -12,74 +12,45 @@
  */
 package com.amazonaws.services.workspaces.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.workspaces.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * StopWorkspacesRequest Marshaller
+ * StopWorkspacesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class StopWorkspacesRequestMarshaller implements Marshaller<Request<StopWorkspacesRequest>, StopWorkspacesRequest> {
+@SdkInternalApi
+public class StopWorkspacesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<List> STOPWORKSPACEREQUESTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StopWorkspaceRequests").build();
 
-    public StopWorkspacesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final StopWorkspacesRequestMarshaller instance = new StopWorkspacesRequestMarshaller();
+
+    public static StopWorkspacesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<StopWorkspacesRequest> marshall(StopWorkspacesRequest stopWorkspacesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(StopWorkspacesRequest stopWorkspacesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (stopWorkspacesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<StopWorkspacesRequest> request = new DefaultRequest<StopWorkspacesRequest>(stopWorkspacesRequest, "AmazonWorkspaces");
-        request.addHeader("X-Amz-Target", "WorkspacesService.StopWorkspaces");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            com.amazonaws.internal.SdkInternalList<StopRequest> stopWorkspaceRequestsList = (com.amazonaws.internal.SdkInternalList<StopRequest>) stopWorkspacesRequest
-                    .getStopWorkspaceRequests();
-            if (!stopWorkspaceRequestsList.isEmpty() || !stopWorkspaceRequestsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("StopWorkspaceRequests");
-                jsonGenerator.writeStartArray();
-                for (StopRequest stopWorkspaceRequestsListValue : stopWorkspaceRequestsList) {
-                    if (stopWorkspaceRequestsListValue != null) {
-
-                        StopRequestJsonMarshaller.getInstance().marshall(stopWorkspaceRequestsListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(stopWorkspacesRequest.getStopWorkspaceRequests(), STOPWORKSPACEREQUESTS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

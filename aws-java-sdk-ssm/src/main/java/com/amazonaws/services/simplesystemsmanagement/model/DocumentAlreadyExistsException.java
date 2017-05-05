@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified SSM document already exists.
+ * The specified document already exists.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

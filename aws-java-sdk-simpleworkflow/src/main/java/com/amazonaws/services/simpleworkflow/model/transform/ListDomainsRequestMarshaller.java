@@ -12,73 +12,53 @@
  */
 package com.amazonaws.services.simpleworkflow.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simpleworkflow.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListDomainsRequest Marshaller
+ * ListDomainsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListDomainsRequestMarshaller implements Marshaller<Request<ListDomainsRequest>, ListDomainsRequest> {
+@SdkInternalApi
+public class ListDomainsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> NEXTPAGETOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("nextPageToken").build();
+    private static final MarshallingInfo<String> REGISTRATIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("registrationStatus").build();
+    private static final MarshallingInfo<Integer> MAXIMUMPAGESIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maximumPageSize").build();
+    private static final MarshallingInfo<Boolean> REVERSEORDER_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("reverseOrder").build();
 
-    public ListDomainsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListDomainsRequestMarshaller instance = new ListDomainsRequestMarshaller();
+
+    public static ListDomainsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListDomainsRequest> marshall(ListDomainsRequest listDomainsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListDomainsRequest listDomainsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listDomainsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListDomainsRequest> request = new DefaultRequest<ListDomainsRequest>(listDomainsRequest, "AmazonSimpleWorkflow");
-        request.addHeader("X-Amz-Target", "SimpleWorkflowService.ListDomains");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (listDomainsRequest.getNextPageToken() != null) {
-                jsonGenerator.writeFieldName("nextPageToken").writeValue(listDomainsRequest.getNextPageToken());
-            }
-            if (listDomainsRequest.getRegistrationStatus() != null) {
-                jsonGenerator.writeFieldName("registrationStatus").writeValue(listDomainsRequest.getRegistrationStatus());
-            }
-            if (listDomainsRequest.getMaximumPageSize() != null) {
-                jsonGenerator.writeFieldName("maximumPageSize").writeValue(listDomainsRequest.getMaximumPageSize());
-            }
-            if (listDomainsRequest.getReverseOrder() != null) {
-                jsonGenerator.writeFieldName("reverseOrder").writeValue(listDomainsRequest.getReverseOrder());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listDomainsRequest.getNextPageToken(), NEXTPAGETOKEN_BINDING);
+            protocolMarshaller.marshall(listDomainsRequest.getRegistrationStatus(), REGISTRATIONSTATUS_BINDING);
+            protocolMarshaller.marshall(listDomainsRequest.getMaximumPageSize(), MAXIMUMPAGESIZE_BINDING);
+            protocolMarshaller.marshall(listDomainsRequest.getReverseOrder(), REVERSEORDER_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

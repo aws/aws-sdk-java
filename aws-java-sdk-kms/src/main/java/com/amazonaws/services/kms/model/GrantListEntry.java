@@ -14,6 +14,8 @@ package com.amazonaws.services.kms.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GrantListEntry implements Serializable, Cloneable {
+public class GrantListEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -77,7 +79,8 @@ public class GrantListEntry implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> operations;
     /**
      * <p>
-     * The conditions under which the grant's operations are allowed.
+     * A list of key-value pairs that must be present in the encryption context of certain subsequent operations that
+     * the grant allows.
      * </p>
      */
     private GrantConstraints constraints;
@@ -471,11 +474,13 @@ public class GrantListEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The conditions under which the grant's operations are allowed.
+     * A list of key-value pairs that must be present in the encryption context of certain subsequent operations that
+     * the grant allows.
      * </p>
      * 
      * @param constraints
-     *        The conditions under which the grant's operations are allowed.
+     *        A list of key-value pairs that must be present in the encryption context of certain subsequent operations
+     *        that the grant allows.
      */
 
     public void setConstraints(GrantConstraints constraints) {
@@ -484,10 +489,12 @@ public class GrantListEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The conditions under which the grant's operations are allowed.
+     * A list of key-value pairs that must be present in the encryption context of certain subsequent operations that
+     * the grant allows.
      * </p>
      * 
-     * @return The conditions under which the grant's operations are allowed.
+     * @return A list of key-value pairs that must be present in the encryption context of certain subsequent operations
+     *         that the grant allows.
      */
 
     public GrantConstraints getConstraints() {
@@ -496,11 +503,13 @@ public class GrantListEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The conditions under which the grant's operations are allowed.
+     * A list of key-value pairs that must be present in the encryption context of certain subsequent operations that
+     * the grant allows.
      * </p>
      * 
      * @param constraints
-     *        The conditions under which the grant's operations are allowed.
+     *        A list of key-value pairs that must be present in the encryption context of certain subsequent operations
+     *        that the grant allows.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -615,5 +624,11 @@ public class GrantListEntry implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.kms.model.transform.GrantListEntryMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

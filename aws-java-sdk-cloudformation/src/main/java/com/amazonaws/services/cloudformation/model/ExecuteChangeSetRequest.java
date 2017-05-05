@@ -41,6 +41,15 @@ public class ExecuteChangeSetRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private String stackName;
+    /**
+     * <p>
+     * A unique identifier for this <code>ExecuteChangeSet</code> request. Specify this token if you plan to retry
+     * requests so that AWS CloudFormation knows that you're not attempting to execute a change set to update a stack
+     * with the same name. You might retry <code>ExecuteChangeSet</code> requests to ensure that AWS CloudFormation
+     * successfully received them.
+     * </p>
+     */
+    private String clientRequestToken;
 
     /**
      * <p>
@@ -129,6 +138,64 @@ public class ExecuteChangeSetRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * A unique identifier for this <code>ExecuteChangeSet</code> request. Specify this token if you plan to retry
+     * requests so that AWS CloudFormation knows that you're not attempting to execute a change set to update a stack
+     * with the same name. You might retry <code>ExecuteChangeSet</code> requests to ensure that AWS CloudFormation
+     * successfully received them.
+     * </p>
+     * 
+     * @param clientRequestToken
+     *        A unique identifier for this <code>ExecuteChangeSet</code> request. Specify this token if you plan to
+     *        retry requests so that AWS CloudFormation knows that you're not attempting to execute a change set to
+     *        update a stack with the same name. You might retry <code>ExecuteChangeSet</code> requests to ensure that
+     *        AWS CloudFormation successfully received them.
+     */
+
+    public void setClientRequestToken(String clientRequestToken) {
+        this.clientRequestToken = clientRequestToken;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for this <code>ExecuteChangeSet</code> request. Specify this token if you plan to retry
+     * requests so that AWS CloudFormation knows that you're not attempting to execute a change set to update a stack
+     * with the same name. You might retry <code>ExecuteChangeSet</code> requests to ensure that AWS CloudFormation
+     * successfully received them.
+     * </p>
+     * 
+     * @return A unique identifier for this <code>ExecuteChangeSet</code> request. Specify this token if you plan to
+     *         retry requests so that AWS CloudFormation knows that you're not attempting to execute a change set to
+     *         update a stack with the same name. You might retry <code>ExecuteChangeSet</code> requests to ensure that
+     *         AWS CloudFormation successfully received them.
+     */
+
+    public String getClientRequestToken() {
+        return this.clientRequestToken;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for this <code>ExecuteChangeSet</code> request. Specify this token if you plan to retry
+     * requests so that AWS CloudFormation knows that you're not attempting to execute a change set to update a stack
+     * with the same name. You might retry <code>ExecuteChangeSet</code> requests to ensure that AWS CloudFormation
+     * successfully received them.
+     * </p>
+     * 
+     * @param clientRequestToken
+     *        A unique identifier for this <code>ExecuteChangeSet</code> request. Specify this token if you plan to
+     *        retry requests so that AWS CloudFormation knows that you're not attempting to execute a change set to
+     *        update a stack with the same name. You might retry <code>ExecuteChangeSet</code> requests to ensure that
+     *        AWS CloudFormation successfully received them.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExecuteChangeSetRequest withClientRequestToken(String clientRequestToken) {
+        setClientRequestToken(clientRequestToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -142,7 +209,9 @@ public class ExecuteChangeSetRequest extends com.amazonaws.AmazonWebServiceReque
         if (getChangeSetName() != null)
             sb.append("ChangeSetName: ").append(getChangeSetName()).append(",");
         if (getStackName() != null)
-            sb.append("StackName: ").append(getStackName());
+            sb.append("StackName: ").append(getStackName()).append(",");
+        if (getClientRequestToken() != null)
+            sb.append("ClientRequestToken: ").append(getClientRequestToken());
         sb.append("}");
         return sb.toString();
     }
@@ -165,6 +234,10 @@ public class ExecuteChangeSetRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getStackName() != null && other.getStackName().equals(this.getStackName()) == false)
             return false;
+        if (other.getClientRequestToken() == null ^ this.getClientRequestToken() == null)
+            return false;
+        if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
+            return false;
         return true;
     }
 
@@ -175,6 +248,7 @@ public class ExecuteChangeSetRequest extends com.amazonaws.AmazonWebServiceReque
 
         hashCode = prime * hashCode + ((getChangeSetName() == null) ? 0 : getChangeSetName().hashCode());
         hashCode = prime * hashCode + ((getStackName() == null) ? 0 : getStackName().hashCode());
+        hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         return hashCode;
     }
 

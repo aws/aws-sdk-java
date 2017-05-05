@@ -14,6 +14,8 @@ package com.amazonaws.services.clouddirectory.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,11 +26,11 @@ import javax.annotation.Generated;
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class BatchReadException implements Serializable, Cloneable {
+public class BatchReadException implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Type of exception, such as InvalidArnException.
+     * Type of exception, such as <code>InvalidArnException</code>.
      * </p>
      */
     private String type;
@@ -41,11 +43,11 @@ public class BatchReadException implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Type of exception, such as InvalidArnException.
+     * Type of exception, such as <code>InvalidArnException</code>.
      * </p>
      * 
      * @param type
-     *        Type of exception, such as InvalidArnException.
+     *        Type of exception, such as <code>InvalidArnException</code>.
      * @see BatchReadExceptionType
      */
 
@@ -55,10 +57,10 @@ public class BatchReadException implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Type of exception, such as InvalidArnException.
+     * Type of exception, such as <code>InvalidArnException</code>.
      * </p>
      * 
-     * @return Type of exception, such as InvalidArnException.
+     * @return Type of exception, such as <code>InvalidArnException</code>.
      * @see BatchReadExceptionType
      */
 
@@ -68,11 +70,11 @@ public class BatchReadException implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Type of exception, such as InvalidArnException.
+     * Type of exception, such as <code>InvalidArnException</code>.
      * </p>
      * 
      * @param type
-     *        Type of exception, such as InvalidArnException.
+     *        Type of exception, such as <code>InvalidArnException</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BatchReadExceptionType
      */
@@ -84,11 +86,11 @@ public class BatchReadException implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Type of exception, such as InvalidArnException.
+     * Type of exception, such as <code>InvalidArnException</code>.
      * </p>
      * 
      * @param type
-     *        Type of exception, such as InvalidArnException.
+     *        Type of exception, such as <code>InvalidArnException</code>.
      * @see BatchReadExceptionType
      */
 
@@ -98,11 +100,11 @@ public class BatchReadException implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Type of exception, such as InvalidArnException.
+     * Type of exception, such as <code>InvalidArnException</code>.
      * </p>
      * 
      * @param type
-     *        Type of exception, such as InvalidArnException.
+     *        Type of exception, such as <code>InvalidArnException</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BatchReadExceptionType
      */
@@ -209,5 +211,11 @@ public class BatchReadException implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.clouddirectory.model.transform.BatchReadExceptionMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

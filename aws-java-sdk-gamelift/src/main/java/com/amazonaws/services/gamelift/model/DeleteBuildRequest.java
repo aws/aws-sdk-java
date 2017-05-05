@@ -30,18 +30,18 @@ public class DeleteBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier for the build you want to delete.
+     * Unique identifier for a build to delete.
      * </p>
      */
     private String buildId;
 
     /**
      * <p>
-     * Unique identifier for the build you want to delete.
+     * Unique identifier for a build to delete.
      * </p>
      * 
      * @param buildId
-     *        Unique identifier for the build you want to delete.
+     *        Unique identifier for a build to delete.
      */
 
     public void setBuildId(String buildId) {
@@ -50,10 +50,10 @@ public class DeleteBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier for the build you want to delete.
+     * Unique identifier for a build to delete.
      * </p>
      * 
-     * @return Unique identifier for the build you want to delete.
+     * @return Unique identifier for a build to delete.
      */
 
     public String getBuildId() {
@@ -62,11 +62,11 @@ public class DeleteBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique identifier for the build you want to delete.
+     * Unique identifier for a build to delete.
      * </p>
      * 
      * @param buildId
-     *        Unique identifier for the build you want to delete.
+     *        Unique identifier for a build to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -30,15 +30,6 @@ public class GetContactReachabilityStatusRequest extends com.amazonaws.AmazonWeb
      * The name of the domain for which you want to know whether the registrant contact has confirmed that the email
      * address is valid.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      */
     private String domainName;
 
@@ -47,27 +38,10 @@ public class GetContactReachabilityStatusRequest extends com.amazonaws.AmazonWeb
      * The name of the domain for which you want to know whether the registrant contact has confirmed that the email
      * address is valid.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param domainName
      *        The name of the domain for which you want to know whether the registrant contact has confirmed that the
-     *        email address is valid.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        email address is valid.
      */
 
     public void setDomainName(String domainName) {
@@ -79,26 +53,9 @@ public class GetContactReachabilityStatusRequest extends com.amazonaws.AmazonWeb
      * The name of the domain for which you want to know whether the registrant contact has confirmed that the email
      * address is valid.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @return The name of the domain for which you want to know whether the registrant contact has confirmed that the
-     *         email address is valid.</p>
-     *         <p>
-     *         Type: String
-     *         </p>
-     *         <p>
-     *         Default: None
-     *         </p>
-     *         <p>
-     *         Required: Yes
+     *         email address is valid.
      */
 
     public String getDomainName() {
@@ -110,27 +67,10 @@ public class GetContactReachabilityStatusRequest extends com.amazonaws.AmazonWeb
      * The name of the domain for which you want to know whether the registrant contact has confirmed that the email
      * address is valid.
      * </p>
-     * <p>
-     * Type: String
-     * </p>
-     * <p>
-     * Default: None
-     * </p>
-     * <p>
-     * Required: Yes
-     * </p>
      * 
      * @param domainName
      *        The name of the domain for which you want to know whether the registrant contact has confirmed that the
-     *        email address is valid.</p>
-     *        <p>
-     *        Type: String
-     *        </p>
-     *        <p>
-     *        Default: None
-     *        </p>
-     *        <p>
-     *        Required: Yes
+     *        email address is valid.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

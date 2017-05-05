@@ -14,12 +14,14 @@ package com.amazonaws.services.budgets.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * This includes the options for getting the cost of a budget.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CostTypes implements Serializable, Cloneable {
+public class CostTypes implements Serializable, Cloneable, StructuredPojo {
 
     private Boolean includeTax;
 
@@ -193,5 +195,11 @@ public class CostTypes implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.budgets.model.transform.CostTypesMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

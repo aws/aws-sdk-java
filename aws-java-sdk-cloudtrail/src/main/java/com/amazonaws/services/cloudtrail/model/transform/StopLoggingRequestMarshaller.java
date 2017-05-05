@@ -12,64 +12,44 @@
  */
 package com.amazonaws.services.cloudtrail.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cloudtrail.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * StopLoggingRequest Marshaller
+ * StopLoggingRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class StopLoggingRequestMarshaller implements Marshaller<Request<StopLoggingRequest>, StopLoggingRequest> {
+@SdkInternalApi
+public class StopLoggingRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
 
-    public StopLoggingRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final StopLoggingRequestMarshaller instance = new StopLoggingRequestMarshaller();
+
+    public static StopLoggingRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<StopLoggingRequest> marshall(StopLoggingRequest stopLoggingRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(StopLoggingRequest stopLoggingRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (stopLoggingRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<StopLoggingRequest> request = new DefaultRequest<StopLoggingRequest>(stopLoggingRequest, "AWSCloudTrail");
-        request.addHeader("X-Amz-Target", "com.amazonaws.cloudtrail.v20131101.CloudTrail_20131101.StopLogging");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (stopLoggingRequest.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(stopLoggingRequest.getName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(stopLoggingRequest.getName(), NAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

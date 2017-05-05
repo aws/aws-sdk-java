@@ -14,9 +14,14 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * Creating application setting request
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class WriteApplicationSettingsRequest implements Serializable, Cloneable {
+public class WriteApplicationSettingsRequest implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * The default campaign limits for the app. These limits apply to each campaign for the app, unless the campaign
@@ -166,5 +171,11 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable 
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.pinpoint.model.transform.WriteApplicationSettingsRequestMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

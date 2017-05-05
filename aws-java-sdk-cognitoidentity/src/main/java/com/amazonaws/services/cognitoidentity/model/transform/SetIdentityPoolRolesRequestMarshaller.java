@@ -12,96 +12,52 @@
  */
 package com.amazonaws.services.cognitoidentity.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.Map;
 
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cognitoidentity.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * SetIdentityPoolRolesRequest Marshaller
+ * SetIdentityPoolRolesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SetIdentityPoolRolesRequestMarshaller implements Marshaller<Request<SetIdentityPoolRolesRequest>, SetIdentityPoolRolesRequest> {
+@SdkInternalApi
+public class SetIdentityPoolRolesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> IDENTITYPOOLID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentityPoolId").build();
+    private static final MarshallingInfo<Map> ROLES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Roles").build();
+    private static final MarshallingInfo<Map> ROLEMAPPINGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("RoleMappings").build();
 
-    public SetIdentityPoolRolesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final SetIdentityPoolRolesRequestMarshaller instance = new SetIdentityPoolRolesRequestMarshaller();
+
+    public static SetIdentityPoolRolesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<SetIdentityPoolRolesRequest> marshall(SetIdentityPoolRolesRequest setIdentityPoolRolesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(SetIdentityPoolRolesRequest setIdentityPoolRolesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (setIdentityPoolRolesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<SetIdentityPoolRolesRequest> request = new DefaultRequest<SetIdentityPoolRolesRequest>(setIdentityPoolRolesRequest, "AmazonCognitoIdentity");
-        request.addHeader("X-Amz-Target", "AWSCognitoIdentityService.SetIdentityPoolRoles");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (setIdentityPoolRolesRequest.getIdentityPoolId() != null) {
-                jsonGenerator.writeFieldName("IdentityPoolId").writeValue(setIdentityPoolRolesRequest.getIdentityPoolId());
-            }
-
-            java.util.Map<String, String> rolesMap = setIdentityPoolRolesRequest.getRoles();
-            if (rolesMap != null) {
-                jsonGenerator.writeFieldName("Roles");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, String> rolesMapValue : rolesMap.entrySet()) {
-                    if (rolesMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(rolesMapValue.getKey());
-
-                        jsonGenerator.writeValue(rolesMapValue.getValue());
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-
-            java.util.Map<String, RoleMapping> roleMappingsMap = setIdentityPoolRolesRequest.getRoleMappings();
-            if (roleMappingsMap != null) {
-                jsonGenerator.writeFieldName("RoleMappings");
-                jsonGenerator.writeStartObject();
-
-                for (Map.Entry<String, RoleMapping> roleMappingsMapValue : roleMappingsMap.entrySet()) {
-                    if (roleMappingsMapValue.getValue() != null) {
-                        jsonGenerator.writeFieldName(roleMappingsMapValue.getKey());
-
-                        RoleMappingJsonMarshaller.getInstance().marshall(roleMappingsMapValue.getValue(), jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndObject();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(setIdentityPoolRolesRequest.getIdentityPoolId(), IDENTITYPOOLID_BINDING);
+            protocolMarshaller.marshall(setIdentityPoolRolesRequest.getRoles(), ROLES_BINDING);
+            protocolMarshaller.marshall(setIdentityPoolRolesRequest.getRoleMappings(), ROLEMAPPINGS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

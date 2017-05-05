@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.polly.presign;
 
-import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.Request;
 import com.amazonaws.annotation.SdkInternalApi;
@@ -25,12 +24,10 @@ import com.amazonaws.auth.presign.PresignerParams;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.polly.AmazonPolly;
 import com.amazonaws.services.polly.model.SynthesizeSpeechRequest;
-
-import org.joda.time.DateTime;
-
 import java.net.URI;
 import java.net.URL;
 import java.util.Date;
+import org.joda.time.DateTime;
 
 /**
  * Presigning extensions methods for {@link AmazonPolly}.
@@ -89,6 +86,12 @@ public final class AmazonPollyPresigners {
         if (synthesizeSpeechRequest.getLexiconNames() != null) {
             for (String lexiconName : synthesizeSpeechRequest.getLexiconNames()) {
                 request.addParameter("LexiconNames", lexiconName);
+            }
+        }
+
+        if (synthesizeSpeechRequest.getSpeechMarkTypes() != null) {
+            for (String speechMarkType : synthesizeSpeechRequest.getSpeechMarkTypes()) {
+                request.addParameter("SpeechMarkTypes", speechMarkType);
             }
         }
     }

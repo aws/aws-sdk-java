@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -37,6 +38,7 @@ import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
 import com.amazonaws.services.elasticloadbalancingv2.AmazonElasticLoadBalancingClientBuilder;
+import com.amazonaws.services.elasticloadbalancingv2.waiters.AmazonElasticLoadBalancingWaiters;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -130,6 +132,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /** Default signing name for the service. */
     private static final String DEFAULT_SIGNING_NAME = "elasticloadbalancing";
+
+    private volatile AmazonElasticLoadBalancingWaiters waiters;
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
@@ -292,6 +296,10 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
         init();
     }
 
+    public static AmazonElasticLoadBalancingClientBuilder builder() {
+        return AmazonElasticLoadBalancingClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Elastic Load Balancing v2 using the specified parameters.
      *
@@ -382,7 +390,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *      API Documentation</a>
      */
     @Override
-    public AddTagsResult addTags(AddTagsRequest addTagsRequest) {
+    public AddTagsResult addTags(AddTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddTags(request);
+    }
+
+    @SdkInternalApi
+    final AddTagsResult executeAddTags(AddTagsRequest addTagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(addTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -460,7 +474,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateListenerResult createListener(CreateListenerRequest createListenerRequest) {
+    public CreateListenerResult createListener(CreateListenerRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateListener(request);
+    }
+
+    @SdkInternalApi
+    final CreateListenerResult executeCreateListener(CreateListenerRequest createListenerRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createListenerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -519,7 +539,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * @param createLoadBalancerRequest
      * @return Result of the CreateLoadBalancer operation returned by the service.
      * @throws DuplicateLoadBalancerNameException
-     *         A load balancer with the specified name already exists for this account.
+     *         A load balancer with the specified name already exists.
      * @throws TooManyLoadBalancersException
      *         You've reached the limit on the number of load balancers for your AWS account.
      * @throws InvalidConfigurationRequestException
@@ -541,7 +561,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateLoadBalancerResult createLoadBalancer(CreateLoadBalancerRequest createLoadBalancerRequest) {
+    public CreateLoadBalancerResult createLoadBalancer(CreateLoadBalancerRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateLoadBalancer(request);
+    }
+
+    @SdkInternalApi
+    final CreateLoadBalancerResult executeCreateLoadBalancer(CreateLoadBalancerRequest createLoadBalancerRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createLoadBalancerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -610,7 +636,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateRuleResult createRule(CreateRuleRequest createRuleRequest) {
+    public CreateRuleResult createRule(CreateRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateRule(request);
+    }
+
+    @SdkInternalApi
+    final CreateRuleResult executeCreateRule(CreateRuleRequest createRuleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -672,7 +704,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateTargetGroupResult createTargetGroup(CreateTargetGroupRequest createTargetGroupRequest) {
+    public CreateTargetGroupResult createTargetGroup(CreateTargetGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTargetGroup(request);
+    }
+
+    @SdkInternalApi
+    final CreateTargetGroupResult executeCreateTargetGroup(CreateTargetGroupRequest createTargetGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createTargetGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -720,7 +758,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteListenerResult deleteListener(DeleteListenerRequest deleteListenerRequest) {
+    public DeleteListenerResult deleteListener(DeleteListenerRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteListener(request);
+    }
+
+    @SdkInternalApi
+    final DeleteListenerResult executeDeleteListener(DeleteListenerRequest deleteListenerRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteListenerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -775,7 +819,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteLoadBalancerResult deleteLoadBalancer(DeleteLoadBalancerRequest deleteLoadBalancerRequest) {
+    public DeleteLoadBalancerResult deleteLoadBalancer(DeleteLoadBalancerRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteLoadBalancer(request);
+    }
+
+    @SdkInternalApi
+    final DeleteLoadBalancerResult executeDeleteLoadBalancer(DeleteLoadBalancerRequest deleteLoadBalancerRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteLoadBalancerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -821,7 +871,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteRuleResult deleteRule(DeleteRuleRequest deleteRuleRequest) {
+    public DeleteRuleResult deleteRule(DeleteRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteRule(request);
+    }
+
+    @SdkInternalApi
+    final DeleteRuleResult executeDeleteRule(DeleteRuleRequest deleteRuleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -868,7 +924,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteTargetGroupResult deleteTargetGroup(DeleteTargetGroupRequest deleteTargetGroupRequest) {
+    public DeleteTargetGroupResult deleteTargetGroup(DeleteTargetGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTargetGroup(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTargetGroupResult executeDeleteTargetGroup(DeleteTargetGroupRequest deleteTargetGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteTargetGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -915,7 +977,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeregisterTargetsResult deregisterTargets(DeregisterTargetsRequest deregisterTargetsRequest) {
+    public DeregisterTargetsResult deregisterTargets(DeregisterTargetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeregisterTargets(request);
+    }
+
+    @SdkInternalApi
+    final DeregisterTargetsResult executeDeregisterTargets(DeregisterTargetsRequest deregisterTargetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deregisterTargetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -962,7 +1030,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeListenersResult describeListeners(DescribeListenersRequest describeListenersRequest) {
+    public DescribeListenersResult describeListeners(DescribeListenersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeListeners(request);
+    }
+
+    @SdkInternalApi
+    final DescribeListenersResult executeDescribeListeners(DescribeListenersRequest describeListenersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeListenersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1007,7 +1081,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeLoadBalancerAttributesResult describeLoadBalancerAttributes(DescribeLoadBalancerAttributesRequest describeLoadBalancerAttributesRequest) {
+    public DescribeLoadBalancerAttributesResult describeLoadBalancerAttributes(DescribeLoadBalancerAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeLoadBalancerAttributes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeLoadBalancerAttributesResult executeDescribeLoadBalancerAttributes(DescribeLoadBalancerAttributesRequest describeLoadBalancerAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeLoadBalancerAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1055,7 +1135,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeLoadBalancersResult describeLoadBalancers(DescribeLoadBalancersRequest describeLoadBalancersRequest) {
+    public DescribeLoadBalancersResult describeLoadBalancers(DescribeLoadBalancersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeLoadBalancers(request);
+    }
+
+    @SdkInternalApi
+    final DescribeLoadBalancersResult executeDescribeLoadBalancers(DescribeLoadBalancersRequest describeLoadBalancersRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeLoadBalancersRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1102,7 +1188,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeRulesResult describeRules(DescribeRulesRequest describeRulesRequest) {
+    public DescribeRulesResult describeRules(DescribeRulesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeRules(request);
+    }
+
+    @SdkInternalApi
+    final DescribeRulesResult executeDescribeRules(DescribeRulesRequest describeRulesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeRulesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1136,7 +1228,9 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * Describes the specified policies or all policies used for SSL negotiation.
      * </p>
      * <p>
-     * Note that the only supported policy at this time is ELBSecurityPolicy-2015-05.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
+     * >Security Policies</a> in the <i>Application Load Balancers Guide</i>.
      * </p>
      * 
      * @param describeSSLPoliciesRequest
@@ -1148,7 +1242,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeSSLPoliciesResult describeSSLPolicies(DescribeSSLPoliciesRequest describeSSLPoliciesRequest) {
+    public DescribeSSLPoliciesResult describeSSLPolicies(DescribeSSLPoliciesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeSSLPolicies(request);
+    }
+
+    @SdkInternalApi
+    final DescribeSSLPoliciesResult executeDescribeSSLPolicies(DescribeSSLPoliciesRequest describeSSLPoliciesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeSSLPoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1180,7 +1280,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Describes the tags for the specified resources.
+     * Describes the tags for the specified resources. You can describe the tags for one or more Application Load
+     * Balancers and target groups.
      * </p>
      * 
      * @param describeTagsRequest
@@ -1198,7 +1299,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeTagsResult describeTags(DescribeTagsRequest describeTagsRequest) {
+    public DescribeTagsResult describeTags(DescribeTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTags(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTagsResult executeDescribeTags(DescribeTagsRequest describeTagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1242,7 +1349,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeTargetGroupAttributesResult describeTargetGroupAttributes(DescribeTargetGroupAttributesRequest describeTargetGroupAttributesRequest) {
+    public DescribeTargetGroupAttributesResult describeTargetGroupAttributes(DescribeTargetGroupAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTargetGroupAttributes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTargetGroupAttributesResult executeDescribeTargetGroupAttributes(DescribeTargetGroupAttributesRequest describeTargetGroupAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTargetGroupAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1294,7 +1407,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeTargetGroupsResult describeTargetGroups(DescribeTargetGroupsRequest describeTargetGroupsRequest) {
+    public DescribeTargetGroupsResult describeTargetGroups(DescribeTargetGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTargetGroups(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTargetGroupsResult executeDescribeTargetGroups(DescribeTargetGroupsRequest describeTargetGroupsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTargetGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1342,7 +1461,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DescribeTargetHealthResult describeTargetHealth(DescribeTargetHealthRequest describeTargetHealthRequest) {
+    public DescribeTargetHealthResult describeTargetHealth(DescribeTargetHealthRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTargetHealth(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTargetHealthResult executeDescribeTargetHealth(DescribeTargetHealthRequest describeTargetHealthRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeTargetHealthRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1379,7 +1504,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * <p>
      * Any properties that you do not specify retain their current values. However, changing the protocol from HTTPS to
      * HTTP removes the security policy and SSL certificate properties. If you change the protocol from HTTP to HTTPS,
-     * you must add the security policy.
+     * you must add the security policy and server certificate.
      * </p>
      * 
      * @param modifyListenerRequest
@@ -1413,7 +1538,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ModifyListenerResult modifyListener(ModifyListenerRequest modifyListenerRequest) {
+    public ModifyListenerResult modifyListener(ModifyListenerRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyListener(request);
+    }
+
+    @SdkInternalApi
+    final ModifyListenerResult executeModifyListener(ModifyListenerRequest modifyListenerRequest) {
 
         ExecutionContext executionContext = createExecutionContext(modifyListenerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1464,7 +1595,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ModifyLoadBalancerAttributesResult modifyLoadBalancerAttributes(ModifyLoadBalancerAttributesRequest modifyLoadBalancerAttributesRequest) {
+    public ModifyLoadBalancerAttributesResult modifyLoadBalancerAttributes(ModifyLoadBalancerAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyLoadBalancerAttributes(request);
+    }
+
+    @SdkInternalApi
+    final ModifyLoadBalancerAttributesResult executeModifyLoadBalancerAttributes(ModifyLoadBalancerAttributesRequest modifyLoadBalancerAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(modifyLoadBalancerAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1520,7 +1657,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ModifyRuleResult modifyRule(ModifyRuleRequest modifyRuleRequest) {
+    public ModifyRuleResult modifyRule(ModifyRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyRule(request);
+    }
+
+    @SdkInternalApi
+    final ModifyRuleResult executeModifyRule(ModifyRuleRequest modifyRuleRequest) {
 
         ExecutionContext executionContext = createExecutionContext(modifyRuleRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1566,7 +1709,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ModifyTargetGroupResult modifyTargetGroup(ModifyTargetGroupRequest modifyTargetGroupRequest) {
+    public ModifyTargetGroupResult modifyTargetGroup(ModifyTargetGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyTargetGroup(request);
+    }
+
+    @SdkInternalApi
+    final ModifyTargetGroupResult executeModifyTargetGroup(ModifyTargetGroupRequest modifyTargetGroupRequest) {
 
         ExecutionContext executionContext = createExecutionContext(modifyTargetGroupRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1611,7 +1760,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ModifyTargetGroupAttributesResult modifyTargetGroupAttributes(ModifyTargetGroupAttributesRequest modifyTargetGroupAttributesRequest) {
+    public ModifyTargetGroupAttributesResult modifyTargetGroupAttributes(ModifyTargetGroupAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyTargetGroupAttributes(request);
+    }
+
+    @SdkInternalApi
+    final ModifyTargetGroupAttributesResult executeModifyTargetGroupAttributes(ModifyTargetGroupAttributesRequest modifyTargetGroupAttributesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(modifyTargetGroupAttributesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1672,7 +1827,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RegisterTargetsResult registerTargets(RegisterTargetsRequest registerTargetsRequest) {
+    public RegisterTargetsResult registerTargets(RegisterTargetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterTargets(request);
+    }
+
+    @SdkInternalApi
+    final RegisterTargetsResult executeRegisterTargets(RegisterTargetsRequest registerTargetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(registerTargetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1727,7 +1888,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public RemoveTagsResult removeTags(RemoveTagsRequest removeTagsRequest) {
+    public RemoveTagsResult removeTags(RemoveTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveTags(request);
+    }
+
+    @SdkInternalApi
+    final RemoveTagsResult executeRemoveTags(RemoveTagsRequest removeTagsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(removeTagsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1774,7 +1941,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public SetIpAddressTypeResult setIpAddressType(SetIpAddressTypeRequest setIpAddressTypeRequest) {
+    public SetIpAddressTypeResult setIpAddressType(SetIpAddressTypeRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetIpAddressType(request);
+    }
+
+    @SdkInternalApi
+    final SetIpAddressTypeResult executeSetIpAddressType(SetIpAddressTypeRequest setIpAddressTypeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(setIpAddressTypeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1826,7 +1999,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public SetRulePrioritiesResult setRulePriorities(SetRulePrioritiesRequest setRulePrioritiesRequest) {
+    public SetRulePrioritiesResult setRulePriorities(SetRulePrioritiesRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetRulePriorities(request);
+    }
+
+    @SdkInternalApi
+    final SetRulePrioritiesResult executeSetRulePriorities(SetRulePrioritiesRequest setRulePrioritiesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(setRulePrioritiesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1875,7 +2054,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public SetSecurityGroupsResult setSecurityGroups(SetSecurityGroupsRequest setSecurityGroupsRequest) {
+    public SetSecurityGroupsResult setSecurityGroups(SetSecurityGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetSecurityGroups(request);
+    }
+
+    @SdkInternalApi
+    final SetSecurityGroupsResult executeSetSecurityGroups(SetSecurityGroupsRequest setSecurityGroupsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(setSecurityGroupsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1926,7 +2111,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public SetSubnetsResult setSubnets(SetSubnetsRequest setSubnetsRequest) {
+    public SetSubnetsResult setSubnets(SetSubnetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetSubnets(request);
+    }
+
+    @SdkInternalApi
+    final SetSubnetsResult executeSetSubnets(SetSubnetsRequest setSubnetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(setSubnetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2006,6 +2197,26 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
 
         return client.execute(request, responseHandler, errorResponseHandler, executionContext);
+    }
+
+    @Override
+    public AmazonElasticLoadBalancingWaiters waiters() {
+        if (waiters == null) {
+            synchronized (this) {
+                if (waiters == null) {
+                    waiters = new AmazonElasticLoadBalancingWaiters(this);
+                }
+            }
+        }
+        return waiters;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
 
 }

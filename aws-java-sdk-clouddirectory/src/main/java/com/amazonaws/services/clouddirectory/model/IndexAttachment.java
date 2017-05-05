@@ -14,6 +14,8 @@ package com.amazonaws.services.clouddirectory.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class IndexAttachment implements Serializable, Cloneable {
+public class IndexAttachment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -34,7 +36,7 @@ public class IndexAttachment implements Serializable, Cloneable {
     private java.util.List<AttributeKeyAndValue> indexedAttributes;
     /**
      * <p>
-     * The ObjectIdentifier of the object attached to the index.
+     * The <code>ObjectIdentifier</code> of the object attached to the index.
      * </p>
      */
     private String objectIdentifier;
@@ -111,11 +113,11 @@ public class IndexAttachment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ObjectIdentifier of the object attached to the index.
+     * The <code>ObjectIdentifier</code> of the object attached to the index.
      * </p>
      * 
      * @param objectIdentifier
-     *        The ObjectIdentifier of the object attached to the index.
+     *        The <code>ObjectIdentifier</code> of the object attached to the index.
      */
 
     public void setObjectIdentifier(String objectIdentifier) {
@@ -124,10 +126,10 @@ public class IndexAttachment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ObjectIdentifier of the object attached to the index.
+     * The <code>ObjectIdentifier</code> of the object attached to the index.
      * </p>
      * 
-     * @return The ObjectIdentifier of the object attached to the index.
+     * @return The <code>ObjectIdentifier</code> of the object attached to the index.
      */
 
     public String getObjectIdentifier() {
@@ -136,11 +138,11 @@ public class IndexAttachment implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ObjectIdentifier of the object attached to the index.
+     * The <code>ObjectIdentifier</code> of the object attached to the index.
      * </p>
      * 
      * @param objectIdentifier
-     *        The ObjectIdentifier of the object attached to the index.
+     *        The <code>ObjectIdentifier</code> of the object attached to the index.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -206,5 +208,11 @@ public class IndexAttachment implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.clouddirectory.model.transform.IndexAttachmentMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

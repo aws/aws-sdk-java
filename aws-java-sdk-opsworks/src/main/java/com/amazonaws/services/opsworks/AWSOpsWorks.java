@@ -29,20 +29,20 @@ import com.amazonaws.services.opsworks.waiters.AWSOpsWorksWaiters;
  * <p>
  * <fullname>AWS OpsWorks</fullname>
  * <p>
- * Welcome to the <i>AWS OpsWorks API Reference</i>. This guide provides descriptions, syntax, and usage examples for
- * AWS OpsWorks actions and data types, including common parameters and error codes.
+ * Welcome to the <i>AWS OpsWorks Stacks API Reference</i>. This guide provides descriptions, syntax, and usage examples
+ * for AWS OpsWorks Stacks actions and data types, including common parameters and error codes.
  * </p>
  * <p>
- * AWS OpsWorks is an application management service that provides an integrated experience for overseeing the complete
- * application lifecycle. For information about this product, go to the <a href="http://aws.amazon.com/opsworks/">AWS
- * OpsWorks</a> details page.
+ * AWS OpsWorks Stacks is an application management service that provides an integrated experience for overseeing the
+ * complete application lifecycle. For information about this product, go to the <a
+ * href="http://aws.amazon.com/opsworks/">AWS OpsWorks</a> details page.
  * </p>
  * <p>
  * <b>SDKs and CLI</b>
  * </p>
  * <p>
- * The most common way to use the AWS OpsWorks API is by using the AWS Command Line Interface (CLI) or by using one of
- * the AWS SDKs to implement applications in your preferred language. For more information, see:
+ * The most common way to use the AWS OpsWorks Stacks API is by using the AWS Command Line Interface (CLI) or by using
+ * one of the AWS SDKs to implement applications in your preferred language. For more information, see:
  * </p>
  * <ul>
  * <li>
@@ -88,13 +88,18 @@ import com.amazonaws.services.opsworks.waiters.AWSOpsWorksWaiters;
  * <b>Endpoints</b>
  * </p>
  * <p>
- * AWS OpsWorks supports the following endpoints, all HTTPS. You must connect to one of the following endpoints. Stacks
- * can only be accessed or managed within the endpoint in which they are created.
+ * AWS OpsWorks Stacks supports the following endpoints, all HTTPS. You must connect to one of the following endpoints.
+ * Stacks can only be accessed or managed within the endpoint in which they are created.
  * </p>
  * <ul>
  * <li>
  * <p>
  * opsworks.us-east-1.amazonaws.com
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * opsworks.us-east-2.amazonaws.com
  * </p>
  * </li>
  * <li>
@@ -110,6 +115,11 @@ import com.amazonaws.services.opsworks.waiters.AWSOpsWorksWaiters;
  * <li>
  * <p>
  * opsworks.eu-west-1.amazonaws.com
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * opsworks.eu-west-2.amazonaws.com
  * </p>
  * </li>
  * <li>
@@ -243,7 +253,7 @@ public interface AWSOpsWorks {
      * </li>
      * <li>
      * <p>
-     * You cannot use this action with instances that were created with AWS OpsWorks.
+     * You cannot use this action with instances that were created with AWS OpsWorks Stacks.
      * </p>
      * </li>
      * </ul>
@@ -703,7 +713,8 @@ public interface AWSOpsWorks {
     /**
      * <p>
      * Deregister a registered Amazon EC2 or on-premises instance. This action removes the instance from the stack and
-     * returns it to your control. This action can not be used with instances that were created with AWS OpsWorks.
+     * returns it to your control. This action can not be used with instances that were created with AWS OpsWorks
+     * Stacks.
      * </p>
      * <p>
      * <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack
@@ -773,8 +784,8 @@ public interface AWSOpsWorks {
 
     /**
      * <p>
-     * Describes the available AWS OpsWorks agent versions. You must specify a stack ID or a configuration manager.
-     * <code>DescribeAgentVersions</code> returns a list of available agent versions for the specified stack or
+     * Describes the available AWS OpsWorks Stacks agent versions. You must specify a stack ID or a configuration
+     * manager. <code>DescribeAgentVersions</code> returns a list of available agent versions for the specified stack or
      * configuration manager.
      * </p>
      * 
@@ -796,7 +807,7 @@ public interface AWSOpsWorks {
      * </p>
      * <note>
      * <p>
-     * You must specify at least one of the parameters.
+     * This call accepts only one resource-identifying parameter.
      * </p>
      * </note>
      * <p>
@@ -825,7 +836,7 @@ public interface AWSOpsWorks {
      * </p>
      * <note>
      * <p>
-     * You must specify at least one of the parameters.
+     * This call accepts only one resource-identifying parameter.
      * </p>
      * </note>
      * <p>
@@ -854,7 +865,7 @@ public interface AWSOpsWorks {
      * </p>
      * <note>
      * <p>
-     * You must specify at least one of the parameters.
+     * This call accepts only one resource-identifying parameter.
      * </p>
      * </note>
      * <p>
@@ -881,7 +892,7 @@ public interface AWSOpsWorks {
      * <p>
      * Describes Amazon ECS clusters that are registered with a stack. If you specify only a stack ID, you can use the
      * <code>MaxResults</code> and <code>NextToken</code> parameters to paginate the response. However, AWS OpsWorks
-     * currently supports only one cluster per layer, so the result set has a maximum of one element.
+     * Stacks currently supports only one cluster per layer, so the result set has a maximum of one element.
      * </p>
      * <p>
      * <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions
@@ -889,6 +900,9 @@ public interface AWSOpsWorks {
      * permissions, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
      * Permissions</a>.
+     * </p>
+     * <p>
+     * This call accepts only one resource-identifying parameter.
      * </p>
      * 
      * @param describeEcsClustersRequest
@@ -910,7 +924,7 @@ public interface AWSOpsWorks {
      * </p>
      * <note>
      * <p>
-     * You must specify at least one of the parameters.
+     * This call accepts only one resource-identifying parameter.
      * </p>
      * </note>
      * <p>
@@ -939,7 +953,7 @@ public interface AWSOpsWorks {
      * </p>
      * <note>
      * <p>
-     * You must specify at least one of the parameters.
+     * This call accepts only one resource-identifying parameter.
      * </p>
      * </note>
      * <p>
@@ -968,7 +982,7 @@ public interface AWSOpsWorks {
      * </p>
      * <note>
      * <p>
-     * You must specify at least one of the parameters.
+     * This call accepts only one resource-identifying parameter.
      * </p>
      * </note>
      * <p>
@@ -997,7 +1011,7 @@ public interface AWSOpsWorks {
      * </p>
      * <note>
      * <p>
-     * You must specify at least one of the parameters.
+     * This call accepts only one resource-identifying parameter.
      * </p>
      * </note>
      * <p>
@@ -1097,7 +1111,7 @@ public interface AWSOpsWorks {
      * </p>
      * <note>
      * <p>
-     * You must specify at least one of the parameters.
+     * This call accepts only one resource-identifying parameter.
      * </p>
      * </note>
      * <p>
@@ -1131,6 +1145,9 @@ public interface AWSOpsWorks {
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
      * Permissions</a>.
      * </p>
+     * <p>
+     * This call accepts only one resource-identifying parameter.
+     * </p>
      * 
      * @param describeRdsDbInstancesRequest
      * @return Result of the DescribeRdsDbInstances operation returned by the service.
@@ -1146,7 +1163,7 @@ public interface AWSOpsWorks {
 
     /**
      * <p>
-     * Describes AWS OpsWorks service errors.
+     * Describes AWS OpsWorks Stacks service errors.
      * </p>
      * <p>
      * <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions
@@ -1154,6 +1171,9 @@ public interface AWSOpsWorks {
      * permissions, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
      * Permissions</a>.
+     * </p>
+     * <p>
+     * This call accepts only one resource-identifying parameter.
      * </p>
      * 
      * @param describeServiceErrorsRequest
@@ -1300,7 +1320,7 @@ public interface AWSOpsWorks {
      * </p>
      * <note>
      * <p>
-     * You must specify at least one of the parameters.
+     * This call accepts only one resource-identifying parameter.
      * </p>
      * </note>
      * <p>
@@ -1493,18 +1513,26 @@ public interface AWSOpsWorks {
 
     /**
      * <p>
-     * Registers instances with a specified stack that were created outside of AWS OpsWorks.
+     * Registers instances that were created outside of AWS OpsWorks Stacks with a specified stack.
      * </p>
      * <note>
      * <p>
-     * We do not recommend using this action to register instances. The complete registration operation has two primary
-     * steps, installing the AWS OpsWorks agent on the instance and registering the instance with the stack.
+     * We do not recommend using this action to register instances. The complete registration operation includes two
+     * tasks: installing the AWS OpsWorks Stacks agent on the instance, and registering the instance with the stack.
      * <code>RegisterInstance</code> handles only the second step. You should instead use the AWS CLI
      * <code>register</code> command, which performs the entire registration operation. For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register.html"> Registering an
-     * Instance with an AWS OpsWorks Stack</a>.
+     * Instance with an AWS OpsWorks Stacks Stack</a>.
      * </p>
      * </note>
+     * <p>
+     * Registered instances have the same requirements as instances that are created by using the <a>CreateInstance</a>
+     * API. For example, registered instances must be running a supported Linux-based operating system, and they must
+     * have a supported instance type. For more information about requirements for instances that you want to register,
+     * see <a href=
+     * "http://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register-registering-preparer.html">
+     * Preparing the Instance</a>.
+     * </p>
      * <p>
      * <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack
      * or an attached policy that explicitly grants permissions. For more information on user permissions, see <a
@@ -1755,7 +1783,7 @@ public interface AWSOpsWorks {
      * <p>
      * Unassigns a registered instance from all of it's layers. The instance remains in the stack as an unassigned
      * instance and can be assigned to another layer, as needed. You cannot use this action with instances that were
-     * created with AWS OpsWorks.
+     * created with AWS OpsWorks Stacks.
      * </p>
      * <p>
      * <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack

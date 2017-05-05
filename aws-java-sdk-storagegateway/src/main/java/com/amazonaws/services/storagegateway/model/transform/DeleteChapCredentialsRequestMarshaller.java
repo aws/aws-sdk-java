@@ -12,67 +12,47 @@
  */
 package com.amazonaws.services.storagegateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.storagegateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteChapCredentialsRequest Marshaller
+ * DeleteChapCredentialsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteChapCredentialsRequestMarshaller implements Marshaller<Request<DeleteChapCredentialsRequest>, DeleteChapCredentialsRequest> {
+@SdkInternalApi
+public class DeleteChapCredentialsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> TARGETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TargetARN").build();
+    private static final MarshallingInfo<String> INITIATORNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InitiatorName").build();
 
-    public DeleteChapCredentialsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteChapCredentialsRequestMarshaller instance = new DeleteChapCredentialsRequestMarshaller();
+
+    public static DeleteChapCredentialsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteChapCredentialsRequest> marshall(DeleteChapCredentialsRequest deleteChapCredentialsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteChapCredentialsRequest deleteChapCredentialsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteChapCredentialsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteChapCredentialsRequest> request = new DefaultRequest<DeleteChapCredentialsRequest>(deleteChapCredentialsRequest, "AWSStorageGateway");
-        request.addHeader("X-Amz-Target", "StorageGateway_20130630.DeleteChapCredentials");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteChapCredentialsRequest.getTargetARN() != null) {
-                jsonGenerator.writeFieldName("TargetARN").writeValue(deleteChapCredentialsRequest.getTargetARN());
-            }
-            if (deleteChapCredentialsRequest.getInitiatorName() != null) {
-                jsonGenerator.writeFieldName("InitiatorName").writeValue(deleteChapCredentialsRequest.getInitiatorName());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteChapCredentialsRequest.getTargetARN(), TARGETARN_BINDING);
+            protocolMarshaller.marshall(deleteChapCredentialsRequest.getInitiatorName(), INITIATORNAME_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

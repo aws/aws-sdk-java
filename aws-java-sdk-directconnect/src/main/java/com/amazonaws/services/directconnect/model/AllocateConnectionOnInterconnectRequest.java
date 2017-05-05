@@ -39,7 +39,7 @@ public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.Amazo
      * Default: None
      * </p>
      * <p>
-     * Values: 50M, 100M, 200M, 300M, 400M, or 500M
+     * Values: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps
      * </p>
      */
     private String bandwidth;
@@ -103,7 +103,7 @@ public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.Amazo
      * Default: None
      * </p>
      * <p>
-     * Values: 50M, 100M, 200M, 300M, 400M, or 500M
+     * Values: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps
      * </p>
      * 
      * @param bandwidth
@@ -115,7 +115,7 @@ public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.Amazo
      *        Default: None
      *        </p>
      *        <p>
-     *        Values: 50M, 100M, 200M, 300M, 400M, or 500M
+     *        Values: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps
      */
 
     public void setBandwidth(String bandwidth) {
@@ -133,7 +133,7 @@ public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.Amazo
      * Default: None
      * </p>
      * <p>
-     * Values: 50M, 100M, 200M, 300M, 400M, or 500M
+     * Values: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps
      * </p>
      * 
      * @return Bandwidth of the connection.</p>
@@ -144,7 +144,7 @@ public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.Amazo
      *         Default: None
      *         </p>
      *         <p>
-     *         Values: 50M, 100M, 200M, 300M, 400M, or 500M
+     *         Values: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps
      */
 
     public String getBandwidth() {
@@ -162,7 +162,7 @@ public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.Amazo
      * Default: None
      * </p>
      * <p>
-     * Values: 50M, 100M, 200M, 300M, 400M, or 500M
+     * Values: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps
      * </p>
      * 
      * @param bandwidth
@@ -174,7 +174,7 @@ public class AllocateConnectionOnInterconnectRequest extends com.amazonaws.Amazo
      *        Default: None
      *        </p>
      *        <p>
-     *        Values: 50M, 100M, 200M, 300M, 400M, or 500M
+     *        Values: 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

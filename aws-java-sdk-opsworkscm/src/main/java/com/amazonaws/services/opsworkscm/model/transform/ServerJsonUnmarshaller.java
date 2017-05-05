@@ -48,6 +48,10 @@ public class ServerJsonUnmarshaller implements Unmarshaller<Server, JsonUnmarsha
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("AssociatePublicIpAddress", targetDepth)) {
+                    context.nextToken();
+                    server.setAssociatePublicIpAddress(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("BackupRetentionCount", targetDepth)) {
                     context.nextToken();
                     server.setBackupRetentionCount(context.getUnmarshaller(Integer.class).unmarshall(context));
@@ -59,6 +63,10 @@ public class ServerJsonUnmarshaller implements Unmarshaller<Server, JsonUnmarsha
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();
                     server.setCreatedAt(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                }
+                if (context.testExpression("CloudFormationStackArn", targetDepth)) {
+                    context.nextToken();
+                    server.setCloudFormationStackArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("DisableAutomatedBackup", targetDepth)) {
                     context.nextToken();

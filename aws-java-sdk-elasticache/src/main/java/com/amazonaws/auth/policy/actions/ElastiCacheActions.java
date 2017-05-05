@@ -101,6 +101,8 @@ public enum ElastiCacheActions implements Action {
     ResetCacheParameterGroup("elasticache:ResetCacheParameterGroup"),
     /** Action for the RevokeCacheSecurityGroupIngress operation. */
     RevokeCacheSecurityGroupIngress("elasticache:RevokeCacheSecurityGroupIngress"),
+    /** Action for the TestFailover operation. */
+    TestFailover("elasticache:TestFailover"),
 
     ;
 

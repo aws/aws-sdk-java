@@ -39,7 +39,7 @@ public class ListPolicyAttachmentsRequest extends com.amazonaws.AmazonWebService
     private ObjectReference policyReference;
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      */
     private String nextToken;
@@ -139,11 +139,11 @@ public class ListPolicyAttachmentsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      * 
      * @param nextToken
-     *        Token used for pagination.
+     *        The pagination token.
      */
 
     public void setNextToken(String nextToken) {
@@ -152,10 +152,10 @@ public class ListPolicyAttachmentsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      * 
-     * @return Token used for pagination.
+     * @return The pagination token.
      */
 
     public String getNextToken() {
@@ -164,11 +164,11 @@ public class ListPolicyAttachmentsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Token used for pagination.
+     * The pagination token.
      * </p>
      * 
      * @param nextToken
-     *        Token used for pagination.
+     *        The pagination token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

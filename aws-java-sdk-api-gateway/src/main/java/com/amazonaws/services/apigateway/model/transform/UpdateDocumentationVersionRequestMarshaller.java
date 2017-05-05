@@ -12,82 +12,51 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.apigateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateDocumentationVersionRequest Marshaller
+ * UpdateDocumentationVersionRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateDocumentationVersionRequestMarshaller implements Marshaller<Request<UpdateDocumentationVersionRequest>, UpdateDocumentationVersionRequest> {
+@SdkInternalApi
+public class UpdateDocumentationVersionRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> RESTAPIID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("restapi_id").build();
+    private static final MarshallingInfo<String> DOCUMENTATIONVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("doc_version").build();
+    private static final MarshallingInfo<List> PATCHOPERATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("patchOperations").build();
 
-    public UpdateDocumentationVersionRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateDocumentationVersionRequestMarshaller instance = new UpdateDocumentationVersionRequestMarshaller();
+
+    public static UpdateDocumentationVersionRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateDocumentationVersionRequest> marshall(UpdateDocumentationVersionRequest updateDocumentationVersionRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateDocumentationVersionRequest updateDocumentationVersionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateDocumentationVersionRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateDocumentationVersionRequest> request = new DefaultRequest<UpdateDocumentationVersionRequest>(updateDocumentationVersionRequest,
-                "AmazonApiGateway");
-
-        request.setHttpMethod(HttpMethodName.PATCH);
-
-        String uriResourcePath = "/restapis/{restapi_id}/documentation/versions/{doc_version}";
-
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "restapi_id",
-                updateDocumentationVersionRequest.getRestApiId());
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "doc_version",
-                updateDocumentationVersionRequest.getDocumentationVersion());
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            java.util.List<PatchOperation> patchOperationsList = updateDocumentationVersionRequest.getPatchOperations();
-            if (patchOperationsList != null) {
-                jsonGenerator.writeFieldName("patchOperations");
-                jsonGenerator.writeStartArray();
-                for (PatchOperation patchOperationsListValue : patchOperationsList) {
-                    if (patchOperationsListValue != null) {
-
-                        PatchOperationJsonMarshaller.getInstance().marshall(patchOperationsListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateDocumentationVersionRequest.getRestApiId(), RESTAPIID_BINDING);
+            protocolMarshaller.marshall(updateDocumentationVersionRequest.getDocumentationVersion(), DOCUMENTATIONVERSION_BINDING);
+            protocolMarshaller.marshall(updateDocumentationVersionRequest.getPatchOperations(), PATCHOPERATIONS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

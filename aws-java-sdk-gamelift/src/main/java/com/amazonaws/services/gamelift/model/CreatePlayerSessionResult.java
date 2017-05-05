@@ -28,18 +28,18 @@ public class CreatePlayerSessionResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Object containing the newly created player session record.
+     * Object that describes the newly created player session record.
      * </p>
      */
     private PlayerSession playerSession;
 
     /**
      * <p>
-     * Object containing the newly created player session record.
+     * Object that describes the newly created player session record.
      * </p>
      * 
      * @param playerSession
-     *        Object containing the newly created player session record.
+     *        Object that describes the newly created player session record.
      */
 
     public void setPlayerSession(PlayerSession playerSession) {
@@ -48,10 +48,10 @@ public class CreatePlayerSessionResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Object containing the newly created player session record.
+     * Object that describes the newly created player session record.
      * </p>
      * 
-     * @return Object containing the newly created player session record.
+     * @return Object that describes the newly created player session record.
      */
 
     public PlayerSession getPlayerSession() {
@@ -60,11 +60,11 @@ public class CreatePlayerSessionResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Object containing the newly created player session record.
+     * Object that describes the newly created player session record.
      * </p>
      * 
      * @param playerSession
-     *        Object containing the newly created player session record.
+     *        Object that describes the newly created player session record.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,4 +124,5 @@ public class CreatePlayerSessionResult extends com.amazonaws.AmazonWebServiceRes
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

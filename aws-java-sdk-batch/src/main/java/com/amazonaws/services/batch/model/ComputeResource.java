@@ -14,6 +14,8 @@ package com.amazonaws.services.batch.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ComputeResource implements Serializable, Cloneable {
+public class ComputeResource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -56,6 +58,12 @@ public class ComputeResource implements Serializable, Cloneable {
      * </p>
      */
     private java.util.List<String> instanceTypes;
+    /**
+     * <p>
+     * The Amazon Machine Image (AMI) ID used for instances launched in the compute environment.
+     * </p>
+     */
+    private String imageId;
     /**
      * <p>
      * The VPC subnets into which the compute resources are launched.
@@ -362,6 +370,46 @@ public class ComputeResource implements Serializable, Cloneable {
 
     public ComputeResource withInstanceTypes(java.util.Collection<String> instanceTypes) {
         setInstanceTypes(instanceTypes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Machine Image (AMI) ID used for instances launched in the compute environment.
+     * </p>
+     * 
+     * @param imageId
+     *        The Amazon Machine Image (AMI) ID used for instances launched in the compute environment.
+     */
+
+    public void setImageId(String imageId) {
+        this.imageId = imageId;
+    }
+
+    /**
+     * <p>
+     * The Amazon Machine Image (AMI) ID used for instances launched in the compute environment.
+     * </p>
+     * 
+     * @return The Amazon Machine Image (AMI) ID used for instances launched in the compute environment.
+     */
+
+    public String getImageId() {
+        return this.imageId;
+    }
+
+    /**
+     * <p>
+     * The Amazon Machine Image (AMI) ID used for instances launched in the compute environment.
+     * </p>
+     * 
+     * @param imageId
+     *        The Amazon Machine Image (AMI) ID used for instances launched in the compute environment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComputeResource withImageId(String imageId) {
+        setImageId(imageId);
         return this;
     }
 
@@ -765,6 +813,8 @@ public class ComputeResource implements Serializable, Cloneable {
             sb.append("DesiredvCpus: ").append(getDesiredvCpus()).append(",");
         if (getInstanceTypes() != null)
             sb.append("InstanceTypes: ").append(getInstanceTypes()).append(",");
+        if (getImageId() != null)
+            sb.append("ImageId: ").append(getImageId()).append(",");
         if (getSubnets() != null)
             sb.append("Subnets: ").append(getSubnets()).append(",");
         if (getSecurityGroupIds() != null)
@@ -813,6 +863,10 @@ public class ComputeResource implements Serializable, Cloneable {
             return false;
         if (other.getInstanceTypes() != null && other.getInstanceTypes().equals(this.getInstanceTypes()) == false)
             return false;
+        if (other.getImageId() == null ^ this.getImageId() == null)
+            return false;
+        if (other.getImageId() != null && other.getImageId().equals(this.getImageId()) == false)
+            return false;
         if (other.getSubnets() == null ^ this.getSubnets() == null)
             return false;
         if (other.getSubnets() != null && other.getSubnets().equals(this.getSubnets()) == false)
@@ -854,6 +908,7 @@ public class ComputeResource implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getMaxvCpus() == null) ? 0 : getMaxvCpus().hashCode());
         hashCode = prime * hashCode + ((getDesiredvCpus() == null) ? 0 : getDesiredvCpus().hashCode());
         hashCode = prime * hashCode + ((getInstanceTypes() == null) ? 0 : getInstanceTypes().hashCode());
+        hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode());
         hashCode = prime * hashCode + ((getSubnets() == null) ? 0 : getSubnets().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
         hashCode = prime * hashCode + ((getEc2KeyPair() == null) ? 0 : getEc2KeyPair().hashCode());
@@ -871,5 +926,11 @@ public class ComputeResource implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.batch.model.transform.ComputeResourceMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

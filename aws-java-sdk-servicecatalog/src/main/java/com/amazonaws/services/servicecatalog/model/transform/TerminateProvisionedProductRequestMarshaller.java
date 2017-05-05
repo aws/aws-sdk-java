@@ -12,78 +12,59 @@
  */
 package com.amazonaws.services.servicecatalog.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.servicecatalog.model.*;
-import com.amazonaws.transform.Marshaller;
 
 import com.amazonaws.util.IdempotentUtils;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * TerminateProvisionedProductRequest Marshaller
+ * TerminateProvisionedProductRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TerminateProvisionedProductRequestMarshaller implements
-        Marshaller<Request<TerminateProvisionedProductRequest>, TerminateProvisionedProductRequest> {
+@SdkInternalApi
+public class TerminateProvisionedProductRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> PROVISIONEDPRODUCTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisionedProductName").build();
+    private static final MarshallingInfo<String> PROVISIONEDPRODUCTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisionedProductId").build();
+    private static final MarshallingInfo<String> TERMINATETOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TerminateToken")
+            .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<Boolean> IGNOREERRORS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IgnoreErrors").build();
+    private static final MarshallingInfo<String> ACCEPTLANGUAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AcceptLanguage").build();
 
-    public TerminateProvisionedProductRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final TerminateProvisionedProductRequestMarshaller instance = new TerminateProvisionedProductRequestMarshaller();
+
+    public static TerminateProvisionedProductRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<TerminateProvisionedProductRequest> marshall(TerminateProvisionedProductRequest terminateProvisionedProductRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(TerminateProvisionedProductRequest terminateProvisionedProductRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (terminateProvisionedProductRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<TerminateProvisionedProductRequest> request = new DefaultRequest<TerminateProvisionedProductRequest>(terminateProvisionedProductRequest,
-                "AWSServiceCatalog");
-        request.addHeader("X-Amz-Target", "AWS242ServiceCatalogService.TerminateProvisionedProduct");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (terminateProvisionedProductRequest.getProvisionedProductName() != null) {
-                jsonGenerator.writeFieldName("ProvisionedProductName").writeValue(terminateProvisionedProductRequest.getProvisionedProductName());
-            }
-            if (terminateProvisionedProductRequest.getProvisionedProductId() != null) {
-                jsonGenerator.writeFieldName("ProvisionedProductId").writeValue(terminateProvisionedProductRequest.getProvisionedProductId());
-            }
-            jsonGenerator.writeFieldName("TerminateToken").writeValue(IdempotentUtils.resolveString(terminateProvisionedProductRequest.getTerminateToken()));
-            if (terminateProvisionedProductRequest.getIgnoreErrors() != null) {
-                jsonGenerator.writeFieldName("IgnoreErrors").writeValue(terminateProvisionedProductRequest.getIgnoreErrors());
-            }
-            if (terminateProvisionedProductRequest.getAcceptLanguage() != null) {
-                jsonGenerator.writeFieldName("AcceptLanguage").writeValue(terminateProvisionedProductRequest.getAcceptLanguage());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(terminateProvisionedProductRequest.getProvisionedProductName(), PROVISIONEDPRODUCTNAME_BINDING);
+            protocolMarshaller.marshall(terminateProvisionedProductRequest.getProvisionedProductId(), PROVISIONEDPRODUCTID_BINDING);
+            protocolMarshaller.marshall(terminateProvisionedProductRequest.getTerminateToken(), TERMINATETOKEN_BINDING);
+            protocolMarshaller.marshall(terminateProvisionedProductRequest.getIgnoreErrors(), IGNOREERRORS_BINDING);
+            protocolMarshaller.marshall(terminateProvisionedProductRequest.getAcceptLanguage(), ACCEPTLANGUAGE_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

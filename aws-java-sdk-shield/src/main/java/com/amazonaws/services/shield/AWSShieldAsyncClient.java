@@ -223,6 +223,10 @@ public class AWSShieldAsyncClient extends AWSShieldClient implements AWSShieldAs
         this.executorService = executorService;
     }
 
+    public static AWSShieldAsyncClientBuilder asyncBuilder() {
+        return AWSShieldAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on AWS Shield using the specified parameters.
      *
@@ -252,14 +256,15 @@ public class AWSShieldAsyncClient extends AWSShieldClient implements AWSShieldAs
     @Override
     public java.util.concurrent.Future<CreateProtectionResult> createProtectionAsync(final CreateProtectionRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateProtectionRequest, CreateProtectionResult> asyncHandler) {
+        final CreateProtectionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateProtectionResult>() {
             @Override
             public CreateProtectionResult call() throws Exception {
-                CreateProtectionResult result;
+                CreateProtectionResult result = null;
 
                 try {
-                    result = createProtection(request);
+                    result = executeCreateProtection(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -268,7 +273,7 @@ public class AWSShieldAsyncClient extends AWSShieldClient implements AWSShieldAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -284,14 +289,15 @@ public class AWSShieldAsyncClient extends AWSShieldClient implements AWSShieldAs
     @Override
     public java.util.concurrent.Future<CreateSubscriptionResult> createSubscriptionAsync(final CreateSubscriptionRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateSubscriptionRequest, CreateSubscriptionResult> asyncHandler) {
+        final CreateSubscriptionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<CreateSubscriptionResult>() {
             @Override
             public CreateSubscriptionResult call() throws Exception {
-                CreateSubscriptionResult result;
+                CreateSubscriptionResult result = null;
 
                 try {
-                    result = createSubscription(request);
+                    result = executeCreateSubscription(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -300,7 +306,7 @@ public class AWSShieldAsyncClient extends AWSShieldClient implements AWSShieldAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -316,14 +322,15 @@ public class AWSShieldAsyncClient extends AWSShieldClient implements AWSShieldAs
     @Override
     public java.util.concurrent.Future<DeleteProtectionResult> deleteProtectionAsync(final DeleteProtectionRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteProtectionRequest, DeleteProtectionResult> asyncHandler) {
+        final DeleteProtectionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteProtectionResult>() {
             @Override
             public DeleteProtectionResult call() throws Exception {
-                DeleteProtectionResult result;
+                DeleteProtectionResult result = null;
 
                 try {
-                    result = deleteProtection(request);
+                    result = executeDeleteProtection(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -332,7 +339,7 @@ public class AWSShieldAsyncClient extends AWSShieldClient implements AWSShieldAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -348,14 +355,15 @@ public class AWSShieldAsyncClient extends AWSShieldClient implements AWSShieldAs
     @Override
     public java.util.concurrent.Future<DeleteSubscriptionResult> deleteSubscriptionAsync(final DeleteSubscriptionRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteSubscriptionRequest, DeleteSubscriptionResult> asyncHandler) {
+        final DeleteSubscriptionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteSubscriptionResult>() {
             @Override
             public DeleteSubscriptionResult call() throws Exception {
-                DeleteSubscriptionResult result;
+                DeleteSubscriptionResult result = null;
 
                 try {
-                    result = deleteSubscription(request);
+                    result = executeDeleteSubscription(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -364,7 +372,7 @@ public class AWSShieldAsyncClient extends AWSShieldClient implements AWSShieldAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -380,14 +388,15 @@ public class AWSShieldAsyncClient extends AWSShieldClient implements AWSShieldAs
     @Override
     public java.util.concurrent.Future<DescribeAttackResult> describeAttackAsync(final DescribeAttackRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeAttackRequest, DescribeAttackResult> asyncHandler) {
+        final DescribeAttackRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeAttackResult>() {
             @Override
             public DescribeAttackResult call() throws Exception {
-                DescribeAttackResult result;
+                DescribeAttackResult result = null;
 
                 try {
-                    result = describeAttack(request);
+                    result = executeDescribeAttack(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -396,7 +405,7 @@ public class AWSShieldAsyncClient extends AWSShieldClient implements AWSShieldAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -412,14 +421,15 @@ public class AWSShieldAsyncClient extends AWSShieldClient implements AWSShieldAs
     @Override
     public java.util.concurrent.Future<DescribeProtectionResult> describeProtectionAsync(final DescribeProtectionRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeProtectionRequest, DescribeProtectionResult> asyncHandler) {
+        final DescribeProtectionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeProtectionResult>() {
             @Override
             public DescribeProtectionResult call() throws Exception {
-                DescribeProtectionResult result;
+                DescribeProtectionResult result = null;
 
                 try {
-                    result = describeProtection(request);
+                    result = executeDescribeProtection(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -428,7 +438,7 @@ public class AWSShieldAsyncClient extends AWSShieldClient implements AWSShieldAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -444,14 +454,15 @@ public class AWSShieldAsyncClient extends AWSShieldClient implements AWSShieldAs
     @Override
     public java.util.concurrent.Future<DescribeSubscriptionResult> describeSubscriptionAsync(final DescribeSubscriptionRequest request,
             final com.amazonaws.handlers.AsyncHandler<DescribeSubscriptionRequest, DescribeSubscriptionResult> asyncHandler) {
+        final DescribeSubscriptionRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DescribeSubscriptionResult>() {
             @Override
             public DescribeSubscriptionResult call() throws Exception {
-                DescribeSubscriptionResult result;
+                DescribeSubscriptionResult result = null;
 
                 try {
-                    result = describeSubscription(request);
+                    result = executeDescribeSubscription(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -460,7 +471,7 @@ public class AWSShieldAsyncClient extends AWSShieldClient implements AWSShieldAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -476,14 +487,15 @@ public class AWSShieldAsyncClient extends AWSShieldClient implements AWSShieldAs
     @Override
     public java.util.concurrent.Future<ListAttacksResult> listAttacksAsync(final ListAttacksRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListAttacksRequest, ListAttacksResult> asyncHandler) {
+        final ListAttacksRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListAttacksResult>() {
             @Override
             public ListAttacksResult call() throws Exception {
-                ListAttacksResult result;
+                ListAttacksResult result = null;
 
                 try {
-                    result = listAttacks(request);
+                    result = executeListAttacks(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -492,7 +504,7 @@ public class AWSShieldAsyncClient extends AWSShieldClient implements AWSShieldAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -508,14 +520,15 @@ public class AWSShieldAsyncClient extends AWSShieldClient implements AWSShieldAs
     @Override
     public java.util.concurrent.Future<ListProtectionsResult> listProtectionsAsync(final ListProtectionsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListProtectionsRequest, ListProtectionsResult> asyncHandler) {
+        final ListProtectionsRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<ListProtectionsResult>() {
             @Override
             public ListProtectionsResult call() throws Exception {
-                ListProtectionsResult result;
+                ListProtectionsResult result = null;
 
                 try {
-                    result = listProtections(request);
+                    result = executeListProtections(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -524,7 +537,7 @@ public class AWSShieldAsyncClient extends AWSShieldClient implements AWSShieldAs
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

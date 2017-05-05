@@ -12,99 +12,57 @@
  */
 package com.amazonaws.services.dynamodbv2.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.dynamodbv2.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * UpdateTableRequest Marshaller
+ * UpdateTableRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateTableRequestMarshaller implements Marshaller<Request<UpdateTableRequest>, UpdateTableRequest> {
+@SdkInternalApi
+public class UpdateTableRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<List> ATTRIBUTEDEFINITIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AttributeDefinitions").build();
+    private static final MarshallingInfo<String> TABLENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TableName").build();
+    private static final MarshallingInfo<StructuredPojo> PROVISIONEDTHROUGHPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisionedThroughput").build();
+    private static final MarshallingInfo<List> GLOBALSECONDARYINDEXUPDATES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GlobalSecondaryIndexUpdates").build();
+    private static final MarshallingInfo<StructuredPojo> STREAMSPECIFICATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StreamSpecification").build();
 
-    public UpdateTableRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final UpdateTableRequestMarshaller instance = new UpdateTableRequestMarshaller();
+
+    public static UpdateTableRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<UpdateTableRequest> marshall(UpdateTableRequest updateTableRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(UpdateTableRequest updateTableRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (updateTableRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<UpdateTableRequest> request = new DefaultRequest<UpdateTableRequest>(updateTableRequest, "AmazonDynamoDBv2");
-        request.addHeader("X-Amz-Target", "DynamoDB_20120810.UpdateTable");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            java.util.List<AttributeDefinition> attributeDefinitionsList = updateTableRequest.getAttributeDefinitions();
-            if (attributeDefinitionsList != null) {
-                jsonGenerator.writeFieldName("AttributeDefinitions");
-                jsonGenerator.writeStartArray();
-                for (AttributeDefinition attributeDefinitionsListValue : attributeDefinitionsList) {
-                    if (attributeDefinitionsListValue != null) {
-
-                        AttributeDefinitionJsonMarshaller.getInstance().marshall(attributeDefinitionsListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (updateTableRequest.getTableName() != null) {
-                jsonGenerator.writeFieldName("TableName").writeValue(updateTableRequest.getTableName());
-            }
-            if (updateTableRequest.getProvisionedThroughput() != null) {
-                jsonGenerator.writeFieldName("ProvisionedThroughput");
-                ProvisionedThroughputJsonMarshaller.getInstance().marshall(updateTableRequest.getProvisionedThroughput(), jsonGenerator);
-            }
-
-            java.util.List<GlobalSecondaryIndexUpdate> globalSecondaryIndexUpdatesList = updateTableRequest.getGlobalSecondaryIndexUpdates();
-            if (globalSecondaryIndexUpdatesList != null) {
-                jsonGenerator.writeFieldName("GlobalSecondaryIndexUpdates");
-                jsonGenerator.writeStartArray();
-                for (GlobalSecondaryIndexUpdate globalSecondaryIndexUpdatesListValue : globalSecondaryIndexUpdatesList) {
-                    if (globalSecondaryIndexUpdatesListValue != null) {
-
-                        GlobalSecondaryIndexUpdateJsonMarshaller.getInstance().marshall(globalSecondaryIndexUpdatesListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-            if (updateTableRequest.getStreamSpecification() != null) {
-                jsonGenerator.writeFieldName("StreamSpecification");
-                StreamSpecificationJsonMarshaller.getInstance().marshall(updateTableRequest.getStreamSpecification(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(updateTableRequest.getAttributeDefinitions(), ATTRIBUTEDEFINITIONS_BINDING);
+            protocolMarshaller.marshall(updateTableRequest.getTableName(), TABLENAME_BINDING);
+            protocolMarshaller.marshall(updateTableRequest.getProvisionedThroughput(), PROVISIONEDTHROUGHPUT_BINDING);
+            protocolMarshaller.marshall(updateTableRequest.getGlobalSecondaryIndexUpdates(), GLOBALSECONDARYINDEXUPDATES_BINDING);
+            protocolMarshaller.marshall(updateTableRequest.getStreamSpecification(), STREAMSPECIFICATION_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

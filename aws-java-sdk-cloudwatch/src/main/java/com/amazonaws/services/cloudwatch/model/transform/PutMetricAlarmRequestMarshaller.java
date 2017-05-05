@@ -145,6 +145,14 @@ public class PutMetricAlarmRequestMarshaller implements Marshaller<Request<PutMe
             request.addParameter("ComparisonOperator", StringUtils.fromString(putMetricAlarmRequest.getComparisonOperator()));
         }
 
+        if (putMetricAlarmRequest.getTreatMissingData() != null) {
+            request.addParameter("TreatMissingData", StringUtils.fromString(putMetricAlarmRequest.getTreatMissingData()));
+        }
+
+        if (putMetricAlarmRequest.getEvaluateLowSampleCountPercentile() != null) {
+            request.addParameter("EvaluateLowSampleCountPercentile", StringUtils.fromString(putMetricAlarmRequest.getEvaluateLowSampleCountPercentile()));
+        }
+
         return request;
     }
 

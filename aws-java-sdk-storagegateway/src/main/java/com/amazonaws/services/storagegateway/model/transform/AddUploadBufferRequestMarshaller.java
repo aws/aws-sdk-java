@@ -12,76 +12,48 @@
  */
 package com.amazonaws.services.storagegateway.model.transform;
 
-import java.io.ByteArrayInputStream;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.storagegateway.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * AddUploadBufferRequest Marshaller
+ * AddUploadBufferRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AddUploadBufferRequestMarshaller implements Marshaller<Request<AddUploadBufferRequest>, AddUploadBufferRequest> {
+@SdkInternalApi
+public class AddUploadBufferRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> GATEWAYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GatewayARN").build();
+    private static final MarshallingInfo<List> DISKIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("DiskIds").build();
 
-    public AddUploadBufferRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final AddUploadBufferRequestMarshaller instance = new AddUploadBufferRequestMarshaller();
+
+    public static AddUploadBufferRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<AddUploadBufferRequest> marshall(AddUploadBufferRequest addUploadBufferRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(AddUploadBufferRequest addUploadBufferRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (addUploadBufferRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<AddUploadBufferRequest> request = new DefaultRequest<AddUploadBufferRequest>(addUploadBufferRequest, "AWSStorageGateway");
-        request.addHeader("X-Amz-Target", "StorageGateway_20130630.AddUploadBuffer");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (addUploadBufferRequest.getGatewayARN() != null) {
-                jsonGenerator.writeFieldName("GatewayARN").writeValue(addUploadBufferRequest.getGatewayARN());
-            }
-
-            com.amazonaws.internal.SdkInternalList<String> diskIdsList = (com.amazonaws.internal.SdkInternalList<String>) addUploadBufferRequest.getDiskIds();
-            if (!diskIdsList.isEmpty() || !diskIdsList.isAutoConstruct()) {
-                jsonGenerator.writeFieldName("DiskIds");
-                jsonGenerator.writeStartArray();
-                for (String diskIdsListValue : diskIdsList) {
-                    if (diskIdsListValue != null) {
-                        jsonGenerator.writeValue(diskIdsListValue);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(addUploadBufferRequest.getGatewayARN(), GATEWAYARN_BINDING);
+            protocolMarshaller.marshall(addUploadBufferRequest.getDiskIds(), DISKIDS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

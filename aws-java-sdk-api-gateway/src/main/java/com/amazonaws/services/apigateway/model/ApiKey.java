@@ -14,6 +14,8 @@ package com.amazonaws.services.apigateway.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -25,7 +27,7 @@ import javax.annotation.Generated;
  * API Keys</a> </div>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ApiKey implements Serializable, Cloneable {
+public class ApiKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -65,14 +67,13 @@ public class ApiKey implements Serializable, Cloneable {
     private Boolean enabled;
     /**
      * <p>
-     * The date when the API Key was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The timestamp when the API Key was created.
      * </p>
      */
     private java.util.Date createdDate;
     /**
      * <p>
-     * When the API Key was last updated, in ISO 8601 format.
+     * The timestamp when the API Key was last updated.
      * </p>
      */
     private java.util.Date lastUpdatedDate;
@@ -337,13 +338,11 @@ public class ApiKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the API Key was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The timestamp when the API Key was created.
      * </p>
      * 
      * @param createdDate
-     *        The date when the API Key was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     *        target="_blank">ISO 8601 format</a>.
+     *        The timestamp when the API Key was created.
      */
 
     public void setCreatedDate(java.util.Date createdDate) {
@@ -352,12 +351,10 @@ public class ApiKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the API Key was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The timestamp when the API Key was created.
      * </p>
      * 
-     * @return The date when the API Key was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     *         target="_blank">ISO 8601 format</a>.
+     * @return The timestamp when the API Key was created.
      */
 
     public java.util.Date getCreatedDate() {
@@ -366,13 +363,11 @@ public class ApiKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the API Key was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The timestamp when the API Key was created.
      * </p>
      * 
      * @param createdDate
-     *        The date when the API Key was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     *        target="_blank">ISO 8601 format</a>.
+     *        The timestamp when the API Key was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -383,11 +378,11 @@ public class ApiKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * When the API Key was last updated, in ISO 8601 format.
+     * The timestamp when the API Key was last updated.
      * </p>
      * 
      * @param lastUpdatedDate
-     *        When the API Key was last updated, in ISO 8601 format.
+     *        The timestamp when the API Key was last updated.
      */
 
     public void setLastUpdatedDate(java.util.Date lastUpdatedDate) {
@@ -396,10 +391,10 @@ public class ApiKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * When the API Key was last updated, in ISO 8601 format.
+     * The timestamp when the API Key was last updated.
      * </p>
      * 
-     * @return When the API Key was last updated, in ISO 8601 format.
+     * @return The timestamp when the API Key was last updated.
      */
 
     public java.util.Date getLastUpdatedDate() {
@@ -408,11 +403,11 @@ public class ApiKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * When the API Key was last updated, in ISO 8601 format.
+     * The timestamp when the API Key was last updated.
      * </p>
      * 
      * @param lastUpdatedDate
-     *        When the API Key was last updated, in ISO 8601 format.
+     *        The timestamp when the API Key was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -597,5 +592,11 @@ public class ApiKey implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.apigateway.model.transform.ApiKeyMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

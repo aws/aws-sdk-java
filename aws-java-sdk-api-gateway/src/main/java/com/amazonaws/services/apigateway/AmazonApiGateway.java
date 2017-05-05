@@ -234,6 +234,23 @@ public interface AmazonApiGateway {
 
     /**
      * <p>
+     * Creates a <a>ReqeustValidator</a> of a given <a>RestApi</a>.
+     * </p>
+     * 
+     * @param createRequestValidatorRequest
+     *        Creates a <a>RequestValidator</a> of a given <a>RestApi</a>.
+     * @return Result of the CreateRequestValidator operation returned by the service.
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws LimitExceededException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.CreateRequestValidator
+     */
+    CreateRequestValidatorResult createRequestValidator(CreateRequestValidatorRequest createRequestValidatorRequest);
+
+    /**
+     * <p>
      * Creates a <a>Resource</a> resource.
      * </p>
      * 
@@ -526,6 +543,23 @@ public interface AmazonApiGateway {
      * @sample AmazonApiGateway.DeleteModel
      */
     DeleteModelResult deleteModel(DeleteModelRequest deleteModelRequest);
+
+    /**
+     * <p>
+     * Deletes a <a>RequestValidator</a> of a given <a>RestApi</a>.
+     * </p>
+     * 
+     * @param deleteRequestValidatorRequest
+     *        Deletes a specified <a>RequestValidator</a> of a given <a>RestApi</a>.
+     * @return Result of the DeleteRequestValidator operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @throws BadRequestException
+     * @throws ConflictException
+     * @sample AmazonApiGateway.DeleteRequestValidator
+     */
+    DeleteRequestValidatorResult deleteRequestValidator(DeleteRequestValidatorRequest deleteRequestValidatorRequest);
 
     /**
      * <p>
@@ -1029,6 +1063,37 @@ public interface AmazonApiGateway {
      * @sample AmazonApiGateway.GetModels
      */
     GetModelsResult getModels(GetModelsRequest getModelsRequest);
+
+    /**
+     * <p>
+     * Gets a <a>RequestValidator</a> of a given <a>RestApi</a>.
+     * </p>
+     * 
+     * @param getRequestValidatorRequest
+     *        Gets a <a>RequestValidator</a> of a given <a>RestApi</a>.
+     * @return Result of the GetRequestValidator operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetRequestValidator
+     */
+    GetRequestValidatorResult getRequestValidator(GetRequestValidatorRequest getRequestValidatorRequest);
+
+    /**
+     * <p>
+     * Gets the <a>RequestValidators</a> collection of a given <a>RestApi</a>.
+     * </p>
+     * 
+     * @param getRequestValidatorsRequest
+     *        Gets the <a>RequestValidators</a> collection of a given <a>RestApi</a>.
+     * @return Result of the GetRequestValidators operation returned by the service.
+     * @throws BadRequestException
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.GetRequestValidators
+     */
+    GetRequestValidatorsResult getRequestValidators(GetRequestValidatorsRequest getRequestValidatorsRequest);
 
     /**
      * <p>
@@ -1645,6 +1710,22 @@ public interface AmazonApiGateway {
      * @sample AmazonApiGateway.UpdateModel
      */
     UpdateModelResult updateModel(UpdateModelRequest updateModelRequest);
+
+    /**
+     * <p>
+     * Updates a <a>RequestValidator</a> of a given <a>RestApi</a>.
+     * </p>
+     * 
+     * @param updateRequestValidatorRequest
+     *        Updates a <a>RequestValidator</a> of a given <a>RestApi</a>.
+     * @return Result of the UpdateRequestValidator operation returned by the service.
+     * @throws UnauthorizedException
+     * @throws NotFoundException
+     * @throws BadRequestException
+     * @throws TooManyRequestsException
+     * @sample AmazonApiGateway.UpdateRequestValidator
+     */
+    UpdateRequestValidatorResult updateRequestValidator(UpdateRequestValidatorRequest updateRequestValidatorRequest);
 
     /**
      * <p>

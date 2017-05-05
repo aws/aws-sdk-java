@@ -12,57 +12,44 @@
  */
 package com.amazonaws.services.clouddirectory.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.clouddirectory.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteDirectoryRequest Marshaller
+ * DeleteDirectoryRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteDirectoryRequestMarshaller implements Marshaller<Request<DeleteDirectoryRequest>, DeleteDirectoryRequest> {
+@SdkInternalApi
+public class DeleteDirectoryRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> DIRECTORYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("x-amz-data-partition").build();
 
-    public DeleteDirectoryRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteDirectoryRequestMarshaller instance = new DeleteDirectoryRequestMarshaller();
+
+    public static DeleteDirectoryRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteDirectoryRequest> marshall(DeleteDirectoryRequest deleteDirectoryRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteDirectoryRequest deleteDirectoryRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteDirectoryRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteDirectoryRequest> request = new DefaultRequest<DeleteDirectoryRequest>(deleteDirectoryRequest, "AmazonCloudDirectory");
-
-        request.setHttpMethod(HttpMethodName.PUT);
-
-        if (deleteDirectoryRequest.getDirectoryArn() != null) {
-            request.addHeader("x-amz-data-partition", StringUtils.fromString(deleteDirectoryRequest.getDirectoryArn()));
+        try {
+            protocolMarshaller.marshall(deleteDirectoryRequest.getDirectoryArn(), DIRECTORYARN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        String uriResourcePath = "/amazonclouddirectory/2017-01-11/directory";
-
-        request.setResourcePath(uriResourcePath);
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

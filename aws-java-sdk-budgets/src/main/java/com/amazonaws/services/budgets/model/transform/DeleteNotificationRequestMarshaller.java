@@ -12,71 +12,50 @@
  */
 package com.amazonaws.services.budgets.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.budgets.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteNotificationRequest Marshaller
+ * DeleteNotificationRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteNotificationRequestMarshaller implements Marshaller<Request<DeleteNotificationRequest>, DeleteNotificationRequest> {
+@SdkInternalApi
+public class DeleteNotificationRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AccountId").build();
+    private static final MarshallingInfo<String> BUDGETNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BudgetName").build();
+    private static final MarshallingInfo<StructuredPojo> NOTIFICATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Notification").build();
 
-    public DeleteNotificationRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DeleteNotificationRequestMarshaller instance = new DeleteNotificationRequestMarshaller();
+
+    public static DeleteNotificationRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DeleteNotificationRequest> marshall(DeleteNotificationRequest deleteNotificationRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteNotificationRequest deleteNotificationRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteNotificationRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteNotificationRequest> request = new DefaultRequest<DeleteNotificationRequest>(deleteNotificationRequest, "AWSBudgets");
-        request.addHeader("X-Amz-Target", "AWSBudgetServiceGateway.DeleteNotification");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (deleteNotificationRequest.getAccountId() != null) {
-                jsonGenerator.writeFieldName("AccountId").writeValue(deleteNotificationRequest.getAccountId());
-            }
-            if (deleteNotificationRequest.getBudgetName() != null) {
-                jsonGenerator.writeFieldName("BudgetName").writeValue(deleteNotificationRequest.getBudgetName());
-            }
-            if (deleteNotificationRequest.getNotification() != null) {
-                jsonGenerator.writeFieldName("Notification");
-                NotificationJsonMarshaller.getInstance().marshall(deleteNotificationRequest.getNotification(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(deleteNotificationRequest.getAccountId(), ACCOUNTID_BINDING);
+            protocolMarshaller.marshall(deleteNotificationRequest.getBudgetName(), BUDGETNAME_BINDING);
+            protocolMarshaller.marshall(deleteNotificationRequest.getNotification(), NOTIFICATION_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

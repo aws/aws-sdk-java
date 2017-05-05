@@ -12,79 +12,48 @@
  */
 package com.amazonaws.services.certificatemanager.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import java.util.List;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.certificatemanager.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * AddTagsToCertificateRequest Marshaller
+ * AddTagsToCertificateRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AddTagsToCertificateRequestMarshaller implements Marshaller<Request<AddTagsToCertificateRequest>, AddTagsToCertificateRequest> {
+@SdkInternalApi
+public class AddTagsToCertificateRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> CERTIFICATEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CertificateArn").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
-    public AddTagsToCertificateRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final AddTagsToCertificateRequestMarshaller instance = new AddTagsToCertificateRequestMarshaller();
+
+    public static AddTagsToCertificateRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<AddTagsToCertificateRequest> marshall(AddTagsToCertificateRequest addTagsToCertificateRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(AddTagsToCertificateRequest addTagsToCertificateRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (addTagsToCertificateRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<AddTagsToCertificateRequest> request = new DefaultRequest<AddTagsToCertificateRequest>(addTagsToCertificateRequest, "AWSCertificateManager");
-        request.addHeader("X-Amz-Target", "CertificateManager.AddTagsToCertificate");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (addTagsToCertificateRequest.getCertificateArn() != null) {
-                jsonGenerator.writeFieldName("CertificateArn").writeValue(addTagsToCertificateRequest.getCertificateArn());
-            }
-
-            java.util.List<Tag> tagsList = addTagsToCertificateRequest.getTags();
-            if (tagsList != null) {
-                jsonGenerator.writeFieldName("Tags");
-                jsonGenerator.writeStartArray();
-                for (Tag tagsListValue : tagsList) {
-                    if (tagsListValue != null) {
-
-                        TagJsonMarshaller.getInstance().marshall(tagsListValue, jsonGenerator);
-                    }
-                }
-                jsonGenerator.writeEndArray();
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(addTagsToCertificateRequest.getCertificateArn(), CERTIFICATEARN_BINDING);
+            protocolMarshaller.marshall(addTagsToCertificateRequest.getTags(), TAGS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

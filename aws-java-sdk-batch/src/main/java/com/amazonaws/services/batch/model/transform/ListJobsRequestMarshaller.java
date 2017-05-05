@@ -12,75 +12,53 @@
  */
 package com.amazonaws.services.batch.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.batch.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListJobsRequest Marshaller
+ * ListJobsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListJobsRequestMarshaller implements Marshaller<Request<ListJobsRequest>, ListJobsRequest> {
+@SdkInternalApi
+public class ListJobsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> JOBQUEUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("jobQueue").build();
+    private static final MarshallingInfo<String> JOBSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("jobStatus").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxResults").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("nextToken").build();
 
-    public ListJobsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListJobsRequestMarshaller instance = new ListJobsRequestMarshaller();
+
+    public static ListJobsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListJobsRequest> marshall(ListJobsRequest listJobsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListJobsRequest listJobsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listJobsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListJobsRequest> request = new DefaultRequest<ListJobsRequest>(listJobsRequest, "AWSBatch");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        String uriResourcePath = "/v1/listjobs";
-
-        request.setResourcePath(uriResourcePath);
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-            jsonGenerator.writeStartObject();
-
-            if (listJobsRequest.getJobQueue() != null) {
-                jsonGenerator.writeFieldName("jobQueue").writeValue(listJobsRequest.getJobQueue());
-            }
-            if (listJobsRequest.getJobStatus() != null) {
-                jsonGenerator.writeFieldName("jobStatus").writeValue(listJobsRequest.getJobStatus());
-            }
-            if (listJobsRequest.getMaxResults() != null) {
-                jsonGenerator.writeFieldName("maxResults").writeValue(listJobsRequest.getMaxResults());
-            }
-            if (listJobsRequest.getNextToken() != null) {
-                jsonGenerator.writeFieldName("nextToken").writeValue(listJobsRequest.getNextToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            if (!request.getHeaders().containsKey("Content-Type")) {
-                request.addHeader("Content-Type", protocolFactory.getContentType());
-            }
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listJobsRequest.getJobQueue(), JOBQUEUE_BINDING);
+            protocolMarshaller.marshall(listJobsRequest.getJobStatus(), JOBSTATUS_BINDING);
+            protocolMarshaller.marshall(listJobsRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listJobsRequest.getNextToken(), NEXTTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

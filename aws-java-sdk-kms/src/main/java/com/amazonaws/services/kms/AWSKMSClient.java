@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -215,6 +216,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                             new JsonErrorShapeMetadata().withErrorCode("AlreadyExistsException").withModeledClass(
                                     com.amazonaws.services.kms.model.AlreadyExistsException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TagException").withModeledClass(com.amazonaws.services.kms.model.TagException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidKeyUsageException").withModeledClass(
                                     com.amazonaws.services.kms.model.InvalidKeyUsageException.class))
                     .addErrorMetadata(
@@ -380,6 +383,10 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         init();
     }
 
+    public static AWSKMSClientBuilder builder() {
+        return AWSKMSClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on KMS using the specified parameters.
      *
@@ -439,7 +446,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public CancelKeyDeletionResult cancelKeyDeletion(CancelKeyDeletionRequest cancelKeyDeletionRequest) {
+    public CancelKeyDeletionResult cancelKeyDeletion(CancelKeyDeletionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelKeyDeletion(request);
+    }
+
+    @SdkInternalApi
+    final CancelKeyDeletionResult executeCancelKeyDeletion(CancelKeyDeletionRequest cancelKeyDeletionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(cancelKeyDeletionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -450,7 +463,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CancelKeyDeletionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelKeyDeletionRequest));
+                request = new CancelKeyDeletionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelKeyDeletionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -511,7 +524,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public CreateAliasResult createAlias(CreateAliasRequest createAliasRequest) {
+    public CreateAliasResult createAlias(CreateAliasRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAlias(request);
+    }
+
+    @SdkInternalApi
+    final CreateAliasResult executeCreateAlias(CreateAliasRequest createAliasRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -522,7 +541,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateAliasRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAliasRequest));
+                request = new CreateAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -581,7 +600,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public CreateGrantResult createGrant(CreateGrantRequest createGrantRequest) {
+    public CreateGrantResult createGrant(CreateGrantRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateGrant(request);
+    }
+
+    @SdkInternalApi
+    final CreateGrantResult executeCreateGrant(CreateGrantRequest createGrantRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createGrantRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -592,7 +617,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateGrantRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGrantRequest));
+                request = new CreateGrantRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGrantRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -651,12 +676,20 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         The request was rejected because a limit was exceeded. For more information, see <a
      *         href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a> in the <i>AWS Key
      *         Management Service Developer Guide</i>.
+     * @throws TagException
+     *         The request was rejected because one or more tags are not valid.
      * @sample AWSKMS.CreateKey
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateKey" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
-    public CreateKeyResult createKey(CreateKeyRequest createKeyRequest) {
+    public CreateKeyResult createKey(CreateKeyRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateKey(request);
+    }
+
+    @SdkInternalApi
+    final CreateKeyResult executeCreateKey(CreateKeyRequest createKeyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -667,7 +700,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateKeyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createKeyRequest));
+                request = new CreateKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -749,7 +782,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public DecryptResult decrypt(DecryptRequest decryptRequest) {
+    public DecryptResult decrypt(DecryptRequest request) {
+        request = beforeClientExecution(request);
+        return executeDecrypt(request);
+    }
+
+    @SdkInternalApi
+    final DecryptResult executeDecrypt(DecryptRequest decryptRequest) {
 
         ExecutionContext executionContext = createExecutionContext(decryptRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -760,7 +799,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DecryptRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(decryptRequest));
+                request = new DecryptRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(decryptRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -803,7 +842,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public DeleteAliasResult deleteAlias(DeleteAliasRequest deleteAliasRequest) {
+    public DeleteAliasResult deleteAlias(DeleteAliasRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAlias(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAliasResult executeDeleteAlias(DeleteAliasRequest deleteAliasRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -814,7 +859,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteAliasRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAliasRequest));
+                request = new DeleteAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -873,7 +918,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      API Documentation</a>
      */
     @Override
-    public DeleteImportedKeyMaterialResult deleteImportedKeyMaterial(DeleteImportedKeyMaterialRequest deleteImportedKeyMaterialRequest) {
+    public DeleteImportedKeyMaterialResult deleteImportedKeyMaterial(DeleteImportedKeyMaterialRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteImportedKeyMaterial(request);
+    }
+
+    @SdkInternalApi
+    final DeleteImportedKeyMaterialResult executeDeleteImportedKeyMaterial(DeleteImportedKeyMaterialRequest deleteImportedKeyMaterialRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteImportedKeyMaterialRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -884,7 +935,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteImportedKeyMaterialRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteImportedKeyMaterialRequest));
+                request = new DeleteImportedKeyMaterialRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteImportedKeyMaterialRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -924,7 +976,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public DescribeKeyResult describeKey(DescribeKeyRequest describeKeyRequest) {
+    public DescribeKeyResult describeKey(DescribeKeyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeKey(request);
+    }
+
+    @SdkInternalApi
+    final DescribeKeyResult executeDescribeKey(DescribeKeyRequest describeKeyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -935,7 +993,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeKeyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeKeyRequest));
+                request = new DescribeKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -983,7 +1041,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public DisableKeyResult disableKey(DisableKeyRequest disableKeyRequest) {
+    public DisableKeyResult disableKey(DisableKeyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisableKey(request);
+    }
+
+    @SdkInternalApi
+    final DisableKeyResult executeDisableKey(DisableKeyRequest disableKeyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(disableKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -994,7 +1058,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisableKeyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableKeyRequest));
+                request = new DisableKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1044,7 +1108,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public DisableKeyRotationResult disableKeyRotation(DisableKeyRotationRequest disableKeyRotationRequest) {
+    public DisableKeyRotationResult disableKeyRotation(DisableKeyRotationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisableKeyRotation(request);
+    }
+
+    @SdkInternalApi
+    final DisableKeyRotationResult executeDisableKeyRotation(DisableKeyRotationRequest disableKeyRotationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(disableKeyRotationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1055,7 +1125,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DisableKeyRotationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableKeyRotationRequest));
+                request = new DisableKeyRotationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableKeyRotationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1104,7 +1174,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public EnableKeyResult enableKey(EnableKeyRequest enableKeyRequest) {
+    public EnableKeyResult enableKey(EnableKeyRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnableKey(request);
+    }
+
+    @SdkInternalApi
+    final EnableKeyResult executeEnableKey(EnableKeyRequest enableKeyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(enableKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1115,7 +1191,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EnableKeyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableKeyRequest));
+                request = new EnableKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1165,7 +1241,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public EnableKeyRotationResult enableKeyRotation(EnableKeyRotationRequest enableKeyRotationRequest) {
+    public EnableKeyRotationResult enableKeyRotation(EnableKeyRotationRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnableKeyRotation(request);
+    }
+
+    @SdkInternalApi
+    final EnableKeyRotationResult executeEnableKeyRotation(EnableKeyRotationRequest enableKeyRotationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(enableKeyRotationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1176,7 +1258,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EnableKeyRotationRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableKeyRotationRequest));
+                request = new EnableKeyRotationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableKeyRotationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1255,7 +1337,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public EncryptResult encrypt(EncryptRequest encryptRequest) {
+    public EncryptResult encrypt(EncryptRequest request) {
+        request = beforeClientExecution(request);
+        return executeEncrypt(request);
+    }
+
+    @SdkInternalApi
+    final EncryptResult executeEncrypt(EncryptRequest encryptRequest) {
 
         ExecutionContext executionContext = createExecutionContext(encryptRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1266,7 +1354,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new EncryptRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(encryptRequest));
+                request = new EncryptRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(encryptRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1338,8 +1426,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </li>
      * </ol>
      * <p>
-     * To return only an encrypted copy of the data key, use <a>GenerateDataKeyWithoutPlaintext</a>. To return an
-     * arbitrary unpredictable byte string, use <a>GenerateRandom</a>.
+     * To return only an encrypted copy of the data key, use <a>GenerateDataKeyWithoutPlaintext</a>. To return a random
+     * byte string that is cryptographically secure, use <a>GenerateRandom</a>.
      * </p>
      * <p>
      * If you use the optional <code>EncryptionContext</code> field, you must store at least enough information to be
@@ -1377,7 +1465,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public GenerateDataKeyResult generateDataKey(GenerateDataKeyRequest generateDataKeyRequest) {
+    public GenerateDataKeyResult generateDataKey(GenerateDataKeyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGenerateDataKey(request);
+    }
+
+    @SdkInternalApi
+    final GenerateDataKeyResult executeGenerateDataKey(GenerateDataKeyRequest generateDataKeyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(generateDataKeyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1388,7 +1482,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GenerateDataKeyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(generateDataKeyRequest));
+                request = new GenerateDataKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(generateDataKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1450,7 +1544,14 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GenerateDataKeyWithoutPlaintextResult generateDataKeyWithoutPlaintext(GenerateDataKeyWithoutPlaintextRequest generateDataKeyWithoutPlaintextRequest) {
+    public GenerateDataKeyWithoutPlaintextResult generateDataKeyWithoutPlaintext(GenerateDataKeyWithoutPlaintextRequest request) {
+        request = beforeClientExecution(request);
+        return executeGenerateDataKeyWithoutPlaintext(request);
+    }
+
+    @SdkInternalApi
+    final GenerateDataKeyWithoutPlaintextResult executeGenerateDataKeyWithoutPlaintext(
+            GenerateDataKeyWithoutPlaintextRequest generateDataKeyWithoutPlaintextRequest) {
 
         ExecutionContext executionContext = createExecutionContext(generateDataKeyWithoutPlaintextRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1461,7 +1562,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GenerateDataKeyWithoutPlaintextRequestMarshaller(protocolFactory).marshall(super
+                request = new GenerateDataKeyWithoutPlaintextRequestProtocolMarshaller(protocolFactory).marshall(super
                         .beforeMarshalling(generateDataKeyWithoutPlaintextRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
@@ -1484,7 +1585,12 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
-     * Generates an unpredictable byte string.
+     * Returns a random byte string that is cryptographically secure.
+     * </p>
+     * <p>
+     * For more information about entropy and random number generation, see the <a
+     * href="https://d0.awsstatic.com/whitepapers/KMS-Cryptographic-Details.pdf">AWS Key Management Service
+     * Cryptographic Details</a> whitepaper.
      * </p>
      * 
      * @param generateRandomRequest
@@ -1498,7 +1604,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public GenerateRandomResult generateRandom(GenerateRandomRequest generateRandomRequest) {
+    public GenerateRandomResult generateRandom(GenerateRandomRequest request) {
+        request = beforeClientExecution(request);
+        return executeGenerateRandom(request);
+    }
+
+    @SdkInternalApi
+    final GenerateRandomResult executeGenerateRandom(GenerateRandomRequest generateRandomRequest) {
 
         ExecutionContext executionContext = createExecutionContext(generateRandomRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1509,7 +1621,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GenerateRandomRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(generateRandomRequest));
+                request = new GenerateRandomRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(generateRandomRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1559,7 +1671,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public GetKeyPolicyResult getKeyPolicy(GetKeyPolicyRequest getKeyPolicyRequest) {
+    public GetKeyPolicyResult getKeyPolicy(GetKeyPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetKeyPolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetKeyPolicyResult executeGetKeyPolicy(GetKeyPolicyRequest getKeyPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getKeyPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1570,7 +1688,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetKeyPolicyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getKeyPolicyRequest));
+                request = new GetKeyPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getKeyPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1618,7 +1736,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public GetKeyRotationStatusResult getKeyRotationStatus(GetKeyRotationStatusRequest getKeyRotationStatusRequest) {
+    public GetKeyRotationStatusResult getKeyRotationStatus(GetKeyRotationStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetKeyRotationStatus(request);
+    }
+
+    @SdkInternalApi
+    final GetKeyRotationStatusResult executeGetKeyRotationStatus(GetKeyRotationStatusRequest getKeyRotationStatusRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getKeyRotationStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1629,7 +1753,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetKeyRotationStatusRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getKeyRotationStatusRequest));
+                request = new GetKeyRotationStatusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getKeyRotationStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1692,7 +1816,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public GetParametersForImportResult getParametersForImport(GetParametersForImportRequest getParametersForImportRequest) {
+    public GetParametersForImportResult getParametersForImport(GetParametersForImportRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetParametersForImport(request);
+    }
+
+    @SdkInternalApi
+    final GetParametersForImportResult executeGetParametersForImport(GetParametersForImportRequest getParametersForImportRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getParametersForImportRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1703,7 +1833,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetParametersForImportRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getParametersForImportRequest));
+                request = new GetParametersForImportRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getParametersForImportRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1784,7 +1914,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public ImportKeyMaterialResult importKeyMaterial(ImportKeyMaterialRequest importKeyMaterialRequest) {
+    public ImportKeyMaterialResult importKeyMaterial(ImportKeyMaterialRequest request) {
+        request = beforeClientExecution(request);
+        return executeImportKeyMaterial(request);
+    }
+
+    @SdkInternalApi
+    final ImportKeyMaterialResult executeImportKeyMaterial(ImportKeyMaterialRequest importKeyMaterialRequest) {
 
         ExecutionContext executionContext = createExecutionContext(importKeyMaterialRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1795,7 +1931,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ImportKeyMaterialRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(importKeyMaterialRequest));
+                request = new ImportKeyMaterialRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(importKeyMaterialRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1833,7 +1969,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public ListAliasesResult listAliases(ListAliasesRequest listAliasesRequest) {
+    public ListAliasesResult listAliases(ListAliasesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAliases(request);
+    }
+
+    @SdkInternalApi
+    final ListAliasesResult executeListAliases(ListAliasesRequest listAliasesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listAliasesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1844,7 +1986,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAliasesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAliasesRequest));
+                request = new ListAliasesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAliasesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1897,7 +2039,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public ListGrantsResult listGrants(ListGrantsRequest listGrantsRequest) {
+    public ListGrantsResult listGrants(ListGrantsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListGrants(request);
+    }
+
+    @SdkInternalApi
+    final ListGrantsResult executeListGrants(ListGrantsRequest listGrantsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listGrantsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1908,7 +2056,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListGrantsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGrantsRequest));
+                request = new ListGrantsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGrantsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1953,7 +2101,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public ListKeyPoliciesResult listKeyPolicies(ListKeyPoliciesRequest listKeyPoliciesRequest) {
+    public ListKeyPoliciesResult listKeyPolicies(ListKeyPoliciesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListKeyPolicies(request);
+    }
+
+    @SdkInternalApi
+    final ListKeyPoliciesResult executeListKeyPolicies(ListKeyPoliciesRequest listKeyPoliciesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listKeyPoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1964,7 +2118,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListKeyPoliciesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listKeyPoliciesRequest));
+                request = new ListKeyPoliciesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listKeyPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2002,7 +2156,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public ListKeysResult listKeys(ListKeysRequest listKeysRequest) {
+    public ListKeysResult listKeys(ListKeysRequest request) {
+        request = beforeClientExecution(request);
+        return executeListKeys(request);
+    }
+
+    @SdkInternalApi
+    final ListKeysResult executeListKeys(ListKeysRequest listKeysRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listKeysRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2013,7 +2173,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListKeysRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listKeysRequest));
+                request = new ListKeysRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listKeysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2035,6 +2195,63 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
     @Override
     public ListKeysResult listKeys() {
         return listKeys(new ListKeysRequest());
+    }
+
+    /**
+     * <p>
+     * Returns a list of all tags for the specified customer master key (CMK).
+     * </p>
+     * 
+     * @param listResourceTagsRequest
+     * @return Result of the ListResourceTags operation returned by the service.
+     * @throws KMSInternalException
+     *         The request was rejected because an internal exception occurred. The request can be retried.
+     * @throws NotFoundException
+     *         The request was rejected because the specified entity or resource could not be found.
+     * @throws InvalidArnException
+     *         The request was rejected because a specified ARN was not valid.
+     * @throws InvalidMarkerException
+     *         The request was rejected because the marker that specifies where pagination should next begin is not
+     *         valid.
+     * @sample AWSKMS.ListResourceTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListResourceTags" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListResourceTagsResult listResourceTags(ListResourceTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListResourceTags(request);
+    }
+
+    @SdkInternalApi
+    final ListResourceTagsResult executeListResourceTags(ListResourceTagsRequest listResourceTagsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listResourceTagsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListResourceTagsRequest> request = null;
+        Response<ListResourceTagsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListResourceTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listResourceTagsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListResourceTagsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListResourceTagsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -2063,7 +2280,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public ListRetirableGrantsResult listRetirableGrants(ListRetirableGrantsRequest listRetirableGrantsRequest) {
+    public ListRetirableGrantsResult listRetirableGrants(ListRetirableGrantsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRetirableGrants(request);
+    }
+
+    @SdkInternalApi
+    final ListRetirableGrantsResult executeListRetirableGrants(ListRetirableGrantsRequest listRetirableGrantsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listRetirableGrantsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2074,7 +2297,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListRetirableGrantsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRetirableGrantsRequest));
+                request = new ListRetirableGrantsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRetirableGrantsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2133,7 +2356,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public PutKeyPolicyResult putKeyPolicy(PutKeyPolicyRequest putKeyPolicyRequest) {
+    public PutKeyPolicyResult putKeyPolicy(PutKeyPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutKeyPolicy(request);
+    }
+
+    @SdkInternalApi
+    final PutKeyPolicyResult executePutKeyPolicy(PutKeyPolicyRequest putKeyPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putKeyPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2144,7 +2373,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutKeyPolicyRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(putKeyPolicyRequest));
+                request = new PutKeyPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putKeyPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2208,7 +2437,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public ReEncryptResult reEncrypt(ReEncryptRequest reEncryptRequest) {
+    public ReEncryptResult reEncrypt(ReEncryptRequest request) {
+        request = beforeClientExecution(request);
+        return executeReEncrypt(request);
+    }
+
+    @SdkInternalApi
+    final ReEncryptResult executeReEncrypt(ReEncryptRequest reEncryptRequest) {
 
         ExecutionContext executionContext = createExecutionContext(reEncryptRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2219,7 +2454,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ReEncryptRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(reEncryptRequest));
+                request = new ReEncryptRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(reEncryptRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2289,7 +2524,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public RetireGrantResult retireGrant(RetireGrantRequest retireGrantRequest) {
+    public RetireGrantResult retireGrant(RetireGrantRequest request) {
+        request = beforeClientExecution(request);
+        return executeRetireGrant(request);
+    }
+
+    @SdkInternalApi
+    final RetireGrantResult executeRetireGrant(RetireGrantRequest retireGrantRequest) {
 
         ExecutionContext executionContext = createExecutionContext(retireGrantRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2300,7 +2541,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RetireGrantRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(retireGrantRequest));
+                request = new RetireGrantRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(retireGrantRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2352,7 +2593,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public RevokeGrantResult revokeGrant(RevokeGrantRequest revokeGrantRequest) {
+    public RevokeGrantResult revokeGrant(RevokeGrantRequest request) {
+        request = beforeClientExecution(request);
+        return executeRevokeGrant(request);
+    }
+
+    @SdkInternalApi
+    final RevokeGrantResult executeRevokeGrant(RevokeGrantRequest revokeGrantRequest) {
 
         ExecutionContext executionContext = createExecutionContext(revokeGrantRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2363,7 +2610,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RevokeGrantRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(revokeGrantRequest));
+                request = new RevokeGrantRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(revokeGrantRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2424,7 +2671,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public ScheduleKeyDeletionResult scheduleKeyDeletion(ScheduleKeyDeletionRequest scheduleKeyDeletionRequest) {
+    public ScheduleKeyDeletionResult scheduleKeyDeletion(ScheduleKeyDeletionRequest request) {
+        request = beforeClientExecution(request);
+        return executeScheduleKeyDeletion(request);
+    }
+
+    @SdkInternalApi
+    final ScheduleKeyDeletionResult executeScheduleKeyDeletion(ScheduleKeyDeletionRequest scheduleKeyDeletionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(scheduleKeyDeletionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2435,7 +2688,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ScheduleKeyDeletionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(scheduleKeyDeletionRequest));
+                request = new ScheduleKeyDeletionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(scheduleKeyDeletionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2444,6 +2697,148 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
             HttpResponseHandler<AmazonWebServiceResponse<ScheduleKeyDeletionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ScheduleKeyDeletionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds or overwrites one or more tags for the specified customer master key (CMK).
+     * </p>
+     * <p>
+     * Each tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be
+     * empty (null) strings.
+     * </p>
+     * <p>
+     * You cannot use the same tag key more than once per CMK. For example, consider a CMK with one tag whose tag key is
+     * <code>Purpose</code> and tag value is <code>Test</code>. If you send a <code>TagResource</code> request for this
+     * CMK with a tag key of <code>Purpose</code> and a tag value of <code>Prod</code>, it does not create a second tag.
+     * Instead, the original tag is overwritten with the new tag value.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws KMSInternalException
+     *         The request was rejected because an internal exception occurred. The request can be retried.
+     * @throws NotFoundException
+     *         The request was rejected because the specified entity or resource could not be found.
+     * @throws InvalidArnException
+     *         The request was rejected because a specified ARN was not valid.
+     * @throws KMSInvalidStateException
+     *         The request was rejected because the state of the specified resource is not valid for this request.</p>
+     *         <p>
+     *         For more information about how key state affects the use of a CMK, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a
+     *         Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * @throws LimitExceededException
+     *         The request was rejected because a limit was exceeded. For more information, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Limits</a> in the <i>AWS Key
+     *         Management Service Developer Guide</i>.
+     * @throws TagException
+     *         The request was rejected because one or more tags are not valid.
+     * @sample AWSKMS.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes the specified tag or tags from the specified customer master key (CMK).
+     * </p>
+     * <p>
+     * To remove a tag, you specify the tag key for each tag to remove. You do not specify the tag value. To overwrite
+     * the tag value for an existing tag, use <a>TagResource</a>.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws KMSInternalException
+     *         The request was rejected because an internal exception occurred. The request can be retried.
+     * @throws NotFoundException
+     *         The request was rejected because the specified entity or resource could not be found.
+     * @throws InvalidArnException
+     *         The request was rejected because a specified ARN was not valid.
+     * @throws KMSInvalidStateException
+     *         The request was rejected because the state of the specified resource is not valid for this request.</p>
+     *         <p>
+     *         For more information about how key state affects the use of a CMK, see <a
+     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a
+     *         Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * @throws TagException
+     *         The request was rejected because one or more tags are not valid.
+     * @sample AWSKMS.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2490,7 +2885,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public UpdateAliasResult updateAlias(UpdateAliasRequest updateAliasRequest) {
+    public UpdateAliasResult updateAlias(UpdateAliasRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAlias(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAliasResult executeUpdateAlias(UpdateAliasRequest updateAliasRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateAliasRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2501,7 +2902,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateAliasRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAliasRequest));
+                request = new UpdateAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -2546,7 +2947,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *      Documentation</a>
      */
     @Override
-    public UpdateKeyDescriptionResult updateKeyDescription(UpdateKeyDescriptionRequest updateKeyDescriptionRequest) {
+    public UpdateKeyDescriptionResult updateKeyDescription(UpdateKeyDescriptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateKeyDescription(request);
+    }
+
+    @SdkInternalApi
+    final UpdateKeyDescriptionResult executeUpdateKeyDescription(UpdateKeyDescriptionRequest updateKeyDescriptionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateKeyDescriptionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2557,7 +2964,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UpdateKeyDescriptionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateKeyDescriptionRequest));
+                request = new UpdateKeyDescriptionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateKeyDescriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

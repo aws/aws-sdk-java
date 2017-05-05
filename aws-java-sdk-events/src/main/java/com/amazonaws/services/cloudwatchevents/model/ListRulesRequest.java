@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Container for the parameters to the <a>ListRules</a> operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListRules" target="_top">AWS API
  *      Documentation</a>
@@ -36,7 +33,7 @@ public class ListRulesRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String namePrefix;
     /**
      * <p>
-     * The token returned by a previous call to indicate that there is more data available.
+     * The token returned by a previous call to retrieve the next set of results.
      * </p>
      */
     private String nextToken;
@@ -89,11 +86,11 @@ public class ListRulesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The token returned by a previous call to indicate that there is more data available.
+     * The token returned by a previous call to retrieve the next set of results.
      * </p>
      * 
      * @param nextToken
-     *        The token returned by a previous call to indicate that there is more data available.
+     *        The token returned by a previous call to retrieve the next set of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -102,10 +99,10 @@ public class ListRulesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The token returned by a previous call to indicate that there is more data available.
+     * The token returned by a previous call to retrieve the next set of results.
      * </p>
      * 
-     * @return The token returned by a previous call to indicate that there is more data available.
+     * @return The token returned by a previous call to retrieve the next set of results.
      */
 
     public String getNextToken() {
@@ -114,11 +111,11 @@ public class ListRulesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The token returned by a previous call to indicate that there is more data available.
+     * The token returned by a previous call to retrieve the next set of results.
      * </p>
      * 
      * @param nextToken
-     *        The token returned by a previous call to indicate that there is more data available.
+     *        The token returned by a previous call to retrieve the next set of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

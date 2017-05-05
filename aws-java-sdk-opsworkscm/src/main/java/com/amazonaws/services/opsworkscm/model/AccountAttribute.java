@@ -14,6 +14,8 @@ package com.amazonaws.services.opsworkscm.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AccountAttribute implements Serializable, Cloneable {
+public class AccountAttribute implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -33,14 +35,14 @@ public class AccountAttribute implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <i>ServerLimit:</i> The number of servers that currently existing / maximal allowed. By default 10 servers can be
-     * created.
+     * <i>ServerLimit:</i> The number of current servers/maximum number of servers allowed. By default, you can have a
+     * maximum of 10 servers.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>ManualBackupLimit:</i> The number of manual backups that currently exist / are maximal allowed. By default 50
-     * manual backups can be created.
+     * <i>ManualBackupLimit:</i> The number of current manual backups/maximum number of backups allowed. By default, you
+     * can have a maximum of 50 manual backups saved.
      * </p>
      * </li>
      * </ul>
@@ -54,7 +56,7 @@ public class AccountAttribute implements Serializable, Cloneable {
     private Integer maximum;
     /**
      * <p>
-     * The current usage, such as the current number of servers associated with the account.
+     * The current usage, such as the current number of servers that are associated with the account.
      * </p>
      */
     private Integer used;
@@ -66,14 +68,14 @@ public class AccountAttribute implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <i>ServerLimit:</i> The number of servers that currently existing / maximal allowed. By default 10 servers can be
-     * created.
+     * <i>ServerLimit:</i> The number of current servers/maximum number of servers allowed. By default, you can have a
+     * maximum of 10 servers.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>ManualBackupLimit:</i> The number of manual backups that currently exist / are maximal allowed. By default 50
-     * manual backups can be created.
+     * <i>ManualBackupLimit:</i> The number of current manual backups/maximum number of backups allowed. By default, you
+     * can have a maximum of 50 manual backups saved.
      * </p>
      * </li>
      * </ul>
@@ -83,14 +85,14 @@ public class AccountAttribute implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>ServerLimit:</i> The number of servers that currently existing / maximal allowed. By default 10 servers
-     *        can be created.
+     *        <i>ServerLimit:</i> The number of current servers/maximum number of servers allowed. By default, you can
+     *        have a maximum of 10 servers.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>ManualBackupLimit:</i> The number of manual backups that currently exist / are maximal allowed. By
-     *        default 50 manual backups can be created.
+     *        <i>ManualBackupLimit:</i> The number of current manual backups/maximum number of backups allowed. By
+     *        default, you can have a maximum of 50 manual backups saved.
      *        </p>
      *        </li>
      */
@@ -106,14 +108,14 @@ public class AccountAttribute implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <i>ServerLimit:</i> The number of servers that currently existing / maximal allowed. By default 10 servers can be
-     * created.
+     * <i>ServerLimit:</i> The number of current servers/maximum number of servers allowed. By default, you can have a
+     * maximum of 10 servers.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>ManualBackupLimit:</i> The number of manual backups that currently exist / are maximal allowed. By default 50
-     * manual backups can be created.
+     * <i>ManualBackupLimit:</i> The number of current manual backups/maximum number of backups allowed. By default, you
+     * can have a maximum of 50 manual backups saved.
      * </p>
      * </li>
      * </ul>
@@ -122,14 +124,14 @@ public class AccountAttribute implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         <i>ServerLimit:</i> The number of servers that currently existing / maximal allowed. By default 10
-     *         servers can be created.
+     *         <i>ServerLimit:</i> The number of current servers/maximum number of servers allowed. By default, you can
+     *         have a maximum of 10 servers.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <i>ManualBackupLimit:</i> The number of manual backups that currently exist / are maximal allowed. By
-     *         default 50 manual backups can be created.
+     *         <i>ManualBackupLimit:</i> The number of current manual backups/maximum number of backups allowed. By
+     *         default, you can have a maximum of 50 manual backups saved.
      *         </p>
      *         </li>
      */
@@ -145,14 +147,14 @@ public class AccountAttribute implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <i>ServerLimit:</i> The number of servers that currently existing / maximal allowed. By default 10 servers can be
-     * created.
+     * <i>ServerLimit:</i> The number of current servers/maximum number of servers allowed. By default, you can have a
+     * maximum of 10 servers.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <i>ManualBackupLimit:</i> The number of manual backups that currently exist / are maximal allowed. By default 50
-     * manual backups can be created.
+     * <i>ManualBackupLimit:</i> The number of current manual backups/maximum number of backups allowed. By default, you
+     * can have a maximum of 50 manual backups saved.
      * </p>
      * </li>
      * </ul>
@@ -162,14 +164,14 @@ public class AccountAttribute implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>ServerLimit:</i> The number of servers that currently existing / maximal allowed. By default 10 servers
-     *        can be created.
+     *        <i>ServerLimit:</i> The number of current servers/maximum number of servers allowed. By default, you can
+     *        have a maximum of 10 servers.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <i>ManualBackupLimit:</i> The number of manual backups that currently exist / are maximal allowed. By
-     *        default 50 manual backups can be created.
+     *        <i>ManualBackupLimit:</i> The number of current manual backups/maximum number of backups allowed. By
+     *        default, you can have a maximum of 50 manual backups saved.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -222,11 +224,11 @@ public class AccountAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current usage, such as the current number of servers associated with the account.
+     * The current usage, such as the current number of servers that are associated with the account.
      * </p>
      * 
      * @param used
-     *        The current usage, such as the current number of servers associated with the account.
+     *        The current usage, such as the current number of servers that are associated with the account.
      */
 
     public void setUsed(Integer used) {
@@ -235,10 +237,10 @@ public class AccountAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current usage, such as the current number of servers associated with the account.
+     * The current usage, such as the current number of servers that are associated with the account.
      * </p>
      * 
-     * @return The current usage, such as the current number of servers associated with the account.
+     * @return The current usage, such as the current number of servers that are associated with the account.
      */
 
     public Integer getUsed() {
@@ -247,11 +249,11 @@ public class AccountAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The current usage, such as the current number of servers associated with the account.
+     * The current usage, such as the current number of servers that are associated with the account.
      * </p>
      * 
      * @param used
-     *        The current usage, such as the current number of servers associated with the account.
+     *        The current usage, such as the current number of servers that are associated with the account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -324,5 +326,11 @@ public class AccountAttribute implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.opsworkscm.model.transform.AccountAttributeMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

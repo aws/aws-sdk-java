@@ -223,6 +223,10 @@ public class AWSIotDataAsyncClient extends AWSIotDataClient implements AWSIotDat
         this.executorService = executorService;
     }
 
+    public static AWSIotDataAsyncClientBuilder asyncBuilder() {
+        return AWSIotDataAsyncClientBuilder.standard();
+    }
+
     /**
      * Constructs a new asynchronous client to invoke service methods on AWS IoT Data Plane using the specified
      * parameters.
@@ -253,14 +257,15 @@ public class AWSIotDataAsyncClient extends AWSIotDataClient implements AWSIotDat
     @Override
     public java.util.concurrent.Future<DeleteThingShadowResult> deleteThingShadowAsync(final DeleteThingShadowRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteThingShadowRequest, DeleteThingShadowResult> asyncHandler) {
+        final DeleteThingShadowRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<DeleteThingShadowResult>() {
             @Override
             public DeleteThingShadowResult call() throws Exception {
-                DeleteThingShadowResult result;
+                DeleteThingShadowResult result = null;
 
                 try {
-                    result = deleteThingShadow(request);
+                    result = executeDeleteThingShadow(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -269,7 +274,7 @@ public class AWSIotDataAsyncClient extends AWSIotDataClient implements AWSIotDat
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -285,14 +290,15 @@ public class AWSIotDataAsyncClient extends AWSIotDataClient implements AWSIotDat
     @Override
     public java.util.concurrent.Future<GetThingShadowResult> getThingShadowAsync(final GetThingShadowRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetThingShadowRequest, GetThingShadowResult> asyncHandler) {
+        final GetThingShadowRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<GetThingShadowResult>() {
             @Override
             public GetThingShadowResult call() throws Exception {
-                GetThingShadowResult result;
+                GetThingShadowResult result = null;
 
                 try {
-                    result = getThingShadow(request);
+                    result = executeGetThingShadow(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -301,7 +307,7 @@ public class AWSIotDataAsyncClient extends AWSIotDataClient implements AWSIotDat
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -317,14 +323,15 @@ public class AWSIotDataAsyncClient extends AWSIotDataClient implements AWSIotDat
     @Override
     public java.util.concurrent.Future<PublishResult> publishAsync(final PublishRequest request,
             final com.amazonaws.handlers.AsyncHandler<PublishRequest, PublishResult> asyncHandler) {
+        final PublishRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<PublishResult>() {
             @Override
             public PublishResult call() throws Exception {
-                PublishResult result;
+                PublishResult result = null;
 
                 try {
-                    result = publish(request);
+                    result = executePublish(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -333,7 +340,7 @@ public class AWSIotDataAsyncClient extends AWSIotDataClient implements AWSIotDat
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }
@@ -349,14 +356,15 @@ public class AWSIotDataAsyncClient extends AWSIotDataClient implements AWSIotDat
     @Override
     public java.util.concurrent.Future<UpdateThingShadowResult> updateThingShadowAsync(final UpdateThingShadowRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateThingShadowRequest, UpdateThingShadowResult> asyncHandler) {
+        final UpdateThingShadowRequest finalRequest = beforeClientExecution(request);
 
         return executorService.submit(new java.util.concurrent.Callable<UpdateThingShadowResult>() {
             @Override
             public UpdateThingShadowResult call() throws Exception {
-                UpdateThingShadowResult result;
+                UpdateThingShadowResult result = null;
 
                 try {
-                    result = updateThingShadow(request);
+                    result = executeUpdateThingShadow(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -365,7 +373,7 @@ public class AWSIotDataAsyncClient extends AWSIotDataClient implements AWSIotDat
                 }
 
                 if (asyncHandler != null) {
-                    asyncHandler.onSuccess(request, result);
+                    asyncHandler.onSuccess(finalRequest, result);
                 }
                 return result;
             }

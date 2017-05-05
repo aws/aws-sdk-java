@@ -12,70 +12,50 @@
  */
 package com.amazonaws.services.cognitoidp.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.cognitoidp.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListDevicesRequest Marshaller
+ * ListDevicesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListDevicesRequestMarshaller implements Marshaller<Request<ListDevicesRequest>, ListDevicesRequest> {
+@SdkInternalApi
+public class ListDevicesRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> ACCESSTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccessToken").build();
+    private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Limit").build();
+    private static final MarshallingInfo<String> PAGINATIONTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PaginationToken").build();
 
-    public ListDevicesRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ListDevicesRequestMarshaller instance = new ListDevicesRequestMarshaller();
+
+    public static ListDevicesRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ListDevicesRequest> marshall(ListDevicesRequest listDevicesRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListDevicesRequest listDevicesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listDevicesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListDevicesRequest> request = new DefaultRequest<ListDevicesRequest>(listDevicesRequest, "AWSCognitoIdentityProvider");
-        request.addHeader("X-Amz-Target", "AWSCognitoIdentityProviderService.ListDevices");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (listDevicesRequest.getAccessToken() != null) {
-                jsonGenerator.writeFieldName("AccessToken").writeValue(listDevicesRequest.getAccessToken());
-            }
-            if (listDevicesRequest.getLimit() != null) {
-                jsonGenerator.writeFieldName("Limit").writeValue(listDevicesRequest.getLimit());
-            }
-            if (listDevicesRequest.getPaginationToken() != null) {
-                jsonGenerator.writeFieldName("PaginationToken").writeValue(listDevicesRequest.getPaginationToken());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(listDevicesRequest.getAccessToken(), ACCESSTOKEN_BINDING);
+            protocolMarshaller.marshall(listDevicesRequest.getLimit(), LIMIT_BINDING);
+            protocolMarshaller.marshall(listDevicesRequest.getPaginationToken(), PAGINATIONTOKEN_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

@@ -14,9 +14,14 @@ package com.amazonaws.services.pinpoint.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * Segment location dimensions
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SegmentLocation implements Serializable, Cloneable {
+public class SegmentLocation implements Serializable, Cloneable, StructuredPojo {
 
     /** The country filter according to ISO 3166-1 Alpha-2 codes. */
     private SetDimension country;
@@ -105,5 +110,11 @@ public class SegmentLocation implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.pinpoint.model.transform.SegmentLocationMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

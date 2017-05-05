@@ -14,12 +14,14 @@ package com.amazonaws.services.budgets.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * A structure represent either a cost spend or usage spend. Contains an amount and a unit.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Spend implements Serializable, Cloneable {
+public class Spend implements Serializable, Cloneable, StructuredPojo {
 
     private java.math.BigDecimal amount;
 
@@ -134,5 +136,11 @@ public class Spend implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.budgets.model.transform.SpendMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

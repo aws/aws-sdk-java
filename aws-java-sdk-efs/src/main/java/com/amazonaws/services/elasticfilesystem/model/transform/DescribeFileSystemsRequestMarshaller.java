@@ -12,69 +12,53 @@
  */
 package com.amazonaws.services.elasticfilesystem.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.elasticfilesystem.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.util.StringUtils;
-
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DescribeFileSystemsRequest Marshaller
+ * DescribeFileSystemsRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescribeFileSystemsRequestMarshaller implements Marshaller<Request<DescribeFileSystemsRequest>, DescribeFileSystemsRequest> {
+@SdkInternalApi
+public class DescribeFileSystemsRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<Integer> MAXITEMS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("MaxItems").build();
+    private static final MarshallingInfo<String> MARKER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("Marker").build();
+    private static final MarshallingInfo<String> CREATIONTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("CreationToken").build();
+    private static final MarshallingInfo<String> FILESYSTEMID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("FileSystemId").build();
 
-    public DescribeFileSystemsRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final DescribeFileSystemsRequestMarshaller instance = new DescribeFileSystemsRequestMarshaller();
+
+    public static DescribeFileSystemsRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<DescribeFileSystemsRequest> marshall(DescribeFileSystemsRequest describeFileSystemsRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DescribeFileSystemsRequest describeFileSystemsRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (describeFileSystemsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DescribeFileSystemsRequest> request = new DefaultRequest<DescribeFileSystemsRequest>(describeFileSystemsRequest, "AmazonElasticFileSystem");
-
-        request.setHttpMethod(HttpMethodName.GET);
-
-        String uriResourcePath = "/2015-02-01/file-systems";
-
-        request.setResourcePath(uriResourcePath);
-
-        if (describeFileSystemsRequest.getMaxItems() != null) {
-            request.addParameter("MaxItems", StringUtils.fromInteger(describeFileSystemsRequest.getMaxItems()));
+        try {
+            protocolMarshaller.marshall(describeFileSystemsRequest.getMaxItems(), MAXITEMS_BINDING);
+            protocolMarshaller.marshall(describeFileSystemsRequest.getMarker(), MARKER_BINDING);
+            protocolMarshaller.marshall(describeFileSystemsRequest.getCreationToken(), CREATIONTOKEN_BINDING);
+            protocolMarshaller.marshall(describeFileSystemsRequest.getFileSystemId(), FILESYSTEMID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (describeFileSystemsRequest.getMarker() != null) {
-            request.addParameter("Marker", StringUtils.fromString(describeFileSystemsRequest.getMarker()));
-        }
-
-        if (describeFileSystemsRequest.getCreationToken() != null) {
-            request.addParameter("CreationToken", StringUtils.fromString(describeFileSystemsRequest.getCreationToken()));
-        }
-
-        if (describeFileSystemsRequest.getFileSystemId() != null) {
-            request.addParameter("FileSystemId", StringUtils.fromString(describeFileSystemsRequest.getFileSystemId()));
-        }
-
-        request.setContent(new ByteArrayInputStream(new byte[0]));
-        if (!request.getHeaders().containsKey("Content-Type")) {
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        }
-
-        return request;
     }
 
 }

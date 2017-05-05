@@ -39,6 +39,8 @@ public enum DynamoDBv2Actions implements Action {
     DescribeLimits("dynamodb:DescribeLimits"),
     /** Action for the DescribeTable operation. */
     DescribeTable("dynamodb:DescribeTable"),
+    /** Action for the DescribeTimeToLive operation. */
+    DescribeTimeToLive("dynamodb:DescribeTimeToLive"),
     /** Action for the GetItem operation. */
     GetItem("dynamodb:GetItem"),
     /** Action for the ListTables operation. */
@@ -59,6 +61,8 @@ public enum DynamoDBv2Actions implements Action {
     UpdateItem("dynamodb:UpdateItem"),
     /** Action for the UpdateTable operation. */
     UpdateTable("dynamodb:UpdateTable"),
+    /** Action for the UpdateTimeToLive operation. */
+    UpdateTimeToLive("dynamodb:UpdateTimeToLive"),
 
     ;
 

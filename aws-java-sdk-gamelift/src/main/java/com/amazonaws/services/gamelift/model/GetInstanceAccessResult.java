@@ -16,6 +16,9 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
+ * <p>
+ * Represents the returned data in response to a request action.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetInstanceAccess" target="_top">AWS API
  *      Documentation</a>
@@ -25,18 +28,18 @@ public class GetInstanceAccessResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Object containing connection information for a fleet instance, including IP address and access credentials.
+     * Object that contains connection information for a fleet instance, including IP address and access credentials.
      * </p>
      */
     private InstanceAccess instanceAccess;
 
     /**
      * <p>
-     * Object containing connection information for a fleet instance, including IP address and access credentials.
+     * Object that contains connection information for a fleet instance, including IP address and access credentials.
      * </p>
      * 
      * @param instanceAccess
-     *        Object containing connection information for a fleet instance, including IP address and access
+     *        Object that contains connection information for a fleet instance, including IP address and access
      *        credentials.
      */
 
@@ -46,10 +49,10 @@ public class GetInstanceAccessResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Object containing connection information for a fleet instance, including IP address and access credentials.
+     * Object that contains connection information for a fleet instance, including IP address and access credentials.
      * </p>
      * 
-     * @return Object containing connection information for a fleet instance, including IP address and access
+     * @return Object that contains connection information for a fleet instance, including IP address and access
      *         credentials.
      */
 
@@ -59,11 +62,11 @@ public class GetInstanceAccessResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Object containing connection information for a fleet instance, including IP address and access credentials.
+     * Object that contains connection information for a fleet instance, including IP address and access credentials.
      * </p>
      * 
      * @param instanceAccess
-     *        Object containing connection information for a fleet instance, including IP address and access
+     *        Object that contains connection information for a fleet instance, including IP address and access
      *        credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -124,4 +127,5 @@ public class GetInstanceAccessResult extends com.amazonaws.AmazonWebServiceResul
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

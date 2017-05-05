@@ -69,9 +69,10 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
     private Integer maxResults;
     /**
      * <p>
-     * The container instance status with which to filter the <code>ListContainerInstances</code> results. Specifying a
-     * container instance status of <code>DRAINING</code> limits the results to container instances that have been set
-     * to drain with the <a>UpdateContainerInstancesState</a> operation.
+     * Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status, the
+     * results include only container instances that have been set to <code>DRAINING</code> using
+     * <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the default is to include container
+     * instances set to <code>ACTIVE</code> and <code>DRAINING</code>.
      * </p>
      */
     private String status;
@@ -343,15 +344,17 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The container instance status with which to filter the <code>ListContainerInstances</code> results. Specifying a
-     * container instance status of <code>DRAINING</code> limits the results to container instances that have been set
-     * to drain with the <a>UpdateContainerInstancesState</a> operation.
+     * Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status, the
+     * results include only container instances that have been set to <code>DRAINING</code> using
+     * <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the default is to include container
+     * instances set to <code>ACTIVE</code> and <code>DRAINING</code>.
      * </p>
      * 
      * @param status
-     *        The container instance status with which to filter the <code>ListContainerInstances</code> results.
-     *        Specifying a container instance status of <code>DRAINING</code> limits the results to container instances
-     *        that have been set to drain with the <a>UpdateContainerInstancesState</a> operation.
+     *        Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status,
+     *        the results include only container instances that have been set to <code>DRAINING</code> using
+     *        <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the default is to include
+     *        container instances set to <code>ACTIVE</code> and <code>DRAINING</code>.
      * @see ContainerInstanceStatus
      */
 
@@ -361,14 +364,16 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The container instance status with which to filter the <code>ListContainerInstances</code> results. Specifying a
-     * container instance status of <code>DRAINING</code> limits the results to container instances that have been set
-     * to drain with the <a>UpdateContainerInstancesState</a> operation.
+     * Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status, the
+     * results include only container instances that have been set to <code>DRAINING</code> using
+     * <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the default is to include container
+     * instances set to <code>ACTIVE</code> and <code>DRAINING</code>.
      * </p>
      * 
-     * @return The container instance status with which to filter the <code>ListContainerInstances</code> results.
-     *         Specifying a container instance status of <code>DRAINING</code> limits the results to container instances
-     *         that have been set to drain with the <a>UpdateContainerInstancesState</a> operation.
+     * @return Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status,
+     *         the results include only container instances that have been set to <code>DRAINING</code> using
+     *         <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the default is to include
+     *         container instances set to <code>ACTIVE</code> and <code>DRAINING</code>.
      * @see ContainerInstanceStatus
      */
 
@@ -378,15 +383,17 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The container instance status with which to filter the <code>ListContainerInstances</code> results. Specifying a
-     * container instance status of <code>DRAINING</code> limits the results to container instances that have been set
-     * to drain with the <a>UpdateContainerInstancesState</a> operation.
+     * Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status, the
+     * results include only container instances that have been set to <code>DRAINING</code> using
+     * <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the default is to include container
+     * instances set to <code>ACTIVE</code> and <code>DRAINING</code>.
      * </p>
      * 
      * @param status
-     *        The container instance status with which to filter the <code>ListContainerInstances</code> results.
-     *        Specifying a container instance status of <code>DRAINING</code> limits the results to container instances
-     *        that have been set to drain with the <a>UpdateContainerInstancesState</a> operation.
+     *        Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status,
+     *        the results include only container instances that have been set to <code>DRAINING</code> using
+     *        <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the default is to include
+     *        container instances set to <code>ACTIVE</code> and <code>DRAINING</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContainerInstanceStatus
      */
@@ -398,15 +405,17 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The container instance status with which to filter the <code>ListContainerInstances</code> results. Specifying a
-     * container instance status of <code>DRAINING</code> limits the results to container instances that have been set
-     * to drain with the <a>UpdateContainerInstancesState</a> operation.
+     * Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status, the
+     * results include only container instances that have been set to <code>DRAINING</code> using
+     * <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the default is to include container
+     * instances set to <code>ACTIVE</code> and <code>DRAINING</code>.
      * </p>
      * 
      * @param status
-     *        The container instance status with which to filter the <code>ListContainerInstances</code> results.
-     *        Specifying a container instance status of <code>DRAINING</code> limits the results to container instances
-     *        that have been set to drain with the <a>UpdateContainerInstancesState</a> operation.
+     *        Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status,
+     *        the results include only container instances that have been set to <code>DRAINING</code> using
+     *        <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the default is to include
+     *        container instances set to <code>ACTIVE</code> and <code>DRAINING</code>.
      * @see ContainerInstanceStatus
      */
 
@@ -416,15 +425,17 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The container instance status with which to filter the <code>ListContainerInstances</code> results. Specifying a
-     * container instance status of <code>DRAINING</code> limits the results to container instances that have been set
-     * to drain with the <a>UpdateContainerInstancesState</a> operation.
+     * Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status, the
+     * results include only container instances that have been set to <code>DRAINING</code> using
+     * <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the default is to include container
+     * instances set to <code>ACTIVE</code> and <code>DRAINING</code>.
      * </p>
      * 
      * @param status
-     *        The container instance status with which to filter the <code>ListContainerInstances</code> results.
-     *        Specifying a container instance status of <code>DRAINING</code> limits the results to container instances
-     *        that have been set to drain with the <a>UpdateContainerInstancesState</a> operation.
+     *        Filters the container instances by status. For example, if you specify the <code>DRAINING</code> status,
+     *        the results include only container instances that have been set to <code>DRAINING</code> using
+     *        <a>UpdateContainerInstancesState</a>. If you do not specify this parameter, the default is to include
+     *        container instances set to <code>ACTIVE</code> and <code>DRAINING</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContainerInstanceStatus
      */

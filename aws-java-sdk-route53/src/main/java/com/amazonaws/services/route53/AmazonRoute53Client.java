@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -222,6 +223,10 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
         init();
     }
 
+    public static AmazonRoute53ClientBuilder builder() {
+        return AmazonRoute53ClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Route 53 using the specified parameters.
      *
@@ -305,14 +310,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * To perform the association, the VPC and the private hosted zone must already exist. You can't convert a public
      * hosted zone into a private hosted zone.
      * </p>
-     * </important>
-     * <p>
-     * Send a <code>POST</code> request to the <code>/2013-04-01/hostedzone/<i>hosted zone ID</i>/associatevpc</code>
-     * resource. The request body must include a document with an <code>AssociateVPCWithHostedZoneRequest</code>
-     * element. The response contains a <code>ChangeInfo</code> data type that you can use to track the progress of the
-     * request.
-     * </p>
-     * <note>
+     * </important> <note>
      * <p>
      * If you want to associate a VPC that was created by using one AWS account with a private hosted zone that was
      * created by using a different account, the AWS account that created the private hosted zone must first submit a
@@ -348,7 +346,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public AssociateVPCWithHostedZoneResult associateVPCWithHostedZone(AssociateVPCWithHostedZoneRequest associateVPCWithHostedZoneRequest) {
+    public AssociateVPCWithHostedZoneResult associateVPCWithHostedZone(AssociateVPCWithHostedZoneRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateVPCWithHostedZone(request);
+    }
+
+    @SdkInternalApi
+    final AssociateVPCWithHostedZoneResult executeAssociateVPCWithHostedZone(AssociateVPCWithHostedZoneRequest associateVPCWithHostedZoneRequest) {
 
         ExecutionContext executionContext = createExecutionContext(associateVPCWithHostedZoneRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -380,11 +384,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Create, change, update, or delete authoritative DNS information on all Amazon Route 53 servers. Send a
-     * <code>POST</code> request to:
+     * Creates, changes, or deletes a resource record set, which contains authoritative DNS information for a specified
+     * domain name or subdomain name. For example, you can use <code>ChangeResourceRecordSets</code> to create a
+     * resource record set that routes traffic for test.example.com to a web server that has an IP address of
+     * 192.0.2.44.
      * </p>
      * <p>
-     * <code>/2013-04-01/hostedzone/<i>Amazon Route 53 hosted Zone ID</i>/rrset</code> resource.
+     * <b>Change Batches and Transactional Changes</b>
      * </p>
      * <p>
      * The request body must include a document with a <code>ChangeResourceRecordSetsRequest</code> element. The request
@@ -406,7 +412,10 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * single change batch. If you attempt to delete the same change batch more than once, Amazon Route 53 returns an
      * <code>InvalidChangeBatch</code> error.
      * </p>
-     * </important> <note>
+     * </important>
+     * <p>
+     * <b>Traffic Flow</b>
+     * </p>
      * <p>
      * To create resource record sets for complex routing configurations, use either the traffic flow visual editor in
      * the Amazon Route 53 console or the API actions for traffic policies and traffic policy instances. Save the
@@ -416,7 +425,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-flow.html">Using Traffic Flow to Route DNS
      * Traffic</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
-     * </note>
+     * <p>
+     * <b>Create, Delete, and Upsert</b>
+     * </p>
      * <p>
      * Use <code>ChangeResourceRecordsSetsRequest</code> to perform the following actions:
      * </p>
@@ -439,88 +450,32 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * </li>
      * </ul>
      * <p>
-     * The values that you need to include in the request depend on the type of resource record set that you're
-     * creating, deleting, or updating:
+     * <b>Syntaxes for Creating, Updating, and Deleting Resource Record Sets</b>
      * </p>
      * <p>
-     * <b>Basic resource record sets (excluding alias, failover, geolocation, latency, and weighted resource record
-     * sets)</b>
+     * The syntax for a request depends on the type of resource record set that you want to create, delete, or update,
+     * such as weighted, alias, or failover. The XML elements in your request must appear in the order listed in the
+     * syntax.
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * <code>Name</code>
+     * For an example for each type of resource record set, see "Examples."
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * <code>Type</code>
+     * Don't refer to the syntax in the "Parameter Syntax" section, which includes all of the elements for every kind of
+     * resource record set that you can create, delete, or update by using <code>ChangeResourceRecordSets</code>.
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * <code>TTL</code>
+     * <b>Change Propagation to Amazon Route 53 DNS Servers</b>
      * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>Failover, geolocation, latency, or weighted resource record sets (excluding alias resource record sets)</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Name</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Type</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>TTL</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>SetIdentifier</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>Alias resource record sets (including failover alias, geolocation alias, latency alias, and weighted alias
-     * resource record sets)</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Name</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Type</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>AliasTarget</code> (includes <code>DNSName</code>, <code>EvaluateTargetHealth</code>, and
-     * <code>HostedZoneId</code>)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>SetIdentifier</code> (for failover, geolocation, latency, and weighted resource record sets)
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * When you submit a <code>ChangeResourceRecordSets</code> request, Amazon Route 53 propagates your changes to all
      * of the Amazon Route 53 authoritative DNS servers. While your changes are propagating, <code>GetChange</code>
      * returns a status of <code>PENDING</code>. When propagation is complete, <code>GetChange</code> returns a status
      * of <code>INSYNC</code>. Changes generally propagate to all Amazon Route 53 name servers in a few minutes. In rare
-     * circumstances, propagation can take up to 30 minutes. For more information, see <a>GetChange</a>
+     * circumstances, propagation can take up to 30 minutes. For more information, see <a>GetChange</a>.
+     * </p>
+     * <p>
+     * <b>Limits on ChangeResourceRecordSets Requests</b>
      * </p>
      * <p>
      * For information about the limits on a <code>ChangeResourceRecordSets</code> request, see <a
@@ -550,7 +505,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ChangeResourceRecordSetsResult changeResourceRecordSets(ChangeResourceRecordSetsRequest changeResourceRecordSetsRequest) {
+    public ChangeResourceRecordSetsResult changeResourceRecordSets(ChangeResourceRecordSetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeChangeResourceRecordSets(request);
+    }
+
+    @SdkInternalApi
+    final ChangeResourceRecordSetsResult executeChangeResourceRecordSets(ChangeResourceRecordSetsRequest changeResourceRecordSetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(changeResourceRecordSetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -605,12 +566,19 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         If Amazon Route 53 returns this error repeatedly for the same request, we recommend that you wait, in
      *         intervals of increasing duration, before you try the request again.
      * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
      * @sample AmazonRoute53.ChangeTagsForResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeTagsForResource" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
-    public ChangeTagsForResourceResult changeTagsForResource(ChangeTagsForResourceRequest changeTagsForResourceRequest) {
+    public ChangeTagsForResourceResult changeTagsForResource(ChangeTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeChangeTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ChangeTagsForResourceResult executeChangeTagsForResource(ChangeTagsForResourceRequest changeTagsForResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(changeTagsForResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -645,16 +613,19 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * Creates a new health check.
      * </p>
      * <p>
-     * To create a new health check, send a <code>POST</code> request to the <code>/2013-04-01/healthcheck</code>
-     * resource. The request body must include a document with a <code>CreateHealthCheckRequest</code> element. The
-     * response returns the <code>CreateHealthCheckResponse</code> element, containing the health check ID specified
-     * when adding health check to a resource record set. For information about adding health checks to resource record
-     * sets, see <a>ResourceRecordSet$HealthCheckId</a> in <a>ChangeResourceRecordSets</a>.
+     * For information about adding health checks to resource record sets, see <a>ResourceRecordSet$HealthCheckId</a> in
+     * <a>ChangeResourceRecordSets</a>.
      * </p>
      * <p>
-     * If you are registering EC2 instances with an Elastic Load Balancing (ELB) load balancer, do not create Amazon
+     * <b>ELB Load Balancers</b>
+     * </p>
+     * <p>
+     * If you're registering EC2 instances with an Elastic Load Balancing (ELB) load balancer, do not create Amazon
      * Route 53 health checks for the EC2 instances. When you register an EC2 instance with a load balancer, you
      * configure settings for an ELB health check, which performs a similar function to an Amazon Route 53 health check.
+     * </p>
+     * <p>
+     * <b>Private Hosted Zones</b>
      * </p>
      * <p>
      * You can associate health checks with failover resource record sets in a private hosted zone. Note the following:
@@ -693,10 +664,21 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the AWS
      *         Support Center.
      * @throws HealthCheckAlreadyExistsException
-     *         The health check you're attempting to create already exists.</p>
+     *         The health check you're attempting to create already exists. Amazon Route 53 returns this error when you
+     *         submit a request that has the following values:</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         Amazon Route 53 returns this error when a health check has already been created with the specified value
-     *         for <code>CallerReference</code>.
+     *         The same value for <code>CallerReference</code> as an existing health check, and one or more values that
+     *         differ from the existing health check that has the same caller reference.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The same value for <code>CallerReference</code> as a health check that you created and later deleted,
+     *         regardless of the other settings in the request.
+     *         </p>
+     *         </li>
      * @throws InvalidInputException
      *         The input is not valid.
      * @sample AmazonRoute53.CreateHealthCheck
@@ -704,7 +686,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public CreateHealthCheckResult createHealthCheck(CreateHealthCheckRequest createHealthCheckRequest) {
+    public CreateHealthCheckResult createHealthCheck(CreateHealthCheckRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateHealthCheck(request);
+    }
+
+    @SdkInternalApi
+    final CreateHealthCheckResult executeCreateHealthCheck(CreateHealthCheckRequest createHealthCheckRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createHealthCheckRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -736,22 +724,17 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Creates a new public hosted zone, used to specify how the Domain Name System (DNS) routes traffic on the Internet
-     * for a domain, such as example.com, and its subdomains.
+     * Creates a new public hosted zone, which you use to specify how the Domain Name System (DNS) routes traffic on the
+     * Internet for a domain, such as example.com, and its subdomains.
      * </p>
      * <important>
      * <p>
-     * Public hosted zones can't be converted to a private hosted zone or vice versa. Instead, create a new hosted zone
-     * with the same name and create new resource record sets.
+     * You can't convert a public hosted zones to a private hosted zone or vice versa. Instead, you must create a new
+     * hosted zone with the same name and create new resource record sets.
      * </p>
      * </important>
      * <p>
-     * Send a <code>POST</code> request to the <code>/2013-04-01/hostedzone</code> resource. The request body must
-     * include a document with a <code>CreateHostedZoneRequest</code> element. The response returns the
-     * <code>CreateHostedZoneResponse</code> element containing metadata about the hosted zone.
-     * </p>
-     * <p>
-     * Fore more information about charges for hosted zones, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
+     * For more information about charges for hosted zones, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
      * Route 53 Pricing</a>.
      * </p>
      * <p>
@@ -770,33 +753,33 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">NS and SOA Records that Amazon
      * Route 53 Creates for a Hosted Zone</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
+     * <p>
+     * If you want to use the same name servers for multiple hosted zones, you can optionally associate a reusable
+     * delegation set with the hosted zone. See the <code>DelegationSetId</code> element.
+     * </p>
      * </li>
      * <li>
      * <p>
      * If your domain is registered with a registrar other than Amazon Route 53, you must update the name servers with
      * your registrar to make Amazon Route 53 your DNS service. For more information, see <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/creating-migrating.html">Configuring Amazon Route
-     * 53 as your DNS Service</a> in the <i>Amazon Route 53 Developer's Guide</i>.
+     * 53 as your DNS Service</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * After creating a zone, its initial status is <code>PENDING</code>. This means that it is not yet available on all
-     * DNS servers. The status of the zone changes to <code>INSYNC</code> when the NS and SOA records are available on
-     * all Amazon Route 53 DNS servers.
-     * </p>
-     * <p>
-     * When trying to create a hosted zone using a reusable delegation set, specify an optional DelegationSetId, and
-     * Amazon Route 53 would assign those 4 NS records for the zone, instead of allotting a new one.
+     * When you submit a <code>CreateHostedZone</code> request, the initial status of the hosted zone is
+     * <code>PENDING</code>. This means that the NS and SOA records are not yet available on all Amazon Route 53 DNS
+     * servers. When the NS and SOA records are available, the status of the zone changes to <code>INSYNC</code>.
      * </p>
      * 
      * @param createHostedZoneRequest
-     *        A complex type containing the hosted zone request information.
+     *        A complex type that contains information about the request to create a hosted zone.
      * @return Result of the CreateHostedZone operation returned by the service.
      * @throws InvalidDomainNameException
      *         The specified domain name is not valid.
      * @throws HostedZoneAlreadyExistsException
-     *         The hosted zone you are trying to create already exists. Amazon Route 53 returns this error when a hosted
+     *         The hosted zone you're trying to create already exists. Amazon Route 53 returns this error when a hosted
      *         zone has already been created with the specified <code>CallerReference</code>.
      * @throws TooManyHostedZonesException
      *         This hosted zone can't be created because the hosted zone limit is exceeded. To request a limit increase,
@@ -825,7 +808,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public CreateHostedZoneResult createHostedZone(CreateHostedZoneRequest createHostedZoneRequest) {
+    public CreateHostedZoneResult createHostedZone(CreateHostedZoneRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateHostedZone(request);
+    }
+
+    @SdkInternalApi
+    final CreateHostedZoneResult executeCreateHostedZone(CreateHostedZoneRequest createHostedZoneRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createHostedZoneRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -861,18 +850,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * zoned ID is specified, <code>CreateReusableDelegationSet</code> marks the delegation set associated with that
      * zone as reusable
      * </p>
-     * <p>
-     * Send a <code>POST</code> request to the <code>/2013-04-01/delegationset</code> resource. The request body must
-     * include a document with a <code>CreateReusableDelegationSetRequest</code> element.
-     * </p>
      * <note>
      * <p>
-     * A reusable delegation set can't be associated with a private hosted zone/
+     * A reusable delegation set can't be associated with a private hosted zone.
      * </p>
      * </note>
      * <p>
-     * For more information, including a procedure on how to create and configure a reusable delegation set (also known
-     * as white label name servers), see <a
+     * For information on how to use a reusable delegation set to configure white label name servers, see <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/white-label-name-servers.html">Configuring White
      * Label Name Servers</a>.
      * </p>
@@ -886,7 +870,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @throws HostedZoneNotFoundException
      *         The specified HostedZone can't be found.
      * @throws InvalidArgumentException
-     *         Parameter name and problem.
+     *         Parameter name is invalid.
      * @throws InvalidInputException
      *         The input is not valid.
      * @throws DelegationSetNotAvailableException
@@ -901,7 +885,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateReusableDelegationSetResult createReusableDelegationSet(CreateReusableDelegationSetRequest createReusableDelegationSetRequest) {
+    public CreateReusableDelegationSetResult createReusableDelegationSet(CreateReusableDelegationSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateReusableDelegationSet(request);
+    }
+
+    @SdkInternalApi
+    final CreateReusableDelegationSetResult executeCreateReusableDelegationSet(CreateReusableDelegationSetRequest createReusableDelegationSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createReusableDelegationSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -936,11 +926,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * Creates a traffic policy, which you use to create multiple DNS resource record sets for one domain name (such as
      * example.com) or one subdomain name (such as www.example.com).
      * </p>
-     * <p>
-     * Send a <code>POST</code> request to the <code>/2013-04-01/trafficpolicy</code> resource. The request body must
-     * include a document with a <code>CreateTrafficPolicyRequest</code> element. The response includes the
-     * <code>CreateTrafficPolicyResponse</code> element, which contains information about the new traffic policy.
-     * </p>
      * 
      * @param createTrafficPolicyRequest
      *        A complex type that contains information about the traffic policy that you want to create.
@@ -961,7 +946,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      API Documentation</a>
      */
     @Override
-    public CreateTrafficPolicyResult createTrafficPolicy(CreateTrafficPolicyRequest createTrafficPolicyRequest) {
+    public CreateTrafficPolicyResult createTrafficPolicy(CreateTrafficPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTrafficPolicy(request);
+    }
+
+    @SdkInternalApi
+    final CreateTrafficPolicyResult executeCreateTrafficPolicy(CreateTrafficPolicyRequest createTrafficPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createTrafficPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -999,12 +990,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * to DNS queries for the domain or subdomain name by using the resource record sets that
      * <code>CreateTrafficPolicyInstance</code> created.
      * </p>
-     * <p>
-     * Send a <code>POST</code> request to the <code>/2013-04-01/trafficpolicyinstance</code> resource. The request body
-     * must include a document with a <code>CreateTrafficPolicyRequest</code> element. The response returns the
-     * <code>CreateTrafficPolicyInstanceResponse</code> element, which contains information about the traffic policy
-     * instance.
-     * </p>
      * 
      * @param createTrafficPolicyInstanceRequest
      *        A complex type that contains information about the resource record sets that you want to create based on a
@@ -1027,7 +1012,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateTrafficPolicyInstanceResult createTrafficPolicyInstance(CreateTrafficPolicyInstanceRequest createTrafficPolicyInstanceRequest) {
+    public CreateTrafficPolicyInstanceResult createTrafficPolicyInstance(CreateTrafficPolicyInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTrafficPolicyInstance(request);
+    }
+
+    @SdkInternalApi
+    final CreateTrafficPolicyInstanceResult executeCreateTrafficPolicyInstance(CreateTrafficPolicyInstanceRequest createTrafficPolicyInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createTrafficPolicyInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1066,16 +1057,10 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * traffic policy. If you reach the limit and need to create another version, you'll need to start a new traffic
      * policy.
      * </p>
-     * <p>
-     * Send a <code>POST</code> request to the <code>/2013-04-01/trafficpolicy/</code> resource. The request body
-     * includes a document with a <code>CreateTrafficPolicyVersionRequest</code> element. The response returns the
-     * <code>CreateTrafficPolicyVersionResponse</code> element, which contains information about the new version of the
-     * traffic policy.
-     * </p>
      * 
      * @param createTrafficPolicyVersionRequest
-     *        A complex type that contains information about the traffic policy for which you want to create a new
-     *        version.
+     *        A complex type that contains information about the traffic policy that you want to create a new version
+     *        for.
      * @return Result of the CreateTrafficPolicyVersion operation returned by the service.
      * @throws NoSuchTrafficPolicyException
      *         No traffic policy exists with the specified ID.
@@ -1091,7 +1076,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateTrafficPolicyVersionResult createTrafficPolicyVersion(CreateTrafficPolicyVersionRequest createTrafficPolicyVersionRequest) {
+    public CreateTrafficPolicyVersionResult createTrafficPolicyVersion(CreateTrafficPolicyVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTrafficPolicyVersion(request);
+    }
+
+    @SdkInternalApi
+    final CreateTrafficPolicyVersionResult executeCreateTrafficPolicyVersion(CreateTrafficPolicyVersionRequest createTrafficPolicyVersionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createTrafficPolicyVersionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1135,18 +1126,14 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * by using a different account, you must submit one authorization request for each VPC.
      * </p>
      * </note>
-     * <p>
-     * Send a <code>POST</code> request to the
-     * <code>/2013-04-01/hostedzone/<i>hosted zone ID</i>/authorizevpcassociation</code> resource. The request body must
-     * include a document with a <code>CreateVPCAssociationAuthorizationRequest</code> element. The response contains
-     * information about the authorization.
-     * </p>
      * 
      * @param createVPCAssociationAuthorizationRequest
      *        A complex type that contains information about the request to authorize associating a VPC with your
      *        private hosted zone. Authorization is only required when a private hosted zone and a VPC were created by
      *        using different accounts.
      * @return Result of the CreateVPCAssociationAuthorization operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Another user submitted a request to update the object at the same time that you did. Retry the request.
      * @throws TooManyVPCAssociationAuthorizationsException
      *         You've created the maximum number of authorizations that can be created for the specified hosted zone. To
      *         authorize another VPC to be associated with the hosted zone, submit a
@@ -1164,7 +1151,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public CreateVPCAssociationAuthorizationResult createVPCAssociationAuthorization(
+    public CreateVPCAssociationAuthorizationResult createVPCAssociationAuthorization(CreateVPCAssociationAuthorizationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateVPCAssociationAuthorization(request);
+    }
+
+    @SdkInternalApi
+    final CreateVPCAssociationAuthorizationResult executeCreateVPCAssociationAuthorization(
             CreateVPCAssociationAuthorizationRequest createVPCAssociationAuthorizationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createVPCAssociationAuthorizationRequest);
@@ -1197,8 +1190,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Deletes a health check. Send a <code>DELETE</code> request to the
-     * <code>/2013-04-01/healthcheck/<i>health check ID</i> </code> resource.
+     * Deletes a health check.
      * </p>
      * <important>
      * <p>
@@ -1207,13 +1199,12 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * sets, the future status of the health check can't be predicted and may change. This will affect the routing of
      * DNS queries for your DNS failover configuration. For more information, see <a href=
      * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html#health-checks-deleting.html"
-     * >Replacing and Deleting Health Checks</a> in the Amazon Route 53 Developer Guide.
+     * >Replacing and Deleting Health Checks</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * </important>
      * 
      * @param deleteHealthCheckRequest
-     *        This action deletes a health check. Send a <code>DELETE</code> request to the
-     *        <code>/2013-04-01/DeleteHealthCheckRequest</code> resource.
+     *        This action deletes a health check.
      * @return Result of the DeleteHealthCheck operation returned by the service.
      * @throws NoSuchHealthCheckException
      *         No health check exists with the ID that you specified in the <code>DeleteHealthCheck</code> request.
@@ -1227,7 +1218,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public DeleteHealthCheckResult deleteHealthCheck(DeleteHealthCheckRequest deleteHealthCheckRequest) {
+    public DeleteHealthCheckResult deleteHealthCheck(DeleteHealthCheckRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteHealthCheck(request);
+    }
+
+    @SdkInternalApi
+    final DeleteHealthCheckResult executeDeleteHealthCheck(DeleteHealthCheckRequest deleteHealthCheckRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteHealthCheckRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1259,21 +1256,49 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Deletes a hosted zone. Send a <code>DELETE</code> request to the
-     * <code>/<i>Amazon Route 53 API version</i>/hostedzone/<i>hosted zone ID</i> </code> resource.
+     * Deletes a hosted zone.
      * </p>
      * <important>
      * <p>
-     * Delete a hosted zone only if there are no resource record sets other than the default SOA record and NS resource
-     * record sets. If the hosted zone contains other resource record sets, delete them before deleting the hosted zone.
-     * If you try to delete a hosted zone that contains other resource record sets, Amazon Route 53 denies your request
-     * with a <code>HostedZoneNotEmpty</code> error. For information about deleting records from your hosted zone, see
-     * <a>ChangeResourceRecordSets</a>.
+     * If the name servers for the hosted zone are associated with a domain and if you want to make the domain
+     * unavailable on the Internet, we recommend that you delete the name servers from the domain to prevent future DNS
+     * queries from possibly being misrouted. If the domain is registered with Amazon Route 53, see
+     * <code>UpdateDomainNameservers</code>. If the domain is registered with another registrar, use the method provided
+     * by the registrar to delete name servers for the domain.
+     * </p>
+     * <p>
+     * Some domain registries don't allow you to remove all of the name servers for a domain. If the registry for your
+     * domain requires one or more name servers, we recommend that you delete the hosted zone only if you transfer DNS
+     * service to another service provider, and you replace the name servers for the domain with name servers from the
+     * new provider.
      * </p>
      * </important>
+     * <p>
+     * You can delete a hosted zone only if it contains only the default SOA record and NS resource record sets. If the
+     * hosted zone contains other resource record sets, you must delete them before you can delete the hosted zone. If
+     * you try to delete a hosted zone that contains other resource record sets, the request fails, and Amazon Route 53
+     * returns a <code>HostedZoneNotEmpty</code> error. For information about deleting records from your hosted zone,
+     * see <a>ChangeResourceRecordSets</a>.
+     * </p>
+     * <p>
+     * To verify that the hosted zone has been deleted, do one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the <code>GetHostedZone</code> action to request information about the hosted zone.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the <code>ListHostedZones</code> action to get a list of the hosted zones associated with the current AWS
+     * account.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param deleteHostedZoneRequest
-     *        A complex type that contains information about the hosted zone that you want to delete.
+     *        A request to delete a hosted zone.
      * @return Result of the DeleteHostedZone operation returned by the service.
      * @throws NoSuchHostedZoneException
      *         No hosted zone exists with the ID that you specified.
@@ -1293,7 +1318,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public DeleteHostedZoneResult deleteHostedZone(DeleteHostedZoneRequest deleteHostedZoneRequest) {
+    public DeleteHostedZoneResult deleteHostedZone(DeleteHostedZoneRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteHostedZone(request);
+    }
+
+    @SdkInternalApi
+    final DeleteHostedZoneResult executeDeleteHostedZone(DeleteHostedZoneRequest deleteHostedZoneRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteHostedZoneRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1325,21 +1356,21 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Deletes a reusable delegation set. Send a <code>DELETE</code> request to the
-     * <code>/2013-04-01/delegationset/<i>delegation set ID</i> </code> resource.
+     * Deletes a reusable delegation set.
      * </p>
      * <important>
      * <p>
-     * You can delete a reusable delegation set only if there are no associated hosted zones.
+     * You can delete a reusable delegation set only if it isn't associated with any hosted zones.
      * </p>
      * </important>
      * <p>
-     * To verify that the reusable delegation set is not associated with any hosted zones, run the
-     * <a>GetReusableDelegationSet</a> action and specify the ID of the reusable delegation set that you want to delete.
+     * To verify that the reusable delegation set is not associated with any hosted zones, submit a
+     * <a>GetReusableDelegationSet</a> request and specify the ID of the reusable delegation set that you want to
+     * delete.
      * </p>
      * 
      * @param deleteReusableDelegationSetRequest
-     *        A complex type containing the information for the delete request.
+     *        A request to delete a reusable delegation set.
      * @return Result of the DeleteReusableDelegationSet operation returned by the service.
      * @throws NoSuchDelegationSetException
      *         A reusable delegation set with the specified ID does not exist.
@@ -1355,7 +1386,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteReusableDelegationSetResult deleteReusableDelegationSet(DeleteReusableDelegationSetRequest deleteReusableDelegationSetRequest) {
+    public DeleteReusableDelegationSetResult deleteReusableDelegationSet(DeleteReusableDelegationSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteReusableDelegationSet(request);
+    }
+
+    @SdkInternalApi
+    final DeleteReusableDelegationSetResult executeDeleteReusableDelegationSet(DeleteReusableDelegationSetRequest deleteReusableDelegationSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteReusableDelegationSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1389,10 +1426,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * <p>
      * Deletes a traffic policy.
      * </p>
-     * <p>
-     * Send a <code>DELETE</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicy</code>
-     * resource.
-     * </p>
      * 
      * @param deleteTrafficPolicyRequest
      *        A request to delete a specified traffic policy version.
@@ -1410,7 +1443,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      API Documentation</a>
      */
     @Override
-    public DeleteTrafficPolicyResult deleteTrafficPolicy(DeleteTrafficPolicyRequest deleteTrafficPolicyRequest) {
+    public DeleteTrafficPolicyResult deleteTrafficPolicy(DeleteTrafficPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTrafficPolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTrafficPolicyResult executeDeleteTrafficPolicy(DeleteTrafficPolicyRequest deleteTrafficPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteTrafficPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1445,10 +1484,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * Deletes a traffic policy instance and all of the resource record sets that Amazon Route 53 created when you
      * created the instance.
      * </p>
-     * <p>
-     * Send a <code>DELETE</code> request to the
-     * <code>/<i>Amazon Route 53 API version</i>/trafficpolicy/<i>traffic policy instance ID</i> </code> resource.
-     * </p>
      * <note>
      * <p>
      * In the Amazon Route 53 console, traffic policy instances are known as policy records.
@@ -1456,7 +1491,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * </note>
      * 
      * @param deleteTrafficPolicyInstanceRequest
-     *        A complex type that contains information about the traffic policy instance that you want to delete.
+     *        A request to delete a specified traffic policy instance.
      * @return Result of the DeleteTrafficPolicyInstance operation returned by the service.
      * @throws NoSuchTrafficPolicyInstanceException
      *         No traffic policy instance exists with the specified ID.
@@ -1472,7 +1507,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteTrafficPolicyInstanceResult deleteTrafficPolicyInstance(DeleteTrafficPolicyInstanceRequest deleteTrafficPolicyInstanceRequest) {
+    public DeleteTrafficPolicyInstanceResult deleteTrafficPolicyInstance(DeleteTrafficPolicyInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTrafficPolicyInstance(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTrafficPolicyInstanceResult executeDeleteTrafficPolicyInstance(DeleteTrafficPolicyInstanceRequest deleteTrafficPolicyInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteTrafficPolicyInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1516,16 +1557,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * delete an existing association, use <code>DisassociateVPCFromHostedZone</code>.
      * </p>
      * </important>
-     * <p>
-     * Send a <code>DELETE</code> request to the
-     * <code>/2013-04-01/hostedzone/<i>hosted zone ID</i>/deauthorizevpcassociation</code> resource. The request body
-     * must include a document with a <code>DeleteVPCAssociationAuthorizationRequest</code> element.
-     * </p>
      * 
      * @param deleteVPCAssociationAuthorizationRequest
      *        A complex type that contains information about the request to remove authorization to associate a VPC that
      *        was created by one AWS account with a hosted zone that was created with a different AWS account.
      * @return Result of the DeleteVPCAssociationAuthorization operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Another user submitted a request to update the object at the same time that you did. Retry the request.
      * @throws VPCAssociationAuthorizationNotFoundException
      *         The VPC that you specified is not authorized to be associated with the hosted zone.
      * @throws NoSuchHostedZoneException
@@ -1540,7 +1578,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DeleteVPCAssociationAuthorizationResult deleteVPCAssociationAuthorization(
+    public DeleteVPCAssociationAuthorizationResult deleteVPCAssociationAuthorization(DeleteVPCAssociationAuthorizationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteVPCAssociationAuthorization(request);
+    }
+
+    @SdkInternalApi
+    final DeleteVPCAssociationAuthorizationResult executeDeleteVPCAssociationAuthorization(
             DeleteVPCAssociationAuthorizationRequest deleteVPCAssociationAuthorizationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteVPCAssociationAuthorizationRequest);
@@ -1579,13 +1623,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * <p>
      * You can't disassociate the last VPC from a private hosted zone.
      * </p>
-     * </note>
-     * <p>
-     * Send a <code>POST</code> request to the <code>/2013-04-01/hostedzone/<i>hosted zone ID</i>/disassociatevpc</code>
-     * resource. The request body must include a document with a <code>DisassociateVPCFromHostedZoneRequest</code>
-     * element. The response includes a <code>DisassociateVPCFromHostedZoneResponse</code> element.
-     * </p>
-     * <important>
+     * </note> <important>
      * <p>
      * You can't disassociate a VPC from a private hosted zone when only one VPC is associated with the hosted zone. You
      * also can't convert a private hosted zone into a public hosted zone.
@@ -1614,7 +1652,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public DisassociateVPCFromHostedZoneResult disassociateVPCFromHostedZone(DisassociateVPCFromHostedZoneRequest disassociateVPCFromHostedZoneRequest) {
+    public DisassociateVPCFromHostedZoneResult disassociateVPCFromHostedZone(DisassociateVPCFromHostedZoneRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateVPCFromHostedZone(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateVPCFromHostedZoneResult executeDisassociateVPCFromHostedZone(DisassociateVPCFromHostedZoneRequest disassociateVPCFromHostedZoneRequest) {
 
         ExecutionContext executionContext = createExecutionContext(disassociateVPCFromHostedZoneRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1651,13 +1695,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * <ul>
      * <li>
      * <p>
-     * <code>PENDING</code> indicates that the changes in this request have not replicated to all Amazon Route 53 DNS
+     * <code>PENDING</code> indicates that the changes in this request have not propagated to all Amazon Route 53 DNS
      * servers. This is the initial status of all change batch requests.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>INSYNC</code> indicates that the changes have replicated to all Amazon Route 53 DNS servers.
+     * <code>INSYNC</code> indicates that the changes have propagated to all Amazon Route 53 DNS servers.
      * </p>
      * </li>
      * </ul>
@@ -1674,7 +1718,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public GetChangeResult getChange(GetChangeRequest getChangeRequest) {
+    public GetChangeResult getChange(GetChangeRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetChange(request);
+    }
+
+    @SdkInternalApi
+    final GetChangeResult executeGetChange(GetChangeRequest getChangeRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getChangeRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1705,21 +1755,26 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Retrieves a list of the IP ranges used by Amazon Route 53 health checkers to check the health of your resources.
-     * Send a <code>GET</code> request to the <code>/<i>Amazon Route 53 API version</i>/checkeripranges</code> resource.
-     * Use these IP addresses to configure router and firewall rules to allow health checkers to check the health of
-     * your resources.
+     * <code>GetCheckerIpRanges</code> still works, but we recommend that you download ip-ranges.json, which includes IP
+     * address ranges for all AWS services. For more information, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-ip-addresses.html">IP Address Ranges of
+     * Amazon Route 53 Servers</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * 
      * @param getCheckerIpRangesRequest
-     *        Empty request.
      * @return Result of the GetCheckerIpRanges operation returned by the service.
      * @sample AmazonRoute53.GetCheckerIpRanges
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetCheckerIpRanges" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
-    public GetCheckerIpRangesResult getCheckerIpRanges(GetCheckerIpRangesRequest getCheckerIpRangesRequest) {
+    public GetCheckerIpRangesResult getCheckerIpRanges(GetCheckerIpRangesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCheckerIpRanges(request);
+    }
+
+    @SdkInternalApi
+    final GetCheckerIpRangesResult executeGetCheckerIpRanges(GetCheckerIpRangesRequest getCheckerIpRangesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getCheckerIpRangesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1756,12 +1811,31 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Retrieves a single geo location. Send a <code>GET</code> request to the <code>/2013-04-01/geolocation</code>
-     * resource with one of these options: continentcode | countrycode | countrycode and subdivisioncode.
+     * Gets information about whether a specified geographic location is supported for Amazon Route 53 geolocation
+     * resource record sets.
+     * </p>
+     * <p>
+     * Use the following syntax to determine whether a continent is supported for geolocation:
+     * </p>
+     * <p>
+     * <code>GET /2013-04-01/geolocation?ContinentCode=<i>two-letter abbreviation for a continent</i> </code>
+     * </p>
+     * <p>
+     * Use the following syntax to determine whether a country is supported for geolocation:
+     * </p>
+     * <p>
+     * <code>GET /2013-04-01/geolocation?CountryCode=<i>two-character country code</i> </code>
+     * </p>
+     * <p>
+     * Use the following syntax to determine whether a subdivision of a country is supported for geolocation:
+     * </p>
+     * <p>
+     * <code>GET /2013-04-01/geolocation?CountryCode=<i>two-character country code</i>&amp;SubdivisionCode=<i>subdivision code</i> </code>
      * </p>
      * 
      * @param getGeoLocationRequest
-     *        A complex type that contains information about the request to get a geo location.
+     *        A request for information about whether a specified geographic location is supported for Amazon Route 53
+     *        geolocation resource record sets.
      * @return Result of the GetGeoLocation operation returned by the service.
      * @throws NoSuchGeoLocationException
      *         Amazon Route 53 doesn't support the specified geolocation.
@@ -1772,7 +1846,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public GetGeoLocationResult getGeoLocation(GetGeoLocationRequest getGeoLocationRequest) {
+    public GetGeoLocationResult getGeoLocation(GetGeoLocationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetGeoLocation(request);
+    }
+
+    @SdkInternalApi
+    final GetGeoLocationResult executeGetGeoLocation(GetGeoLocationRequest getGeoLocationRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getGeoLocationRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1809,37 +1889,30 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Gets information about a specified health check. Send a <code>GET</code> request to the
-     * <code>/2013-04-01/healthcheck/<i>health check ID</i> </code> resource. For more information about using the
-     * console to perform this operation, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health Checks
-     * and DNS Failover</a> in the Amazon Route 53 Developer Guide.
+     * Gets information about a specified health check.
      * </p>
      * 
      * @param getHealthCheckRequest
-     *        This action gets information about a specified health check.</p>
-     *        <p>
-     *        Send a <code>GET</code> request to the
-     *        <code>/<i>Amazon Route 53 API version</i>/gethealthcheckrequest</code> resource.
-     *        </p>
-     *        <p>
-     *        For information about getting information about a health check using the Amazon Route 53 console, see <a
-     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health
-     *        Checks and DNS Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.
+     *        A request to get information about a specified health check.
      * @return Result of the GetHealthCheck operation returned by the service.
      * @throws NoSuchHealthCheckException
      *         No health check exists with the ID that you specified in the <code>DeleteHealthCheck</code> request.
      * @throws InvalidInputException
      *         The input is not valid.
      * @throws IncompatibleVersionException
-     *         The resource you are trying to access is unsupported on this Amazon Route 53 endpoint. Please consider
-     *         using a newer endpoint or a tool that does so.
+     *         The resource you're trying to access is unsupported on this Amazon Route 53 endpoint.
      * @sample AmazonRoute53.GetHealthCheck
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheck" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
-    public GetHealthCheckResult getHealthCheck(GetHealthCheckRequest getHealthCheckRequest) {
+    public GetHealthCheckResult getHealthCheck(GetHealthCheckRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetHealthCheck(request);
+    }
+
+    @SdkInternalApi
+    final GetHealthCheckResult executeGetHealthCheck(GetHealthCheckRequest getHealthCheckRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getHealthCheckRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1871,20 +1944,24 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * To retrieve a count of all your health checks, send a <code>GET</code> request to the
-     * <code>/2013-04-01/healthcheckcount</code> resource.
+     * Retrieves the number of health checks that are associated with the current AWS account.
      * </p>
      * 
      * @param getHealthCheckCountRequest
-     *        To retrieve a count of all your health checks, send a <code>GET</code> request to the
-     *        <code>/2013-04-01/healthcheckcount</code> resource.
+     *        A request for the number of health checks that are associated with the current AWS account.
      * @return Result of the GetHealthCheckCount operation returned by the service.
      * @sample AmazonRoute53.GetHealthCheckCount
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckCount" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
-    public GetHealthCheckCountResult getHealthCheckCount(GetHealthCheckCountRequest getHealthCheckCountRequest) {
+    public GetHealthCheckCountResult getHealthCheckCount(GetHealthCheckCountRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetHealthCheckCount(request);
+    }
+
+    @SdkInternalApi
+    final GetHealthCheckCountResult executeGetHealthCheckCount(GetHealthCheckCountRequest getHealthCheckCountRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getHealthCheckCountRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1921,23 +1998,11 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * If you want to learn why a health check is currently failing or why it failed most recently (if at all), you can
-     * get the failure reason for the most recent failure. Send a <code>GET</code> request to the
-     * <code>/<i>Amazon Route 53 API version</i>/healthcheck/<i>health check ID</i>/lastfailurereason</code> resource.
+     * Gets the reason that a specified health check failed most recently.
      * </p>
      * 
      * @param getHealthCheckLastFailureReasonRequest
-     *        This action gets the reason that a specified health check failed most recently.</p>
-     *        <p>
-     *        To get the reason for the last failure of a health check, send a GET request to the
-     *        /2013-04-01/healthcheck/health check ID/lastfailurereason resource.
-     *        </p>
-     *        <p>
-     *        For information about viewing the last failure reason for a health check using the Amazon Route 53
-     *        console, see <a
-     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-monitor-view-status.html"
-     *        >Viewing Health Check Status and the Reason for Health Check Failures</a> in the <i>Amazon Route 53
-     *        Developer Guide</i>.
+     *        A request for the reason that a health check failed most recently.
      * @return Result of the GetHealthCheckLastFailureReason operation returned by the service.
      * @throws NoSuchHealthCheckException
      *         No health check exists with the ID that you specified in the <code>DeleteHealthCheck</code> request.
@@ -1948,7 +2013,14 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetHealthCheckLastFailureReasonResult getHealthCheckLastFailureReason(GetHealthCheckLastFailureReasonRequest getHealthCheckLastFailureReasonRequest) {
+    public GetHealthCheckLastFailureReasonResult getHealthCheckLastFailureReason(GetHealthCheckLastFailureReasonRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetHealthCheckLastFailureReason(request);
+    }
+
+    @SdkInternalApi
+    final GetHealthCheckLastFailureReasonResult executeGetHealthCheckLastFailureReason(
+            GetHealthCheckLastFailureReasonRequest getHealthCheckLastFailureReasonRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getHealthCheckLastFailureReasonRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1980,13 +2052,11 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Gets status of a specified health check. Send a <code>GET</code> request to the
-     * <code>/2013-04-01/healthcheck/<i>health check ID</i>/status</code> resource. You can use this call to get a
-     * health check's current status.
+     * Gets status of a specified health check.
      * </p>
      * 
      * @param getHealthCheckStatusRequest
-     *        A complex type that contains information about the request to get health check status for a health check.
+     *        A request to get the status for a health check.
      * @return Result of the GetHealthCheckStatus operation returned by the service.
      * @throws NoSuchHealthCheckException
      *         No health check exists with the ID that you specified in the <code>DeleteHealthCheck</code> request.
@@ -1997,7 +2067,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      API Documentation</a>
      */
     @Override
-    public GetHealthCheckStatusResult getHealthCheckStatus(GetHealthCheckStatusRequest getHealthCheckStatusRequest) {
+    public GetHealthCheckStatusResult getHealthCheckStatus(GetHealthCheckStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetHealthCheckStatus(request);
+    }
+
+    @SdkInternalApi
+    final GetHealthCheckStatusResult executeGetHealthCheckStatus(GetHealthCheckStatusRequest getHealthCheckStatusRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getHealthCheckStatusRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2029,13 +2105,11 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Retrieves the delegation set for a hosted zone, including the four name servers assigned to the hosted zone. Send
-     * a <code>GET</code> request to the
-     * <code>/<i>Amazon Route 53 API version</i>/hostedzone/<i>hosted zone ID</i> </code> resource.
+     * Gets information about a specified hosted zone including the four name servers assigned to the hosted zone.
      * </p>
      * 
      * @param getHostedZoneRequest
-     *        The input for a GetHostedZone request.
+     *        A request to get information about a specified hosted zone.
      * @return Result of the GetHostedZone operation returned by the service.
      * @throws NoSuchHostedZoneException
      *         No hosted zone exists with the ID that you specified.
@@ -2046,7 +2120,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public GetHostedZoneResult getHostedZone(GetHostedZoneRequest getHostedZoneRequest) {
+    public GetHostedZoneResult getHostedZone(GetHostedZoneRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetHostedZone(request);
+    }
+
+    @SdkInternalApi
+    final GetHostedZoneResult executeGetHostedZone(GetHostedZoneRequest getHostedZoneRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getHostedZoneRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2077,13 +2157,11 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Retrieves a count of all your hosted zones. Send a <code>GET</code> request to the
-     * <code>/2013-04-01/hostedzonecount</code> resource.
+     * Retrieves the number of hosted zones that are associated with the current AWS account.
      * </p>
      * 
      * @param getHostedZoneCountRequest
-     *        To retrieve a count of all your hosted zones, send a <code>GET</code> request to the
-     *        <code>/2013-04-01/hostedzonecount</code> resource.
+     *        A request to retrieve a count of all the hosted zones that are associated with the current AWS account.
      * @return Result of the GetHostedZoneCount operation returned by the service.
      * @throws InvalidInputException
      *         The input is not valid.
@@ -2092,7 +2170,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public GetHostedZoneCountResult getHostedZoneCount(GetHostedZoneCountRequest getHostedZoneCountRequest) {
+    public GetHostedZoneCountResult getHostedZoneCount(GetHostedZoneCountRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetHostedZoneCount(request);
+    }
+
+    @SdkInternalApi
+    final GetHostedZoneCountResult executeGetHostedZoneCount(GetHostedZoneCountRequest getHostedZoneCountRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getHostedZoneCountRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2129,12 +2213,12 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Retrieves the reusable delegation set. Send a <code>GET</code> request to the
-     * <code>/2013-04-01/delegationset/<i>delegation set ID</i> </code> resource.
+     * Retrieves information about a specified reusable delegation set, including the four name servers that are
+     * assigned to the delegation set.
      * </p>
      * 
      * @param getReusableDelegationSetRequest
-     *        The input for a <code>GetReusableDelegationSet</code> request.
+     *        A request to get information about a specified reusable delegation set.
      * @return Result of the GetReusableDelegationSet operation returned by the service.
      * @throws NoSuchDelegationSetException
      *         A reusable delegation set with the specified ID does not exist.
@@ -2147,7 +2231,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetReusableDelegationSetResult getReusableDelegationSet(GetReusableDelegationSetRequest getReusableDelegationSetRequest) {
+    public GetReusableDelegationSetResult getReusableDelegationSet(GetReusableDelegationSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetReusableDelegationSet(request);
+    }
+
+    @SdkInternalApi
+    final GetReusableDelegationSetResult executeGetReusableDelegationSet(GetReusableDelegationSetRequest getReusableDelegationSetRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getReusableDelegationSetRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2181,13 +2271,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * <p>
      * Gets information about a specific traffic policy version.
      * </p>
-     * <p>
-     * Send a <code>GET</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicy</code> resource.
-     * </p>
      * 
      * @param getTrafficPolicyRequest
-     *        Gets information about a specific traffic policy version. To get the information, send a GET request to
-     *        the /2013-04-01/trafficpolicy resource, and specify the ID and the version of the traffic policy.
+     *        Gets information about a specific traffic policy version.
      * @return Result of the GetTrafficPolicy operation returned by the service.
      * @throws NoSuchTrafficPolicyException
      *         No traffic policy exists with the specified ID.
@@ -2198,7 +2284,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public GetTrafficPolicyResult getTrafficPolicy(GetTrafficPolicyRequest getTrafficPolicyRequest) {
+    public GetTrafficPolicyResult getTrafficPolicy(GetTrafficPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetTrafficPolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetTrafficPolicyResult executeGetTrafficPolicy(GetTrafficPolicyRequest getTrafficPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getTrafficPolicyRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2232,10 +2324,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * <p>
      * Gets information about a specified traffic policy instance.
      * </p>
-     * <p>
-     * Send a <code>GET</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicyinstance</code>
-     * resource.
-     * </p>
      * <note>
      * <p>
      * After you submit a <code>CreateTrafficPolicyInstance</code> or an <code>UpdateTrafficPolicyInstance</code>
@@ -2249,10 +2337,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * </note>
      * 
      * @param getTrafficPolicyInstanceRequest
-     *        Gets information about a specified traffic policy instance.</p>
-     *        <p>
-     *        To get information about a traffic policy instance, send a <code>GET</code> request to the
-     *        <code>/<i>Amazon Route 53 API version</i>/trafficpolicyinstance/<i>Id</i> </code> resource.
+     *        Gets information about a specified traffic policy instance.
      * @return Result of the GetTrafficPolicyInstance operation returned by the service.
      * @throws NoSuchTrafficPolicyInstanceException
      *         No traffic policy instance exists with the specified ID.
@@ -2263,7 +2348,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetTrafficPolicyInstanceResult getTrafficPolicyInstance(GetTrafficPolicyInstanceRequest getTrafficPolicyInstanceRequest) {
+    public GetTrafficPolicyInstanceResult getTrafficPolicyInstance(GetTrafficPolicyInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetTrafficPolicyInstance(request);
+    }
+
+    @SdkInternalApi
+    final GetTrafficPolicyInstanceResult executeGetTrafficPolicyInstance(GetTrafficPolicyInstanceRequest getTrafficPolicyInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getTrafficPolicyInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2297,21 +2388,22 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * <p>
      * Gets the number of traffic policy instances that are associated with the current AWS account.
      * </p>
-     * <p>
-     * To get the number of traffic policy instances, send a <code>GET</code> request to the
-     * <code>/2013-04-01/trafficpolicyinstancecount</code> resource.
-     * </p>
      * 
      * @param getTrafficPolicyInstanceCountRequest
-     *        To retrieve a count of all your traffic policy instances, send a <code>GET</code> request to the
-     *        <code>/2013-04-01/trafficpolicyinstancecount</code> resource.
+     *        Request to get the number of traffic policy instances that are associated with the current AWS account.
      * @return Result of the GetTrafficPolicyInstanceCount operation returned by the service.
      * @sample AmazonRoute53.GetTrafficPolicyInstanceCount
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstanceCount"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public GetTrafficPolicyInstanceCountResult getTrafficPolicyInstanceCount(GetTrafficPolicyInstanceCountRequest getTrafficPolicyInstanceCountRequest) {
+    public GetTrafficPolicyInstanceCountResult getTrafficPolicyInstanceCount(GetTrafficPolicyInstanceCountRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetTrafficPolicyInstanceCount(request);
+    }
+
+    @SdkInternalApi
+    final GetTrafficPolicyInstanceCountResult executeGetTrafficPolicyInstanceCount(GetTrafficPolicyInstanceCountRequest getTrafficPolicyInstanceCountRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getTrafficPolicyInstanceCountRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2348,9 +2440,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Retrieves a list of supported geo locations. Send a <code>GET</code> request to the
-     * <code>/2013-04-01/geolocations</code> resource. The response to this request includes a
-     * <code>GeoLocationDetailsList</code> element for each location that Amazon Route 53 supports.
+     * Retrieves a list of supported geo locations.
      * </p>
      * <p>
      * Countries are listed first, and continents are listed last. If Amazon Route 53 supports subdivisions for a
@@ -2359,14 +2449,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * </p>
      * 
      * @param listGeoLocationsRequest
-     *        To get a list of geographic locations that Amazon Route 53 supports for geolocation, send a
-     *        <code>GET</code> request to the <code>/<i>Amazon Route 53 API version</i>/geolocations</code> resource.
-     *        The response to this request includes a <code>GeoLocationDetails</code> element for each location that
-     *        Amazon Route 53 supports.</p>
-     *        <p>
-     *        Countries are listed first, and continents are listed last. If Amazon Route 53 supports subdivisions for a
-     *        country (for example, states or provinces), the subdivisions for that country are listed in alphabetical
-     *        order immediately after the corresponding country.
+     *        A request to get a list of geographic locations that Amazon Route 53 supports for geolocation resource
+     *        record sets.
      * @return Result of the ListGeoLocations operation returned by the service.
      * @throws InvalidInputException
      *         The input is not valid.
@@ -2375,7 +2459,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public ListGeoLocationsResult listGeoLocations(ListGeoLocationsRequest listGeoLocationsRequest) {
+    public ListGeoLocationsResult listGeoLocations(ListGeoLocationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListGeoLocations(request);
+    }
+
+    @SdkInternalApi
+    final ListGeoLocationsResult executeListGeoLocations(ListGeoLocationsRequest listGeoLocationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listGeoLocationsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2412,42 +2502,28 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Retrieve a list of your health checks. Send a <code>GET</code> request to the
-     * <code>/2013-04-01/healthcheck</code> resource. The response to this request includes a <code>HealthChecks</code>
-     * element with zero or more <code>HealthCheck</code> child elements. By default, the list of health checks is
-     * displayed on a single page. You can control the length of the page that is displayed by using the
-     * <code>MaxItems</code> parameter. You can use the <code>Marker</code> parameter to control the health check that
-     * the list begins with.
-     * </p>
-     * <p>
-     * For information about listing health checks using the Amazon Route 53 console, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health Checks
-     * and DNS Failover</a>.
+     * Retrieve a list of the health checks that are associated with the current AWS account.
      * </p>
      * 
      * @param listHealthChecksRequest
-     *        To retrieve a list of your health checks, send a <code>GET</code> request to the
-     *        <code>/2013-04-01/healthcheck</code> resource. The response to this request includes a
-     *        <code>HealthChecks</code> element with zero or more <code>HealthCheck</code> child elements. By default,
-     *        the list of health checks is displayed on a single page. You can control the length of the page that is
-     *        displayed by using the <code>MaxItems</code> parameter. You can use the <code>Marker</code> parameter to
-     *        control the health check that the list begins with.</p> <note>
-     *        <p>
-     *        Amazon Route 53 returns a maximum of 100 items. If you set <code>MaxItems</code> to a value greater than
-     *        100, Amazon Route 53 returns only the first 100.
-     *        </p>
+     *        A request to retrieve a list of the health checks that are associated with the current AWS account.
      * @return Result of the ListHealthChecks operation returned by the service.
      * @throws InvalidInputException
      *         The input is not valid.
      * @throws IncompatibleVersionException
-     *         The resource you are trying to access is unsupported on this Amazon Route 53 endpoint. Please consider
-     *         using a newer endpoint or a tool that does so.
+     *         The resource you're trying to access is unsupported on this Amazon Route 53 endpoint.
      * @sample AmazonRoute53.ListHealthChecks
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHealthChecks" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
-    public ListHealthChecksResult listHealthChecks(ListHealthChecksRequest listHealthChecksRequest) {
+    public ListHealthChecksResult listHealthChecks(ListHealthChecksRequest request) {
+        request = beforeClientExecution(request);
+        return executeListHealthChecks(request);
+    }
+
+    @SdkInternalApi
+    final ListHealthChecksResult executeListHealthChecks(ListHealthChecksRequest listHealthChecksRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listHealthChecksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2484,89 +2560,17 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * To retrieve a list of your public and private hosted zones, send a <code>GET</code> request to the
-     * <code>/2013-04-01/hostedzone</code> resource. The response to this request includes a <code>HostedZones</code>
-     * child element for each hosted zone created by the current AWS account.
+     * Retrieves a list of the public and private hosted zones that are associated with the current AWS account. The
+     * response includes a <code>HostedZones</code> child element for each hosted zone.
      * </p>
      * <p>
      * Amazon Route 53 returns a maximum of 100 items in each response. If you have a lot of hosted zones, you can use
-     * the <code>maxitems</code> parameter to list them in groups of up to 100. The response includes four values that
-     * help navigate from one group of <code>maxitems</code> hosted zones to the next:
+     * the <code>maxitems</code> parameter to list them in groups of up to 100.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>MaxItems</code> is the value specified for the <code>maxitems</code> parameter in the request that produced
-     * the current response.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If the value of <code>IsTruncated</code> in the response is true, there are more hosted zones associated with the
-     * current AWS account.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>NextMarker</code> is the hosted zone ID of the next hosted zone that is associated with the current AWS
-     * account. If you want to list more hosted zones, make another call to <code>ListHostedZones</code>, and specify
-     * the value of the <code>NextMarker</code> element in the marker parameter.
-     * </p>
-     * <p>
-     * If <code>IsTruncated</code> is false, the <code>NextMarker</code> element is omitted from the response.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If you're making the second or subsequent call to <code>ListHostedZones</code>, the <code>Marker</code> element
-     * matches the value that you specified in the <code>marker</code> parameter in the previous request.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param listHostedZonesRequest
-     *        To retrieve a list of your public and private hosted zones, send a <code>GET</code> request to the
-     *        <code>/2013-04-01/hostedzone</code> resource. The response to this request includes a HostedZone child
-     *        element for each hosted zone that was created by the current AWS account.</p>
-     *        <p>
-     *        Amazon Route 53 returns a maximum of 100 items in each response. If you have a lot of hosted zones, you
-     *        can use the maxitems parameter to list them in groups of up to 100. The response includes four values that
-     *        help you navigate from one group of maxitems hosted zones to the next:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>MaxItems</code> is the value that you specified for the <code>maxitems</code> parameter in the
-     *        request that produced the current response.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        If the value of <code>IsTruncated</code> in the response is <code>true</code>, there are more hosted zones
-     *        associated with the current AWS account.
-     *        </p>
-     *        <p>
-     *        If <code>IsTruncated</code> is <code>false</code>, this response includes the last hosted zone that is
-     *        associated with the current account.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>NextMarker</code> is the hosted zone ID of the next hosted zone that is associated with the current
-     *        AWS account. If you want to list more hosted zones, make another call to <code>ListHostedZones</code>, and
-     *        specify the value of the <code>NextMarker</code> element in the marker parameter.
-     *        </p>
-     *        <p>
-     *        If <code>IsTruncated</code> is <code>false</code>, the <code>NextMarker</code> element is omitted from the
-     *        response.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        If you're making the second or subsequent call to <code>ListHostedZones</code>, the <code>Marker</code>
-     *        element matches the value that you specified in the <code>marker</code> parameter in the previous request.
-     *        </p>
-     *        </li>
+     *        A request to retrieve a list of the public and private hosted zones that are associated with the current
+     *        AWS account.
      * @return Result of the ListHostedZones operation returned by the service.
      * @throws InvalidInputException
      *         The input is not valid.
@@ -2579,7 +2583,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public ListHostedZonesResult listHostedZones(ListHostedZonesRequest listHostedZonesRequest) {
+    public ListHostedZonesResult listHostedZones(ListHostedZonesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListHostedZones(request);
+    }
+
+    @SdkInternalApi
+    final ListHostedZonesResult executeListHostedZones(ListHostedZonesRequest listHostedZonesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listHostedZonesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2616,41 +2626,32 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Retrieves a list of your hosted zones in lexicographic order. Send a <code>GET</code> request to the
-     * <code>/2013-04-01/hostedzonesbyname</code> resource. The response includes a <code>HostedZones</code> child
-     * element for each hosted zone created by the current AWS account.
+     * Retrieves a list of your hosted zones in lexicographic order. The response includes a <code>HostedZones</code>
+     * child element for each hosted zone created by the current AWS account.
      * </p>
      * <p>
      * <code>ListHostedZonesByName</code> sorts hosted zones by name with the labels reversed. For example:
      * </p>
-     * <ul>
-     * <li>
      * <p>
      * <code>com.example.www.</code>
      * </p>
-     * </li>
-     * </ul>
      * <p>
      * Note the trailing dot, which can change the sort order in some circumstances.
      * </p>
      * <p>
      * If the domain name includes escape characters or Punycode, <code>ListHostedZonesByName</code> alphabetizes the
      * domain name using the escaped or Punycoded value, which is the format that Amazon Route 53 saves in its database.
-     * For example, to create a hosted zone for example.com, specify ex\344mple.com for the domain name.
+     * For example, to create a hosted zone for exämple.com, you specify ex\344mple.com for the domain name.
      * <code>ListHostedZonesByName</code> alphabetizes it as:
      * </p>
-     * <ul>
-     * <li>
      * <p>
      * <code>com.ex\344mple.</code>
      * </p>
-     * </li>
-     * </ul>
      * <p>
      * The labels are reversed and alphabetized using the escaped value. For more information about valid domain name
      * formats, including internationalized domain names, see <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a>
-     * in the Amazon Route 53 Developer Guide.
+     * in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * <p>
      * Amazon Route 53 returns up to 100 items in each response. If you have a lot of hosted zones, use the
@@ -2694,66 +2695,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * </ul>
      * 
      * @param listHostedZonesByNameRequest
-     *        To retrieve a list of your public and private hosted zones in ASCII order by domain name, send a
-     *        <code>GET</code> request to the <code>/<i>Amazon Route 53 API version</i>/hostedzonesbyname</code>
-     *        resource. The response to this request includes a <code>HostedZone</code> child element for each hosted
-     *        zone that was created by the current AWS account. <code>ListHostedZonesByName</code> sorts hosted zones by
-     *        name with the labels reversed, for example:</p>
-     *        <p>
-     *        <code>com.example.www.</code>
-     *        </p>
-     *        <p>
-     *        Note the trailing dot, which can change the sort order in some circumstances.
-     *        </p>
-     *        <p>
-     *        If the domain name includes escape characters or Punycode, <code>ListHostedZonesByName</code> alphabetizes
-     *        the domain name using the escaped or Punycoded value, which is the format that Amazon Route 53 saves in
-     *        its database. For example, to create a hosted zone for exämple.com, you specify
-     *        <code>ex\344mple.com</code> for the domain name. <code>ListHostedZonesByName</code> alphabetizes it as:
-     *        <code>com.ex\344mple</code>. The labels are reversed, and it's alphabetized using the escaped value. For
-     *        more information about valid domain name formats, including internationalized domain names, see <a
-     *        href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name
-     *        Format</a> in the <i>Amazon Route 53 Developer Guide</i>.
-     *        </p>
-     *        <p>
-     *        Amazon Route 53 returns up to 100 items in each response. If you have a lot of hosted zones, you can use
-     *        the <code>MaxItems</code> parameter to list them in groups of up to 100. The response includes values that
-     *        help you navigate from one group of <code>MaxItems</code> hosted zones to the next:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        The <code>DNSName</code> and <code>HostedZoneId</code> elements in the response contain the values, if
-     *        any, that you specified for the <code>dnsname</code> and <code>hostedzoneid</code> parameters in the
-     *        request that produced the current response.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        The <code>MaxItems</code> element in the response contains the value, if any, that you specified for the
-     *        <code>maxitems</code> parameter in the request that produced the current response.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        If the value of <code>IsTruncated</code> in the response is true, there are more hosted zones associated
-     *        with the current Amazon Route 53 account.
-     *        </p>
-     *        <p>
-     *        If <code>IsTruncated</code> is <code>false</code>, this response includes the last hosted zone that is
-     *        associated with the current account. The <code>NextDNSName</code> element and
-     *        <code>NextHostedZoneId</code> elements are omitted from the response.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        The <code>NextDNSName</code> and <code>NextHostedZoneId</code> elements in the response contain the domain
-     *        name and the hosted zone ID of the next hosted zone that is associated with the current AWS account. If
-     *        you want to list more hosted zones, make another call to <code>ListHostedZonesByName</code>, and specify
-     *        the value of <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the <code>dnsname</code> and
-     *        <code>hostedzoneid</code> parameters, respectively.
-     *        </p>
-     *        </li>
+     *        Retrieves a list of the public and private hosted zones that are associated with the current AWS account
+     *        in ASCII order by domain name.
      * @return Result of the ListHostedZonesByName operation returned by the service.
      * @throws InvalidInputException
      *         The input is not valid.
@@ -2764,7 +2707,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      API Documentation</a>
      */
     @Override
-    public ListHostedZonesByNameResult listHostedZonesByName(ListHostedZonesByNameRequest listHostedZonesByNameRequest) {
+    public ListHostedZonesByNameResult listHostedZonesByName(ListHostedZonesByNameRequest request) {
+        request = beforeClientExecution(request);
+        return executeListHostedZonesByName(request);
+    }
+
+    @SdkInternalApi
+    final ListHostedZonesByNameResult executeListHostedZonesByName(ListHostedZonesByNameRequest listHostedZonesByNameRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listHostedZonesByNameRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2861,7 +2810,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * </p>
      * 
      * @param listResourceRecordSetsRequest
-     *        The input for a ListResourceRecordSets request.
+     *        A request for the resource record sets that are associated with a specified hosted zone.
      * @return Result of the ListResourceRecordSets operation returned by the service.
      * @throws NoSuchHostedZoneException
      *         No hosted zone exists with the ID that you specified.
@@ -2872,7 +2821,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      API Documentation</a>
      */
     @Override
-    public ListResourceRecordSetsResult listResourceRecordSets(ListResourceRecordSetsRequest listResourceRecordSetsRequest) {
+    public ListResourceRecordSetsResult listResourceRecordSets(ListResourceRecordSetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListResourceRecordSets(request);
+    }
+
+    @SdkInternalApi
+    final ListResourceRecordSetsResult executeListResourceRecordSets(ListResourceRecordSetsRequest listResourceRecordSetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listResourceRecordSetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2904,31 +2859,11 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * To retrieve a list of your reusable delegation sets, send a <code>GET</code> request to the
-     * <code>/2013-04-01/delegationset</code> resource. The response to this request includes a
-     * <code>DelegationSets</code> element with zero, one, or multiple <code>DelegationSet</code> child elements. By
-     * default, the list of delegation sets is displayed on a single page. You can control the length of the page that
-     * is displayed by using the <code>MaxItems</code> parameter. You can use the <code>Marker</code> parameter to
-     * control the delegation set that the list begins with.
+     * Retrieves a list of the reusable delegation sets that are associated with the current AWS account.
      * </p>
-     * <note>
-     * <p>
-     * Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value greater than 100, Amazon Route 53
-     * returns only the first 100.
-     * </p>
-     * </note>
      * 
      * @param listReusableDelegationSetsRequest
-     *        To retrieve a list of your reusable delegation sets, send a <code>GET</code> request to the
-     *        <code>/2013-04-01/delegationset</code> resource. The response to this request includes a
-     *        <code>DelegationSets</code> element with zero or more <code>DelegationSet</code> child elements. By
-     *        default, the list of reusable delegation sets is displayed on a single page. You can control the length of
-     *        the page that is displayed by using the <code>MaxItems</code> parameter. You can use the
-     *        <code>Marker</code> parameter to control the delegation set that the list begins with.</p> <note>
-     *        <p>
-     *        Amazon Route 53 returns a maximum of 100 items. If you set <code>MaxItems</code> to a value greater than
-     *        100, Amazon Route 53 returns only the first 100.
-     *        </p>
+     *        A request to get a list of the reusable delegation sets that are associated with the current AWS account.
      * @return Result of the ListReusableDelegationSets operation returned by the service.
      * @throws InvalidInputException
      *         The input is not valid.
@@ -2937,7 +2872,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListReusableDelegationSetsResult listReusableDelegationSets(ListReusableDelegationSetsRequest listReusableDelegationSetsRequest) {
+    public ListReusableDelegationSetsResult listReusableDelegationSets(ListReusableDelegationSetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListReusableDelegationSets(request);
+    }
+
+    @SdkInternalApi
+    final ListReusableDelegationSetsResult executeListReusableDelegationSets(ListReusableDelegationSetsRequest listReusableDelegationSetsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listReusableDelegationSetsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -2998,12 +2939,19 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         If Amazon Route 53 returns this error repeatedly for the same request, we recommend that you wait, in
      *         intervals of increasing duration, before you try the request again.
      * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
      * @sample AmazonRoute53.ListTagsForResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResource" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
-    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3059,12 +3007,19 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *         If Amazon Route 53 returns this error repeatedly for the same request, we recommend that you wait, in
      *         intervals of increasing duration, before you try the request again.
      * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
      * @sample AmazonRoute53.ListTagsForResources
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResources" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
-    public ListTagsForResourcesResult listTagsForResources(ListTagsForResourcesRequest listTagsForResourcesRequest) {
+    public ListTagsForResourcesResult listTagsForResources(ListTagsForResourcesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResources(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourcesResult executeListTagsForResources(ListTagsForResourcesRequest listTagsForResourcesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTagsForResourcesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3097,57 +3052,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     /**
      * <p>
      * Gets information about the latest version for every traffic policy that is associated with the current AWS
-     * account. Send a <code>GET</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicy</code>
-     * resource.
+     * account. Policies are listed in the order in which they were created.
      * </p>
-     * <p>
-     * Amazon Route 53 returns a maximum of 100 items in each response. If you have a lot of traffic policies, you can
-     * use the <code>maxitems</code> parameter to list them in groups of up to 100.
-     * </p>
-     * <p>
-     * The response includes three values that help you navigate from one group of <code>maxitems</code> traffic
-     * policies to the next:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>IsTruncated</b>
-     * </p>
-     * <p>
-     * If the value of <code>IsTruncated</code> in the response is <code>true</code>, there are more traffic policies
-     * associated with the current AWS account.
-     * </p>
-     * <p>
-     * If <code>IsTruncated</code> is <code>false</code>, this response includes the last traffic policy that is
-     * associated with the current account.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>TrafficPolicyIdMarker</b>
-     * </p>
-     * <p>
-     * If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyIdMarker</code> is the ID of the first
-     * traffic policy in the next group of <code>MaxItems</code> traffic policies. If you want to list more traffic
-     * policies, make another call to <code>ListTrafficPolicies</code>, and specify the value of the
-     * <code>TrafficPolicyIdMarker</code> element from the response in the <code>TrafficPolicyIdMarker</code> request
-     * parameter.
-     * </p>
-     * <p>
-     * If <code>IsTruncated</code> is <code>false</code>, the <code>TrafficPolicyIdMarker</code> element is omitted from
-     * the response.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>MaxItems</b>
-     * </p>
-     * <p>
-     * The value that you specified for the <code>MaxItems</code> parameter in the request that produced the current
-     * response.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param listTrafficPoliciesRequest
      *        A complex type that contains the information about the request to list the traffic policies that are
@@ -3160,7 +3066,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      API Documentation</a>
      */
     @Override
-    public ListTrafficPoliciesResult listTrafficPolicies(ListTrafficPoliciesRequest listTrafficPoliciesRequest) {
+    public ListTrafficPoliciesResult listTrafficPolicies(ListTrafficPoliciesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTrafficPolicies(request);
+    }
+
+    @SdkInternalApi
+    final ListTrafficPoliciesResult executeListTrafficPolicies(ListTrafficPoliciesRequest listTrafficPoliciesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTrafficPoliciesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3207,58 +3119,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * </p>
      * </note>
      * <p>
-     * Send a <code>GET</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicyinstance</code>
-     * resource.
-     * </p>
-     * <p>
      * Amazon Route 53 returns a maximum of 100 items in each response. If you have a lot of traffic policy instances,
      * you can use the <code>MaxItems</code> parameter to list them in groups of up to 100.
      * </p>
-     * <p>
-     * The response includes five values that help you navigate from one group of <code>MaxItems</code> traffic policy
-     * instances to the next:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>IsTruncated</b>
-     * </p>
-     * <p>
-     * If the value of <code>IsTruncated</code> in the response is <code>true</code>, there are more traffic policy
-     * instances associated with the current AWS account.
-     * </p>
-     * <p>
-     * If <code>IsTruncated</code> is <code>false</code>, this response includes the last traffic policy instance that
-     * is associated with the current account.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>MaxItems</b>
-     * </p>
-     * <p>
-     * The value that you specified for the <code>MaxItems</code> parameter in the request that produced the current
-     * response.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>HostedZoneIdMarker</b>, <b>TrafficPolicyInstanceNameMarker</b>, and <b>TrafficPolicyInstanceTypeMarker</b>
-     * </p>
-     * <p>
-     * If <code>IsTruncated</code> is <code>true</code>, these three values in the response represent the first traffic
-     * policy instance in the next group of <code>MaxItems</code> traffic policy instances. To list more traffic policy
-     * instances, make another call to <code>ListTrafficPolicyInstances</code>, and specify these values in the
-     * corresponding request parameters.
-     * </p>
-     * <p>
-     * If <code>IsTruncated</code> is <code>false</code>, all three elements are omitted from the response.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param listTrafficPolicyInstancesRequest
-     *        A complex type that contains the information about the request to list your traffic policy instances.
+     *        A request to get information about the traffic policy instances that you created by using the current AWS
+     *        account.
      * @return Result of the ListTrafficPolicyInstances operation returned by the service.
      * @throws InvalidInputException
      *         The input is not valid.
@@ -3269,7 +3136,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListTrafficPolicyInstancesResult listTrafficPolicyInstances(ListTrafficPolicyInstancesRequest listTrafficPolicyInstancesRequest) {
+    public ListTrafficPolicyInstancesResult listTrafficPolicyInstances(ListTrafficPolicyInstancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTrafficPolicyInstances(request);
+    }
+
+    @SdkInternalApi
+    final ListTrafficPolicyInstancesResult executeListTrafficPolicyInstances(ListTrafficPolicyInstancesRequest listTrafficPolicyInstancesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTrafficPolicyInstancesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3310,61 +3183,15 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * </p>
      * <note>
      * <p>
-     * After you submit an <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while Amazon Route 53
-     * creates the resource record sets that are specified in the traffic policy definition. For more information, see
-     * the <code>State</code> response element.
+     * After you submit a <code>CreateTrafficPolicyInstance</code> or an <code>UpdateTrafficPolicyInstance</code>
+     * request, there's a brief delay while Amazon Route 53 creates the resource record sets that are specified in the
+     * traffic policy definition. For more information, see the <code>State</code> response element.
      * </p>
      * </note>
-     * <p>
-     * Send a <code>GET</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicyinstance</code>
-     * resource and include the ID of the hosted zone.
-     * </p>
      * <p>
      * Amazon Route 53 returns a maximum of 100 items in each response. If you have a lot of traffic policy instances,
      * you can use the <code>MaxItems</code> parameter to list them in groups of up to 100.
      * </p>
-     * <p>
-     * The response includes four values that help you navigate from one group of <code>MaxItems</code> traffic policy
-     * instances to the next:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>IsTruncated</b>
-     * </p>
-     * <p>
-     * If the value of <code/>IsTruncated in the response is <code>true</code>, there are more traffic policy instances
-     * associated with the current AWS account.
-     * </p>
-     * <p>
-     * If <code>IsTruncated</code> is <code>false</code>, this response includes the last traffic policy instance that
-     * is associated with the current account.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>MaxItems</b>
-     * </p>
-     * <p>
-     * The value that you specified for the <code>MaxItems</code> parameter in the request that produced the current
-     * response.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>TrafficPolicyInstanceNameMarker</b> and <b>TrafficPolicyInstanceTypeMarker</b>
-     * </p>
-     * <p>
-     * If <code>IsTruncated</code> is <code>true</code>, these two values in the response represent the first traffic
-     * policy instance in the next group of <code>MaxItems</code> traffic policy instances. To list more traffic policy
-     * instances, make another call to <code>ListTrafficPolicyInstancesByHostedZone</code>, and specify these values in
-     * the corresponding request parameters.
-     * </p>
-     * <p>
-     * If <code>IsTruncated</code> is <code>false</code>, all three elements are omitted from the response.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param listTrafficPolicyInstancesByHostedZoneRequest
      *        A request for the traffic policy instances that you created in a specified hosted zone.
@@ -3380,7 +3207,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListTrafficPolicyInstancesByHostedZoneResult listTrafficPolicyInstancesByHostedZone(
+    public ListTrafficPolicyInstancesByHostedZoneResult listTrafficPolicyInstancesByHostedZone(ListTrafficPolicyInstancesByHostedZoneRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTrafficPolicyInstancesByHostedZone(request);
+    }
+
+    @SdkInternalApi
+    final ListTrafficPolicyInstancesByHostedZoneResult executeListTrafficPolicyInstancesByHostedZone(
             ListTrafficPolicyInstancesByHostedZoneRequest listTrafficPolicyInstancesByHostedZoneRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTrafficPolicyInstancesByHostedZoneRequest);
@@ -3424,55 +3257,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * </p>
      * </note>
      * <p>
-     * Send a <code>GET</code> request to the <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code> resource
-     * and include the ID and version of the traffic policy.
-     * </p>
-     * <p>
      * Amazon Route 53 returns a maximum of 100 items in each response. If you have a lot of traffic policy instances,
      * you can use the <code>MaxItems</code> parameter to list them in groups of up to 100.
      * </p>
-     * <p>
-     * The response includes five values that help you navigate from one group of <code>MaxItems</code> traffic policy
-     * instances to the next:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>IsTruncated</b>
-     * </p>
-     * <p>
-     * If the value of <code>IsTruncated</code> in the response is <code>true</code>, there are more traffic policy
-     * instances associated with the specified traffic policy.
-     * </p>
-     * <p>
-     * If <code>IsTruncated</code> is <code>false</code>, this response includes the last traffic policy instance that
-     * is associated with the specified traffic policy.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>MaxItems</b>
-     * </p>
-     * <p>
-     * The value that you specified for the <code>MaxItems</code> parameter in the request that produced the current
-     * response.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>HostedZoneIdMarker</b>, <b>TrafficPolicyInstanceNameMarker</b>, and <b>TrafficPolicyInstanceTypeMarker</b>
-     * </p>
-     * <p>
-     * If <code>IsTruncated</code> is <code>true</code>, these values in the response represent the first traffic policy
-     * instance in the next group of <code>MaxItems</code> traffic policy instances. To list more traffic policy
-     * instances, make another call to <code>ListTrafficPolicyInstancesByPolicy</code>, and specify these values in the
-     * corresponding request parameters.
-     * </p>
-     * <p>
-     * If <code>IsTruncated</code> is <code>false</code>, all three elements are omitted from the response.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param listTrafficPolicyInstancesByPolicyRequest
      *        A complex type that contains the information about the request to list your traffic policy instances.
@@ -3488,7 +3275,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListTrafficPolicyInstancesByPolicyResult listTrafficPolicyInstancesByPolicy(
+    public ListTrafficPolicyInstancesByPolicyResult listTrafficPolicyInstancesByPolicy(ListTrafficPolicyInstancesByPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTrafficPolicyInstancesByPolicy(request);
+    }
+
+    @SdkInternalApi
+    final ListTrafficPolicyInstancesByPolicyResult executeListTrafficPolicyInstancesByPolicy(
             ListTrafficPolicyInstancesByPolicyRequest listTrafficPolicyInstancesByPolicyRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTrafficPolicyInstancesByPolicyRequest);
@@ -3525,55 +3318,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * Gets information about all of the versions for a specified traffic policy.
      * </p>
      * <p>
-     * Send a <code>GET</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicy</code> resource
-     * and specify the ID of the traffic policy for which you want to list versions.
+     * Traffic policy versions are listed in numerical order by <code>VersionNumber</code>.
      * </p>
-     * <p>
-     * Amazon Route 53 returns a maximum of 100 items in each response. If you have a lot of traffic policies, you can
-     * use the <code>maxitems</code> parameter to list them in groups of up to 100.
-     * </p>
-     * <p>
-     * The response includes three values that help you navigate from one group of <code>maxitems</code> traffic
-     * policies to the next:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>IsTruncated</b>
-     * </p>
-     * <p>
-     * If the value of <code>IsTruncated</code> in the response is <code>true</code>, there are more traffic policy
-     * versions associated with the specified traffic policy.
-     * </p>
-     * <p>
-     * If <code>IsTruncated</code> is <code>false</code>, this response includes the last traffic policy version that is
-     * associated with the specified traffic policy.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>TrafficPolicyVersionMarker</b>
-     * </p>
-     * <p>
-     * The ID of the next traffic policy version that is associated with the current AWS account. If you want to list
-     * more traffic policies, make another call to <code>ListTrafficPolicyVersions</code>, and specify the value of the
-     * <code>TrafficPolicyVersionMarker</code> element in the <code>TrafficPolicyVersionMarker</code> request parameter.
-     * </p>
-     * <p>
-     * If <code>IsTruncated</code> is <code>false</code>, Amazon Route 53 omits the
-     * <code>TrafficPolicyVersionMarker</code> element from the response.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>MaxItems</b>
-     * </p>
-     * <p>
-     * The value that you specified for the <code>MaxItems</code> parameter in the request that produced the current
-     * response.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param listTrafficPolicyVersionsRequest
      *        A complex type that contains the information about the request to list your traffic policies.
@@ -3587,7 +3333,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListTrafficPolicyVersionsResult listTrafficPolicyVersions(ListTrafficPolicyVersionsRequest listTrafficPolicyVersionsRequest) {
+    public ListTrafficPolicyVersionsResult listTrafficPolicyVersions(ListTrafficPolicyVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTrafficPolicyVersions(request);
+    }
+
+    @SdkInternalApi
+    final ListTrafficPolicyVersionsResult executeListTrafficPolicyVersions(ListTrafficPolicyVersionsRequest listTrafficPolicyVersionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listTrafficPolicyVersionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3623,25 +3375,8 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * zone because you've submitted one or more <code>CreateVPCAssociationAuthorization</code> requests.
      * </p>
      * <p>
-     * Send a <code>GET</code> request to the
-     * <code>/2013-04-01/hostedzone/<i>hosted zone ID</i>/authorizevpcassociation</code> resource. The response to this
-     * request includes a <code>VPCs</code> element with a <code>VPC</code> child element for each VPC that can be
+     * The response includes a <code>VPCs</code> element with a <code>VPC</code> child element for each VPC that can be
      * associated with the hosted zone.
-     * </p>
-     * <p>
-     * Amazon Route 53 returns up to 50 VPCs per page. To return fewer VPCs per page, include the
-     * <code>MaxResults</code> parameter:
-     * </p>
-     * <p>
-     * <code>/2013-04-01/hostedzone/<i>hosted zone ID</i>/authorizevpcassociation?MaxItems=<i>VPCs per page</i> </code>
-     * </p>
-     * <p>
-     * If the response includes a <code>NextToken</code> element, there are more VPCs to list. To get the next page of
-     * VPCs, submit another <code>ListVPCAssociationAuthorizations</code> request, and include the value of the
-     * <code>NextToken</code> element from the response in the <code>NextToken</code> request parameter:
-     * </p>
-     * <p>
-     * <code>/2013-04-01/hostedzone/<i>hosted zone ID</i>/authorizevpcassociation?MaxItems=<i>VPCs per page</i>&amp;NextToken=<i/> </code>
      * </p>
      * 
      * @param listVPCAssociationAuthorizationsRequest
@@ -3657,7 +3392,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public ListVPCAssociationAuthorizationsResult listVPCAssociationAuthorizations(
+    public ListVPCAssociationAuthorizationsResult listVPCAssociationAuthorizations(ListVPCAssociationAuthorizationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListVPCAssociationAuthorizations(request);
+    }
+
+    @SdkInternalApi
+    final ListVPCAssociationAuthorizationsResult executeListVPCAssociationAuthorizations(
             ListVPCAssociationAuthorizationsRequest listVPCAssociationAuthorizationsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listVPCAssociationAuthorizationsRequest);
@@ -3698,54 +3439,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * @param testDNSAnswerRequest
      *        Gets the value that Amazon Route 53 returns in response to a DNS request for a specified record name and
      *        type. You can optionally specify the IP address of a DNS resolver, an EDNS0 client subnet IP address, and
-     *        a subnet mask. </p>
-     *        <p>
-     *        <b>Parameters</b>
-     *        </p>
-     *        <dl>
-     *        <dt>hostedzoneid</dt>
-     *        <dd>
-     *        <p>
-     *        The ID of the hosted zone that you want Amazon Route 53 to simulate a query for.
-     *        </p>
-     *        </dd>
-     *        <dt>recordname</dt>
-     *        <dd>
-     *        <p>
-     *        The name of the resource record set that you want Amazon Route 53 to simulate a query for.
-     *        </p>
-     *        </dd>
-     *        <dt>recordtype</dt>
-     *        <dd>
-     *        <p>
-     *        The type of the resource record set.
-     *        </p>
-     *        </dd>
-     *        <dt>resolverip (optional)</dt>
-     *        <dd>
-     *        <p>
-     *        If you want to simulate a request from a specific DNS resolver, specify the IP address for that resolver.
-     *        If you omit this value, <code>TestDNSAnswer</code> uses the IP address of a DNS resolver in the AWS US
-     *        East region.
-     *        </p>
-     *        </dd>
-     *        <dt>edns0clientsubnetip (optional)</dt>
-     *        <dd>
-     *        <p>
-     *        If the resolver that you specified for <code>resolverip</code> supports EDNS0, specify the IP address of a
-     *        client in the applicable location.
-     *        </p>
-     *        </dd>
-     *        <dt>edns0clientsubnetmask (optional)</dt>
-     *        <dd>
-     *        <p>
-     *        If you specify an IP address for <code>edns0clientsubnetip</code>, you can optionally specify the number
-     *        of bits of the IP address that you want the checking tool to include in the DNS query. For example, if you
-     *        specify <code>192.0.2.44</code> for <code>edns0clientsubnetip</code> and <code>24</code> for
-     *        <code>edns0clientsubnetmask</code>, the checking tool will simulate a request from
-     *        <code>192.0.2.0/24</code>. The default value is 24 bits.
-     *        </p>
-     *        </dd>
+     *        a subnet mask.
      * @return Result of the TestDNSAnswer operation returned by the service.
      * @throws NoSuchHostedZoneException
      *         No hosted zone exists with the ID that you specified.
@@ -3756,7 +3450,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public TestDNSAnswerResult testDNSAnswer(TestDNSAnswerRequest testDNSAnswerRequest) {
+    public TestDNSAnswerResult testDNSAnswer(TestDNSAnswerRequest request) {
+        request = beforeClientExecution(request);
+        return executeTestDNSAnswer(request);
+    }
+
+    @SdkInternalApi
+    final TestDNSAnswerResult executeTestDNSAnswer(TestDNSAnswerRequest testDNSAnswerRequest) {
 
         ExecutionContext executionContext = createExecutionContext(testDNSAnswerRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3787,18 +3487,16 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Updates an existing health check.
+     * Updates an existing health check. Note that some values can't be updated.
      * </p>
      * <p>
-     * Send a <code>POST</code> request to the <code>/2013-04-01/healthcheck/<i>health check ID</i> </code> resource.
-     * The request body must include a document with an <code>UpdateHealthCheckRequest</code> element. For more
-     * information about updating health checks, see <a
+     * For more information about updating health checks, see <a
      * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html">Creating,
-     * Updating, and Deleting Health Checks</a> in the Amazon Route 53 Developer Guide.
+     * Updating, and Deleting Health Checks</a> in the <i>Amazon Route 53 Developer Guide</i>.
      * </p>
      * 
      * @param updateHealthCheckRequest
-     *        A complex type that contains the health check request information.
+     *        A complex type that contains information about a request to update a health check.
      * @return Result of the UpdateHealthCheck operation returned by the service.
      * @throws NoSuchHealthCheckException
      *         No health check exists with the ID that you specified in the <code>DeleteHealthCheck</code> request.
@@ -3812,7 +3510,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      Documentation</a>
      */
     @Override
-    public UpdateHealthCheckResult updateHealthCheck(UpdateHealthCheckRequest updateHealthCheckRequest) {
+    public UpdateHealthCheckResult updateHealthCheck(UpdateHealthCheckRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateHealthCheck(request);
+    }
+
+    @SdkInternalApi
+    final UpdateHealthCheckResult executeUpdateHealthCheck(UpdateHealthCheckRequest updateHealthCheckRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateHealthCheckRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3844,12 +3548,11 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Updates the hosted zone comment. Send a <code>POST</code> request to the
-     * <code>/2013-04-01/hostedzone/<i>hosted zone ID</i> </code> resource.
+     * Updates the comment for a specified hosted zone.
      * </p>
      * 
      * @param updateHostedZoneCommentRequest
-     *        A complex type that contains the hosted zone request information.
+     *        A request to update the comment for a hosted zone.
      * @return Result of the UpdateHostedZoneComment operation returned by the service.
      * @throws NoSuchHostedZoneException
      *         No hosted zone exists with the ID that you specified.
@@ -3860,7 +3563,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateHostedZoneCommentResult updateHostedZoneComment(UpdateHostedZoneCommentRequest updateHostedZoneCommentRequest) {
+    public UpdateHostedZoneCommentResult updateHostedZoneComment(UpdateHostedZoneCommentRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateHostedZoneComment(request);
+    }
+
+    @SdkInternalApi
+    final UpdateHostedZoneCommentResult executeUpdateHostedZoneComment(UpdateHostedZoneCommentRequest updateHostedZoneCommentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateHostedZoneCommentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3894,16 +3603,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * <p>
      * Updates the comment for a specified traffic policy version.
      * </p>
-     * <p>
-     * Send a <code>POST</code> request to the <code>/2013-04-01/trafficpolicy/</code> resource.
-     * </p>
-     * <p>
-     * The request body must include a document with an <code>UpdateTrafficPolicyCommentRequest</code> element.
-     * </p>
      * 
      * @param updateTrafficPolicyCommentRequest
-     *        A complex type that contains information about the traffic policy for which you want to update the
-     *        comment.
+     *        A complex type that contains information about the traffic policy that you want to update the comment for.
      * @return Result of the UpdateTrafficPolicyComment operation returned by the service.
      * @throws InvalidInputException
      *         The input is not valid.
@@ -3916,7 +3618,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateTrafficPolicyCommentResult updateTrafficPolicyComment(UpdateTrafficPolicyCommentRequest updateTrafficPolicyCommentRequest) {
+    public UpdateTrafficPolicyCommentResult updateTrafficPolicyComment(UpdateTrafficPolicyCommentRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateTrafficPolicyComment(request);
+    }
+
+    @SdkInternalApi
+    final UpdateTrafficPolicyCommentResult executeUpdateTrafficPolicyComment(UpdateTrafficPolicyCommentRequest updateTrafficPolicyCommentRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateTrafficPolicyCommentRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -3952,11 +3660,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * specified traffic policy version.
      * </p>
      * <p>
-     * Send a <code>POST</code> request to the <code>/2013-04-01/trafficpolicyinstance/<i>traffic policy ID</i> </code>
-     * resource. The request body must include a document with an <code>UpdateTrafficPolicyInstanceRequest</code>
-     * element.
-     * </p>
-     * <p>
      * When you update a traffic policy instance, Amazon Route 53 continues to respond to DNS queries for the root
      * resource record set name (such as example.com) while it replaces one group of resource record sets with another.
      * Amazon Route 53 performs the following operations:
@@ -3965,7 +3668,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * <li>
      * <p>
      * Amazon Route 53 creates a new group of resource record sets based on the specified traffic policy. This is true
-     * regardless of how substantial the differences are between the existing resource record sets and the new resource
+     * regardless of how significant the differences are between the existing resource record sets and the new resource
      * record sets.
      * </p>
      * </li>
@@ -4007,7 +3710,13 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      *      target="_top">AWS API Documentation</a>
      */
     @Override
-    public UpdateTrafficPolicyInstanceResult updateTrafficPolicyInstance(UpdateTrafficPolicyInstanceRequest updateTrafficPolicyInstanceRequest) {
+    public UpdateTrafficPolicyInstanceResult updateTrafficPolicyInstance(UpdateTrafficPolicyInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateTrafficPolicyInstance(request);
+    }
+
+    @SdkInternalApi
+    final UpdateTrafficPolicyInstanceResult executeUpdateTrafficPolicyInstance(UpdateTrafficPolicyInstanceRequest updateTrafficPolicyInstanceRequest) {
 
         ExecutionContext executionContext = createExecutionContext(updateTrafficPolicyInstanceRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -4100,6 +3809,14 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
             }
         }
         return waiters;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
 
 }

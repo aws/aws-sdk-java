@@ -14,6 +14,8 @@ package com.amazonaws.services.gamelift.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -25,17 +27,17 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Instance implements Serializable, Cloneable {
+public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier for the fleet that the instance belongs to.
+     * Unique identifier for a fleet that the instance is in.
      * </p>
      */
     private String fleetId;
     /**
      * <p>
-     * Unique identifier for the instance.
+     * Unique identifier for an instance.
      * </p>
      */
     private String instanceId;
@@ -71,8 +73,8 @@ public class Instance implements Serializable, Cloneable {
      * <li>
      * <p>
      * <b>ACTIVE</b> – The instance has been successfully created and at least one server process has successfully
-     * launched and reported back to GameLift that it is ready to host a game session. The instance is now considered
-     * ready to host game sessions.
+     * launched and reported back to Amazon GameLift that it is ready to host a game session. The instance is now
+     * considered ready to host game sessions.
      * </p>
      * </li>
      * <li>
@@ -87,18 +89,18 @@ public class Instance implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057").
+     * milliseconds (for example "1469498468.057").
      * </p>
      */
     private java.util.Date creationTime;
 
     /**
      * <p>
-     * Unique identifier for the fleet that the instance belongs to.
+     * Unique identifier for a fleet that the instance is in.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for the fleet that the instance belongs to.
+     *        Unique identifier for a fleet that the instance is in.
      */
 
     public void setFleetId(String fleetId) {
@@ -107,10 +109,10 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique identifier for the fleet that the instance belongs to.
+     * Unique identifier for a fleet that the instance is in.
      * </p>
      * 
-     * @return Unique identifier for the fleet that the instance belongs to.
+     * @return Unique identifier for a fleet that the instance is in.
      */
 
     public String getFleetId() {
@@ -119,11 +121,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique identifier for the fleet that the instance belongs to.
+     * Unique identifier for a fleet that the instance is in.
      * </p>
      * 
      * @param fleetId
-     *        Unique identifier for the fleet that the instance belongs to.
+     *        Unique identifier for a fleet that the instance is in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,11 +136,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique identifier for the instance.
+     * Unique identifier for an instance.
      * </p>
      * 
      * @param instanceId
-     *        Unique identifier for the instance.
+     *        Unique identifier for an instance.
      */
 
     public void setInstanceId(String instanceId) {
@@ -147,10 +149,10 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique identifier for the instance.
+     * Unique identifier for an instance.
      * </p>
      * 
-     * @return Unique identifier for the instance.
+     * @return Unique identifier for an instance.
      */
 
     public String getInstanceId() {
@@ -159,11 +161,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Unique identifier for the instance.
+     * Unique identifier for an instance.
      * </p>
      * 
      * @param instanceId
-     *        Unique identifier for the instance.
+     *        Unique identifier for an instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -372,8 +374,8 @@ public class Instance implements Serializable, Cloneable {
      * <li>
      * <p>
      * <b>ACTIVE</b> – The instance has been successfully created and at least one server process has successfully
-     * launched and reported back to GameLift that it is ready to host a game session. The instance is now considered
-     * ready to host game sessions.
+     * launched and reported back to Amazon GameLift that it is ready to host a game session. The instance is now
+     * considered ready to host game sessions.
      * </p>
      * </li>
      * <li>
@@ -396,8 +398,8 @@ public class Instance implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <b>ACTIVE</b> – The instance has been successfully created and at least one server process has
-     *        successfully launched and reported back to GameLift that it is ready to host a game session. The instance
-     *        is now considered ready to host game sessions.
+     *        successfully launched and reported back to Amazon GameLift that it is ready to host a game session. The
+     *        instance is now considered ready to host game sessions.
      *        </p>
      *        </li>
      *        <li>
@@ -427,8 +429,8 @@ public class Instance implements Serializable, Cloneable {
      * <li>
      * <p>
      * <b>ACTIVE</b> – The instance has been successfully created and at least one server process has successfully
-     * launched and reported back to GameLift that it is ready to host a game session. The instance is now considered
-     * ready to host game sessions.
+     * launched and reported back to Amazon GameLift that it is ready to host a game session. The instance is now
+     * considered ready to host game sessions.
      * </p>
      * </li>
      * <li>
@@ -450,8 +452,8 @@ public class Instance implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         <b>ACTIVE</b> – The instance has been successfully created and at least one server process has
-     *         successfully launched and reported back to GameLift that it is ready to host a game session. The instance
-     *         is now considered ready to host game sessions.
+     *         successfully launched and reported back to Amazon GameLift that it is ready to host a game session. The
+     *         instance is now considered ready to host game sessions.
      *         </p>
      *         </li>
      *         <li>
@@ -481,8 +483,8 @@ public class Instance implements Serializable, Cloneable {
      * <li>
      * <p>
      * <b>ACTIVE</b> – The instance has been successfully created and at least one server process has successfully
-     * launched and reported back to GameLift that it is ready to host a game session. The instance is now considered
-     * ready to host game sessions.
+     * launched and reported back to Amazon GameLift that it is ready to host a game session. The instance is now
+     * considered ready to host game sessions.
      * </p>
      * </li>
      * <li>
@@ -505,8 +507,8 @@ public class Instance implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <b>ACTIVE</b> – The instance has been successfully created and at least one server process has
-     *        successfully launched and reported back to GameLift that it is ready to host a game session. The instance
-     *        is now considered ready to host game sessions.
+     *        successfully launched and reported back to Amazon GameLift that it is ready to host a game session. The
+     *        instance is now considered ready to host game sessions.
      *        </p>
      *        </li>
      *        <li>
@@ -538,8 +540,8 @@ public class Instance implements Serializable, Cloneable {
      * <li>
      * <p>
      * <b>ACTIVE</b> – The instance has been successfully created and at least one server process has successfully
-     * launched and reported back to GameLift that it is ready to host a game session. The instance is now considered
-     * ready to host game sessions.
+     * launched and reported back to Amazon GameLift that it is ready to host a game session. The instance is now
+     * considered ready to host game sessions.
      * </p>
      * </li>
      * <li>
@@ -562,8 +564,8 @@ public class Instance implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <b>ACTIVE</b> – The instance has been successfully created and at least one server process has
-     *        successfully launched and reported back to GameLift that it is ready to host a game session. The instance
-     *        is now considered ready to host game sessions.
+     *        successfully launched and reported back to Amazon GameLift that it is ready to host a game session. The
+     *        instance is now considered ready to host game sessions.
      *        </p>
      *        </li>
      *        <li>
@@ -593,8 +595,8 @@ public class Instance implements Serializable, Cloneable {
      * <li>
      * <p>
      * <b>ACTIVE</b> – The instance has been successfully created and at least one server process has successfully
-     * launched and reported back to GameLift that it is ready to host a game session. The instance is now considered
-     * ready to host game sessions.
+     * launched and reported back to Amazon GameLift that it is ready to host a game session. The instance is now
+     * considered ready to host game sessions.
      * </p>
      * </li>
      * <li>
@@ -617,8 +619,8 @@ public class Instance implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <b>ACTIVE</b> – The instance has been successfully created and at least one server process has
-     *        successfully launched and reported back to GameLift that it is ready to host a game session. The instance
-     *        is now considered ready to host game sessions.
+     *        successfully launched and reported back to Amazon GameLift that it is ready to host a game session. The
+     *        instance is now considered ready to host game sessions.
      *        </p>
      *        </li>
      *        <li>
@@ -639,12 +641,12 @@ public class Instance implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057").
+     * milliseconds (for example "1469498468.057").
      * </p>
      * 
      * @param creationTime
      *        Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     *        milliseconds (ex: "1469498468.057").
+     *        milliseconds (for example "1469498468.057").
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -654,11 +656,11 @@ public class Instance implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057").
+     * milliseconds (for example "1469498468.057").
      * </p>
      * 
      * @return Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     *         milliseconds (ex: "1469498468.057").
+     *         milliseconds (for example "1469498468.057").
      */
 
     public java.util.Date getCreationTime() {
@@ -668,12 +670,12 @@ public class Instance implements Serializable, Cloneable {
     /**
      * <p>
      * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (ex: "1469498468.057").
+     * milliseconds (for example "1469498468.057").
      * </p>
      * 
      * @param creationTime
      *        Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     *        milliseconds (ex: "1469498468.057").
+     *        milliseconds (for example "1469498468.057").
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -774,5 +776,11 @@ public class Instance implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.gamelift.model.transform.InstanceMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

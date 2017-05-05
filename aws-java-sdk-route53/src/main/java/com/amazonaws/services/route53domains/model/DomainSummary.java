@@ -14,21 +14,23 @@ package com.amazonaws.services.route53domains.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Summary information about one domain.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DomainSummary" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DomainSummary implements Serializable, Cloneable {
+public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a domain.
-     * </p>
-     * <p>
-     * Type: String
+     * The name of the domain that the summary information applies to.
      * </p>
      */
     private String domainName;
@@ -36,23 +38,11 @@ public class DomainSummary implements Serializable, Cloneable {
      * <p>
      * Indicates whether the domain is automatically renewed upon expiration.
      * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
-     * <p>
-     * Valid values: <code>True</code> | <code>False</code>
-     * </p>
      */
     private Boolean autoRenew;
     /**
      * <p>
      * Indicates whether a domain is locked from unauthorized transfer to another party.
-     * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
-     * <p>
-     * Valid values: <code>True</code> | <code>False</code>
      * </p>
      */
     private Boolean transferLock;
@@ -60,24 +50,16 @@ public class DomainSummary implements Serializable, Cloneable {
      * <p>
      * Expiration date of the domain in Coordinated Universal Time (UTC).
      * </p>
-     * <p>
-     * Type: Long
-     * </p>
      */
     private java.util.Date expiry;
 
     /**
      * <p>
-     * The name of a domain.
-     * </p>
-     * <p>
-     * Type: String
+     * The name of the domain that the summary information applies to.
      * </p>
      * 
      * @param domainName
-     *        The name of a domain.</p>
-     *        <p>
-     *        Type: String
+     *        The name of the domain that the summary information applies to.
      */
 
     public void setDomainName(String domainName) {
@@ -86,15 +68,10 @@ public class DomainSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of a domain.
-     * </p>
-     * <p>
-     * Type: String
+     * The name of the domain that the summary information applies to.
      * </p>
      * 
-     * @return The name of a domain.</p>
-     *         <p>
-     *         Type: String
+     * @return The name of the domain that the summary information applies to.
      */
 
     public String getDomainName() {
@@ -103,16 +80,11 @@ public class DomainSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of a domain.
-     * </p>
-     * <p>
-     * Type: String
+     * The name of the domain that the summary information applies to.
      * </p>
      * 
      * @param domainName
-     *        The name of a domain.</p>
-     *        <p>
-     *        Type: String
+     *        The name of the domain that the summary information applies to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -125,20 +97,9 @@ public class DomainSummary implements Serializable, Cloneable {
      * <p>
      * Indicates whether the domain is automatically renewed upon expiration.
      * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
-     * <p>
-     * Valid values: <code>True</code> | <code>False</code>
-     * </p>
      * 
      * @param autoRenew
-     *        Indicates whether the domain is automatically renewed upon expiration.</p>
-     *        <p>
-     *        Type: Boolean
-     *        </p>
-     *        <p>
-     *        Valid values: <code>True</code> | <code>False</code>
+     *        Indicates whether the domain is automatically renewed upon expiration.
      */
 
     public void setAutoRenew(Boolean autoRenew) {
@@ -149,19 +110,8 @@ public class DomainSummary implements Serializable, Cloneable {
      * <p>
      * Indicates whether the domain is automatically renewed upon expiration.
      * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
-     * <p>
-     * Valid values: <code>True</code> | <code>False</code>
-     * </p>
      * 
-     * @return Indicates whether the domain is automatically renewed upon expiration.</p>
-     *         <p>
-     *         Type: Boolean
-     *         </p>
-     *         <p>
-     *         Valid values: <code>True</code> | <code>False</code>
+     * @return Indicates whether the domain is automatically renewed upon expiration.
      */
 
     public Boolean getAutoRenew() {
@@ -172,20 +122,9 @@ public class DomainSummary implements Serializable, Cloneable {
      * <p>
      * Indicates whether the domain is automatically renewed upon expiration.
      * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
-     * <p>
-     * Valid values: <code>True</code> | <code>False</code>
-     * </p>
      * 
      * @param autoRenew
-     *        Indicates whether the domain is automatically renewed upon expiration.</p>
-     *        <p>
-     *        Type: Boolean
-     *        </p>
-     *        <p>
-     *        Valid values: <code>True</code> | <code>False</code>
+     *        Indicates whether the domain is automatically renewed upon expiration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -198,19 +137,8 @@ public class DomainSummary implements Serializable, Cloneable {
      * <p>
      * Indicates whether the domain is automatically renewed upon expiration.
      * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
-     * <p>
-     * Valid values: <code>True</code> | <code>False</code>
-     * </p>
      * 
-     * @return Indicates whether the domain is automatically renewed upon expiration.</p>
-     *         <p>
-     *         Type: Boolean
-     *         </p>
-     *         <p>
-     *         Valid values: <code>True</code> | <code>False</code>
+     * @return Indicates whether the domain is automatically renewed upon expiration.
      */
 
     public Boolean isAutoRenew() {
@@ -221,20 +149,9 @@ public class DomainSummary implements Serializable, Cloneable {
      * <p>
      * Indicates whether a domain is locked from unauthorized transfer to another party.
      * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
-     * <p>
-     * Valid values: <code>True</code> | <code>False</code>
-     * </p>
      * 
      * @param transferLock
-     *        Indicates whether a domain is locked from unauthorized transfer to another party.</p>
-     *        <p>
-     *        Type: Boolean
-     *        </p>
-     *        <p>
-     *        Valid values: <code>True</code> | <code>False</code>
+     *        Indicates whether a domain is locked from unauthorized transfer to another party.
      */
 
     public void setTransferLock(Boolean transferLock) {
@@ -245,19 +162,8 @@ public class DomainSummary implements Serializable, Cloneable {
      * <p>
      * Indicates whether a domain is locked from unauthorized transfer to another party.
      * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
-     * <p>
-     * Valid values: <code>True</code> | <code>False</code>
-     * </p>
      * 
-     * @return Indicates whether a domain is locked from unauthorized transfer to another party.</p>
-     *         <p>
-     *         Type: Boolean
-     *         </p>
-     *         <p>
-     *         Valid values: <code>True</code> | <code>False</code>
+     * @return Indicates whether a domain is locked from unauthorized transfer to another party.
      */
 
     public Boolean getTransferLock() {
@@ -268,20 +174,9 @@ public class DomainSummary implements Serializable, Cloneable {
      * <p>
      * Indicates whether a domain is locked from unauthorized transfer to another party.
      * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
-     * <p>
-     * Valid values: <code>True</code> | <code>False</code>
-     * </p>
      * 
      * @param transferLock
-     *        Indicates whether a domain is locked from unauthorized transfer to another party.</p>
-     *        <p>
-     *        Type: Boolean
-     *        </p>
-     *        <p>
-     *        Valid values: <code>True</code> | <code>False</code>
+     *        Indicates whether a domain is locked from unauthorized transfer to another party.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -294,19 +189,8 @@ public class DomainSummary implements Serializable, Cloneable {
      * <p>
      * Indicates whether a domain is locked from unauthorized transfer to another party.
      * </p>
-     * <p>
-     * Type: Boolean
-     * </p>
-     * <p>
-     * Valid values: <code>True</code> | <code>False</code>
-     * </p>
      * 
-     * @return Indicates whether a domain is locked from unauthorized transfer to another party.</p>
-     *         <p>
-     *         Type: Boolean
-     *         </p>
-     *         <p>
-     *         Valid values: <code>True</code> | <code>False</code>
+     * @return Indicates whether a domain is locked from unauthorized transfer to another party.
      */
 
     public Boolean isTransferLock() {
@@ -317,14 +201,9 @@ public class DomainSummary implements Serializable, Cloneable {
      * <p>
      * Expiration date of the domain in Coordinated Universal Time (UTC).
      * </p>
-     * <p>
-     * Type: Long
-     * </p>
      * 
      * @param expiry
-     *        Expiration date of the domain in Coordinated Universal Time (UTC).</p>
-     *        <p>
-     *        Type: Long
+     *        Expiration date of the domain in Coordinated Universal Time (UTC).
      */
 
     public void setExpiry(java.util.Date expiry) {
@@ -335,13 +214,8 @@ public class DomainSummary implements Serializable, Cloneable {
      * <p>
      * Expiration date of the domain in Coordinated Universal Time (UTC).
      * </p>
-     * <p>
-     * Type: Long
-     * </p>
      * 
-     * @return Expiration date of the domain in Coordinated Universal Time (UTC).</p>
-     *         <p>
-     *         Type: Long
+     * @return Expiration date of the domain in Coordinated Universal Time (UTC).
      */
 
     public java.util.Date getExpiry() {
@@ -352,14 +226,9 @@ public class DomainSummary implements Serializable, Cloneable {
      * <p>
      * Expiration date of the domain in Coordinated Universal Time (UTC).
      * </p>
-     * <p>
-     * Type: Long
-     * </p>
      * 
      * @param expiry
-     *        Expiration date of the domain in Coordinated Universal Time (UTC).</p>
-     *        <p>
-     *        Type: Long
+     *        Expiration date of the domain in Coordinated Universal Time (UTC).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -439,5 +308,11 @@ public class DomainSummary implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.route53domains.model.transform.DomainSummaryMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

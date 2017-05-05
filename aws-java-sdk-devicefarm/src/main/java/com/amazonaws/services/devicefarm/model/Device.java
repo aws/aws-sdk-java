@@ -14,6 +14,8 @@ package com.amazonaws.services.devicefarm.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Device implements Serializable, Cloneable {
+public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -104,7 +106,11 @@ public class Device implements Serializable, Cloneable {
      * </p>
      */
     private CPU cpu;
-
+    /**
+     * <p>
+     * The resolution of the device.
+     * </p>
+     */
     private Resolution resolution;
     /**
      * <p>
@@ -832,7 +838,12 @@ public class Device implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The resolution of the device.
+     * </p>
+     * 
      * @param resolution
+     *        The resolution of the device.
      */
 
     public void setResolution(Resolution resolution) {
@@ -840,7 +851,11 @@ public class Device implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The resolution of the device.
+     * </p>
+     * 
+     * @return The resolution of the device.
      */
 
     public Resolution getResolution() {
@@ -848,7 +863,12 @@ public class Device implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The resolution of the device.
+     * </p>
+     * 
      * @param resolution
+     *        The resolution of the device.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1351,5 +1371,11 @@ public class Device implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.devicefarm.model.transform.DeviceMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

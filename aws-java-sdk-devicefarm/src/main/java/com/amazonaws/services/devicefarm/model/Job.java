@@ -14,6 +14,8 @@ package com.amazonaws.services.devicefarm.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Job implements Serializable, Cloneable {
+public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -252,7 +254,11 @@ public class Job implements Serializable, Cloneable {
      * </p>
      */
     private String message;
-
+    /**
+     * <p>
+     * The device (phone or tablet).
+     * </p>
+     */
     private Device device;
     /**
      * <p>
@@ -2406,7 +2412,12 @@ public class Job implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The device (phone or tablet).
+     * </p>
+     * 
      * @param device
+     *        The device (phone or tablet).
      */
 
     public void setDevice(Device device) {
@@ -2414,7 +2425,11 @@ public class Job implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The device (phone or tablet).
+     * </p>
+     * 
+     * @return The device (phone or tablet).
      */
 
     public Device getDevice() {
@@ -2422,7 +2437,12 @@ public class Job implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The device (phone or tablet).
+     * </p>
+     * 
      * @param device
+     *        The device (phone or tablet).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2598,5 +2618,11 @@ public class Job implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.devicefarm.model.transform.JobMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -253,6 +254,10 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
         init();
     }
 
+    public static AWSShieldClientBuilder builder() {
+        return AWSShieldClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWS Shield using the specified parameters.
      *
@@ -310,7 +315,13 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *      Documentation</a>
      */
     @Override
-    public CreateProtectionResult createProtection(CreateProtectionRequest createProtectionRequest) {
+    public CreateProtectionResult createProtection(CreateProtectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateProtection(request);
+    }
+
+    @SdkInternalApi
+    final CreateProtectionResult executeCreateProtection(CreateProtectionRequest createProtectionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createProtectionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -321,7 +332,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateProtectionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createProtectionRequest));
+                request = new CreateProtectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createProtectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -357,7 +368,13 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *      Documentation</a>
      */
     @Override
-    public CreateSubscriptionResult createSubscription(CreateSubscriptionRequest createSubscriptionRequest) {
+    public CreateSubscriptionResult createSubscription(CreateSubscriptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSubscription(request);
+    }
+
+    @SdkInternalApi
+    final CreateSubscriptionResult executeCreateSubscription(CreateSubscriptionRequest createSubscriptionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createSubscriptionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -368,7 +385,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateSubscriptionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSubscriptionRequest));
+                request = new CreateSubscriptionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -407,7 +424,13 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *      Documentation</a>
      */
     @Override
-    public DeleteProtectionResult deleteProtection(DeleteProtectionRequest deleteProtectionRequest) {
+    public DeleteProtectionResult deleteProtection(DeleteProtectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteProtection(request);
+    }
+
+    @SdkInternalApi
+    final DeleteProtectionResult executeDeleteProtection(DeleteProtectionRequest deleteProtectionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteProtectionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -418,7 +441,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteProtectionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteProtectionRequest));
+                request = new DeleteProtectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteProtectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -457,7 +480,13 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *      Documentation</a>
      */
     @Override
-    public DeleteSubscriptionResult deleteSubscription(DeleteSubscriptionRequest deleteSubscriptionRequest) {
+    public DeleteSubscriptionResult deleteSubscription(DeleteSubscriptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteSubscription(request);
+    }
+
+    @SdkInternalApi
+    final DeleteSubscriptionResult executeDeleteSubscription(DeleteSubscriptionRequest deleteSubscriptionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteSubscriptionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -468,7 +497,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteSubscriptionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSubscriptionRequest));
+                request = new DeleteSubscriptionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -504,7 +533,13 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *      Documentation</a>
      */
     @Override
-    public DescribeAttackResult describeAttack(DescribeAttackRequest describeAttackRequest) {
+    public DescribeAttackResult describeAttack(DescribeAttackRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAttack(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAttackResult executeDescribeAttack(DescribeAttackRequest describeAttackRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeAttackRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -515,7 +550,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeAttackRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAttackRequest));
+                request = new DescribeAttackRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAttackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -551,7 +586,13 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *      Documentation</a>
      */
     @Override
-    public DescribeProtectionResult describeProtection(DescribeProtectionRequest describeProtectionRequest) {
+    public DescribeProtectionResult describeProtection(DescribeProtectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeProtection(request);
+    }
+
+    @SdkInternalApi
+    final DescribeProtectionResult executeDescribeProtection(DescribeProtectionRequest describeProtectionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeProtectionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -562,7 +603,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeProtectionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeProtectionRequest));
+                request = new DescribeProtectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeProtectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -598,7 +639,13 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *      API Documentation</a>
      */
     @Override
-    public DescribeSubscriptionResult describeSubscription(DescribeSubscriptionRequest describeSubscriptionRequest) {
+    public DescribeSubscriptionResult describeSubscription(DescribeSubscriptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeSubscription(request);
+    }
+
+    @SdkInternalApi
+    final DescribeSubscriptionResult executeDescribeSubscription(DescribeSubscriptionRequest describeSubscriptionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeSubscriptionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -609,7 +656,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeSubscriptionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeSubscriptionRequest));
+                request = new DescribeSubscriptionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -647,7 +694,13 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *      Documentation</a>
      */
     @Override
-    public ListAttacksResult listAttacks(ListAttacksRequest listAttacksRequest) {
+    public ListAttacksResult listAttacks(ListAttacksRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAttacks(request);
+    }
+
+    @SdkInternalApi
+    final ListAttacksResult executeListAttacks(ListAttacksRequest listAttacksRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listAttacksRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -658,7 +711,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListAttacksRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAttacksRequest));
+                request = new ListAttacksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAttacksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -694,7 +747,13 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *      Documentation</a>
      */
     @Override
-    public ListProtectionsResult listProtections(ListProtectionsRequest listProtectionsRequest) {
+    public ListProtectionsResult listProtections(ListProtectionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListProtections(request);
+    }
+
+    @SdkInternalApi
+    final ListProtectionsResult executeListProtections(ListProtectionsRequest listProtectionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listProtectionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -705,7 +764,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListProtectionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listProtectionsRequest));
+                request = new ListProtectionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listProtectionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

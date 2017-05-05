@@ -12,80 +12,59 @@
  */
 package com.amazonaws.services.directory.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.directory.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ConnectDirectoryRequest Marshaller
+ * ConnectDirectoryRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ConnectDirectoryRequestMarshaller implements Marshaller<Request<ConnectDirectoryRequest>, ConnectDirectoryRequest> {
+@SdkInternalApi
+public class ConnectDirectoryRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> SHORTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ShortName").build();
+    private static final MarshallingInfo<String> PASSWORD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Password").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<String> SIZE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Size").build();
+    private static final MarshallingInfo<StructuredPojo> CONNECTSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConnectSettings").build();
 
-    public ConnectDirectoryRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final ConnectDirectoryRequestMarshaller instance = new ConnectDirectoryRequestMarshaller();
+
+    public static ConnectDirectoryRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<ConnectDirectoryRequest> marshall(ConnectDirectoryRequest connectDirectoryRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ConnectDirectoryRequest connectDirectoryRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (connectDirectoryRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ConnectDirectoryRequest> request = new DefaultRequest<ConnectDirectoryRequest>(connectDirectoryRequest, "AWSDirectoryService");
-        request.addHeader("X-Amz-Target", "DirectoryService_20150416.ConnectDirectory");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (connectDirectoryRequest.getName() != null) {
-                jsonGenerator.writeFieldName("Name").writeValue(connectDirectoryRequest.getName());
-            }
-            if (connectDirectoryRequest.getShortName() != null) {
-                jsonGenerator.writeFieldName("ShortName").writeValue(connectDirectoryRequest.getShortName());
-            }
-            if (connectDirectoryRequest.getPassword() != null) {
-                jsonGenerator.writeFieldName("Password").writeValue(connectDirectoryRequest.getPassword());
-            }
-            if (connectDirectoryRequest.getDescription() != null) {
-                jsonGenerator.writeFieldName("Description").writeValue(connectDirectoryRequest.getDescription());
-            }
-            if (connectDirectoryRequest.getSize() != null) {
-                jsonGenerator.writeFieldName("Size").writeValue(connectDirectoryRequest.getSize());
-            }
-            if (connectDirectoryRequest.getConnectSettings() != null) {
-                jsonGenerator.writeFieldName("ConnectSettings");
-                DirectoryConnectSettingsJsonMarshaller.getInstance().marshall(connectDirectoryRequest.getConnectSettings(), jsonGenerator);
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(connectDirectoryRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(connectDirectoryRequest.getShortName(), SHORTNAME_BINDING);
+            protocolMarshaller.marshall(connectDirectoryRequest.getPassword(), PASSWORD_BINDING);
+            protocolMarshaller.marshall(connectDirectoryRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(connectDirectoryRequest.getSize(), SIZE_BINDING);
+            protocolMarshaller.marshall(connectDirectoryRequest.getConnectSettings(), CONNECTSETTINGS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

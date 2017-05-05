@@ -14,6 +14,8 @@ package com.amazonaws.services.appstream.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Fleet implements Serializable, Cloneable {
+public class Fleet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -105,6 +107,12 @@ public class Fleet implements Serializable, Cloneable {
      * </p>
      */
     private java.util.List<FleetError> fleetErrors;
+    /**
+     * <p>
+     * Default Internet access from the fleet. True (Enabled), False (Disabled).
+     * </p>
+     */
+    private Boolean enableDefaultInternetAccess;
 
     /**
      * <p>
@@ -699,6 +707,58 @@ public class Fleet implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Default Internet access from the fleet. True (Enabled), False (Disabled).
+     * </p>
+     * 
+     * @param enableDefaultInternetAccess
+     *        Default Internet access from the fleet. True (Enabled), False (Disabled).
+     */
+
+    public void setEnableDefaultInternetAccess(Boolean enableDefaultInternetAccess) {
+        this.enableDefaultInternetAccess = enableDefaultInternetAccess;
+    }
+
+    /**
+     * <p>
+     * Default Internet access from the fleet. True (Enabled), False (Disabled).
+     * </p>
+     * 
+     * @return Default Internet access from the fleet. True (Enabled), False (Disabled).
+     */
+
+    public Boolean getEnableDefaultInternetAccess() {
+        return this.enableDefaultInternetAccess;
+    }
+
+    /**
+     * <p>
+     * Default Internet access from the fleet. True (Enabled), False (Disabled).
+     * </p>
+     * 
+     * @param enableDefaultInternetAccess
+     *        Default Internet access from the fleet. True (Enabled), False (Disabled).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Fleet withEnableDefaultInternetAccess(Boolean enableDefaultInternetAccess) {
+        setEnableDefaultInternetAccess(enableDefaultInternetAccess);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Default Internet access from the fleet. True (Enabled), False (Disabled).
+     * </p>
+     * 
+     * @return Default Internet access from the fleet. True (Enabled), False (Disabled).
+     */
+
+    public Boolean isEnableDefaultInternetAccess() {
+        return this.enableDefaultInternetAccess;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -734,7 +794,9 @@ public class Fleet implements Serializable, Cloneable {
         if (getCreatedTime() != null)
             sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
         if (getFleetErrors() != null)
-            sb.append("FleetErrors: ").append(getFleetErrors());
+            sb.append("FleetErrors: ").append(getFleetErrors()).append(",");
+        if (getEnableDefaultInternetAccess() != null)
+            sb.append("EnableDefaultInternetAccess: ").append(getEnableDefaultInternetAccess());
         sb.append("}");
         return sb.toString();
     }
@@ -801,6 +863,10 @@ public class Fleet implements Serializable, Cloneable {
             return false;
         if (other.getFleetErrors() != null && other.getFleetErrors().equals(this.getFleetErrors()) == false)
             return false;
+        if (other.getEnableDefaultInternetAccess() == null ^ this.getEnableDefaultInternetAccess() == null)
+            return false;
+        if (other.getEnableDefaultInternetAccess() != null && other.getEnableDefaultInternetAccess().equals(this.getEnableDefaultInternetAccess()) == false)
+            return false;
         return true;
     }
 
@@ -822,6 +888,7 @@ public class Fleet implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
         hashCode = prime * hashCode + ((getFleetErrors() == null) ? 0 : getFleetErrors().hashCode());
+        hashCode = prime * hashCode + ((getEnableDefaultInternetAccess() == null) ? 0 : getEnableDefaultInternetAccess().hashCode());
         return hashCode;
     }
 
@@ -832,5 +899,11 @@ public class Fleet implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.appstream.model.transform.FleetMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

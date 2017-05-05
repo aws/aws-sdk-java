@@ -34,7 +34,7 @@ public class DescribeFleetAttributesResult extends com.amazonaws.AmazonWebServic
     private java.util.List<FleetAttributes> fleetAttributes;
     /**
      * <p>
-     * Token indicating where to resume retrieving results on the next call to this action. If no token is returned,
+     * Token that indicates where to resume retrieving results on the next call to this action. If no token is returned,
      * these results represent the end of the list.
      * </p>
      */
@@ -112,12 +112,12 @@ public class DescribeFleetAttributesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Token indicating where to resume retrieving results on the next call to this action. If no token is returned,
+     * Token that indicates where to resume retrieving results on the next call to this action. If no token is returned,
      * these results represent the end of the list.
      * </p>
      * 
      * @param nextToken
-     *        Token indicating where to resume retrieving results on the next call to this action. If no token is
+     *        Token that indicates where to resume retrieving results on the next call to this action. If no token is
      *        returned, these results represent the end of the list.
      */
 
@@ -127,11 +127,11 @@ public class DescribeFleetAttributesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Token indicating where to resume retrieving results on the next call to this action. If no token is returned,
+     * Token that indicates where to resume retrieving results on the next call to this action. If no token is returned,
      * these results represent the end of the list.
      * </p>
      * 
-     * @return Token indicating where to resume retrieving results on the next call to this action. If no token is
+     * @return Token that indicates where to resume retrieving results on the next call to this action. If no token is
      *         returned, these results represent the end of the list.
      */
 
@@ -141,12 +141,12 @@ public class DescribeFleetAttributesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Token indicating where to resume retrieving results on the next call to this action. If no token is returned,
+     * Token that indicates where to resume retrieving results on the next call to this action. If no token is returned,
      * these results represent the end of the list.
      * </p>
      * 
      * @param nextToken
-     *        Token indicating where to resume retrieving results on the next call to this action. If no token is
+     *        Token that indicates where to resume retrieving results on the next call to this action. If no token is
      *        returned, these results represent the end of the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -214,4 +214,5 @@ public class DescribeFleetAttributesResult extends com.amazonaws.AmazonWebServic
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

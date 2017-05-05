@@ -17,16 +17,16 @@ package com.amazonaws.auth;
 import static com.amazonaws.SDKGlobalConfiguration.ACCESS_KEY_ENV_VAR;
 import static com.amazonaws.SDKGlobalConfiguration.ALTERNATE_ACCESS_KEY_ENV_VAR;
 import static com.amazonaws.SDKGlobalConfiguration.ALTERNATE_SECRET_KEY_ENV_VAR;
-import static com.amazonaws.SDKGlobalConfiguration.SECRET_KEY_ENV_VAR;
 import static com.amazonaws.SDKGlobalConfiguration.AWS_SESSION_TOKEN_ENV_VAR;
+import static com.amazonaws.SDKGlobalConfiguration.SECRET_KEY_ENV_VAR;
 
 import com.amazonaws.SdkClientException;
 import com.amazonaws.util.StringUtils;
 
 /**
- * {@link AWSCredentialsProvider} implementation that provides credentials
- * by looking at the: <code>AWS_ACCESS_KEY_ID</code> (or <code>AWS_ACCESS_KEY</code>) and
- * <code>AWS_SECRET_KEY</code> (or <code>AWS_SECRET_ACCESS_KEY</code>) environment variables.
+ * {@link AWSCredentialsProvider} implementation that provides credentials by looking at the: <code>AWS_ACCESS_KEY_ID</code> (or
+ * <code>AWS_ACCESS_KEY</code>) and <code>AWS_SECRET_KEY</code> (or <code>AWS_SECRET_ACCESS_KEY</code>) environment variables. If
+ * the <code>AWS_SESSION_TOKEN</code> environment variable is also set then temporary credentials will be used.
  */
 public class EnvironmentVariableCredentialsProvider implements AWSCredentialsProvider {
     @Override
@@ -43,11 +43,9 @@ public class EnvironmentVariableCredentialsProvider implements AWSCredentialsPro
 
         accessKey = StringUtils.trim(accessKey);
         secretKey = StringUtils.trim(secretKey);
-        String sessionToken =
-            StringUtils.trim(System.getenv(AWS_SESSION_TOKEN_ENV_VAR));
+        String sessionToken = StringUtils.trim(System.getenv(AWS_SESSION_TOKEN_ENV_VAR));
 
-        if (StringUtils.isNullOrEmpty(accessKey)
-                || StringUtils.isNullOrEmpty(secretKey)) {
+        if (StringUtils.isNullOrEmpty(accessKey) || StringUtils.isNullOrEmpty(secretKey)) {
 
             throw new SdkClientException(
                     "Unable to load AWS credentials from environment variables " +
@@ -62,7 +60,8 @@ public class EnvironmentVariableCredentialsProvider implements AWSCredentialsPro
     }
 
     @Override
-    public void refresh() {}
+    public void refresh() {
+    }
 
     @Override
     public String toString() {

@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A complex type that contains the hosted zone request information.
+ * A request to update the comment for a hosted zone.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHostedZoneComment" target="_top">AWS
@@ -30,7 +30,7 @@ public class UpdateHostedZoneCommentRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ID for the hosted zone for which you want to update the comment.
+     * The ID for the hosted zone that you want to update the comment for.
      * </p>
      */
     private String id;
@@ -44,11 +44,11 @@ public class UpdateHostedZoneCommentRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ID for the hosted zone for which you want to update the comment.
+     * The ID for the hosted zone that you want to update the comment for.
      * </p>
      * 
      * @param id
-     *        The ID for the hosted zone for which you want to update the comment.
+     *        The ID for the hosted zone that you want to update the comment for.
      */
 
     public void setId(String id) {
@@ -57,10 +57,10 @@ public class UpdateHostedZoneCommentRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ID for the hosted zone for which you want to update the comment.
+     * The ID for the hosted zone that you want to update the comment for.
      * </p>
      * 
-     * @return The ID for the hosted zone for which you want to update the comment.
+     * @return The ID for the hosted zone that you want to update the comment for.
      */
 
     public String getId() {
@@ -69,11 +69,11 @@ public class UpdateHostedZoneCommentRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ID for the hosted zone for which you want to update the comment.
+     * The ID for the hosted zone that you want to update the comment for.
      * </p>
      * 
      * @param id
-     *        The ID for the hosted zone for which you want to update the comment.
+     *        The ID for the hosted zone that you want to update the comment for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

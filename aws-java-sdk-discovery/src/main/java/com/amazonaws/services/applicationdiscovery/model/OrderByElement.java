@@ -14,18 +14,20 @@ package com.amazonaws.services.applicationdiscovery.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Field and direction for ordered output.
+ * A field and direction for ordered output.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class OrderByElement implements Serializable, Cloneable {
+public class OrderByElement implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Field to order on.
+     * The field on which to order.
      * </p>
      */
     private String fieldName;
@@ -38,11 +40,11 @@ public class OrderByElement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Field to order on.
+     * The field on which to order.
      * </p>
      * 
      * @param fieldName
-     *        Field to order on.
+     *        The field on which to order.
      */
 
     public void setFieldName(String fieldName) {
@@ -51,10 +53,10 @@ public class OrderByElement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Field to order on.
+     * The field on which to order.
      * </p>
      * 
-     * @return Field to order on.
+     * @return The field on which to order.
      */
 
     public String getFieldName() {
@@ -63,11 +65,11 @@ public class OrderByElement implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Field to order on.
+     * The field on which to order.
      * </p>
      * 
      * @param fieldName
-     *        Field to order on.
+     *        The field on which to order.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -206,5 +208,11 @@ public class OrderByElement implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.applicationdiscovery.model.transform.OrderByElementMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

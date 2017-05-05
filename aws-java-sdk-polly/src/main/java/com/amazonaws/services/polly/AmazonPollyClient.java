@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 import com.amazonaws.auth.presign.PresignerParams;
 import com.amazonaws.handlers.*;
@@ -83,6 +84,9 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
                             new JsonErrorShapeMetadata().withErrorCode("MaxLexiconsNumberExceededException").withModeledClass(
                                     com.amazonaws.services.polly.model.MaxLexiconsNumberExceededException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("MarksNotSupportedForFormatException").withModeledClass(
+                                    com.amazonaws.services.polly.model.MarksNotSupportedForFormatException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("MaxLexemeLengthExceededException").withModeledClass(
                                     com.amazonaws.services.polly.model.MaxLexemeLengthExceededException.class))
                     .addErrorMetadata(
@@ -112,6 +116,9 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceFailureException").withModeledClass(
                                     com.amazonaws.services.polly.model.ServiceFailureException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("SsmlMarksNotSupportedForTextTypeException").withModeledClass(
+                                    com.amazonaws.services.polly.model.SsmlMarksNotSupportedForTextTypeException.class))
                     .withBaseServiceExceptionClass(com.amazonaws.services.polly.model.AmazonPollyException.class));
 
     /**
@@ -265,6 +272,10 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
         init();
     }
 
+    public static AmazonPollyClientBuilder builder() {
+        return AmazonPollyClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on Amazon Polly using the specified parameters.
      *
@@ -318,7 +329,13 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
      *      Documentation</a>
      */
     @Override
-    public DeleteLexiconResult deleteLexicon(DeleteLexiconRequest deleteLexiconRequest) {
+    public DeleteLexiconResult deleteLexicon(DeleteLexiconRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteLexicon(request);
+    }
+
+    @SdkInternalApi
+    final DeleteLexiconResult executeDeleteLexicon(DeleteLexiconRequest deleteLexiconRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteLexiconRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -329,7 +346,7 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteLexiconRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteLexiconRequest));
+                request = new DeleteLexiconRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteLexiconRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -382,7 +399,13 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
      *      Documentation</a>
      */
     @Override
-    public DescribeVoicesResult describeVoices(DescribeVoicesRequest describeVoicesRequest) {
+    public DescribeVoicesResult describeVoices(DescribeVoicesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeVoices(request);
+    }
+
+    @SdkInternalApi
+    final DescribeVoicesResult executeDescribeVoices(DescribeVoicesRequest describeVoicesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeVoicesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -393,7 +416,7 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeVoicesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeVoicesRequest));
+                request = new DescribeVoicesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeVoicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -433,7 +456,13 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
      *      Documentation</a>
      */
     @Override
-    public GetLexiconResult getLexicon(GetLexiconRequest getLexiconRequest) {
+    public GetLexiconResult getLexicon(GetLexiconRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetLexicon(request);
+    }
+
+    @SdkInternalApi
+    final GetLexiconResult executeGetLexicon(GetLexiconRequest getLexiconRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getLexiconRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -444,7 +473,7 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetLexiconRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getLexiconRequest));
+                request = new GetLexiconRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getLexiconRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -480,7 +509,13 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
      *      Documentation</a>
      */
     @Override
-    public ListLexiconsResult listLexicons(ListLexiconsRequest listLexiconsRequest) {
+    public ListLexiconsResult listLexicons(ListLexiconsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListLexicons(request);
+    }
+
+    @SdkInternalApi
+    final ListLexiconsResult executeListLexicons(ListLexiconsRequest listLexiconsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listLexiconsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -491,7 +526,7 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListLexiconsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listLexiconsRequest));
+                request = new ListLexiconsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listLexiconsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -545,7 +580,13 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
      *      Documentation</a>
      */
     @Override
-    public PutLexiconResult putLexicon(PutLexiconRequest putLexiconRequest) {
+    public PutLexiconResult putLexicon(PutLexiconRequest request) {
+        request = beforeClientExecution(request);
+        return executePutLexicon(request);
+    }
+
+    @SdkInternalApi
+    final PutLexiconResult executePutLexicon(PutLexiconRequest putLexiconRequest) {
 
         ExecutionContext executionContext = createExecutionContext(putLexiconRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -556,7 +597,7 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PutLexiconRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(putLexiconRequest));
+                request = new PutLexiconRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putLexiconRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -602,12 +643,23 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
      *         is spelled correctly. Then try again.
      * @throws ServiceFailureException
      *         An unknown condition has caused a service failure.
+     * @throws MarksNotSupportedForFormatException
+     *         Speech marks are not supported for the <code>OutputFormat</code> selected. Speech marks are only
+     *         available for content in <code>json</code> format.
+     * @throws SsmlMarksNotSupportedForTextTypeException
+     *         SSML speech marks are not supported for plain text-type input.
      * @sample AmazonPolly.SynthesizeSpeech
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/SynthesizeSpeech" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
-    public SynthesizeSpeechResult synthesizeSpeech(SynthesizeSpeechRequest synthesizeSpeechRequest) {
+    public SynthesizeSpeechResult synthesizeSpeech(SynthesizeSpeechRequest request) {
+        request = beforeClientExecution(request);
+        return executeSynthesizeSpeech(request);
+    }
+
+    @SdkInternalApi
+    final SynthesizeSpeechResult executeSynthesizeSpeech(SynthesizeSpeechRequest synthesizeSpeechRequest) {
 
         ExecutionContext executionContext = createExecutionContext(synthesizeSpeechRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -618,7 +670,7 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SynthesizeSpeechRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(synthesizeSpeechRequest));
+                request = new SynthesizeSpeechRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(synthesizeSpeechRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

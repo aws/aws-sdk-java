@@ -22,6 +22,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 
 import com.amazonaws.handlers.*;
@@ -289,6 +290,10 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
         init();
     }
 
+    public static AWSStepFunctionsClientBuilder builder() {
+        return AWSStepFunctionsClientBuilder.standard();
+    }
+
     /**
      * Constructs a new client to invoke service methods on AWS SFN using the specified parameters.
      *
@@ -333,7 +338,13 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      *      Documentation</a>
      */
     @Override
-    public CreateActivityResult createActivity(CreateActivityRequest createActivityRequest) {
+    public CreateActivityResult createActivity(CreateActivityRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateActivity(request);
+    }
+
+    @SdkInternalApi
+    final CreateActivityResult executeCreateActivity(CreateActivityRequest createActivityRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createActivityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -344,7 +355,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateActivityRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createActivityRequest));
+                request = new CreateActivityRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createActivityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -388,7 +399,13 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      *      Documentation</a>
      */
     @Override
-    public CreateStateMachineResult createStateMachine(CreateStateMachineRequest createStateMachineRequest) {
+    public CreateStateMachineResult createStateMachine(CreateStateMachineRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateStateMachine(request);
+    }
+
+    @SdkInternalApi
+    final CreateStateMachineResult executeCreateStateMachine(CreateStateMachineRequest createStateMachineRequest) {
 
         ExecutionContext executionContext = createExecutionContext(createStateMachineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -399,7 +416,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateStateMachineRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(createStateMachineRequest));
+                request = new CreateStateMachineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createStateMachineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -432,7 +449,13 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      *      Documentation</a>
      */
     @Override
-    public DeleteActivityResult deleteActivity(DeleteActivityRequest deleteActivityRequest) {
+    public DeleteActivityResult deleteActivity(DeleteActivityRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteActivity(request);
+    }
+
+    @SdkInternalApi
+    final DeleteActivityResult executeDeleteActivity(DeleteActivityRequest deleteActivityRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteActivityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -443,7 +466,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteActivityRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteActivityRequest));
+                request = new DeleteActivityRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteActivityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -477,7 +500,13 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      *      Documentation</a>
      */
     @Override
-    public DeleteStateMachineResult deleteStateMachine(DeleteStateMachineRequest deleteStateMachineRequest) {
+    public DeleteStateMachineResult deleteStateMachine(DeleteStateMachineRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteStateMachine(request);
+    }
+
+    @SdkInternalApi
+    final DeleteStateMachineResult executeDeleteStateMachine(DeleteStateMachineRequest deleteStateMachineRequest) {
 
         ExecutionContext executionContext = createExecutionContext(deleteStateMachineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -488,7 +517,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteStateMachineRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteStateMachineRequest));
+                request = new DeleteStateMachineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteStateMachineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -523,7 +552,13 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      *      Documentation</a>
      */
     @Override
-    public DescribeActivityResult describeActivity(DescribeActivityRequest describeActivityRequest) {
+    public DescribeActivityResult describeActivity(DescribeActivityRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeActivity(request);
+    }
+
+    @SdkInternalApi
+    final DescribeActivityResult executeDescribeActivity(DescribeActivityRequest describeActivityRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeActivityRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -534,7 +569,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeActivityRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeActivityRequest));
+                request = new DescribeActivityRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeActivityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -569,7 +604,13 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      *      Documentation</a>
      */
     @Override
-    public DescribeExecutionResult describeExecution(DescribeExecutionRequest describeExecutionRequest) {
+    public DescribeExecutionResult describeExecution(DescribeExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeExecution(request);
+    }
+
+    @SdkInternalApi
+    final DescribeExecutionResult executeDescribeExecution(DescribeExecutionRequest describeExecutionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeExecutionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -580,7 +621,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeExecutionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeExecutionRequest));
+                request = new DescribeExecutionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -615,7 +656,13 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      *      API Documentation</a>
      */
     @Override
-    public DescribeStateMachineResult describeStateMachine(DescribeStateMachineRequest describeStateMachineRequest) {
+    public DescribeStateMachineResult describeStateMachine(DescribeStateMachineRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeStateMachine(request);
+    }
+
+    @SdkInternalApi
+    final DescribeStateMachineResult executeDescribeStateMachine(DescribeStateMachineRequest describeStateMachineRequest) {
 
         ExecutionContext executionContext = createExecutionContext(describeStateMachineRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -626,7 +673,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DescribeStateMachineRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeStateMachineRequest));
+                request = new DescribeStateMachineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeStateMachineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -673,7 +720,13 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      *      Documentation</a>
      */
     @Override
-    public GetActivityTaskResult getActivityTask(GetActivityTaskRequest getActivityTaskRequest) {
+    public GetActivityTaskResult getActivityTask(GetActivityTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetActivityTask(request);
+    }
+
+    @SdkInternalApi
+    final GetActivityTaskResult executeGetActivityTask(GetActivityTaskRequest getActivityTaskRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getActivityTaskRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -684,7 +737,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetActivityTaskRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getActivityTaskRequest));
+                request = new GetActivityTaskRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getActivityTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -724,7 +777,13 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      *      Documentation</a>
      */
     @Override
-    public GetExecutionHistoryResult getExecutionHistory(GetExecutionHistoryRequest getExecutionHistoryRequest) {
+    public GetExecutionHistoryResult getExecutionHistory(GetExecutionHistoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetExecutionHistory(request);
+    }
+
+    @SdkInternalApi
+    final GetExecutionHistoryResult executeGetExecutionHistory(GetExecutionHistoryRequest getExecutionHistoryRequest) {
 
         ExecutionContext executionContext = createExecutionContext(getExecutionHistoryRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -735,7 +794,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetExecutionHistoryRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(getExecutionHistoryRequest));
+                request = new GetExecutionHistoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getExecutionHistoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -769,7 +828,13 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      *      Documentation</a>
      */
     @Override
-    public ListActivitiesResult listActivities(ListActivitiesRequest listActivitiesRequest) {
+    public ListActivitiesResult listActivities(ListActivitiesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListActivities(request);
+    }
+
+    @SdkInternalApi
+    final ListActivitiesResult executeListActivities(ListActivitiesRequest listActivitiesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listActivitiesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -780,7 +845,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListActivitiesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listActivitiesRequest));
+                request = new ListActivitiesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listActivitiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -819,7 +884,13 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      *      Documentation</a>
      */
     @Override
-    public ListExecutionsResult listExecutions(ListExecutionsRequest listExecutionsRequest) {
+    public ListExecutionsResult listExecutions(ListExecutionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListExecutions(request);
+    }
+
+    @SdkInternalApi
+    final ListExecutionsResult executeListExecutions(ListExecutionsRequest listExecutionsRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listExecutionsRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -830,7 +901,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListExecutionsRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listExecutionsRequest));
+                request = new ListExecutionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listExecutionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -864,7 +935,13 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      *      Documentation</a>
      */
     @Override
-    public ListStateMachinesResult listStateMachines(ListStateMachinesRequest listStateMachinesRequest) {
+    public ListStateMachinesResult listStateMachines(ListStateMachinesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListStateMachines(request);
+    }
+
+    @SdkInternalApi
+    final ListStateMachinesResult executeListStateMachines(ListStateMachinesRequest listStateMachinesRequest) {
 
         ExecutionContext executionContext = createExecutionContext(listStateMachinesRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -875,7 +952,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListStateMachinesRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(listStateMachinesRequest));
+                request = new ListStateMachinesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listStateMachinesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -910,7 +987,13 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      *      Documentation</a>
      */
     @Override
-    public SendTaskFailureResult sendTaskFailure(SendTaskFailureRequest sendTaskFailureRequest) {
+    public SendTaskFailureResult sendTaskFailure(SendTaskFailureRequest request) {
+        request = beforeClientExecution(request);
+        return executeSendTaskFailure(request);
+    }
+
+    @SdkInternalApi
+    final SendTaskFailureResult executeSendTaskFailure(SendTaskFailureRequest sendTaskFailureRequest) {
 
         ExecutionContext executionContext = createExecutionContext(sendTaskFailureRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -921,7 +1004,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SendTaskFailureRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(sendTaskFailureRequest));
+                request = new SendTaskFailureRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(sendTaskFailureRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -970,7 +1053,13 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      *      Documentation</a>
      */
     @Override
-    public SendTaskHeartbeatResult sendTaskHeartbeat(SendTaskHeartbeatRequest sendTaskHeartbeatRequest) {
+    public SendTaskHeartbeatResult sendTaskHeartbeat(SendTaskHeartbeatRequest request) {
+        request = beforeClientExecution(request);
+        return executeSendTaskHeartbeat(request);
+    }
+
+    @SdkInternalApi
+    final SendTaskHeartbeatResult executeSendTaskHeartbeat(SendTaskHeartbeatRequest sendTaskHeartbeatRequest) {
 
         ExecutionContext executionContext = createExecutionContext(sendTaskHeartbeatRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -981,7 +1070,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SendTaskHeartbeatRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(sendTaskHeartbeatRequest));
+                request = new SendTaskHeartbeatRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(sendTaskHeartbeatRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1018,7 +1107,13 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      *      Documentation</a>
      */
     @Override
-    public SendTaskSuccessResult sendTaskSuccess(SendTaskSuccessRequest sendTaskSuccessRequest) {
+    public SendTaskSuccessResult sendTaskSuccess(SendTaskSuccessRequest request) {
+        request = beforeClientExecution(request);
+        return executeSendTaskSuccess(request);
+    }
+
+    @SdkInternalApi
+    final SendTaskSuccessResult executeSendTaskSuccess(SendTaskSuccessRequest sendTaskSuccessRequest) {
 
         ExecutionContext executionContext = createExecutionContext(sendTaskSuccessRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1029,7 +1124,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SendTaskSuccessRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(sendTaskSuccessRequest));
+                request = new SendTaskSuccessRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(sendTaskSuccessRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1075,7 +1170,13 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      *      Documentation</a>
      */
     @Override
-    public StartExecutionResult startExecution(StartExecutionRequest startExecutionRequest) {
+    public StartExecutionResult startExecution(StartExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartExecution(request);
+    }
+
+    @SdkInternalApi
+    final StartExecutionResult executeStartExecution(StartExecutionRequest startExecutionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(startExecutionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1086,7 +1187,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StartExecutionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(startExecutionRequest));
+                request = new StartExecutionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {
@@ -1121,7 +1222,13 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      *      Documentation</a>
      */
     @Override
-    public StopExecutionResult stopExecution(StopExecutionRequest stopExecutionRequest) {
+    public StopExecutionResult stopExecution(StopExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopExecution(request);
+    }
+
+    @SdkInternalApi
+    final StopExecutionResult executeStopExecution(StopExecutionRequest stopExecutionRequest) {
 
         ExecutionContext executionContext = createExecutionContext(stopExecutionRequest);
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
@@ -1132,7 +1239,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new StopExecutionRequestMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopExecutionRequest));
+                request = new StopExecutionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
             } finally {

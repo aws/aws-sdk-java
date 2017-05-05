@@ -14,17 +14,19 @@ package com.amazonaws.services.storagegateway.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents a device object associated with a gateway-VTL.
+ * Represents a device object associated with a tape gateway.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/VTLDevice" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class VTLDevice implements Serializable, Cloneable {
+public class VTLDevice implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -281,5 +283,11 @@ public class VTLDevice implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.storagegateway.model.transform.VTLDeviceMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

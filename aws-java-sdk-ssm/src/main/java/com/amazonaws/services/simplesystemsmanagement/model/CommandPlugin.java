@@ -14,6 +14,8 @@ package com.amazonaws.services.simplesystemsmanagement.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,7 +26,7 @@ import javax.annotation.Generated;
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CommandPlugin implements Serializable, Cloneable {
+public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
@@ -44,10 +46,8 @@ public class CommandPlugin implements Serializable, Cloneable {
      * A detailed status of the plugin execution. <code>StatusDetails</code> includes more information than
      * <code>Status</code> because it includes states resulting from error and concurrency control parameters.
      * <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these
-     * statuses, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
-     * Commands</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor Commands</a>
-     * (Windows). <code>StatusDetails</code> can be one of the following values:
+     * statuses, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
+     * Command Status</a>. <code>StatusDetails</code> can be one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -322,10 +322,8 @@ public class CommandPlugin implements Serializable, Cloneable {
      * A detailed status of the plugin execution. <code>StatusDetails</code> includes more information than
      * <code>Status</code> because it includes states resulting from error and concurrency control parameters.
      * <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these
-     * statuses, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
-     * Commands</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor Commands</a>
-     * (Windows). <code>StatusDetails</code> can be one of the following values:
+     * statuses, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
+     * Command Status</a>. <code>StatusDetails</code> can be one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -391,9 +389,8 @@ public class CommandPlugin implements Serializable, Cloneable {
      *        <code>Status</code> because it includes states resulting from error and concurrency control parameters.
      *        <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about
      *        these statuses, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor Commands</a>
-     *        (Linux) or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-     *        Commands</a> (Windows). <code>StatusDetails</code> can be one of the following values:</p>
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run Command
+     *        Status</a>. <code>StatusDetails</code> can be one of the following values:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -463,10 +460,8 @@ public class CommandPlugin implements Serializable, Cloneable {
      * A detailed status of the plugin execution. <code>StatusDetails</code> includes more information than
      * <code>Status</code> because it includes states resulting from error and concurrency control parameters.
      * <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these
-     * statuses, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
-     * Commands</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor Commands</a>
-     * (Windows). <code>StatusDetails</code> can be one of the following values:
+     * statuses, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
+     * Command Status</a>. <code>StatusDetails</code> can be one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -531,9 +526,8 @@ public class CommandPlugin implements Serializable, Cloneable {
      *         <code>Status</code> because it includes states resulting from error and concurrency control parameters.
      *         <code>StatusDetails</code> can show different results than <code>Status</code>. For more information
      *         about these statuses, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor Commands</a>
-     *         (Linux) or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-     *         Commands</a> (Windows). <code>StatusDetails</code> can be one of the following values:</p>
+     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run Command
+     *         Status</a>. <code>StatusDetails</code> can be one of the following values:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -603,10 +597,8 @@ public class CommandPlugin implements Serializable, Cloneable {
      * A detailed status of the plugin execution. <code>StatusDetails</code> includes more information than
      * <code>Status</code> because it includes states resulting from error and concurrency control parameters.
      * <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these
-     * statuses, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
-     * Commands</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor Commands</a>
-     * (Windows). <code>StatusDetails</code> can be one of the following values:
+     * statuses, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
+     * Command Status</a>. <code>StatusDetails</code> can be one of the following values:
      * </p>
      * <ul>
      * <li>
@@ -672,9 +664,8 @@ public class CommandPlugin implements Serializable, Cloneable {
      *        <code>Status</code> because it includes states resulting from error and concurrency control parameters.
      *        <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about
      *        these statuses, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor Commands</a>
-     *        (Linux) or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
-     *        Commands</a> (Windows). <code>StatusDetails</code> can be one of the following values:</p>
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run Command
+     *        Status</a>. <code>StatusDetails</code> can be one of the following values:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1426,5 +1417,11 @@ public class CommandPlugin implements Serializable, Cloneable {
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.simplesystemsmanagement.model.transform.CommandPluginMarshaller.getInstance().marshall(this, protocolMarshaller);
     }
 }

@@ -33,19 +33,18 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
     private com.amazonaws.internal.SdkInternalList<String> instanceIds;
     /**
      * <p>
-     * (Optional) An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code>
+     * (Optional) An array of search criteria that targets instances using a <code>Key</code>,<code>Value</code>
      * combination that you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in
      * the call. For more information about how to use <code>Targets</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
-     * Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
-     * EC2 Run Command</a> (Windows).
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
+     * Systems Manager Run Command</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Target> targets;
     /**
      * <p>
-     * Required. The name of the SSM document to execute. This can be an SSM public document or a custom document.
+     * Required. The name of the Systems Manager document to execute. This can be a public document or a custom
+     * document.
      * </p>
      */
     private String documentName;
@@ -85,7 +84,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String comment;
     /**
      * <p>
-     * The required and optional parameters specified in the SSM document being executed.
+     * The required and optional parameters specified in the document being executed.
      * </p>
      */
     private java.util.Map<String, java.util.List<String>> parameters;
@@ -113,10 +112,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * (Optional) The maximum number of instances that are allowed to execute the command at the same time. You can
      * specify a number such as “10” or a percentage such as “10%”. The default value is 50. For more information about
      * how to use <code>MaxConcurrency</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
-     * Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
-     * EC2 Run Command</a> (Windows).
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
+     * Systems Manager Run Command</a>.
      * </p>
      */
     private String maxConcurrency;
@@ -126,10 +123,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * value of <code>MaxErrors</code>, the systems stops sending the command to additional targets. You can specify a
      * number like “10” or a percentage like “10%”. The default value is 50. For more information about how to use
      * <code>MaxErrors</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
-     * Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
-     * EC2 Run Command</a> (Windows).
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
+     * Systems Manager Run Command</a>.
      * </p>
      */
     private String maxErrors;
@@ -221,22 +216,18 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * (Optional) An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code>
+     * (Optional) An array of search criteria that targets instances using a <code>Key</code>,<code>Value</code>
      * combination that you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in
      * the call. For more information about how to use <code>Targets</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
-     * Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
-     * EC2 Run Command</a> (Windows).
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
+     * Systems Manager Run Command</a>.
      * </p>
      * 
-     * @return (Optional) An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code>
+     * @return (Optional) An array of search criteria that targets instances using a <code>Key</code>,<code>Value</code>
      *         combination that you specify. <code>Targets</code> is required if you don't provide one or more instance
      *         IDs in the call. For more information about how to use <code>Targets</code>, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
-     *         Amazon EC2 Run Command</a> (Linux) or <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
-     *         Amazon EC2 Run Command</a> (Windows).
+     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
+     *         Using Systems Manager Run Command</a>.
      */
 
     public java.util.List<Target> getTargets() {
@@ -248,23 +239,19 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * (Optional) An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code>
+     * (Optional) An array of search criteria that targets instances using a <code>Key</code>,<code>Value</code>
      * combination that you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in
      * the call. For more information about how to use <code>Targets</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
-     * Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
-     * EC2 Run Command</a> (Windows).
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
+     * Systems Manager Run Command</a>.
      * </p>
      * 
      * @param targets
-     *        (Optional) An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code>
+     *        (Optional) An array of search criteria that targets instances using a <code>Key</code>,<code>Value</code>
      *        combination that you specify. <code>Targets</code> is required if you don't provide one or more instance
      *        IDs in the call. For more information about how to use <code>Targets</code>, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
-     *        Amazon EC2 Run Command</a> (Linux) or <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
-     *        Amazon EC2 Run Command</a> (Windows).
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
+     *        Using Systems Manager Run Command</a>.
      */
 
     public void setTargets(java.util.Collection<Target> targets) {
@@ -278,13 +265,11 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * (Optional) An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code>
+     * (Optional) An array of search criteria that targets instances using a <code>Key</code>,<code>Value</code>
      * combination that you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in
      * the call. For more information about how to use <code>Targets</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
-     * Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
-     * EC2 Run Command</a> (Windows).
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
+     * Systems Manager Run Command</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -293,13 +278,11 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param targets
-     *        (Optional) An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code>
+     *        (Optional) An array of search criteria that targets instances using a <code>Key</code>,<code>Value</code>
      *        combination that you specify. <code>Targets</code> is required if you don't provide one or more instance
      *        IDs in the call. For more information about how to use <code>Targets</code>, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
-     *        Amazon EC2 Run Command</a> (Linux) or <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
-     *        Amazon EC2 Run Command</a> (Windows).
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
+     *        Using Systems Manager Run Command</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -315,23 +298,19 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * (Optional) An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code>
+     * (Optional) An array of search criteria that targets instances using a <code>Key</code>,<code>Value</code>
      * combination that you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in
      * the call. For more information about how to use <code>Targets</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
-     * Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
-     * EC2 Run Command</a> (Windows).
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
+     * Systems Manager Run Command</a>.
      * </p>
      * 
      * @param targets
-     *        (Optional) An array of search criteria that targets instances using a <code>Key</code>;<code>Value</code>
+     *        (Optional) An array of search criteria that targets instances using a <code>Key</code>,<code>Value</code>
      *        combination that you specify. <code>Targets</code> is required if you don't provide one or more instance
      *        IDs in the call. For more information about how to use <code>Targets</code>, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
-     *        Amazon EC2 Run Command</a> (Linux) or <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
-     *        Amazon EC2 Run Command</a> (Windows).
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
+     *        Using Systems Manager Run Command</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -342,11 +321,12 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Required. The name of the SSM document to execute. This can be an SSM public document or a custom document.
+     * Required. The name of the Systems Manager document to execute. This can be a public document or a custom
+     * document.
      * </p>
      * 
      * @param documentName
-     *        Required. The name of the SSM document to execute. This can be an SSM public document or a custom
+     *        Required. The name of the Systems Manager document to execute. This can be a public document or a custom
      *        document.
      */
 
@@ -356,10 +336,11 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Required. The name of the SSM document to execute. This can be an SSM public document or a custom document.
+     * Required. The name of the Systems Manager document to execute. This can be a public document or a custom
+     * document.
      * </p>
      * 
-     * @return Required. The name of the SSM document to execute. This can be an SSM public document or a custom
+     * @return Required. The name of the Systems Manager document to execute. This can be a public document or a custom
      *         document.
      */
 
@@ -369,11 +350,12 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Required. The name of the SSM document to execute. This can be an SSM public document or a custom document.
+     * Required. The name of the Systems Manager document to execute. This can be a public document or a custom
+     * document.
      * </p>
      * 
      * @param documentName
-     *        Required. The name of the SSM document to execute. This can be an SSM public document or a custom
+     *        Required. The name of the Systems Manager document to execute. This can be a public document or a custom
      *        document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -642,10 +624,10 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The required and optional parameters specified in the SSM document being executed.
+     * The required and optional parameters specified in the document being executed.
      * </p>
      * 
-     * @return The required and optional parameters specified in the SSM document being executed.
+     * @return The required and optional parameters specified in the document being executed.
      */
 
     public java.util.Map<String, java.util.List<String>> getParameters() {
@@ -654,11 +636,11 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The required and optional parameters specified in the SSM document being executed.
+     * The required and optional parameters specified in the document being executed.
      * </p>
      * 
      * @param parameters
-     *        The required and optional parameters specified in the SSM document being executed.
+     *        The required and optional parameters specified in the document being executed.
      */
 
     public void setParameters(java.util.Map<String, java.util.List<String>> parameters) {
@@ -667,11 +649,11 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The required and optional parameters specified in the SSM document being executed.
+     * The required and optional parameters specified in the document being executed.
      * </p>
      * 
      * @param parameters
-     *        The required and optional parameters specified in the SSM document being executed.
+     *        The required and optional parameters specified in the document being executed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -832,20 +814,16 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * (Optional) The maximum number of instances that are allowed to execute the command at the same time. You can
      * specify a number such as “10” or a percentage such as “10%”. The default value is 50. For more information about
      * how to use <code>MaxConcurrency</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
-     * Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
-     * EC2 Run Command</a> (Windows).
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
+     * Systems Manager Run Command</a>.
      * </p>
      * 
      * @param maxConcurrency
      *        (Optional) The maximum number of instances that are allowed to execute the command at the same time. You
      *        can specify a number such as “10” or a percentage such as “10%”. The default value is 50. For more
      *        information about how to use <code>MaxConcurrency</code>, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
-     *        Amazon EC2 Run Command</a> (Linux) or <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
-     *        Amazon EC2 Run Command</a> (Windows).
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
+     *        Using Systems Manager Run Command</a>.
      */
 
     public void setMaxConcurrency(String maxConcurrency) {
@@ -857,19 +835,15 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * (Optional) The maximum number of instances that are allowed to execute the command at the same time. You can
      * specify a number such as “10” or a percentage such as “10%”. The default value is 50. For more information about
      * how to use <code>MaxConcurrency</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
-     * Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
-     * EC2 Run Command</a> (Windows).
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
+     * Systems Manager Run Command</a>.
      * </p>
      * 
      * @return (Optional) The maximum number of instances that are allowed to execute the command at the same time. You
      *         can specify a number such as “10” or a percentage such as “10%”. The default value is 50. For more
      *         information about how to use <code>MaxConcurrency</code>, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
-     *         Amazon EC2 Run Command</a> (Linux) or <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
-     *         Amazon EC2 Run Command</a> (Windows).
+     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
+     *         Using Systems Manager Run Command</a>.
      */
 
     public String getMaxConcurrency() {
@@ -881,20 +855,16 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * (Optional) The maximum number of instances that are allowed to execute the command at the same time. You can
      * specify a number such as “10” or a percentage such as “10%”. The default value is 50. For more information about
      * how to use <code>MaxConcurrency</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
-     * Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
-     * EC2 Run Command</a> (Windows).
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
+     * Systems Manager Run Command</a>.
      * </p>
      * 
      * @param maxConcurrency
      *        (Optional) The maximum number of instances that are allowed to execute the command at the same time. You
      *        can specify a number such as “10” or a percentage such as “10%”. The default value is 50. For more
      *        information about how to use <code>MaxConcurrency</code>, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
-     *        Amazon EC2 Run Command</a> (Linux) or <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
-     *        Amazon EC2 Run Command</a> (Windows).
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
+     *        Using Systems Manager Run Command</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -909,10 +879,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * value of <code>MaxErrors</code>, the systems stops sending the command to additional targets. You can specify a
      * number like “10” or a percentage like “10%”. The default value is 50. For more information about how to use
      * <code>MaxErrors</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
-     * Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
-     * EC2 Run Command</a> (Windows).
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
+     * Systems Manager Run Command</a>.
      * </p>
      * 
      * @param maxErrors
@@ -920,10 +888,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        beyond the value of <code>MaxErrors</code>, the systems stops sending the command to additional targets.
      *        You can specify a number like “10” or a percentage like “10%”. The default value is 50. For more
      *        information about how to use <code>MaxErrors</code>, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
-     *        Amazon EC2 Run Command</a> (Linux) or <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
-     *        Amazon EC2 Run Command</a> (Windows).
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
+     *        Using Systems Manager Run Command</a>.
      */
 
     public void setMaxErrors(String maxErrors) {
@@ -936,20 +902,16 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * value of <code>MaxErrors</code>, the systems stops sending the command to additional targets. You can specify a
      * number like “10” or a percentage like “10%”. The default value is 50. For more information about how to use
      * <code>MaxErrors</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
-     * Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
-     * EC2 Run Command</a> (Windows).
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
+     * Systems Manager Run Command</a>.
      * </p>
      * 
      * @return The maximum number of errors allowed without the command failing. When the command fails one more time
      *         beyond the value of <code>MaxErrors</code>, the systems stops sending the command to additional targets.
      *         You can specify a number like “10” or a percentage like “10%”. The default value is 50. For more
      *         information about how to use <code>MaxErrors</code>, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
-     *         Amazon EC2 Run Command</a> (Linux) or <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
-     *         Amazon EC2 Run Command</a> (Windows).
+     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
+     *         Using Systems Manager Run Command</a>.
      */
 
     public String getMaxErrors() {
@@ -962,10 +924,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * value of <code>MaxErrors</code>, the systems stops sending the command to additional targets. You can specify a
      * number like “10” or a percentage like “10%”. The default value is 50. For more information about how to use
      * <code>MaxErrors</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using Amazon EC2
-     * Run Command</a> (Linux) or <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using Amazon
-     * EC2 Run Command</a> (Windows).
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
+     * Systems Manager Run Command</a>.
      * </p>
      * 
      * @param maxErrors
@@ -973,10 +933,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        beyond the value of <code>MaxErrors</code>, the systems stops sending the command to additional targets.
      *        You can specify a number like “10” or a percentage like “10%”. The default value is 50. For more
      *        information about how to use <code>MaxErrors</code>, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/run-command.html">Executing a Command Using
-     *        Amazon EC2 Run Command</a> (Linux) or <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/run-command.html">Executing a Command Using
-     *        Amazon EC2 Run Command</a> (Windows).
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
+     *        Using Systems Manager Run Command</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

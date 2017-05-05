@@ -40,8 +40,13 @@ public class UpdateDomainNameResult extends com.amazonaws.AmazonWebServiceResult
     private String certificateName;
     /**
      * <p>
-     * The date when the certificate was uploaded, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The reference to an AWS-managed certificate. AWS Certificate Manager is the only supported source.
+     * </p>
+     */
+    private String certificateArn;
+    /**
+     * <p>
+     * The timestamp when the certificate was uploaded.
      * </p>
      */
     private java.util.Date certificateUploadDate;
@@ -135,13 +140,51 @@ public class UpdateDomainNameResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The date when the certificate was uploaded, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The reference to an AWS-managed certificate. AWS Certificate Manager is the only supported source.
+     * </p>
+     * 
+     * @param certificateArn
+     *        The reference to an AWS-managed certificate. AWS Certificate Manager is the only supported source.
+     */
+
+    public void setCertificateArn(String certificateArn) {
+        this.certificateArn = certificateArn;
+    }
+
+    /**
+     * <p>
+     * The reference to an AWS-managed certificate. AWS Certificate Manager is the only supported source.
+     * </p>
+     * 
+     * @return The reference to an AWS-managed certificate. AWS Certificate Manager is the only supported source.
+     */
+
+    public String getCertificateArn() {
+        return this.certificateArn;
+    }
+
+    /**
+     * <p>
+     * The reference to an AWS-managed certificate. AWS Certificate Manager is the only supported source.
+     * </p>
+     * 
+     * @param certificateArn
+     *        The reference to an AWS-managed certificate. AWS Certificate Manager is the only supported source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDomainNameResult withCertificateArn(String certificateArn) {
+        setCertificateArn(certificateArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The timestamp when the certificate was uploaded.
      * </p>
      * 
      * @param certificateUploadDate
-     *        The date when the certificate was uploaded, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     *        target="_blank">ISO 8601 format</a>.
+     *        The timestamp when the certificate was uploaded.
      */
 
     public void setCertificateUploadDate(java.util.Date certificateUploadDate) {
@@ -150,12 +193,10 @@ public class UpdateDomainNameResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The date when the certificate was uploaded, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The timestamp when the certificate was uploaded.
      * </p>
      * 
-     * @return The date when the certificate was uploaded, in <a
-     *         href="http://www.iso.org/iso/home/standards/iso8601.htm" target="_blank">ISO 8601 format</a>.
+     * @return The timestamp when the certificate was uploaded.
      */
 
     public java.util.Date getCertificateUploadDate() {
@@ -164,13 +205,11 @@ public class UpdateDomainNameResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The date when the certificate was uploaded, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     * target="_blank">ISO 8601 format</a>.
+     * The timestamp when the certificate was uploaded.
      * </p>
      * 
      * @param certificateUploadDate
-     *        The date when the certificate was uploaded, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
-     *        target="_blank">ISO 8601 format</a>.
+     *        The timestamp when the certificate was uploaded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -243,6 +282,8 @@ public class UpdateDomainNameResult extends com.amazonaws.AmazonWebServiceResult
             sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getCertificateName() != null)
             sb.append("CertificateName: ").append(getCertificateName()).append(",");
+        if (getCertificateArn() != null)
+            sb.append("CertificateArn: ").append(getCertificateArn()).append(",");
         if (getCertificateUploadDate() != null)
             sb.append("CertificateUploadDate: ").append(getCertificateUploadDate()).append(",");
         if (getDistributionDomainName() != null)
@@ -269,6 +310,10 @@ public class UpdateDomainNameResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getCertificateName() != null && other.getCertificateName().equals(this.getCertificateName()) == false)
             return false;
+        if (other.getCertificateArn() == null ^ this.getCertificateArn() == null)
+            return false;
+        if (other.getCertificateArn() != null && other.getCertificateArn().equals(this.getCertificateArn()) == false)
+            return false;
         if (other.getCertificateUploadDate() == null ^ this.getCertificateUploadDate() == null)
             return false;
         if (other.getCertificateUploadDate() != null && other.getCertificateUploadDate().equals(this.getCertificateUploadDate()) == false)
@@ -287,6 +332,7 @@ public class UpdateDomainNameResult extends com.amazonaws.AmazonWebServiceResult
 
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
         hashCode = prime * hashCode + ((getCertificateName() == null) ? 0 : getCertificateName().hashCode());
+        hashCode = prime * hashCode + ((getCertificateArn() == null) ? 0 : getCertificateArn().hashCode());
         hashCode = prime * hashCode + ((getCertificateUploadDate() == null) ? 0 : getCertificateUploadDate().hashCode());
         hashCode = prime * hashCode + ((getDistributionDomainName() == null) ? 0 : getDistributionDomainName().hashCode());
         return hashCode;
@@ -300,4 +346,5 @@ public class UpdateDomainNameResult extends com.amazonaws.AmazonWebServiceResult
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }
     }
+
 }

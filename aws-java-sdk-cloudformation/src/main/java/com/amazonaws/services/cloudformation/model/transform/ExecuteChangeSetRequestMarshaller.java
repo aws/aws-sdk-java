@@ -48,6 +48,10 @@ public class ExecuteChangeSetRequestMarshaller implements Marshaller<Request<Exe
             request.addParameter("StackName", StringUtils.fromString(executeChangeSetRequest.getStackName()));
         }
 
+        if (executeChangeSetRequest.getClientRequestToken() != null) {
+            request.addParameter("ClientRequestToken", StringUtils.fromString(executeChangeSetRequest.getClientRequestToken()));
+        }
+
         return request;
     }
 

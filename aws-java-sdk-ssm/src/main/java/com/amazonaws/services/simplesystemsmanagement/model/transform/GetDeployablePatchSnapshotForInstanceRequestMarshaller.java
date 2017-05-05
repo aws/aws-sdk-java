@@ -12,70 +12,47 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
-import java.io.ByteArrayInputStream;
-
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simplesystemsmanagement.model.*;
-import com.amazonaws.transform.Marshaller;
 
-import com.amazonaws.protocol.json.*;
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetDeployablePatchSnapshotForInstanceRequest Marshaller
+ * GetDeployablePatchSnapshotForInstanceRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetDeployablePatchSnapshotForInstanceRequestMarshaller implements
-        Marshaller<Request<GetDeployablePatchSnapshotForInstanceRequest>, GetDeployablePatchSnapshotForInstanceRequest> {
+@SdkInternalApi
+public class GetDeployablePatchSnapshotForInstanceRequestMarshaller {
 
-    private final SdkJsonMarshallerFactory protocolFactory;
+    private static final MarshallingInfo<String> INSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceId").build();
+    private static final MarshallingInfo<String> SNAPSHOTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnapshotId").build();
 
-    public GetDeployablePatchSnapshotForInstanceRequestMarshaller(SdkJsonMarshallerFactory protocolFactory) {
-        this.protocolFactory = protocolFactory;
+    private static final GetDeployablePatchSnapshotForInstanceRequestMarshaller instance = new GetDeployablePatchSnapshotForInstanceRequestMarshaller();
+
+    public static GetDeployablePatchSnapshotForInstanceRequestMarshaller getInstance() {
+        return instance;
     }
 
-    public Request<GetDeployablePatchSnapshotForInstanceRequest> marshall(
-            GetDeployablePatchSnapshotForInstanceRequest getDeployablePatchSnapshotForInstanceRequest) {
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetDeployablePatchSnapshotForInstanceRequest getDeployablePatchSnapshotForInstanceRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getDeployablePatchSnapshotForInstanceRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetDeployablePatchSnapshotForInstanceRequest> request = new DefaultRequest<GetDeployablePatchSnapshotForInstanceRequest>(
-                getDeployablePatchSnapshotForInstanceRequest, "AWSSimpleSystemsManagement");
-        request.addHeader("X-Amz-Target", "AmazonSSM.GetDeployablePatchSnapshotForInstance");
-
-        request.setHttpMethod(HttpMethodName.POST);
-
-        request.setResourcePath("");
-
         try {
-            final StructuredJsonGenerator jsonGenerator = protocolFactory.createGenerator();
-
-            jsonGenerator.writeStartObject();
-
-            if (getDeployablePatchSnapshotForInstanceRequest.getInstanceId() != null) {
-                jsonGenerator.writeFieldName("InstanceId").writeValue(getDeployablePatchSnapshotForInstanceRequest.getInstanceId());
-            }
-            if (getDeployablePatchSnapshotForInstanceRequest.getSnapshotId() != null) {
-                jsonGenerator.writeFieldName("SnapshotId").writeValue(getDeployablePatchSnapshotForInstanceRequest.getSnapshotId());
-            }
-
-            jsonGenerator.writeEndObject();
-
-            byte[] content = jsonGenerator.getBytes();
-            request.setContent(new ByteArrayInputStream(content));
-            request.addHeader("Content-Length", Integer.toString(content.length));
-            request.addHeader("Content-Type", protocolFactory.getContentType());
-        } catch (Throwable t) {
-            throw new SdkClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
+            protocolMarshaller.marshall(getDeployablePatchSnapshotForInstanceRequest.getInstanceId(), INSTANCEID_BINDING);
+            protocolMarshaller.marshall(getDeployablePatchSnapshotForInstanceRequest.getSnapshotId(), SNAPSHOTID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        return request;
     }
 
 }

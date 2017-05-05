@@ -15,6 +15,7 @@ import javax.annotation.Generated;
 import org.apache.commons.logging.*;
 
 import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.*;
 import com.amazonaws.auth.presign.PresignerParams;
 import com.amazonaws.handlers.*;
@@ -78,6 +79,7 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
 
     <@AdditionalSyncClientFieldsMacro.content .data_model />
 
+<#if customizationConfig.emitClientConstructors()>
     /**
      * Constructs a new client to invoke service methods on
      * ${serviceAbbreviation}.  A credentials provider chain will be used
@@ -237,6 +239,11 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
         this.awsCredentialsProvider = awsCredentialsProvider;
         init();
     }
+</#if>
+
+    public static ${metadata.syncClientBuilderClassName} builder() {
+        return ${metadata.syncClientBuilderClassName}.standard();
+    }
 
     /**
      * Constructs a new client to invoke service methods on
@@ -360,6 +367,14 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
                }
         }
         return waiters;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
     </#if>
 
