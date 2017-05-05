@@ -7,7 +7,7 @@ jdk:
   - oraclejdk8
 env:
   - MODULES_TO_SKIP=\!aws-java-sdk-osgi MAVEN_OPTS=-XX:MaxPermSize=256m
-  - MODULES_TO_SKIP=\!aws-java-sdk-osgi,\!aws-java-sdk-code-generator,\!aws-java-sdk-codegen-maven-plugin,\!aws-java-sdk-opensdk  MAVEN_OPTS=-XX:MaxPermSize=256m
+  - MODULES_TO_SKIP=\!aws-java-sdk-osgi,\!aws-java-sdk-code-generator,\!aws-java-sdk-codegen-maven-plugin,\!aws-java-sdk-opensdk MAVEN_OPTS=-XX:MaxPermSize=256m
 # Exclude certain items in the matrix as some modules only build with Java8
 matrix:
   exclude:

@@ -24,13 +24,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * EnableFullControlResult JSON Unmarshaller
+ * EnableAllFeaturesResult JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EnableFullControlResultJsonUnmarshaller implements Unmarshaller<EnableFullControlResult, JsonUnmarshallerContext> {
+public class EnableAllFeaturesResultJsonUnmarshaller implements Unmarshaller<EnableAllFeaturesResult, JsonUnmarshallerContext> {
 
-    public EnableFullControlResult unmarshall(JsonUnmarshallerContext context) throws Exception {
-        EnableFullControlResult enableFullControlResult = new EnableFullControlResult();
+    public EnableAllFeaturesResult unmarshall(JsonUnmarshallerContext context) throws Exception {
+        EnableAllFeaturesResult enableAllFeaturesResult = new EnableAllFeaturesResult();
 
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
@@ -40,7 +40,7 @@ public class EnableFullControlResultJsonUnmarshaller implements Unmarshaller<Ena
         if (token == null)
             token = context.nextToken();
         if (token == VALUE_NULL) {
-            return enableFullControlResult;
+            return enableAllFeaturesResult;
         }
 
         while (true) {
@@ -50,7 +50,7 @@ public class EnableFullControlResultJsonUnmarshaller implements Unmarshaller<Ena
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Handshake", targetDepth)) {
                     context.nextToken();
-                    enableFullControlResult.setHandshake(HandshakeJsonUnmarshaller.getInstance().unmarshall(context));
+                    enableAllFeaturesResult.setHandshake(HandshakeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
@@ -61,14 +61,14 @@ public class EnableFullControlResultJsonUnmarshaller implements Unmarshaller<Ena
             token = context.nextToken();
         }
 
-        return enableFullControlResult;
+        return enableAllFeaturesResult;
     }
 
-    private static EnableFullControlResultJsonUnmarshaller instance;
+    private static EnableAllFeaturesResultJsonUnmarshaller instance;
 
-    public static EnableFullControlResultJsonUnmarshaller getInstance() {
+    public static EnableAllFeaturesResultJsonUnmarshaller getInstance() {
         if (instance == null)
-            instance = new EnableFullControlResultJsonUnmarshaller();
+            instance = new EnableAllFeaturesResultJsonUnmarshaller();
         return instance;
     }
 }

@@ -51,11 +51,12 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * If you do not specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.
      * </p>
      * <p>
-     * For more information about how to use this role to access the member account, see <a
-     * href="Organizations/latest/UserGuide/orgs_permissions.html#orgs_manage_accounts_access-new">Cross-Account Access
-     * to Accounts Created as Part of the Organization</a> in the <i>AWS Organizations User Guide</i>, and steps 2 and 3
-     * in <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
-     * Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide</i>.
+     * For more information about how to use this role to access the member account, see <a href=
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role"
+     * >Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User
+     * Guide</i>, and steps 2 and 3 in <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate
+     * Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a
@@ -69,7 +70,7 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information <i>if</i>
      * they have the required permissions. If set to <code>DENY</code>, then only the root user of the new account can
      * access account billing information. For more information, see <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
+     * "http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
      * >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>.
      * </p>
@@ -175,11 +176,12 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * If you do not specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.
      * </p>
      * <p>
-     * For more information about how to use this role to access the member account, see <a
-     * href="Organizations/latest/UserGuide/orgs_permissions.html#orgs_manage_accounts_access-new">Cross-Account Access
-     * to Accounts Created as Part of the Organization</a> in the <i>AWS Organizations User Guide</i>, and steps 2 and 3
-     * in <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
-     * Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide</i>.
+     * For more information about how to use this role to access the member account, see <a href=
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role"
+     * >Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User
+     * Guide</i>, and steps 2 and 3 in <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate
+     * Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a
@@ -199,10 +201,10 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        .
      *        </p>
      *        <p>
-     *        For more information about how to use this role to access the member account, see <a
-     *        href="Organizations/latest/UserGuide/orgs_permissions.html#orgs_manage_accounts_access-new">Cross-Account
-     *        Access to Accounts Created as Part of the Organization</a> in the <i>AWS Organizations User Guide</i>, and
-     *        steps 2 and 3 in <a
+     *        For more information about how to use this role to access the member account, see <a href=
+     *        "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role"
+     *        >Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User
+     *        Guide</i>, and steps 2 and 3 in <a
      *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
      *        Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide</i>.
      *        </p>
@@ -229,11 +231,12 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * If you do not specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.
      * </p>
      * <p>
-     * For more information about how to use this role to access the member account, see <a
-     * href="Organizations/latest/UserGuide/orgs_permissions.html#orgs_manage_accounts_access-new">Cross-Account Access
-     * to Accounts Created as Part of the Organization</a> in the <i>AWS Organizations User Guide</i>, and steps 2 and 3
-     * in <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
-     * Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide</i>.
+     * For more information about how to use this role to access the member account, see <a href=
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role"
+     * >Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User
+     * Guide</i>, and steps 2 and 3 in <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate
+     * Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a
@@ -252,10 +255,10 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         <code>OrganizationAccountAccessRole</code>.
      *         </p>
      *         <p>
-     *         For more information about how to use this role to access the member account, see <a
-     *         href="Organizations/latest/UserGuide/orgs_permissions.html#orgs_manage_accounts_access-new">Cross-Account
-     *         Access to Accounts Created as Part of the Organization</a> in the <i>AWS Organizations User Guide</i>,
-     *         and steps 2 and 3 in <a
+     *         For more information about how to use this role to access the member account, see <a href=
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role"
+     *         >Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations
+     *         User Guide</i>, and steps 2 and 3 in <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
      *         Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide</i>.
      *         </p>
@@ -282,11 +285,12 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * If you do not specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.
      * </p>
      * <p>
-     * For more information about how to use this role to access the member account, see <a
-     * href="Organizations/latest/UserGuide/orgs_permissions.html#orgs_manage_accounts_access-new">Cross-Account Access
-     * to Accounts Created as Part of the Organization</a> in the <i>AWS Organizations User Guide</i>, and steps 2 and 3
-     * in <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
-     * Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide</i>.
+     * For more information about how to use this role to access the member account, see <a href=
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role"
+     * >Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User
+     * Guide</i>, and steps 2 and 3 in <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial: Delegate
+     * Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a
@@ -306,10 +310,10 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        .
      *        </p>
      *        <p>
-     *        For more information about how to use this role to access the member account, see <a
-     *        href="Organizations/latest/UserGuide/orgs_permissions.html#orgs_manage_accounts_access-new">Cross-Account
-     *        Access to Accounts Created as Part of the Organization</a> in the <i>AWS Organizations User Guide</i>, and
-     *        steps 2 and 3 in <a
+     *        For more information about how to use this role to access the member account, see <a href=
+     *        "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role"
+     *        >Accessing and Administering the Member Accounts in Your Organization</a> in the <i>AWS Organizations User
+     *        Guide</i>, and steps 2 and 3 in <a
      *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
      *        Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User Guide</i>.
      *        </p>
@@ -330,7 +334,7 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information <i>if</i>
      * they have the required permissions. If set to <code>DENY</code>, then only the root user of the new account can
      * access account billing information. For more information, see <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
+     * "http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
      * >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>.
      * </p>
@@ -339,7 +343,7 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information
      *        <i>if</i> they have the required permissions. If set to <code>DENY</code>, then only the root user of the
      *        new account can access account billing information. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
+     *        "http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
      *        >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost
      *        Management User Guide</i>.
      * @see IAMUserAccessToBilling
@@ -354,7 +358,7 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information <i>if</i>
      * they have the required permissions. If set to <code>DENY</code>, then only the root user of the new account can
      * access account billing information. For more information, see <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
+     * "http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
      * >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>.
      * </p>
@@ -362,7 +366,7 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @return If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information
      *         <i>if</i> they have the required permissions. If set to <code>DENY</code>, then only the root user of the
      *         new account can access account billing information. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
+     *         "http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
      *         >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost
      *         Management User Guide</i>.
      * @see IAMUserAccessToBilling
@@ -377,7 +381,7 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information <i>if</i>
      * they have the required permissions. If set to <code>DENY</code>, then only the root user of the new account can
      * access account billing information. For more information, see <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
+     * "http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
      * >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>.
      * </p>
@@ -386,7 +390,7 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information
      *        <i>if</i> they have the required permissions. If set to <code>DENY</code>, then only the root user of the
      *        new account can access account billing information. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
+     *        "http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
      *        >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost
      *        Management User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -403,7 +407,7 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information <i>if</i>
      * they have the required permissions. If set to <code>DENY</code>, then only the root user of the new account can
      * access account billing information. For more information, see <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
+     * "http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
      * >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>.
      * </p>
@@ -412,7 +416,7 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information
      *        <i>if</i> they have the required permissions. If set to <code>DENY</code>, then only the root user of the
      *        new account can access account billing information. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
+     *        "http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
      *        >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost
      *        Management User Guide</i>.
      * @see IAMUserAccessToBilling
@@ -427,7 +431,7 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information <i>if</i>
      * they have the required permissions. If set to <code>DENY</code>, then only the root user of the new account can
      * access account billing information. For more information, see <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
+     * "http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
      * >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>.
      * </p>
@@ -436,7 +440,7 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information
      *        <i>if</i> they have the required permissions. If set to <code>DENY</code>, then only the root user of the
      *        new account can access account billing information. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
+     *        "http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
      *        >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost
      *        Management User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.

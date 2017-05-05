@@ -43,9 +43,9 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) of the account.
      * </p>
      * <p>
-     * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * For more information about ARNs in Organizations, see <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      */
     private String arn;
@@ -54,8 +54,8 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
      * The friendly name of the account.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of any of the
-     * characters in the ASCII character range.
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a
+     * string of any of the characters in the ASCII character range.
      * </p>
      */
     private String name;
@@ -144,17 +144,17 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) of the account.
      * </p>
      * <p>
-     * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * For more information about ARNs in Organizations, see <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of the account.</p>
      *        <p>
-     *        For more information about ARNs, see <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *        For more information about ARNs in Organizations, see <a href=
+     *        "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
+     *        >ARN Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      */
 
     public void setArn(String arn) {
@@ -166,16 +166,16 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) of the account.
      * </p>
      * <p>
-     * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * For more information about ARNs in Organizations, see <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the account.</p>
      *         <p>
-     *         For more information about ARNs, see <a href=
-     *         "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-     *         >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *         For more information about ARNs in Organizations, see <a href=
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
+     *         >ARN Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      */
 
     public String getArn() {
@@ -187,17 +187,17 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) of the account.
      * </p>
      * <p>
-     * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * For more information about ARNs in Organizations, see <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of the account.</p>
      *        <p>
-     *        For more information about ARNs, see <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *        For more information about ARNs in Organizations, see <a href=
+     *        "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
+     *        >ARN Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -211,15 +211,15 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
      * The friendly name of the account.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of any of the
-     * characters in the ASCII character range.
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a
+     * string of any of the characters in the ASCII character range.
      * </p>
      * 
      * @param name
      *        The friendly name of the account.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of any of
-     *        the characters in the ASCII character range.
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is
+     *        a string of any of the characters in the ASCII character range.
      */
 
     public void setName(String name) {
@@ -231,14 +231,14 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
      * The friendly name of the account.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of any of the
-     * characters in the ASCII character range.
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a
+     * string of any of the characters in the ASCII character range.
      * </p>
      * 
      * @return The friendly name of the account.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of any of
-     *         the characters in the ASCII character range.
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter
+     *         is a string of any of the characters in the ASCII character range.
      */
 
     public String getName() {
@@ -250,15 +250,15 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
      * The friendly name of the account.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of any of the
-     * characters in the ASCII character range.
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a
+     * string of any of the characters in the ASCII character range.
      * </p>
      * 
      * @param name
      *        The friendly name of the account.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of any of
-     *        the characters in the ASCII character range.
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is
+     *        a string of any of the characters in the ASCII character range.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

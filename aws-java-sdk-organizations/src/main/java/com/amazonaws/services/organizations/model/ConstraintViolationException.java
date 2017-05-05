@@ -39,6 +39,7 @@ public class ConstraintViolationException extends com.amazonaws.services.organiz
 
     /**
      * @param reason
+     * @see ConstraintViolationExceptionReason
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("Reason")
@@ -48,6 +49,7 @@ public class ConstraintViolationException extends com.amazonaws.services.organiz
 
     /**
      * @return
+     * @see ConstraintViolationExceptionReason
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("Reason")
@@ -58,9 +60,30 @@ public class ConstraintViolationException extends com.amazonaws.services.organiz
     /**
      * @param reason
      * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConstraintViolationExceptionReason
      */
 
     public ConstraintViolationException withReason(String reason) {
+        setReason(reason);
+        return this;
+    }
+
+    /**
+     * @param reason
+     * @see ConstraintViolationExceptionReason
+     */
+
+    public void setReason(ConstraintViolationExceptionReason reason) {
+        this.reason = reason.toString();
+    }
+
+    /**
+     * @param reason
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConstraintViolationExceptionReason
+     */
+
+    public ConstraintViolationException withReason(ConstraintViolationExceptionReason reason) {
         setReason(reason);
         return this;
     }

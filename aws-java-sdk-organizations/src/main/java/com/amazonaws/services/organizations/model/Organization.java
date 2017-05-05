@@ -21,7 +21,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Contains details about an organization. An organization is a collection of accounts that are centrally managed
  * together using consolidated billing, organized hierarchically with organizational units (OUs), and controlled with
- * organization control policies (OCPs).
+ * policies .
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/Organization" target="_top">AWS API
@@ -45,30 +45,30 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) of an organization.
      * </p>
      * <p>
-     * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * For more information about ARNs in Organizations, see <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * Specifies the mode of operation that currently applies to all accounts in the organization. If full-control mode
-     * is enabled, then organization control policies (OCPs) can be applied to accounts in the organization. If not,
-     * then only shared billing functionality is available. For more information, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/IAM/latest/orgs_operating-modes.html">Organization
-     * Operating Modes</a> in the <i>AWS Organizations User Guide</i>.
+     * Specifies the functionality that currently is available to the organization. If set to "ALL", then all features
+     * are enabled and policies can be applied to accounts in the organization. If set to "CONSOLIDATED_BILLING", then
+     * only consolidated billing functionality is available. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">Enabling All
+     * Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      */
-    private String mode;
+    private String featureSet;
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the account that is designated as the master account for the organization.
      * </p>
      * <p>
-     * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * For more information about ARNs in Organizations, see <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      */
     private String masterAccountArn;
@@ -91,8 +91,8 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
     private String masterAccountEmail;
     /**
      * <p>
-     * A list of policy types that are enabled for this organization. For example, if your organization is in
-     * full-control mode, then service control policies (SCPs) are included in the list.
+     * A list of policy types that are enabled for this organization. For example, if your organization has all features
+     * enabled, then service control policies (SCPs) are included in the list.
      * </p>
      */
     private java.util.List<PolicyTypeSummary> availablePolicyTypes;
@@ -163,17 +163,17 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) of an organization.
      * </p>
      * <p>
-     * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * For more information about ARNs in Organizations, see <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of an organization.</p>
      *        <p>
-     *        For more information about ARNs, see <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *        For more information about ARNs in Organizations, see <a href=
+     *        "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
+     *        >ARN Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      */
 
     public void setArn(String arn) {
@@ -185,16 +185,16 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) of an organization.
      * </p>
      * <p>
-     * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * For more information about ARNs in Organizations, see <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of an organization.</p>
      *         <p>
-     *         For more information about ARNs, see <a href=
-     *         "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-     *         >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *         For more information about ARNs in Organizations, see <a href=
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
+     *         >ARN Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      */
 
     public String getArn() {
@@ -206,17 +206,17 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) of an organization.
      * </p>
      * <p>
-     * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * For more information about ARNs in Organizations, see <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of an organization.</p>
      *        <p>
-     *        For more information about ARNs, see <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *        For more information about ARNs in Organizations, see <a href=
+     *        "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
+     *        >ARN Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,118 +227,114 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the mode of operation that currently applies to all accounts in the organization. If full-control mode
-     * is enabled, then organization control policies (OCPs) can be applied to accounts in the organization. If not,
-     * then only shared billing functionality is available. For more information, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/IAM/latest/orgs_operating-modes.html">Organization
-     * Operating Modes</a> in the <i>AWS Organizations User Guide</i>.
+     * Specifies the functionality that currently is available to the organization. If set to "ALL", then all features
+     * are enabled and policies can be applied to accounts in the organization. If set to "CONSOLIDATED_BILLING", then
+     * only consolidated billing functionality is available. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">Enabling All
+     * Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * 
-     * @param mode
-     *        Specifies the mode of operation that currently applies to all accounts in the organization. If
-     *        full-control mode is enabled, then organization control policies (OCPs) can be applied to accounts in the
-     *        organization. If not, then only shared billing functionality is available. For more information, see <a
-     *        href
-     *        ="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/IAM/latest/orgs_operating-modes.html">Organization
-     *        Operating Modes</a> in the <i>AWS Organizations User Guide</i>.
-     * @see OrganizationMode
+     * @param featureSet
+     *        Specifies the functionality that currently is available to the organization. If set to "ALL", then all
+     *        features are enabled and policies can be applied to accounts in the organization. If set to
+     *        "CONSOLIDATED_BILLING", then only consolidated billing functionality is available. For more information,
+     *        see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">
+     *        Enabling All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
+     * @see OrganizationFeatureSet
      */
 
-    public void setMode(String mode) {
-        this.mode = mode;
+    public void setFeatureSet(String featureSet) {
+        this.featureSet = featureSet;
     }
 
     /**
      * <p>
-     * Specifies the mode of operation that currently applies to all accounts in the organization. If full-control mode
-     * is enabled, then organization control policies (OCPs) can be applied to accounts in the organization. If not,
-     * then only shared billing functionality is available. For more information, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/IAM/latest/orgs_operating-modes.html">Organization
-     * Operating Modes</a> in the <i>AWS Organizations User Guide</i>.
+     * Specifies the functionality that currently is available to the organization. If set to "ALL", then all features
+     * are enabled and policies can be applied to accounts in the organization. If set to "CONSOLIDATED_BILLING", then
+     * only consolidated billing functionality is available. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">Enabling All
+     * Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * 
-     * @return Specifies the mode of operation that currently applies to all accounts in the organization. If
-     *         full-control mode is enabled, then organization control policies (OCPs) can be applied to accounts in the
-     *         organization. If not, then only shared billing functionality is available. For more information, see <a
-     *         href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/IAM/latest/orgs_operating-modes.html">
-     *         Organization Operating Modes</a> in the <i>AWS Organizations User Guide</i>.
-     * @see OrganizationMode
+     * @return Specifies the functionality that currently is available to the organization. If set to "ALL", then all
+     *         features are enabled and policies can be applied to accounts in the organization. If set to
+     *         "CONSOLIDATED_BILLING", then only consolidated billing functionality is available. For more information,
+     *         see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">
+     *         Enabling All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
+     * @see OrganizationFeatureSet
      */
 
-    public String getMode() {
-        return this.mode;
+    public String getFeatureSet() {
+        return this.featureSet;
     }
 
     /**
      * <p>
-     * Specifies the mode of operation that currently applies to all accounts in the organization. If full-control mode
-     * is enabled, then organization control policies (OCPs) can be applied to accounts in the organization. If not,
-     * then only shared billing functionality is available. For more information, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/IAM/latest/orgs_operating-modes.html">Organization
-     * Operating Modes</a> in the <i>AWS Organizations User Guide</i>.
+     * Specifies the functionality that currently is available to the organization. If set to "ALL", then all features
+     * are enabled and policies can be applied to accounts in the organization. If set to "CONSOLIDATED_BILLING", then
+     * only consolidated billing functionality is available. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">Enabling All
+     * Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * 
-     * @param mode
-     *        Specifies the mode of operation that currently applies to all accounts in the organization. If
-     *        full-control mode is enabled, then organization control policies (OCPs) can be applied to accounts in the
-     *        organization. If not, then only shared billing functionality is available. For more information, see <a
-     *        href
-     *        ="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/IAM/latest/orgs_operating-modes.html">Organization
-     *        Operating Modes</a> in the <i>AWS Organizations User Guide</i>.
+     * @param featureSet
+     *        Specifies the functionality that currently is available to the organization. If set to "ALL", then all
+     *        features are enabled and policies can be applied to accounts in the organization. If set to
+     *        "CONSOLIDATED_BILLING", then only consolidated billing functionality is available. For more information,
+     *        see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">
+     *        Enabling All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see OrganizationMode
+     * @see OrganizationFeatureSet
      */
 
-    public Organization withMode(String mode) {
-        setMode(mode);
+    public Organization withFeatureSet(String featureSet) {
+        setFeatureSet(featureSet);
         return this;
     }
 
     /**
      * <p>
-     * Specifies the mode of operation that currently applies to all accounts in the organization. If full-control mode
-     * is enabled, then organization control policies (OCPs) can be applied to accounts in the organization. If not,
-     * then only shared billing functionality is available. For more information, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/IAM/latest/orgs_operating-modes.html">Organization
-     * Operating Modes</a> in the <i>AWS Organizations User Guide</i>.
+     * Specifies the functionality that currently is available to the organization. If set to "ALL", then all features
+     * are enabled and policies can be applied to accounts in the organization. If set to "CONSOLIDATED_BILLING", then
+     * only consolidated billing functionality is available. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">Enabling All
+     * Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * 
-     * @param mode
-     *        Specifies the mode of operation that currently applies to all accounts in the organization. If
-     *        full-control mode is enabled, then organization control policies (OCPs) can be applied to accounts in the
-     *        organization. If not, then only shared billing functionality is available. For more information, see <a
-     *        href
-     *        ="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/IAM/latest/orgs_operating-modes.html">Organization
-     *        Operating Modes</a> in the <i>AWS Organizations User Guide</i>.
-     * @see OrganizationMode
+     * @param featureSet
+     *        Specifies the functionality that currently is available to the organization. If set to "ALL", then all
+     *        features are enabled and policies can be applied to accounts in the organization. If set to
+     *        "CONSOLIDATED_BILLING", then only consolidated billing functionality is available. For more information,
+     *        see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">
+     *        Enabling All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
+     * @see OrganizationFeatureSet
      */
 
-    public void setMode(OrganizationMode mode) {
-        this.mode = mode.toString();
+    public void setFeatureSet(OrganizationFeatureSet featureSet) {
+        this.featureSet = featureSet.toString();
     }
 
     /**
      * <p>
-     * Specifies the mode of operation that currently applies to all accounts in the organization. If full-control mode
-     * is enabled, then organization control policies (OCPs) can be applied to accounts in the organization. If not,
-     * then only shared billing functionality is available. For more information, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/IAM/latest/orgs_operating-modes.html">Organization
-     * Operating Modes</a> in the <i>AWS Organizations User Guide</i>.
+     * Specifies the functionality that currently is available to the organization. If set to "ALL", then all features
+     * are enabled and policies can be applied to accounts in the organization. If set to "CONSOLIDATED_BILLING", then
+     * only consolidated billing functionality is available. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">Enabling All
+     * Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * 
-     * @param mode
-     *        Specifies the mode of operation that currently applies to all accounts in the organization. If
-     *        full-control mode is enabled, then organization control policies (OCPs) can be applied to accounts in the
-     *        organization. If not, then only shared billing functionality is available. For more information, see <a
-     *        href
-     *        ="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/IAM/latest/orgs_operating-modes.html">Organization
-     *        Operating Modes</a> in the <i>AWS Organizations User Guide</i>.
+     * @param featureSet
+     *        Specifies the functionality that currently is available to the organization. If set to "ALL", then all
+     *        features are enabled and policies can be applied to accounts in the organization. If set to
+     *        "CONSOLIDATED_BILLING", then only consolidated billing functionality is available. For more information,
+     *        see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">
+     *        Enabling All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see OrganizationMode
+     * @see OrganizationFeatureSet
      */
 
-    public Organization withMode(OrganizationMode mode) {
-        setMode(mode);
+    public Organization withFeatureSet(OrganizationFeatureSet featureSet) {
+        setFeatureSet(featureSet);
         return this;
     }
 
@@ -347,18 +343,18 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) of the account that is designated as the master account for the organization.
      * </p>
      * <p>
-     * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * For more information about ARNs in Organizations, see <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * 
      * @param masterAccountArn
      *        The Amazon Resource Name (ARN) of the account that is designated as the master account for the
      *        organization.</p>
      *        <p>
-     *        For more information about ARNs, see <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *        For more information about ARNs in Organizations, see <a href=
+     *        "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
+     *        >ARN Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      */
 
     public void setMasterAccountArn(String masterAccountArn) {
@@ -370,17 +366,17 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) of the account that is designated as the master account for the organization.
      * </p>
      * <p>
-     * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * For more information about ARNs in Organizations, see <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the account that is designated as the master account for the
      *         organization.</p>
      *         <p>
-     *         For more information about ARNs, see <a href=
-     *         "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-     *         >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *         For more information about ARNs in Organizations, see <a href=
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
+     *         >ARN Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      */
 
     public String getMasterAccountArn() {
@@ -392,18 +388,18 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) of the account that is designated as the master account for the organization.
      * </p>
      * <p>
-     * For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * For more information about ARNs in Organizations, see <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * 
      * @param masterAccountArn
      *        The Amazon Resource Name (ARN) of the account that is designated as the master account for the
      *        organization.</p>
      *        <p>
-     *        For more information about ARNs, see <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"
-     *        >Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *        For more information about ARNs in Organizations, see <a href=
+     *        "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
+     *        >ARN Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -521,12 +517,12 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of policy types that are enabled for this organization. For example, if your organization is in
-     * full-control mode, then service control policies (SCPs) are included in the list.
+     * A list of policy types that are enabled for this organization. For example, if your organization has all features
+     * enabled, then service control policies (SCPs) are included in the list.
      * </p>
      * 
-     * @return A list of policy types that are enabled for this organization. For example, if your organization is in
-     *         full-control mode, then service control policies (SCPs) are included in the list.
+     * @return A list of policy types that are enabled for this organization. For example, if your organization has all
+     *         features enabled, then service control policies (SCPs) are included in the list.
      */
 
     public java.util.List<PolicyTypeSummary> getAvailablePolicyTypes() {
@@ -535,13 +531,13 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of policy types that are enabled for this organization. For example, if your organization is in
-     * full-control mode, then service control policies (SCPs) are included in the list.
+     * A list of policy types that are enabled for this organization. For example, if your organization has all features
+     * enabled, then service control policies (SCPs) are included in the list.
      * </p>
      * 
      * @param availablePolicyTypes
-     *        A list of policy types that are enabled for this organization. For example, if your organization is in
-     *        full-control mode, then service control policies (SCPs) are included in the list.
+     *        A list of policy types that are enabled for this organization. For example, if your organization has all
+     *        features enabled, then service control policies (SCPs) are included in the list.
      */
 
     public void setAvailablePolicyTypes(java.util.Collection<PolicyTypeSummary> availablePolicyTypes) {
@@ -555,8 +551,8 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of policy types that are enabled for this organization. For example, if your organization is in
-     * full-control mode, then service control policies (SCPs) are included in the list.
+     * A list of policy types that are enabled for this organization. For example, if your organization has all features
+     * enabled, then service control policies (SCPs) are included in the list.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -565,8 +561,8 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param availablePolicyTypes
-     *        A list of policy types that are enabled for this organization. For example, if your organization is in
-     *        full-control mode, then service control policies (SCPs) are included in the list.
+     *        A list of policy types that are enabled for this organization. For example, if your organization has all
+     *        features enabled, then service control policies (SCPs) are included in the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -582,13 +578,13 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of policy types that are enabled for this organization. For example, if your organization is in
-     * full-control mode, then service control policies (SCPs) are included in the list.
+     * A list of policy types that are enabled for this organization. For example, if your organization has all features
+     * enabled, then service control policies (SCPs) are included in the list.
      * </p>
      * 
      * @param availablePolicyTypes
-     *        A list of policy types that are enabled for this organization. For example, if your organization is in
-     *        full-control mode, then service control policies (SCPs) are included in the list.
+     *        A list of policy types that are enabled for this organization. For example, if your organization has all
+     *        features enabled, then service control policies (SCPs) are included in the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -612,8 +608,8 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
             sb.append("Id: ").append(getId()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
-        if (getMode() != null)
-            sb.append("Mode: ").append(getMode()).append(",");
+        if (getFeatureSet() != null)
+            sb.append("FeatureSet: ").append(getFeatureSet()).append(",");
         if (getMasterAccountArn() != null)
             sb.append("MasterAccountArn: ").append(getMasterAccountArn()).append(",");
         if (getMasterAccountId() != null)
@@ -644,9 +640,9 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
-        if (other.getMode() == null ^ this.getMode() == null)
+        if (other.getFeatureSet() == null ^ this.getFeatureSet() == null)
             return false;
-        if (other.getMode() != null && other.getMode().equals(this.getMode()) == false)
+        if (other.getFeatureSet() != null && other.getFeatureSet().equals(this.getFeatureSet()) == false)
             return false;
         if (other.getMasterAccountArn() == null ^ this.getMasterAccountArn() == null)
             return false;
@@ -674,7 +670,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
-        hashCode = prime * hashCode + ((getMode() == null) ? 0 : getMode().hashCode());
+        hashCode = prime * hashCode + ((getFeatureSet() == null) ? 0 : getFeatureSet().hashCode());
         hashCode = prime * hashCode + ((getMasterAccountArn() == null) ? 0 : getMasterAccountArn().hashCode());
         hashCode = prime * hashCode + ((getMasterAccountId() == null) ? 0 : getMasterAccountId().hashCode());
         hashCode = prime * hashCode + ((getMasterAccountEmail() == null) ? 0 : getMasterAccountEmail().hashCode());

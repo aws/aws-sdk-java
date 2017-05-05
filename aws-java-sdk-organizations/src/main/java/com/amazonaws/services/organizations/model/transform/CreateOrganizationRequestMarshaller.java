@@ -27,8 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateOrganizationRequestMarshaller {
 
-    private static final MarshallingInfo<String> MODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("Mode").build();
+    private static final MarshallingInfo<String> FEATURESET_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FeatureSet").build();
 
     private static final CreateOrganizationRequestMarshaller instance = new CreateOrganizationRequestMarshaller();
 
@@ -46,7 +46,7 @@ public class CreateOrganizationRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(createOrganizationRequest.getMode(), MODE_BINDING);
+            protocolMarshaller.marshall(createOrganizationRequest.getFeatureSet(), FEATURESET_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

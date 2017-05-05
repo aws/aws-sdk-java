@@ -21,8 +21,8 @@ import javax.annotation.Generated;
 public enum ActionType {
 
     INVITE("INVITE"),
-    ENABLE_FULL_CONTROL("ENABLE_FULL_CONTROL"),
-    APPROVE_FULL_CONTROL("APPROVE_FULL_CONTROL");
+    ENABLE_ALL_FEATURES("ENABLE_ALL_FEATURES"),
+    APPROVE_ALL_FEATURES("APPROVE_ALL_FEATURES");
 
     private String value;
 

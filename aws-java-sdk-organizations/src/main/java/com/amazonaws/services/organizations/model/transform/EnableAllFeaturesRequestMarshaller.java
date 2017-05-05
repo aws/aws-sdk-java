@@ -21,24 +21,24 @@ import com.amazonaws.protocol.*;
 import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * EnableFullControlRequestMarshaller
+ * EnableAllFeaturesRequestMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 @SdkInternalApi
-public class EnableFullControlRequestMarshaller {
+public class EnableAllFeaturesRequestMarshaller {
 
-    private static final EnableFullControlRequestMarshaller instance = new EnableFullControlRequestMarshaller();
+    private static final EnableAllFeaturesRequestMarshaller instance = new EnableAllFeaturesRequestMarshaller();
 
-    public static EnableFullControlRequestMarshaller getInstance() {
+    public static EnableAllFeaturesRequestMarshaller getInstance() {
         return instance;
     }
 
     /**
      * Marshall the given parameter object.
      */
-    public void marshall(EnableFullControlRequest enableFullControlRequest, ProtocolMarshaller protocolMarshaller) {
+    public void marshall(EnableAllFeaturesRequest enableAllFeaturesRequest, ProtocolMarshaller protocolMarshaller) {
 
-        if (enableFullControlRequest == null) {
+        if (enableAllFeaturesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 

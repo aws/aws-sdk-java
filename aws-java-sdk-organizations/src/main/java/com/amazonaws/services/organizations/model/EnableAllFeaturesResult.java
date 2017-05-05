@@ -17,29 +17,29 @@ import javax.annotation.Generated;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableFullControl" target="_top">AWS
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAllFeatures" target="_top">AWS
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EnableFullControlResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
+public class EnableAllFeaturesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A structure that contains details about the handshake created to support this request to migrate to full-control
-     * mode.
+     * A structure that contains details about the handshake created to support this request to enable all features in
+     * the organization.
      * </p>
      */
     private Handshake handshake;
 
     /**
      * <p>
-     * A structure that contains details about the handshake created to support this request to migrate to full-control
-     * mode.
+     * A structure that contains details about the handshake created to support this request to enable all features in
+     * the organization.
      * </p>
      * 
      * @param handshake
-     *        A structure that contains details about the handshake created to support this request to migrate to
-     *        full-control mode.
+     *        A structure that contains details about the handshake created to support this request to enable all
+     *        features in the organization.
      */
 
     public void setHandshake(Handshake handshake) {
@@ -48,12 +48,12 @@ public class EnableFullControlResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A structure that contains details about the handshake created to support this request to migrate to full-control
-     * mode.
+     * A structure that contains details about the handshake created to support this request to enable all features in
+     * the organization.
      * </p>
      * 
-     * @return A structure that contains details about the handshake created to support this request to migrate to
-     *         full-control mode.
+     * @return A structure that contains details about the handshake created to support this request to enable all
+     *         features in the organization.
      */
 
     public Handshake getHandshake() {
@@ -62,17 +62,17 @@ public class EnableFullControlResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A structure that contains details about the handshake created to support this request to migrate to full-control
-     * mode.
+     * A structure that contains details about the handshake created to support this request to enable all features in
+     * the organization.
      * </p>
      * 
      * @param handshake
-     *        A structure that contains details about the handshake created to support this request to migrate to
-     *        full-control mode.
+     *        A structure that contains details about the handshake created to support this request to enable all
+     *        features in the organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public EnableFullControlResult withHandshake(Handshake handshake) {
+    public EnableAllFeaturesResult withHandshake(Handshake handshake) {
         setHandshake(handshake);
         return this;
     }
@@ -101,9 +101,9 @@ public class EnableFullControlResult extends com.amazonaws.AmazonWebServiceResul
         if (obj == null)
             return false;
 
-        if (obj instanceof EnableFullControlResult == false)
+        if (obj instanceof EnableAllFeaturesResult == false)
             return false;
-        EnableFullControlResult other = (EnableFullControlResult) obj;
+        EnableAllFeaturesResult other = (EnableAllFeaturesResult) obj;
         if (other.getHandshake() == null ^ this.getHandshake() == null)
             return false;
         if (other.getHandshake() != null && other.getHandshake().equals(this.getHandshake()) == false)
@@ -121,9 +121,9 @@ public class EnableFullControlResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     @Override
-    public EnableFullControlResult clone() {
+    public EnableAllFeaturesResult clone() {
         try {
-            return (EnableFullControlResult) super.clone();
+            return (EnableAllFeaturesResult) super.clone();
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }

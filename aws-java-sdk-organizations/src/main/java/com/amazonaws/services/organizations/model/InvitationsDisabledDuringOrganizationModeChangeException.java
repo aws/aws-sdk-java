@@ -12,15 +12,14 @@
  */
 package com.amazonaws.services.organizations.model;
 
-import javax.annotation.Generated;
-
 /**
  * <p>
  * You can't send invitations to join an organization that is in the process of upgrading to full-control mode. Wait
  * until the switch to full-control mode complete and try again.
  * </p>
+ * @deprecated exception will never be raised, no longer in use.
  */
-@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@Deprecated
 public class InvitationsDisabledDuringOrganizationModeChangeException extends com.amazonaws.services.organizations.model.AWSOrganizationsException {
     private static final long serialVersionUID = 1L;
 

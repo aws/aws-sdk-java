@@ -12,14 +12,13 @@
  */
 package com.amazonaws.services.organizations.model;
 
-import javax.annotation.Generated;
-
 /**
  * <p>
  * This organization is already in full-control mode.
  * </p>
+ * @deprecated exception will never be raised, no longer in use.
  */
-@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@Deprecated
 public class FullControlAlreadyEnabledException extends com.amazonaws.services.organizations.model.AWSOrganizationsException {
     private static final long serialVersionUID = 1L;
 

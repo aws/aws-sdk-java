@@ -19,11 +19,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableFullControl" target="_top">AWS
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAllFeatures" target="_top">AWS
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EnableFullControlRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
+public class EnableAllFeaturesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
      * Returns a string representation of this object; useful for testing and debugging.
@@ -47,9 +47,9 @@ public class EnableFullControlRequest extends com.amazonaws.AmazonWebServiceRequ
         if (obj == null)
             return false;
 
-        if (obj instanceof EnableFullControlRequest == false)
+        if (obj instanceof EnableAllFeaturesRequest == false)
             return false;
-        EnableFullControlRequest other = (EnableFullControlRequest) obj;
+        EnableAllFeaturesRequest other = (EnableAllFeaturesRequest) obj;
         return true;
     }
 
@@ -62,8 +62,8 @@ public class EnableFullControlRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     @Override
-    public EnableFullControlRequest clone() {
-        return (EnableFullControlRequest) super.clone();
+    public EnableAllFeaturesRequest clone() {
+        return (EnableAllFeaturesRequest) super.clone();
     }
 
 }

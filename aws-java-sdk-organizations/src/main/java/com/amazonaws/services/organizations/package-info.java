@@ -19,7 +19,7 @@
  * </p>
  * <p>
  * This guide provides descriptions of the Organizations API. For more information about using this service, see the <a
- * href="http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_introduction.html">AWS Organizations User
+ * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">AWS Organizations User
  * Guide</a>.
  * </p>
  * <p>
@@ -41,7 +41,7 @@
  * <p>
  * We recommend that you use the AWS SDKs to make programmatic API calls to Organizations. However, you also can use the
  * Organizations Query API to make direct calls to the Organizations web service. To learn more about the Organizations
- * Query API, see <a href="http://docs.aws.amazon.com/organizations/latest/UserGuide/orgs_query-requests.html">Making
+ * Query API, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_query-requests.html">Making
  * Query Requests</a> in the <i>AWS Organizations User Guide</i>. Organizations supports GET and POST requests for all
  * actions. That is, the API does not require you to use GET for some actions and POST for others. However, GET requests
  * are subject to the limitation size of a URL. Therefore, for operations that require larger sizes, use a POST request.
@@ -78,10 +78,10 @@
  * <p>
  * We welcome your feedback. Send your comments to <a
  * href="mailto:feedback-awsorganizations@amazon.com">feedback-awsorganizations@amazon.com</a> or post your feedback and
- * questions in our private <a href="https://forums.aws.amazon.com/forum.jspa?forumID=219">AWS Organizations support
+ * questions in our private <a href="http://forums.aws.amazon.com/forum.jspa?forumID=219">AWS Organizations support
  * forum</a>. If you don't have access to the forum, send a request for access to the email address, along with your
  * forum user ID. For more information about the AWS support forums, see <a
- * href="https://forums.aws.amazon.com/help.jspa">Forums Help</a>.
+ * href="http://forums.aws.amazon.com/help.jspa">Forums Help</a>.
  * </p>
  * <p>
  * <b>Endpoint to Call When Using the CLI or the AWS API</b>

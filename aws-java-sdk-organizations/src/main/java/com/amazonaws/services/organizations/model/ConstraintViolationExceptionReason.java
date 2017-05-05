@@ -18,14 +18,22 @@ import javax.annotation.Generated;
  * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public enum OrganizationMode {
+public enum ConstraintViolationExceptionReason {
 
-    FULL_CONTROL("FULL_CONTROL"),
-    BILLING("BILLING");
+    ACCOUNT_NUMBER_LIMIT_EXCEEDED("ACCOUNT_NUMBER_LIMIT_EXCEEDED"),
+    HANDSHAKE_RATE_LIMIT_EXCEEDED("HANDSHAKE_RATE_LIMIT_EXCEEDED"),
+    OU_NUMBER_LIMIT_EXCEEDED("OU_NUMBER_LIMIT_EXCEEDED"),
+    OU_DEPTH_LIMIT_EXCEEDED("OU_DEPTH_LIMIT_EXCEEDED"),
+    POLICY_NUMBER_LIMIT_EXCEEDED("POLICY_NUMBER_LIMIT_EXCEEDED"),
+    MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED("MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED"),
+    MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED("MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED"),
+    ACCOUNT_CANNOT_LEAVE_ORGANIZATION("ACCOUNT_CANNOT_LEAVE_ORGANIZATION"),
+    MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED("MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED"),
+    ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED("ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED");
 
     private String value;
 
-    private OrganizationMode(String value) {
+    private ConstraintViolationExceptionReason(String value) {
         this.value = value;
     }
 
@@ -39,14 +47,14 @@ public enum OrganizationMode {
      *
      * @param value
      *        real value
-     * @return OrganizationMode corresponding to the value
+     * @return ConstraintViolationExceptionReason corresponding to the value
      */
-    public static OrganizationMode fromValue(String value) {
+    public static ConstraintViolationExceptionReason fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         }
 
-        for (OrganizationMode enumEntry : OrganizationMode.values()) {
+        for (ConstraintViolationExceptionReason enumEntry : ConstraintViolationExceptionReason.values()) {
             if (enumEntry.toString().equals(value)) {
                 return enumEntry;
             }

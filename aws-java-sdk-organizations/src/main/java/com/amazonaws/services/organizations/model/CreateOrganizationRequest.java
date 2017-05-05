@@ -27,344 +27,290 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies the mode that the new organization is in. Each mode supports different levels of functionality.
+     * Specifies the feature set supported by the new organization. Each feature set supports different levels of
+     * functionality.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>BILLING</i>: All member accounts have their bills consolidated to and paid by the master account. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_getting-started_concepts.html#billing-mode"
-     * >Billing mode</a> in the <i>AWS Organizations User Guide</i>.
+     * <i>CONSOLIDATED_BILLING</i>: All member accounts have their bills consolidated to and paid by the master account.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only"
+     * >Consolidated Billing</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
-     * <note>
-     * <p>
-     * If you use the AWS Organizations console, you can create an organization only in full-control mode. To create an
-     * organization in billing mode, you must call this API through a tool such as the AWS CLI or an AWS SDK.
-     * </p>
-     * </note></li>
+     * </li>
      * <li>
      * <p>
-     * <i>FULL_CONTROL</i>: In addition to all the features of billing mode, the master account can apply any type of
-     * organizational control policy (OCP) to any member account in the organization. For more information, see <a href=
-     * "http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_getting-started_concepts.html#full-control-mode"
-     * >Full-control mode</a> in the <i>AWS Organizations User Guide</i>.
+     * <i>ALL</i>: In addition to all the features supported by the consolidated billing feature set, the master account
+     * can also apply any type of policy to any member account in the organization. For more information, see <a href=
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all"
+     * >All features</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * </li>
      * </ul>
      */
-    private String mode;
+    private String featureSet;
 
     /**
      * <p>
-     * Specifies the mode that the new organization is in. Each mode supports different levels of functionality.
+     * Specifies the feature set supported by the new organization. Each feature set supports different levels of
+     * functionality.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>BILLING</i>: All member accounts have their bills consolidated to and paid by the master account. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_getting-started_concepts.html#billing-mode"
-     * >Billing mode</a> in the <i>AWS Organizations User Guide</i>.
+     * <i>CONSOLIDATED_BILLING</i>: All member accounts have their bills consolidated to and paid by the master account.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only"
+     * >Consolidated Billing</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
-     * <note>
-     * <p>
-     * If you use the AWS Organizations console, you can create an organization only in full-control mode. To create an
-     * organization in billing mode, you must call this API through a tool such as the AWS CLI or an AWS SDK.
-     * </p>
-     * </note></li>
+     * </li>
      * <li>
      * <p>
-     * <i>FULL_CONTROL</i>: In addition to all the features of billing mode, the master account can apply any type of
-     * organizational control policy (OCP) to any member account in the organization. For more information, see <a href=
-     * "http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_getting-started_concepts.html#full-control-mode"
-     * >Full-control mode</a> in the <i>AWS Organizations User Guide</i>.
+     * <i>ALL</i>: In addition to all the features supported by the consolidated billing feature set, the master account
+     * can also apply any type of policy to any member account in the organization. For more information, see <a href=
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all"
+     * >All features</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * </li>
      * </ul>
      * 
-     * @param mode
-     *        Specifies the mode that the new organization is in. Each mode supports different levels of
+     * @param featureSet
+     *        Specifies the feature set supported by the new organization. Each feature set supports different levels of
      *        functionality.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>BILLING</i>: All member accounts have their bills consolidated to and paid by the master account. For
-     *        more information, see <a href=
-     *        "http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_getting-started_concepts.html#billing-mode"
-     *        >Billing mode</a> in the <i>AWS Organizations User Guide</i>.
-     *        </p>
-     *        <note>
-     *        <p>
-     *        If you use the AWS Organizations console, you can create an organization only in full-control mode. To
-     *        create an organization in billing mode, you must call this API through a tool such as the AWS CLI or an
-     *        AWS SDK.
-     *        </p>
-     *        </note></li>
-     *        <li>
-     *        <p>
-     *        <i>FULL_CONTROL</i>: In addition to all the features of billing mode, the master account can apply any
-     *        type of organizational control policy (OCP) to any member account in the organization. For more
-     *        information, see <a href=
-     *        "http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_getting-started_concepts.html#full-control-mode"
-     *        >Full-control mode</a> in the <i>AWS Organizations User Guide</i>.
+     *        <i>CONSOLIDATED_BILLING</i>: All member accounts have their bills consolidated to and paid by the master
+     *        account. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only"
+     *        >Consolidated Billing</a> in the <i>AWS Organizations User Guide</i>.
      *        </p>
      *        </li>
-     * @see OrganizationMode
+     *        <li>
+     *        <p>
+     *        <i>ALL</i>: In addition to all the features supported by the consolidated billing feature set, the master
+     *        account can also apply any type of policy to any member account in the organization. For more information,
+     *        see <a href=
+     *        "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all"
+     *        >All features</a> in the <i>AWS Organizations User Guide</i>.
+     *        </p>
+     *        </li>
+     * @see OrganizationFeatureSet
      */
 
-    public void setMode(String mode) {
-        this.mode = mode;
+    public void setFeatureSet(String featureSet) {
+        this.featureSet = featureSet;
     }
 
     /**
      * <p>
-     * Specifies the mode that the new organization is in. Each mode supports different levels of functionality.
+     * Specifies the feature set supported by the new organization. Each feature set supports different levels of
+     * functionality.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>BILLING</i>: All member accounts have their bills consolidated to and paid by the master account. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_getting-started_concepts.html#billing-mode"
-     * >Billing mode</a> in the <i>AWS Organizations User Guide</i>.
+     * <i>CONSOLIDATED_BILLING</i>: All member accounts have their bills consolidated to and paid by the master account.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only"
+     * >Consolidated Billing</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
-     * <note>
-     * <p>
-     * If you use the AWS Organizations console, you can create an organization only in full-control mode. To create an
-     * organization in billing mode, you must call this API through a tool such as the AWS CLI or an AWS SDK.
-     * </p>
-     * </note></li>
+     * </li>
      * <li>
      * <p>
-     * <i>FULL_CONTROL</i>: In addition to all the features of billing mode, the master account can apply any type of
-     * organizational control policy (OCP) to any member account in the organization. For more information, see <a href=
-     * "http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_getting-started_concepts.html#full-control-mode"
-     * >Full-control mode</a> in the <i>AWS Organizations User Guide</i>.
+     * <i>ALL</i>: In addition to all the features supported by the consolidated billing feature set, the master account
+     * can also apply any type of policy to any member account in the organization. For more information, see <a href=
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all"
+     * >All features</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return Specifies the mode that the new organization is in. Each mode supports different levels of
-     *         functionality.</p>
+     * @return Specifies the feature set supported by the new organization. Each feature set supports different levels
+     *         of functionality.</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <i>BILLING</i>: All member accounts have their bills consolidated to and paid by the master account. For
-     *         more information, see <a href=
-     *         "http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_getting-started_concepts.html#billing-mode"
-     *         >Billing mode</a> in the <i>AWS Organizations User Guide</i>.
-     *         </p>
-     *         <note>
-     *         <p>
-     *         If you use the AWS Organizations console, you can create an organization only in full-control mode. To
-     *         create an organization in billing mode, you must call this API through a tool such as the AWS CLI or an
-     *         AWS SDK.
-     *         </p>
-     *         </note></li>
-     *         <li>
-     *         <p>
-     *         <i>FULL_CONTROL</i>: In addition to all the features of billing mode, the master account can apply any
-     *         type of organizational control policy (OCP) to any member account in the organization. For more
-     *         information, see <a href=
-     *         "http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_getting-started_concepts.html#full-control-mode"
-     *         >Full-control mode</a> in the <i>AWS Organizations User Guide</i>.
+     *         <i>CONSOLIDATED_BILLING</i>: All member accounts have their bills consolidated to and paid by the master
+     *         account. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only"
+     *         >Consolidated Billing</a> in the <i>AWS Organizations User Guide</i>.
      *         </p>
      *         </li>
-     * @see OrganizationMode
+     *         <li>
+     *         <p>
+     *         <i>ALL</i>: In addition to all the features supported by the consolidated billing feature set, the master
+     *         account can also apply any type of policy to any member account in the organization. For more
+     *         information, see <a href=
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all"
+     *         >All features</a> in the <i>AWS Organizations User Guide</i>.
+     *         </p>
+     *         </li>
+     * @see OrganizationFeatureSet
      */
 
-    public String getMode() {
-        return this.mode;
+    public String getFeatureSet() {
+        return this.featureSet;
     }
 
     /**
      * <p>
-     * Specifies the mode that the new organization is in. Each mode supports different levels of functionality.
+     * Specifies the feature set supported by the new organization. Each feature set supports different levels of
+     * functionality.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>BILLING</i>: All member accounts have their bills consolidated to and paid by the master account. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_getting-started_concepts.html#billing-mode"
-     * >Billing mode</a> in the <i>AWS Organizations User Guide</i>.
+     * <i>CONSOLIDATED_BILLING</i>: All member accounts have their bills consolidated to and paid by the master account.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only"
+     * >Consolidated Billing</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
-     * <note>
-     * <p>
-     * If you use the AWS Organizations console, you can create an organization only in full-control mode. To create an
-     * organization in billing mode, you must call this API through a tool such as the AWS CLI or an AWS SDK.
-     * </p>
-     * </note></li>
+     * </li>
      * <li>
      * <p>
-     * <i>FULL_CONTROL</i>: In addition to all the features of billing mode, the master account can apply any type of
-     * organizational control policy (OCP) to any member account in the organization. For more information, see <a href=
-     * "http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_getting-started_concepts.html#full-control-mode"
-     * >Full-control mode</a> in the <i>AWS Organizations User Guide</i>.
+     * <i>ALL</i>: In addition to all the features supported by the consolidated billing feature set, the master account
+     * can also apply any type of policy to any member account in the organization. For more information, see <a href=
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all"
+     * >All features</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * </li>
      * </ul>
      * 
-     * @param mode
-     *        Specifies the mode that the new organization is in. Each mode supports different levels of
+     * @param featureSet
+     *        Specifies the feature set supported by the new organization. Each feature set supports different levels of
      *        functionality.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>BILLING</i>: All member accounts have their bills consolidated to and paid by the master account. For
-     *        more information, see <a href=
-     *        "http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_getting-started_concepts.html#billing-mode"
-     *        >Billing mode</a> in the <i>AWS Organizations User Guide</i>.
+     *        <i>CONSOLIDATED_BILLING</i>: All member accounts have their bills consolidated to and paid by the master
+     *        account. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only"
+     *        >Consolidated Billing</a> in the <i>AWS Organizations User Guide</i>.
      *        </p>
-     *        <note>
-     *        <p>
-     *        If you use the AWS Organizations console, you can create an organization only in full-control mode. To
-     *        create an organization in billing mode, you must call this API through a tool such as the AWS CLI or an
-     *        AWS SDK.
-     *        </p>
-     *        </note></li>
+     *        </li>
      *        <li>
      *        <p>
-     *        <i>FULL_CONTROL</i>: In addition to all the features of billing mode, the master account can apply any
-     *        type of organizational control policy (OCP) to any member account in the organization. For more
-     *        information, see <a href=
-     *        "http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_getting-started_concepts.html#full-control-mode"
-     *        >Full-control mode</a> in the <i>AWS Organizations User Guide</i>.
+     *        <i>ALL</i>: In addition to all the features supported by the consolidated billing feature set, the master
+     *        account can also apply any type of policy to any member account in the organization. For more information,
+     *        see <a href=
+     *        "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all"
+     *        >All features</a> in the <i>AWS Organizations User Guide</i>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see OrganizationMode
+     * @see OrganizationFeatureSet
      */
 
-    public CreateOrganizationRequest withMode(String mode) {
-        setMode(mode);
+    public CreateOrganizationRequest withFeatureSet(String featureSet) {
+        setFeatureSet(featureSet);
         return this;
     }
 
     /**
      * <p>
-     * Specifies the mode that the new organization is in. Each mode supports different levels of functionality.
+     * Specifies the feature set supported by the new organization. Each feature set supports different levels of
+     * functionality.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>BILLING</i>: All member accounts have their bills consolidated to and paid by the master account. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_getting-started_concepts.html#billing-mode"
-     * >Billing mode</a> in the <i>AWS Organizations User Guide</i>.
+     * <i>CONSOLIDATED_BILLING</i>: All member accounts have their bills consolidated to and paid by the master account.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only"
+     * >Consolidated Billing</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
-     * <note>
-     * <p>
-     * If you use the AWS Organizations console, you can create an organization only in full-control mode. To create an
-     * organization in billing mode, you must call this API through a tool such as the AWS CLI or an AWS SDK.
-     * </p>
-     * </note></li>
+     * </li>
      * <li>
      * <p>
-     * <i>FULL_CONTROL</i>: In addition to all the features of billing mode, the master account can apply any type of
-     * organizational control policy (OCP) to any member account in the organization. For more information, see <a href=
-     * "http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_getting-started_concepts.html#full-control-mode"
-     * >Full-control mode</a> in the <i>AWS Organizations User Guide</i>.
+     * <i>ALL</i>: In addition to all the features supported by the consolidated billing feature set, the master account
+     * can also apply any type of policy to any member account in the organization. For more information, see <a href=
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all"
+     * >All features</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * </li>
      * </ul>
      * 
-     * @param mode
-     *        Specifies the mode that the new organization is in. Each mode supports different levels of
+     * @param featureSet
+     *        Specifies the feature set supported by the new organization. Each feature set supports different levels of
      *        functionality.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>BILLING</i>: All member accounts have their bills consolidated to and paid by the master account. For
-     *        more information, see <a href=
-     *        "http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_getting-started_concepts.html#billing-mode"
-     *        >Billing mode</a> in the <i>AWS Organizations User Guide</i>.
-     *        </p>
-     *        <note>
-     *        <p>
-     *        If you use the AWS Organizations console, you can create an organization only in full-control mode. To
-     *        create an organization in billing mode, you must call this API through a tool such as the AWS CLI or an
-     *        AWS SDK.
-     *        </p>
-     *        </note></li>
-     *        <li>
-     *        <p>
-     *        <i>FULL_CONTROL</i>: In addition to all the features of billing mode, the master account can apply any
-     *        type of organizational control policy (OCP) to any member account in the organization. For more
-     *        information, see <a href=
-     *        "http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_getting-started_concepts.html#full-control-mode"
-     *        >Full-control mode</a> in the <i>AWS Organizations User Guide</i>.
+     *        <i>CONSOLIDATED_BILLING</i>: All member accounts have their bills consolidated to and paid by the master
+     *        account. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only"
+     *        >Consolidated Billing</a> in the <i>AWS Organizations User Guide</i>.
      *        </p>
      *        </li>
-     * @see OrganizationMode
+     *        <li>
+     *        <p>
+     *        <i>ALL</i>: In addition to all the features supported by the consolidated billing feature set, the master
+     *        account can also apply any type of policy to any member account in the organization. For more information,
+     *        see <a href=
+     *        "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all"
+     *        >All features</a> in the <i>AWS Organizations User Guide</i>.
+     *        </p>
+     *        </li>
+     * @see OrganizationFeatureSet
      */
 
-    public void setMode(OrganizationMode mode) {
-        this.mode = mode.toString();
+    public void setFeatureSet(OrganizationFeatureSet featureSet) {
+        this.featureSet = featureSet.toString();
     }
 
     /**
      * <p>
-     * Specifies the mode that the new organization is in. Each mode supports different levels of functionality.
+     * Specifies the feature set supported by the new organization. Each feature set supports different levels of
+     * functionality.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>BILLING</i>: All member accounts have their bills consolidated to and paid by the master account. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_getting-started_concepts.html#billing-mode"
-     * >Billing mode</a> in the <i>AWS Organizations User Guide</i>.
+     * <i>CONSOLIDATED_BILLING</i>: All member accounts have their bills consolidated to and paid by the master account.
+     * For more information, see <a href=
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only"
+     * >Consolidated Billing</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
-     * <note>
-     * <p>
-     * If you use the AWS Organizations console, you can create an organization only in full-control mode. To create an
-     * organization in billing mode, you must call this API through a tool such as the AWS CLI or an AWS SDK.
-     * </p>
-     * </note></li>
+     * </li>
      * <li>
      * <p>
-     * <i>FULL_CONTROL</i>: In addition to all the features of billing mode, the master account can apply any type of
-     * organizational control policy (OCP) to any member account in the organization. For more information, see <a href=
-     * "http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_getting-started_concepts.html#full-control-mode"
-     * >Full-control mode</a> in the <i>AWS Organizations User Guide</i>.
+     * <i>ALL</i>: In addition to all the features supported by the consolidated billing feature set, the master account
+     * can also apply any type of policy to any member account in the organization. For more information, see <a href=
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all"
+     * >All features</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * </li>
      * </ul>
      * 
-     * @param mode
-     *        Specifies the mode that the new organization is in. Each mode supports different levels of
+     * @param featureSet
+     *        Specifies the feature set supported by the new organization. Each feature set supports different levels of
      *        functionality.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>BILLING</i>: All member accounts have their bills consolidated to and paid by the master account. For
-     *        more information, see <a href=
-     *        "http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_getting-started_concepts.html#billing-mode"
-     *        >Billing mode</a> in the <i>AWS Organizations User Guide</i>.
+     *        <i>CONSOLIDATED_BILLING</i>: All member accounts have their bills consolidated to and paid by the master
+     *        account. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only"
+     *        >Consolidated Billing</a> in the <i>AWS Organizations User Guide</i>.
      *        </p>
-     *        <note>
-     *        <p>
-     *        If you use the AWS Organizations console, you can create an organization only in full-control mode. To
-     *        create an organization in billing mode, you must call this API through a tool such as the AWS CLI or an
-     *        AWS SDK.
-     *        </p>
-     *        </note></li>
+     *        </li>
      *        <li>
      *        <p>
-     *        <i>FULL_CONTROL</i>: In addition to all the features of billing mode, the master account can apply any
-     *        type of organizational control policy (OCP) to any member account in the organization. For more
-     *        information, see <a href=
-     *        "http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_getting-started_concepts.html#full-control-mode"
-     *        >Full-control mode</a> in the <i>AWS Organizations User Guide</i>.
+     *        <i>ALL</i>: In addition to all the features supported by the consolidated billing feature set, the master
+     *        account can also apply any type of policy to any member account in the organization. For more information,
+     *        see <a href=
+     *        "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all"
+     *        >All features</a> in the <i>AWS Organizations User Guide</i>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see OrganizationMode
+     * @see OrganizationFeatureSet
      */
 
-    public CreateOrganizationRequest withMode(OrganizationMode mode) {
-        setMode(mode);
+    public CreateOrganizationRequest withFeatureSet(OrganizationFeatureSet featureSet) {
+        setFeatureSet(featureSet);
         return this;
     }
 
@@ -379,8 +325,8 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getMode() != null)
-            sb.append("Mode: ").append(getMode());
+        if (getFeatureSet() != null)
+            sb.append("FeatureSet: ").append(getFeatureSet());
         sb.append("}");
         return sb.toString();
     }
@@ -395,9 +341,9 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
         if (obj instanceof CreateOrganizationRequest == false)
             return false;
         CreateOrganizationRequest other = (CreateOrganizationRequest) obj;
-        if (other.getMode() == null ^ this.getMode() == null)
+        if (other.getFeatureSet() == null ^ this.getFeatureSet() == null)
             return false;
-        if (other.getMode() != null && other.getMode().equals(this.getMode()) == false)
+        if (other.getFeatureSet() != null && other.getFeatureSet().equals(this.getFeatureSet()) == false)
             return false;
         return true;
     }
@@ -407,7 +353,7 @@ public class CreateOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getMode() == null) ? 0 : getMode().hashCode());
+        hashCode = prime * hashCode + ((getFeatureSet() == null) ? 0 : getFeatureSet().hashCode());
         return hashCode;
     }
 

@@ -56,9 +56,9 @@ public class OrganizationJsonUnmarshaller implements Unmarshaller<Organization, 
                     context.nextToken();
                     organization.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("Mode", targetDepth)) {
+                if (context.testExpression("FeatureSet", targetDepth)) {
                     context.nextToken();
-                    organization.setMode(context.getUnmarshaller(String.class).unmarshall(context));
+                    organization.setFeatureSet(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("MasterAccountArn", targetDepth)) {
                     context.nextToken();

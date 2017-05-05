@@ -27,24 +27,24 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The policy content to add to the new OCP. For example, if you create a <a
-     * href="http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_manage_policies_scps.html">service control
+     * The policy content to add to the new policy. For example, if you create a <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service control
      * policy</a> (SCP), this string must be JSON text that specifies the permissions that admins in attached accounts
      * can delegate to their users, groups, and roles. For more information about the SCP syntax, see <a
-     * href="http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_manage_policies_scps.html#scp_syntax">Syntax
-     * for SCPs</a> in the <i>AWS Organizations User Guide</i>.
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control
+     * Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      */
     private String content;
     /**
      * <p>
-     * An optional description to assign to the OCP.
+     * An optional description to assign to the policy.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The friendly name to assign to the OCP.
+     * The friendly name to assign to the policy.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a
@@ -54,11 +54,11 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String name;
     /**
      * <p>
-     * The type of OCP to create.
+     * The type of policy to create.
      * </p>
      * <note>
      * <p>
-     * In the current release, the only type of OCP that you can create is a service control policy (SCP).
+     * In the current release, the only type of policy that you can create is a service control policy (SCP).
      * </p>
      * </note>
      */
@@ -66,22 +66,22 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The policy content to add to the new OCP. For example, if you create a <a
-     * href="http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_manage_policies_scps.html">service control
+     * The policy content to add to the new policy. For example, if you create a <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service control
      * policy</a> (SCP), this string must be JSON text that specifies the permissions that admins in attached accounts
      * can delegate to their users, groups, and roles. For more information about the SCP syntax, see <a
-     * href="http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_manage_policies_scps.html#scp_syntax">Syntax
-     * for SCPs</a> in the <i>AWS Organizations User Guide</i>.
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control
+     * Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * 
      * @param content
-     *        The policy content to add to the new OCP. For example, if you create a <a
-     *        href="http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_manage_policies_scps.html">service
+     *        The policy content to add to the new policy. For example, if you create a <a
+     *        href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service
      *        control policy</a> (SCP), this string must be JSON text that specifies the permissions that admins in
      *        attached accounts can delegate to their users, groups, and roles. For more information about the SCP
-     *        syntax, see <a href=
-     *        "http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_manage_policies_scps.html#scp_syntax"
-     *        >Syntax for SCPs</a> in the <i>AWS Organizations User Guide</i>.
+     *        syntax, see <a
+     *        href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
+     *        Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
      */
 
     public void setContent(String content) {
@@ -90,21 +90,21 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The policy content to add to the new OCP. For example, if you create a <a
-     * href="http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_manage_policies_scps.html">service control
+     * The policy content to add to the new policy. For example, if you create a <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service control
      * policy</a> (SCP), this string must be JSON text that specifies the permissions that admins in attached accounts
      * can delegate to their users, groups, and roles. For more information about the SCP syntax, see <a
-     * href="http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_manage_policies_scps.html#scp_syntax">Syntax
-     * for SCPs</a> in the <i>AWS Organizations User Guide</i>.
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control
+     * Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * 
-     * @return The policy content to add to the new OCP. For example, if you create a <a
-     *         href="http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_manage_policies_scps.html">service
+     * @return The policy content to add to the new policy. For example, if you create a <a
+     *         href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service
      *         control policy</a> (SCP), this string must be JSON text that specifies the permissions that admins in
      *         attached accounts can delegate to their users, groups, and roles. For more information about the SCP
-     *         syntax, see <a href=
-     *         "http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_manage_policies_scps.html#scp_syntax"
-     *         >Syntax for SCPs</a> in the <i>AWS Organizations User Guide</i>.
+     *         syntax, see <a
+     *         href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
+     *         Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
      */
 
     public String getContent() {
@@ -113,22 +113,22 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The policy content to add to the new OCP. For example, if you create a <a
-     * href="http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_manage_policies_scps.html">service control
+     * The policy content to add to the new policy. For example, if you create a <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service control
      * policy</a> (SCP), this string must be JSON text that specifies the permissions that admins in attached accounts
      * can delegate to their users, groups, and roles. For more information about the SCP syntax, see <a
-     * href="http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_manage_policies_scps.html#scp_syntax">Syntax
-     * for SCPs</a> in the <i>AWS Organizations User Guide</i>.
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control
+     * Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * 
      * @param content
-     *        The policy content to add to the new OCP. For example, if you create a <a
-     *        href="http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_manage_policies_scps.html">service
+     *        The policy content to add to the new policy. For example, if you create a <a
+     *        href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service
      *        control policy</a> (SCP), this string must be JSON text that specifies the permissions that admins in
      *        attached accounts can delegate to their users, groups, and roles. For more information about the SCP
-     *        syntax, see <a href=
-     *        "http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_manage_policies_scps.html#scp_syntax"
-     *        >Syntax for SCPs</a> in the <i>AWS Organizations User Guide</i>.
+     *        syntax, see <a
+     *        href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
+     *        Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,11 +139,11 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * An optional description to assign to the OCP.
+     * An optional description to assign to the policy.
      * </p>
      * 
      * @param description
-     *        An optional description to assign to the OCP.
+     *        An optional description to assign to the policy.
      */
 
     public void setDescription(String description) {
@@ -152,10 +152,10 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * An optional description to assign to the OCP.
+     * An optional description to assign to the policy.
      * </p>
      * 
-     * @return An optional description to assign to the OCP.
+     * @return An optional description to assign to the policy.
      */
 
     public String getDescription() {
@@ -164,11 +164,11 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * An optional description to assign to the OCP.
+     * An optional description to assign to the policy.
      * </p>
      * 
      * @param description
-     *        An optional description to assign to the OCP.
+     *        An optional description to assign to the policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,7 +179,7 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The friendly name to assign to the OCP.
+     * The friendly name to assign to the policy.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a
@@ -187,7 +187,7 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param name
-     *        The friendly name to assign to the OCP.</p>
+     *        The friendly name to assign to the policy.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is
      *        a string of any of the characters in the ASCII character range.
@@ -199,14 +199,14 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The friendly name to assign to the OCP.
+     * The friendly name to assign to the policy.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a
      * string of any of the characters in the ASCII character range.
      * </p>
      * 
-     * @return The friendly name to assign to the OCP.</p>
+     * @return The friendly name to assign to the policy.</p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter
      *         is a string of any of the characters in the ASCII character range.
@@ -218,7 +218,7 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The friendly name to assign to the OCP.
+     * The friendly name to assign to the policy.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a
@@ -226,7 +226,7 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param name
-     *        The friendly name to assign to the OCP.</p>
+     *        The friendly name to assign to the policy.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is
      *        a string of any of the characters in the ASCII character range.
@@ -240,18 +240,18 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of OCP to create.
+     * The type of policy to create.
      * </p>
      * <note>
      * <p>
-     * In the current release, the only type of OCP that you can create is a service control policy (SCP).
+     * In the current release, the only type of policy that you can create is a service control policy (SCP).
      * </p>
      * </note>
      * 
      * @param type
-     *        The type of OCP to create.</p> <note>
+     *        The type of policy to create.</p> <note>
      *        <p>
-     *        In the current release, the only type of OCP that you can create is a service control policy (SCP).
+     *        In the current release, the only type of policy that you can create is a service control policy (SCP).
      *        </p>
      * @see PolicyType
      */
@@ -262,17 +262,17 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of OCP to create.
+     * The type of policy to create.
      * </p>
      * <note>
      * <p>
-     * In the current release, the only type of OCP that you can create is a service control policy (SCP).
+     * In the current release, the only type of policy that you can create is a service control policy (SCP).
      * </p>
      * </note>
      * 
-     * @return The type of OCP to create.</p> <note>
+     * @return The type of policy to create.</p> <note>
      *         <p>
-     *         In the current release, the only type of OCP that you can create is a service control policy (SCP).
+     *         In the current release, the only type of policy that you can create is a service control policy (SCP).
      *         </p>
      * @see PolicyType
      */
@@ -283,18 +283,18 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of OCP to create.
+     * The type of policy to create.
      * </p>
      * <note>
      * <p>
-     * In the current release, the only type of OCP that you can create is a service control policy (SCP).
+     * In the current release, the only type of policy that you can create is a service control policy (SCP).
      * </p>
      * </note>
      * 
      * @param type
-     *        The type of OCP to create.</p> <note>
+     *        The type of policy to create.</p> <note>
      *        <p>
-     *        In the current release, the only type of OCP that you can create is a service control policy (SCP).
+     *        In the current release, the only type of policy that you can create is a service control policy (SCP).
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyType
@@ -307,18 +307,18 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of OCP to create.
+     * The type of policy to create.
      * </p>
      * <note>
      * <p>
-     * In the current release, the only type of OCP that you can create is a service control policy (SCP).
+     * In the current release, the only type of policy that you can create is a service control policy (SCP).
      * </p>
      * </note>
      * 
      * @param type
-     *        The type of OCP to create.</p> <note>
+     *        The type of policy to create.</p> <note>
      *        <p>
-     *        In the current release, the only type of OCP that you can create is a service control policy (SCP).
+     *        In the current release, the only type of policy that you can create is a service control policy (SCP).
      *        </p>
      * @see PolicyType
      */
@@ -329,18 +329,18 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of OCP to create.
+     * The type of policy to create.
      * </p>
      * <note>
      * <p>
-     * In the current release, the only type of OCP that you can create is a service control policy (SCP).
+     * In the current release, the only type of policy that you can create is a service control policy (SCP).
      * </p>
      * </note>
      * 
      * @param type
-     *        The type of OCP to create.</p> <note>
+     *        The type of policy to create.</p> <note>
      *        <p>
-     *        In the current release, the only type of OCP that you can create is a service control policy (SCP).
+     *        In the current release, the only type of policy that you can create is a service control policy (SCP).
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyType

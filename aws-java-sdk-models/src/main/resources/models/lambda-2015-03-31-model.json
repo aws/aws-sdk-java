@@ -2979,7 +2979,7 @@
       "members" : {
         "Variables" : {
           "deprecated" : false,
-          "documentation" : "<p>The key-value pairs that represent your environment's configuration settings. The value you specify cannot contain a \",\".</p>",
+          "documentation" : "<p>The key-value pairs that represent your environment's configuration settings.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -3135,7 +3135,7 @@
       "member" : null,
       "members" : { },
       "min" : 0,
-      "pattern" : "[^,]*",
+      "pattern" : null,
       "payload" : null,
       "required" : null,
       "streaming" : false,
@@ -7238,6 +7238,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "DryRun" : {
+          "deprecated" : false,
+          "documentation" : "<p>This boolean parameter can be used to test your request to AWS Lambda to update the Lambda function and publish a version as an atomic operation. It will do all necessary computation and validation of your code but will not upload it or a publish a version. Each time this operation is invoked, the <code>CodeSha256</code> hash value the provided code will also be computed and returned in the response.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Boolean",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "FunctionName" : {
           "deprecated" : false,
           "documentation" : "<p>The existing Lambda function name whose code you want to replace.</p> <p> You can specify a function name (for example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the function (for example, <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda also allows you to specify a partial ARN (for example, <code>account-id:Thumbnail</code>). Note that the length constraint applies only to the ARN. If you specify only the function name, it is limited to 64 characters in length. </p>",

@@ -133,7 +133,7 @@ public class AbstractAWSOrganizations implements AWSOrganizations {
     }
 
     @Override
-    public EnableFullControlResult enableFullControl(EnableFullControlRequest request) {
+    public EnableAllFeaturesResult enableAllFeatures(EnableAllFeaturesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

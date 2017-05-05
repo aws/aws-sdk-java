@@ -37,6 +37,7 @@ public class InvalidInputException extends com.amazonaws.services.organizations.
 
     /**
      * @param reason
+     * @see InvalidInputExceptionReason
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("Reason")
@@ -46,6 +47,7 @@ public class InvalidInputException extends com.amazonaws.services.organizations.
 
     /**
      * @return
+     * @see InvalidInputExceptionReason
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("Reason")
@@ -56,9 +58,30 @@ public class InvalidInputException extends com.amazonaws.services.organizations.
     /**
      * @param reason
      * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InvalidInputExceptionReason
      */
 
     public InvalidInputException withReason(String reason) {
+        setReason(reason);
+        return this;
+    }
+
+    /**
+     * @param reason
+     * @see InvalidInputExceptionReason
+     */
+
+    public void setReason(InvalidInputExceptionReason reason) {
+        this.reason = reason.toString();
+    }
+
+    /**
+     * @param reason
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InvalidInputExceptionReason
+     */
+
+    public InvalidInputException withReason(InvalidInputExceptionReason reason) {
         setReason(reason);
         return this;
     }

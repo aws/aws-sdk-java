@@ -1,3 +1,98 @@
+# __1.11.126__ __2017-05-04__
+## __AWS Lambda__
+  - ### Features
+    - Support for UpdateFunctionCode DryRun option
+
+## __AWS Marketplace Entitlement Service__
+  - ### Features
+    - AWS Marketplace Entitlement Service enables AWS Marketplace sellers to determine the capacity purchased by their customers.
+
+## __AWS Organizations__
+  - ### Bugfixes
+    - Updated model classes to match AWS Organizations API [specification](http://docs.aws.amazon.com/organizations/latest/APIReference/Welcome.html). This includes the following updates to the model objects:
+
+      #### Renamed Operation
+      * `AWSOrganizations.enableFullControl` renamed to `AWSOrganizations.enableAllFeatures`
+        * Previously this operation would never have completed successfully.
+
+      #### Operation Exceptions Changed
+      * `AWSOrganizations.acceptHandshake`
+         * Exceptions Removed:
+            * `AlreadyInOrganizationException` 
+            * `ConstraintViolationException`
+            * `OrganizationFromDifferentSellerOfRecordException`
+         * Exceptions Added:
+            * `HandshakeConstraintViolationException` (new to model)
+            * `HandshakeAlreadyInStateException` (new to model)
+            * `ConcurrentModificationException`
+      * `AWSOrganizations.cancelHandshake`
+         * Exception Added:
+            * `HandshakeAlreadyInStateException` (new to model)
+      * `AWSOrganizations.declineHandshake`
+         * Exception Added:
+            * `HandshakeAlreadyInStateException` (new to model)
+      * `AWSOrganizations.createOrganization`
+         * Exception Removed:
+            * `PaymentInstrumentRequiredException` 
+         * Exception Added:
+            * `ConstraintViolationException`
+      * `AWSOrganizations.createPolicy`
+         * Exception Added:
+            * `MalformedPolicyDocumentException`
+      * `AWSOrganizations.moveAccount`
+         * Exception Added:
+            * `DuplicateAccountException`
+      * `AWSOrganizations.inviteAccountToOrganization`
+         * Exceptions Removed:
+            * `ConstraintViolationException`
+            * `InvitationsDisabledDuringOrganizationModeChangeException`
+         * Exception Added:
+            * `HandshakeConstraintViolationException`
+      * `AWSOrganizations.leaveOrganization`
+         * Exception Removed:
+            * `AccountCannotLeaveOrganizationException`
+         * Exception Added:
+            * `ConstraintViolationException`
+      * `AWSOrganizations.removeAccountFromOrganization`
+         * Exception Removed:
+            * `AccountCannotLeaveOrganizationException`
+         * Exception Added:
+            * `ConstraintViolationException`
+      * `AWSOrganizations.updatePolicy`
+         * Exception Added:
+            * `ConstraintViolationException`
+
+      #### Deprecated Exceptions
+      The following exceptions are no longer in use and have been deprecated:
+      * `AccountCannotLeaveOrganizationException`
+      * `FullControlAlreadyEnabledException`
+      * `PaymentInstrumentRequiredException`
+      * `OrganizationFromDifferentSellerOfRecordException`
+      * `InvitationsDisabledDuringOrganizationModeChangeException`
+
+      #### Model Changes
+      * `mode` property on `Organization` object renamed to `featureSet`
+      * `mode` property on `CreateOrganizationRequest` object renamed to `featureSet`
+      * Enum `ActionType` values renamed:
+        * `ENABLE_FULL_CONTROL` renamed to `ENABLE_ALL_FEATURES`
+        * `APPROVE_FULL_CONTROL` renamed to `APPROVE_ALL_FEATURES`
+      * Enum `OrganizationMode` removed
+
+## __Amazon EC2 Container Service__
+  - ### Features
+    - Exposes container instance registration time in ECS:DescribeContainerInstances.
+
+## __Amazon Relational Database Service (RDS)__
+  - ### Bugfixes
+    - Fixed the DBInstanceAvailable waiter. Previously it would always throw a NullPointerException.
+
+## __Amazon S3__
+  - ### Features
+    - Added the ability to specify a filter to `TransferManager`'s `downloadDirectory` operation.
+
+  - ### Bugfixes
+    - Fixed possible security issue in `TransferManager`s `downloadDirectory` operation where files could be downloaded to a directory outside the destination directory if the key contained relative paths.
+
 # __1.11.125__ __2017-04-28__
 ## __AWS Cloud Formation__
   - ### Features

@@ -32,8 +32,8 @@ public class OrganizationMarshaller {
             .marshallLocationName("Id").build();
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Arn").build();
-    private static final MarshallingInfo<String> MODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("Mode").build();
+    private static final MarshallingInfo<String> FEATURESET_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FeatureSet").build();
     private static final MarshallingInfo<String> MASTERACCOUNTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MasterAccountArn").build();
     private static final MarshallingInfo<String> MASTERACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -61,7 +61,7 @@ public class OrganizationMarshaller {
         try {
             protocolMarshaller.marshall(organization.getId(), ID_BINDING);
             protocolMarshaller.marshall(organization.getArn(), ARN_BINDING);
-            protocolMarshaller.marshall(organization.getMode(), MODE_BINDING);
+            protocolMarshaller.marshall(organization.getFeatureSet(), FEATURESET_BINDING);
             protocolMarshaller.marshall(organization.getMasterAccountArn(), MASTERACCOUNTARN_BINDING);
             protocolMarshaller.marshall(organization.getMasterAccountId(), MASTERACCOUNTID_BINDING);
             protocolMarshaller.marshall(organization.getMasterAccountEmail(), MASTERACCOUNTEMAIL_BINDING);

@@ -12,15 +12,14 @@
  */
 package com.amazonaws.services.organizations.model;
 
-import javax.annotation.Generated;
-
 /**
  * <p>
  * You can't remove an account from an organization that was created by AWS Organizations. You can remove only invited
  * accounts.
  * </p>
+ * @deprecated exception will never be raised, no longer in use.
  */
-@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@Deprecated
 public class AccountCannotLeaveOrganizationException extends com.amazonaws.services.organizations.model.AWSOrganizationsException {
     private static final long serialVersionUID = 1L;
 

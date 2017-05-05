@@ -156,20 +156,22 @@ public interface AmazonECS {
      * The <code>minimumHealthyPercent</code> represents a lower limit on the number of your service's tasks that must
      * remain in the <code>RUNNING</code> state during a deployment, as a percentage of the <code>desiredCount</code>
      * (rounded up to the nearest integer). This parameter enables you to deploy without using additional cluster
-     * capacity. For example, if <code>desiredCount</code> is four tasks and the minimum is 50%, the scheduler can stop
-     * two existing tasks to free up cluster capacity before starting two new tasks. Tasks for services that do not use
-     * a load balancer are considered healthy if they are in the <code>RUNNING</code> state. Tasks for services that use
-     * a load balancer are considered healthy if they are in the <code>RUNNING</code> state and the container instance
-     * they are hosted on is reported as healthy by the load balancer. The default value is 50% in the console and 100%
-     * for the AWS CLI, the AWS SDKs, and the APIs.
+     * capacity. For example, if your service has a <code>desiredCount</code> of four tasks and a
+     * <code>minimumHealthyPercent</code> of 50%, the scheduler can stop two existing tasks to free up cluster capacity
+     * before starting two new tasks. Tasks for services that <i>do not</i> use a load balancer are considered healthy
+     * if they are in the <code>RUNNING</code> state. Tasks for services that <i>do</i> use a load balancer are
+     * considered healthy if they are in the <code>RUNNING</code> state and the container instance they are hosted on is
+     * reported as healthy by the load balancer. The default value for <code>minimumHealthyPercent</code> is 50% in the
+     * console and 100% for the AWS CLI, the AWS SDKs, and the APIs.
      * </p>
      * <p>
      * The <code>maximumPercent</code> parameter represents an upper limit on the number of your service's tasks that
      * are allowed in the <code>RUNNING</code> or <code>PENDING</code> state during a deployment, as a percentage of the
      * <code>desiredCount</code> (rounded down to the nearest integer). This parameter enables you to define the
-     * deployment batch size. For example, if <code>desiredCount</code> is four tasks and the maximum is 200%, the
-     * scheduler can start four new tasks before stopping the four older tasks (provided that the cluster resources
-     * required to do this are available). The default value is 200%.
+     * deployment batch size. For example, if your service has a <code>desiredCount</code> of four tasks and a
+     * <code>maximumPercent</code> value of 200%, the scheduler can start four new tasks before stopping the four older
+     * tasks (provided that the cluster resources required to do this are available). The default value for
+     * <code>maximumPercent</code> is 200%.
      * </p>
      * <p>
      * When the service scheduler launches new tasks, it determines task placement in your cluster using the following
@@ -185,7 +187,7 @@ public interface AmazonECS {
      * <li>
      * <p>
      * By default, the service scheduler attempts to balance tasks across Availability Zones in this manner (although
-     * you can choose a different placement strategy):
+     * you can choose a different placement strategy) with the <code>placementStrategy</code> parameter):
      * </p>
      * <ul>
      * <li>
@@ -374,6 +376,13 @@ public interface AmazonECS {
      * update an existing service to reference an <code>INACTIVE</code> task definition (although there may be up to a
      * 10 minute window following deregistration where these restrictions have not yet taken effect).
      * </p>
+     * <note>
+     * <p>
+     * At this time, <code>INACTIVE</code> task definitions remain discoverable in your account indefinitely; however,
+     * this behavior is subject to change in the future, so you should not rely on <code>INACTIVE</code> task
+     * definitions persisting beyond the life cycle of any associated tasks and services.
+     * </p>
+     * </note>
      * 
      * @param deregisterTaskDefinitionRequest
      * @return Result of the DeregisterTaskDefinition operation returned by the service.
@@ -555,7 +564,7 @@ public interface AmazonECS {
     /**
      * <p>
      * Lists the attributes for Amazon ECS resources within a specified target type and cluster. When you specify a
-     * target type and cluster, <code>LisAttributes</code> returns a list of attribute objects, one for each attribute
+     * target type and cluster, <code>ListAttributes</code> returns a list of attribute objects, one for each attribute
      * on each resource. You can filter the list of results to a single attribute name to only return results that have
      * that name. You can also filter the results by attribute name and value, for example, to see which container
      * instances in a cluster are running a Linux AMI (<code>ecs.os-type=linux</code>).
@@ -931,10 +940,18 @@ public interface AmazonECS {
      * </p>
      * <p>
      * When <a>StopTask</a> is called on a task, the equivalent of <code>docker stop</code> is issued to the containers
-     * running in the task. This results in a <code>SIGTERM</code> and a 30-second timeout, after which
+     * running in the task. This results in a <code>SIGTERM</code> and a default 30-second timeout, after which
      * <code>SIGKILL</code> is sent and the containers are forcibly stopped. If the container handles the
      * <code>SIGTERM</code> gracefully and exits within 30 seconds from receiving it, no <code>SIGKILL</code> is sent.
      * </p>
+     * <note>
+     * <p>
+     * The default 30-second timeout can be configured on the Amazon ECS container agent with the
+     * <code>ECS_CONTAINER_STOP_TIMEOUT</code> variable. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container
+     * Agent Configuration</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param stopTaskRequest
      * @return Result of the StopTask operation returned by the service.

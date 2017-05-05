@@ -30,20 +30,17 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key-value pairs that represent your environment's configuration settings. The value you specify cannot
-     * contain a ",".
+     * The key-value pairs that represent your environment's configuration settings.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> variables;
 
     /**
      * <p>
-     * The key-value pairs that represent your environment's configuration settings. The value you specify cannot
-     * contain a ",".
+     * The key-value pairs that represent your environment's configuration settings.
      * </p>
      * 
-     * @return The key-value pairs that represent your environment's configuration settings. The value you specify
-     *         cannot contain a ",".
+     * @return The key-value pairs that represent your environment's configuration settings.
      */
 
     public java.util.Map<String, String> getVariables() {
@@ -55,13 +52,11 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key-value pairs that represent your environment's configuration settings. The value you specify cannot
-     * contain a ",".
+     * The key-value pairs that represent your environment's configuration settings.
      * </p>
      * 
      * @param variables
-     *        The key-value pairs that represent your environment's configuration settings. The value you specify cannot
-     *        contain a ",".
+     *        The key-value pairs that represent your environment's configuration settings.
      */
 
     public void setVariables(java.util.Map<String, String> variables) {
@@ -70,13 +65,11 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key-value pairs that represent your environment's configuration settings. The value you specify cannot
-     * contain a ",".
+     * The key-value pairs that represent your environment's configuration settings.
      * </p>
      * 
      * @param variables
-     *        The key-value pairs that represent your environment's configuration settings. The value you specify cannot
-     *        contain a ",".
+     *        The key-value pairs that represent your environment's configuration settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

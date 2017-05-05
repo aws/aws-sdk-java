@@ -33,7 +33,7 @@ import com.amazonaws.services.organizations.model.*;
  * </p>
  * <p>
  * This guide provides descriptions of the Organizations API. For more information about using this service, see the <a
- * href="http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_introduction.html">AWS Organizations User
+ * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">AWS Organizations User
  * Guide</a>.
  * </p>
  * <p>
@@ -55,7 +55,7 @@ import com.amazonaws.services.organizations.model.*;
  * <p>
  * We recommend that you use the AWS SDKs to make programmatic API calls to Organizations. However, you also can use the
  * Organizations Query API to make direct calls to the Organizations web service. To learn more about the Organizations
- * Query API, see <a href="http://docs.aws.amazon.com/organizations/latest/UserGuide/orgs_query-requests.html">Making
+ * Query API, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_query-requests.html">Making
  * Query Requests</a> in the <i>AWS Organizations User Guide</i>. Organizations supports GET and POST requests for all
  * actions. That is, the API does not require you to use GET for some actions and POST for others. However, GET requests
  * are subject to the limitation size of a URL. Therefore, for operations that require larger sizes, use a POST request.
@@ -92,10 +92,10 @@ import com.amazonaws.services.organizations.model.*;
  * <p>
  * We welcome your feedback. Send your comments to <a
  * href="mailto:feedback-awsorganizations@amazon.com">feedback-awsorganizations@amazon.com</a> or post your feedback and
- * questions in our private <a href="https://forums.aws.amazon.com/forum.jspa?forumID=219">AWS Organizations support
+ * questions in our private <a href="http://forums.aws.amazon.com/forum.jspa?forumID=219">AWS Organizations support
  * forum</a>. If you don't have access to the forum, send a request for access to the email address, along with your
  * forum user ID. For more information about the AWS support forums, see <a
- * href="https://forums.aws.amazon.com/help.jspa">Forums Help</a>.
+ * href="http://forums.aws.amazon.com/help.jspa">Forums Help</a>.
  * </p>
  * <p>
  * <b>Endpoint to Call When Using the CLI or the AWS API</b>
@@ -233,20 +233,21 @@ public interface AWSOrganizations {
      * <ul>
      * <li>
      * <p>
-     * <b>Invitation to join</b> or <b>Full-control request</b> handshake: only a principal from the member account.
+     * <b>Invitation to join</b> or <b>Approve all features request</b> handshakes: only a principal from the member
+     * account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Full-control final confirmation</b> handshake: only a principal from the master account.
+     * <b>Enable all features final confirmation</b> handshake: only a principal from the master account.
      * </p>
      * <p>
      * For more information about invitations, see <a
-     * href="http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_manage_accounts_invites.html">Inviting an
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html">Inviting an
      * AWS Account to Join Your Organization</a> in the <i>AWS Organizations User Guide</i>. For more information about
-     * full-control requests, see <a
-     * href="http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_manage_full-control-mode.html">Migrating to
-     * Full-Control Mode in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
+     * requests to enable all features in the organization, see <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html"
+     * >Enabling All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -256,28 +257,25 @@ public interface AWSOrganizations {
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
-     * @throws AlreadyInOrganizationException
-     *         This account is already a member of an organization. An account can belong to only one organization at a
-     *         time.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws AWSOrganizationsNotInUseException
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
-     * @throws ConstraintViolationException
-     *         Performing this operation violates a minimum or maximum value limit. For example, attempting to removing
-     *         the last SCP from an OU or root, inviting or creating too many accounts to the organization, or attaching
-     *         too many policies to an account, OU, or root.
+     * @throws HandshakeConstraintViolationException
+     *         The requested operation would violate the constraint identified in the reason code.
      * @throws HandshakeNotFoundException
      *         We can't find a handshake with the HandshakeId that you specified.
      * @throws InvalidHandshakeTransitionException
      *         You can't perform the operation on the handshake in its current state. For example, you can't cancel a
      *         handshake that was already accepted, or accept a handshake that was already declined.
+     * @throws HandshakeAlreadyInStateException
+     *         The specified handshake is already in the requested state. For example, you can't accept a handshake that
+     *         was already accepted.
      * @throws InvalidInputException
      *         You provided invalid values for one or more of the request parameters.
-     * @throws OrganizationFromDifferentSellerOfRecordException
-     *         You can add accounts only to an organization that was created by the same AWS seller as the master
-     *         account of the organization.
+     * @throws ConcurrentModificationException
+     *         The target of the operation is currently being modified by a different request. Try again later.
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
@@ -334,8 +332,8 @@ public interface AWSOrganizations {
      * permissions that you want to allow in that OU or account.
      * </p>
      * <p>
-     * For more information about how OCP permissions work, see <a
-     * href="http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_manage_policies_scps.html">Using Service
+     * For more information about how Organizations policies permissions work, see <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">Using Service
      * Control Policies</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * </li>
@@ -349,8 +347,8 @@ public interface AWSOrganizations {
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws AWSOrganizationsNotInUseException
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
@@ -367,7 +365,11 @@ public interface AWSOrganizations {
      * @throws PolicyNotFoundException
      *         We can't find a policy with the PolicyId that you specified.
      * @throws PolicyTypeNotEnabledException
-     *         The specified policy type is not currently enabled in this root.
+     *         The specified policy type is not currently enabled in this root. You cannot attach policies of the
+     *         specified type to entities in a root until you enable that type in the root. For more information, see <a
+     *         href
+     *         ="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html"
+     *         >Enabling All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TargetNotFoundException
@@ -396,13 +398,16 @@ public interface AWSOrganizations {
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws HandshakeNotFoundException
      *         We can't find a handshake with the HandshakeId that you specified.
      * @throws InvalidHandshakeTransitionException
      *         You can't perform the operation on the handshake in its current state. For example, you can't cancel a
      *         handshake that was already accepted, or accept a handshake that was already declined.
+     * @throws HandshakeAlreadyInStateException
+     *         The specified handshake is already in the requested state. For example, you can't accept a handshake that
+     *         was already accepted.
      * @throws InvalidInputException
      *         You provided invalid values for one or more of the request parameters.
      * @throws ServiceException
@@ -431,7 +436,7 @@ public interface AWSOrganizations {
      * </p>
      * <p>
      * For more information about creating accounts, see <a
-     * href="http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_manage_accounts_create.html">Creating an AWS
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating an AWS
      * Account in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * <important>
@@ -458,8 +463,8 @@ public interface AWSOrganizations {
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws AWSOrganizationsNotInUseException
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
@@ -495,9 +500,11 @@ public interface AWSOrganizations {
      * account. The principal must also have the relevant IAM permissions.
      * </p>
      * <p>
-     * By default, a new organization is created in full-control mode and service control policies are automatically
-     * enabled in the root. If you instead choose to create the organization in billing mode by setting the
-     * <code>Mode</code> parameter to <code>BILLING"</code>, then no OCP types are enabled by default.
+     * By default (or if you set the <code>FeatureSet</code> parameter to <code>ALL</code>), the new organization is
+     * created with all features enabled and service control policies automatically enabled in the root. If you instead
+     * choose to create the organization supporting only the consolidated billing features by setting the
+     * <code>FeatureSet</code> parameter to <code>CONSOLIDATED_BILLING"</code>, then no policy types are enabled by
+     * default and you cannot use organization policies.
      * </p>
      * 
      * @param createOrganizationRequest
@@ -505,18 +512,19 @@ public interface AWSOrganizations {
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws AlreadyInOrganizationException
      *         This account is already a member of an organization. An account can belong to only one organization at a
      *         time.
      * @throws ConcurrentModificationException
      *         The target of the operation is currently being modified by a different request. Try again later.
+     * @throws ConstraintViolationException
+     *         Performing this operation violates a minimum or maximum value limit. For example, attempting to removing
+     *         the last SCP from an OU or root, inviting or creating too many accounts to the organization, or attaching
+     *         too many policies to an account, OU, or root.
      * @throws InvalidInputException
      *         You provided invalid values for one or more of the request parameters.
-     * @throws PaymentInstrumentRequiredException
-     *         The account isn't set up with a payment method, such as a credit card. Provide a payment method, and then
-     *         try again.
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
@@ -531,13 +539,13 @@ public interface AWSOrganizations {
     /**
      * <p>
      * Creates an organizational unit (OU) within a root or parent OU. An OU is a container for accounts that enables
-     * you to organize your accounts to apply organization control policies according to your business requirements. The
-     * number of levels deep that you can nest OUs is dependent upon the organization control policy types enabled for
-     * that root. For service control policies, the limit is five.
+     * you to organize your accounts to apply policies according to your business requirements. The number of levels
+     * deep that you can nest OUs is dependent upon the policy types enabled for that root. For service control
+     * policies, the limit is five.
      * </p>
      * <p>
      * For more information about OUs, see <a
-     * href="http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_manage_ous.html">Managing Organizational
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html">Managing Organizational
      * Units</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * <p>
@@ -549,8 +557,8 @@ public interface AWSOrganizations {
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws AWSOrganizationsNotInUseException
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
@@ -577,13 +585,13 @@ public interface AWSOrganizations {
 
     /**
      * <p>
-     * Creates an organization control policy (OCP) of a specified type that you can attach to a root, an organizational
-     * unit (OU), or an individual AWS account.
+     * Creates a policy of a specified type that you can attach to a root, an organizational unit (OU), or an individual
+     * AWS account.
      * </p>
      * <p>
-     * For more information about OCPs and their use, see <a
-     * href="http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_manage_policies.html">Managing Organization
-     * Control Policies</a>.
+     * For more information about policies and their use, see <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html">Managing Organization
+     * Policies</a>.
      * </p>
      * <p>
      * This operation can be called only from the organization's master account.
@@ -594,8 +602,8 @@ public interface AWSOrganizations {
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws AWSOrganizationsNotInUseException
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
@@ -609,10 +617,17 @@ public interface AWSOrganizations {
      *         A policy with the same name already exists.
      * @throws InvalidInputException
      *         You provided invalid values for one or more of the request parameters.
+     * @throws MalformedPolicyDocumentException
+     *         The provided policy document does not meet the requirements of the specified policy type. For example,
+     *         the syntax might be incorrect. For details about service control policy syntax, see <a
+     *         href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
+     *         Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
      * @throws PolicyTypeNotAvailableForOrganizationException
-     *         You can't use the specified policy type with the organization in its current mode of operation. For
-     *         example, you can enable service control policies (SCPs) only after the organization upgrades to
-     *         full-control mode.
+     *         You can't use the specified policy type with the feature set currently enabled for this organization. For
+     *         example, you can enable service control policies (SCPs) only after you enable all features in the
+     *         organization. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html#enable_policies_on_root"
+     *         >Enabling and Disabling a Policy Type on a Root</a> in the <i>AWS Organizations User Guide</i>.
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
@@ -640,13 +655,16 @@ public interface AWSOrganizations {
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws HandshakeNotFoundException
      *         We can't find a handshake with the HandshakeId that you specified.
      * @throws InvalidHandshakeTransitionException
      *         You can't perform the operation on the handshake in its current state. For example, you can't cancel a
      *         handshake that was already accepted, or accept a handshake that was already declined.
+     * @throws HandshakeAlreadyInStateException
+     *         The specified handshake is already in the requested state. For example, you can't accept a handshake that
+     *         was already accepted.
      * @throws InvalidInputException
      *         You provided invalid values for one or more of the request parameters.
      * @throws ServiceException
@@ -677,8 +695,8 @@ public interface AWSOrganizations {
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws AWSOrganizationsNotInUseException
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
@@ -688,7 +706,7 @@ public interface AWSOrganizations {
      *         You provided invalid values for one or more of the request parameters.
      * @throws OrganizationNotEmptyException
      *         The organization isn't empty. To delete an organization, you must first remove all accounts except the
-     *         master, delete all organizational units (OUs), and delete all policies.
+     *         master account, delete all organizational units (OUs), and delete all policies.
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
@@ -714,8 +732,8 @@ public interface AWSOrganizations {
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws AWSOrganizationsNotInUseException
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
@@ -724,8 +742,8 @@ public interface AWSOrganizations {
      * @throws InvalidInputException
      *         You provided invalid values for one or more of the request parameters.
      * @throws OrganizationalUnitNotEmptyException
-     *         The specified organizational unit (OU) is not empty. Move all entities to another root or to other OUs,
-     *         and then try the operation again.
+     *         The specified organizational unit (OU) is not empty. Move all accounts to another root or to other OUs,
+     *         remove all child OUs, and then try the operation again.
      * @throws OrganizationalUnitNotFoundException
      *         We can't find an organizational unit (OU) with the OrganizationalUnitId that you specified.
      * @throws ServiceException
@@ -753,8 +771,8 @@ public interface AWSOrganizations {
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws AWSOrganizationsNotInUseException
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
@@ -791,8 +809,8 @@ public interface AWSOrganizations {
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws AccountNotFoundException
      *         We can't find an AWS account with the AccountId that you specified, or the account whose credentials you
      *         used to make this request is not a member of an organization.
@@ -825,8 +843,8 @@ public interface AWSOrganizations {
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws AWSOrganizationsNotInUseException
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
@@ -859,8 +877,8 @@ public interface AWSOrganizations {
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws HandshakeNotFoundException
      *         We can't find a handshake with the HandshakeId that you specified.
      * @throws InvalidInputException
@@ -889,8 +907,8 @@ public interface AWSOrganizations {
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws AWSOrganizationsNotInUseException
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
@@ -918,8 +936,8 @@ public interface AWSOrganizations {
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws AWSOrganizationsNotInUseException
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
@@ -940,7 +958,7 @@ public interface AWSOrganizations {
 
     /**
      * <p>
-     * Retrieves information about an organization control policy (OCP).
+     * Retrieves information about a policy.
      * </p>
      * <p>
      * This operation can be called only from the organization's master account.
@@ -951,8 +969,8 @@ public interface AWSOrganizations {
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws AWSOrganizationsNotInUseException
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
@@ -973,21 +991,20 @@ public interface AWSOrganizations {
 
     /**
      * <p>
-     * Detaches an organization control policy (OCP) from a target root, organizational unit, or account. If the policy
-     * being detached is a service control policy (SCP), the changes to permissions for IAM users and roles in affected
-     * accounts are immediate.
+     * Detaches a policy from a target root, organizational unit, or account. If the policy being detached is a service
+     * control policy (SCP), the changes to permissions for IAM users and roles in affected accounts are immediate.
      * </p>
      * <p>
      * <b>Note:</b> Every root, OU, and account must have at least one SCP attached. If you want to replace the default
      * <code>FullAWSAccess</code> policy with one that limits the permissions that can be delegated, then you must
      * attach the replacement policy before you can remove the default one. This is the authorization strategy of <a
      * href=
-     * "http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_manage_policies_scps.html#orgs_policies_whitelist"
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_whitelist"
      * >whitelisting</a>. If you instead attach a second SCP and leave the <code>FullAWSAccess</code> SCP still
      * attached, and specify <code>"Effect": "Deny"</code> in the second SCP to override the
      * <code>"Effect": "Allow"</code> in the <code>FullAWSAccess</code> policy (or any other attached SCP), then you are
      * using the authorization strategy of <a href=
-     * "http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_manage_policies_scps.html#orgs_policies_blacklist"
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_blacklist"
      * >blacklisting</a>.
      * </p>
      * <p>
@@ -999,8 +1016,8 @@ public interface AWSOrganizations {
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws AWSOrganizationsNotInUseException
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
@@ -1031,10 +1048,10 @@ public interface AWSOrganizations {
 
     /**
      * <p>
-     * Disables an organizational control policy (OCP) type in a root. An OCP of a certain type can be attached to
-     * entities in a root only if that type is enabled in the root. After you perform this operation, you no longer can
-     * attach policies of the specified type to that root or to any OU or account in that root. You can undo this by
-     * using the <a>EnablePolicyType</a> operation.
+     * Disables an organizational control policy type in a root. A poicy of a certain type can be attached to entities
+     * in a root only if that type is enabled in the root. After you perform this operation, you no longer can attach
+     * policies of the specified type to that root or to any OU or account in that root. You can undo this by using the
+     * <a>EnablePolicyType</a> operation.
      * </p>
      * <p>
      * This operation can be called only from the organization's master account.
@@ -1045,8 +1062,8 @@ public interface AWSOrganizations {
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws AWSOrganizationsNotInUseException
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
@@ -1059,7 +1076,11 @@ public interface AWSOrganizations {
      * @throws InvalidInputException
      *         You provided invalid values for one or more of the request parameters.
      * @throws PolicyTypeNotEnabledException
-     *         The specified policy type is not currently enabled in this root.
+     *         The specified policy type is not currently enabled in this root. You cannot attach policies of the
+     *         specified type to entities in a root until you enable that type in the root. For more information, see <a
+     *         href
+     *         ="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html"
+     *         >Enabling All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
      * @throws RootNotFoundException
      *         We can't find a root with the RootId that you specified.
      * @throws ServiceException
@@ -1075,51 +1096,48 @@ public interface AWSOrganizations {
 
     /**
      * <p>
-     * Enables full-control mode in an organization. Full-control mode enables the use of organization control policies
-     * (OCPs) to restrict the services and actions that can be called in each account. Until you enable full-control
-     * mode, you have access only to shared billing, and you can't use any of the advanced account administration
-     * features that AWS Organizations supports. For more information about full-control mode, see <a
-     * href="http://docs.aws.amazon.com/Organizations/latest/UserGuide/orgs_manage_full-control-mode.html">Enabling
-     * Full-Control Mode in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
+     * Enables all features in an organization. This enables the use of organization policies that can restrict the
+     * services and actions that can be called in each account. Until you enable all features, you have access only to
+     * consolidated billing, and you can't use any of the advanced account administration features that AWS
+     * Organizations supports. For more information, see <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html"
+     * >Enabling All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * <important>
      * <p>
-     * This operation is required only for organizations that were created explicitly in billing mode, or that were
-     * migrated from a Consolidated Billing account family to Organizations. Calling this operation sends a handshake to
-     * every account in the organization. The migration can be finalized and the new features enabled only after all
-     * administrators approve the switch by accepting the handshake.
+     * This operation is required only for organizations that were created explicitly with only the consolidated billing
+     * features enabled, or that were migrated from a Consolidated Billing account family to Organizations. Calling this
+     * operation sends a handshake to every invited account in the organization. The feature set change can be finalized
+     * and the additional features enabled only after all administrators in the invited accounts approve the change by
+     * accepting the handshake.
      * </p>
      * </important>
      * <p>
-     * After all member accounts accept the handshake, you finalize the migration by accepting the handshake that
-     * contains <code>"Action": "ENABLE_FULL_CONTROL"</code>. This completes the switch.
+     * After all invited member accounts accept the handshake, you finalize the feature set change by accepting the
+     * handshake that contains <code>"Action": "ENABLE_ALL_FEATURES"</code>. This completes the change.
      * </p>
      * <p>
-     * After you enable full-control mode, the master account in the organization can apply OCPs on all member accounts.
-     * These policies can restrict what users and even administrators in those accounts can do. The master account can
-     * apply policies that prevent accounts from leaving the organization. Ensure that your account administrators are
-     * aware of this.
+     * After you enable all features in your organization, the master account in the organization can apply policies on
+     * all member accounts. These policies can restrict what users and even administrators in those accounts can do. The
+     * master account can apply policies that prevent accounts from leaving the organization. Ensure that your account
+     * administrators are aware of this.
      * </p>
      * <p>
      * This operation can be called only from the organization's master account.
      * </p>
      * 
-     * @param enableFullControlRequest
-     * @return Result of the EnableFullControl operation returned by the service.
+     * @param enableAllFeaturesRequest
+     * @return Result of the EnableAllFeatures operation returned by the service.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws AWSOrganizationsNotInUseException
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
-     * @throws ConstraintViolationException
-     *         Performing this operation violates a minimum or maximum value limit. For example, attempting to removing
-     *         the last SCP from an OU or root, inviting or creating too many accounts to the organization, or attaching
-     *         too many policies to an account, OU, or root.
-     * @throws FullControlAlreadyEnabledException
-     *         This organization is already in full-control mode.
+     * @throws HandshakeConstraintViolationException
+     *         The requested operation would violate the constraint identified in the reason code.
      * @throws InvalidInputException
      *         You provided invalid values for one or more of the request parameters.
      * @throws ServiceException
@@ -1127,11 +1145,11 @@ public interface AWSOrganizations {
      * @throws TooManyRequestsException
      *         You've sent too many requests in too short a period of time. The limit helps protect against
      *         denial-of-service attacks. Try again later.
-     * @sample AWSOrganizations.EnableFullControl
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableFullControl"
+     * @sample AWSOrganizations.EnableAllFeatures
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAllFeatures"
      *      target="_top">AWS API Documentation</a>
      */
-    EnableFullControlResult enableFullControl(EnableFullControlRequest enableFullControlRequest);
+    EnableAllFeaturesResult enableAllFeatures(EnableAllFeaturesRequest enableAllFeaturesRequest);
 
     /**
      * <p>
@@ -1147,8 +1165,8 @@ public interface AWSOrganizations {
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws AWSOrganizationsNotInUseException
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
@@ -1170,9 +1188,11 @@ public interface AWSOrganizations {
      *         You've sent too many requests in too short a period of time. The limit helps protect against
      *         denial-of-service attacks. Try again later.
      * @throws PolicyTypeNotAvailableForOrganizationException
-     *         You can't use the specified policy type with the organization in its current mode of operation. For
-     *         example, you can enable service control policies (SCPs) only after the organization upgrades to
-     *         full-control mode.
+     *         You can't use the specified policy type with the feature set currently enabled for this organization. For
+     *         example, you can enable service control policies (SCPs) only after you enable all features in the
+     *         organization. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html#enable_policies_on_root"
+     *         >Enabling and Disabling a Policy Type on a Root</a> in the <i>AWS Organizations User Guide</i>.
      * @sample AWSOrganizations.EnablePolicyType
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnablePolicyType" target="_top">AWS
      *      API Documentation</a>
@@ -1194,15 +1214,13 @@ public interface AWSOrganizations {
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws AWSOrganizationsNotInUseException
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
-     * @throws ConstraintViolationException
-     *         Performing this operation violates a minimum or maximum value limit. For example, attempting to removing
-     *         the last SCP from an OU or root, inviting or creating too many accounts to the organization, or attaching
-     *         too many policies to an account, OU, or root.
+     * @throws HandshakeConstraintViolationException
+     *         The requested operation would violate the constraint identified in the reason code.
      * @throws DuplicateHandshakeException
      *         A handshake with the same action and target already exists. For example, if you invited an account to
      *         join your organization, the invited account might already have a pending invitation from this
@@ -1210,9 +1228,6 @@ public interface AWSOrganizations {
      *         might be considered duplicates are canceled or declined.
      * @throws InvalidInputException
      *         You provided invalid values for one or more of the request parameters.
-     * @throws InvitationsDisabledDuringOrganizationModeChangeException
-     *         You can't send invitations to join an organization that is in the process of upgrading to full-control
-     *         mode. Wait until the switch to full-control mode complete and try again.
      * @throws FinalizingOrganizationException
      *         AWS Organizations could not finalize the creation of your organization. Try again later. If this
      *         persists, contact AWS customer support.
@@ -1238,7 +1253,7 @@ public interface AWSOrganizations {
      * </p>
      * <important>
      * <p>
-     * The master account in an organization in full-control mode can set service control policies (SCPs) that can
+     * The master account in an organization with all features enabled can set service control policies (SCPs) that can
      * restrict what administrators of member accounts can do, including preventing them from successfully calling
      * <code>LeaveOrganization</code> and leaving the organization.
      * </p>
@@ -1249,11 +1264,8 @@ public interface AWSOrganizations {
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
-     * @throws AccountCannotLeaveOrganizationException
-     *         You can't remove an account from an organization that was created by AWS Organizations. You can remove
-     *         only invited accounts.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws AccountNotFoundException
      *         We can't find an AWS account with the AccountId that you specified, or the account whose credentials you
      *         used to make this request is not a member of an organization.
@@ -1262,6 +1274,10 @@ public interface AWSOrganizations {
      *         account that belongs to an organization.
      * @throws ConcurrentModificationException
      *         The target of the operation is currently being modified by a different request. Try again later.
+     * @throws ConstraintViolationException
+     *         Performing this operation violates a minimum or maximum value limit. For example, attempting to removing
+     *         the last SCP from an OU or root, inviting or creating too many accounts to the organization, or attaching
+     *         too many policies to an account, OU, or root.
      * @throws InvalidInputException
      *         You provided invalid values for one or more of the request parameters.
      * @throws MasterCannotLeaveOrganizationException
@@ -1292,8 +1308,8 @@ public interface AWSOrganizations {
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws AWSOrganizationsNotInUseException
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
@@ -1323,8 +1339,8 @@ public interface AWSOrganizations {
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws AWSOrganizationsNotInUseException
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
@@ -1354,8 +1370,8 @@ public interface AWSOrganizations {
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws AWSOrganizationsNotInUseException
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
@@ -1388,8 +1404,8 @@ public interface AWSOrganizations {
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws AWSOrganizationsNotInUseException
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
@@ -1419,8 +1435,8 @@ public interface AWSOrganizations {
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws InvalidInputException
      *         You provided invalid values for one or more of the request parameters.
      * @throws ServiceException
@@ -1449,8 +1465,8 @@ public interface AWSOrganizations {
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws AWSOrganizationsNotInUseException
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
@@ -1480,8 +1496,8 @@ public interface AWSOrganizations {
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws AWSOrganizationsNotInUseException
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
@@ -1509,14 +1525,19 @@ public interface AWSOrganizations {
      * <p>
      * This operation can be called only from the organization's master account.
      * </p>
+     * <note>
+     * <p>
+     * In the current release, a child can have only a single parent.
+     * </p>
+     * </note>
      * 
      * @param listParentsRequest
      * @return Result of the ListParents operation returned by the service.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws AWSOrganizationsNotInUseException
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
@@ -1548,8 +1569,8 @@ public interface AWSOrganizations {
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws AWSOrganizationsNotInUseException
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
@@ -1580,8 +1601,8 @@ public interface AWSOrganizations {
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws AWSOrganizationsNotInUseException
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
@@ -1613,8 +1634,8 @@ public interface AWSOrganizations {
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws AWSOrganizationsNotInUseException
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
@@ -1644,8 +1665,8 @@ public interface AWSOrganizations {
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws AWSOrganizationsNotInUseException
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
@@ -1677,14 +1698,16 @@ public interface AWSOrganizations {
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws InvalidInputException
      *         You provided invalid values for one or more of the request parameters.
      * @throws SourceParentNotFoundException
      *         We can't find a source root or OU with the ParentId that you specified.
      * @throws DestinationParentNotFoundException
      *         We can't find the destination container (a root or OU) with the ParentId that you specified.
+     * @throws DuplicateAccountException
+     *         That account is already present in the specified destination.
      * @throws AccountNotFoundException
      *         We can't find an AWS account with the AccountId that you specified, or the account whose credentials you
      *         used to make this request is not a member of an organization.
@@ -1710,9 +1733,8 @@ public interface AWSOrganizations {
      * </p>
      * <p>
      * The removed account becomes a stand-alone account that is not a member of any organization. It is no longer
-     * subject to any organization control policies (OCPs) and is responsible for its own bill payments. The
-     * organization's master account is no longer charged for any expenses accrued by the member account after it is
-     * removed from the organization.
+     * subject to any policies and is responsible for its own bill payments. The organization's master account is no
+     * longer charged for any expenses accrued by the member account after it is removed from the organization.
      * </p>
      * <p>
      * This operation can be called only from the organization's master account. Member accounts can remove themselves
@@ -1730,11 +1752,8 @@ public interface AWSOrganizations {
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
-     * @throws AccountCannotLeaveOrganizationException
-     *         You can't remove an account from an organization that was created by AWS Organizations. You can remove
-     *         only invited accounts.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws AccountNotFoundException
      *         We can't find an AWS account with the AccountId that you specified, or the account whose credentials you
      *         used to make this request is not a member of an organization.
@@ -1743,6 +1762,10 @@ public interface AWSOrganizations {
      *         account that belongs to an organization.
      * @throws ConcurrentModificationException
      *         The target of the operation is currently being modified by a different request. Try again later.
+     * @throws ConstraintViolationException
+     *         Performing this operation violates a minimum or maximum value limit. For example, attempting to removing
+     *         the last SCP from an OU or root, inviting or creating too many accounts to the organization, or attaching
+     *         too many policies to an account, OU, or root.
      * @throws InvalidInputException
      *         You provided invalid values for one or more of the request parameters.
      * @throws MasterCannotLeaveOrganizationException
@@ -1773,8 +1796,8 @@ public interface AWSOrganizations {
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws AWSOrganizationsNotInUseException
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
@@ -1811,8 +1834,8 @@ public interface AWSOrganizations {
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="http://docs.aws.amazon.com/Orgs/latest/access.html">Access Management</a>
-     *         in the <i>AWS Organizations User Guide</i>.
+     *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
      * @throws AWSOrganizationsNotInUseException
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
@@ -1826,6 +1849,11 @@ public interface AWSOrganizations {
      *         A policy with the same name already exists.
      * @throws InvalidInputException
      *         You provided invalid values for one or more of the request parameters.
+     * @throws MalformedPolicyDocumentException
+     *         The provided policy document does not meet the requirements of the specified policy type. For example,
+     *         the syntax might be incorrect. For details about service control policy syntax, see <a
+     *         href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
+     *         Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
      * @throws PolicyNotFoundException
      *         We can't find a policy with the PolicyId that you specified.
      * @throws ServiceException

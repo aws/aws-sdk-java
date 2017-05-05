@@ -275,14 +275,14 @@ public class AbstractAWSOrganizationsAsync extends AbstractAWSOrganizations impl
     }
 
     @Override
-    public java.util.concurrent.Future<EnableFullControlResult> enableFullControlAsync(EnableFullControlRequest request) {
+    public java.util.concurrent.Future<EnableAllFeaturesResult> enableAllFeaturesAsync(EnableAllFeaturesRequest request) {
 
-        return enableFullControlAsync(request, null);
+        return enableAllFeaturesAsync(request, null);
     }
 
     @Override
-    public java.util.concurrent.Future<EnableFullControlResult> enableFullControlAsync(EnableFullControlRequest request,
-            com.amazonaws.handlers.AsyncHandler<EnableFullControlRequest, EnableFullControlResult> asyncHandler) {
+    public java.util.concurrent.Future<EnableAllFeaturesResult> enableAllFeaturesAsync(EnableAllFeaturesRequest request,
+            com.amazonaws.handlers.AsyncHandler<EnableAllFeaturesRequest, EnableAllFeaturesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

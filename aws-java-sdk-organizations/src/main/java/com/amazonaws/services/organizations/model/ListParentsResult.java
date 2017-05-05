@@ -25,7 +25,7 @@ public class ListParentsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A list of parent containers for the specified child entity.
+     * A list of parents for the specified child account or OU.
      * </p>
      */
     private java.util.List<Parent> parents;
@@ -41,10 +41,10 @@ public class ListParentsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A list of parent containers for the specified child entity.
+     * A list of parents for the specified child account or OU.
      * </p>
      * 
-     * @return A list of parent containers for the specified child entity.
+     * @return A list of parents for the specified child account or OU.
      */
 
     public java.util.List<Parent> getParents() {
@@ -53,11 +53,11 @@ public class ListParentsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A list of parent containers for the specified child entity.
+     * A list of parents for the specified child account or OU.
      * </p>
      * 
      * @param parents
-     *        A list of parent containers for the specified child entity.
+     *        A list of parents for the specified child account or OU.
      */
 
     public void setParents(java.util.Collection<Parent> parents) {
@@ -71,7 +71,7 @@ public class ListParentsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A list of parent containers for the specified child entity.
+     * A list of parents for the specified child account or OU.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -80,7 +80,7 @@ public class ListParentsResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * @param parents
-     *        A list of parent containers for the specified child entity.
+     *        A list of parents for the specified child account or OU.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +96,11 @@ public class ListParentsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A list of parent containers for the specified child entity.
+     * A list of parents for the specified child account or OU.
      * </p>
      * 
      * @param parents
-     *        A list of parent containers for the specified child entity.
+     *        A list of parents for the specified child account or OU.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

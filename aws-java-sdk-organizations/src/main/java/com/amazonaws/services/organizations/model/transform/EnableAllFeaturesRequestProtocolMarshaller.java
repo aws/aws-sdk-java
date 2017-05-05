@@ -25,34 +25,34 @@ import com.amazonaws.protocol.*;
 import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * EnableFullControlRequest Marshaller
+ * EnableAllFeaturesRequest Marshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 @SdkInternalApi
-public class EnableFullControlRequestProtocolMarshaller implements Marshaller<Request<EnableFullControlRequest>, EnableFullControlRequest> {
+public class EnableAllFeaturesRequestProtocolMarshaller implements Marshaller<Request<EnableAllFeaturesRequest>, EnableAllFeaturesRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.AWS_JSON).requestUri("/")
             .httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false).hasPayloadMembers(false)
-            .operationIdentifier("AWSOrganizationsV20161128.EnableFullControl").serviceName("AWSOrganizations").build();
+            .operationIdentifier("AWSOrganizationsV20161128.EnableAllFeatures").serviceName("AWSOrganizations").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 
-    public EnableFullControlRequestProtocolMarshaller(com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory) {
+    public EnableAllFeaturesRequestProtocolMarshaller(com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<EnableFullControlRequest> marshall(EnableFullControlRequest enableFullControlRequest) {
+    public Request<EnableAllFeaturesRequest> marshall(EnableAllFeaturesRequest enableAllFeaturesRequest) {
 
-        if (enableFullControlRequest == null) {
+        if (enableAllFeaturesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
-            final ProtocolRequestMarshaller<EnableFullControlRequest> protocolMarshaller = protocolFactory.createProtocolMarshaller(SDK_OPERATION_BINDING,
-                    enableFullControlRequest);
+            final ProtocolRequestMarshaller<EnableAllFeaturesRequest> protocolMarshaller = protocolFactory.createProtocolMarshaller(SDK_OPERATION_BINDING,
+                    enableAllFeaturesRequest);
 
             protocolMarshaller.startMarshalling();
-            EnableFullControlRequestMarshaller.getInstance().marshall(enableFullControlRequest, protocolMarshaller);
+            EnableAllFeaturesRequestMarshaller.getInstance().marshall(enableAllFeaturesRequest, protocolMarshaller);
             return protocolMarshaller.finishMarshalling();
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

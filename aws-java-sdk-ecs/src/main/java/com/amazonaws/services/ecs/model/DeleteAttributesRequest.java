@@ -27,7 +27,7 @@ public class DeleteAttributesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster that contains the resource to apply attributes.
+     * The short name or full Amazon Resource Name (ARN) of the cluster that contains the resource to delete attributes.
      * If you do not specify a cluster, the default cluster is assumed.
      * </p>
      */
@@ -43,12 +43,12 @@ public class DeleteAttributesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster that contains the resource to apply attributes.
+     * The short name or full Amazon Resource Name (ARN) of the cluster that contains the resource to delete attributes.
      * If you do not specify a cluster, the default cluster is assumed.
      * </p>
      * 
      * @param cluster
-     *        The short name or full Amazon Resource Name (ARN) of the cluster that contains the resource to apply
+     *        The short name or full Amazon Resource Name (ARN) of the cluster that contains the resource to delete
      *        attributes. If you do not specify a cluster, the default cluster is assumed.
      */
 
@@ -58,11 +58,11 @@ public class DeleteAttributesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster that contains the resource to apply attributes.
+     * The short name or full Amazon Resource Name (ARN) of the cluster that contains the resource to delete attributes.
      * If you do not specify a cluster, the default cluster is assumed.
      * </p>
      * 
-     * @return The short name or full Amazon Resource Name (ARN) of the cluster that contains the resource to apply
+     * @return The short name or full Amazon Resource Name (ARN) of the cluster that contains the resource to delete
      *         attributes. If you do not specify a cluster, the default cluster is assumed.
      */
 
@@ -72,12 +72,12 @@ public class DeleteAttributesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster that contains the resource to apply attributes.
+     * The short name or full Amazon Resource Name (ARN) of the cluster that contains the resource to delete attributes.
      * If you do not specify a cluster, the default cluster is assumed.
      * </p>
      * 
      * @param cluster
-     *        The short name or full Amazon Resource Name (ARN) of the cluster that contains the resource to apply
+     *        The short name or full Amazon Resource Name (ARN) of the cluster that contains the resource to delete
      *        attributes. If you do not specify a cluster, the default cluster is assumed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

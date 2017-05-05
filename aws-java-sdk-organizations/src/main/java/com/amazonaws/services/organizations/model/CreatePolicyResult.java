@@ -25,18 +25,18 @@ public class CreatePolicyResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A structure that contains details about the newly created OCP.
+     * A structure that contains details about the newly created policy.
      * </p>
      */
     private Policy policy;
 
     /**
      * <p>
-     * A structure that contains details about the newly created OCP.
+     * A structure that contains details about the newly created policy.
      * </p>
      * 
      * @param policy
-     *        A structure that contains details about the newly created OCP.
+     *        A structure that contains details about the newly created policy.
      */
 
     public void setPolicy(Policy policy) {
@@ -45,10 +45,10 @@ public class CreatePolicyResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A structure that contains details about the newly created OCP.
+     * A structure that contains details about the newly created policy.
      * </p>
      * 
-     * @return A structure that contains details about the newly created OCP.
+     * @return A structure that contains details about the newly created policy.
      */
 
     public Policy getPolicy() {
@@ -57,11 +57,11 @@ public class CreatePolicyResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A structure that contains details about the newly created OCP.
+     * A structure that contains details about the newly created policy.
      * </p>
      * 
      * @param policy
-     *        A structure that contains details about the newly created OCP.
+     *        A structure that contains details about the newly created policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

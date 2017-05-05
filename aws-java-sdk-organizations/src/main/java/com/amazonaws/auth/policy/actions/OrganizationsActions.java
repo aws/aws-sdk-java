@@ -63,8 +63,8 @@ public enum OrganizationsActions implements Action {
     DetachPolicy("organizations:DetachPolicy"),
     /** Action for the DisablePolicyType operation. */
     DisablePolicyType("organizations:DisablePolicyType"),
-    /** Action for the EnableFullControl operation. */
-    EnableFullControl("organizations:EnableFullControl"),
+    /** Action for the EnableAllFeatures operation. */
+    EnableAllFeatures("organizations:EnableAllFeatures"),
     /** Action for the EnablePolicyType operation. */
     EnablePolicyType("organizations:EnablePolicyType"),
     /** Action for the InviteAccountToOrganization operation. */

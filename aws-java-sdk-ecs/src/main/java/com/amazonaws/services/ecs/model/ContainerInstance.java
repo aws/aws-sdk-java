@@ -78,8 +78,12 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
     private com.amazonaws.internal.SdkInternalList<Resource> registeredResources;
     /**
      * <p>
-     * The status of the container instance. The valid values are <code>ACTIVE</code> or <code>INACTIVE</code>.
-     * <code>ACTIVE</code> indicates that the container instance can accept tasks.
+     * The status of the container instance. The valid values are <code>ACTIVE</code>, <code>INACTIVE</code>, or
+     * <code>DRAINING</code>. <code>ACTIVE</code> indicates that the container instance can accept tasks.
+     * <code>DRAINING</code> indicates that new tasks are not placed on the container instance and any service tasks
+     * running on the container instance are removed if possible. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
+     * Instance Draining</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
      * </p>
      */
     private String status;
@@ -117,6 +121,12 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Attribute> attributes;
+    /**
+     * <p>
+     * The Unix timestamp for when the container instance was registered.
+     * </p>
+     */
+    private java.util.Date registeredAt;
 
     /**
      * <p>
@@ -514,13 +524,21 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The status of the container instance. The valid values are <code>ACTIVE</code> or <code>INACTIVE</code>.
-     * <code>ACTIVE</code> indicates that the container instance can accept tasks.
+     * The status of the container instance. The valid values are <code>ACTIVE</code>, <code>INACTIVE</code>, or
+     * <code>DRAINING</code>. <code>ACTIVE</code> indicates that the container instance can accept tasks.
+     * <code>DRAINING</code> indicates that new tasks are not placed on the container instance and any service tasks
+     * running on the container instance are removed if possible. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
+     * Instance Draining</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
      * </p>
      * 
      * @param status
-     *        The status of the container instance. The valid values are <code>ACTIVE</code> or <code>INACTIVE</code>.
-     *        <code>ACTIVE</code> indicates that the container instance can accept tasks.
+     *        The status of the container instance. The valid values are <code>ACTIVE</code>, <code>INACTIVE</code>, or
+     *        <code>DRAINING</code>. <code>ACTIVE</code> indicates that the container instance can accept tasks.
+     *        <code>DRAINING</code> indicates that new tasks are not placed on the container instance and any service
+     *        tasks running on the container instance are removed if possible. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html"
+     *        >Container Instance Draining</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
      */
 
     public void setStatus(String status) {
@@ -529,12 +547,20 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The status of the container instance. The valid values are <code>ACTIVE</code> or <code>INACTIVE</code>.
-     * <code>ACTIVE</code> indicates that the container instance can accept tasks.
+     * The status of the container instance. The valid values are <code>ACTIVE</code>, <code>INACTIVE</code>, or
+     * <code>DRAINING</code>. <code>ACTIVE</code> indicates that the container instance can accept tasks.
+     * <code>DRAINING</code> indicates that new tasks are not placed on the container instance and any service tasks
+     * running on the container instance are removed if possible. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
+     * Instance Draining</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The status of the container instance. The valid values are <code>ACTIVE</code> or <code>INACTIVE</code>.
-     *         <code>ACTIVE</code> indicates that the container instance can accept tasks.
+     * @return The status of the container instance. The valid values are <code>ACTIVE</code>, <code>INACTIVE</code>, or
+     *         <code>DRAINING</code>. <code>ACTIVE</code> indicates that the container instance can accept tasks.
+     *         <code>DRAINING</code> indicates that new tasks are not placed on the container instance and any service
+     *         tasks running on the container instance are removed if possible. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html"
+     *         >Container Instance Draining</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
      */
 
     public String getStatus() {
@@ -543,13 +569,21 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The status of the container instance. The valid values are <code>ACTIVE</code> or <code>INACTIVE</code>.
-     * <code>ACTIVE</code> indicates that the container instance can accept tasks.
+     * The status of the container instance. The valid values are <code>ACTIVE</code>, <code>INACTIVE</code>, or
+     * <code>DRAINING</code>. <code>ACTIVE</code> indicates that the container instance can accept tasks.
+     * <code>DRAINING</code> indicates that new tasks are not placed on the container instance and any service tasks
+     * running on the container instance are removed if possible. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
+     * Instance Draining</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
      * </p>
      * 
      * @param status
-     *        The status of the container instance. The valid values are <code>ACTIVE</code> or <code>INACTIVE</code>.
-     *        <code>ACTIVE</code> indicates that the container instance can accept tasks.
+     *        The status of the container instance. The valid values are <code>ACTIVE</code>, <code>INACTIVE</code>, or
+     *        <code>DRAINING</code>. <code>ACTIVE</code> indicates that the container instance can accept tasks.
+     *        <code>DRAINING</code> indicates that new tasks are not placed on the container instance and any service
+     *        tasks running on the container instance are removed if possible. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html"
+     *        >Container Instance Draining</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -871,6 +905,46 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The Unix timestamp for when the container instance was registered.
+     * </p>
+     * 
+     * @param registeredAt
+     *        The Unix timestamp for when the container instance was registered.
+     */
+
+    public void setRegisteredAt(java.util.Date registeredAt) {
+        this.registeredAt = registeredAt;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp for when the container instance was registered.
+     * </p>
+     * 
+     * @return The Unix timestamp for when the container instance was registered.
+     */
+
+    public java.util.Date getRegisteredAt() {
+        return this.registeredAt;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp for when the container instance was registered.
+     * </p>
+     * 
+     * @param registeredAt
+     *        The Unix timestamp for when the container instance was registered.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerInstance withRegisteredAt(java.util.Date registeredAt) {
+        setRegisteredAt(registeredAt);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -904,7 +978,9 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
         if (getAgentUpdateStatus() != null)
             sb.append("AgentUpdateStatus: ").append(getAgentUpdateStatus()).append(",");
         if (getAttributes() != null)
-            sb.append("Attributes: ").append(getAttributes());
+            sb.append("Attributes: ").append(getAttributes()).append(",");
+        if (getRegisteredAt() != null)
+            sb.append("RegisteredAt: ").append(getRegisteredAt());
         sb.append("}");
         return sb.toString();
     }
@@ -967,6 +1043,10 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false)
             return false;
+        if (other.getRegisteredAt() == null ^ this.getRegisteredAt() == null)
+            return false;
+        if (other.getRegisteredAt() != null && other.getRegisteredAt().equals(this.getRegisteredAt()) == false)
+            return false;
         return true;
     }
 
@@ -987,6 +1067,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getPendingTasksCount() == null) ? 0 : getPendingTasksCount().hashCode());
         hashCode = prime * hashCode + ((getAgentUpdateStatus() == null) ? 0 : getAgentUpdateStatus().hashCode());
         hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
+        hashCode = prime * hashCode + ((getRegisteredAt() == null) ? 0 : getRegisteredAt().hashCode());
         return hashCode;
     }
 

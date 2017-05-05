@@ -66,6 +66,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Date;
@@ -1149,6 +1150,16 @@ public class TransferManager {
     public MultipleFileDownload downloadDirectory(String bucketName, String keyPrefix, File destinationDirectory) {
         return downloadDirectory(bucketName, keyPrefix, destinationDirectory, false);
     }
+
+    public MultipleFileDownload downloadDirectory(String bucketName, String keyPrefix, File destinationDirectory, KeyFilter filter) {
+        return downloadDirectory(bucketName, keyPrefix, destinationDirectory, false, filter);
+    }
+
+    public MultipleFileDownload downloadDirectory(String bucketName, String keyPrefix, File destinationDirectory,
+                                                  boolean resumeOnRetry) {
+        return downloadDirectory(bucketName, keyPrefix, destinationDirectory, resumeOnRetry, null);
+    }
+
     /**
      * Downloads all objects in the virtual directory designated by the
      * keyPrefix given to the destination directory given. All virtual
@@ -1175,11 +1186,17 @@ public class TransferManager {
      *            If set to true, upon an immediate retry of a failed object
      *            download, the <code>TransferManager</code> will resume the
      *            download from the current end of the file on disk.
+     * @param filter
+     *           If set, applies the filter to determine which keys to include
+     *           in the download request. (default is include all).
      */
     public MultipleFileDownload downloadDirectory(String bucketName, String keyPrefix, File destinationDirectory,
-            boolean resumeOnRetry) {
+                                                  boolean resumeOnRetry, KeyFilter filter) {
         if ( keyPrefix == null )
             keyPrefix = "";
+        if ( filter == null ) {
+            filter = KeyFilter.INCLUDE_ALL;
+        }
         List<S3ObjectSummary> objectSummaries = new LinkedList<S3ObjectSummary>();
         Stack<String> commonPrefixes = new Stack<String>();
         commonPrefixes.add(keyPrefix);
@@ -1203,6 +1220,17 @@ public class TransferManager {
                     // Skip any files that are also virtual directories, since
                     // we can't save both a directory and a file of the same
                     // name.
+
+                    if ( !filter.shouldInclude(s) ) {
+                        log.debug("Skipping " + s.getKey() + " as it does not match filter.");
+                        continue;
+                    }
+
+                    if ( leavesRoot(destinationDirectory, s.getKey()) ) {
+                        throw new RuntimeException("Cannot download key " + s.getKey() +
+                            ", its relative path resolves outside the parent directory.");
+                    }
+
                     if ( !s.getKey().equals(prefix)
                             && !listObjectsResponse.getCommonPrefixes().contains(s.getKey() + DEFAULT_DELIMITER) ) {
                         objectSummaries.add(s);
@@ -1245,6 +1273,7 @@ public class TransferManager {
             // TODO: non-standard delimiters
             File f = new File(destinationDirectory, summary.getKey());
             File parentFile = f.getParentFile();
+
             if ( !parentFile.exists() && !parentFile.mkdirs() ) {
                 throw new RuntimeException("Couldn't create parent directories for " + f.getAbsolutePath());
             }
@@ -1271,6 +1300,14 @@ public class TransferManager {
         // to wake up and continue.
         latch.countDown();
         return multipleFileDownload;
+    }
+
+    private boolean leavesRoot(File localBaseDirectory, String key) {
+        try {
+            return !new File(localBaseDirectory, key).getCanonicalPath().startsWith(localBaseDirectory.getCanonicalPath());
+        } catch (IOException e) {
+            throw new RuntimeException("Unable to canonicalize paths",  e);
+        }
     }
 
     /**
