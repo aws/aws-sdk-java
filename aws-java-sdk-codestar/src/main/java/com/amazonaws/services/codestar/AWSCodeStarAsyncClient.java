@@ -39,11 +39,6 @@ import java.util.concurrent.ExecutorService;
  * <ul>
  * <li>
  * <p>
- * <a>CreateProject</a>, which creates an empty project in AWS CodeStar with no resources.
- * </p>
- * </li>
- * <li>
- * <p>
  * <a>DeleteProject</a>, which deletes a project in AWS CodeStar.
  * </p>
  * </li>

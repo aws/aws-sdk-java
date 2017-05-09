@@ -1,3 +1,8 @@
+# __1.11.127__ __2017-05-09__
+## __AWS SDK for Java__
+  - ### Features
+    - This change includes documentation updates for Amazon Workspaces and AWS CodeStar
+
 # __1.11.126__ __2017-05-04__
 ## __AWS Lambda__
   - ### Features

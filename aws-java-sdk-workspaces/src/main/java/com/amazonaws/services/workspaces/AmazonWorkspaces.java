@@ -283,7 +283,7 @@ public interface AmazonWorkspaces {
 
     /**
      * <p>
-     * Modifies the WorkSpace properties, including the RunningMode and AutoStop time.
+     * Modifies the WorkSpace properties, including the running mode and AutoStop time.
      * </p>
      * 
      * @param modifyWorkspacePropertiesRequest
@@ -291,16 +291,17 @@ public interface AmazonWorkspaces {
      * @throws InvalidParameterValuesException
      *         One or more parameter values are not valid.
      * @throws InvalidResourceStateException
-     *         The specified WorkSpace has an invalid state for this operation.
+     *         The state of the WorkSpace is not valid for this operation.
      * @throws OperationInProgressException
      *         The properties of this WorkSpace are currently being modified. Try again in a moment.
      * @throws UnsupportedWorkspaceConfigurationException
-     *         The WorkSpace does not have the supported configuration for this operation. For more information, see the
-     *         <a href="http://docs.aws.amazon.com/workspaces/latest/adminguide">Amazon WorkSpaces Administration
+     *         The configuration of this WorkSpace is not supported for this operation. For more information, see the <a
+     *         href="http://docs.aws.amazon.com/workspaces/latest/adminguide/">Amazon WorkSpaces Administration
      *         Guide</a>.
      * @throws ResourceNotFoundException
      *         The resource could not be found.
      * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
      * @throws ResourceUnavailableException
      *         The specified resource is not available.
      * @sample AmazonWorkspaces.ModifyWorkspaceProperties
@@ -376,8 +377,7 @@ public interface AmazonWorkspaces {
 
     /**
      * <p>
-     * Starts the specified WorkSpaces. The API only works with WorkSpaces that have RunningMode configured as AutoStop
-     * and the State set to “STOPPED.”
+     * Starts the specified WorkSpaces. The WorkSpaces must have a running mode of AutoStop and a state of STOPPED.
      * </p>
      * 
      * @param startWorkspacesRequest
@@ -390,8 +390,8 @@ public interface AmazonWorkspaces {
 
     /**
      * <p>
-     * Stops the specified WorkSpaces. The API only works with WorkSpaces that have RunningMode configured as AutoStop
-     * and the State set to AVAILABLE, IMPAIRED, UNHEALTHY, or ERROR.
+     * Stops the specified WorkSpaces. The WorkSpaces must have a running mode of AutoStop and a state of AVAILABLE,
+     * IMPAIRED, UNHEALTHY, or ERROR.
      * </p>
      * 
      * @param stopWorkspacesRequest

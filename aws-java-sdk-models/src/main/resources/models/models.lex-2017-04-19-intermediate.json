@@ -17,7 +17,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors" ],
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
     "presignersFqcn" : null,

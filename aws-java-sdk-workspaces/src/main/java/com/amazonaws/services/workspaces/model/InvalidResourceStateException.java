@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified WorkSpace has an invalid state for this operation.
+ * The state of the WorkSpace is not valid for this operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -408,7 +408,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Modifies the WorkSpace properties, including the RunningMode and AutoStop time.
+     * Modifies the WorkSpace properties, including the running mode and AutoStop time.
      * </p>
      * 
      * @param modifyWorkspacePropertiesRequest
@@ -422,7 +422,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Modifies the WorkSpace properties, including the RunningMode and AutoStop time.
+     * Modifies the WorkSpace properties, including the running mode and AutoStop time.
      * </p>
      * 
      * @param modifyWorkspacePropertiesRequest
@@ -581,8 +581,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Starts the specified WorkSpaces. The API only works with WorkSpaces that have RunningMode configured as AutoStop
-     * and the State set to “STOPPED.”
+     * Starts the specified WorkSpaces. The WorkSpaces must have a running mode of AutoStop and a state of STOPPED.
      * </p>
      * 
      * @param startWorkspacesRequest
@@ -595,8 +594,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Starts the specified WorkSpaces. The API only works with WorkSpaces that have RunningMode configured as AutoStop
-     * and the State set to “STOPPED.”
+     * Starts the specified WorkSpaces. The WorkSpaces must have a running mode of AutoStop and a state of STOPPED.
      * </p>
      * 
      * @param startWorkspacesRequest
@@ -614,8 +612,8 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Stops the specified WorkSpaces. The API only works with WorkSpaces that have RunningMode configured as AutoStop
-     * and the State set to AVAILABLE, IMPAIRED, UNHEALTHY, or ERROR.
+     * Stops the specified WorkSpaces. The WorkSpaces must have a running mode of AutoStop and a state of AVAILABLE,
+     * IMPAIRED, UNHEALTHY, or ERROR.
      * </p>
      * 
      * @param stopWorkspacesRequest
@@ -628,8 +626,8 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Stops the specified WorkSpaces. The API only works with WorkSpaces that have RunningMode configured as AutoStop
-     * and the State set to AVAILABLE, IMPAIRED, UNHEALTHY, or ERROR.
+     * Stops the specified WorkSpaces. The WorkSpaces must have a running mode of AutoStop and a state of AVAILABLE,
+     * IMPAIRED, UNHEALTHY, or ERROR.
      * </p>
      * 
      * @param stopWorkspacesRequest

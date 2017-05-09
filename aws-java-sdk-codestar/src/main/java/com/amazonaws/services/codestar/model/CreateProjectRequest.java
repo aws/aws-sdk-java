@@ -27,53 +27,36 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The friendly name for the project. This friendly name serves as the basis for the names for resources associated
-     * with the project, such as a repository name in AWS CodeCommit. The name is limited to 100 characters and cannot
-     * contain certain restricted symbols. For more information, see <a
-     * href="http://docs.aws.amazon.com/codestar/latest/userguide/limits.html">Limits</a> in the AWS CodeStar User
-     * Guide.
+     * Reserved for future use.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The ID for the AWS CodeStar project. Project IDs must be unique within an AWS account. Project IDs cannot exceed
-     * 15 characters and cannot contain capital letters and other restricted symbols. For more information, see <a
-     * href="http://docs.aws.amazon.com/codestar/latest/userguide/limits.html">Limits</a> in the AWS CodeStar User
-     * Guide.
+     * Reserved for future use.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * Optional. The description for the project.
+     * Reserved for future use.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * A user- or system-generated token that identifies the entity that requested project creation. This token can be
-     * used to repeat the request. It can also be used to identify which user or system made the request in
-     * DescribeProject and ListProjects.
+     * Reserved for future use.
      * </p>
      */
     private String clientRequestToken;
 
     /**
      * <p>
-     * The friendly name for the project. This friendly name serves as the basis for the names for resources associated
-     * with the project, such as a repository name in AWS CodeCommit. The name is limited to 100 characters and cannot
-     * contain certain restricted symbols. For more information, see <a
-     * href="http://docs.aws.amazon.com/codestar/latest/userguide/limits.html">Limits</a> in the AWS CodeStar User
-     * Guide.
+     * Reserved for future use.
      * </p>
      * 
      * @param name
-     *        The friendly name for the project. This friendly name serves as the basis for the names for resources
-     *        associated with the project, such as a repository name in AWS CodeCommit. The name is limited to 100
-     *        characters and cannot contain certain restricted symbols. For more information, see <a
-     *        href="http://docs.aws.amazon.com/codestar/latest/userguide/limits.html">Limits</a> in the AWS CodeStar
-     *        User Guide.
+     *        Reserved for future use.
      */
 
     public void setName(String name) {
@@ -82,18 +65,10 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The friendly name for the project. This friendly name serves as the basis for the names for resources associated
-     * with the project, such as a repository name in AWS CodeCommit. The name is limited to 100 characters and cannot
-     * contain certain restricted symbols. For more information, see <a
-     * href="http://docs.aws.amazon.com/codestar/latest/userguide/limits.html">Limits</a> in the AWS CodeStar User
-     * Guide.
+     * Reserved for future use.
      * </p>
      * 
-     * @return The friendly name for the project. This friendly name serves as the basis for the names for resources
-     *         associated with the project, such as a repository name in AWS CodeCommit. The name is limited to 100
-     *         characters and cannot contain certain restricted symbols. For more information, see <a
-     *         href="http://docs.aws.amazon.com/codestar/latest/userguide/limits.html">Limits</a> in the AWS CodeStar
-     *         User Guide.
+     * @return Reserved for future use.
      */
 
     public String getName() {
@@ -102,19 +77,11 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The friendly name for the project. This friendly name serves as the basis for the names for resources associated
-     * with the project, such as a repository name in AWS CodeCommit. The name is limited to 100 characters and cannot
-     * contain certain restricted symbols. For more information, see <a
-     * href="http://docs.aws.amazon.com/codestar/latest/userguide/limits.html">Limits</a> in the AWS CodeStar User
-     * Guide.
+     * Reserved for future use.
      * </p>
      * 
      * @param name
-     *        The friendly name for the project. This friendly name serves as the basis for the names for resources
-     *        associated with the project, such as a repository name in AWS CodeCommit. The name is limited to 100
-     *        characters and cannot contain certain restricted symbols. For more information, see <a
-     *        href="http://docs.aws.amazon.com/codestar/latest/userguide/limits.html">Limits</a> in the AWS CodeStar
-     *        User Guide.
+     *        Reserved for future use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -125,17 +92,11 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID for the AWS CodeStar project. Project IDs must be unique within an AWS account. Project IDs cannot exceed
-     * 15 characters and cannot contain capital letters and other restricted symbols. For more information, see <a
-     * href="http://docs.aws.amazon.com/codestar/latest/userguide/limits.html">Limits</a> in the AWS CodeStar User
-     * Guide.
+     * Reserved for future use.
      * </p>
      * 
      * @param id
-     *        The ID for the AWS CodeStar project. Project IDs must be unique within an AWS account. Project IDs cannot
-     *        exceed 15 characters and cannot contain capital letters and other restricted symbols. For more
-     *        information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/limits.html">Limits</a> in
-     *        the AWS CodeStar User Guide.
+     *        Reserved for future use.
      */
 
     public void setId(String id) {
@@ -144,16 +105,10 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID for the AWS CodeStar project. Project IDs must be unique within an AWS account. Project IDs cannot exceed
-     * 15 characters and cannot contain capital letters and other restricted symbols. For more information, see <a
-     * href="http://docs.aws.amazon.com/codestar/latest/userguide/limits.html">Limits</a> in the AWS CodeStar User
-     * Guide.
+     * Reserved for future use.
      * </p>
      * 
-     * @return The ID for the AWS CodeStar project. Project IDs must be unique within an AWS account. Project IDs cannot
-     *         exceed 15 characters and cannot contain capital letters and other restricted symbols. For more
-     *         information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/limits.html">Limits</a> in
-     *         the AWS CodeStar User Guide.
+     * @return Reserved for future use.
      */
 
     public String getId() {
@@ -162,17 +117,11 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID for the AWS CodeStar project. Project IDs must be unique within an AWS account. Project IDs cannot exceed
-     * 15 characters and cannot contain capital letters and other restricted symbols. For more information, see <a
-     * href="http://docs.aws.amazon.com/codestar/latest/userguide/limits.html">Limits</a> in the AWS CodeStar User
-     * Guide.
+     * Reserved for future use.
      * </p>
      * 
      * @param id
-     *        The ID for the AWS CodeStar project. Project IDs must be unique within an AWS account. Project IDs cannot
-     *        exceed 15 characters and cannot contain capital letters and other restricted symbols. For more
-     *        information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/limits.html">Limits</a> in
-     *        the AWS CodeStar User Guide.
+     *        Reserved for future use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -183,11 +132,11 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Optional. The description for the project.
+     * Reserved for future use.
      * </p>
      * 
      * @param description
-     *        Optional. The description for the project.
+     *        Reserved for future use.
      */
 
     public void setDescription(String description) {
@@ -196,10 +145,10 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Optional. The description for the project.
+     * Reserved for future use.
      * </p>
      * 
-     * @return Optional. The description for the project.
+     * @return Reserved for future use.
      */
 
     public String getDescription() {
@@ -208,11 +157,11 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Optional. The description for the project.
+     * Reserved for future use.
      * </p>
      * 
      * @param description
-     *        Optional. The description for the project.
+     *        Reserved for future use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -223,15 +172,11 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A user- or system-generated token that identifies the entity that requested project creation. This token can be
-     * used to repeat the request. It can also be used to identify which user or system made the request in
-     * DescribeProject and ListProjects.
+     * Reserved for future use.
      * </p>
      * 
      * @param clientRequestToken
-     *        A user- or system-generated token that identifies the entity that requested project creation. This token
-     *        can be used to repeat the request. It can also be used to identify which user or system made the request
-     *        in DescribeProject and ListProjects.
+     *        Reserved for future use.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -240,14 +185,10 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A user- or system-generated token that identifies the entity that requested project creation. This token can be
-     * used to repeat the request. It can also be used to identify which user or system made the request in
-     * DescribeProject and ListProjects.
+     * Reserved for future use.
      * </p>
      * 
-     * @return A user- or system-generated token that identifies the entity that requested project creation. This token
-     *         can be used to repeat the request. It can also be used to identify which user or system made the request
-     *         in DescribeProject and ListProjects.
+     * @return Reserved for future use.
      */
 
     public String getClientRequestToken() {
@@ -256,15 +197,11 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A user- or system-generated token that identifies the entity that requested project creation. This token can be
-     * used to repeat the request. It can also be used to identify which user or system made the request in
-     * DescribeProject and ListProjects.
+     * Reserved for future use.
      * </p>
      * 
      * @param clientRequestToken
-     *        A user- or system-generated token that identifies the entity that requested project creation. This token
-     *        can be used to repeat the request. It can also be used to identify which user or system made the request
-     *        in DescribeProject and ListProjects.
+     *        Reserved for future use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

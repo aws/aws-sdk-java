@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The WorkSpace does not have the supported configuration for this operation. For more information, see the <a
- * href="http://docs.aws.amazon.com/workspaces/latest/adminguide">Amazon WorkSpaces Administration Guide</a>.
+ * The configuration of this WorkSpace is not supported for this operation. For more information, see the <a
+ * href="http://docs.aws.amazon.com/workspaces/latest/adminguide/">Amazon WorkSpaces Administration Guide</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -15,7 +15,9 @@ package com.amazonaws.services.workspaces.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The user is not authorized to access a resource.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AccessDeniedException extends com.amazonaws.services.workspaces.model.AmazonWorkspacesException {

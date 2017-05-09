@@ -39,11 +39,6 @@ import com.amazonaws.services.codestar.model.*;
  * <ul>
  * <li>
  * <p>
- * <a>CreateProject</a>, which creates an empty project in AWS CodeStar with no resources.
- * </p>
- * </li>
- * <li>
- * <p>
  * <a>DeleteProject</a>, which deletes a project in AWS CodeStar.
  * </p>
  * </li>
@@ -157,7 +152,7 @@ public interface AWSCodeStarAsync extends AWSCodeStar {
 
     /**
      * <p>
-     * Creates a project in AWS CodeStar with minimal structure and no resources.
+     * Reserved for future use. To create a project, use the AWS CodeStar console.
      * </p>
      * 
      * @param createProjectRequest
@@ -170,7 +165,7 @@ public interface AWSCodeStarAsync extends AWSCodeStar {
 
     /**
      * <p>
-     * Creates a project in AWS CodeStar with minimal structure and no resources.
+     * Reserved for future use. To create a project, use the AWS CodeStar console.
      * </p>
      * 
      * @param createProjectRequest
