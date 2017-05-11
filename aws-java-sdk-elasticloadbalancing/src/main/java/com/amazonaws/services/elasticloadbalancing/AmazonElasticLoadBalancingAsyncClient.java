@@ -39,16 +39,18 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * balancer and a protocol and port number for connections from the load balancer to the instances.
  * </p>
  * <p>
- * Elastic Load Balancing supports two types of load balancers: Classic load balancers and Application load balancers
- * (new). A Classic load balancer makes routing and load balancing decisions either at the transport layer (TCP/SSL) or
- * the application layer (HTTP/HTTPS), and supports either EC2-Classic or a VPC. An Application load balancer makes
+ * Elastic Load Balancing supports two types of load balancers: Classic Load Balancers and Application Load Balancers
+ * (new). A Classic Load Balancer makes routing and load balancing decisions either at the transport layer (TCP/SSL) or
+ * the application layer (HTTP/HTTPS), and supports either EC2-Classic or a VPC. An Application Load Balancer makes
  * routing and load balancing decisions at the application layer (HTTP/HTTPS), supports path-based routing, and can
  * route requests to one or more ports on each EC2 instance or container instance in your virtual private cloud (VPC).
- * For more information, see the .
+ * For more information, see the <a
+ * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html">Elastic Load
+ * Balancing User Guide</a>.
  * </p>
  * <p>
- * This reference covers the 2012-06-01 API, which supports Classic load balancers. The 2015-12-01 API supports
- * Application load balancers.
+ * This reference covers the 2012-06-01 API, which supports Classic Load Balancers. The 2015-12-01 API supports
+ * Application Load Balancers.
  * </p>
  * <p>
  * To get started, create a load balancer with one or more listeners using <a>CreateLoadBalancer</a>. Register your
@@ -691,6 +693,39 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
 
                 try {
                     result = executeDeregisterInstancesFromLoadBalancer(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccountLimitsResult> describeAccountLimitsAsync(DescribeAccountLimitsRequest request) {
+
+        return describeAccountLimitsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccountLimitsResult> describeAccountLimitsAsync(final DescribeAccountLimitsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAccountLimitsRequest, DescribeAccountLimitsResult> asyncHandler) {
+        final DescribeAccountLimitsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAccountLimitsResult>() {
+            @Override
+            public DescribeAccountLimitsResult call() throws Exception {
+                DescribeAccountLimitsResult result = null;
+
+                try {
+                    result = executeDescribeAccountLimits(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -22,7 +22,7 @@ import javax.annotation.Generated;
  * <p>
  * For information about the protocols and the ports supported by Elastic Load Balancing, see <a
  * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your
- * Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
+ * Classic Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/Listener" target="_top">AWS API

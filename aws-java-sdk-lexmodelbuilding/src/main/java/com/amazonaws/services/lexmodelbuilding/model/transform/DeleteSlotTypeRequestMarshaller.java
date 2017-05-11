@@ -29,8 +29,6 @@ public class DeleteSlotTypeRequestMarshaller {
 
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("name").build();
-    private static final MarshallingInfo<String> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("version").build();
 
     private static final DeleteSlotTypeRequestMarshaller instance = new DeleteSlotTypeRequestMarshaller();
 
@@ -49,7 +47,6 @@ public class DeleteSlotTypeRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(deleteSlotTypeRequest.getName(), NAME_BINDING);
-            protocolMarshaller.marshall(deleteSlotTypeRequest.getVersion(), VERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

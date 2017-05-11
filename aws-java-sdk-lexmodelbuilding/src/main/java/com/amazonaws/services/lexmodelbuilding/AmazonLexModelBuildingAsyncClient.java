@@ -263,6 +263,39 @@ public class AmazonLexModelBuildingAsyncClient extends AmazonLexModelBuildingCli
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteBotVersionResult> deleteBotVersionAsync(DeleteBotVersionRequest request) {
+
+        return deleteBotVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBotVersionResult> deleteBotVersionAsync(final DeleteBotVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteBotVersionRequest, DeleteBotVersionResult> asyncHandler) {
+        final DeleteBotVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteBotVersionResult>() {
+            @Override
+            public DeleteBotVersionResult call() throws Exception {
+                DeleteBotVersionResult result = null;
+
+                try {
+                    result = executeDeleteBotVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteIntentResult> deleteIntentAsync(DeleteIntentRequest request) {
 
         return deleteIntentAsync(request, null);
@@ -296,6 +329,39 @@ public class AmazonLexModelBuildingAsyncClient extends AmazonLexModelBuildingCli
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteIntentVersionResult> deleteIntentVersionAsync(DeleteIntentVersionRequest request) {
+
+        return deleteIntentVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteIntentVersionResult> deleteIntentVersionAsync(final DeleteIntentVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteIntentVersionRequest, DeleteIntentVersionResult> asyncHandler) {
+        final DeleteIntentVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteIntentVersionResult>() {
+            @Override
+            public DeleteIntentVersionResult call() throws Exception {
+                DeleteIntentVersionResult result = null;
+
+                try {
+                    result = executeDeleteIntentVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteSlotTypeResult> deleteSlotTypeAsync(DeleteSlotTypeRequest request) {
 
         return deleteSlotTypeAsync(request, null);
@@ -313,6 +379,39 @@ public class AmazonLexModelBuildingAsyncClient extends AmazonLexModelBuildingCli
 
                 try {
                     result = executeDeleteSlotType(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSlotTypeVersionResult> deleteSlotTypeVersionAsync(DeleteSlotTypeVersionRequest request) {
+
+        return deleteSlotTypeVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSlotTypeVersionResult> deleteSlotTypeVersionAsync(final DeleteSlotTypeVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteSlotTypeVersionRequest, DeleteSlotTypeVersionResult> asyncHandler) {
+        final DeleteSlotTypeVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteSlotTypeVersionResult>() {
+            @Override
+            public DeleteSlotTypeVersionResult call() throws Exception {
+                DeleteSlotTypeVersionResult result = null;
+
+                try {
+                    result = executeDeleteSlotTypeVersion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

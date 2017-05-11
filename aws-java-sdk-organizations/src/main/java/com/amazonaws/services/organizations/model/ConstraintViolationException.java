@@ -18,8 +18,80 @@ import javax.annotation.Generated;
  * <p>
  * Performing this operation violates a minimum or maximum value limit. For example, attempting to removing the last SCP
  * from an OU or root, inviting or creating too many accounts to the organization, or attaching too many policies to an
- * account, OU, or root.
+ * account, OU, or root. This exception includes a reason that contains additional information about the violated limit:
  * </p>
+ * <p/>
+ * <ul>
+ * <li>
+ * <p>
+ * ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an organization.
+ * <b>Note</b>: deleted and closed accounts still count toward your limit.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes you can send in one day.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * OU_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of organizational units you can have in an organization.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an organizational unit tree that is too many levels deep.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an organization.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to exceed the number of policies of a certain type that can
+ * be attached to an entity at one time.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to detach a policy from an entity that would cause the
+ * entity to have fewer than the minimum number of policies of a certain type required.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove an account from an organization that was created from
+ * within organizations.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this account, you first must associate a
+ * payment instrument, such as a credit card, with the account.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member account, you first must
+ * associate a payment instrument, such as a credit card, with the account.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts that you can create in one day.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first must migrate
+ * the organization's master account to the marketplace that corresponds to the master account's address. For example,
+ * accounts with India addresses must be associated with the AISPL marketplace. All accounts in an organization must be
+ * associated with the same marketplace.
+ * </p>
+ * </li>
+ * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConstraintViolationException extends com.amazonaws.services.organizations.model.AWSOrganizationsException {

@@ -15,7 +15,9 @@ package com.amazonaws.services.elasticloadbalancing.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The specified protocol or signature version is not supported.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UnsupportedProtocolException extends com.amazonaws.services.elasticloadbalancing.model.AmazonElasticLoadBalancingException {

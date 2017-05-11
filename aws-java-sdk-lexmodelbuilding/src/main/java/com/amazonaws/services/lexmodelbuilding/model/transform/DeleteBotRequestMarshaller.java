@@ -29,8 +29,6 @@ public class DeleteBotRequestMarshaller {
 
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("name").build();
-    private static final MarshallingInfo<String> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("version").build();
 
     private static final DeleteBotRequestMarshaller instance = new DeleteBotRequestMarshaller();
 
@@ -49,7 +47,6 @@ public class DeleteBotRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(deleteBotRequest.getName(), NAME_BINDING);
-            protocolMarshaller.marshall(deleteBotRequest.getVersion(), VERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

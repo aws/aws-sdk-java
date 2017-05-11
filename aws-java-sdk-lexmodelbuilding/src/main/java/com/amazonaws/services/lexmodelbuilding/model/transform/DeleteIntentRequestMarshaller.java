@@ -29,8 +29,6 @@ public class DeleteIntentRequestMarshaller {
 
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("name").build();
-    private static final MarshallingInfo<String> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("version").build();
 
     private static final DeleteIntentRequestMarshaller instance = new DeleteIntentRequestMarshaller();
 
@@ -49,7 +47,6 @@ public class DeleteIntentRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(deleteIntentRequest.getName(), NAME_BINDING);
-            protocolMarshaller.marshall(deleteIntentRequest.getVersion(), VERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

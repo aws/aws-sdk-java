@@ -31,12 +31,6 @@ public class DeleteSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String name;
-    /**
-     * <p>
-     * The version of the slot type.
-     * </p>
-     */
-    private String version;
 
     /**
      * <p>
@@ -79,46 +73,6 @@ public class DeleteSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * <p>
-     * The version of the slot type.
-     * </p>
-     * 
-     * @param version
-     *        The version of the slot type.
-     */
-
-    public void setVersion(String version) {
-        this.version = version;
-    }
-
-    /**
-     * <p>
-     * The version of the slot type.
-     * </p>
-     * 
-     * @return The version of the slot type.
-     */
-
-    public String getVersion() {
-        return this.version;
-    }
-
-    /**
-     * <p>
-     * The version of the slot type.
-     * </p>
-     * 
-     * @param version
-     *        The version of the slot type.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DeleteSlotTypeRequest withVersion(String version) {
-        setVersion(version);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -130,9 +84,7 @@ public class DeleteSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
-        if (getVersion() != null)
-            sb.append("Version: ").append(getVersion());
+            sb.append("Name: ").append(getName());
         sb.append("}");
         return sb.toString();
     }
@@ -151,10 +103,6 @@ public class DeleteSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
-        if (other.getVersion() == null ^ this.getVersion() == null)
-            return false;
-        if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
-            return false;
         return true;
     }
 
@@ -164,7 +112,6 @@ public class DeleteSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         return hashCode;
     }
 

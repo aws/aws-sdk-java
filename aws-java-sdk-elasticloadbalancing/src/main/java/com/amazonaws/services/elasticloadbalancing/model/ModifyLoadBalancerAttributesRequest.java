@@ -36,7 +36,7 @@ public class ModifyLoadBalancerAttributesRequest extends com.amazonaws.AmazonWeb
     private String loadBalancerName;
     /**
      * <p>
-     * The attributes of the load balancer.
+     * The attributes for the load balancer.
      * </p>
      */
     private LoadBalancerAttributes loadBalancerAttributes;
@@ -83,11 +83,11 @@ public class ModifyLoadBalancerAttributesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The attributes of the load balancer.
+     * The attributes for the load balancer.
      * </p>
      * 
      * @param loadBalancerAttributes
-     *        The attributes of the load balancer.
+     *        The attributes for the load balancer.
      */
 
     public void setLoadBalancerAttributes(LoadBalancerAttributes loadBalancerAttributes) {
@@ -96,10 +96,10 @@ public class ModifyLoadBalancerAttributesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The attributes of the load balancer.
+     * The attributes for the load balancer.
      * </p>
      * 
-     * @return The attributes of the load balancer.
+     * @return The attributes for the load balancer.
      */
 
     public LoadBalancerAttributes getLoadBalancerAttributes() {
@@ -108,11 +108,11 @@ public class ModifyLoadBalancerAttributesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The attributes of the load balancer.
+     * The attributes for the load balancer.
      * </p>
      * 
      * @param loadBalancerAttributes
-     *        The attributes of the load balancer.
+     *        The attributes for the load balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

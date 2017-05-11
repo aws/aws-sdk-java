@@ -1015,6 +1015,59 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * Describes the current Elastic Load Balancing resource limits for your AWS account.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits for
+     * Your Application Load Balancer</a> in the <i>Application Load Balancer Guide</i>.
+     * </p>
+     * 
+     * @param describeAccountLimitsRequest
+     * @return Result of the DescribeAccountLimits operation returned by the service.
+     * @sample AmazonElasticLoadBalancing.DescribeAccountLimits
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeAccountLimits"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeAccountLimitsResult describeAccountLimits(DescribeAccountLimitsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAccountLimits(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAccountLimitsResult executeDescribeAccountLimits(DescribeAccountLimitsRequest describeAccountLimitsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAccountLimitsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAccountLimitsRequest> request = null;
+        Response<DescribeAccountLimitsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAccountLimitsRequestMarshaller().marshall(super.beforeMarshalling(describeAccountLimitsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeAccountLimitsResult> responseHandler = new StaxResponseHandler<DescribeAccountLimitsResult>(
+                    new DescribeAccountLimitsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes the specified listeners or the listeners for the specified Application Load Balancer. You must specify
      * either a load balancer or one or more listeners.
      * </p>

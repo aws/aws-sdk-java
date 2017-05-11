@@ -1,3 +1,16 @@
+# __1.11.128__ __2017-05-11__
+## __AWS Organizations__
+  - ### Features
+    - AWS Organizations APIs that return an Account object now include the email address associated with the account?s root user.
+
+## __Amazon Lex Model Building Service__
+  - ### Features
+    - Releasing new DeleteBotVersion, DeleteIntentVersion and DeleteSlotTypeVersion APIs.
+
+## __Elastic Load Balancing__
+  - ### Features
+    - Add a new API to allow customers to describe their account limits, such as load balancer limit, target group limit etc.
+
 # __1.11.127__ __2017-05-09__
 ## __AWS SDK for Java__
   - ### Features

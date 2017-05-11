@@ -77,6 +77,36 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * <p>
      * If the request failed, a description of the reason for the failure.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you have reached the limit on the number of
+     * accounts in your organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EMAIL_ALREADY_EXISTS: The account could not be created because another AWS account with that email address
+     * already exists.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INVALID_ADDRESS: The account could not be created because the address you provided is not valid.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INVALID_EMAIL: The account could not be created because the email address you provided is not valid.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the
+     * problem persists, contact Customer Support.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String failureReason;
 
@@ -405,9 +435,68 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * <p>
      * If the request failed, a description of the reason for the failure.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you have reached the limit on the number of
+     * accounts in your organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EMAIL_ALREADY_EXISTS: The account could not be created because another AWS account with that email address
+     * already exists.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INVALID_ADDRESS: The account could not be created because the address you provided is not valid.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INVALID_EMAIL: The account could not be created because the email address you provided is not valid.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the
+     * problem persists, contact Customer Support.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param failureReason
-     *        If the request failed, a description of the reason for the failure.
+     *        If the request failed, a description of the reason for the failure.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you have reached the limit on the number
+     *        of accounts in your organization.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EMAIL_ALREADY_EXISTS: The account could not be created because another AWS account with that email address
+     *        already exists.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INVALID_ADDRESS: The account could not be created because the address you provided is not valid.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INVALID_EMAIL: The account could not be created because the email address you provided is not valid.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the
+     *        problem persists, contact Customer Support.
+     *        </p>
+     *        </li>
      * @see CreateAccountFailureReason
      */
 
@@ -419,8 +508,67 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * <p>
      * If the request failed, a description of the reason for the failure.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you have reached the limit on the number of
+     * accounts in your organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EMAIL_ALREADY_EXISTS: The account could not be created because another AWS account with that email address
+     * already exists.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INVALID_ADDRESS: The account could not be created because the address you provided is not valid.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INVALID_EMAIL: The account could not be created because the email address you provided is not valid.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the
+     * problem persists, contact Customer Support.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return If the request failed, a description of the reason for the failure.
+     * @return If the request failed, a description of the reason for the failure.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you have reached the limit on the number
+     *         of accounts in your organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EMAIL_ALREADY_EXISTS: The account could not be created because another AWS account with that email
+     *         address already exists.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ADDRESS: The account could not be created because the address you provided is not valid.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_EMAIL: The account could not be created because the email address you provided is not valid.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If
+     *         the problem persists, contact Customer Support.
+     *         </p>
+     *         </li>
      * @see CreateAccountFailureReason
      */
 
@@ -432,9 +580,68 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * <p>
      * If the request failed, a description of the reason for the failure.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you have reached the limit on the number of
+     * accounts in your organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EMAIL_ALREADY_EXISTS: The account could not be created because another AWS account with that email address
+     * already exists.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INVALID_ADDRESS: The account could not be created because the address you provided is not valid.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INVALID_EMAIL: The account could not be created because the email address you provided is not valid.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the
+     * problem persists, contact Customer Support.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param failureReason
-     *        If the request failed, a description of the reason for the failure.
+     *        If the request failed, a description of the reason for the failure.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you have reached the limit on the number
+     *        of accounts in your organization.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EMAIL_ALREADY_EXISTS: The account could not be created because another AWS account with that email address
+     *        already exists.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INVALID_ADDRESS: The account could not be created because the address you provided is not valid.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INVALID_EMAIL: The account could not be created because the email address you provided is not valid.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the
+     *        problem persists, contact Customer Support.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CreateAccountFailureReason
      */
@@ -448,9 +655,68 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * <p>
      * If the request failed, a description of the reason for the failure.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you have reached the limit on the number of
+     * accounts in your organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EMAIL_ALREADY_EXISTS: The account could not be created because another AWS account with that email address
+     * already exists.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INVALID_ADDRESS: The account could not be created because the address you provided is not valid.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INVALID_EMAIL: The account could not be created because the email address you provided is not valid.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the
+     * problem persists, contact Customer Support.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param failureReason
-     *        If the request failed, a description of the reason for the failure.
+     *        If the request failed, a description of the reason for the failure.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you have reached the limit on the number
+     *        of accounts in your organization.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EMAIL_ALREADY_EXISTS: The account could not be created because another AWS account with that email address
+     *        already exists.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INVALID_ADDRESS: The account could not be created because the address you provided is not valid.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INVALID_EMAIL: The account could not be created because the email address you provided is not valid.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the
+     *        problem persists, contact Customer Support.
+     *        </p>
+     *        </li>
      * @see CreateAccountFailureReason
      */
 
@@ -462,9 +728,68 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * <p>
      * If the request failed, a description of the reason for the failure.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you have reached the limit on the number of
+     * accounts in your organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EMAIL_ALREADY_EXISTS: The account could not be created because another AWS account with that email address
+     * already exists.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INVALID_ADDRESS: The account could not be created because the address you provided is not valid.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INVALID_EMAIL: The account could not be created because the email address you provided is not valid.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the
+     * problem persists, contact Customer Support.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param failureReason
-     *        If the request failed, a description of the reason for the failure.
+     *        If the request failed, a description of the reason for the failure.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you have reached the limit on the number
+     *        of accounts in your organization.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EMAIL_ALREADY_EXISTS: The account could not be created because another AWS account with that email address
+     *        already exists.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INVALID_ADDRESS: The account could not be created because the address you provided is not valid.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INVALID_EMAIL: The account could not be created because the email address you provided is not valid.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the
+     *        problem persists, contact Customer Support.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CreateAccountFailureReason
      */

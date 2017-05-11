@@ -89,6 +89,11 @@ public class AbstractAmazonElasticLoadBalancing implements AmazonElasticLoadBala
     }
 
     @Override
+    public DescribeAccountLimitsResult describeAccountLimits(DescribeAccountLimitsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeListenersResult describeListeners(DescribeListenersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

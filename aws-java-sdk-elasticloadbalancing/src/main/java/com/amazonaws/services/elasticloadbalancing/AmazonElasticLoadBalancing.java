@@ -36,16 +36,18 @@ import com.amazonaws.services.elasticloadbalancing.waiters.AmazonElasticLoadBala
  * balancer and a protocol and port number for connections from the load balancer to the instances.
  * </p>
  * <p>
- * Elastic Load Balancing supports two types of load balancers: Classic load balancers and Application load balancers
- * (new). A Classic load balancer makes routing and load balancing decisions either at the transport layer (TCP/SSL) or
- * the application layer (HTTP/HTTPS), and supports either EC2-Classic or a VPC. An Application load balancer makes
+ * Elastic Load Balancing supports two types of load balancers: Classic Load Balancers and Application Load Balancers
+ * (new). A Classic Load Balancer makes routing and load balancing decisions either at the transport layer (TCP/SSL) or
+ * the application layer (HTTP/HTTPS), and supports either EC2-Classic or a VPC. An Application Load Balancer makes
  * routing and load balancing decisions at the application layer (HTTP/HTTPS), supports path-based routing, and can
  * route requests to one or more ports on each EC2 instance or container instance in your virtual private cloud (VPC).
- * For more information, see the .
+ * For more information, see the <a
+ * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html">Elastic Load
+ * Balancing User Guide</a>.
  * </p>
  * <p>
- * This reference covers the 2012-06-01 API, which supports Classic load balancers. The 2015-12-01 API supports
- * Application load balancers.
+ * This reference covers the 2012-06-01 API, which supports Classic Load Balancers. The 2015-12-01 API supports
+ * Application Load Balancers.
  * </p>
  * <p>
  * To get started, create a load balancer with one or more listeners using <a>CreateLoadBalancer</a>. Register your
@@ -129,7 +131,7 @@ public interface AmazonElasticLoadBalancing {
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag Your Classic Load
-     * Balancer</a> in the <i>Classic Load Balancers Guide</i>.
+     * Balancer</a> in the <i>Classic Load Balancer Guide</i>.
      * </p>
      * 
      * @param addTagsRequest
@@ -155,7 +157,7 @@ public interface AmazonElasticLoadBalancing {
      * <p>
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-security-groups.html#elb-vpc-security-groups"
-     * >Security Groups for Load Balancers in a VPC</a> in the <i>Classic Load Balancers Guide</i>.
+     * >Security Groups for Load Balancers in a VPC</a> in the <i>Classic Load Balancer Guide</i>.
      * </p>
      * 
      * @param applySecurityGroupsToLoadBalancerRequest
@@ -181,7 +183,7 @@ public interface AmazonElasticLoadBalancing {
      * <p>
      * The load balancer evenly distributes requests across all registered subnets. For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-manage-subnets.html">Add or Remove
-     * Subnets for Your Load Balancer in a VPC</a> in the <i>Classic Load Balancers Guide</i>.
+     * Subnets for Your Load Balancer in a VPC</a> in the <i>Classic Load Balancer Guide</i>.
      * </p>
      * 
      * @param attachLoadBalancerToSubnetsRequest
@@ -208,7 +210,7 @@ public interface AmazonElasticLoadBalancing {
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-healthchecks.html">Configure Health
-     * Checks for Your Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
+     * Checks for Your Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
      * </p>
      * 
      * @param configureHealthCheckRequest
@@ -240,7 +242,7 @@ public interface AmazonElasticLoadBalancing {
      * <p>
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-application"
-     * >Application-Controlled Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.
+     * >Application-Controlled Session Stickiness</a> in the <i>Classic Load Balancer Guide</i>.
      * </p>
      * 
      * @param createAppCookieStickinessPolicyRequest
@@ -279,7 +281,7 @@ public interface AmazonElasticLoadBalancing {
      * <p>
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-duration"
-     * >Duration-Based Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.
+     * >Duration-Based Session Stickiness</a> in the <i>Classic Load Balancer Guide</i>.
      * </p>
      * 
      * @param createLBCookieStickinessPolicyRequest
@@ -302,7 +304,7 @@ public interface AmazonElasticLoadBalancing {
 
     /**
      * <p>
-     * Creates a Classic load balancer.
+     * Creates a Classic Load Balancer.
      * </p>
      * <p>
      * You can add listeners, security groups, subnets, and tags when you create your load balancer, or you can add them
@@ -317,7 +319,7 @@ public interface AmazonElasticLoadBalancing {
      * You can create up to 20 load balancers per region per account. You can request an increase for the number of load
      * balancers for your account. For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-limits.html">Limits for Your Classic
-     * Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
+     * Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
      * </p>
      * 
      * @param createLoadBalancerRequest
@@ -347,6 +349,7 @@ public interface AmazonElasticLoadBalancing {
      * @throws DuplicateTagKeysException
      *         A tag key was specified more than once.
      * @throws UnsupportedProtocolException
+     *         The specified protocol or signature version is not supported.
      * @sample AmazonElasticLoadBalancing.CreateLoadBalancer
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLoadBalancer"
      *      target="_top">AWS API Documentation</a>
@@ -362,7 +365,7 @@ public interface AmazonElasticLoadBalancing {
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners for Your
-     * Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
+     * Classic Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
      * </p>
      * 
      * @param createLoadBalancerListenersRequest
@@ -380,6 +383,7 @@ public interface AmazonElasticLoadBalancing {
      * @throws InvalidConfigurationRequestException
      *         The requested configuration change is not valid.
      * @throws UnsupportedProtocolException
+     *         The specified protocol or signature version is not supported.
      * @sample AmazonElasticLoadBalancing.CreateLoadBalancerListeners
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/CreateLoadBalancerListeners"
      *      target="_top">AWS API Documentation</a>
@@ -482,7 +486,7 @@ public interface AmazonElasticLoadBalancing {
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-deregister-register-instances.html"
-     * >Register or De-Register EC2 Instances</a> in the <i>Classic Load Balancers Guide</i>.
+     * >Register or De-Register EC2 Instances</a> in the <i>Classic Load Balancer Guide</i>.
      * </p>
      * 
      * @param deregisterInstancesFromLoadBalancerRequest
@@ -499,6 +503,24 @@ public interface AmazonElasticLoadBalancing {
      */
     DeregisterInstancesFromLoadBalancerResult deregisterInstancesFromLoadBalancer(
             DeregisterInstancesFromLoadBalancerRequest deregisterInstancesFromLoadBalancerRequest);
+
+    /**
+     * <p>
+     * Describes the current Elastic Load Balancing resource limits for your AWS account.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-limits.html">Limits for Your Classic
+     * Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
+     * </p>
+     * 
+     * @param describeAccountLimitsRequest
+     * @return Result of the DescribeAccountLimits operation returned by the service.
+     * @sample AmazonElasticLoadBalancing.DescribeAccountLimits
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeAccountLimits"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeAccountLimitsResult describeAccountLimits(DescribeAccountLimitsRequest describeAccountLimitsRequest);
 
     /**
      * <p>
@@ -685,7 +707,7 @@ public interface AmazonElasticLoadBalancing {
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html">Add or Remove
-     * Availability Zones</a> in the <i>Classic Load Balancers Guide</i>.
+     * Availability Zones</a> in the <i>Classic Load Balancer Guide</i>.
      * </p>
      * 
      * @param disableAvailabilityZonesForLoadBalancerRequest
@@ -714,7 +736,7 @@ public interface AmazonElasticLoadBalancing {
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html">Add or Remove
-     * Availability Zones</a> in the <i>Classic Load Balancers Guide</i>.
+     * Availability Zones</a> in the <i>Classic Load Balancer Guide</i>.
      * </p>
      * 
      * @param enableAvailabilityZonesForLoadBalancerRequest
@@ -741,7 +763,7 @@ public interface AmazonElasticLoadBalancing {
      * balancer.
      * </p>
      * <p>
-     * For more information, see the following in the <i>Classic Load Balancers Guide</i>:
+     * For more information, see the following in the <i>Classic Load Balancer Guide</i>:
      * </p>
      * <ul>
      * <li>
@@ -813,7 +835,7 @@ public interface AmazonElasticLoadBalancing {
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-deregister-register-instances.html"
-     * >Register or De-Register EC2 Instances</a> in the <i>Classic Load Balancers Guide</i>.
+     * >Register or De-Register EC2 Instances</a> in the <i>Classic Load Balancer Guide</i>.
      * </p>
      * 
      * @param registerInstancesWithLoadBalancerRequest
@@ -854,7 +876,7 @@ public interface AmazonElasticLoadBalancing {
      * <p>
      * For more information about updating your SSL certificate, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-update-ssl-cert.html">Replace the SSL
-     * Certificate for Your Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
+     * Certificate for Your Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.
      * </p>
      * 
      * @param setLoadBalancerListenerSSLCertificateRequest
@@ -871,6 +893,7 @@ public interface AmazonElasticLoadBalancing {
      * @throws InvalidConfigurationRequestException
      *         The requested configuration change is not valid.
      * @throws UnsupportedProtocolException
+     *         The specified protocol or signature version is not supported.
      * @sample AmazonElasticLoadBalancing.SetLoadBalancerListenerSSLCertificate
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/SetLoadBalancerListenerSSLCertificate"
@@ -896,10 +919,10 @@ public interface AmazonElasticLoadBalancing {
      * <p>
      * For more information about enabling back-end instance authentication, see <a href=
      * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-create-https-ssl-load-balancer.html#configure_backendauth_clt"
-     * >Configure Back-end Instance Authentication</a> in the <i>Classic Load Balancers Guide</i>. For more information
+     * >Configure Back-end Instance Authentication</a> in the <i>Classic Load Balancer Guide</i>. For more information
      * about Proxy Protocol, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-proxy-protocol.html">Configure Proxy
-     * Protocol Support</a> in the <i>Classic Load Balancers Guide</i>.
+     * Protocol Support</a> in the <i>Classic Load Balancer Guide</i>.
      * </p>
      * 
      * @param setLoadBalancerPoliciesForBackendServerRequest
@@ -933,7 +956,7 @@ public interface AmazonElasticLoadBalancing {
      * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-duration"
      * >Duration-Based Session Stickiness</a>, and <a href=
      * "http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-application"
-     * >Application-Controlled Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.
+     * >Application-Controlled Session Stickiness</a> in the <i>Classic Load Balancer Guide</i>.
      * </p>
      * 
      * @param setLoadBalancerPoliciesOfListenerRequest

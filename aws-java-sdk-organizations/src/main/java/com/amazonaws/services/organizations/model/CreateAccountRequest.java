@@ -74,6 +74,10 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>.
      * </p>
+     * <p>
+     * If you do not specify this parameter, the value defaults to ALLOW, and IAM users and roles with the required
+     * permissions can access billing information for the new account.
+     * </p>
      */
     private String iamUserAccessToBilling;
 
@@ -338,6 +342,10 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>.
      * </p>
+     * <p>
+     * If you do not specify this parameter, the value defaults to ALLOW, and IAM users and roles with the required
+     * permissions can access billing information for the new account.
+     * </p>
      * 
      * @param iamUserAccessToBilling
      *        If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information
@@ -345,7 +353,10 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        new account can access account billing information. For more information, see <a href=
      *        "http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
      *        >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost
-     *        Management User Guide</i>.
+     *        Management User Guide</i>.</p>
+     *        <p>
+     *        If you do not specify this parameter, the value defaults to ALLOW, and IAM users and roles with the
+     *        required permissions can access billing information for the new account.
      * @see IAMUserAccessToBilling
      */
 
@@ -362,13 +373,20 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>.
      * </p>
+     * <p>
+     * If you do not specify this parameter, the value defaults to ALLOW, and IAM users and roles with the required
+     * permissions can access billing information for the new account.
+     * </p>
      * 
      * @return If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information
      *         <i>if</i> they have the required permissions. If set to <code>DENY</code>, then only the root user of the
      *         new account can access account billing information. For more information, see <a href=
      *         "http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
      *         >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost
-     *         Management User Guide</i>.
+     *         Management User Guide</i>.</p>
+     *         <p>
+     *         If you do not specify this parameter, the value defaults to ALLOW, and IAM users and roles with the
+     *         required permissions can access billing information for the new account.
      * @see IAMUserAccessToBilling
      */
 
@@ -385,6 +403,10 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>.
      * </p>
+     * <p>
+     * If you do not specify this parameter, the value defaults to ALLOW, and IAM users and roles with the required
+     * permissions can access billing information for the new account.
+     * </p>
      * 
      * @param iamUserAccessToBilling
      *        If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information
@@ -392,7 +414,10 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        new account can access account billing information. For more information, see <a href=
      *        "http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
      *        >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost
-     *        Management User Guide</i>.
+     *        Management User Guide</i>.</p>
+     *        <p>
+     *        If you do not specify this parameter, the value defaults to ALLOW, and IAM users and roles with the
+     *        required permissions can access billing information for the new account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IAMUserAccessToBilling
      */
@@ -411,6 +436,10 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>.
      * </p>
+     * <p>
+     * If you do not specify this parameter, the value defaults to ALLOW, and IAM users and roles with the required
+     * permissions can access billing information for the new account.
+     * </p>
      * 
      * @param iamUserAccessToBilling
      *        If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information
@@ -418,7 +447,10 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        new account can access account billing information. For more information, see <a href=
      *        "http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
      *        >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost
-     *        Management User Guide</i>.
+     *        Management User Guide</i>.</p>
+     *        <p>
+     *        If you do not specify this parameter, the value defaults to ALLOW, and IAM users and roles with the
+     *        required permissions can access billing information for the new account.
      * @see IAMUserAccessToBilling
      */
 
@@ -435,6 +467,10 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>.
      * </p>
+     * <p>
+     * If you do not specify this parameter, the value defaults to ALLOW, and IAM users and roles with the required
+     * permissions can access billing information for the new account.
+     * </p>
      * 
      * @param iamUserAccessToBilling
      *        If set to <code>ALLOW</code>, the new account enables IAM users to access account billing information
@@ -442,7 +478,10 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        new account can access account billing information. For more information, see <a href=
      *        "http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
      *        >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost
-     *        Management User Guide</i>.
+     *        Management User Guide</i>.</p>
+     *        <p>
+     *        If you do not specify this parameter, the value defaults to ALLOW, and IAM users and roles with the
+     *        required permissions can access billing information for the new account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IAMUserAccessToBilling
      */

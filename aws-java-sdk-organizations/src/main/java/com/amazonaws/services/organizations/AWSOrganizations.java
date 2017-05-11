@@ -263,7 +263,57 @@ public interface AWSOrganizations {
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
      * @throws HandshakeConstraintViolationException
-     *         The requested operation would violate the constraint identified in the reason code.
+     *         The requested operation would violate the constraint identified in the reason code.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an
+     *         organization. <b>Note</b>: deleted and closed accounts still count toward your limit.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes you can send in one day.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ALREADY_IN_AN_ORGANIZATION: The handshake request is invalid because the invited account is already a
+     *         member of an organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ORGANIZATION_ALREADY_HAS_ALL_FEATURES: The handshake request is invalid because the organization has
+     *         already enabled all features.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES: You cannot issue new invitations to join an organization
+     *         while it is in the process of enabling all features. You can resume inviting accounts after you finalize
+     *         the process when all accounts have agreed to the change.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         PAYMENT_INSTRUMENT_REQUIRED: You cannot complete the operation with an account that does not have a
+     *         payment instrument, such as a credit card, associated with it.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: The request failed because the account is from a different
+     *         marketplace than the accounts in the organization. For example, accounts with India addresses must be
+     *         associated with the AISPL marketplace. All accounts in an organization must be from the same marketplace.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED: You attempted to change the membership of an account
+     *         too quickly after its previous change.
+     *         </p>
+     *         </li>
      * @throws HandshakeNotFoundException
      *         We can't find a handshake with the HandshakeId that you specified.
      * @throws InvalidHandshakeTransitionException
@@ -273,7 +323,92 @@ public interface AWSOrganizations {
      *         The specified handshake is already in the requested state. For example, you can't accept a handshake that
      *         was already accepted.
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws ConcurrentModificationException
      *         The target of the operation is currently being modified by a different request. Try again later.
      * @throws ServiceException
@@ -357,11 +492,173 @@ public interface AWSOrganizations {
      * @throws ConstraintViolationException
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to removing
      *         the last SCP from an OU or root, inviting or creating too many accounts to the organization, or attaching
-     *         too many policies to an account, OU, or root.
+     *         too many policies to an account, OU, or root. This exception includes a reason that contains additional
+     *         information about the violated limit:</p>
+     *         <p/>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an
+     *         organization. <b>Note</b>: deleted and closed accounts still count toward your limit.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes you can send in one day.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OU_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of organizational units you can have in an
+     *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an organizational unit tree that is too many levels
+     *         deep.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an
+     *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to exceed the number of policies of a certain
+     *         type that can be attached to an entity at one time.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to detach a policy from an entity that would
+     *         cause the entity to have fewer than the minimum number of policies of a certain type required.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove an account from an organization that was
+     *         created from within organizations.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this account, you first must
+     *         associate a payment instrument, such as a credit card, with the account.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member account, you
+     *         first must associate a payment instrument, such as a credit card, with the account.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts that you can create
+     *         in one day.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
+     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         account's address. For example, accounts with India addresses must be associated with the AISPL
+     *         marketplace. All accounts in an organization must be associated with the same marketplace.
+     *         </p>
+     *         </li>
      * @throws DuplicatePolicyAttachmentException
      *         The selected policy is already attached to the specified target.
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws PolicyNotFoundException
      *         We can't find a policy with the PolicyId that you specified.
      * @throws PolicyTypeNotEnabledException
@@ -409,7 +706,92 @@ public interface AWSOrganizations {
      *         The specified handshake is already in the requested state. For example, you can't accept a handshake that
      *         was already accepted.
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
@@ -446,11 +828,11 @@ public interface AWSOrganizations {
      * </p>
      * </important> <note>
      * <p>
-     * When you create a member account with this operation, the account is created with the <b>IAM User and Role Access
-     * to Billing Information</b> switch enabled. This allows IAM users and roles that are granted appropriate
-     * permissions to view billing information. If this is disabled, then only the account root user can access billing
-     * information. For information about how to disable this for an account, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting Access to Your
+     * When you create a member account with this operation, you can choose whether to create the account with the
+     * <b>IAM User and Role Access to Billing Information</b> switch enabled. If you enable it, IAM users and roles that
+     * have appropriate permissions can view billing information for the account. If you disable this, then only the
+     * account root user can access billing information. For information about how to disable this for an account, see
+     * <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting Access to Your
      * Billing Information and Tools</a>.
      * </p>
      * </note>
@@ -471,9 +853,171 @@ public interface AWSOrganizations {
      * @throws ConstraintViolationException
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to removing
      *         the last SCP from an OU or root, inviting or creating too many accounts to the organization, or attaching
-     *         too many policies to an account, OU, or root.
+     *         too many policies to an account, OU, or root. This exception includes a reason that contains additional
+     *         information about the violated limit:</p>
+     *         <p/>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an
+     *         organization. <b>Note</b>: deleted and closed accounts still count toward your limit.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes you can send in one day.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OU_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of organizational units you can have in an
+     *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an organizational unit tree that is too many levels
+     *         deep.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an
+     *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to exceed the number of policies of a certain
+     *         type that can be attached to an entity at one time.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to detach a policy from an entity that would
+     *         cause the entity to have fewer than the minimum number of policies of a certain type required.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove an account from an organization that was
+     *         created from within organizations.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this account, you first must
+     *         associate a payment instrument, such as a credit card, with the account.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member account, you
+     *         first must associate a payment instrument, such as a credit card, with the account.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts that you can create
+     *         in one day.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
+     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         account's address. For example, accounts with India addresses must be associated with the AISPL
+     *         marketplace. All accounts in an organization must be associated with the same marketplace.
+     *         </p>
+     *         </li>
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws FinalizingOrganizationException
      *         AWS Organizations could not finalize the creation of your organization. Try again later. If this
      *         persists, contact AWS customer support.
@@ -522,9 +1066,171 @@ public interface AWSOrganizations {
      * @throws ConstraintViolationException
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to removing
      *         the last SCP from an OU or root, inviting or creating too many accounts to the organization, or attaching
-     *         too many policies to an account, OU, or root.
+     *         too many policies to an account, OU, or root. This exception includes a reason that contains additional
+     *         information about the violated limit:</p>
+     *         <p/>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an
+     *         organization. <b>Note</b>: deleted and closed accounts still count toward your limit.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes you can send in one day.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OU_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of organizational units you can have in an
+     *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an organizational unit tree that is too many levels
+     *         deep.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an
+     *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to exceed the number of policies of a certain
+     *         type that can be attached to an entity at one time.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to detach a policy from an entity that would
+     *         cause the entity to have fewer than the minimum number of policies of a certain type required.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove an account from an organization that was
+     *         created from within organizations.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this account, you first must
+     *         associate a payment instrument, such as a credit card, with the account.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member account, you
+     *         first must associate a payment instrument, such as a credit card, with the account.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts that you can create
+     *         in one day.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
+     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         account's address. For example, accounts with India addresses must be associated with the AISPL
+     *         marketplace. All accounts in an organization must be associated with the same marketplace.
+     *         </p>
+     *         </li>
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
@@ -565,11 +1271,173 @@ public interface AWSOrganizations {
      * @throws ConstraintViolationException
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to removing
      *         the last SCP from an OU or root, inviting or creating too many accounts to the organization, or attaching
-     *         too many policies to an account, OU, or root.
+     *         too many policies to an account, OU, or root. This exception includes a reason that contains additional
+     *         information about the violated limit:</p>
+     *         <p/>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an
+     *         organization. <b>Note</b>: deleted and closed accounts still count toward your limit.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes you can send in one day.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OU_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of organizational units you can have in an
+     *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an organizational unit tree that is too many levels
+     *         deep.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an
+     *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to exceed the number of policies of a certain
+     *         type that can be attached to an entity at one time.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to detach a policy from an entity that would
+     *         cause the entity to have fewer than the minimum number of policies of a certain type required.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove an account from an organization that was
+     *         created from within organizations.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this account, you first must
+     *         associate a payment instrument, such as a credit card, with the account.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member account, you
+     *         first must associate a payment instrument, such as a credit card, with the account.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts that you can create
+     *         in one day.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
+     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         account's address. For example, accounts with India addresses must be associated with the AISPL
+     *         marketplace. All accounts in an organization must be associated with the same marketplace.
+     *         </p>
+     *         </li>
      * @throws DuplicateOrganizationalUnitException
      *         An organizational unit (OU) with the same name already exists.
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws ParentNotFoundException
      *         We can't find a root or organizational unit (OU) with the ParentId that you specified.
      * @throws ServiceException
@@ -612,11 +1480,173 @@ public interface AWSOrganizations {
      * @throws ConstraintViolationException
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to removing
      *         the last SCP from an OU or root, inviting or creating too many accounts to the organization, or attaching
-     *         too many policies to an account, OU, or root.
+     *         too many policies to an account, OU, or root. This exception includes a reason that contains additional
+     *         information about the violated limit:</p>
+     *         <p/>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an
+     *         organization. <b>Note</b>: deleted and closed accounts still count toward your limit.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes you can send in one day.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OU_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of organizational units you can have in an
+     *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an organizational unit tree that is too many levels
+     *         deep.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an
+     *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to exceed the number of policies of a certain
+     *         type that can be attached to an entity at one time.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to detach a policy from an entity that would
+     *         cause the entity to have fewer than the minimum number of policies of a certain type required.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove an account from an organization that was
+     *         created from within organizations.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this account, you first must
+     *         associate a payment instrument, such as a credit card, with the account.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member account, you
+     *         first must associate a payment instrument, such as a credit card, with the account.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts that you can create
+     *         in one day.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
+     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         account's address. For example, accounts with India addresses must be associated with the AISPL
+     *         marketplace. All accounts in an organization must be associated with the same marketplace.
+     *         </p>
+     *         </li>
      * @throws DuplicatePolicyException
      *         A policy with the same name already exists.
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws MalformedPolicyDocumentException
      *         The provided policy document does not meet the requirements of the specified policy type. For example,
      *         the syntax might be incorrect. For details about service control policy syntax, see <a
@@ -666,7 +1696,92 @@ public interface AWSOrganizations {
      *         The specified handshake is already in the requested state. For example, you can't accept a handshake that
      *         was already accepted.
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
@@ -703,7 +1818,92 @@ public interface AWSOrganizations {
      * @throws ConcurrentModificationException
      *         The target of the operation is currently being modified by a different request. Try again later.
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws OrganizationNotEmptyException
      *         The organization isn't empty. To delete an organization, you must first remove all accounts except the
      *         master account, delete all organizational units (OUs), and delete all policies.
@@ -740,7 +1940,92 @@ public interface AWSOrganizations {
      * @throws ConcurrentModificationException
      *         The target of the operation is currently being modified by a different request. Try again later.
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws OrganizationalUnitNotEmptyException
      *         The specified organizational unit (OU) is not empty. Move all accounts to another root or to other OUs,
      *         remove all child OUs, and then try the operation again.
@@ -779,7 +2064,92 @@ public interface AWSOrganizations {
      * @throws ConcurrentModificationException
      *         The target of the operation is currently being modified by a different request. Try again later.
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws PolicyInUseException
      *         The policy is attached to one or more entities. You must detach it from all roots, organizational units
      *         (OUs), and accounts before performing this operation.
@@ -818,7 +2188,92 @@ public interface AWSOrganizations {
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
@@ -851,7 +2306,92 @@ public interface AWSOrganizations {
      * @throws CreateAccountStatusNotFoundException
      *         We can't find an create account request with the CreateAccountRequestId that you specified.
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
@@ -882,7 +2422,92 @@ public interface AWSOrganizations {
      * @throws HandshakeNotFoundException
      *         We can't find a handshake with the HandshakeId that you specified.
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
@@ -942,7 +2567,92 @@ public interface AWSOrganizations {
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws OrganizationalUnitNotFoundException
      *         We can't find an organizational unit (OU) with the OrganizationalUnitId that you specified.
      * @throws ServiceException
@@ -975,7 +2685,92 @@ public interface AWSOrganizations {
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws PolicyNotFoundException
      *         We can't find a policy with the PolicyId that you specified.
      * @throws ServiceException
@@ -1026,9 +2821,171 @@ public interface AWSOrganizations {
      * @throws ConstraintViolationException
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to removing
      *         the last SCP from an OU or root, inviting or creating too many accounts to the organization, or attaching
-     *         too many policies to an account, OU, or root.
+     *         too many policies to an account, OU, or root. This exception includes a reason that contains additional
+     *         information about the violated limit:</p>
+     *         <p/>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an
+     *         organization. <b>Note</b>: deleted and closed accounts still count toward your limit.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes you can send in one day.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OU_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of organizational units you can have in an
+     *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an organizational unit tree that is too many levels
+     *         deep.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an
+     *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to exceed the number of policies of a certain
+     *         type that can be attached to an entity at one time.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to detach a policy from an entity that would
+     *         cause the entity to have fewer than the minimum number of policies of a certain type required.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove an account from an organization that was
+     *         created from within organizations.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this account, you first must
+     *         associate a payment instrument, such as a credit card, with the account.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member account, you
+     *         first must associate a payment instrument, such as a credit card, with the account.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts that you can create
+     *         in one day.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
+     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         account's address. For example, accounts with India addresses must be associated with the AISPL
+     *         marketplace. All accounts in an organization must be associated with the same marketplace.
+     *         </p>
+     *         </li>
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws PolicyNotAttachedException
      *         The policy isn't attached to the specified target in the specified root.
      * @throws PolicyNotFoundException
@@ -1072,9 +3029,171 @@ public interface AWSOrganizations {
      * @throws ConstraintViolationException
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to removing
      *         the last SCP from an OU or root, inviting or creating too many accounts to the organization, or attaching
-     *         too many policies to an account, OU, or root.
+     *         too many policies to an account, OU, or root. This exception includes a reason that contains additional
+     *         information about the violated limit:</p>
+     *         <p/>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an
+     *         organization. <b>Note</b>: deleted and closed accounts still count toward your limit.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes you can send in one day.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OU_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of organizational units you can have in an
+     *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an organizational unit tree that is too many levels
+     *         deep.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an
+     *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to exceed the number of policies of a certain
+     *         type that can be attached to an entity at one time.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to detach a policy from an entity that would
+     *         cause the entity to have fewer than the minimum number of policies of a certain type required.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove an account from an organization that was
+     *         created from within organizations.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this account, you first must
+     *         associate a payment instrument, such as a credit card, with the account.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member account, you
+     *         first must associate a payment instrument, such as a credit card, with the account.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts that you can create
+     *         in one day.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
+     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         account's address. For example, accounts with India addresses must be associated with the AISPL
+     *         marketplace. All accounts in an organization must be associated with the same marketplace.
+     *         </p>
+     *         </li>
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws PolicyTypeNotEnabledException
      *         The specified policy type is not currently enabled in this root. You cannot attach policies of the
      *         specified type to entities in a root until you enable that type in the root. For more information, see <a
@@ -1137,9 +3256,144 @@ public interface AWSOrganizations {
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
      * @throws HandshakeConstraintViolationException
-     *         The requested operation would violate the constraint identified in the reason code.
+     *         The requested operation would violate the constraint identified in the reason code.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an
+     *         organization. <b>Note</b>: deleted and closed accounts still count toward your limit.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes you can send in one day.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ALREADY_IN_AN_ORGANIZATION: The handshake request is invalid because the invited account is already a
+     *         member of an organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ORGANIZATION_ALREADY_HAS_ALL_FEATURES: The handshake request is invalid because the organization has
+     *         already enabled all features.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES: You cannot issue new invitations to join an organization
+     *         while it is in the process of enabling all features. You can resume inviting accounts after you finalize
+     *         the process when all accounts have agreed to the change.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         PAYMENT_INSTRUMENT_REQUIRED: You cannot complete the operation with an account that does not have a
+     *         payment instrument, such as a credit card, associated with it.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: The request failed because the account is from a different
+     *         marketplace than the accounts in the organization. For example, accounts with India addresses must be
+     *         associated with the AISPL marketplace. All accounts in an organization must be from the same marketplace.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED: You attempted to change the membership of an account
+     *         too quickly after its previous change.
+     *         </p>
+     *         </li>
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
@@ -1175,9 +3429,171 @@ public interface AWSOrganizations {
      * @throws ConstraintViolationException
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to removing
      *         the last SCP from an OU or root, inviting or creating too many accounts to the organization, or attaching
-     *         too many policies to an account, OU, or root.
+     *         too many policies to an account, OU, or root. This exception includes a reason that contains additional
+     *         information about the violated limit:</p>
+     *         <p/>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an
+     *         organization. <b>Note</b>: deleted and closed accounts still count toward your limit.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes you can send in one day.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OU_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of organizational units you can have in an
+     *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an organizational unit tree that is too many levels
+     *         deep.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an
+     *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to exceed the number of policies of a certain
+     *         type that can be attached to an entity at one time.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to detach a policy from an entity that would
+     *         cause the entity to have fewer than the minimum number of policies of a certain type required.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove an account from an organization that was
+     *         created from within organizations.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this account, you first must
+     *         associate a payment instrument, such as a credit card, with the account.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member account, you
+     *         first must associate a payment instrument, such as a credit card, with the account.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts that you can create
+     *         in one day.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
+     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         account's address. For example, accounts with India addresses must be associated with the AISPL
+     *         marketplace. All accounts in an organization must be associated with the same marketplace.
+     *         </p>
+     *         </li>
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws PolicyTypeAlreadyEnabledException
      *         The specified policy type is already enabled in the specified root.
      * @throws RootNotFoundException
@@ -1220,14 +3636,149 @@ public interface AWSOrganizations {
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
      * @throws HandshakeConstraintViolationException
-     *         The requested operation would violate the constraint identified in the reason code.
+     *         The requested operation would violate the constraint identified in the reason code.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an
+     *         organization. <b>Note</b>: deleted and closed accounts still count toward your limit.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes you can send in one day.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ALREADY_IN_AN_ORGANIZATION: The handshake request is invalid because the invited account is already a
+     *         member of an organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ORGANIZATION_ALREADY_HAS_ALL_FEATURES: The handshake request is invalid because the organization has
+     *         already enabled all features.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES: You cannot issue new invitations to join an organization
+     *         while it is in the process of enabling all features. You can resume inviting accounts after you finalize
+     *         the process when all accounts have agreed to the change.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         PAYMENT_INSTRUMENT_REQUIRED: You cannot complete the operation with an account that does not have a
+     *         payment instrument, such as a credit card, associated with it.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: The request failed because the account is from a different
+     *         marketplace than the accounts in the organization. For example, accounts with India addresses must be
+     *         associated with the AISPL marketplace. All accounts in an organization must be from the same marketplace.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED: You attempted to change the membership of an account
+     *         too quickly after its previous change.
+     *         </p>
+     *         </li>
      * @throws DuplicateHandshakeException
      *         A handshake with the same action and target already exists. For example, if you invited an account to
      *         join your organization, the invited account might already have a pending invitation from this
      *         organization. If you intend to resend an invitation to an account, ensure that existing handshakes that
      *         might be considered duplicates are canceled or declined.
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws FinalizingOrganizationException
      *         AWS Organizations could not finalize the creation of your organization. Try again later. If this
      *         persists, contact AWS customer support.
@@ -1277,9 +3828,171 @@ public interface AWSOrganizations {
      * @throws ConstraintViolationException
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to removing
      *         the last SCP from an OU or root, inviting or creating too many accounts to the organization, or attaching
-     *         too many policies to an account, OU, or root.
+     *         too many policies to an account, OU, or root. This exception includes a reason that contains additional
+     *         information about the violated limit:</p>
+     *         <p/>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an
+     *         organization. <b>Note</b>: deleted and closed accounts still count toward your limit.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes you can send in one day.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OU_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of organizational units you can have in an
+     *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an organizational unit tree that is too many levels
+     *         deep.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an
+     *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to exceed the number of policies of a certain
+     *         type that can be attached to an entity at one time.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to detach a policy from an entity that would
+     *         cause the entity to have fewer than the minimum number of policies of a certain type required.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove an account from an organization that was
+     *         created from within organizations.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this account, you first must
+     *         associate a payment instrument, such as a credit card, with the account.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member account, you
+     *         first must associate a payment instrument, such as a credit card, with the account.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts that you can create
+     *         in one day.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
+     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         account's address. For example, accounts with India addresses must be associated with the AISPL
+     *         marketplace. All accounts in an organization must be associated with the same marketplace.
+     *         </p>
+     *         </li>
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws MasterCannotLeaveOrganizationException
      *         You can't remove a master account from an organization. If you want the master account to become a member
      *         account in another organization, you must first delete the current organization of the master account.
@@ -1314,7 +4027,92 @@ public interface AWSOrganizations {
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
@@ -1345,7 +4143,92 @@ public interface AWSOrganizations {
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws ParentNotFoundException
      *         We can't find a root or organizational unit (OU) with the ParentId that you specified.
      * @throws ServiceException
@@ -1376,7 +4259,92 @@ public interface AWSOrganizations {
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws ParentNotFoundException
      *         We can't find a root or organizational unit (OU) with the ParentId that you specified.
      * @throws ServiceException
@@ -1410,7 +4378,92 @@ public interface AWSOrganizations {
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
@@ -1438,7 +4491,92 @@ public interface AWSOrganizations {
      *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
      *         Management</a> in the <i>IAM User Guide</i>.
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
@@ -1471,7 +4609,92 @@ public interface AWSOrganizations {
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
@@ -1502,7 +4725,92 @@ public interface AWSOrganizations {
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws ParentNotFoundException
      *         We can't find a root or organizational unit (OU) with the ParentId that you specified.
      * @throws ServiceException
@@ -1544,7 +4852,92 @@ public interface AWSOrganizations {
      * @throws ChildNotFoundException
      *         We can't find an organizational unit (OU) or AWS account with the ChildId that you specified.
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
@@ -1575,7 +4968,92 @@ public interface AWSOrganizations {
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
@@ -1607,7 +5085,92 @@ public interface AWSOrganizations {
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TargetNotFoundException
@@ -1640,7 +5203,92 @@ public interface AWSOrganizations {
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
@@ -1671,7 +5319,92 @@ public interface AWSOrganizations {
      *         Your account is not a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws PolicyNotFoundException
      *         We can't find a policy with the PolicyId that you specified.
      * @throws ServiceException
@@ -1701,7 +5434,92 @@ public interface AWSOrganizations {
      *         more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
      *         Management</a> in the <i>IAM User Guide</i>.
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws SourceParentNotFoundException
      *         We can't find a source root or OU with the ParentId that you specified.
      * @throws DestinationParentNotFoundException
@@ -1765,9 +5583,171 @@ public interface AWSOrganizations {
      * @throws ConstraintViolationException
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to removing
      *         the last SCP from an OU or root, inviting or creating too many accounts to the organization, or attaching
-     *         too many policies to an account, OU, or root.
+     *         too many policies to an account, OU, or root. This exception includes a reason that contains additional
+     *         information about the violated limit:</p>
+     *         <p/>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an
+     *         organization. <b>Note</b>: deleted and closed accounts still count toward your limit.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes you can send in one day.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OU_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of organizational units you can have in an
+     *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an organizational unit tree that is too many levels
+     *         deep.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an
+     *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to exceed the number of policies of a certain
+     *         type that can be attached to an entity at one time.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to detach a policy from an entity that would
+     *         cause the entity to have fewer than the minimum number of policies of a certain type required.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove an account from an organization that was
+     *         created from within organizations.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this account, you first must
+     *         associate a payment instrument, such as a credit card, with the account.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member account, you
+     *         first must associate a payment instrument, such as a credit card, with the account.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts that you can create
+     *         in one day.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
+     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         account's address. For example, accounts with India addresses must be associated with the AISPL
+     *         marketplace. All accounts in an organization must be associated with the same marketplace.
+     *         </p>
+     *         </li>
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws MasterCannotLeaveOrganizationException
      *         You can't remove a master account from an organization. If you want the master account to become a member
      *         account in another organization, you must first delete the current organization of the master account.
@@ -1806,7 +5786,92 @@ public interface AWSOrganizations {
      * @throws DuplicateOrganizationalUnitException
      *         An organizational unit (OU) with the same name already exists.
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws OrganizationalUnitNotFoundException
      *         We can't find an organizational unit (OU) with the OrganizationalUnitId that you specified.
      * @throws ServiceException
@@ -1844,11 +5909,173 @@ public interface AWSOrganizations {
      * @throws ConstraintViolationException
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to removing
      *         the last SCP from an OU or root, inviting or creating too many accounts to the organization, or attaching
-     *         too many policies to an account, OU, or root.
+     *         too many policies to an account, OU, or root. This exception includes a reason that contains additional
+     *         information about the violated limit:</p>
+     *         <p/>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an
+     *         organization. <b>Note</b>: deleted and closed accounts still count toward your limit.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes you can send in one day.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OU_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of organizational units you can have in an
+     *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an organizational unit tree that is too many levels
+     *         deep.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an
+     *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to exceed the number of policies of a certain
+     *         type that can be attached to an entity at one time.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to detach a policy from an entity that would
+     *         cause the entity to have fewer than the minimum number of policies of a certain type required.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove an account from an organization that was
+     *         created from within organizations.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this account, you first must
+     *         associate a payment instrument, such as a credit card, with the account.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member account, you
+     *         first must associate a payment instrument, such as a credit card, with the account.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts that you can create
+     *         in one day.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
+     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         account's address. For example, accounts with India addresses must be associated with the AISPL
+     *         marketplace. All accounts in an organization must be associated with the same marketplace.
+     *         </p>
+     *         </li>
      * @throws DuplicatePolicyException
      *         A policy with the same name already exists.
      * @throws InvalidInputException
-     *         You provided invalid values for one or more of the request parameters.
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid ARN for the organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified a value that is not valid for that parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and cannot be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the NextToken parameter from the response to a previous call
+     *         of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
      * @throws MalformedPolicyDocumentException
      *         The provided policy document does not meet the requirements of the specified policy type. For example,
      *         the syntax might be incorrect. For details about service control policy syntax, see <a

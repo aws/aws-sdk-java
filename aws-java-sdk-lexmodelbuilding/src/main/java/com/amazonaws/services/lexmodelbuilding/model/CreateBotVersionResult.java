@@ -95,7 +95,7 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
     private String voiceId;
     /**
      * <p>
-     * Checksum identifying the version of the boat that was created.
+     * Checksum identifying the version of the bot that was created.
      * </p>
      */
     private String checksum;
@@ -683,11 +683,11 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Checksum identifying the version of the boat that was created.
+     * Checksum identifying the version of the bot that was created.
      * </p>
      * 
      * @param checksum
-     *        Checksum identifying the version of the boat that was created.
+     *        Checksum identifying the version of the bot that was created.
      */
 
     public void setChecksum(String checksum) {
@@ -696,10 +696,10 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Checksum identifying the version of the boat that was created.
+     * Checksum identifying the version of the bot that was created.
      * </p>
      * 
-     * @return Checksum identifying the version of the boat that was created.
+     * @return Checksum identifying the version of the bot that was created.
      */
 
     public String getChecksum() {
@@ -708,11 +708,11 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Checksum identifying the version of the boat that was created.
+     * Checksum identifying the version of the bot that was created.
      * </p>
      * 
      * @param checksum
-     *        Checksum identifying the version of the boat that was created.
+     *        Checksum identifying the version of the bot that was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

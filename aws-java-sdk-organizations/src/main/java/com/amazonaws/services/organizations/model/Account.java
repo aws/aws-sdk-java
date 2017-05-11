@@ -51,6 +51,16 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
     private String arn;
     /**
      * <p>
+     * The email address associated with the AWS account.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that
+     * represents a standard Internet email address.
+     * </p>
+     */
+    private String email;
+    /**
+     * <p>
      * The friendly name of the account.
      * </p>
      * <p>
@@ -203,6 +213,67 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
 
     public Account withArn(String arn) {
         setArn(arn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The email address associated with the AWS account.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that
+     * represents a standard Internet email address.
+     * </p>
+     * 
+     * @param email
+     *        The email address associated with the AWS account.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        characters that represents a standard Internet email address.
+     */
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    /**
+     * <p>
+     * The email address associated with the AWS account.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that
+     * represents a standard Internet email address.
+     * </p>
+     * 
+     * @return The email address associated with the AWS account.</p>
+     *         <p>
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *         characters that represents a standard Internet email address.
+     */
+
+    public String getEmail() {
+        return this.email;
+    }
+
+    /**
+     * <p>
+     * The email address associated with the AWS account.
+     * </p>
+     * <p>
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that
+     * represents a standard Internet email address.
+     * </p>
+     * 
+     * @param email
+     *        The email address associated with the AWS account.</p>
+     *        <p>
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of
+     *        characters that represents a standard Internet email address.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Account withEmail(String email) {
+        setEmail(email);
         return this;
     }
 
@@ -468,6 +539,8 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
             sb.append("Id: ").append(getId()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getEmail() != null)
+            sb.append("Email: ").append(getEmail()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getStatus() != null)
@@ -498,6 +571,10 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
+        if (other.getEmail() == null ^ this.getEmail() == null)
+            return false;
+        if (other.getEmail() != null && other.getEmail().equals(this.getEmail()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -524,6 +601,7 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getEmail() == null) ? 0 : getEmail().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getJoinedMethod() == null) ? 0 : getJoinedMethod().hashCode());

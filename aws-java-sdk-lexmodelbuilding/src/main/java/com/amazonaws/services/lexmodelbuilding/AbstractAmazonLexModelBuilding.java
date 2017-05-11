@@ -58,12 +58,27 @@ public class AbstractAmazonLexModelBuilding implements AmazonLexModelBuilding {
     }
 
     @Override
+    public DeleteBotVersionResult deleteBotVersion(DeleteBotVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteIntentResult deleteIntent(DeleteIntentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public DeleteIntentVersionResult deleteIntentVersion(DeleteIntentVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteSlotTypeResult deleteSlotType(DeleteSlotTypeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteSlotTypeVersionResult deleteSlotTypeVersion(DeleteSlotTypeVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

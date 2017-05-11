@@ -31,6 +31,8 @@ public class AccountMarshaller {
             .marshallLocationName("Id").build();
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Arn").build();
+    private static final MarshallingInfo<String> EMAIL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Email").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -58,6 +60,7 @@ public class AccountMarshaller {
         try {
             protocolMarshaller.marshall(account.getId(), ID_BINDING);
             protocolMarshaller.marshall(account.getArn(), ARN_BINDING);
+            protocolMarshaller.marshall(account.getEmail(), EMAIL_BINDING);
             protocolMarshaller.marshall(account.getName(), NAME_BINDING);
             protocolMarshaller.marshall(account.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(account.getJoinedMethod(), JOINEDMETHOD_BINDING);

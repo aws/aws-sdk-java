@@ -203,6 +203,19 @@ public class AbstractAmazonElasticLoadBalancingAsync extends AbstractAmazonElast
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAccountLimitsResult> describeAccountLimitsAsync(DescribeAccountLimitsRequest request) {
+
+        return describeAccountLimitsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccountLimitsResult> describeAccountLimitsAsync(DescribeAccountLimitsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAccountLimitsRequest, DescribeAccountLimitsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeInstanceHealthResult> describeInstanceHealthAsync(DescribeInstanceHealthRequest request) {
 
         return describeInstanceHealthAsync(request, null);

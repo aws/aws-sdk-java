@@ -51,6 +51,8 @@ public enum ElasticLoadBalancingActions implements Action {
     DeleteLoadBalancerPolicy("elasticloadbalancing:DeleteLoadBalancerPolicy"),
     /** Action for the DeregisterInstancesFromLoadBalancer operation. */
     DeregisterInstancesFromLoadBalancer("elasticloadbalancing:DeregisterInstancesFromLoadBalancer"),
+    /** Action for the DescribeAccountLimits operation. */
+    DescribeAccountLimits("elasticloadbalancing:DescribeAccountLimits"),
     /** Action for the DescribeInstanceHealth operation. */
     DescribeInstanceHealth("elasticloadbalancing:DescribeInstanceHealth"),
     /** Action for the DescribeLoadBalancerAttributes operation. */

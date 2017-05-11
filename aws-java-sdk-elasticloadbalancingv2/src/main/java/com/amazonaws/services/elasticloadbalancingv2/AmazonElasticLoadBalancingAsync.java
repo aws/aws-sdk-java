@@ -591,6 +591,47 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
+     * Describes the current Elastic Load Balancing resource limits for your AWS account.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits for
+     * Your Application Load Balancer</a> in the <i>Application Load Balancer Guide</i>.
+     * </p>
+     * 
+     * @param describeAccountLimitsRequest
+     * @return A Java Future containing the result of the DescribeAccountLimits operation returned by the service.
+     * @sample AmazonElasticLoadBalancingAsync.DescribeAccountLimits
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeAccountLimits"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAccountLimitsResult> describeAccountLimitsAsync(DescribeAccountLimitsRequest describeAccountLimitsRequest);
+
+    /**
+     * <p>
+     * Describes the current Elastic Load Balancing resource limits for your AWS account.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits for
+     * Your Application Load Balancer</a> in the <i>Application Load Balancer Guide</i>.
+     * </p>
+     * 
+     * @param describeAccountLimitsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAccountLimits operation returned by the service.
+     * @sample AmazonElasticLoadBalancingAsyncHandler.DescribeAccountLimits
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeAccountLimits"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAccountLimitsResult> describeAccountLimitsAsync(DescribeAccountLimitsRequest describeAccountLimitsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAccountLimitsRequest, DescribeAccountLimitsResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes the specified listeners or the listeners for the specified Application Load Balancer. You must specify
      * either a load balancer or one or more listeners.
      * </p>

@@ -219,8 +219,8 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
 
     /**
      * <p>
-     * Deletes a bot. If you specify a bot version in the request, the API deletes only the specified bot version. If
-     * you don't specify a version, the API deletes all versions of the bot, including the <code>$LATEST</code> version.
+     * Deletes all versions of the bot, including the <code>$LATEST</code> version. To delete a specific version of the
+     * bot, use the operation.
      * </p>
      * <p>
      * If a bot has an alias, you can't delete it. Instead, the <code>DeleteBot</code> operation returns a
@@ -242,8 +242,8 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
 
     /**
      * <p>
-     * Deletes a bot. If you specify a bot version in the request, the API deletes only the specified bot version. If
-     * you don't specify a version, the API deletes all versions of the bot, including the <code>$LATEST</code> version.
+     * Deletes all versions of the bot, including the <code>$LATEST</code> version. To delete a specific version of the
+     * bot, use the operation.
      * </p>
      * <p>
      * If a bot has an alias, you can't delete it. Instead, the <code>DeleteBot</code> operation returns a
@@ -354,9 +354,45 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
 
     /**
      * <p>
-     * Deletes an intent. If you specify a version in the request, the API deletes only the specified version of the
-     * intent. If you don't specify a version in the request, the API deletes all of the versions of the intent,
-     * including the <code>$LATEST</code> version.
+     * Deletes a specific version of a bot. To delete all versions of a bot, use the operation.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>lex:DeleteBotVersion</code> action.
+     * </p>
+     * 
+     * @param deleteBotVersionRequest
+     * @return A Java Future containing the result of the DeleteBotVersion operation returned by the service.
+     * @sample AmazonLexModelBuildingAsync.DeleteBotVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBotVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteBotVersionResult> deleteBotVersionAsync(DeleteBotVersionRequest deleteBotVersionRequest);
+
+    /**
+     * <p>
+     * Deletes a specific version of a bot. To delete all versions of a bot, use the operation.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>lex:DeleteBotVersion</code> action.
+     * </p>
+     * 
+     * @param deleteBotVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteBotVersion operation returned by the service.
+     * @sample AmazonLexModelBuildingAsyncHandler.DeleteBotVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBotVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteBotVersionResult> deleteBotVersionAsync(DeleteBotVersionRequest deleteBotVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteBotVersionRequest, DeleteBotVersionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes all versions of the intent, including the <code>$LATEST</code> version. To delete a specific version of
+     * the intent, use the operation.
      * </p>
      * <p>
      * You can delete a version of an intent only if it is not referenced. To delete an intent that is referred to in
@@ -384,9 +420,8 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
 
     /**
      * <p>
-     * Deletes an intent. If you specify a version in the request, the API deletes only the specified version of the
-     * intent. If you don't specify a version in the request, the API deletes all of the versions of the intent,
-     * including the <code>$LATEST</code> version.
+     * Deletes all versions of the intent, including the <code>$LATEST</code> version. To delete a specific version of
+     * the intent, use the operation.
      * </p>
      * <p>
      * You can delete a version of an intent only if it is not referenced. To delete an intent that is referred to in
@@ -419,9 +454,45 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
 
     /**
      * <p>
-     * Deletes a slot type. If you specify a version in the request, the API deletes the specific version. If you don't
-     * specify a version in the request, the API deletes all versions of the slot type, including the
-     * <code>$LATEST</code> version.
+     * Deletes a specific version of an intent. To delete all versions of a intent, use the operation.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>lex:DeleteIntentVersion</code> action.
+     * </p>
+     * 
+     * @param deleteIntentVersionRequest
+     * @return A Java Future containing the result of the DeleteIntentVersion operation returned by the service.
+     * @sample AmazonLexModelBuildingAsync.DeleteIntentVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntentVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteIntentVersionResult> deleteIntentVersionAsync(DeleteIntentVersionRequest deleteIntentVersionRequest);
+
+    /**
+     * <p>
+     * Deletes a specific version of an intent. To delete all versions of a intent, use the operation.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>lex:DeleteIntentVersion</code> action.
+     * </p>
+     * 
+     * @param deleteIntentVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteIntentVersion operation returned by the service.
+     * @sample AmazonLexModelBuildingAsyncHandler.DeleteIntentVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntentVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteIntentVersionResult> deleteIntentVersionAsync(DeleteIntentVersionRequest deleteIntentVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteIntentVersionRequest, DeleteIntentVersionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes all versions of the slot type, including the <code>$LATEST</code> version. To delete a specific version
+     * of the slot type, use the operation.
      * </p>
      * <p>
      * You can delete a version of a slot type only if it is not referenced. To delete a slot type that is referred to
@@ -429,10 +500,10 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
      * </p>
      * <note>
      * <p>
-     * If you get the <code>SlotTypeInUse</code> exception, the exception provides an example reference that shows the
-     * intent where the slot type is referenced. To remove the reference to the slot type, either update the intent or
-     * delete it. If you get the same exception when you attempt to delete the intent again, repeat until the intent has
-     * no references and the <code>DeleteSlotType</code> call is successful.
+     * If you get the <code>ResourceInUseException</code> exception, the exception provides an example reference that
+     * shows the intent where the slot type is referenced. To remove the reference to the slot type, either update the
+     * intent or delete it. If you get the same exception when you attempt to delete the slot type again, repeat until
+     * the slot type has no references and the <code>DeleteSlotType</code> call is successful.
      * </p>
      * </note>
      * <p>
@@ -449,9 +520,8 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
 
     /**
      * <p>
-     * Deletes a slot type. If you specify a version in the request, the API deletes the specific version. If you don't
-     * specify a version in the request, the API deletes all versions of the slot type, including the
-     * <code>$LATEST</code> version.
+     * Deletes all versions of the slot type, including the <code>$LATEST</code> version. To delete a specific version
+     * of the slot type, use the operation.
      * </p>
      * <p>
      * You can delete a version of a slot type only if it is not referenced. To delete a slot type that is referred to
@@ -459,10 +529,10 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
      * </p>
      * <note>
      * <p>
-     * If you get the <code>SlotTypeInUse</code> exception, the exception provides an example reference that shows the
-     * intent where the slot type is referenced. To remove the reference to the slot type, either update the intent or
-     * delete it. If you get the same exception when you attempt to delete the intent again, repeat until the intent has
-     * no references and the <code>DeleteSlotType</code> call is successful.
+     * If you get the <code>ResourceInUseException</code> exception, the exception provides an example reference that
+     * shows the intent where the slot type is referenced. To remove the reference to the slot type, either update the
+     * intent or delete it. If you get the same exception when you attempt to delete the slot type again, repeat until
+     * the slot type has no references and the <code>DeleteSlotType</code> call is successful.
      * </p>
      * </note>
      * <p>
@@ -484,12 +554,52 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
 
     /**
      * <p>
+     * Deletes a specific version of a slot type. To delete all versions of a slot type, use the operation.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>lex:DeleteSlotTypeVersion</code> action.
+     * </p>
+     * 
+     * @param deleteSlotTypeVersionRequest
+     * @return A Java Future containing the result of the DeleteSlotTypeVersion operation returned by the service.
+     * @sample AmazonLexModelBuildingAsync.DeleteSlotTypeVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotTypeVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteSlotTypeVersionResult> deleteSlotTypeVersionAsync(DeleteSlotTypeVersionRequest deleteSlotTypeVersionRequest);
+
+    /**
+     * <p>
+     * Deletes a specific version of a slot type. To delete all versions of a slot type, use the operation.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>lex:DeleteSlotTypeVersion</code> action.
+     * </p>
+     * 
+     * @param deleteSlotTypeVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteSlotTypeVersion operation returned by the service.
+     * @sample AmazonLexModelBuildingAsyncHandler.DeleteSlotTypeVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotTypeVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteSlotTypeVersionResult> deleteSlotTypeVersionAsync(DeleteSlotTypeVersionRequest deleteSlotTypeVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteSlotTypeVersionRequest, DeleteSlotTypeVersionResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes stored utterances.
      * </p>
      * <p>
-     * When you create or update a bot using the operation, configure your bot to store user utterances by setting
-     * <code>privacySetting</code> to <code>STORE_UTTERANCES</code>. Use <code>DeleteUtterances</code> to remove the
-     * stored utterances for a specific user .
+     * Amazon Lex stores the utterances that users send to your bot unless the <code>childDirected</code> field in the
+     * bot is set to <code>true</code>. Utterances are stored for 15 days for use with the operation, and then stored
+     * indefinately for use in improving the ability of your bot to respond to user input.
+     * </p>
+     * <p>
+     * Use the <code>DeleteStoredUtterances</code> operation to manually delete stored utterances for a specific user.
      * </p>
      * <p>
      * This operation requires permissions for the <code>lex:DeleteUtterances</code> action.
@@ -508,9 +618,12 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
      * Deletes stored utterances.
      * </p>
      * <p>
-     * When you create or update a bot using the operation, configure your bot to store user utterances by setting
-     * <code>privacySetting</code> to <code>STORE_UTTERANCES</code>. Use <code>DeleteUtterances</code> to remove the
-     * stored utterances for a specific user .
+     * Amazon Lex stores the utterances that users send to your bot unless the <code>childDirected</code> field in the
+     * bot is set to <code>true</code>. Utterances are stored for 15 days for use with the operation, and then stored
+     * indefinately for use in improving the ability of your bot to respond to user input.
+     * </p>
+     * <p>
+     * Use the <code>DeleteStoredUtterances</code> operation to manually delete stored utterances for a specific user.
      * </p>
      * <p>
      * This operation requires permissions for the <code>lex:DeleteUtterances</code> action.
@@ -571,6 +684,9 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
      * Returns information about an Amazon Lex bot alias. For more information about aliases, see
      * <a>versioning-aliases</a>.
      * </p>
+     * <p>
+     * This operation requires permissions for the <code>lex:GetBotAlias</code> action.
+     * </p>
      * 
      * @param getBotAliasRequest
      * @return A Java Future containing the result of the GetBotAlias operation returned by the service.
@@ -584,6 +700,9 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
      * <p>
      * Returns information about an Amazon Lex bot alias. For more information about aliases, see
      * <a>versioning-aliases</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>lex:GetBotAlias</code> action.
      * </p>
      * 
      * @param getBotAliasRequest
@@ -603,6 +722,9 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
      * <p>
      * Returns a list of aliases for a specified Amazon Lex bot.
      * </p>
+     * <p>
+     * This operation requires permissions for the <code>lex:GetBotAliases</code> action.
+     * </p>
      * 
      * @param getBotAliasesRequest
      * @return A Java Future containing the result of the GetBotAliases operation returned by the service.
@@ -615,6 +737,9 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
     /**
      * <p>
      * Returns a list of aliases for a specified Amazon Lex bot.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>lex:GetBotAliases</code> action.
      * </p>
      * 
      * @param getBotAliasesRequest
@@ -634,6 +759,9 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
      * <p>
      * Returns information about the association between an Amazon Lex bot and a messaging platform.
      * </p>
+     * <p>
+     * This operation requires permissions for the <code>lex:GetBotChannelAssociation</code> action.
+     * </p>
      * 
      * @param getBotChannelAssociationRequest
      * @return A Java Future containing the result of the GetBotChannelAssociation operation returned by the service.
@@ -646,6 +774,9 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
     /**
      * <p>
      * Returns information about the association between an Amazon Lex bot and a messaging platform.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>lex:GetBotChannelAssociation</code> action.
      * </p>
      * 
      * @param getBotChannelAssociationRequest
@@ -665,6 +796,10 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
      * <p>
      * Returns a list of all of the channels associated with the specified bot.
      * </p>
+     * <p>
+     * The <code>GetBotChannelAssociations</code> operation requires permissions for the
+     * <code>lex:GetBotChannelAssociations</code> action.
+     * </p>
      * 
      * @param getBotChannelAssociationsRequest
      * @return A Java Future containing the result of the GetBotChannelAssociations operation returned by the service.
@@ -678,6 +813,10 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
     /**
      * <p>
      * Returns a list of all of the channels associated with the specified bot.
+     * </p>
+     * <p>
+     * The <code>GetBotChannelAssociations</code> operation requires permissions for the
+     * <code>lex:GetBotChannelAssociations</code> action.
      * </p>
      * 
      * @param getBotChannelAssociationsRequest
@@ -707,6 +846,9 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
      * <p>
      * The <code>GetBotVersions</code> operation always returns at least one version, the <code>$LATEST</code> version.
      * </p>
+     * <p>
+     * This operation requires permissions for the <code>lex:GetBotVersions</code> action.
+     * </p>
      * 
      * @param getBotVersionsRequest
      * @return A Java Future containing the result of the GetBotVersions operation returned by the service.
@@ -728,6 +870,9 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
      * </p>
      * <p>
      * The <code>GetBotVersions</code> operation always returns at least one version, the <code>$LATEST</code> version.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>lex:GetBotVersions</code> action.
      * </p>
      * 
      * @param getBotVersionsRequest
@@ -980,6 +1125,9 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
      * The <code>GetIntentVersions</code> operation always returns at least one version, the <code>$LATEST</code>
      * version.
      * </p>
+     * <p>
+     * This operation requires permissions for the <code>lex:GetIntentVersions</code> action.
+     * </p>
      * 
      * @param getIntentVersionsRequest
      * @return A Java Future containing the result of the GetIntentVersions operation returned by the service.
@@ -1002,6 +1150,9 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
      * <p>
      * The <code>GetIntentVersions</code> operation always returns at least one version, the <code>$LATEST</code>
      * version.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>lex:GetIntentVersions</code> action.
      * </p>
      * 
      * @param getIntentVersionsRequest
@@ -1135,6 +1286,9 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
      * The <code>GetSlotTypeVersions</code> operation always returns at least one version, the <code>$LATEST</code>
      * version.
      * </p>
+     * <p>
+     * This operation requires permissions for the <code>lex:GetSlotTypeVersions</code> action.
+     * </p>
      * 
      * @param getSlotTypeVersionsRequest
      * @return A Java Future containing the result of the GetSlotTypeVersions operation returned by the service.
@@ -1157,6 +1311,9 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
      * <p>
      * The <code>GetSlotTypeVersions</code> operation always returns at least one version, the <code>$LATEST</code>
      * version.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>lex:GetSlotTypeVersions</code> action.
      * </p>
      * 
      * @param getSlotTypeVersionsRequest
@@ -1253,8 +1410,15 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
      * can compare the performance across the two versions.
      * </p>
      * <p>
-     * You can request information for up to 5 versions in each request. The response contains information about a
-     * maximum of 100 utterances for each version.
+     * Data is available for the last 15 days. You can request information for up to 5 versions in each request. The
+     * response contains information about a maximum of 100 utterances for each version.
+     * </p>
+     * <p>
+     * If the bot's <code>childDirected</code> field is set to <code>true</code>, utterances for the bot are not stored
+     * and cannot be retrieved with the <code>GetUtterancesView</code> operation. For more information, see .
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>lex:GetUtterancesView</code> action.
      * </p>
      * 
      * @param getUtterancesViewRequest
@@ -1281,8 +1445,15 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
      * can compare the performance across the two versions.
      * </p>
      * <p>
-     * You can request information for up to 5 versions in each request. The response contains information about a
-     * maximum of 100 utterances for each version.
+     * Data is available for the last 15 days. You can request information for up to 5 versions in each request. The
+     * response contains information about a maximum of 100 utterances for each version.
+     * </p>
+     * <p>
+     * If the bot's <code>childDirected</code> field is set to <code>true</code>, utterances for the bot are not stored
+     * and cannot be retrieved with the <code>GetUtterancesView</code> operation. For more information, see .
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>lex:GetUtterancesView</code> action.
      * </p>
      * 
      * @param getUtterancesViewRequest
@@ -1300,9 +1471,9 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
 
     /**
      * <p>
-     * Creates an Amazon Lex conversational bot or replaces an existing bot. When you create or update an intent you
-     * only required to specify a name. You can use this to add intents later, or to remove intents from an existing
-     * bot. When you create a bot with a name only, the bot is created or updated but Amazon Lex returns the
+     * Creates an Amazon Lex conversational bot or replaces an existing bot. When you create or update a bot you only
+     * required to specify a name. You can use this to add intents later, or to remove intents from an existing bot.
+     * When you create a bot with a name only, the bot is created or updated but Amazon Lex returns the
      * <code/> response <code>FAILED</code>. You can build the bot after you add one or more intents. For more
      * information about Amazon Lex bots, see <a>how-it-works</a>.
      * </p>
@@ -1327,9 +1498,9 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
 
     /**
      * <p>
-     * Creates an Amazon Lex conversational bot or replaces an existing bot. When you create or update an intent you
-     * only required to specify a name. You can use this to add intents later, or to remove intents from an existing
-     * bot. When you create a bot with a name only, the bot is created or updated but Amazon Lex returns the
+     * Creates an Amazon Lex conversational bot or replaces an existing bot. When you create or update a bot you only
+     * required to specify a name. You can use this to add intents later, or to remove intents from an existing bot.
+     * When you create a bot with a name only, the bot is created or updated but Amazon Lex returns the
      * <code/> response <code>FAILED</code>. You can build the bot after you add one or more intents. For more
      * information about Amazon Lex bots, see <a>how-it-works</a>.
      * </p>
@@ -1467,8 +1638,7 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
      * For more information, see <a>how-it-works</a>.
      * </p>
      * <p>
-     * This operation requires permissions for the <code>lex:PutIntent</code> action. For more information, see
-     * <a>auth-and-access-control</a>.
+     * This operation requires permissions for the <code>lex:PutIntent</code> action.
      * </p>
      * 
      * @param putIntentRequest
@@ -1548,8 +1718,7 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
      * For more information, see <a>how-it-works</a>.
      * </p>
      * <p>
-     * This operation requires permissions for the <code>lex:PutIntent</code> action. For more information, see
-     * <a>auth-and-access-control</a>.
+     * This operation requires permissions for the <code>lex:PutIntent</code> action.
      * </p>
      * 
      * @param putIntentRequest

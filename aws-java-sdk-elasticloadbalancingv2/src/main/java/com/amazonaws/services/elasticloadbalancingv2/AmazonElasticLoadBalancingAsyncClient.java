@@ -645,6 +645,39 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAccountLimitsResult> describeAccountLimitsAsync(DescribeAccountLimitsRequest request) {
+
+        return describeAccountLimitsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccountLimitsResult> describeAccountLimitsAsync(final DescribeAccountLimitsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAccountLimitsRequest, DescribeAccountLimitsResult> asyncHandler) {
+        final DescribeAccountLimitsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAccountLimitsResult>() {
+            @Override
+            public DescribeAccountLimitsResult call() throws Exception {
+                DescribeAccountLimitsResult result = null;
+
+                try {
+                    result = executeDescribeAccountLimits(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeListenersResult> describeListenersAsync(DescribeListenersRequest request) {
 
         return describeListenersAsync(request, null);

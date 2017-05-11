@@ -106,6 +106,19 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteBotVersionResult> deleteBotVersionAsync(DeleteBotVersionRequest request) {
+
+        return deleteBotVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBotVersionResult> deleteBotVersionAsync(DeleteBotVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteBotVersionRequest, DeleteBotVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteIntentResult> deleteIntentAsync(DeleteIntentRequest request) {
 
         return deleteIntentAsync(request, null);
@@ -119,6 +132,19 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteIntentVersionResult> deleteIntentVersionAsync(DeleteIntentVersionRequest request) {
+
+        return deleteIntentVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteIntentVersionResult> deleteIntentVersionAsync(DeleteIntentVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteIntentVersionRequest, DeleteIntentVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteSlotTypeResult> deleteSlotTypeAsync(DeleteSlotTypeRequest request) {
 
         return deleteSlotTypeAsync(request, null);
@@ -127,6 +153,19 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     @Override
     public java.util.concurrent.Future<DeleteSlotTypeResult> deleteSlotTypeAsync(DeleteSlotTypeRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteSlotTypeRequest, DeleteSlotTypeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSlotTypeVersionResult> deleteSlotTypeVersionAsync(DeleteSlotTypeVersionRequest request) {
+
+        return deleteSlotTypeVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSlotTypeVersionResult> deleteSlotTypeVersionAsync(DeleteSlotTypeVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteSlotTypeVersionRequest, DeleteSlotTypeVersionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -18,6 +18,57 @@ import javax.annotation.Generated;
  * <p>
  * The requested operation would violate the constraint identified in the reason code.
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an organization.
+ * <b>Note</b>: deleted and closed accounts still count toward your limit.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes you can send in one day.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * ALREADY_IN_AN_ORGANIZATION: The handshake request is invalid because the invited account is already a member of an
+ * organization.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * ORGANIZATION_ALREADY_HAS_ALL_FEATURES: The handshake request is invalid because the organization has already enabled
+ * all features.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES: You cannot issue new invitations to join an organization while it is in
+ * the process of enabling all features. You can resume inviting accounts after you finalize the process when all
+ * accounts have agreed to the change.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * PAYMENT_INSTRUMENT_REQUIRED: You cannot complete the operation with an account that does not have a payment
+ * instrument, such as a credit card, associated with it.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: The request failed because the account is from a different marketplace
+ * than the accounts in the organization. For example, accounts with India addresses must be associated with the AISPL
+ * marketplace. All accounts in an organization must be from the same marketplace.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED: You attempted to change the membership of an account too quickly
+ * after its previous change.
+ * </p>
+ * </li>
+ * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class HandshakeConstraintViolationException extends com.amazonaws.services.organizations.model.AWSOrganizationsException {

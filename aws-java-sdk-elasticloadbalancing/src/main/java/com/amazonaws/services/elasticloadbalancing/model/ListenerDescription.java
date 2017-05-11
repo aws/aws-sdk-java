@@ -26,6 +26,11 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListenerDescription implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The listener.
+     * </p>
+     */
     private Listener listener;
     /**
      * <p>
@@ -35,7 +40,12 @@ public class ListenerDescription implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> policyNames;
 
     /**
+     * <p>
+     * The listener.
+     * </p>
+     * 
      * @param listener
+     *        The listener.
      */
 
     public void setListener(Listener listener) {
@@ -43,7 +53,11 @@ public class ListenerDescription implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The listener.
+     * </p>
+     * 
+     * @return The listener.
      */
 
     public Listener getListener() {
@@ -51,7 +65,12 @@ public class ListenerDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The listener.
+     * </p>
+     * 
      * @param listener
+     *        The listener.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

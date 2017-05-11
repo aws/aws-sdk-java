@@ -56,6 +56,10 @@ public class AccountJsonUnmarshaller implements Unmarshaller<Account, JsonUnmars
                     context.nextToken();
                     account.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Email", targetDepth)) {
+                    context.nextToken();
+                    account.setEmail(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
                     account.setName(context.getUnmarshaller(String.class).unmarshall(context));
