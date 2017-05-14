@@ -53,7 +53,7 @@ public class RequestXmlFactory {
             for (PartETag partEtag : sortedPartETags) {
                 xml.start("Part");
                 xml.start("PartNumber").value(Integer.toString(partEtag.getPartNumber())).end();
-                xml.start("ETag").value(partEtag.getETag()).end();
+                xml.start("ETag").value("\"" + partEtag.getETag() + "\"").end();
                 xml.end();
             }
         }
