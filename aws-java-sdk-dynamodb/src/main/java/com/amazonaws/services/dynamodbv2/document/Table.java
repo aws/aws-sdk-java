@@ -461,6 +461,7 @@ public class Table implements PutItemApi, GetItemApi, QueryApi, ScanApi,
     public TableDescription updateTable(
             ProvisionedThroughput provisionedThroughput) {
         return updateTable(new UpdateTableSpec()
+            .withTableName(tableName)
             .withProvisionedThroughput(provisionedThroughput));
     }
 
