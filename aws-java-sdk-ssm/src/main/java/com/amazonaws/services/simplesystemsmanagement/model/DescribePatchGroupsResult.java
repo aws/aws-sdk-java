@@ -28,7 +28,7 @@ public class DescribePatchGroupsResult extends com.amazonaws.AmazonWebServiceRes
      * Each entry in the array contains:
      * </p>
      * <p>
-     * PatchGroup: string (1 ≤ length ≤ 256, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)
+     * PatchGroup: string (between 1 and 256 characters, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)
      * </p>
      * <p>
      * PatchBaselineIdentity: A PatchBaselineIdentity element.
@@ -48,7 +48,7 @@ public class DescribePatchGroupsResult extends com.amazonaws.AmazonWebServiceRes
      * Each entry in the array contains:
      * </p>
      * <p>
-     * PatchGroup: string (1 ≤ length ≤ 256, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)
+     * PatchGroup: string (between 1 and 256 characters, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)
      * </p>
      * <p>
      * PatchBaselineIdentity: A PatchBaselineIdentity element.
@@ -56,7 +56,7 @@ public class DescribePatchGroupsResult extends com.amazonaws.AmazonWebServiceRes
      * 
      * @return Each entry in the array contains:</p>
      *         <p>
-     *         PatchGroup: string (1 ≤ length ≤ 256, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)
+     *         PatchGroup: string (between 1 and 256 characters, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)
      *         </p>
      *         <p>
      *         PatchBaselineIdentity: A PatchBaselineIdentity element.
@@ -74,7 +74,7 @@ public class DescribePatchGroupsResult extends com.amazonaws.AmazonWebServiceRes
      * Each entry in the array contains:
      * </p>
      * <p>
-     * PatchGroup: string (1 ≤ length ≤ 256, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)
+     * PatchGroup: string (between 1 and 256 characters, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)
      * </p>
      * <p>
      * PatchBaselineIdentity: A PatchBaselineIdentity element.
@@ -83,7 +83,7 @@ public class DescribePatchGroupsResult extends com.amazonaws.AmazonWebServiceRes
      * @param mappings
      *        Each entry in the array contains:</p>
      *        <p>
-     *        PatchGroup: string (1 ≤ length ≤ 256, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)
+     *        PatchGroup: string (between 1 and 256 characters, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)
      *        </p>
      *        <p>
      *        PatchBaselineIdentity: A PatchBaselineIdentity element.
@@ -103,7 +103,7 @@ public class DescribePatchGroupsResult extends com.amazonaws.AmazonWebServiceRes
      * Each entry in the array contains:
      * </p>
      * <p>
-     * PatchGroup: string (1 ≤ length ≤ 256, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)
+     * PatchGroup: string (between 1 and 256 characters, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)
      * </p>
      * <p>
      * PatchBaselineIdentity: A PatchBaselineIdentity element.
@@ -117,7 +117,7 @@ public class DescribePatchGroupsResult extends com.amazonaws.AmazonWebServiceRes
      * @param mappings
      *        Each entry in the array contains:</p>
      *        <p>
-     *        PatchGroup: string (1 ≤ length ≤ 256, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)
+     *        PatchGroup: string (between 1 and 256 characters, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)
      *        </p>
      *        <p>
      *        PatchBaselineIdentity: A PatchBaselineIdentity element.
@@ -139,7 +139,7 @@ public class DescribePatchGroupsResult extends com.amazonaws.AmazonWebServiceRes
      * Each entry in the array contains:
      * </p>
      * <p>
-     * PatchGroup: string (1 ≤ length ≤ 256, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)
+     * PatchGroup: string (between 1 and 256 characters, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)
      * </p>
      * <p>
      * PatchBaselineIdentity: A PatchBaselineIdentity element.
@@ -148,7 +148,7 @@ public class DescribePatchGroupsResult extends com.amazonaws.AmazonWebServiceRes
      * @param mappings
      *        Each entry in the array contains:</p>
      *        <p>
-     *        PatchGroup: string (1 ≤ length ≤ 256, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)
+     *        PatchGroup: string (between 1 and 256 characters, Regex: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)
      *        </p>
      *        <p>
      *        PatchBaselineIdentity: A PatchBaselineIdentity element.

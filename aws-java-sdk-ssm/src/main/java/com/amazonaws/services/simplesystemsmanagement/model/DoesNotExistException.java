@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+ * Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't exist.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

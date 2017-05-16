@@ -42,8 +42,8 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
     private String action;
     /**
      * <p>
-     * If a step has begun execution, this contains the time the step started. If the step is in <code>Pending</code>
-     * status, this field is not populated.
+     * If a step has begun execution, this contains the time the step started. If the step is in Pending status, this
+     * field is not populated.
      * </p>
      */
     private java.util.Date executionStartTime;
@@ -56,8 +56,8 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date executionEndTime;
     /**
      * <p>
-     * The execution status for this step. Valid values include: <code>Pending</code>, <code>InProgress</code>,
-     * <code>Success</code>, <code>Cancelled</code>, <code>Failed</code>, and <code>TimedOut</code>.
+     * The execution status for this step. Valid values include: Pending, InProgress, Success, Cancelled, Failed, and
+     * TimedOut.
      * </p>
      */
     private String stepStatus;
@@ -91,6 +91,12 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String failureMessage;
+    /**
+     * <p>
+     * Information about the Automation failure.
+     * </p>
+     */
+    private FailureDetails failureDetails;
 
     /**
      * <p>
@@ -174,13 +180,13 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If a step has begun execution, this contains the time the step started. If the step is in <code>Pending</code>
-     * status, this field is not populated.
+     * If a step has begun execution, this contains the time the step started. If the step is in Pending status, this
+     * field is not populated.
      * </p>
      * 
      * @param executionStartTime
-     *        If a step has begun execution, this contains the time the step started. If the step is in
-     *        <code>Pending</code> status, this field is not populated.
+     *        If a step has begun execution, this contains the time the step started. If the step is in Pending status,
+     *        this field is not populated.
      */
 
     public void setExecutionStartTime(java.util.Date executionStartTime) {
@@ -189,12 +195,12 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If a step has begun execution, this contains the time the step started. If the step is in <code>Pending</code>
-     * status, this field is not populated.
+     * If a step has begun execution, this contains the time the step started. If the step is in Pending status, this
+     * field is not populated.
      * </p>
      * 
-     * @return If a step has begun execution, this contains the time the step started. If the step is in
-     *         <code>Pending</code> status, this field is not populated.
+     * @return If a step has begun execution, this contains the time the step started. If the step is in Pending status,
+     *         this field is not populated.
      */
 
     public java.util.Date getExecutionStartTime() {
@@ -203,13 +209,13 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If a step has begun execution, this contains the time the step started. If the step is in <code>Pending</code>
-     * status, this field is not populated.
+     * If a step has begun execution, this contains the time the step started. If the step is in Pending status, this
+     * field is not populated.
      * </p>
      * 
      * @param executionStartTime
-     *        If a step has begun execution, this contains the time the step started. If the step is in
-     *        <code>Pending</code> status, this field is not populated.
+     *        If a step has begun execution, this contains the time the step started. If the step is in Pending status,
+     *        this field is not populated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -266,13 +272,13 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The execution status for this step. Valid values include: <code>Pending</code>, <code>InProgress</code>,
-     * <code>Success</code>, <code>Cancelled</code>, <code>Failed</code>, and <code>TimedOut</code>.
+     * The execution status for this step. Valid values include: Pending, InProgress, Success, Cancelled, Failed, and
+     * TimedOut.
      * </p>
      * 
      * @param stepStatus
-     *        The execution status for this step. Valid values include: <code>Pending</code>, <code>InProgress</code>,
-     *        <code>Success</code>, <code>Cancelled</code>, <code>Failed</code>, and <code>TimedOut</code>.
+     *        The execution status for this step. Valid values include: Pending, InProgress, Success, Cancelled, Failed,
+     *        and TimedOut.
      * @see AutomationExecutionStatus
      */
 
@@ -282,12 +288,12 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The execution status for this step. Valid values include: <code>Pending</code>, <code>InProgress</code>,
-     * <code>Success</code>, <code>Cancelled</code>, <code>Failed</code>, and <code>TimedOut</code>.
+     * The execution status for this step. Valid values include: Pending, InProgress, Success, Cancelled, Failed, and
+     * TimedOut.
      * </p>
      * 
-     * @return The execution status for this step. Valid values include: <code>Pending</code>, <code>InProgress</code>,
-     *         <code>Success</code>, <code>Cancelled</code>, <code>Failed</code>, and <code>TimedOut</code>.
+     * @return The execution status for this step. Valid values include: Pending, InProgress, Success, Cancelled,
+     *         Failed, and TimedOut.
      * @see AutomationExecutionStatus
      */
 
@@ -297,13 +303,13 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The execution status for this step. Valid values include: <code>Pending</code>, <code>InProgress</code>,
-     * <code>Success</code>, <code>Cancelled</code>, <code>Failed</code>, and <code>TimedOut</code>.
+     * The execution status for this step. Valid values include: Pending, InProgress, Success, Cancelled, Failed, and
+     * TimedOut.
      * </p>
      * 
      * @param stepStatus
-     *        The execution status for this step. Valid values include: <code>Pending</code>, <code>InProgress</code>,
-     *        <code>Success</code>, <code>Cancelled</code>, <code>Failed</code>, and <code>TimedOut</code>.
+     *        The execution status for this step. Valid values include: Pending, InProgress, Success, Cancelled, Failed,
+     *        and TimedOut.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutomationExecutionStatus
      */
@@ -315,13 +321,13 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The execution status for this step. Valid values include: <code>Pending</code>, <code>InProgress</code>,
-     * <code>Success</code>, <code>Cancelled</code>, <code>Failed</code>, and <code>TimedOut</code>.
+     * The execution status for this step. Valid values include: Pending, InProgress, Success, Cancelled, Failed, and
+     * TimedOut.
      * </p>
      * 
      * @param stepStatus
-     *        The execution status for this step. Valid values include: <code>Pending</code>, <code>InProgress</code>,
-     *        <code>Success</code>, <code>Cancelled</code>, <code>Failed</code>, and <code>TimedOut</code>.
+     *        The execution status for this step. Valid values include: Pending, InProgress, Success, Cancelled, Failed,
+     *        and TimedOut.
      * @see AutomationExecutionStatus
      */
 
@@ -331,13 +337,13 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The execution status for this step. Valid values include: <code>Pending</code>, <code>InProgress</code>,
-     * <code>Success</code>, <code>Cancelled</code>, <code>Failed</code>, and <code>TimedOut</code>.
+     * The execution status for this step. Valid values include: Pending, InProgress, Success, Cancelled, Failed, and
+     * TimedOut.
      * </p>
      * 
      * @param stepStatus
-     *        The execution status for this step. Valid values include: <code>Pending</code>, <code>InProgress</code>,
-     *        <code>Success</code>, <code>Cancelled</code>, <code>Failed</code>, and <code>TimedOut</code>.
+     *        The execution status for this step. Valid values include: Pending, InProgress, Success, Cancelled, Failed,
+     *        and TimedOut.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutomationExecutionStatus
      */
@@ -590,6 +596,46 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Information about the Automation failure.
+     * </p>
+     * 
+     * @param failureDetails
+     *        Information about the Automation failure.
+     */
+
+    public void setFailureDetails(FailureDetails failureDetails) {
+        this.failureDetails = failureDetails;
+    }
+
+    /**
+     * <p>
+     * Information about the Automation failure.
+     * </p>
+     * 
+     * @return Information about the Automation failure.
+     */
+
+    public FailureDetails getFailureDetails() {
+        return this.failureDetails;
+    }
+
+    /**
+     * <p>
+     * Information about the Automation failure.
+     * </p>
+     * 
+     * @param failureDetails
+     *        Information about the Automation failure.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StepExecution withFailureDetails(FailureDetails failureDetails) {
+        setFailureDetails(failureDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -619,7 +665,9 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
         if (getResponse() != null)
             sb.append("Response: ").append(getResponse()).append(",");
         if (getFailureMessage() != null)
-            sb.append("FailureMessage: ").append(getFailureMessage());
+            sb.append("FailureMessage: ").append(getFailureMessage()).append(",");
+        if (getFailureDetails() != null)
+            sb.append("FailureDetails: ").append(getFailureDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -674,6 +722,10 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getFailureMessage() != null && other.getFailureMessage().equals(this.getFailureMessage()) == false)
             return false;
+        if (other.getFailureDetails() == null ^ this.getFailureDetails() == null)
+            return false;
+        if (other.getFailureDetails() != null && other.getFailureDetails().equals(this.getFailureDetails()) == false)
+            return false;
         return true;
     }
 
@@ -692,6 +744,7 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getOutputs() == null) ? 0 : getOutputs().hashCode());
         hashCode = prime * hashCode + ((getResponse() == null) ? 0 : getResponse().hashCode());
         hashCode = prime * hashCode + ((getFailureMessage() == null) ? 0 : getFailureMessage().hashCode());
+        hashCode = prime * hashCode + ((getFailureDetails() == null) ? 0 : getFailureDetails().hashCode());
         return hashCode;
     }
 

@@ -37,7 +37,7 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
     private Integer instancesWithInstalledPatches;
     /**
      * <p>
-     * The number of instances with patches installed that aren’t defined in the patch baseline.
+     * The number of instances with patches installed that aren't defined in the patch baseline.
      * </p>
      */
     private Integer instancesWithInstalledOtherPatches;
@@ -55,7 +55,7 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
     private Integer instancesWithFailedPatches;
     /**
      * <p>
-     * The number of instances with patches that aren’t applicable.
+     * The number of instances with patches that aren't applicable.
      * </p>
      */
     private Integer instancesWithNotApplicablePatches;
@@ -142,11 +142,11 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of instances with patches installed that aren’t defined in the patch baseline.
+     * The number of instances with patches installed that aren't defined in the patch baseline.
      * </p>
      * 
      * @param instancesWithInstalledOtherPatches
-     *        The number of instances with patches installed that aren’t defined in the patch baseline.
+     *        The number of instances with patches installed that aren't defined in the patch baseline.
      */
 
     public void setInstancesWithInstalledOtherPatches(Integer instancesWithInstalledOtherPatches) {
@@ -155,10 +155,10 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of instances with patches installed that aren’t defined in the patch baseline.
+     * The number of instances with patches installed that aren't defined in the patch baseline.
      * </p>
      * 
-     * @return The number of instances with patches installed that aren’t defined in the patch baseline.
+     * @return The number of instances with patches installed that aren't defined in the patch baseline.
      */
 
     public Integer getInstancesWithInstalledOtherPatches() {
@@ -167,11 +167,11 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of instances with patches installed that aren’t defined in the patch baseline.
+     * The number of instances with patches installed that aren't defined in the patch baseline.
      * </p>
      * 
      * @param instancesWithInstalledOtherPatches
-     *        The number of instances with patches installed that aren’t defined in the patch baseline.
+     *        The number of instances with patches installed that aren't defined in the patch baseline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -262,11 +262,11 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of instances with patches that aren’t applicable.
+     * The number of instances with patches that aren't applicable.
      * </p>
      * 
      * @param instancesWithNotApplicablePatches
-     *        The number of instances with patches that aren’t applicable.
+     *        The number of instances with patches that aren't applicable.
      */
 
     public void setInstancesWithNotApplicablePatches(Integer instancesWithNotApplicablePatches) {
@@ -275,10 +275,10 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of instances with patches that aren’t applicable.
+     * The number of instances with patches that aren't applicable.
      * </p>
      * 
-     * @return The number of instances with patches that aren’t applicable.
+     * @return The number of instances with patches that aren't applicable.
      */
 
     public Integer getInstancesWithNotApplicablePatches() {
@@ -287,11 +287,11 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of instances with patches that aren’t applicable.
+     * The number of instances with patches that aren't applicable.
      * </p>
      * 
      * @param instancesWithNotApplicablePatches
-     *        The number of instances with patches that aren’t applicable.
+     *        The number of instances with patches that aren't applicable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

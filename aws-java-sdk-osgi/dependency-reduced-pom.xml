@@ -3,7 +3,7 @@
   <parent>
     <artifactId>aws-java-sdk-pom</artifactId>
     <groupId>com.amazonaws</groupId>
-    <version>1.11.128</version>
+    <version>1.11.129</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
@@ -114,10 +114,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.128</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.129</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.128</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.129</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -598,7 +598,6 @@
                   &lt;!--/DO NOT REMOVE/--&gt;
                   &lt;!-- End SiteCatalyst code version: H.25.2. --&gt;</footer>
                   <bottom>Copyright &amp;#169; 2013 Amazon Web Services, Inc. All Rights Reserved.</bottom>
-                  <excludePackageNames>*.internal:*.transform</excludePackageNames>
                 </configuration>
               </execution>
               <execution>
@@ -619,10 +618,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.128</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.129</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.128</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.129</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -1103,7 +1102,6 @@
                   &lt;!--/DO NOT REMOVE/--&gt;
                   &lt;!-- End SiteCatalyst code version: H.25.2. --&gt;</footer>
                   <bottom>Copyright &amp;#169; 2013 Amazon Web Services, Inc. All Rights Reserved.</bottom>
-                  <excludePackageNames>*.internal:*.transform</excludePackageNames>
                 </configuration>
               </execution>
             </executions>
@@ -1120,10 +1118,10 @@
               <use>false</use>
               <notree>true</notree>
               <nodeprecatedlist>true</nodeprecatedlist>
-              <windowtitle>AWS SDK for Java - 1.11.128</windowtitle>
+              <windowtitle>AWS SDK for Java - 1.11.129</windowtitle>
               <encoding>UTF-8</encoding>
               <docencoding>UTF-8</docencoding>
-              <doctitle>AWS SDK for Java API Reference - 1.11.128</doctitle>
+              <doctitle>AWS SDK for Java API Reference - 1.11.129</doctitle>
               <packagesheader>AWS SDK for Java</packagesheader>
               <docfilessubdirs>true</docfilessubdirs>
               <taglets>
@@ -1604,7 +1602,6 @@
                   &lt;!--/DO NOT REMOVE/--&gt;
                   &lt;!-- End SiteCatalyst code version: H.25.2. --&gt;</footer>
               <bottom>Copyright &amp;#169; 2013 Amazon Web Services, Inc. All Rights Reserved.</bottom>
-              <excludePackageNames>*.internal:*.transform</excludePackageNames>
             </configuration>
           </plugin>
         </plugins>
@@ -1818,7 +1815,7 @@
                   <goal>exec</goal>
                 </goals>
                 <configuration>
-                  <workingDirectory>target/aws-java-sdk-osgi-1.11.128-sdk-zip-archive-assembly/</workingDirectory>
+                  <workingDirectory>target/aws-java-sdk-osgi-1.11.129-sdk-zip-archive-assembly/</workingDirectory>
                   <executable>zip</executable>
                   <commandlineArgs>-r ../aws-java-sdk.zip .</commandlineArgs>
                 </configuration>

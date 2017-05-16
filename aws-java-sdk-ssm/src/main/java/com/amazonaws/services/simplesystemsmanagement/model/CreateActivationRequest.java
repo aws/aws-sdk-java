@@ -27,7 +27,7 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A user-defined description of the resource that you want to register with Amazon EC2.
+     * A userdefined description of the resource that you want to register with Amazon EC2.
      * </p>
      */
     private String description;
@@ -59,11 +59,11 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A user-defined description of the resource that you want to register with Amazon EC2.
+     * A userdefined description of the resource that you want to register with Amazon EC2.
      * </p>
      * 
      * @param description
-     *        A user-defined description of the resource that you want to register with Amazon EC2.
+     *        A userdefined description of the resource that you want to register with Amazon EC2.
      */
 
     public void setDescription(String description) {
@@ -72,10 +72,10 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A user-defined description of the resource that you want to register with Amazon EC2.
+     * A userdefined description of the resource that you want to register with Amazon EC2.
      * </p>
      * 
-     * @return A user-defined description of the resource that you want to register with Amazon EC2.
+     * @return A userdefined description of the resource that you want to register with Amazon EC2.
      */
 
     public String getDescription() {
@@ -84,11 +84,11 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A user-defined description of the resource that you want to register with Amazon EC2.
+     * A userdefined description of the resource that you want to register with Amazon EC2.
      * </p>
      * 
      * @param description
-     *        A user-defined description of the resource that you want to register with Amazon EC2.
+     *        A userdefined description of the resource that you want to register with Amazon EC2.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

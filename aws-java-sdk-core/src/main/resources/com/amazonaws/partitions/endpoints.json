@@ -320,6 +320,14 @@
             "us-west-2": {}
           }
         },
+        "codestar": {
+          "endpoints": {
+            "eu-west-1": {},
+            "us-east-1": {},
+            "us-east-2": {},
+            "us-west-2": {}
+          }
+        },
         "cognito-identity": {
           "endpoints": {
             "ap-northeast-1": {},
@@ -673,6 +681,16 @@
             "eu-west-1": {},
             "us-east-1": {},
             "us-west-2": {}
+          }
+        },
+        "entitlement.marketplace": {
+          "defaults": {
+            "credentialScope": {
+              "service": "aws-marketplace"
+            }
+          },
+          "endpoints": {
+            "us-east-1": {}
           }
         },
         "es": {

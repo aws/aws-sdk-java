@@ -101,7 +101,7 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
     private String msrcNumber;
     /**
      * <p>
-     * The language of the patch if it’s language-specific.
+     * The language of the patch if it's language-specific.
      * </p>
      */
     private String language;
@@ -588,11 +588,11 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The language of the patch if it’s language-specific.
+     * The language of the patch if it's language-specific.
      * </p>
      * 
      * @param language
-     *        The language of the patch if it’s language-specific.
+     *        The language of the patch if it's language-specific.
      */
 
     public void setLanguage(String language) {
@@ -601,10 +601,10 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The language of the patch if it’s language-specific.
+     * The language of the patch if it's language-specific.
      * </p>
      * 
-     * @return The language of the patch if it’s language-specific.
+     * @return The language of the patch if it's language-specific.
      */
 
     public String getLanguage() {
@@ -613,11 +613,11 @@ public class Patch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The language of the patch if it’s language-specific.
+     * The language of the patch if it's language-specific.
      * </p>
      * 
      * @param language
-     *        The language of the patch if it’s language-specific.
+     *        The language of the patch if it's language-specific.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

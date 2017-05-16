@@ -59,10 +59,10 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
      * The parameters passed to the task when it was executed. The map has the following format:
      * </p>
      * <p>
-     * Key: string, 1 ≤ length ≤ 255
+     * Key: string, between 1 and 255 characters
      * </p>
      * <p>
-     * Value: an array of strings where each string 1 ≤ length ≤ 255
+     * Value: an array of strings, each string is between 1 and 255 characters
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<java.util.Map<String, MaintenanceWindowTaskParameterValueExpression>> taskParameters;
@@ -348,18 +348,18 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
      * The parameters passed to the task when it was executed. The map has the following format:
      * </p>
      * <p>
-     * Key: string, 1 ≤ length ≤ 255
+     * Key: string, between 1 and 255 characters
      * </p>
      * <p>
-     * Value: an array of strings where each string 1 ≤ length ≤ 255
+     * Value: an array of strings, each string is between 1 and 255 characters
      * </p>
      * 
      * @return The parameters passed to the task when it was executed. The map has the following format:</p>
      *         <p>
-     *         Key: string, 1 ≤ length ≤ 255
+     *         Key: string, between 1 and 255 characters
      *         </p>
      *         <p>
-     *         Value: an array of strings where each string 1 ≤ length ≤ 255
+     *         Value: an array of strings, each string is between 1 and 255 characters
      */
 
     public java.util.List<java.util.Map<String, MaintenanceWindowTaskParameterValueExpression>> getTaskParameters() {
@@ -374,19 +374,19 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
      * The parameters passed to the task when it was executed. The map has the following format:
      * </p>
      * <p>
-     * Key: string, 1 ≤ length ≤ 255
+     * Key: string, between 1 and 255 characters
      * </p>
      * <p>
-     * Value: an array of strings where each string 1 ≤ length ≤ 255
+     * Value: an array of strings, each string is between 1 and 255 characters
      * </p>
      * 
      * @param taskParameters
      *        The parameters passed to the task when it was executed. The map has the following format:</p>
      *        <p>
-     *        Key: string, 1 ≤ length ≤ 255
+     *        Key: string, between 1 and 255 characters
      *        </p>
      *        <p>
-     *        Value: an array of strings where each string 1 ≤ length ≤ 255
+     *        Value: an array of strings, each string is between 1 and 255 characters
      */
 
     public void setTaskParameters(java.util.Collection<java.util.Map<String, MaintenanceWindowTaskParameterValueExpression>> taskParameters) {
@@ -403,10 +403,10 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
      * The parameters passed to the task when it was executed. The map has the following format:
      * </p>
      * <p>
-     * Key: string, 1 ≤ length ≤ 255
+     * Key: string, between 1 and 255 characters
      * </p>
      * <p>
-     * Value: an array of strings where each string 1 ≤ length ≤ 255
+     * Value: an array of strings, each string is between 1 and 255 characters
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -417,10 +417,10 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
      * @param taskParameters
      *        The parameters passed to the task when it was executed. The map has the following format:</p>
      *        <p>
-     *        Key: string, 1 ≤ length ≤ 255
+     *        Key: string, between 1 and 255 characters
      *        </p>
      *        <p>
-     *        Value: an array of strings where each string 1 ≤ length ≤ 255
+     *        Value: an array of strings, each string is between 1 and 255 characters
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -440,19 +440,19 @@ public class GetMaintenanceWindowExecutionTaskResult extends com.amazonaws.Amazo
      * The parameters passed to the task when it was executed. The map has the following format:
      * </p>
      * <p>
-     * Key: string, 1 ≤ length ≤ 255
+     * Key: string, between 1 and 255 characters
      * </p>
      * <p>
-     * Value: an array of strings where each string 1 ≤ length ≤ 255
+     * Value: an array of strings, each string is between 1 and 255 characters
      * </p>
      * 
      * @param taskParameters
      *        The parameters passed to the task when it was executed. The map has the following format:</p>
      *        <p>
-     *        Key: string, 1 ≤ length ≤ 255
+     *        Key: string, between 1 and 255 characters
      *        </p>
      *        <p>
-     *        Value: an array of strings where each string 1 ≤ length ≤ 255
+     *        Value: an array of strings, each string is between 1 and 255 characters
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

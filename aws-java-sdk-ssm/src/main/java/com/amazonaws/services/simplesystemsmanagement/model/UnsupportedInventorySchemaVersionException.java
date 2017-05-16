@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Inventory item type schema version has to match supported versions in the service. Check output of
- * <code>GetInventorySchema</code> to see the available schema version for each type.
+ * Inventory item type schema version has to match supported versions in the service. Check output of GetInventorySchema
+ * to see the available schema version for each type.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

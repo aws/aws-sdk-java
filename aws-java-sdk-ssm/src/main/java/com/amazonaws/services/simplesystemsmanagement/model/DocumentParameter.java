@@ -36,7 +36,7 @@ public class DocumentParameter implements Serializable, Cloneable, StructuredPoj
     private String name;
     /**
      * <p>
-     * The type of parameter. The type can be either “String” or “StringList”.
+     * The type of parameter. The type can be either String or StringList.
      * </p>
      */
     private String type;
@@ -97,11 +97,11 @@ public class DocumentParameter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The type of parameter. The type can be either “String” or “StringList”.
+     * The type of parameter. The type can be either String or StringList.
      * </p>
      * 
      * @param type
-     *        The type of parameter. The type can be either “String” or “StringList”.
+     *        The type of parameter. The type can be either String or StringList.
      * @see DocumentParameterType
      */
 
@@ -111,10 +111,10 @@ public class DocumentParameter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The type of parameter. The type can be either “String” or “StringList”.
+     * The type of parameter. The type can be either String or StringList.
      * </p>
      * 
-     * @return The type of parameter. The type can be either “String” or “StringList”.
+     * @return The type of parameter. The type can be either String or StringList.
      * @see DocumentParameterType
      */
 
@@ -124,11 +124,11 @@ public class DocumentParameter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The type of parameter. The type can be either “String” or “StringList”.
+     * The type of parameter. The type can be either String or StringList.
      * </p>
      * 
      * @param type
-     *        The type of parameter. The type can be either “String” or “StringList”.
+     *        The type of parameter. The type can be either String or StringList.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DocumentParameterType
      */
@@ -140,11 +140,11 @@ public class DocumentParameter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The type of parameter. The type can be either “String” or “StringList”.
+     * The type of parameter. The type can be either String or StringList.
      * </p>
      * 
      * @param type
-     *        The type of parameter. The type can be either “String” or “StringList”.
+     *        The type of parameter. The type can be either String or StringList.
      * @see DocumentParameterType
      */
 
@@ -154,11 +154,11 @@ public class DocumentParameter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The type of parameter. The type can be either “String” or “StringList”.
+     * The type of parameter. The type can be either String or StringList.
      * </p>
      * 
      * @param type
-     *        The type of parameter. The type can be either “String” or “StringList”.
+     *        The type of parameter. The type can be either String or StringList.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DocumentParameterType
      */

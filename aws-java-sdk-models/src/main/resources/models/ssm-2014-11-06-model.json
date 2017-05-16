@@ -19,7 +19,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Adds or overwrites one or more tags for the specified resource. Tags are metadata that you assign to your managed instances. Tags enable you to categorize your managed instances in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. For example, you could define a set of tags for your account's managed instances that helps you track each instance's owner and stack level. For example: Key=Owner and Value=DbAdmin, SysAdmin, or Dev. Or Key=Stack and Value=Production, Pre-Production, or Test. Each resource can have a maximum of 10 tags. </p> <p>We recommend that you devise a set of tag keys that meets your needs for each resource type. Using a consistent set of tag keys makes it easier for you to manage your resources. You can search and filter the resources based on the tags you add. Tags don't have any semantic meaning to Amazon EC2 and are interpreted strictly as a string of characters. </p> <p>For more information about tags, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html\">Tagging Your Amazon EC2 Resources</a> in the <i>Amazon EC2 User Guide</i>.</p>",
+      "documentation" : "<p>Adds or overwrites one or more tags for the specified resource. Tags are metadata that you assign to your managed instances, Maintenance Windows, or Parameter Store parameters. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. For example, you could define a set of tags for your account's managed instances that helps you track each instance's owner and stack level. For example: Key=Owner and Value=DbAdmin, SysAdmin, or Dev. Or Key=Stack and Value=Production, Pre-Production, or Test.</p> <p>Each resource can have a maximum of 10 tags. </p> <p>We recommend that you devise a set of tag keys that meets your needs for each resource type. Using a consistent set of tag keys makes it easier for you to manage your resources. You can search and filter the resources based on the tags you add. Tags don't have any semantic meaning to Amazon EC2 and are interpreted strictly as a string of characters. </p> <p>For more information about tags, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html\">Tagging Your Amazon EC2 Resources</a> in the <i>Amazon EC2 User Guide</i>.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -729,7 +729,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Removes the server or virtual machine from the list of registered servers. You can reregister the instance again at any time. If you don’t plan to use Run Command on the server, we suggest uninstalling the SSM Agent first.</p>",
+      "documentation" : "<p>Removes the server or virtual machine from the list of registered servers. You can reregister the instance again at any time. If you don't plan to use Run Command on the server, we suggest uninstalling the SSM Agent first.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -1080,7 +1080,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Describes the permissions for a Systems Manager document. If you created the document, you are the owner. If a document is shared, it can either be shared privately (by specifying a user’s AWS account ID) or publicly (<i>All</i>). </p>",
+      "documentation" : "<p>Describes the permissions for a Systems Manager document. If you created the document, you are the owner. If a document is shared, it can either be shared privately (by specifying a user's AWS account ID) or publicly (<i>All</i>). </p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -3333,6 +3333,18 @@
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyUpdates"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidDocument"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidTarget"
       } ],
       "http" : {
         "method" : "POST",
@@ -4820,7 +4832,7 @@
         },
         "Status" : {
           "deprecated" : false,
-          "documentation" : "<p>The status of the association. Status can be: <code>Pending</code>, <code>Success</code>, or <code>Failed</code>.</p>",
+          "documentation" : "<p>The status of the association. Status can be: Pending, Success, or Failed.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5249,7 +5261,7 @@
         },
         "Parameters" : {
           "deprecated" : false,
-          "documentation" : "<p>The key-value map of execution parameters, which were supplied when calling <code>StartAutomationExecution</code>.</p>",
+          "documentation" : "<p>The key-value map of execution parameters, which were supplied when calling StartAutomationExecution.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6103,7 +6115,7 @@
         },
         "CompletedCount" : {
           "deprecated" : false,
-          "documentation" : "<p>The number of targets for which the command invocation reached a terminal state. Terminal states include the following: <code>Success</code>, <code>Failed</code>, <code>Execution Timed Out</code>, <code>Delivery Timed Out</code>, <code>Canceled</code>, <code>Terminated</code>, or <code>Undeliverable</code>.</p>",
+          "documentation" : "<p>The number of targets for which the command invocation reached a terminal state. Terminal states include the following: Success, Failed, Execution Timed Out, Delivery Timed Out, Canceled, Terminated, or Undeliverable.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6131,7 +6143,7 @@
         },
         "ErrorCount" : {
           "deprecated" : false,
-          "documentation" : "<p>The number of targets for which the status is <code>Failed</code> or <code>Execution Timed Out</code>.</p>",
+          "documentation" : "<p>The number of targets for which the status is Failed or Execution Timed Out.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6173,7 +6185,7 @@
         },
         "MaxConcurrency" : {
           "deprecated" : false,
-          "documentation" : "<p>The maximum number of instances that are allowed to execute the command at the same time. You can specify a number of instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For more information about how to use <code>MaxConcurrency</code>, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html\">Executing a Command Using Systems Manager Run Command</a>.</p>",
+          "documentation" : "<p>The maximum number of instances that are allowed to execute the command at the same time. You can specify a number of instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For more information about how to use MaxConcurrency, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html\">Executing a Command Using Systems Manager Run Command</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6187,7 +6199,7 @@
         },
         "MaxErrors" : {
           "deprecated" : false,
-          "documentation" : "<p>The maximum number of errors allowed before the system stops sending the command to additional targets. You can specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is 50. For more information about how to use <code>MaxErrors</code>, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html\">Executing a Command Using Systems Manager Run Command</a>.</p>",
+          "documentation" : "<p>The maximum number of errors allowed before the system stops sending the command to additional targets. You can specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is 50. For more information about how to use MaxErrors, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html\">Executing a Command Using Systems Manager Run Command</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6313,7 +6325,7 @@
         },
         "StatusDetails" : {
           "deprecated" : false,
-          "documentation" : "<p>A detailed status of the command execution. <code>StatusDetails</code> includes more information than <code>Status</code> because it includes states resulting from error and concurrency control parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these statuses, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html\">Run Command Status</a>. <code>StatusDetails</code> can be one of the following values:</p> <ul> <li> <p>Pending – The command has not been sent to any instances.</p> </li> <li> <p>In Progress – The command has been sent to at least one instance but has not reached a final state on all instances.</p> </li> <li> <p>Success – The command successfully executed on all invocations. This is a terminal state.</p> </li> <li> <p>Delivery Timed Out – The value of <code>MaxErrors</code> or more command invocations shows a status of <code>Delivery Timed Out</code>. This is a terminal state.</p> </li> <li> <p>Execution Timed Out – The value of <code>MaxErrors</code> or more command invocations shows a status of <code>Execution Timed Out</code>. This is a terminal state.</p> </li> <li> <p>Failed – The value of <code>MaxErrors</code> or more command invocations shows a status of <code>Failed</code>. This is a terminal state.</p> </li> <li> <p>Incomplete – The command was attempted on all instances and one or more invocations does not have a value of <code>Success</code> but not enough invocations failed for the status to be <code>Failed</code>. This is a terminal state.</p> </li> <li> <p>Canceled – The command was terminated before it was completed. This is a terminal state.</p> </li> <li> <p>Rate Exceeded – The number of instances targeted by the command exceeded the account limit for pending invocations. The system has canceled the command before executing it on any instance. This is a terminal state.</p> </li> </ul>",
+          "documentation" : "<p>A detailed status of the command execution. StatusDetails includes more information than Status because it includes states resulting from error and concurrency control parameters. StatusDetails can show different results than Status. For more information about these statuses, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html\">Run Command Status</a>. StatusDetails can be one of the following values:</p> <ul> <li> <p>Pending: The command has not been sent to any instances.</p> </li> <li> <p>In Progress: The command has been sent to at least one instance but has not reached a final state on all instances.</p> </li> <li> <p>Success: The command successfully executed on all invocations. This is a terminal state.</p> </li> <li> <p>Delivery Timed Out: The value of MaxErrors or more command invocations shows a status of Delivery Timed Out. This is a terminal state.</p> </li> <li> <p>Execution Timed Out: The value of MaxErrors or more command invocations shows a status of Execution Timed Out. This is a terminal state.</p> </li> <li> <p>Failed: The value of MaxErrors or more command invocations shows a status of Failed. This is a terminal state.</p> </li> <li> <p>Incomplete: The command was attempted on all instances and one or more invocations does not have a value of Success but not enough invocations failed for the status to be Failed. This is a terminal state.</p> </li> <li> <p>Canceled: The command was terminated before it was completed. This is a terminal state.</p> </li> <li> <p>Rate Exceeded: The number of instances targeted by the command exceeded the account limit for pending invocations. The system has canceled the command before executing it on any instance. This is a terminal state.</p> </li> </ul>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6341,7 +6353,7 @@
         },
         "Targets" : {
           "deprecated" : false,
-          "documentation" : "<p>An array of search criteria that targets instances using a <code>Key</code>,<code>Value</code> combination that you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in the call.</p>",
+          "documentation" : "<p>An array of search criteria that targets instances using a Key,Value combination that you specify. Targets is required if you don't provide one or more instance IDs in the call.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6594,7 +6606,7 @@
         },
         "InstanceName" : {
           "deprecated" : false,
-          "documentation" : "<p>The name of the invocation target. For Amazon EC2 instances this is the value for the <code>aws:Name</code> tag. For on-premises instances, this is the name of the instance.</p>",
+          "documentation" : "<p>The name of the invocation target. For Amazon EC2 instances this is the value for the aws:Name tag. For on-premises instances, this is the name of the instance.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6650,7 +6662,7 @@
         },
         "StandardErrorUrl" : {
           "deprecated" : false,
-          "documentation" : "<p>The URL to the plugin’s StdErr file in Amazon S3, if the Amazon S3 bucket was defined for the parent command. For an invocation, <code>StandardErrorUrl</code> is populated if there is just one plugin defined for the command, and the Amazon S3 bucket was defined for the command.</p>",
+          "documentation" : "<p>The URL to the plugin's StdErr file in Amazon S3, if the Amazon S3 bucket was defined for the parent command. For an invocation, StandardErrorUrl is populated if there is just one plugin defined for the command, and the Amazon S3 bucket was defined for the command.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6664,7 +6676,7 @@
         },
         "StandardOutputUrl" : {
           "deprecated" : false,
-          "documentation" : "<p>The URL to the plugin’s StdOut file in Amazon S3, if the Amazon S3 bucket was defined for the parent command. For an invocation, <code>StandardOutputUrl</code> is populated if there is just one plugin defined for the command, and the Amazon S3 bucket was defined for the command.</p>",
+          "documentation" : "<p>The URL to the plugin's StdOut file in Amazon S3, if the Amazon S3 bucket was defined for the parent command. For an invocation, StandardOutputUrl is populated if there is just one plugin defined for the command, and the Amazon S3 bucket was defined for the command.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6692,7 +6704,7 @@
         },
         "StatusDetails" : {
           "deprecated" : false,
-          "documentation" : "<p>A detailed status of the command execution for each invocation (each instance targeted by the command). <code>StatusDetails</code> includes more information than <code>Status</code> because it includes states resulting from error and concurrency control parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these statuses, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html\">Run Command Status</a>. <code>StatusDetails</code> can be one of the following values:</p> <ul> <li> <p>Pending – The command has not been sent to the instance.</p> </li> <li> <p>In Progress – The command has been sent to the instance but has not reached a terminal state.</p> </li> <li> <p>Success – The execution of the command or plugin was successfully completed. This is a terminal state.</p> </li> <li> <p>Delivery Timed Out – The command was not delivered to the instance before the delivery timeout expired. Delivery timeouts do not count against the parent command’s <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is <code>Success</code> or <code>Incomplete</code>. This is a terminal state.</p> </li> <li> <p>Execution Timed Out – Command execution started on the instance, but the execution was not complete before the execution timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li> <li> <p>Failed – The command was not successful on the instance. For a plugin, this indicates that the result code was not zero. For a command invocation, this indicates that the result code for one or more plugins was not zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li> <li> <p>Canceled – The command was terminated before it was completed. This is a terminal state.</p> </li> <li> <p>Undeliverable – The command can't be delivered to the instance. The instance might not exist or might not be responding. Undeliverable invocations don't count against the parent command’s <code>MaxErrors</code> limit and don't contribute to whether the parent command status is <code>Success</code> or <code>Incomplete</code>. This is a terminal state.</p> </li> <li> <p>Terminated – The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li> </ul>",
+          "documentation" : "<p>A detailed status of the command execution for each invocation (each instance targeted by the command). StatusDetails includes more information than Status because it includes states resulting from error and concurrency control parameters. StatusDetails can show different results than Status. For more information about these statuses, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html\">Run Command Status</a>. StatusDetails can be one of the following values:</p> <ul> <li> <p>Pending: The command has not been sent to the instance.</p> </li> <li> <p>In Progress: The command has been sent to the instance but has not reached a terminal state.</p> </li> <li> <p>Success: The execution of the command or plugin was successfully completed. This is a terminal state.</p> </li> <li> <p>Delivery Timed Out: The command was not delivered to the instance before the delivery timeout expired. Delivery timeouts do not count against the parent command's MaxErrors limit, but they do contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li> <li> <p>Execution Timed Out: Command execution started on the instance, but the execution was not complete before the execution timeout expired. Execution timeouts count against the MaxErrors limit of the parent command. This is a terminal state.</p> </li> <li> <p>Failed: The command was not successful on the instance. For a plugin, this indicates that the result code was not zero. For a command invocation, this indicates that the result code for one or more plugins was not zero. Invocation failures count against the MaxErrors limit of the parent command. This is a terminal state.</p> </li> <li> <p>Canceled: The command was terminated before it was completed. This is a terminal state.</p> </li> <li> <p>Undeliverable: The command can't be delivered to the instance. The instance might not exist or might not be responding. Undeliverable invocations don't count against the parent command's MaxErrors limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li> <li> <p>Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li> </ul>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6880,7 +6892,7 @@
         },
         "OutputS3BucketName" : {
           "deprecated" : false,
-          "documentation" : "<p>The S3 bucket where the responses to the command executions should be stored. This was requested when issuing the command. For example, in the following response:</p> <p> <code>test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript</code> </p> <p> <code>test_folder</code> is the name of the Amazon S3 bucket;</p> <p> <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;</p> <p> <code>i-1234567876543</code> is the instance ID;</p> <p> <code>awsrunShellScript</code> is the name of the plugin.</p>",
+          "documentation" : "<p>The S3 bucket where the responses to the command executions should be stored. This was requested when issuing the command. For example, in the following response:</p> <p> test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript </p> <p>test_folder is the name of the Amazon S3 bucket;</p> <p> ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p> <p>i-1234567876543 is the instance ID;</p> <p>awsrunShellScript is the name of the plugin.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6894,7 +6906,7 @@
         },
         "OutputS3KeyPrefix" : {
           "deprecated" : false,
-          "documentation" : "<p>The S3 directory path inside the bucket where the responses to the command executions should be stored. This was requested when issuing the command. For example, in the following response:</p> <p> <code>test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript</code> </p> <p> <code>test_folder</code> is the name of the Amazon S3 bucket;</p> <p> <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;</p> <p> <code>i-1234567876543</code> is the instance ID;</p> <p> <code>awsrunShellScript</code> is the name of the plugin.</p>",
+          "documentation" : "<p>The S3 directory path inside the bucket where the responses to the command executions should be stored. This was requested when issuing the command. For example, in the following response:</p> <p> test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript </p> <p>test_folder is the name of the Amazon S3 bucket;</p> <p> ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p> <p>i-1234567876543 is the instance ID;</p> <p>awsrunShellScript is the name of the plugin.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -7006,7 +7018,7 @@
         },
         "StatusDetails" : {
           "deprecated" : false,
-          "documentation" : "<p>A detailed status of the plugin execution. <code>StatusDetails</code> includes more information than <code>Status</code> because it includes states resulting from error and concurrency control parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these statuses, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html\">Run Command Status</a>. <code>StatusDetails</code> can be one of the following values:</p> <ul> <li> <p>Pending – The command has not been sent to the instance.</p> </li> <li> <p>In Progress – The command has been sent to the instance but has not reached a terminal state.</p> </li> <li> <p>Success – The execution of the command or plugin was successfully completed. This is a terminal state.</p> </li> <li> <p>Delivery Timed Out – The command was not delivered to the instance before the delivery timeout expired. Delivery timeouts do not count against the parent command’s <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is <code>Success</code> or <code>Incomplete</code>. This is a terminal state.</p> </li> <li> <p>Execution Timed Out – Command execution started on the instance, but the execution was not complete before the execution timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li> <li> <p>Failed – The command was not successful on the instance. For a plugin, this indicates that the result code was not zero. For a command invocation, this indicates that the result code for one or more plugins was not zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li> <li> <p>Canceled – The command was terminated before it was completed. This is a terminal state.</p> </li> <li> <p>Undeliverable – The command can't be delivered to the instance. The instance might not exist, or it might not be responding. Undeliverable invocations don't count against the parent command’s <code>MaxErrors</code> limit, and they don't contribute to whether the parent command status is <code>Success</code> or <code>Incomplete</code>. This is a terminal state.</p> </li> <li> <p>Terminated – The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li> </ul>",
+          "documentation" : "<p>A detailed status of the plugin execution. StatusDetails includes more information than Status because it includes states resulting from error and concurrency control parameters. StatusDetails can show different results than Status. For more information about these statuses, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html\">Run Command Status</a>. StatusDetails can be one of the following values:</p> <ul> <li> <p>Pending: The command has not been sent to the instance.</p> </li> <li> <p>In Progress: The command has been sent to the instance but has not reached a terminal state.</p> </li> <li> <p>Success: The execution of the command or plugin was successfully completed. This is a terminal state.</p> </li> <li> <p>Delivery Timed Out: The command was not delivered to the instance before the delivery timeout expired. Delivery timeouts do not count against the parent command's MaxErrors limit, but they do contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li> <li> <p>Execution Timed Out: Command execution started on the instance, but the execution was not complete before the execution timeout expired. Execution timeouts count against the MaxErrors limit of the parent command. This is a terminal state.</p> </li> <li> <p>Failed: The command was not successful on the instance. For a plugin, this indicates that the result code was not zero. For a command invocation, this indicates that the result code for one or more plugins was not zero. Invocation failures count against the MaxErrors limit of the parent command. This is a terminal state.</p> </li> <li> <p>Canceled: The command was terminated before it was completed. This is a terminal state.</p> </li> <li> <p>Undeliverable: The command can't be delivered to the instance. The instance might not exist, or it might not be responding. Undeliverable invocations don't count against the parent command's MaxErrors limit, and they don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li> <li> <p>Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li> </ul>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -7237,7 +7249,7 @@
         },
         "Description" : {
           "deprecated" : false,
-          "documentation" : "<p>A user-defined description of the resource that you want to register with Amazon EC2. </p>",
+          "documentation" : "<p>A userdefined description of the resource that you want to register with Amazon EC2. </p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -7423,7 +7435,7 @@
     },
     "CreateAssociationBatchRequestEntry" : {
       "deprecated" : false,
-      "documentation" : "<p> Describes the association of a Systems Manager document and an instance.</p>",
+      "documentation" : "<p>Describes the association of a Systems Manager document and an instance.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -7449,7 +7461,7 @@
         },
         "InstanceId" : {
           "deprecated" : false,
-          "documentation" : "<p> The ID of the instance. </p>",
+          "documentation" : "<p>The ID of the instance. </p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -7463,7 +7475,7 @@
         },
         "Name" : {
           "deprecated" : false,
-          "documentation" : "<p> The name of the configuration document. </p>",
+          "documentation" : "<p>The name of the configuration document. </p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -7647,7 +7659,7 @@
         },
         "OutputLocation" : {
           "deprecated" : false,
-          "documentation" : "<p>An Amazon S3 bucket where you want to store the output details of the request. For example:</p> <p> <code>\"{ \\\"S3Location\\\": { \\\"OutputS3Region\\\": \\\"&lt;region&gt;\\\", \\\"OutputS3BucketName\\\": \\\"bucket name\\\", \\\"OutputS3KeyPrefix\\\": \\\"folder name\\\" } }\"</code> </p>",
+          "documentation" : "<p>An Amazon S3 bucket where you want to store the output details of the request.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -7675,7 +7687,7 @@
         },
         "ScheduleExpression" : {
           "deprecated" : false,
-          "documentation" : "<p>A cron expression when the association will be applied to the target(s). Supported expressions are every half, 1, 2, 4, 8 or 12 hour(s); every specified day and time of the week. For example: cron(0 0/30 * 1/1 * ? *) to run every thirty minutes; cron(0 0 0/4 1/1 * ? *) to run every four hours; and cron(0 0 10 ? * SUN *) to run every Sunday at 10 a.m.</p>",
+          "documentation" : "<p>A cron expression when the association will be applied to the target(s).</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -7689,7 +7701,7 @@
         },
         "Targets" : {
           "deprecated" : false,
-          "documentation" : "<p>The targets (either instances or tags) for the association. Instances are specified using Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified using Key=&lt;tag name&gt;,Values=&lt;tag value&gt;.</p>",
+          "documentation" : "<p>The targets (either instances or tags) for the association.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -8031,7 +8043,7 @@
         },
         "ClientToken" : {
           "deprecated" : false,
-          "documentation" : "<p>Caller-provided idempotency token.</p>",
+          "documentation" : "<p>User-provided idempotency token.</p>",
           "flattened" : false,
           "idempotencyToken" : true,
           "jsonvalue" : false,
@@ -10225,7 +10237,7 @@
       "members" : {
         "Filters" : {
           "deprecated" : false,
-          "documentation" : "<p>Each entry in the array is a structure containing:</p> <p>Key (string 1 ≤ length ≤ 200)</p> <p> Values (array containing a single string)</p> <p> Type (string “Equal”, “NotEqual”, “LessThan”, “GreaterThan”)</p>",
+          "documentation" : "<p>Each entry in the array is a structure containing:</p> <p>Key (string between 1 and 200 characters)</p> <p> Values (array containing a single string)</p> <p> Type (string \"Equal\", \"NotEqual\", \"LessThan\", \"GreaterThan\")</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -10467,7 +10479,7 @@
       "members" : {
         "Filters" : {
           "deprecated" : false,
-          "documentation" : "<p>Each entry in the array is a structure containing:</p> <p>Key (string, 1 ≤ length ≤ 128)</p> <p>Values (array of strings 1 ≤ length ≤ 256)</p>",
+          "documentation" : "<p>Each entry in the array is a structure containing:</p> <p>Key (string, between 1 and 128 characters)</p> <p>Values (array of strings, each string between 1 and 256 characters)</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -10559,7 +10571,7 @@
         },
         "Patches" : {
           "deprecated" : false,
-          "documentation" : "<p>Each entry in the array is a structure containing:</p> <p>Title (string)</p> <p>KBId (string)</p> <p>Classification (string)</p> <p>Severity (string)</p> <p>State (string – “INSTALLED”, “INSTALLED_OTHER”, “MISSING”, “NOT_APPLICABLE”, “FAILED”)</p> <p>InstalledTime (DateTime)</p> <p>InstalledBy (string)</p>",
+          "documentation" : "<p>Each entry in the array is a structure containing:</p> <p>Title (string)</p> <p>KBId (string)</p> <p>Classification (string)</p> <p>Severity (string)</p> <p>State (string: \"INSTALLED\", \"INSTALLED OTHER\", \"MISSING\", \"NOT APPLICABLE\", \"FAILED\")</p> <p>InstalledTime (DateTime)</p> <p>InstalledBy (string)</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -10865,7 +10877,7 @@
       "members" : {
         "Filters" : {
           "deprecated" : false,
-          "documentation" : "<p>Each entry in the array is a structure containing:</p> <p>Key (string, 1 ≤ length ≤ 128)</p> <p>Values (array of strings 1 ≤ length ≤ 256)</p> <p>The supported Keys are <code>ExecutedBefore</code> and <code>ExecutedAfter</code> with the value being a date/time string such as 2016-11-04T05:00:00Z.</p>",
+          "documentation" : "<p>Each entry in the array is a structure containing:</p> <p>Key (string, between 1 and 128 characters)</p> <p>Values (array of strings, each string is between 1 and 256 characters)</p> <p>The supported Keys are ExecutedBefore and ExecutedAfter with the value being a date/time string such as 2016-11-04T05:00:00Z.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -10993,7 +11005,7 @@
       "members" : {
         "Filters" : {
           "deprecated" : false,
-          "documentation" : "<p>Optional filters that can be used to narrow down the scope of the returned window targets. The supported filter keys are <code>Type</code>, <code>WindowTargetId</code> and <code>OwnerInformation</code>.</p>",
+          "documentation" : "<p>Optional filters that can be used to narrow down the scope of the returned window targets. The supported filter keys are Type, WindowTargetId and OwnerInformation.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11121,7 +11133,7 @@
       "members" : {
         "Filters" : {
           "deprecated" : false,
-          "documentation" : "<p>Optional filters used to narrow down the scope of the returned tasks. The supported filter keys are <code>WindowTaskId</code>, <code>TaskArn</code>, <code>Priority</code>, and <code>TaskType</code>.</p>",
+          "documentation" : "<p>Optional filters used to narrow down the scope of the returned tasks. The supported filter keys are WindowTaskId, TaskArn, Priority, and TaskType.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11249,7 +11261,7 @@
       "members" : {
         "Filters" : {
           "deprecated" : false,
-          "documentation" : "<p>Optional filters used to narrow down the scope of the returned Maintenance Windows. Supported filter keys are <code>Name</code> and <code>Enabled</code>.</p>",
+          "documentation" : "<p>Optional filters used to narrow down the scope of the returned Maintenance Windows. Supported filter keys are Name and Enabled.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11477,7 +11489,7 @@
       "members" : {
         "Filters" : {
           "deprecated" : false,
-          "documentation" : "<p>Each element in the array is a structure containing: </p> <p>Key: (string, “NAME_PREFIX” or “OWNER”)</p> <p>Value: (array of strings, exactly 1 entry, 1 ≤ length ≤ 255)</p>",
+          "documentation" : "<p>Each element in the array is a structure containing: </p> <p>Key: (string, \"NAME_PREFIX\" or \"OWNER\")</p> <p>Value: (array of strings, exactly 1 entry, between 1 and 255 characters)</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11655,7 +11667,7 @@
         },
         "InstancesWithInstalledOtherPatches" : {
           "deprecated" : false,
-          "documentation" : "<p>The number of instances with patches installed that aren’t defined in the patch baseline.</p>",
+          "documentation" : "<p>The number of instances with patches installed that aren't defined in the patch baseline.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11697,7 +11709,7 @@
         },
         "InstancesWithNotApplicablePatches" : {
           "deprecated" : false,
-          "documentation" : "<p>The number of instances with patches that aren’t applicable.</p>",
+          "documentation" : "<p>The number of instances with patches that aren't applicable.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11783,7 +11795,7 @@
       "members" : {
         "Mappings" : {
           "deprecated" : false,
-          "documentation" : "<p>Each entry in the array contains:</p> <p>PatchGroup: string (1 ≤ length ≤ 256, Regex: ^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$)</p> <p>PatchBaselineIdentity: A PatchBaselineIdentity element. </p>",
+          "documentation" : "<p>Each entry in the array contains:</p> <p>PatchGroup: string (between 1 and 256 characters, Regex: ^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$)</p> <p>PatchBaselineIdentity: A PatchBaselineIdentity element. </p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11970,7 +11982,7 @@
     },
     "DocumentDescription" : {
       "deprecated" : false,
-      "documentation" : "<p> Describes an SSM document. </p>",
+      "documentation" : "<p>Describes an SSM document. </p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -11982,7 +11994,7 @@
       "members" : {
         "CreatedDate" : {
           "deprecated" : false,
-          "documentation" : "<p> The date when the document was created.</p>",
+          "documentation" : "<p>The date when the document was created.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -12010,7 +12022,7 @@
         },
         "Description" : {
           "deprecated" : false,
-          "documentation" : "<p> A description of the document. </p>",
+          "documentation" : "<p>A description of the document. </p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -12642,7 +12654,7 @@
         },
         "Type" : {
           "deprecated" : false,
-          "documentation" : "<p>The type of parameter. The type can be either “String” or “StringList”.</p>",
+          "documentation" : "<p>The type of parameter. The type can be either String or StringList.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -13115,7 +13127,7 @@
     },
     "DoesNotExistException" : {
       "deprecated" : false,
-      "documentation" : "<p>Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.</p>",
+      "documentation" : "<p>Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't exist.</p>",
       "enum" : null,
       "error" : null,
       "exception" : true,
@@ -13451,6 +13463,70 @@
       "value" : null,
       "wrapper" : false
     },
+    "FailureDetails" : {
+      "deprecated" : false,
+      "documentation" : "<p>Information about an Automation failure.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Details" : {
+          "deprecated" : false,
+          "documentation" : "<p>Detailed information about the Automation step failure.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AutomationParameterMap",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "FailureStage" : {
+          "deprecated" : false,
+          "documentation" : "<p>The stage of the Automation execution when the failure occurred. The stages include the following: InputValidation, PreVerification, Invocation, PostVerification.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "FailureType" : {
+          "deprecated" : false,
+          "documentation" : "<p>The type of Automation failure. Failure types include the following: Action, Permission, Throttling, Verification, Internal.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "Fault" : {
       "deprecated" : false,
       "documentation" : null,
@@ -13486,7 +13562,7 @@
       "members" : {
         "AutomationExecutionId" : {
           "deprecated" : false,
-          "documentation" : "<p>The unique identifier for an existing automation execution to examine. The execution ID is returned by <code>StartAutomationExecution</code> when the execution of an Automation document is initiated.</p>",
+          "documentation" : "<p>The unique identifier for an existing automation execution to examine. The execution ID is returned by StartAutomationExecution when the execution of an Automation document is initiated.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -13664,7 +13740,7 @@
         },
         "ExecutionElapsedTime" : {
           "deprecated" : false,
-          "documentation" : "<p>Duration since <code>ExecutionStartDateTime</code>.</p>",
+          "documentation" : "<p>Duration since ExecutionStartDateTime.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -13734,7 +13810,7 @@
         },
         "ResponseCode" : {
           "deprecated" : false,
-          "documentation" : "<p>The error level response code for the plugin script. If the response code is <code>-1</code>, then the command has not started executing on the instance, or it was not received by the instance.</p>",
+          "documentation" : "<p>The error level response code for the plugin script. If the response code is -1, then the command has not started executing on the instance, or it was not received by the instance.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -13776,7 +13852,7 @@
         },
         "StandardOutputContent" : {
           "deprecated" : false,
-          "documentation" : "<p>The first 24,000 characters written by the plugin to stdout. If the command has not finished executing, if <code>ExecutionStatus</code> is neither <code>Succeeded</code> nor <code>Failed</code>, then this string is empty.</p>",
+          "documentation" : "<p>The first 24,000 characters written by the plugin to stdout. If the command has not finished executing, if ExecutionStatus is neither Succeeded nor Failed, then this string is empty.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -13804,7 +13880,7 @@
         },
         "Status" : {
           "deprecated" : false,
-          "documentation" : "<p>The status of the parent command for this invocation. This status can be different than <code>StatusDetails</code>.</p>",
+          "documentation" : "<p>The status of the parent command for this invocation. This status can be different than StatusDetails.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -13818,7 +13894,7 @@
         },
         "StatusDetails" : {
           "deprecated" : false,
-          "documentation" : "<p>A detailed status of the command execution for an invocation. <code>StatusDetails</code> includes more information than <code>Status</code> because it includes states resulting from error and concurrency control parameters. <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these statuses, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html\">Run Command Status</a>. <code>StatusDetails</code> can be one of the following values:</p> <ul> <li> <p>Pending – The command has not been sent to the instance.</p> </li> <li> <p>In Progress – The command has been sent to the instance but has not reached a terminal state.</p> </li> <li> <p>Delayed – The system attempted to send the command to the target, but the target was not available. The instance might not be available because of network issues, the instance was stopped, etc. The system will try to deliver the command again.</p> </li> <li> <p>Success – The command or plugin was executed successfully. This is a terminal state.</p> </li> <li> <p>Delivery Timed Out – The command was not delivered to the instance before the delivery timeout expired. Delivery timeouts do not count against the parent command’s <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is <code>Success</code> or <code>Incomplete</code>. This is a terminal state.</p> </li> <li> <p>Execution Timed Out – The command started to execute on the instance, but the execution was not complete before the timeout expired. Execution timeouts count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li> <li> <p>Failed – The command wasn't executed successfully on the instance. For a plugin, this indicates that the result code was not zero. For a command invocation, this indicates that the result code for one or more plugins was not zero. Invocation failures count against the <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p> </li> <li> <p>Canceled – The command was terminated before it was completed. This is a terminal state.</p> </li> <li> <p>Undeliverable – The command can't be delivered to the instance. The instance might not exist or might not be responding. Undeliverable invocations don't count against the parent command’s <code>MaxErrors</code> limit and don't contribute to whether the parent command status is <code>Success</code> or <code>Incomplete</code>. This is a terminal state.</p> </li> <li> <p>Terminated – The parent command exceeded its <code>MaxErrors</code> limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li> </ul>",
+          "documentation" : "<p>A detailed status of the command execution for an invocation. StatusDetails includes more information than Status because it includes states resulting from error and concurrency control parameters. StatusDetails can show different results than Status. For more information about these statuses, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html\">Run Command Status</a>. StatusDetails can be one of the following values:</p> <ul> <li> <p>Pending: The command has not been sent to the instance.</p> </li> <li> <p>In Progress: The command has been sent to the instance but has not reached a terminal state.</p> </li> <li> <p>Delayed: The system attempted to send the command to the target, but the target was not available. The instance might not be available because of network issues, the instance was stopped, etc. The system will try to deliver the command again.</p> </li> <li> <p>Success: The command or plugin was executed successfully. This is a terminal state.</p> </li> <li> <p>Delivery Timed Out: The command was not delivered to the instance before the delivery timeout expired. Delivery timeouts do not count against the parent command's MaxErrors limit, but they do contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li> <li> <p>Execution Timed Out: The command started to execute on the instance, but the execution was not complete before the timeout expired. Execution timeouts count against the MaxErrors limit of the parent command. This is a terminal state.</p> </li> <li> <p>Failed: The command wasn't executed successfully on the instance. For a plugin, this indicates that the result code was not zero. For a command invocation, this indicates that the result code for one or more plugins was not zero. Invocation failures count against the MaxErrors limit of the parent command. This is a terminal state.</p> </li> <li> <p>Canceled: The command was terminated before it was completed. This is a terminal state.</p> </li> <li> <p>Undeliverable: The command can't be delivered to the instance. The instance might not exist or might not be responding. Undeliverable invocations don't count against the parent command's MaxErrors limit and don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li> <li> <p>Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li> </ul>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -14748,7 +14824,7 @@
         },
         "TaskParameters" : {
           "deprecated" : false,
-          "documentation" : "<p>The parameters passed to the task when it was executed. The map has the following format:</p> <p>Key: string, 1 ≤ length ≤ 255</p> <p>Value: an array of strings where each string 1 ≤ length ≤ 255</p>",
+          "documentation" : "<p>The parameters passed to the task when it was executed. The map has the following format:</p> <p>Key: string, between 1 and 255 characters</p> <p>Value: an array of strings, each string is between 1 and 255 characters</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -15538,7 +15614,7 @@
     },
     "IdempotentParameterMismatch" : {
       "deprecated" : false,
-      "documentation" : "<p>Error returned when an idempotent operation is retried and the parameters don’t match the original call to the API with the same idempotency token. </p>",
+      "documentation" : "<p>Error returned when an idempotent operation is retried and the parameters don't match the original call to the API with the same idempotency token. </p>",
       "enum" : null,
       "error" : null,
       "exception" : true,
@@ -16628,7 +16704,7 @@
       "members" : {
         "Key" : {
           "deprecated" : false,
-          "documentation" : "<p>The filter key name to describe your instances. For example:</p> <p>\"InstanceIds\"|\"AgentVersion\"|\"PingStatus\"|\"PlatformTypes\"|\"ActivationIds\"|\"IamRole\"|\"ResourceType\"|”AssociationStatus”|”Tag Key”</p>",
+          "documentation" : "<p>The filter key name to describe your instances. For example:</p> <p>\"InstanceIds\"|\"AgentVersion\"|\"PingStatus\"|\"PlatformTypes\"|\"ActivationIds\"|\"IamRole\"|\"ResourceType\"|\"AssociationStatus\"|\"Tag Key\"</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -16803,7 +16879,7 @@
         },
         "MissingCount" : {
           "deprecated" : false,
-          "documentation" : "<p>The number of patches from the patch baseline that are applicable for the instance but aren’t currently installed.</p>",
+          "documentation" : "<p>The number of patches from the patch baseline that are applicable for the instance but aren't currently installed.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -16817,7 +16893,7 @@
         },
         "NotApplicableCount" : {
           "deprecated" : false,
-          "documentation" : "<p>The number of patches from the patch baseline that aren’t applicable for the instance and hence aren’t installed on the instance.</p>",
+          "documentation" : "<p>The number of patches from the patch baseline that aren't applicable for the instance and hence aren't installed on the instance.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -18526,7 +18602,7 @@
         },
         "ContentHash" : {
           "deprecated" : false,
-          "documentation" : "<p>MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory information. The <code>PutInventory</code> API does not update the inventory item type contents if the MD5 hash has not changed since last update. </p>",
+          "documentation" : "<p>MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory information. The PutInventory API does not update the inventory item type contents if the MD5 hash has not changed since last update. </p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -18554,7 +18630,7 @@
         },
         "TypeName" : {
           "deprecated" : false,
-          "documentation" : "<p>The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom inventory type names will start with <code>Custom</code>. Default inventory item types include the following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>",
+          "documentation" : "<p>The name of the inventory type. Default inventory item type names start with AWS. Custom inventory type names will start with Custom. Default inventory item types include the following: AWS:AWSComponent, AWS:Application, AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -18866,7 +18942,7 @@
         },
         "TypeName" : {
           "deprecated" : false,
-          "documentation" : "<p>The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom inventory type names will start with <code>Custom</code>. Default inventory item types include the following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.</p>",
+          "documentation" : "<p>The name of the inventory type. Default inventory item type names start with AWS. Custom inventory type names will start with Custom. Default inventory item types include the following: AWS:AWSComponent, AWS:Application, AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -19167,7 +19243,7 @@
         },
         "ContentHash" : {
           "deprecated" : false,
-          "documentation" : "<p>MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory information. The <code>PutInventory</code> API does not update the inventory item type contents if the MD5 hash has not changed since last update. </p>",
+          "documentation" : "<p>MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory information. The PutInventory API does not update the inventory item type contents if the MD5 hash has not changed since last update. </p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -23774,7 +23850,7 @@
         },
         "Language" : {
           "deprecated" : false,
-          "documentation" : "<p>The language of the patch if it’s language-specific.</p>",
+          "documentation" : "<p>The language of the patch if it's language-specific.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -26508,7 +26584,7 @@
       "members" : {
         "TypeName" : {
           "deprecated" : false,
-          "documentation" : "<p>Name of the inventory item type. Valid value: “AWS:InstanceInformation”. Default Value: “AWS:InstanceInformation”.</p>",
+          "documentation" : "<p>Name of the inventory item type. Valid value: AWS:InstanceInformation. Default Value: AWS:InstanceInformation.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -26818,7 +26894,7 @@
         },
         "InstanceIds" : {
           "deprecated" : false,
-          "documentation" : "<p>Required. The instance IDs where the command should execute. You can specify a maximum of 50 IDs.</p>",
+          "documentation" : "<p>The instance IDs where the command should execute. You can specify a maximum of 50 IDs. If you prefer not to list individual instance IDs, you can instead send commands to a fleet of instances using the Targets parameter, which accepts EC2 tags.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -26832,7 +26908,7 @@
         },
         "MaxConcurrency" : {
           "deprecated" : false,
-          "documentation" : "<p>(Optional) The maximum number of instances that are allowed to execute the command at the same time. You can specify a number such as “10” or a percentage such as “10%”. The default value is 50. For more information about how to use <code>MaxConcurrency</code>, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html\">Executing a Command Using Systems Manager Run Command</a>.</p>",
+          "documentation" : "<p>(Optional) The maximum number of instances that are allowed to execute the command at the same time. You can specify a number such as 10 or a percentage such as 10%. The default value is 50. For more information about how to use MaxConcurrency, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html\">Executing a Command Using Systems Manager Run Command</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -26846,7 +26922,7 @@
         },
         "MaxErrors" : {
           "deprecated" : false,
-          "documentation" : "<p>The maximum number of errors allowed without the command failing. When the command fails one more time beyond the value of <code>MaxErrors</code>, the systems stops sending the command to additional targets. You can specify a number like “10” or a percentage like “10%”. The default value is 50. For more information about how to use <code>MaxErrors</code>, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html\">Executing a Command Using Systems Manager Run Command</a>.</p>",
+          "documentation" : "<p>The maximum number of errors allowed without the command failing. When the command fails one more time beyond the value of MaxErrors, the systems stops sending the command to additional targets. You can specify a number like 10 or a percentage like 10%. The default value is 50. For more information about how to use MaxErrors, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html\">Executing a Command Using Systems Manager Run Command</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -26944,7 +27020,7 @@
         },
         "Targets" : {
           "deprecated" : false,
-          "documentation" : "<p>(Optional) An array of search criteria that targets instances using a <code>Key</code>,<code>Value</code> combination that you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in the call. For more information about how to use <code>Targets</code>, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html\">Executing a Command Using Systems Manager Run Command</a>.</p>",
+          "documentation" : "<p>(Optional) An array of search criteria that targets instances using a Key,Value combination that you specify. Targets is required if you don't provide one or more instance IDs in the call. For more information about how to use Targets, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html\">Executing a Command Using Systems Manager Run Command</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -27368,7 +27444,7 @@
         },
         "ExecutionStartTime" : {
           "deprecated" : false,
-          "documentation" : "<p>If a step has begun execution, this contains the time the step started. If the step is in <code>Pending</code> status, this field is not populated.</p>",
+          "documentation" : "<p>If a step has begun execution, this contains the time the step started. If the step is in Pending status, this field is not populated.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -27377,6 +27453,20 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "DateTime",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "FailureDetails" : {
+          "deprecated" : false,
+          "documentation" : "<p>Information about the Automation failure.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "FailureDetails",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -27466,7 +27556,7 @@
         },
         "StepStatus" : {
           "deprecated" : false,
-          "documentation" : "<p>The execution status for this step. Valid values include: <code>Pending</code>, <code>InProgress</code>, <code>Success</code>, <code>Cancelled</code>, <code>Failed</code>, and <code>TimedOut</code>.</p>",
+          "documentation" : "<p>The execution status for this step. Valid values include: Pending, InProgress, Success, Cancelled, Failed, and TimedOut.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -27783,7 +27873,7 @@
     },
     "Target" : {
       "deprecated" : false,
-      "documentation" : "<p>An array of search criteria that targets instances using a <code>Key</code>,<code>Value</code> combination that you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in the call.</p>",
+      "documentation" : "<p>An array of search criteria that targets instances using a Key,Value combination that you specify. Targets is required if you don't provide one or more instance IDs in the call.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -27795,7 +27885,7 @@
       "members" : {
         "Key" : {
           "deprecated" : false,
-          "documentation" : "<p>User-defined criteria for sending commands that target instances that meet the criteria. <code>Key</code> can be <code>tag:&lt;Amazon EC2 tag&gt;</code> or <code>InstanceIds</code>. For more information about how to send commands that target instances using <code>Key</code>,<code>Value</code> parameters, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html\">Executing a Command Using Systems Manager Run Command</a>.</p>",
+          "documentation" : "<p>User-defined criteria for sending commands that target instances that meet the criteria. Key can be tag:&lt;Amazon EC2 tag&gt; or InstanceIds. For more information about how to send commands that target instances using Key,Value parameters, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html\">Executing a Command Using Systems Manager Run Command</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -27809,7 +27899,7 @@
         },
         "Values" : {
           "deprecated" : false,
-          "documentation" : "<p>User-defined criteria that maps to <code>Key</code>. For example, if you specified <code>tag:ServerRole</code>, you could specify <code>value:WebServer</code> to execute a command on instances that include Amazon EC2 tags of ServerRole,WebServer. For more information about how to send commands that target instances using <code>Key</code>,<code>Value</code> parameters, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html\">Executing a Command Using Systems Manager Run Command</a>.</p>",
+          "documentation" : "<p>User-defined criteria that maps to Key. For example, if you specified tag:ServerRole, you could specify value:WebServer to execute a command on instances that include Amazon EC2 tags of ServerRole,WebServer. For more information about how to send commands that target instances using Key,Value parameters, see <a href=\"http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html\">Executing a Command Using Systems Manager Run Command</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -27985,7 +28075,7 @@
     },
     "TooManyTagsError" : {
       "deprecated" : false,
-      "documentation" : "<p>The <code>Targets</code> parameter includes too many tags. Remove one or more tags and try the command again.</p>",
+      "documentation" : "<p>The Targets parameter includes too many tags. Remove one or more tags and try the command again.</p>",
       "enum" : null,
       "error" : null,
       "exception" : true,
@@ -28078,7 +28168,7 @@
     },
     "UnsupportedInventorySchemaVersionException" : {
       "deprecated" : false,
-      "documentation" : "<p>Inventory item type schema version has to match supported versions in the service. Check output of <code>GetInventorySchema</code> to see the available schema version for each type.</p>",
+      "documentation" : "<p>Inventory item type schema version has to match supported versions in the service. Check output of GetInventorySchema to see the available schema version for each type.</p>",
       "enum" : null,
       "error" : null,
       "exception" : true,
@@ -28224,9 +28314,23 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "Name" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name of the association document.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DocumentName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "OutputLocation" : {
           "deprecated" : false,
-          "documentation" : "<p>An Amazon S3 bucket where you want to store the results of this request.</p> <p> <code>\"{ \\\"S3Location\\\": { \\\"OutputS3Region\\\": \\\"&lt;region&gt;\\\", \\\"OutputS3BucketName\\\": \\\"bucket name\\\", \\\"OutputS3KeyPrefix\\\": \\\"folder name\\\" } }\"</code> </p>",
+          "documentation" : "<p>An Amazon S3 bucket where you want to store the results of this request.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -28254,7 +28358,7 @@
         },
         "ScheduleExpression" : {
           "deprecated" : false,
-          "documentation" : "<p>The cron expression used to schedule the association that you want to update. Supported expressions are every half, 1, 2, 4, 8 or 12 hour(s); every specified day and time of the week. For example: cron(0 0/30 * 1/1 * ? *) to run every thirty minutes; cron(0 0 0/4 1/1 * ? *) to run every four hours; and cron(0 0 10 ? * SUN *) to run every Sunday at 10 a.m.</p>",
+          "documentation" : "<p>The cron expression used to schedule the association that you want to update.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -28263,6 +28367,20 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "ScheduleExpression",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Targets" : {
+          "deprecated" : false,
+          "documentation" : "<p>The targets of the association.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Targets",
           "streaming" : false,
           "xmlNamespace" : null
         }

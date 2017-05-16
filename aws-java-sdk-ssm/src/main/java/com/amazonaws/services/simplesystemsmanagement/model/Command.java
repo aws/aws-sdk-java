@@ -66,8 +66,8 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
     private com.amazonaws.internal.SdkInternalList<String> instanceIds;
     /**
      * <p>
-     * An array of search criteria that targets instances using a <code>Key</code>,<code>Value</code> combination that
-     * you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in the call.
+     * An array of search criteria that targets instances using a Key,Value combination that you specify. Targets is
+     * required if you don't provide one or more instance IDs in the call.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Target> targets;
@@ -85,62 +85,60 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * A detailed status of the command execution. <code>StatusDetails</code> includes more information than
-     * <code>Status</code> because it includes states resulting from error and concurrency control parameters.
-     * <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these
-     * statuses, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
-     * Command Status</a>. <code>StatusDetails</code> can be one of the following values:
+     * A detailed status of the command execution. StatusDetails includes more information than Status because it
+     * includes states resulting from error and concurrency control parameters. StatusDetails can show different results
+     * than Status. For more information about these statuses, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run Command
+     * Status</a>. StatusDetails can be one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Pending – The command has not been sent to any instances.
+     * Pending: The command has not been sent to any instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In Progress – The command has been sent to at least one instance but has not reached a final state on all
+     * In Progress: The command has been sent to at least one instance but has not reached a final state on all
      * instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Success – The command successfully executed on all invocations. This is a terminal state.
+     * Success: The command successfully executed on all invocations. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Delivery Timed Out – The value of <code>MaxErrors</code> or more command invocations shows a status of
-     * <code>Delivery Timed Out</code>. This is a terminal state.
+     * Delivery Timed Out: The value of MaxErrors or more command invocations shows a status of Delivery Timed Out. This
+     * is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Execution Timed Out – The value of <code>MaxErrors</code> or more command invocations shows a status of
-     * <code>Execution Timed Out</code>. This is a terminal state.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Failed – The value of <code>MaxErrors</code> or more command invocations shows a status of <code>Failed</code>.
+     * Execution Timed Out: The value of MaxErrors or more command invocations shows a status of Execution Timed Out.
      * This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Incomplete – The command was attempted on all instances and one or more invocations does not have a value of
-     * <code>Success</code> but not enough invocations failed for the status to be <code>Failed</code>. This is a
-     * terminal state.
+     * Failed: The value of MaxErrors or more command invocations shows a status of Failed. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Canceled – The command was terminated before it was completed. This is a terminal state.
+     * Incomplete: The command was attempted on all instances and one or more invocations does not have a value of
+     * Success but not enough invocations failed for the status to be Failed. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Rate Exceeded – The number of instances targeted by the command exceeded the account limit for pending
+     * Canceled: The command was terminated before it was completed. This is a terminal state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Rate Exceeded: The number of instances targeted by the command exceeded the account limit for pending
      * invocations. The system has canceled the command before executing it on any instance. This is a terminal state.
      * </p>
      * </li>
@@ -172,7 +170,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The maximum number of instances that are allowed to execute the command at the same time. You can specify a
      * number of instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For more
-     * information about how to use <code>MaxConcurrency</code>, see <a
+     * information about how to use MaxConcurrency, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
      * Systems Manager Run Command</a>.
      * </p>
@@ -182,7 +180,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The maximum number of errors allowed before the system stops sending the command to additional targets. You can
      * specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is 50. For more
-     * information about how to use <code>MaxErrors</code>, see <a
+     * information about how to use MaxErrors, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
      * Systems Manager Run Command</a>.
      * </p>
@@ -197,14 +195,13 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of targets for which the command invocation reached a terminal state. Terminal states include the
-     * following: <code>Success</code>, <code>Failed</code>, <code>Execution Timed Out</code>,
-     * <code>Delivery Timed Out</code>, <code>Canceled</code>, <code>Terminated</code>, or <code>Undeliverable</code>.
+     * following: Success, Failed, Execution Timed Out, Delivery Timed Out, Canceled, Terminated, or Undeliverable.
      * </p>
      */
     private Integer completedCount;
     /**
      * <p>
-     * The number of targets for which the status is <code>Failed</code> or <code>Execution Timed Out</code>.
+     * The number of targets for which the status is Failed or Execution Timed Out.
      * </p>
      */
     private Integer errorCount;
@@ -524,13 +521,12 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of search criteria that targets instances using a <code>Key</code>,<code>Value</code> combination that
-     * you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in the call.
+     * An array of search criteria that targets instances using a Key,Value combination that you specify. Targets is
+     * required if you don't provide one or more instance IDs in the call.
      * </p>
      * 
-     * @return An array of search criteria that targets instances using a <code>Key</code>,<code>Value</code>
-     *         combination that you specify. <code>Targets</code> is required if you don't provide one or more instance
-     *         IDs in the call.
+     * @return An array of search criteria that targets instances using a Key,Value combination that you specify.
+     *         Targets is required if you don't provide one or more instance IDs in the call.
      */
 
     public java.util.List<Target> getTargets() {
@@ -542,14 +538,13 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of search criteria that targets instances using a <code>Key</code>,<code>Value</code> combination that
-     * you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in the call.
+     * An array of search criteria that targets instances using a Key,Value combination that you specify. Targets is
+     * required if you don't provide one or more instance IDs in the call.
      * </p>
      * 
      * @param targets
-     *        An array of search criteria that targets instances using a <code>Key</code>,<code>Value</code> combination
-     *        that you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in the
-     *        call.
+     *        An array of search criteria that targets instances using a Key,Value combination that you specify. Targets
+     *        is required if you don't provide one or more instance IDs in the call.
      */
 
     public void setTargets(java.util.Collection<Target> targets) {
@@ -563,8 +558,8 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of search criteria that targets instances using a <code>Key</code>,<code>Value</code> combination that
-     * you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in the call.
+     * An array of search criteria that targets instances using a Key,Value combination that you specify. Targets is
+     * required if you don't provide one or more instance IDs in the call.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -573,9 +568,8 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param targets
-     *        An array of search criteria that targets instances using a <code>Key</code>,<code>Value</code> combination
-     *        that you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in the
-     *        call.
+     *        An array of search criteria that targets instances using a Key,Value combination that you specify. Targets
+     *        is required if you don't provide one or more instance IDs in the call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -591,14 +585,13 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of search criteria that targets instances using a <code>Key</code>,<code>Value</code> combination that
-     * you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in the call.
+     * An array of search criteria that targets instances using a Key,Value combination that you specify. Targets is
+     * required if you don't provide one or more instance IDs in the call.
      * </p>
      * 
      * @param targets
-     *        An array of search criteria that targets instances using a <code>Key</code>,<code>Value</code> combination
-     *        that you specify. <code>Targets</code> is required if you don't provide one or more instance IDs in the
-     *        call.
+     *        An array of search criteria that targets instances using a Key,Value combination that you specify. Targets
+     *        is required if you don't provide one or more instance IDs in the call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -722,124 +715,120 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A detailed status of the command execution. <code>StatusDetails</code> includes more information than
-     * <code>Status</code> because it includes states resulting from error and concurrency control parameters.
-     * <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these
-     * statuses, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
-     * Command Status</a>. <code>StatusDetails</code> can be one of the following values:
+     * A detailed status of the command execution. StatusDetails includes more information than Status because it
+     * includes states resulting from error and concurrency control parameters. StatusDetails can show different results
+     * than Status. For more information about these statuses, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run Command
+     * Status</a>. StatusDetails can be one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Pending – The command has not been sent to any instances.
+     * Pending: The command has not been sent to any instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In Progress – The command has been sent to at least one instance but has not reached a final state on all
+     * In Progress: The command has been sent to at least one instance but has not reached a final state on all
      * instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Success – The command successfully executed on all invocations. This is a terminal state.
+     * Success: The command successfully executed on all invocations. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Delivery Timed Out – The value of <code>MaxErrors</code> or more command invocations shows a status of
-     * <code>Delivery Timed Out</code>. This is a terminal state.
+     * Delivery Timed Out: The value of MaxErrors or more command invocations shows a status of Delivery Timed Out. This
+     * is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Execution Timed Out – The value of <code>MaxErrors</code> or more command invocations shows a status of
-     * <code>Execution Timed Out</code>. This is a terminal state.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Failed – The value of <code>MaxErrors</code> or more command invocations shows a status of <code>Failed</code>.
+     * Execution Timed Out: The value of MaxErrors or more command invocations shows a status of Execution Timed Out.
      * This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Incomplete – The command was attempted on all instances and one or more invocations does not have a value of
-     * <code>Success</code> but not enough invocations failed for the status to be <code>Failed</code>. This is a
-     * terminal state.
+     * Failed: The value of MaxErrors or more command invocations shows a status of Failed. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Canceled – The command was terminated before it was completed. This is a terminal state.
+     * Incomplete: The command was attempted on all instances and one or more invocations does not have a value of
+     * Success but not enough invocations failed for the status to be Failed. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Rate Exceeded – The number of instances targeted by the command exceeded the account limit for pending
+     * Canceled: The command was terminated before it was completed. This is a terminal state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Rate Exceeded: The number of instances targeted by the command exceeded the account limit for pending
      * invocations. The system has canceled the command before executing it on any instance. This is a terminal state.
      * </p>
      * </li>
      * </ul>
      * 
      * @param statusDetails
-     *        A detailed status of the command execution. <code>StatusDetails</code> includes more information than
-     *        <code>Status</code> because it includes states resulting from error and concurrency control parameters.
-     *        <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about
-     *        these statuses, see <a
+     *        A detailed status of the command execution. StatusDetails includes more information than Status because it
+     *        includes states resulting from error and concurrency control parameters. StatusDetails can show different
+     *        results than Status. For more information about these statuses, see <a
      *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run Command
-     *        Status</a>. <code>StatusDetails</code> can be one of the following values:</p>
+     *        Status</a>. StatusDetails can be one of the following values:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Pending – The command has not been sent to any instances.
+     *        Pending: The command has not been sent to any instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In Progress – The command has been sent to at least one instance but has not reached a final state on all
+     *        In Progress: The command has been sent to at least one instance but has not reached a final state on all
      *        instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Success – The command successfully executed on all invocations. This is a terminal state.
+     *        Success: The command successfully executed on all invocations. This is a terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Delivery Timed Out – The value of <code>MaxErrors</code> or more command invocations shows a status of
-     *        <code>Delivery Timed Out</code>. This is a terminal state.
+     *        Delivery Timed Out: The value of MaxErrors or more command invocations shows a status of Delivery Timed
+     *        Out. This is a terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Execution Timed Out – The value of <code>MaxErrors</code> or more command invocations shows a status of
-     *        <code>Execution Timed Out</code>. This is a terminal state.
+     *        Execution Timed Out: The value of MaxErrors or more command invocations shows a status of Execution Timed
+     *        Out. This is a terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Failed – The value of <code>MaxErrors</code> or more command invocations shows a status of
-     *        <code>Failed</code>. This is a terminal state.
+     *        Failed: The value of MaxErrors or more command invocations shows a status of Failed. This is a terminal
+     *        state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Incomplete – The command was attempted on all instances and one or more invocations does not have a value
-     *        of <code>Success</code> but not enough invocations failed for the status to be <code>Failed</code>. This
-     *        is a terminal state.
+     *        Incomplete: The command was attempted on all instances and one or more invocations does not have a value
+     *        of Success but not enough invocations failed for the status to be Failed. This is a terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Canceled – The command was terminated before it was completed. This is a terminal state.
+     *        Canceled: The command was terminated before it was completed. This is a terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Rate Exceeded – The number of instances targeted by the command exceeded the account limit for pending
+     *        Rate Exceeded: The number of instances targeted by the command exceeded the account limit for pending
      *        invocations. The system has canceled the command before executing it on any instance. This is a terminal
      *        state.
      *        </p>
@@ -852,123 +841,119 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A detailed status of the command execution. <code>StatusDetails</code> includes more information than
-     * <code>Status</code> because it includes states resulting from error and concurrency control parameters.
-     * <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these
-     * statuses, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
-     * Command Status</a>. <code>StatusDetails</code> can be one of the following values:
+     * A detailed status of the command execution. StatusDetails includes more information than Status because it
+     * includes states resulting from error and concurrency control parameters. StatusDetails can show different results
+     * than Status. For more information about these statuses, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run Command
+     * Status</a>. StatusDetails can be one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Pending – The command has not been sent to any instances.
+     * Pending: The command has not been sent to any instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In Progress – The command has been sent to at least one instance but has not reached a final state on all
+     * In Progress: The command has been sent to at least one instance but has not reached a final state on all
      * instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Success – The command successfully executed on all invocations. This is a terminal state.
+     * Success: The command successfully executed on all invocations. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Delivery Timed Out – The value of <code>MaxErrors</code> or more command invocations shows a status of
-     * <code>Delivery Timed Out</code>. This is a terminal state.
+     * Delivery Timed Out: The value of MaxErrors or more command invocations shows a status of Delivery Timed Out. This
+     * is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Execution Timed Out – The value of <code>MaxErrors</code> or more command invocations shows a status of
-     * <code>Execution Timed Out</code>. This is a terminal state.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Failed – The value of <code>MaxErrors</code> or more command invocations shows a status of <code>Failed</code>.
+     * Execution Timed Out: The value of MaxErrors or more command invocations shows a status of Execution Timed Out.
      * This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Incomplete – The command was attempted on all instances and one or more invocations does not have a value of
-     * <code>Success</code> but not enough invocations failed for the status to be <code>Failed</code>. This is a
-     * terminal state.
+     * Failed: The value of MaxErrors or more command invocations shows a status of Failed. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Canceled – The command was terminated before it was completed. This is a terminal state.
+     * Incomplete: The command was attempted on all instances and one or more invocations does not have a value of
+     * Success but not enough invocations failed for the status to be Failed. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Rate Exceeded – The number of instances targeted by the command exceeded the account limit for pending
+     * Canceled: The command was terminated before it was completed. This is a terminal state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Rate Exceeded: The number of instances targeted by the command exceeded the account limit for pending
      * invocations. The system has canceled the command before executing it on any instance. This is a terminal state.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return A detailed status of the command execution. <code>StatusDetails</code> includes more information than
-     *         <code>Status</code> because it includes states resulting from error and concurrency control parameters.
-     *         <code>StatusDetails</code> can show different results than <code>Status</code>. For more information
-     *         about these statuses, see <a
+     * @return A detailed status of the command execution. StatusDetails includes more information than Status because
+     *         it includes states resulting from error and concurrency control parameters. StatusDetails can show
+     *         different results than Status. For more information about these statuses, see <a
      *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run Command
-     *         Status</a>. <code>StatusDetails</code> can be one of the following values:</p>
+     *         Status</a>. StatusDetails can be one of the following values:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Pending – The command has not been sent to any instances.
+     *         Pending: The command has not been sent to any instances.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         In Progress – The command has been sent to at least one instance but has not reached a final state on all
+     *         In Progress: The command has been sent to at least one instance but has not reached a final state on all
      *         instances.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Success – The command successfully executed on all invocations. This is a terminal state.
+     *         Success: The command successfully executed on all invocations. This is a terminal state.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Delivery Timed Out – The value of <code>MaxErrors</code> or more command invocations shows a status of
-     *         <code>Delivery Timed Out</code>. This is a terminal state.
+     *         Delivery Timed Out: The value of MaxErrors or more command invocations shows a status of Delivery Timed
+     *         Out. This is a terminal state.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Execution Timed Out – The value of <code>MaxErrors</code> or more command invocations shows a status of
-     *         <code>Execution Timed Out</code>. This is a terminal state.
+     *         Execution Timed Out: The value of MaxErrors or more command invocations shows a status of Execution Timed
+     *         Out. This is a terminal state.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Failed – The value of <code>MaxErrors</code> or more command invocations shows a status of
-     *         <code>Failed</code>. This is a terminal state.
+     *         Failed: The value of MaxErrors or more command invocations shows a status of Failed. This is a terminal
+     *         state.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Incomplete – The command was attempted on all instances and one or more invocations does not have a value
-     *         of <code>Success</code> but not enough invocations failed for the status to be <code>Failed</code>. This
-     *         is a terminal state.
+     *         Incomplete: The command was attempted on all instances and one or more invocations does not have a value
+     *         of Success but not enough invocations failed for the status to be Failed. This is a terminal state.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Canceled – The command was terminated before it was completed. This is a terminal state.
+     *         Canceled: The command was terminated before it was completed. This is a terminal state.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Rate Exceeded – The number of instances targeted by the command exceeded the account limit for pending
+     *         Rate Exceeded: The number of instances targeted by the command exceeded the account limit for pending
      *         invocations. The system has canceled the command before executing it on any instance. This is a terminal
      *         state.
      *         </p>
@@ -981,124 +966,120 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A detailed status of the command execution. <code>StatusDetails</code> includes more information than
-     * <code>Status</code> because it includes states resulting from error and concurrency control parameters.
-     * <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about these
-     * statuses, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run
-     * Command Status</a>. <code>StatusDetails</code> can be one of the following values:
+     * A detailed status of the command execution. StatusDetails includes more information than Status because it
+     * includes states resulting from error and concurrency control parameters. StatusDetails can show different results
+     * than Status. For more information about these statuses, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run Command
+     * Status</a>. StatusDetails can be one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Pending – The command has not been sent to any instances.
+     * Pending: The command has not been sent to any instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In Progress – The command has been sent to at least one instance but has not reached a final state on all
+     * In Progress: The command has been sent to at least one instance but has not reached a final state on all
      * instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Success – The command successfully executed on all invocations. This is a terminal state.
+     * Success: The command successfully executed on all invocations. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Delivery Timed Out – The value of <code>MaxErrors</code> or more command invocations shows a status of
-     * <code>Delivery Timed Out</code>. This is a terminal state.
+     * Delivery Timed Out: The value of MaxErrors or more command invocations shows a status of Delivery Timed Out. This
+     * is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Execution Timed Out – The value of <code>MaxErrors</code> or more command invocations shows a status of
-     * <code>Execution Timed Out</code>. This is a terminal state.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Failed – The value of <code>MaxErrors</code> or more command invocations shows a status of <code>Failed</code>.
+     * Execution Timed Out: The value of MaxErrors or more command invocations shows a status of Execution Timed Out.
      * This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Incomplete – The command was attempted on all instances and one or more invocations does not have a value of
-     * <code>Success</code> but not enough invocations failed for the status to be <code>Failed</code>. This is a
-     * terminal state.
+     * Failed: The value of MaxErrors or more command invocations shows a status of Failed. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Canceled – The command was terminated before it was completed. This is a terminal state.
+     * Incomplete: The command was attempted on all instances and one or more invocations does not have a value of
+     * Success but not enough invocations failed for the status to be Failed. This is a terminal state.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Rate Exceeded – The number of instances targeted by the command exceeded the account limit for pending
+     * Canceled: The command was terminated before it was completed. This is a terminal state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Rate Exceeded: The number of instances targeted by the command exceeded the account limit for pending
      * invocations. The system has canceled the command before executing it on any instance. This is a terminal state.
      * </p>
      * </li>
      * </ul>
      * 
      * @param statusDetails
-     *        A detailed status of the command execution. <code>StatusDetails</code> includes more information than
-     *        <code>Status</code> because it includes states resulting from error and concurrency control parameters.
-     *        <code>StatusDetails</code> can show different results than <code>Status</code>. For more information about
-     *        these statuses, see <a
+     *        A detailed status of the command execution. StatusDetails includes more information than Status because it
+     *        includes states resulting from error and concurrency control parameters. StatusDetails can show different
+     *        results than Status. For more information about these statuses, see <a
      *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-about-status.html">Run Command
-     *        Status</a>. <code>StatusDetails</code> can be one of the following values:</p>
+     *        Status</a>. StatusDetails can be one of the following values:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Pending – The command has not been sent to any instances.
+     *        Pending: The command has not been sent to any instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In Progress – The command has been sent to at least one instance but has not reached a final state on all
+     *        In Progress: The command has been sent to at least one instance but has not reached a final state on all
      *        instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Success – The command successfully executed on all invocations. This is a terminal state.
+     *        Success: The command successfully executed on all invocations. This is a terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Delivery Timed Out – The value of <code>MaxErrors</code> or more command invocations shows a status of
-     *        <code>Delivery Timed Out</code>. This is a terminal state.
+     *        Delivery Timed Out: The value of MaxErrors or more command invocations shows a status of Delivery Timed
+     *        Out. This is a terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Execution Timed Out – The value of <code>MaxErrors</code> or more command invocations shows a status of
-     *        <code>Execution Timed Out</code>. This is a terminal state.
+     *        Execution Timed Out: The value of MaxErrors or more command invocations shows a status of Execution Timed
+     *        Out. This is a terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Failed – The value of <code>MaxErrors</code> or more command invocations shows a status of
-     *        <code>Failed</code>. This is a terminal state.
+     *        Failed: The value of MaxErrors or more command invocations shows a status of Failed. This is a terminal
+     *        state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Incomplete – The command was attempted on all instances and one or more invocations does not have a value
-     *        of <code>Success</code> but not enough invocations failed for the status to be <code>Failed</code>. This
-     *        is a terminal state.
+     *        Incomplete: The command was attempted on all instances and one or more invocations does not have a value
+     *        of Success but not enough invocations failed for the status to be Failed. This is a terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Canceled – The command was terminated before it was completed. This is a terminal state.
+     *        Canceled: The command was terminated before it was completed. This is a terminal state.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Rate Exceeded – The number of instances targeted by the command exceeded the account limit for pending
+     *        Rate Exceeded: The number of instances targeted by the command exceeded the account limit for pending
      *        invocations. The system has canceled the command before executing it on any instance. This is a terminal
      *        state.
      *        </p>
@@ -1253,7 +1234,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The maximum number of instances that are allowed to execute the command at the same time. You can specify a
      * number of instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For more
-     * information about how to use <code>MaxConcurrency</code>, see <a
+     * information about how to use MaxConcurrency, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
      * Systems Manager Run Command</a>.
      * </p>
@@ -1261,7 +1242,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * @param maxConcurrency
      *        The maximum number of instances that are allowed to execute the command at the same time. You can specify
      *        a number of instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For
-     *        more information about how to use <code>MaxConcurrency</code>, see <a
+     *        more information about how to use MaxConcurrency, see <a
      *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
      *        Using Systems Manager Run Command</a>.
      */
@@ -1274,14 +1255,14 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The maximum number of instances that are allowed to execute the command at the same time. You can specify a
      * number of instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For more
-     * information about how to use <code>MaxConcurrency</code>, see <a
+     * information about how to use MaxConcurrency, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
      * Systems Manager Run Command</a>.
      * </p>
      * 
      * @return The maximum number of instances that are allowed to execute the command at the same time. You can specify
      *         a number of instances, such as 10, or a percentage of instances, such as 10%. The default value is 50.
-     *         For more information about how to use <code>MaxConcurrency</code>, see <a
+     *         For more information about how to use MaxConcurrency, see <a
      *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
      *         Using Systems Manager Run Command</a>.
      */
@@ -1294,7 +1275,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The maximum number of instances that are allowed to execute the command at the same time. You can specify a
      * number of instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For more
-     * information about how to use <code>MaxConcurrency</code>, see <a
+     * information about how to use MaxConcurrency, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
      * Systems Manager Run Command</a>.
      * </p>
@@ -1302,7 +1283,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * @param maxConcurrency
      *        The maximum number of instances that are allowed to execute the command at the same time. You can specify
      *        a number of instances, such as 10, or a percentage of instances, such as 10%. The default value is 50. For
-     *        more information about how to use <code>MaxConcurrency</code>, see <a
+     *        more information about how to use MaxConcurrency, see <a
      *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
      *        Using Systems Manager Run Command</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1317,7 +1298,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The maximum number of errors allowed before the system stops sending the command to additional targets. You can
      * specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is 50. For more
-     * information about how to use <code>MaxErrors</code>, see <a
+     * information about how to use MaxErrors, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
      * Systems Manager Run Command</a>.
      * </p>
@@ -1325,7 +1306,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * @param maxErrors
      *        The maximum number of errors allowed before the system stops sending the command to additional targets.
      *        You can specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value
-     *        is 50. For more information about how to use <code>MaxErrors</code>, see <a
+     *        is 50. For more information about how to use MaxErrors, see <a
      *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
      *        Using Systems Manager Run Command</a>.
      */
@@ -1338,14 +1319,14 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The maximum number of errors allowed before the system stops sending the command to additional targets. You can
      * specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is 50. For more
-     * information about how to use <code>MaxErrors</code>, see <a
+     * information about how to use MaxErrors, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
      * Systems Manager Run Command</a>.
      * </p>
      * 
      * @return The maximum number of errors allowed before the system stops sending the command to additional targets.
      *         You can specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value
-     *         is 50. For more information about how to use <code>MaxErrors</code>, see <a
+     *         is 50. For more information about how to use MaxErrors, see <a
      *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
      *         Using Systems Manager Run Command</a>.
      */
@@ -1358,7 +1339,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The maximum number of errors allowed before the system stops sending the command to additional targets. You can
      * specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is 50. For more
-     * information about how to use <code>MaxErrors</code>, see <a
+     * information about how to use MaxErrors, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
      * Systems Manager Run Command</a>.
      * </p>
@@ -1366,7 +1347,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * @param maxErrors
      *        The maximum number of errors allowed before the system stops sending the command to additional targets.
      *        You can specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value
-     *        is 50. For more information about how to use <code>MaxErrors</code>, see <a
+     *        is 50. For more information about how to use MaxErrors, see <a
      *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
      *        Using Systems Manager Run Command</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1420,15 +1401,13 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of targets for which the command invocation reached a terminal state. Terminal states include the
-     * following: <code>Success</code>, <code>Failed</code>, <code>Execution Timed Out</code>,
-     * <code>Delivery Timed Out</code>, <code>Canceled</code>, <code>Terminated</code>, or <code>Undeliverable</code>.
+     * following: Success, Failed, Execution Timed Out, Delivery Timed Out, Canceled, Terminated, or Undeliverable.
      * </p>
      * 
      * @param completedCount
      *        The number of targets for which the command invocation reached a terminal state. Terminal states include
-     *        the following: <code>Success</code>, <code>Failed</code>, <code>Execution Timed Out</code>,
-     *        <code>Delivery Timed Out</code>, <code>Canceled</code>, <code>Terminated</code>, or
-     *        <code>Undeliverable</code>.
+     *        the following: Success, Failed, Execution Timed Out, Delivery Timed Out, Canceled, Terminated, or
+     *        Undeliverable.
      */
 
     public void setCompletedCount(Integer completedCount) {
@@ -1438,14 +1417,12 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of targets for which the command invocation reached a terminal state. Terminal states include the
-     * following: <code>Success</code>, <code>Failed</code>, <code>Execution Timed Out</code>,
-     * <code>Delivery Timed Out</code>, <code>Canceled</code>, <code>Terminated</code>, or <code>Undeliverable</code>.
+     * following: Success, Failed, Execution Timed Out, Delivery Timed Out, Canceled, Terminated, or Undeliverable.
      * </p>
      * 
      * @return The number of targets for which the command invocation reached a terminal state. Terminal states include
-     *         the following: <code>Success</code>, <code>Failed</code>, <code>Execution Timed Out</code>,
-     *         <code>Delivery Timed Out</code>, <code>Canceled</code>, <code>Terminated</code>, or
-     *         <code>Undeliverable</code>.
+     *         the following: Success, Failed, Execution Timed Out, Delivery Timed Out, Canceled, Terminated, or
+     *         Undeliverable.
      */
 
     public Integer getCompletedCount() {
@@ -1455,15 +1432,13 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of targets for which the command invocation reached a terminal state. Terminal states include the
-     * following: <code>Success</code>, <code>Failed</code>, <code>Execution Timed Out</code>,
-     * <code>Delivery Timed Out</code>, <code>Canceled</code>, <code>Terminated</code>, or <code>Undeliverable</code>.
+     * following: Success, Failed, Execution Timed Out, Delivery Timed Out, Canceled, Terminated, or Undeliverable.
      * </p>
      * 
      * @param completedCount
      *        The number of targets for which the command invocation reached a terminal state. Terminal states include
-     *        the following: <code>Success</code>, <code>Failed</code>, <code>Execution Timed Out</code>,
-     *        <code>Delivery Timed Out</code>, <code>Canceled</code>, <code>Terminated</code>, or
-     *        <code>Undeliverable</code>.
+     *        the following: Success, Failed, Execution Timed Out, Delivery Timed Out, Canceled, Terminated, or
+     *        Undeliverable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1474,11 +1449,11 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of targets for which the status is <code>Failed</code> or <code>Execution Timed Out</code>.
+     * The number of targets for which the status is Failed or Execution Timed Out.
      * </p>
      * 
      * @param errorCount
-     *        The number of targets for which the status is <code>Failed</code> or <code>Execution Timed Out</code>.
+     *        The number of targets for which the status is Failed or Execution Timed Out.
      */
 
     public void setErrorCount(Integer errorCount) {
@@ -1487,10 +1462,10 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of targets for which the status is <code>Failed</code> or <code>Execution Timed Out</code>.
+     * The number of targets for which the status is Failed or Execution Timed Out.
      * </p>
      * 
-     * @return The number of targets for which the status is <code>Failed</code> or <code>Execution Timed Out</code>.
+     * @return The number of targets for which the status is Failed or Execution Timed Out.
      */
 
     public Integer getErrorCount() {
@@ -1499,11 +1474,11 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of targets for which the status is <code>Failed</code> or <code>Execution Timed Out</code>.
+     * The number of targets for which the status is Failed or Execution Timed Out.
      * </p>
      * 
      * @param errorCount
-     *        The number of targets for which the status is <code>Failed</code> or <code>Execution Timed Out</code>.
+     *        The number of targets for which the status is Failed or Execution Timed Out.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Error returned when an idempotent operation is retried and the parameters don’t match the original call to the API
+ * Error returned when an idempotent operation is retried and the parameters don't match the original call to the API
  * with the same idempotency token.
  * </p>
  */

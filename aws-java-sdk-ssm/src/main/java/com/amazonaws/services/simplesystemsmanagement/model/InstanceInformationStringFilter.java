@@ -33,8 +33,8 @@ public class InstanceInformationStringFilter implements Serializable, Cloneable,
      * The filter key name to describe your instances. For example:
      * </p>
      * <p>
-     * "InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|”
-     * AssociationStatus”|”Tag Key”
+     * "InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|
+     * "AssociationStatus"|"Tag Key"
      * </p>
      */
     private String key;
@@ -50,15 +50,15 @@ public class InstanceInformationStringFilter implements Serializable, Cloneable,
      * The filter key name to describe your instances. For example:
      * </p>
      * <p>
-     * "InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|”
-     * AssociationStatus”|”Tag Key”
+     * "InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|
+     * "AssociationStatus"|"Tag Key"
      * </p>
      * 
      * @param key
      *        The filter key name to describe your instances. For example:</p>
      *        <p>
-     *        "InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|”
-     *        AssociationStatus”|”Tag Key”
+     *        "InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|
+     *        "AssociationStatus"|"Tag Key"
      */
 
     public void setKey(String key) {
@@ -70,14 +70,14 @@ public class InstanceInformationStringFilter implements Serializable, Cloneable,
      * The filter key name to describe your instances. For example:
      * </p>
      * <p>
-     * "InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|”
-     * AssociationStatus”|”Tag Key”
+     * "InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|
+     * "AssociationStatus"|"Tag Key"
      * </p>
      * 
      * @return The filter key name to describe your instances. For example:</p>
      *         <p>
-     *         "InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|”
-     *         AssociationStatus”|”Tag Key”
+     *         "InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|
+     *         "AssociationStatus"|"Tag Key"
      */
 
     public String getKey() {
@@ -89,15 +89,15 @@ public class InstanceInformationStringFilter implements Serializable, Cloneable,
      * The filter key name to describe your instances. For example:
      * </p>
      * <p>
-     * "InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|”
-     * AssociationStatus”|”Tag Key”
+     * "InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|
+     * "AssociationStatus"|"Tag Key"
      * </p>
      * 
      * @param key
      *        The filter key name to describe your instances. For example:</p>
      *        <p>
-     *        "InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|”
-     *        AssociationStatus”|”Tag Key”
+     *        "InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|
+     *        "AssociationStatus"|"Tag Key"
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

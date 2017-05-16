@@ -471,11 +471,14 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
     /**
      * <p>
      * Adds or overwrites one or more tags for the specified resource. Tags are metadata that you assign to your managed
-     * instances. Tags enable you to categorize your managed instances in different ways, for example, by purpose,
-     * owner, or environment. Each tag consists of a key and an optional value, both of which you define. For example,
-     * you could define a set of tags for your account's managed instances that helps you track each instance's owner
-     * and stack level. For example: Key=Owner and Value=DbAdmin, SysAdmin, or Dev. Or Key=Stack and Value=Production,
-     * Pre-Production, or Test. Each resource can have a maximum of 10 tags.
+     * instances, Maintenance Windows, or Parameter Store parameters. Tags enable you to categorize your resources in
+     * different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value,
+     * both of which you define. For example, you could define a set of tags for your account's managed instances that
+     * helps you track each instance's owner and stack level. For example: Key=Owner and Value=DbAdmin, SysAdmin, or
+     * Dev. Or Key=Stack and Value=Production, Pre-Production, or Test.
+     * </p>
+     * <p>
+     * Each resource can have a maximum of 10 tags.
      * </p>
      * <p>
      * We recommend that you devise a set of tag keys that meets your needs for each resource type. Using a consistent
@@ -499,8 +502,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @throws TooManyTagsErrorException
-     *         The <code>Targets</code> parameter includes too many tags. Remove one or more tags and try the command
-     *         again.
+     *         The Targets parameter includes too many tags. Remove one or more tags and try the command again.
      * @sample AWSSimpleSystemsManagement.AddTagsToResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AddTagsToResource" target="_top">AWS API
      *      Documentation</a>
@@ -928,7 +930,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @param createMaintenanceWindowRequest
      * @return Result of the CreateMaintenanceWindow operation returned by the service.
      * @throws IdempotentParameterMismatchException
-     *         Error returned when an idempotent operation is retried and the parameters don’t match the original call
+     *         Error returned when an idempotent operation is retried and the parameters don't match the original call
      *         to the API with the same idempotency token.
      * @throws ResourceLimitExceededException
      *         Error returned when the caller has exceeded the default resource limits (e.g. too many Maintenance
@@ -986,7 +988,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @param createPatchBaselineRequest
      * @return Result of the CreatePatchBaseline operation returned by the service.
      * @throws IdempotentParameterMismatchException
-     *         Error returned when an idempotent operation is retried and the parameters don’t match the original call
+     *         Error returned when an idempotent operation is retried and the parameters don't match the original call
      *         to the API with the same idempotency token.
      * @throws ResourceLimitExceededException
      *         Error returned when the caller has exceeded the default resource limits (e.g. too many Maintenance
@@ -1389,7 +1391,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
     /**
      * <p>
      * Removes the server or virtual machine from the list of registered servers. You can reregister the instance again
-     * at any time. If you don’t plan to use Run Command on the server, we suggest uninstalling the SSM Agent first.
+     * at any time. If you don't plan to use Run Command on the server, we suggest uninstalling the SSM Agent first.
      * </p>
      * 
      * @param deregisterManagedInstanceRequest
@@ -1518,7 +1520,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @param deregisterTargetFromMaintenanceWindowRequest
      * @return Result of the DeregisterTargetFromMaintenanceWindow operation returned by the service.
      * @throws DoesNotExistException
-     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't exist.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DeregisterTargetFromMaintenanceWindow
@@ -1573,7 +1575,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @param deregisterTaskFromMaintenanceWindowRequest
      * @return Result of the DeregisterTaskFromMaintenanceWindow operation returned by the service.
      * @throws DoesNotExistException
-     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't exist.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DeregisterTaskFromMaintenanceWindow
@@ -1908,7 +1910,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
     /**
      * <p>
      * Describes the permissions for a Systems Manager document. If you created the document, you are the owner. If a
-     * document is shared, it can either be shared privately (by specifying a user’s AWS account ID) or publicly
+     * document is shared, it can either be shared privately (by specifying a user's AWS account ID) or publicly
      * (<i>All</i>).
      * </p>
      * 
@@ -2044,7 +2046,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @throws InvalidResourceIdException
      *         The resource ID is not valid. Verify that you entered the correct ID and try again.
      * @throws DoesNotExistException
-     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't exist.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DescribeEffectivePatchesForPatchBaseline
@@ -2433,7 +2435,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @param describeMaintenanceWindowExecutionTaskInvocationsRequest
      * @return Result of the DescribeMaintenanceWindowExecutionTaskInvocations operation returned by the service.
      * @throws DoesNotExistException
-     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't exist.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DescribeMaintenanceWindowExecutionTaskInvocations
@@ -2490,7 +2492,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @param describeMaintenanceWindowExecutionTasksRequest
      * @return Result of the DescribeMaintenanceWindowExecutionTasks operation returned by the service.
      * @throws DoesNotExistException
-     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't exist.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DescribeMaintenanceWindowExecutionTasks
@@ -2599,7 +2601,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @param describeMaintenanceWindowTargetsRequest
      * @return Result of the DescribeMaintenanceWindowTargets operation returned by the service.
      * @throws DoesNotExistException
-     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't exist.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DescribeMaintenanceWindowTargets
@@ -2654,7 +2656,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @param describeMaintenanceWindowTasksRequest
      * @return Result of the DescribeMaintenanceWindowTasks operation returned by the service.
      * @throws DoesNotExistException
-     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't exist.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DescribeMaintenanceWindowTasks
@@ -3367,7 +3369,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @param getMaintenanceWindowRequest
      * @return Result of the GetMaintenanceWindow operation returned by the service.
      * @throws DoesNotExistException
-     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't exist.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.GetMaintenanceWindow
@@ -3419,7 +3421,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @param getMaintenanceWindowExecutionRequest
      * @return Result of the GetMaintenanceWindowExecution operation returned by the service.
      * @throws DoesNotExistException
-     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't exist.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.GetMaintenanceWindowExecution
@@ -3473,7 +3475,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @param getMaintenanceWindowExecutionTaskRequest
      * @return Result of the GetMaintenanceWindowExecutionTask operation returned by the service.
      * @throws DoesNotExistException
-     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't exist.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.GetMaintenanceWindowExecutionTask
@@ -3632,7 +3634,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @param getPatchBaselineRequest
      * @return Result of the GetPatchBaseline operation returned by the service.
      * @throws DoesNotExistException
-     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't exist.
      * @throws InvalidResourceIdException
      *         The resource ID is not valid. Verify that you entered the correct ID and try again.
      * @throws InternalServerErrorException
@@ -4272,7 +4274,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         You have exceeded the limit for custom schemas. Delete one or more custom schemas and try again.
      * @throws UnsupportedInventorySchemaVersionException
      *         Inventory item type schema version has to match supported versions in the service. Check output of
-     *         <code>GetInventorySchema</code> to see the available schema version for each type.
+     *         GetInventorySchema to see the available schema version for each type.
      * @sample AWSSimpleSystemsManagement.PutInventory
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutInventory" target="_top">AWS API
      *      Documentation</a>
@@ -4385,7 +4387,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @throws InvalidResourceIdException
      *         The resource ID is not valid. Verify that you entered the correct ID and try again.
      * @throws DoesNotExistException
-     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't exist.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.RegisterDefaultPatchBaseline
@@ -4442,7 +4444,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         Error returned if an attempt is made to register a patch group with a patch baseline that is already
      *         registered with a different patch baseline.
      * @throws DoesNotExistException
-     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't exist.
      * @throws InvalidResourceIdException
      *         The resource ID is not valid. Verify that you entered the correct ID and try again.
      * @throws ResourceLimitExceededException
@@ -4502,10 +4504,10 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @param registerTargetWithMaintenanceWindowRequest
      * @return Result of the RegisterTargetWithMaintenanceWindow operation returned by the service.
      * @throws IdempotentParameterMismatchException
-     *         Error returned when an idempotent operation is retried and the parameters don’t match the original call
+     *         Error returned when an idempotent operation is retried and the parameters don't match the original call
      *         to the API with the same idempotency token.
      * @throws DoesNotExistException
-     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't exist.
      * @throws ResourceLimitExceededException
      *         Error returned when the caller has exceeded the default resource limits (e.g. too many Maintenance
      *         Windows have been created).
@@ -4563,10 +4565,10 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @param registerTaskWithMaintenanceWindowRequest
      * @return Result of the RegisterTaskWithMaintenanceWindow operation returned by the service.
      * @throws IdempotentParameterMismatchException
-     *         Error returned when an idempotent operation is retried and the parameters don’t match the original call
+     *         Error returned when an idempotent operation is retried and the parameters don't match the original call
      *         to the API with the same idempotency token.
      * @throws DoesNotExistException
-     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't exist.
      * @throws ResourceLimitExceededException
      *         Error returned when the caller has exceeded the default resource limits (e.g. too many Maintenance
      *         Windows have been created).
@@ -4901,6 +4903,11 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         The update is not valid.
      * @throws TooManyUpdatesException
      *         There are concurrent updates for a resource that supports one update at a time.
+     * @throws InvalidDocumentException
+     *         The specified document does not exist.
+     * @throws InvalidTargetException
+     *         The target is not valid or does not exist. It might not be configured for EC2 Systems Manager or you
+     *         might not have permission to perform the operation.
      * @sample AWSSimpleSystemsManagement.UpdateAssociation
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation" target="_top">AWS API
      *      Documentation</a>
@@ -5149,7 +5156,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @param updateMaintenanceWindowRequest
      * @return Result of the UpdateMaintenanceWindow operation returned by the service.
      * @throws DoesNotExistException
-     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't exist.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.UpdateMaintenanceWindow
@@ -5271,7 +5278,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @param updatePatchBaselineRequest
      * @return Result of the UpdatePatchBaseline operation returned by the service.
      * @throws DoesNotExistException
-     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t exist.
+     *         Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn't exist.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.UpdatePatchBaseline

@@ -49,6 +49,8 @@ public class StepExecutionMarshaller {
             .marshallLocationName("Response").build();
     private static final MarshallingInfo<String> FAILUREMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FailureMessage").build();
+    private static final MarshallingInfo<StructuredPojo> FAILUREDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FailureDetails").build();
 
     private static final StepExecutionMarshaller instance = new StepExecutionMarshaller();
 
@@ -76,6 +78,7 @@ public class StepExecutionMarshaller {
             protocolMarshaller.marshall(stepExecution.getOutputs(), OUTPUTS_BINDING);
             protocolMarshaller.marshall(stepExecution.getResponse(), RESPONSE_BINDING);
             protocolMarshaller.marshall(stepExecution.getFailureMessage(), FAILUREMESSAGE_BINDING);
+            protocolMarshaller.marshall(stepExecution.getFailureDetails(), FAILUREDETAILS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

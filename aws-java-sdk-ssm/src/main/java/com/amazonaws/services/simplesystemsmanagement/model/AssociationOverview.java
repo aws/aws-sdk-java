@@ -30,7 +30,7 @@ public class AssociationOverview implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The status of the association. Status can be: <code>Pending</code>, <code>Success</code>, or <code>Failed</code>.
+     * The status of the association. Status can be: Pending, Success, or Failed.
      * </p>
      */
     private String status;
@@ -50,12 +50,11 @@ public class AssociationOverview implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The status of the association. Status can be: <code>Pending</code>, <code>Success</code>, or <code>Failed</code>.
+     * The status of the association. Status can be: Pending, Success, or Failed.
      * </p>
      * 
      * @param status
-     *        The status of the association. Status can be: <code>Pending</code>, <code>Success</code>, or
-     *        <code>Failed</code>.
+     *        The status of the association. Status can be: Pending, Success, or Failed.
      */
 
     public void setStatus(String status) {
@@ -64,11 +63,10 @@ public class AssociationOverview implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The status of the association. Status can be: <code>Pending</code>, <code>Success</code>, or <code>Failed</code>.
+     * The status of the association. Status can be: Pending, Success, or Failed.
      * </p>
      * 
-     * @return The status of the association. Status can be: <code>Pending</code>, <code>Success</code>, or
-     *         <code>Failed</code>.
+     * @return The status of the association. Status can be: Pending, Success, or Failed.
      */
 
     public String getStatus() {
@@ -77,12 +75,11 @@ public class AssociationOverview implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The status of the association. Status can be: <code>Pending</code>, <code>Success</code>, or <code>Failed</code>.
+     * The status of the association. Status can be: Pending, Success, or Failed.
      * </p>
      * 
      * @param status
-     *        The status of the association. Status can be: <code>Pending</code>, <code>Success</code>, or
-     *        <code>Failed</code>.
+     *        The status of the association. Status can be: Pending, Success, or Failed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

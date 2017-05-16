@@ -73,8 +73,7 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
     private com.amazonaws.internal.SdkInternalList<StepExecution> stepExecutions;
     /**
      * <p>
-     * The key-value map of execution parameters, which were supplied when calling <code>StartAutomationExecution</code>
-     * .
+     * The key-value map of execution parameters, which were supplied when calling StartAutomationExecution.
      * </p>
      */
     private java.util.Map<String, java.util.List<String>> parameters;
@@ -447,12 +446,10 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The key-value map of execution parameters, which were supplied when calling <code>StartAutomationExecution</code>
-     * .
+     * The key-value map of execution parameters, which were supplied when calling StartAutomationExecution.
      * </p>
      * 
-     * @return The key-value map of execution parameters, which were supplied when calling
-     *         <code>StartAutomationExecution</code>.
+     * @return The key-value map of execution parameters, which were supplied when calling StartAutomationExecution.
      */
 
     public java.util.Map<String, java.util.List<String>> getParameters() {
@@ -461,13 +458,11 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The key-value map of execution parameters, which were supplied when calling <code>StartAutomationExecution</code>
-     * .
+     * The key-value map of execution parameters, which were supplied when calling StartAutomationExecution.
      * </p>
      * 
      * @param parameters
-     *        The key-value map of execution parameters, which were supplied when calling
-     *        <code>StartAutomationExecution</code>.
+     *        The key-value map of execution parameters, which were supplied when calling StartAutomationExecution.
      */
 
     public void setParameters(java.util.Map<String, java.util.List<String>> parameters) {
@@ -476,13 +471,11 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The key-value map of execution parameters, which were supplied when calling <code>StartAutomationExecution</code>
-     * .
+     * The key-value map of execution parameters, which were supplied when calling StartAutomationExecution.
      * </p>
      * 
      * @param parameters
-     *        The key-value map of execution parameters, which were supplied when calling
-     *        <code>StartAutomationExecution</code>.
+     *        The key-value map of execution parameters, which were supplied when calling StartAutomationExecution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

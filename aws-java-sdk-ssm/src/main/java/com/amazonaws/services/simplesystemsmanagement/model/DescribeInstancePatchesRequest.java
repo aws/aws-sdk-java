@@ -36,10 +36,10 @@ public class DescribeInstancePatchesRequest extends com.amazonaws.AmazonWebServi
      * Each entry in the array is a structure containing:
      * </p>
      * <p>
-     * Key (string, 1 ≤ length ≤ 128)
+     * Key (string, between 1 and 128 characters)
      * </p>
      * <p>
-     * Values (array of strings 1 ≤ length ≤ 256)
+     * Values (array of strings, each string between 1 and 256 characters)
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PatchOrchestratorFilter> filters;
@@ -101,18 +101,18 @@ public class DescribeInstancePatchesRequest extends com.amazonaws.AmazonWebServi
      * Each entry in the array is a structure containing:
      * </p>
      * <p>
-     * Key (string, 1 ≤ length ≤ 128)
+     * Key (string, between 1 and 128 characters)
      * </p>
      * <p>
-     * Values (array of strings 1 ≤ length ≤ 256)
+     * Values (array of strings, each string between 1 and 256 characters)
      * </p>
      * 
      * @return Each entry in the array is a structure containing:</p>
      *         <p>
-     *         Key (string, 1 ≤ length ≤ 128)
+     *         Key (string, between 1 and 128 characters)
      *         </p>
      *         <p>
-     *         Values (array of strings 1 ≤ length ≤ 256)
+     *         Values (array of strings, each string between 1 and 256 characters)
      */
 
     public java.util.List<PatchOrchestratorFilter> getFilters() {
@@ -127,19 +127,19 @@ public class DescribeInstancePatchesRequest extends com.amazonaws.AmazonWebServi
      * Each entry in the array is a structure containing:
      * </p>
      * <p>
-     * Key (string, 1 ≤ length ≤ 128)
+     * Key (string, between 1 and 128 characters)
      * </p>
      * <p>
-     * Values (array of strings 1 ≤ length ≤ 256)
+     * Values (array of strings, each string between 1 and 256 characters)
      * </p>
      * 
      * @param filters
      *        Each entry in the array is a structure containing:</p>
      *        <p>
-     *        Key (string, 1 ≤ length ≤ 128)
+     *        Key (string, between 1 and 128 characters)
      *        </p>
      *        <p>
-     *        Values (array of strings 1 ≤ length ≤ 256)
+     *        Values (array of strings, each string between 1 and 256 characters)
      */
 
     public void setFilters(java.util.Collection<PatchOrchestratorFilter> filters) {
@@ -156,10 +156,10 @@ public class DescribeInstancePatchesRequest extends com.amazonaws.AmazonWebServi
      * Each entry in the array is a structure containing:
      * </p>
      * <p>
-     * Key (string, 1 ≤ length ≤ 128)
+     * Key (string, between 1 and 128 characters)
      * </p>
      * <p>
-     * Values (array of strings 1 ≤ length ≤ 256)
+     * Values (array of strings, each string between 1 and 256 characters)
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -170,10 +170,10 @@ public class DescribeInstancePatchesRequest extends com.amazonaws.AmazonWebServi
      * @param filters
      *        Each entry in the array is a structure containing:</p>
      *        <p>
-     *        Key (string, 1 ≤ length ≤ 128)
+     *        Key (string, between 1 and 128 characters)
      *        </p>
      *        <p>
-     *        Values (array of strings 1 ≤ length ≤ 256)
+     *        Values (array of strings, each string between 1 and 256 characters)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -192,19 +192,19 @@ public class DescribeInstancePatchesRequest extends com.amazonaws.AmazonWebServi
      * Each entry in the array is a structure containing:
      * </p>
      * <p>
-     * Key (string, 1 ≤ length ≤ 128)
+     * Key (string, between 1 and 128 characters)
      * </p>
      * <p>
-     * Values (array of strings 1 ≤ length ≤ 256)
+     * Values (array of strings, each string between 1 and 256 characters)
      * </p>
      * 
      * @param filters
      *        Each entry in the array is a structure containing:</p>
      *        <p>
-     *        Key (string, 1 ≤ length ≤ 128)
+     *        Key (string, between 1 and 128 characters)
      *        </p>
      *        <p>
-     *        Values (array of strings 1 ≤ length ≤ 256)
+     *        Values (array of strings, each string between 1 and 256 characters)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

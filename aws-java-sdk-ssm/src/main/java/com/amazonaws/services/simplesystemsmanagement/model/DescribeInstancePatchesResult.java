@@ -40,7 +40,7 @@ public class DescribeInstancePatchesResult extends com.amazonaws.AmazonWebServic
      * Severity (string)
      * </p>
      * <p>
-     * State (string – “INSTALLED”, “INSTALLED_OTHER”, “MISSING”, “NOT_APPLICABLE”, “FAILED”)
+     * State (string: "INSTALLED", "INSTALLED OTHER", "MISSING", "NOT APPLICABLE", "FAILED")
      * </p>
      * <p>
      * InstalledTime (DateTime)
@@ -75,7 +75,7 @@ public class DescribeInstancePatchesResult extends com.amazonaws.AmazonWebServic
      * Severity (string)
      * </p>
      * <p>
-     * State (string – “INSTALLED”, “INSTALLED_OTHER”, “MISSING”, “NOT_APPLICABLE”, “FAILED”)
+     * State (string: "INSTALLED", "INSTALLED OTHER", "MISSING", "NOT APPLICABLE", "FAILED")
      * </p>
      * <p>
      * InstalledTime (DateTime)
@@ -98,7 +98,7 @@ public class DescribeInstancePatchesResult extends com.amazonaws.AmazonWebServic
      *         Severity (string)
      *         </p>
      *         <p>
-     *         State (string – “INSTALLED”, “INSTALLED_OTHER”, “MISSING”, “NOT_APPLICABLE”, “FAILED”)
+     *         State (string: "INSTALLED", "INSTALLED OTHER", "MISSING", "NOT APPLICABLE", "FAILED")
      *         </p>
      *         <p>
      *         InstalledTime (DateTime)
@@ -131,7 +131,7 @@ public class DescribeInstancePatchesResult extends com.amazonaws.AmazonWebServic
      * Severity (string)
      * </p>
      * <p>
-     * State (string – “INSTALLED”, “INSTALLED_OTHER”, “MISSING”, “NOT_APPLICABLE”, “FAILED”)
+     * State (string: "INSTALLED", "INSTALLED OTHER", "MISSING", "NOT APPLICABLE", "FAILED")
      * </p>
      * <p>
      * InstalledTime (DateTime)
@@ -155,7 +155,7 @@ public class DescribeInstancePatchesResult extends com.amazonaws.AmazonWebServic
      *        Severity (string)
      *        </p>
      *        <p>
-     *        State (string – “INSTALLED”, “INSTALLED_OTHER”, “MISSING”, “NOT_APPLICABLE”, “FAILED”)
+     *        State (string: "INSTALLED", "INSTALLED OTHER", "MISSING", "NOT APPLICABLE", "FAILED")
      *        </p>
      *        <p>
      *        InstalledTime (DateTime)
@@ -190,7 +190,7 @@ public class DescribeInstancePatchesResult extends com.amazonaws.AmazonWebServic
      * Severity (string)
      * </p>
      * <p>
-     * State (string – “INSTALLED”, “INSTALLED_OTHER”, “MISSING”, “NOT_APPLICABLE”, “FAILED”)
+     * State (string: "INSTALLED", "INSTALLED OTHER", "MISSING", "NOT APPLICABLE", "FAILED")
      * </p>
      * <p>
      * InstalledTime (DateTime)
@@ -219,7 +219,7 @@ public class DescribeInstancePatchesResult extends com.amazonaws.AmazonWebServic
      *        Severity (string)
      *        </p>
      *        <p>
-     *        State (string – “INSTALLED”, “INSTALLED_OTHER”, “MISSING”, “NOT_APPLICABLE”, “FAILED”)
+     *        State (string: "INSTALLED", "INSTALLED OTHER", "MISSING", "NOT APPLICABLE", "FAILED")
      *        </p>
      *        <p>
      *        InstalledTime (DateTime)
@@ -256,7 +256,7 @@ public class DescribeInstancePatchesResult extends com.amazonaws.AmazonWebServic
      * Severity (string)
      * </p>
      * <p>
-     * State (string – “INSTALLED”, “INSTALLED_OTHER”, “MISSING”, “NOT_APPLICABLE”, “FAILED”)
+     * State (string: "INSTALLED", "INSTALLED OTHER", "MISSING", "NOT APPLICABLE", "FAILED")
      * </p>
      * <p>
      * InstalledTime (DateTime)
@@ -280,7 +280,7 @@ public class DescribeInstancePatchesResult extends com.amazonaws.AmazonWebServic
      *        Severity (string)
      *        </p>
      *        <p>
-     *        State (string – “INSTALLED”, “INSTALLED_OTHER”, “MISSING”, “NOT_APPLICABLE”, “FAILED”)
+     *        State (string: "INSTALLED", "INSTALLED OTHER", "MISSING", "NOT APPLICABLE", "FAILED")
      *        </p>
      *        <p>
      *        InstalledTime (DateTime)

@@ -36,14 +36,14 @@ public class DescribeMaintenanceWindowExecutionsRequest extends com.amazonaws.Am
      * Each entry in the array is a structure containing:
      * </p>
      * <p>
-     * Key (string, 1 ≤ length ≤ 128)
+     * Key (string, between 1 and 128 characters)
      * </p>
      * <p>
-     * Values (array of strings 1 ≤ length ≤ 256)
+     * Values (array of strings, each string is between 1 and 256 characters)
      * </p>
      * <p>
-     * The supported Keys are <code>ExecutedBefore</code> and <code>ExecutedAfter</code> with the value being a
-     * date/time string such as 2016-11-04T05:00:00Z.
+     * The supported Keys are ExecutedBefore and ExecutedAfter with the value being a date/time string such as
+     * 2016-11-04T05:00:00Z.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<MaintenanceWindowFilter> filters;
@@ -106,26 +106,26 @@ public class DescribeMaintenanceWindowExecutionsRequest extends com.amazonaws.Am
      * Each entry in the array is a structure containing:
      * </p>
      * <p>
-     * Key (string, 1 ≤ length ≤ 128)
+     * Key (string, between 1 and 128 characters)
      * </p>
      * <p>
-     * Values (array of strings 1 ≤ length ≤ 256)
+     * Values (array of strings, each string is between 1 and 256 characters)
      * </p>
      * <p>
-     * The supported Keys are <code>ExecutedBefore</code> and <code>ExecutedAfter</code> with the value being a
-     * date/time string such as 2016-11-04T05:00:00Z.
+     * The supported Keys are ExecutedBefore and ExecutedAfter with the value being a date/time string such as
+     * 2016-11-04T05:00:00Z.
      * </p>
      * 
      * @return Each entry in the array is a structure containing:</p>
      *         <p>
-     *         Key (string, 1 ≤ length ≤ 128)
+     *         Key (string, between 1 and 128 characters)
      *         </p>
      *         <p>
-     *         Values (array of strings 1 ≤ length ≤ 256)
+     *         Values (array of strings, each string is between 1 and 256 characters)
      *         </p>
      *         <p>
-     *         The supported Keys are <code>ExecutedBefore</code> and <code>ExecutedAfter</code> with the value being a
-     *         date/time string such as 2016-11-04T05:00:00Z.
+     *         The supported Keys are ExecutedBefore and ExecutedAfter with the value being a date/time string such as
+     *         2016-11-04T05:00:00Z.
      */
 
     public java.util.List<MaintenanceWindowFilter> getFilters() {
@@ -140,27 +140,27 @@ public class DescribeMaintenanceWindowExecutionsRequest extends com.amazonaws.Am
      * Each entry in the array is a structure containing:
      * </p>
      * <p>
-     * Key (string, 1 ≤ length ≤ 128)
+     * Key (string, between 1 and 128 characters)
      * </p>
      * <p>
-     * Values (array of strings 1 ≤ length ≤ 256)
+     * Values (array of strings, each string is between 1 and 256 characters)
      * </p>
      * <p>
-     * The supported Keys are <code>ExecutedBefore</code> and <code>ExecutedAfter</code> with the value being a
-     * date/time string such as 2016-11-04T05:00:00Z.
+     * The supported Keys are ExecutedBefore and ExecutedAfter with the value being a date/time string such as
+     * 2016-11-04T05:00:00Z.
      * </p>
      * 
      * @param filters
      *        Each entry in the array is a structure containing:</p>
      *        <p>
-     *        Key (string, 1 ≤ length ≤ 128)
+     *        Key (string, between 1 and 128 characters)
      *        </p>
      *        <p>
-     *        Values (array of strings 1 ≤ length ≤ 256)
+     *        Values (array of strings, each string is between 1 and 256 characters)
      *        </p>
      *        <p>
-     *        The supported Keys are <code>ExecutedBefore</code> and <code>ExecutedAfter</code> with the value being a
-     *        date/time string such as 2016-11-04T05:00:00Z.
+     *        The supported Keys are ExecutedBefore and ExecutedAfter with the value being a date/time string such as
+     *        2016-11-04T05:00:00Z.
      */
 
     public void setFilters(java.util.Collection<MaintenanceWindowFilter> filters) {
@@ -177,14 +177,14 @@ public class DescribeMaintenanceWindowExecutionsRequest extends com.amazonaws.Am
      * Each entry in the array is a structure containing:
      * </p>
      * <p>
-     * Key (string, 1 ≤ length ≤ 128)
+     * Key (string, between 1 and 128 characters)
      * </p>
      * <p>
-     * Values (array of strings 1 ≤ length ≤ 256)
+     * Values (array of strings, each string is between 1 and 256 characters)
      * </p>
      * <p>
-     * The supported Keys are <code>ExecutedBefore</code> and <code>ExecutedAfter</code> with the value being a
-     * date/time string such as 2016-11-04T05:00:00Z.
+     * The supported Keys are ExecutedBefore and ExecutedAfter with the value being a date/time string such as
+     * 2016-11-04T05:00:00Z.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -195,14 +195,14 @@ public class DescribeMaintenanceWindowExecutionsRequest extends com.amazonaws.Am
      * @param filters
      *        Each entry in the array is a structure containing:</p>
      *        <p>
-     *        Key (string, 1 ≤ length ≤ 128)
+     *        Key (string, between 1 and 128 characters)
      *        </p>
      *        <p>
-     *        Values (array of strings 1 ≤ length ≤ 256)
+     *        Values (array of strings, each string is between 1 and 256 characters)
      *        </p>
      *        <p>
-     *        The supported Keys are <code>ExecutedBefore</code> and <code>ExecutedAfter</code> with the value being a
-     *        date/time string such as 2016-11-04T05:00:00Z.
+     *        The supported Keys are ExecutedBefore and ExecutedAfter with the value being a date/time string such as
+     *        2016-11-04T05:00:00Z.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,27 +221,27 @@ public class DescribeMaintenanceWindowExecutionsRequest extends com.amazonaws.Am
      * Each entry in the array is a structure containing:
      * </p>
      * <p>
-     * Key (string, 1 ≤ length ≤ 128)
+     * Key (string, between 1 and 128 characters)
      * </p>
      * <p>
-     * Values (array of strings 1 ≤ length ≤ 256)
+     * Values (array of strings, each string is between 1 and 256 characters)
      * </p>
      * <p>
-     * The supported Keys are <code>ExecutedBefore</code> and <code>ExecutedAfter</code> with the value being a
-     * date/time string such as 2016-11-04T05:00:00Z.
+     * The supported Keys are ExecutedBefore and ExecutedAfter with the value being a date/time string such as
+     * 2016-11-04T05:00:00Z.
      * </p>
      * 
      * @param filters
      *        Each entry in the array is a structure containing:</p>
      *        <p>
-     *        Key (string, 1 ≤ length ≤ 128)
+     *        Key (string, between 1 and 128 characters)
      *        </p>
      *        <p>
-     *        Values (array of strings 1 ≤ length ≤ 256)
+     *        Values (array of strings, each string is between 1 and 256 characters)
      *        </p>
      *        <p>
-     *        The supported Keys are <code>ExecutedBefore</code> and <code>ExecutedAfter</code> with the value being a
-     *        date/time string such as 2016-11-04T05:00:00Z.
+     *        The supported Keys are ExecutedBefore and ExecutedAfter with the value being a date/time string such as
+     *        2016-11-04T05:00:00Z.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -90,6 +90,10 @@ public class StepExecutionJsonUnmarshaller implements Unmarshaller<StepExecution
                     context.nextToken();
                     stepExecution.setFailureMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("FailureDetails", targetDepth)) {
+                    context.nextToken();
+                    stepExecution.setFailureDetails(FailureDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -46,10 +46,7 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
     private String documentVersion;
     /**
      * <p>
-     * The cron expression used to schedule the association that you want to update. Supported expressions are every
-     * half, 1, 2, 4, 8 or 12 hour(s); every specified day and time of the week. For example: cron(0 0/30 * 1/1 * ? *)
-     * to run every thirty minutes; cron(0 0 0/4 1/1 * ? *) to run every four hours; and cron(0 0 10 ? * SUN *) to run
-     * every Sunday at 10 a.m.
+     * The cron expression used to schedule the association that you want to update.
      * </p>
      */
     private String scheduleExpression;
@@ -57,11 +54,20 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * An Amazon S3 bucket where you want to store the results of this request.
      * </p>
-     * <p>
-     * <code>"{ \"S3Location\": { \"OutputS3Region\": \"&lt;region&gt;\", \"OutputS3BucketName\": \"bucket name\", \"OutputS3KeyPrefix\": \"folder name\" } }"</code>
-     * </p>
      */
     private InstanceAssociationOutputLocation outputLocation;
+    /**
+     * <p>
+     * The name of the association document.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
+     * The targets of the association.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Target> targets;
 
     /**
      * <p>
@@ -212,17 +218,11 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The cron expression used to schedule the association that you want to update. Supported expressions are every
-     * half, 1, 2, 4, 8 or 12 hour(s); every specified day and time of the week. For example: cron(0 0/30 * 1/1 * ? *)
-     * to run every thirty minutes; cron(0 0 0/4 1/1 * ? *) to run every four hours; and cron(0 0 10 ? * SUN *) to run
-     * every Sunday at 10 a.m.
+     * The cron expression used to schedule the association that you want to update.
      * </p>
      * 
      * @param scheduleExpression
-     *        The cron expression used to schedule the association that you want to update. Supported expressions are
-     *        every half, 1, 2, 4, 8 or 12 hour(s); every specified day and time of the week. For example: cron(0 0/30 *
-     *        1/1 * ? *) to run every thirty minutes; cron(0 0 0/4 1/1 * ? *) to run every four hours; and cron(0 0 10 ?
-     *        * SUN *) to run every Sunday at 10 a.m.
+     *        The cron expression used to schedule the association that you want to update.
      */
 
     public void setScheduleExpression(String scheduleExpression) {
@@ -231,16 +231,10 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The cron expression used to schedule the association that you want to update. Supported expressions are every
-     * half, 1, 2, 4, 8 or 12 hour(s); every specified day and time of the week. For example: cron(0 0/30 * 1/1 * ? *)
-     * to run every thirty minutes; cron(0 0 0/4 1/1 * ? *) to run every four hours; and cron(0 0 10 ? * SUN *) to run
-     * every Sunday at 10 a.m.
+     * The cron expression used to schedule the association that you want to update.
      * </p>
      * 
-     * @return The cron expression used to schedule the association that you want to update. Supported expressions are
-     *         every half, 1, 2, 4, 8 or 12 hour(s); every specified day and time of the week. For example: cron(0 0/30
-     *         * 1/1 * ? *) to run every thirty minutes; cron(0 0 0/4 1/1 * ? *) to run every four hours; and cron(0 0
-     *         10 ? * SUN *) to run every Sunday at 10 a.m.
+     * @return The cron expression used to schedule the association that you want to update.
      */
 
     public String getScheduleExpression() {
@@ -249,17 +243,11 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The cron expression used to schedule the association that you want to update. Supported expressions are every
-     * half, 1, 2, 4, 8 or 12 hour(s); every specified day and time of the week. For example: cron(0 0/30 * 1/1 * ? *)
-     * to run every thirty minutes; cron(0 0 0/4 1/1 * ? *) to run every four hours; and cron(0 0 10 ? * SUN *) to run
-     * every Sunday at 10 a.m.
+     * The cron expression used to schedule the association that you want to update.
      * </p>
      * 
      * @param scheduleExpression
-     *        The cron expression used to schedule the association that you want to update. Supported expressions are
-     *        every half, 1, 2, 4, 8 or 12 hour(s); every specified day and time of the week. For example: cron(0 0/30 *
-     *        1/1 * ? *) to run every thirty minutes; cron(0 0 0/4 1/1 * ? *) to run every four hours; and cron(0 0 10 ?
-     *        * SUN *) to run every Sunday at 10 a.m.
+     *        The cron expression used to schedule the association that you want to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -272,14 +260,9 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * An Amazon S3 bucket where you want to store the results of this request.
      * </p>
-     * <p>
-     * <code>"{ \"S3Location\": { \"OutputS3Region\": \"&lt;region&gt;\", \"OutputS3BucketName\": \"bucket name\", \"OutputS3KeyPrefix\": \"folder name\" } }"</code>
-     * </p>
      * 
      * @param outputLocation
-     *        An Amazon S3 bucket where you want to store the results of this request.</p>
-     *        <p>
-     *        <code>"{ \"S3Location\": { \"OutputS3Region\": \"&lt;region&gt;\", \"OutputS3BucketName\": \"bucket name\", \"OutputS3KeyPrefix\": \"folder name\" } }"</code>
+     *        An Amazon S3 bucket where you want to store the results of this request.
      */
 
     public void setOutputLocation(InstanceAssociationOutputLocation outputLocation) {
@@ -290,13 +273,8 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * An Amazon S3 bucket where you want to store the results of this request.
      * </p>
-     * <p>
-     * <code>"{ \"S3Location\": { \"OutputS3Region\": \"&lt;region&gt;\", \"OutputS3BucketName\": \"bucket name\", \"OutputS3KeyPrefix\": \"folder name\" } }"</code>
-     * </p>
      * 
-     * @return An Amazon S3 bucket where you want to store the results of this request.</p>
-     *         <p>
-     *         <code>"{ \"S3Location\": { \"OutputS3Region\": \"&lt;region&gt;\", \"OutputS3BucketName\": \"bucket name\", \"OutputS3KeyPrefix\": \"folder name\" } }"</code>
+     * @return An Amazon S3 bucket where you want to store the results of this request.
      */
 
     public InstanceAssociationOutputLocation getOutputLocation() {
@@ -307,19 +285,127 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * An Amazon S3 bucket where you want to store the results of this request.
      * </p>
-     * <p>
-     * <code>"{ \"S3Location\": { \"OutputS3Region\": \"&lt;region&gt;\", \"OutputS3BucketName\": \"bucket name\", \"OutputS3KeyPrefix\": \"folder name\" } }"</code>
-     * </p>
      * 
      * @param outputLocation
-     *        An Amazon S3 bucket where you want to store the results of this request.</p>
-     *        <p>
-     *        <code>"{ \"S3Location\": { \"OutputS3Region\": \"&lt;region&gt;\", \"OutputS3BucketName\": \"bucket name\", \"OutputS3KeyPrefix\": \"folder name\" } }"</code>
+     *        An Amazon S3 bucket where you want to store the results of this request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateAssociationRequest withOutputLocation(InstanceAssociationOutputLocation outputLocation) {
         setOutputLocation(outputLocation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the association document.
+     * </p>
+     * 
+     * @param name
+     *        The name of the association document.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The name of the association document.
+     * </p>
+     * 
+     * @return The name of the association document.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The name of the association document.
+     * </p>
+     * 
+     * @param name
+     *        The name of the association document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAssociationRequest withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The targets of the association.
+     * </p>
+     * 
+     * @return The targets of the association.
+     */
+
+    public java.util.List<Target> getTargets() {
+        if (targets == null) {
+            targets = new com.amazonaws.internal.SdkInternalList<Target>();
+        }
+        return targets;
+    }
+
+    /**
+     * <p>
+     * The targets of the association.
+     * </p>
+     * 
+     * @param targets
+     *        The targets of the association.
+     */
+
+    public void setTargets(java.util.Collection<Target> targets) {
+        if (targets == null) {
+            this.targets = null;
+            return;
+        }
+
+        this.targets = new com.amazonaws.internal.SdkInternalList<Target>(targets);
+    }
+
+    /**
+     * <p>
+     * The targets of the association.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTargets(java.util.Collection)} or {@link #withTargets(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param targets
+     *        The targets of the association.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAssociationRequest withTargets(Target... targets) {
+        if (this.targets == null) {
+            setTargets(new com.amazonaws.internal.SdkInternalList<Target>(targets.length));
+        }
+        for (Target ele : targets) {
+            this.targets.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The targets of the association.
+     * </p>
+     * 
+     * @param targets
+     *        The targets of the association.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAssociationRequest withTargets(java.util.Collection<Target> targets) {
+        setTargets(targets);
         return this;
     }
 
@@ -343,7 +429,11 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getScheduleExpression() != null)
             sb.append("ScheduleExpression: ").append(getScheduleExpression()).append(",");
         if (getOutputLocation() != null)
-            sb.append("OutputLocation: ").append(getOutputLocation());
+            sb.append("OutputLocation: ").append(getOutputLocation()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getTargets() != null)
+            sb.append("Targets: ").append(getTargets());
         sb.append("}");
         return sb.toString();
     }
@@ -378,6 +468,14 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getOutputLocation() != null && other.getOutputLocation().equals(this.getOutputLocation()) == false)
             return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getTargets() == null ^ this.getTargets() == null)
+            return false;
+        if (other.getTargets() != null && other.getTargets().equals(this.getTargets()) == false)
+            return false;
         return true;
     }
 
@@ -391,6 +489,8 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getDocumentVersion() == null) ? 0 : getDocumentVersion().hashCode());
         hashCode = prime * hashCode + ((getScheduleExpression() == null) ? 0 : getScheduleExpression().hashCode());
         hashCode = prime * hashCode + ((getOutputLocation() == null) ? 0 : getOutputLocation().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getTargets() == null) ? 0 : getTargets().hashCode());
         return hashCode;
     }
 

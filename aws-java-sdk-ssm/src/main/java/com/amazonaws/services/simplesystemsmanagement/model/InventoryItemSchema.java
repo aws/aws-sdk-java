@@ -30,10 +30,9 @@ public class InventoryItemSchema implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom inventory
-     * type names will start with <code>Custom</code>. Default inventory item types include the following:
-     * <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>,
-     * <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.
+     * The name of the inventory type. Default inventory item type names start with AWS. Custom inventory type names
+     * will start with Custom. Default inventory item types include the following: AWS:AWSComponent, AWS:Application,
+     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.
      * </p>
      */
     private String typeName;
@@ -52,17 +51,15 @@ public class InventoryItemSchema implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom inventory
-     * type names will start with <code>Custom</code>. Default inventory item types include the following:
-     * <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>,
-     * <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.
+     * The name of the inventory type. Default inventory item type names start with AWS. Custom inventory type names
+     * will start with Custom. Default inventory item types include the following: AWS:AWSComponent, AWS:Application,
+     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.
      * </p>
      * 
      * @param typeName
-     *        The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom
-     *        inventory type names will start with <code>Custom</code>. Default inventory item types include the
-     *        following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>,
-     *        <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.
+     *        The name of the inventory type. Default inventory item type names start with AWS. Custom inventory type
+     *        names will start with Custom. Default inventory item types include the following: AWS:AWSComponent,
+     *        AWS:Application, AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.
      */
 
     public void setTypeName(String typeName) {
@@ -71,16 +68,14 @@ public class InventoryItemSchema implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom inventory
-     * type names will start with <code>Custom</code>. Default inventory item types include the following:
-     * <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>,
-     * <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.
+     * The name of the inventory type. Default inventory item type names start with AWS. Custom inventory type names
+     * will start with Custom. Default inventory item types include the following: AWS:AWSComponent, AWS:Application,
+     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.
      * </p>
      * 
-     * @return The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom
-     *         inventory type names will start with <code>Custom</code>. Default inventory item types include the
-     *         following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>,
-     *         <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.
+     * @return The name of the inventory type. Default inventory item type names start with AWS. Custom inventory type
+     *         names will start with Custom. Default inventory item types include the following: AWS:AWSComponent,
+     *         AWS:Application, AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.
      */
 
     public String getTypeName() {
@@ -89,17 +84,15 @@ public class InventoryItemSchema implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom inventory
-     * type names will start with <code>Custom</code>. Default inventory item types include the following:
-     * <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>,
-     * <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.
+     * The name of the inventory type. Default inventory item type names start with AWS. Custom inventory type names
+     * will start with Custom. Default inventory item types include the following: AWS:AWSComponent, AWS:Application,
+     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.
      * </p>
      * 
      * @param typeName
-     *        The name of the inventory type. Default inventory item type names start with <code>AWS</code>. Custom
-     *        inventory type names will start with <code>Custom</code>. Default inventory item types include the
-     *        following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>,
-     *        <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.
+     *        The name of the inventory type. Default inventory item type names start with AWS. Custom inventory type
+     *        names will start with Custom. Default inventory item types include the following: AWS:AWSComponent,
+     *        AWS:Application, AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

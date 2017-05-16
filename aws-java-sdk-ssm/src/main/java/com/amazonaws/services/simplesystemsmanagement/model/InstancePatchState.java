@@ -74,7 +74,7 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
     private Integer installedOtherCount;
     /**
      * <p>
-     * The number of patches from the patch baseline that are applicable for the instance but aren’t currently
+     * The number of patches from the patch baseline that are applicable for the instance but aren't currently
      * installed.
      * </p>
      */
@@ -88,7 +88,7 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
     private Integer failedCount;
     /**
      * <p>
-     * The number of patches from the patch baseline that aren’t applicable for the instance and hence aren’t installed
+     * The number of patches from the patch baseline that aren't applicable for the instance and hence aren't installed
      * on the instance.
      * </p>
      */
@@ -398,12 +398,12 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of patches from the patch baseline that are applicable for the instance but aren’t currently
+     * The number of patches from the patch baseline that are applicable for the instance but aren't currently
      * installed.
      * </p>
      * 
      * @param missingCount
-     *        The number of patches from the patch baseline that are applicable for the instance but aren’t currently
+     *        The number of patches from the patch baseline that are applicable for the instance but aren't currently
      *        installed.
      */
 
@@ -413,11 +413,11 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of patches from the patch baseline that are applicable for the instance but aren’t currently
+     * The number of patches from the patch baseline that are applicable for the instance but aren't currently
      * installed.
      * </p>
      * 
-     * @return The number of patches from the patch baseline that are applicable for the instance but aren’t currently
+     * @return The number of patches from the patch baseline that are applicable for the instance but aren't currently
      *         installed.
      */
 
@@ -427,12 +427,12 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of patches from the patch baseline that are applicable for the instance but aren’t currently
+     * The number of patches from the patch baseline that are applicable for the instance but aren't currently
      * installed.
      * </p>
      * 
      * @param missingCount
-     *        The number of patches from the patch baseline that are applicable for the instance but aren’t currently
+     *        The number of patches from the patch baseline that are applicable for the instance but aren't currently
      *        installed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -490,12 +490,12 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of patches from the patch baseline that aren’t applicable for the instance and hence aren’t installed
+     * The number of patches from the patch baseline that aren't applicable for the instance and hence aren't installed
      * on the instance.
      * </p>
      * 
      * @param notApplicableCount
-     *        The number of patches from the patch baseline that aren’t applicable for the instance and hence aren’t
+     *        The number of patches from the patch baseline that aren't applicable for the instance and hence aren't
      *        installed on the instance.
      */
 
@@ -505,11 +505,11 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of patches from the patch baseline that aren’t applicable for the instance and hence aren’t installed
+     * The number of patches from the patch baseline that aren't applicable for the instance and hence aren't installed
      * on the instance.
      * </p>
      * 
-     * @return The number of patches from the patch baseline that aren’t applicable for the instance and hence aren’t
+     * @return The number of patches from the patch baseline that aren't applicable for the instance and hence aren't
      *         installed on the instance.
      */
 
@@ -519,12 +519,12 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of patches from the patch baseline that aren’t applicable for the instance and hence aren’t installed
+     * The number of patches from the patch baseline that aren't applicable for the instance and hence aren't installed
      * on the instance.
      * </p>
      * 
      * @param notApplicableCount
-     *        The number of patches from the patch baseline that aren’t applicable for the instance and hence aren’t
+     *        The number of patches from the patch baseline that aren't applicable for the instance and hence aren't
      *        installed on the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

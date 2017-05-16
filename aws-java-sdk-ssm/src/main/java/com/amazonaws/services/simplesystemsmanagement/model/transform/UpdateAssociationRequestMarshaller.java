@@ -13,7 +13,7 @@
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -39,6 +39,10 @@ public class UpdateAssociationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScheduleExpression").build();
     private static final MarshallingInfo<StructuredPojo> OUTPUTLOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutputLocation").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<List> TARGETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Targets").build();
 
     private static final UpdateAssociationRequestMarshaller instance = new UpdateAssociationRequestMarshaller();
 
@@ -61,6 +65,8 @@ public class UpdateAssociationRequestMarshaller {
             protocolMarshaller.marshall(updateAssociationRequest.getDocumentVersion(), DOCUMENTVERSION_BINDING);
             protocolMarshaller.marshall(updateAssociationRequest.getScheduleExpression(), SCHEDULEEXPRESSION_BINDING);
             protocolMarshaller.marshall(updateAssociationRequest.getOutputLocation(), OUTPUTLOCATION_BINDING);
+            protocolMarshaller.marshall(updateAssociationRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(updateAssociationRequest.getTargets(), TARGETS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

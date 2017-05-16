@@ -1,7 +1,12 @@
+# __1.11.129__ __2017-05-15__
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - UpdateAssociation API now supports updating document name and targets of an association. GetAutomationExecution API can return FailureDetails as an optional field to the StepExecution Object, which contains failure type, failure stage as well as other failure related information for a failed step.
+
 # __1.11.128__ __2017-05-11__
 ## __AWS Organizations__
   - ### Features
-    - AWS Organizations APIs that return an Account object now include the email address associated with the account?s root user.
+    - AWS Organizations APIs that return an Account object now include the email address associated with the account's root user.
 
 ## __Amazon Lex Model Building Service__
   - ### Features

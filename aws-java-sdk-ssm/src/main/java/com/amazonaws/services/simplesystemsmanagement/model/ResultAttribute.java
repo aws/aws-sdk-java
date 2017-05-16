@@ -30,21 +30,19 @@ public class ResultAttribute implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Name of the inventory item type. Valid value: “AWS:InstanceInformation”. Default Value:
-     * “AWS:InstanceInformation”.
+     * Name of the inventory item type. Valid value: AWS:InstanceInformation. Default Value: AWS:InstanceInformation.
      * </p>
      */
     private String typeName;
 
     /**
      * <p>
-     * Name of the inventory item type. Valid value: “AWS:InstanceInformation”. Default Value:
-     * “AWS:InstanceInformation”.
+     * Name of the inventory item type. Valid value: AWS:InstanceInformation. Default Value: AWS:InstanceInformation.
      * </p>
      * 
      * @param typeName
-     *        Name of the inventory item type. Valid value: “AWS:InstanceInformation”. Default Value:
-     *        “AWS:InstanceInformation”.
+     *        Name of the inventory item type. Valid value: AWS:InstanceInformation. Default Value:
+     *        AWS:InstanceInformation.
      */
 
     public void setTypeName(String typeName) {
@@ -53,12 +51,11 @@ public class ResultAttribute implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Name of the inventory item type. Valid value: “AWS:InstanceInformation”. Default Value:
-     * “AWS:InstanceInformation”.
+     * Name of the inventory item type. Valid value: AWS:InstanceInformation. Default Value: AWS:InstanceInformation.
      * </p>
      * 
-     * @return Name of the inventory item type. Valid value: “AWS:InstanceInformation”. Default Value:
-     *         “AWS:InstanceInformation”.
+     * @return Name of the inventory item type. Valid value: AWS:InstanceInformation. Default Value:
+     *         AWS:InstanceInformation.
      */
 
     public String getTypeName() {
@@ -67,13 +64,12 @@ public class ResultAttribute implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Name of the inventory item type. Valid value: “AWS:InstanceInformation”. Default Value:
-     * “AWS:InstanceInformation”.
+     * Name of the inventory item type. Valid value: AWS:InstanceInformation. Default Value: AWS:InstanceInformation.
      * </p>
      * 
      * @param typeName
-     *        Name of the inventory item type. Valid value: “AWS:InstanceInformation”. Default Value:
-     *        “AWS:InstanceInformation”.
+     *        Name of the inventory item type. Valid value: AWS:InstanceInformation. Default Value:
+     *        AWS:InstanceInformation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

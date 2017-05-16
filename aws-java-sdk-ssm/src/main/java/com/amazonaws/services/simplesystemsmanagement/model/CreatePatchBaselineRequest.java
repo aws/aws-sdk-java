@@ -63,7 +63,7 @@ public class CreatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
     private String description;
     /**
      * <p>
-     * Caller-provided idempotency token.
+     * User-provided idempotency token.
      * </p>
      */
     private String clientToken;
@@ -376,11 +376,11 @@ public class CreatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Caller-provided idempotency token.
+     * User-provided idempotency token.
      * </p>
      * 
      * @param clientToken
-     *        Caller-provided idempotency token.
+     *        User-provided idempotency token.
      */
 
     public void setClientToken(String clientToken) {
@@ -389,10 +389,10 @@ public class CreatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Caller-provided idempotency token.
+     * User-provided idempotency token.
      * </p>
      * 
-     * @return Caller-provided idempotency token.
+     * @return User-provided idempotency token.
      */
 
     public String getClientToken() {
@@ -401,11 +401,11 @@ public class CreatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Caller-provided idempotency token.
+     * User-provided idempotency token.
      * </p>
      * 
      * @param clientToken
-     *        Caller-provided idempotency token.
+     *        User-provided idempotency token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
