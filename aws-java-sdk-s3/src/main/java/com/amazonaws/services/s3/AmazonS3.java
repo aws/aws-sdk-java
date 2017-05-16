@@ -3175,7 +3175,7 @@ public interface AmazonS3 extends S3DirectSpi {
 
     /**
      * Gets the lifecycle configuration for the specified bucket, or null if the
-     * specified bucket does not exists or if no configuration has been
+     * specified bucket does not exist or if no configuration has been
      * established.
      *
      * @param bucketName
@@ -3189,7 +3189,7 @@ public interface AmazonS3 extends S3DirectSpi {
 
     /**
      * Gets the lifecycle configuration for the specified bucket, or null if the
-     * specified bucket does not exists or if no configuration has been
+     * specified bucket does not exist or if no configuration has been
      * established.
      *
      * @param getBucketLifecycleConfigurationRequest
