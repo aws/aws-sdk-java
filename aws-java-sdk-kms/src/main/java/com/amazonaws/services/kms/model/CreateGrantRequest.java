@@ -53,8 +53,8 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * To specify the principal, use the <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a>
-     * of an AWS principal. Valid AWS principals include AWS accounts (root), IAM users, federated users, and assumed
-     * role users. For examples of the ARN syntax to use for specifying a principal, see <a
+     * of an AWS principal. Valid AWS principals include AWS accounts (root), IAM users, IAM roles, federated users, and
+     * assumed role users. For examples of the ARN syntax to use for specifying a principal, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS Identity and
      * Access Management (IAM)</a> in the Example ARNs section of the <i>AWS General Reference</i>.
      * </p>
@@ -256,8 +256,8 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * To specify the principal, use the <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a>
-     * of an AWS principal. Valid AWS principals include AWS accounts (root), IAM users, federated users, and assumed
-     * role users. For examples of the ARN syntax to use for specifying a principal, see <a
+     * of an AWS principal. Valid AWS principals include AWS accounts (root), IAM users, IAM roles, federated users, and
+     * assumed role users. For examples of the ARN syntax to use for specifying a principal, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS Identity and
      * Access Management (IAM)</a> in the Example ARNs section of the <i>AWS General Reference</i>.
      * </p>
@@ -267,9 +267,9 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        To specify the principal, use the <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
-     *        (ARN)</a> of an AWS principal. Valid AWS principals include AWS accounts (root), IAM users, federated
-     *        users, and assumed role users. For examples of the ARN syntax to use for specifying a principal, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     *        (ARN)</a> of an AWS principal. Valid AWS principals include AWS accounts (root), IAM users, IAM roles,
+     *        federated users, and assumed role users. For examples of the ARN syntax to use for specifying a principal,
+     *        see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
      *        Identity and Access Management (IAM)</a> in the Example ARNs section of the <i>AWS General Reference</i>.
      */
 
@@ -284,8 +284,8 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * To specify the principal, use the <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a>
-     * of an AWS principal. Valid AWS principals include AWS accounts (root), IAM users, federated users, and assumed
-     * role users. For examples of the ARN syntax to use for specifying a principal, see <a
+     * of an AWS principal. Valid AWS principals include AWS accounts (root), IAM users, IAM roles, federated users, and
+     * assumed role users. For examples of the ARN syntax to use for specifying a principal, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS Identity and
      * Access Management (IAM)</a> in the Example ARNs section of the <i>AWS General Reference</i>.
      * </p>
@@ -294,8 +294,9 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <p>
      *         To specify the principal, use the <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
-     *         (ARN)</a> of an AWS principal. Valid AWS principals include AWS accounts (root), IAM users, federated
-     *         users, and assumed role users. For examples of the ARN syntax to use for specifying a principal, see <a
+     *         (ARN)</a> of an AWS principal. Valid AWS principals include AWS accounts (root), IAM users, IAM roles,
+     *         federated users, and assumed role users. For examples of the ARN syntax to use for specifying a
+     *         principal, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
      *         Identity and Access Management (IAM)</a> in the Example ARNs section of the <i>AWS General Reference</i>.
      */
@@ -311,8 +312,8 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * To specify the principal, use the <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a>
-     * of an AWS principal. Valid AWS principals include AWS accounts (root), IAM users, federated users, and assumed
-     * role users. For examples of the ARN syntax to use for specifying a principal, see <a
+     * of an AWS principal. Valid AWS principals include AWS accounts (root), IAM users, IAM roles, federated users, and
+     * assumed role users. For examples of the ARN syntax to use for specifying a principal, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS Identity and
      * Access Management (IAM)</a> in the Example ARNs section of the <i>AWS General Reference</i>.
      * </p>
@@ -322,9 +323,9 @@ public class CreateGrantRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        To specify the principal, use the <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
-     *        (ARN)</a> of an AWS principal. Valid AWS principals include AWS accounts (root), IAM users, federated
-     *        users, and assumed role users. For examples of the ARN syntax to use for specifying a principal, see <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     *        (ARN)</a> of an AWS principal. Valid AWS principals include AWS accounts (root), IAM users, IAM roles,
+     *        federated users, and assumed role users. For examples of the ARN syntax to use for specifying a principal,
+     *        see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
      *        Identity and Access Management (IAM)</a> in the Example ARNs section of the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

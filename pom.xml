@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-pom</artifactId>
-  <version>1.11.130-SNAPSHOT</version>
+  <version>1.11.130</version>
   <packaging>pom</packaging>
   <name>AWS SDK for Java</name>
   <description>The Amazon Web Services SDK for Java provides Java APIs
@@ -199,6 +199,7 @@
           <artifactId>maven-javadoc-plugin</artifactId>
           <version>2.9.1</version>
           <configuration>
+            <excludePackageNames>*.transform</excludePackageNames>
             <minmemory>128m</minmemory>
             <maxmemory>1024m</maxmemory>
           </configuration>

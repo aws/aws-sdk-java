@@ -35,6 +35,8 @@ public class DeploymentInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deploymentConfigName").build();
     private static final MarshallingInfo<String> DEPLOYMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deploymentId").build();
+    private static final MarshallingInfo<StructuredPojo> PREVIOUSREVISION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("previousRevision").build();
     private static final MarshallingInfo<StructuredPojo> REVISION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("revision").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -73,6 +75,8 @@ public class DeploymentInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("loadBalancerInfo").build();
     private static final MarshallingInfo<String> ADDITIONALDEPLOYMENTSTATUSINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("additionalDeploymentStatusInfo").build();
+    private static final MarshallingInfo<String> FILEEXISTSBEHAVIOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fileExistsBehavior").build();
 
     private static final DeploymentInfoMarshaller instance = new DeploymentInfoMarshaller();
 
@@ -94,6 +98,7 @@ public class DeploymentInfoMarshaller {
             protocolMarshaller.marshall(deploymentInfo.getDeploymentGroupName(), DEPLOYMENTGROUPNAME_BINDING);
             protocolMarshaller.marshall(deploymentInfo.getDeploymentConfigName(), DEPLOYMENTCONFIGNAME_BINDING);
             protocolMarshaller.marshall(deploymentInfo.getDeploymentId(), DEPLOYMENTID_BINDING);
+            protocolMarshaller.marshall(deploymentInfo.getPreviousRevision(), PREVIOUSREVISION_BINDING);
             protocolMarshaller.marshall(deploymentInfo.getRevision(), REVISION_BINDING);
             protocolMarshaller.marshall(deploymentInfo.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(deploymentInfo.getErrorInformation(), ERRORINFORMATION_BINDING);
@@ -113,6 +118,7 @@ public class DeploymentInfoMarshaller {
             protocolMarshaller.marshall(deploymentInfo.getBlueGreenDeploymentConfiguration(), BLUEGREENDEPLOYMENTCONFIGURATION_BINDING);
             protocolMarshaller.marshall(deploymentInfo.getLoadBalancerInfo(), LOADBALANCERINFO_BINDING);
             protocolMarshaller.marshall(deploymentInfo.getAdditionalDeploymentStatusInfo(), ADDITIONALDEPLOYMENTSTATUSINFO_BINDING);
+            protocolMarshaller.marshall(deploymentInfo.getFileExistsBehavior(), FILEEXISTSBEHAVIOR_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -45,6 +45,8 @@ public class CreateDeploymentRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("autoRollbackConfiguration").build();
     private static final MarshallingInfo<Boolean> UPDATEOUTDATEDINSTANCESONLY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updateOutdatedInstancesOnly").build();
+    private static final MarshallingInfo<String> FILEEXISTSBEHAVIOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fileExistsBehavior").build();
 
     private static final CreateDeploymentRequestMarshaller instance = new CreateDeploymentRequestMarshaller();
 
@@ -71,6 +73,7 @@ public class CreateDeploymentRequestMarshaller {
             protocolMarshaller.marshall(createDeploymentRequest.getTargetInstances(), TARGETINSTANCES_BINDING);
             protocolMarshaller.marshall(createDeploymentRequest.getAutoRollbackConfiguration(), AUTOROLLBACKCONFIGURATION_BINDING);
             protocolMarshaller.marshall(createDeploymentRequest.getUpdateOutdatedInstancesOnly(), UPDATEOUTDATEDINSTANCESONLY_BINDING);
+            protocolMarshaller.marshall(createDeploymentRequest.getFileExistsBehavior(), FILEEXISTSBEHAVIOR_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

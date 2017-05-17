@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the type of deployment, either standard or blue/green, you want to run and whether to route
+ * Information about the type of deployment, either in-place or blue/green, you want to run and whether to route
  * deployment traffic behind a load balancer.
  * </p>
  * 
@@ -31,7 +31,7 @@ public class DeploymentStyle implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Indicates whether to run a standard deployment or a blue/green deployment.
+     * Indicates whether to run an in-place deployment or a blue/green deployment.
      * </p>
      */
     private String deploymentType;
@@ -44,11 +44,11 @@ public class DeploymentStyle implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Indicates whether to run a standard deployment or a blue/green deployment.
+     * Indicates whether to run an in-place deployment or a blue/green deployment.
      * </p>
      * 
      * @param deploymentType
-     *        Indicates whether to run a standard deployment or a blue/green deployment.
+     *        Indicates whether to run an in-place deployment or a blue/green deployment.
      * @see DeploymentType
      */
 
@@ -58,10 +58,10 @@ public class DeploymentStyle implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Indicates whether to run a standard deployment or a blue/green deployment.
+     * Indicates whether to run an in-place deployment or a blue/green deployment.
      * </p>
      * 
-     * @return Indicates whether to run a standard deployment or a blue/green deployment.
+     * @return Indicates whether to run an in-place deployment or a blue/green deployment.
      * @see DeploymentType
      */
 
@@ -71,11 +71,11 @@ public class DeploymentStyle implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Indicates whether to run a standard deployment or a blue/green deployment.
+     * Indicates whether to run an in-place deployment or a blue/green deployment.
      * </p>
      * 
      * @param deploymentType
-     *        Indicates whether to run a standard deployment or a blue/green deployment.
+     *        Indicates whether to run an in-place deployment or a blue/green deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeploymentType
      */
@@ -87,11 +87,11 @@ public class DeploymentStyle implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Indicates whether to run a standard deployment or a blue/green deployment.
+     * Indicates whether to run an in-place deployment or a blue/green deployment.
      * </p>
      * 
      * @param deploymentType
-     *        Indicates whether to run a standard deployment or a blue/green deployment.
+     *        Indicates whether to run an in-place deployment or a blue/green deployment.
      * @see DeploymentType
      */
 
@@ -101,11 +101,11 @@ public class DeploymentStyle implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Indicates whether to run a standard deployment or a blue/green deployment.
+     * Indicates whether to run an in-place deployment or a blue/green deployment.
      * </p>
      * 
      * @param deploymentType
-     *        Indicates whether to run a standard deployment or a blue/green deployment.
+     *        Indicates whether to run an in-place deployment or a blue/green deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeploymentType
      */

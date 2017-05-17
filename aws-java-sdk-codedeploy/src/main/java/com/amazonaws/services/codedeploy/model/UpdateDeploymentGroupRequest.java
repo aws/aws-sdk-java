@@ -102,7 +102,7 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     private AutoRollbackConfiguration autoRollbackConfiguration;
     /**
      * <p>
-     * Information about the type of deployment, either standard or blue/green, you want to run and whether to route
+     * Information about the type of deployment, either in-place or blue/green, you want to run and whether to route
      * deployment traffic behind a load balancer.
      * </p>
      */
@@ -115,7 +115,7 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     private BlueGreenDeploymentConfiguration blueGreenDeploymentConfiguration;
     /**
      * <p>
-     * Information about the load balancer used in a blue/green deployment.
+     * Information about the load balancer used in a deployment.
      * </p>
      */
     private LoadBalancerInfo loadBalancerInfo;
@@ -745,12 +745,12 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Information about the type of deployment, either standard or blue/green, you want to run and whether to route
+     * Information about the type of deployment, either in-place or blue/green, you want to run and whether to route
      * deployment traffic behind a load balancer.
      * </p>
      * 
      * @param deploymentStyle
-     *        Information about the type of deployment, either standard or blue/green, you want to run and whether to
+     *        Information about the type of deployment, either in-place or blue/green, you want to run and whether to
      *        route deployment traffic behind a load balancer.
      */
 
@@ -760,11 +760,11 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Information about the type of deployment, either standard or blue/green, you want to run and whether to route
+     * Information about the type of deployment, either in-place or blue/green, you want to run and whether to route
      * deployment traffic behind a load balancer.
      * </p>
      * 
-     * @return Information about the type of deployment, either standard or blue/green, you want to run and whether to
+     * @return Information about the type of deployment, either in-place or blue/green, you want to run and whether to
      *         route deployment traffic behind a load balancer.
      */
 
@@ -774,12 +774,12 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Information about the type of deployment, either standard or blue/green, you want to run and whether to route
+     * Information about the type of deployment, either in-place or blue/green, you want to run and whether to route
      * deployment traffic behind a load balancer.
      * </p>
      * 
      * @param deploymentStyle
-     *        Information about the type of deployment, either standard or blue/green, you want to run and whether to
+     *        Information about the type of deployment, either in-place or blue/green, you want to run and whether to
      *        route deployment traffic behind a load balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -831,11 +831,11 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Information about the load balancer used in a blue/green deployment.
+     * Information about the load balancer used in a deployment.
      * </p>
      * 
      * @param loadBalancerInfo
-     *        Information about the load balancer used in a blue/green deployment.
+     *        Information about the load balancer used in a deployment.
      */
 
     public void setLoadBalancerInfo(LoadBalancerInfo loadBalancerInfo) {
@@ -844,10 +844,10 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Information about the load balancer used in a blue/green deployment.
+     * Information about the load balancer used in a deployment.
      * </p>
      * 
-     * @return Information about the load balancer used in a blue/green deployment.
+     * @return Information about the load balancer used in a deployment.
      */
 
     public LoadBalancerInfo getLoadBalancerInfo() {
@@ -856,11 +856,11 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Information about the load balancer used in a blue/green deployment.
+     * Information about the load balancer used in a deployment.
      * </p>
      * 
      * @param loadBalancerInfo
-     *        Information about the load balancer used in a blue/green deployment.
+     *        Information about the load balancer used in a deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

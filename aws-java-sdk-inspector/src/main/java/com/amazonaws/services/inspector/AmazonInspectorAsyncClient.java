@@ -712,6 +712,39 @@ public class AmazonInspectorAsyncClient extends AmazonInspectorClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetAssessmentReportResult> getAssessmentReportAsync(GetAssessmentReportRequest request) {
+
+        return getAssessmentReportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAssessmentReportResult> getAssessmentReportAsync(final GetAssessmentReportRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetAssessmentReportRequest, GetAssessmentReportResult> asyncHandler) {
+        final GetAssessmentReportRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetAssessmentReportResult>() {
+            @Override
+            public GetAssessmentReportResult call() throws Exception {
+                GetAssessmentReportResult result = null;
+
+                try {
+                    result = executeGetAssessmentReport(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetTelemetryMetadataResult> getTelemetryMetadataAsync(GetTelemetryMetadataRequest request) {
 
         return getTelemetryMetadataAsync(request, null);

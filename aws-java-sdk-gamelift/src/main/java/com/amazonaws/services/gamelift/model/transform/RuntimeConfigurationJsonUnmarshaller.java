@@ -53,6 +53,14 @@ public class RuntimeConfigurationJsonUnmarshaller implements Unmarshaller<Runtim
                     runtimeConfiguration.setServerProcesses(new ListUnmarshaller<ServerProcess>(ServerProcessJsonUnmarshaller.getInstance())
                             .unmarshall(context));
                 }
+                if (context.testExpression("MaxConcurrentGameSessionActivations", targetDepth)) {
+                    context.nextToken();
+                    runtimeConfiguration.setMaxConcurrentGameSessionActivations(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("GameSessionActivationTimeoutSeconds", targetDepth)) {
+                    context.nextToken();
+                    runtimeConfiguration.setGameSessionActivationTimeoutSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

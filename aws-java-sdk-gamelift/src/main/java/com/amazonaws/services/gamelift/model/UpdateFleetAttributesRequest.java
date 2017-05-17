@@ -72,6 +72,14 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private ResourceCreationLimitPolicy resourceCreationLimitPolicy;
+    /**
+     * <p>
+     * Names of metric groups to include this fleet with. A fleet metric group is used in Amazon CloudWatch to aggregate
+     * metrics from multiple fleets. Use an existing metric group name to add this fleet to the group, or use a new name
+     * to create a new metric group. Currently, a fleet can only be included in one metric group at a time.
+     * </p>
+     */
+    private java.util.List<String> metricGroups;
 
     /**
      * <p>
@@ -447,6 +455,96 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * Names of metric groups to include this fleet with. A fleet metric group is used in Amazon CloudWatch to aggregate
+     * metrics from multiple fleets. Use an existing metric group name to add this fleet to the group, or use a new name
+     * to create a new metric group. Currently, a fleet can only be included in one metric group at a time.
+     * </p>
+     * 
+     * @return Names of metric groups to include this fleet with. A fleet metric group is used in Amazon CloudWatch to
+     *         aggregate metrics from multiple fleets. Use an existing metric group name to add this fleet to the group,
+     *         or use a new name to create a new metric group. Currently, a fleet can only be included in one metric
+     *         group at a time.
+     */
+
+    public java.util.List<String> getMetricGroups() {
+        return metricGroups;
+    }
+
+    /**
+     * <p>
+     * Names of metric groups to include this fleet with. A fleet metric group is used in Amazon CloudWatch to aggregate
+     * metrics from multiple fleets. Use an existing metric group name to add this fleet to the group, or use a new name
+     * to create a new metric group. Currently, a fleet can only be included in one metric group at a time.
+     * </p>
+     * 
+     * @param metricGroups
+     *        Names of metric groups to include this fleet with. A fleet metric group is used in Amazon CloudWatch to
+     *        aggregate metrics from multiple fleets. Use an existing metric group name to add this fleet to the group,
+     *        or use a new name to create a new metric group. Currently, a fleet can only be included in one metric
+     *        group at a time.
+     */
+
+    public void setMetricGroups(java.util.Collection<String> metricGroups) {
+        if (metricGroups == null) {
+            this.metricGroups = null;
+            return;
+        }
+
+        this.metricGroups = new java.util.ArrayList<String>(metricGroups);
+    }
+
+    /**
+     * <p>
+     * Names of metric groups to include this fleet with. A fleet metric group is used in Amazon CloudWatch to aggregate
+     * metrics from multiple fleets. Use an existing metric group name to add this fleet to the group, or use a new name
+     * to create a new metric group. Currently, a fleet can only be included in one metric group at a time.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMetricGroups(java.util.Collection)} or {@link #withMetricGroups(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param metricGroups
+     *        Names of metric groups to include this fleet with. A fleet metric group is used in Amazon CloudWatch to
+     *        aggregate metrics from multiple fleets. Use an existing metric group name to add this fleet to the group,
+     *        or use a new name to create a new metric group. Currently, a fleet can only be included in one metric
+     *        group at a time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFleetAttributesRequest withMetricGroups(String... metricGroups) {
+        if (this.metricGroups == null) {
+            setMetricGroups(new java.util.ArrayList<String>(metricGroups.length));
+        }
+        for (String ele : metricGroups) {
+            this.metricGroups.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Names of metric groups to include this fleet with. A fleet metric group is used in Amazon CloudWatch to aggregate
+     * metrics from multiple fleets. Use an existing metric group name to add this fleet to the group, or use a new name
+     * to create a new metric group. Currently, a fleet can only be included in one metric group at a time.
+     * </p>
+     * 
+     * @param metricGroups
+     *        Names of metric groups to include this fleet with. A fleet metric group is used in Amazon CloudWatch to
+     *        aggregate metrics from multiple fleets. Use an existing metric group name to add this fleet to the group,
+     *        or use a new name to create a new metric group. Currently, a fleet can only be included in one metric
+     *        group at a time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFleetAttributesRequest withMetricGroups(java.util.Collection<String> metricGroups) {
+        setMetricGroups(metricGroups);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -466,7 +564,9 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
         if (getNewGameSessionProtectionPolicy() != null)
             sb.append("NewGameSessionProtectionPolicy: ").append(getNewGameSessionProtectionPolicy()).append(",");
         if (getResourceCreationLimitPolicy() != null)
-            sb.append("ResourceCreationLimitPolicy: ").append(getResourceCreationLimitPolicy());
+            sb.append("ResourceCreationLimitPolicy: ").append(getResourceCreationLimitPolicy()).append(",");
+        if (getMetricGroups() != null)
+            sb.append("MetricGroups: ").append(getMetricGroups());
         sb.append("}");
         return sb.toString();
     }
@@ -502,6 +602,10 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getResourceCreationLimitPolicy() != null && other.getResourceCreationLimitPolicy().equals(this.getResourceCreationLimitPolicy()) == false)
             return false;
+        if (other.getMetricGroups() == null ^ this.getMetricGroups() == null)
+            return false;
+        if (other.getMetricGroups() != null && other.getMetricGroups().equals(this.getMetricGroups()) == false)
+            return false;
         return true;
     }
 
@@ -515,6 +619,7 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getNewGameSessionProtectionPolicy() == null) ? 0 : getNewGameSessionProtectionPolicy().hashCode());
         hashCode = prime * hashCode + ((getResourceCreationLimitPolicy() == null) ? 0 : getResourceCreationLimitPolicy().hashCode());
+        hashCode = prime * hashCode + ((getMetricGroups() == null) ? 0 : getMetricGroups().hashCode());
         return hashCode;
     }
 

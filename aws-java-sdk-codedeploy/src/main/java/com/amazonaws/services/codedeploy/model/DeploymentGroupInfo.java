@@ -102,7 +102,7 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
     private AutoRollbackConfiguration autoRollbackConfiguration;
     /**
      * <p>
-     * Information about the type of deployment, either standard or blue/green, you want to run and whether to route
+     * Information about the type of deployment, either in-place or blue/green, you want to run and whether to route
      * deployment traffic behind a load balancer.
      * </p>
      */
@@ -115,7 +115,7 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
     private BlueGreenDeploymentConfiguration blueGreenDeploymentConfiguration;
     /**
      * <p>
-     * Information about the load balancer to use in a blue/green deployment.
+     * Information about the load balancer to use in a deployment.
      * </p>
      */
     private LoadBalancerInfo loadBalancerInfo;
@@ -734,12 +734,12 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Information about the type of deployment, either standard or blue/green, you want to run and whether to route
+     * Information about the type of deployment, either in-place or blue/green, you want to run and whether to route
      * deployment traffic behind a load balancer.
      * </p>
      * 
      * @param deploymentStyle
-     *        Information about the type of deployment, either standard or blue/green, you want to run and whether to
+     *        Information about the type of deployment, either in-place or blue/green, you want to run and whether to
      *        route deployment traffic behind a load balancer.
      */
 
@@ -749,11 +749,11 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Information about the type of deployment, either standard or blue/green, you want to run and whether to route
+     * Information about the type of deployment, either in-place or blue/green, you want to run and whether to route
      * deployment traffic behind a load balancer.
      * </p>
      * 
-     * @return Information about the type of deployment, either standard or blue/green, you want to run and whether to
+     * @return Information about the type of deployment, either in-place or blue/green, you want to run and whether to
      *         route deployment traffic behind a load balancer.
      */
 
@@ -763,12 +763,12 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Information about the type of deployment, either standard or blue/green, you want to run and whether to route
+     * Information about the type of deployment, either in-place or blue/green, you want to run and whether to route
      * deployment traffic behind a load balancer.
      * </p>
      * 
      * @param deploymentStyle
-     *        Information about the type of deployment, either standard or blue/green, you want to run and whether to
+     *        Information about the type of deployment, either in-place or blue/green, you want to run and whether to
      *        route deployment traffic behind a load balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -820,11 +820,11 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Information about the load balancer to use in a blue/green deployment.
+     * Information about the load balancer to use in a deployment.
      * </p>
      * 
      * @param loadBalancerInfo
-     *        Information about the load balancer to use in a blue/green deployment.
+     *        Information about the load balancer to use in a deployment.
      */
 
     public void setLoadBalancerInfo(LoadBalancerInfo loadBalancerInfo) {
@@ -833,10 +833,10 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Information about the load balancer to use in a blue/green deployment.
+     * Information about the load balancer to use in a deployment.
      * </p>
      * 
-     * @return Information about the load balancer to use in a blue/green deployment.
+     * @return Information about the load balancer to use in a deployment.
      */
 
     public LoadBalancerInfo getLoadBalancerInfo() {
@@ -845,11 +845,11 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Information about the load balancer to use in a blue/green deployment.
+     * Information about the load balancer to use in a deployment.
      * </p>
      * 
      * @param loadBalancerInfo
-     *        Information about the load balancer to use in a blue/green deployment.
+     *        Information about the load balancer to use in a deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

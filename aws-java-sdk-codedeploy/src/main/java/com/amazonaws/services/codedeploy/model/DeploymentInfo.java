@@ -54,6 +54,13 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
     private String deploymentId;
     /**
      * <p>
+     * Information about the application revision that was deployed to the deployment group before the most recent
+     * successful deployment.
+     * </p>
+     */
+    private RevisionLocation previousRevision;
+    /**
+     * <p>
      * Information about the location of stored application artifacts and the service from which to retrieve them.
      * </p>
      */
@@ -160,7 +167,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
     private RollbackInfo rollbackInfo;
     /**
      * <p>
-     * Information about the type of deployment, either standard or blue/green, you want to run and whether to route
+     * Information about the type of deployment, either in-place or blue/green, you want to run and whether to route
      * deployment traffic behind a load balancer.
      * </p>
      */
@@ -187,7 +194,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
     private BlueGreenDeploymentConfiguration blueGreenDeploymentConfiguration;
     /**
      * <p>
-     * Information about the load balancer used in this blue/green deployment.
+     * Information about the load balancer used in the deployment.
      * </p>
      */
     private LoadBalancerInfo loadBalancerInfo;
@@ -198,6 +205,31 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String additionalDeploymentStatusInfo;
+    /**
+     * <p>
+     * Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't
+     * part of the previous successful deployment.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OVERWRITE: The version of the file from the application revision currently being deployed replaces the version
+     * already on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String fileExistsBehavior;
 
     /**
      * <p>
@@ -356,6 +388,52 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
 
     public DeploymentInfo withDeploymentId(String deploymentId) {
         setDeploymentId(deploymentId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the application revision that was deployed to the deployment group before the most recent
+     * successful deployment.
+     * </p>
+     * 
+     * @param previousRevision
+     *        Information about the application revision that was deployed to the deployment group before the most
+     *        recent successful deployment.
+     */
+
+    public void setPreviousRevision(RevisionLocation previousRevision) {
+        this.previousRevision = previousRevision;
+    }
+
+    /**
+     * <p>
+     * Information about the application revision that was deployed to the deployment group before the most recent
+     * successful deployment.
+     * </p>
+     * 
+     * @return Information about the application revision that was deployed to the deployment group before the most
+     *         recent successful deployment.
+     */
+
+    public RevisionLocation getPreviousRevision() {
+        return this.previousRevision;
+    }
+
+    /**
+     * <p>
+     * Information about the application revision that was deployed to the deployment group before the most recent
+     * successful deployment.
+     * </p>
+     * 
+     * @param previousRevision
+     *        Information about the application revision that was deployed to the deployment group before the most
+     *        recent successful deployment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeploymentInfo withPreviousRevision(RevisionLocation previousRevision) {
+        setPreviousRevision(previousRevision);
         return this;
     }
 
@@ -1216,12 +1294,12 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the type of deployment, either standard or blue/green, you want to run and whether to route
+     * Information about the type of deployment, either in-place or blue/green, you want to run and whether to route
      * deployment traffic behind a load balancer.
      * </p>
      * 
      * @param deploymentStyle
-     *        Information about the type of deployment, either standard or blue/green, you want to run and whether to
+     *        Information about the type of deployment, either in-place or blue/green, you want to run and whether to
      *        route deployment traffic behind a load balancer.
      */
 
@@ -1231,11 +1309,11 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the type of deployment, either standard or blue/green, you want to run and whether to route
+     * Information about the type of deployment, either in-place or blue/green, you want to run and whether to route
      * deployment traffic behind a load balancer.
      * </p>
      * 
-     * @return Information about the type of deployment, either standard or blue/green, you want to run and whether to
+     * @return Information about the type of deployment, either in-place or blue/green, you want to run and whether to
      *         route deployment traffic behind a load balancer.
      */
 
@@ -1245,12 +1323,12 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the type of deployment, either standard or blue/green, you want to run and whether to route
+     * Information about the type of deployment, either in-place or blue/green, you want to run and whether to route
      * deployment traffic behind a load balancer.
      * </p>
      * 
      * @param deploymentStyle
-     *        Information about the type of deployment, either standard or blue/green, you want to run and whether to
+     *        Information about the type of deployment, either in-place or blue/green, you want to run and whether to
      *        route deployment traffic behind a load balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1410,11 +1488,11 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the load balancer used in this blue/green deployment.
+     * Information about the load balancer used in the deployment.
      * </p>
      * 
      * @param loadBalancerInfo
-     *        Information about the load balancer used in this blue/green deployment.
+     *        Information about the load balancer used in the deployment.
      */
 
     public void setLoadBalancerInfo(LoadBalancerInfo loadBalancerInfo) {
@@ -1423,10 +1501,10 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the load balancer used in this blue/green deployment.
+     * Information about the load balancer used in the deployment.
      * </p>
      * 
-     * @return Information about the load balancer used in this blue/green deployment.
+     * @return Information about the load balancer used in the deployment.
      */
 
     public LoadBalancerInfo getLoadBalancerInfo() {
@@ -1435,11 +1513,11 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the load balancer used in this blue/green deployment.
+     * Information about the load balancer used in the deployment.
      * </p>
      * 
      * @param loadBalancerInfo
-     *        Information about the load balancer used in this blue/green deployment.
+     *        Information about the load balancer used in the deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1495,6 +1573,264 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't
+     * part of the previous successful deployment.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OVERWRITE: The version of the file from the application revision currently being deployed replaces the version
+     * already on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param fileExistsBehavior
+     *        Information about how AWS CodeDeploy handles files that already exist in a deployment target location but
+     *        weren't part of the previous successful deployment.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OVERWRITE: The version of the file from the application revision currently being deployed replaces the
+     *        version already on the instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     *        </p>
+     *        </li>
+     * @see FileExistsBehavior
+     */
+
+    public void setFileExistsBehavior(String fileExistsBehavior) {
+        this.fileExistsBehavior = fileExistsBehavior;
+    }
+
+    /**
+     * <p>
+     * Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't
+     * part of the previous successful deployment.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OVERWRITE: The version of the file from the application revision currently being deployed replaces the version
+     * already on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Information about how AWS CodeDeploy handles files that already exist in a deployment target location but
+     *         weren't part of the previous successful deployment.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OVERWRITE: The version of the file from the application revision currently being deployed replaces the
+     *         version already on the instance.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     *         </p>
+     *         </li>
+     * @see FileExistsBehavior
+     */
+
+    public String getFileExistsBehavior() {
+        return this.fileExistsBehavior;
+    }
+
+    /**
+     * <p>
+     * Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't
+     * part of the previous successful deployment.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OVERWRITE: The version of the file from the application revision currently being deployed replaces the version
+     * already on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param fileExistsBehavior
+     *        Information about how AWS CodeDeploy handles files that already exist in a deployment target location but
+     *        weren't part of the previous successful deployment.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OVERWRITE: The version of the file from the application revision currently being deployed replaces the
+     *        version already on the instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FileExistsBehavior
+     */
+
+    public DeploymentInfo withFileExistsBehavior(String fileExistsBehavior) {
+        setFileExistsBehavior(fileExistsBehavior);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't
+     * part of the previous successful deployment.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OVERWRITE: The version of the file from the application revision currently being deployed replaces the version
+     * already on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param fileExistsBehavior
+     *        Information about how AWS CodeDeploy handles files that already exist in a deployment target location but
+     *        weren't part of the previous successful deployment.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OVERWRITE: The version of the file from the application revision currently being deployed replaces the
+     *        version already on the instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     *        </p>
+     *        </li>
+     * @see FileExistsBehavior
+     */
+
+    public void setFileExistsBehavior(FileExistsBehavior fileExistsBehavior) {
+        this.fileExistsBehavior = fileExistsBehavior.toString();
+    }
+
+    /**
+     * <p>
+     * Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't
+     * part of the previous successful deployment.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OVERWRITE: The version of the file from the application revision currently being deployed replaces the version
+     * already on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param fileExistsBehavior
+     *        Information about how AWS CodeDeploy handles files that already exist in a deployment target location but
+     *        weren't part of the previous successful deployment.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OVERWRITE: The version of the file from the application revision currently being deployed replaces the
+     *        version already on the instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FileExistsBehavior
+     */
+
+    public DeploymentInfo withFileExistsBehavior(FileExistsBehavior fileExistsBehavior) {
+        setFileExistsBehavior(fileExistsBehavior);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1513,6 +1849,8 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
             sb.append("DeploymentConfigName: ").append(getDeploymentConfigName()).append(",");
         if (getDeploymentId() != null)
             sb.append("DeploymentId: ").append(getDeploymentId()).append(",");
+        if (getPreviousRevision() != null)
+            sb.append("PreviousRevision: ").append(getPreviousRevision()).append(",");
         if (getRevision() != null)
             sb.append("Revision: ").append(getRevision()).append(",");
         if (getStatus() != null)
@@ -1550,7 +1888,9 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
         if (getLoadBalancerInfo() != null)
             sb.append("LoadBalancerInfo: ").append(getLoadBalancerInfo()).append(",");
         if (getAdditionalDeploymentStatusInfo() != null)
-            sb.append("AdditionalDeploymentStatusInfo: ").append(getAdditionalDeploymentStatusInfo());
+            sb.append("AdditionalDeploymentStatusInfo: ").append(getAdditionalDeploymentStatusInfo()).append(",");
+        if (getFileExistsBehavior() != null)
+            sb.append("FileExistsBehavior: ").append(getFileExistsBehavior());
         sb.append("}");
         return sb.toString();
     }
@@ -1580,6 +1920,10 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
         if (other.getDeploymentId() == null ^ this.getDeploymentId() == null)
             return false;
         if (other.getDeploymentId() != null && other.getDeploymentId().equals(this.getDeploymentId()) == false)
+            return false;
+        if (other.getPreviousRevision() == null ^ this.getPreviousRevision() == null)
+            return false;
+        if (other.getPreviousRevision() != null && other.getPreviousRevision().equals(this.getPreviousRevision()) == false)
             return false;
         if (other.getRevision() == null ^ this.getRevision() == null)
             return false;
@@ -1661,6 +2005,10 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
         if (other.getAdditionalDeploymentStatusInfo() != null
                 && other.getAdditionalDeploymentStatusInfo().equals(this.getAdditionalDeploymentStatusInfo()) == false)
             return false;
+        if (other.getFileExistsBehavior() == null ^ this.getFileExistsBehavior() == null)
+            return false;
+        if (other.getFileExistsBehavior() != null && other.getFileExistsBehavior().equals(this.getFileExistsBehavior()) == false)
+            return false;
         return true;
     }
 
@@ -1673,6 +2021,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDeploymentGroupName() == null) ? 0 : getDeploymentGroupName().hashCode());
         hashCode = prime * hashCode + ((getDeploymentConfigName() == null) ? 0 : getDeploymentConfigName().hashCode());
         hashCode = prime * hashCode + ((getDeploymentId() == null) ? 0 : getDeploymentId().hashCode());
+        hashCode = prime * hashCode + ((getPreviousRevision() == null) ? 0 : getPreviousRevision().hashCode());
         hashCode = prime * hashCode + ((getRevision() == null) ? 0 : getRevision().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getErrorInformation() == null) ? 0 : getErrorInformation().hashCode());
@@ -1692,6 +2041,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getBlueGreenDeploymentConfiguration() == null) ? 0 : getBlueGreenDeploymentConfiguration().hashCode());
         hashCode = prime * hashCode + ((getLoadBalancerInfo() == null) ? 0 : getLoadBalancerInfo().hashCode());
         hashCode = prime * hashCode + ((getAdditionalDeploymentStatusInfo() == null) ? 0 : getAdditionalDeploymentStatusInfo().hashCode());
+        hashCode = prime * hashCode + ((getFileExistsBehavior() == null) ? 0 : getFileExistsBehavior().hashCode());
         return hashCode;
     }
 

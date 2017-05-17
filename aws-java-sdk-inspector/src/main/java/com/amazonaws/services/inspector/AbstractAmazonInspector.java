@@ -108,6 +108,11 @@ public class AbstractAmazonInspector implements AmazonInspector {
     }
 
     @Override
+    public GetAssessmentReportResult getAssessmentReport(GetAssessmentReportRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetTelemetryMetadataResult getTelemetryMetadata(GetTelemetryMetadataRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -492,6 +492,37 @@ public interface AmazonInspectorAsync extends AmazonInspector {
 
     /**
      * <p>
+     * Produces an assessment report that includes detailed and comprehensive results of a specified assessment run.
+     * </p>
+     * 
+     * @param getAssessmentReportRequest
+     * @return A Java Future containing the result of the GetAssessmentReport operation returned by the service.
+     * @sample AmazonInspectorAsync.GetAssessmentReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetAssessmentReport" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAssessmentReportResult> getAssessmentReportAsync(GetAssessmentReportRequest getAssessmentReportRequest);
+
+    /**
+     * <p>
+     * Produces an assessment report that includes detailed and comprehensive results of a specified assessment run.
+     * </p>
+     * 
+     * @param getAssessmentReportRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAssessmentReport operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.GetAssessmentReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetAssessmentReport" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAssessmentReportResult> getAssessmentReportAsync(GetAssessmentReportRequest getAssessmentReportRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAssessmentReportRequest, GetAssessmentReportResult> asyncHandler);
+
+    /**
+     * <p>
      * Information about the data that is collected for the specified assessment run.
      * </p>
      * 

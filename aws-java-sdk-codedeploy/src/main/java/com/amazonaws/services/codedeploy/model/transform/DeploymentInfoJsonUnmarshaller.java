@@ -64,6 +64,10 @@ public class DeploymentInfoJsonUnmarshaller implements Unmarshaller<DeploymentIn
                     context.nextToken();
                     deploymentInfo.setDeploymentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("previousRevision", targetDepth)) {
+                    context.nextToken();
+                    deploymentInfo.setPreviousRevision(RevisionLocationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("revision", targetDepth)) {
                     context.nextToken();
                     deploymentInfo.setRevision(RevisionLocationJsonUnmarshaller.getInstance().unmarshall(context));
@@ -139,6 +143,10 @@ public class DeploymentInfoJsonUnmarshaller implements Unmarshaller<DeploymentIn
                 if (context.testExpression("additionalDeploymentStatusInfo", targetDepth)) {
                     context.nextToken();
                     deploymentInfo.setAdditionalDeploymentStatusInfo(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("fileExistsBehavior", targetDepth)) {
+                    context.nextToken();
+                    deploymentInfo.setFileExistsBehavior(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

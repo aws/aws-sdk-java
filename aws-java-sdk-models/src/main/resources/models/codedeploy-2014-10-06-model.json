@@ -393,7 +393,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Starts the process of rerouting traffic from instances in the original environment to instances in thereplacement environment without waiting for a specified wait time to elapse. (Traffic rerouting, which is achieved by registering instances in the replacement environment with the load balancer, can start as soon as all instances have a status of Ready.) </p>",
+      "documentation" : "<p>For a blue/green deployment, starts the process of rerouting traffic from instances in the original environment to instances in the replacement environment without waiting for a specified wait time to elapse. (Traffic rerouting, which is achieved by registering instances in the replacement environment with the load balancer, can start as soon as all instances have a status of Ready.) </p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -595,6 +595,12 @@
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidLoadBalancerInfoException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidFileExistsBehaviorException"
       } ],
       "http" : {
         "method" : "POST",
@@ -1594,6 +1600,12 @@
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidInstanceTypeException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidDeploymentInstanceTypeException"
       } ],
       "http" : {
         "method" : "POST",
@@ -3998,7 +4010,7 @@
       "members" : {
         "alarmConfiguration" : {
           "deprecated" : false,
-          "documentation" : "<p>Information to add about Amazon CloudWatch alarms when the deployment group is created. </p>",
+          "documentation" : "<p>Information to add about Amazon CloudWatch alarms when the deployment group is created.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4068,7 +4080,7 @@
         },
         "deploymentConfigName" : {
           "deprecated" : false,
-          "documentation" : "<p>If specified, the deployment configuration name can be either one of the predefined configurations provided with AWS CodeDeploy or a custom deployment configuration that you create by calling the create deployment configuration operation.</p> <p>CodeDeployDefault.OneAtATime is the default deployment configuration. It is used if a configuration isn't specified for the deployment or the deployment group.</p> <p>For more information about the predefined deployment configurations in AWS CodeDeploy, see see <a href=\"http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html\">Working with Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User Guide.</p>",
+          "documentation" : "<p>If specified, the deployment configuration name can be either one of the predefined configurations provided with AWS CodeDeploy or a custom deployment configuration that you create by calling the create deployment configuration operation.</p> <p>CodeDeployDefault.OneAtATime is the default deployment configuration. It is used if a configuration isn't specified for the deployment or the deployment group.</p> <p>For more information about the predefined deployment configurations in AWS CodeDeploy, see <a href=\"http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html\">Working with Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User Guide.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4096,7 +4108,7 @@
         },
         "deploymentStyle" : {
           "deprecated" : false,
-          "documentation" : "<p>Information about the type of deployment, standard or blue/green, that you want to run and whether to route deployment traffic behind a load balancer.</p>",
+          "documentation" : "<p>Information about the type of deployment, in-place or blue/green, that you want to run and whether to route deployment traffic behind a load balancer.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4110,7 +4122,7 @@
         },
         "ec2TagFilters" : {
           "deprecated" : false,
-          "documentation" : "<p>The Amazon EC2 tags on which to filter.</p>",
+          "documentation" : "<p>The Amazon EC2 tags on which to filter. The deployment group will include EC2 instances with any of the specified tags.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4124,7 +4136,7 @@
         },
         "loadBalancerInfo" : {
           "deprecated" : false,
-          "documentation" : "<p>Information about the load balancer used in a blue/green deployment.</p>",
+          "documentation" : "<p>Information about the load balancer used in a deployment.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4138,7 +4150,7 @@
         },
         "onPremisesInstanceTagFilters" : {
           "deprecated" : false,
-          "documentation" : "<p>The on-premises instance tags on which to filter.</p>",
+          "documentation" : "<p>The on-premises instance tags on which to filter. The deployment group will include on-premises instances with any of the specified tags.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4303,6 +4315,20 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "Description",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "fileExistsBehavior" : {
+          "deprecated" : false,
+          "documentation" : "<p>Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p> <p>The fileExistsBehavior parameter takes any of the following values:</p> <ul> <li> <p>DISALLOW: The deployment fails. This is also the default behavior if no option is specified.</p> </li> <li> <p>OVERWRITE: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p> </li> <li> <p>RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.</p> </li> </ul>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "FileExistsBehavior",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -5077,7 +5103,7 @@
         },
         "deploymentStyle" : {
           "deprecated" : false,
-          "documentation" : "<p>Information about the type of deployment, either standard or blue/green, you want to run and whether to route deployment traffic behind a load balancer.</p>",
+          "documentation" : "<p>Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5105,7 +5131,7 @@
         },
         "loadBalancerInfo" : {
           "deprecated" : false,
-          "documentation" : "<p>Information about the load balancer to use in a blue/green deployment.</p>",
+          "documentation" : "<p>Information about the load balancer to use in a deployment.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5524,7 +5550,7 @@
         },
         "deploymentStyle" : {
           "deprecated" : false,
-          "documentation" : "<p>Information about the type of deployment, either standard or blue/green, you want to run and whether to route deployment traffic behind a load balancer.</p>",
+          "documentation" : "<p>Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5564,6 +5590,20 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "fileExistsBehavior" : {
+          "deprecated" : false,
+          "documentation" : "<p>Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p> <ul> <li> <p>DISALLOW: The deployment fails. This is also the default behavior if no option is specified.</p> </li> <li> <p>OVERWRITE: The version of the file from the application revision currently being deployed replaces the version already on the instance.</p> </li> <li> <p>RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.</p> </li> </ul>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "FileExistsBehavior",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "ignoreApplicationStopFailures" : {
           "deprecated" : false,
           "documentation" : "<p>If true, then if the deployment causes the ApplicationStop deployment lifecycle event to an instance to fail, the deployment to that instance will not be considered to have failed at that point and will continue on to the BeforeInstall deployment lifecycle event.</p> <p>If false or not specified, then if the deployment causes the ApplicationStop deployment lifecycle event to an instance to fail, the deployment to that instance will stop, and the deployment to that instance will be considered to have failed.</p>",
@@ -5594,7 +5634,7 @@
         },
         "loadBalancerInfo" : {
           "deprecated" : false,
-          "documentation" : "<p>Information about the load balancer used in this blue/green deployment.</p>",
+          "documentation" : "<p>Information about the load balancer used in the deployment.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5603,6 +5643,20 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "LoadBalancerInfo",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "previousRevision" : {
+          "deprecated" : false,
+          "documentation" : "<p>Information about the application revision that was deployed to the deployment group before the most recent successful deployment.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RevisionLocation",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -6018,7 +6072,7 @@
     },
     "DeploymentStyle" : {
       "deprecated" : false,
-      "documentation" : "<p>Information about the type of deployment, either standard or blue/green, you want to run and whether to route deployment traffic behind a load balancer.</p>",
+      "documentation" : "<p>Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -6044,7 +6098,7 @@
         },
         "deploymentType" : {
           "deprecated" : false,
-          "documentation" : "<p>Indicates whether to run a standard deployment or a blue/green deployment.</p>",
+          "documentation" : "<p>Indicates whether to run an in-place deployment or a blue/green deployment.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6334,7 +6388,7 @@
     },
     "EC2TagFilter" : {
       "deprecated" : false,
-      "documentation" : "<p>Information about a tag filter.</p>",
+      "documentation" : "<p>Information about an EC2 tag filter.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -6453,7 +6507,7 @@
     },
     "ELBInfo" : {
       "deprecated" : false,
-      "documentation" : "<p>Information about a load balancer in Elastic Load Balancing to use in a blue/green deployment.</p>",
+      "documentation" : "<p>Information about a load balancer in Elastic Load Balancing to use in a deployment.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -6465,7 +6519,7 @@
       "members" : {
         "name" : {
           "deprecated" : false,
-          "documentation" : "<p>The name of the load balancer that will be used to route traffic from original instances to replacement instances in a blue/green deployment.</p>",
+          "documentation" : "<p>For blue/green deployments, the name of the load balancer that will be used to route traffic from original instances to replacement instances in a blue/green deployment. For in-place deployments, the name of the load balancer that instances are deregistered from so they are not serving traffic during a deployment, and then re-registered with after the deployment completes.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6638,6 +6692,27 @@
       "deprecated" : false,
       "documentation" : null,
       "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "FileExistsBehavior" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "DISALLOW", "OVERWRITE", "RETAIN" ],
       "error" : null,
       "exception" : false,
       "fault" : false,
@@ -8467,6 +8542,27 @@
       "value" : null,
       "wrapper" : false
     },
+    "InvalidDeploymentInstanceTypeException" : {
+      "deprecated" : false,
+      "documentation" : "<p>An instance type was specified for an in-place deployment. Instance types are supported for blue/green deployments only.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "InvalidDeploymentStatusException" : {
       "deprecated" : false,
       "documentation" : "<p>The specified deployment status doesn't exist or cannot be determined.</p>",
@@ -8490,7 +8586,7 @@
     },
     "InvalidDeploymentStyleException" : {
       "deprecated" : false,
-      "documentation" : "<p>An invalid deployment style was specified. Valid deployment types include \"IN_PLACE\" and \"BLUE_GREEN\". Valid deployment options for blue/green deployments include \"WITH_TRAFFIC_CONTROL\" and \"WITHOUT_TRAFFIC_CONTROL\".</p>",
+      "documentation" : "<p>An invalid deployment style was specified. Valid deployment types include \"IN_PLACE\" and \"BLUE_GREEN\". Valid deployment options include \"WITH_TRAFFIC_CONTROL\" and \"WITHOUT_TRAFFIC_CONTROL\".</p>",
       "enum" : null,
       "error" : null,
       "exception" : true,
@@ -8512,6 +8608,27 @@
     "InvalidEC2TagException" : {
       "deprecated" : false,
       "documentation" : "<p>The tag was specified in an invalid format.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "InvalidFileExistsBehaviorException" : {
+      "deprecated" : false,
+      "documentation" : "<p>An invalid fileExistsBehavior option was specified to determine how AWS CodeDeploy handles files or directories that already exist in a deployment target location but weren't part of the previous successful deployment. Valid values include \"DISALLOW\", \"OVERWRITE\", and \"RETAIN\".</p>",
       "enum" : null,
       "error" : null,
       "exception" : true,
@@ -10065,7 +10182,7 @@
     },
     "LoadBalancerInfo" : {
       "deprecated" : false,
-      "documentation" : "<p>Information about the load balancer used in a blue/green deployment.</p>",
+      "documentation" : "<p>Information about the load balancer used in a deployment.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -10077,7 +10194,7 @@
       "members" : {
         "elbInfoList" : {
           "deprecated" : false,
-          "documentation" : "<p>An array containing information about the load balancer in Elastic Load Balancing to use in a blue/green deployment.</p>",
+          "documentation" : "<p>An array containing information about the load balancer in Elastic Load Balancing to use in a deployment.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -10155,7 +10272,7 @@
       "members" : {
         "type" : {
           "deprecated" : false,
-          "documentation" : "<p>The minimum healthy instance type:</p> <ul> <li> <p>HOST_COUNT: The minimum number of healthy instance as an absolute value.</p> </li> <li> <p>FLEET_PERCENT: The minimum number of healthy instance as a percentage of the total number of instance in the deployment.</p> </li> </ul> <p>In an example of nine instance, if a HOST_COUNT of six is specified, deploy to up to three instances at a time. The deployment will be successful if six or more instances are deployed to successfully; otherwise, the deployment fails. If a FLEET_PERCENT of 40 is specified, deploy to up to five instance at a time. The deployment will be successful if four or more instance are deployed to successfully; otherwise, the deployment fails.</p> <note> <p>In a call to the get deployment configuration operation, CodeDeployDefault.OneAtATime will return a minimum healthy instance type of MOST_CONCURRENCY and a value of 1. This means a deployment to only one instance at a time. (You cannot set the type to MOST_CONCURRENCY, only to HOST_COUNT or FLEET_PERCENT.) In addition, with CodeDeployDefault.OneAtATime, AWS CodeDeploy will try to ensure that all instances but one are kept in a healthy state during the deployment. Although this allows one instance at a time to be taken offline for a new deployment, it also means that if the deployment to the last instance fails, the overall deployment still succeeds.</p> </note>",
+          "documentation" : "<p>The minimum healthy instance type:</p> <ul> <li> <p>HOST_COUNT: The minimum number of healthy instance as an absolute value.</p> </li> <li> <p>FLEET_PERCENT: The minimum number of healthy instance as a percentage of the total number of instance in the deployment.</p> </li> </ul> <p>In an example of nine instance, if a HOST_COUNT of six is specified, deploy to up to three instances at a time. The deployment will be successful if six or more instances are deployed to successfully; otherwise, the deployment fails. If a FLEET_PERCENT of 40 is specified, deploy to up to five instance at a time. The deployment will be successful if four or more instance are deployed to successfully; otherwise, the deployment fails.</p> <note> <p>In a call to the get deployment configuration operation, CodeDeployDefault.OneAtATime will return a minimum healthy instance type of MOST_CONCURRENCY and a value of 1. This means a deployment to only one instance at a time. (You cannot set the type to MOST_CONCURRENCY, only to HOST_COUNT or FLEET_PERCENT.) In addition, with CodeDeployDefault.OneAtATime, AWS CodeDeploy will try to ensure that all instances but one are kept in a healthy state during the deployment. Although this allows one instance at a time to be taken offline for a new deployment, it also means that if the deployment to the last instance fails, the overall deployment still succeeds.</p> </note> <p>For more information, see <a href=\"http://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html\">AWS CodeDeploy Instance Health</a> in the <i>AWS CodeDeploy User Guide</i>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11867,7 +11984,7 @@
       "members" : {
         "alarmConfiguration" : {
           "deprecated" : false,
-          "documentation" : "<p>Information to add or change about Amazon CloudWatch alarms when the deployment group is updated. </p>",
+          "documentation" : "<p>Information to add or change about Amazon CloudWatch alarms when the deployment group is updated.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11965,7 +12082,7 @@
         },
         "deploymentStyle" : {
           "deprecated" : false,
-          "documentation" : "<p>Information about the type of deployment, either standard or blue/green, you want to run and whether to route deployment traffic behind a load balancer.</p>",
+          "documentation" : "<p>Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11993,7 +12110,7 @@
         },
         "loadBalancerInfo" : {
           "deprecated" : false,
-          "documentation" : "<p>Information about the load balancer used in a blue/green deployment.</p>",
+          "documentation" : "<p>Information about the load balancer used in a deployment.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -12150,5 +12267,5 @@
       "wrapper" : false
     }
   },
-  "documentation" : "<fullname>AWS CodeDeploy</fullname> <p> <b>Overview</b> </p> <p>This reference guide provides descriptions of the AWS CodeDeploy APIs. For more information about AWS CodeDeploy, see the <a href=\"http://docs.aws.amazon.com/codedeploy/latest/userguide\">AWS CodeDeploy User Guide</a>.</p> <p> <b>Using the APIs</b> </p> <p>You can use the AWS CodeDeploy APIs to work with the following:</p> <ul> <li> <p>Applications are unique identifiers used by AWS CodeDeploy to ensure the correct combinations of revisions, deployment configurations, and deployment groups are being referenced during deployments.</p> <p>You can use the AWS CodeDeploy APIs to create, delete, get, list, and update applications.</p> </li> <li> <p>Deployment configurations are sets of deployment rules and success and failure conditions used by AWS CodeDeploy during deployments.</p> <p>You can use the AWS CodeDeploy APIs to create, delete, get, and list deployment configurations.</p> </li> <li> <p>Deployment groups are groups of instances to which application revisions can be deployed.</p> <p>You can use the AWS CodeDeploy APIs to create, delete, get, list, and update deployment groups.</p> </li> <li> <p>Instances represent Amazon EC2 instances to which application revisions are deployed. Instances are identified by their Amazon EC2 tags or Auto Scaling group names. Instances belong to deployment groups.</p> <p>You can use the AWS CodeDeploy APIs to get and list instance.</p> </li> <li> <p>Deployments represent the process of deploying revisions to instances.</p> <p>You can use the AWS CodeDeploy APIs to create, get, list, and stop deployments.</p> </li> <li> <p>Application revisions are archive files stored in Amazon S3 buckets or GitHub repositories. These revisions contain source content (such as source code, web pages, executable files, and deployment scripts) along with an application specification (AppSpec) file. (The AppSpec file is unique to AWS CodeDeploy; it defines the deployment actions you want AWS CodeDeploy to execute.) For application revisions stored in Amazon S3 buckets, an application revision is uniquely identified by its Amazon S3 object key and its ETag, version, or both. For application revisions stored in GitHub repositories, an application revision is uniquely identified by its repository name and commit ID. Application revisions are deployed through deployment groups.</p> <p>You can use the AWS CodeDeploy APIs to get, list, and register application revisions.</p> </li> </ul>"
+  "documentation" : "<fullname>AWS CodeDeploy</fullname> <p>AWS CodeDeploy is a deployment service that automates application deployments to Amazon EC2 instances or on-premises instances running in your own facility.</p> <p>You can deploy a nearly unlimited variety of application content, such as code, web and configuration files, executables, packages, scripts, multimedia files, and so on. AWS CodeDeploy can deploy application content stored in Amazon S3 buckets, GitHub repositories, or Bitbucket repositories. You do not need to make changes to your existing code before you can use AWS CodeDeploy.</p> <p>AWS CodeDeploy makes it easier for you to rapidly release new features, helps you avoid downtime during application deployment, and handles the complexity of updating your applications, without many of the risks associated with error-prone manual deployments.</p> <p> <b>AWS CodeDeploy Components</b> </p> <p>Use the information in this guide to help you work with the following AWS CodeDeploy components:</p> <ul> <li> <p> <b>Application</b>: A name that uniquely identifies the application you want to deploy. AWS CodeDeploy uses this name, which functions as a container, to ensure the correct combination of revision, deployment configuration, and deployment group are referenced during a deployment.</p> </li> <li> <p> <b>Deployment group</b>: A set of individual instances. A deployment group contains individually tagged instances, Amazon EC2 instances in Auto Scaling groups, or both. </p> </li> <li> <p> <b>Deployment configuration</b>: A set of deployment rules and deployment success and failure conditions used by AWS CodeDeploy during a deployment.</p> </li> <li> <p> <b>Deployment</b>: The process, and the components involved in the process, of installing content on one or more instances. </p> </li> <li> <p> <b>Application revisions</b>: An archive file containing source content—source code, web pages, executable files, and deployment scripts—along with an application specification file (AppSpec file). Revisions are stored in Amazon S3 buckets or GitHub repositories. For Amazon S3, a revision is uniquely identified by its Amazon S3 object key and its ETag, version, or both. For GitHub, a revision is uniquely identified by its commit ID.</p> </li> </ul> <p>This guide also contains information to help you get details about the instances in your deployments and to make on-premises instances available for AWS CodeDeploy deployments.</p> <p> <b>AWS CodeDeploy Information Resources</b> </p> <ul> <li> <p> <a href=\"http://docs.aws.amazon.com/codedeploy/latest/userguide\">AWS CodeDeploy User Guide</a> </p> </li> <li> <p> <a href=\"http://docs.aws.amazon.com/codedeploy/latest/APIReference/\">AWS CodeDeploy API Reference Guide</a> </p> </li> <li> <p> <a href=\"http://docs.aws.amazon.com/cli/latest/reference/deploy/index.html\">AWS CLI Reference for AWS CodeDeploy</a> </p> </li> <li> <p> <a href=\"https://forums.aws.amazon.com/forum.jspa?forumID=179\">AWS CodeDeploy Developer Forum</a> </p> </li> </ul>"
 }

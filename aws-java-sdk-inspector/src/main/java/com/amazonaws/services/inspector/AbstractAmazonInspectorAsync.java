@@ -210,6 +210,19 @@ public class AbstractAmazonInspectorAsync extends AbstractAmazonInspector implem
     }
 
     @Override
+    public java.util.concurrent.Future<GetAssessmentReportResult> getAssessmentReportAsync(GetAssessmentReportRequest request) {
+
+        return getAssessmentReportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAssessmentReportResult> getAssessmentReportAsync(GetAssessmentReportRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetAssessmentReportRequest, GetAssessmentReportResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetTelemetryMetadataResult> getTelemetryMetadataAsync(GetTelemetryMetadataRequest request) {
 
         return getTelemetryMetadataAsync(request, null);

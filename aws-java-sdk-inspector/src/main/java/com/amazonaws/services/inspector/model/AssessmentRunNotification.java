@@ -40,7 +40,11 @@ public class AssessmentRunNotification implements Serializable, Cloneable, Struc
      * </p>
      */
     private String event;
-
+    /**
+     * <p>
+     * The message included in the notification.
+     * </p>
+     */
     private String message;
     /**
      * <p>
@@ -175,7 +179,12 @@ public class AssessmentRunNotification implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The message included in the notification.
+     * </p>
+     * 
      * @param message
+     *        The message included in the notification.
      */
 
     public void setMessage(String message) {
@@ -183,7 +192,11 @@ public class AssessmentRunNotification implements Serializable, Cloneable, Struc
     }
 
     /**
-     * @return
+     * <p>
+     * The message included in the notification.
+     * </p>
+     * 
+     * @return The message included in the notification.
      */
 
     public String getMessage() {
@@ -191,7 +204,12 @@ public class AssessmentRunNotification implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The message included in the notification.
+     * </p>
+     * 
      * @param message
+     *        The message included in the notification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1041,7 +1041,7 @@ public class ClientConfiguration {
      *
      * @param socketTimeout
      *            The amount of time to wait (in milliseconds) for data to be transfered over an
-     *            established, open connection before the connection is times out and is closed.
+     *            established, open connection before the connection times out and is closed.
      */
     public void setSocketTimeout(int socketTimeout) {
         this.socketTimeout = socketTimeout;
@@ -1054,7 +1054,7 @@ public class ClientConfiguration {
      *
      * @param socketTimeout
      *            The amount of time to wait (in milliseconds) for data to be transfered over an
-     *            established, open connection before the connection is times out and is closed.
+     *            established, open connection before the connection times out and is closed.
      * @return The updated ClientConfiguration object.
      */
     public ClientConfiguration withSocketTimeout(int socketTimeout) {

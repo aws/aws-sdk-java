@@ -17,7 +17,6 @@ package com.amazonaws.services.stepfunctions.builder;
 import com.amazonaws.util.IOUtils;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.io.IOException;
 
 public class TestResourceLoader {

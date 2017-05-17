@@ -16,9 +16,9 @@ package com.amazonaws.services.stepfunctions.builder.states;
 
 import com.amazonaws.services.stepfunctions.builder.internal.PropertyNames;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
-
 import java.util.Date;
 
 /**
@@ -36,11 +36,8 @@ public final class WaitState extends TransitionState {
     @JsonUnwrapped
     private final WaitFor waitFor;
 
-    @JsonProperty(PropertyNames.INPUT_PATH)
-    private final String inputPath;
-
-    @JsonProperty(PropertyNames.OUTPUT_PATH)
-    private final String outputPath;
+    @JsonUnwrapped
+    private final PathContainer pathContainer;
 
     @JsonUnwrapped
     private final Transition transition;
@@ -49,8 +46,7 @@ public final class WaitState extends TransitionState {
     private WaitState(Builder builder) {
         this.comment = builder.comment;
         this.waitFor = builder.waitFor.build();
-        this.inputPath = builder.inputPath;
-        this.outputPath = builder.outputPath;
+        this.pathContainer = builder.pathContainer.build();
         this.transition = builder.transition.build();
     }
 
@@ -76,15 +72,17 @@ public final class WaitState extends TransitionState {
     /**
      * @return The input path expression that may optionally transform the input to this state.
      */
+    @JsonIgnore
     public String getInputPath() {
-        return inputPath;
+        return pathContainer.getInputPath();
     }
 
     /**
      * @return The output path expression that may optionally transform the output to this state.
      */
+    @JsonIgnore
     public String getOutputPath() {
-        return outputPath;
+        return pathContainer.getOutputPath();
     }
 
     /**
@@ -109,18 +107,14 @@ public final class WaitState extends TransitionState {
     /**
      * Builder for a {@link WaitState}.
      */
-    public static final class Builder extends TransitionStateBuilder {
+    public static final class Builder extends TransitionStateBuilder implements InputOutputPathBuilder<Builder> {
 
         @JsonProperty(PropertyNames.COMMENT)
         private String comment;
 
         private WaitFor.Builder waitFor = WaitFor.NULL_BUILDER;
 
-        @JsonProperty(PropertyNames.INPUT_PATH)
-        private String inputPath;
-
-        @JsonProperty(PropertyNames.OUTPUT_PATH)
-        private String outputPath;
+        private final PathContainer.Builder pathContainer = PathContainer.builder();
 
         @JsonProperty
         private Transition.Builder transition = Transition.NULL_BUILDER;
@@ -174,29 +168,15 @@ public final class WaitState extends TransitionState {
             return this;
         }
 
-        /**
-         * OPTIONAL. The value of “InputPath” MUST be a Path, which is applied to the previous State’s output to select some or
-         * all of it to form the input for this state. If not provided then the whole output from the previous state is used as
-         * input to this state.
-         *
-         * @param inputPath New path value.
-         * @return This object for method chaining.
-         */
+        @Override
         public Builder inputPath(String inputPath) {
-            this.inputPath = inputPath;
+            pathContainer.inputPath(inputPath);
             return this;
         }
 
-        /**
-         * OPTIONAL. The value of “OutputPath” MUST be a path, which is applied to the state’s output after the application of
-         * ResultPath, leading in the generation of the raw input for the next state. If not provided then the whole output is
-         * used.
-         *
-         * @param outputPath New path value.
-         * @return This object for method chaining.
-         */
+        @Override
         public Builder outputPath(String outputPath) {
-            this.outputPath = outputPath;
+            pathContainer.outputPath(outputPath);
             return this;
         }
 

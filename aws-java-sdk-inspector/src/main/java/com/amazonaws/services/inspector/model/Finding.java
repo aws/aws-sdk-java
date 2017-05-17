@@ -47,7 +47,11 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String service;
-
+    /**
+     * <p>
+     * This data type is used in the <a>Finding</a> data type.
+     * </p>
+     */
     private InspectorServiceAttributes serviceAttributes;
     /**
      * <p>
@@ -255,7 +259,12 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * This data type is used in the <a>Finding</a> data type.
+     * </p>
+     * 
      * @param serviceAttributes
+     *        This data type is used in the <a>Finding</a> data type.
      */
 
     public void setServiceAttributes(InspectorServiceAttributes serviceAttributes) {
@@ -263,7 +272,11 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * This data type is used in the <a>Finding</a> data type.
+     * </p>
+     * 
+     * @return This data type is used in the <a>Finding</a> data type.
      */
 
     public InspectorServiceAttributes getServiceAttributes() {
@@ -271,7 +284,12 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * This data type is used in the <a>Finding</a> data type.
+     * </p>
+     * 
      * @param serviceAttributes
+     *        This data type is used in the <a>Finding</a> data type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

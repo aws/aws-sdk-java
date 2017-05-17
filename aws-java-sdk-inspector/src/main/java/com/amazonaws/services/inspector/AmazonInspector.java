@@ -387,6 +387,35 @@ public interface AmazonInspector {
 
     /**
      * <p>
+     * Produces an assessment report that includes detailed and comprehensive results of a specified assessment run.
+     * </p>
+     * 
+     * @param getAssessmentReportRequest
+     * @return Result of the GetAssessmentReport operation returned by the service.
+     * @throws InternalException
+     *         Internal server error.
+     * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
+     * @throws AccessDeniedException
+     *         You do not have required permissions to access the requested resource.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced an entity that does not exist. The error code describes
+     *         the entity.
+     * @throws AssessmentRunInProgressException
+     *         You cannot perform a specified action if an assessment run is currently in progress.
+     * @throws UnsupportedFeatureException
+     *         Used by the <a>GetAssessmentReport</a> API. The request was rejected because you tried to generate a
+     *         report for an assessment run that existed before reporting was supported in Amazon Inspector. You can
+     *         only generate reports for assessment runs that took place or will take place after generating reports in
+     *         Amazon Inspector became available.
+     * @sample AmazonInspector.GetAssessmentReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetAssessmentReport" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetAssessmentReportResult getAssessmentReport(GetAssessmentReportRequest getAssessmentReportRequest);
+
+    /**
+     * <p>
      * Information about the data that is collected for the specified assessment run.
      * </p>
      * 

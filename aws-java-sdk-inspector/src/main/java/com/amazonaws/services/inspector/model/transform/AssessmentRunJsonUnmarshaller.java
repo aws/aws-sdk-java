@@ -106,6 +106,11 @@ public class AssessmentRunJsonUnmarshaller implements Unmarshaller<AssessmentRun
                     assessmentRun.setNotifications(new ListUnmarshaller<AssessmentRunNotification>(AssessmentRunNotificationJsonUnmarshaller.getInstance())
                             .unmarshall(context));
                 }
+                if (context.testExpression("findingCounts", targetDepth)) {
+                    context.nextToken();
+                    assessmentRun.setFindingCounts(new MapUnmarshaller<String, Integer>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(Integer.class)).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

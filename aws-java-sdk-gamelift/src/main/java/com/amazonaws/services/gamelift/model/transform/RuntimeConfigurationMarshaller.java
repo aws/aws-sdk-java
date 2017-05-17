@@ -30,6 +30,10 @@ public class RuntimeConfigurationMarshaller {
 
     private static final MarshallingInfo<List> SERVERPROCESSES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServerProcesses").build();
+    private static final MarshallingInfo<Integer> MAXCONCURRENTGAMESESSIONACTIVATIONS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxConcurrentGameSessionActivations").build();
+    private static final MarshallingInfo<Integer> GAMESESSIONACTIVATIONTIMEOUTSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GameSessionActivationTimeoutSeconds").build();
 
     private static final RuntimeConfigurationMarshaller instance = new RuntimeConfigurationMarshaller();
 
@@ -48,6 +52,8 @@ public class RuntimeConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(runtimeConfiguration.getServerProcesses(), SERVERPROCESSES_BINDING);
+            protocolMarshaller.marshall(runtimeConfiguration.getMaxConcurrentGameSessionActivations(), MAXCONCURRENTGAMESESSIONACTIVATIONS_BINDING);
+            protocolMarshaller.marshall(runtimeConfiguration.getGameSessionActivationTimeoutSeconds(), GAMESESSIONACTIVATIONTIMEOUTSECONDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

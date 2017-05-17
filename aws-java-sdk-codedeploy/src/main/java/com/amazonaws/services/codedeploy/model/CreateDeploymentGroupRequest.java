@@ -51,7 +51,7 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      * specified for the deployment or the deployment group.
      * </p>
      * <p>
-     * For more information about the predefined deployment configurations in AWS CodeDeploy, see see <a
+     * For more information about the predefined deployment configurations in AWS CodeDeploy, see <a
      * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with
      * Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User Guide.
      * </p>
@@ -59,13 +59,15 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     private String deploymentConfigName;
     /**
      * <p>
-     * The Amazon EC2 tags on which to filter.
+     * The Amazon EC2 tags on which to filter. The deployment group will include EC2 instances with any of the specified
+     * tags.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<EC2TagFilter> ec2TagFilters;
     /**
      * <p>
-     * The on-premises instance tags on which to filter.
+     * The on-premises instance tags on which to filter. The deployment group will include on-premises instances with
+     * any of the specified tags.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TagFilter> onPremisesInstanceTagFilters;
@@ -103,7 +105,7 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     private AutoRollbackConfiguration autoRollbackConfiguration;
     /**
      * <p>
-     * Information about the type of deployment, standard or blue/green, that you want to run and whether to route
+     * Information about the type of deployment, in-place or blue/green, that you want to run and whether to route
      * deployment traffic behind a load balancer.
      * </p>
      */
@@ -116,7 +118,7 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     private BlueGreenDeploymentConfiguration blueGreenDeploymentConfiguration;
     /**
      * <p>
-     * Information about the load balancer used in a blue/green deployment.
+     * Information about the load balancer used in a deployment.
      * </p>
      */
     private LoadBalancerInfo loadBalancerInfo;
@@ -212,7 +214,7 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      * specified for the deployment or the deployment group.
      * </p>
      * <p>
-     * For more information about the predefined deployment configurations in AWS CodeDeploy, see see <a
+     * For more information about the predefined deployment configurations in AWS CodeDeploy, see <a
      * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with
      * Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User Guide.
      * </p>
@@ -226,7 +228,7 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      *        specified for the deployment or the deployment group.
      *        </p>
      *        <p>
-     *        For more information about the predefined deployment configurations in AWS CodeDeploy, see see <a
+     *        For more information about the predefined deployment configurations in AWS CodeDeploy, see <a
      *        href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with
      *        Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User Guide.
      */
@@ -246,7 +248,7 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      * specified for the deployment or the deployment group.
      * </p>
      * <p>
-     * For more information about the predefined deployment configurations in AWS CodeDeploy, see see <a
+     * For more information about the predefined deployment configurations in AWS CodeDeploy, see <a
      * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with
      * Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User Guide.
      * </p>
@@ -259,7 +261,7 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      *         specified for the deployment or the deployment group.
      *         </p>
      *         <p>
-     *         For more information about the predefined deployment configurations in AWS CodeDeploy, see see <a
+     *         For more information about the predefined deployment configurations in AWS CodeDeploy, see <a
      *         href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with
      *         Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User Guide.
      */
@@ -279,7 +281,7 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      * specified for the deployment or the deployment group.
      * </p>
      * <p>
-     * For more information about the predefined deployment configurations in AWS CodeDeploy, see see <a
+     * For more information about the predefined deployment configurations in AWS CodeDeploy, see <a
      * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with
      * Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User Guide.
      * </p>
@@ -293,7 +295,7 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      *        specified for the deployment or the deployment group.
      *        </p>
      *        <p>
-     *        For more information about the predefined deployment configurations in AWS CodeDeploy, see see <a
+     *        For more information about the predefined deployment configurations in AWS CodeDeploy, see <a
      *        href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with
      *        Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -306,10 +308,12 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon EC2 tags on which to filter.
+     * The Amazon EC2 tags on which to filter. The deployment group will include EC2 instances with any of the specified
+     * tags.
      * </p>
      * 
-     * @return The Amazon EC2 tags on which to filter.
+     * @return The Amazon EC2 tags on which to filter. The deployment group will include EC2 instances with any of the
+     *         specified tags.
      */
 
     public java.util.List<EC2TagFilter> getEc2TagFilters() {
@@ -321,11 +325,13 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon EC2 tags on which to filter.
+     * The Amazon EC2 tags on which to filter. The deployment group will include EC2 instances with any of the specified
+     * tags.
      * </p>
      * 
      * @param ec2TagFilters
-     *        The Amazon EC2 tags on which to filter.
+     *        The Amazon EC2 tags on which to filter. The deployment group will include EC2 instances with any of the
+     *        specified tags.
      */
 
     public void setEc2TagFilters(java.util.Collection<EC2TagFilter> ec2TagFilters) {
@@ -339,7 +345,8 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon EC2 tags on which to filter.
+     * The Amazon EC2 tags on which to filter. The deployment group will include EC2 instances with any of the specified
+     * tags.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -348,7 +355,8 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param ec2TagFilters
-     *        The Amazon EC2 tags on which to filter.
+     *        The Amazon EC2 tags on which to filter. The deployment group will include EC2 instances with any of the
+     *        specified tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -364,11 +372,13 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon EC2 tags on which to filter.
+     * The Amazon EC2 tags on which to filter. The deployment group will include EC2 instances with any of the specified
+     * tags.
      * </p>
      * 
      * @param ec2TagFilters
-     *        The Amazon EC2 tags on which to filter.
+     *        The Amazon EC2 tags on which to filter. The deployment group will include EC2 instances with any of the
+     *        specified tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -379,10 +389,12 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The on-premises instance tags on which to filter.
+     * The on-premises instance tags on which to filter. The deployment group will include on-premises instances with
+     * any of the specified tags.
      * </p>
      * 
-     * @return The on-premises instance tags on which to filter.
+     * @return The on-premises instance tags on which to filter. The deployment group will include on-premises instances
+     *         with any of the specified tags.
      */
 
     public java.util.List<TagFilter> getOnPremisesInstanceTagFilters() {
@@ -394,11 +406,13 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The on-premises instance tags on which to filter.
+     * The on-premises instance tags on which to filter. The deployment group will include on-premises instances with
+     * any of the specified tags.
      * </p>
      * 
      * @param onPremisesInstanceTagFilters
-     *        The on-premises instance tags on which to filter.
+     *        The on-premises instance tags on which to filter. The deployment group will include on-premises instances
+     *        with any of the specified tags.
      */
 
     public void setOnPremisesInstanceTagFilters(java.util.Collection<TagFilter> onPremisesInstanceTagFilters) {
@@ -412,7 +426,8 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The on-premises instance tags on which to filter.
+     * The on-premises instance tags on which to filter. The deployment group will include on-premises instances with
+     * any of the specified tags.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -421,7 +436,8 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param onPremisesInstanceTagFilters
-     *        The on-premises instance tags on which to filter.
+     *        The on-premises instance tags on which to filter. The deployment group will include on-premises instances
+     *        with any of the specified tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -437,11 +453,13 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The on-premises instance tags on which to filter.
+     * The on-premises instance tags on which to filter. The deployment group will include on-premises instances with
+     * any of the specified tags.
      * </p>
      * 
      * @param onPremisesInstanceTagFilters
-     *        The on-premises instance tags on which to filter.
+     *        The on-premises instance tags on which to filter. The deployment group will include on-premises instances
+     *        with any of the specified tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -737,12 +755,12 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Information about the type of deployment, standard or blue/green, that you want to run and whether to route
+     * Information about the type of deployment, in-place or blue/green, that you want to run and whether to route
      * deployment traffic behind a load balancer.
      * </p>
      * 
      * @param deploymentStyle
-     *        Information about the type of deployment, standard or blue/green, that you want to run and whether to
+     *        Information about the type of deployment, in-place or blue/green, that you want to run and whether to
      *        route deployment traffic behind a load balancer.
      */
 
@@ -752,11 +770,11 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Information about the type of deployment, standard or blue/green, that you want to run and whether to route
+     * Information about the type of deployment, in-place or blue/green, that you want to run and whether to route
      * deployment traffic behind a load balancer.
      * </p>
      * 
-     * @return Information about the type of deployment, standard or blue/green, that you want to run and whether to
+     * @return Information about the type of deployment, in-place or blue/green, that you want to run and whether to
      *         route deployment traffic behind a load balancer.
      */
 
@@ -766,12 +784,12 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Information about the type of deployment, standard or blue/green, that you want to run and whether to route
+     * Information about the type of deployment, in-place or blue/green, that you want to run and whether to route
      * deployment traffic behind a load balancer.
      * </p>
      * 
      * @param deploymentStyle
-     *        Information about the type of deployment, standard or blue/green, that you want to run and whether to
+     *        Information about the type of deployment, in-place or blue/green, that you want to run and whether to
      *        route deployment traffic behind a load balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -823,11 +841,11 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Information about the load balancer used in a blue/green deployment.
+     * Information about the load balancer used in a deployment.
      * </p>
      * 
      * @param loadBalancerInfo
-     *        Information about the load balancer used in a blue/green deployment.
+     *        Information about the load balancer used in a deployment.
      */
 
     public void setLoadBalancerInfo(LoadBalancerInfo loadBalancerInfo) {
@@ -836,10 +854,10 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Information about the load balancer used in a blue/green deployment.
+     * Information about the load balancer used in a deployment.
      * </p>
      * 
-     * @return Information about the load balancer used in a blue/green deployment.
+     * @return Information about the load balancer used in a deployment.
      */
 
     public LoadBalancerInfo getLoadBalancerInfo() {
@@ -848,11 +866,11 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Information about the load balancer used in a blue/green deployment.
+     * Information about the load balancer used in a deployment.
      * </p>
      * 
      * @param loadBalancerInfo
-     *        Information about the load balancer used in a blue/green deployment.
+     *        Information about the load balancer used in a deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the load balancer used in a blue/green deployment.
+ * Information about the load balancer used in a deployment.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/LoadBalancerInfo" target="_top">AWS API
@@ -30,20 +30,17 @@ public class LoadBalancerInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An array containing information about the load balancer in Elastic Load Balancing to use in a blue/green
-     * deployment.
+     * An array containing information about the load balancer in Elastic Load Balancing to use in a deployment.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ELBInfo> elbInfoList;
 
     /**
      * <p>
-     * An array containing information about the load balancer in Elastic Load Balancing to use in a blue/green
-     * deployment.
+     * An array containing information about the load balancer in Elastic Load Balancing to use in a deployment.
      * </p>
      * 
-     * @return An array containing information about the load balancer in Elastic Load Balancing to use in a blue/green
-     *         deployment.
+     * @return An array containing information about the load balancer in Elastic Load Balancing to use in a deployment.
      */
 
     public java.util.List<ELBInfo> getElbInfoList() {
@@ -55,13 +52,11 @@ public class LoadBalancerInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An array containing information about the load balancer in Elastic Load Balancing to use in a blue/green
-     * deployment.
+     * An array containing information about the load balancer in Elastic Load Balancing to use in a deployment.
      * </p>
      * 
      * @param elbInfoList
-     *        An array containing information about the load balancer in Elastic Load Balancing to use in a blue/green
-     *        deployment.
+     *        An array containing information about the load balancer in Elastic Load Balancing to use in a deployment.
      */
 
     public void setElbInfoList(java.util.Collection<ELBInfo> elbInfoList) {
@@ -75,8 +70,7 @@ public class LoadBalancerInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An array containing information about the load balancer in Elastic Load Balancing to use in a blue/green
-     * deployment.
+     * An array containing information about the load balancer in Elastic Load Balancing to use in a deployment.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -85,8 +79,7 @@ public class LoadBalancerInfo implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param elbInfoList
-     *        An array containing information about the load balancer in Elastic Load Balancing to use in a blue/green
-     *        deployment.
+     *        An array containing information about the load balancer in Elastic Load Balancing to use in a deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,13 +95,11 @@ public class LoadBalancerInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An array containing information about the load balancer in Elastic Load Balancing to use in a blue/green
-     * deployment.
+     * An array containing information about the load balancer in Elastic Load Balancing to use in a deployment.
      * </p>
      * 
      * @param elbInfoList
-     *        An array containing information about the load balancer in Elastic Load Balancing to use in a blue/green
-     *        deployment.
+     *        An array containing information about the load balancer in Elastic Load Balancing to use in a deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about a load balancer in Elastic Load Balancing to use in a blue/green deployment.
+ * Information about a load balancer in Elastic Load Balancing to use in a deployment.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ELBInfo" target="_top">AWS API
@@ -30,21 +30,27 @@ public class ELBInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the load balancer that will be used to route traffic from original instances to replacement instances
-     * in a blue/green deployment.
+     * For blue/green deployments, the name of the load balancer that will be used to route traffic from original
+     * instances to replacement instances in a blue/green deployment. For in-place deployments, the name of the load
+     * balancer that instances are deregistered from so they are not serving traffic during a deployment, and then
+     * re-registered with after the deployment completes.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * The name of the load balancer that will be used to route traffic from original instances to replacement instances
-     * in a blue/green deployment.
+     * For blue/green deployments, the name of the load balancer that will be used to route traffic from original
+     * instances to replacement instances in a blue/green deployment. For in-place deployments, the name of the load
+     * balancer that instances are deregistered from so they are not serving traffic during a deployment, and then
+     * re-registered with after the deployment completes.
      * </p>
      * 
      * @param name
-     *        The name of the load balancer that will be used to route traffic from original instances to replacement
-     *        instances in a blue/green deployment.
+     *        For blue/green deployments, the name of the load balancer that will be used to route traffic from original
+     *        instances to replacement instances in a blue/green deployment. For in-place deployments, the name of the
+     *        load balancer that instances are deregistered from so they are not serving traffic during a deployment,
+     *        and then re-registered with after the deployment completes.
      */
 
     public void setName(String name) {
@@ -53,12 +59,16 @@ public class ELBInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the load balancer that will be used to route traffic from original instances to replacement instances
-     * in a blue/green deployment.
+     * For blue/green deployments, the name of the load balancer that will be used to route traffic from original
+     * instances to replacement instances in a blue/green deployment. For in-place deployments, the name of the load
+     * balancer that instances are deregistered from so they are not serving traffic during a deployment, and then
+     * re-registered with after the deployment completes.
      * </p>
      * 
-     * @return The name of the load balancer that will be used to route traffic from original instances to replacement
-     *         instances in a blue/green deployment.
+     * @return For blue/green deployments, the name of the load balancer that will be used to route traffic from
+     *         original instances to replacement instances in a blue/green deployment. For in-place deployments, the
+     *         name of the load balancer that instances are deregistered from so they are not serving traffic during a
+     *         deployment, and then re-registered with after the deployment completes.
      */
 
     public String getName() {
@@ -67,13 +77,17 @@ public class ELBInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the load balancer that will be used to route traffic from original instances to replacement instances
-     * in a blue/green deployment.
+     * For blue/green deployments, the name of the load balancer that will be used to route traffic from original
+     * instances to replacement instances in a blue/green deployment. For in-place deployments, the name of the load
+     * balancer that instances are deregistered from so they are not serving traffic during a deployment, and then
+     * re-registered with after the deployment completes.
      * </p>
      * 
      * @param name
-     *        The name of the load balancer that will be used to route traffic from original instances to replacement
-     *        instances in a blue/green deployment.
+     *        For blue/green deployments, the name of the load balancer that will be used to route traffic from original
+     *        instances to replacement instances in a blue/green deployment. For in-place deployments, the name of the
+     *        load balancer that instances are deregistered from so they are not serving traffic during a deployment,
+     *        and then re-registered with after the deployment completes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

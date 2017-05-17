@@ -68,6 +68,11 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
      * succeeds.
      * </p>
      * </note>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy Instance
+     * Health</a> in the <i>AWS CodeDeploy User Guide</i>.
+     * </p>
      */
     private String type;
 
@@ -145,6 +150,11 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
      * succeeds.
      * </p>
      * </note>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy Instance
+     * Health</a> in the <i>AWS CodeDeploy User Guide</i>.
+     * </p>
      * 
      * @param type
      *        The minimum healthy instance type:</p>
@@ -178,6 +188,11 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
      *        offline for a new deployment, it also means that if the deployment to the last instance fails, the overall
      *        deployment still succeeds.
      *        </p>
+     *        </note>
+     *        <p>
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy
+     *        Instance Health</a> in the <i>AWS CodeDeploy User Guide</i>.
      * @see MinimumHealthyHostsType
      */
 
@@ -219,6 +234,11 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
      * succeeds.
      * </p>
      * </note>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy Instance
+     * Health</a> in the <i>AWS CodeDeploy User Guide</i>.
+     * </p>
      * 
      * @return The minimum healthy instance type:</p>
      *         <ul>
@@ -251,6 +271,11 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
      *         taken offline for a new deployment, it also means that if the deployment to the last instance fails, the
      *         overall deployment still succeeds.
      *         </p>
+     *         </note>
+     *         <p>
+     *         For more information, see <a
+     *         href="http://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy
+     *         Instance Health</a> in the <i>AWS CodeDeploy User Guide</i>.
      * @see MinimumHealthyHostsType
      */
 
@@ -292,6 +317,11 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
      * succeeds.
      * </p>
      * </note>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy Instance
+     * Health</a> in the <i>AWS CodeDeploy User Guide</i>.
+     * </p>
      * 
      * @param type
      *        The minimum healthy instance type:</p>
@@ -325,6 +355,11 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
      *        offline for a new deployment, it also means that if the deployment to the last instance fails, the overall
      *        deployment still succeeds.
      *        </p>
+     *        </note>
+     *        <p>
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy
+     *        Instance Health</a> in the <i>AWS CodeDeploy User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MinimumHealthyHostsType
      */
@@ -368,6 +403,11 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
      * succeeds.
      * </p>
      * </note>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy Instance
+     * Health</a> in the <i>AWS CodeDeploy User Guide</i>.
+     * </p>
      * 
      * @param type
      *        The minimum healthy instance type:</p>
@@ -401,6 +441,11 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
      *        offline for a new deployment, it also means that if the deployment to the last instance fails, the overall
      *        deployment still succeeds.
      *        </p>
+     *        </note>
+     *        <p>
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy
+     *        Instance Health</a> in the <i>AWS CodeDeploy User Guide</i>.
      * @see MinimumHealthyHostsType
      */
 
@@ -442,6 +487,11 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
      * succeeds.
      * </p>
      * </note>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy Instance
+     * Health</a> in the <i>AWS CodeDeploy User Guide</i>.
+     * </p>
      * 
      * @param type
      *        The minimum healthy instance type:</p>
@@ -475,6 +525,11 @@ public class MinimumHealthyHosts implements Serializable, Cloneable, StructuredP
      *        offline for a new deployment, it also means that if the deployment to the last instance fails, the overall
      *        deployment still succeeds.
      *        </p>
+     *        </note>
+     *        <p>
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">AWS CodeDeploy
+     *        Instance Health</a> in the <i>AWS CodeDeploy User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MinimumHealthyHostsType
      */

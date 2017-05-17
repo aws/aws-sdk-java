@@ -79,6 +79,9 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                             new JsonErrorShapeMetadata().withErrorCode("AssessmentRunInProgressException").withModeledClass(
                                     com.amazonaws.services.inspector.model.AssessmentRunInProgressException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedFeatureException").withModeledClass(
+                                    com.amazonaws.services.inspector.model.UnsupportedFeatureException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
                                     com.amazonaws.services.inspector.model.LimitExceededException.class))
                     .addErrorMetadata(
@@ -1070,6 +1073,70 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
             HttpResponseHandler<AmazonWebServiceResponse<DescribeRulesPackagesResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new DescribeRulesPackagesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Produces an assessment report that includes detailed and comprehensive results of a specified assessment run.
+     * </p>
+     * 
+     * @param getAssessmentReportRequest
+     * @return Result of the GetAssessmentReport operation returned by the service.
+     * @throws InternalException
+     *         Internal server error.
+     * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
+     * @throws AccessDeniedException
+     *         You do not have required permissions to access the requested resource.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced an entity that does not exist. The error code describes
+     *         the entity.
+     * @throws AssessmentRunInProgressException
+     *         You cannot perform a specified action if an assessment run is currently in progress.
+     * @throws UnsupportedFeatureException
+     *         Used by the <a>GetAssessmentReport</a> API. The request was rejected because you tried to generate a
+     *         report for an assessment run that existed before reporting was supported in Amazon Inspector. You can
+     *         only generate reports for assessment runs that took place or will take place after generating reports in
+     *         Amazon Inspector became available.
+     * @sample AmazonInspector.GetAssessmentReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetAssessmentReport" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetAssessmentReportResult getAssessmentReport(GetAssessmentReportRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAssessmentReport(request);
+    }
+
+    @SdkInternalApi
+    final GetAssessmentReportResult executeGetAssessmentReport(GetAssessmentReportRequest getAssessmentReportRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAssessmentReportRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAssessmentReportRequest> request = null;
+        Response<GetAssessmentReportResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAssessmentReportRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAssessmentReportRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetAssessmentReportResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetAssessmentReportResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

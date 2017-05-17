@@ -1,3 +1,28 @@
+# __1.11.130__ __2017-05-16__
+## __AWS CodeDeploy__
+  - ### Features
+    - This release introduces the previousRevision field in the responses to the GetDeployment and BatchGetDeployments actions. previousRevision provides information about the application revision that was deployed to the deployment group before the most recent successful deployment.  Also, the fileExistsBehavior parameter has been added for CreateDeployment action requests. In the past, if the AWS CodeDeploy agent detected files in a target location that weren't part of the application revision from the most recent successful deployment, it would fail the current deployment by default. This new parameter provides options for how the agent handles these files: fail the deployment, retain the content, or overwrite the content.
+
+## __AWS Key Management Service (KMS)__
+  - ### Features
+    - Update documentation for KMS.
+
+## __AWS Step Functions__
+  - ### Bugfixes
+    - Fixes [Issue 1150]( https://github.com/aws/aws-sdk-java/issues/1150) by preserving explicit null values for InputPath, OutputPath, and ResultPath.
+
+## __Amazon GameLift__
+  - ### Features
+    - Allow developers to specify how metrics are grouped in CloudWatch for their GameLift fleets. Developers can also specify how many concurrent game sessions activate on a per-instance basis.
+
+## __Amazon Inspector__
+  - ### Features
+    - Adds ability to produce an assessment report that includes detailed and comprehensive results of a specified assessment run.
+
+## __Amazon S3__
+  - ### Bugfixes
+    - All API methods in AmazonS3Client now call beforeClientExecution in the RequestHandler2 interface.
+
 # __1.11.129__ __2017-05-15__
 ## __Amazon Simple Systems Manager (SSM)__
   - ### Features

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.stepfunctions.builder;
 
+import static com.amazonaws.services.stepfunctions.builder.StatesAsserts.assertStateMachineMatches;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.and;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.branch;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.catcher;
@@ -40,18 +41,12 @@ import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.t
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.timestamp;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.timestampPath;
 import static com.amazonaws.services.stepfunctions.builder.StepFunctionBuilder.waitState;
-import static org.junit.Assert.assertEquals;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import java.io.IOException;
 import java.util.Date;
 import org.joda.time.DateTime;
 import org.junit.Test;
 
 public class StepFunctionBuilderTest {
-
-    private static final ObjectMapper MAPPER = new ObjectMapper();
 
     @Test
     public void singleSucceedState() {
@@ -64,7 +59,7 @@ public class StepFunctionBuilderTest {
                         .inputPath("$.input")
                         .outputPath("$.output"))
                 .build();
-        assertStateMachine(stateMachine, "SingleSucceedState.json");
+        assertStateMachineMatches("SingleSucceedState.json", stateMachine);
     }
 
     @Test
@@ -83,7 +78,7 @@ public class StepFunctionBuilderTest {
                 .state("NextState", succeedState())
                 .build();
 
-        assertStateMachine(stateMachine, "SimpleTaskState.json");
+        assertStateMachineMatches("SimpleTaskState.json", stateMachine);
     }
 
     @Test
@@ -95,7 +90,7 @@ public class StepFunctionBuilderTest {
                         .transition(end()))
                 .build();
 
-        assertStateMachine(stateMachine, "TaskStateWithEnd.json");
+        assertStateMachineMatches("TaskStateWithEnd.json", stateMachine);
     }
 
     @Test
@@ -118,7 +113,7 @@ public class StepFunctionBuilderTest {
                 .state("NextState", succeedState())
                 .build();
 
-        assertStateMachine(stateMachine, "SimpleTaskStateWithRetries.json");
+        assertStateMachineMatches("SimpleTaskStateWithRetries.json", stateMachine);
     }
 
     @Test
@@ -140,7 +135,7 @@ public class StepFunctionBuilderTest {
                 .state("OtherRecoveryState", succeedState())
                 .build();
 
-        assertStateMachine(stateMachine, "SimpleTaskStateWithCatchers.json");
+        assertStateMachineMatches("SimpleTaskStateWithCatchers.json", stateMachine);
     }
 
     @Test
@@ -157,7 +152,7 @@ public class StepFunctionBuilderTest {
                 .state("NextState", succeedState())
                 .build();
 
-        assertStateMachine(stateMachine, "SinglePassStateWithJsonResult.json");
+        assertStateMachineMatches("SinglePassStateWithJsonResult.json", stateMachine);
     }
 
     @Test
@@ -169,7 +164,7 @@ public class StepFunctionBuilderTest {
                         .result(new SimplePojo("value")))
                 .build();
 
-        assertStateMachine(stateMachine, "SinglePassStateWithObjectResult.json");
+        assertStateMachineMatches("SinglePassStateWithObjectResult.json", stateMachine);
     }
 
     @Test
@@ -185,7 +180,7 @@ public class StepFunctionBuilderTest {
                 .state("NextState", succeedState())
                 .build();
 
-        assertStateMachine(stateMachine, "SingleWaitStateWithSeconds.json");
+        assertStateMachineMatches("SingleWaitStateWithSeconds.json", stateMachine);
     }
 
     @Test
@@ -197,7 +192,7 @@ public class StepFunctionBuilderTest {
                         .transition(end()))
                 .build();
 
-        assertStateMachine(stateMachine, "SingleWaitStateWithSecondsPath.json");
+        assertStateMachineMatches("SingleWaitStateWithSecondsPath.json", stateMachine);
     }
 
     @Test
@@ -209,7 +204,7 @@ public class StepFunctionBuilderTest {
                         .transition(end()))
                 .build();
 
-        assertStateMachine(stateMachine, "SingleWaitStateWithTimestamp.json");
+        assertStateMachineMatches("SingleWaitStateWithTimestamp.json", stateMachine);
     }
 
     @Test
@@ -221,7 +216,7 @@ public class StepFunctionBuilderTest {
                         .transition(end()))
                 .build();
 
-        assertStateMachine(stateMachine, "SingleWaitStateWithTimestampWithMilliseconds.json");
+        assertStateMachineMatches("SingleWaitStateWithTimestampWithMilliseconds.json", stateMachine);
     }
 
     @Test
@@ -233,7 +228,7 @@ public class StepFunctionBuilderTest {
                         .transition(end()))
                 .build();
 
-        assertStateMachine(stateMachine, "SingleWaitStateWithTimestampWithTimezone.json");
+        assertStateMachineMatches("SingleWaitStateWithTimestampWithTimezone.json", stateMachine);
     }
 
     @Test
@@ -245,7 +240,7 @@ public class StepFunctionBuilderTest {
                         .transition(end()))
                 .build();
 
-        assertStateMachine(stateMachine, "SingleWaitStateWithTimestampWithPath.json");
+        assertStateMachineMatches("SingleWaitStateWithTimestampWithPath.json", stateMachine);
     }
 
     @Test
@@ -258,7 +253,7 @@ public class StepFunctionBuilderTest {
                         .error("java.lang.Exception"))
                 .build();
 
-        assertStateMachine(stateMachine, "SingleFailState.json");
+        assertStateMachineMatches("SingleFailState.json", stateMachine);
     }
 
     @Test
@@ -276,7 +271,7 @@ public class StepFunctionBuilderTest {
                 .state("DefaultState", succeedState())
                 .build();
 
-        assertStateMachine(stateMachine, "SimpleChoiceState.json");
+        assertStateMachineMatches("SimpleChoiceState.json", stateMachine);
     }
 
     @Test
@@ -295,7 +290,7 @@ public class StepFunctionBuilderTest {
                 .state("DefaultState", succeedState())
                 .build();
 
-        assertStateMachine(stateMachine, "ChoiceStateWithMultipleChoices.json");
+        assertStateMachineMatches("ChoiceStateWithMultipleChoices.json", stateMachine);
     }
 
     @Test
@@ -313,7 +308,7 @@ public class StepFunctionBuilderTest {
                 .state("DefaultState", succeedState())
                 .build();
 
-        assertStateMachine(stateMachine, "ChoiceStateWithAndCondition.json");
+        assertStateMachineMatches("ChoiceStateWithAndCondition.json", stateMachine);
     }
 
     @Test
@@ -331,7 +326,7 @@ public class StepFunctionBuilderTest {
                 .state("DefaultState", succeedState())
                 .build();
 
-        assertStateMachine(stateMachine, "ChoiceStateWithOrCondition.json");
+        assertStateMachineMatches("ChoiceStateWithOrCondition.json", stateMachine);
     }
 
     @Test
@@ -346,7 +341,7 @@ public class StepFunctionBuilderTest {
                 .state("DefaultState", succeedState())
                 .build();
 
-        assertStateMachine(stateMachine, "ChoiceStateWithNotCondition.json");
+        assertStateMachineMatches("ChoiceStateWithNotCondition.json", stateMachine);
     }
 
     @Test
@@ -368,7 +363,7 @@ public class StepFunctionBuilderTest {
                 .state("DefaultState", succeedState())
                 .build();
 
-        assertStateMachine(stateMachine, "ChoiceStateWithComplexCondition.json");
+        assertStateMachineMatches("ChoiceStateWithComplexCondition.json", stateMachine);
     }
 
     @Test
@@ -407,7 +402,7 @@ public class StepFunctionBuilderTest {
                 .state("DefaultState", succeedState())
                 .build();
 
-        assertStateMachine(stateMachine, "ChoiceStateWithAllPrimitiveCondition.json");
+        assertStateMachineMatches("ChoiceStateWithAllPrimitiveCondition.json", stateMachine);
     }
 
     @Test
@@ -433,7 +428,7 @@ public class StepFunctionBuilderTest {
                 .state("NextState", succeedState())
                 .build();
 
-        assertStateMachine(stateMachine, "SimpleParallelState.json");
+        assertStateMachineMatches("SimpleParallelState.json", stateMachine);
     }
 
     @Test
@@ -465,7 +460,7 @@ public class StepFunctionBuilderTest {
                         ))
                 .build();
 
-        assertStateMachine(stateMachine, "ParallelStateWithRetriers.json");
+        assertStateMachineMatches("ParallelStateWithRetriers.json", stateMachine);
     }
 
     @Test
@@ -497,7 +492,7 @@ public class StepFunctionBuilderTest {
                 .state("OtherRecoveryState", succeedState())
                 .build();
 
-        assertStateMachine(stateMachine, "ParallelStateWithCatchers.json");
+        assertStateMachineMatches("ParallelStateWithCatchers.json", stateMachine);
     }
 
     @Test
@@ -511,40 +506,12 @@ public class StepFunctionBuilderTest {
                 .state("FinalState", succeedState())
                 .build();
 
-        assertStateMachine(stateMachine, "ChoiceStateWithEmptyStringInExpectedValue.json");
+        assertStateMachineMatches("ChoiceStateWithEmptyStringInExpectedValue.json", stateMachine);
     }
 
     @Test(expected = Exception.class)
     public void stateMachineFromJson_MalformedJson_ThrowsException() {
         StateMachine.fromJson("{");
-    }
-
-    private void assertStateMachine(StateMachine stateMachine, String resourcePath) {
-        final JsonNode expected = loadExpected(resourcePath);
-        assertEquals(expected, serialize(stateMachine));
-        assertEquals(expected, serialize(roundTripStateMachine(stateMachine)));
-    }
-
-    /**
-     * Serializes StateMachine into JSON and deserialize back into a StateMachine from the JSON.
-     *
-     * @param stateMachine State machine to round trip.
-     * @return Round-tripped state machine.
-     */
-    private StateMachine roundTripStateMachine(StateMachine stateMachine) {
-        return StateMachine.fromJson(stateMachine.toJson()).build();
-    }
-
-    private JsonNode serialize(StateMachine stateMachine) {
-        try {
-            return MAPPER.readTree(stateMachine.toJson());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    private JsonNode loadExpected(String resourcePath) {
-        return TestResourceLoader.loadAsJson(resourcePath);
     }
 
 }

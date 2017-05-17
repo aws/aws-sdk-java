@@ -56,6 +56,8 @@ public class FleetAttributesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OperatingSystem").build();
     private static final MarshallingInfo<StructuredPojo> RESOURCECREATIONLIMITPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceCreationLimitPolicy").build();
+    private static final MarshallingInfo<List> METRICGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("MetricGroups").build();
 
     private static final FleetAttributesMarshaller instance = new FleetAttributesMarshaller();
 
@@ -87,6 +89,7 @@ public class FleetAttributesMarshaller {
             protocolMarshaller.marshall(fleetAttributes.getNewGameSessionProtectionPolicy(), NEWGAMESESSIONPROTECTIONPOLICY_BINDING);
             protocolMarshaller.marshall(fleetAttributes.getOperatingSystem(), OPERATINGSYSTEM_BINDING);
             protocolMarshaller.marshall(fleetAttributes.getResourceCreationLimitPolicy(), RESOURCECREATIONLIMITPOLICY_BINDING);
+            protocolMarshaller.marshall(fleetAttributes.getMetricGroups(), METRICGROUPS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

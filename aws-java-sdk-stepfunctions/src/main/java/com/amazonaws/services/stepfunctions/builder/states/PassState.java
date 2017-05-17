@@ -23,7 +23,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.io.IOException;
 
 /**
@@ -52,14 +51,8 @@ public final class PassState extends TransitionState {
     @JsonProperty(PropertyNames.RESULT)
     private final JsonNode result;
 
-    @JsonProperty(PropertyNames.INPUT_PATH)
-    private final String inputPath;
-
-    @JsonProperty(PropertyNames.OUTPUT_PATH)
-    private final String outputPath;
-
-    @JsonProperty(PropertyNames.RESULT_PATH)
-    private final String resultPath;
+    @JsonUnwrapped
+    private final PathContainer pathContainer;
 
     @JsonUnwrapped
     private final Transition transition;
@@ -67,9 +60,7 @@ public final class PassState extends TransitionState {
     private PassState(Builder builder) {
         this.comment = builder.comment;
         this.result = builder.result;
-        this.inputPath = builder.inputPath;
-        this.outputPath = builder.outputPath;
-        this.resultPath = builder.resultPath;
+        this.pathContainer = builder.pathContainer.build();
         this.transition = builder.transition.build();
     }
 
@@ -103,22 +94,25 @@ public final class PassState extends TransitionState {
     /**
      * @return The input path expression that may optionally transform the input to this state.
      */
+    @JsonIgnore
     public String getInputPath() {
-        return inputPath;
+        return pathContainer.getInputPath();
     }
 
     /**
      * @return The output path expression that may optionally transform the output to this state.
      */
+    @JsonIgnore
     public String getOutputPath() {
-        return outputPath;
+        return pathContainer.getOutputPath();
     }
 
     /**
      * @return The result path expression that may optionally combine or replace the state's raw input with it's result.
      */
+    @JsonIgnore
     public String getResultPath() {
-        return resultPath;
+        return pathContainer.getResultPath();
     }
 
     /**
@@ -143,7 +137,7 @@ public final class PassState extends TransitionState {
     /**
      * Builder for a {@link PassState}.
      */
-    public static final class Builder extends TransitionStateBuilder {
+    public static final class Builder extends TransitionStateBuilder implements InputOutputResultPathBuilder<Builder> {
 
         @JsonProperty(PropertyNames.COMMENT)
         private String comment;
@@ -151,14 +145,7 @@ public final class PassState extends TransitionState {
         @JsonProperty(PropertyNames.RESULT)
         private JsonNode result;
 
-        @JsonProperty(PropertyNames.INPUT_PATH)
-        private String inputPath;
-
-        @JsonProperty(PropertyNames.OUTPUT_PATH)
-        private String outputPath;
-
-        @JsonProperty(PropertyNames.RESULT_PATH)
-        private String resultPath;
+        private final PathContainer.Builder pathContainer = PathContainer.builder();
 
         private Transition.Builder transition = Transition.NULL_BUILDER;
 
@@ -202,42 +189,21 @@ public final class PassState extends TransitionState {
             return this;
         }
 
-        /**
-         * OPTIONAL. The value of “InputPath” MUST be a Path, which is applied to a State’s raw input to select some or all of
-         * it;
-         * that selection is used by the state. If not provided then the whole output from the previous state is used as input to
-         * this state.
-         *
-         * @param inputPath New path value.
-         * @return This object for method chaining.
-         */
+        @Override
         public Builder inputPath(String inputPath) {
-            this.inputPath = inputPath;
+            pathContainer.inputPath(inputPath);
             return this;
         }
 
-        /**
-         * OPTIONAL. The value of “OutputPath” MUST be a path, which is applied to the state’s output after the application of
-         * ResultPath,
-         * leading in the generation of the raw input for the next state. If not provided then the whole output is used.
-         *
-         * @param outputPath New path value.
-         * @return This object for method chaining.
-         */
+        @Override
         public Builder outputPath(String outputPath) {
-            this.outputPath = outputPath;
+            pathContainer.outputPath(outputPath);
             return this;
         }
 
-        /**
-         * OPTIONAL. The value of “ResultPath” MUST be a Reference Path, which specifies the combination with or replacement of
-         * the state’s result with its raw input. If not provided then the output completely replaces the input.
-         *
-         * @param resultPath New path value.
-         * @return This object for method chaining.
-         */
+        @Override
         public Builder resultPath(String resultPath) {
-            this.resultPath = resultPath;
+            pathContainer.resultPath(resultPath);
             return this;
         }
 

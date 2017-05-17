@@ -83,9 +83,8 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
     private String name;
     /**
      * <p>
-     * Amazon Resource Name (<a
-     * href="http://docs.aws.amazon.com/docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is
-     * assigned to a game session queue and uniquely identifies it. Format is
+     * Amazon Resource Name (<a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that
+     * is assigned to a game session queue and uniquely identifies it. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * </p>
      */
@@ -158,16 +157,14 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Amazon Resource Name (<a
-     * href="http://docs.aws.amazon.com/docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is
-     * assigned to a game session queue and uniquely identifies it. Format is
+     * Amazon Resource Name (<a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that
+     * is assigned to a game session queue and uniquely identifies it. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * </p>
      * 
      * @param gameSessionQueueArn
-     *        Amazon Resource Name (<a
-     *        href="http://docs.aws.amazon.com/docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that
-     *        is assigned to a game session queue and uniquely identifies it. Format is
+     *        Amazon Resource Name (<a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     *        that is assigned to a game session queue and uniquely identifies it. Format is
      *        <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      */
 
@@ -177,15 +174,14 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Amazon Resource Name (<a
-     * href="http://docs.aws.amazon.com/docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is
-     * assigned to a game session queue and uniquely identifies it. Format is
+     * Amazon Resource Name (<a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that
+     * is assigned to a game session queue and uniquely identifies it. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * </p>
      * 
      * @return Amazon Resource Name (<a
-     *         href="http://docs.aws.amazon.com/docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     *         that is assigned to a game session queue and uniquely identifies it. Format is
+     *         href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *         game session queue and uniquely identifies it. Format is
      *         <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      */
 
@@ -195,16 +191,14 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Amazon Resource Name (<a
-     * href="http://docs.aws.amazon.com/docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is
-     * assigned to a game session queue and uniquely identifies it. Format is
+     * Amazon Resource Name (<a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that
+     * is assigned to a game session queue and uniquely identifies it. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * </p>
      * 
      * @param gameSessionQueueArn
-     *        Amazon Resource Name (<a
-     *        href="http://docs.aws.amazon.com/docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that
-     *        is assigned to a game session queue and uniquely identifies it. Format is
+     *        Amazon Resource Name (<a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     *        that is assigned to a game session queue and uniquely identifies it. Format is
      *        <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

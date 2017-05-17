@@ -95,6 +95,34 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private Boolean updateOutdatedInstancesOnly;
+    /**
+     * <p>
+     * Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't
+     * part of the previous successful deployment.
+     * </p>
+     * <p>
+     * The fileExistsBehavior parameter takes any of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OVERWRITE: The version of the file from the application revision currently being deployed replaces the version
+     * already on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String fileExistsBehavior;
 
     /**
      * <p>
@@ -571,6 +599,294 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't
+     * part of the previous successful deployment.
+     * </p>
+     * <p>
+     * The fileExistsBehavior parameter takes any of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OVERWRITE: The version of the file from the application revision currently being deployed replaces the version
+     * already on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param fileExistsBehavior
+     *        Information about how AWS CodeDeploy handles files that already exist in a deployment target location but
+     *        weren't part of the previous successful deployment.</p>
+     *        <p>
+     *        The fileExistsBehavior parameter takes any of the following values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OVERWRITE: The version of the file from the application revision currently being deployed replaces the
+     *        version already on the instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     *        </p>
+     *        </li>
+     * @see FileExistsBehavior
+     */
+
+    public void setFileExistsBehavior(String fileExistsBehavior) {
+        this.fileExistsBehavior = fileExistsBehavior;
+    }
+
+    /**
+     * <p>
+     * Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't
+     * part of the previous successful deployment.
+     * </p>
+     * <p>
+     * The fileExistsBehavior parameter takes any of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OVERWRITE: The version of the file from the application revision currently being deployed replaces the version
+     * already on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Information about how AWS CodeDeploy handles files that already exist in a deployment target location but
+     *         weren't part of the previous successful deployment.</p>
+     *         <p>
+     *         The fileExistsBehavior parameter takes any of the following values:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OVERWRITE: The version of the file from the application revision currently being deployed replaces the
+     *         version already on the instance.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     *         </p>
+     *         </li>
+     * @see FileExistsBehavior
+     */
+
+    public String getFileExistsBehavior() {
+        return this.fileExistsBehavior;
+    }
+
+    /**
+     * <p>
+     * Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't
+     * part of the previous successful deployment.
+     * </p>
+     * <p>
+     * The fileExistsBehavior parameter takes any of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OVERWRITE: The version of the file from the application revision currently being deployed replaces the version
+     * already on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param fileExistsBehavior
+     *        Information about how AWS CodeDeploy handles files that already exist in a deployment target location but
+     *        weren't part of the previous successful deployment.</p>
+     *        <p>
+     *        The fileExistsBehavior parameter takes any of the following values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OVERWRITE: The version of the file from the application revision currently being deployed replaces the
+     *        version already on the instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FileExistsBehavior
+     */
+
+    public CreateDeploymentRequest withFileExistsBehavior(String fileExistsBehavior) {
+        setFileExistsBehavior(fileExistsBehavior);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't
+     * part of the previous successful deployment.
+     * </p>
+     * <p>
+     * The fileExistsBehavior parameter takes any of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OVERWRITE: The version of the file from the application revision currently being deployed replaces the version
+     * already on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param fileExistsBehavior
+     *        Information about how AWS CodeDeploy handles files that already exist in a deployment target location but
+     *        weren't part of the previous successful deployment.</p>
+     *        <p>
+     *        The fileExistsBehavior parameter takes any of the following values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OVERWRITE: The version of the file from the application revision currently being deployed replaces the
+     *        version already on the instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     *        </p>
+     *        </li>
+     * @see FileExistsBehavior
+     */
+
+    public void setFileExistsBehavior(FileExistsBehavior fileExistsBehavior) {
+        this.fileExistsBehavior = fileExistsBehavior.toString();
+    }
+
+    /**
+     * <p>
+     * Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't
+     * part of the previous successful deployment.
+     * </p>
+     * <p>
+     * The fileExistsBehavior parameter takes any of the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OVERWRITE: The version of the file from the application revision currently being deployed replaces the version
+     * already on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param fileExistsBehavior
+     *        Information about how AWS CodeDeploy handles files that already exist in a deployment target location but
+     *        weren't part of the previous successful deployment.</p>
+     *        <p>
+     *        The fileExistsBehavior parameter takes any of the following values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        DISALLOW: The deployment fails. This is also the default behavior if no option is specified.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OVERWRITE: The version of the file from the application revision currently being deployed replaces the
+     *        version already on the instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FileExistsBehavior
+     */
+
+    public CreateDeploymentRequest withFileExistsBehavior(FileExistsBehavior fileExistsBehavior) {
+        setFileExistsBehavior(fileExistsBehavior);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -598,7 +914,9 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
         if (getAutoRollbackConfiguration() != null)
             sb.append("AutoRollbackConfiguration: ").append(getAutoRollbackConfiguration()).append(",");
         if (getUpdateOutdatedInstancesOnly() != null)
-            sb.append("UpdateOutdatedInstancesOnly: ").append(getUpdateOutdatedInstancesOnly());
+            sb.append("UpdateOutdatedInstancesOnly: ").append(getUpdateOutdatedInstancesOnly()).append(",");
+        if (getFileExistsBehavior() != null)
+            sb.append("FileExistsBehavior: ").append(getFileExistsBehavior());
         sb.append("}");
         return sb.toString();
     }
@@ -650,6 +968,10 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getUpdateOutdatedInstancesOnly() != null && other.getUpdateOutdatedInstancesOnly().equals(this.getUpdateOutdatedInstancesOnly()) == false)
             return false;
+        if (other.getFileExistsBehavior() == null ^ this.getFileExistsBehavior() == null)
+            return false;
+        if (other.getFileExistsBehavior() != null && other.getFileExistsBehavior().equals(this.getFileExistsBehavior()) == false)
+            return false;
         return true;
     }
 
@@ -667,6 +989,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getTargetInstances() == null) ? 0 : getTargetInstances().hashCode());
         hashCode = prime * hashCode + ((getAutoRollbackConfiguration() == null) ? 0 : getAutoRollbackConfiguration().hashCode());
         hashCode = prime * hashCode + ((getUpdateOutdatedInstancesOnly() == null) ? 0 : getUpdateOutdatedInstancesOnly().hashCode());
+        hashCode = prime * hashCode + ((getFileExistsBehavior() == null) ? 0 : getFileExistsBehavior().hashCode());
         return hashCode;
     }
 

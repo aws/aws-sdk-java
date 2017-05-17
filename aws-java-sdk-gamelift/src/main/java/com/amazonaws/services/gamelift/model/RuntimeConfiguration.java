@@ -44,18 +44,34 @@ public class RuntimeConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Collection of server process configurations describing what server processes to run on each instance in a fleet
+     * Collection of server process configurations that describe which server processes to run on each instance in a
+     * fleet.
      * </p>
      */
     private java.util.List<ServerProcess> serverProcesses;
+    /**
+     * <p>
+     * Maximum number of game sessions with status ACTIVATING to allow on an instance simultaneously. This setting
+     * limits the amount of instance resources that can be used for new game activations at any one time.
+     * </p>
+     */
+    private Integer maxConcurrentGameSessionActivations;
+    /**
+     * <p>
+     * Maximum amount of time (in seconds) that a game session can remain in status ACTIVATING. If the game session is
+     * not active before the timeout, activation is terminated and the game session status is changed to TERMINATED.
+     * </p>
+     */
+    private Integer gameSessionActivationTimeoutSeconds;
 
     /**
      * <p>
-     * Collection of server process configurations describing what server processes to run on each instance in a fleet
+     * Collection of server process configurations that describe which server processes to run on each instance in a
+     * fleet.
      * </p>
      * 
-     * @return Collection of server process configurations describing what server processes to run on each instance in a
-     *         fleet
+     * @return Collection of server process configurations that describe which server processes to run on each instance
+     *         in a fleet.
      */
 
     public java.util.List<ServerProcess> getServerProcesses() {
@@ -64,12 +80,13 @@ public class RuntimeConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Collection of server process configurations describing what server processes to run on each instance in a fleet
+     * Collection of server process configurations that describe which server processes to run on each instance in a
+     * fleet.
      * </p>
      * 
      * @param serverProcesses
-     *        Collection of server process configurations describing what server processes to run on each instance in a
-     *        fleet
+     *        Collection of server process configurations that describe which server processes to run on each instance
+     *        in a fleet.
      */
 
     public void setServerProcesses(java.util.Collection<ServerProcess> serverProcesses) {
@@ -83,7 +100,8 @@ public class RuntimeConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Collection of server process configurations describing what server processes to run on each instance in a fleet
+     * Collection of server process configurations that describe which server processes to run on each instance in a
+     * fleet.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -92,8 +110,8 @@ public class RuntimeConfiguration implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param serverProcesses
-     *        Collection of server process configurations describing what server processes to run on each instance in a
-     *        fleet
+     *        Collection of server process configurations that describe which server processes to run on each instance
+     *        in a fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,17 +127,114 @@ public class RuntimeConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Collection of server process configurations describing what server processes to run on each instance in a fleet
+     * Collection of server process configurations that describe which server processes to run on each instance in a
+     * fleet.
      * </p>
      * 
      * @param serverProcesses
-     *        Collection of server process configurations describing what server processes to run on each instance in a
-     *        fleet
+     *        Collection of server process configurations that describe which server processes to run on each instance
+     *        in a fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RuntimeConfiguration withServerProcesses(java.util.Collection<ServerProcess> serverProcesses) {
         setServerProcesses(serverProcesses);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Maximum number of game sessions with status ACTIVATING to allow on an instance simultaneously. This setting
+     * limits the amount of instance resources that can be used for new game activations at any one time.
+     * </p>
+     * 
+     * @param maxConcurrentGameSessionActivations
+     *        Maximum number of game sessions with status ACTIVATING to allow on an instance simultaneously. This
+     *        setting limits the amount of instance resources that can be used for new game activations at any one time.
+     */
+
+    public void setMaxConcurrentGameSessionActivations(Integer maxConcurrentGameSessionActivations) {
+        this.maxConcurrentGameSessionActivations = maxConcurrentGameSessionActivations;
+    }
+
+    /**
+     * <p>
+     * Maximum number of game sessions with status ACTIVATING to allow on an instance simultaneously. This setting
+     * limits the amount of instance resources that can be used for new game activations at any one time.
+     * </p>
+     * 
+     * @return Maximum number of game sessions with status ACTIVATING to allow on an instance simultaneously. This
+     *         setting limits the amount of instance resources that can be used for new game activations at any one
+     *         time.
+     */
+
+    public Integer getMaxConcurrentGameSessionActivations() {
+        return this.maxConcurrentGameSessionActivations;
+    }
+
+    /**
+     * <p>
+     * Maximum number of game sessions with status ACTIVATING to allow on an instance simultaneously. This setting
+     * limits the amount of instance resources that can be used for new game activations at any one time.
+     * </p>
+     * 
+     * @param maxConcurrentGameSessionActivations
+     *        Maximum number of game sessions with status ACTIVATING to allow on an instance simultaneously. This
+     *        setting limits the amount of instance resources that can be used for new game activations at any one time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuntimeConfiguration withMaxConcurrentGameSessionActivations(Integer maxConcurrentGameSessionActivations) {
+        setMaxConcurrentGameSessionActivations(maxConcurrentGameSessionActivations);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Maximum amount of time (in seconds) that a game session can remain in status ACTIVATING. If the game session is
+     * not active before the timeout, activation is terminated and the game session status is changed to TERMINATED.
+     * </p>
+     * 
+     * @param gameSessionActivationTimeoutSeconds
+     *        Maximum amount of time (in seconds) that a game session can remain in status ACTIVATING. If the game
+     *        session is not active before the timeout, activation is terminated and the game session status is changed
+     *        to TERMINATED.
+     */
+
+    public void setGameSessionActivationTimeoutSeconds(Integer gameSessionActivationTimeoutSeconds) {
+        this.gameSessionActivationTimeoutSeconds = gameSessionActivationTimeoutSeconds;
+    }
+
+    /**
+     * <p>
+     * Maximum amount of time (in seconds) that a game session can remain in status ACTIVATING. If the game session is
+     * not active before the timeout, activation is terminated and the game session status is changed to TERMINATED.
+     * </p>
+     * 
+     * @return Maximum amount of time (in seconds) that a game session can remain in status ACTIVATING. If the game
+     *         session is not active before the timeout, activation is terminated and the game session status is changed
+     *         to TERMINATED.
+     */
+
+    public Integer getGameSessionActivationTimeoutSeconds() {
+        return this.gameSessionActivationTimeoutSeconds;
+    }
+
+    /**
+     * <p>
+     * Maximum amount of time (in seconds) that a game session can remain in status ACTIVATING. If the game session is
+     * not active before the timeout, activation is terminated and the game session status is changed to TERMINATED.
+     * </p>
+     * 
+     * @param gameSessionActivationTimeoutSeconds
+     *        Maximum amount of time (in seconds) that a game session can remain in status ACTIVATING. If the game
+     *        session is not active before the timeout, activation is terminated and the game session status is changed
+     *        to TERMINATED.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuntimeConfiguration withGameSessionActivationTimeoutSeconds(Integer gameSessionActivationTimeoutSeconds) {
+        setGameSessionActivationTimeoutSeconds(gameSessionActivationTimeoutSeconds);
         return this;
     }
 
@@ -135,7 +250,11 @@ public class RuntimeConfiguration implements Serializable, Cloneable, Structured
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getServerProcesses() != null)
-            sb.append("ServerProcesses: ").append(getServerProcesses());
+            sb.append("ServerProcesses: ").append(getServerProcesses()).append(",");
+        if (getMaxConcurrentGameSessionActivations() != null)
+            sb.append("MaxConcurrentGameSessionActivations: ").append(getMaxConcurrentGameSessionActivations()).append(",");
+        if (getGameSessionActivationTimeoutSeconds() != null)
+            sb.append("GameSessionActivationTimeoutSeconds: ").append(getGameSessionActivationTimeoutSeconds());
         sb.append("}");
         return sb.toString();
     }
@@ -154,6 +273,16 @@ public class RuntimeConfiguration implements Serializable, Cloneable, Structured
             return false;
         if (other.getServerProcesses() != null && other.getServerProcesses().equals(this.getServerProcesses()) == false)
             return false;
+        if (other.getMaxConcurrentGameSessionActivations() == null ^ this.getMaxConcurrentGameSessionActivations() == null)
+            return false;
+        if (other.getMaxConcurrentGameSessionActivations() != null
+                && other.getMaxConcurrentGameSessionActivations().equals(this.getMaxConcurrentGameSessionActivations()) == false)
+            return false;
+        if (other.getGameSessionActivationTimeoutSeconds() == null ^ this.getGameSessionActivationTimeoutSeconds() == null)
+            return false;
+        if (other.getGameSessionActivationTimeoutSeconds() != null
+                && other.getGameSessionActivationTimeoutSeconds().equals(this.getGameSessionActivationTimeoutSeconds()) == false)
+            return false;
         return true;
     }
 
@@ -163,6 +292,8 @@ public class RuntimeConfiguration implements Serializable, Cloneable, Structured
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getServerProcesses() == null) ? 0 : getServerProcesses().hashCode());
+        hashCode = prime * hashCode + ((getMaxConcurrentGameSessionActivations() == null) ? 0 : getMaxConcurrentGameSessionActivations().hashCode());
+        hashCode = prime * hashCode + ((getGameSessionActivationTimeoutSeconds() == null) ? 0 : getGameSessionActivationTimeoutSeconds().hashCode());
         return hashCode;
     }
 

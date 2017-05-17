@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.130-SNAPSHOT</version>
+    <version>1.11.130</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-core</artifactId>
@@ -111,6 +111,12 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
+        <configuration combine.self="override">
+            <!-- We don't want to exclude transform package for core -->
+            <excludePackageNames></excludePackageNames>
+            <minmemory>128m</minmemory>
+            <maxmemory>1024m</maxmemory>
+        </configuration>
       </plugin>
     </plugins>
   </build>

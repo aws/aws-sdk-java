@@ -17,9 +17,9 @@ package com.amazonaws.services.stepfunctions.builder.states;
 import com.amazonaws.services.stepfunctions.builder.ErrorCodes;
 import com.amazonaws.services.stepfunctions.builder.internal.Buildable;
 import com.amazonaws.services.stepfunctions.builder.internal.PropertyNames;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -35,15 +35,15 @@ public final class Catcher {
     @JsonProperty(PropertyNames.ERROR_EQUALS)
     private final List<String> errorEquals;
 
-    @JsonProperty(PropertyNames.RESULT_PATH)
-    private final String resultPath;
+    @JsonUnwrapped
+    private final PathContainer pathContainer;
 
     @JsonUnwrapped
     private final Transition transition;
 
     private Catcher(Builder builder) {
         this.errorEquals = new ArrayList<String>(builder.errorEquals);
-        this.resultPath = builder.resultPath;
+        this.pathContainer = builder.pathContainer.build();
         this.transition = builder.transition.build();
     }
 
@@ -59,8 +59,9 @@ public final class Catcher {
      * result will solely consist of the error output. See <a href="https://states-language.net/spec.html#filters">https://states-language.net/spec.html#filters</a>
      * for more information.
      */
+    @JsonIgnore
     public String getResultPath() {
-        return resultPath;
+        return pathContainer.getResultPath();
     }
 
     /**
@@ -81,13 +82,12 @@ public final class Catcher {
     /**
      * Builder for a {@link Catcher}.
      */
-    public static final class Builder implements Buildable<Catcher> {
+    public static final class Builder implements Buildable<Catcher>, ResultPathBuilder<Builder> {
 
         @JsonProperty(PropertyNames.ERROR_EQUALS)
         private List<String> errorEquals = new ArrayList<String>();
 
-        @JsonProperty(PropertyNames.RESULT_PATH)
-        private String resultPath;
+        private final PathContainer.Builder pathContainer = PathContainer.builder();
 
         private Transition.Builder transition = Transition.NULL_BUILDER;
 
@@ -125,8 +125,9 @@ public final class Catcher {
          *                   for more information.
          * @return This object for method chaining.
          */
+        @Override
         public Builder resultPath(String resultPath) {
-            this.resultPath = resultPath;
+            pathContainer.resultPath(resultPath);
             return this;
         }
 

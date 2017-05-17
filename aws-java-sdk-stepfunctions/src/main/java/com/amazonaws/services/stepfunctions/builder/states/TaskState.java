@@ -17,10 +17,10 @@ package com.amazonaws.services.stepfunctions.builder.states;
 import com.amazonaws.services.stepfunctions.builder.ErrorCodes;
 import com.amazonaws.services.stepfunctions.builder.internal.Buildable;
 import com.amazonaws.services.stepfunctions.builder.internal.PropertyNames;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,14 +36,8 @@ public final class TaskState extends TransitionState {
     @JsonProperty(PropertyNames.RESOURCE)
     private final String resource;
 
-    @JsonProperty(PropertyNames.INPUT_PATH)
-    private final String inputPath;
-
-    @JsonProperty(PropertyNames.RESULT_PATH)
-    private final String resultPath;
-
-    @JsonProperty(PropertyNames.OUTPUT_PATH)
-    private final String outputPath;
+    @JsonUnwrapped
+    private final PathContainer pathContainer;
 
     @JsonProperty(PropertyNames.COMMENT)
     private final String comment;
@@ -67,9 +61,7 @@ public final class TaskState extends TransitionState {
 
     private TaskState(Builder builder) {
         this.resource = builder.resource;
-        this.inputPath = builder.inputPath;
-        this.resultPath = builder.resultPath;
-        this.outputPath = builder.outputPath;
+        this.pathContainer = builder.pathContainer.build();
         this.comment = builder.comment;
         this.timeoutSeconds = builder.timeoutSeconds;
         this.heartbeatSeconds = builder.heartbeatSeconds;
@@ -96,22 +88,25 @@ public final class TaskState extends TransitionState {
     /**
      * @return The input path expression that may optionally transform the input to this state.
      */
+    @JsonIgnore
     public String getInputPath() {
-        return inputPath;
+        return pathContainer.getInputPath();
     }
 
     /**
      * @return The result path expression that may optionally combine or replace the state's raw input with it's result.
      */
+    @JsonIgnore
     public String getResultPath() {
-        return resultPath;
+        return pathContainer.getResultPath();
     }
 
     /**
      * @return The output path expression that may optionally transform the output to this state.
      */
+    @JsonIgnore
     public String getOutputPath() {
-        return outputPath;
+        return pathContainer.getOutputPath();
     }
 
     /**
@@ -171,19 +166,10 @@ public final class TaskState extends TransitionState {
     /**
      * Builder for a {@link TaskState}.
      */
-    public static final class Builder extends TransitionStateBuilder {
+    public static final class Builder extends TransitionStateBuilder implements InputOutputResultPathBuilder<Builder> {
 
         @JsonProperty(PropertyNames.RESOURCE)
         private String resource;
-
-        @JsonProperty(PropertyNames.INPUT_PATH)
-        private String inputPath;
-
-        @JsonProperty(PropertyNames.RESULT_PATH)
-        private String resultPath;
-
-        @JsonProperty(PropertyNames.OUTPUT_PATH)
-        private String outputPath;
 
         @JsonProperty(PropertyNames.COMMENT)
         private String comment;
@@ -195,6 +181,8 @@ public final class TaskState extends TransitionState {
         private Integer heartbeatSeconds;
 
         private Transition.Builder transition = Transition.NULL_BUILDER;
+
+        private PathContainer.Builder pathContainer = PathContainer.builder();
 
         @JsonProperty(PropertyNames.RETRY)
         private final List<Retrier.Builder> retriers = new ArrayList<Retrier.Builder>();
@@ -217,42 +205,21 @@ public final class TaskState extends TransitionState {
             return this;
         }
 
-        /**
-         * OPTIONAL. The value of “InputPath” MUST be a Path, which is applied to a State’s raw input to select some or all of
-         * it;
-         * that selection is used by the state. If not provided then the whole output from the previous state is used as input to
-         * this state.
-         *
-         * @param inputPath New path value.
-         * @return This object for method chaining.
-         */
+        @Override
         public Builder inputPath(String inputPath) {
-            this.inputPath = inputPath;
+            pathContainer.inputPath(inputPath);
             return this;
         }
 
-        /**
-         * OPTIONAL. The value of “ResultPath” MUST be a Reference Path, which specifies the combination with or replacement of
-         * the state’s result with its raw input. If not provided then the output completely replaces the input.
-         *
-         * @param resultPath New path value.
-         * @return This object for method chaining.
-         */
+        @Override
         public Builder resultPath(String resultPath) {
-            this.resultPath = resultPath;
+            pathContainer.resultPath(resultPath);
             return this;
         }
 
-        /**
-         * OPTIONAL. The value of “OutputPath” MUST be a path, which is applied to the state’s output after the application of
-         * ResultPath, leading in the generation of the raw input for the next state. If not provided then the whole output is
-         * used.
-         *
-         * @param outputPath New path value.
-         * @return This object for method chaining.
-         */
+        @Override
         public Builder outputPath(String outputPath) {
-            this.outputPath = outputPath;
+            pathContainer.outputPath(outputPath);
             return this;
         }
 
@@ -378,4 +345,5 @@ public final class TaskState extends TransitionState {
             return new TaskState(this);
         }
     }
+
 }

@@ -15,7 +15,9 @@
 package com.amazonaws.services.stepfunctions.builder.states;
 
 import com.amazonaws.services.stepfunctions.builder.internal.PropertyNames;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
 /**
  * The Succeed State terminates a state machine successfully. The Succeed State is a useful target for Choice-state branches that
@@ -28,16 +30,12 @@ public final class SucceedState implements State {
     @JsonProperty(PropertyNames.COMMENT)
     private final String comment;
 
-    @JsonProperty(PropertyNames.INPUT_PATH)
-    private final String inputPath;
-
-    @JsonProperty(PropertyNames.OUTPUT_PATH)
-    private final String outputPath;
+    @JsonUnwrapped
+    private final PathContainer pathContainer;
 
     private SucceedState(Builder builder) {
         this.comment = builder.comment;
-        this.inputPath = builder.inputPath;
-        this.outputPath = builder.outputPath;
+        this.pathContainer = builder.pathContainer.build();
     }
 
     /**
@@ -58,15 +56,17 @@ public final class SucceedState implements State {
     /**
      * @return The input path expression that may optionally transform the input to this state.
      */
+    @JsonIgnore
     public String getInputPath() {
-        return inputPath;
+        return pathContainer.getInputPath();
     }
 
     /**
      * @return The output path expression that may optionally transform the output to this state.
      */
+    @JsonIgnore
     public String getOutputPath() {
-        return outputPath;
+        return pathContainer.getOutputPath();
     }
 
     /**
@@ -94,16 +94,12 @@ public final class SucceedState implements State {
     /**
      * Builder for a {@link SucceedState}.
      */
-    public static final class Builder implements State.Builder {
+    public static final class Builder implements State.Builder, InputOutputPathBuilder<Builder> {
 
         @JsonProperty(PropertyNames.COMMENT)
         private String comment;
 
-        @JsonProperty(PropertyNames.INPUT_PATH)
-        private String inputPath;
-
-        @JsonProperty(PropertyNames.OUTPUT_PATH)
-        private String outputPath;
+        private final PathContainer.Builder pathContainer = PathContainer.builder();
 
         private Builder() {
         }
@@ -119,30 +115,15 @@ public final class SucceedState implements State {
             return this;
         }
 
-        /**
-         * OPTIONAL. The value of “InputPath” MUST be a Path, which is applied to a State’s raw input to select some or all of
-         * it;
-         * that selection is used by the state. If not provided then the whole output from the previous state is used as input to
-         * this state.
-         *
-         * @param inputPath New path value.
-         * @return This object for method chaining.
-         */
+        @Override
         public Builder inputPath(String inputPath) {
-            this.inputPath = inputPath;
+            pathContainer.inputPath(inputPath);
             return this;
         }
 
-        /**
-         * OPTIONAL. The value of “OutputPath” MUST be a path, which is applied to the state’s output after the application of
-         * ResultPath, leading in the generation of the raw input for the next state. If not provided then the whole output is
-         * used.
-         *
-         * @param outputPath New path value.
-         * @return This object for method chaining.
-         */
+        @Override
         public Builder outputPath(String outputPath) {
-            this.outputPath = outputPath;
+            pathContainer.outputPath(outputPath);
             return this;
         }
 

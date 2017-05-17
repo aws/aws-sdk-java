@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.gamelift.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -37,6 +38,8 @@ public class UpdateFleetAttributesRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NewGameSessionProtectionPolicy").build();
     private static final MarshallingInfo<StructuredPojo> RESOURCECREATIONLIMITPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceCreationLimitPolicy").build();
+    private static final MarshallingInfo<List> METRICGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("MetricGroups").build();
 
     private static final UpdateFleetAttributesRequestMarshaller instance = new UpdateFleetAttributesRequestMarshaller();
 
@@ -59,6 +62,7 @@ public class UpdateFleetAttributesRequestMarshaller {
             protocolMarshaller.marshall(updateFleetAttributesRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(updateFleetAttributesRequest.getNewGameSessionProtectionPolicy(), NEWGAMESESSIONPROTECTIONPOLICY_BINDING);
             protocolMarshaller.marshall(updateFleetAttributesRequest.getResourceCreationLimitPolicy(), RESOURCECREATIONLIMITPOLICY_BINDING);
+            protocolMarshaller.marshall(updateFleetAttributesRequest.getMetricGroups(), METRICGROUPS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

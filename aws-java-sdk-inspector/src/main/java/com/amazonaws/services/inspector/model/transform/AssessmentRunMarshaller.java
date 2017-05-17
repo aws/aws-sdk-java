@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.inspector.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -56,6 +57,8 @@ public class AssessmentRunMarshaller {
             .marshallLocationName("stateChanges").build();
     private static final MarshallingInfo<List> NOTIFICATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("notifications").build();
+    private static final MarshallingInfo<Map> FINDINGCOUNTS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("findingCounts").build();
 
     private static final AssessmentRunMarshaller instance = new AssessmentRunMarshaller();
 
@@ -87,6 +90,7 @@ public class AssessmentRunMarshaller {
             protocolMarshaller.marshall(assessmentRun.getDataCollected(), DATACOLLECTED_BINDING);
             protocolMarshaller.marshall(assessmentRun.getStateChanges(), STATECHANGES_BINDING);
             protocolMarshaller.marshall(assessmentRun.getNotifications(), NOTIFICATIONS_BINDING);
+            protocolMarshaller.marshall(assessmentRun.getFindingCounts(), FINDINGCOUNTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

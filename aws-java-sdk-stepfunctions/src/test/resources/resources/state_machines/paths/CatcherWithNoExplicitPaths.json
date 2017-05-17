@@ -1,0 +1,21 @@
+{
+  "StartAt": "InitialState",
+  "States": {
+    "InitialState": {
+      "Type": "Task",
+      "Resource": "resource-arn",
+      "Catch": [
+        {
+          "ErrorEquals": [
+            "States.ALL"
+          ],
+          "Next": "EndState"
+        }
+      ],
+      "End": true
+    },
+    "EndState": {
+      "Type": "Succeed"
+    }
+  }
+}
