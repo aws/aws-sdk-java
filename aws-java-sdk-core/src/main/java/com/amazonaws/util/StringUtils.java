@@ -21,7 +21,9 @@ import java.math.BigInteger;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.text.Collator;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 /**
@@ -198,6 +200,26 @@ public class StringUtils {
      */
     public static boolean hasValue(String str) {
         return !isNullOrEmpty(str);
+    }
+    
+    /**
+     * @return true if the array of values is null or if the array values contain a null or empty value.
+     */
+    public static boolean existsNullOrEmpty(String...values) {
+    	
+    	if(values == null) {
+    		return Boolean.TRUE;
+    	}
+    	
+    	List<String> listValues = Arrays.asList(values);
+    	
+    	for(String value : listValues) {
+    		if(isNullOrEmpty(value)) {
+    			return Boolean.TRUE;
+    		}
+    	}
+    	
+    	return listValues.isEmpty() ? Boolean.TRUE : Boolean.FALSE;
     }
 
     /**
