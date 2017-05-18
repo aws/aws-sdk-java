@@ -61,7 +61,7 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
     private String arn;
     /**
      * <p>
-     * The creation time of the destination.
+     * The creation time of the destination, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
      * </p>
      */
     private Long creationTime;
@@ -277,11 +277,12 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The creation time of the destination.
+     * The creation time of the destination, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
      * @param creationTime
-     *        The creation time of the destination.
+     *        The creation time of the destination, expressed as the number of milliseconds since Jan 1, 1970 00:00:00
+     *        UTC.
      */
 
     public void setCreationTime(Long creationTime) {
@@ -290,10 +291,11 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The creation time of the destination.
+     * The creation time of the destination, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
-     * @return The creation time of the destination.
+     * @return The creation time of the destination, expressed as the number of milliseconds since Jan 1, 1970 00:00:00
+     *         UTC.
      */
 
     public Long getCreationTime() {
@@ -302,11 +304,12 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The creation time of the destination.
+     * The creation time of the destination, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
      * @param creationTime
-     *        The creation time of the destination.
+     *        The creation time of the destination, expressed as the number of milliseconds since Jan 1, 1970 00:00:00
+     *        UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

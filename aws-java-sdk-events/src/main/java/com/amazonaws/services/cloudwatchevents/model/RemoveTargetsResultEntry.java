@@ -36,7 +36,8 @@ public class RemoveTargetsResultEntry implements Serializable, Cloneable, Struct
     private String targetId;
     /**
      * <p>
-     * The error code that indicates why the target removal failed.
+     * The error code that indicates why the target removal failed. If the value is
+     * <code>ConcurrentModificationException</code>, too many requests were made at the same time.
      * </p>
      */
     private String errorCode;
@@ -89,11 +90,13 @@ public class RemoveTargetsResultEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The error code that indicates why the target removal failed.
+     * The error code that indicates why the target removal failed. If the value is
+     * <code>ConcurrentModificationException</code>, too many requests were made at the same time.
      * </p>
      * 
      * @param errorCode
-     *        The error code that indicates why the target removal failed.
+     *        The error code that indicates why the target removal failed. If the value is
+     *        <code>ConcurrentModificationException</code>, too many requests were made at the same time.
      */
 
     public void setErrorCode(String errorCode) {
@@ -102,10 +105,12 @@ public class RemoveTargetsResultEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The error code that indicates why the target removal failed.
+     * The error code that indicates why the target removal failed. If the value is
+     * <code>ConcurrentModificationException</code>, too many requests were made at the same time.
      * </p>
      * 
-     * @return The error code that indicates why the target removal failed.
+     * @return The error code that indicates why the target removal failed. If the value is
+     *         <code>ConcurrentModificationException</code>, too many requests were made at the same time.
      */
 
     public String getErrorCode() {
@@ -114,11 +119,13 @@ public class RemoveTargetsResultEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The error code that indicates why the target removal failed.
+     * The error code that indicates why the target removal failed. If the value is
+     * <code>ConcurrentModificationException</code>, too many requests were made at the same time.
      * </p>
      * 
      * @param errorCode
-     *        The error code that indicates why the target removal failed.
+     *        The error code that indicates why the target removal failed. If the value is
+     *        <code>ConcurrentModificationException</code>, too many requests were made at the same time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

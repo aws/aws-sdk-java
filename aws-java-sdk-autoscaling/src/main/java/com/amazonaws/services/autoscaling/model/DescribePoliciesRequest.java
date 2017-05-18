@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Contains the parameters for DescribePolicies.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribePolicies" target="_top">AWS API
  *      Documentation</a>
@@ -56,7 +53,7 @@ public class DescribePoliciesRequest extends com.amazonaws.AmazonWebServiceReque
     private String nextToken;
     /**
      * <p>
-     * The maximum number of items to be returned with each call.
+     * The maximum number of items to be returned with each call. The default value is 50 and the maximum value is 100.
      * </p>
      */
     private Integer maxRecords;
@@ -305,11 +302,12 @@ public class DescribePoliciesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The maximum number of items to be returned with each call.
+     * The maximum number of items to be returned with each call. The default value is 50 and the maximum value is 100.
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of items to be returned with each call.
+     *        The maximum number of items to be returned with each call. The default value is 50 and the maximum value
+     *        is 100.
      */
 
     public void setMaxRecords(Integer maxRecords) {
@@ -318,10 +316,11 @@ public class DescribePoliciesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The maximum number of items to be returned with each call.
+     * The maximum number of items to be returned with each call. The default value is 50 and the maximum value is 100.
      * </p>
      * 
-     * @return The maximum number of items to be returned with each call.
+     * @return The maximum number of items to be returned with each call. The default value is 50 and the maximum value
+     *         is 100.
      */
 
     public Integer getMaxRecords() {
@@ -330,11 +329,12 @@ public class DescribePoliciesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The maximum number of items to be returned with each call.
+     * The maximum number of items to be returned with each call. The default value is 50 and the maximum value is 100.
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of items to be returned with each call.
+     *        The maximum number of items to be returned with each call. The default value is 50 and the maximum value
+     *        is 100.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

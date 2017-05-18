@@ -45,7 +45,7 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * maximum size of the group, the operation fails.
      * </p>
      * <p>
-     * If there is a Classic load balancer attached to your Auto Scaling group, the instances are also registered with
+     * If there is a Classic Load Balancer attached to your Auto Scaling group, the instances are also registered with
      * the load balancer. If there are target groups attached to your Auto Scaling group, the instances are also
      * registered with the target groups.
      * </p>
@@ -56,7 +56,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param attachInstancesRequest
-     *        Contains the parameters for AttachInstances.
      * @return A Java Future containing the result of the AttachInstances operation returned by the service.
      * @sample AmazonAutoScalingAsync.AttachInstances
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachInstances" target="_top">AWS
@@ -74,7 +73,7 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * maximum size of the group, the operation fails.
      * </p>
      * <p>
-     * If there is a Classic load balancer attached to your Auto Scaling group, the instances are also registered with
+     * If there is a Classic Load Balancer attached to your Auto Scaling group, the instances are also registered with
      * the load balancer. If there are target groups attached to your Auto Scaling group, the instances are also
      * registered with the target groups.
      * </p>
@@ -85,7 +84,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param attachInstancesRequest
-     *        Contains the parameters for AttachInstances.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -113,7 +111,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param attachLoadBalancerTargetGroupsRequest
-     *        Contains the parameters for AttachLoadBalancerTargetGroups.
      * @return A Java Future containing the result of the AttachLoadBalancerTargetGroups operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsync.AttachLoadBalancerTargetGroups
@@ -138,7 +135,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param attachLoadBalancerTargetGroupsRequest
-     *        Contains the parameters for AttachLoadBalancerTargetGroups.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -155,10 +151,10 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
 
     /**
      * <p>
-     * Attaches one or more Classic load balancers to the specified Auto Scaling group.
+     * Attaches one or more Classic Load Balancers to the specified Auto Scaling group.
      * </p>
      * <p>
-     * To attach an Application load balancer instead, see <a>AttachLoadBalancerTargetGroups</a>.
+     * To attach an Application Load Balancer instead, see <a>AttachLoadBalancerTargetGroups</a>.
      * </p>
      * <p>
      * To describe the load balancers for an Auto Scaling group, use <a>DescribeLoadBalancers</a>. To detach the load
@@ -171,7 +167,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param attachLoadBalancersRequest
-     *        Contains the parameters for AttachLoadBalancers.
      * @return A Java Future containing the result of the AttachLoadBalancers operation returned by the service.
      * @sample AmazonAutoScalingAsync.AttachLoadBalancers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancers"
@@ -181,10 +176,10 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
 
     /**
      * <p>
-     * Attaches one or more Classic load balancers to the specified Auto Scaling group.
+     * Attaches one or more Classic Load Balancers to the specified Auto Scaling group.
      * </p>
      * <p>
-     * To attach an Application load balancer instead, see <a>AttachLoadBalancerTargetGroups</a>.
+     * To attach an Application Load Balancer instead, see <a>AttachLoadBalancerTargetGroups</a>.
      * </p>
      * <p>
      * To describe the load balancers for an Auto Scaling group, use <a>DescribeLoadBalancers</a>. To detach the load
@@ -197,7 +192,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param attachLoadBalancersRequest
-     *        Contains the parameters for AttachLoadBalancers.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -268,7 +262,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param completeLifecycleActionRequest
-     *        Contains the parameters for CompleteLifecycleAction.
      * @return A Java Future containing the result of the CompleteLifecycleAction operation returned by the service.
      * @sample AmazonAutoScalingAsync.CompleteLifecycleAction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CompleteLifecycleAction"
@@ -319,7 +312,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param completeLifecycleActionRequest
-     *        Contains the parameters for CompleteLifecycleAction.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -347,7 +339,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param createAutoScalingGroupRequest
-     *        Contains the parameters for CreateAutoScalingGroup.
      * @return A Java Future containing the result of the CreateAutoScalingGroup operation returned by the service.
      * @sample AmazonAutoScalingAsync.CreateAutoScalingGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateAutoScalingGroup"
@@ -370,7 +361,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param createAutoScalingGroupRequest
-     *        Contains the parameters for CreateAutoScalingGroup.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -398,7 +388,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param createLaunchConfigurationRequest
-     *        Contains the parameters for CreateLaunchConfiguration.
      * @return A Java Future containing the result of the CreateLaunchConfiguration operation returned by the service.
      * @sample AmazonAutoScalingAsync.CreateLaunchConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateLaunchConfiguration"
@@ -422,7 +411,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param createLaunchConfigurationRequest
-     *        Contains the parameters for CreateLaunchConfiguration.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -451,7 +439,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param createOrUpdateTagsRequest
-     *        Contains the parameters for CreateOrUpdateTags.
      * @return A Java Future containing the result of the CreateOrUpdateTags operation returned by the service.
      * @sample AmazonAutoScalingAsync.CreateOrUpdateTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateOrUpdateTags" target="_top">AWS
@@ -474,7 +461,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param createOrUpdateTagsRequest
-     *        Contains the parameters for CreateOrUpdateTags.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -510,7 +496,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param deleteAutoScalingGroupRequest
-     *        Contains the parameters for DeleteAutoScalingGroup.
      * @return A Java Future containing the result of the DeleteAutoScalingGroup operation returned by the service.
      * @sample AmazonAutoScalingAsync.DeleteAutoScalingGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteAutoScalingGroup"
@@ -541,7 +526,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param deleteAutoScalingGroupRequest
-     *        Contains the parameters for DeleteAutoScalingGroup.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -564,7 +548,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param deleteLaunchConfigurationRequest
-     *        Contains the parameters for DeleteLaunchConfiguration.
      * @return A Java Future containing the result of the DeleteLaunchConfiguration operation returned by the service.
      * @sample AmazonAutoScalingAsync.DeleteLaunchConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteLaunchConfiguration"
@@ -583,7 +566,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param deleteLaunchConfigurationRequest
-     *        Contains the parameters for DeleteLaunchConfiguration.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -607,7 +589,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param deleteLifecycleHookRequest
-     *        Contains the parameters for DeleteLifecycleHook.
      * @return A Java Future containing the result of the DeleteLifecycleHook operation returned by the service.
      * @sample AmazonAutoScalingAsync.DeleteLifecycleHook
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteLifecycleHook"
@@ -625,7 +606,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param deleteLifecycleHookRequest
-     *        Contains the parameters for DeleteLifecycleHook.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -644,7 +624,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param deleteNotificationConfigurationRequest
-     *        Contains the parameters for DeleteNotificationConfiguration.
      * @return A Java Future containing the result of the DeleteNotificationConfiguration operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsync.DeleteNotificationConfiguration
@@ -660,7 +639,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param deleteNotificationConfigurationRequest
-     *        Contains the parameters for DeleteNotificationConfiguration.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -685,7 +663,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param deletePolicyRequest
-     *        Contains the parameters for DeletePolicy.
      * @return A Java Future containing the result of the DeletePolicy operation returned by the service.
      * @sample AmazonAutoScalingAsync.DeletePolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeletePolicy" target="_top">AWS API
@@ -703,7 +680,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param deletePolicyRequest
-     *        Contains the parameters for DeletePolicy.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -722,7 +698,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param deleteScheduledActionRequest
-     *        Contains the parameters for DeleteScheduledAction.
      * @return A Java Future containing the result of the DeleteScheduledAction operation returned by the service.
      * @sample AmazonAutoScalingAsync.DeleteScheduledAction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteScheduledAction"
@@ -736,7 +711,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param deleteScheduledActionRequest
-     *        Contains the parameters for DeleteScheduledAction.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -755,7 +729,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param deleteTagsRequest
-     *        Contains the parameters for DeleteTags.
      * @return A Java Future containing the result of the DeleteTags operation returned by the service.
      * @sample AmazonAutoScalingAsync.DeleteTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteTags" target="_top">AWS API
@@ -769,7 +742,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param deleteTagsRequest
-     *        Contains the parameters for DeleteTags.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -890,7 +862,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param describeAutoScalingGroupsRequest
-     *        Contains the parameters for DescribeAutoScalingGroups.
      * @return A Java Future containing the result of the DescribeAutoScalingGroups operation returned by the service.
      * @sample AmazonAutoScalingAsync.DescribeAutoScalingGroups
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingGroups"
@@ -905,7 +876,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param describeAutoScalingGroupsRequest
-     *        Contains the parameters for DescribeAutoScalingGroups.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -940,7 +910,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param describeAutoScalingInstancesRequest
-     *        Contains the parameters for DescribeAutoScalingInstances.
      * @return A Java Future containing the result of the DescribeAutoScalingInstances operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsync.DescribeAutoScalingInstances
@@ -956,7 +925,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param describeAutoScalingInstancesRequest
-     *        Contains the parameters for DescribeAutoScalingInstances.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1043,7 +1011,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param describeLaunchConfigurationsRequest
-     *        Contains the parameters for DescribeLaunchConfigurations.
      * @return A Java Future containing the result of the DescribeLaunchConfigurations operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsync.DescribeLaunchConfigurations
@@ -1059,7 +1026,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param describeLaunchConfigurationsRequest
-     *        Contains the parameters for DescribeLaunchConfigurations.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1143,7 +1109,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param describeLifecycleHooksRequest
-     *        Contains the parameters for DescribeLifecycleHooks.
      * @return A Java Future containing the result of the DescribeLifecycleHooks operation returned by the service.
      * @sample AmazonAutoScalingAsync.DescribeLifecycleHooks
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLifecycleHooks"
@@ -1157,7 +1122,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param describeLifecycleHooksRequest
-     *        Contains the parameters for DescribeLifecycleHooks.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1176,7 +1140,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param describeLoadBalancerTargetGroupsRequest
-     *        Contains the parameters for DescribeLoadBalancerTargetGroups.
      * @return A Java Future containing the result of the DescribeLoadBalancerTargetGroups operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsync.DescribeLoadBalancerTargetGroups
@@ -1192,7 +1155,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param describeLoadBalancerTargetGroupsRequest
-     *        Contains the parameters for DescribeLoadBalancerTargetGroups.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1212,12 +1174,11 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * Describes the load balancers for the specified Auto Scaling group.
      * </p>
      * <p>
-     * Note that this operation describes only Classic load balancers. If you have Application load balancers, use
+     * Note that this operation describes only Classic Load Balancers. If you have Application Load Balancers, use
      * <a>DescribeLoadBalancerTargetGroups</a> instead.
      * </p>
      * 
      * @param describeLoadBalancersRequest
-     *        Contains the parameters for DescribeLoadBalancers.
      * @return A Java Future containing the result of the DescribeLoadBalancers operation returned by the service.
      * @sample AmazonAutoScalingAsync.DescribeLoadBalancers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancers"
@@ -1230,12 +1191,11 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * Describes the load balancers for the specified Auto Scaling group.
      * </p>
      * <p>
-     * Note that this operation describes only Classic load balancers. If you have Application load balancers, use
+     * Note that this operation describes only Classic Load Balancers. If you have Application Load Balancers, use
      * <a>DescribeLoadBalancerTargetGroups</a> instead.
      * </p>
      * 
      * @param describeLoadBalancersRequest
-     *        Contains the parameters for DescribeLoadBalancers.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1313,7 +1273,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param describeNotificationConfigurationsRequest
-     *        Contains the parameters for DescribeNotificationConfigurations.
      * @return A Java Future containing the result of the DescribeNotificationConfigurations operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsync.DescribeNotificationConfigurations
@@ -1329,7 +1288,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param describeNotificationConfigurationsRequest
-     *        Contains the parameters for DescribeNotificationConfigurations.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1366,7 +1324,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param describePoliciesRequest
-     *        Contains the parameters for DescribePolicies.
      * @return A Java Future containing the result of the DescribePolicies operation returned by the service.
      * @sample AmazonAutoScalingAsync.DescribePolicies
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribePolicies" target="_top">AWS
@@ -1380,7 +1337,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param describePoliciesRequest
-     *        Contains the parameters for DescribePolicies.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1414,7 +1370,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param describeScalingActivitiesRequest
-     *        Contains the parameters for DescribeScalingActivities.
      * @return A Java Future containing the result of the DescribeScalingActivities operation returned by the service.
      * @sample AmazonAutoScalingAsync.DescribeScalingActivities
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScalingActivities"
@@ -1429,7 +1384,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param describeScalingActivitiesRequest
-     *        Contains the parameters for DescribeScalingActivities.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1513,7 +1467,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param describeScheduledActionsRequest
-     *        Contains the parameters for DescribeScheduledActions.
      * @return A Java Future containing the result of the DescribeScheduledActions operation returned by the service.
      * @sample AmazonAutoScalingAsync.DescribeScheduledActions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScheduledActions"
@@ -1528,7 +1481,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param describeScheduledActionsRequest
-     *        Contains the parameters for DescribeScheduledActions.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1571,7 +1523,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param describeTagsRequest
-     *        Contains the parameters for DescribeTags.
      * @return A Java Future containing the result of the DescribeTags operation returned by the service.
      * @sample AmazonAutoScalingAsync.DescribeTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTags" target="_top">AWS API
@@ -1594,7 +1545,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param describeTagsRequest
-     *        Contains the parameters for DescribeTags.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1677,14 +1627,14 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * Removes one or more instances from the specified Auto Scaling group.
      * </p>
      * <p>
-     * After the instances are detached, you can manage them independently from the rest of the Auto Scaling group.
+     * After the instances are detached, you can manage them independent of the Auto Scaling group.
      * </p>
      * <p>
      * If you do not specify the option to decrement the desired capacity, Auto Scaling launches instances to replace
      * the ones that are detached.
      * </p>
      * <p>
-     * If there is a Classic load balancer attached to the Auto Scaling group, the instances are deregistered from the
+     * If there is a Classic Load Balancer attached to the Auto Scaling group, the instances are deregistered from the
      * load balancer. If there are target groups attached to the Auto Scaling group, the instances are deregistered from
      * the target groups.
      * </p>
@@ -1695,7 +1645,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param detachInstancesRequest
-     *        Contains the parameters for DetachInstances.
      * @return A Java Future containing the result of the DetachInstances operation returned by the service.
      * @sample AmazonAutoScalingAsync.DetachInstances
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachInstances" target="_top">AWS
@@ -1708,14 +1657,14 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * Removes one or more instances from the specified Auto Scaling group.
      * </p>
      * <p>
-     * After the instances are detached, you can manage them independently from the rest of the Auto Scaling group.
+     * After the instances are detached, you can manage them independent of the Auto Scaling group.
      * </p>
      * <p>
      * If you do not specify the option to decrement the desired capacity, Auto Scaling launches instances to replace
      * the ones that are detached.
      * </p>
      * <p>
-     * If there is a Classic load balancer attached to the Auto Scaling group, the instances are deregistered from the
+     * If there is a Classic Load Balancer attached to the Auto Scaling group, the instances are deregistered from the
      * load balancer. If there are target groups attached to the Auto Scaling group, the instances are deregistered from
      * the target groups.
      * </p>
@@ -1726,7 +1675,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param detachInstancesRequest
-     *        Contains the parameters for DetachInstances.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1776,10 +1724,10 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
 
     /**
      * <p>
-     * Detaches one or more Classic load balancers from the specified Auto Scaling group.
+     * Detaches one or more Classic Load Balancers from the specified Auto Scaling group.
      * </p>
      * <p>
-     * Note that this operation detaches only Classic load balancers. If you have Application load balancers, use
+     * Note that this operation detaches only Classic Load Balancers. If you have Application Load Balancers, use
      * <a>DetachLoadBalancerTargetGroups</a> instead.
      * </p>
      * <p>
@@ -1789,7 +1737,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param detachLoadBalancersRequest
-     *        Contains the parameters for DetachLoadBalancers.
      * @return A Java Future containing the result of the DetachLoadBalancers operation returned by the service.
      * @sample AmazonAutoScalingAsync.DetachLoadBalancers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachLoadBalancers"
@@ -1799,10 +1746,10 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
 
     /**
      * <p>
-     * Detaches one or more Classic load balancers from the specified Auto Scaling group.
+     * Detaches one or more Classic Load Balancers from the specified Auto Scaling group.
      * </p>
      * <p>
-     * Note that this operation detaches only Classic load balancers. If you have Application load balancers, use
+     * Note that this operation detaches only Classic Load Balancers. If you have Application Load Balancers, use
      * <a>DetachLoadBalancerTargetGroups</a> instead.
      * </p>
      * <p>
@@ -1812,7 +1759,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param detachLoadBalancersRequest
-     *        Contains the parameters for DetachLoadBalancers.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1846,7 +1792,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param disableMetricsCollectionRequest
-     *        Contains the parameters for DisableMetricsCollection.
      * @return A Java Future containing the result of the DisableMetricsCollection operation returned by the service.
      * @sample AmazonAutoScalingAsync.DisableMetricsCollection
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DisableMetricsCollection"
@@ -1860,7 +1805,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param disableMetricsCollectionRequest
-     *        Contains the parameters for DisableMetricsCollection.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1881,7 +1825,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param enableMetricsCollectionRequest
-     *        Contains the parameters for EnableMetricsCollection.
      * @return A Java Future containing the result of the EnableMetricsCollection operation returned by the service.
      * @sample AmazonAutoScalingAsync.EnableMetricsCollection
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnableMetricsCollection"
@@ -1897,7 +1840,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param enableMetricsCollectionRequest
-     *        Contains the parameters for EnableMetricsCollection.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1912,16 +1854,15 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
 
     /**
      * <p>
-     * Moves the specified instances into <code>Standby</code> mode.
+     * Moves the specified instances into the standby state.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto Scaling
-     * Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-enter-exit-standby.html">Temporarily Removing
+     * Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param enterStandbyRequest
-     *        Contains the parameters for EnteStandby.
      * @return A Java Future containing the result of the EnterStandby operation returned by the service.
      * @sample AmazonAutoScalingAsync.EnterStandby
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnterStandby" target="_top">AWS API
@@ -1931,16 +1872,15 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
 
     /**
      * <p>
-     * Moves the specified instances into <code>Standby</code> mode.
+     * Moves the specified instances into the standby state.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto Scaling
-     * Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-enter-exit-standby.html">Temporarily Removing
+     * Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param enterStandbyRequest
-     *        Contains the parameters for EnteStandby.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1959,7 +1899,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param executePolicyRequest
-     *        Contains the parameters for ExecutePolicy.
      * @return A Java Future containing the result of the ExecutePolicy operation returned by the service.
      * @sample AmazonAutoScalingAsync.ExecutePolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ExecutePolicy" target="_top">AWS API
@@ -1973,7 +1912,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param executePolicyRequest
-     *        Contains the parameters for ExecutePolicy.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1988,16 +1926,15 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
 
     /**
      * <p>
-     * Moves the specified instances out of <code>Standby</code> mode.
+     * Moves the specified instances out of the standby state.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto Scaling
-     * Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-enter-exit-standby.html">Temporarily Removing
+     * Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param exitStandbyRequest
-     *        Contains the parameters for ExitStandby.
      * @return A Java Future containing the result of the ExitStandby operation returned by the service.
      * @sample AmazonAutoScalingAsync.ExitStandby
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ExitStandby" target="_top">AWS API
@@ -2007,16 +1944,15 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
 
     /**
      * <p>
-     * Moves the specified instances out of <code>Standby</code> mode.
+     * Moves the specified instances out of the standby state.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto Scaling
-     * Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-enter-exit-standby.html">Temporarily Removing
+     * Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param exitStandbyRequest
-     *        Contains the parameters for ExitStandby.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -2082,7 +2018,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param putLifecycleHookRequest
-     *        Contains the parameters for PutLifecycleHook.
      * @return A Java Future containing the result of the PutLifecycleHook operation returned by the service.
      * @sample AmazonAutoScalingAsync.PutLifecycleHook
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutLifecycleHook" target="_top">AWS
@@ -2143,7 +2078,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param putLifecycleHookRequest
-     *        Contains the parameters for PutLifecycleHook.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -2171,7 +2105,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param putNotificationConfigurationRequest
-     *        Contains the parameters for PutNotificationConfiguration.
      * @return A Java Future containing the result of the PutNotificationConfiguration operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsync.PutNotificationConfiguration
@@ -2196,7 +2129,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param putNotificationConfigurationRequest
-     *        Contains the parameters for PutNotificationConfiguration.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -2225,7 +2157,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param putScalingPolicyRequest
-     *        Contains the parameters for PutScalingPolicy.
      * @return A Java Future containing the result of the PutScalingPolicy operation returned by the service.
      * @sample AmazonAutoScalingAsync.PutScalingPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScalingPolicy" target="_top">AWS
@@ -2247,7 +2178,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param putScalingPolicyRequest
-     *        Contains the parameters for PutScalingPolicy.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -2272,7 +2202,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param putScheduledUpdateGroupActionRequest
-     *        Contains the parameters for PutScheduledUpdateGroupAction.
      * @return A Java Future containing the result of the PutScheduledUpdateGroupAction operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsync.PutScheduledUpdateGroupAction
@@ -2294,7 +2223,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param putScheduledUpdateGroupActionRequest
-     *        Contains the parameters for PutScheduledUpdateGroupAction.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -2353,7 +2281,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param recordLifecycleActionHeartbeatRequest
-     *        Contains the parameters for RecordLifecycleActionHeartbeat.
      * @return A Java Future containing the result of the RecordLifecycleActionHeartbeat operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsync.RecordLifecycleActionHeartbeat
@@ -2407,7 +2334,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param recordLifecycleActionHeartbeatRequest
-     *        Contains the parameters for RecordLifecycleActionHeartbeat.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -2434,7 +2360,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param resumeProcessesRequest
-     *        Contains the parameters for SuspendProcesses and ResumeProcesses.
      * @return A Java Future containing the result of the ResumeProcesses operation returned by the service.
      * @sample AmazonAutoScalingAsync.ResumeProcesses
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ResumeProcesses" target="_top">AWS
@@ -2454,7 +2379,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param resumeProcessesRequest
-     *        Contains the parameters for SuspendProcesses and ResumeProcesses.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -2478,7 +2402,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param setDesiredCapacityRequest
-     *        Contains the parameters for SetDesiredCapacity.
      * @return A Java Future containing the result of the SetDesiredCapacity operation returned by the service.
      * @sample AmazonAutoScalingAsync.SetDesiredCapacity
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetDesiredCapacity" target="_top">AWS
@@ -2497,7 +2420,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param setDesiredCapacityRequest
-     *        Contains the parameters for SetDesiredCapacity.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -2521,7 +2443,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param setInstanceHealthRequest
-     *        Contains the parameters for SetInstanceHealth.
      * @return A Java Future containing the result of the SetInstanceHealth operation returned by the service.
      * @sample AmazonAutoScalingAsync.SetInstanceHealth
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceHealth" target="_top">AWS
@@ -2540,7 +2461,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param setInstanceHealthRequest
-     *        Contains the parameters for SetInstanceHealth.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -2564,7 +2484,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param setInstanceProtectionRequest
-     *        Contains the parameters for SetInstanceProtection.
      * @return A Java Future containing the result of the SetInstanceProtection operation returned by the service.
      * @sample AmazonAutoScalingAsync.SetInstanceProtection
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceProtection"
@@ -2583,7 +2502,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param setInstanceProtectionRequest
-     *        Contains the parameters for SetInstanceProtection.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -2614,7 +2532,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param suspendProcessesRequest
-     *        Contains the parameters for SuspendProcesses and ResumeProcesses.
      * @return A Java Future containing the result of the SuspendProcesses operation returned by the service.
      * @sample AmazonAutoScalingAsync.SuspendProcesses
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SuspendProcesses" target="_top">AWS
@@ -2640,7 +2557,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param suspendProcessesRequest
-     *        Contains the parameters for SuspendProcesses and ResumeProcesses.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -2662,7 +2578,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param terminateInstanceInAutoScalingGroupRequest
-     *        Contains the parameters for TerminateInstanceInAutoScalingGroup.
      * @return A Java Future containing the result of the TerminateInstanceInAutoScalingGroup operation returned by the
      *         service.
      * @sample AmazonAutoScalingAsync.TerminateInstanceInAutoScalingGroup
@@ -2681,7 +2596,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </p>
      * 
      * @param terminateInstanceInAutoScalingGroupRequest
-     *        Contains the parameters for TerminateInstanceInAutoScalingGroup.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -2701,14 +2615,14 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * Updates the configuration for the specified Auto Scaling group.
      * </p>
      * <p>
-     * To update an Auto Scaling group with a launch configuration with <code>InstanceMonitoring</code> set to
-     * <code>False</code>, you must first disable the collection of group metrics. Otherwise, you will get an error. If
-     * you have previously enabled the collection of group metrics, you can disable it using
-     * <a>DisableMetricsCollection</a>.
+     * The new settings take effect on any scaling activities after this call returns. Scaling activities that are
+     * currently in progress aren't affected.
      * </p>
      * <p>
-     * The new settings are registered upon the completion of this call. Any launch configuration settings take effect
-     * on any triggers after this call returns. Scaling activities that are currently in progress aren't affected.
+     * To update an Auto Scaling group with a launch configuration with <code>InstanceMonitoring</code> set to
+     * <code>false</code>, you must first disable the collection of group metrics. Otherwise, you will get an error. If
+     * you have previously enabled the collection of group metrics, you can disable it using
+     * <a>DisableMetricsCollection</a>.
      * </p>
      * <p>
      * Note the following:
@@ -2736,7 +2650,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </ul>
      * 
      * @param updateAutoScalingGroupRequest
-     *        Contains the parameters for UpdateAutoScalingGroup.
      * @return A Java Future containing the result of the UpdateAutoScalingGroup operation returned by the service.
      * @sample AmazonAutoScalingAsync.UpdateAutoScalingGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/UpdateAutoScalingGroup"
@@ -2749,14 +2662,14 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * Updates the configuration for the specified Auto Scaling group.
      * </p>
      * <p>
-     * To update an Auto Scaling group with a launch configuration with <code>InstanceMonitoring</code> set to
-     * <code>False</code>, you must first disable the collection of group metrics. Otherwise, you will get an error. If
-     * you have previously enabled the collection of group metrics, you can disable it using
-     * <a>DisableMetricsCollection</a>.
+     * The new settings take effect on any scaling activities after this call returns. Scaling activities that are
+     * currently in progress aren't affected.
      * </p>
      * <p>
-     * The new settings are registered upon the completion of this call. Any launch configuration settings take effect
-     * on any triggers after this call returns. Scaling activities that are currently in progress aren't affected.
+     * To update an Auto Scaling group with a launch configuration with <code>InstanceMonitoring</code> set to
+     * <code>false</code>, you must first disable the collection of group metrics. Otherwise, you will get an error. If
+     * you have previously enabled the collection of group metrics, you can disable it using
+     * <a>DisableMetricsCollection</a>.
      * </p>
      * <p>
      * Note the following:
@@ -2784,7 +2697,6 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * </ul>
      * 
      * @param updateAutoScalingGroupRequest
-     *        Contains the parameters for UpdateAutoScalingGroup.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or

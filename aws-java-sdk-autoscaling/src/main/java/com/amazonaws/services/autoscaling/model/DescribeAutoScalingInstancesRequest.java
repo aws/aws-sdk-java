@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Contains the parameters for DescribeAutoScalingInstances.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingInstances"
  *      target="_top">AWS API Documentation</a>
@@ -37,7 +34,7 @@ public class DescribeAutoScalingInstancesRequest extends com.amazonaws.AmazonWeb
     private com.amazonaws.internal.SdkInternalList<String> instanceIds;
     /**
      * <p>
-     * The maximum number of items to return with this call.
+     * The maximum number of items to return with this call. The default value is 50 and the maximum value is 100.
      * </p>
      */
     private Integer maxRecords;
@@ -131,11 +128,12 @@ public class DescribeAutoScalingInstancesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The maximum number of items to return with this call.
+     * The maximum number of items to return with this call. The default value is 50 and the maximum value is 100.
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of items to return with this call.
+     *        The maximum number of items to return with this call. The default value is 50 and the maximum value is
+     *        100.
      */
 
     public void setMaxRecords(Integer maxRecords) {
@@ -144,10 +142,11 @@ public class DescribeAutoScalingInstancesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The maximum number of items to return with this call.
+     * The maximum number of items to return with this call. The default value is 50 and the maximum value is 100.
      * </p>
      * 
-     * @return The maximum number of items to return with this call.
+     * @return The maximum number of items to return with this call. The default value is 50 and the maximum value is
+     *         100.
      */
 
     public Integer getMaxRecords() {
@@ -156,11 +155,12 @@ public class DescribeAutoScalingInstancesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The maximum number of items to return with this call.
+     * The maximum number of items to return with this call. The default value is 50 and the maximum value is 100.
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of items to return with this call.
+     *        The maximum number of items to return with this call. The default value is 50 and the maximum value is
+     *        100.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

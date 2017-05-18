@@ -461,8 +461,17 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * </li>
      * </ul>
      * <p>
+     * When you specify <code>Input</code>, <code>InputPath</code>, or <code>InputTransformer</code>, you must use JSON
+     * dot notation, not bracket notation.
+     * </p>
+     * <p>
      * When you add targets to a rule and the associated rule triggers soon after, new or updated targets might not be
      * immediately invoked. Please allow a short period of time for changes to take effect.
+     * </p>
+     * <p>
+     * This action can partially fail if too many requests are made at the same time. If that happens,
+     * <code>FailedEntryCount</code> is non-zero in the response and each entry in <code>FailedEntries</code> provides
+     * the ID of the failed target and the error code.
      * </p>
      * 
      * @param putTargetsRequest
@@ -529,8 +538,17 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * </li>
      * </ul>
      * <p>
+     * When you specify <code>Input</code>, <code>InputPath</code>, or <code>InputTransformer</code>, you must use JSON
+     * dot notation, not bracket notation.
+     * </p>
+     * <p>
      * When you add targets to a rule and the associated rule triggers soon after, new or updated targets might not be
      * immediately invoked. Please allow a short period of time for changes to take effect.
+     * </p>
+     * <p>
+     * This action can partially fail if too many requests are made at the same time. If that happens,
+     * <code>FailedEntryCount</code> is non-zero in the response and each entry in <code>FailedEntries</code> provides
+     * the ID of the failed target and the error code.
      * </p>
      * 
      * @param putTargetsRequest
@@ -555,6 +573,11 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * When you remove a target, when the associated rule triggers, removed targets might continue to be invoked. Please
      * allow a short period of time for changes to take effect.
      * </p>
+     * <p>
+     * This action can partially fail if too many requests are made at the same time. If that happens,
+     * <code>FailedEntryCount</code> is non-zero in the response and each entry in <code>FailedEntries</code> provides
+     * the ID of the failed target and the error code.
+     * </p>
      * 
      * @param removeTargetsRequest
      * @return A Java Future containing the result of the RemoveTargets operation returned by the service.
@@ -572,6 +595,11 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * <p>
      * When you remove a target, when the associated rule triggers, removed targets might continue to be invoked. Please
      * allow a short period of time for changes to take effect.
+     * </p>
+     * <p>
+     * This action can partially fail if too many requests are made at the same time. If that happens,
+     * <code>FailedEntryCount</code> is non-zero in the response and each entry in <code>FailedEntries</code> provides
+     * the ID of the failed target and the error code.
      * </p>
      * 
      * @param removeTargetsRequest

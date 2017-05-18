@@ -1075,7 +1075,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Creates or updates a subscription filter and associates it with the specified log group. Subscription filters allow you to subscribe to a real-time stream of log events ingested through <a>PutLogEvents</a> and have them delivered to a specific destination. Currently, the supported destinations are:</p> <ul> <li> <p>An Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li> <li> <p>A logical destination that belongs to a different account, for cross-account delivery.</p> </li> <li> <p>An Amazon Kinesis Firehose stream that belongs to the same account as the subscription filter, for same-account delivery.</p> </li> <li> <p>An AWS Lambda function that belongs to the same account as the subscription filter, for same-account delivery.</p> </li> </ul> <p>There can only be one subscription filter associated with a log group.</p>",
+      "documentation" : "<p>Creates or updates a subscription filter and associates it with the specified log group. Subscription filters allow you to subscribe to a real-time stream of log events ingested through <a>PutLogEvents</a> and have them delivered to a specific destination. Currently, the supported destinations are:</p> <ul> <li> <p>An Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li> <li> <p>A logical destination that belongs to a different account, for cross-account delivery.</p> </li> <li> <p>An Amazon Kinesis Firehose stream that belongs to the same account as the subscription filter, for same-account delivery.</p> </li> <li> <p>An AWS Lambda function that belongs to the same account as the subscription filter, for same-account delivery.</p> </li> </ul> <p>There can only be one subscription filter associated with a log group. If you are updating an existing filter, you must specify the correct name in <code>filterName</code>. Otherwise, the call will fail because you cannot associate a second filter with a log group.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -2370,7 +2370,7 @@
         },
         "orderBy" : {
           "deprecated" : false,
-          "documentation" : "<p>If the value is <code>LogStreamName</code>, the results are ordered by log stream name. If the value is <code>LastEventTime</code>, the results are ordered by the event time. The default value is <code>LogStreamName</code>.</p> <p>If you order the results by event time, you cannot specify the <code>logStreamNamePrefix</code> parameter.</p>",
+          "documentation" : "<p>If the value is <code>LogStreamName</code>, the results are ordered by log stream name. If the value is <code>LastEventTime</code>, the results are ordered by the event time. The default value is <code>LogStreamName</code>.</p> <p>If you order the results by event time, you cannot specify the <code>logStreamNamePrefix</code> parameter.</p> <p>lastEventTimestamp represents the time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. lastEventTimeStamp updates on an eventual consistency basis. It typically updates in less than an hour from ingestion, but may take longer in some rare situations.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -2768,7 +2768,7 @@
         },
         "creationTime" : {
           "deprecated" : false,
-          "documentation" : "<p>The creation time of the destination.</p>",
+          "documentation" : "<p>The creation time of the destination, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -3217,7 +3217,7 @@
       "members" : {
         "completionTime" : {
           "deprecated" : false,
-          "documentation" : "<p>The completion time of the export task.</p>",
+          "documentation" : "<p>The completion time of the export task, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -3231,7 +3231,7 @@
         },
         "creationTime" : {
           "deprecated" : false,
-          "documentation" : "<p>The creation time of the export task.</p>",
+          "documentation" : "<p>The creation time of the export task, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -3757,7 +3757,7 @@
         },
         "ingestionTime" : {
           "deprecated" : false,
-          "documentation" : "<p>The time the event was ingested.</p>",
+          "documentation" : "<p>The time the event was ingested, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4398,7 +4398,7 @@
         },
         "creationTime" : {
           "deprecated" : false,
-          "documentation" : "<p>The creation time of the log group.</p>",
+          "documentation" : "<p>The creation time of the log group, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4559,7 +4559,7 @@
         },
         "creationTime" : {
           "deprecated" : false,
-          "documentation" : "<p>The creation time of the stream.</p>",
+          "documentation" : "<p>The creation time of the stream, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4587,7 +4587,7 @@
         },
         "lastEventTimestamp" : {
           "deprecated" : false,
-          "documentation" : "<p>The time of the last event, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>",
+          "documentation" : "<p> the time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC. lastEventTime updates on an eventual consistency basis. It typically updates in less than an hour from ingestion, but may take longer in some rare situations.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4601,7 +4601,7 @@
         },
         "lastIngestionTime" : {
           "deprecated" : false,
-          "documentation" : "<p>The ingestion time.</p>",
+          "documentation" : "<p>The ingestion time, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4755,7 +4755,7 @@
       "members" : {
         "creationTime" : {
           "deprecated" : false,
-          "documentation" : "<p>The creation time of the metric filter.</p>",
+          "documentation" : "<p>The creation time of the metric filter, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5217,7 +5217,7 @@
       "members" : {
         "ingestionTime" : {
           "deprecated" : false,
-          "documentation" : "<p>The time the event was ingested.</p>",
+          "documentation" : "<p>The time the event was ingested, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5749,7 +5749,7 @@
         },
         "filterName" : {
           "deprecated" : false,
-          "documentation" : "<p>A name for the subscription filter.</p>",
+          "documentation" : "<p>A name for the subscription filter. If you are updating an existing filter, you must specify the correct name in <code>filterName</code>. Otherwise, the call will fail because you cannot associate a second filter with a log group. To find the name of the filter currently associated with a log group, use <a>DescribeSubscriptionFilters</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6122,7 +6122,7 @@
       "members" : {
         "creationTime" : {
           "deprecated" : false,
-          "documentation" : "<p>The creation time of the subscription filter.</p>",
+          "documentation" : "<p>The creation time of the subscription filter, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,

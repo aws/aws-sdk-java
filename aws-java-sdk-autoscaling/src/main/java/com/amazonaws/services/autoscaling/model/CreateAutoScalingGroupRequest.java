@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Contains the parameters for CreateAutoScalingGroup.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateAutoScalingGroup" target="_top">AWS
  *      API Documentation</a>
@@ -72,7 +69,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The number of EC2 instances that should be running in the group. This number must be greater than or equal to the
-     * minimum size of the group and less than or equal to the maximum size of the group.
+     * minimum size of the group and less than or equal to the maximum size of the group. If you do not specify a
+     * desired capacity, the default is the minimum size of the group.
      * </p>
      */
     private Integer desiredCapacity;
@@ -95,7 +93,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     private com.amazonaws.internal.SdkInternalList<String> availabilityZones;
     /**
      * <p>
-     * One or more Classic load balancers. To specify an Application load balancer, use <code>TargetGroupARNs</code>
+     * One or more Classic Load Balancers. To specify an Application Load Balancer, use <code>TargetGroupARNs</code>
      * instead.
      * </p>
      * <p>
@@ -460,12 +458,14 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The number of EC2 instances that should be running in the group. This number must be greater than or equal to the
-     * minimum size of the group and less than or equal to the maximum size of the group.
+     * minimum size of the group and less than or equal to the maximum size of the group. If you do not specify a
+     * desired capacity, the default is the minimum size of the group.
      * </p>
      * 
      * @param desiredCapacity
      *        The number of EC2 instances that should be running in the group. This number must be greater than or equal
-     *        to the minimum size of the group and less than or equal to the maximum size of the group.
+     *        to the minimum size of the group and less than or equal to the maximum size of the group. If you do not
+     *        specify a desired capacity, the default is the minimum size of the group.
      */
 
     public void setDesiredCapacity(Integer desiredCapacity) {
@@ -475,11 +475,13 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The number of EC2 instances that should be running in the group. This number must be greater than or equal to the
-     * minimum size of the group and less than or equal to the maximum size of the group.
+     * minimum size of the group and less than or equal to the maximum size of the group. If you do not specify a
+     * desired capacity, the default is the minimum size of the group.
      * </p>
      * 
      * @return The number of EC2 instances that should be running in the group. This number must be greater than or
-     *         equal to the minimum size of the group and less than or equal to the maximum size of the group.
+     *         equal to the minimum size of the group and less than or equal to the maximum size of the group. If you do
+     *         not specify a desired capacity, the default is the minimum size of the group.
      */
 
     public Integer getDesiredCapacity() {
@@ -489,12 +491,14 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The number of EC2 instances that should be running in the group. This number must be greater than or equal to the
-     * minimum size of the group and less than or equal to the maximum size of the group.
+     * minimum size of the group and less than or equal to the maximum size of the group. If you do not specify a
+     * desired capacity, the default is the minimum size of the group.
      * </p>
      * 
      * @param desiredCapacity
      *        The number of EC2 instances that should be running in the group. This number must be greater than or equal
-     *        to the minimum size of the group and less than or equal to the maximum size of the group.
+     *        to the minimum size of the group and less than or equal to the maximum size of the group. If you do not
+     *        specify a desired capacity, the default is the minimum size of the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -652,7 +656,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * One or more Classic load balancers. To specify an Application load balancer, use <code>TargetGroupARNs</code>
+     * One or more Classic Load Balancers. To specify an Application Load Balancer, use <code>TargetGroupARNs</code>
      * instead.
      * </p>
      * <p>
@@ -661,7 +665,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * Balancer With an Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
-     * @return One or more Classic load balancers. To specify an Application load balancer, use
+     * @return One or more Classic Load Balancers. To specify an Application Load Balancer, use
      *         <code>TargetGroupARNs</code> instead.</p>
      *         <p>
      *         For more information, see <a
@@ -678,7 +682,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * One or more Classic load balancers. To specify an Application load balancer, use <code>TargetGroupARNs</code>
+     * One or more Classic Load Balancers. To specify an Application Load Balancer, use <code>TargetGroupARNs</code>
      * instead.
      * </p>
      * <p>
@@ -688,7 +692,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param loadBalancerNames
-     *        One or more Classic load balancers. To specify an Application load balancer, use
+     *        One or more Classic Load Balancers. To specify an Application Load Balancer, use
      *        <code>TargetGroupARNs</code> instead.</p>
      *        <p>
      *        For more information, see <a
@@ -707,7 +711,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * One or more Classic load balancers. To specify an Application load balancer, use <code>TargetGroupARNs</code>
+     * One or more Classic Load Balancers. To specify an Application Load Balancer, use <code>TargetGroupARNs</code>
      * instead.
      * </p>
      * <p>
@@ -722,7 +726,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param loadBalancerNames
-     *        One or more Classic load balancers. To specify an Application load balancer, use
+     *        One or more Classic Load Balancers. To specify an Application Load Balancer, use
      *        <code>TargetGroupARNs</code> instead.</p>
      *        <p>
      *        For more information, see <a
@@ -743,7 +747,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * One or more Classic load balancers. To specify an Application load balancer, use <code>TargetGroupARNs</code>
+     * One or more Classic Load Balancers. To specify an Application Load Balancer, use <code>TargetGroupARNs</code>
      * instead.
      * </p>
      * <p>
@@ -753,7 +757,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param loadBalancerNames
-     *        One or more Classic load balancers. To specify an Application load balancer, use
+     *        One or more Classic Load Balancers. To specify an Application Load Balancer, use
      *        <code>TargetGroupARNs</code> instead.</p>
      *        <p>
      *        For more information, see <a

@@ -19,7 +19,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Attaches one or more EC2 instances to the specified Auto Scaling group.</p> <p>When you attach instances, Auto Scaling increases the desired capacity of the group by the number of instances being attached. If the number of instances being attached plus the desired capacity of the group exceeds the maximum size of the group, the operation fails.</p> <p>If there is a Classic load balancer attached to your Auto Scaling group, the instances are also registered with the load balancer. If there are target groups attached to your Auto Scaling group, the instances are also registered with the target groups.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/autoscaling/latest/userguide/attach-instance-asg.html\">Attach EC2 Instances to Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.</p>",
+      "documentation" : "<p>Attaches one or more EC2 instances to the specified Auto Scaling group.</p> <p>When you attach instances, Auto Scaling increases the desired capacity of the group by the number of instances being attached. If the number of instances being attached plus the desired capacity of the group exceeds the maximum size of the group, the operation fails.</p> <p>If there is a Classic Load Balancer attached to your Auto Scaling group, the instances are also registered with the load balancer. If there are target groups attached to your Auto Scaling group, the instances are also registered with the target groups.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/autoscaling/latest/userguide/attach-instance-asg.html\">Attach EC2 Instances to Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -76,7 +76,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Attaches one or more Classic load balancers to the specified Auto Scaling group.</p> <p>To attach an Application load balancer instead, see <a>AttachLoadBalancerTargetGroups</a>.</p> <p>To describe the load balancers for an Auto Scaling group, use <a>DescribeLoadBalancers</a>. To detach the load balancer from the Auto Scaling group, use <a>DetachLoadBalancers</a>.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/autoscaling/latest/userguide/attach-load-balancer-asg.html\">Attach a Load Balancer to Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.</p>",
+      "documentation" : "<p>Attaches one or more Classic Load Balancers to the specified Auto Scaling group.</p> <p>To attach an Application Load Balancer instead, see <a>AttachLoadBalancerTargetGroups</a>.</p> <p>To describe the load balancers for an Auto Scaling group, use <a>DescribeLoadBalancers</a>. To detach the load balancer from the Auto Scaling group, use <a>DetachLoadBalancers</a>.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/autoscaling/latest/userguide/attach-load-balancer-asg.html\">Attach a Load Balancer to Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -734,7 +734,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Describes the load balancers for the specified Auto Scaling group.</p> <p>Note that this operation describes only Classic load balancers. If you have Application load balancers, use <a>DescribeLoadBalancerTargetGroups</a> instead.</p>",
+      "documentation" : "<p>Describes the load balancers for the specified Auto Scaling group.</p> <p>Note that this operation describes only Classic Load Balancers. If you have Application Load Balancers, use <a>DescribeLoadBalancerTargetGroups</a> instead.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -1028,7 +1028,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Removes one or more instances from the specified Auto Scaling group.</p> <p>After the instances are detached, you can manage them independently from the rest of the Auto Scaling group.</p> <p>If you do not specify the option to decrement the desired capacity, Auto Scaling launches instances to replace the ones that are detached.</p> <p>If there is a Classic load balancer attached to the Auto Scaling group, the instances are deregistered from the load balancer. If there are target groups attached to the Auto Scaling group, the instances are deregistered from the target groups.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/autoscaling/latest/userguide/detach-instance-asg.html\">Detach EC2 Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.</p>",
+      "documentation" : "<p>Removes one or more instances from the specified Auto Scaling group.</p> <p>After the instances are detached, you can manage them independent of the Auto Scaling group.</p> <p>If you do not specify the option to decrement the desired capacity, Auto Scaling launches instances to replace the ones that are detached.</p> <p>If there is a Classic Load Balancer attached to the Auto Scaling group, the instances are deregistered from the load balancer. If there are target groups attached to the Auto Scaling group, the instances are deregistered from the target groups.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/autoscaling/latest/userguide/detach-instance-asg.html\">Detach EC2 Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -1090,7 +1090,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Detaches one or more Classic load balancers from the specified Auto Scaling group.</p> <p>Note that this operation detaches only Classic load balancers. If you have Application load balancers, use <a>DetachLoadBalancerTargetGroups</a> instead.</p> <p>When you detach a load balancer, it enters the <code>Removing</code> state while deregistering the instances in the group. When all instances are deregistered, then you can no longer describe the load balancer using <a>DescribeLoadBalancers</a>. Note that the instances remain running.</p>",
+      "documentation" : "<p>Detaches one or more Classic Load Balancers from the specified Auto Scaling group.</p> <p>Note that this operation detaches only Classic Load Balancers. If you have Application Load Balancers, use <a>DetachLoadBalancerTargetGroups</a> instead.</p> <p>When you detach a load balancer, it enters the <code>Removing</code> state while deregistering the instances in the group. When all instances are deregistered, then you can no longer describe the load balancer using <a>DescribeLoadBalancers</a>. Note that the instances remain running.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -1173,7 +1173,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Moves the specified instances into <code>Standby</code> mode.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html\">Auto Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>",
+      "documentation" : "<p>Moves the specified instances into the standby state.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/autoscaling/latest/userguide/as-enter-exit-standby.html\">Temporarily Removing Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -1236,7 +1236,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Moves the specified instances out of <code>Standby</code> mode.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html\">Auto Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.</p>",
+      "documentation" : "<p>Moves the specified instances out of the standby state.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/autoscaling/latest/userguide/as-enter-exit-standby.html\">Temporarily Removing Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -1638,7 +1638,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Updates the configuration for the specified Auto Scaling group.</p> <p>To update an Auto Scaling group with a launch configuration with <code>InstanceMonitoring</code> set to <code>False</code>, you must first disable the collection of group metrics. Otherwise, you will get an error. If you have previously enabled the collection of group metrics, you can disable it using <a>DisableMetricsCollection</a>.</p> <p>The new settings are registered upon the completion of this call. Any launch configuration settings take effect on any triggers after this call returns. Scaling activities that are currently in progress aren't affected.</p> <p>Note the following:</p> <ul> <li> <p>If you specify a new value for <code>MinSize</code> without specifying a value for <code>DesiredCapacity</code>, and the new <code>MinSize</code> is larger than the current size of the group, we implicitly call <a>SetDesiredCapacity</a> to set the size of the group to the new value of <code>MinSize</code>.</p> </li> <li> <p>If you specify a new value for <code>MaxSize</code> without specifying a value for <code>DesiredCapacity</code>, and the new <code>MaxSize</code> is smaller than the current size of the group, we implicitly call <a>SetDesiredCapacity</a> to set the size of the group to the new value of <code>MaxSize</code>.</p> </li> <li> <p>All other optional parameters are left unchanged if not specified.</p> </li> </ul>",
+      "documentation" : "<p>Updates the configuration for the specified Auto Scaling group.</p> <p>The new settings take effect on any scaling activities after this call returns. Scaling activities that are currently in progress aren't affected.</p> <p>To update an Auto Scaling group with a launch configuration with <code>InstanceMonitoring</code> set to <code>false</code>, you must first disable the collection of group metrics. Otherwise, you will get an error. If you have previously enabled the collection of group metrics, you can disable it using <a>DisableMetricsCollection</a>.</p> <p>Note the following:</p> <ul> <li> <p>If you specify a new value for <code>MinSize</code> without specifying a value for <code>DesiredCapacity</code>, and the new <code>MinSize</code> is larger than the current size of the group, we implicitly call <a>SetDesiredCapacity</a> to set the size of the group to the new value of <code>MinSize</code>.</p> </li> <li> <p>If you specify a new value for <code>MaxSize</code> without specifying a value for <code>DesiredCapacity</code>, and the new <code>MaxSize</code> is smaller than the current size of the group, we implicitly call <a>SetDesiredCapacity</a> to set the size of the group to the new value of <code>MaxSize</code>.</p> </li> <li> <p>All other optional parameters are left unchanged if not specified.</p> </li> </ul>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -1704,7 +1704,7 @@
     },
     "ActivitiesType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DescribeScalingActivities.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -1950,7 +1950,7 @@
     },
     "ActivityType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of TerminateInstancesInAutoScalingGroup.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2221,7 +2221,7 @@
     },
     "AttachInstancesQuery" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for AttachInstances.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2292,7 +2292,7 @@
     },
     "AttachLoadBalancerTargetGroupsType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for AttachLoadBalancerTargetGroups.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2342,7 +2342,7 @@
     },
     "AttachLoadBalancersResultType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of AttachLoadBalancers.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2363,7 +2363,7 @@
     },
     "AttachLoadBalancersType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for AttachLoadBalancers.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2840,7 +2840,7 @@
     },
     "AutoScalingGroupNamesType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DescribeAutoScalingGroups.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2866,7 +2866,7 @@
         },
         "MaxRecords" : {
           "deprecated" : false,
-          "documentation" : "<p>The maximum number of items to return with this call.</p>",
+          "documentation" : "<p>The maximum number of items to return with this call. The default value is 50 and the maximum value is 100.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -2938,7 +2938,7 @@
     },
     "AutoScalingGroupsType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output for DescribeAutoScalingGroups.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3056,7 +3056,7 @@
         },
         "LaunchConfigurationName" : {
           "deprecated" : false,
-          "documentation" : "<p>The launch configuration associated with the instance.</p>",
+          "documentation" : "<p>The launch configuration used to launch the instance. This value is not available if you attached the instance to the Auto Scaling group.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -3142,7 +3142,7 @@
     },
     "AutoScalingInstancesType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DescribeAutoScalingInstances.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3511,7 +3511,7 @@
     },
     "CompleteLifecycleActionAnswer" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of CompleteLifecycleAction.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3532,7 +3532,7 @@
     },
     "CompleteLifecycleActionType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for CompleteLifecycleAction.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3645,7 +3645,7 @@
     },
     "CreateAutoScalingGroupType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for CreateAutoScalingGroup.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3699,7 +3699,7 @@
         },
         "DesiredCapacity" : {
           "deprecated" : false,
-          "documentation" : "<p>The number of EC2 instances that should be running in the group. This number must be greater than or equal to the minimum size of the group and less than or equal to the maximum size of the group.</p>",
+          "documentation" : "<p>The number of EC2 instances that should be running in the group. This number must be greater than or equal to the minimum size of the group and less than or equal to the maximum size of the group. If you do not specify a desired capacity, the default is the minimum size of the group.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -3769,7 +3769,7 @@
         },
         "LoadBalancerNames" : {
           "deprecated" : false,
-          "documentation" : "<p>One or more Classic load balancers. To specify an Application load balancer, use <code>TargetGroupARNs</code> instead.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/autoscaling/latest/userguide/create-asg-from-instance.html\">Using a Load Balancer With an Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.</p>",
+          "documentation" : "<p>One or more Classic Load Balancers. To specify an Application Load Balancer, use <code>TargetGroupARNs</code> instead.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/autoscaling/latest/userguide/create-asg-from-instance.html\">Using a Load Balancer With an Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -3905,7 +3905,7 @@
     },
     "CreateLaunchConfigurationType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for CreateLaunchConfiguration.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4001,7 +4001,7 @@
         },
         "ImageId" : {
           "deprecated" : false,
-          "documentation" : "<p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html\">Finding an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>",
+          "documentation" : "<p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.</p> <p>If you do not specify <code>InstanceId</code>, you must specify <code>ImageId</code>.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html\">Finding an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4015,7 +4015,7 @@
         },
         "InstanceId" : {
           "deprecated" : false,
-          "documentation" : "<p>The ID of the instance to use to create the launch configuration.</p> <p>The new launch configuration derives attributes from the instance, with the exception of the block device mapping.</p> <p>To create a launch configuration with a block device mapping or override any other instance attributes, specify them as part of the same request.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/autoscaling/latest/userguide/create-lc-with-instanceID.html\">Create a Launch Configuration Using an EC2 Instance</a> in the <i>Auto Scaling User Guide</i>.</p>",
+          "documentation" : "<p>The ID of the instance to use to create the launch configuration. The new launch configuration derives attributes from the instance, with the exception of the block device mapping.</p> <p>If you do not specify <code>InstanceId</code>, you must specify both <code>ImageId</code> and <code>InstanceType</code>.</p> <p>To create a launch configuration with a block device mapping or override any other instance attributes, specify them as part of the same request.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/autoscaling/latest/userguide/create-lc-with-instanceID.html\">Create a Launch Configuration Using an EC2 Instance</a> in the <i>Auto Scaling User Guide</i>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4029,7 +4029,7 @@
         },
         "InstanceMonitoring" : {
           "deprecated" : false,
-          "documentation" : "<p>Enables detailed monitoring (<code>true</code>) or basic monitoring (<code>false</code>) for the Auto Scaling instances.</p>",
+          "documentation" : "<p>Enables detailed monitoring (<code>true</code>) or basic monitoring (<code>false</code>) for the Auto Scaling instances. The default is <code>true</code>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4043,7 +4043,7 @@
         },
         "InstanceType" : {
           "deprecated" : false,
-          "documentation" : "<p>The instance type of the EC2 instance. For information about available instance types, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes\"> Available Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> </p>",
+          "documentation" : "<p>The instance type of the EC2 instance.</p> <p>If you do not specify <code>InstanceId</code>, you must specify <code>InstanceType</code>.</p> <p>For information about available instance types, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes\">Available Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> </p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4179,7 +4179,7 @@
     },
     "CreateOrUpdateTagsType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for CreateOrUpdateTags.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4215,7 +4215,7 @@
     },
     "DeleteAutoScalingGroupType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DeleteAutoScalingGroup.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4265,7 +4265,7 @@
     },
     "DeleteLifecycleHookAnswer" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DeleteLifecycleHook.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4286,7 +4286,7 @@
     },
     "DeleteLifecycleHookType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DeleteLifecycleHook.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4336,7 +4336,7 @@
     },
     "DeleteNotificationConfigurationType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DeleteNotificationConfiguration.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4386,7 +4386,7 @@
     },
     "DeletePolicyType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DeletePolicy.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4436,7 +4436,7 @@
     },
     "DeleteScheduledActionType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DeleteScheduledAction.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4486,7 +4486,7 @@
     },
     "DeleteTagsType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DeleteTags.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4522,7 +4522,7 @@
     },
     "DescribeAccountLimitsAnswer" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DescribeAccountLimits.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4600,7 +4600,7 @@
     },
     "DescribeAdjustmentTypesAnswer" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DescribeAdjustmentTypes.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4636,7 +4636,7 @@
     },
     "DescribeAutoScalingInstancesType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DescribeAutoScalingInstances.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4662,7 +4662,7 @@
         },
         "MaxRecords" : {
           "deprecated" : false,
-          "documentation" : "<p>The maximum number of items to return with this call.</p>",
+          "documentation" : "<p>The maximum number of items to return with this call. The default value is 50 and the maximum value is 100.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4700,7 +4700,7 @@
     },
     "DescribeAutoScalingNotificationTypesAnswer" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DescribeAutoScalingNotificationTypes.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4736,7 +4736,7 @@
     },
     "DescribeLifecycleHookTypesAnswer" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DescribeLifecycleHookTypes.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4772,7 +4772,7 @@
     },
     "DescribeLifecycleHooksAnswer" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DescribeLifecycleHooks.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4808,7 +4808,7 @@
     },
     "DescribeLifecycleHooksType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DescribeLifecycleHooks.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4858,7 +4858,7 @@
     },
     "DescribeLoadBalancerTargetGroupsRequest" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DescribeLoadBalancerTargetGroups.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4884,7 +4884,7 @@
         },
         "MaxRecords" : {
           "deprecated" : false,
-          "documentation" : "<p>The maximum number of items to return with this call.</p>",
+          "documentation" : "<p>The maximum number of items to return with this call. The default value is 50 and the maximum value is 100.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4922,7 +4922,7 @@
     },
     "DescribeLoadBalancerTargetGroupsResponse" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DescribeLoadBalancerTargetGroups.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4972,7 +4972,7 @@
     },
     "DescribeLoadBalancersRequest" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DescribeLoadBalancers.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4998,7 +4998,7 @@
         },
         "MaxRecords" : {
           "deprecated" : false,
-          "documentation" : "<p>The maximum number of items to return with this call.</p>",
+          "documentation" : "<p>The maximum number of items to return with this call. The default value is 50 and the maximum value is 100.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5036,7 +5036,7 @@
     },
     "DescribeLoadBalancersResponse" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DescribeLoadBalancers.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5086,7 +5086,7 @@
     },
     "DescribeMetricCollectionTypesAnswer" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DescribeMetricsCollectionTypes.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5136,7 +5136,7 @@
     },
     "DescribeNotificationConfigurationsAnswer" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output from DescribeNotificationConfigurations.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5186,7 +5186,7 @@
     },
     "DescribeNotificationConfigurationsType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DescribeNotificationConfigurations.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5212,7 +5212,7 @@
         },
         "MaxRecords" : {
           "deprecated" : false,
-          "documentation" : "<p>The maximum number of items to return with this call.</p>",
+          "documentation" : "<p>The maximum number of items to return with this call. The default value is 50 and the maximum value is 100.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5250,7 +5250,7 @@
     },
     "DescribePoliciesType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DescribePolicies.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5276,7 +5276,7 @@
         },
         "MaxRecords" : {
           "deprecated" : false,
-          "documentation" : "<p>The maximum number of items to be returned with each call.</p>",
+          "documentation" : "<p>The maximum number of items to be returned with each call. The default value is 50 and the maximum value is 100.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5342,7 +5342,7 @@
     },
     "DescribeScalingActivitiesType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DescribeScalingActivities.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5382,7 +5382,7 @@
         },
         "MaxRecords" : {
           "deprecated" : false,
-          "documentation" : "<p>The maximum number of items to return with this call.</p>",
+          "documentation" : "<p>The maximum number of items to return with this call. The default value is 100.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5420,7 +5420,7 @@
     },
     "DescribeScheduledActionsType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DescribeScheduledActions.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5460,7 +5460,7 @@
         },
         "MaxRecords" : {
           "deprecated" : false,
-          "documentation" : "<p>The maximum number of items to return with this call.</p>",
+          "documentation" : "<p>The maximum number of items to return with this call. The default value is 50 and the maximum value is 100.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5526,7 +5526,7 @@
     },
     "DescribeTagsType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DescribeTags.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5552,7 +5552,7 @@
         },
         "MaxRecords" : {
           "deprecated" : false,
-          "documentation" : "<p>The maximum number of items to return with this call.</p>",
+          "documentation" : "<p>The maximum number of items to return with this call. The default value is 50 and the maximum value is 100.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5590,7 +5590,7 @@
     },
     "DescribeTerminationPolicyTypesAnswer" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DescribeTerminationPolicyTypes.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5626,7 +5626,7 @@
     },
     "DetachInstancesAnswer" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DetachInstances.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5662,7 +5662,7 @@
     },
     "DetachInstancesQuery" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DetachInstances.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5797,7 +5797,7 @@
     },
     "DetachLoadBalancersResultType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output for DetachLoadBalancers.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5818,7 +5818,7 @@
     },
     "DetachLoadBalancersType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DetachLoadBalancers.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5868,7 +5868,7 @@
     },
     "DisableMetricsCollectionQuery" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DisableMetricsCollection.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -6045,7 +6045,7 @@
     },
     "EnableMetricsCollectionQuery" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for EnableMetricsCollection.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -6193,7 +6193,7 @@
     },
     "EnterStandbyAnswer" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of EnterStandby.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -6229,7 +6229,7 @@
     },
     "EnterStandbyQuery" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for EnteStandby.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -6314,7 +6314,7 @@
     },
     "ExecutePolicyType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for ExecutePolicy.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -6406,7 +6406,7 @@
     },
     "ExitStandbyAnswer" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for ExitStandby.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -6442,7 +6442,7 @@
     },
     "ExitStandbyQuery" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for ExitStandby.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -6821,7 +6821,7 @@
     },
     "InstanceMonitoring" : {
       "deprecated" : false,
-      "documentation" : "<p>Describes whether instance monitoring is enabled.</p>",
+      "documentation" : "<p>Describes whether detailed monitoring is enabled for the Auto Scaling instances.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -6833,7 +6833,7 @@
       "members" : {
         "Enabled" : {
           "deprecated" : false,
-          "documentation" : "<p>If <code>True</code>, instance monitoring is enabled.</p>",
+          "documentation" : "<p>If <code>true</code>, detailed monitoring is enabled. Otherwise, basic monitoring is enabled.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -7239,7 +7239,7 @@
     },
     "LaunchConfigurationNameType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DeleteLaunchConfiguration.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -7309,7 +7309,7 @@
     },
     "LaunchConfigurationNamesType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for DescribeLaunchConfigurations.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -7335,7 +7335,7 @@
         },
         "MaxRecords" : {
           "deprecated" : false,
-          "documentation" : "<p>The maximum number of items to return with this call. The default is 100.</p>",
+          "documentation" : "<p>The maximum number of items to return with this call. The default value is 50 and the maximum value is 100.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -7407,7 +7407,7 @@
     },
     "LaunchConfigurationsType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DescribeLaunchConfigurations.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -7830,7 +7830,7 @@
     },
     "LoadBalancerState" : {
       "deprecated" : false,
-      "documentation" : "<p>Describes the state of a Classic load balancer.</p> <p>If you specify a load balancer when creating the Auto Scaling group, the state of the load balancer is <code>InService</code>.</p> <p>If you attach a load balancer to an existing Auto Scaling group, the initial state is <code>Adding</code>. The state transitions to <code>Added</code> after all instances in the group are registered with the load balancer. If ELB health checks are enabled for the load balancer, the state transitions to <code>InService</code> after at least one instance in the group passes the health check. If EC2 health checks are enabled instead, the load balancer remains in the <code>Added</code> state.</p>",
+      "documentation" : "<p>Describes the state of a Classic Load Balancer.</p> <p>If you specify a load balancer when creating the Auto Scaling group, the state of the load balancer is <code>InService</code>.</p> <p>If you attach a load balancer to an existing Auto Scaling group, the initial state is <code>Adding</code>. The state transitions to <code>Added</code> after all instances in the group are registered with the load balancer. If ELB health checks are enabled for the load balancer, the state transitions to <code>InService</code> after at least one instance in the group passes the health check. If EC2 health checks are enabled instead, the load balancer remains in the <code>Added</code> state.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -8501,7 +8501,7 @@
     },
     "PoliciesType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DescribePolicies.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -8551,7 +8551,7 @@
     },
     "PolicyARNType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of PutScalingPolicy.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -8780,7 +8780,7 @@
     },
     "ProcessesType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DescribeScalingProcessTypes.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -8879,7 +8879,7 @@
     },
     "PutLifecycleHookAnswer" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of PutLifecycleHook.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -8900,7 +8900,7 @@
     },
     "PutLifecycleHookType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for PutLifecycleHook.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -9034,7 +9034,7 @@
     },
     "PutNotificationConfigurationType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for PutNotificationConfiguration.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -9098,7 +9098,7 @@
     },
     "PutScalingPolicyType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for PutScalingPolicy.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -9274,7 +9274,7 @@
     },
     "PutScheduledUpdateGroupActionType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for PutScheduledUpdateGroupAction.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -9422,7 +9422,7 @@
     },
     "RecordLifecycleActionHeartbeatAnswer" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of RecordLifecycleActionHeartBeat.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -9443,7 +9443,7 @@
     },
     "RecordLifecycleActionHeartbeatType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for RecordLifecycleActionHeartbeat.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -9768,7 +9768,7 @@
         },
         "Cooldown" : {
           "deprecated" : false,
-          "documentation" : "<p>The amount of time, in seconds, after a scaling activity completes before any further trigger-related scaling activities can start.</p>",
+          "documentation" : "<p>The amount of time, in seconds, after a scaling activity completes before any further dynamic scaling activities can start.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -9918,7 +9918,7 @@
     },
     "ScalingProcessQuery" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for SuspendProcesses and ResumeProcesses.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -10002,7 +10002,7 @@
     },
     "ScheduledActionsType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DescribeScheduledActions.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -10282,7 +10282,7 @@
     },
     "SetDesiredCapacityType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for SetDesiredCapacity.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -10346,7 +10346,7 @@
     },
     "SetInstanceHealthQuery" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for SetInstanceHealth.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -10410,7 +10410,7 @@
     },
     "SetInstanceProtectionAnswer" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of SetInstanceProtection.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -10431,7 +10431,7 @@
     },
     "SetInstanceProtectionQuery" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for SetInstanceProtection.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -11034,7 +11034,7 @@
     },
     "TagsType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the output of DescribeTags.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -11118,7 +11118,7 @@
     },
     "TerminateInstanceInAutoScalingGroupType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for TerminateInstanceInAutoScalingGroup.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -11223,7 +11223,7 @@
     },
     "UpdateAutoScalingGroupType" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the parameters for UpdateAutoScalingGroup.</p>",
+      "documentation" : null,
       "enum" : null,
       "error" : null,
       "exception" : false,

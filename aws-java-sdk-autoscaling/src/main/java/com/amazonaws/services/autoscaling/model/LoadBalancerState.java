@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes the state of a Classic load balancer.
+ * Describes the state of a Classic Load Balancer.
  * </p>
  * <p>
  * If you specify a load balancer when creating the Auto Scaling group, the state of the load balancer is

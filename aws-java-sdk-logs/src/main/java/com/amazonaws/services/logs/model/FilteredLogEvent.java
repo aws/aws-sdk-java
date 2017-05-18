@@ -48,7 +48,7 @@ public class FilteredLogEvent implements Serializable, Cloneable, StructuredPojo
     private String message;
     /**
      * <p>
-     * The time the event was ingested.
+     * The time the event was ingested, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
      * </p>
      */
     private Long ingestionTime;
@@ -181,11 +181,11 @@ public class FilteredLogEvent implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The time the event was ingested.
+     * The time the event was ingested, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
      * @param ingestionTime
-     *        The time the event was ingested.
+     *        The time the event was ingested, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
      */
 
     public void setIngestionTime(Long ingestionTime) {
@@ -194,10 +194,10 @@ public class FilteredLogEvent implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The time the event was ingested.
+     * The time the event was ingested, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
-     * @return The time the event was ingested.
+     * @return The time the event was ingested, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
      */
 
     public Long getIngestionTime() {
@@ -206,11 +206,11 @@ public class FilteredLogEvent implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The time the event was ingested.
+     * The time the event was ingested, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
      * @param ingestionTime
-     *        The time the event was ingested.
+     *        The time the event was ingested, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

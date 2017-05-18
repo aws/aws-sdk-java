@@ -31,7 +31,8 @@ public class InputTransformer implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Map of JSON paths to be extracted from the event. These are key-value pairs, where each value is a JSON path.
+     * Map of JSON paths to be extracted from the event. These are key-value pairs, where each value is a JSON path. You
+     * must use JSON dot notation, not bracket notation.
      * </p>
      */
     private java.util.Map<String, String> inputPathsMap;
@@ -45,11 +46,12 @@ public class InputTransformer implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Map of JSON paths to be extracted from the event. These are key-value pairs, where each value is a JSON path.
+     * Map of JSON paths to be extracted from the event. These are key-value pairs, where each value is a JSON path. You
+     * must use JSON dot notation, not bracket notation.
      * </p>
      * 
      * @return Map of JSON paths to be extracted from the event. These are key-value pairs, where each value is a JSON
-     *         path.
+     *         path. You must use JSON dot notation, not bracket notation.
      */
 
     public java.util.Map<String, String> getInputPathsMap() {
@@ -58,12 +60,13 @@ public class InputTransformer implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Map of JSON paths to be extracted from the event. These are key-value pairs, where each value is a JSON path.
+     * Map of JSON paths to be extracted from the event. These are key-value pairs, where each value is a JSON path. You
+     * must use JSON dot notation, not bracket notation.
      * </p>
      * 
      * @param inputPathsMap
      *        Map of JSON paths to be extracted from the event. These are key-value pairs, where each value is a JSON
-     *        path.
+     *        path. You must use JSON dot notation, not bracket notation.
      */
 
     public void setInputPathsMap(java.util.Map<String, String> inputPathsMap) {
@@ -72,12 +75,13 @@ public class InputTransformer implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Map of JSON paths to be extracted from the event. These are key-value pairs, where each value is a JSON path.
+     * Map of JSON paths to be extracted from the event. These are key-value pairs, where each value is a JSON path. You
+     * must use JSON dot notation, not bracket notation.
      * </p>
      * 
      * @param inputPathsMap
      *        Map of JSON paths to be extracted from the event. These are key-value pairs, where each value is a JSON
-     *        path.
+     *        path. You must use JSON dot notation, not bracket notation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -36,7 +36,7 @@ public class LogGroup implements Serializable, Cloneable, StructuredPojo {
     private String logGroupName;
     /**
      * <p>
-     * The creation time of the log group.
+     * The creation time of the log group, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
      * </p>
      */
     private Long creationTime;
@@ -103,11 +103,12 @@ public class LogGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The creation time of the log group.
+     * The creation time of the log group, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
      * @param creationTime
-     *        The creation time of the log group.
+     *        The creation time of the log group, expressed as the number of milliseconds since Jan 1, 1970 00:00:00
+     *        UTC.
      */
 
     public void setCreationTime(Long creationTime) {
@@ -116,10 +117,11 @@ public class LogGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The creation time of the log group.
+     * The creation time of the log group, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
-     * @return The creation time of the log group.
+     * @return The creation time of the log group, expressed as the number of milliseconds since Jan 1, 1970 00:00:00
+     *         UTC.
      */
 
     public Long getCreationTime() {
@@ -128,11 +130,12 @@ public class LogGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The creation time of the log group.
+     * The creation time of the log group, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.
      * </p>
      * 
      * @param creationTime
-     *        The creation time of the log group.
+     *        The creation time of the log group, expressed as the number of milliseconds since Jan 1, 1970 00:00:00
+     *        UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

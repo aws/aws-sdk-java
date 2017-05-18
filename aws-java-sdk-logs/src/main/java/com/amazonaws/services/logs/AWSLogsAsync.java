@@ -1164,7 +1164,9 @@ public interface AWSLogsAsync extends AWSLogs {
      * </li>
      * </ul>
      * <p>
-     * There can only be one subscription filter associated with a log group.
+     * There can only be one subscription filter associated with a log group. If you are updating an existing filter,
+     * you must specify the correct name in <code>filterName</code>. Otherwise, the call will fail because you cannot
+     * associate a second filter with a log group.
      * </p>
      * 
      * @param putSubscriptionFilterRequest
@@ -1205,7 +1207,9 @@ public interface AWSLogsAsync extends AWSLogs {
      * </li>
      * </ul>
      * <p>
-     * There can only be one subscription filter associated with a log group.
+     * There can only be one subscription filter associated with a log group. If you are updating an existing filter,
+     * you must specify the correct name in <code>filterName</code>. Otherwise, the call will fail because you cannot
+     * associate a second filter with a log group.
      * </p>
      * 
      * @param putSubscriptionFilterRequest

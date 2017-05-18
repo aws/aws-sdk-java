@@ -1,3 +1,20 @@
+# __1.11.131__ __2017-05-17__
+## __Amazon CloudWatch Events__
+  - ### Features
+    - Various CloudWatch Events documentation updates.
+
+## __Amazon CloudWatch Logs__
+  - ### Features
+    - Various CloudWatch Logs documentation updates.
+
+## __Amazon Polly__
+  - ### Features
+    - Amazon Polly adds new German voice "Vicki"
+
+## __Auto Scaling__
+  - ### Features
+    - Various Auto Scaling documentation updates
+
 # __1.11.130__ __2017-05-16__
 ## __AWS CodeDeploy__
   - ### Features

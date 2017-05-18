@@ -80,8 +80,8 @@ public class ScalingPolicy implements Serializable, Cloneable {
     private Integer scalingAdjustment;
     /**
      * <p>
-     * The amount of time, in seconds, after a scaling activity completes before any further trigger-related scaling
-     * activities can start.
+     * The amount of time, in seconds, after a scaling activity completes before any further dynamic scaling activities
+     * can start.
      * </p>
      */
     private Integer cooldown;
@@ -457,13 +457,13 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time, in seconds, after a scaling activity completes before any further trigger-related scaling
-     * activities can start.
+     * The amount of time, in seconds, after a scaling activity completes before any further dynamic scaling activities
+     * can start.
      * </p>
      * 
      * @param cooldown
-     *        The amount of time, in seconds, after a scaling activity completes before any further trigger-related
-     *        scaling activities can start.
+     *        The amount of time, in seconds, after a scaling activity completes before any further dynamic scaling
+     *        activities can start.
      */
 
     public void setCooldown(Integer cooldown) {
@@ -472,12 +472,12 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time, in seconds, after a scaling activity completes before any further trigger-related scaling
-     * activities can start.
+     * The amount of time, in seconds, after a scaling activity completes before any further dynamic scaling activities
+     * can start.
      * </p>
      * 
-     * @return The amount of time, in seconds, after a scaling activity completes before any further trigger-related
-     *         scaling activities can start.
+     * @return The amount of time, in seconds, after a scaling activity completes before any further dynamic scaling
+     *         activities can start.
      */
 
     public Integer getCooldown() {
@@ -486,13 +486,13 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time, in seconds, after a scaling activity completes before any further trigger-related scaling
-     * activities can start.
+     * The amount of time, in seconds, after a scaling activity completes before any further dynamic scaling activities
+     * can start.
      * </p>
      * 
      * @param cooldown
-     *        The amount of time, in seconds, after a scaling activity completes before any further trigger-related
-     *        scaling activities can start.
+     *        The amount of time, in seconds, after a scaling activity completes before any further dynamic scaling
+     *        activities can start.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

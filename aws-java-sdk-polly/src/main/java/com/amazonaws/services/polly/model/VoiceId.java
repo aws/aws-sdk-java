@@ -66,7 +66,8 @@ public enum VoiceId {
     Maxim("Maxim"),
     Tatyana("Tatyana"),
     Astrid("Astrid"),
-    Filiz("Filiz");
+    Filiz("Filiz"),
+    Vicki("Vicki");
 
     private String value;
 

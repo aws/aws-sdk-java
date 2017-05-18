@@ -33,7 +33,10 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
     private String logGroupName;
     /**
      * <p>
-     * A name for the subscription filter.
+     * A name for the subscription filter. If you are updating an existing filter, you must specify the correct name in
+     * <code>filterName</code>. Otherwise, the call will fail because you cannot associate a second filter with a log
+     * group. To find the name of the filter currently associated with a log group, use
+     * <a>DescribeSubscriptionFilters</a>.
      * </p>
      */
     private String filterName;
@@ -130,11 +133,17 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A name for the subscription filter.
+     * A name for the subscription filter. If you are updating an existing filter, you must specify the correct name in
+     * <code>filterName</code>. Otherwise, the call will fail because you cannot associate a second filter with a log
+     * group. To find the name of the filter currently associated with a log group, use
+     * <a>DescribeSubscriptionFilters</a>.
      * </p>
      * 
      * @param filterName
-     *        A name for the subscription filter.
+     *        A name for the subscription filter. If you are updating an existing filter, you must specify the correct
+     *        name in <code>filterName</code>. Otherwise, the call will fail because you cannot associate a second
+     *        filter with a log group. To find the name of the filter currently associated with a log group, use
+     *        <a>DescribeSubscriptionFilters</a>.
      */
 
     public void setFilterName(String filterName) {
@@ -143,10 +152,16 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A name for the subscription filter.
+     * A name for the subscription filter. If you are updating an existing filter, you must specify the correct name in
+     * <code>filterName</code>. Otherwise, the call will fail because you cannot associate a second filter with a log
+     * group. To find the name of the filter currently associated with a log group, use
+     * <a>DescribeSubscriptionFilters</a>.
      * </p>
      * 
-     * @return A name for the subscription filter.
+     * @return A name for the subscription filter. If you are updating an existing filter, you must specify the correct
+     *         name in <code>filterName</code>. Otherwise, the call will fail because you cannot associate a second
+     *         filter with a log group. To find the name of the filter currently associated with a log group, use
+     *         <a>DescribeSubscriptionFilters</a>.
      */
 
     public String getFilterName() {
@@ -155,11 +170,17 @@ public class PutSubscriptionFilterRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A name for the subscription filter.
+     * A name for the subscription filter. If you are updating an existing filter, you must specify the correct name in
+     * <code>filterName</code>. Otherwise, the call will fail because you cannot associate a second filter with a log
+     * group. To find the name of the filter currently associated with a log group, use
+     * <a>DescribeSubscriptionFilters</a>.
      * </p>
      * 
      * @param filterName
-     *        A name for the subscription filter.
+     *        A name for the subscription filter. If you are updating an existing filter, you must specify the correct
+     *        name in <code>filterName</code>. Otherwise, the call will fail because you cannot associate a second
+     *        filter with a log group. To find the name of the filter currently associated with a log group, use
+     *        <a>DescribeSubscriptionFilters</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

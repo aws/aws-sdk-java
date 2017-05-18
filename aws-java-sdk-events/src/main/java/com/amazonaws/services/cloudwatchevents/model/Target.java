@@ -51,16 +51,18 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
     private String roleArn;
     /**
      * <p>
-     * Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For
-     * more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON)
-     * Data Interchange Format</a>.
+     * Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. You
+     * must use JSON dot notation, not bracket notation. For more information, see <a
+     * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange
+     * Format</a>.
      * </p>
      */
     private String input;
     /**
      * <p>
      * The value of the JSONPath that is used for extracting part of the matched event when passing it to the target.
-     * For more information about JSON paths, see <a href="http://goessner.net/articles/JsonPath/">JSONPath</a>.
+     * You must use JSON dot notation, not bracket notation. For more information about JSON paths, see <a
+     * href="http://goessner.net/articles/JsonPath/">JSONPath</a>.
      * </p>
      */
     private String inputPath;
@@ -222,15 +224,17 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For
-     * more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON)
-     * Data Interchange Format</a>.
+     * Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. You
+     * must use JSON dot notation, not bracket notation. For more information, see <a
+     * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange
+     * Format</a>.
      * </p>
      * 
      * @param input
      *        Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target.
-     *        For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object
-     *        Notation (JSON) Data Interchange Format</a>.
+     *        You must use JSON dot notation, not bracket notation. For more information, see <a
+     *        href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange
+     *        Format</a>.
      */
 
     public void setInput(String input) {
@@ -239,14 +243,16 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For
-     * more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON)
-     * Data Interchange Format</a>.
+     * Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. You
+     * must use JSON dot notation, not bracket notation. For more information, see <a
+     * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange
+     * Format</a>.
      * </p>
      * 
      * @return Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the
-     *         target. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript
-     *         Object Notation (JSON) Data Interchange Format</a>.
+     *         target. You must use JSON dot notation, not bracket notation. For more information, see <a
+     *         href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange
+     *         Format</a>.
      */
 
     public String getInput() {
@@ -255,15 +261,17 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For
-     * more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON)
-     * Data Interchange Format</a>.
+     * Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. You
+     * must use JSON dot notation, not bracket notation. For more information, see <a
+     * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange
+     * Format</a>.
      * </p>
      * 
      * @param input
      *        Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target.
-     *        For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object
-     *        Notation (JSON) Data Interchange Format</a>.
+     *        You must use JSON dot notation, not bracket notation. For more information, see <a
+     *        href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange
+     *        Format</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -275,13 +283,14 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The value of the JSONPath that is used for extracting part of the matched event when passing it to the target.
-     * For more information about JSON paths, see <a href="http://goessner.net/articles/JsonPath/">JSONPath</a>.
+     * You must use JSON dot notation, not bracket notation. For more information about JSON paths, see <a
+     * href="http://goessner.net/articles/JsonPath/">JSONPath</a>.
      * </p>
      * 
      * @param inputPath
      *        The value of the JSONPath that is used for extracting part of the matched event when passing it to the
-     *        target. For more information about JSON paths, see <a
-     *        href="http://goessner.net/articles/JsonPath/">JSONPath</a>.
+     *        target. You must use JSON dot notation, not bracket notation. For more information about JSON paths, see
+     *        <a href="http://goessner.net/articles/JsonPath/">JSONPath</a>.
      */
 
     public void setInputPath(String inputPath) {
@@ -291,12 +300,13 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The value of the JSONPath that is used for extracting part of the matched event when passing it to the target.
-     * For more information about JSON paths, see <a href="http://goessner.net/articles/JsonPath/">JSONPath</a>.
+     * You must use JSON dot notation, not bracket notation. For more information about JSON paths, see <a
+     * href="http://goessner.net/articles/JsonPath/">JSONPath</a>.
      * </p>
      * 
      * @return The value of the JSONPath that is used for extracting part of the matched event when passing it to the
-     *         target. For more information about JSON paths, see <a
-     *         href="http://goessner.net/articles/JsonPath/">JSONPath</a>.
+     *         target. You must use JSON dot notation, not bracket notation. For more information about JSON paths, see
+     *         <a href="http://goessner.net/articles/JsonPath/">JSONPath</a>.
      */
 
     public String getInputPath() {
@@ -306,13 +316,14 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The value of the JSONPath that is used for extracting part of the matched event when passing it to the target.
-     * For more information about JSON paths, see <a href="http://goessner.net/articles/JsonPath/">JSONPath</a>.
+     * You must use JSON dot notation, not bracket notation. For more information about JSON paths, see <a
+     * href="http://goessner.net/articles/JsonPath/">JSONPath</a>.
      * </p>
      * 
      * @param inputPath
      *        The value of the JSONPath that is used for extracting part of the matched event when passing it to the
-     *        target. For more information about JSON paths, see <a
-     *        href="http://goessner.net/articles/JsonPath/">JSONPath</a>.
+     *        target. You must use JSON dot notation, not bracket notation. For more information about JSON paths, see
+     *        <a href="http://goessner.net/articles/JsonPath/">JSONPath</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

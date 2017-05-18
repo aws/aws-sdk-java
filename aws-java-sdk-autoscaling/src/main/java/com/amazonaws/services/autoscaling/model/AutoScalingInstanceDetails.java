@@ -61,7 +61,8 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
     private String healthStatus;
     /**
      * <p>
-     * The launch configuration associated with the instance.
+     * The launch configuration used to launch the instance. This value is not available if you attached the instance to
+     * the Auto Scaling group.
      * </p>
      */
     private String launchConfigurationName;
@@ -295,11 +296,13 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch configuration associated with the instance.
+     * The launch configuration used to launch the instance. This value is not available if you attached the instance to
+     * the Auto Scaling group.
      * </p>
      * 
      * @param launchConfigurationName
-     *        The launch configuration associated with the instance.
+     *        The launch configuration used to launch the instance. This value is not available if you attached the
+     *        instance to the Auto Scaling group.
      */
 
     public void setLaunchConfigurationName(String launchConfigurationName) {
@@ -308,10 +311,12 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch configuration associated with the instance.
+     * The launch configuration used to launch the instance. This value is not available if you attached the instance to
+     * the Auto Scaling group.
      * </p>
      * 
-     * @return The launch configuration associated with the instance.
+     * @return The launch configuration used to launch the instance. This value is not available if you attached the
+     *         instance to the Auto Scaling group.
      */
 
     public String getLaunchConfigurationName() {
@@ -320,11 +325,13 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch configuration associated with the instance.
+     * The launch configuration used to launch the instance. This value is not available if you attached the instance to
+     * the Auto Scaling group.
      * </p>
      * 
      * @param launchConfigurationName
-     *        The launch configuration associated with the instance.
+     *        The launch configuration used to launch the instance. This value is not available if you attached the
+     *        instance to the Auto Scaling group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
