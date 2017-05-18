@@ -110,6 +110,8 @@ public enum InternalUtils {
             } else if (attribute.getAttributeValues() != null) {
                 attributeToUpdate.withValue(toAttributeValue(attribute
                         .getAttributeValues()));
+            } else {
+                attributeToUpdate.withValue(toAttributeValue(null));
             }
             result.put(attribute.getAttributeName(), attributeToUpdate);
         }
