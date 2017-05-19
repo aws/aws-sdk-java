@@ -38,12 +38,12 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </p>
  * <p>
  * For more information about Lightsail concepts and tasks, see the <a
- * href="http://lightsail.aws.amazon.com/ls/docs">Lightsail Dev Guide</a>.
+ * href="https://lightsail.aws.amazon.com/ls/docs/all">Lightsail Dev Guide</a>.
  * </p>
  * <p>
  * To use the Lightsail API or the CLI, you will need to use AWS Identity and Access Management (IAM) to generate access
  * keys. For details about how to set this up, see the <a href=
- * "http://lightsail.aws.amazon.com/ls/docs/how-to/articles/lightsail-how-to-set-up-access-keys-to-use-sdk-api-cli"
+ * "http://lightsail.aws.amazon.com/ls/docs/how-to/article/lightsail-how-to-set-up-access-keys-to-use-sdk-api-cli"
  * >Lightsail Dev Guide</a>.
  * </p>
  */
@@ -1595,6 +1595,39 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
 
                 try {
                     result = executePeerVpc(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutInstancePublicPortsResult> putInstancePublicPortsAsync(PutInstancePublicPortsRequest request) {
+
+        return putInstancePublicPortsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutInstancePublicPortsResult> putInstancePublicPortsAsync(final PutInstancePublicPortsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutInstancePublicPortsRequest, PutInstancePublicPortsResult> asyncHandler) {
+        final PutInstancePublicPortsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutInstancePublicPortsResult>() {
+            @Override
+            public PutInstancePublicPortsResult call() throws Exception {
+                PutInstancePublicPortsResult result = null;
+
+                try {
+                    result = executePutInstancePublicPorts(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

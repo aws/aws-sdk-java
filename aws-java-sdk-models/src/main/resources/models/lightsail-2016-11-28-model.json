@@ -2297,7 +2297,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Returns a list of all valid regions for Amazon Lightsail.</p>",
+      "documentation" : "<p>Returns a list of all valid regions for Amazon Lightsail. Use the <code>include availability zones</code> parameter to also return the availability zones in a region.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -2760,6 +2760,73 @@
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "PeerVpcResult"
+      }
+    },
+    "PutInstancePublicPorts" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Sets the specified open ports for an Amazon Lightsail instance, and closes all ports for every protocol not included in the current request.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ServiceException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidInputException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "OperationFailureException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "AccessDeniedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "AccountSetupInProgressException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "UnauthenticatedException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "PutInstancePublicPortsRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "PutInstancePublicPorts",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "PutInstancePublicPortsResult"
       }
     },
     "RebootInstance" : {
@@ -3529,7 +3596,7 @@
         },
         "zoneName" : {
           "deprecated" : false,
-          "documentation" : "<p>The name of the Availability Zone.</p>",
+          "documentation" : "<p>The name of the Availability Zone. The format is <code>us-east-1a</code> (case-sensitive).</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4377,7 +4444,7 @@
       "members" : {
         "availabilityZone" : {
           "deprecated" : false,
-          "documentation" : "<p>The Availability Zone where you want to create your instances. Use the following formatting: <code>us-east-1a</code> (case sensitive).</p>",
+          "documentation" : "<p>The Availability Zone where you want to create your instances. Use the following formatting: <code>us-east-1a</code> (case sensitive). You can get a list of availability zones by using the <a href=\"http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html\">get regions</a> operation. Be sure to add the <code>include availability zones</code> parameter to your request.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4519,7 +4586,7 @@
       "members" : {
         "availabilityZone" : {
           "deprecated" : false,
-          "documentation" : "<p>The Availability Zone in which to create your instance. Use the following format: <code>us-east-1a</code> (case sensitive).</p>",
+          "documentation" : "<p>The Availability Zone in which to create your instance. Use the following format: <code>us-east-1a</code> (case sensitive). You can get a list of availability zones by using the <a href=\"http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html\">get regions</a> operation. Be sure to add the <code>include availability zones</code> parameter to your request.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6692,7 +6759,7 @@
           "locationName" : null,
           "payload" : false,
           "queryName" : null,
-          "shape" : "PortStateList",
+          "shape" : "InstancePortStateList",
           "streaming" : false,
           "xmlNamespace" : null
         }
@@ -8508,7 +8575,7 @@
         },
         "protocol" : {
           "deprecated" : false,
-          "documentation" : "<p>The protocol. </p>",
+          "documentation" : "<p>The protocol being used. Can be one of the following.</p> <ul> <li> <p> <code>tcp</code> - Transmission Control Protocol (TCP) provides reliable, ordered, and error-checked delivery of streamed data between applications running on hosts communicating by an IP network. If you have an application that doesn't require reliable data stream service, use UDP instead.</p> </li> <li> <p> <code>all</code> - All transport layer protocol types. For more general information, see <a href=\"https://en.wikipedia.org/wiki/Transport_layer\">Transport layer</a> on Wikipedia.</p> </li> <li> <p> <code>udp</code> - With User Datagram Protocol (UDP), computer applications can send messages (or datagrams) to other hosts on an Internet Protocol (IP) network. Prior communications are not required to set up transmission channels or data paths. Applications that don't require reliable data stream service can use UDP, which provides a connectionless datagram service that emphasizes reduced latency over reliability. If you do require reliable data stream service, use TCP instead.</p> </li> </ul>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -8565,6 +8632,118 @@
         "payload" : false,
         "queryName" : null,
         "shape" : "InstancePortInfo",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "InstancePortState" : {
+      "deprecated" : false,
+      "documentation" : "<p>Describes the port state.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "fromPort" : {
+          "deprecated" : false,
+          "documentation" : "<p>The first port in the range.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Port",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "protocol" : {
+          "deprecated" : false,
+          "documentation" : "<p>The protocol being used. Can be one of the following.</p> <ul> <li> <p> <code>tcp</code> - Transmission Control Protocol (TCP) provides reliable, ordered, and error-checked delivery of streamed data between applications running on hosts communicating by an IP network. If you have an application that doesn't require reliable data stream service, use UDP instead.</p> </li> <li> <p> <code>all</code> - All transport layer protocol types. For more general information, see <a href=\"https://en.wikipedia.org/wiki/Transport_layer\">Transport layer</a> on Wikipedia.</p> </li> <li> <p> <code>udp</code> - With User Datagram Protocol (UDP), computer applications can send messages (or datagrams) to other hosts on an Internet Protocol (IP) network. Prior communications are not required to set up transmission channels or data paths. Applications that don't require reliable data stream service can use UDP, which provides a connectionless datagram service that emphasizes reduced latency over reliability. If you do require reliable data stream service, use TCP instead.</p> </li> </ul>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NetworkProtocol",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "state" : {
+          "deprecated" : false,
+          "documentation" : "<p>Specifies whether the instance port is <code>open</code> or <code>closed</code>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "PortState",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "toPort" : {
+          "deprecated" : false,
+          "documentation" : "<p>The last port in the range.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Port",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "InstancePortStateList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "InstancePortState",
         "streaming" : false,
         "xmlNamespace" : null
       },
@@ -8889,7 +9068,7 @@
     },
     "InvalidInputException" : {
       "deprecated" : false,
-      "documentation" : "<p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p>",
+      "documentation" : "<p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p> <note> <p>Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region configuration to us-east-1 to create, view, or edit these resources.</p> </note>",
       "enum" : null,
       "error" : null,
       "exception" : true,
@@ -10058,7 +10237,7 @@
     "OperationType" : {
       "deprecated" : false,
       "documentation" : null,
-      "enum" : [ "DeleteInstance", "CreateInstance", "StopInstance", "StartInstance", "RebootInstance", "OpenInstancePublicPorts", "CloseInstancePublicPorts", "AllocateStaticIp", "ReleaseStaticIp", "AttachStaticIp", "DetachStaticIp", "UpdateDomainEntry", "DeleteDomainEntry", "CreateDomain", "DeleteDomain", "CreateInstanceSnapshot", "DeleteInstanceSnapshot", "CreateInstancesFromSnapshot" ],
+      "enum" : [ "DeleteInstance", "CreateInstance", "StopInstance", "StartInstance", "RebootInstance", "OpenInstancePublicPorts", "PutInstancePublicPorts", "CloseInstancePublicPorts", "AllocateStaticIp", "ReleaseStaticIp", "AttachStaticIp", "DetachStaticIp", "UpdateDomainEntry", "DeleteDomainEntry", "CreateDomain", "DeleteDomain", "CreateInstanceSnapshot", "DeleteInstanceSnapshot", "CreateInstancesFromSnapshot" ],
       "error" : null,
       "exception" : false,
       "fault" : false,
@@ -10239,6 +10418,40 @@
       "value" : null,
       "wrapper" : false
     },
+    "PortInfoList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "PortInfo",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
     "PortState" : {
       "deprecated" : false,
       "documentation" : null,
@@ -10260,7 +10473,7 @@
       "value" : null,
       "wrapper" : false
     },
-    "PortStateList" : {
+    "PutInstancePublicPortsRequest" : {
       "deprecated" : false,
       "documentation" : null,
       "enum" : null,
@@ -10270,27 +10483,79 @@
       "flattened" : false,
       "key" : null,
       "max" : 0,
-      "member" : {
-        "deprecated" : false,
-        "documentation" : null,
-        "flattened" : false,
-        "idempotencyToken" : false,
-        "jsonvalue" : false,
-        "location" : null,
-        "locationName" : null,
-        "payload" : false,
-        "queryName" : null,
-        "shape" : "PortState",
-        "streaming" : false,
-        "xmlNamespace" : null
+      "member" : null,
+      "members" : {
+        "instanceName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The Lightsail instance name of the public port(s) you are setting.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ResourceName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "portInfos" : {
+          "deprecated" : false,
+          "documentation" : "<p>Specifies information about the public port(s).</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "PortInfoList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
       },
-      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "portInfos", "instanceName" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "PutInstancePublicPortsResult" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "operation" : {
+          "deprecated" : false,
+          "documentation" : "<p>Describes metadata about the operation you just executed.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Operation",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
       "required" : null,
       "streaming" : false,
-      "type" : "list",
+      "type" : "structure",
       "value" : null,
       "wrapper" : false
     },
@@ -10380,7 +10645,7 @@
       "members" : {
         "availabilityZones" : {
           "deprecated" : false,
-          "documentation" : "<p>The Availability Zones.</p>",
+          "documentation" : "<p>The Availability Zones. Follows the format <code>us-east-1a</code> (case-sensitive).</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -10599,7 +10864,7 @@
       "members" : {
         "availabilityZone" : {
           "deprecated" : false,
-          "documentation" : "<p>The Availability Zone.</p>",
+          "documentation" : "<p>The Availability Zone. Follows the format <code>us-east-1a</code> (case-sensitive).</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -10683,7 +10948,7 @@
       "enum" : null,
       "error" : null,
       "exception" : true,
-      "fault" : false,
+      "fault" : true,
       "flattened" : false,
       "key" : null,
       "max" : 0,
@@ -11463,5 +11728,5 @@
       "wrapper" : false
     }
   },
-  "documentation" : "<p>Amazon Lightsail is the easiest way to get started with AWS for developers who just need virtual private servers. Lightsail includes everything you need to launch your project quickly - a virtual machine, SSD-based storage, data transfer, DNS management, and a static IP - for a low, predictable price. You manage those Lightsail servers through the Lightsail console or by using the API or command-line interface (CLI).</p> <p>For more information about Lightsail concepts and tasks, see the <a href=\"http://lightsail.aws.amazon.com/ls/docs\">Lightsail Dev Guide</a>.</p> <p>To use the Lightsail API or the CLI, you will need to use AWS Identity and Access Management (IAM) to generate access keys. For details about how to set this up, see the <a href=\"http://lightsail.aws.amazon.com/ls/docs/how-to/articles/lightsail-how-to-set-up-access-keys-to-use-sdk-api-cli\">Lightsail Dev Guide</a>.</p>"
+  "documentation" : "<p>Amazon Lightsail is the easiest way to get started with AWS for developers who just need virtual private servers. Lightsail includes everything you need to launch your project quickly - a virtual machine, SSD-based storage, data transfer, DNS management, and a static IP - for a low, predictable price. You manage those Lightsail servers through the Lightsail console or by using the API or command-line interface (CLI).</p> <p>For more information about Lightsail concepts and tasks, see the <a href=\"https://lightsail.aws.amazon.com/ls/docs/all\">Lightsail Dev Guide</a>.</p> <p>To use the Lightsail API or the CLI, you will need to use AWS Identity and Access Management (IAM) to generate access keys. For details about how to set this up, see the <a href=\"http://lightsail.aws.amazon.com/ls/docs/how-to/article/lightsail-how-to-set-up-access-keys-to-use-sdk-api-cli\">Lightsail Dev Guide</a>.</p>"
 }

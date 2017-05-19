@@ -20,12 +20,12 @@
  * </p>
  * <p>
  * For more information about Lightsail concepts and tasks, see the <a
- * href="http://lightsail.aws.amazon.com/ls/docs">Lightsail Dev Guide</a>.
+ * href="https://lightsail.aws.amazon.com/ls/docs/all">Lightsail Dev Guide</a>.
  * </p>
  * <p>
  * To use the Lightsail API or the CLI, you will need to use AWS Identity and Access Management (IAM) to generate access
  * keys. For details about how to set this up, see the <a href=
- * "http://lightsail.aws.amazon.com/ls/docs/how-to/articles/lightsail-how-to-set-up-access-keys-to-use-sdk-api-cli"
+ * "http://lightsail.aws.amazon.com/ls/docs/how-to/article/lightsail-how-to-set-up-access-keys-to-use-sdk-api-cli"
  * >Lightsail Dev Guide</a>.
  * </p>
  */

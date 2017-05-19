@@ -26,6 +26,7 @@ public enum OperationType {
     StartInstance("StartInstance"),
     RebootInstance("RebootInstance"),
     OpenInstancePublicPorts("OpenInstancePublicPorts"),
+    PutInstancePublicPorts("PutInstancePublicPorts"),
     CloseInstancePublicPorts("CloseInstancePublicPorts"),
     AllocateStaticIp("AllocateStaticIp"),
     ReleaseStaticIp("ReleaseStaticIp"),

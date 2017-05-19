@@ -18,6 +18,12 @@ import javax.annotation.Generated;
  * <p>
  * Lightsail throws this exception when user input does not conform to the validation rules of an input field.
  * </p>
+ * <note>
+ * <p>
+ * Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region configuration to
+ * us-east-1 to create, view, or edit these resources.
+ * </p>
+ * </note>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidInputException extends com.amazonaws.services.lightsail.model.AmazonLightsailException {

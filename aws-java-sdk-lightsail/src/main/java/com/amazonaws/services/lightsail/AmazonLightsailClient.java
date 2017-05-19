@@ -56,12 +56,12 @@ import com.amazonaws.services.lightsail.model.transform.*;
  * </p>
  * <p>
  * For more information about Lightsail concepts and tasks, see the <a
- * href="http://lightsail.aws.amazon.com/ls/docs">Lightsail Dev Guide</a>.
+ * href="https://lightsail.aws.amazon.com/ls/docs/all">Lightsail Dev Guide</a>.
  * </p>
  * <p>
  * To use the Lightsail API or the CLI, you will need to use AWS Identity and Access Management (IAM) to generate access
  * keys. For details about how to set this up, see the <a href=
- * "http://lightsail.aws.amazon.com/ls/docs/how-to/articles/lightsail-how-to-set-up-access-keys-to-use-sdk-api-cli"
+ * "http://lightsail.aws.amazon.com/ls/docs/how-to/article/lightsail-how-to-set-up-access-keys-to-use-sdk-api-cli"
  * >Lightsail Dev Guide</a>.
  * </p>
  */
@@ -301,7 +301,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -365,7 +369,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -429,7 +437,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -495,7 +507,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -560,7 +576,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -625,7 +645,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -690,7 +714,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -755,7 +783,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -821,7 +853,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -885,7 +921,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -949,7 +989,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -1013,7 +1057,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -1077,7 +1125,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -1142,7 +1194,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -1206,7 +1262,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -1270,7 +1330,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -1335,7 +1399,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -1401,7 +1469,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -1466,7 +1538,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -1530,7 +1606,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -1594,7 +1674,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -1658,7 +1742,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -1722,7 +1810,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -1788,7 +1880,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -1853,7 +1949,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -1918,7 +2018,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -1982,7 +2086,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -2046,7 +2154,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -2110,7 +2222,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -2174,7 +2290,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -2238,7 +2358,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -2303,7 +2427,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -2372,7 +2500,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -2436,7 +2568,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -2493,7 +2629,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Returns a list of all valid regions for Amazon Lightsail.
+     * Returns a list of all valid regions for Amazon Lightsail. Use the <code>include availability zones</code>
+     * parameter to also return the availability zones in a region.
      * </p>
      * 
      * @param getRegionsRequest
@@ -2502,7 +2639,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -2566,7 +2707,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -2630,7 +2775,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -2694,7 +2843,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -2758,7 +2911,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -2822,7 +2979,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -2888,7 +3049,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -2943,6 +3108,76 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Sets the specified open ports for an Amazon Lightsail instance, and closes all ports for every protocol not
+     * included in the current request.
+     * </p>
+     * 
+     * @param putInstancePublicPortsRequest
+     * @return Result of the PutInstancePublicPorts operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws AccountSetupInProgressException
+     *         Lightsail throws this exception when an account is still in the setup in progress state.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.PutInstancePublicPorts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PutInstancePublicPorts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutInstancePublicPortsResult putInstancePublicPorts(PutInstancePublicPortsRequest request) {
+        request = beforeClientExecution(request);
+        return executePutInstancePublicPorts(request);
+    }
+
+    @SdkInternalApi
+    final PutInstancePublicPortsResult executePutInstancePublicPorts(PutInstancePublicPortsRequest putInstancePublicPortsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putInstancePublicPortsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutInstancePublicPortsRequest> request = null;
+        Response<PutInstancePublicPortsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutInstancePublicPortsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putInstancePublicPortsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutInstancePublicPortsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutInstancePublicPortsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Restarts a specific instance. When your Amazon Lightsail instance is finished rebooting, Lightsail assigns a new
      * public IP address. To use the same IP address after restarting, create a static IP address and attach it to the
      * instance.
@@ -2954,7 +3189,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -3018,7 +3257,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -3083,7 +3326,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -3147,7 +3394,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -3211,7 +3462,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException
@@ -3275,7 +3530,11 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      *         A general service exception.
      * @throws InvalidInputException
      *         Lightsail throws this exception when user input does not conform to the validation rules of an input
-     *         field.
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
      * @throws NotFoundException
      *         Lightsail throws this exception when it cannot find a resource.
      * @throws OperationFailureException

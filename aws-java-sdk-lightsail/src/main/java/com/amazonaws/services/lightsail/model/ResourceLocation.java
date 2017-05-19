@@ -30,7 +30,7 @@ public class ResourceLocation implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Availability Zone.
+     * The Availability Zone. Follows the format <code>us-east-1a</code> (case-sensitive).
      * </p>
      */
     private String availabilityZone;
@@ -43,11 +43,11 @@ public class ResourceLocation implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Availability Zone.
+     * The Availability Zone. Follows the format <code>us-east-1a</code> (case-sensitive).
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone.
+     *        The Availability Zone. Follows the format <code>us-east-1a</code> (case-sensitive).
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -56,10 +56,10 @@ public class ResourceLocation implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Availability Zone.
+     * The Availability Zone. Follows the format <code>us-east-1a</code> (case-sensitive).
      * </p>
      * 
-     * @return The Availability Zone.
+     * @return The Availability Zone. Follows the format <code>us-east-1a</code> (case-sensitive).
      */
 
     public String getAvailabilityZone() {
@@ -68,11 +68,11 @@ public class ResourceLocation implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Availability Zone.
+     * The Availability Zone. Follows the format <code>us-east-1a</code> (case-sensitive).
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone.
+     *        The Availability Zone. Follows the format <code>us-east-1a</code> (case-sensitive).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -28,7 +28,7 @@ public class GetInstancePortStatesResult extends com.amazonaws.AmazonWebServiceR
      * Information about the port states resulting from your request.
      * </p>
      */
-    private java.util.List<String> portStates;
+    private java.util.List<InstancePortState> portStates;
 
     /**
      * <p>
@@ -36,10 +36,9 @@ public class GetInstancePortStatesResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @return Information about the port states resulting from your request.
-     * @see PortState
      */
 
-    public java.util.List<String> getPortStates() {
+    public java.util.List<InstancePortState> getPortStates() {
         return portStates;
     }
 
@@ -50,16 +49,15 @@ public class GetInstancePortStatesResult extends com.amazonaws.AmazonWebServiceR
      * 
      * @param portStates
      *        Information about the port states resulting from your request.
-     * @see PortState
      */
 
-    public void setPortStates(java.util.Collection<String> portStates) {
+    public void setPortStates(java.util.Collection<InstancePortState> portStates) {
         if (portStates == null) {
             this.portStates = null;
             return;
         }
 
-        this.portStates = new java.util.ArrayList<String>(portStates);
+        this.portStates = new java.util.ArrayList<InstancePortState>(portStates);
     }
 
     /**
@@ -75,14 +73,13 @@ public class GetInstancePortStatesResult extends com.amazonaws.AmazonWebServiceR
      * @param portStates
      *        Information about the port states resulting from your request.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see PortState
      */
 
-    public GetInstancePortStatesResult withPortStates(String... portStates) {
+    public GetInstancePortStatesResult withPortStates(InstancePortState... portStates) {
         if (this.portStates == null) {
-            setPortStates(new java.util.ArrayList<String>(portStates.length));
+            setPortStates(new java.util.ArrayList<InstancePortState>(portStates.length));
         }
-        for (String ele : portStates) {
+        for (InstancePortState ele : portStates) {
             this.portStates.add(ele);
         }
         return this;
@@ -96,35 +93,10 @@ public class GetInstancePortStatesResult extends com.amazonaws.AmazonWebServiceR
      * @param portStates
      *        Information about the port states resulting from your request.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see PortState
      */
 
-    public GetInstancePortStatesResult withPortStates(java.util.Collection<String> portStates) {
+    public GetInstancePortStatesResult withPortStates(java.util.Collection<InstancePortState> portStates) {
         setPortStates(portStates);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Information about the port states resulting from your request.
-     * </p>
-     * 
-     * @param portStates
-     *        Information about the port states resulting from your request.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see PortState
-     */
-
-    public GetInstancePortStatesResult withPortStates(PortState... portStates) {
-        java.util.ArrayList<String> portStatesCopy = new java.util.ArrayList<String>(portStates.length);
-        for (PortState value : portStates) {
-            portStatesCopy.add(value.toString());
-        }
-        if (getPortStates() == null) {
-            setPortStates(portStatesCopy);
-        } else {
-            getPortStates().addAll(portStatesCopy);
-        }
         return this;
     }
 

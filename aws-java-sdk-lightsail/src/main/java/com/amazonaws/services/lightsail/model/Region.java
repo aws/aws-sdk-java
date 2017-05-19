@@ -55,7 +55,7 @@ public class Region implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The Availability Zones.
+     * The Availability Zones. Follows the format <code>us-east-1a</code> (case-sensitive).
      * </p>
      */
     private java.util.List<AvailabilityZone> availabilityZones;
@@ -261,10 +261,10 @@ public class Region implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Availability Zones.
+     * The Availability Zones. Follows the format <code>us-east-1a</code> (case-sensitive).
      * </p>
      * 
-     * @return The Availability Zones.
+     * @return The Availability Zones. Follows the format <code>us-east-1a</code> (case-sensitive).
      */
 
     public java.util.List<AvailabilityZone> getAvailabilityZones() {
@@ -273,11 +273,11 @@ public class Region implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Availability Zones.
+     * The Availability Zones. Follows the format <code>us-east-1a</code> (case-sensitive).
      * </p>
      * 
      * @param availabilityZones
-     *        The Availability Zones.
+     *        The Availability Zones. Follows the format <code>us-east-1a</code> (case-sensitive).
      */
 
     public void setAvailabilityZones(java.util.Collection<AvailabilityZone> availabilityZones) {
@@ -291,7 +291,7 @@ public class Region implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Availability Zones.
+     * The Availability Zones. Follows the format <code>us-east-1a</code> (case-sensitive).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -300,7 +300,7 @@ public class Region implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param availabilityZones
-     *        The Availability Zones.
+     *        The Availability Zones. Follows the format <code>us-east-1a</code> (case-sensitive).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -316,11 +316,11 @@ public class Region implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Availability Zones.
+     * The Availability Zones. Follows the format <code>us-east-1a</code> (case-sensitive).
      * </p>
      * 
      * @param availabilityZones
-     *        The Availability Zones.
+     *        The Availability Zones. Follows the format <code>us-east-1a</code> (case-sensitive).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

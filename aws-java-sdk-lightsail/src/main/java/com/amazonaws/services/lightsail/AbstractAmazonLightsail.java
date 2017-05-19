@@ -243,6 +243,11 @@ public class AbstractAmazonLightsail implements AmazonLightsail {
     }
 
     @Override
+    public PutInstancePublicPortsResult putInstancePublicPorts(PutInstancePublicPortsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RebootInstanceResult rebootInstance(RebootInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

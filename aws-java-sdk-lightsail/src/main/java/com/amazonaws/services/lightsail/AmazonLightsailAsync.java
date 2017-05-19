@@ -33,12 +33,12 @@ import com.amazonaws.services.lightsail.model.*;
  * </p>
  * <p>
  * For more information about Lightsail concepts and tasks, see the <a
- * href="http://lightsail.aws.amazon.com/ls/docs">Lightsail Dev Guide</a>.
+ * href="https://lightsail.aws.amazon.com/ls/docs/all">Lightsail Dev Guide</a>.
  * </p>
  * <p>
  * To use the Lightsail API or the CLI, you will need to use AWS Identity and Access Management (IAM) to generate access
  * keys. For details about how to set this up, see the <a href=
- * "http://lightsail.aws.amazon.com/ls/docs/how-to/articles/lightsail-how-to-set-up-access-keys-to-use-sdk-api-cli"
+ * "http://lightsail.aws.amazon.com/ls/docs/how-to/article/lightsail-how-to-set-up-access-keys-to-use-sdk-api-cli"
  * >Lightsail Dev Guide</a>.
  * </p>
  */
@@ -1127,7 +1127,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Returns a list of all valid regions for Amazon Lightsail.
+     * Returns a list of all valid regions for Amazon Lightsail. Use the <code>include availability zones</code>
+     * parameter to also return the availability zones in a region.
      * </p>
      * 
      * @param getRegionsRequest
@@ -1140,7 +1141,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Returns a list of all valid regions for Amazon Lightsail.
+     * Returns a list of all valid regions for Amazon Lightsail. Use the <code>include availability zones</code>
+     * parameter to also return the availability zones in a region.
      * </p>
      * 
      * @param getRegionsRequest
@@ -1341,6 +1343,39 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      */
     java.util.concurrent.Future<PeerVpcResult> peerVpcAsync(PeerVpcRequest peerVpcRequest,
             com.amazonaws.handlers.AsyncHandler<PeerVpcRequest, PeerVpcResult> asyncHandler);
+
+    /**
+     * <p>
+     * Sets the specified open ports for an Amazon Lightsail instance, and closes all ports for every protocol not
+     * included in the current request.
+     * </p>
+     * 
+     * @param putInstancePublicPortsRequest
+     * @return A Java Future containing the result of the PutInstancePublicPorts operation returned by the service.
+     * @sample AmazonLightsailAsync.PutInstancePublicPorts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PutInstancePublicPorts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutInstancePublicPortsResult> putInstancePublicPortsAsync(PutInstancePublicPortsRequest putInstancePublicPortsRequest);
+
+    /**
+     * <p>
+     * Sets the specified open ports for an Amazon Lightsail instance, and closes all ports for every protocol not
+     * included in the current request.
+     * </p>
+     * 
+     * @param putInstancePublicPortsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutInstancePublicPorts operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.PutInstancePublicPorts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PutInstancePublicPorts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutInstancePublicPortsResult> putInstancePublicPortsAsync(PutInstancePublicPortsRequest putInstancePublicPortsRequest,
+            com.amazonaws.handlers.AsyncHandler<PutInstancePublicPortsRequest, PutInstancePublicPortsResult> asyncHandler);
 
     /**
      * <p>
