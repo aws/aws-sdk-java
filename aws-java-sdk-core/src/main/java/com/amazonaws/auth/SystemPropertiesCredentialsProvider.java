@@ -16,6 +16,7 @@ package com.amazonaws.auth;
 
 import static com.amazonaws.SDKGlobalConfiguration.ACCESS_KEY_SYSTEM_PROPERTY;
 import static com.amazonaws.SDKGlobalConfiguration.SECRET_KEY_SYSTEM_PROPERTY;
+import static com.amazonaws.SDKGlobalConfiguration.SESSION_TOKEN_SYSTEM_PROPERTY;
 
 import com.amazonaws.SdkClientException;
 import com.amazonaws.util.StringUtils;
@@ -35,6 +36,9 @@ public class SystemPropertiesCredentialsProvider implements AWSCredentialsProvid
         String secretKey =
             StringUtils.trim(System.getProperty(SECRET_KEY_SYSTEM_PROPERTY));
 
+        String sessionToken =
+            StringUtils.trim(System.getProperty(SESSION_TOKEN_SYSTEM_PROPERTY));
+
         if (StringUtils.isNullOrEmpty(accessKey)
                 || StringUtils.isNullOrEmpty(secretKey)) {
 
@@ -44,7 +48,11 @@ public class SystemPropertiesCredentialsProvider implements AWSCredentialsProvid
                     + SECRET_KEY_SYSTEM_PROPERTY + ")");
         }
 
-        return new BasicAWSCredentials(accessKey, secretKey);
+        if (StringUtils.isNullOrEmpty(sessionToken)) {
+            return new BasicAWSCredentials(accessKey, secretKey);
+        } else {
+            return new BasicSessionCredentials(accessKey, secretKey, sessionToken);
+        }
     }
 
     @Override
