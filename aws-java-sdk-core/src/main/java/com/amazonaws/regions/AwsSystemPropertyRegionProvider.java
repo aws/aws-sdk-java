@@ -14,15 +14,17 @@
  */
 package com.amazonaws.regions;
 
-/**
- * Default region provider chain used when no explicit region is supplied to a client builder.
- */
-public class DefaultAwsRegionProviderChain extends AwsRegionProviderChain {
+import com.amazonaws.SDKGlobalConfiguration;
+import com.amazonaws.SdkClientException;
 
-    public DefaultAwsRegionProviderChain() {
-        super(new AwsEnvVarOverrideRegionProvider(),
-              new AwsSystemPropertyRegionProvider(),
-              new AwsProfileRegionProvider(),
-              new InstanceMetadataRegionProvider());
+/**
+ * Loads region information from the '{@value com.amazonaws.SDKGlobalConfiguration#AWS_REGION_SYSTEM_PROPERTY}' JVM system
+ * property.
+ */
+public class AwsSystemPropertyRegionProvider extends AwsRegionProvider {
+
+    @Override
+    public String getRegion() throws SdkClientException {
+        return System.getProperty(SDKGlobalConfiguration.AWS_REGION_SYSTEM_PROPERTY);
     }
 }

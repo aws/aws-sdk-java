@@ -48,10 +48,18 @@ public class SDKGlobalConfiguration {
     public static final String ACCESS_KEY_SYSTEM_PROPERTY = "aws.accessKeyId";
 
     /** System property name for the AWS secret key */
-    public static final String SECRET_KEY_SYSTEM_PROPERTY = "aws.secretKey";
+    public  static final String SECRET_KEY_SYSTEM_PROPERTY = "aws.secretKey";
 
-    /** System property name for the STS session token */
+    /**
+     * System property name for the AWS session token
+     */
     public static final String SESSION_TOKEN_SYSTEM_PROPERTY = "aws.sessionToken";
+
+    /**
+     * System property for the AWS region to use when creating clients.
+     * See {@link com.amazonaws.regions.DefaultAwsRegionProviderChain}.
+     */
+    public static final String AWS_REGION_SYSTEM_PROPERTY = "aws.region";
 
     /**
      * System property for overriding the Amazon EC2 Instance Metadata Service

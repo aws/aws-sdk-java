@@ -29,6 +29,7 @@ public class RetryUtils {
     static {
         THROTTLING_ERROR_CODES.add("Throttling");
         THROTTLING_ERROR_CODES.add("ThrottlingException");
+        THROTTLING_ERROR_CODES.add("ThrottledException");
         THROTTLING_ERROR_CODES.add("ProvisionedThroughputExceededException");
         THROTTLING_ERROR_CODES.add("SlowDown");
         THROTTLING_ERROR_CODES.add("TooManyRequestsException");

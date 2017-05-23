@@ -32,6 +32,8 @@ public class GetResourcesRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PaginationToken").build();
     private static final MarshallingInfo<List> TAGFILTERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("TagFilters").build();
+    private static final MarshallingInfo<Integer> RESOURCESPERPAGE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourcesPerPage").build();
     private static final MarshallingInfo<Integer> TAGSPERPAGE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TagsPerPage").build();
     private static final MarshallingInfo<List> RESOURCETYPEFILTERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -55,6 +57,7 @@ public class GetResourcesRequestMarshaller {
         try {
             protocolMarshaller.marshall(getResourcesRequest.getPaginationToken(), PAGINATIONTOKEN_BINDING);
             protocolMarshaller.marshall(getResourcesRequest.getTagFilters(), TAGFILTERS_BINDING);
+            protocolMarshaller.marshall(getResourcesRequest.getResourcesPerPage(), RESOURCESPERPAGE_BINDING);
             protocolMarshaller.marshall(getResourcesRequest.getTagsPerPage(), TAGSPERPAGE_BINDING);
             protocolMarshaller.marshall(getResourcesRequest.getResourceTypeFilters(), RESOURCETYPEFILTERS_BINDING);
         } catch (Exception e) {

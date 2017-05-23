@@ -20,14 +20,14 @@ import static com.fasterxml.jackson.core.JsonToken.FIELD_NAME;
 import static com.fasterxml.jackson.core.JsonToken.START_ARRAY;
 import static com.fasterxml.jackson.core.JsonToken.START_OBJECT;
 
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Stack;
-
 import com.amazonaws.http.HttpResponse;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonToken;
+import java.io.IOException;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Stack;
 
 public class JsonUnmarshallerContextImpl extends JsonUnmarshallerContext {
     /** The current JsonToken that the private JsonParser is currently pointing to. **/
@@ -87,6 +87,15 @@ public class JsonUnmarshallerContextImpl extends JsonUnmarshallerContext {
     private final Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> unmarshallerMap;
 
     private final Map<UnmarshallerType, Unmarshaller<?, JsonUnmarshallerContext>> customUnmarshallerMap;
+
+    public JsonUnmarshallerContextImpl(JsonParser jsonParser,
+                                       Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> mapper,
+                                       HttpResponse httpResponse) {
+        this(jsonParser,
+             mapper,
+             Collections.<UnmarshallerType, Unmarshaller<?, JsonUnmarshallerContext>>emptyMap(),
+             httpResponse);
+    }
 
     public JsonUnmarshallerContextImpl(JsonParser jsonParser,
                                        Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> mapper,

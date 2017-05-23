@@ -49,6 +49,13 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
     private java.util.List<TagFilter> tagFilters;
     /**
      * <p>
+     * A limit that restricts the number of resources returned by GetResources in paginated output. You can set
+     * ResourcesPerPage to a minimum of 1 item and the maximum of 50 items.
+     * </p>
+     */
+    private Integer resourcesPerPage;
+    /**
+     * <p>
      * A limit that restricts the number of tags (key and value pairs) returned by GetResources in paginated output. A
      * resource with no tags is counted as having one tag (one key and value pair).
      * </p>
@@ -286,6 +293,52 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     public GetResourcesRequest withTagFilters(java.util.Collection<TagFilter> tagFilters) {
         setTagFilters(tagFilters);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A limit that restricts the number of resources returned by GetResources in paginated output. You can set
+     * ResourcesPerPage to a minimum of 1 item and the maximum of 50 items.
+     * </p>
+     * 
+     * @param resourcesPerPage
+     *        A limit that restricts the number of resources returned by GetResources in paginated output. You can set
+     *        ResourcesPerPage to a minimum of 1 item and the maximum of 50 items.
+     */
+
+    public void setResourcesPerPage(Integer resourcesPerPage) {
+        this.resourcesPerPage = resourcesPerPage;
+    }
+
+    /**
+     * <p>
+     * A limit that restricts the number of resources returned by GetResources in paginated output. You can set
+     * ResourcesPerPage to a minimum of 1 item and the maximum of 50 items.
+     * </p>
+     * 
+     * @return A limit that restricts the number of resources returned by GetResources in paginated output. You can set
+     *         ResourcesPerPage to a minimum of 1 item and the maximum of 50 items.
+     */
+
+    public Integer getResourcesPerPage() {
+        return this.resourcesPerPage;
+    }
+
+    /**
+     * <p>
+     * A limit that restricts the number of resources returned by GetResources in paginated output. You can set
+     * ResourcesPerPage to a minimum of 1 item and the maximum of 50 items.
+     * </p>
+     * 
+     * @param resourcesPerPage
+     *        A limit that restricts the number of resources returned by GetResources in paginated output. You can set
+     *        ResourcesPerPage to a minimum of 1 item and the maximum of 50 items.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetResourcesRequest withResourcesPerPage(Integer resourcesPerPage) {
+        setResourcesPerPage(resourcesPerPage);
         return this;
     }
 
@@ -730,6 +783,8 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
             sb.append("PaginationToken: ").append(getPaginationToken()).append(",");
         if (getTagFilters() != null)
             sb.append("TagFilters: ").append(getTagFilters()).append(",");
+        if (getResourcesPerPage() != null)
+            sb.append("ResourcesPerPage: ").append(getResourcesPerPage()).append(",");
         if (getTagsPerPage() != null)
             sb.append("TagsPerPage: ").append(getTagsPerPage()).append(",");
         if (getResourceTypeFilters() != null)
@@ -756,6 +811,10 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getTagFilters() != null && other.getTagFilters().equals(this.getTagFilters()) == false)
             return false;
+        if (other.getResourcesPerPage() == null ^ this.getResourcesPerPage() == null)
+            return false;
+        if (other.getResourcesPerPage() != null && other.getResourcesPerPage().equals(this.getResourcesPerPage()) == false)
+            return false;
         if (other.getTagsPerPage() == null ^ this.getTagsPerPage() == null)
             return false;
         if (other.getTagsPerPage() != null && other.getTagsPerPage().equals(this.getTagsPerPage()) == false)
@@ -774,6 +833,7 @@ public class GetResourcesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
         hashCode = prime * hashCode + ((getPaginationToken() == null) ? 0 : getPaginationToken().hashCode());
         hashCode = prime * hashCode + ((getTagFilters() == null) ? 0 : getTagFilters().hashCode());
+        hashCode = prime * hashCode + ((getResourcesPerPage() == null) ? 0 : getResourcesPerPage().hashCode());
         hashCode = prime * hashCode + ((getTagsPerPage() == null) ? 0 : getTagsPerPage().hashCode());
         hashCode = prime * hashCode + ((getResourceTypeFilters() == null) ? 0 : getResourceTypeFilters().hashCode());
         return hashCode;

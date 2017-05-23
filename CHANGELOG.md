@@ -1,3 +1,8 @@
+# __1.11.133__ __2017-05-22__
+## __AWS Resource Groups Tagging API__
+  - ### Features
+    - You can now specify the number of resources returned per page in GetResources operation, as an optional parameter, to easily manage the list of resources returned by your queries.
+
 # __1.11.132__ __2017-05-18__
 ## __Amazon Athena__
   - ### Features

@@ -94,7 +94,7 @@ import com.amazonaws.services.resourcegroupstaggingapi.model.transform.*;
  * </li>
  * </ul>
  * <p>
- * Not all resources can have tags. For a list of resources that support tagging, see <a
+ * Not all resources can have tags. For a lists of resources that you can tag, see <a
  * href="http://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/supported-resources.html">Supported Resources</a> in
  * the <i>AWS Resource Groups and Tag Editor User Guide</i>.
  * </p>
