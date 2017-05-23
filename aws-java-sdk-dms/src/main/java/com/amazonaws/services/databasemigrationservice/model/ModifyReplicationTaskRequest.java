@@ -42,7 +42,7 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * Must contain from 1 to 255 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -69,7 +69,8 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
     private String migrationType;
     /**
      * <p>
-     * The path of the JSON file that contains the table mappings. Preceed the path with "file://".
+     * When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the
+     * path with "file://". When working with the DMS API, provide the JSON as the parameter value.
      * </p>
      * <p>
      * For example, --table-mappings file://mappingfile.json
@@ -139,7 +140,7 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * Must contain from 1 to 255 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -162,7 +163,7 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        Must contain from 1 to 255 alphanumeric characters or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -191,7 +192,7 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * Must contain from 1 to 255 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -213,7 +214,7 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *         Must contain from 1 to 255 alphanumeric characters or hyphens.
      *         </p>
      *         </li>
      *         <li>
@@ -242,7 +243,7 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * Must contain from 1 to 255 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -265,7 +266,7 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        Must contain from 1 to 255 alphanumeric characters or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -386,14 +387,17 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The path of the JSON file that contains the table mappings. Preceed the path with "file://".
+     * When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the
+     * path with "file://". When working with the DMS API, provide the JSON as the parameter value.
      * </p>
      * <p>
      * For example, --table-mappings file://mappingfile.json
      * </p>
      * 
      * @param tableMappings
-     *        The path of the JSON file that contains the table mappings. Preceed the path with "file://".</p>
+     *        When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings.
+     *        Precede the path with "file://". When working with the DMS API, provide the JSON as the parameter
+     *        value.</p>
      *        <p>
      *        For example, --table-mappings file://mappingfile.json
      */
@@ -404,13 +408,16 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The path of the JSON file that contains the table mappings. Preceed the path with "file://".
+     * When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the
+     * path with "file://". When working with the DMS API, provide the JSON as the parameter value.
      * </p>
      * <p>
      * For example, --table-mappings file://mappingfile.json
      * </p>
      * 
-     * @return The path of the JSON file that contains the table mappings. Preceed the path with "file://".</p>
+     * @return When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings.
+     *         Precede the path with "file://". When working with the DMS API, provide the JSON as the parameter
+     *         value.</p>
      *         <p>
      *         For example, --table-mappings file://mappingfile.json
      */
@@ -421,14 +428,17 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The path of the JSON file that contains the table mappings. Preceed the path with "file://".
+     * When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the
+     * path with "file://". When working with the DMS API, provide the JSON as the parameter value.
      * </p>
      * <p>
      * For example, --table-mappings file://mappingfile.json
      * </p>
      * 
      * @param tableMappings
-     *        The path of the JSON file that contains the table mappings. Preceed the path with "file://".</p>
+     *        When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings.
+     *        Precede the path with "file://". When working with the DMS API, provide the JSON as the parameter
+     *        value.</p>
      *        <p>
      *        For example, --table-mappings file://mappingfile.json
      * @return Returns a reference to this object so that method calls can be chained together.

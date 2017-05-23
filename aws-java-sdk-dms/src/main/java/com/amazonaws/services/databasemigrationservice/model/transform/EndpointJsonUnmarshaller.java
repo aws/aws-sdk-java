@@ -100,6 +100,22 @@ public class EndpointJsonUnmarshaller implements Unmarshaller<Endpoint, JsonUnma
                     context.nextToken();
                     endpoint.setSslMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ExternalId", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setExternalId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("DynamoDbSettings", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setDynamoDbSettings(DynamoDbSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("S3Settings", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setS3Settings(S3SettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("MongoDbSettings", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setMongoDbSettings(MongoDbSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

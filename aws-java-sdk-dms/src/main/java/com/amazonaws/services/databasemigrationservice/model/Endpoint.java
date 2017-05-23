@@ -40,8 +40,8 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
     private String endpointType;
     /**
      * <p>
-     * The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and
-     * SQLSERVER.
+     * The database engine name. Valid values, depending on the EndPointType, include MYSQL, ORACLE, POSTGRES, MARIADB,
+     * AURORA, REDSHIFT, S3, SYBASE, DYNAMODB, MONGODB, and SQLSERVER.
      * </p>
      */
     private String engineName;
@@ -113,6 +113,33 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String sslMode;
+    /**
+     * <p>
+     * Value returned by a call to CreateEndpoint that can be used for cross-account validation. Use it on a subsequent
+     * call to CreateEndpoint to create the endpoint with a cross-account.
+     * </p>
+     */
+    private String externalId;
+    /**
+     * <p>
+     * The settings for the target DynamoDB database. For more information, see the <code>DynamoDBSettings</code>
+     * structure.
+     * </p>
+     */
+    private DynamoDbSettings dynamoDbSettings;
+    /**
+     * <p>
+     * The settings for the S3 target endpoint. For more information, see the <code>S3Settings</code> structure.
+     * </p>
+     */
+    private S3Settings s3Settings;
+    /**
+     * <p>
+     * The settings for the MongoDB source endpoint. For more information, see the <code>MongoDbSettings</code>
+     * structure.
+     * </p>
+     */
+    private MongoDbSettings mongoDbSettings;
 
     /**
      * <p>
@@ -235,13 +262,13 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and
-     * SQLSERVER.
+     * The database engine name. Valid values, depending on the EndPointType, include MYSQL, ORACLE, POSTGRES, MARIADB,
+     * AURORA, REDSHIFT, S3, SYBASE, DYNAMODB, MONGODB, and SQLSERVER.
      * </p>
      * 
      * @param engineName
-     *        The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE,
-     *        and SQLSERVER.
+     *        The database engine name. Valid values, depending on the EndPointType, include MYSQL, ORACLE, POSTGRES,
+     *        MARIADB, AURORA, REDSHIFT, S3, SYBASE, DYNAMODB, MONGODB, and SQLSERVER.
      */
 
     public void setEngineName(String engineName) {
@@ -250,12 +277,12 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and
-     * SQLSERVER.
+     * The database engine name. Valid values, depending on the EndPointType, include MYSQL, ORACLE, POSTGRES, MARIADB,
+     * AURORA, REDSHIFT, S3, SYBASE, DYNAMODB, MONGODB, and SQLSERVER.
      * </p>
      * 
-     * @return The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT,
-     *         SYBASE, and SQLSERVER.
+     * @return The database engine name. Valid values, depending on the EndPointType, include MYSQL, ORACLE, POSTGRES,
+     *         MARIADB, AURORA, REDSHIFT, S3, SYBASE, DYNAMODB, MONGODB, and SQLSERVER.
      */
 
     public String getEngineName() {
@@ -264,13 +291,13 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE, and
-     * SQLSERVER.
+     * The database engine name. Valid values, depending on the EndPointType, include MYSQL, ORACLE, POSTGRES, MARIADB,
+     * AURORA, REDSHIFT, S3, SYBASE, DYNAMODB, MONGODB, and SQLSERVER.
      * </p>
      * 
      * @param engineName
-     *        The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, SYBASE,
-     *        and SQLSERVER.
+     *        The database engine name. Valid values, depending on the EndPointType, include MYSQL, ORACLE, POSTGRES,
+     *        MARIADB, AURORA, REDSHIFT, S3, SYBASE, DYNAMODB, MONGODB, and SQLSERVER.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -783,6 +810,184 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Value returned by a call to CreateEndpoint that can be used for cross-account validation. Use it on a subsequent
+     * call to CreateEndpoint to create the endpoint with a cross-account.
+     * </p>
+     * 
+     * @param externalId
+     *        Value returned by a call to CreateEndpoint that can be used for cross-account validation. Use it on a
+     *        subsequent call to CreateEndpoint to create the endpoint with a cross-account.
+     */
+
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
+    }
+
+    /**
+     * <p>
+     * Value returned by a call to CreateEndpoint that can be used for cross-account validation. Use it on a subsequent
+     * call to CreateEndpoint to create the endpoint with a cross-account.
+     * </p>
+     * 
+     * @return Value returned by a call to CreateEndpoint that can be used for cross-account validation. Use it on a
+     *         subsequent call to CreateEndpoint to create the endpoint with a cross-account.
+     */
+
+    public String getExternalId() {
+        return this.externalId;
+    }
+
+    /**
+     * <p>
+     * Value returned by a call to CreateEndpoint that can be used for cross-account validation. Use it on a subsequent
+     * call to CreateEndpoint to create the endpoint with a cross-account.
+     * </p>
+     * 
+     * @param externalId
+     *        Value returned by a call to CreateEndpoint that can be used for cross-account validation. Use it on a
+     *        subsequent call to CreateEndpoint to create the endpoint with a cross-account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withExternalId(String externalId) {
+        setExternalId(externalId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The settings for the target DynamoDB database. For more information, see the <code>DynamoDBSettings</code>
+     * structure.
+     * </p>
+     * 
+     * @param dynamoDbSettings
+     *        The settings for the target DynamoDB database. For more information, see the <code>DynamoDBSettings</code>
+     *        structure.
+     */
+
+    public void setDynamoDbSettings(DynamoDbSettings dynamoDbSettings) {
+        this.dynamoDbSettings = dynamoDbSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for the target DynamoDB database. For more information, see the <code>DynamoDBSettings</code>
+     * structure.
+     * </p>
+     * 
+     * @return The settings for the target DynamoDB database. For more information, see the
+     *         <code>DynamoDBSettings</code> structure.
+     */
+
+    public DynamoDbSettings getDynamoDbSettings() {
+        return this.dynamoDbSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for the target DynamoDB database. For more information, see the <code>DynamoDBSettings</code>
+     * structure.
+     * </p>
+     * 
+     * @param dynamoDbSettings
+     *        The settings for the target DynamoDB database. For more information, see the <code>DynamoDBSettings</code>
+     *        structure.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withDynamoDbSettings(DynamoDbSettings dynamoDbSettings) {
+        setDynamoDbSettings(dynamoDbSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The settings for the S3 target endpoint. For more information, see the <code>S3Settings</code> structure.
+     * </p>
+     * 
+     * @param s3Settings
+     *        The settings for the S3 target endpoint. For more information, see the <code>S3Settings</code> structure.
+     */
+
+    public void setS3Settings(S3Settings s3Settings) {
+        this.s3Settings = s3Settings;
+    }
+
+    /**
+     * <p>
+     * The settings for the S3 target endpoint. For more information, see the <code>S3Settings</code> structure.
+     * </p>
+     * 
+     * @return The settings for the S3 target endpoint. For more information, see the <code>S3Settings</code> structure.
+     */
+
+    public S3Settings getS3Settings() {
+        return this.s3Settings;
+    }
+
+    /**
+     * <p>
+     * The settings for the S3 target endpoint. For more information, see the <code>S3Settings</code> structure.
+     * </p>
+     * 
+     * @param s3Settings
+     *        The settings for the S3 target endpoint. For more information, see the <code>S3Settings</code> structure.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withS3Settings(S3Settings s3Settings) {
+        setS3Settings(s3Settings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The settings for the MongoDB source endpoint. For more information, see the <code>MongoDbSettings</code>
+     * structure.
+     * </p>
+     * 
+     * @param mongoDbSettings
+     *        The settings for the MongoDB source endpoint. For more information, see the <code>MongoDbSettings</code>
+     *        structure.
+     */
+
+    public void setMongoDbSettings(MongoDbSettings mongoDbSettings) {
+        this.mongoDbSettings = mongoDbSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for the MongoDB source endpoint. For more information, see the <code>MongoDbSettings</code>
+     * structure.
+     * </p>
+     * 
+     * @return The settings for the MongoDB source endpoint. For more information, see the <code>MongoDbSettings</code>
+     *         structure.
+     */
+
+    public MongoDbSettings getMongoDbSettings() {
+        return this.mongoDbSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for the MongoDB source endpoint. For more information, see the <code>MongoDbSettings</code>
+     * structure.
+     * </p>
+     * 
+     * @param mongoDbSettings
+     *        The settings for the MongoDB source endpoint. For more information, see the <code>MongoDbSettings</code>
+     *        structure.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withMongoDbSettings(MongoDbSettings mongoDbSettings) {
+        setMongoDbSettings(mongoDbSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -818,7 +1023,15 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
         if (getCertificateArn() != null)
             sb.append("CertificateArn: ").append(getCertificateArn()).append(",");
         if (getSslMode() != null)
-            sb.append("SslMode: ").append(getSslMode());
+            sb.append("SslMode: ").append(getSslMode()).append(",");
+        if (getExternalId() != null)
+            sb.append("ExternalId: ").append(getExternalId()).append(",");
+        if (getDynamoDbSettings() != null)
+            sb.append("DynamoDbSettings: ").append(getDynamoDbSettings()).append(",");
+        if (getS3Settings() != null)
+            sb.append("S3Settings: ").append(getS3Settings()).append(",");
+        if (getMongoDbSettings() != null)
+            sb.append("MongoDbSettings: ").append(getMongoDbSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -885,6 +1098,22 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSslMode() != null && other.getSslMode().equals(this.getSslMode()) == false)
             return false;
+        if (other.getExternalId() == null ^ this.getExternalId() == null)
+            return false;
+        if (other.getExternalId() != null && other.getExternalId().equals(this.getExternalId()) == false)
+            return false;
+        if (other.getDynamoDbSettings() == null ^ this.getDynamoDbSettings() == null)
+            return false;
+        if (other.getDynamoDbSettings() != null && other.getDynamoDbSettings().equals(this.getDynamoDbSettings()) == false)
+            return false;
+        if (other.getS3Settings() == null ^ this.getS3Settings() == null)
+            return false;
+        if (other.getS3Settings() != null && other.getS3Settings().equals(this.getS3Settings()) == false)
+            return false;
+        if (other.getMongoDbSettings() == null ^ this.getMongoDbSettings() == null)
+            return false;
+        if (other.getMongoDbSettings() != null && other.getMongoDbSettings().equals(this.getMongoDbSettings()) == false)
+            return false;
         return true;
     }
 
@@ -906,6 +1135,10 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEndpointArn() == null) ? 0 : getEndpointArn().hashCode());
         hashCode = prime * hashCode + ((getCertificateArn() == null) ? 0 : getCertificateArn().hashCode());
         hashCode = prime * hashCode + ((getSslMode() == null) ? 0 : getSslMode().hashCode());
+        hashCode = prime * hashCode + ((getExternalId() == null) ? 0 : getExternalId().hashCode());
+        hashCode = prime * hashCode + ((getDynamoDbSettings() == null) ? 0 : getDynamoDbSettings().hashCode());
+        hashCode = prime * hashCode + ((getS3Settings() == null) ? 0 : getS3Settings().hashCode());
+        hashCode = prime * hashCode + ((getMongoDbSettings() == null) ? 0 : getMongoDbSettings().hashCode());
         return hashCode;
     }
 

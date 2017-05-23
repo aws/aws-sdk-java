@@ -53,6 +53,14 @@ public class EndpointMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CertificateArn").build();
     private static final MarshallingInfo<String> SSLMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SslMode").build();
+    private static final MarshallingInfo<String> EXTERNALID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExternalId").build();
+    private static final MarshallingInfo<StructuredPojo> DYNAMODBSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DynamoDbSettings").build();
+    private static final MarshallingInfo<StructuredPojo> S3SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3Settings").build();
+    private static final MarshallingInfo<StructuredPojo> MONGODBSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MongoDbSettings").build();
 
     private static final EndpointMarshaller instance = new EndpointMarshaller();
 
@@ -83,6 +91,10 @@ public class EndpointMarshaller {
             protocolMarshaller.marshall(endpoint.getEndpointArn(), ENDPOINTARN_BINDING);
             protocolMarshaller.marshall(endpoint.getCertificateArn(), CERTIFICATEARN_BINDING);
             protocolMarshaller.marshall(endpoint.getSslMode(), SSLMODE_BINDING);
+            protocolMarshaller.marshall(endpoint.getExternalId(), EXTERNALID_BINDING);
+            protocolMarshaller.marshall(endpoint.getDynamoDbSettings(), DYNAMODBSETTINGS_BINDING);
+            protocolMarshaller.marshall(endpoint.getS3Settings(), S3SETTINGS_BINDING);
+            protocolMarshaller.marshall(endpoint.getMongoDbSettings(), MONGODBSETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

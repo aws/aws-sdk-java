@@ -36,7 +36,7 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * Must contain from 1 to 255 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -141,7 +141,7 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * Must contain from 1 to 255 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -164,7 +164,7 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        Must contain from 1 to 255 alphanumeric characters or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -193,7 +193,7 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * Must contain from 1 to 255 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -215,7 +215,7 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *         Must contain from 1 to 255 alphanumeric characters or hyphens.
      *         </p>
      *         </li>
      *         <li>
@@ -244,7 +244,7 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 63 alphanumeric characters or hyphens.
+     * Must contain from 1 to 255 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -267,7 +267,7 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 63 alphanumeric characters or hyphens.
+     *        Must contain from 1 to 255 alphanumeric characters or hyphens.
      *        </p>
      *        </li>
      *        <li>

@@ -41,8 +41,8 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     private String endpointType;
     /**
      * <p>
-     * The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT,
-     * SYBASE, and SQLSERVER.
+     * The type of engine for the endpoint. Valid values, depending on the EndPointType, include MYSQL, ORACLE,
+     * POSTGRES, MARIADB, AURORA, REDSHIFT, S3, SYBASE, DYNAMODB, MONGODB, and SQLSERVER.
      * </p>
      */
     private String engineName;
@@ -114,6 +114,33 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String sslMode;
+    /**
+     * <p>
+     * Settings in JSON format for the target Amazon DynamoDB endpoint. For more information about the available
+     * settings, see the <b>Using Object Mapping to Migrate Data to DynamoDB</b> section at <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html"> Using an Amazon DynamoDB
+     * Database as a Target for AWS Database Migration Service</a>.
+     * </p>
+     */
+    private DynamoDbSettings dynamoDbSettings;
+    /**
+     * <p>
+     * Settings in JSON format for the target S3 endpoint. For more information about the available settings, see the
+     * <b>Extra Connection Attributes</b> section at <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html"> Using Amazon S3 as a Target for AWS
+     * Database Migration Service</a>.
+     * </p>
+     */
+    private S3Settings s3Settings;
+    /**
+     * <p>
+     * Settings in JSON format for the source MongoDB endpoint. For more information about the available settings, see
+     * the <b>Configuration Properties When Using MongoDB as a Source for AWS Database Migration Service</b> section at
+     * <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html"> Using Amazon S3 as a Target
+     * for AWS Database Migration Service</a>.
+     * </p>
+     */
+    private MongoDbSettings mongoDbSettings;
 
     /**
      * <p>
@@ -236,13 +263,13 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT,
-     * SYBASE, and SQLSERVER.
+     * The type of engine for the endpoint. Valid values, depending on the EndPointType, include MYSQL, ORACLE,
+     * POSTGRES, MARIADB, AURORA, REDSHIFT, S3, SYBASE, DYNAMODB, MONGODB, and SQLSERVER.
      * </p>
      * 
      * @param engineName
-     *        The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA,
-     *        REDSHIFT, SYBASE, and SQLSERVER.
+     *        The type of engine for the endpoint. Valid values, depending on the EndPointType, include MYSQL, ORACLE,
+     *        POSTGRES, MARIADB, AURORA, REDSHIFT, S3, SYBASE, DYNAMODB, MONGODB, and SQLSERVER.
      */
 
     public void setEngineName(String engineName) {
@@ -251,12 +278,12 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT,
-     * SYBASE, and SQLSERVER.
+     * The type of engine for the endpoint. Valid values, depending on the EndPointType, include MYSQL, ORACLE,
+     * POSTGRES, MARIADB, AURORA, REDSHIFT, S3, SYBASE, DYNAMODB, MONGODB, and SQLSERVER.
      * </p>
      * 
-     * @return The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA,
-     *         REDSHIFT, SYBASE, and SQLSERVER.
+     * @return The type of engine for the endpoint. Valid values, depending on the EndPointType, include MYSQL, ORACLE,
+     *         POSTGRES, MARIADB, AURORA, REDSHIFT, S3, SYBASE, DYNAMODB, MONGODB, and SQLSERVER.
      */
 
     public String getEngineName() {
@@ -265,13 +292,13 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT,
-     * SYBASE, and SQLSERVER.
+     * The type of engine for the endpoint. Valid values, depending on the EndPointType, include MYSQL, ORACLE,
+     * POSTGRES, MARIADB, AURORA, REDSHIFT, S3, SYBASE, DYNAMODB, MONGODB, and SQLSERVER.
      * </p>
      * 
      * @param engineName
-     *        The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA,
-     *        REDSHIFT, SYBASE, and SQLSERVER.
+     *        The type of engine for the endpoint. Valid values, depending on the EndPointType, include MYSQL, ORACLE,
+     *        POSTGRES, MARIADB, AURORA, REDSHIFT, S3, SYBASE, DYNAMODB, MONGODB, and SQLSERVER.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -814,6 +841,181 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Settings in JSON format for the target Amazon DynamoDB endpoint. For more information about the available
+     * settings, see the <b>Using Object Mapping to Migrate Data to DynamoDB</b> section at <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html"> Using an Amazon DynamoDB
+     * Database as a Target for AWS Database Migration Service</a>.
+     * </p>
+     * 
+     * @param dynamoDbSettings
+     *        Settings in JSON format for the target Amazon DynamoDB endpoint. For more information about the available
+     *        settings, see the <b>Using Object Mapping to Migrate Data to DynamoDB</b> section at <a
+     *        href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html"> Using an Amazon DynamoDB
+     *        Database as a Target for AWS Database Migration Service</a>.
+     */
+
+    public void setDynamoDbSettings(DynamoDbSettings dynamoDbSettings) {
+        this.dynamoDbSettings = dynamoDbSettings;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the target Amazon DynamoDB endpoint. For more information about the available
+     * settings, see the <b>Using Object Mapping to Migrate Data to DynamoDB</b> section at <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html"> Using an Amazon DynamoDB
+     * Database as a Target for AWS Database Migration Service</a>.
+     * </p>
+     * 
+     * @return Settings in JSON format for the target Amazon DynamoDB endpoint. For more information about the available
+     *         settings, see the <b>Using Object Mapping to Migrate Data to DynamoDB</b> section at <a
+     *         href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html"> Using an Amazon
+     *         DynamoDB Database as a Target for AWS Database Migration Service</a>.
+     */
+
+    public DynamoDbSettings getDynamoDbSettings() {
+        return this.dynamoDbSettings;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the target Amazon DynamoDB endpoint. For more information about the available
+     * settings, see the <b>Using Object Mapping to Migrate Data to DynamoDB</b> section at <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html"> Using an Amazon DynamoDB
+     * Database as a Target for AWS Database Migration Service</a>.
+     * </p>
+     * 
+     * @param dynamoDbSettings
+     *        Settings in JSON format for the target Amazon DynamoDB endpoint. For more information about the available
+     *        settings, see the <b>Using Object Mapping to Migrate Data to DynamoDB</b> section at <a
+     *        href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html"> Using an Amazon DynamoDB
+     *        Database as a Target for AWS Database Migration Service</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEndpointRequest withDynamoDbSettings(DynamoDbSettings dynamoDbSettings) {
+        setDynamoDbSettings(dynamoDbSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the target S3 endpoint. For more information about the available settings, see the
+     * <b>Extra Connection Attributes</b> section at <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html"> Using Amazon S3 as a Target for AWS
+     * Database Migration Service</a>.
+     * </p>
+     * 
+     * @param s3Settings
+     *        Settings in JSON format for the target S3 endpoint. For more information about the available settings, see
+     *        the <b>Extra Connection Attributes</b> section at <a
+     *        href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html"> Using Amazon S3 as a Target
+     *        for AWS Database Migration Service</a>.
+     */
+
+    public void setS3Settings(S3Settings s3Settings) {
+        this.s3Settings = s3Settings;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the target S3 endpoint. For more information about the available settings, see the
+     * <b>Extra Connection Attributes</b> section at <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html"> Using Amazon S3 as a Target for AWS
+     * Database Migration Service</a>.
+     * </p>
+     * 
+     * @return Settings in JSON format for the target S3 endpoint. For more information about the available settings,
+     *         see the <b>Extra Connection Attributes</b> section at <a
+     *         href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html"> Using Amazon S3 as a Target
+     *         for AWS Database Migration Service</a>.
+     */
+
+    public S3Settings getS3Settings() {
+        return this.s3Settings;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the target S3 endpoint. For more information about the available settings, see the
+     * <b>Extra Connection Attributes</b> section at <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html"> Using Amazon S3 as a Target for AWS
+     * Database Migration Service</a>.
+     * </p>
+     * 
+     * @param s3Settings
+     *        Settings in JSON format for the target S3 endpoint. For more information about the available settings, see
+     *        the <b>Extra Connection Attributes</b> section at <a
+     *        href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html"> Using Amazon S3 as a Target
+     *        for AWS Database Migration Service</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEndpointRequest withS3Settings(S3Settings s3Settings) {
+        setS3Settings(s3Settings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the source MongoDB endpoint. For more information about the available settings, see
+     * the <b>Configuration Properties When Using MongoDB as a Source for AWS Database Migration Service</b> section at
+     * <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html"> Using Amazon S3 as a Target
+     * for AWS Database Migration Service</a>.
+     * </p>
+     * 
+     * @param mongoDbSettings
+     *        Settings in JSON format for the source MongoDB endpoint. For more information about the available
+     *        settings, see the <b>Configuration Properties When Using MongoDB as a Source for AWS Database Migration
+     *        Service</b> section at <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">
+     *        Using Amazon S3 as a Target for AWS Database Migration Service</a>.
+     */
+
+    public void setMongoDbSettings(MongoDbSettings mongoDbSettings) {
+        this.mongoDbSettings = mongoDbSettings;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the source MongoDB endpoint. For more information about the available settings, see
+     * the <b>Configuration Properties When Using MongoDB as a Source for AWS Database Migration Service</b> section at
+     * <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html"> Using Amazon S3 as a Target
+     * for AWS Database Migration Service</a>.
+     * </p>
+     * 
+     * @return Settings in JSON format for the source MongoDB endpoint. For more information about the available
+     *         settings, see the <b>Configuration Properties When Using MongoDB as a Source for AWS Database Migration
+     *         Service</b> section at <a
+     *         href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html"> Using Amazon S3 as a
+     *         Target for AWS Database Migration Service</a>.
+     */
+
+    public MongoDbSettings getMongoDbSettings() {
+        return this.mongoDbSettings;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the source MongoDB endpoint. For more information about the available settings, see
+     * the <b>Configuration Properties When Using MongoDB as a Source for AWS Database Migration Service</b> section at
+     * <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html"> Using Amazon S3 as a Target
+     * for AWS Database Migration Service</a>.
+     * </p>
+     * 
+     * @param mongoDbSettings
+     *        Settings in JSON format for the source MongoDB endpoint. For more information about the available
+     *        settings, see the <b>Configuration Properties When Using MongoDB as a Source for AWS Database Migration
+     *        Service</b> section at <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">
+     *        Using Amazon S3 as a Target for AWS Database Migration Service</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEndpointRequest withMongoDbSettings(MongoDbSettings mongoDbSettings) {
+        setMongoDbSettings(mongoDbSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -849,7 +1051,13 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getCertificateArn() != null)
             sb.append("CertificateArn: ").append(getCertificateArn()).append(",");
         if (getSslMode() != null)
-            sb.append("SslMode: ").append(getSslMode());
+            sb.append("SslMode: ").append(getSslMode()).append(",");
+        if (getDynamoDbSettings() != null)
+            sb.append("DynamoDbSettings: ").append(getDynamoDbSettings()).append(",");
+        if (getS3Settings() != null)
+            sb.append("S3Settings: ").append(getS3Settings()).append(",");
+        if (getMongoDbSettings() != null)
+            sb.append("MongoDbSettings: ").append(getMongoDbSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -916,6 +1124,18 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getSslMode() != null && other.getSslMode().equals(this.getSslMode()) == false)
             return false;
+        if (other.getDynamoDbSettings() == null ^ this.getDynamoDbSettings() == null)
+            return false;
+        if (other.getDynamoDbSettings() != null && other.getDynamoDbSettings().equals(this.getDynamoDbSettings()) == false)
+            return false;
+        if (other.getS3Settings() == null ^ this.getS3Settings() == null)
+            return false;
+        if (other.getS3Settings() != null && other.getS3Settings().equals(this.getS3Settings()) == false)
+            return false;
+        if (other.getMongoDbSettings() == null ^ this.getMongoDbSettings() == null)
+            return false;
+        if (other.getMongoDbSettings() != null && other.getMongoDbSettings().equals(this.getMongoDbSettings()) == false)
+            return false;
         return true;
     }
 
@@ -937,6 +1157,9 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getCertificateArn() == null) ? 0 : getCertificateArn().hashCode());
         hashCode = prime * hashCode + ((getSslMode() == null) ? 0 : getSslMode().hashCode());
+        hashCode = prime * hashCode + ((getDynamoDbSettings() == null) ? 0 : getDynamoDbSettings().hashCode());
+        hashCode = prime * hashCode + ((getS3Settings() == null) ? 0 : getS3Settings().hashCode());
+        hashCode = prime * hashCode + ((getMongoDbSettings() == null) ? 0 : getMongoDbSettings().hashCode());
         return hashCode;
     }
 

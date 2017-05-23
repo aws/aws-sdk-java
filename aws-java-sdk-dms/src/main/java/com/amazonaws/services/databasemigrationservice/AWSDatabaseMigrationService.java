@@ -34,6 +34,10 @@ import com.amazonaws.services.databasemigrationservice.model.*;
  * Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL
  * Server to PostgreSQL.
  * </p>
+ * <p>
+ * For more information about AWS DMS, see the AWS DMS user guide at <a
+ * href="http://docs.aws.amazon.com/dms/latest/userguide/Welcome.html"> What Is AWS Database Migration Service? </a>
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSDatabaseMigrationService {
@@ -137,6 +141,45 @@ public interface AWSDatabaseMigrationService {
      *      Documentation</a>
      */
     CreateEndpointResult createEndpoint(CreateEndpointRequest createEndpointRequest);
+
+    /**
+     * <p>
+     * Creates an AWS DMS event notification subscription.
+     * </p>
+     * <p>
+     * You can specify the type of source (<code>SourceType</code>) you want to be notified of, provide a list of AWS
+     * DMS source IDs (<code>SourceIds</code>) that triggers the events, and provide a list of event categories (
+     * <code>EventCategories</code>) for events you want to be notified of. If you specify both the
+     * <code>SourceType</code> and <code>SourceIds</code>, such as <code>SourceType = replication-instance</code> and
+     * <code>SourceIdentifier = my-replinstance</code>, you will be notified of all the replication instance events for
+     * the specified source. If you specify a <code>SourceType</code> but don't specify a <code>SourceIdentifier</code>,
+     * you receive notice of the events for that source type for all your AWS DMS sources. If you don't specify either
+     * <code>SourceType</code> nor <code>SourceIdentifier</code>, you will be notified of events generated from all AWS
+     * DMS sources belonging to your customer account.
+     * </p>
+     * <p>
+     * For more information about AWS DMS events, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working with Events and Notifications
+     * </a> in the AWS Database MIgration Service User Guide.
+     * </p>
+     * 
+     * @param createEventSubscriptionRequest
+     * @return Result of the CreateEventSubscription operation returned by the service.
+     * @throws ResourceQuotaExceededException
+     *         The quota for this resource quota has been exceeded.
+     * @throws ResourceAlreadyExistsException
+     *         The resource you are attempting to create already exists.
+     * @throws SNSInvalidTopicException
+     *         The SNS topic is invalid.
+     * @throws SNSNoAuthorizationException
+     *         You are not authorized for the SNS subscription.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @sample AWSDatabaseMigrationService.CreateEventSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateEventSubscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateEventSubscriptionResult createEventSubscription(CreateEventSubscriptionRequest createEventSubscriptionRequest);
 
     /**
      * <p>
@@ -260,6 +303,23 @@ public interface AWSDatabaseMigrationService {
      *      Documentation</a>
      */
     DeleteEndpointResult deleteEndpoint(DeleteEndpointRequest deleteEndpointRequest);
+
+    /**
+     * <p>
+     * Deletes an AWS DMS event subscription.
+     * </p>
+     * 
+     * @param deleteEventSubscriptionRequest
+     * @return Result of the DeleteEventSubscription operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @sample AWSDatabaseMigrationService.DeleteEventSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteEventSubscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteEventSubscriptionResult deleteEventSubscription(DeleteEventSubscriptionRequest deleteEventSubscriptionRequest);
 
     /**
      * <p>
@@ -394,6 +454,57 @@ public interface AWSDatabaseMigrationService {
      *      Documentation</a>
      */
     DescribeEndpointsResult describeEndpoints(DescribeEndpointsRequest describeEndpointsRequest);
+
+    /**
+     * <p>
+     * Lists categories for all event source types, or, if specified, for a specified source type. You can see a list of
+     * the event categories and source types in <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working with Events and Notifications
+     * </a> in the AWS Database Migration Service User Guide.
+     * </p>
+     * 
+     * @param describeEventCategoriesRequest
+     * @return Result of the DescribeEventCategories operation returned by the service.
+     * @sample AWSDatabaseMigrationService.DescribeEventCategories
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEventCategories" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeEventCategoriesResult describeEventCategories(DescribeEventCategoriesRequest describeEventCategoriesRequest);
+
+    /**
+     * <p>
+     * Lists all the event subscriptions for a customer account. The description of a subscription includes
+     * <code>SubscriptionName</code>, <code>SNSTopicARN</code>, <code>CustomerID</code>, <code>SourceType</code>,
+     * <code>SourceID</code>, <code>CreationTime</code>, and <code>Status</code>.
+     * </p>
+     * <p>
+     * If you specify <code>SubscriptionName</code>, this action lists the description for that subscription.
+     * </p>
+     * 
+     * @param describeEventSubscriptionsRequest
+     * @return Result of the DescribeEventSubscriptions operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @sample AWSDatabaseMigrationService.DescribeEventSubscriptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEventSubscriptions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeEventSubscriptionsResult describeEventSubscriptions(DescribeEventSubscriptionsRequest describeEventSubscriptionsRequest);
+
+    /**
+     * <p>
+     * Lists events for a given source identifier and source type. You can also specify a start and end time. For more
+     * information on AWS DMS events, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">
+     * Working with Events and Notifications </a>.
+     * </p>
+     * 
+     * @param describeEventsRequest
+     * @return Result of the DescribeEvents operation returned by the service.
+     * @sample AWSDatabaseMigrationService.DescribeEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEvents" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeEventsResult describeEvents(DescribeEventsRequest describeEventsRequest);
 
     /**
      * <p>
@@ -554,11 +665,34 @@ public interface AWSDatabaseMigrationService {
      *         The resource you are attempting to create already exists.
      * @throws KMSKeyNotAccessibleException
      *         AWS DMS cannot access the KMS key.
+     * @throws AccessDeniedException
+     *         AWS DMS was denied access to the endpoint.
      * @sample AWSDatabaseMigrationService.ModifyEndpoint
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyEndpoint" target="_top">AWS API
      *      Documentation</a>
      */
     ModifyEndpointResult modifyEndpoint(ModifyEndpointRequest modifyEndpointRequest);
+
+    /**
+     * <p>
+     * Modifies an existing AWS DMS event notification subscription.
+     * </p>
+     * 
+     * @param modifyEventSubscriptionRequest
+     * @return Result of the ModifyEventSubscription operation returned by the service.
+     * @throws ResourceQuotaExceededException
+     *         The quota for this resource quota has been exceeded.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws SNSInvalidTopicException
+     *         The SNS topic is invalid.
+     * @throws SNSNoAuthorizationException
+     *         You are not authorized for the SNS subscription.
+     * @sample AWSDatabaseMigrationService.ModifyEventSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyEventSubscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ModifyEventSubscriptionResult modifyEventSubscription(ModifyEventSubscriptionRequest modifyEventSubscriptionRequest);
 
     /**
      * <p>
@@ -623,6 +757,10 @@ public interface AWSDatabaseMigrationService {
      * <p>
      * You can't modify the task endpoints. The task must be stopped before you can modify it.
      * </p>
+     * <p>
+     * For more information about AWS DMS tasks, see the AWS DMS user guide at <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html"> Working with Migration Tasks </a>
+     * </p>
      * 
      * @param modifyReplicationTaskRequest
      * @return Result of the ModifyReplicationTask operation returned by the service.
@@ -664,6 +802,23 @@ public interface AWSDatabaseMigrationService {
 
     /**
      * <p>
+     * Reloads the target database table with the source data.
+     * </p>
+     * 
+     * @param reloadTablesRequest
+     * @return Result of the ReloadTables operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @sample AWSDatabaseMigrationService.ReloadTables
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReloadTables" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ReloadTablesResult reloadTables(ReloadTablesRequest reloadTablesRequest);
+
+    /**
+     * <p>
      * Removes metadata tags from a DMS resource.
      * </p>
      * 
@@ -680,6 +835,10 @@ public interface AWSDatabaseMigrationService {
     /**
      * <p>
      * Starts the replication task.
+     * </p>
+     * <p>
+     * For more information about AWS DMS tasks, see the AWS DMS user guide at <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html"> Working with Migration Tasks </a>
      * </p>
      * 
      * @param startReplicationTaskRequest

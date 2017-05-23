@@ -20,6 +20,10 @@
  * Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL
  * Server to PostgreSQL.
  * </p>
+ * <p>
+ * For more information about AWS DMS, see the AWS DMS user guide at <a
+ * href="http://docs.aws.amazon.com/dms/latest/userguide/Welcome.html"> What Is AWS Database Migration Service? </a>
+ * </p>
  */
 package com.amazonaws.services.databasemigrationservice;
 

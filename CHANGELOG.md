@@ -1,3 +1,8 @@
+# __1.11.134__ __2017-05-23__
+## __AWS Database Migration Service__
+  - ### Features
+    - This release adds support for using Amazon S3 and Amazon DynamoDB as targets for database migration, and using MongoDB as a source for database migration. For more information, see the AWS Database Migration Service documentation.
+
 # __1.11.133__ __2017-05-22__
 ## __AWS Resource Groups Tagging API__
   - ### Features

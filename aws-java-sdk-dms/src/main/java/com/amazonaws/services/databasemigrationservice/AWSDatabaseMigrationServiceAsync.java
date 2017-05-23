@@ -33,6 +33,10 @@ import com.amazonaws.services.databasemigrationservice.model.*;
  * Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL
  * Server to PostgreSQL.
  * </p>
+ * <p>
+ * For more information about AWS DMS, see the AWS DMS user guide at <a
+ * href="http://docs.aws.amazon.com/dms/latest/userguide/Welcome.html"> What Is AWS Database Migration Service? </a>
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationService {
@@ -102,6 +106,69 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
      */
     java.util.concurrent.Future<CreateEndpointResult> createEndpointAsync(CreateEndpointRequest createEndpointRequest,
             com.amazonaws.handlers.AsyncHandler<CreateEndpointRequest, CreateEndpointResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an AWS DMS event notification subscription.
+     * </p>
+     * <p>
+     * You can specify the type of source (<code>SourceType</code>) you want to be notified of, provide a list of AWS
+     * DMS source IDs (<code>SourceIds</code>) that triggers the events, and provide a list of event categories (
+     * <code>EventCategories</code>) for events you want to be notified of. If you specify both the
+     * <code>SourceType</code> and <code>SourceIds</code>, such as <code>SourceType = replication-instance</code> and
+     * <code>SourceIdentifier = my-replinstance</code>, you will be notified of all the replication instance events for
+     * the specified source. If you specify a <code>SourceType</code> but don't specify a <code>SourceIdentifier</code>,
+     * you receive notice of the events for that source type for all your AWS DMS sources. If you don't specify either
+     * <code>SourceType</code> nor <code>SourceIdentifier</code>, you will be notified of events generated from all AWS
+     * DMS sources belonging to your customer account.
+     * </p>
+     * <p>
+     * For more information about AWS DMS events, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working with Events and Notifications
+     * </a> in the AWS Database MIgration Service User Guide.
+     * </p>
+     * 
+     * @param createEventSubscriptionRequest
+     * @return A Java Future containing the result of the CreateEventSubscription operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsync.CreateEventSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateEventSubscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateEventSubscriptionResult> createEventSubscriptionAsync(CreateEventSubscriptionRequest createEventSubscriptionRequest);
+
+    /**
+     * <p>
+     * Creates an AWS DMS event notification subscription.
+     * </p>
+     * <p>
+     * You can specify the type of source (<code>SourceType</code>) you want to be notified of, provide a list of AWS
+     * DMS source IDs (<code>SourceIds</code>) that triggers the events, and provide a list of event categories (
+     * <code>EventCategories</code>) for events you want to be notified of. If you specify both the
+     * <code>SourceType</code> and <code>SourceIds</code>, such as <code>SourceType = replication-instance</code> and
+     * <code>SourceIdentifier = my-replinstance</code>, you will be notified of all the replication instance events for
+     * the specified source. If you specify a <code>SourceType</code> but don't specify a <code>SourceIdentifier</code>,
+     * you receive notice of the events for that source type for all your AWS DMS sources. If you don't specify either
+     * <code>SourceType</code> nor <code>SourceIdentifier</code>, you will be notified of events generated from all AWS
+     * DMS sources belonging to your customer account.
+     * </p>
+     * <p>
+     * For more information about AWS DMS events, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working with Events and Notifications
+     * </a> in the AWS Database MIgration Service User Guide.
+     * </p>
+     * 
+     * @param createEventSubscriptionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateEventSubscription operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.CreateEventSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateEventSubscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateEventSubscriptionResult> createEventSubscriptionAsync(CreateEventSubscriptionRequest createEventSubscriptionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateEventSubscriptionRequest, CreateEventSubscriptionResult> asyncHandler);
 
     /**
      * <p>
@@ -275,6 +342,37 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
      */
     java.util.concurrent.Future<DeleteEndpointResult> deleteEndpointAsync(DeleteEndpointRequest deleteEndpointRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteEndpointRequest, DeleteEndpointResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an AWS DMS event subscription.
+     * </p>
+     * 
+     * @param deleteEventSubscriptionRequest
+     * @return A Java Future containing the result of the DeleteEventSubscription operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsync.DeleteEventSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteEventSubscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteEventSubscriptionResult> deleteEventSubscriptionAsync(DeleteEventSubscriptionRequest deleteEventSubscriptionRequest);
+
+    /**
+     * <p>
+     * Deletes an AWS DMS event subscription.
+     * </p>
+     * 
+     * @param deleteEventSubscriptionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteEventSubscription operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.DeleteEventSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteEventSubscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteEventSubscriptionResult> deleteEventSubscriptionAsync(DeleteEventSubscriptionRequest deleteEventSubscriptionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteEventSubscriptionRequest, DeleteEventSubscriptionResult> asyncHandler);
 
     /**
      * <p>
@@ -555,6 +653,121 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
      */
     java.util.concurrent.Future<DescribeEndpointsResult> describeEndpointsAsync(DescribeEndpointsRequest describeEndpointsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeEndpointsRequest, DescribeEndpointsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists categories for all event source types, or, if specified, for a specified source type. You can see a list of
+     * the event categories and source types in <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working with Events and Notifications
+     * </a> in the AWS Database Migration Service User Guide.
+     * </p>
+     * 
+     * @param describeEventCategoriesRequest
+     * @return A Java Future containing the result of the DescribeEventCategories operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsync.DescribeEventCategories
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEventCategories" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeEventCategoriesResult> describeEventCategoriesAsync(DescribeEventCategoriesRequest describeEventCategoriesRequest);
+
+    /**
+     * <p>
+     * Lists categories for all event source types, or, if specified, for a specified source type. You can see a list of
+     * the event categories and source types in <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working with Events and Notifications
+     * </a> in the AWS Database Migration Service User Guide.
+     * </p>
+     * 
+     * @param describeEventCategoriesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeEventCategories operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.DescribeEventCategories
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEventCategories" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeEventCategoriesResult> describeEventCategoriesAsync(DescribeEventCategoriesRequest describeEventCategoriesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeEventCategoriesRequest, DescribeEventCategoriesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all the event subscriptions for a customer account. The description of a subscription includes
+     * <code>SubscriptionName</code>, <code>SNSTopicARN</code>, <code>CustomerID</code>, <code>SourceType</code>,
+     * <code>SourceID</code>, <code>CreationTime</code>, and <code>Status</code>.
+     * </p>
+     * <p>
+     * If you specify <code>SubscriptionName</code>, this action lists the description for that subscription.
+     * </p>
+     * 
+     * @param describeEventSubscriptionsRequest
+     * @return A Java Future containing the result of the DescribeEventSubscriptions operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsync.DescribeEventSubscriptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEventSubscriptions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeEventSubscriptionsResult> describeEventSubscriptionsAsync(
+            DescribeEventSubscriptionsRequest describeEventSubscriptionsRequest);
+
+    /**
+     * <p>
+     * Lists all the event subscriptions for a customer account. The description of a subscription includes
+     * <code>SubscriptionName</code>, <code>SNSTopicARN</code>, <code>CustomerID</code>, <code>SourceType</code>,
+     * <code>SourceID</code>, <code>CreationTime</code>, and <code>Status</code>.
+     * </p>
+     * <p>
+     * If you specify <code>SubscriptionName</code>, this action lists the description for that subscription.
+     * </p>
+     * 
+     * @param describeEventSubscriptionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeEventSubscriptions operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.DescribeEventSubscriptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEventSubscriptions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeEventSubscriptionsResult> describeEventSubscriptionsAsync(
+            DescribeEventSubscriptionsRequest describeEventSubscriptionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeEventSubscriptionsRequest, DescribeEventSubscriptionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists events for a given source identifier and source type. You can also specify a start and end time. For more
+     * information on AWS DMS events, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">
+     * Working with Events and Notifications </a>.
+     * </p>
+     * 
+     * @param describeEventsRequest
+     * @return A Java Future containing the result of the DescribeEvents operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsync.DescribeEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEvents" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeEventsResult> describeEventsAsync(DescribeEventsRequest describeEventsRequest);
+
+    /**
+     * <p>
+     * Lists events for a given source identifier and source type. You can also specify a start and end time. For more
+     * information on AWS DMS events, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">
+     * Working with Events and Notifications </a>.
+     * </p>
+     * 
+     * @param describeEventsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeEvents operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.DescribeEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEvents" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeEventsResult> describeEventsAsync(DescribeEventsRequest describeEventsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeEventsRequest, DescribeEventsResult> asyncHandler);
 
     /**
      * <p>
@@ -888,6 +1101,37 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
 
     /**
      * <p>
+     * Modifies an existing AWS DMS event notification subscription.
+     * </p>
+     * 
+     * @param modifyEventSubscriptionRequest
+     * @return A Java Future containing the result of the ModifyEventSubscription operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsync.ModifyEventSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyEventSubscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyEventSubscriptionResult> modifyEventSubscriptionAsync(ModifyEventSubscriptionRequest modifyEventSubscriptionRequest);
+
+    /**
+     * <p>
+     * Modifies an existing AWS DMS event notification subscription.
+     * </p>
+     * 
+     * @param modifyEventSubscriptionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyEventSubscription operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.ModifyEventSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyEventSubscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyEventSubscriptionResult> modifyEventSubscriptionAsync(ModifyEventSubscriptionRequest modifyEventSubscriptionRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyEventSubscriptionRequest, ModifyEventSubscriptionResult> asyncHandler);
+
+    /**
+     * <p>
      * Modifies the replication instance to apply new settings. You can change one or more parameters by specifying
      * these parameters and the new values in the request.
      * </p>
@@ -971,6 +1215,10 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
      * <p>
      * You can't modify the task endpoints. The task must be stopped before you can modify it.
      * </p>
+     * <p>
+     * For more information about AWS DMS tasks, see the AWS DMS user guide at <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html"> Working with Migration Tasks </a>
+     * </p>
      * 
      * @param modifyReplicationTaskRequest
      * @return A Java Future containing the result of the ModifyReplicationTask operation returned by the service.
@@ -986,6 +1234,10 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
      * </p>
      * <p>
      * You can't modify the task endpoints. The task must be stopped before you can modify it.
+     * </p>
+     * <p>
+     * For more information about AWS DMS tasks, see the AWS DMS user guide at <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html"> Working with Migration Tasks </a>
      * </p>
      * 
      * @param modifyReplicationTaskRequest
@@ -1036,6 +1288,37 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
 
     /**
      * <p>
+     * Reloads the target database table with the source data.
+     * </p>
+     * 
+     * @param reloadTablesRequest
+     * @return A Java Future containing the result of the ReloadTables operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsync.ReloadTables
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReloadTables" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ReloadTablesResult> reloadTablesAsync(ReloadTablesRequest reloadTablesRequest);
+
+    /**
+     * <p>
+     * Reloads the target database table with the source data.
+     * </p>
+     * 
+     * @param reloadTablesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ReloadTables operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.ReloadTables
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReloadTables" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ReloadTablesResult> reloadTablesAsync(ReloadTablesRequest reloadTablesRequest,
+            com.amazonaws.handlers.AsyncHandler<ReloadTablesRequest, ReloadTablesResult> asyncHandler);
+
+    /**
+     * <p>
      * Removes metadata tags from a DMS resource.
      * </p>
      * 
@@ -1069,6 +1352,10 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
      * <p>
      * Starts the replication task.
      * </p>
+     * <p>
+     * For more information about AWS DMS tasks, see the AWS DMS user guide at <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html"> Working with Migration Tasks </a>
+     * </p>
      * 
      * @param startReplicationTaskRequest
      * @return A Java Future containing the result of the StartReplicationTask operation returned by the service.
@@ -1081,6 +1368,10 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
     /**
      * <p>
      * Starts the replication task.
+     * </p>
+     * <p>
+     * For more information about AWS DMS tasks, see the AWS DMS user guide at <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html"> Working with Migration Tasks </a>
      * </p>
      * 
      * @param startReplicationTaskRequest
