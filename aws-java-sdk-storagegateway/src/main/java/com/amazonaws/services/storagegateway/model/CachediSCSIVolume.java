@@ -79,7 +79,11 @@ public class CachediSCSIVolume implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private VolumeiSCSIAttributes volumeiSCSIAttributes;
-
+    /**
+     * <p>
+     * The date the volume was created. Volumes created prior to March 28, 2017 don’t have this time stamp.
+     * </p>
+     */
     private java.util.Date createdDate;
 
     /**
@@ -424,7 +428,12 @@ public class CachediSCSIVolume implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The date the volume was created. Volumes created prior to March 28, 2017 don’t have this time stamp.
+     * </p>
+     * 
      * @param createdDate
+     *        The date the volume was created. Volumes created prior to March 28, 2017 don’t have this time stamp.
      */
 
     public void setCreatedDate(java.util.Date createdDate) {
@@ -432,7 +441,11 @@ public class CachediSCSIVolume implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * <p>
+     * The date the volume was created. Volumes created prior to March 28, 2017 don’t have this time stamp.
+     * </p>
+     * 
+     * @return The date the volume was created. Volumes created prior to March 28, 2017 don’t have this time stamp.
      */
 
     public java.util.Date getCreatedDate() {
@@ -440,7 +453,12 @@ public class CachediSCSIVolume implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The date the volume was created. Volumes created prior to March 28, 2017 don’t have this time stamp.
+     * </p>
+     * 
      * @param createdDate
+     *        The date the volume was created. Volumes created prior to March 28, 2017 don’t have this time stamp.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -40,11 +40,15 @@ public class Tape implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String tapeBarcode;
-
+    /**
+     * <p>
+     * The date the virtual tape was created.
+     * </p>
+     */
     private java.util.Date tapeCreatedDate;
     /**
      * <p>
-     * The size, in bytes, of the virtual tape.
+     * The size, in bytes, of the virtual tape capacity.
      * </p>
      */
     private Long tapeSizeInBytes;
@@ -69,6 +73,17 @@ public class Tape implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Double progress;
+    /**
+     * <p>
+     * The size, in bytes, of data written to the virtual tape.
+     * </p>
+     * <note>
+     * <p>
+     * This value is not available for tapes created prior to May,13 2015.
+     * </p>
+     * </note>
+     */
+    private Long tapeUsedInBytes;
 
     /**
      * <p>
@@ -151,7 +166,12 @@ public class Tape implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The date the virtual tape was created.
+     * </p>
+     * 
      * @param tapeCreatedDate
+     *        The date the virtual tape was created.
      */
 
     public void setTapeCreatedDate(java.util.Date tapeCreatedDate) {
@@ -159,7 +179,11 @@ public class Tape implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The date the virtual tape was created.
+     * </p>
+     * 
+     * @return The date the virtual tape was created.
      */
 
     public java.util.Date getTapeCreatedDate() {
@@ -167,7 +191,12 @@ public class Tape implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The date the virtual tape was created.
+     * </p>
+     * 
      * @param tapeCreatedDate
+     *        The date the virtual tape was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,11 +207,11 @@ public class Tape implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The size, in bytes, of the virtual tape.
+     * The size, in bytes, of the virtual tape capacity.
      * </p>
      * 
      * @param tapeSizeInBytes
-     *        The size, in bytes, of the virtual tape.
+     *        The size, in bytes, of the virtual tape capacity.
      */
 
     public void setTapeSizeInBytes(Long tapeSizeInBytes) {
@@ -191,10 +220,10 @@ public class Tape implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The size, in bytes, of the virtual tape.
+     * The size, in bytes, of the virtual tape capacity.
      * </p>
      * 
-     * @return The size, in bytes, of the virtual tape.
+     * @return The size, in bytes, of the virtual tape capacity.
      */
 
     public Long getTapeSizeInBytes() {
@@ -203,11 +232,11 @@ public class Tape implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The size, in bytes, of the virtual tape.
+     * The size, in bytes, of the virtual tape capacity.
      * </p>
      * 
      * @param tapeSizeInBytes
-     *        The size, in bytes, of the virtual tape.
+     *        The size, in bytes, of the virtual tape capacity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -355,6 +384,70 @@ public class Tape implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The size, in bytes, of data written to the virtual tape.
+     * </p>
+     * <note>
+     * <p>
+     * This value is not available for tapes created prior to May,13 2015.
+     * </p>
+     * </note>
+     * 
+     * @param tapeUsedInBytes
+     *        The size, in bytes, of data written to the virtual tape.</p> <note>
+     *        <p>
+     *        This value is not available for tapes created prior to May,13 2015.
+     *        </p>
+     */
+
+    public void setTapeUsedInBytes(Long tapeUsedInBytes) {
+        this.tapeUsedInBytes = tapeUsedInBytes;
+    }
+
+    /**
+     * <p>
+     * The size, in bytes, of data written to the virtual tape.
+     * </p>
+     * <note>
+     * <p>
+     * This value is not available for tapes created prior to May,13 2015.
+     * </p>
+     * </note>
+     * 
+     * @return The size, in bytes, of data written to the virtual tape.</p> <note>
+     *         <p>
+     *         This value is not available for tapes created prior to May,13 2015.
+     *         </p>
+     */
+
+    public Long getTapeUsedInBytes() {
+        return this.tapeUsedInBytes;
+    }
+
+    /**
+     * <p>
+     * The size, in bytes, of data written to the virtual tape.
+     * </p>
+     * <note>
+     * <p>
+     * This value is not available for tapes created prior to May,13 2015.
+     * </p>
+     * </note>
+     * 
+     * @param tapeUsedInBytes
+     *        The size, in bytes, of data written to the virtual tape.</p> <note>
+     *        <p>
+     *        This value is not available for tapes created prior to May,13 2015.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Tape withTapeUsedInBytes(Long tapeUsedInBytes) {
+        setTapeUsedInBytes(tapeUsedInBytes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -378,7 +471,9 @@ public class Tape implements Serializable, Cloneable, StructuredPojo {
         if (getVTLDevice() != null)
             sb.append("VTLDevice: ").append(getVTLDevice()).append(",");
         if (getProgress() != null)
-            sb.append("Progress: ").append(getProgress());
+            sb.append("Progress: ").append(getProgress()).append(",");
+        if (getTapeUsedInBytes() != null)
+            sb.append("TapeUsedInBytes: ").append(getTapeUsedInBytes());
         sb.append("}");
         return sb.toString();
     }
@@ -421,6 +516,10 @@ public class Tape implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getProgress() != null && other.getProgress().equals(this.getProgress()) == false)
             return false;
+        if (other.getTapeUsedInBytes() == null ^ this.getTapeUsedInBytes() == null)
+            return false;
+        if (other.getTapeUsedInBytes() != null && other.getTapeUsedInBytes().equals(this.getTapeUsedInBytes()) == false)
+            return false;
         return true;
     }
 
@@ -436,6 +535,7 @@ public class Tape implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTapeStatus() == null) ? 0 : getTapeStatus().hashCode());
         hashCode = prime * hashCode + ((getVTLDevice() == null) ? 0 : getVTLDevice().hashCode());
         hashCode = prime * hashCode + ((getProgress() == null) ? 0 : getProgress().hashCode());
+        hashCode = prime * hashCode + ((getTapeUsedInBytes() == null) ? 0 : getTapeUsedInBytes().hashCode());
         return hashCode;
     }
 

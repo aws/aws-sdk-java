@@ -41,6 +41,8 @@ public class TapeMarshaller {
             .marshallLocationName("VTLDevice").build();
     private static final MarshallingInfo<Double> PROGRESS_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Progress").build();
+    private static final MarshallingInfo<Long> TAPEUSEDINBYTES_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TapeUsedInBytes").build();
 
     private static final TapeMarshaller instance = new TapeMarshaller();
 
@@ -65,6 +67,7 @@ public class TapeMarshaller {
             protocolMarshaller.marshall(tape.getTapeStatus(), TAPESTATUS_BINDING);
             protocolMarshaller.marshall(tape.getVTLDevice(), VTLDEVICE_BINDING);
             protocolMarshaller.marshall(tape.getProgress(), PROGRESS_BINDING);
+            protocolMarshaller.marshall(tape.getTapeUsedInBytes(), TAPEUSEDINBYTES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

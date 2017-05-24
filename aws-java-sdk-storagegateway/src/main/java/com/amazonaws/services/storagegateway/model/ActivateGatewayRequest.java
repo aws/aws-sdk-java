@@ -83,22 +83,24 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
     private String gatewayName;
     /**
      * <p>
-     * A value that indicates the time zone you want to set for the gateway. The time zone is used, for example, for
-     * scheduling snapshots and your gateway's maintenance schedule.
+     * A value that indicates the time zone you want to set for the gateway. The time zone is of the format "GMT-hr:mm"
+     * or "GMT+hr:mm". For example, GMT-4:00 indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2
+     * hours ahead of GMT. The time zone is used, for example, for scheduling snapshots and your gateway's maintenance
+     * schedule.
      * </p>
      */
     private String gatewayTimezone;
     /**
      * <p>
-     * A value that indicates the region where you want to store the snapshot backups. The gateway region specified must
-     * be the same region as the region in your <code>Host</code> header in the request. For more information about
-     * available regions and endpoints for AWS Storage Gateway, see <a
+     * A value that indicates the region where you want to store your data. The gateway region specified must be the
+     * same region as the region in your <code>Host</code> header in the request. For more information about available
+     * regions and endpoints for AWS Storage Gateway, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the
      * <i>Amazon Web Services Glossary</i>.
      * </p>
      * <p>
      * Valid Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1", "eu-west-1", "eu-central-1",
-     * "eu-west-2", "ap-northeast-1", "ap-northeast-2", "ap-southeast-1", "ap-southeast-2", "sa-east-1"
+     * "eu-west-2", "ap-northeast-1", "ap-northeast-2", "ap-southeast-1", "ap-southeast-2", "ap-south-1", "sa-east-1"
      * </p>
      */
     private String gatewayRegion;
@@ -237,13 +239,17 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates the time zone you want to set for the gateway. The time zone is used, for example, for
-     * scheduling snapshots and your gateway's maintenance schedule.
+     * A value that indicates the time zone you want to set for the gateway. The time zone is of the format "GMT-hr:mm"
+     * or "GMT+hr:mm". For example, GMT-4:00 indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2
+     * hours ahead of GMT. The time zone is used, for example, for scheduling snapshots and your gateway's maintenance
+     * schedule.
      * </p>
      * 
      * @param gatewayTimezone
-     *        A value that indicates the time zone you want to set for the gateway. The time zone is used, for example,
-     *        for scheduling snapshots and your gateway's maintenance schedule.
+     *        A value that indicates the time zone you want to set for the gateway. The time zone is of the format
+     *        "GMT-hr:mm" or "GMT+hr:mm". For example, GMT-4:00 indicates the time is 4 hours behind GMT. GMT+2:00
+     *        indicates the time is 2 hours ahead of GMT. The time zone is used, for example, for scheduling snapshots
+     *        and your gateway's maintenance schedule.
      */
 
     public void setGatewayTimezone(String gatewayTimezone) {
@@ -252,12 +258,16 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates the time zone you want to set for the gateway. The time zone is used, for example, for
-     * scheduling snapshots and your gateway's maintenance schedule.
+     * A value that indicates the time zone you want to set for the gateway. The time zone is of the format "GMT-hr:mm"
+     * or "GMT+hr:mm". For example, GMT-4:00 indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2
+     * hours ahead of GMT. The time zone is used, for example, for scheduling snapshots and your gateway's maintenance
+     * schedule.
      * </p>
      * 
-     * @return A value that indicates the time zone you want to set for the gateway. The time zone is used, for example,
-     *         for scheduling snapshots and your gateway's maintenance schedule.
+     * @return A value that indicates the time zone you want to set for the gateway. The time zone is of the format
+     *         "GMT-hr:mm" or "GMT+hr:mm". For example, GMT-4:00 indicates the time is 4 hours behind GMT. GMT+2:00
+     *         indicates the time is 2 hours ahead of GMT. The time zone is used, for example, for scheduling snapshots
+     *         and your gateway's maintenance schedule.
      */
 
     public String getGatewayTimezone() {
@@ -266,13 +276,17 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates the time zone you want to set for the gateway. The time zone is used, for example, for
-     * scheduling snapshots and your gateway's maintenance schedule.
+     * A value that indicates the time zone you want to set for the gateway. The time zone is of the format "GMT-hr:mm"
+     * or "GMT+hr:mm". For example, GMT-4:00 indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2
+     * hours ahead of GMT. The time zone is used, for example, for scheduling snapshots and your gateway's maintenance
+     * schedule.
      * </p>
      * 
      * @param gatewayTimezone
-     *        A value that indicates the time zone you want to set for the gateway. The time zone is used, for example,
-     *        for scheduling snapshots and your gateway's maintenance schedule.
+     *        A value that indicates the time zone you want to set for the gateway. The time zone is of the format
+     *        "GMT-hr:mm" or "GMT+hr:mm". For example, GMT-4:00 indicates the time is 4 hours behind GMT. GMT+2:00
+     *        indicates the time is 2 hours ahead of GMT. The time zone is used, for example, for scheduling snapshots
+     *        and your gateway's maintenance schedule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -283,27 +297,27 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates the region where you want to store the snapshot backups. The gateway region specified must
-     * be the same region as the region in your <code>Host</code> header in the request. For more information about
-     * available regions and endpoints for AWS Storage Gateway, see <a
+     * A value that indicates the region where you want to store your data. The gateway region specified must be the
+     * same region as the region in your <code>Host</code> header in the request. For more information about available
+     * regions and endpoints for AWS Storage Gateway, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the
      * <i>Amazon Web Services Glossary</i>.
      * </p>
      * <p>
      * Valid Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1", "eu-west-1", "eu-central-1",
-     * "eu-west-2", "ap-northeast-1", "ap-northeast-2", "ap-southeast-1", "ap-southeast-2", "sa-east-1"
+     * "eu-west-2", "ap-northeast-1", "ap-northeast-2", "ap-southeast-1", "ap-southeast-2", "ap-south-1", "sa-east-1"
      * </p>
      * 
      * @param gatewayRegion
-     *        A value that indicates the region where you want to store the snapshot backups. The gateway region
-     *        specified must be the same region as the region in your <code>Host</code> header in the request. For more
-     *        information about available regions and endpoints for AWS Storage Gateway, see <a
+     *        A value that indicates the region where you want to store your data. The gateway region specified must be
+     *        the same region as the region in your <code>Host</code> header in the request. For more information about
+     *        available regions and endpoints for AWS Storage Gateway, see <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the
      *        <i>Amazon Web Services Glossary</i>.</p>
      *        <p>
      *        Valid Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1", "eu-west-1",
      *        "eu-central-1", "eu-west-2", "ap-northeast-1", "ap-northeast-2", "ap-southeast-1", "ap-southeast-2",
-     *        "sa-east-1"
+     *        "ap-south-1", "sa-east-1"
      */
 
     public void setGatewayRegion(String gatewayRegion) {
@@ -312,26 +326,26 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates the region where you want to store the snapshot backups. The gateway region specified must
-     * be the same region as the region in your <code>Host</code> header in the request. For more information about
-     * available regions and endpoints for AWS Storage Gateway, see <a
+     * A value that indicates the region where you want to store your data. The gateway region specified must be the
+     * same region as the region in your <code>Host</code> header in the request. For more information about available
+     * regions and endpoints for AWS Storage Gateway, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the
      * <i>Amazon Web Services Glossary</i>.
      * </p>
      * <p>
      * Valid Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1", "eu-west-1", "eu-central-1",
-     * "eu-west-2", "ap-northeast-1", "ap-northeast-2", "ap-southeast-1", "ap-southeast-2", "sa-east-1"
+     * "eu-west-2", "ap-northeast-1", "ap-northeast-2", "ap-southeast-1", "ap-southeast-2", "ap-south-1", "sa-east-1"
      * </p>
      * 
-     * @return A value that indicates the region where you want to store the snapshot backups. The gateway region
-     *         specified must be the same region as the region in your <code>Host</code> header in the request. For more
-     *         information about available regions and endpoints for AWS Storage Gateway, see <a
+     * @return A value that indicates the region where you want to store your data. The gateway region specified must be
+     *         the same region as the region in your <code>Host</code> header in the request. For more information about
+     *         available regions and endpoints for AWS Storage Gateway, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the
      *         <i>Amazon Web Services Glossary</i>.</p>
      *         <p>
      *         Valid Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1", "eu-west-1",
      *         "eu-central-1", "eu-west-2", "ap-northeast-1", "ap-northeast-2", "ap-southeast-1", "ap-southeast-2",
-     *         "sa-east-1"
+     *         "ap-south-1", "sa-east-1"
      */
 
     public String getGatewayRegion() {
@@ -340,27 +354,27 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates the region where you want to store the snapshot backups. The gateway region specified must
-     * be the same region as the region in your <code>Host</code> header in the request. For more information about
-     * available regions and endpoints for AWS Storage Gateway, see <a
+     * A value that indicates the region where you want to store your data. The gateway region specified must be the
+     * same region as the region in your <code>Host</code> header in the request. For more information about available
+     * regions and endpoints for AWS Storage Gateway, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the
      * <i>Amazon Web Services Glossary</i>.
      * </p>
      * <p>
      * Valid Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1", "eu-west-1", "eu-central-1",
-     * "eu-west-2", "ap-northeast-1", "ap-northeast-2", "ap-southeast-1", "ap-southeast-2", "sa-east-1"
+     * "eu-west-2", "ap-northeast-1", "ap-northeast-2", "ap-southeast-1", "ap-southeast-2", "ap-south-1", "sa-east-1"
      * </p>
      * 
      * @param gatewayRegion
-     *        A value that indicates the region where you want to store the snapshot backups. The gateway region
-     *        specified must be the same region as the region in your <code>Host</code> header in the request. For more
-     *        information about available regions and endpoints for AWS Storage Gateway, see <a
+     *        A value that indicates the region where you want to store your data. The gateway region specified must be
+     *        the same region as the region in your <code>Host</code> header in the request. For more information about
+     *        available regions and endpoints for AWS Storage Gateway, see <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the
      *        <i>Amazon Web Services Glossary</i>.</p>
      *        <p>
      *        Valid Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1", "eu-west-1",
      *        "eu-central-1", "eu-west-2", "ap-northeast-1", "ap-northeast-2", "ap-southeast-1", "ap-southeast-2",
-     *        "sa-east-1"
+     *        "ap-south-1", "sa-east-1"
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

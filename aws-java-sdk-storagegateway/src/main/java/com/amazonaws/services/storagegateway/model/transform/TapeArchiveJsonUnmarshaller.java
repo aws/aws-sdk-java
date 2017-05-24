@@ -76,6 +76,10 @@ public class TapeArchiveJsonUnmarshaller implements Unmarshaller<TapeArchive, Js
                     context.nextToken();
                     tapeArchive.setTapeStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("TapeUsedInBytes", targetDepth)) {
+                    context.nextToken();
+                    tapeArchive.setTapeUsedInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

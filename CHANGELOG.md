@@ -1,3 +1,16 @@
+# __1.11.135__ __2017-05-24__
+## __AWS Identity and Access Management (IAM)__
+  - ### Features
+    - The unique ID and access key lengths were extended from 32 to 128
+
+## __AWS Security Token Service (STS)__
+  - ### Features
+    - The unique ID and access key lengths were extended from 32 to 128.
+
+## __AWS Storage Gateway__
+  - ### Features
+    - Two Storage Gateway data types, Tape and TapeArchive, each have a new response element, TapeUsedInBytes. This element helps you manage your virtual tapes. By using TapeUsedInBytes, you can see the amount of data written to each virtual tape.
+
 # __1.11.134__ __2017-05-23__
 ## __AWS Database Migration Service__
   - ### Features

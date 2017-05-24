@@ -72,6 +72,17 @@ public class TapeArchive implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String tapeStatus;
+    /**
+     * <p>
+     * The size, in bytes, of data written to the virtual tape.
+     * </p>
+     * <note>
+     * <p>
+     * This value is not available for tapes created prior to May,13 2015.
+     * </p>
+     * </note>
+     */
+    private Long tapeUsedInBytes;
 
     /**
      * <p>
@@ -370,6 +381,70 @@ public class TapeArchive implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The size, in bytes, of data written to the virtual tape.
+     * </p>
+     * <note>
+     * <p>
+     * This value is not available for tapes created prior to May,13 2015.
+     * </p>
+     * </note>
+     * 
+     * @param tapeUsedInBytes
+     *        The size, in bytes, of data written to the virtual tape.</p> <note>
+     *        <p>
+     *        This value is not available for tapes created prior to May,13 2015.
+     *        </p>
+     */
+
+    public void setTapeUsedInBytes(Long tapeUsedInBytes) {
+        this.tapeUsedInBytes = tapeUsedInBytes;
+    }
+
+    /**
+     * <p>
+     * The size, in bytes, of data written to the virtual tape.
+     * </p>
+     * <note>
+     * <p>
+     * This value is not available for tapes created prior to May,13 2015.
+     * </p>
+     * </note>
+     * 
+     * @return The size, in bytes, of data written to the virtual tape.</p> <note>
+     *         <p>
+     *         This value is not available for tapes created prior to May,13 2015.
+     *         </p>
+     */
+
+    public Long getTapeUsedInBytes() {
+        return this.tapeUsedInBytes;
+    }
+
+    /**
+     * <p>
+     * The size, in bytes, of data written to the virtual tape.
+     * </p>
+     * <note>
+     * <p>
+     * This value is not available for tapes created prior to May,13 2015.
+     * </p>
+     * </note>
+     * 
+     * @param tapeUsedInBytes
+     *        The size, in bytes, of data written to the virtual tape.</p> <note>
+     *        <p>
+     *        This value is not available for tapes created prior to May,13 2015.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TapeArchive withTapeUsedInBytes(Long tapeUsedInBytes) {
+        setTapeUsedInBytes(tapeUsedInBytes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -393,7 +468,9 @@ public class TapeArchive implements Serializable, Cloneable, StructuredPojo {
         if (getRetrievedTo() != null)
             sb.append("RetrievedTo: ").append(getRetrievedTo()).append(",");
         if (getTapeStatus() != null)
-            sb.append("TapeStatus: ").append(getTapeStatus());
+            sb.append("TapeStatus: ").append(getTapeStatus()).append(",");
+        if (getTapeUsedInBytes() != null)
+            sb.append("TapeUsedInBytes: ").append(getTapeUsedInBytes());
         sb.append("}");
         return sb.toString();
     }
@@ -436,6 +513,10 @@ public class TapeArchive implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTapeStatus() != null && other.getTapeStatus().equals(this.getTapeStatus()) == false)
             return false;
+        if (other.getTapeUsedInBytes() == null ^ this.getTapeUsedInBytes() == null)
+            return false;
+        if (other.getTapeUsedInBytes() != null && other.getTapeUsedInBytes().equals(this.getTapeUsedInBytes()) == false)
+            return false;
         return true;
     }
 
@@ -451,6 +532,7 @@ public class TapeArchive implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCompletionTime() == null) ? 0 : getCompletionTime().hashCode());
         hashCode = prime * hashCode + ((getRetrievedTo() == null) ? 0 : getRetrievedTo().hashCode());
         hashCode = prime * hashCode + ((getTapeStatus() == null) ? 0 : getTapeStatus().hashCode());
+        hashCode = prime * hashCode + ((getTapeUsedInBytes() == null) ? 0 : getTapeUsedInBytes().hashCode());
         return hashCode;
     }
 

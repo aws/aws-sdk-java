@@ -105,7 +105,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The regex used to validated this parameter is a string of characters consisting of upper- and lower-case
      * alphanumeric characters with no spaces. You can also include underscores or any of the following characters:
-     * =,.@:\/-
+     * =,.@:/-
      * </p>
      */
     private String externalId;
@@ -570,7 +570,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The regex used to validated this parameter is a string of characters consisting of upper- and lower-case
      * alphanumeric characters with no spaces. You can also include underscores or any of the following characters:
-     * =,.@:\/-
+     * =,.@:/-
      * </p>
      * 
      * @param externalId
@@ -585,7 +585,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        The regex used to validated this parameter is a string of characters consisting of upper- and lower-case
      *        alphanumeric characters with no spaces. You can also include underscores or any of the following
-     *        characters: =,.@:\/-
+     *        characters: =,.@:/-
      */
 
     public void setExternalId(String externalId) {
@@ -605,7 +605,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The regex used to validated this parameter is a string of characters consisting of upper- and lower-case
      * alphanumeric characters with no spaces. You can also include underscores or any of the following characters:
-     * =,.@:\/-
+     * =,.@:/-
      * </p>
      * 
      * @return A unique identifier that is used by third parties when assuming roles in their customers' accounts. For
@@ -619,7 +619,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <p>
      *         The regex used to validated this parameter is a string of characters consisting of upper- and lower-case
      *         alphanumeric characters with no spaces. You can also include underscores or any of the following
-     *         characters: =,.@:\/-
+     *         characters: =,.@:/-
      */
 
     public String getExternalId() {
@@ -639,7 +639,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The regex used to validated this parameter is a string of characters consisting of upper- and lower-case
      * alphanumeric characters with no spaces. You can also include underscores or any of the following characters:
-     * =,.@:\/-
+     * =,.@:/-
      * </p>
      * 
      * @param externalId
@@ -654,7 +654,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        The regex used to validated this parameter is a string of characters consisting of upper- and lower-case
      *        alphanumeric characters with no spaces. You can also include underscores or any of the following
-     *        characters: =,.@:\/-
+     *        characters: =,.@:/-
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

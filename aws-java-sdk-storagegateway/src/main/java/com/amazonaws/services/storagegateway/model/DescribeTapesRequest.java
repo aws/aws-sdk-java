@@ -32,8 +32,8 @@ public class DescribeTapesRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe.
-     * If this parameter is not specified, AWS Storage Gateway returns a description of all virtual tapes associated
-     * with the specified gateway.
+     * If this parameter is not specified, Tape gateway returns a description of all virtual tapes associated with the
+     * specified gateway.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> tapeARNs;
@@ -88,13 +88,13 @@ public class DescribeTapesRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe.
-     * If this parameter is not specified, AWS Storage Gateway returns a description of all virtual tapes associated
-     * with the specified gateway.
+     * If this parameter is not specified, Tape gateway returns a description of all virtual tapes associated with the
+     * specified gateway.
      * </p>
      * 
      * @return Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to
-     *         describe. If this parameter is not specified, AWS Storage Gateway returns a description of all virtual
-     *         tapes associated with the specified gateway.
+     *         describe. If this parameter is not specified, Tape gateway returns a description of all virtual tapes
+     *         associated with the specified gateway.
      */
 
     public java.util.List<String> getTapeARNs() {
@@ -107,14 +107,14 @@ public class DescribeTapesRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe.
-     * If this parameter is not specified, AWS Storage Gateway returns a description of all virtual tapes associated
-     * with the specified gateway.
+     * If this parameter is not specified, Tape gateway returns a description of all virtual tapes associated with the
+     * specified gateway.
      * </p>
      * 
      * @param tapeARNs
      *        Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to
-     *        describe. If this parameter is not specified, AWS Storage Gateway returns a description of all virtual
-     *        tapes associated with the specified gateway.
+     *        describe. If this parameter is not specified, Tape gateway returns a description of all virtual tapes
+     *        associated with the specified gateway.
      */
 
     public void setTapeARNs(java.util.Collection<String> tapeARNs) {
@@ -129,8 +129,8 @@ public class DescribeTapesRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe.
-     * If this parameter is not specified, AWS Storage Gateway returns a description of all virtual tapes associated
-     * with the specified gateway.
+     * If this parameter is not specified, Tape gateway returns a description of all virtual tapes associated with the
+     * specified gateway.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -140,8 +140,8 @@ public class DescribeTapesRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param tapeARNs
      *        Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to
-     *        describe. If this parameter is not specified, AWS Storage Gateway returns a description of all virtual
-     *        tapes associated with the specified gateway.
+     *        describe. If this parameter is not specified, Tape gateway returns a description of all virtual tapes
+     *        associated with the specified gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -158,14 +158,14 @@ public class DescribeTapesRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to describe.
-     * If this parameter is not specified, AWS Storage Gateway returns a description of all virtual tapes associated
-     * with the specified gateway.
+     * If this parameter is not specified, Tape gateway returns a description of all virtual tapes associated with the
+     * specified gateway.
      * </p>
      * 
      * @param tapeARNs
      *        Specifies one or more unique Amazon Resource Names (ARNs) that represent the virtual tapes you want to
-     *        describe. If this parameter is not specified, AWS Storage Gateway returns a description of all virtual
-     *        tapes associated with the specified gateway.
+     *        describe. If this parameter is not specified, Tape gateway returns a description of all virtual tapes
+     *        associated with the specified gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

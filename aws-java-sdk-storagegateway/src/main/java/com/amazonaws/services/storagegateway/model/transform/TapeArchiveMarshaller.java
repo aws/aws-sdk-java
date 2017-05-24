@@ -41,6 +41,8 @@ public class TapeArchiveMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RetrievedTo").build();
     private static final MarshallingInfo<String> TAPESTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TapeStatus").build();
+    private static final MarshallingInfo<Long> TAPEUSEDINBYTES_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TapeUsedInBytes").build();
 
     private static final TapeArchiveMarshaller instance = new TapeArchiveMarshaller();
 
@@ -65,6 +67,7 @@ public class TapeArchiveMarshaller {
             protocolMarshaller.marshall(tapeArchive.getCompletionTime(), COMPLETIONTIME_BINDING);
             protocolMarshaller.marshall(tapeArchive.getRetrievedTo(), RETRIEVEDTO_BINDING);
             protocolMarshaller.marshall(tapeArchive.getTapeStatus(), TAPESTATUS_BINDING);
+            protocolMarshaller.marshall(tapeArchive.getTapeUsedInBytes(), TAPEUSEDINBYTES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

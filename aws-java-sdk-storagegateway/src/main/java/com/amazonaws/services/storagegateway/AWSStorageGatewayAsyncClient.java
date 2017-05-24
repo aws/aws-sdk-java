@@ -73,8 +73,8 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/general/latest/gr/index.html?rande.html">AWS Storage Gateway Regions and
- * Endpoints</a>: Provides a list of each of the s and endpoints available for use with AWS Storage Gateway.
+ * <a href="http://docs.aws.amazon.com/general/latest/general/latest/gr/rande.html#sg_region">AWS Storage Gateway
+ * Regions and Endpoints</a>: Provides a list of each region and endpoints available for use with AWS Storage Gateway.
  * </p>
  * </li>
  * </ul>
@@ -82,8 +82,9 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * AWS Storage Gateway resource IDs are in uppercase. When you use these resource IDs with the Amazon EC2 API, EC2
  * expects resource IDs in lowercase. You must change your resource ID to lowercase to use it with the EC2 API. For
- * example, in Storage Gateway the ID for a volume might be <code>vol-1122AABB</code>. When you use this ID with the EC2
- * API, you must change it to <code>vol-1122aabb</code>. Otherwise, the EC2 API might not behave as expected.
+ * example, in Storage Gateway the ID for a volume might be <code>vol-AA22BB012345DAF670</code>. When you use this ID
+ * with the EC2 API, you must change it to <code>vol-aa22bb012345daf670</code>. Otherwise, the EC2 API might not behave
+ * as expected.
  * </p>
  * </note> <important>
  * <p>
@@ -93,13 +94,13 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * information, see <a href="https://aws.amazon.com/ec2/faqs/#longer-ids">Longer EC2 and EBS Resource IDs</a>.
  * </p>
  * <p>
- * For example, a volume ARN with the longer volume ID format will look like this:
+ * For example, a volume Amazon Resource Name (ARN) with the longer volume ID format looks like the following:
  * </p>
  * <p>
  * <code>arn:aws:storagegateway:us-west-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABBCCDDEEFFG</code>.
  * </p>
  * <p>
- * A snapshot ID with the longer ID format will look like this: <code>snap-78e226633445566ee</code>.
+ * A snapshot ID with the longer ID format looks like the following: <code>snap-78e226633445566ee</code>.
  * </p>
  * <p>
  * For more information, see <a href="https://forums.aws.amazon.com/ann.jspa?annID=3557">Announcement: Heads-up – Longer

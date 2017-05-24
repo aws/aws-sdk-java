@@ -70,14 +70,30 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     private com.amazonaws.internal.SdkInternalList<String> clientList;
     /**
      * <p>
-     * Indicates the user mapped to anonymous user. Valid options: "RootSquash" - Only root is mapped to anonymous user,
-     * "NoSquash" - No one is mapped to anonymous user or "AllSquash" - Everyone is mapped to anonymous user.
+     * The user mapped to anonymous user. Valid options are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * "RootSquash" - Only root is mapped to anonymous user.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "NoSquash" - No one is mapped to anonymous user
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "AllSquash" - Everyone is mapped to anonymous user.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String squash;
     /**
      * <p>
-     * Sets the write status of a file share. "true", if the write status is read-only; otherwise "false.
+     * Sets the write status of a file share: "true" if the write status is read-only, and otherwise "false".
      * </p>
      */
     private Boolean readOnly;
@@ -400,14 +416,44 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Indicates the user mapped to anonymous user. Valid options: "RootSquash" - Only root is mapped to anonymous user,
-     * "NoSquash" - No one is mapped to anonymous user or "AllSquash" - Everyone is mapped to anonymous user.
+     * The user mapped to anonymous user. Valid options are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * "RootSquash" - Only root is mapped to anonymous user.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "NoSquash" - No one is mapped to anonymous user
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "AllSquash" - Everyone is mapped to anonymous user.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param squash
-     *        Indicates the user mapped to anonymous user. Valid options: "RootSquash" - Only root is mapped to
-     *        anonymous user, "NoSquash" - No one is mapped to anonymous user or "AllSquash" - Everyone is mapped to
-     *        anonymous user.
+     *        The user mapped to anonymous user. Valid options are the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        "RootSquash" - Only root is mapped to anonymous user.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "NoSquash" - No one is mapped to anonymous user
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "AllSquash" - Everyone is mapped to anonymous user.
+     *        </p>
+     *        </li>
      */
 
     public void setSquash(String squash) {
@@ -416,13 +462,43 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Indicates the user mapped to anonymous user. Valid options: "RootSquash" - Only root is mapped to anonymous user,
-     * "NoSquash" - No one is mapped to anonymous user or "AllSquash" - Everyone is mapped to anonymous user.
+     * The user mapped to anonymous user. Valid options are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * "RootSquash" - Only root is mapped to anonymous user.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "NoSquash" - No one is mapped to anonymous user
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "AllSquash" - Everyone is mapped to anonymous user.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Indicates the user mapped to anonymous user. Valid options: "RootSquash" - Only root is mapped to
-     *         anonymous user, "NoSquash" - No one is mapped to anonymous user or "AllSquash" - Everyone is mapped to
-     *         anonymous user.
+     * @return The user mapped to anonymous user. Valid options are the following:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         "RootSquash" - Only root is mapped to anonymous user.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         "NoSquash" - No one is mapped to anonymous user
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         "AllSquash" - Everyone is mapped to anonymous user.
+     *         </p>
+     *         </li>
      */
 
     public String getSquash() {
@@ -431,14 +507,44 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Indicates the user mapped to anonymous user. Valid options: "RootSquash" - Only root is mapped to anonymous user,
-     * "NoSquash" - No one is mapped to anonymous user or "AllSquash" - Everyone is mapped to anonymous user.
+     * The user mapped to anonymous user. Valid options are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * "RootSquash" - Only root is mapped to anonymous user.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "NoSquash" - No one is mapped to anonymous user
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * "AllSquash" - Everyone is mapped to anonymous user.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param squash
-     *        Indicates the user mapped to anonymous user. Valid options: "RootSquash" - Only root is mapped to
-     *        anonymous user, "NoSquash" - No one is mapped to anonymous user or "AllSquash" - Everyone is mapped to
-     *        anonymous user.
+     *        The user mapped to anonymous user. Valid options are the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        "RootSquash" - Only root is mapped to anonymous user.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "NoSquash" - No one is mapped to anonymous user
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        "AllSquash" - Everyone is mapped to anonymous user.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -449,11 +555,11 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Sets the write status of a file share. "true", if the write status is read-only; otherwise "false.
+     * Sets the write status of a file share: "true" if the write status is read-only, and otherwise "false".
      * </p>
      * 
      * @param readOnly
-     *        Sets the write status of a file share. "true", if the write status is read-only; otherwise "false.
+     *        Sets the write status of a file share: "true" if the write status is read-only, and otherwise "false".
      */
 
     public void setReadOnly(Boolean readOnly) {
@@ -462,10 +568,10 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Sets the write status of a file share. "true", if the write status is read-only; otherwise "false.
+     * Sets the write status of a file share: "true" if the write status is read-only, and otherwise "false".
      * </p>
      * 
-     * @return Sets the write status of a file share. "true", if the write status is read-only; otherwise "false.
+     * @return Sets the write status of a file share: "true" if the write status is read-only, and otherwise "false".
      */
 
     public Boolean getReadOnly() {
@@ -474,11 +580,11 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Sets the write status of a file share. "true", if the write status is read-only; otherwise "false.
+     * Sets the write status of a file share: "true" if the write status is read-only, and otherwise "false".
      * </p>
      * 
      * @param readOnly
-     *        Sets the write status of a file share. "true", if the write status is read-only; otherwise "false.
+     *        Sets the write status of a file share: "true" if the write status is read-only, and otherwise "false".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -489,10 +595,10 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Sets the write status of a file share. "true", if the write status is read-only; otherwise "false.
+     * Sets the write status of a file share: "true" if the write status is read-only, and otherwise "false".
      * </p>
      * 
-     * @return Sets the write status of a file share. "true", if the write status is read-only; otherwise "false.
+     * @return Sets the write status of a file share: "true" if the write status is read-only, and otherwise "false".
      */
 
     public Boolean isReadOnly() {

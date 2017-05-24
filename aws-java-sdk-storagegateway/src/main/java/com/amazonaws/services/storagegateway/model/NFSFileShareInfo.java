@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The Unix file permissions and ownership information assigned, by default, to native S3 objects when Storage Gateway
+ * The Unix file permissions and ownership information assigned, by default, to native S3 objects when file gateway
  * discovers them in S3 buckets. This operation is only supported in file gateways.
  * </p>
  * 
