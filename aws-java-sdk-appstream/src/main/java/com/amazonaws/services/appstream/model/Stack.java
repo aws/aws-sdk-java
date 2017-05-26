@@ -58,6 +58,18 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date createdTime;
+    /**
+     * <p>
+     * The storage connectors to be enabled for the stack.
+     * </p>
+     */
+    private java.util.List<StorageConnector> storageConnectors;
+    /**
+     * <p>
+     * The list of errors associated with the stack.
+     * </p>
+     */
+    private java.util.List<StackError> stackErrors;
 
     /**
      * <p>
@@ -260,6 +272,146 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The storage connectors to be enabled for the stack.
+     * </p>
+     * 
+     * @return The storage connectors to be enabled for the stack.
+     */
+
+    public java.util.List<StorageConnector> getStorageConnectors() {
+        return storageConnectors;
+    }
+
+    /**
+     * <p>
+     * The storage connectors to be enabled for the stack.
+     * </p>
+     * 
+     * @param storageConnectors
+     *        The storage connectors to be enabled for the stack.
+     */
+
+    public void setStorageConnectors(java.util.Collection<StorageConnector> storageConnectors) {
+        if (storageConnectors == null) {
+            this.storageConnectors = null;
+            return;
+        }
+
+        this.storageConnectors = new java.util.ArrayList<StorageConnector>(storageConnectors);
+    }
+
+    /**
+     * <p>
+     * The storage connectors to be enabled for the stack.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setStorageConnectors(java.util.Collection)} or {@link #withStorageConnectors(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param storageConnectors
+     *        The storage connectors to be enabled for the stack.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Stack withStorageConnectors(StorageConnector... storageConnectors) {
+        if (this.storageConnectors == null) {
+            setStorageConnectors(new java.util.ArrayList<StorageConnector>(storageConnectors.length));
+        }
+        for (StorageConnector ele : storageConnectors) {
+            this.storageConnectors.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The storage connectors to be enabled for the stack.
+     * </p>
+     * 
+     * @param storageConnectors
+     *        The storage connectors to be enabled for the stack.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Stack withStorageConnectors(java.util.Collection<StorageConnector> storageConnectors) {
+        setStorageConnectors(storageConnectors);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of errors associated with the stack.
+     * </p>
+     * 
+     * @return The list of errors associated with the stack.
+     */
+
+    public java.util.List<StackError> getStackErrors() {
+        return stackErrors;
+    }
+
+    /**
+     * <p>
+     * The list of errors associated with the stack.
+     * </p>
+     * 
+     * @param stackErrors
+     *        The list of errors associated with the stack.
+     */
+
+    public void setStackErrors(java.util.Collection<StackError> stackErrors) {
+        if (stackErrors == null) {
+            this.stackErrors = null;
+            return;
+        }
+
+        this.stackErrors = new java.util.ArrayList<StackError>(stackErrors);
+    }
+
+    /**
+     * <p>
+     * The list of errors associated with the stack.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setStackErrors(java.util.Collection)} or {@link #withStackErrors(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param stackErrors
+     *        The list of errors associated with the stack.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Stack withStackErrors(StackError... stackErrors) {
+        if (this.stackErrors == null) {
+            setStackErrors(new java.util.ArrayList<StackError>(stackErrors.length));
+        }
+        for (StackError ele : stackErrors) {
+            this.stackErrors.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of errors associated with the stack.
+     * </p>
+     * 
+     * @param stackErrors
+     *        The list of errors associated with the stack.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Stack withStackErrors(java.util.Collection<StackError> stackErrors) {
+        setStackErrors(stackErrors);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -279,7 +431,11 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
         if (getDisplayName() != null)
             sb.append("DisplayName: ").append(getDisplayName()).append(",");
         if (getCreatedTime() != null)
-            sb.append("CreatedTime: ").append(getCreatedTime());
+            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
+        if (getStorageConnectors() != null)
+            sb.append("StorageConnectors: ").append(getStorageConnectors()).append(",");
+        if (getStackErrors() != null)
+            sb.append("StackErrors: ").append(getStackErrors());
         sb.append("}");
         return sb.toString();
     }
@@ -314,6 +470,14 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
             return false;
+        if (other.getStorageConnectors() == null ^ this.getStorageConnectors() == null)
+            return false;
+        if (other.getStorageConnectors() != null && other.getStorageConnectors().equals(this.getStorageConnectors()) == false)
+            return false;
+        if (other.getStackErrors() == null ^ this.getStackErrors() == null)
+            return false;
+        if (other.getStackErrors() != null && other.getStackErrors().equals(this.getStackErrors()) == false)
+            return false;
         return true;
     }
 
@@ -327,6 +491,8 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
+        hashCode = prime * hashCode + ((getStorageConnectors() == null) ? 0 : getStorageConnectors().hashCode());
+        hashCode = prime * hashCode + ((getStackErrors() == null) ? 0 : getStackErrors().hashCode());
         return hashCode;
     }
 

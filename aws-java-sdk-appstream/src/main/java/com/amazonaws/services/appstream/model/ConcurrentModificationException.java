@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * An API error occurred, please try again.
+ * An API error occurred. Wait a few minutes and try again.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

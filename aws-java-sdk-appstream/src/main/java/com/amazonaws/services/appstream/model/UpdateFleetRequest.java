@@ -57,14 +57,16 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     private VpcConfig vpcConfig;
     /**
      * <p>
-     * The maximum time during which a streaming session can run.
+     * The maximum time for which a streaming session can run. The input can be any numeric value in seconds between 600
+     * and 57600.
      * </p>
      */
     private Integer maxUserDurationInSeconds;
     /**
      * <p>
-     * The time after disconnection when a session is considered to have ended. When the user reconnects after a
-     * disconnection, the user is connected to the same instance within this time interval.
+     * The time after disconnection when a session is considered to have ended. If a user who got disconnected
+     * reconnects within this timeout interval, the user is connected back to their previous session. The input can be
+     * any numeric value in seconds between 60 and 57600.
      * </p>
      */
     private Integer disconnectTimeoutInSeconds;
@@ -88,7 +90,7 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String displayName;
     /**
      * <p>
-     * Enable/Disable default Internet access from fleet.
+     * Enables or disables default Internet access for the fleet.
      * </p>
      */
     private Boolean enableDefaultInternetAccess;
@@ -298,11 +300,13 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum time during which a streaming session can run.
+     * The maximum time for which a streaming session can run. The input can be any numeric value in seconds between 600
+     * and 57600.
      * </p>
      * 
      * @param maxUserDurationInSeconds
-     *        The maximum time during which a streaming session can run.
+     *        The maximum time for which a streaming session can run. The input can be any numeric value in seconds
+     *        between 600 and 57600.
      */
 
     public void setMaxUserDurationInSeconds(Integer maxUserDurationInSeconds) {
@@ -311,10 +315,12 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum time during which a streaming session can run.
+     * The maximum time for which a streaming session can run. The input can be any numeric value in seconds between 600
+     * and 57600.
      * </p>
      * 
-     * @return The maximum time during which a streaming session can run.
+     * @return The maximum time for which a streaming session can run. The input can be any numeric value in seconds
+     *         between 600 and 57600.
      */
 
     public Integer getMaxUserDurationInSeconds() {
@@ -323,11 +329,13 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum time during which a streaming session can run.
+     * The maximum time for which a streaming session can run. The input can be any numeric value in seconds between 600
+     * and 57600.
      * </p>
      * 
      * @param maxUserDurationInSeconds
-     *        The maximum time during which a streaming session can run.
+     *        The maximum time for which a streaming session can run. The input can be any numeric value in seconds
+     *        between 600 and 57600.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -338,13 +346,15 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The time after disconnection when a session is considered to have ended. When the user reconnects after a
-     * disconnection, the user is connected to the same instance within this time interval.
+     * The time after disconnection when a session is considered to have ended. If a user who got disconnected
+     * reconnects within this timeout interval, the user is connected back to their previous session. The input can be
+     * any numeric value in seconds between 60 and 57600.
      * </p>
      * 
      * @param disconnectTimeoutInSeconds
-     *        The time after disconnection when a session is considered to have ended. When the user reconnects after a
-     *        disconnection, the user is connected to the same instance within this time interval.
+     *        The time after disconnection when a session is considered to have ended. If a user who got disconnected
+     *        reconnects within this timeout interval, the user is connected back to their previous session. The input
+     *        can be any numeric value in seconds between 60 and 57600.
      */
 
     public void setDisconnectTimeoutInSeconds(Integer disconnectTimeoutInSeconds) {
@@ -353,12 +363,14 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The time after disconnection when a session is considered to have ended. When the user reconnects after a
-     * disconnection, the user is connected to the same instance within this time interval.
+     * The time after disconnection when a session is considered to have ended. If a user who got disconnected
+     * reconnects within this timeout interval, the user is connected back to their previous session. The input can be
+     * any numeric value in seconds between 60 and 57600.
      * </p>
      * 
-     * @return The time after disconnection when a session is considered to have ended. When the user reconnects after a
-     *         disconnection, the user is connected to the same instance within this time interval.
+     * @return The time after disconnection when a session is considered to have ended. If a user who got disconnected
+     *         reconnects within this timeout interval, the user is connected back to their previous session. The input
+     *         can be any numeric value in seconds between 60 and 57600.
      */
 
     public Integer getDisconnectTimeoutInSeconds() {
@@ -367,13 +379,15 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The time after disconnection when a session is considered to have ended. When the user reconnects after a
-     * disconnection, the user is connected to the same instance within this time interval.
+     * The time after disconnection when a session is considered to have ended. If a user who got disconnected
+     * reconnects within this timeout interval, the user is connected back to their previous session. The input can be
+     * any numeric value in seconds between 60 and 57600.
      * </p>
      * 
      * @param disconnectTimeoutInSeconds
-     *        The time after disconnection when a session is considered to have ended. When the user reconnects after a
-     *        disconnection, the user is connected to the same instance within this time interval.
+     *        The time after disconnection when a session is considered to have ended. If a user who got disconnected
+     *        reconnects within this timeout interval, the user is connected back to their previous session. The input
+     *        can be any numeric value in seconds between 60 and 57600.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -516,11 +530,11 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Enable/Disable default Internet access from fleet.
+     * Enables or disables default Internet access for the fleet.
      * </p>
      * 
      * @param enableDefaultInternetAccess
-     *        Enable/Disable default Internet access from fleet.
+     *        Enables or disables default Internet access for the fleet.
      */
 
     public void setEnableDefaultInternetAccess(Boolean enableDefaultInternetAccess) {
@@ -529,10 +543,10 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Enable/Disable default Internet access from fleet.
+     * Enables or disables default Internet access for the fleet.
      * </p>
      * 
-     * @return Enable/Disable default Internet access from fleet.
+     * @return Enables or disables default Internet access for the fleet.
      */
 
     public Boolean getEnableDefaultInternetAccess() {
@@ -541,11 +555,11 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Enable/Disable default Internet access from fleet.
+     * Enables or disables default Internet access for the fleet.
      * </p>
      * 
      * @param enableDefaultInternetAccess
-     *        Enable/Disable default Internet access from fleet.
+     *        Enables or disables default Internet access for the fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -556,10 +570,10 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Enable/Disable default Internet access from fleet.
+     * Enables or disables default Internet access for the fleet.
      * </p>
      * 
-     * @return Enable/Disable default Internet access from fleet.
+     * @return Enables or disables default Internet access for the fleet.
      */
 
     public Boolean isEnableDefaultInternetAccess() {

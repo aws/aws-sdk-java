@@ -1,3 +1,12 @@
+# __1.11.136__ __2017-05-25__
+## __Amazon AppStream__
+  - ### Features
+    - Support added for persistent user storage, backed by S3.
+
+## __Amazon Rekognition__
+  - ### Features
+    - Updated the CompareFaces API response to include orientation information, unmatched faces, landmarks, pose, and quality of the compared faces.
+
 # __1.11.135__ __2017-05-24__
 ## __AWS Identity and Access Management (IAM)__
   - ### Features

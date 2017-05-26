@@ -36,7 +36,7 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String externalImageId;
     /**
      * <p>
-     * A list of facial attributes that you want to be returned. This can be the default list of attributes or all
+     * An array of facial attributes that you want to be returned. This can be the default list of attributes or all
      * attributes. If you don't specify a value for <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>,
      * the API returns the following subset of facial attributes: <code>BoundingBox</code>, <code>Confidence</code>,
      * <code>Pose</code>, <code>Quality</code> and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
@@ -158,7 +158,7 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of facial attributes that you want to be returned. This can be the default list of attributes or all
+     * An array of facial attributes that you want to be returned. This can be the default list of attributes or all
      * attributes. If you don't specify a value for <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>,
      * the API returns the following subset of facial attributes: <code>BoundingBox</code>, <code>Confidence</code>,
      * <code>Pose</code>, <code>Quality</code> and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
@@ -169,7 +169,7 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * attributes to return (in this case, all attributes).
      * </p>
      * 
-     * @return A list of facial attributes that you want to be returned. This can be the default list of attributes or
+     * @return An array of facial attributes that you want to be returned. This can be the default list of attributes or
      *         all attributes. If you don't specify a value for <code>Attributes</code> or if you specify
      *         <code>["DEFAULT"]</code>, the API returns the following subset of facial attributes:
      *         <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
@@ -187,7 +187,7 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of facial attributes that you want to be returned. This can be the default list of attributes or all
+     * An array of facial attributes that you want to be returned. This can be the default list of attributes or all
      * attributes. If you don't specify a value for <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>,
      * the API returns the following subset of facial attributes: <code>BoundingBox</code>, <code>Confidence</code>,
      * <code>Pose</code>, <code>Quality</code> and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
@@ -199,7 +199,7 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param detectionAttributes
-     *        A list of facial attributes that you want to be returned. This can be the default list of attributes or
+     *        An array of facial attributes that you want to be returned. This can be the default list of attributes or
      *        all attributes. If you don't specify a value for <code>Attributes</code> or if you specify
      *        <code>["DEFAULT"]</code>, the API returns the following subset of facial attributes:
      *        <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
@@ -222,7 +222,7 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of facial attributes that you want to be returned. This can be the default list of attributes or all
+     * An array of facial attributes that you want to be returned. This can be the default list of attributes or all
      * attributes. If you don't specify a value for <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>,
      * the API returns the following subset of facial attributes: <code>BoundingBox</code>, <code>Confidence</code>,
      * <code>Pose</code>, <code>Quality</code> and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
@@ -239,7 +239,7 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param detectionAttributes
-     *        A list of facial attributes that you want to be returned. This can be the default list of attributes or
+     *        An array of facial attributes that you want to be returned. This can be the default list of attributes or
      *        all attributes. If you don't specify a value for <code>Attributes</code> or if you specify
      *        <code>["DEFAULT"]</code>, the API returns the following subset of facial attributes:
      *        <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
@@ -264,7 +264,7 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of facial attributes that you want to be returned. This can be the default list of attributes or all
+     * An array of facial attributes that you want to be returned. This can be the default list of attributes or all
      * attributes. If you don't specify a value for <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>,
      * the API returns the following subset of facial attributes: <code>BoundingBox</code>, <code>Confidence</code>,
      * <code>Pose</code>, <code>Quality</code> and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
@@ -276,7 +276,7 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param detectionAttributes
-     *        A list of facial attributes that you want to be returned. This can be the default list of attributes or
+     *        An array of facial attributes that you want to be returned. This can be the default list of attributes or
      *        all attributes. If you don't specify a value for <code>Attributes</code> or if you specify
      *        <code>["DEFAULT"]</code>, the API returns the following subset of facial attributes:
      *        <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
@@ -296,7 +296,7 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of facial attributes that you want to be returned. This can be the default list of attributes or all
+     * An array of facial attributes that you want to be returned. This can be the default list of attributes or all
      * attributes. If you don't specify a value for <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>,
      * the API returns the following subset of facial attributes: <code>BoundingBox</code>, <code>Confidence</code>,
      * <code>Pose</code>, <code>Quality</code> and <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all
@@ -308,7 +308,7 @@ public class IndexFacesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param detectionAttributes
-     *        A list of facial attributes that you want to be returned. This can be the default list of attributes or
+     *        An array of facial attributes that you want to be returned. This can be the default list of attributes or
      *        all attributes. If you don't specify a value for <code>Attributes</code> or if you specify
      *        <code>["DEFAULT"]</code>, the API returns the following subset of facial attributes:
      *        <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and

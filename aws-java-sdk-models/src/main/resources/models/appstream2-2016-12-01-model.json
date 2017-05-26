@@ -38,6 +38,12 @@
         "exception" : false,
         "fault" : false,
         "shape" : "ConcurrentModificationException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "IncompatibleImageException"
       } ],
       "http" : {
         "method" : "POST",
@@ -142,6 +148,24 @@
         "exception" : false,
         "fault" : false,
         "shape" : "ConcurrentModificationException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidRoleException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidParameterCombinationException"
       } ],
       "http" : {
         "method" : "POST",
@@ -363,7 +387,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Describes the streaming sessions for a stack and a fleet. If a user ID is provided, this operation returns streaming sessions for only that user. Pass this value for the <code>nextToken</code> parameter in a subsequent call to this operation to retrieve the next set of items. If an authentication type is not provided, the operation defaults to users authenticated using a streaming url.</p>",
+      "documentation" : "<p>Describes the streaming sessions for a stack and a fleet. If a user ID is provided, this operation returns streaming sessions for only that user. Pass this value for the <code>nextToken</code> parameter in a subsequent call to this operation to retrieve the next set of items. If an authentication type is not provided, the operation defaults to users authenticated using a streaming URL.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -672,6 +696,12 @@
         "exception" : false,
         "fault" : false,
         "shape" : "ConcurrentModificationException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "IncompatibleImageException"
       } ],
       "http" : {
         "method" : "POST",
@@ -709,6 +739,36 @@
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceInUseException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidRoleException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidParameterCombinationException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "LimitExceededException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "IncompatibleImageException"
       } ],
       "http" : {
         "method" : "POST",
@@ -815,7 +875,7 @@
         },
         "Metadata" : {
           "deprecated" : false,
-          "documentation" : "<p>Additional attributes that describes the application.</p>",
+          "documentation" : "<p>Additional attributes that describe the application.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -1156,7 +1216,7 @@
     },
     "ConcurrentModificationException" : {
       "deprecated" : false,
-      "documentation" : "<p>An API error occurred, please try again.</p>",
+      "documentation" : "<p>An API error occurred. Wait a few minutes and try again.</p>",
       "enum" : null,
       "error" : null,
       "exception" : true,
@@ -1232,7 +1292,7 @@
         },
         "DisconnectTimeoutInSeconds" : {
           "deprecated" : false,
-          "documentation" : "<p>The time after disconnection when a session is considered to have ended. If a user who got disconnected reconnects within this timeout interval, the user is connected back to his/her previous session. </p>",
+          "documentation" : "<p>The time after disconnection when a session is considered to have ended. If a user who got disconnected reconnects within this timeout interval, the user is connected back to their previous session. The input can be any numeric value in seconds between 60 and 57600. </p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -1260,7 +1320,7 @@
         },
         "EnableDefaultInternetAccess" : {
           "deprecated" : false,
-          "documentation" : "<p>Enable/Disable default Internet access from fleet.</p>",
+          "documentation" : "<p>Enables or disables default Internet access for the fleet.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -1302,7 +1362,7 @@
         },
         "MaxUserDurationInSeconds" : {
           "deprecated" : false,
-          "documentation" : "<p>The maximum time up to which a streaming session can run.</p>",
+          "documentation" : "<p>The maximum time for which a streaming session can run. The input can be any numeric value in seconds between 600 and 57600.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -1441,6 +1501,20 @@
           "shape" : "String",
           "streaming" : false,
           "xmlNamespace" : null
+        },
+        "StorageConnectors" : {
+          "deprecated" : false,
+          "documentation" : "<p>The storage connectors to be enabled for the stack.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "StorageConnectorList",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
       "min" : 0,
@@ -1572,7 +1646,7 @@
         },
         "Validity" : {
           "deprecated" : false,
-          "documentation" : "<p>The validity duration of the URL in seconds. After this duration, the URL returned by this operation becomes invalid.</p>",
+          "documentation" : "<p>The duration up to which the URL returned by this action is valid. The input can be any numeric value in seconds between 1 and 604800 seconds.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -1944,7 +2018,7 @@
       "members" : {
         "AuthenticationType" : {
           "deprecated" : false,
-          "documentation" : "<p>The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user. If an authentication type is not provided, the operation defaults to users authenticated using a streaming url.</p>",
+          "documentation" : "<p>The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming URL, or <code>SAML</code> for a SAML federated user. If an authentication type is not provided, the operation defaults to users authenticated using a streaming URL.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -2447,7 +2521,7 @@
         },
         "DisconnectTimeoutInSeconds" : {
           "deprecated" : false,
-          "documentation" : "<p>The time after disconnection when a session is considered to have ended. When a user reconnects after a disconnection, the user is connected to the same session and instance within this time interval.</p>",
+          "documentation" : "<p>The time after disconnection when a session is considered to have ended. If a user who got disconnected reconnects within this timeout interval, the user is connected back to their previous session. The input can be any numeric value in seconds between 60 and 57600.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -2475,7 +2549,7 @@
         },
         "EnableDefaultInternetAccess" : {
           "deprecated" : false,
-          "documentation" : "<p>Default Internet access from the fleet. True (Enabled), False (Disabled).</p>",
+          "documentation" : "<p>Whether default Internet access is enabled for the fleet. </p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -2531,7 +2605,7 @@
         },
         "MaxUserDurationInSeconds" : {
           "deprecated" : false,
-          "documentation" : "<p>The maximum time during which a streaming session can run.</p>",
+          "documentation" : "<p>The maximum time for which a streaming session can run. The value can be any numeric value in seconds between 600 and 57600.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -2853,7 +2927,7 @@
         },
         "ImageBuilderSupported" : {
           "deprecated" : false,
-          "documentation" : "<p>Indicates whether an image builder can be launched from this image.</p>",
+          "documentation" : "<p>Whether an image builder can be launched from this image.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -2890,6 +2964,20 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "PlatformType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "PublicBaseImageReleasedDate" : {
+          "deprecated" : false,
+          "documentation" : "<p>The AWS release date of the public base image. For private images, this date is the release date of the base image from which the image was created.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Timestamp",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -3068,6 +3156,42 @@
       "required" : null,
       "streaming" : false,
       "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "IncompatibleImageException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The image does not support storage connectors.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Message" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ErrorMessage",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
       "value" : null,
       "wrapper" : false
     },
@@ -3582,6 +3706,27 @@
       "value" : null,
       "wrapper" : false
     },
+    "ResourceIdentifier" : {
+      "deprecated" : false,
+      "documentation" : "<p>The ARN of the resource.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 1,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
     "ResourceInUseException" : {
       "deprecated" : false,
       "documentation" : "<p>The specified resource is in use.</p>",
@@ -3704,7 +3849,7 @@
       "members" : {
         "AuthenticationType" : {
           "deprecated" : false,
-          "documentation" : "<p>The authentication method of the user for whom the session was created. It can be <code>API</code> for a user authenticated using a streaming url or <code>SAML</code> for a SAML federated user.</p>",
+          "documentation" : "<p>The authentication method of the user for whom the session was created. It can be <code>API</code> for a user authenticated using a streaming URL or <code>SAML</code> for a SAML federated user.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -3932,6 +4077,34 @@
           "shape" : "String",
           "streaming" : false,
           "xmlNamespace" : null
+        },
+        "StackErrors" : {
+          "deprecated" : false,
+          "documentation" : "<p>The list of errors associated with the stack.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "StackErrors",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "StorageConnectors" : {
+          "deprecated" : false,
+          "documentation" : "<p>The storage connectors to be enabled for the stack.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "StorageConnectorList",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
       "min" : 0,
@@ -3940,6 +4113,111 @@
       "required" : [ "Name" ],
       "streaming" : false,
       "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "StackError" : {
+      "deprecated" : false,
+      "documentation" : "<p>Contains the parameters for a stack error.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ErrorCode" : {
+          "deprecated" : false,
+          "documentation" : "<p>The error code of a stack error.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "StackErrorCode",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ErrorMessage" : {
+          "deprecated" : false,
+          "documentation" : "<p>The error message of a stack error.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "StackErrorCode" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "STORAGE_CONNECTOR_ERROR", "INTERNAL_SERVICE_ERROR" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "StackErrors" : {
+      "deprecated" : false,
+      "documentation" : "<p>A list of stack errors.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "StackError",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
       "value" : null,
       "wrapper" : false
     },
@@ -4091,6 +4369,111 @@
       "value" : null,
       "wrapper" : false
     },
+    "StorageConnector" : {
+      "deprecated" : false,
+      "documentation" : "<p>Contains the parameters for a storage connector.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ConnectorType" : {
+          "deprecated" : false,
+          "documentation" : "<p>The type of storage connector. The possible values include: HOMEFOLDERS.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "StorageConnectorType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ResourceIdentifier" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ARN associated with the storage connector.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ResourceIdentifier",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "ConnectorType" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "StorageConnectorList" : {
+      "deprecated" : false,
+      "documentation" : "<p>A list of storage connectors.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "StorageConnector",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "StorageConnectorType" : {
+      "deprecated" : false,
+      "documentation" : "<p>The type of storage connector. The possible values include: HOMEFOLDERS.</p>",
+      "enum" : [ "HOMEFOLDERS" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
     "String" : {
       "deprecated" : false,
       "documentation" : null,
@@ -4171,7 +4554,7 @@
         "xmlNamespace" : null
       },
       "members" : { },
-      "min" : 1,
+      "min" : 0,
       "pattern" : null,
       "payload" : null,
       "required" : null,
@@ -4257,7 +4640,7 @@
         },
         "DisconnectTimeoutInSeconds" : {
           "deprecated" : false,
-          "documentation" : "<p>The time after disconnection when a session is considered to have ended. When the user reconnects after a disconnection, the user is connected to the same instance within this time interval.</p>",
+          "documentation" : "<p>The time after disconnection when a session is considered to have ended. If a user who got disconnected reconnects within this timeout interval, the user is connected back to their previous session. The input can be any numeric value in seconds between 60 and 57600.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4285,7 +4668,7 @@
         },
         "EnableDefaultInternetAccess" : {
           "deprecated" : false,
-          "documentation" : "<p>Enable/Disable default Internet access from fleet.</p>",
+          "documentation" : "<p>Enables or disables default Internet access for the fleet.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4327,7 +4710,7 @@
         },
         "MaxUserDurationInSeconds" : {
           "deprecated" : false,
-          "documentation" : "<p>The maximum time during which a streaming session can run.</p>",
+          "documentation" : "<p>The maximum time for which a streaming session can run. The input can be any numeric value in seconds between 600 and 57600.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4425,6 +4808,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "DeleteStorageConnectors" : {
+          "deprecated" : false,
+          "documentation" : "<p>Remove all the storage connectors currently enabled for the stack.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Boolean",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "Description" : {
           "deprecated" : false,
           "documentation" : "<p>The description displayed to end users on the AppStream 2.0 portal.</p>",
@@ -4464,6 +4861,20 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "String",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "StorageConnectors" : {
+          "deprecated" : false,
+          "documentation" : "<p>The storage connectors to be enabled for the stack.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "StorageConnectorList",
           "streaming" : false,
           "xmlNamespace" : null
         }
@@ -4585,7 +4996,7 @@
       "min" : 0,
       "pattern" : null,
       "payload" : null,
-      "required" : [ "SubnetIds" ],
+      "required" : null,
       "streaming" : false,
       "type" : "structure",
       "value" : null,

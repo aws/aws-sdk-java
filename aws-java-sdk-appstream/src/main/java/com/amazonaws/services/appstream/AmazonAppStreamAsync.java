@@ -296,7 +296,7 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      * Describes the streaming sessions for a stack and a fleet. If a user ID is provided, this operation returns
      * streaming sessions for only that user. Pass this value for the <code>nextToken</code> parameter in a subsequent
      * call to this operation to retrieve the next set of items. If an authentication type is not provided, the
-     * operation defaults to users authenticated using a streaming url.
+     * operation defaults to users authenticated using a streaming URL.
      * </p>
      * 
      * @param describeSessionsRequest
@@ -312,7 +312,7 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      * Describes the streaming sessions for a stack and a fleet. If a user ID is provided, this operation returns
      * streaming sessions for only that user. Pass this value for the <code>nextToken</code> parameter in a subsequent
      * call to this operation to retrieve the next set of items. If an authentication type is not provided, the
-     * operation defaults to users authenticated using a streaming url.
+     * operation defaults to users authenticated using a streaming URL.
      * </p>
      * 
      * @param describeSessionsRequest

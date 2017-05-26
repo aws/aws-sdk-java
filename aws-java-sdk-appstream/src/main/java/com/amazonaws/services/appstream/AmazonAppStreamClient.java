@@ -85,6 +85,9 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
                                     com.amazonaws.services.appstream.model.ResourceNotFoundException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("IncompatibleImageException").withModeledClass(
+                                    com.amazonaws.services.appstream.model.IncompatibleImageException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidRoleException").withModeledClass(
                                     com.amazonaws.services.appstream.model.InvalidRoleException.class))
                     .addErrorMetadata(
@@ -299,7 +302,9 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws ConcurrentModificationException
-     *         An API error occurred, please try again.
+     *         An API error occurred. Wait a few minutes and try again.
+     * @throws IncompatibleImageException
+     *         The image does not support storage connectors.
      * @sample AmazonAppStream.AssociateFleet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateFleet" target="_top">AWS API
      *      Documentation</a>
@@ -360,7 +365,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @throws InvalidRoleException
      *         The specified role is invalid.
      * @throws ConcurrentModificationException
-     *         An API error occurred, please try again.
+     *         An API error occurred. Wait a few minutes and try again.
      * @sample AmazonAppStream.CreateFleet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet" target="_top">AWS API
      *      Documentation</a>
@@ -414,7 +419,13 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @throws ResourceAlreadyExistsException
      *         The specified resource already exists.
      * @throws ConcurrentModificationException
-     *         An API error occurred, please try again.
+     *         An API error occurred. Wait a few minutes and try again.
+     * @throws InvalidRoleException
+     *         The specified role is invalid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParameterCombinationException
+     *         Indicates an incorrect combination of parameters, or a missing parameter.
      * @sample AmazonAppStream.CreateStack
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStack" target="_top">AWS API
      *      Documentation</a>
@@ -525,7 +536,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws ConcurrentModificationException
-     *         An API error occurred, please try again.
+     *         An API error occurred. Wait a few minutes and try again.
      * @sample AmazonAppStream.DeleteFleet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteFleet" target="_top">AWS API
      *      Documentation</a>
@@ -580,7 +591,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws ConcurrentModificationException
-     *         An API error occurred, please try again.
+     *         An API error occurred. Wait a few minutes and try again.
      * @sample AmazonAppStream.DeleteStack
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteStack" target="_top">AWS API
      *      Documentation</a>
@@ -729,7 +740,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * Describes the streaming sessions for a stack and a fleet. If a user ID is provided, this operation returns
      * streaming sessions for only that user. Pass this value for the <code>nextToken</code> parameter in a subsequent
      * call to this operation to retrieve the next set of items. If an authentication type is not provided, the
-     * operation defaults to users authenticated using a streaming url.
+     * operation defaults to users authenticated using a streaming URL.
      * </p>
      * 
      * @param describeSessionsRequest
@@ -841,7 +852,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws ConcurrentModificationException
-     *         An API error occurred, please try again.
+     *         An API error occurred. Wait a few minutes and try again.
      * @sample AmazonAppStream.DisassociateFleet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateFleet" target="_top">AWS
      *      API Documentation</a>
@@ -1041,7 +1052,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @throws LimitExceededException
      *         The requested limit exceeds the permitted limit for an account.
      * @throws ConcurrentModificationException
-     *         An API error occurred, please try again.
+     *         An API error occurred. Wait a few minutes and try again.
      * @sample AmazonAppStream.StartFleet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartFleet" target="_top">AWS API
      *      Documentation</a>
@@ -1093,7 +1104,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws ConcurrentModificationException
-     *         An API error occurred, please try again.
+     *         An API error occurred. Wait a few minutes and try again.
      * @sample AmazonAppStream.StopFleet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopFleet" target="_top">AWS API
      *      Documentation</a>
@@ -1157,7 +1168,9 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @throws InvalidParameterCombinationException
      *         Indicates an incorrect combination of parameters, or a missing parameter.
      * @throws ConcurrentModificationException
-     *         An API error occurred, please try again.
+     *         An API error occurred. Wait a few minutes and try again.
+     * @throws IncompatibleImageException
+     *         The image does not support storage connectors.
      * @sample AmazonAppStream.UpdateFleet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet" target="_top">AWS API
      *      Documentation</a>
@@ -1210,6 +1223,16 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *         The specified resource was not found.
      * @throws ResourceInUseException
      *         The specified resource is in use.
+     * @throws InvalidRoleException
+     *         The specified role is invalid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParameterCombinationException
+     *         Indicates an incorrect combination of parameters, or a missing parameter.
+     * @throws LimitExceededException
+     *         The requested limit exceeds the permitted limit for an account.
+     * @throws IncompatibleImageException
+     *         The image does not support storage connectors.
      * @sample AmazonAppStream.UpdateStack
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateStack" target="_top">AWS API
      *      Documentation</a>

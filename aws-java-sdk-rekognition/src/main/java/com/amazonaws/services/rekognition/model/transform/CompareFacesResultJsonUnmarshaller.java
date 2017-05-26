@@ -57,6 +57,18 @@ public class CompareFacesResultJsonUnmarshaller implements Unmarshaller<CompareF
                     compareFacesResult.setFaceMatches(new ListUnmarshaller<CompareFacesMatch>(CompareFacesMatchJsonUnmarshaller.getInstance())
                             .unmarshall(context));
                 }
+                if (context.testExpression("UnmatchedFaces", targetDepth)) {
+                    context.nextToken();
+                    compareFacesResult.setUnmatchedFaces(new ListUnmarshaller<ComparedFace>(ComparedFaceJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("SourceImageOrientationCorrection", targetDepth)) {
+                    context.nextToken();
+                    compareFacesResult.setSourceImageOrientationCorrection(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("TargetImageOrientationCorrection", targetDepth)) {
+                    context.nextToken();
+                    compareFacesResult.setTargetImageOrientationCorrection(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

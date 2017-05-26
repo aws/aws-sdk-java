@@ -95,13 +95,13 @@ public class FaceDetail implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<Emotion> emotions;
     /**
      * <p>
-     * Indicates the location of the landmark on the face.
+     * Indicates the location of landmarks on the face.
      * </p>
      */
     private java.util.List<Landmark> landmarks;
     /**
      * <p>
-     * Indicates the pose of the face as determined by pitch, roll, and the yaw.
+     * Indicates the pose of the face as determined by its pitch, roll, and yaw.
      * </p>
      */
     private Pose pose;
@@ -604,10 +604,10 @@ public class FaceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates the location of the landmark on the face.
+     * Indicates the location of landmarks on the face.
      * </p>
      * 
-     * @return Indicates the location of the landmark on the face.
+     * @return Indicates the location of landmarks on the face.
      */
 
     public java.util.List<Landmark> getLandmarks() {
@@ -616,11 +616,11 @@ public class FaceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates the location of the landmark on the face.
+     * Indicates the location of landmarks on the face.
      * </p>
      * 
      * @param landmarks
-     *        Indicates the location of the landmark on the face.
+     *        Indicates the location of landmarks on the face.
      */
 
     public void setLandmarks(java.util.Collection<Landmark> landmarks) {
@@ -634,7 +634,7 @@ public class FaceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates the location of the landmark on the face.
+     * Indicates the location of landmarks on the face.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -643,7 +643,7 @@ public class FaceDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param landmarks
-     *        Indicates the location of the landmark on the face.
+     *        Indicates the location of landmarks on the face.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -659,11 +659,11 @@ public class FaceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates the location of the landmark on the face.
+     * Indicates the location of landmarks on the face.
      * </p>
      * 
      * @param landmarks
-     *        Indicates the location of the landmark on the face.
+     *        Indicates the location of landmarks on the face.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -674,11 +674,11 @@ public class FaceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates the pose of the face as determined by pitch, roll, and the yaw.
+     * Indicates the pose of the face as determined by its pitch, roll, and yaw.
      * </p>
      * 
      * @param pose
-     *        Indicates the pose of the face as determined by pitch, roll, and the yaw.
+     *        Indicates the pose of the face as determined by its pitch, roll, and yaw.
      */
 
     public void setPose(Pose pose) {
@@ -687,10 +687,10 @@ public class FaceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates the pose of the face as determined by pitch, roll, and the yaw.
+     * Indicates the pose of the face as determined by its pitch, roll, and yaw.
      * </p>
      * 
-     * @return Indicates the pose of the face as determined by pitch, roll, and the yaw.
+     * @return Indicates the pose of the face as determined by its pitch, roll, and yaw.
      */
 
     public Pose getPose() {
@@ -699,11 +699,11 @@ public class FaceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates the pose of the face as determined by pitch, roll, and the yaw.
+     * Indicates the pose of the face as determined by its pitch, roll, and yaw.
      * </p>
      * 
      * @param pose
-     *        Indicates the pose of the face as determined by pitch, roll, and the yaw.
+     *        Indicates the pose of the face as determined by its pitch, roll, and yaw.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

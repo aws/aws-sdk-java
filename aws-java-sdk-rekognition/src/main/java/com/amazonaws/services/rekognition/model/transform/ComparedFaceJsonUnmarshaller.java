@@ -56,6 +56,18 @@ public class ComparedFaceJsonUnmarshaller implements Unmarshaller<ComparedFace, 
                     context.nextToken();
                     comparedFace.setConfidence(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
+                if (context.testExpression("Landmarks", targetDepth)) {
+                    context.nextToken();
+                    comparedFace.setLandmarks(new ListUnmarshaller<Landmark>(LandmarkJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("Pose", targetDepth)) {
+                    context.nextToken();
+                    comparedFace.setPose(PoseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Quality", targetDepth)) {
+                    context.nextToken();
+                    comparedFace.setQuality(ImageQualityJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -20,7 +20,7 @@ public class DetectModerationLabelsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of labels for explicit or suggestive adult content found in the image. The list includes the top-level
+     * An array of labels for explicit or suggestive adult content found in the image. The list includes the top-level
      * label and each child label detected in the image. This is useful for filtering specific categories of content.
      * </p>
      */
@@ -28,11 +28,11 @@ public class DetectModerationLabelsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of labels for explicit or suggestive adult content found in the image. The list includes the top-level
+     * An array of labels for explicit or suggestive adult content found in the image. The list includes the top-level
      * label and each child label detected in the image. This is useful for filtering specific categories of content.
      * </p>
      * 
-     * @return A list of labels for explicit or suggestive adult content found in the image. The list includes the
+     * @return An array of labels for explicit or suggestive adult content found in the image. The list includes the
      *         top-level label and each child label detected in the image. This is useful for filtering specific
      *         categories of content.
      */
@@ -43,12 +43,12 @@ public class DetectModerationLabelsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of labels for explicit or suggestive adult content found in the image. The list includes the top-level
+     * An array of labels for explicit or suggestive adult content found in the image. The list includes the top-level
      * label and each child label detected in the image. This is useful for filtering specific categories of content.
      * </p>
      * 
      * @param moderationLabels
-     *        A list of labels for explicit or suggestive adult content found in the image. The list includes the
+     *        An array of labels for explicit or suggestive adult content found in the image. The list includes the
      *        top-level label and each child label detected in the image. This is useful for filtering specific
      *        categories of content.
      */
@@ -64,7 +64,7 @@ public class DetectModerationLabelsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of labels for explicit or suggestive adult content found in the image. The list includes the top-level
+     * An array of labels for explicit or suggestive adult content found in the image. The list includes the top-level
      * label and each child label detected in the image. This is useful for filtering specific categories of content.
      * </p>
      * <p>
@@ -74,7 +74,7 @@ public class DetectModerationLabelsResult extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param moderationLabels
-     *        A list of labels for explicit or suggestive adult content found in the image. The list includes the
+     *        An array of labels for explicit or suggestive adult content found in the image. The list includes the
      *        top-level label and each child label detected in the image. This is useful for filtering specific
      *        categories of content.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -92,12 +92,12 @@ public class DetectModerationLabelsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of labels for explicit or suggestive adult content found in the image. The list includes the top-level
+     * An array of labels for explicit or suggestive adult content found in the image. The list includes the top-level
      * label and each child label detected in the image. This is useful for filtering specific categories of content.
      * </p>
      * 
      * @param moderationLabels
-     *        A list of labels for explicit or suggestive adult content found in the image. The list includes the
+     *        An array of labels for explicit or suggestive adult content found in the image. The list includes the
      *        top-level label and each child label detected in the image. This is useful for filtering specific
      *        categories of content.
      * @return Returns a reference to this object so that method calls can be chained together.

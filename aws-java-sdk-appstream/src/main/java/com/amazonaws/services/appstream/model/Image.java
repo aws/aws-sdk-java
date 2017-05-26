@@ -67,7 +67,7 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
     private String visibility;
     /**
      * <p>
-     * Indicates whether an image builder can be launched from this image.
+     * Whether an image builder can be launched from this image.
      * </p>
      */
     private Boolean imageBuilderSupported;
@@ -101,6 +101,13 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date createdTime;
+    /**
+     * <p>
+     * The AWS release date of the public base image. For private images, this date is the release date of the base
+     * image from which the image was created.
+     * </p>
+     */
+    private java.util.Date publicBaseImageReleasedDate;
 
     /**
      * <p>
@@ -420,11 +427,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether an image builder can be launched from this image.
+     * Whether an image builder can be launched from this image.
      * </p>
      * 
      * @param imageBuilderSupported
-     *        Indicates whether an image builder can be launched from this image.
+     *        Whether an image builder can be launched from this image.
      */
 
     public void setImageBuilderSupported(Boolean imageBuilderSupported) {
@@ -433,10 +440,10 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether an image builder can be launched from this image.
+     * Whether an image builder can be launched from this image.
      * </p>
      * 
-     * @return Indicates whether an image builder can be launched from this image.
+     * @return Whether an image builder can be launched from this image.
      */
 
     public Boolean getImageBuilderSupported() {
@@ -445,11 +452,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether an image builder can be launched from this image.
+     * Whether an image builder can be launched from this image.
      * </p>
      * 
      * @param imageBuilderSupported
-     *        Indicates whether an image builder can be launched from this image.
+     *        Whether an image builder can be launched from this image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -460,10 +467,10 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether an image builder can be launched from this image.
+     * Whether an image builder can be launched from this image.
      * </p>
      * 
-     * @return Indicates whether an image builder can be launched from this image.
+     * @return Whether an image builder can be launched from this image.
      */
 
     public Boolean isImageBuilderSupported() {
@@ -734,6 +741,52 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The AWS release date of the public base image. For private images, this date is the release date of the base
+     * image from which the image was created.
+     * </p>
+     * 
+     * @param publicBaseImageReleasedDate
+     *        The AWS release date of the public base image. For private images, this date is the release date of the
+     *        base image from which the image was created.
+     */
+
+    public void setPublicBaseImageReleasedDate(java.util.Date publicBaseImageReleasedDate) {
+        this.publicBaseImageReleasedDate = publicBaseImageReleasedDate;
+    }
+
+    /**
+     * <p>
+     * The AWS release date of the public base image. For private images, this date is the release date of the base
+     * image from which the image was created.
+     * </p>
+     * 
+     * @return The AWS release date of the public base image. For private images, this date is the release date of the
+     *         base image from which the image was created.
+     */
+
+    public java.util.Date getPublicBaseImageReleasedDate() {
+        return this.publicBaseImageReleasedDate;
+    }
+
+    /**
+     * <p>
+     * The AWS release date of the public base image. For private images, this date is the release date of the base
+     * image from which the image was created.
+     * </p>
+     * 
+     * @param publicBaseImageReleasedDate
+     *        The AWS release date of the public base image. For private images, this date is the release date of the
+     *        base image from which the image was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Image withPublicBaseImageReleasedDate(java.util.Date publicBaseImageReleasedDate) {
+        setPublicBaseImageReleasedDate(publicBaseImageReleasedDate);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -767,7 +820,9 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
         if (getApplications() != null)
             sb.append("Applications: ").append(getApplications()).append(",");
         if (getCreatedTime() != null)
-            sb.append("CreatedTime: ").append(getCreatedTime());
+            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
+        if (getPublicBaseImageReleasedDate() != null)
+            sb.append("PublicBaseImageReleasedDate: ").append(getPublicBaseImageReleasedDate());
         sb.append("}");
         return sb.toString();
     }
@@ -830,6 +885,10 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
             return false;
+        if (other.getPublicBaseImageReleasedDate() == null ^ this.getPublicBaseImageReleasedDate() == null)
+            return false;
+        if (other.getPublicBaseImageReleasedDate() != null && other.getPublicBaseImageReleasedDate().equals(this.getPublicBaseImageReleasedDate()) == false)
+            return false;
         return true;
     }
 
@@ -850,6 +909,7 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStateChangeReason() == null) ? 0 : getStateChangeReason().hashCode());
         hashCode = prime * hashCode + ((getApplications() == null) ? 0 : getApplications().hashCode());
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
+        hashCode = prime * hashCode + ((getPublicBaseImageReleasedDate() == null) ? 0 : getPublicBaseImageReleasedDate().hashCode());
         return hashCode;
     }
 

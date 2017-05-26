@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Indicates the pose of the face as determined by pitch, roll, and the yaw.
+ * Indicates the pose of the face as determined by its pitch, roll, and yaw.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

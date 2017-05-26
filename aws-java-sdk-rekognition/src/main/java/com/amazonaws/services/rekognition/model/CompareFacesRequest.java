@@ -22,30 +22,31 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Source image either as bytes or an S3 object
+     * The source image, either as bytes or as an S3 object.
      * </p>
      */
     private Image sourceImage;
     /**
      * <p>
-     * Target image either as bytes or an S3 object
+     * The target image, either as bytes or as an S3 object.
      * </p>
      */
     private Image targetImage;
     /**
      * <p>
-     * The minimum level of confidence in the match you want included in the result.
+     * The minimum level of confidence in the face matches that a match must meet to be included in the
+     * <code>FaceMatches</code> array.
      * </p>
      */
     private Float similarityThreshold;
 
     /**
      * <p>
-     * Source image either as bytes or an S3 object
+     * The source image, either as bytes or as an S3 object.
      * </p>
      * 
      * @param sourceImage
-     *        Source image either as bytes or an S3 object
+     *        The source image, either as bytes or as an S3 object.
      */
 
     public void setSourceImage(Image sourceImage) {
@@ -54,10 +55,10 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Source image either as bytes or an S3 object
+     * The source image, either as bytes or as an S3 object.
      * </p>
      * 
-     * @return Source image either as bytes or an S3 object
+     * @return The source image, either as bytes or as an S3 object.
      */
 
     public Image getSourceImage() {
@@ -66,11 +67,11 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Source image either as bytes or an S3 object
+     * The source image, either as bytes or as an S3 object.
      * </p>
      * 
      * @param sourceImage
-     *        Source image either as bytes or an S3 object
+     *        The source image, either as bytes or as an S3 object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,11 +82,11 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Target image either as bytes or an S3 object
+     * The target image, either as bytes or as an S3 object.
      * </p>
      * 
      * @param targetImage
-     *        Target image either as bytes or an S3 object
+     *        The target image, either as bytes or as an S3 object.
      */
 
     public void setTargetImage(Image targetImage) {
@@ -94,10 +95,10 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Target image either as bytes or an S3 object
+     * The target image, either as bytes or as an S3 object.
      * </p>
      * 
-     * @return Target image either as bytes or an S3 object
+     * @return The target image, either as bytes or as an S3 object.
      */
 
     public Image getTargetImage() {
@@ -106,11 +107,11 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Target image either as bytes or an S3 object
+     * The target image, either as bytes or as an S3 object.
      * </p>
      * 
      * @param targetImage
-     *        Target image either as bytes or an S3 object
+     *        The target image, either as bytes or as an S3 object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -121,11 +122,13 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The minimum level of confidence in the match you want included in the result.
+     * The minimum level of confidence in the face matches that a match must meet to be included in the
+     * <code>FaceMatches</code> array.
      * </p>
      * 
      * @param similarityThreshold
-     *        The minimum level of confidence in the match you want included in the result.
+     *        The minimum level of confidence in the face matches that a match must meet to be included in the
+     *        <code>FaceMatches</code> array.
      */
 
     public void setSimilarityThreshold(Float similarityThreshold) {
@@ -134,10 +137,12 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The minimum level of confidence in the match you want included in the result.
+     * The minimum level of confidence in the face matches that a match must meet to be included in the
+     * <code>FaceMatches</code> array.
      * </p>
      * 
-     * @return The minimum level of confidence in the match you want included in the result.
+     * @return The minimum level of confidence in the face matches that a match must meet to be included in the
+     *         <code>FaceMatches</code> array.
      */
 
     public Float getSimilarityThreshold() {
@@ -146,11 +151,13 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The minimum level of confidence in the match you want included in the result.
+     * The minimum level of confidence in the face matches that a match must meet to be included in the
+     * <code>FaceMatches</code> array.
      * </p>
      * 
      * @param similarityThreshold
-     *        The minimum level of confidence in the match you want included in the result.
+     *        The minimum level of confidence in the face matches that a match must meet to be included in the
+     *        <code>FaceMatches</code> array.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

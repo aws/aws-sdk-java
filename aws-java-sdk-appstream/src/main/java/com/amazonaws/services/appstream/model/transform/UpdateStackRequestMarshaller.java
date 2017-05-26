@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.appstream.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +34,10 @@ public class UpdateStackRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<List> STORAGECONNECTORS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StorageConnectors").build();
+    private static final MarshallingInfo<Boolean> DELETESTORAGECONNECTORS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeleteStorageConnectors").build();
 
     private static final UpdateStackRequestMarshaller instance = new UpdateStackRequestMarshaller();
 
@@ -53,6 +58,8 @@ public class UpdateStackRequestMarshaller {
             protocolMarshaller.marshall(updateStackRequest.getDisplayName(), DISPLAYNAME_BINDING);
             protocolMarshaller.marshall(updateStackRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(updateStackRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(updateStackRequest.getStorageConnectors(), STORAGECONNECTORS_BINDING);
+            protocolMarshaller.marshall(updateStackRequest.getDeleteStorageConnectors(), DELETESTORAGECONNECTORS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

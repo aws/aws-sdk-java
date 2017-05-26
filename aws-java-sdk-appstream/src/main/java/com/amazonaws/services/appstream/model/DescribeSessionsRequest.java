@@ -58,9 +58,9 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
     private Integer limit;
     /**
      * <p>
-     * The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming url
+     * The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming URL,
      * or <code>SAML</code> for a SAML federated user. If an authentication type is not provided, the operation defaults
-     * to users authenticated using a streaming url.
+     * to users authenticated using a streaming URL.
      * </p>
      */
     private String authenticationType;
@@ -273,15 +273,15 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming url
+     * The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming URL,
      * or <code>SAML</code> for a SAML federated user. If an authentication type is not provided, the operation defaults
-     * to users authenticated using a streaming url.
+     * to users authenticated using a streaming URL.
      * </p>
      * 
      * @param authenticationType
      *        The authentication method of the user. It can be <code>API</code> for a user authenticated using a
-     *        streaming url or <code>SAML</code> for a SAML federated user. If an authentication type is not provided,
-     *        the operation defaults to users authenticated using a streaming url.
+     *        streaming URL, or <code>SAML</code> for a SAML federated user. If an authentication type is not provided,
+     *        the operation defaults to users authenticated using a streaming URL.
      * @see AuthenticationType
      */
 
@@ -291,14 +291,14 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming url
+     * The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming URL,
      * or <code>SAML</code> for a SAML federated user. If an authentication type is not provided, the operation defaults
-     * to users authenticated using a streaming url.
+     * to users authenticated using a streaming URL.
      * </p>
      * 
      * @return The authentication method of the user. It can be <code>API</code> for a user authenticated using a
-     *         streaming url or <code>SAML</code> for a SAML federated user. If an authentication type is not provided,
-     *         the operation defaults to users authenticated using a streaming url.
+     *         streaming URL, or <code>SAML</code> for a SAML federated user. If an authentication type is not provided,
+     *         the operation defaults to users authenticated using a streaming URL.
      * @see AuthenticationType
      */
 
@@ -308,15 +308,15 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming url
+     * The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming URL,
      * or <code>SAML</code> for a SAML federated user. If an authentication type is not provided, the operation defaults
-     * to users authenticated using a streaming url.
+     * to users authenticated using a streaming URL.
      * </p>
      * 
      * @param authenticationType
      *        The authentication method of the user. It can be <code>API</code> for a user authenticated using a
-     *        streaming url or <code>SAML</code> for a SAML federated user. If an authentication type is not provided,
-     *        the operation defaults to users authenticated using a streaming url.
+     *        streaming URL, or <code>SAML</code> for a SAML federated user. If an authentication type is not provided,
+     *        the operation defaults to users authenticated using a streaming URL.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthenticationType
      */
@@ -328,15 +328,15 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming url
+     * The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming URL,
      * or <code>SAML</code> for a SAML federated user. If an authentication type is not provided, the operation defaults
-     * to users authenticated using a streaming url.
+     * to users authenticated using a streaming URL.
      * </p>
      * 
      * @param authenticationType
      *        The authentication method of the user. It can be <code>API</code> for a user authenticated using a
-     *        streaming url or <code>SAML</code> for a SAML federated user. If an authentication type is not provided,
-     *        the operation defaults to users authenticated using a streaming url.
+     *        streaming URL, or <code>SAML</code> for a SAML federated user. If an authentication type is not provided,
+     *        the operation defaults to users authenticated using a streaming URL.
      * @see AuthenticationType
      */
 
@@ -346,15 +346,15 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming url
+     * The authentication method of the user. It can be <code>API</code> for a user authenticated using a streaming URL,
      * or <code>SAML</code> for a SAML federated user. If an authentication type is not provided, the operation defaults
-     * to users authenticated using a streaming url.
+     * to users authenticated using a streaming URL.
      * </p>
      * 
      * @param authenticationType
      *        The authentication method of the user. It can be <code>API</code> for a user authenticated using a
-     *        streaming url or <code>SAML</code> for a SAML federated user. If an authentication type is not provided,
-     *        the operation defaults to users authenticated using a streaming url.
+     *        streaming URL, or <code>SAML</code> for a SAML federated user. If an authentication type is not provided,
+     *        the operation defaults to users authenticated using a streaming URL.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthenticationType
      */

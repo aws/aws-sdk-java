@@ -26,14 +26,16 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
     private java.util.List<FaceRecord> faceRecords;
     /**
      * <p>
-     * The algorithm detects the image orientation. If it detects that the image was rotated, it returns the degree of
-     * rotation. You can use this value to correct the orientation and also appropriately analyze the bounding box
-     * coordinates that are returned.
+     * The orientation of the input image (counterclockwise direction). If your application displays the image, you can
+     * use this value to correct image orientation. The bounding box coordinates returned in <code>FaceRecords</code>
+     * represent face locations before the image orientation is corrected.
      * </p>
      * <note>
      * <p>
-     * If the source image Exif metadata populates the orientation field, Amazon Rekognition does not perform
-     * orientation correction and the value of OrientationCorrection will be nil.
+     * If the source image is in jpeg format, it might contain exchangeable image (Exif) metadata. If so, and the Exif
+     * metadata populates the orientation field, the value of <code>OrientationCorrection</code> is nil and the bounding
+     * box coordinates in <code>FaceRecords</code> represent face locations after Exif metadata is used to correct the
+     * image orientation. Images in .png format don't contain Exif metadata.
      * </p>
      * </note>
      */
@@ -115,24 +117,28 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The algorithm detects the image orientation. If it detects that the image was rotated, it returns the degree of
-     * rotation. You can use this value to correct the orientation and also appropriately analyze the bounding box
-     * coordinates that are returned.
+     * The orientation of the input image (counterclockwise direction). If your application displays the image, you can
+     * use this value to correct image orientation. The bounding box coordinates returned in <code>FaceRecords</code>
+     * represent face locations before the image orientation is corrected.
      * </p>
      * <note>
      * <p>
-     * If the source image Exif metadata populates the orientation field, Amazon Rekognition does not perform
-     * orientation correction and the value of OrientationCorrection will be nil.
+     * If the source image is in jpeg format, it might contain exchangeable image (Exif) metadata. If so, and the Exif
+     * metadata populates the orientation field, the value of <code>OrientationCorrection</code> is nil and the bounding
+     * box coordinates in <code>FaceRecords</code> represent face locations after Exif metadata is used to correct the
+     * image orientation. Images in .png format don't contain Exif metadata.
      * </p>
      * </note>
      * 
      * @param orientationCorrection
-     *        The algorithm detects the image orientation. If it detects that the image was rotated, it returns the
-     *        degree of rotation. You can use this value to correct the orientation and also appropriately analyze the
-     *        bounding box coordinates that are returned. </p> <note>
+     *        The orientation of the input image (counterclockwise direction). If your application displays the image,
+     *        you can use this value to correct image orientation. The bounding box coordinates returned in
+     *        <code>FaceRecords</code> represent face locations before the image orientation is corrected. </p> <note>
      *        <p>
-     *        If the source image Exif metadata populates the orientation field, Amazon Rekognition does not perform
-     *        orientation correction and the value of OrientationCorrection will be nil.
+     *        If the source image is in jpeg format, it might contain exchangeable image (Exif) metadata. If so, and the
+     *        Exif metadata populates the orientation field, the value of <code>OrientationCorrection</code> is nil and
+     *        the bounding box coordinates in <code>FaceRecords</code> represent face locations after Exif metadata is
+     *        used to correct the image orientation. Images in .png format don't contain Exif metadata.
      *        </p>
      * @see OrientationCorrection
      */
@@ -143,23 +149,27 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The algorithm detects the image orientation. If it detects that the image was rotated, it returns the degree of
-     * rotation. You can use this value to correct the orientation and also appropriately analyze the bounding box
-     * coordinates that are returned.
+     * The orientation of the input image (counterclockwise direction). If your application displays the image, you can
+     * use this value to correct image orientation. The bounding box coordinates returned in <code>FaceRecords</code>
+     * represent face locations before the image orientation is corrected.
      * </p>
      * <note>
      * <p>
-     * If the source image Exif metadata populates the orientation field, Amazon Rekognition does not perform
-     * orientation correction and the value of OrientationCorrection will be nil.
+     * If the source image is in jpeg format, it might contain exchangeable image (Exif) metadata. If so, and the Exif
+     * metadata populates the orientation field, the value of <code>OrientationCorrection</code> is nil and the bounding
+     * box coordinates in <code>FaceRecords</code> represent face locations after Exif metadata is used to correct the
+     * image orientation. Images in .png format don't contain Exif metadata.
      * </p>
      * </note>
      * 
-     * @return The algorithm detects the image orientation. If it detects that the image was rotated, it returns the
-     *         degree of rotation. You can use this value to correct the orientation and also appropriately analyze the
-     *         bounding box coordinates that are returned. </p> <note>
+     * @return The orientation of the input image (counterclockwise direction). If your application displays the image,
+     *         you can use this value to correct image orientation. The bounding box coordinates returned in
+     *         <code>FaceRecords</code> represent face locations before the image orientation is corrected. </p> <note>
      *         <p>
-     *         If the source image Exif metadata populates the orientation field, Amazon Rekognition does not perform
-     *         orientation correction and the value of OrientationCorrection will be nil.
+     *         If the source image is in jpeg format, it might contain exchangeable image (Exif) metadata. If so, and
+     *         the Exif metadata populates the orientation field, the value of <code>OrientationCorrection</code> is nil
+     *         and the bounding box coordinates in <code>FaceRecords</code> represent face locations after Exif metadata
+     *         is used to correct the image orientation. Images in .png format don't contain Exif metadata.
      *         </p>
      * @see OrientationCorrection
      */
@@ -170,24 +180,28 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The algorithm detects the image orientation. If it detects that the image was rotated, it returns the degree of
-     * rotation. You can use this value to correct the orientation and also appropriately analyze the bounding box
-     * coordinates that are returned.
+     * The orientation of the input image (counterclockwise direction). If your application displays the image, you can
+     * use this value to correct image orientation. The bounding box coordinates returned in <code>FaceRecords</code>
+     * represent face locations before the image orientation is corrected.
      * </p>
      * <note>
      * <p>
-     * If the source image Exif metadata populates the orientation field, Amazon Rekognition does not perform
-     * orientation correction and the value of OrientationCorrection will be nil.
+     * If the source image is in jpeg format, it might contain exchangeable image (Exif) metadata. If so, and the Exif
+     * metadata populates the orientation field, the value of <code>OrientationCorrection</code> is nil and the bounding
+     * box coordinates in <code>FaceRecords</code> represent face locations after Exif metadata is used to correct the
+     * image orientation. Images in .png format don't contain Exif metadata.
      * </p>
      * </note>
      * 
      * @param orientationCorrection
-     *        The algorithm detects the image orientation. If it detects that the image was rotated, it returns the
-     *        degree of rotation. You can use this value to correct the orientation and also appropriately analyze the
-     *        bounding box coordinates that are returned. </p> <note>
+     *        The orientation of the input image (counterclockwise direction). If your application displays the image,
+     *        you can use this value to correct image orientation. The bounding box coordinates returned in
+     *        <code>FaceRecords</code> represent face locations before the image orientation is corrected. </p> <note>
      *        <p>
-     *        If the source image Exif metadata populates the orientation field, Amazon Rekognition does not perform
-     *        orientation correction and the value of OrientationCorrection will be nil.
+     *        If the source image is in jpeg format, it might contain exchangeable image (Exif) metadata. If so, and the
+     *        Exif metadata populates the orientation field, the value of <code>OrientationCorrection</code> is nil and
+     *        the bounding box coordinates in <code>FaceRecords</code> represent face locations after Exif metadata is
+     *        used to correct the image orientation. Images in .png format don't contain Exif metadata.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrientationCorrection
@@ -200,24 +214,28 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The algorithm detects the image orientation. If it detects that the image was rotated, it returns the degree of
-     * rotation. You can use this value to correct the orientation and also appropriately analyze the bounding box
-     * coordinates that are returned.
+     * The orientation of the input image (counterclockwise direction). If your application displays the image, you can
+     * use this value to correct image orientation. The bounding box coordinates returned in <code>FaceRecords</code>
+     * represent face locations before the image orientation is corrected.
      * </p>
      * <note>
      * <p>
-     * If the source image Exif metadata populates the orientation field, Amazon Rekognition does not perform
-     * orientation correction and the value of OrientationCorrection will be nil.
+     * If the source image is in jpeg format, it might contain exchangeable image (Exif) metadata. If so, and the Exif
+     * metadata populates the orientation field, the value of <code>OrientationCorrection</code> is nil and the bounding
+     * box coordinates in <code>FaceRecords</code> represent face locations after Exif metadata is used to correct the
+     * image orientation. Images in .png format don't contain Exif metadata.
      * </p>
      * </note>
      * 
      * @param orientationCorrection
-     *        The algorithm detects the image orientation. If it detects that the image was rotated, it returns the
-     *        degree of rotation. You can use this value to correct the orientation and also appropriately analyze the
-     *        bounding box coordinates that are returned. </p> <note>
+     *        The orientation of the input image (counterclockwise direction). If your application displays the image,
+     *        you can use this value to correct image orientation. The bounding box coordinates returned in
+     *        <code>FaceRecords</code> represent face locations before the image orientation is corrected. </p> <note>
      *        <p>
-     *        If the source image Exif metadata populates the orientation field, Amazon Rekognition does not perform
-     *        orientation correction and the value of OrientationCorrection will be nil.
+     *        If the source image is in jpeg format, it might contain exchangeable image (Exif) metadata. If so, and the
+     *        Exif metadata populates the orientation field, the value of <code>OrientationCorrection</code> is nil and
+     *        the bounding box coordinates in <code>FaceRecords</code> represent face locations after Exif metadata is
+     *        used to correct the image orientation. Images in .png format don't contain Exif metadata.
      *        </p>
      * @see OrientationCorrection
      */
@@ -228,24 +246,28 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The algorithm detects the image orientation. If it detects that the image was rotated, it returns the degree of
-     * rotation. You can use this value to correct the orientation and also appropriately analyze the bounding box
-     * coordinates that are returned.
+     * The orientation of the input image (counterclockwise direction). If your application displays the image, you can
+     * use this value to correct image orientation. The bounding box coordinates returned in <code>FaceRecords</code>
+     * represent face locations before the image orientation is corrected.
      * </p>
      * <note>
      * <p>
-     * If the source image Exif metadata populates the orientation field, Amazon Rekognition does not perform
-     * orientation correction and the value of OrientationCorrection will be nil.
+     * If the source image is in jpeg format, it might contain exchangeable image (Exif) metadata. If so, and the Exif
+     * metadata populates the orientation field, the value of <code>OrientationCorrection</code> is nil and the bounding
+     * box coordinates in <code>FaceRecords</code> represent face locations after Exif metadata is used to correct the
+     * image orientation. Images in .png format don't contain Exif metadata.
      * </p>
      * </note>
      * 
      * @param orientationCorrection
-     *        The algorithm detects the image orientation. If it detects that the image was rotated, it returns the
-     *        degree of rotation. You can use this value to correct the orientation and also appropriately analyze the
-     *        bounding box coordinates that are returned. </p> <note>
+     *        The orientation of the input image (counterclockwise direction). If your application displays the image,
+     *        you can use this value to correct image orientation. The bounding box coordinates returned in
+     *        <code>FaceRecords</code> represent face locations before the image orientation is corrected. </p> <note>
      *        <p>
-     *        If the source image Exif metadata populates the orientation field, Amazon Rekognition does not perform
-     *        orientation correction and the value of OrientationCorrection will be nil.
+     *        If the source image is in jpeg format, it might contain exchangeable image (Exif) metadata. If so, and the
+     *        Exif metadata populates the orientation field, the value of <code>OrientationCorrection</code> is nil and
+     *        the bounding box coordinates in <code>FaceRecords</code> represent face locations after Exif metadata is
+     *        used to correct the image orientation. Images in .png format don't contain Exif metadata.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrientationCorrection

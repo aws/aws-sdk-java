@@ -66,7 +66,7 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
     private Boolean enabled;
     /**
      * <p>
-     * Additional attributes that describes the application.
+     * Additional attributes that describe the application.
      * </p>
      */
     private java.util.Map<String, String> metadata;
@@ -325,10 +325,10 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Additional attributes that describes the application.
+     * Additional attributes that describe the application.
      * </p>
      * 
-     * @return Additional attributes that describes the application.
+     * @return Additional attributes that describe the application.
      */
 
     public java.util.Map<String, String> getMetadata() {
@@ -337,11 +337,11 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Additional attributes that describes the application.
+     * Additional attributes that describe the application.
      * </p>
      * 
      * @param metadata
-     *        Additional attributes that describes the application.
+     *        Additional attributes that describe the application.
      */
 
     public void setMetadata(java.util.Map<String, String> metadata) {
@@ -350,11 +350,11 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Additional attributes that describes the application.
+     * Additional attributes that describe the application.
      * </p>
      * 
      * @param metadata
-     *        Additional attributes that describes the application.
+     *        Additional attributes that describe the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

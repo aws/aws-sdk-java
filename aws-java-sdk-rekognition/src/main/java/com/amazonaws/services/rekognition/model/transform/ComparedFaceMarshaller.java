@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.rekognition.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,12 @@ public class ComparedFaceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BoundingBox").build();
     private static final MarshallingInfo<Float> CONFIDENCE_BINDING = MarshallingInfo.builder(MarshallingType.FLOAT).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Confidence").build();
+    private static final MarshallingInfo<List> LANDMARKS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Landmarks").build();
+    private static final MarshallingInfo<StructuredPojo> POSE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Pose").build();
+    private static final MarshallingInfo<StructuredPojo> QUALITY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Quality").build();
 
     private static final ComparedFaceMarshaller instance = new ComparedFaceMarshaller();
 
@@ -50,6 +57,9 @@ public class ComparedFaceMarshaller {
         try {
             protocolMarshaller.marshall(comparedFace.getBoundingBox(), BOUNDINGBOX_BINDING);
             protocolMarshaller.marshall(comparedFace.getConfidence(), CONFIDENCE_BINDING);
+            protocolMarshaller.marshall(comparedFace.getLandmarks(), LANDMARKS_BINDING);
+            protocolMarshaller.marshall(comparedFace.getPose(), POSE_BINDING);
+            protocolMarshaller.marshall(comparedFace.getQuality(), QUALITY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

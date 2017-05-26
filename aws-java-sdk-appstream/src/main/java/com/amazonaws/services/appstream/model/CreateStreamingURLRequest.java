@@ -51,8 +51,8 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
     private String applicationId;
     /**
      * <p>
-     * The validity duration of the URL in seconds. After this duration, the URL returned by this operation becomes
-     * invalid.
+     * The duration up to which the URL returned by this action is valid. The input can be any numeric value in seconds
+     * between 1 and 604800 seconds.
      * </p>
      */
     private Long validity;
@@ -225,13 +225,13 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The validity duration of the URL in seconds. After this duration, the URL returned by this operation becomes
-     * invalid.
+     * The duration up to which the URL returned by this action is valid. The input can be any numeric value in seconds
+     * between 1 and 604800 seconds.
      * </p>
      * 
      * @param validity
-     *        The validity duration of the URL in seconds. After this duration, the URL returned by this operation
-     *        becomes invalid.
+     *        The duration up to which the URL returned by this action is valid. The input can be any numeric value in
+     *        seconds between 1 and 604800 seconds.
      */
 
     public void setValidity(Long validity) {
@@ -240,12 +240,12 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The validity duration of the URL in seconds. After this duration, the URL returned by this operation becomes
-     * invalid.
+     * The duration up to which the URL returned by this action is valid. The input can be any numeric value in seconds
+     * between 1 and 604800 seconds.
      * </p>
      * 
-     * @return The validity duration of the URL in seconds. After this duration, the URL returned by this operation
-     *         becomes invalid.
+     * @return The duration up to which the URL returned by this action is valid. The input can be any numeric value in
+     *         seconds between 1 and 604800 seconds.
      */
 
     public Long getValidity() {
@@ -254,13 +254,13 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The validity duration of the URL in seconds. After this duration, the URL returned by this operation becomes
-     * invalid.
+     * The duration up to which the URL returned by this action is valid. The input can be any numeric value in seconds
+     * between 1 and 604800 seconds.
      * </p>
      * 
      * @param validity
-     *        The validity duration of the URL in seconds. After this duration, the URL returned by this operation
-     *        becomes invalid.
+     *        The duration up to which the URL returned by this action is valid. The input can be any numeric value in
+     *        seconds between 1 and 604800 seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

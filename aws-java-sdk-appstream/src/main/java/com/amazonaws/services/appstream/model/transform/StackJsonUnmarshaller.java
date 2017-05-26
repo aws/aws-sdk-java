@@ -68,6 +68,14 @@ public class StackJsonUnmarshaller implements Unmarshaller<Stack, JsonUnmarshall
                     context.nextToken();
                     stack.setCreatedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
+                if (context.testExpression("StorageConnectors", targetDepth)) {
+                    context.nextToken();
+                    stack.setStorageConnectors(new ListUnmarshaller<StorageConnector>(StorageConnectorJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("StackErrors", targetDepth)) {
+                    context.nextToken();
+                    stack.setStackErrors(new ListUnmarshaller<StackError>(StackErrorJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

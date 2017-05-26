@@ -43,6 +43,12 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String displayName;
+    /**
+     * <p>
+     * The storage connectors to be enabled for the stack.
+     * </p>
+     */
+    private java.util.List<StorageConnector> storageConnectors;
 
     /**
      * <p>
@@ -165,6 +171,76 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The storage connectors to be enabled for the stack.
+     * </p>
+     * 
+     * @return The storage connectors to be enabled for the stack.
+     */
+
+    public java.util.List<StorageConnector> getStorageConnectors() {
+        return storageConnectors;
+    }
+
+    /**
+     * <p>
+     * The storage connectors to be enabled for the stack.
+     * </p>
+     * 
+     * @param storageConnectors
+     *        The storage connectors to be enabled for the stack.
+     */
+
+    public void setStorageConnectors(java.util.Collection<StorageConnector> storageConnectors) {
+        if (storageConnectors == null) {
+            this.storageConnectors = null;
+            return;
+        }
+
+        this.storageConnectors = new java.util.ArrayList<StorageConnector>(storageConnectors);
+    }
+
+    /**
+     * <p>
+     * The storage connectors to be enabled for the stack.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setStorageConnectors(java.util.Collection)} or {@link #withStorageConnectors(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param storageConnectors
+     *        The storage connectors to be enabled for the stack.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStackRequest withStorageConnectors(StorageConnector... storageConnectors) {
+        if (this.storageConnectors == null) {
+            setStorageConnectors(new java.util.ArrayList<StorageConnector>(storageConnectors.length));
+        }
+        for (StorageConnector ele : storageConnectors) {
+            this.storageConnectors.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The storage connectors to be enabled for the stack.
+     * </p>
+     * 
+     * @param storageConnectors
+     *        The storage connectors to be enabled for the stack.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStackRequest withStorageConnectors(java.util.Collection<StorageConnector> storageConnectors) {
+        setStorageConnectors(storageConnectors);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -180,7 +256,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getDisplayName() != null)
-            sb.append("DisplayName: ").append(getDisplayName());
+            sb.append("DisplayName: ").append(getDisplayName()).append(",");
+        if (getStorageConnectors() != null)
+            sb.append("StorageConnectors: ").append(getStorageConnectors());
         sb.append("}");
         return sb.toString();
     }
@@ -207,6 +285,10 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
             return false;
+        if (other.getStorageConnectors() == null ^ this.getStorageConnectors() == null)
+            return false;
+        if (other.getStorageConnectors() != null && other.getStorageConnectors().equals(this.getStorageConnectors()) == false)
+            return false;
         return true;
     }
 
@@ -218,6 +300,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
+        hashCode = prime * hashCode + ((getStorageConnectors() == null) ? 0 : getStorageConnectors().hashCode());
         return hashCode;
     }
 

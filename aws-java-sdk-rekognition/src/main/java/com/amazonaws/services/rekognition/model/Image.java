@@ -22,12 +22,18 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Provides the source image either as bytes or an S3 object.
  * </p>
  * <p>
- * The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition
- * operations.
+ * You pass image bytes to a Rekognition API operation by using the <code>Bytes</code> property. For example, you would
+ * use the <code>Bytes</code> property to pass an image loaded from a local file system. Image bytes passed by using the
+ * <code>Bytes</code> property must be base64-encoded. Your code may not need to encode image bytes if you are using an
+ * AWS SDK to call Rekognition API operations. For more information, see <a>example4</a>.
  * </p>
  * <p>
- * You may need to Base64-encode the image bytes depending on the language you are using and whether or not you are
- * using the AWS SDK. For more information, see <a>example4</a>.
+ * You pass images stored in an S3 bucket to a Rekognition API operation by using the <code>S3Object</code> property.
+ * Images stored in an S3 bucket do not need to be base64-encoded.
+ * </p>
+ * <p>
+ * The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition
+ * operations.
  * </p>
  * <p>
  * If you use the Amazon CLI to call Amazon Rekognition operations, passing image bytes using the Bytes property is not

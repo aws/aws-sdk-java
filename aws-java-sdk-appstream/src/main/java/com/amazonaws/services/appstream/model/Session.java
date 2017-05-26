@@ -61,7 +61,7 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The authentication method of the user for whom the session was created. It can be <code>API</code> for a user
-     * authenticated using a streaming url or <code>SAML</code> for a SAML federated user.
+     * authenticated using a streaming URL or <code>SAML</code> for a SAML federated user.
      * </p>
      */
     private String authenticationType;
@@ -302,12 +302,12 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The authentication method of the user for whom the session was created. It can be <code>API</code> for a user
-     * authenticated using a streaming url or <code>SAML</code> for a SAML federated user.
+     * authenticated using a streaming URL or <code>SAML</code> for a SAML federated user.
      * </p>
      * 
      * @param authenticationType
      *        The authentication method of the user for whom the session was created. It can be <code>API</code> for a
-     *        user authenticated using a streaming url or <code>SAML</code> for a SAML federated user.
+     *        user authenticated using a streaming URL or <code>SAML</code> for a SAML federated user.
      * @see AuthenticationType
      */
 
@@ -318,11 +318,11 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The authentication method of the user for whom the session was created. It can be <code>API</code> for a user
-     * authenticated using a streaming url or <code>SAML</code> for a SAML federated user.
+     * authenticated using a streaming URL or <code>SAML</code> for a SAML federated user.
      * </p>
      * 
      * @return The authentication method of the user for whom the session was created. It can be <code>API</code> for a
-     *         user authenticated using a streaming url or <code>SAML</code> for a SAML federated user.
+     *         user authenticated using a streaming URL or <code>SAML</code> for a SAML federated user.
      * @see AuthenticationType
      */
 
@@ -333,12 +333,12 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The authentication method of the user for whom the session was created. It can be <code>API</code> for a user
-     * authenticated using a streaming url or <code>SAML</code> for a SAML federated user.
+     * authenticated using a streaming URL or <code>SAML</code> for a SAML federated user.
      * </p>
      * 
      * @param authenticationType
      *        The authentication method of the user for whom the session was created. It can be <code>API</code> for a
-     *        user authenticated using a streaming url or <code>SAML</code> for a SAML federated user.
+     *        user authenticated using a streaming URL or <code>SAML</code> for a SAML federated user.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthenticationType
      */
@@ -351,12 +351,12 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The authentication method of the user for whom the session was created. It can be <code>API</code> for a user
-     * authenticated using a streaming url or <code>SAML</code> for a SAML federated user.
+     * authenticated using a streaming URL or <code>SAML</code> for a SAML federated user.
      * </p>
      * 
      * @param authenticationType
      *        The authentication method of the user for whom the session was created. It can be <code>API</code> for a
-     *        user authenticated using a streaming url or <code>SAML</code> for a SAML federated user.
+     *        user authenticated using a streaming URL or <code>SAML</code> for a SAML federated user.
      * @see AuthenticationType
      */
 
@@ -367,12 +367,12 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The authentication method of the user for whom the session was created. It can be <code>API</code> for a user
-     * authenticated using a streaming url or <code>SAML</code> for a SAML federated user.
+     * authenticated using a streaming URL or <code>SAML</code> for a SAML federated user.
      * </p>
      * 
      * @param authenticationType
      *        The authentication method of the user for whom the session was created. It can be <code>API</code> for a
-     *        user authenticated using a streaming url or <code>SAML</code> for a SAML federated user.
+     *        user authenticated using a streaming URL or <code>SAML</code> for a SAML federated user.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthenticationType
      */
