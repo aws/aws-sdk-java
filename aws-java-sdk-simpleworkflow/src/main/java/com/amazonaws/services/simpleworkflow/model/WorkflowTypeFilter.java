@@ -22,6 +22,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Used to filter workflow execution query results by type. Each parameter, if specified, defines a rule that must be
  * satisfied by each returned result.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/WorkflowTypeFilter" target="_top">AWS API
+ *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class WorkflowTypeFilter implements Serializable, Cloneable, StructuredPojo {

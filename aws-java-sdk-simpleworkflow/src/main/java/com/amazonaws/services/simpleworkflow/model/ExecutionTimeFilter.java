@@ -24,6 +24,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * href="https://en.wikipedia.org/wiki/Unix_time">Unix Time format</a>. For example:
  * <code>"oldestDate": 1325376070.</code>
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ExecutionTimeFilter" target="_top">AWS API
+ *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ExecutionTimeFilter implements Serializable, Cloneable, StructuredPojo {

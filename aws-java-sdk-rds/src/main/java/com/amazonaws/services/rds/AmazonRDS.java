@@ -2827,6 +2827,71 @@ public interface AmazonRDS {
     DBSecurityGroup revokeDBSecurityGroupIngress(RevokeDBSecurityGroupIngressRequest revokeDBSecurityGroupIngressRequest);
 
     /**
+     * <p>
+     * Starts a DB instance that was stopped using the AWS console, the stop-db-instance AWS CLI command, or the
+     * StopDBInstance action. For more information, see Stopping and Starting a DB instance in the AWS RDS user guide.
+     * </p>
+     * 
+     * @param startDBInstanceRequest
+     * @return Result of the StartDBInstance operation returned by the service.
+     * @throws DBInstanceNotFoundException
+     *         <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+     * @throws InvalidDBInstanceStateException
+     *         The specified DB instance is not in the <i>available</i> state.
+     * @throws InsufficientDBInstanceCapacityException
+     *         Specified DB instance class is not available in the specified Availability Zone.
+     * @throws DBSubnetGroupNotFoundException
+     *         <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+     * @throws DBSubnetGroupDoesNotCoverEnoughAZsException
+     *         Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one
+     *         Availability Zone.
+     * @throws InvalidDBClusterStateException
+     *         The DB cluster is not in a valid state.
+     * @throws InvalidSubnetException
+     *         The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.
+     * @throws InvalidVPCNetworkStateException
+     *         DB subnet group does not cover all Availability Zones after it is created because users' change.
+     * @throws DBClusterNotFoundException
+     *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+     * @throws AuthorizationNotFoundException
+     *         Specified CIDRIP or EC2 security group is not authorized for the specified DB security group.</p>
+     *         <p>
+     *         RDS may not also be authorized via IAM to perform necessary actions on your behalf.
+     * @throws KMSKeyNotAccessibleException
+     *         Error accessing KMS key.
+     * @sample AmazonRDS.StartDBInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DBInstance startDBInstance(StartDBInstanceRequest startDBInstanceRequest);
+
+    /**
+     * <p>
+     * Stops a DB instance. When you stop a DB instance, Amazon RDS retains the DB instance's metadata, including its
+     * endpoint, DB parameter group, and option group membership. Amazon RDS also retains the transaction logs so you
+     * can do a point-in-time restore if necessary. For more information, see Stopping and Starting a DB instance in the
+     * AWS RDS user guide.
+     * </p>
+     * 
+     * @param stopDBInstanceRequest
+     * @return Result of the StopDBInstance operation returned by the service.
+     * @throws DBInstanceNotFoundException
+     *         <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+     * @throws InvalidDBInstanceStateException
+     *         The specified DB instance is not in the <i>available</i> state.
+     * @throws DBSnapshotAlreadyExistsException
+     *         <i>DBSnapshotIdentifier</i> is already used by an existing snapshot.
+     * @throws SnapshotQuotaExceededException
+     *         Request would result in user exceeding the allowed number of DB snapshots.
+     * @throws InvalidDBClusterStateException
+     *         The DB cluster is not in a valid state.
+     * @sample AmazonRDS.StopDBInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopDBInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DBInstance stopDBInstance(StopDBInstanceRequest stopDBInstanceRequest);
+
+    /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and
      * callers are not expected to call it, but can if they want to explicitly release any open resources. Once a client
      * has been shutdown, it should not be used to make any more requests.

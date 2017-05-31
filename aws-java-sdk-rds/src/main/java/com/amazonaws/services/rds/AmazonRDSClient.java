@@ -6044,6 +6044,139 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     }
 
     /**
+     * <p>
+     * Starts a DB instance that was stopped using the AWS console, the stop-db-instance AWS CLI command, or the
+     * StopDBInstance action. For more information, see Stopping and Starting a DB instance in the AWS RDS user guide.
+     * </p>
+     * 
+     * @param startDBInstanceRequest
+     * @return Result of the StartDBInstance operation returned by the service.
+     * @throws DBInstanceNotFoundException
+     *         <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+     * @throws InvalidDBInstanceStateException
+     *         The specified DB instance is not in the <i>available</i> state.
+     * @throws InsufficientDBInstanceCapacityException
+     *         Specified DB instance class is not available in the specified Availability Zone.
+     * @throws DBSubnetGroupNotFoundException
+     *         <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+     * @throws DBSubnetGroupDoesNotCoverEnoughAZsException
+     *         Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one
+     *         Availability Zone.
+     * @throws InvalidDBClusterStateException
+     *         The DB cluster is not in a valid state.
+     * @throws InvalidSubnetException
+     *         The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.
+     * @throws InvalidVPCNetworkStateException
+     *         DB subnet group does not cover all Availability Zones after it is created because users' change.
+     * @throws DBClusterNotFoundException
+     *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+     * @throws AuthorizationNotFoundException
+     *         Specified CIDRIP or EC2 security group is not authorized for the specified DB security group.</p>
+     *         <p>
+     *         RDS may not also be authorized via IAM to perform necessary actions on your behalf.
+     * @throws KMSKeyNotAccessibleException
+     *         Error accessing KMS key.
+     * @sample AmazonRDS.StartDBInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DBInstance startDBInstance(StartDBInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartDBInstance(request);
+    }
+
+    @SdkInternalApi
+    final DBInstance executeStartDBInstance(StartDBInstanceRequest startDBInstanceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startDBInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartDBInstanceRequest> request = null;
+        Response<DBInstance> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartDBInstanceRequestMarshaller().marshall(super.beforeMarshalling(startDBInstanceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DBInstance> responseHandler = new StaxResponseHandler<DBInstance>(new DBInstanceStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops a DB instance. When you stop a DB instance, Amazon RDS retains the DB instance's metadata, including its
+     * endpoint, DB parameter group, and option group membership. Amazon RDS also retains the transaction logs so you
+     * can do a point-in-time restore if necessary. For more information, see Stopping and Starting a DB instance in the
+     * AWS RDS user guide.
+     * </p>
+     * 
+     * @param stopDBInstanceRequest
+     * @return Result of the StopDBInstance operation returned by the service.
+     * @throws DBInstanceNotFoundException
+     *         <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+     * @throws InvalidDBInstanceStateException
+     *         The specified DB instance is not in the <i>available</i> state.
+     * @throws DBSnapshotAlreadyExistsException
+     *         <i>DBSnapshotIdentifier</i> is already used by an existing snapshot.
+     * @throws SnapshotQuotaExceededException
+     *         Request would result in user exceeding the allowed number of DB snapshots.
+     * @throws InvalidDBClusterStateException
+     *         The DB cluster is not in a valid state.
+     * @sample AmazonRDS.StopDBInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopDBInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DBInstance stopDBInstance(StopDBInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopDBInstance(request);
+    }
+
+    @SdkInternalApi
+    final DBInstance executeStopDBInstance(StopDBInstanceRequest stopDBInstanceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopDBInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopDBInstanceRequest> request = null;
+        Response<DBInstance> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopDBInstanceRequestMarshaller().marshall(super.beforeMarshalling(stopDBInstanceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DBInstance> responseHandler = new StaxResponseHandler<DBInstance>(new DBInstanceStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Returns additional metadata for a previously executed successful, request, typically used for debugging issues
      * where a service isn't acting as expected. This data isn't considered part of the result data returned by an
      * operation, so it's available through this separate, diagnostic interface.

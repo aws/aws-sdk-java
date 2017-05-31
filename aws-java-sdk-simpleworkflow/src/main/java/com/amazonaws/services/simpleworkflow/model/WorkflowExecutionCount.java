@@ -20,6 +20,9 @@ import javax.annotation.Generated;
  * Contains the count of workflow executions returned from <a>CountOpenWorkflowExecutions</a> or
  * <a>CountClosedWorkflowExecutions</a>
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/WorkflowExecutionCount" target="_top">AWS API
+ *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class WorkflowExecutionCount extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {

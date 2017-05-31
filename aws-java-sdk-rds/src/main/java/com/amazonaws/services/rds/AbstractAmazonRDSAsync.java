@@ -1630,4 +1630,30 @@ public class AbstractAmazonRDSAsync extends AbstractAmazonRDS implements AmazonR
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Override
+    public java.util.concurrent.Future<DBInstance> startDBInstanceAsync(StartDBInstanceRequest request) {
+
+        return startDBInstanceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DBInstance> startDBInstanceAsync(StartDBInstanceRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartDBInstanceRequest, DBInstance> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DBInstance> stopDBInstanceAsync(StopDBInstanceRequest request) {
+
+        return stopDBInstanceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DBInstance> stopDBInstanceAsync(StopDBInstanceRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopDBInstanceRequest, DBInstance> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
 }

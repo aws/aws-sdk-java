@@ -62,8 +62,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private String characterSetName;
     /**
      * <p>
-     * The name for your database of up to 8 alpha-numeric characters. If you do not provide a name, Amazon RDS will not
-     * create a database in the DB cluster you are creating.
+     * The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon RDS will
+     * not create a database in the DB cluster you are creating.
      * </p>
      */
     private String databaseName;
@@ -625,12 +625,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name for your database of up to 8 alpha-numeric characters. If you do not provide a name, Amazon RDS will not
-     * create a database in the DB cluster you are creating.
+     * The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon RDS will
+     * not create a database in the DB cluster you are creating.
      * </p>
      * 
      * @param databaseName
-     *        The name for your database of up to 8 alpha-numeric characters. If you do not provide a name, Amazon RDS
+     *        The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon RDS
      *        will not create a database in the DB cluster you are creating.
      */
 
@@ -640,11 +640,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name for your database of up to 8 alpha-numeric characters. If you do not provide a name, Amazon RDS will not
-     * create a database in the DB cluster you are creating.
+     * The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon RDS will
+     * not create a database in the DB cluster you are creating.
      * </p>
      * 
-     * @return The name for your database of up to 8 alpha-numeric characters. If you do not provide a name, Amazon RDS
+     * @return The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon RDS
      *         will not create a database in the DB cluster you are creating.
      */
 
@@ -654,12 +654,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name for your database of up to 8 alpha-numeric characters. If you do not provide a name, Amazon RDS will not
-     * create a database in the DB cluster you are creating.
+     * The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon RDS will
+     * not create a database in the DB cluster you are creating.
      * </p>
      * 
      * @param databaseName
-     *        The name for your database of up to 8 alpha-numeric characters. If you do not provide a name, Amazon RDS
+     *        The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon RDS
      *        will not create a database in the DB cluster you are creating.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

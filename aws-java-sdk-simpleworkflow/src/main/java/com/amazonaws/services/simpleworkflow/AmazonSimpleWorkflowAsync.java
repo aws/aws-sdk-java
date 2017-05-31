@@ -80,6 +80,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future containing the result of the CountClosedWorkflowExecutions operation returned by the
      *         service.
      * @sample AmazonSimpleWorkflowAsync.CountClosedWorkflowExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountClosedWorkflowExecutions"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<WorkflowExecutionCount> countClosedWorkflowExecutionsAsync(
             CountClosedWorkflowExecutionsRequest countClosedWorkflowExecutionsRequest);
@@ -124,6 +126,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future containing the result of the CountClosedWorkflowExecutions operation returned by the
      *         service.
      * @sample AmazonSimpleWorkflowAsyncHandler.CountClosedWorkflowExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountClosedWorkflowExecutions"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<WorkflowExecutionCount> countClosedWorkflowExecutionsAsync(
             CountClosedWorkflowExecutionsRequest countClosedWorkflowExecutionsRequest,
@@ -164,6 +168,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @param countOpenWorkflowExecutionsRequest
      * @return A Java Future containing the result of the CountOpenWorkflowExecutions operation returned by the service.
      * @sample AmazonSimpleWorkflowAsync.CountOpenWorkflowExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountOpenWorkflowExecutions"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<WorkflowExecutionCount> countOpenWorkflowExecutionsAsync(CountOpenWorkflowExecutionsRequest countOpenWorkflowExecutionsRequest);
 
@@ -206,6 +212,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CountOpenWorkflowExecutions operation returned by the service.
      * @sample AmazonSimpleWorkflowAsyncHandler.CountOpenWorkflowExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountOpenWorkflowExecutions"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<WorkflowExecutionCount> countOpenWorkflowExecutionsAsync(CountOpenWorkflowExecutionsRequest countOpenWorkflowExecutionsRequest,
             com.amazonaws.handlers.AsyncHandler<CountOpenWorkflowExecutionsRequest, WorkflowExecutionCount> asyncHandler);
@@ -239,6 +247,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @param countPendingActivityTasksRequest
      * @return A Java Future containing the result of the CountPendingActivityTasks operation returned by the service.
      * @sample AmazonSimpleWorkflowAsync.CountPendingActivityTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountPendingActivityTasks" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<PendingTaskCount> countPendingActivityTasksAsync(CountPendingActivityTasksRequest countPendingActivityTasksRequest);
 
@@ -275,6 +285,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CountPendingActivityTasks operation returned by the service.
      * @sample AmazonSimpleWorkflowAsyncHandler.CountPendingActivityTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountPendingActivityTasks" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<PendingTaskCount> countPendingActivityTasksAsync(CountPendingActivityTasksRequest countPendingActivityTasksRequest,
             com.amazonaws.handlers.AsyncHandler<CountPendingActivityTasksRequest, PendingTaskCount> asyncHandler);
@@ -308,6 +320,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @param countPendingDecisionTasksRequest
      * @return A Java Future containing the result of the CountPendingDecisionTasks operation returned by the service.
      * @sample AmazonSimpleWorkflowAsync.CountPendingDecisionTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountPendingDecisionTasks" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<PendingTaskCount> countPendingDecisionTasksAsync(CountPendingDecisionTasksRequest countPendingDecisionTasksRequest);
 
@@ -344,6 +358,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CountPendingDecisionTasks operation returned by the service.
      * @sample AmazonSimpleWorkflowAsyncHandler.CountPendingDecisionTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountPendingDecisionTasks" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<PendingTaskCount> countPendingDecisionTasksAsync(CountPendingDecisionTasksRequest countPendingDecisionTasksRequest,
             com.amazonaws.handlers.AsyncHandler<CountPendingDecisionTasksRequest, PendingTaskCount> asyncHandler);
@@ -382,6 +398,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * 
      * @param deprecateActivityTypeRequest
      * @sample AmazonSimpleWorkflowAsync.DeprecateActivityType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateActivityType" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Void> deprecateActivityTypeAsync(DeprecateActivityTypeRequest deprecateActivityTypeRequest);
 
@@ -423,6 +441,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
      * @sample AmazonSimpleWorkflowAsyncHandler.DeprecateActivityType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateActivityType" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Void> deprecateActivityTypeAsync(DeprecateActivityTypeRequest deprecateActivityTypeRequest,
             com.amazonaws.handlers.AsyncHandler<DeprecateActivityTypeRequest, Void> asyncHandler);
@@ -457,6 +477,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * 
      * @param deprecateDomainRequest
      * @sample AmazonSimpleWorkflowAsync.DeprecateDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateDomain" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Void> deprecateDomainAsync(DeprecateDomainRequest deprecateDomainRequest);
 
@@ -494,6 +516,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
      * @sample AmazonSimpleWorkflowAsyncHandler.DeprecateDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateDomain" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Void> deprecateDomainAsync(DeprecateDomainRequest deprecateDomainRequest,
             com.amazonaws.handlers.AsyncHandler<DeprecateDomainRequest, Void> asyncHandler);
@@ -532,6 +556,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * 
      * @param deprecateWorkflowTypeRequest
      * @sample AmazonSimpleWorkflowAsync.DeprecateWorkflowType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateWorkflowType" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Void> deprecateWorkflowTypeAsync(DeprecateWorkflowTypeRequest deprecateWorkflowTypeRequest);
 
@@ -573,6 +599,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
      * @sample AmazonSimpleWorkflowAsyncHandler.DeprecateWorkflowType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateWorkflowType" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Void> deprecateWorkflowTypeAsync(DeprecateWorkflowTypeRequest deprecateWorkflowTypeRequest,
             com.amazonaws.handlers.AsyncHandler<DeprecateWorkflowTypeRequest, Void> asyncHandler);
@@ -609,6 +637,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @param describeActivityTypeRequest
      * @return A Java Future containing the result of the DescribeActivityType operation returned by the service.
      * @sample AmazonSimpleWorkflowAsync.DescribeActivityType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeActivityType" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ActivityTypeDetail> describeActivityTypeAsync(DescribeActivityTypeRequest describeActivityTypeRequest);
 
@@ -648,6 +678,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeActivityType operation returned by the service.
      * @sample AmazonSimpleWorkflowAsyncHandler.DescribeActivityType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeActivityType" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ActivityTypeDetail> describeActivityTypeAsync(DescribeActivityTypeRequest describeActivityTypeRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeActivityTypeRequest, ActivityTypeDetail> asyncHandler);
@@ -678,6 +710,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @param describeDomainRequest
      * @return A Java Future containing the result of the DescribeDomain operation returned by the service.
      * @sample AmazonSimpleWorkflowAsync.DescribeDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeDomain" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DomainDetail> describeDomainAsync(DescribeDomainRequest describeDomainRequest);
 
@@ -711,6 +745,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeDomain operation returned by the service.
      * @sample AmazonSimpleWorkflowAsyncHandler.DescribeDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeDomain" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DomainDetail> describeDomainAsync(DescribeDomainRequest describeDomainRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeDomainRequest, DomainDetail> asyncHandler);
@@ -743,6 +779,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @param describeWorkflowExecutionRequest
      * @return A Java Future containing the result of the DescribeWorkflowExecution operation returned by the service.
      * @sample AmazonSimpleWorkflowAsync.DescribeWorkflowExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeWorkflowExecution" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<WorkflowExecutionDetail> describeWorkflowExecutionAsync(DescribeWorkflowExecutionRequest describeWorkflowExecutionRequest);
 
@@ -778,6 +816,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeWorkflowExecution operation returned by the service.
      * @sample AmazonSimpleWorkflowAsyncHandler.DescribeWorkflowExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeWorkflowExecution" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<WorkflowExecutionDetail> describeWorkflowExecutionAsync(DescribeWorkflowExecutionRequest describeWorkflowExecutionRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeWorkflowExecutionRequest, WorkflowExecutionDetail> asyncHandler);
@@ -814,6 +854,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @param describeWorkflowTypeRequest
      * @return A Java Future containing the result of the DescribeWorkflowType operation returned by the service.
      * @sample AmazonSimpleWorkflowAsync.DescribeWorkflowType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeWorkflowType" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<WorkflowTypeDetail> describeWorkflowTypeAsync(DescribeWorkflowTypeRequest describeWorkflowTypeRequest);
 
@@ -853,6 +895,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DescribeWorkflowType operation returned by the service.
      * @sample AmazonSimpleWorkflowAsyncHandler.DescribeWorkflowType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeWorkflowType" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<WorkflowTypeDetail> describeWorkflowTypeAsync(DescribeWorkflowTypeRequest describeWorkflowTypeRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeWorkflowTypeRequest, WorkflowTypeDetail> asyncHandler);
@@ -886,6 +930,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @param getWorkflowExecutionHistoryRequest
      * @return A Java Future containing the result of the GetWorkflowExecutionHistory operation returned by the service.
      * @sample AmazonSimpleWorkflowAsync.GetWorkflowExecutionHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/GetWorkflowExecutionHistory"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<History> getWorkflowExecutionHistoryAsync(GetWorkflowExecutionHistoryRequest getWorkflowExecutionHistoryRequest);
 
@@ -922,6 +968,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetWorkflowExecutionHistory operation returned by the service.
      * @sample AmazonSimpleWorkflowAsyncHandler.GetWorkflowExecutionHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/GetWorkflowExecutionHistory"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<History> getWorkflowExecutionHistoryAsync(GetWorkflowExecutionHistoryRequest getWorkflowExecutionHistoryRequest,
             com.amazonaws.handlers.AsyncHandler<GetWorkflowExecutionHistoryRequest, History> asyncHandler);
@@ -955,6 +1003,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @param listActivityTypesRequest
      * @return A Java Future containing the result of the ListActivityTypes operation returned by the service.
      * @sample AmazonSimpleWorkflowAsync.ListActivityTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListActivityTypes" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ActivityTypeInfos> listActivityTypesAsync(ListActivityTypesRequest listActivityTypesRequest);
 
@@ -991,6 +1041,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListActivityTypes operation returned by the service.
      * @sample AmazonSimpleWorkflowAsyncHandler.ListActivityTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListActivityTypes" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ActivityTypeInfos> listActivityTypesAsync(ListActivityTypesRequest listActivityTypesRequest,
             com.amazonaws.handlers.AsyncHandler<ListActivityTypesRequest, ActivityTypeInfos> asyncHandler);
@@ -1032,6 +1084,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future containing the result of the ListClosedWorkflowExecutions operation returned by the
      *         service.
      * @sample AmazonSimpleWorkflowAsync.ListClosedWorkflowExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListClosedWorkflowExecutions"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<WorkflowExecutionInfos> listClosedWorkflowExecutionsAsync(
             ListClosedWorkflowExecutionsRequest listClosedWorkflowExecutionsRequest);
@@ -1077,6 +1131,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @return A Java Future containing the result of the ListClosedWorkflowExecutions operation returned by the
      *         service.
      * @sample AmazonSimpleWorkflowAsyncHandler.ListClosedWorkflowExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListClosedWorkflowExecutions"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<WorkflowExecutionInfos> listClosedWorkflowExecutionsAsync(
             ListClosedWorkflowExecutionsRequest listClosedWorkflowExecutionsRequest,
@@ -1113,6 +1169,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @param listDomainsRequest
      * @return A Java Future containing the result of the ListDomains operation returned by the service.
      * @sample AmazonSimpleWorkflowAsync.ListDomains
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListDomains" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DomainInfos> listDomainsAsync(ListDomainsRequest listDomainsRequest);
 
@@ -1151,6 +1209,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListDomains operation returned by the service.
      * @sample AmazonSimpleWorkflowAsyncHandler.ListDomains
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListDomains" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DomainInfos> listDomainsAsync(ListDomainsRequest listDomainsRequest,
             com.amazonaws.handlers.AsyncHandler<ListDomainsRequest, DomainInfos> asyncHandler);
@@ -1191,6 +1251,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @param listOpenWorkflowExecutionsRequest
      * @return A Java Future containing the result of the ListOpenWorkflowExecutions operation returned by the service.
      * @sample AmazonSimpleWorkflowAsync.ListOpenWorkflowExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListOpenWorkflowExecutions" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<WorkflowExecutionInfos> listOpenWorkflowExecutionsAsync(ListOpenWorkflowExecutionsRequest listOpenWorkflowExecutionsRequest);
 
@@ -1234,6 +1296,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListOpenWorkflowExecutions operation returned by the service.
      * @sample AmazonSimpleWorkflowAsyncHandler.ListOpenWorkflowExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListOpenWorkflowExecutions" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<WorkflowExecutionInfos> listOpenWorkflowExecutionsAsync(ListOpenWorkflowExecutionsRequest listOpenWorkflowExecutionsRequest,
             com.amazonaws.handlers.AsyncHandler<ListOpenWorkflowExecutionsRequest, WorkflowExecutionInfos> asyncHandler);
@@ -1265,6 +1329,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @param listWorkflowTypesRequest
      * @return A Java Future containing the result of the ListWorkflowTypes operation returned by the service.
      * @sample AmazonSimpleWorkflowAsync.ListWorkflowTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListWorkflowTypes" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<WorkflowTypeInfos> listWorkflowTypesAsync(ListWorkflowTypesRequest listWorkflowTypesRequest);
 
@@ -1299,6 +1365,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListWorkflowTypes operation returned by the service.
      * @sample AmazonSimpleWorkflowAsyncHandler.ListWorkflowTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListWorkflowTypes" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<WorkflowTypeInfos> listWorkflowTypesAsync(ListWorkflowTypesRequest listWorkflowTypesRequest,
             com.amazonaws.handlers.AsyncHandler<ListWorkflowTypesRequest, WorkflowTypeInfos> asyncHandler);
@@ -1337,6 +1405,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @param pollForActivityTaskRequest
      * @return A Java Future containing the result of the PollForActivityTask operation returned by the service.
      * @sample AmazonSimpleWorkflowAsync.PollForActivityTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForActivityTask" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ActivityTask> pollForActivityTaskAsync(PollForActivityTaskRequest pollForActivityTaskRequest);
 
@@ -1378,6 +1448,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PollForActivityTask operation returned by the service.
      * @sample AmazonSimpleWorkflowAsyncHandler.PollForActivityTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForActivityTask" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<ActivityTask> pollForActivityTaskAsync(PollForActivityTaskRequest pollForActivityTaskRequest,
             com.amazonaws.handlers.AsyncHandler<PollForActivityTaskRequest, ActivityTask> asyncHandler);
@@ -1424,6 +1496,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @param pollForDecisionTaskRequest
      * @return A Java Future containing the result of the PollForDecisionTask operation returned by the service.
      * @sample AmazonSimpleWorkflowAsync.PollForDecisionTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForDecisionTask" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DecisionTask> pollForDecisionTaskAsync(PollForDecisionTaskRequest pollForDecisionTaskRequest);
 
@@ -1473,6 +1547,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PollForDecisionTask operation returned by the service.
      * @sample AmazonSimpleWorkflowAsyncHandler.PollForDecisionTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForDecisionTask" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<DecisionTask> pollForDecisionTaskAsync(PollForDecisionTaskRequest pollForDecisionTaskRequest,
             com.amazonaws.handlers.AsyncHandler<PollForDecisionTaskRequest, DecisionTask> asyncHandler);
@@ -1524,6 +1600,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @param recordActivityTaskHeartbeatRequest
      * @return A Java Future containing the result of the RecordActivityTaskHeartbeat operation returned by the service.
      * @sample AmazonSimpleWorkflowAsync.RecordActivityTaskHeartbeat
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RecordActivityTaskHeartbeat"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ActivityTaskStatus> recordActivityTaskHeartbeatAsync(RecordActivityTaskHeartbeatRequest recordActivityTaskHeartbeatRequest);
 
@@ -1578,6 +1656,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RecordActivityTaskHeartbeat operation returned by the service.
      * @sample AmazonSimpleWorkflowAsyncHandler.RecordActivityTaskHeartbeat
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RecordActivityTaskHeartbeat"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ActivityTaskStatus> recordActivityTaskHeartbeatAsync(RecordActivityTaskHeartbeatRequest recordActivityTaskHeartbeatRequest,
             com.amazonaws.handlers.AsyncHandler<RecordActivityTaskHeartbeatRequest, ActivityTaskStatus> asyncHandler);
@@ -1616,6 +1696,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * 
      * @param registerActivityTypeRequest
      * @sample AmazonSimpleWorkflowAsync.RegisterActivityType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterActivityType" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Void> registerActivityTypeAsync(RegisterActivityTypeRequest registerActivityTypeRequest);
 
@@ -1657,6 +1739,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
      * @sample AmazonSimpleWorkflowAsyncHandler.RegisterActivityType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterActivityType" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Void> registerActivityTypeAsync(RegisterActivityTypeRequest registerActivityTypeRequest,
             com.amazonaws.handlers.AsyncHandler<RegisterActivityTypeRequest, Void> asyncHandler);
@@ -1687,6 +1771,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * 
      * @param registerDomainRequest
      * @sample AmazonSimpleWorkflowAsync.RegisterDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterDomain" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Void> registerDomainAsync(RegisterDomainRequest registerDomainRequest);
 
@@ -1720,6 +1806,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
      * @sample AmazonSimpleWorkflowAsyncHandler.RegisterDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterDomain" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Void> registerDomainAsync(RegisterDomainRequest registerDomainRequest,
             com.amazonaws.handlers.AsyncHandler<RegisterDomainRequest, Void> asyncHandler);
@@ -1761,6 +1849,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * 
      * @param registerWorkflowTypeRequest
      * @sample AmazonSimpleWorkflowAsync.RegisterWorkflowType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterWorkflowType" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Void> registerWorkflowTypeAsync(RegisterWorkflowTypeRequest registerWorkflowTypeRequest);
 
@@ -1805,6 +1895,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
      * @sample AmazonSimpleWorkflowAsyncHandler.RegisterWorkflowType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterWorkflowType" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Void> registerWorkflowTypeAsync(RegisterWorkflowTypeRequest registerWorkflowTypeRequest,
             com.amazonaws.handlers.AsyncHandler<RegisterWorkflowTypeRequest, Void> asyncHandler);
@@ -1841,6 +1933,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * 
      * @param requestCancelWorkflowExecutionRequest
      * @sample AmazonSimpleWorkflowAsync.RequestCancelWorkflowExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RequestCancelWorkflowExecution"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<Void> requestCancelWorkflowExecutionAsync(RequestCancelWorkflowExecutionRequest requestCancelWorkflowExecutionRequest);
 
@@ -1880,6 +1974,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
      * @sample AmazonSimpleWorkflowAsyncHandler.RequestCancelWorkflowExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RequestCancelWorkflowExecution"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<Void> requestCancelWorkflowExecutionAsync(RequestCancelWorkflowExecutionRequest requestCancelWorkflowExecutionRequest,
             com.amazonaws.handlers.AsyncHandler<RequestCancelWorkflowExecutionRequest, Void> asyncHandler);
@@ -1925,6 +2021,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * 
      * @param respondActivityTaskCanceledRequest
      * @sample AmazonSimpleWorkflowAsync.RespondActivityTaskCanceled
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskCanceled"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<Void> respondActivityTaskCanceledAsync(RespondActivityTaskCanceledRequest respondActivityTaskCanceledRequest);
 
@@ -1973,6 +2071,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
      * @sample AmazonSimpleWorkflowAsyncHandler.RespondActivityTaskCanceled
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskCanceled"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<Void> respondActivityTaskCanceledAsync(RespondActivityTaskCanceledRequest respondActivityTaskCanceledRequest,
             com.amazonaws.handlers.AsyncHandler<RespondActivityTaskCanceledRequest, Void> asyncHandler);
@@ -2016,6 +2116,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * 
      * @param respondActivityTaskCompletedRequest
      * @sample AmazonSimpleWorkflowAsync.RespondActivityTaskCompleted
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskCompleted"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<Void> respondActivityTaskCompletedAsync(RespondActivityTaskCompletedRequest respondActivityTaskCompletedRequest);
 
@@ -2062,6 +2164,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
      * @sample AmazonSimpleWorkflowAsyncHandler.RespondActivityTaskCompleted
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskCompleted"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<Void> respondActivityTaskCompletedAsync(RespondActivityTaskCompletedRequest respondActivityTaskCompletedRequest,
             com.amazonaws.handlers.AsyncHandler<RespondActivityTaskCompletedRequest, Void> asyncHandler);
@@ -2101,6 +2205,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * 
      * @param respondActivityTaskFailedRequest
      * @sample AmazonSimpleWorkflowAsync.RespondActivityTaskFailed
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskFailed" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<Void> respondActivityTaskFailedAsync(RespondActivityTaskFailedRequest respondActivityTaskFailedRequest);
 
@@ -2143,6 +2249,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
      * @sample AmazonSimpleWorkflowAsyncHandler.RespondActivityTaskFailed
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskFailed" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<Void> respondActivityTaskFailedAsync(RespondActivityTaskFailedRequest respondActivityTaskFailedRequest,
             com.amazonaws.handlers.AsyncHandler<RespondActivityTaskFailedRequest, Void> asyncHandler);
@@ -2171,6 +2279,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * 
      * @param respondDecisionTaskCompletedRequest
      * @sample AmazonSimpleWorkflowAsync.RespondDecisionTaskCompleted
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondDecisionTaskCompleted"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<Void> respondDecisionTaskCompletedAsync(RespondDecisionTaskCompletedRequest respondDecisionTaskCompletedRequest);
 
@@ -2202,6 +2312,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
      * @sample AmazonSimpleWorkflowAsyncHandler.RespondDecisionTaskCompleted
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondDecisionTaskCompleted"
+     *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<Void> respondDecisionTaskCompletedAsync(RespondDecisionTaskCompletedRequest respondDecisionTaskCompletedRequest,
             com.amazonaws.handlers.AsyncHandler<RespondDecisionTaskCompletedRequest, Void> asyncHandler);
@@ -2236,6 +2348,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * 
      * @param signalWorkflowExecutionRequest
      * @sample AmazonSimpleWorkflowAsync.SignalWorkflowExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/SignalWorkflowExecution" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<Void> signalWorkflowExecutionAsync(SignalWorkflowExecutionRequest signalWorkflowExecutionRequest);
 
@@ -2273,6 +2387,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
      * @sample AmazonSimpleWorkflowAsyncHandler.SignalWorkflowExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/SignalWorkflowExecution" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<Void> signalWorkflowExecutionAsync(SignalWorkflowExecutionRequest signalWorkflowExecutionRequest,
             com.amazonaws.handlers.AsyncHandler<SignalWorkflowExecutionRequest, Void> asyncHandler);
@@ -2318,6 +2434,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * @param startWorkflowExecutionRequest
      * @return A Java Future containing the result of the StartWorkflowExecution operation returned by the service.
      * @sample AmazonSimpleWorkflowAsync.StartWorkflowExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/StartWorkflowExecution" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Run> startWorkflowExecutionAsync(StartWorkflowExecutionRequest startWorkflowExecutionRequest);
 
@@ -2366,6 +2484,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the StartWorkflowExecution operation returned by the service.
      * @sample AmazonSimpleWorkflowAsyncHandler.StartWorkflowExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/StartWorkflowExecution" target="_top">AWS API
+     *      Documentation</a>
      */
     java.util.concurrent.Future<Run> startWorkflowExecutionAsync(StartWorkflowExecutionRequest startWorkflowExecutionRequest,
             com.amazonaws.handlers.AsyncHandler<StartWorkflowExecutionRequest, Run> asyncHandler);
@@ -2402,6 +2522,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      * 
      * @param terminateWorkflowExecutionRequest
      * @sample AmazonSimpleWorkflowAsync.TerminateWorkflowExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/TerminateWorkflowExecution" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<Void> terminateWorkflowExecutionAsync(TerminateWorkflowExecutionRequest terminateWorkflowExecutionRequest);
 
@@ -2441,6 +2563,8 @@ public interface AmazonSimpleWorkflowAsync extends AmazonSimpleWorkflow {
      *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
      * @sample AmazonSimpleWorkflowAsyncHandler.TerminateWorkflowExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/TerminateWorkflowExecution" target="_top">AWS
+     *      API Documentation</a>
      */
     java.util.concurrent.Future<Void> terminateWorkflowExecutionAsync(TerminateWorkflowExecutionRequest terminateWorkflowExecutionRequest,
             com.amazonaws.handlers.AsyncHandler<TerminateWorkflowExecutionRequest, Void> asyncHandler);

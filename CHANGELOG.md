@@ -1,3 +1,8 @@
+# __1.11.138__ __2017-05-31__
+## __Amazon Relational Database Service (RDS)__
+  - ### Features
+    - Amazon RDS customers can now easily and quickly stop and start their DB instances.
+
 # __1.11.137__ __2017-05-30__
 ## __Amazon CloudDirectory__
   - ### Features

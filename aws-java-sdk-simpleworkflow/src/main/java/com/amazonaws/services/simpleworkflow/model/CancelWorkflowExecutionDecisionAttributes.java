@@ -39,6 +39,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to
  * Amazon SWF Workflows</a>.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CancelWorkflowExecutionDecisionAttributes"
+ *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CancelWorkflowExecutionDecisionAttributes implements Serializable, Cloneable, StructuredPojo {

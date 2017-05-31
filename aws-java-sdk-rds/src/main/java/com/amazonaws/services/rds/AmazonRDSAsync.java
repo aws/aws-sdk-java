@@ -4603,4 +4603,74 @@ public interface AmazonRDSAsync extends AmazonRDS {
     java.util.concurrent.Future<DBSecurityGroup> revokeDBSecurityGroupIngressAsync(RevokeDBSecurityGroupIngressRequest revokeDBSecurityGroupIngressRequest,
             com.amazonaws.handlers.AsyncHandler<RevokeDBSecurityGroupIngressRequest, DBSecurityGroup> asyncHandler);
 
+    /**
+     * <p>
+     * Starts a DB instance that was stopped using the AWS console, the stop-db-instance AWS CLI command, or the
+     * StopDBInstance action. For more information, see Stopping and Starting a DB instance in the AWS RDS user guide.
+     * </p>
+     * 
+     * @param startDBInstanceRequest
+     * @return A Java Future containing the result of the StartDBInstance operation returned by the service.
+     * @sample AmazonRDSAsync.StartDBInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DBInstance> startDBInstanceAsync(StartDBInstanceRequest startDBInstanceRequest);
+
+    /**
+     * <p>
+     * Starts a DB instance that was stopped using the AWS console, the stop-db-instance AWS CLI command, or the
+     * StopDBInstance action. For more information, see Stopping and Starting a DB instance in the AWS RDS user guide.
+     * </p>
+     * 
+     * @param startDBInstanceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartDBInstance operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.StartDBInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DBInstance> startDBInstanceAsync(StartDBInstanceRequest startDBInstanceRequest,
+            com.amazonaws.handlers.AsyncHandler<StartDBInstanceRequest, DBInstance> asyncHandler);
+
+    /**
+     * <p>
+     * Stops a DB instance. When you stop a DB instance, Amazon RDS retains the DB instance's metadata, including its
+     * endpoint, DB parameter group, and option group membership. Amazon RDS also retains the transaction logs so you
+     * can do a point-in-time restore if necessary. For more information, see Stopping and Starting a DB instance in the
+     * AWS RDS user guide.
+     * </p>
+     * 
+     * @param stopDBInstanceRequest
+     * @return A Java Future containing the result of the StopDBInstance operation returned by the service.
+     * @sample AmazonRDSAsync.StopDBInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopDBInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DBInstance> stopDBInstanceAsync(StopDBInstanceRequest stopDBInstanceRequest);
+
+    /**
+     * <p>
+     * Stops a DB instance. When you stop a DB instance, Amazon RDS retains the DB instance's metadata, including its
+     * endpoint, DB parameter group, and option group membership. Amazon RDS also retains the transaction logs so you
+     * can do a point-in-time restore if necessary. For more information, see Stopping and Starting a DB instance in the
+     * AWS RDS user guide.
+     * </p>
+     * 
+     * @param stopDBInstanceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopDBInstance operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.StopDBInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopDBInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DBInstance> stopDBInstanceAsync(StopDBInstanceRequest stopDBInstanceRequest,
+            com.amazonaws.handlers.AsyncHandler<StopDBInstanceRequest, DBInstance> asyncHandler);
+
 }

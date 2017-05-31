@@ -51,7 +51,7 @@ public class DocumentationUtils {
     private static final Set<String> SERVICES_EXCLUDED_FROM_CROSS_LINKING = new HashSet<>(Arrays.asList(
             "apigateway", "budgets", "cloudsearch", "cloudsearchdomain",
             "discovery", "elastictranscoder", "es", "glacier", "importexport",
-            "iot", "data.iot", "machinelearning", "rekognition", "s3", "sdb", "swf"
+            "iot", "data.iot", "machinelearning", "rekognition", "s3", "sdb"
     ));
 
     public static String generateSetterDocumentation() {

@@ -21,6 +21,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Represents a task list.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/TaskList" target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TaskList implements Serializable, Cloneable, StructuredPojo {

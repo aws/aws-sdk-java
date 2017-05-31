@@ -143,6 +143,8 @@ public interface AmazonSimpleWorkflow {
      * @throws OperationNotPermittedException
      *         Returned when the caller does not have sufficient permissions to invoke the action.
      * @sample AmazonSimpleWorkflow.CountClosedWorkflowExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountClosedWorkflowExecutions"
+     *      target="_top">AWS API Documentation</a>
      */
     WorkflowExecutionCount countClosedWorkflowExecutions(CountClosedWorkflowExecutionsRequest countClosedWorkflowExecutionsRequest);
 
@@ -186,6 +188,8 @@ public interface AmazonSimpleWorkflow {
      * @throws OperationNotPermittedException
      *         Returned when the caller does not have sufficient permissions to invoke the action.
      * @sample AmazonSimpleWorkflow.CountOpenWorkflowExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountOpenWorkflowExecutions"
+     *      target="_top">AWS API Documentation</a>
      */
     WorkflowExecutionCount countOpenWorkflowExecutions(CountOpenWorkflowExecutionsRequest countOpenWorkflowExecutionsRequest);
 
@@ -223,6 +227,8 @@ public interface AmazonSimpleWorkflow {
      * @throws OperationNotPermittedException
      *         Returned when the caller does not have sufficient permissions to invoke the action.
      * @sample AmazonSimpleWorkflow.CountPendingActivityTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountPendingActivityTasks" target="_top">AWS
+     *      API Documentation</a>
      */
     PendingTaskCount countPendingActivityTasks(CountPendingActivityTasksRequest countPendingActivityTasksRequest);
 
@@ -260,6 +266,8 @@ public interface AmazonSimpleWorkflow {
      * @throws OperationNotPermittedException
      *         Returned when the caller does not have sufficient permissions to invoke the action.
      * @sample AmazonSimpleWorkflow.CountPendingDecisionTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/CountPendingDecisionTasks" target="_top">AWS
+     *      API Documentation</a>
      */
     PendingTaskCount countPendingDecisionTasks(CountPendingDecisionTasksRequest countPendingDecisionTasksRequest);
 
@@ -304,6 +312,8 @@ public interface AmazonSimpleWorkflow {
      * @throws OperationNotPermittedException
      *         Returned when the caller does not have sufficient permissions to invoke the action.
      * @sample AmazonSimpleWorkflow.DeprecateActivityType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateActivityType" target="_top">AWS API
+     *      Documentation</a>
      */
     void deprecateActivityType(DeprecateActivityTypeRequest deprecateActivityTypeRequest);
 
@@ -344,6 +354,8 @@ public interface AmazonSimpleWorkflow {
      * @throws OperationNotPermittedException
      *         Returned when the caller does not have sufficient permissions to invoke the action.
      * @sample AmazonSimpleWorkflow.DeprecateDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateDomain" target="_top">AWS API
+     *      Documentation</a>
      */
     void deprecateDomain(DeprecateDomainRequest deprecateDomainRequest);
 
@@ -388,6 +400,8 @@ public interface AmazonSimpleWorkflow {
      * @throws OperationNotPermittedException
      *         Returned when the caller does not have sufficient permissions to invoke the action.
      * @sample AmazonSimpleWorkflow.DeprecateWorkflowType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DeprecateWorkflowType" target="_top">AWS API
+     *      Documentation</a>
      */
     void deprecateWorkflowType(DeprecateWorkflowTypeRequest deprecateWorkflowTypeRequest);
 
@@ -428,6 +442,8 @@ public interface AmazonSimpleWorkflow {
      * @throws OperationNotPermittedException
      *         Returned when the caller does not have sufficient permissions to invoke the action.
      * @sample AmazonSimpleWorkflow.DescribeActivityType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeActivityType" target="_top">AWS API
+     *      Documentation</a>
      */
     ActivityTypeDetail describeActivityType(DescribeActivityTypeRequest describeActivityTypeRequest);
 
@@ -462,6 +478,8 @@ public interface AmazonSimpleWorkflow {
      * @throws OperationNotPermittedException
      *         Returned when the caller does not have sufficient permissions to invoke the action.
      * @sample AmazonSimpleWorkflow.DescribeDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeDomain" target="_top">AWS API
+     *      Documentation</a>
      */
     DomainDetail describeDomain(DescribeDomainRequest describeDomainRequest);
 
@@ -498,6 +516,8 @@ public interface AmazonSimpleWorkflow {
      * @throws OperationNotPermittedException
      *         Returned when the caller does not have sufficient permissions to invoke the action.
      * @sample AmazonSimpleWorkflow.DescribeWorkflowExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeWorkflowExecution" target="_top">AWS
+     *      API Documentation</a>
      */
     WorkflowExecutionDetail describeWorkflowExecution(DescribeWorkflowExecutionRequest describeWorkflowExecutionRequest);
 
@@ -538,6 +558,8 @@ public interface AmazonSimpleWorkflow {
      * @throws OperationNotPermittedException
      *         Returned when the caller does not have sufficient permissions to invoke the action.
      * @sample AmazonSimpleWorkflow.DescribeWorkflowType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/DescribeWorkflowType" target="_top">AWS API
+     *      Documentation</a>
      */
     WorkflowTypeDetail describeWorkflowType(DescribeWorkflowTypeRequest describeWorkflowTypeRequest);
 
@@ -575,6 +597,8 @@ public interface AmazonSimpleWorkflow {
      * @throws OperationNotPermittedException
      *         Returned when the caller does not have sufficient permissions to invoke the action.
      * @sample AmazonSimpleWorkflow.GetWorkflowExecutionHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/GetWorkflowExecutionHistory"
+     *      target="_top">AWS API Documentation</a>
      */
     History getWorkflowExecutionHistory(GetWorkflowExecutionHistoryRequest getWorkflowExecutionHistoryRequest);
 
@@ -612,6 +636,8 @@ public interface AmazonSimpleWorkflow {
      *         Returned when the named resource cannot be found with in the scope of this operation (region or domain).
      *         This could happen if the named resource was never created or is no longer available for this operation.
      * @sample AmazonSimpleWorkflow.ListActivityTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListActivityTypes" target="_top">AWS API
+     *      Documentation</a>
      */
     ActivityTypeInfos listActivityTypes(ListActivityTypesRequest listActivityTypesRequest);
 
@@ -656,6 +682,8 @@ public interface AmazonSimpleWorkflow {
      * @throws OperationNotPermittedException
      *         Returned when the caller does not have sufficient permissions to invoke the action.
      * @sample AmazonSimpleWorkflow.ListClosedWorkflowExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListClosedWorkflowExecutions"
+     *      target="_top">AWS API Documentation</a>
      */
     WorkflowExecutionInfos listClosedWorkflowExecutions(ListClosedWorkflowExecutionsRequest listClosedWorkflowExecutionsRequest);
 
@@ -692,6 +720,8 @@ public interface AmazonSimpleWorkflow {
      * @throws OperationNotPermittedException
      *         Returned when the caller does not have sufficient permissions to invoke the action.
      * @sample AmazonSimpleWorkflow.ListDomains
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListDomains" target="_top">AWS API
+     *      Documentation</a>
      */
     DomainInfos listDomains(ListDomainsRequest listDomainsRequest);
 
@@ -736,6 +766,8 @@ public interface AmazonSimpleWorkflow {
      * @throws OperationNotPermittedException
      *         Returned when the caller does not have sufficient permissions to invoke the action.
      * @sample AmazonSimpleWorkflow.ListOpenWorkflowExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListOpenWorkflowExecutions" target="_top">AWS
+     *      API Documentation</a>
      */
     WorkflowExecutionInfos listOpenWorkflowExecutions(ListOpenWorkflowExecutionsRequest listOpenWorkflowExecutionsRequest);
 
@@ -771,6 +803,8 @@ public interface AmazonSimpleWorkflow {
      *         Returned when the named resource cannot be found with in the scope of this operation (region or domain).
      *         This could happen if the named resource was never created or is no longer available for this operation.
      * @sample AmazonSimpleWorkflow.ListWorkflowTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/ListWorkflowTypes" target="_top">AWS API
+     *      Documentation</a>
      */
     WorkflowTypeInfos listWorkflowTypes(ListWorkflowTypesRequest listWorkflowTypesRequest);
 
@@ -816,6 +850,8 @@ public interface AmazonSimpleWorkflow {
      *         Returned by any operation if a system imposed limitation has been reached. To address this fault you
      *         should either clean up unused resources or increase the limit by contacting AWS.
      * @sample AmazonSimpleWorkflow.PollForActivityTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForActivityTask" target="_top">AWS API
+     *      Documentation</a>
      */
     ActivityTask pollForActivityTask(PollForActivityTaskRequest pollForActivityTaskRequest);
 
@@ -869,6 +905,8 @@ public interface AmazonSimpleWorkflow {
      *         Returned by any operation if a system imposed limitation has been reached. To address this fault you
      *         should either clean up unused resources or increase the limit by contacting AWS.
      * @sample AmazonSimpleWorkflow.PollForDecisionTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/PollForDecisionTask" target="_top">AWS API
+     *      Documentation</a>
      */
     DecisionTask pollForDecisionTask(PollForDecisionTaskRequest pollForDecisionTaskRequest);
 
@@ -924,6 +962,8 @@ public interface AmazonSimpleWorkflow {
      * @throws OperationNotPermittedException
      *         Returned when the caller does not have sufficient permissions to invoke the action.
      * @sample AmazonSimpleWorkflow.RecordActivityTaskHeartbeat
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RecordActivityTaskHeartbeat"
+     *      target="_top">AWS API Documentation</a>
      */
     ActivityTaskStatus recordActivityTaskHeartbeat(RecordActivityTaskHeartbeatRequest recordActivityTaskHeartbeatRequest);
 
@@ -973,6 +1013,8 @@ public interface AmazonSimpleWorkflow {
      * @throws OperationNotPermittedException
      *         Returned when the caller does not have sufficient permissions to invoke the action.
      * @sample AmazonSimpleWorkflow.RegisterActivityType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterActivityType" target="_top">AWS API
+     *      Documentation</a>
      */
     void registerActivityType(RegisterActivityTypeRequest registerActivityTypeRequest);
 
@@ -1010,6 +1052,8 @@ public interface AmazonSimpleWorkflow {
      * @throws OperationNotPermittedException
      *         Returned when the caller does not have sufficient permissions to invoke the action.
      * @sample AmazonSimpleWorkflow.RegisterDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterDomain" target="_top">AWS API
+     *      Documentation</a>
      */
     void registerDomain(RegisterDomainRequest registerDomainRequest);
 
@@ -1062,6 +1106,8 @@ public interface AmazonSimpleWorkflow {
      * @throws OperationNotPermittedException
      *         Returned when the caller does not have sufficient permissions to invoke the action.
      * @sample AmazonSimpleWorkflow.RegisterWorkflowType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RegisterWorkflowType" target="_top">AWS API
+     *      Documentation</a>
      */
     void registerWorkflowType(RegisterWorkflowTypeRequest registerWorkflowTypeRequest);
 
@@ -1102,6 +1148,8 @@ public interface AmazonSimpleWorkflow {
      * @throws OperationNotPermittedException
      *         Returned when the caller does not have sufficient permissions to invoke the action.
      * @sample AmazonSimpleWorkflow.RequestCancelWorkflowExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RequestCancelWorkflowExecution"
+     *      target="_top">AWS API Documentation</a>
      */
     void requestCancelWorkflowExecution(RequestCancelWorkflowExecutionRequest requestCancelWorkflowExecutionRequest);
 
@@ -1151,6 +1199,8 @@ public interface AmazonSimpleWorkflow {
      * @throws OperationNotPermittedException
      *         Returned when the caller does not have sufficient permissions to invoke the action.
      * @sample AmazonSimpleWorkflow.RespondActivityTaskCanceled
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskCanceled"
+     *      target="_top">AWS API Documentation</a>
      */
     void respondActivityTaskCanceled(RespondActivityTaskCanceledRequest respondActivityTaskCanceledRequest);
 
@@ -1198,6 +1248,8 @@ public interface AmazonSimpleWorkflow {
      * @throws OperationNotPermittedException
      *         Returned when the caller does not have sufficient permissions to invoke the action.
      * @sample AmazonSimpleWorkflow.RespondActivityTaskCompleted
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskCompleted"
+     *      target="_top">AWS API Documentation</a>
      */
     void respondActivityTaskCompleted(RespondActivityTaskCompletedRequest respondActivityTaskCompletedRequest);
 
@@ -1241,6 +1293,8 @@ public interface AmazonSimpleWorkflow {
      * @throws OperationNotPermittedException
      *         Returned when the caller does not have sufficient permissions to invoke the action.
      * @sample AmazonSimpleWorkflow.RespondActivityTaskFailed
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondActivityTaskFailed" target="_top">AWS
+     *      API Documentation</a>
      */
     void respondActivityTaskFailed(RespondActivityTaskFailedRequest respondActivityTaskFailedRequest);
 
@@ -1273,6 +1327,8 @@ public interface AmazonSimpleWorkflow {
      * @throws OperationNotPermittedException
      *         Returned when the caller does not have sufficient permissions to invoke the action.
      * @sample AmazonSimpleWorkflow.RespondDecisionTaskCompleted
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/RespondDecisionTaskCompleted"
+     *      target="_top">AWS API Documentation</a>
      */
     void respondDecisionTaskCompleted(RespondDecisionTaskCompletedRequest respondDecisionTaskCompletedRequest);
 
@@ -1311,6 +1367,8 @@ public interface AmazonSimpleWorkflow {
      * @throws OperationNotPermittedException
      *         Returned when the caller does not have sufficient permissions to invoke the action.
      * @sample AmazonSimpleWorkflow.SignalWorkflowExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/SignalWorkflowExecution" target="_top">AWS
+     *      API Documentation</a>
      */
     void signalWorkflowExecution(SignalWorkflowExecutionRequest signalWorkflowExecutionRequest);
 
@@ -1369,6 +1427,8 @@ public interface AmazonSimpleWorkflow {
      *         Returned when the caller does not have sufficient permissions to invoke the action.
      * @throws DefaultUndefinedException
      * @sample AmazonSimpleWorkflow.StartWorkflowExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/StartWorkflowExecution" target="_top">AWS API
+     *      Documentation</a>
      */
     Run startWorkflowExecution(StartWorkflowExecutionRequest startWorkflowExecutionRequest);
 
@@ -1409,6 +1469,8 @@ public interface AmazonSimpleWorkflow {
      * @throws OperationNotPermittedException
      *         Returned when the caller does not have sufficient permissions to invoke the action.
      * @sample AmazonSimpleWorkflow.TerminateWorkflowExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/TerminateWorkflowExecution" target="_top">AWS
+     *      API Documentation</a>
      */
     void terminateWorkflowExecution(TerminateWorkflowExecutionRequest terminateWorkflowExecutionRequest);
 

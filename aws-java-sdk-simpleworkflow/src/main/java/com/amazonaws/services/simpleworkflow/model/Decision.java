@@ -143,6 +143,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <li><a>RequestCancelExternalWorkflowExecutionDecisionAttributes</a></li>
  * <li><a>StartChildWorkflowExecutionDecisionAttributes</a></li>
  * </ul>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/Decision" target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Decision implements Serializable, Cloneable, StructuredPojo {

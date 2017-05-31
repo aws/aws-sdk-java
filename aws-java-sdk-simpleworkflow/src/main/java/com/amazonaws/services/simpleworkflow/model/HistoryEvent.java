@@ -93,6 +93,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <li><b>StartLambdaFunctionFailed</b>: Failed to invoke the scheduled function in the AWS Lambda service. This happens
  * when the AWS Lambda service is not available in the current region, or received too many requests.</li>
  * </ul>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/HistoryEvent" target="_top">AWS API
+ *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {

@@ -23,6 +23,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * settings are determined from the defaults specified when registering the workflow type and those specified when
  * starting the workflow execution.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/WorkflowExecutionConfiguration" target="_top">AWS
+ *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class WorkflowExecutionConfiguration implements Serializable, Cloneable, StructuredPojo {

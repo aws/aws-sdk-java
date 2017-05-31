@@ -20,6 +20,8 @@ import javax.annotation.Generated;
  * Paginated representation of a workflow history for a workflow execution. This is the up to date, complete and
  * authoritative record of the events related to all tasks and events in the life of the workflow execution.
  * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/History" target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class History extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
