@@ -27,30 +27,33 @@ public class AttachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a> where both objects reside. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where both objects reside. For more
+     * information, see <a>arns</a>.
      * </p>
      */
     private String directoryArn;
     /**
      * <p>
-     * Reference associated with the policy object.
+     * The reference that is associated with the policy object.
      * </p>
      */
     private ObjectReference policyReference;
     /**
      * <p>
-     * Reference that identifies the object to which the policy will be attached.
+     * The reference that identifies the object to which the policy will be attached.
      * </p>
      */
     private ObjectReference objectReference;
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a> where both objects reside. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where both objects reside. For more
+     * information, see <a>arns</a>.
      * </p>
      * 
      * @param directoryArn
-     *        ARN associated with the <a>Directory</a> where both objects reside. For more information, see <a>arns</a>.
+     *        The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where both objects reside. For
+     *        more information, see <a>arns</a>.
      */
 
     public void setDirectoryArn(String directoryArn) {
@@ -59,11 +62,12 @@ public class AttachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a> where both objects reside. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where both objects reside. For more
+     * information, see <a>arns</a>.
      * </p>
      * 
-     * @return ARN associated with the <a>Directory</a> where both objects reside. For more information, see
-     *         <a>arns</a>.
+     * @return The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where both objects reside.
+     *         For more information, see <a>arns</a>.
      */
 
     public String getDirectoryArn() {
@@ -72,11 +76,13 @@ public class AttachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a> where both objects reside. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where both objects reside. For more
+     * information, see <a>arns</a>.
      * </p>
      * 
      * @param directoryArn
-     *        ARN associated with the <a>Directory</a> where both objects reside. For more information, see <a>arns</a>.
+     *        The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where both objects reside. For
+     *        more information, see <a>arns</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +93,11 @@ public class AttachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Reference associated with the policy object.
+     * The reference that is associated with the policy object.
      * </p>
      * 
      * @param policyReference
-     *        Reference associated with the policy object.
+     *        The reference that is associated with the policy object.
      */
 
     public void setPolicyReference(ObjectReference policyReference) {
@@ -100,10 +106,10 @@ public class AttachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Reference associated with the policy object.
+     * The reference that is associated with the policy object.
      * </p>
      * 
-     * @return Reference associated with the policy object.
+     * @return The reference that is associated with the policy object.
      */
 
     public ObjectReference getPolicyReference() {
@@ -112,11 +118,11 @@ public class AttachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Reference associated with the policy object.
+     * The reference that is associated with the policy object.
      * </p>
      * 
      * @param policyReference
-     *        Reference associated with the policy object.
+     *        The reference that is associated with the policy object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,11 +133,11 @@ public class AttachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Reference that identifies the object to which the policy will be attached.
+     * The reference that identifies the object to which the policy will be attached.
      * </p>
      * 
      * @param objectReference
-     *        Reference that identifies the object to which the policy will be attached.
+     *        The reference that identifies the object to which the policy will be attached.
      */
 
     public void setObjectReference(ObjectReference objectReference) {
@@ -140,10 +146,10 @@ public class AttachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Reference that identifies the object to which the policy will be attached.
+     * The reference that identifies the object to which the policy will be attached.
      * </p>
      * 
-     * @return Reference that identifies the object to which the policy will be attached.
+     * @return The reference that identifies the object to which the policy will be attached.
      */
 
     public ObjectReference getObjectReference() {
@@ -152,11 +158,11 @@ public class AttachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Reference that identifies the object to which the policy will be attached.
+     * The reference that identifies the object to which the policy will be attached.
      * </p>
      * 
      * @param objectReference
-     *        Reference that identifies the object to which the policy will be attached.
+     *        The reference that identifies the object to which the policy will be attached.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

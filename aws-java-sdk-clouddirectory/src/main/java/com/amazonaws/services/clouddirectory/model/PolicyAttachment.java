@@ -20,7 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Contains the <code>PolicyType</code>, <code>PolicyId</code>, and the <code>ObjectIdentifier</code> to which it is
- * attached.
+ * attached. For more information, see <a
+ * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PolicyAttachment" target="_top">AWS
@@ -37,7 +38,7 @@ public class PolicyAttachment implements Serializable, Cloneable, StructuredPojo
     private String policyId;
     /**
      * <p>
-     * The <code>ObjectIdentifier</code> associated with <code>PolicyAttachment</code>.
+     * The <code>ObjectIdentifier</code> that is associated with <code>PolicyAttachment</code>.
      * </p>
      */
     private String objectIdentifier;
@@ -90,11 +91,11 @@ public class PolicyAttachment implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The <code>ObjectIdentifier</code> associated with <code>PolicyAttachment</code>.
+     * The <code>ObjectIdentifier</code> that is associated with <code>PolicyAttachment</code>.
      * </p>
      * 
      * @param objectIdentifier
-     *        The <code>ObjectIdentifier</code> associated with <code>PolicyAttachment</code>.
+     *        The <code>ObjectIdentifier</code> that is associated with <code>PolicyAttachment</code>.
      */
 
     public void setObjectIdentifier(String objectIdentifier) {
@@ -103,10 +104,10 @@ public class PolicyAttachment implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The <code>ObjectIdentifier</code> associated with <code>PolicyAttachment</code>.
+     * The <code>ObjectIdentifier</code> that is associated with <code>PolicyAttachment</code>.
      * </p>
      * 
-     * @return The <code>ObjectIdentifier</code> associated with <code>PolicyAttachment</code>.
+     * @return The <code>ObjectIdentifier</code> that is associated with <code>PolicyAttachment</code>.
      */
 
     public String getObjectIdentifier() {
@@ -115,11 +116,11 @@ public class PolicyAttachment implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The <code>ObjectIdentifier</code> associated with <code>PolicyAttachment</code>.
+     * The <code>ObjectIdentifier</code> that is associated with <code>PolicyAttachment</code>.
      * </p>
      * 
      * @param objectIdentifier
-     *        The <code>ObjectIdentifier</code> associated with <code>PolicyAttachment</code>.
+     *        The <code>ObjectIdentifier</code> that is associated with <code>PolicyAttachment</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

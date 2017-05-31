@@ -27,25 +27,25 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Schema ARN in which the new <a>Facet</a> will be created. For more information, see <a>arns</a>.
+     * The schema ARN in which the new <a>Facet</a> will be created. For more information, see <a>arns</a>.
      * </p>
      */
     private String schemaArn;
     /**
      * <p>
-     * Name of the <a>Facet</a>, which is unique for a given schema.
+     * The name of the <a>Facet</a>, which is unique for a given schema.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Attributes associated with the <a>Facet</a>.e
+     * The attributes that are associated with the <a>Facet</a>.
      * </p>
      */
     private java.util.List<FacetAttribute> attributes;
     /**
      * <p>
-     * Specifies whether a given object created from this facet is of type Node, Leaf Node, Policy or Index.
+     * Specifies whether a given object created from this facet is of type node, leaf node, policy or index.
      * </p>
      * <ul>
      * <li>
@@ -57,7 +57,7 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * Leaf Node: Cannot have children but can have multiple parents.
+     * Leaf node: Cannot have children but can have multiple parents.
      * </p>
      * </li>
      * </ul>
@@ -81,11 +81,11 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Schema ARN in which the new <a>Facet</a> will be created. For more information, see <a>arns</a>.
+     * The schema ARN in which the new <a>Facet</a> will be created. For more information, see <a>arns</a>.
      * </p>
      * 
      * @param schemaArn
-     *        Schema ARN in which the new <a>Facet</a> will be created. For more information, see <a>arns</a>.
+     *        The schema ARN in which the new <a>Facet</a> will be created. For more information, see <a>arns</a>.
      */
 
     public void setSchemaArn(String schemaArn) {
@@ -94,10 +94,10 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Schema ARN in which the new <a>Facet</a> will be created. For more information, see <a>arns</a>.
+     * The schema ARN in which the new <a>Facet</a> will be created. For more information, see <a>arns</a>.
      * </p>
      * 
-     * @return Schema ARN in which the new <a>Facet</a> will be created. For more information, see <a>arns</a>.
+     * @return The schema ARN in which the new <a>Facet</a> will be created. For more information, see <a>arns</a>.
      */
 
     public String getSchemaArn() {
@@ -106,11 +106,11 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Schema ARN in which the new <a>Facet</a> will be created. For more information, see <a>arns</a>.
+     * The schema ARN in which the new <a>Facet</a> will be created. For more information, see <a>arns</a>.
      * </p>
      * 
      * @param schemaArn
-     *        Schema ARN in which the new <a>Facet</a> will be created. For more information, see <a>arns</a>.
+     *        The schema ARN in which the new <a>Facet</a> will be created. For more information, see <a>arns</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -121,11 +121,11 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Name of the <a>Facet</a>, which is unique for a given schema.
+     * The name of the <a>Facet</a>, which is unique for a given schema.
      * </p>
      * 
      * @param name
-     *        Name of the <a>Facet</a>, which is unique for a given schema.
+     *        The name of the <a>Facet</a>, which is unique for a given schema.
      */
 
     public void setName(String name) {
@@ -134,10 +134,10 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Name of the <a>Facet</a>, which is unique for a given schema.
+     * The name of the <a>Facet</a>, which is unique for a given schema.
      * </p>
      * 
-     * @return Name of the <a>Facet</a>, which is unique for a given schema.
+     * @return The name of the <a>Facet</a>, which is unique for a given schema.
      */
 
     public String getName() {
@@ -146,11 +146,11 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Name of the <a>Facet</a>, which is unique for a given schema.
+     * The name of the <a>Facet</a>, which is unique for a given schema.
      * </p>
      * 
      * @param name
-     *        Name of the <a>Facet</a>, which is unique for a given schema.
+     *        The name of the <a>Facet</a>, which is unique for a given schema.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -161,10 +161,10 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Attributes associated with the <a>Facet</a>.e
+     * The attributes that are associated with the <a>Facet</a>.
      * </p>
      * 
-     * @return Attributes associated with the <a>Facet</a>.e
+     * @return The attributes that are associated with the <a>Facet</a>.
      */
 
     public java.util.List<FacetAttribute> getAttributes() {
@@ -173,11 +173,11 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Attributes associated with the <a>Facet</a>.e
+     * The attributes that are associated with the <a>Facet</a>.
      * </p>
      * 
      * @param attributes
-     *        Attributes associated with the <a>Facet</a>.e
+     *        The attributes that are associated with the <a>Facet</a>.
      */
 
     public void setAttributes(java.util.Collection<FacetAttribute> attributes) {
@@ -191,7 +191,7 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Attributes associated with the <a>Facet</a>.e
+     * The attributes that are associated with the <a>Facet</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -200,7 +200,7 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param attributes
-     *        Attributes associated with the <a>Facet</a>.e
+     *        The attributes that are associated with the <a>Facet</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -216,11 +216,11 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Attributes associated with the <a>Facet</a>.e
+     * The attributes that are associated with the <a>Facet</a>.
      * </p>
      * 
      * @param attributes
-     *        Attributes associated with the <a>Facet</a>.e
+     *        The attributes that are associated with the <a>Facet</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -231,7 +231,7 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether a given object created from this facet is of type Node, Leaf Node, Policy or Index.
+     * Specifies whether a given object created from this facet is of type node, leaf node, policy or index.
      * </p>
      * <ul>
      * <li>
@@ -243,7 +243,7 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * Leaf Node: Cannot have children but can have multiple parents.
+     * Leaf node: Cannot have children but can have multiple parents.
      * </p>
      * </li>
      * </ul>
@@ -264,7 +264,7 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * 
      * @param objectType
-     *        Specifies whether a given object created from this facet is of type Node, Leaf Node, Policy or Index.</p>
+     *        Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -275,7 +275,7 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        Leaf Node: Cannot have children but can have multiple parents.
+     *        Leaf node: Cannot have children but can have multiple parents.
      *        </p>
      *        </li>
      *        </ul>
@@ -303,7 +303,7 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether a given object created from this facet is of type Node, Leaf Node, Policy or Index.
+     * Specifies whether a given object created from this facet is of type node, leaf node, policy or index.
      * </p>
      * <ul>
      * <li>
@@ -315,7 +315,7 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * Leaf Node: Cannot have children but can have multiple parents.
+     * Leaf node: Cannot have children but can have multiple parents.
      * </p>
      * </li>
      * </ul>
@@ -335,7 +335,7 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * 
-     * @return Specifies whether a given object created from this facet is of type Node, Leaf Node, Policy or Index.</p>
+     * @return Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -346,7 +346,7 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <ul>
      *         <li>
      *         <p>
-     *         Leaf Node: Cannot have children but can have multiple parents.
+     *         Leaf node: Cannot have children but can have multiple parents.
      *         </p>
      *         </li>
      *         </ul>
@@ -374,7 +374,7 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether a given object created from this facet is of type Node, Leaf Node, Policy or Index.
+     * Specifies whether a given object created from this facet is of type node, leaf node, policy or index.
      * </p>
      * <ul>
      * <li>
@@ -386,7 +386,7 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * Leaf Node: Cannot have children but can have multiple parents.
+     * Leaf node: Cannot have children but can have multiple parents.
      * </p>
      * </li>
      * </ul>
@@ -407,7 +407,7 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * 
      * @param objectType
-     *        Specifies whether a given object created from this facet is of type Node, Leaf Node, Policy or Index.</p>
+     *        Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -418,7 +418,7 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        Leaf Node: Cannot have children but can have multiple parents.
+     *        Leaf node: Cannot have children but can have multiple parents.
      *        </p>
      *        </li>
      *        </ul>
@@ -448,7 +448,7 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether a given object created from this facet is of type Node, Leaf Node, Policy or Index.
+     * Specifies whether a given object created from this facet is of type node, leaf node, policy or index.
      * </p>
      * <ul>
      * <li>
@@ -460,7 +460,7 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * Leaf Node: Cannot have children but can have multiple parents.
+     * Leaf node: Cannot have children but can have multiple parents.
      * </p>
      * </li>
      * </ul>
@@ -481,7 +481,7 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * 
      * @param objectType
-     *        Specifies whether a given object created from this facet is of type Node, Leaf Node, Policy or Index.</p>
+     *        Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -492,7 +492,7 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        Leaf Node: Cannot have children but can have multiple parents.
+     *        Leaf node: Cannot have children but can have multiple parents.
      *        </p>
      *        </li>
      *        </ul>
@@ -520,7 +520,7 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether a given object created from this facet is of type Node, Leaf Node, Policy or Index.
+     * Specifies whether a given object created from this facet is of type node, leaf node, policy or index.
      * </p>
      * <ul>
      * <li>
@@ -532,7 +532,7 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * Leaf Node: Cannot have children but can have multiple parents.
+     * Leaf node: Cannot have children but can have multiple parents.
      * </p>
      * </li>
      * </ul>
@@ -553,7 +553,7 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * 
      * @param objectType
-     *        Specifies whether a given object created from this facet is of type Node, Leaf Node, Policy or Index.</p>
+     *        Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -564,7 +564,7 @@ public class CreateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        Leaf Node: Cannot have children but can have multiple parents.
+     *        Leaf node: Cannot have children but can have multiple parents.
      *        </p>
      *        </li>
      *        </ul>

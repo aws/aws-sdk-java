@@ -30,18 +30,18 @@ public class BatchUpdateObjectAttributesResponse implements Serializable, Clonea
 
     /**
      * <p>
-     * ID associated with the object.
+     * ID that is associated with the object.
      * </p>
      */
     private String objectIdentifier;
 
     /**
      * <p>
-     * ID associated with the object.
+     * ID that is associated with the object.
      * </p>
      * 
      * @param objectIdentifier
-     *        ID associated with the object.
+     *        ID that is associated with the object.
      */
 
     public void setObjectIdentifier(String objectIdentifier) {
@@ -50,10 +50,10 @@ public class BatchUpdateObjectAttributesResponse implements Serializable, Clonea
 
     /**
      * <p>
-     * ID associated with the object.
+     * ID that is associated with the object.
      * </p>
      * 
-     * @return ID associated with the object.
+     * @return ID that is associated with the object.
      */
 
     public String getObjectIdentifier() {
@@ -62,11 +62,11 @@ public class BatchUpdateObjectAttributesResponse implements Serializable, Clonea
 
     /**
      * <p>
-     * ID associated with the object.
+     * ID that is associated with the object.
      * </p>
      * 
      * @param objectIdentifier
-     *        ID associated with the object.
+     *        ID that is associated with the object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,24 +27,24 @@ public class UpdateSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * ARN of the development schema. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) of the development schema. For more information, see <a>arns</a>.
      * </p>
      */
     private String schemaArn;
     /**
      * <p>
-     * Name of the schema.
+     * The name of the schema.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * ARN of the development schema. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) of the development schema. For more information, see <a>arns</a>.
      * </p>
      * 
      * @param schemaArn
-     *        ARN of the development schema. For more information, see <a>arns</a>.
+     *        The Amazon Resource Name (ARN) of the development schema. For more information, see <a>arns</a>.
      */
 
     public void setSchemaArn(String schemaArn) {
@@ -53,10 +53,10 @@ public class UpdateSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * ARN of the development schema. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) of the development schema. For more information, see <a>arns</a>.
      * </p>
      * 
-     * @return ARN of the development schema. For more information, see <a>arns</a>.
+     * @return The Amazon Resource Name (ARN) of the development schema. For more information, see <a>arns</a>.
      */
 
     public String getSchemaArn() {
@@ -65,11 +65,11 @@ public class UpdateSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * ARN of the development schema. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) of the development schema. For more information, see <a>arns</a>.
      * </p>
      * 
      * @param schemaArn
-     *        ARN of the development schema. For more information, see <a>arns</a>.
+     *        The Amazon Resource Name (ARN) of the development schema. For more information, see <a>arns</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class UpdateSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Name of the schema.
+     * The name of the schema.
      * </p>
      * 
      * @param name
-     *        Name of the schema.
+     *        The name of the schema.
      */
 
     public void setName(String name) {
@@ -93,10 +93,10 @@ public class UpdateSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Name of the schema.
+     * The name of the schema.
      * </p>
      * 
-     * @return Name of the schema.
+     * @return The name of the schema.
      */
 
     public String getName() {
@@ -105,11 +105,11 @@ public class UpdateSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Name of the schema.
+     * The name of the schema.
      * </p>
      * 
      * @param name
-     *        Name of the schema.
+     *        The name of the schema.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

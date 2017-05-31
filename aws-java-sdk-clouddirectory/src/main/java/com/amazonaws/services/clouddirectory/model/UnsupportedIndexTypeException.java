@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Indicates the requested index type is not supported.
+ * Indicates that the requested index type is not supported.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

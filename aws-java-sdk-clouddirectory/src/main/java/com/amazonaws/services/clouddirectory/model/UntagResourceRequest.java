@@ -27,24 +27,24 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * ARN of the resource. Tagging is only supported for directories.
+     * The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * Keys of the tag that needs to be removed from the resource.
+     * Keys of the tag that need to be removed from the resource.
      * </p>
      */
     private java.util.List<String> tagKeys;
 
     /**
      * <p>
-     * ARN of the resource. Tagging is only supported for directories.
+     * The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.
      * </p>
      * 
      * @param resourceArn
-     *        ARN of the resource. Tagging is only supported for directories.
+     *        The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -53,10 +53,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * ARN of the resource. Tagging is only supported for directories.
+     * The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.
      * </p>
      * 
-     * @return ARN of the resource. Tagging is only supported for directories.
+     * @return The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.
      */
 
     public String getResourceArn() {
@@ -65,11 +65,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * ARN of the resource. Tagging is only supported for directories.
+     * The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.
      * </p>
      * 
      * @param resourceArn
-     *        ARN of the resource. Tagging is only supported for directories.
+     *        The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,10 +80,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Keys of the tag that needs to be removed from the resource.
+     * Keys of the tag that need to be removed from the resource.
      * </p>
      * 
-     * @return Keys of the tag that needs to be removed from the resource.
+     * @return Keys of the tag that need to be removed from the resource.
      */
 
     public java.util.List<String> getTagKeys() {
@@ -92,11 +92,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Keys of the tag that needs to be removed from the resource.
+     * Keys of the tag that need to be removed from the resource.
      * </p>
      * 
      * @param tagKeys
-     *        Keys of the tag that needs to be removed from the resource.
+     *        Keys of the tag that need to be removed from the resource.
      */
 
     public void setTagKeys(java.util.Collection<String> tagKeys) {
@@ -110,7 +110,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Keys of the tag that needs to be removed from the resource.
+     * Keys of the tag that need to be removed from the resource.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -119,7 +119,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param tagKeys
-     *        Keys of the tag that needs to be removed from the resource.
+     *        Keys of the tag that need to be removed from the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Keys of the tag that needs to be removed from the resource.
+     * Keys of the tag that need to be removed from the resource.
      * </p>
      * 
      * @param tagKeys
-     *        Keys of the tag that needs to be removed from the resource.
+     *        Keys of the tag that need to be removed from the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

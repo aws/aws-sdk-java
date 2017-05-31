@@ -93,6 +93,19 @@ public class AbstractAmazonCloudDirectoryAsync extends AbstractAmazonCloudDirect
     }
 
     @Override
+    public java.util.concurrent.Future<AttachTypedLinkResult> attachTypedLinkAsync(AttachTypedLinkRequest request) {
+
+        return attachTypedLinkAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AttachTypedLinkResult> attachTypedLinkAsync(AttachTypedLinkRequest request,
+            com.amazonaws.handlers.AsyncHandler<AttachTypedLinkRequest, AttachTypedLinkResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchReadResult> batchReadAsync(BatchReadRequest request) {
 
         return batchReadAsync(request, null);
@@ -184,6 +197,19 @@ public class AbstractAmazonCloudDirectoryAsync extends AbstractAmazonCloudDirect
     }
 
     @Override
+    public java.util.concurrent.Future<CreateTypedLinkFacetResult> createTypedLinkFacetAsync(CreateTypedLinkFacetRequest request) {
+
+        return createTypedLinkFacetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTypedLinkFacetResult> createTypedLinkFacetAsync(CreateTypedLinkFacetRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateTypedLinkFacetRequest, CreateTypedLinkFacetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDirectoryResult> deleteDirectoryAsync(DeleteDirectoryRequest request) {
 
         return deleteDirectoryAsync(request, null);
@@ -236,6 +262,19 @@ public class AbstractAmazonCloudDirectoryAsync extends AbstractAmazonCloudDirect
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteTypedLinkFacetResult> deleteTypedLinkFacetAsync(DeleteTypedLinkFacetRequest request) {
+
+        return deleteTypedLinkFacetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTypedLinkFacetResult> deleteTypedLinkFacetAsync(DeleteTypedLinkFacetRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteTypedLinkFacetRequest, DeleteTypedLinkFacetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DetachFromIndexResult> detachFromIndexAsync(DetachFromIndexRequest request) {
 
         return detachFromIndexAsync(request, null);
@@ -270,6 +309,19 @@ public class AbstractAmazonCloudDirectoryAsync extends AbstractAmazonCloudDirect
     @Override
     public java.util.concurrent.Future<DetachPolicyResult> detachPolicyAsync(DetachPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<DetachPolicyRequest, DetachPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetachTypedLinkResult> detachTypedLinkAsync(DetachTypedLinkRequest request) {
+
+        return detachTypedLinkAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetachTypedLinkResult> detachTypedLinkAsync(DetachTypedLinkRequest request,
+            com.amazonaws.handlers.AsyncHandler<DetachTypedLinkRequest, DetachTypedLinkResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -353,6 +405,19 @@ public class AbstractAmazonCloudDirectoryAsync extends AbstractAmazonCloudDirect
     }
 
     @Override
+    public java.util.concurrent.Future<GetTypedLinkFacetInformationResult> getTypedLinkFacetInformationAsync(GetTypedLinkFacetInformationRequest request) {
+
+        return getTypedLinkFacetInformationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTypedLinkFacetInformationResult> getTypedLinkFacetInformationAsync(GetTypedLinkFacetInformationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetTypedLinkFacetInformationRequest, GetTypedLinkFacetInformationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAppliedSchemaArnsResult> listAppliedSchemaArnsAsync(ListAppliedSchemaArnsRequest request) {
 
         return listAppliedSchemaArnsAsync(request, null);
@@ -426,6 +491,19 @@ public class AbstractAmazonCloudDirectoryAsync extends AbstractAmazonCloudDirect
     @Override
     public java.util.concurrent.Future<ListFacetNamesResult> listFacetNamesAsync(ListFacetNamesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListFacetNamesRequest, ListFacetNamesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListIncomingTypedLinksResult> listIncomingTypedLinksAsync(ListIncomingTypedLinksRequest request) {
+
+        return listIncomingTypedLinksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListIncomingTypedLinksResult> listIncomingTypedLinksAsync(ListIncomingTypedLinksRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListIncomingTypedLinksRequest, ListIncomingTypedLinksResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -509,6 +587,19 @@ public class AbstractAmazonCloudDirectoryAsync extends AbstractAmazonCloudDirect
     }
 
     @Override
+    public java.util.concurrent.Future<ListOutgoingTypedLinksResult> listOutgoingTypedLinksAsync(ListOutgoingTypedLinksRequest request) {
+
+        return listOutgoingTypedLinksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOutgoingTypedLinksResult> listOutgoingTypedLinksAsync(ListOutgoingTypedLinksRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListOutgoingTypedLinksRequest, ListOutgoingTypedLinksResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPolicyAttachmentsResult> listPolicyAttachmentsAsync(ListPolicyAttachmentsRequest request) {
 
         return listPolicyAttachmentsAsync(request, null);
@@ -543,6 +634,32 @@ public class AbstractAmazonCloudDirectoryAsync extends AbstractAmazonCloudDirect
     @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTypedLinkFacetAttributesResult> listTypedLinkFacetAttributesAsync(ListTypedLinkFacetAttributesRequest request) {
+
+        return listTypedLinkFacetAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTypedLinkFacetAttributesResult> listTypedLinkFacetAttributesAsync(ListTypedLinkFacetAttributesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTypedLinkFacetAttributesRequest, ListTypedLinkFacetAttributesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTypedLinkFacetNamesResult> listTypedLinkFacetNamesAsync(ListTypedLinkFacetNamesRequest request) {
+
+        return listTypedLinkFacetNamesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTypedLinkFacetNamesResult> listTypedLinkFacetNamesAsync(ListTypedLinkFacetNamesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTypedLinkFacetNamesRequest, ListTypedLinkFacetNamesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -660,6 +777,19 @@ public class AbstractAmazonCloudDirectoryAsync extends AbstractAmazonCloudDirect
     @Override
     public java.util.concurrent.Future<UpdateSchemaResult> updateSchemaAsync(UpdateSchemaRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateSchemaRequest, UpdateSchemaResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTypedLinkFacetResult> updateTypedLinkFacetAsync(UpdateTypedLinkFacetRequest request) {
+
+        return updateTypedLinkFacetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTypedLinkFacetResult> updateTypedLinkFacetAsync(UpdateTypedLinkFacetRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateTypedLinkFacetRequest, UpdateTypedLinkFacetResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -30,8 +30,8 @@ public class BatchListObjectChildrenResponse implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the
-     * value.
+     * The children structure, which is a map with the key as the <code>LinkName</code> and
+     * <code>ObjectIdentifier</code> as the value.
      * </p>
      */
     private java.util.Map<String, String> children;
@@ -44,11 +44,11 @@ public class BatchListObjectChildrenResponse implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the
-     * value.
+     * The children structure, which is a map with the key as the <code>LinkName</code> and
+     * <code>ObjectIdentifier</code> as the value.
      * </p>
      * 
-     * @return Children structure, which is a map with key as the <code>LinkName</code> and
+     * @return The children structure, which is a map with the key as the <code>LinkName</code> and
      *         <code>ObjectIdentifier</code> as the value.
      */
 
@@ -58,13 +58,13 @@ public class BatchListObjectChildrenResponse implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the
-     * value.
+     * The children structure, which is a map with the key as the <code>LinkName</code> and
+     * <code>ObjectIdentifier</code> as the value.
      * </p>
      * 
      * @param children
-     *        Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code>
-     *        as the value.
+     *        The children structure, which is a map with the key as the <code>LinkName</code> and
+     *        <code>ObjectIdentifier</code> as the value.
      */
 
     public void setChildren(java.util.Map<String, String> children) {
@@ -73,13 +73,13 @@ public class BatchListObjectChildrenResponse implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the
-     * value.
+     * The children structure, which is a map with the key as the <code>LinkName</code> and
+     * <code>ObjectIdentifier</code> as the value.
      * </p>
      * 
      * @param children
-     *        Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code>
-     *        as the value.
+     *        The children structure, which is a map with the key as the <code>LinkName</code> and
+     *        <code>ObjectIdentifier</code> as the value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

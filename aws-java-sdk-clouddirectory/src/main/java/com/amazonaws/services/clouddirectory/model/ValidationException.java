@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Indicates your request is malformed in some manner. See the exception message.
+ * Indicates that your request is malformed in some manner. See the exception message.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

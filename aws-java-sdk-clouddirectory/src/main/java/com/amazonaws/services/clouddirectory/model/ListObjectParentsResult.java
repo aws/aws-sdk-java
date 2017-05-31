@@ -25,7 +25,7 @@ public class ListObjectParentsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Parent structure, which is a map with key as the <code>ObjectIdentifier</code> and LinkName as the value.
+     * The parent structure, which is a map with key as the <code>ObjectIdentifier</code> and LinkName as the value.
      * </p>
      */
     private java.util.Map<String, String> parents;
@@ -38,10 +38,11 @@ public class ListObjectParentsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Parent structure, which is a map with key as the <code>ObjectIdentifier</code> and LinkName as the value.
+     * The parent structure, which is a map with key as the <code>ObjectIdentifier</code> and LinkName as the value.
      * </p>
      * 
-     * @return Parent structure, which is a map with key as the <code>ObjectIdentifier</code> and LinkName as the value.
+     * @return The parent structure, which is a map with key as the <code>ObjectIdentifier</code> and LinkName as the
+     *         value.
      */
 
     public java.util.Map<String, String> getParents() {
@@ -50,11 +51,12 @@ public class ListObjectParentsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Parent structure, which is a map with key as the <code>ObjectIdentifier</code> and LinkName as the value.
+     * The parent structure, which is a map with key as the <code>ObjectIdentifier</code> and LinkName as the value.
      * </p>
      * 
      * @param parents
-     *        Parent structure, which is a map with key as the <code>ObjectIdentifier</code> and LinkName as the value.
+     *        The parent structure, which is a map with key as the <code>ObjectIdentifier</code> and LinkName as the
+     *        value.
      */
 
     public void setParents(java.util.Map<String, String> parents) {
@@ -63,11 +65,12 @@ public class ListObjectParentsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Parent structure, which is a map with key as the <code>ObjectIdentifier</code> and LinkName as the value.
+     * The parent structure, which is a map with key as the <code>ObjectIdentifier</code> and LinkName as the value.
      * </p>
      * 
      * @param parents
-     *        Parent structure, which is a map with key as the <code>ObjectIdentifier</code> and LinkName as the value.
+     *        The parent structure, which is a map with key as the <code>ObjectIdentifier</code> and LinkName as the
+     *        value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

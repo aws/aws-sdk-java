@@ -33,13 +33,13 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String directoryArn;
     /**
      * <p>
-     * Specifies the Attributes that should be indexed on. Currently only a single attribute is supported.
+     * Specifies the attributes that should be indexed on. Currently only a single attribute is supported.
      * </p>
      */
     private java.util.List<AttributeKey> orderedIndexedAttributeList;
     /**
      * <p>
-     * Indicates whether objects with the same indexed attribute value can be added to the index.
+     * Indicates whether the attribute that is being indexed has unique values or not.
      * </p>
      */
     private Boolean isUnique;
@@ -98,10 +98,10 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies the Attributes that should be indexed on. Currently only a single attribute is supported.
+     * Specifies the attributes that should be indexed on. Currently only a single attribute is supported.
      * </p>
      * 
-     * @return Specifies the Attributes that should be indexed on. Currently only a single attribute is supported.
+     * @return Specifies the attributes that should be indexed on. Currently only a single attribute is supported.
      */
 
     public java.util.List<AttributeKey> getOrderedIndexedAttributeList() {
@@ -110,11 +110,11 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies the Attributes that should be indexed on. Currently only a single attribute is supported.
+     * Specifies the attributes that should be indexed on. Currently only a single attribute is supported.
      * </p>
      * 
      * @param orderedIndexedAttributeList
-     *        Specifies the Attributes that should be indexed on. Currently only a single attribute is supported.
+     *        Specifies the attributes that should be indexed on. Currently only a single attribute is supported.
      */
 
     public void setOrderedIndexedAttributeList(java.util.Collection<AttributeKey> orderedIndexedAttributeList) {
@@ -128,7 +128,7 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies the Attributes that should be indexed on. Currently only a single attribute is supported.
+     * Specifies the attributes that should be indexed on. Currently only a single attribute is supported.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -137,7 +137,7 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param orderedIndexedAttributeList
-     *        Specifies the Attributes that should be indexed on. Currently only a single attribute is supported.
+     *        Specifies the attributes that should be indexed on. Currently only a single attribute is supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,11 +153,11 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies the Attributes that should be indexed on. Currently only a single attribute is supported.
+     * Specifies the attributes that should be indexed on. Currently only a single attribute is supported.
      * </p>
      * 
      * @param orderedIndexedAttributeList
-     *        Specifies the Attributes that should be indexed on. Currently only a single attribute is supported.
+     *        Specifies the attributes that should be indexed on. Currently only a single attribute is supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,11 +168,11 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Indicates whether objects with the same indexed attribute value can be added to the index.
+     * Indicates whether the attribute that is being indexed has unique values or not.
      * </p>
      * 
      * @param isUnique
-     *        Indicates whether objects with the same indexed attribute value can be added to the index.
+     *        Indicates whether the attribute that is being indexed has unique values or not.
      */
 
     public void setIsUnique(Boolean isUnique) {
@@ -181,10 +181,10 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Indicates whether objects with the same indexed attribute value can be added to the index.
+     * Indicates whether the attribute that is being indexed has unique values or not.
      * </p>
      * 
-     * @return Indicates whether objects with the same indexed attribute value can be added to the index.
+     * @return Indicates whether the attribute that is being indexed has unique values or not.
      */
 
     public Boolean getIsUnique() {
@@ -193,11 +193,11 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Indicates whether objects with the same indexed attribute value can be added to the index.
+     * Indicates whether the attribute that is being indexed has unique values or not.
      * </p>
      * 
      * @param isUnique
-     *        Indicates whether objects with the same indexed attribute value can be added to the index.
+     *        Indicates whether the attribute that is being indexed has unique values or not.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -208,10 +208,10 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Indicates whether objects with the same indexed attribute value can be added to the index.
+     * Indicates whether the attribute that is being indexed has unique values or not.
      * </p>
      * 
-     * @return Indicates whether objects with the same indexed attribute value can be added to the index.
+     * @return Indicates whether the attribute that is being indexed has unique values or not.
      */
 
     public Boolean isUnique() {

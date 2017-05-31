@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Indicates the object is not attached to the index.
+ * Indicates that the object is not attached to the index.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

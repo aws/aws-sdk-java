@@ -25,7 +25,7 @@ public class ListPolicyAttachmentsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * List of <code>ObjectIdentifiers</code> to which the policy is attached.
+     * A list of <code>ObjectIdentifiers</code> to which the policy is attached.
      * </p>
      */
     private java.util.List<String> objectIdentifiers;
@@ -38,10 +38,10 @@ public class ListPolicyAttachmentsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * List of <code>ObjectIdentifiers</code> to which the policy is attached.
+     * A list of <code>ObjectIdentifiers</code> to which the policy is attached.
      * </p>
      * 
-     * @return List of <code>ObjectIdentifiers</code> to which the policy is attached.
+     * @return A list of <code>ObjectIdentifiers</code> to which the policy is attached.
      */
 
     public java.util.List<String> getObjectIdentifiers() {
@@ -50,11 +50,11 @@ public class ListPolicyAttachmentsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * List of <code>ObjectIdentifiers</code> to which the policy is attached.
+     * A list of <code>ObjectIdentifiers</code> to which the policy is attached.
      * </p>
      * 
      * @param objectIdentifiers
-     *        List of <code>ObjectIdentifiers</code> to which the policy is attached.
+     *        A list of <code>ObjectIdentifiers</code> to which the policy is attached.
      */
 
     public void setObjectIdentifiers(java.util.Collection<String> objectIdentifiers) {
@@ -68,7 +68,7 @@ public class ListPolicyAttachmentsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * List of <code>ObjectIdentifiers</code> to which the policy is attached.
+     * A list of <code>ObjectIdentifiers</code> to which the policy is attached.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListPolicyAttachmentsResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param objectIdentifiers
-     *        List of <code>ObjectIdentifiers</code> to which the policy is attached.
+     *        A list of <code>ObjectIdentifiers</code> to which the policy is attached.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListPolicyAttachmentsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * List of <code>ObjectIdentifiers</code> to which the policy is attached.
+     * A list of <code>ObjectIdentifiers</code> to which the policy is attached.
      * </p>
      * 
      * @param objectIdentifiers
-     *        List of <code>ObjectIdentifiers</code> to which the policy is attached.
+     *        A list of <code>ObjectIdentifiers</code> to which the policy is attached.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,18 +25,18 @@ public class GetFacetResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * <a>Facet</a> structure associated with the facet.
+     * The <a>Facet</a> structure that is associated with the facet.
      * </p>
      */
     private Facet facet;
 
     /**
      * <p>
-     * <a>Facet</a> structure associated with the facet.
+     * The <a>Facet</a> structure that is associated with the facet.
      * </p>
      * 
      * @param facet
-     *        <a>Facet</a> structure associated with the facet.
+     *        The <a>Facet</a> structure that is associated with the facet.
      */
 
     public void setFacet(Facet facet) {
@@ -45,10 +45,10 @@ public class GetFacetResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * <a>Facet</a> structure associated with the facet.
+     * The <a>Facet</a> structure that is associated with the facet.
      * </p>
      * 
-     * @return <a>Facet</a> structure associated with the facet.
+     * @return The <a>Facet</a> structure that is associated with the facet.
      */
 
     public Facet getFacet() {
@@ -57,11 +57,11 @@ public class GetFacetResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * <a>Facet</a> structure associated with the facet.
+     * The <a>Facet</a> structure that is associated with the facet.
      * </p>
      * 
      * @param facet
-     *        <a>Facet</a> structure associated with the facet.
+     *        The <a>Facet</a> structure that is associated with the facet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

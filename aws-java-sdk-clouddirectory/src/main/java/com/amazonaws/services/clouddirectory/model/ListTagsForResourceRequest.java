@@ -27,7 +27,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * ARN of the resource. Tagging is only supported for directories.
+     * The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.
      * </p>
      */
     private String resourceArn;
@@ -39,19 +39,19 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     private String nextToken;
     /**
      * <p>
-     * The MaxResults parameter sets the maximum number of results returned in a single page. This is for future use and
-     * is not supported currently.
+     * The <code>MaxResults</code> parameter sets the maximum number of results returned in a single page. This is for
+     * future use and is not supported currently.
      * </p>
      */
     private Integer maxResults;
 
     /**
      * <p>
-     * ARN of the resource. Tagging is only supported for directories.
+     * The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.
      * </p>
      * 
      * @param resourceArn
-     *        ARN of the resource. Tagging is only supported for directories.
+     *        The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -60,10 +60,10 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * ARN of the resource. Tagging is only supported for directories.
+     * The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.
      * </p>
      * 
-     * @return ARN of the resource. Tagging is only supported for directories.
+     * @return The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.
      */
 
     public String getResourceArn() {
@@ -72,11 +72,11 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * ARN of the resource. Tagging is only supported for directories.
+     * The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.
      * </p>
      * 
      * @param resourceArn
-     *        ARN of the resource. Tagging is only supported for directories.
+     *        The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,13 +127,13 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The MaxResults parameter sets the maximum number of results returned in a single page. This is for future use and
-     * is not supported currently.
+     * The <code>MaxResults</code> parameter sets the maximum number of results returned in a single page. This is for
+     * future use and is not supported currently.
      * </p>
      * 
      * @param maxResults
-     *        The MaxResults parameter sets the maximum number of results returned in a single page. This is for future
-     *        use and is not supported currently.
+     *        The <code>MaxResults</code> parameter sets the maximum number of results returned in a single page. This
+     *        is for future use and is not supported currently.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -142,12 +142,12 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The MaxResults parameter sets the maximum number of results returned in a single page. This is for future use and
-     * is not supported currently.
+     * The <code>MaxResults</code> parameter sets the maximum number of results returned in a single page. This is for
+     * future use and is not supported currently.
      * </p>
      * 
-     * @return The MaxResults parameter sets the maximum number of results returned in a single page. This is for future
-     *         use and is not supported currently.
+     * @return The <code>MaxResults</code> parameter sets the maximum number of results returned in a single page. This
+     *         is for future use and is not supported currently.
      */
 
     public Integer getMaxResults() {
@@ -156,13 +156,13 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The MaxResults parameter sets the maximum number of results returned in a single page. This is for future use and
-     * is not supported currently.
+     * The <code>MaxResults</code> parameter sets the maximum number of results returned in a single page. This is for
+     * future use and is not supported currently.
      * </p>
      * 
      * @param maxResults
-     *        The MaxResults parameter sets the maximum number of results returned in a single page. This is for future
-     *        use and is not supported currently.
+     *        The <code>MaxResults</code> parameter sets the maximum number of results returned in a single page. This
+     *        is for future use and is not supported currently.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

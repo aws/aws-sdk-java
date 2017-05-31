@@ -27,36 +27,39 @@ public class AttachObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a> where both objects reside. For more information, see <a>arns</a>.
+     * Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where both objects reside. For more
+     * information, see <a>arns</a>.
      * </p>
      */
     private String directoryArn;
     /**
      * <p>
-     * Parent object reference.
+     * The parent object reference.
      * </p>
      */
     private ObjectReference parentReference;
     /**
      * <p>
-     * Child object reference to be attached to the object.
+     * The child object reference to be attached to the object.
      * </p>
      */
     private ObjectReference childReference;
     /**
      * <p>
-     * Link name with which the child object is attached to the parent.
+     * The link name with which the child object is attached to the parent.
      * </p>
      */
     private String linkName;
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a> where both objects reside. For more information, see <a>arns</a>.
+     * Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where both objects reside. For more
+     * information, see <a>arns</a>.
      * </p>
      * 
      * @param directoryArn
-     *        ARN associated with the <a>Directory</a> where both objects reside. For more information, see <a>arns</a>.
+     *        Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where both objects reside. For
+     *        more information, see <a>arns</a>.
      */
 
     public void setDirectoryArn(String directoryArn) {
@@ -65,11 +68,12 @@ public class AttachObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a> where both objects reside. For more information, see <a>arns</a>.
+     * Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where both objects reside. For more
+     * information, see <a>arns</a>.
      * </p>
      * 
-     * @return ARN associated with the <a>Directory</a> where both objects reside. For more information, see
-     *         <a>arns</a>.
+     * @return Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where both objects reside. For
+     *         more information, see <a>arns</a>.
      */
 
     public String getDirectoryArn() {
@@ -78,11 +82,13 @@ public class AttachObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a> where both objects reside. For more information, see <a>arns</a>.
+     * Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where both objects reside. For more
+     * information, see <a>arns</a>.
      * </p>
      * 
      * @param directoryArn
-     *        ARN associated with the <a>Directory</a> where both objects reside. For more information, see <a>arns</a>.
+     *        Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where both objects reside. For
+     *        more information, see <a>arns</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +99,11 @@ public class AttachObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Parent object reference.
+     * The parent object reference.
      * </p>
      * 
      * @param parentReference
-     *        Parent object reference.
+     *        The parent object reference.
      */
 
     public void setParentReference(ObjectReference parentReference) {
@@ -106,10 +112,10 @@ public class AttachObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Parent object reference.
+     * The parent object reference.
      * </p>
      * 
-     * @return Parent object reference.
+     * @return The parent object reference.
      */
 
     public ObjectReference getParentReference() {
@@ -118,11 +124,11 @@ public class AttachObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Parent object reference.
+     * The parent object reference.
      * </p>
      * 
      * @param parentReference
-     *        Parent object reference.
+     *        The parent object reference.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,11 +139,11 @@ public class AttachObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Child object reference to be attached to the object.
+     * The child object reference to be attached to the object.
      * </p>
      * 
      * @param childReference
-     *        Child object reference to be attached to the object.
+     *        The child object reference to be attached to the object.
      */
 
     public void setChildReference(ObjectReference childReference) {
@@ -146,10 +152,10 @@ public class AttachObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Child object reference to be attached to the object.
+     * The child object reference to be attached to the object.
      * </p>
      * 
-     * @return Child object reference to be attached to the object.
+     * @return The child object reference to be attached to the object.
      */
 
     public ObjectReference getChildReference() {
@@ -158,11 +164,11 @@ public class AttachObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Child object reference to be attached to the object.
+     * The child object reference to be attached to the object.
      * </p>
      * 
      * @param childReference
-     *        Child object reference to be attached to the object.
+     *        The child object reference to be attached to the object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,11 +179,11 @@ public class AttachObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Link name with which the child object is attached to the parent.
+     * The link name with which the child object is attached to the parent.
      * </p>
      * 
      * @param linkName
-     *        Link name with which the child object is attached to the parent.
+     *        The link name with which the child object is attached to the parent.
      */
 
     public void setLinkName(String linkName) {
@@ -186,10 +192,10 @@ public class AttachObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Link name with which the child object is attached to the parent.
+     * The link name with which the child object is attached to the parent.
      * </p>
      * 
-     * @return Link name with which the child object is attached to the parent.
+     * @return The link name with which the child object is attached to the parent.
      */
 
     public String getLinkName() {
@@ -198,11 +204,11 @@ public class AttachObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Link name with which the child object is attached to the parent.
+     * The link name with which the child object is attached to the parent.
      * </p>
      * 
      * @param linkName
-     *        Link name with which the child object is attached to the parent.
+     *        The link name with which the child object is attached to the parent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

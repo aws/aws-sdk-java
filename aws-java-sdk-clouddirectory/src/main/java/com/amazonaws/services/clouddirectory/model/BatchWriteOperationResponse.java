@@ -60,13 +60,13 @@ public class BatchWriteOperationResponse implements Serializable, Cloneable, Str
     private BatchDeleteObjectResponse deleteObject;
     /**
      * <p>
-     * Result of an add facet to object batch operation.
+     * The result of an add facet to object batch operation.
      * </p>
      */
     private BatchAddFacetToObjectResponse addFacetToObject;
     /**
      * <p>
-     * Result of a batch remove facet from object operation.
+     * The result of a batch remove facet from object operation.
      * </p>
      */
     private BatchRemoveFacetFromObjectResponse removeFacetFromObject;
@@ -273,11 +273,11 @@ public class BatchWriteOperationResponse implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Result of an add facet to object batch operation.
+     * The result of an add facet to object batch operation.
      * </p>
      * 
      * @param addFacetToObject
-     *        Result of an add facet to object batch operation.
+     *        The result of an add facet to object batch operation.
      */
 
     public void setAddFacetToObject(BatchAddFacetToObjectResponse addFacetToObject) {
@@ -286,10 +286,10 @@ public class BatchWriteOperationResponse implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Result of an add facet to object batch operation.
+     * The result of an add facet to object batch operation.
      * </p>
      * 
-     * @return Result of an add facet to object batch operation.
+     * @return The result of an add facet to object batch operation.
      */
 
     public BatchAddFacetToObjectResponse getAddFacetToObject() {
@@ -298,11 +298,11 @@ public class BatchWriteOperationResponse implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Result of an add facet to object batch operation.
+     * The result of an add facet to object batch operation.
      * </p>
      * 
      * @param addFacetToObject
-     *        Result of an add facet to object batch operation.
+     *        The result of an add facet to object batch operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -313,11 +313,11 @@ public class BatchWriteOperationResponse implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Result of a batch remove facet from object operation.
+     * The result of a batch remove facet from object operation.
      * </p>
      * 
      * @param removeFacetFromObject
-     *        Result of a batch remove facet from object operation.
+     *        The result of a batch remove facet from object operation.
      */
 
     public void setRemoveFacetFromObject(BatchRemoveFacetFromObjectResponse removeFacetFromObject) {
@@ -326,10 +326,10 @@ public class BatchWriteOperationResponse implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Result of a batch remove facet from object operation.
+     * The result of a batch remove facet from object operation.
      * </p>
      * 
-     * @return Result of a batch remove facet from object operation.
+     * @return The result of a batch remove facet from object operation.
      */
 
     public BatchRemoveFacetFromObjectResponse getRemoveFacetFromObject() {
@@ -338,11 +338,11 @@ public class BatchWriteOperationResponse implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Result of a batch remove facet from object operation.
+     * The result of a batch remove facet from object operation.
      * </p>
      * 
      * @param removeFacetFromObject
-     *        Result of a batch remove facet from object operation.
+     *        The result of a batch remove facet from object operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

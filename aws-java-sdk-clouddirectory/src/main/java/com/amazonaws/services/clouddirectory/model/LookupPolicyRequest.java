@@ -27,7 +27,8 @@ public class LookupPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a>. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>. For more information, see
+     * <a>arns</a>.
      * </p>
      */
     private String directoryArn;
@@ -45,18 +46,20 @@ public class LookupPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String nextToken;
     /**
      * <p>
-     * Maximum number of items to be retrieved in a single call. This is an approximate number.
+     * The maximum number of items to be retrieved in a single call. This is an approximate number.
      * </p>
      */
     private Integer maxResults;
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a>. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>. For more information, see
+     * <a>arns</a>.
      * </p>
      * 
      * @param directoryArn
-     *        ARN associated with the <a>Directory</a>. For more information, see <a>arns</a>.
+     *        The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>. For more information, see
+     *        <a>arns</a>.
      */
 
     public void setDirectoryArn(String directoryArn) {
@@ -65,10 +68,12 @@ public class LookupPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a>. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>. For more information, see
+     * <a>arns</a>.
      * </p>
      * 
-     * @return ARN associated with the <a>Directory</a>. For more information, see <a>arns</a>.
+     * @return The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>. For more information, see
+     *         <a>arns</a>.
      */
 
     public String getDirectoryArn() {
@@ -77,11 +82,13 @@ public class LookupPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a>. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>. For more information, see
+     * <a>arns</a>.
      * </p>
      * 
      * @param directoryArn
-     *        ARN associated with the <a>Directory</a>. For more information, see <a>arns</a>.
+     *        The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>. For more information, see
+     *        <a>arns</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,11 +179,11 @@ public class LookupPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Maximum number of items to be retrieved in a single call. This is an approximate number.
+     * The maximum number of items to be retrieved in a single call. This is an approximate number.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of items to be retrieved in a single call. This is an approximate number.
+     *        The maximum number of items to be retrieved in a single call. This is an approximate number.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -185,10 +192,10 @@ public class LookupPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Maximum number of items to be retrieved in a single call. This is an approximate number.
+     * The maximum number of items to be retrieved in a single call. This is an approximate number.
      * </p>
      * 
-     * @return Maximum number of items to be retrieved in a single call. This is an approximate number.
+     * @return The maximum number of items to be retrieved in a single call. This is an approximate number.
      */
 
     public Integer getMaxResults() {
@@ -197,11 +204,11 @@ public class LookupPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Maximum number of items to be retrieved in a single call. This is an approximate number.
+     * The maximum number of items to be retrieved in a single call. This is an approximate number.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of items to be retrieved in a single call. This is an approximate number.
+     *        The maximum number of items to be retrieved in a single call. This is an approximate number.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

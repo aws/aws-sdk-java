@@ -98,7 +98,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Copies input published schema into <a>Directory</a> with same name and version as that of published schema .</p>",
+      "documentation" : "<p>Copies the input published schema into the <a>Directory</a> with the same name and version as that of the published schema .</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -440,6 +440,91 @@
         "shape" : "AttachToIndexResponse"
       }
     },
+    "AttachTypedLink" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Attaches a typed link to a specified source and target object. For more information, see <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink\">Typed link</a>.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalServiceException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidArnException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RetryableConflictException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ValidationException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "LimitExceededException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "AccessDeniedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidAttachmentException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ValidationException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "FacetValidationException"
+      } ],
+      "http" : {
+        "method" : "PUT",
+        "requestUri" : "/amazonclouddirectory/2017-01-11/typedlink/attach",
+        "responseCode" : "200"
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "AttachTypedLinkRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "AttachTypedLink",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "AttachTypedLinkResponse"
+      }
+    },
     "BatchRead" : {
       "authorizer" : null,
       "authtype" : "IAM",
@@ -718,6 +803,12 @@
         "exception" : false,
         "fault" : false,
         "shape" : "InvalidRuleException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "FacetValidationException"
       } ],
       "http" : {
         "method" : "PUT",
@@ -833,7 +924,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Creates an object in a <a>Directory</a>. Additionally attaches the object to a parent, if a parent reference and LinkName is specified. An object is simply a collection of <a>Facet</a> attributes. You can also use this API call to create a policy object, if the facet from which you create the object is a policy facet. </p>",
+      "documentation" : "<p>Creates an object in a <a>Directory</a>. Additionally attaches the object to a parent, if a parent reference and <code>LinkName</code> is specified. An object is simply a collection of <a>Facet</a> attributes. You can also use this API call to create a policy object, if the facet from which you create the object is a policy facet. </p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -999,6 +1090,91 @@
         "shape" : "CreateSchemaResponse"
       }
     },
+    "CreateTypedLinkFacet" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Creates a <a>TypedLinkFacet</a>. For more information, see <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink\">Typed link</a>.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalServiceException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidArnException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RetryableConflictException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ValidationException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "LimitExceededException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "AccessDeniedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "FacetAlreadyExistsException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidRuleException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "FacetValidationException"
+      } ],
+      "http" : {
+        "method" : "PUT",
+        "requestUri" : "/amazonclouddirectory/2017-01-11/typedlink/facet/create",
+        "responseCode" : "200"
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "CreateTypedLinkFacetRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "CreateTypedLinkFacet",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "CreateTypedLinkFacetResponse"
+      }
+    },
     "DeleteDirectory" : {
       "authorizer" : null,
       "authtype" : "IAM",
@@ -1052,6 +1228,12 @@
         "exception" : false,
         "fault" : false,
         "shape" : "RetryableConflictException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidArnException"
       } ],
       "http" : {
         "method" : "PUT",
@@ -1076,7 +1258,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Deletes a given <a>Facet</a>. All attributes and <a>Rule</a>s associated with the facet will be deleted. Only development schema facets are allowed deletion.</p>",
+      "documentation" : "<p>Deletes a given <a>Facet</a>. All attributes and <a>Rule</a>s that are associated with the facet will be deleted. Only development schema facets are allowed deletion.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -1301,6 +1483,79 @@
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "DeleteSchemaResponse"
+      }
+    },
+    "DeleteTypedLinkFacet" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Deletes a <a>TypedLinkFacet</a>. For more information, see <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink\">Typed link</a>.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalServiceException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidArnException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RetryableConflictException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ValidationException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "LimitExceededException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "AccessDeniedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "FacetNotFoundException"
+      } ],
+      "http" : {
+        "method" : "PUT",
+        "requestUri" : "/amazonclouddirectory/2017-01-11/typedlink/facet/delete",
+        "responseCode" : "200"
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DeleteTypedLinkFacetRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "DeleteTypedLinkFacet",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "DeleteTypedLinkFacetResponse"
       }
     },
     "DetachFromIndex" : {
@@ -1546,6 +1801,74 @@
         "shape" : "DetachPolicyResponse"
       }
     },
+    "DetachTypedLink" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Detaches a typed link from a specified source and target object. For more information, see <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink\">Typed link</a>.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalServiceException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidArnException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RetryableConflictException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ValidationException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "LimitExceededException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "AccessDeniedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "FacetValidationException"
+      } ],
+      "http" : {
+        "method" : "PUT",
+        "requestUri" : "/amazonclouddirectory/2017-01-11/typedlink/detach",
+        "responseCode" : "200"
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DetachTypedLinkRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "DetachTypedLink",
+      "output" : null
+    },
     "DisableDirectory" : {
       "authorizer" : null,
       "authtype" : "IAM",
@@ -1593,6 +1916,12 @@
         "exception" : false,
         "fault" : false,
         "shape" : "RetryableConflictException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidArnException"
       } ],
       "http" : {
         "method" : "PUT",
@@ -1660,6 +1989,12 @@
         "exception" : false,
         "fault" : false,
         "shape" : "RetryableConflictException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidArnException"
       } ],
       "http" : {
         "method" : "PUT",
@@ -1745,7 +2080,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Gets details of the <a>Facet</a>, such as Facet Name, Attributes, <a>Rule</a>s, or ObjectType. You can call this on all kinds of schema facets -- published, development, or applied.</p>",
+      "documentation" : "<p>Gets details of the <a>Facet</a>, such as facet name, attributes, <a>Rule</a>s, or <code>ObjectType</code>. You can call this on all kinds of schema facets -- published, development, or applied.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -1960,6 +2295,85 @@
         "shape" : "GetSchemaAsJsonResponse"
       }
     },
+    "GetTypedLinkFacetInformation" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Returns the identity attribute order for a specific <a>TypedLinkFacet</a>. For more information, see <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink\">Typed link</a>.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalServiceException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidArnException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RetryableConflictException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ValidationException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "LimitExceededException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "AccessDeniedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidNextTokenException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "FacetNotFoundException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/amazonclouddirectory/2017-01-11/typedlink/facet/get",
+        "responseCode" : "200"
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "GetTypedLinkFacetInformationRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "GetTypedLinkFacetInformation",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "GetTypedLinkFacetInformationResponse"
+      }
+    },
     "ListAppliedSchemaArns" : {
       "authorizer" : null,
       "authtype" : "IAM",
@@ -2110,7 +2524,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Retrieves the ARNs of schemas in the development state.</p>",
+      "documentation" : "<p>Retrieves each Amazon Resource Name (ARN) of schemas in the development state.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -2398,6 +2812,85 @@
         "shape" : "ListFacetNamesResponse"
       }
     },
+    "ListIncomingTypedLinks" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink\">Typed link</a>.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalServiceException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidArnException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RetryableConflictException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ValidationException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "LimitExceededException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "AccessDeniedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidNextTokenException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "FacetValidationException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/amazonclouddirectory/2017-01-11/typedlink/incoming",
+        "responseCode" : "200"
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "ListIncomingTypedLinksRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "ListIncomingTypedLinks",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "ListIncomingTypedLinksResponse"
+      }
+    },
     "ListIndex" : {
       "authorizer" : null,
       "authtype" : "IAM",
@@ -2481,7 +2974,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Lists all attributes associated with an object. </p>",
+      "documentation" : "<p>Lists all attributes that are associated with an object. </p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -2572,7 +3065,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Returns a paginated list of child objects associated with a given object.</p>",
+      "documentation" : "<p>Returns a paginated list of child objects that are associated with a given object.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -2663,7 +3156,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects. For more information about objects, see <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#dirstructure\">Directory Structure</a>.</p> <p>Use this API to evaluate all parents for an object. The call returns all objects from the root of the directory up to the requested object. The API returns the number of paths based on user-defined <code>MaxResults</code>, in case there are multiple paths to the parent. The order of the paths and nodes returned is consistent among multiple API calls unless the objects are deleted or moved. Paths not leading to directory root are ignored from the target object.</p>",
+      "documentation" : "<p>Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects. For more information about objects, see <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#dirstructure\">Directory Structure</a>.</p> <p>Use this API to evaluate all parents for an object. The call returns all objects from the root of the directory up to the requested object. The API returns the number of paths based on user-defined <code>MaxResults</code>, in case there are multiple paths to the parent. The order of the paths and nodes returned is consistent among multiple API calls unless the objects are deleted or moved. Paths not leading to the directory root are ignored from the target object.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -2742,7 +3235,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Lists parent objects associated with a given object in pagination fashion.</p>",
+      "documentation" : "<p>Lists parent objects that are associated with a given object in pagination fashion.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -2908,6 +3401,85 @@
         "shape" : "ListObjectPoliciesResponse"
       }
     },
+    "ListOutgoingTypedLinks" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink\">Typed link</a>.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalServiceException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidArnException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RetryableConflictException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ValidationException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "LimitExceededException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "AccessDeniedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidNextTokenException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "FacetValidationException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/amazonclouddirectory/2017-01-11/typedlink/outgoing",
+        "responseCode" : "200"
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "ListOutgoingTypedLinksRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "ListOutgoingTypedLinks",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "ListOutgoingTypedLinksResponse"
+      }
+    },
     "ListPolicyAttachments" : {
       "authorizer" : null,
       "authtype" : "IAM",
@@ -3003,7 +3575,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Retrieves published schema ARNs.</p>",
+      "documentation" : "<p>Retrieves each published schema Amazon Resource Name (ARN).</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -3145,11 +3717,163 @@
         "shape" : "ListTagsForResourceResponse"
       }
     },
+    "ListTypedLinkFacetAttributes" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Returns a paginated list of all attribute definitions for a particular <a>TypedLinkFacet</a>. For more information, see <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink\">Typed link</a>.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalServiceException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidArnException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RetryableConflictException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ValidationException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "LimitExceededException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "AccessDeniedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "FacetNotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidNextTokenException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/amazonclouddirectory/2017-01-11/typedlink/facet/attributes",
+        "responseCode" : "200"
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "ListTypedLinkFacetAttributesRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "ListTypedLinkFacetAttributes",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "ListTypedLinkFacetAttributesResponse"
+      }
+    },
+    "ListTypedLinkFacetNames" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Returns a paginated list of <code>TypedLink</code> facet names for a particular schema. For more information, see <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink\">Typed link</a>.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalServiceException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidArnException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RetryableConflictException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ValidationException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "LimitExceededException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "AccessDeniedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidNextTokenException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/amazonclouddirectory/2017-01-11/typedlink/facet/list",
+        "responseCode" : "200"
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "ListTypedLinkFacetNamesRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "ListTypedLinkFacetNames",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "ListTypedLinkFacetNamesResponse"
+      }
+    },
     "LookupPolicy" : {
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Lists all policies from the root of the <a>Directory</a> to the object specified. If there are no policies present, an empty list is returned. If policies are present, and if some objects don't have the policies attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the root from the target object are ignored.</p>",
+      "documentation" : "<p>Lists all policies from the root of the <a>Directory</a> to the object specified. If there are no policies present, an empty list is returned. If policies are present, and if some objects don't have the policies attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the root from the target object are ignored. For more information, see <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies\">Policies</a>.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -3234,7 +3958,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Publishes a development schema with a version. If description and attributes are specified, PublishSchema overrides the development schema description and attributes. If not, the development schema description and attributes are used.</p>",
+      "documentation" : "<p>Publishes a development schema with a version. If description and attributes are specified, <code>PublishSchema</code> overrides the development schema description and attributes. If not, the development schema description and attributes are used.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -3459,7 +4183,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>API for adding tags to a resource.</p>",
+      "documentation" : "<p>An API operation for adding tags to a resource.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -3532,7 +4256,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>API for removing tags from a resource.</p>",
+      "documentation" : "<p>An API operation for removing tags from a resource.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -3831,6 +4555,97 @@
         "resultWrapper" : null,
         "shape" : "UpdateSchemaResponse"
       }
+    },
+    "UpdateTypedLinkFacet" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Updates a <a>TypedLinkFacet</a>. For more information, see <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink\">Typed link</a>.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalServiceException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidArnException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "RetryableConflictException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ValidationException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "LimitExceededException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "AccessDeniedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "FacetValidationException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidFacetUpdateException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "FacetNotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidRuleException"
+      } ],
+      "http" : {
+        "method" : "PUT",
+        "requestUri" : "/amazonclouddirectory/2017-01-11/typedlink/facet",
+        "responseCode" : "200"
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "UpdateTypedLinkFacetRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "UpdateTypedLinkFacet",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "UpdateTypedLinkFacetResponse"
+      }
     }
   },
   "shapes" : {
@@ -3887,7 +4702,7 @@
       "members" : {
         "DirectoryArn" : {
           "deprecated" : false,
-          "documentation" : "<p>ARN associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -3901,7 +4716,7 @@
         },
         "ObjectAttributeList" : {
           "deprecated" : false,
-          "documentation" : "<p>Attributes on the facet you are adding to the object.</p>",
+          "documentation" : "<p>Attributes on the facet that you are adding to the object.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -3986,7 +4801,7 @@
       "members" : {
         "DirectoryArn" : {
           "deprecated" : false,
-          "documentation" : "<p>ARN associated with the <a>Directory</a> into which the schema is copied. For more information, see <a>arns</a>.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> into which the schema is copied. For more information, see <a>arns</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4000,7 +4815,7 @@
         },
         "PublishedSchemaArn" : {
           "deprecated" : false,
-          "documentation" : "<p>Published schema ARN that needs to be copied. For more information, see <a>arns</a>.</p>",
+          "documentation" : "<p>Published schema Amazon Resource Name (ARN) that needs to be copied. For more information, see <a>arns</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4036,7 +4851,7 @@
       "members" : {
         "AppliedSchemaArn" : {
           "deprecated" : false,
-          "documentation" : "<p>Applied schema ARN associated with the copied schema in the <a>Directory</a>. You can use this ARN to describe the schema information applied on this directory. For more information, see <a>arns</a>.</p>",
+          "documentation" : "<p>The applied schema ARN that is associated with the copied schema in the <a>Directory</a>. You can use this ARN to describe the schema information applied on this directory. For more information, see <a>arns</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4050,7 +4865,7 @@
         },
         "DirectoryArn" : {
           "deprecated" : false,
-          "documentation" : "<p>ARN associated with the <a>Directory</a>. For more information, see <a>arns</a>.</p>",
+          "documentation" : "<p>The ARN that is associated with the <a>Directory</a>. For more information, see <a>arns</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4141,7 +4956,7 @@
       "members" : {
         "ChildReference" : {
           "deprecated" : false,
-          "documentation" : "<p>Child object reference to be attached to the object.</p>",
+          "documentation" : "<p>The child object reference to be attached to the object.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4155,7 +4970,7 @@
         },
         "DirectoryArn" : {
           "deprecated" : false,
-          "documentation" : "<p>ARN associated with the <a>Directory</a> where both objects reside. For more information, see <a>arns</a>.</p>",
+          "documentation" : "<p>Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where both objects reside. For more information, see <a>arns</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4169,7 +4984,7 @@
         },
         "LinkName" : {
           "deprecated" : false,
-          "documentation" : "<p>Link name with which the child object is attached to the parent.</p>",
+          "documentation" : "<p>The link name with which the child object is attached to the parent.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4183,7 +4998,7 @@
         },
         "ParentReference" : {
           "deprecated" : false,
-          "documentation" : "<p>Parent object reference.</p>",
+          "documentation" : "<p>The parent object reference.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4219,7 +5034,7 @@
       "members" : {
         "AttachedObjectIdentifier" : {
           "deprecated" : false,
-          "documentation" : "<p>Attached <code>ObjectIdentifier</code>, which is the child <code>ObjectIdentifier</code>.</p>",
+          "documentation" : "<p>The attached <code>ObjectIdentifier</code>, which is the child <code>ObjectIdentifier</code>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4255,7 +5070,7 @@
       "members" : {
         "DirectoryArn" : {
           "deprecated" : false,
-          "documentation" : "<p>ARN associated with the <a>Directory</a> where both objects reside. For more information, see <a>arns</a>.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where both objects reside. For more information, see <a>arns</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4269,7 +5084,7 @@
         },
         "ObjectReference" : {
           "deprecated" : false,
-          "documentation" : "<p>Reference that identifies the object to which the policy will be attached.</p>",
+          "documentation" : "<p>The reference that identifies the object to which the policy will be attached.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4283,7 +5098,7 @@
         },
         "PolicyReference" : {
           "deprecated" : false,
-          "documentation" : "<p>Reference associated with the policy object.</p>",
+          "documentation" : "<p>The reference that is associated with the policy object.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4340,7 +5155,7 @@
       "members" : {
         "DirectoryArn" : {
           "deprecated" : false,
-          "documentation" : "<p>The ARN of the directory where the object and index exist.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the directory where the object and index exist.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4426,6 +5241,134 @@
       "value" : null,
       "wrapper" : false
     },
+    "AttachTypedLinkRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Attributes" : {
+          "deprecated" : false,
+          "documentation" : "<p>An ordered set of attributes that are associated with the typed link.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AttributeNameAndValueList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "DirectoryArn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the directory where you want to attach the typed link.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "x-amz-data-partition",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Arn",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "SourceObjectReference" : {
+          "deprecated" : false,
+          "documentation" : "<p>Identifies the source object that the typed link will attach to.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ObjectReference",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "TargetObjectReference" : {
+          "deprecated" : false,
+          "documentation" : "<p>Identifies the target object that the typed link will attach to.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ObjectReference",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "TypedLinkFacet" : {
+          "deprecated" : false,
+          "documentation" : "<p>Identifies the typed link facet that is associated with the typed link.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TypedLinkSchemaAndFacetName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "DirectoryArn", "SourceObjectReference", "TargetObjectReference", "TypedLinkFacet", "Attributes" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "AttachTypedLinkResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "TypedLinkSpecifier" : {
+          "deprecated" : false,
+          "documentation" : "<p>Returns a typed link specifier as output.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TypedLinkSpecifier",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "AttributeKey" : {
       "deprecated" : false,
       "documentation" : "<p>A unique identifier for an attribute.</p>",
@@ -4440,7 +5383,7 @@
       "members" : {
         "FacetName" : {
           "deprecated" : false,
-          "documentation" : "<p>The name of the facet the attribute exists within.</p>",
+          "documentation" : "<p>The name of the facet that the attribute exists within.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4468,7 +5411,7 @@
         },
         "SchemaArn" : {
           "deprecated" : false,
-          "documentation" : "<p>The ARN of the schema that contains the facet and attribute.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the schema that contains the facet and attribute.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4629,6 +5572,124 @@
       "value" : null,
       "wrapper" : false
     },
+    "AttributeNameAndValue" : {
+      "deprecated" : false,
+      "documentation" : "<p>Identifies the attribute name and value for a typed link.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "AttributeName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The attribute name of the typed link.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AttributeName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Value" : {
+          "deprecated" : false,
+          "documentation" : "<p>The value for the typed link.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TypedAttributeValue",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "AttributeName", "Value" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "AttributeNameAndValueList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "AttributeNameAndValue",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "AttributeNameList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "AttributeName",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
     "BatchAddFacetToObject" : {
       "deprecated" : false,
       "documentation" : "<p>Represents the output of a batch add facet to object operation.</p>",
@@ -4716,7 +5777,7 @@
     },
     "BatchAttachObject" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of an AttachObject operation.</p>",
+      "documentation" : "<p>Represents the output of an <code>AttachObject</code> operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4728,7 +5789,7 @@
       "members" : {
         "ChildReference" : {
           "deprecated" : false,
-          "documentation" : "<p>Child object reference to be attached to the object.</p>",
+          "documentation" : "<p>The child object reference that is to be attached to the object.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4756,7 +5817,7 @@
         },
         "ParentReference" : {
           "deprecated" : false,
-          "documentation" : "<p>Parent object reference.</p>",
+          "documentation" : "<p>The parent object reference.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4780,7 +5841,7 @@
     },
     "BatchAttachObjectResponse" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output batch AttachObject response operation.</p>",
+      "documentation" : "<p>Represents the output batch <code>AttachObject</code> response operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4816,7 +5877,7 @@
     },
     "BatchCreateObject" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a CreateObject operation.</p>",
+      "documentation" : "<p>Represents the output of a <code>CreateObject</code> operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4856,7 +5917,7 @@
         },
         "ObjectAttributeList" : {
           "deprecated" : false,
-          "documentation" : "<p>Attribute map, which contains an attribute ARN as the key and attribute value as the map value.</p>",
+          "documentation" : "<p>An attribute map, which contains an attribute ARN as the key and attribute value as the map value.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4884,7 +5945,7 @@
         },
         "SchemaFacet" : {
           "deprecated" : false,
-          "documentation" : "<p>List of FacetArns that will be associated with the object. For more information, see <a>arns</a>.</p>",
+          "documentation" : "<p>A list of <code>FacetArns</code> that will be associated with the object. For more information, see <a>arns</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4920,7 +5981,7 @@
       "members" : {
         "ObjectIdentifier" : {
           "deprecated" : false,
-          "documentation" : "<p>ID associated with the object.</p>",
+          "documentation" : "<p>The ID that is associated with the object.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4956,7 +6017,7 @@
       "members" : {
         "ObjectReference" : {
           "deprecated" : false,
-          "documentation" : "<p>Reference that identifies the object.</p>",
+          "documentation" : "<p>The reference that identifies the object.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5113,7 +6174,7 @@
       "members" : {
         "FacetFilter" : {
           "deprecated" : false,
-          "documentation" : "<p>Used to filter the list of object attributes associated with a certain facet.</p>",
+          "documentation" : "<p>Used to filter the list of object attributes that are associated with a certain facet.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5127,7 +6188,7 @@
         },
         "MaxResults" : {
           "deprecated" : false,
-          "documentation" : "<p>Maximum number of items to be retrieved in a single call. This is an approximate number.</p>",
+          "documentation" : "<p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5191,7 +6252,7 @@
       "members" : {
         "Attributes" : {
           "deprecated" : false,
-          "documentation" : "<p>Attributes map associated with the object. <code>AttributeArn</code> is the key; attribute value is the value.</p>",
+          "documentation" : "<p>The attributes map that is associated with the object. <code>AttributeArn</code> is the key; attribute value is the value.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5305,7 +6366,7 @@
       "members" : {
         "Children" : {
           "deprecated" : false,
-          "documentation" : "<p>Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the value.</p>",
+          "documentation" : "<p>The children structure, which is a map with the key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the value.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5364,7 +6425,7 @@
     },
     "BatchReadException" : {
       "deprecated" : false,
-      "documentation" : "<p>Batch Read Exception structure, which contains exception type and message.</p>",
+      "documentation" : "<p>The batch read exception structure, which contains the exception type and message.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5376,7 +6437,7 @@
       "members" : {
         "Message" : {
           "deprecated" : false,
-          "documentation" : "<p>Exception message associated with the failure.</p>",
+          "documentation" : "<p>An exception message that is associated with the failure.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5390,7 +6451,7 @@
         },
         "Type" : {
           "deprecated" : false,
-          "documentation" : "<p>Type of exception, such as <code>InvalidArnException</code>.</p>",
+          "documentation" : "<p>A type of exception, such as <code>InvalidArnException</code>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5447,7 +6508,7 @@
       "members" : {
         "ListObjectAttributes" : {
           "deprecated" : false,
-          "documentation" : "<p>Lists all attributes associated with an object.</p>",
+          "documentation" : "<p>Lists all attributes that are associated with an object.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5629,7 +6690,7 @@
         },
         "DirectoryArn" : {
           "deprecated" : false,
-          "documentation" : "<p>ARN associated with the <a>Directory</a>. For more information, see <a>arns</a>.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>. For more information, see <a>arns</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5643,7 +6704,7 @@
         },
         "Operations" : {
           "deprecated" : false,
-          "documentation" : "<p>List of operations that are part of the batch.</p>",
+          "documentation" : "<p>A list of operations that are part of the batch.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5679,7 +6740,7 @@
       "members" : {
         "Responses" : {
           "deprecated" : false,
-          "documentation" : "<p>List of all the responses for each batch read.</p>",
+          "documentation" : "<p>A list of all the responses for each batch read.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5715,7 +6776,7 @@
       "members" : {
         "ListObjectAttributes" : {
           "deprecated" : false,
-          "documentation" : "<p>Lists all attributes associated with an object.</p>",
+          "documentation" : "<p>Lists all attributes that are associated with an object.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5729,7 +6790,7 @@
         },
         "ListObjectChildren" : {
           "deprecated" : false,
-          "documentation" : "<p>Returns a paginated list of child objects associated with a given object.</p>",
+          "documentation" : "<p>Returns a paginated list of child objects that are associated with a given object.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5774,7 +6835,7 @@
     },
     "BatchRemoveFacetFromObject" : {
       "deprecated" : false,
-      "documentation" : "<p>Batch operation to remove a facet from an object.</p>",
+      "documentation" : "<p>A batch operation to remove a facet from an object.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5824,7 +6885,7 @@
     },
     "BatchRemoveFacetFromObjectResponse" : {
       "deprecated" : false,
-      "documentation" : "<p>Empty result representing success.</p>",
+      "documentation" : "<p>An empty result that represents success.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5907,7 +6968,7 @@
       "members" : {
         "ObjectIdentifier" : {
           "deprecated" : false,
-          "documentation" : "<p>ID associated with the object.</p>",
+          "documentation" : "<p>ID that is associated with the object.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6028,7 +7089,7 @@
       "members" : {
         "AddFacetToObject" : {
           "deprecated" : false,
-          "documentation" : "<p>Batch operation adding a facet to an object.</p>",
+          "documentation" : "<p>A batch operation that adds a facet to an object.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6098,7 +7159,7 @@
         },
         "RemoveFacetFromObject" : {
           "deprecated" : false,
-          "documentation" : "<p>Batch operation removing a facet from an object.</p>",
+          "documentation" : "<p>A batch operation that removes a facet from an object.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6112,7 +7173,7 @@
         },
         "UpdateObjectAttributes" : {
           "deprecated" : false,
-          "documentation" : "<p>Update a given object's attributes.</p>",
+          "documentation" : "<p>Updates a given object's attributes.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6182,7 +7243,7 @@
       "members" : {
         "AddFacetToObject" : {
           "deprecated" : false,
-          "documentation" : "<p>Result of an add facet to object batch operation.</p>",
+          "documentation" : "<p>The result of an add facet to object batch operation.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6252,7 +7313,7 @@
         },
         "RemoveFacetFromObject" : {
           "deprecated" : false,
-          "documentation" : "<p>Result of a batch remove facet from object operation.</p>",
+          "documentation" : "<p>The result of a batch remove facet from object operation.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6336,7 +7397,7 @@
       "members" : {
         "DirectoryArn" : {
           "deprecated" : false,
-          "documentation" : "<p>ARN associated with the <a>Directory</a>. For more information, see <a>arns</a>.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>. For more information, see <a>arns</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6350,7 +7411,7 @@
         },
         "Operations" : {
           "deprecated" : false,
-          "documentation" : "<p>List of operations that are part of the batch.</p>",
+          "documentation" : "<p>A list of operations that are part of the batch.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6386,7 +7447,7 @@
       "members" : {
         "Responses" : {
           "deprecated" : false,
-          "documentation" : "<p>List of all the responses for each batch write.</p>",
+          "documentation" : "<p>A list of all the responses for each batch write.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6545,7 +7606,7 @@
       "members" : {
         "Name" : {
           "deprecated" : false,
-          "documentation" : "<p>Name of the <a>Directory</a>. Should be unique per account, per region.</p>",
+          "documentation" : "<p>The name of the <a>Directory</a>. Should be unique per account, per region.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6559,7 +7620,7 @@
         },
         "SchemaArn" : {
           "deprecated" : false,
-          "documentation" : "<p>ARN of the published schema that will be copied into the data <a>Directory</a>. For more information, see <a>arns</a>.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the published schema that will be copied into the data <a>Directory</a>. For more information, see <a>arns</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6595,7 +7656,7 @@
       "members" : {
         "AppliedSchemaArn" : {
           "deprecated" : false,
-          "documentation" : "<p>ARN of the published schema in the <a>Directory</a>. Once a published schema is copied into the directory, it has its own ARN which is referred to applied schema ARN. For more information, see <a>arns</a>.</p>",
+          "documentation" : "<p>The ARN of the published schema in the <a>Directory</a>. Once a published schema is copied into the directory, it has its own ARN, which is referred to applied schema ARN. For more information, see <a>arns</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6609,7 +7670,7 @@
         },
         "DirectoryArn" : {
           "deprecated" : false,
-          "documentation" : "<p>ARN associated with the <a>Directory</a>. For more information, see <a>arns</a>.</p>",
+          "documentation" : "<p>The ARN that is associated with the <a>Directory</a>. For more information, see <a>arns</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6623,7 +7684,7 @@
         },
         "Name" : {
           "deprecated" : false,
-          "documentation" : "<p>Name of the <a>Directory</a>.</p>",
+          "documentation" : "<p>The name of the <a>Directory</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6673,7 +7734,7 @@
       "members" : {
         "Attributes" : {
           "deprecated" : false,
-          "documentation" : "<p>Attributes associated with the <a>Facet</a>.e</p>",
+          "documentation" : "<p>The attributes that are associated with the <a>Facet</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6687,7 +7748,7 @@
         },
         "Name" : {
           "deprecated" : false,
-          "documentation" : "<p>Name of the <a>Facet</a>, which is unique for a given schema.</p>",
+          "documentation" : "<p>The name of the <a>Facet</a>, which is unique for a given schema.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6701,7 +7762,7 @@
         },
         "ObjectType" : {
           "deprecated" : false,
-          "documentation" : "<p>Specifies whether a given object created from this facet is of type Node, Leaf Node, Policy or Index.</p> <ul> <li> <p>Node: Can have multiple children but one parent.</p> </li> </ul> <ul> <li> <p>Leaf Node: Cannot have children but can have multiple parents.</p> </li> </ul> <ul> <li> <p>Policy: Allows you to store a policy document and policy type. For more information, see <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies\">Policies</a>.</p> </li> </ul> <ul> <li> <p>Index: Can be created with the Index API.</p> </li> </ul>",
+          "documentation" : "<p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p> <ul> <li> <p>Node: Can have multiple children but one parent.</p> </li> </ul> <ul> <li> <p>Leaf node: Cannot have children but can have multiple parents.</p> </li> </ul> <ul> <li> <p>Policy: Allows you to store a policy document and policy type. For more information, see <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies\">Policies</a>.</p> </li> </ul> <ul> <li> <p>Index: Can be created with the Index API.</p> </li> </ul>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6715,7 +7776,7 @@
         },
         "SchemaArn" : {
           "deprecated" : false,
-          "documentation" : "<p>Schema ARN in which the new <a>Facet</a> will be created. For more information, see <a>arns</a>.</p>",
+          "documentation" : "<p>The schema ARN in which the new <a>Facet</a> will be created. For more information, see <a>arns</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6786,7 +7847,7 @@
         },
         "IsUnique" : {
           "deprecated" : false,
-          "documentation" : "<p>Indicates whether objects with the same indexed attribute value can be added to the index.</p>",
+          "documentation" : "<p>Indicates whether the attribute that is being indexed has unique values or not.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6814,7 +7875,7 @@
         },
         "OrderedIndexedAttributeList" : {
           "deprecated" : false,
-          "documentation" : "<p>Specifies the Attributes that should be indexed on. Currently only a single attribute is supported.</p>",
+          "documentation" : "<p>Specifies the attributes that should be indexed on. Currently only a single attribute is supported.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6900,7 +7961,7 @@
       "members" : {
         "DirectoryArn" : {
           "deprecated" : false,
-          "documentation" : "<p>ARN associated with the <a>Directory</a> in which the object will be created. For more information, see <a>arns</a>.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> in which the object will be created. For more information, see <a>arns</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6928,7 +7989,7 @@
         },
         "ObjectAttributeList" : {
           "deprecated" : false,
-          "documentation" : "<p>Attribute map whose attribute ARN contains the key and attribute value as the map value.</p>",
+          "documentation" : "<p>The attribute map whose attribute ARN contains the key and attribute value as the map value.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6956,7 +8017,7 @@
         },
         "SchemaFacets" : {
           "deprecated" : false,
-          "documentation" : "<p>List of facet ARNs to be associated with the object. For more information, see <a>arns</a>.</p>",
+          "documentation" : "<p>A list of schema facets to be associated with the object that contains <code>SchemaArn</code> and facet name. For more information, see <a>arns</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6992,7 +8053,7 @@
       "members" : {
         "ObjectIdentifier" : {
           "deprecated" : false,
-          "documentation" : "<p>Identifier associated with the object.</p>",
+          "documentation" : "<p>The identifier that is associated with the object.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -7028,7 +8089,7 @@
       "members" : {
         "Name" : {
           "deprecated" : false,
-          "documentation" : "<p>Name associated with the schema. This is unique to each account and in each region.</p>",
+          "documentation" : "<p>The name that is associated with the schema. This is unique to each account and in each region.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -7064,7 +8125,7 @@
       "members" : {
         "SchemaArn" : {
           "deprecated" : false,
-          "documentation" : "<p>ARN associated with the schema. For more information, see <a>arns</a>.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <a>arns</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -7077,6 +8138,77 @@
           "xmlNamespace" : null
         }
       },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "CreateTypedLinkFacetRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Facet" : {
+          "deprecated" : false,
+          "documentation" : "<p> <a>Facet</a> structure that is associated with the typed link facet.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TypedLinkFacet",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "SchemaArn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <a>arns</a>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "x-amz-data-partition",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Arn",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "SchemaArn", "Facet" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "CreateTypedLinkFacetResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7228,7 +8360,7 @@
         },
         "SchemaArn" : {
           "deprecated" : false,
-          "documentation" : "<p>ARN associated with the <a>Facet</a>. For more information, see <a>arns</a>.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>. For more information, see <a>arns</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -7285,7 +8417,7 @@
       "members" : {
         "DirectoryArn" : {
           "deprecated" : false,
-          "documentation" : "<p>ARN associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -7299,7 +8431,7 @@
         },
         "ObjectReference" : {
           "deprecated" : false,
-          "documentation" : "<p>Reference that identifies the object.</p>",
+          "documentation" : "<p>A reference that identifies the object.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -7356,7 +8488,7 @@
       "members" : {
         "SchemaArn" : {
           "deprecated" : false,
-          "documentation" : "<p>ARN of the development schema. For more information, see <a>arns</a>.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the development schema. For more information, see <a>arns</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -7392,7 +8524,7 @@
       "members" : {
         "SchemaArn" : {
           "deprecated" : false,
-          "documentation" : "<p>Input ARN that is returned as part of the response. For more information, see <a>arns</a>.</p>",
+          "documentation" : "<p>The input ARN that is returned as part of the response. For more information, see <a>arns</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -7405,6 +8537,77 @@
           "xmlNamespace" : null
         }
       },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DeleteTypedLinkFacetRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Name" : {
+          "deprecated" : false,
+          "documentation" : "<p>The unique name of the typed link facet.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TypedLinkName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "SchemaArn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <a>arns</a>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "x-amz-data-partition",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Arn",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "SchemaArn", "Name" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DeleteTypedLinkFacetResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -7428,7 +8631,7 @@
       "members" : {
         "DirectoryArn" : {
           "deprecated" : false,
-          "documentation" : "<p>The ARN of the directory the index and object exist in.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the directory the index and object exist in.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -7528,7 +8731,7 @@
       "members" : {
         "DirectoryArn" : {
           "deprecated" : false,
-          "documentation" : "<p>ARN associated with the <a>Directory</a> where objects reside. For more information, see <a>arns</a>.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where objects reside. For more information, see <a>arns</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -7542,7 +8745,7 @@
         },
         "LinkName" : {
           "deprecated" : false,
-          "documentation" : "<p>Link name associated with the object that needs to be detached.</p>",
+          "documentation" : "<p>The link name associated with the object that needs to be detached.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -7556,7 +8759,7 @@
         },
         "ParentReference" : {
           "deprecated" : false,
-          "documentation" : "<p>Parent reference from which the object with the specified link name is detached.</p>",
+          "documentation" : "<p>The parent reference from which the object with the specified link name is detached.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -7628,7 +8831,7 @@
       "members" : {
         "DirectoryArn" : {
           "deprecated" : false,
-          "documentation" : "<p>ARN associated with the <a>Directory</a> where both objects reside. For more information, see <a>arns</a>.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where both objects reside. For more information, see <a>arns</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -7699,6 +8902,56 @@
       "value" : null,
       "wrapper" : false
     },
+    "DetachTypedLinkRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "DirectoryArn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the directory where you want to detach the typed link.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "x-amz-data-partition",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Arn",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "TypedLinkSpecifier" : {
+          "deprecated" : false,
+          "documentation" : "<p>Used to accept a typed link specifier as input.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TypedLinkSpecifier",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "DirectoryArn", "TypedLinkSpecifier" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "Directory" : {
       "deprecated" : false,
       "documentation" : "<p>Directory structure that includes the directory name and directory ARN.</p>",
@@ -7727,7 +8980,7 @@
         },
         "DirectoryArn" : {
           "deprecated" : false,
-          "documentation" : "<p>ARN associated with the directory. For more information, see <a>arns</a>.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) that is associated with the directory. For more information, see <a>arns</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -7839,7 +9092,7 @@
     },
     "DirectoryDeletedException" : {
       "deprecated" : false,
-      "documentation" : "<p>A directory that has been deleted has been attempted to be accessed. Note: The requested resource will eventually cease to exist.</p>",
+      "documentation" : "<p>A directory that has been deleted and to which access has been attempted. Note: The requested resource will eventually cease to exist.</p>",
       "enum" : null,
       "error" : {
         "code" : null,
@@ -8223,7 +9476,7 @@
         },
         "ObjectType" : {
           "deprecated" : false,
-          "documentation" : "<p>Object type associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.</p>",
+          "documentation" : "<p>The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -8286,7 +9539,7 @@
     },
     "FacetAttribute" : {
       "deprecated" : false,
-      "documentation" : "<p>Attribute associated with the <a>Facet</a>.</p>",
+      "documentation" : "<p>An attribute that is associated with the <a>Facet</a>.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -8312,7 +9565,7 @@
         },
         "AttributeReference" : {
           "deprecated" : false,
-          "documentation" : "<p>Attribute reference associated with the attribute. See <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences\">Attribute References</a> for more information.</p>",
+          "documentation" : "<p>An attribute reference that is associated with the attribute. See <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences\">Attribute References</a> for more information.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -8476,7 +9729,7 @@
     },
     "FacetAttributeReference" : {
       "deprecated" : false,
-      "documentation" : "<p>Facet attribute reference that specifies the attribute definition which contains attribute facet name and attribute name.</p>",
+      "documentation" : "<p>The facet attribute reference that specifies the attribute definition that contains the attribute facet name and attribute name.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -8488,7 +9741,7 @@
       "members" : {
         "TargetAttributeName" : {
           "deprecated" : false,
-          "documentation" : "<p>Target attribute name associated with the facet reference. See <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences\">Attribute References</a> for more information.</p>",
+          "documentation" : "<p>The target attribute name that is associated with the facet reference. See <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences\">Attribute References</a> for more information.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -8502,7 +9755,7 @@
         },
         "TargetFacetName" : {
           "deprecated" : false,
-          "documentation" : "<p>Target facet name associated with the facet reference. See <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences\">Attribute References</a> for more information.</p>",
+          "documentation" : "<p>The target facet name that is associated with the facet reference. See <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences\">Attribute References</a> for more information.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -8631,7 +9884,7 @@
     },
     "FacetInUseException" : {
       "deprecated" : false,
-      "documentation" : "<p>Occurs when deleting a facet that contains an attribute which is a target to an attribute reference in a different facet.</p>",
+      "documentation" : "<p>Occurs when deleting a facet that contains an attribute that is a target to an attribute reference in a different facet.</p>",
       "enum" : null,
       "error" : {
         "code" : null,
@@ -8764,7 +10017,7 @@
     },
     "FacetValidationException" : {
       "deprecated" : false,
-      "documentation" : "<p>The <a>Facet</a> you provided was not well formed or could not be validated with the schema.</p>",
+      "documentation" : "<p>The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.</p>",
       "enum" : null,
       "error" : {
         "code" : null,
@@ -8901,7 +10154,7 @@
         },
         "SchemaArn" : {
           "deprecated" : false,
-          "documentation" : "<p>ARN associated with the <a>Facet</a>. For more information, see <a>arns</a>.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>. For more information, see <a>arns</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -8937,7 +10190,7 @@
       "members" : {
         "Facet" : {
           "deprecated" : false,
-          "documentation" : "<p> <a>Facet</a> structure associated with the facet.</p>",
+          "documentation" : "<p>The <a>Facet</a> structure that is associated with the facet.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -9159,6 +10412,92 @@
       "value" : null,
       "wrapper" : false
     },
+    "GetTypedLinkFacetInformationRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Name" : {
+          "deprecated" : false,
+          "documentation" : "<p>The unique name of the typed link facet.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TypedLinkName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "SchemaArn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <a>arns</a>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "x-amz-data-partition",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Arn",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "SchemaArn", "Name" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "GetTypedLinkFacetInformationResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "IdentityAttributeOrder" : {
+          "deprecated" : false,
+          "documentation" : "<p>A range filter that you provide for multiple attributes. The ability to filter typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AttributeNameList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "IndexAttachment" : {
       "deprecated" : false,
       "documentation" : "<p>Represents an index and an attached object.</p>",
@@ -9362,7 +10701,7 @@
     },
     "InvalidAttachmentException" : {
       "deprecated" : false,
-      "documentation" : "<p>Indicates that an attempt to attach an object with the same link name or to apply a schema with same name has occurred. Rename the link or the schema and then try again.</p>",
+      "documentation" : "<p>Indicates that an attempt to attach an object with the same link name or to apply a schema with the same name has occurred. Rename the link or the schema and then try again.</p>",
       "enum" : null,
       "error" : {
         "code" : null,
@@ -9596,7 +10935,7 @@
     },
     "LimitExceededException" : {
       "deprecated" : false,
-      "documentation" : "<p>Indicates limits are exceeded. See <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html\">Limits</a> for more information.</p>",
+      "documentation" : "<p>Indicates that limits are exceeded. See <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html\">Limits</a> for more information.</p>",
       "enum" : null,
       "error" : {
         "code" : null,
@@ -9645,8 +10984,8 @@
       "max" : 64,
       "member" : null,
       "members" : { },
-      "min" : 0,
-      "pattern" : null,
+      "min" : 1,
+      "pattern" : "[^\\/\\[\\]\\(\\):\\{\\}#@!?\\s\\\\;]+",
       "payload" : null,
       "required" : null,
       "streaming" : false,
@@ -10174,7 +11513,7 @@
       "members" : {
         "Directories" : {
           "deprecated" : false,
-          "documentation" : "<p>Lists all directories associated with your account in pagination fashion.</p>",
+          "documentation" : "<p>Lists all directories that are associated with your account in pagination fashion.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -10352,7 +11691,7 @@
       "members" : {
         "MaxResults" : {
           "deprecated" : false,
-          "documentation" : "<p>The maximum number of results to retrieve</p>",
+          "documentation" : "<p>The maximum number of results to retrieve.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -10380,7 +11719,7 @@
         },
         "SchemaArn" : {
           "deprecated" : false,
-          "documentation" : "<p>The ARN to retrieve facet names from.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) to retrieve facet names from.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -10425,6 +11764,176 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "FacetNameList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "NextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>The pagination token.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NextToken",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ListIncomingTypedLinksRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ConsistencyLevel" : {
+          "deprecated" : false,
+          "documentation" : "<p>The consistency level to execute the request at.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ConsistencyLevel",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "DirectoryArn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the directory where you want to list the typed links.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "x-amz-data-partition",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Arn",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "FilterAttributeRanges" : {
+          "deprecated" : false,
+          "documentation" : "<p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TypedLinkAttributeRangeList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "FilterTypedLink" : {
+          "deprecated" : false,
+          "documentation" : "<p>Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TypedLinkSchemaAndFacetName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "MaxResults" : {
+          "deprecated" : false,
+          "documentation" : "<p>The maximum number of results to retrieve.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NumberResults",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "NextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>The pagination token.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NextToken",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ObjectReference" : {
+          "deprecated" : false,
+          "documentation" : "<p>Reference that identifies the object whose attributes will be listed.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ObjectReference",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "DirectoryArn", "ObjectReference" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ListIncomingTypedLinksResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "LinkSpecifiers" : {
+          "deprecated" : false,
+          "documentation" : "<p>Returns a typed link specifier as output.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TypedLinkSpecifierList",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -10636,7 +12145,7 @@
         },
         "DirectoryArn" : {
           "deprecated" : false,
-          "documentation" : "<p>ARN associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -10650,7 +12159,7 @@
         },
         "FacetFilter" : {
           "deprecated" : false,
-          "documentation" : "<p>Used to filter the list of object attributes associated with a certain facet.</p>",
+          "documentation" : "<p>Used to filter the list of object attributes that are associated with a certain facet.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -10664,7 +12173,7 @@
         },
         "MaxResults" : {
           "deprecated" : false,
-          "documentation" : "<p>Maximum number of items to be retrieved in a single call. This is an approximate number.</p>",
+          "documentation" : "<p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -10692,7 +12201,7 @@
         },
         "ObjectReference" : {
           "deprecated" : false,
-          "documentation" : "<p>Reference that identifies the object whose attributes will be listed.</p>",
+          "documentation" : "<p>The reference that identifies the object whose attributes will be listed.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -10728,7 +12237,7 @@
       "members" : {
         "Attributes" : {
           "deprecated" : false,
-          "documentation" : "<p>Attributes map associated with the object. AttributeArn is the key, and attribute value is the value.</p>",
+          "documentation" : "<p>Attributes map that is associated with the object. <code>AttributeArn</code> is the key, and attribute value is the value.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -10792,7 +12301,7 @@
         },
         "DirectoryArn" : {
           "deprecated" : false,
-          "documentation" : "<p>ARN associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -10806,7 +12315,7 @@
         },
         "MaxResults" : {
           "deprecated" : false,
-          "documentation" : "<p>Maximum number of items to be retrieved in a single call. This is an approximate number.</p>",
+          "documentation" : "<p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -10834,7 +12343,7 @@
         },
         "ObjectReference" : {
           "deprecated" : false,
-          "documentation" : "<p>Reference that identifies the object for which child objects are being listed.</p>",
+          "documentation" : "<p>The reference that identifies the object for which child objects are being listed.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -10870,7 +12379,7 @@
       "members" : {
         "Children" : {
           "deprecated" : false,
-          "documentation" : "<p>Children structure, which is a map with key as the LinkName and <code>ObjectIdentifier</code> as the value.</p>",
+          "documentation" : "<p>Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the value.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -10934,7 +12443,7 @@
         },
         "MaxResults" : {
           "deprecated" : false,
-          "documentation" : "<p>Maximum number of items to be retrieved in a single call. This is an approximate number.</p>",
+          "documentation" : "<p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -10962,7 +12471,7 @@
         },
         "ObjectReference" : {
           "deprecated" : false,
-          "documentation" : "<p>Reference that identifies the object whose parent paths are listed.</p>",
+          "documentation" : "<p>The reference that identifies the object whose parent paths are listed.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11012,7 +12521,7 @@
         },
         "PathToObjectIdentifiersList" : {
           "deprecated" : false,
-          "documentation" : "<p>Returns the path to the <code>ObjectIdentifiers</code> associated with the directory.</p>",
+          "documentation" : "<p>Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11062,7 +12571,7 @@
         },
         "DirectoryArn" : {
           "deprecated" : false,
-          "documentation" : "<p>ARN associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11076,7 +12585,7 @@
         },
         "MaxResults" : {
           "deprecated" : false,
-          "documentation" : "<p>Maximum number of items to be retrieved in a single call. This is an approximate number.</p>",
+          "documentation" : "<p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11104,7 +12613,7 @@
         },
         "ObjectReference" : {
           "deprecated" : false,
-          "documentation" : "<p>Reference that identifies the object for which parent objects are being listed.</p>",
+          "documentation" : "<p>The reference that identifies the object for which parent objects are being listed.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11154,7 +12663,7 @@
         },
         "Parents" : {
           "deprecated" : false,
-          "documentation" : "<p>Parent structure, which is a map with key as the <code>ObjectIdentifier</code> and LinkName as the value.</p>",
+          "documentation" : "<p>The parent structure, which is a map with key as the <code>ObjectIdentifier</code> and LinkName as the value.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11204,7 +12713,7 @@
         },
         "DirectoryArn" : {
           "deprecated" : false,
-          "documentation" : "<p>ARN associated with the <a>Directory</a> where objects reside. For more information, see <a>arns</a>.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where objects reside. For more information, see <a>arns</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11218,7 +12727,7 @@
         },
         "MaxResults" : {
           "deprecated" : false,
-          "documentation" : "<p>Maximum number of items to be retrieved in a single call. This is an approximate number.</p>",
+          "documentation" : "<p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11282,7 +12791,7 @@
       "members" : {
         "AttachedPolicyIds" : {
           "deprecated" : false,
-          "documentation" : "<p>List of policy <code>ObjectIdentifiers</code>, that are attached to the object.</p>",
+          "documentation" : "<p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the object.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11305,6 +12814,176 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "NextToken",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ListOutgoingTypedLinksRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ConsistencyLevel" : {
+          "deprecated" : false,
+          "documentation" : "<p>The consistency level to execute the request at.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ConsistencyLevel",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "DirectoryArn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the directory where you want to list the typed links.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "x-amz-data-partition",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Arn",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "FilterAttributeRanges" : {
+          "deprecated" : false,
+          "documentation" : "<p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TypedLinkAttributeRangeList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "FilterTypedLink" : {
+          "deprecated" : false,
+          "documentation" : "<p>Filters are interpreted in the order of the attributes defined on the typed link facet, not the order they are supplied to any API calls.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TypedLinkSchemaAndFacetName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "MaxResults" : {
+          "deprecated" : false,
+          "documentation" : "<p>The maximum number of results to retrieve.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NumberResults",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "NextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>The pagination token.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NextToken",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ObjectReference" : {
+          "deprecated" : false,
+          "documentation" : "<p>A reference that identifies the object whose attributes will be listed.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ObjectReference",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "DirectoryArn", "ObjectReference" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ListOutgoingTypedLinksResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "NextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>The pagination token.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NextToken",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "TypedLinkSpecifiers" : {
+          "deprecated" : false,
+          "documentation" : "<p>Returns a typed link specifier as output.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TypedLinkSpecifierList",
           "streaming" : false,
           "xmlNamespace" : null
         }
@@ -11346,7 +13025,7 @@
         },
         "DirectoryArn" : {
           "deprecated" : false,
-          "documentation" : "<p>ARN associated with the <a>Directory</a> where objects reside. For more information, see <a>arns</a>.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where objects reside. For more information, see <a>arns</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11360,7 +13039,7 @@
         },
         "MaxResults" : {
           "deprecated" : false,
-          "documentation" : "<p>Maximum number of items to be retrieved in a single call. This is an approximate number.</p>",
+          "documentation" : "<p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11388,7 +13067,7 @@
         },
         "PolicyReference" : {
           "deprecated" : false,
-          "documentation" : "<p>Reference that identifies the policy object.</p>",
+          "documentation" : "<p>The reference that identifies the policy object.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11438,7 +13117,7 @@
         },
         "ObjectIdentifiers" : {
           "deprecated" : false,
-          "documentation" : "<p>List of <code>ObjectIdentifiers</code> to which the policy is attached.</p>",
+          "documentation" : "<p>A list of <code>ObjectIdentifiers</code> to which the policy is attached.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11574,7 +13253,7 @@
       "members" : {
         "MaxResults" : {
           "deprecated" : false,
-          "documentation" : "<p>The MaxResults parameter sets the maximum number of results returned in a single page. This is for future use and is not supported currently.</p>",
+          "documentation" : "<p>The <code>MaxResults</code> parameter sets the maximum number of results returned in a single page. This is for future use and is not supported currently.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11602,7 +13281,7 @@
         },
         "ResourceArn" : {
           "deprecated" : false,
-          "documentation" : "<p>ARN of the resource. Tagging is only supported for directories.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11652,7 +13331,7 @@
         },
         "Tags" : {
           "deprecated" : false,
-          "documentation" : "<p>List of tag key value pairs associated with the response.</p>",
+          "documentation" : "<p>A list of tag key value pairs that are associated with the response.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11661,6 +13340,248 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "TagList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ListTypedLinkFacetAttributesRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "MaxResults" : {
+          "deprecated" : false,
+          "documentation" : "<p>The maximum number of results to retrieve.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NumberResults",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Name" : {
+          "deprecated" : false,
+          "documentation" : "<p>The unique name of the typed link facet.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TypedLinkName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "NextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>The pagination token.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NextToken",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "SchemaArn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <a>arns</a>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "x-amz-data-partition",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Arn",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "SchemaArn", "Name" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ListTypedLinkFacetAttributesResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Attributes" : {
+          "deprecated" : false,
+          "documentation" : "<p>An ordered set of attributes associate with the typed link.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TypedLinkAttributeDefinitionList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "NextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>The pagination token.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NextToken",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ListTypedLinkFacetNamesRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "MaxResults" : {
+          "deprecated" : false,
+          "documentation" : "<p>The maximum number of results to retrieve.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NumberResults",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "NextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>The pagination token.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NextToken",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "SchemaArn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <a>arns</a>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "x-amz-data-partition",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Arn",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "SchemaArn" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ListTypedLinkFacetNamesResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "FacetNames" : {
+          "deprecated" : false,
+          "documentation" : "<p>The names of typed link facets that exist within the schema.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TypedLinkNameList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "NextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>The pagination token.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NextToken",
           "streaming" : false,
           "xmlNamespace" : null
         }
@@ -11688,7 +13609,7 @@
       "members" : {
         "DirectoryArn" : {
           "deprecated" : false,
-          "documentation" : "<p>ARN associated with the <a>Directory</a>. For more information, see <a>arns</a>.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>. For more information, see <a>arns</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11702,7 +13623,7 @@
         },
         "MaxResults" : {
           "deprecated" : false,
-          "documentation" : "<p>Maximum number of items to be retrieved in a single call. This is an approximate number.</p>",
+          "documentation" : "<p>The maximum number of items to be retrieved in a single call. This is an approximate number.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11780,7 +13701,7 @@
         },
         "PolicyToPathList" : {
           "deprecated" : false,
-          "documentation" : "<p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and <code>PolicyType</code>.</p>",
+          "documentation" : "<p>Provides list of path to policies. Policies contain <code>PolicyId</code>, <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more information, see <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies\">Policies</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11825,7 +13746,7 @@
     },
     "NotIndexException" : {
       "deprecated" : false,
-      "documentation" : "<p>Indicates the requested operation can only operate on index objects.</p>",
+      "documentation" : "<p>Indicates that the requested operation can only operate on index objects.</p>",
       "enum" : null,
       "error" : {
         "code" : null,
@@ -11864,7 +13785,7 @@
     },
     "NotNodeException" : {
       "deprecated" : false,
-      "documentation" : "<p>Occurs when any invalid operations are performed on an object which is not a node, such as calling <code>ListObjectChildren</code> for a leaf node object.</p>",
+      "documentation" : "<p>Occurs when any invalid operations are performed on an object that is not a node, such as calling <code>ListObjectChildren</code> for a leaf node object.</p>",
       "enum" : null,
       "error" : {
         "code" : null,
@@ -11903,7 +13824,7 @@
     },
     "NotPolicyException" : {
       "deprecated" : false,
-      "documentation" : "<p>Indicates the requested operation can only operate on policy objects.</p>",
+      "documentation" : "<p>Indicates that the requested operation can only operate on policy objects.</p>",
       "enum" : null,
       "error" : {
         "code" : null,
@@ -11984,7 +13905,7 @@
     },
     "ObjectAlreadyDetachedException" : {
       "deprecated" : false,
-      "documentation" : "<p>Indicates the object is not attached to the index.</p>",
+      "documentation" : "<p>Indicates that the object is not attached to the index.</p>",
       "enum" : null,
       "error" : {
         "code" : null,
@@ -12035,7 +13956,7 @@
       "members" : {
         "ObjectAttributeActionType" : {
           "deprecated" : false,
-          "documentation" : "<p>Type can be either Update or Delete.</p>",
+          "documentation" : "<p>A type that can be either <code>Update</code> or <code>Delete</code>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -12085,7 +14006,7 @@
       "members" : {
         "AttributeKey" : {
           "deprecated" : false,
-          "documentation" : "<p>The key of the attribute the attribute range covers.</p>",
+          "documentation" : "<p>The key of the attribute that the attribute range covers.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -12343,7 +14264,7 @@
     },
     "ObjectNotDetachedException" : {
       "deprecated" : false,
-      "documentation" : "<p>Indicates the requested operation cannot be completed because the object has not been detached from the tree.</p>",
+      "documentation" : "<p>Indicates that the requested operation cannot be completed because the object has not been detached from the tree.</p>",
       "enum" : null,
       "error" : {
         "code" : null,
@@ -12382,7 +14303,7 @@
     },
     "ObjectReference" : {
       "deprecated" : false,
-      "documentation" : "<p>Reference that identifies an object.</p>",
+      "documentation" : "<p>The reference that identifies an object.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -12394,7 +14315,7 @@
       "members" : {
         "Selector" : {
           "deprecated" : false,
-          "documentation" : "<p>Allows you to specify an object. You can identify an object in one of the following ways:</p> <ul> <li> <p> <i>$ObjectIdentifier</i> - Identifies the object by <code>ObjectIdentifier</code> </p> </li> <li> <p> <i>/some/path</i> - Identifies the object based on path</p> </li> <li> <p> <i>#SomeBatchReference</i> - Identifies the object in a batch call</p> </li> </ul>",
+          "documentation" : "<p>A path selector supports easy selection of an object by the parent/child links leading to it from the directory root. Use the link names from each parent/child link to construct the path. Path selectors start with a slash (/) and link names are separated by slashes. For more information about paths, see <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#accessingobjects\">Accessing Objects</a>. You can identify an object in one of the following ways:</p> <ul> <li> <p> <i>$ObjectIdentifier</i> - An object identifier is an opaque string provided by Amazon Cloud Directory. When creating objects, the system will provide you with the identifier of the created object. An object’s identifier is immutable and no two objects will ever share the same object identifier</p> </li> <li> <p> <i>/some/path</i> - Identifies the object based on path</p> </li> <li> <p> <i>#SomeBatchReference</i> - Identifies the object in a batch call</p> </li> </ul>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -12460,7 +14381,7 @@
     },
     "PathToObjectIdentifiers" : {
       "deprecated" : false,
-      "documentation" : "<p>Returns the path to the <code>ObjectIdentifiers</code> associated with the directory.</p>",
+      "documentation" : "<p>Returns the path to the <code>ObjectIdentifiers</code> that is associated with the directory.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -12486,7 +14407,7 @@
         },
         "Path" : {
           "deprecated" : false,
-          "documentation" : "<p>The path used to identify the object starting from directory root.</p>",
+          "documentation" : "<p>The path that is used to identify the object starting from directory root.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -12544,7 +14465,7 @@
     },
     "PolicyAttachment" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains the <code>PolicyType</code>, <code>PolicyId</code>, and the <code>ObjectIdentifier</code> to which it is attached.</p>",
+      "documentation" : "<p>Contains the <code>PolicyType</code>, <code>PolicyId</code>, and the <code>ObjectIdentifier</code> to which it is attached. For more information, see <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies\">Policies</a>.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -12556,7 +14477,7 @@
       "members" : {
         "ObjectIdentifier" : {
           "deprecated" : false,
-          "documentation" : "<p>The <code>ObjectIdentifier</code> associated with <code>PolicyAttachment</code>.</p>",
+          "documentation" : "<p>The <code>ObjectIdentifier</code> that is associated with <code>PolicyAttachment</code>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -12642,7 +14563,7 @@
     },
     "PolicyToPath" : {
       "deprecated" : false,
-      "documentation" : "<p>Used when a regular object exists in a <a>Directory</a> and you want to find all of the policies associated with that object and the parent to that object.</p>",
+      "documentation" : "<p>Used when a regular object exists in a <a>Directory</a> and you want to find all of the policies that are associated with that object and the parent to that object.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -12759,7 +14680,7 @@
       "members" : {
         "DevelopmentSchemaArn" : {
           "deprecated" : false,
-          "documentation" : "<p>ARN associated with the development schema. For more information, see <a>arns</a>.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) that is associated with the development schema. For more information, see <a>arns</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -12773,7 +14694,7 @@
         },
         "Name" : {
           "deprecated" : false,
-          "documentation" : "<p>New name under which the schema will be published. If this is not provided, the development schema is considered.</p>",
+          "documentation" : "<p>The new name under which the schema will be published. If this is not provided, the development schema is considered.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -12787,7 +14708,7 @@
         },
         "Version" : {
           "deprecated" : false,
-          "documentation" : "<p>Version under which the schema will be published.</p>",
+          "documentation" : "<p>The version under which the schema will be published.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -12823,7 +14744,7 @@
       "members" : {
         "PublishedSchemaArn" : {
           "deprecated" : false,
-          "documentation" : "<p>ARN associated with the published schema. For more information, see <a>arns</a>.</p>",
+          "documentation" : "<p>The ARN that is associated with the published schema. For more information, see <a>arns</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -13138,7 +15059,7 @@
     },
     "Rule" : {
       "deprecated" : false,
-      "documentation" : "<p>Contains an ARN and parameters associated with the rule.</p>",
+      "documentation" : "<p>Contains an Amazon Resource Name (ARN) and parameters that are associated with the rule.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -13150,7 +15071,7 @@
       "members" : {
         "Parameters" : {
           "deprecated" : false,
-          "documentation" : "<p>Min and max parameters associated with the rule.</p>",
+          "documentation" : "<p>The minimum and maximum parameters that are associated with the rule.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -13405,7 +15326,7 @@
     },
     "SchemaAlreadyPublishedException" : {
       "deprecated" : false,
-      "documentation" : "<p>Indicates a schema is already published.</p>",
+      "documentation" : "<p>Indicates that a schema is already published.</p>",
       "enum" : null,
       "error" : {
         "code" : null,
@@ -13651,7 +15572,7 @@
     },
     "Tag" : {
       "deprecated" : false,
-      "documentation" : "<p>Tag structure which contains tag key and value.</p>",
+      "documentation" : "<p>The tag structure that contains a tag key and value.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -13663,7 +15584,7 @@
       "members" : {
         "Key" : {
           "deprecated" : false,
-          "documentation" : "<p>Key associated with the tag.</p>",
+          "documentation" : "<p>The key that is associated with the tag.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -13677,7 +15598,7 @@
         },
         "Value" : {
           "deprecated" : false,
-          "documentation" : "<p>Value associated with the tag.</p>",
+          "documentation" : "<p>The value that is associated with the tag.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -13802,7 +15723,7 @@
       "members" : {
         "ResourceArn" : {
           "deprecated" : false,
-          "documentation" : "<p>ARN of the resource. Tagging is only supported for directories.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -13816,7 +15737,7 @@
         },
         "Tags" : {
           "deprecated" : false,
-          "documentation" : "<p>List of tag key value pairs.</p>",
+          "documentation" : "<p>A list of tag key-value pairs.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -14007,7 +15928,7 @@
       "members" : {
         "EndMode" : {
           "deprecated" : false,
-          "documentation" : "<p>Inclusive or exclusive range end.</p>",
+          "documentation" : "<p>The inclusive or exclusive range end.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -14035,7 +15956,7 @@
         },
         "StartMode" : {
           "deprecated" : false,
-          "documentation" : "<p>Inclusive or exclusive range start.</p>",
+          "documentation" : "<p>The inclusive or exclusive range start.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -14071,9 +15992,598 @@
       "value" : null,
       "wrapper" : false
     },
+    "TypedLinkAttributeDefinition" : {
+      "deprecated" : false,
+      "documentation" : "<p>A typed link attribute definition.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "DefaultValue" : {
+          "deprecated" : false,
+          "documentation" : "<p>The default value of the attribute (if configured).</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TypedAttributeValue",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "IsImmutable" : {
+          "deprecated" : false,
+          "documentation" : "<p>Whether the attribute is mutable or not.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Bool",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Name" : {
+          "deprecated" : false,
+          "documentation" : "<p>The unique name of the typed link attribute.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AttributeName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "RequiredBehavior" : {
+          "deprecated" : false,
+          "documentation" : "<p>The required behavior of the <code>TypedLinkAttributeDefinition</code>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RequiredAttributeBehavior",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Rules" : {
+          "deprecated" : false,
+          "documentation" : "<p>Validation rules that are attached to the attribute definition.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RuleMap",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Type" : {
+          "deprecated" : false,
+          "documentation" : "<p>The type of the attribute.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "FacetAttributeType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "Name", "Type", "RequiredBehavior" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "TypedLinkAttributeDefinitionList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "TypedLinkAttributeDefinition",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "TypedLinkAttributeRange" : {
+      "deprecated" : false,
+      "documentation" : "<p>Identifies the range of attributes that are used by a specified filter.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "AttributeName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The unique name of the typed link attribute.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AttributeName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Range" : {
+          "deprecated" : false,
+          "documentation" : "<p>The range of attribute values that are being selected.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TypedAttributeValueRange",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "Range" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "TypedLinkAttributeRangeList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "TypedLinkAttributeRange",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "TypedLinkFacet" : {
+      "deprecated" : false,
+      "documentation" : "<p>Defines the typed links structure and its attributes. To create a typed link facet, use the <a>CreateTypedLinkFacet</a> API.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Attributes" : {
+          "deprecated" : false,
+          "documentation" : "<p>An ordered set of attributes that are associate with the typed link. You can use typed link attributes when you need to represent the relationship between two objects or allow for quick filtering of incoming or outgoing typed links.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TypedLinkAttributeDefinitionList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "IdentityAttributeOrder" : {
+          "deprecated" : false,
+          "documentation" : "<p>A range filter that you provide for multiple attributes. The ability to filter typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AttributeNameList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Name" : {
+          "deprecated" : false,
+          "documentation" : "<p>The unique name of the typed link facet.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TypedLinkName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "Name", "Attributes", "IdentityAttributeOrder" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "TypedLinkFacetAttributeUpdate" : {
+      "deprecated" : false,
+      "documentation" : "<p>A typed link facet attribute update.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Action" : {
+          "deprecated" : false,
+          "documentation" : "<p>The action to perform when updating the attribute.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "UpdateActionType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Attribute" : {
+          "deprecated" : false,
+          "documentation" : "<p>The attribute to update.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TypedLinkAttributeDefinition",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "Attribute", "Action" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "TypedLinkFacetAttributeUpdateList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "TypedLinkFacetAttributeUpdate",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "TypedLinkName" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : "^[a-zA-Z0-9._-]*$",
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "TypedLinkNameList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "TypedLinkName",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "TypedLinkSchemaAndFacetName" : {
+      "deprecated" : false,
+      "documentation" : "<p>Identifies the schema Amazon Resource Name (ARN) and facet name for the typed link.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "SchemaArn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <a>arns</a>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Arn",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "TypedLinkName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The unique name of the typed link facet.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TypedLinkName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "SchemaArn", "TypedLinkName" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "TypedLinkSpecifier" : {
+      "deprecated" : false,
+      "documentation" : "<p>Contains all the information that is used to uniquely identify a typed link. The parameters discussed in this topic are used to uniquely specify the typed link being operated on. The <a>AttachTypedLink</a> API returns a typed link specifier while the <a>DetachTypedLink</a> API accepts one as input. Similarly, the <a>ListIncomingTypedLinks</a> and <a>ListOutgoingTypedLinks</a> API operations provide typed link specifiers as output. You can also construct a typed link specifier from scratch.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "IdentityAttributeValues" : {
+          "deprecated" : false,
+          "documentation" : "<p>Identifies the attribute value to update.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AttributeNameAndValueList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "SourceObjectReference" : {
+          "deprecated" : false,
+          "documentation" : "<p>Identifies the source object that the typed link will attach to.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ObjectReference",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "TargetObjectReference" : {
+          "deprecated" : false,
+          "documentation" : "<p>Identifies the target object that the typed link will attach to.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ObjectReference",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "TypedLinkFacet" : {
+          "deprecated" : false,
+          "documentation" : "<p>Identifies the typed link facet that is associated with the typed link.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TypedLinkSchemaAndFacetName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "TypedLinkFacet", "SourceObjectReference", "TargetObjectReference", "IdentityAttributeValues" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "TypedLinkSpecifierList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "TypedLinkSpecifier",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
     "UnsupportedIndexTypeException" : {
       "deprecated" : false,
-      "documentation" : "<p>Indicates the requested index type is not supported.</p>",
+      "documentation" : "<p>Indicates that the requested index type is not supported.</p>",
       "enum" : null,
       "error" : {
         "code" : null,
@@ -14124,7 +16634,7 @@
       "members" : {
         "ResourceArn" : {
           "deprecated" : false,
-          "documentation" : "<p>ARN of the resource. Tagging is only supported for directories.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -14138,7 +16648,7 @@
         },
         "TagKeys" : {
           "deprecated" : false,
-          "documentation" : "<p>Keys of the tag that needs to be removed from the resource.</p>",
+          "documentation" : "<p>Keys of the tag that need to be removed from the resource.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -14216,7 +16726,7 @@
       "members" : {
         "AttributeUpdates" : {
           "deprecated" : false,
-          "documentation" : "<p>List of attributes that need to be updated in a given schema <a>Facet</a>. Each attribute is followed by AttributeAction, which specifies the type of update operation to perform. </p>",
+          "documentation" : "<p>List of attributes that need to be updated in a given schema <a>Facet</a>. Each attribute is followed by <code>AttributeAction</code>, which specifies the type of update operation to perform. </p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -14230,7 +16740,7 @@
         },
         "Name" : {
           "deprecated" : false,
-          "documentation" : "<p> </p>",
+          "documentation" : "<p>The name of the facet.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -14244,7 +16754,7 @@
         },
         "ObjectType" : {
           "deprecated" : false,
-          "documentation" : "<p>Object type associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.</p>",
+          "documentation" : "<p>The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -14258,7 +16768,7 @@
         },
         "SchemaArn" : {
           "deprecated" : false,
-          "documentation" : "<p>ARN associated with the <a>Facet</a>. For more information, see <a>arns</a>.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>. For more information, see <a>arns</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -14315,7 +16825,7 @@
       "members" : {
         "AttributeUpdates" : {
           "deprecated" : false,
-          "documentation" : "<p>Attributes update structure.</p>",
+          "documentation" : "<p>The attributes update structure.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -14329,7 +16839,7 @@
         },
         "DirectoryArn" : {
           "deprecated" : false,
-          "documentation" : "<p>ARN associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -14343,7 +16853,7 @@
         },
         "ObjectReference" : {
           "deprecated" : false,
-          "documentation" : "<p>Reference that identifies the object.</p>",
+          "documentation" : "<p>The reference that identifies the object.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -14379,7 +16889,7 @@
       "members" : {
         "ObjectIdentifier" : {
           "deprecated" : false,
-          "documentation" : "<p> <code>ObjectIdentifier</code> of the updated object.</p>",
+          "documentation" : "<p>The <code>ObjectIdentifier</code> of the updated object.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -14415,7 +16925,7 @@
       "members" : {
         "Name" : {
           "deprecated" : false,
-          "documentation" : "<p>Name of the schema.</p>",
+          "documentation" : "<p>The name of the schema.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -14429,7 +16939,7 @@
         },
         "SchemaArn" : {
           "deprecated" : false,
-          "documentation" : "<p>ARN of the development schema. For more information, see <a>arns</a>.</p>",
+          "documentation" : "<p>The Amazon Resource Name (ARN) of the development schema. For more information, see <a>arns</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -14465,7 +16975,7 @@
       "members" : {
         "SchemaArn" : {
           "deprecated" : false,
-          "documentation" : "<p>ARN associated with the updated schema. For more information, see <a>arns</a>.</p>",
+          "documentation" : "<p>The ARN that is associated with the updated schema. For more information, see <a>arns</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -14487,9 +16997,108 @@
       "value" : null,
       "wrapper" : false
     },
+    "UpdateTypedLinkFacetRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "AttributeUpdates" : {
+          "deprecated" : false,
+          "documentation" : "<p>Attributes update structure.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TypedLinkFacetAttributeUpdateList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "IdentityAttributeOrder" : {
+          "deprecated" : false,
+          "documentation" : "<p>A range filter that you provide for multiple attributes. The ability to filter typed links considers the order that the attributes are defined on the typed link facet. When providing ranges to a typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range. Filters are interpreted in the order of the attributes on the typed link facet, not the order in which they are supplied to any API calls.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AttributeNameList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Name" : {
+          "deprecated" : false,
+          "documentation" : "<p>The unique name of the typed link facet.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TypedLinkName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "SchemaArn" : {
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <a>arns</a>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "x-amz-data-partition",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Arn",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "SchemaArn", "Name", "AttributeUpdates", "IdentityAttributeOrder" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "UpdateTypedLinkFacetResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "ValidationException" : {
       "deprecated" : false,
-      "documentation" : "<p>Indicates your request is malformed in some manner. See the exception message.</p>",
+      "documentation" : "<p>Indicates that your request is malformed in some manner. See the exception message.</p>",
       "enum" : null,
       "error" : {
         "code" : null,
@@ -14548,5 +17157,5 @@
       "wrapper" : false
     }
   },
-  "documentation" : "<fullname>Amazon Cloud Directory</fullname> <p>Amazon Cloud Directory is a component of the AWS Directory Service that simplifies the development and management of cloud-scale web, mobile and IoT applications. This guide describes the Cloud Directory operations that you can call programatically and includes detailed information on data types and errors. For information about AWS Directory Services features, see <a href=\"https://aws.amazon.com/directoryservice/\">AWS Directory Service</a> and the <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/what_is.html\">AWS Directory Service Administration Guide</a>.</p>"
+  "documentation" : "<fullname>Amazon Cloud Directory</fullname> <p>Amazon Cloud Directory is a component of the AWS Directory Service that simplifies the development and management of cloud-scale web, mobile, and IoT applications. This guide describes the Cloud Directory operations that you can call programmatically and includes detailed information on data types and errors. For information about AWS Directory Services features, see <a href=\"https://aws.amazon.com/directoryservice/\">AWS Directory Service</a> and the <a href=\"http://docs.aws.amazon.com/directoryservice/latest/admin-guide/what_is.html\">AWS Directory Service Administration Guide</a>.</p>"
 }

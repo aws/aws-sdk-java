@@ -28,8 +28,8 @@ import com.amazonaws.services.clouddirectory.model.*;
  * <fullname>Amazon Cloud Directory</fullname>
  * <p>
  * Amazon Cloud Directory is a component of the AWS Directory Service that simplifies the development and management of
- * cloud-scale web, mobile and IoT applications. This guide describes the Cloud Directory operations that you can call
- * programatically and includes detailed information on data types and errors. For information about AWS Directory
+ * cloud-scale web, mobile, and IoT applications. This guide describes the Cloud Directory operations that you can call
+ * programmatically and includes detailed information on data types and errors. For information about AWS Directory
  * Services features, see <a href="https://aws.amazon.com/directoryservice/">AWS Directory Service</a> and the <a
  * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/what_is.html">AWS Directory Service
  * Administration Guide</a>.
@@ -71,7 +71,8 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Copies input published schema into <a>Directory</a> with same name and version as that of published schema .
+     * Copies the input published schema into the <a>Directory</a> with the same name and version as that of the
+     * published schema .
      * </p>
      * 
      * @param applySchemaRequest
@@ -84,7 +85,8 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Copies input published schema into <a>Directory</a> with same name and version as that of published schema .
+     * Copies the input published schema into the <a>Directory</a> with the same name and version as that of the
+     * published schema .
      * </p>
      * 
      * @param applySchemaRequest
@@ -216,6 +218,41 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      */
     java.util.concurrent.Future<AttachToIndexResult> attachToIndexAsync(AttachToIndexRequest attachToIndexRequest,
             com.amazonaws.handlers.AsyncHandler<AttachToIndexRequest, AttachToIndexResult> asyncHandler);
+
+    /**
+     * <p>
+     * Attaches a typed link to a specified source and target object. For more information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.
+     * </p>
+     * 
+     * @param attachTypedLinkRequest
+     * @return A Java Future containing the result of the AttachTypedLink operation returned by the service.
+     * @sample AmazonCloudDirectoryAsync.AttachTypedLink
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachTypedLink" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AttachTypedLinkResult> attachTypedLinkAsync(AttachTypedLinkRequest attachTypedLinkRequest);
+
+    /**
+     * <p>
+     * Attaches a typed link to a specified source and target object. For more information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.
+     * </p>
+     * 
+     * @param attachTypedLinkRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AttachTypedLink operation returned by the service.
+     * @sample AmazonCloudDirectoryAsyncHandler.AttachTypedLink
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachTypedLink" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AttachTypedLinkResult> attachTypedLinkAsync(AttachTypedLinkRequest attachTypedLinkRequest,
+            com.amazonaws.handlers.AsyncHandler<AttachTypedLinkRequest, AttachTypedLinkResult> asyncHandler);
 
     /**
      * <p>
@@ -383,8 +420,8 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
     /**
      * <p>
      * Creates an object in a <a>Directory</a>. Additionally attaches the object to a parent, if a parent reference and
-     * LinkName is specified. An object is simply a collection of <a>Facet</a> attributes. You can also use this API
-     * call to create a policy object, if the facet from which you create the object is a policy facet.
+     * <code>LinkName</code> is specified. An object is simply a collection of <a>Facet</a> attributes. You can also use
+     * this API call to create a policy object, if the facet from which you create the object is a policy facet.
      * </p>
      * 
      * @param createObjectRequest
@@ -398,8 +435,8 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
     /**
      * <p>
      * Creates an object in a <a>Directory</a>. Additionally attaches the object to a parent, if a parent reference and
-     * LinkName is specified. An object is simply a collection of <a>Facet</a> attributes. You can also use this API
-     * call to create a policy object, if the facet from which you create the object is a policy facet.
+     * <code>LinkName</code> is specified. An object is simply a collection of <a>Facet</a> attributes. You can also use
+     * this API call to create a policy object, if the facet from which you create the object is a policy facet.
      * </p>
      * 
      * @param createObjectRequest
@@ -486,6 +523,41 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
+     * Creates a <a>TypedLinkFacet</a>. For more information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.
+     * </p>
+     * 
+     * @param createTypedLinkFacetRequest
+     * @return A Java Future containing the result of the CreateTypedLinkFacet operation returned by the service.
+     * @sample AmazonCloudDirectoryAsync.CreateTypedLinkFacet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateTypedLinkFacet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTypedLinkFacetResult> createTypedLinkFacetAsync(CreateTypedLinkFacetRequest createTypedLinkFacetRequest);
+
+    /**
+     * <p>
+     * Creates a <a>TypedLinkFacet</a>. For more information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.
+     * </p>
+     * 
+     * @param createTypedLinkFacetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateTypedLinkFacet operation returned by the service.
+     * @sample AmazonCloudDirectoryAsyncHandler.CreateTypedLinkFacet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateTypedLinkFacet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTypedLinkFacetResult> createTypedLinkFacetAsync(CreateTypedLinkFacetRequest createTypedLinkFacetRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateTypedLinkFacetRequest, CreateTypedLinkFacetResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a directory. Only disabled directories can be deleted. A deleted directory cannot be undone. Exercise
      * extreme caution when deleting directories.
      * </p>
@@ -519,8 +591,8 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Deletes a given <a>Facet</a>. All attributes and <a>Rule</a>s associated with the facet will be deleted. Only
-     * development schema facets are allowed deletion.
+     * Deletes a given <a>Facet</a>. All attributes and <a>Rule</a>s that are associated with the facet will be deleted.
+     * Only development schema facets are allowed deletion.
      * </p>
      * 
      * @param deleteFacetRequest
@@ -533,8 +605,8 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Deletes a given <a>Facet</a>. All attributes and <a>Rule</a>s associated with the facet will be deleted. Only
-     * development schema facets are allowed deletion.
+     * Deletes a given <a>Facet</a>. All attributes and <a>Rule</a>s that are associated with the facet will be deleted.
+     * Only development schema facets are allowed deletion.
      * </p>
      * 
      * @param deleteFacetRequest
@@ -611,6 +683,41 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      */
     java.util.concurrent.Future<DeleteSchemaResult> deleteSchemaAsync(DeleteSchemaRequest deleteSchemaRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteSchemaRequest, DeleteSchemaResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a <a>TypedLinkFacet</a>. For more information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.
+     * </p>
+     * 
+     * @param deleteTypedLinkFacetRequest
+     * @return A Java Future containing the result of the DeleteTypedLinkFacet operation returned by the service.
+     * @sample AmazonCloudDirectoryAsync.DeleteTypedLinkFacet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteTypedLinkFacet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTypedLinkFacetResult> deleteTypedLinkFacetAsync(DeleteTypedLinkFacetRequest deleteTypedLinkFacetRequest);
+
+    /**
+     * <p>
+     * Deletes a <a>TypedLinkFacet</a>. For more information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.
+     * </p>
+     * 
+     * @param deleteTypedLinkFacetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTypedLinkFacet operation returned by the service.
+     * @sample AmazonCloudDirectoryAsyncHandler.DeleteTypedLinkFacet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteTypedLinkFacet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTypedLinkFacetResult> deleteTypedLinkFacetAsync(DeleteTypedLinkFacetRequest deleteTypedLinkFacetRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteTypedLinkFacetRequest, DeleteTypedLinkFacetResult> asyncHandler);
 
     /**
      * <p>
@@ -706,6 +813,41 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      */
     java.util.concurrent.Future<DetachPolicyResult> detachPolicyAsync(DetachPolicyRequest detachPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<DetachPolicyRequest, DetachPolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Detaches a typed link from a specified source and target object. For more information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.
+     * </p>
+     * 
+     * @param detachTypedLinkRequest
+     * @return A Java Future containing the result of the DetachTypedLink operation returned by the service.
+     * @sample AmazonCloudDirectoryAsync.DetachTypedLink
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachTypedLink" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DetachTypedLinkResult> detachTypedLinkAsync(DetachTypedLinkRequest detachTypedLinkRequest);
+
+    /**
+     * <p>
+     * Detaches a typed link from a specified source and target object. For more information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.
+     * </p>
+     * 
+     * @param detachTypedLinkRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DetachTypedLink operation returned by the service.
+     * @sample AmazonCloudDirectoryAsyncHandler.DetachTypedLink
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachTypedLink" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DetachTypedLinkResult> detachTypedLinkAsync(DetachTypedLinkRequest detachTypedLinkRequest,
+            com.amazonaws.handlers.AsyncHandler<DetachTypedLinkRequest, DetachTypedLinkResult> asyncHandler);
 
     /**
      * <p>
@@ -806,8 +948,8 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Gets details of the <a>Facet</a>, such as Facet Name, Attributes, <a>Rule</a>s, or ObjectType. You can call this
-     * on all kinds of schema facets -- published, development, or applied.
+     * Gets details of the <a>Facet</a>, such as facet name, attributes, <a>Rule</a>s, or <code>ObjectType</code>. You
+     * can call this on all kinds of schema facets -- published, development, or applied.
      * </p>
      * 
      * @param getFacetRequest
@@ -820,8 +962,8 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Gets details of the <a>Facet</a>, such as Facet Name, Attributes, <a>Rule</a>s, or ObjectType. You can call this
-     * on all kinds of schema facets -- published, development, or applied.
+     * Gets details of the <a>Facet</a>, such as facet name, attributes, <a>Rule</a>s, or <code>ObjectType</code>. You
+     * can call this on all kinds of schema facets -- published, development, or applied.
      * </p>
      * 
      * @param getFacetRequest
@@ -905,6 +1047,45 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
+     * Returns the identity attribute order for a specific <a>TypedLinkFacet</a>. For more information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.
+     * </p>
+     * 
+     * @param getTypedLinkFacetInformationRequest
+     * @return A Java Future containing the result of the GetTypedLinkFacetInformation operation returned by the
+     *         service.
+     * @sample AmazonCloudDirectoryAsync.GetTypedLinkFacetInformation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetTypedLinkFacetInformation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetTypedLinkFacetInformationResult> getTypedLinkFacetInformationAsync(
+            GetTypedLinkFacetInformationRequest getTypedLinkFacetInformationRequest);
+
+    /**
+     * <p>
+     * Returns the identity attribute order for a specific <a>TypedLinkFacet</a>. For more information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.
+     * </p>
+     * 
+     * @param getTypedLinkFacetInformationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetTypedLinkFacetInformation operation returned by the
+     *         service.
+     * @sample AmazonCloudDirectoryAsyncHandler.GetTypedLinkFacetInformation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetTypedLinkFacetInformation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetTypedLinkFacetInformationResult> getTypedLinkFacetInformationAsync(
+            GetTypedLinkFacetInformationRequest getTypedLinkFacetInformationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetTypedLinkFacetInformationRequest, GetTypedLinkFacetInformationResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists schemas applied to a directory.
      * </p>
      * 
@@ -967,7 +1148,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Retrieves the ARNs of schemas in the development state.
+     * Retrieves each Amazon Resource Name (ARN) of schemas in the development state.
      * </p>
      * 
      * @param listDevelopmentSchemaArnsRequest
@@ -981,7 +1162,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Retrieves the ARNs of schemas in the development state.
+     * Retrieves each Amazon Resource Name (ARN) of schemas in the development state.
      * </p>
      * 
      * @param listDevelopmentSchemaArnsRequest
@@ -1093,6 +1274,43 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
+     * Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a> information for an object. It also
+     * supports filtering by typed link facet and identity attributes. For more information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.
+     * </p>
+     * 
+     * @param listIncomingTypedLinksRequest
+     * @return A Java Future containing the result of the ListIncomingTypedLinks operation returned by the service.
+     * @sample AmazonCloudDirectoryAsync.ListIncomingTypedLinks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIncomingTypedLinks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListIncomingTypedLinksResult> listIncomingTypedLinksAsync(ListIncomingTypedLinksRequest listIncomingTypedLinksRequest);
+
+    /**
+     * <p>
+     * Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a> information for an object. It also
+     * supports filtering by typed link facet and identity attributes. For more information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.
+     * </p>
+     * 
+     * @param listIncomingTypedLinksRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListIncomingTypedLinks operation returned by the service.
+     * @sample AmazonCloudDirectoryAsyncHandler.ListIncomingTypedLinks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIncomingTypedLinks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListIncomingTypedLinksResult> listIncomingTypedLinksAsync(ListIncomingTypedLinksRequest listIncomingTypedLinksRequest,
+            com.amazonaws.handlers.AsyncHandler<ListIncomingTypedLinksRequest, ListIncomingTypedLinksResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists objects attached to the specified index.
      * </p>
      * 
@@ -1124,7 +1342,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Lists all attributes associated with an object.
+     * Lists all attributes that are associated with an object.
      * </p>
      * 
      * @param listObjectAttributesRequest
@@ -1137,7 +1355,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Lists all attributes associated with an object.
+     * Lists all attributes that are associated with an object.
      * </p>
      * 
      * @param listObjectAttributesRequest
@@ -1155,7 +1373,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Returns a paginated list of child objects associated with a given object.
+     * Returns a paginated list of child objects that are associated with a given object.
      * </p>
      * 
      * @param listObjectChildrenRequest
@@ -1168,7 +1386,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Returns a paginated list of child objects associated with a given object.
+     * Returns a paginated list of child objects that are associated with a given object.
      * </p>
      * 
      * @param listObjectChildrenRequest
@@ -1195,8 +1413,8 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * Use this API to evaluate all parents for an object. The call returns all objects from the root of the directory
      * up to the requested object. The API returns the number of paths based on user-defined <code>MaxResults</code>, in
      * case there are multiple paths to the parent. The order of the paths and nodes returned is consistent among
-     * multiple API calls unless the objects are deleted or moved. Paths not leading to directory root are ignored from
-     * the target object.
+     * multiple API calls unless the objects are deleted or moved. Paths not leading to the directory root are ignored
+     * from the target object.
      * </p>
      * 
      * @param listObjectParentPathsRequest
@@ -1218,8 +1436,8 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * Use this API to evaluate all parents for an object. The call returns all objects from the root of the directory
      * up to the requested object. The API returns the number of paths based on user-defined <code>MaxResults</code>, in
      * case there are multiple paths to the parent. The order of the paths and nodes returned is consistent among
-     * multiple API calls unless the objects are deleted or moved. Paths not leading to directory root are ignored from
-     * the target object.
+     * multiple API calls unless the objects are deleted or moved. Paths not leading to the directory root are ignored
+     * from the target object.
      * </p>
      * 
      * @param listObjectParentPathsRequest
@@ -1237,7 +1455,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Lists parent objects associated with a given object in pagination fashion.
+     * Lists parent objects that are associated with a given object in pagination fashion.
      * </p>
      * 
      * @param listObjectParentsRequest
@@ -1250,7 +1468,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Lists parent objects associated with a given object in pagination fashion.
+     * Lists parent objects that are associated with a given object in pagination fashion.
      * </p>
      * 
      * @param listObjectParentsRequest
@@ -1299,6 +1517,43 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
+     * Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a> information for an object. It also
+     * supports filtering by typed link facet and identity attributes. For more information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.
+     * </p>
+     * 
+     * @param listOutgoingTypedLinksRequest
+     * @return A Java Future containing the result of the ListOutgoingTypedLinks operation returned by the service.
+     * @sample AmazonCloudDirectoryAsync.ListOutgoingTypedLinks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListOutgoingTypedLinks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListOutgoingTypedLinksResult> listOutgoingTypedLinksAsync(ListOutgoingTypedLinksRequest listOutgoingTypedLinksRequest);
+
+    /**
+     * <p>
+     * Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a> information for an object. It also
+     * supports filtering by typed link facet and identity attributes. For more information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.
+     * </p>
+     * 
+     * @param listOutgoingTypedLinksRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListOutgoingTypedLinks operation returned by the service.
+     * @sample AmazonCloudDirectoryAsyncHandler.ListOutgoingTypedLinks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListOutgoingTypedLinks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListOutgoingTypedLinksResult> listOutgoingTypedLinksAsync(ListOutgoingTypedLinksRequest listOutgoingTypedLinksRequest,
+            com.amazonaws.handlers.AsyncHandler<ListOutgoingTypedLinksRequest, ListOutgoingTypedLinksResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached.
      * </p>
      * 
@@ -1330,7 +1585,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Retrieves published schema ARNs.
+     * Retrieves each published schema Amazon Resource Name (ARN).
      * </p>
      * 
      * @param listPublishedSchemaArnsRequest
@@ -1343,7 +1598,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Retrieves published schema ARNs.
+     * Retrieves each published schema Amazon Resource Name (ARN).
      * </p>
      * 
      * @param listPublishedSchemaArnsRequest
@@ -1394,11 +1649,88 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
+     * Returns a paginated list of all attribute definitions for a particular <a>TypedLinkFacet</a>. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.
+     * </p>
+     * 
+     * @param listTypedLinkFacetAttributesRequest
+     * @return A Java Future containing the result of the ListTypedLinkFacetAttributes operation returned by the
+     *         service.
+     * @sample AmazonCloudDirectoryAsync.ListTypedLinkFacetAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTypedLinkFacetAttributesResult> listTypedLinkFacetAttributesAsync(
+            ListTypedLinkFacetAttributesRequest listTypedLinkFacetAttributesRequest);
+
+    /**
+     * <p>
+     * Returns a paginated list of all attribute definitions for a particular <a>TypedLinkFacet</a>. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.
+     * </p>
+     * 
+     * @param listTypedLinkFacetAttributesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTypedLinkFacetAttributes operation returned by the
+     *         service.
+     * @sample AmazonCloudDirectoryAsyncHandler.ListTypedLinkFacetAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTypedLinkFacetAttributesResult> listTypedLinkFacetAttributesAsync(
+            ListTypedLinkFacetAttributesRequest listTypedLinkFacetAttributesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTypedLinkFacetAttributesRequest, ListTypedLinkFacetAttributesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a paginated list of <code>TypedLink</code> facet names for a particular schema. For more information, see
+     * <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.
+     * </p>
+     * 
+     * @param listTypedLinkFacetNamesRequest
+     * @return A Java Future containing the result of the ListTypedLinkFacetNames operation returned by the service.
+     * @sample AmazonCloudDirectoryAsync.ListTypedLinkFacetNames
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetNames"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTypedLinkFacetNamesResult> listTypedLinkFacetNamesAsync(ListTypedLinkFacetNamesRequest listTypedLinkFacetNamesRequest);
+
+    /**
+     * <p>
+     * Returns a paginated list of <code>TypedLink</code> facet names for a particular schema. For more information, see
+     * <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.
+     * </p>
+     * 
+     * @param listTypedLinkFacetNamesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTypedLinkFacetNames operation returned by the service.
+     * @sample AmazonCloudDirectoryAsyncHandler.ListTypedLinkFacetNames
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetNames"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTypedLinkFacetNamesResult> listTypedLinkFacetNamesAsync(ListTypedLinkFacetNamesRequest listTypedLinkFacetNamesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTypedLinkFacetNamesRequest, ListTypedLinkFacetNamesResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists all policies from the root of the <a>Directory</a> to the object specified. If there are no policies
      * present, an empty list is returned. If policies are present, and if some objects don't have the policies
      * attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns
      * <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the
-     * root from the target object are ignored.
+     * root from the target object are ignored. For more information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
      * </p>
      * 
      * @param lookupPolicyRequest
@@ -1415,7 +1747,8 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * present, an empty list is returned. If policies are present, and if some objects don't have the policies
      * attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns
      * <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the
-     * root from the target object are ignored.
+     * root from the target object are ignored. For more information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
      * </p>
      * 
      * @param lookupPolicyRequest
@@ -1433,9 +1766,9 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Publishes a development schema with a version. If description and attributes are specified, PublishSchema
-     * overrides the development schema description and attributes. If not, the development schema description and
-     * attributes are used.
+     * Publishes a development schema with a version. If description and attributes are specified,
+     * <code>PublishSchema</code> overrides the development schema description and attributes. If not, the development
+     * schema description and attributes are used.
      * </p>
      * 
      * @param publishSchemaRequest
@@ -1448,9 +1781,9 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Publishes a development schema with a version. If description and attributes are specified, PublishSchema
-     * overrides the development schema description and attributes. If not, the development schema description and
-     * attributes are used.
+     * Publishes a development schema with a version. If description and attributes are specified,
+     * <code>PublishSchema</code> overrides the development schema description and attributes. If not, the development
+     * schema description and attributes are used.
      * </p>
      * 
      * @param publishSchemaRequest
@@ -1534,7 +1867,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * API for adding tags to a resource.
+     * An API operation for adding tags to a resource.
      * </p>
      * 
      * @param tagResourceRequest
@@ -1547,7 +1880,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * API for adding tags to a resource.
+     * An API operation for adding tags to a resource.
      * </p>
      * 
      * @param tagResourceRequest
@@ -1565,7 +1898,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * API for removing tags from a resource.
+     * An API operation for removing tags from a resource.
      * </p>
      * 
      * @param untagResourceRequest
@@ -1578,7 +1911,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * API for removing tags from a resource.
+     * An API operation for removing tags from a resource.
      * </p>
      * 
      * @param untagResourceRequest
@@ -1720,5 +2053,40 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      */
     java.util.concurrent.Future<UpdateSchemaResult> updateSchemaAsync(UpdateSchemaRequest updateSchemaRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateSchemaRequest, UpdateSchemaResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a <a>TypedLinkFacet</a>. For more information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.
+     * </p>
+     * 
+     * @param updateTypedLinkFacetRequest
+     * @return A Java Future containing the result of the UpdateTypedLinkFacet operation returned by the service.
+     * @sample AmazonCloudDirectoryAsync.UpdateTypedLinkFacet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateTypedLinkFacet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTypedLinkFacetResult> updateTypedLinkFacetAsync(UpdateTypedLinkFacetRequest updateTypedLinkFacetRequest);
+
+    /**
+     * <p>
+     * Updates a <a>TypedLinkFacet</a>. For more information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.
+     * </p>
+     * 
+     * @param updateTypedLinkFacetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateTypedLinkFacet operation returned by the service.
+     * @sample AmazonCloudDirectoryAsyncHandler.UpdateTypedLinkFacet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateTypedLinkFacet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTypedLinkFacetResult> updateTypedLinkFacetAsync(UpdateTypedLinkFacetRequest updateTypedLinkFacetRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateTypedLinkFacetRequest, UpdateTypedLinkFacetResult> asyncHandler);
 
 }

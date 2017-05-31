@@ -30,7 +30,7 @@ public class ObjectAttributeRange implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The key of the attribute the attribute range covers.
+     * The key of the attribute that the attribute range covers.
      * </p>
      */
     private AttributeKey attributeKey;
@@ -43,11 +43,11 @@ public class ObjectAttributeRange implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The key of the attribute the attribute range covers.
+     * The key of the attribute that the attribute range covers.
      * </p>
      * 
      * @param attributeKey
-     *        The key of the attribute the attribute range covers.
+     *        The key of the attribute that the attribute range covers.
      */
 
     public void setAttributeKey(AttributeKey attributeKey) {
@@ -56,10 +56,10 @@ public class ObjectAttributeRange implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The key of the attribute the attribute range covers.
+     * The key of the attribute that the attribute range covers.
      * </p>
      * 
-     * @return The key of the attribute the attribute range covers.
+     * @return The key of the attribute that the attribute range covers.
      */
 
     public AttributeKey getAttributeKey() {
@@ -68,11 +68,11 @@ public class ObjectAttributeRange implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The key of the attribute the attribute range covers.
+     * The key of the attribute that the attribute range covers.
      * </p>
      * 
      * @param attributeKey
-     *        The key of the attribute the attribute range covers.
+     *        The key of the attribute that the attribute range covers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

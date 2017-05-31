@@ -36,7 +36,7 @@ public class Directory implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * ARN associated with the directory. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the directory. For more information, see <a>arns</a>.
      * </p>
      */
     private String directoryArn;
@@ -95,11 +95,12 @@ public class Directory implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * ARN associated with the directory. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the directory. For more information, see <a>arns</a>.
      * </p>
      * 
      * @param directoryArn
-     *        ARN associated with the directory. For more information, see <a>arns</a>.
+     *        The Amazon Resource Name (ARN) that is associated with the directory. For more information, see
+     *        <a>arns</a>.
      */
 
     public void setDirectoryArn(String directoryArn) {
@@ -108,10 +109,11 @@ public class Directory implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * ARN associated with the directory. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the directory. For more information, see <a>arns</a>.
      * </p>
      * 
-     * @return ARN associated with the directory. For more information, see <a>arns</a>.
+     * @return The Amazon Resource Name (ARN) that is associated with the directory. For more information, see
+     *         <a>arns</a>.
      */
 
     public String getDirectoryArn() {
@@ -120,11 +122,12 @@ public class Directory implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * ARN associated with the directory. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the directory. For more information, see <a>arns</a>.
      * </p>
      * 
      * @param directoryArn
-     *        ARN associated with the directory. For more information, see <a>arns</a>.
+     *        The Amazon Resource Name (ARN) that is associated with the directory. For more information, see
+     *        <a>arns</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Reference that identifies an object.
+ * The reference that identifies an object.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ObjectReference" target="_top">AWS API
@@ -30,12 +30,18 @@ public class ObjectReference implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Allows you to specify an object. You can identify an object in one of the following ways:
+     * A path selector supports easy selection of an object by the parent/child links leading to it from the directory
+     * root. Use the link names from each parent/child link to construct the path. Path selectors start with a slash (/)
+     * and link names are separated by slashes. For more information about paths, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#accessingobjects"
+     * >Accessing Objects</a>. You can identify an object in one of the following ways:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>$ObjectIdentifier</i> - Identifies the object by <code>ObjectIdentifier</code>
+     * <i>$ObjectIdentifier</i> - An object identifier is an opaque string provided by Amazon Cloud Directory. When
+     * creating objects, the system will provide you with the identifier of the created object. An object’s identifier
+     * is immutable and no two objects will ever share the same object identifier
      * </p>
      * </li>
      * <li>
@@ -54,12 +60,18 @@ public class ObjectReference implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Allows you to specify an object. You can identify an object in one of the following ways:
+     * A path selector supports easy selection of an object by the parent/child links leading to it from the directory
+     * root. Use the link names from each parent/child link to construct the path. Path selectors start with a slash (/)
+     * and link names are separated by slashes. For more information about paths, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#accessingobjects"
+     * >Accessing Objects</a>. You can identify an object in one of the following ways:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>$ObjectIdentifier</i> - Identifies the object by <code>ObjectIdentifier</code>
+     * <i>$ObjectIdentifier</i> - An object identifier is an opaque string provided by Amazon Cloud Directory. When
+     * creating objects, the system will provide you with the identifier of the created object. An object’s identifier
+     * is immutable and no two objects will ever share the same object identifier
      * </p>
      * </li>
      * <li>
@@ -75,11 +87,17 @@ public class ObjectReference implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * 
      * @param selector
-     *        Allows you to specify an object. You can identify an object in one of the following ways:</p>
+     *        A path selector supports easy selection of an object by the parent/child links leading to it from the
+     *        directory root. Use the link names from each parent/child link to construct the path. Path selectors start
+     *        with a slash (/) and link names are separated by slashes. For more information about paths, see <a href=
+     *        "http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#accessingobjects"
+     *        >Accessing Objects</a>. You can identify an object in one of the following ways:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>$ObjectIdentifier</i> - Identifies the object by <code>ObjectIdentifier</code>
+     *        <i>$ObjectIdentifier</i> - An object identifier is an opaque string provided by Amazon Cloud Directory.
+     *        When creating objects, the system will provide you with the identifier of the created object. An object’s
+     *        identifier is immutable and no two objects will ever share the same object identifier
      *        </p>
      *        </li>
      *        <li>
@@ -100,12 +118,18 @@ public class ObjectReference implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Allows you to specify an object. You can identify an object in one of the following ways:
+     * A path selector supports easy selection of an object by the parent/child links leading to it from the directory
+     * root. Use the link names from each parent/child link to construct the path. Path selectors start with a slash (/)
+     * and link names are separated by slashes. For more information about paths, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#accessingobjects"
+     * >Accessing Objects</a>. You can identify an object in one of the following ways:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>$ObjectIdentifier</i> - Identifies the object by <code>ObjectIdentifier</code>
+     * <i>$ObjectIdentifier</i> - An object identifier is an opaque string provided by Amazon Cloud Directory. When
+     * creating objects, the system will provide you with the identifier of the created object. An object’s identifier
+     * is immutable and no two objects will ever share the same object identifier
      * </p>
      * </li>
      * <li>
@@ -120,11 +144,18 @@ public class ObjectReference implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * </ul>
      * 
-     * @return Allows you to specify an object. You can identify an object in one of the following ways:</p>
+     * @return A path selector supports easy selection of an object by the parent/child links leading to it from the
+     *         directory root. Use the link names from each parent/child link to construct the path. Path selectors
+     *         start with a slash (/) and link names are separated by slashes. For more information about paths, see <a
+     *         href
+     *         ="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#accessingobjects"
+     *         >Accessing Objects</a>. You can identify an object in one of the following ways:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <i>$ObjectIdentifier</i> - Identifies the object by <code>ObjectIdentifier</code>
+     *         <i>$ObjectIdentifier</i> - An object identifier is an opaque string provided by Amazon Cloud Directory.
+     *         When creating objects, the system will provide you with the identifier of the created object. An object’s
+     *         identifier is immutable and no two objects will ever share the same object identifier
      *         </p>
      *         </li>
      *         <li>
@@ -145,12 +176,18 @@ public class ObjectReference implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Allows you to specify an object. You can identify an object in one of the following ways:
+     * A path selector supports easy selection of an object by the parent/child links leading to it from the directory
+     * root. Use the link names from each parent/child link to construct the path. Path selectors start with a slash (/)
+     * and link names are separated by slashes. For more information about paths, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#accessingobjects"
+     * >Accessing Objects</a>. You can identify an object in one of the following ways:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <i>$ObjectIdentifier</i> - Identifies the object by <code>ObjectIdentifier</code>
+     * <i>$ObjectIdentifier</i> - An object identifier is an opaque string provided by Amazon Cloud Directory. When
+     * creating objects, the system will provide you with the identifier of the created object. An object’s identifier
+     * is immutable and no two objects will ever share the same object identifier
      * </p>
      * </li>
      * <li>
@@ -166,11 +203,17 @@ public class ObjectReference implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * 
      * @param selector
-     *        Allows you to specify an object. You can identify an object in one of the following ways:</p>
+     *        A path selector supports easy selection of an object by the parent/child links leading to it from the
+     *        directory root. Use the link names from each parent/child link to construct the path. Path selectors start
+     *        with a slash (/) and link names are separated by slashes. For more information about paths, see <a href=
+     *        "http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#accessingobjects"
+     *        >Accessing Objects</a>. You can identify an object in one of the following ways:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <i>$ObjectIdentifier</i> - Identifies the object by <code>ObjectIdentifier</code>
+     *        <i>$ObjectIdentifier</i> - An object identifier is an opaque string provided by Amazon Cloud Directory.
+     *        When creating objects, the system will provide you with the identifier of the created object. An object’s
+     *        identifier is immutable and no two objects will ever share the same object identifier
      *        </p>
      *        </li>
      *        <li>

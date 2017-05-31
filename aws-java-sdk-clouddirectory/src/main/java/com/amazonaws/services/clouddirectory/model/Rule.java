@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains an ARN and parameters associated with the rule.
+ * Contains an Amazon Resource Name (ARN) and parameters that are associated with the rule.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/Rule" target="_top">AWS API
@@ -36,7 +36,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
     private String type;
     /**
      * <p>
-     * Min and max parameters associated with the rule.
+     * The minimum and maximum parameters that are associated with the rule.
      * </p>
      */
     private java.util.Map<String, String> parameters;
@@ -116,10 +116,10 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Min and max parameters associated with the rule.
+     * The minimum and maximum parameters that are associated with the rule.
      * </p>
      * 
-     * @return Min and max parameters associated with the rule.
+     * @return The minimum and maximum parameters that are associated with the rule.
      */
 
     public java.util.Map<String, String> getParameters() {
@@ -128,11 +128,11 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Min and max parameters associated with the rule.
+     * The minimum and maximum parameters that are associated with the rule.
      * </p>
      * 
      * @param parameters
-     *        Min and max parameters associated with the rule.
+     *        The minimum and maximum parameters that are associated with the rule.
      */
 
     public void setParameters(java.util.Map<String, String> parameters) {
@@ -141,11 +141,11 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Min and max parameters associated with the rule.
+     * The minimum and maximum parameters that are associated with the rule.
      * </p>
      * 
      * @param parameters
-     *        Min and max parameters associated with the rule.
+     *        The minimum and maximum parameters that are associated with the rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

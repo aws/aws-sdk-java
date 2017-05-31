@@ -25,7 +25,8 @@ public class ListObjectChildrenResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Children structure, which is a map with key as the LinkName and <code>ObjectIdentifier</code> as the value.
+     * Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the
+     * value.
      * </p>
      */
     private java.util.Map<String, String> children;
@@ -38,11 +39,12 @@ public class ListObjectChildrenResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Children structure, which is a map with key as the LinkName and <code>ObjectIdentifier</code> as the value.
+     * Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the
+     * value.
      * </p>
      * 
-     * @return Children structure, which is a map with key as the LinkName and <code>ObjectIdentifier</code> as the
-     *         value.
+     * @return Children structure, which is a map with key as the <code>LinkName</code> and
+     *         <code>ObjectIdentifier</code> as the value.
      */
 
     public java.util.Map<String, String> getChildren() {
@@ -51,12 +53,13 @@ public class ListObjectChildrenResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Children structure, which is a map with key as the LinkName and <code>ObjectIdentifier</code> as the value.
+     * Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the
+     * value.
      * </p>
      * 
      * @param children
-     *        Children structure, which is a map with key as the LinkName and <code>ObjectIdentifier</code> as the
-     *        value.
+     *        Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code>
+     *        as the value.
      */
 
     public void setChildren(java.util.Map<String, String> children) {
@@ -65,12 +68,13 @@ public class ListObjectChildrenResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Children structure, which is a map with key as the LinkName and <code>ObjectIdentifier</code> as the value.
+     * Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code> as the
+     * value.
      * </p>
      * 
      * @param children
-     *        Children structure, which is a map with key as the LinkName and <code>ObjectIdentifier</code> as the
-     *        value.
+     *        Children structure, which is a map with key as the <code>LinkName</code> and <code>ObjectIdentifier</code>
+     *        as the value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

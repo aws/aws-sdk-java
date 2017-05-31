@@ -27,24 +27,27 @@ public class DeleteObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides. For more
+     * information, see <a>arns</a>.
      * </p>
      */
     private String directoryArn;
     /**
      * <p>
-     * Reference that identifies the object.
+     * A reference that identifies the object.
      * </p>
      */
     private ObjectReference objectReference;
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides. For more
+     * information, see <a>arns</a>.
      * </p>
      * 
      * @param directoryArn
-     *        ARN associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.
+     *        The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides. For
+     *        more information, see <a>arns</a>.
      */
 
     public void setDirectoryArn(String directoryArn) {
@@ -53,10 +56,12 @@ public class DeleteObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides. For more
+     * information, see <a>arns</a>.
      * </p>
      * 
-     * @return ARN associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.
+     * @return The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides. For
+     *         more information, see <a>arns</a>.
      */
 
     public String getDirectoryArn() {
@@ -65,11 +70,13 @@ public class DeleteObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides. For more
+     * information, see <a>arns</a>.
      * </p>
      * 
      * @param directoryArn
-     *        ARN associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.
+     *        The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides. For
+     *        more information, see <a>arns</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +87,11 @@ public class DeleteObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Reference that identifies the object.
+     * A reference that identifies the object.
      * </p>
      * 
      * @param objectReference
-     *        Reference that identifies the object.
+     *        A reference that identifies the object.
      */
 
     public void setObjectReference(ObjectReference objectReference) {
@@ -93,10 +100,10 @@ public class DeleteObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Reference that identifies the object.
+     * A reference that identifies the object.
      * </p>
      * 
-     * @return Reference that identifies the object.
+     * @return A reference that identifies the object.
      */
 
     public ObjectReference getObjectReference() {
@@ -105,11 +112,11 @@ public class DeleteObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Reference that identifies the object.
+     * A reference that identifies the object.
      * </p>
      * 
      * @param objectReference
-     *        Reference that identifies the object.
+     *        A reference that identifies the object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

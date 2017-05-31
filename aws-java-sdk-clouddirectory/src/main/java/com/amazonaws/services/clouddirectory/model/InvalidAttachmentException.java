@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Indicates that an attempt to attach an object with the same link name or to apply a schema with same name has
+ * Indicates that an attempt to attach an object with the same link name or to apply a schema with the same name has
  * occurred. Rename the link or the schema and then try again.
  * </p>
  */

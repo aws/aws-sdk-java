@@ -25,18 +25,18 @@ public class DeleteSchemaResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Input ARN that is returned as part of the response. For more information, see <a>arns</a>.
+     * The input ARN that is returned as part of the response. For more information, see <a>arns</a>.
      * </p>
      */
     private String schemaArn;
 
     /**
      * <p>
-     * Input ARN that is returned as part of the response. For more information, see <a>arns</a>.
+     * The input ARN that is returned as part of the response. For more information, see <a>arns</a>.
      * </p>
      * 
      * @param schemaArn
-     *        Input ARN that is returned as part of the response. For more information, see <a>arns</a>.
+     *        The input ARN that is returned as part of the response. For more information, see <a>arns</a>.
      */
 
     public void setSchemaArn(String schemaArn) {
@@ -45,10 +45,10 @@ public class DeleteSchemaResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Input ARN that is returned as part of the response. For more information, see <a>arns</a>.
+     * The input ARN that is returned as part of the response. For more information, see <a>arns</a>.
      * </p>
      * 
-     * @return Input ARN that is returned as part of the response. For more information, see <a>arns</a>.
+     * @return The input ARN that is returned as part of the response. For more information, see <a>arns</a>.
      */
 
     public String getSchemaArn() {
@@ -57,11 +57,11 @@ public class DeleteSchemaResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Input ARN that is returned as part of the response. For more information, see <a>arns</a>.
+     * The input ARN that is returned as part of the response. For more information, see <a>arns</a>.
      * </p>
      * 
      * @param schemaArn
-     *        Input ARN that is returned as part of the response. For more information, see <a>arns</a>.
+     *        The input ARN that is returned as part of the response. For more information, see <a>arns</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

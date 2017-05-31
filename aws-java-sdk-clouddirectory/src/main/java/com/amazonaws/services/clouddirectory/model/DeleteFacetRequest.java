@@ -27,7 +27,7 @@ public class DeleteFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * ARN associated with the <a>Facet</a>. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>. For more information, see <a>arns</a>.
      * </p>
      */
     private String schemaArn;
@@ -40,11 +40,12 @@ public class DeleteFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * ARN associated with the <a>Facet</a>. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>. For more information, see <a>arns</a>.
      * </p>
      * 
      * @param schemaArn
-     *        ARN associated with the <a>Facet</a>. For more information, see <a>arns</a>.
+     *        The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>. For more information, see
+     *        <a>arns</a>.
      */
 
     public void setSchemaArn(String schemaArn) {
@@ -53,10 +54,11 @@ public class DeleteFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * ARN associated with the <a>Facet</a>. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>. For more information, see <a>arns</a>.
      * </p>
      * 
-     * @return ARN associated with the <a>Facet</a>. For more information, see <a>arns</a>.
+     * @return The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>. For more information, see
+     *         <a>arns</a>.
      */
 
     public String getSchemaArn() {
@@ -65,11 +67,12 @@ public class DeleteFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * ARN associated with the <a>Facet</a>. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>. For more information, see <a>arns</a>.
      * </p>
      * 
      * @param schemaArn
-     *        ARN associated with the <a>Facet</a>. For more information, see <a>arns</a>.
+     *        The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>. For more information, see
+     *        <a>arns</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

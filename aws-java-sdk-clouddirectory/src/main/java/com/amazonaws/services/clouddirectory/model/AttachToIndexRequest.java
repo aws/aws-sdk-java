@@ -27,7 +27,7 @@ public class AttachToIndexRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ARN of the directory where the object and index exist.
+     * The Amazon Resource Name (ARN) of the directory where the object and index exist.
      * </p>
      */
     private String directoryArn;
@@ -46,11 +46,11 @@ public class AttachToIndexRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ARN of the directory where the object and index exist.
+     * The Amazon Resource Name (ARN) of the directory where the object and index exist.
      * </p>
      * 
      * @param directoryArn
-     *        The ARN of the directory where the object and index exist.
+     *        The Amazon Resource Name (ARN) of the directory where the object and index exist.
      */
 
     public void setDirectoryArn(String directoryArn) {
@@ -59,10 +59,10 @@ public class AttachToIndexRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ARN of the directory where the object and index exist.
+     * The Amazon Resource Name (ARN) of the directory where the object and index exist.
      * </p>
      * 
-     * @return The ARN of the directory where the object and index exist.
+     * @return The Amazon Resource Name (ARN) of the directory where the object and index exist.
      */
 
     public String getDirectoryArn() {
@@ -71,11 +71,11 @@ public class AttachToIndexRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ARN of the directory where the object and index exist.
+     * The Amazon Resource Name (ARN) of the directory where the object and index exist.
      * </p>
      * 
      * @param directoryArn
-     *        The ARN of the directory where the object and index exist.
+     *        The Amazon Resource Name (ARN) of the directory where the object and index exist.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

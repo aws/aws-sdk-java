@@ -27,30 +27,33 @@ public class DetachObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a> where objects reside. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where objects reside. For more
+     * information, see <a>arns</a>.
      * </p>
      */
     private String directoryArn;
     /**
      * <p>
-     * Parent reference from which the object with the specified link name is detached.
+     * The parent reference from which the object with the specified link name is detached.
      * </p>
      */
     private ObjectReference parentReference;
     /**
      * <p>
-     * Link name associated with the object that needs to be detached.
+     * The link name associated with the object that needs to be detached.
      * </p>
      */
     private String linkName;
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a> where objects reside. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where objects reside. For more
+     * information, see <a>arns</a>.
      * </p>
      * 
      * @param directoryArn
-     *        ARN associated with the <a>Directory</a> where objects reside. For more information, see <a>arns</a>.
+     *        The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where objects reside. For more
+     *        information, see <a>arns</a>.
      */
 
     public void setDirectoryArn(String directoryArn) {
@@ -59,10 +62,12 @@ public class DetachObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a> where objects reside. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where objects reside. For more
+     * information, see <a>arns</a>.
      * </p>
      * 
-     * @return ARN associated with the <a>Directory</a> where objects reside. For more information, see <a>arns</a>.
+     * @return The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where objects reside. For
+     *         more information, see <a>arns</a>.
      */
 
     public String getDirectoryArn() {
@@ -71,11 +76,13 @@ public class DetachObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a> where objects reside. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where objects reside. For more
+     * information, see <a>arns</a>.
      * </p>
      * 
      * @param directoryArn
-     *        ARN associated with the <a>Directory</a> where objects reside. For more information, see <a>arns</a>.
+     *        The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where objects reside. For more
+     *        information, see <a>arns</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +93,11 @@ public class DetachObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Parent reference from which the object with the specified link name is detached.
+     * The parent reference from which the object with the specified link name is detached.
      * </p>
      * 
      * @param parentReference
-     *        Parent reference from which the object with the specified link name is detached.
+     *        The parent reference from which the object with the specified link name is detached.
      */
 
     public void setParentReference(ObjectReference parentReference) {
@@ -99,10 +106,10 @@ public class DetachObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Parent reference from which the object with the specified link name is detached.
+     * The parent reference from which the object with the specified link name is detached.
      * </p>
      * 
-     * @return Parent reference from which the object with the specified link name is detached.
+     * @return The parent reference from which the object with the specified link name is detached.
      */
 
     public ObjectReference getParentReference() {
@@ -111,11 +118,11 @@ public class DetachObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Parent reference from which the object with the specified link name is detached.
+     * The parent reference from which the object with the specified link name is detached.
      * </p>
      * 
      * @param parentReference
-     *        Parent reference from which the object with the specified link name is detached.
+     *        The parent reference from which the object with the specified link name is detached.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +133,11 @@ public class DetachObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Link name associated with the object that needs to be detached.
+     * The link name associated with the object that needs to be detached.
      * </p>
      * 
      * @param linkName
-     *        Link name associated with the object that needs to be detached.
+     *        The link name associated with the object that needs to be detached.
      */
 
     public void setLinkName(String linkName) {
@@ -139,10 +146,10 @@ public class DetachObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Link name associated with the object that needs to be detached.
+     * The link name associated with the object that needs to be detached.
      * </p>
      * 
-     * @return Link name associated with the object that needs to be detached.
+     * @return The link name associated with the object that needs to be detached.
      */
 
     public String getLinkName() {
@@ -151,11 +158,11 @@ public class DetachObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Link name associated with the object that needs to be detached.
+     * The link name associated with the object that needs to be detached.
      * </p>
      * 
      * @param linkName
-     *        Link name associated with the object that needs to be detached.
+     *        The link name associated with the object that needs to be detached.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

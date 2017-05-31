@@ -30,7 +30,7 @@ public class BatchReadOperation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Lists all attributes associated with an object.
+     * Lists all attributes that are associated with an object.
      * </p>
      */
     private BatchListObjectAttributes listObjectAttributes;
@@ -43,11 +43,11 @@ public class BatchReadOperation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Lists all attributes associated with an object.
+     * Lists all attributes that are associated with an object.
      * </p>
      * 
      * @param listObjectAttributes
-     *        Lists all attributes associated with an object.
+     *        Lists all attributes that are associated with an object.
      */
 
     public void setListObjectAttributes(BatchListObjectAttributes listObjectAttributes) {
@@ -56,10 +56,10 @@ public class BatchReadOperation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Lists all attributes associated with an object.
+     * Lists all attributes that are associated with an object.
      * </p>
      * 
-     * @return Lists all attributes associated with an object.
+     * @return Lists all attributes that are associated with an object.
      */
 
     public BatchListObjectAttributes getListObjectAttributes() {
@@ -68,11 +68,11 @@ public class BatchReadOperation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Lists all attributes associated with an object.
+     * Lists all attributes that are associated with an object.
      * </p>
      * 
      * @param listObjectAttributes
-     *        Lists all attributes associated with an object.
+     *        Lists all attributes that are associated with an object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

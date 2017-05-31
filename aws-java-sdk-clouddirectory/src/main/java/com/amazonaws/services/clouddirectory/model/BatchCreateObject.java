@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents the output of a CreateObject operation.
+ * Represents the output of a <code>CreateObject</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchCreateObject" target="_top">AWS
@@ -30,13 +30,13 @@ public class BatchCreateObject implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * List of FacetArns that will be associated with the object. For more information, see <a>arns</a>.
+     * A list of <code>FacetArns</code> that will be associated with the object. For more information, see <a>arns</a>.
      * </p>
      */
     private java.util.List<SchemaFacet> schemaFacet;
     /**
      * <p>
-     * Attribute map, which contains an attribute ARN as the key and attribute value as the map value.
+     * An attribute map, which contains an attribute ARN as the key and attribute value as the map value.
      * </p>
      */
     private java.util.List<AttributeKeyAndValue> objectAttributeList;
@@ -63,10 +63,11 @@ public class BatchCreateObject implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * List of FacetArns that will be associated with the object. For more information, see <a>arns</a>.
+     * A list of <code>FacetArns</code> that will be associated with the object. For more information, see <a>arns</a>.
      * </p>
      * 
-     * @return List of FacetArns that will be associated with the object. For more information, see <a>arns</a>.
+     * @return A list of <code>FacetArns</code> that will be associated with the object. For more information, see
+     *         <a>arns</a>.
      */
 
     public java.util.List<SchemaFacet> getSchemaFacet() {
@@ -75,11 +76,12 @@ public class BatchCreateObject implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * List of FacetArns that will be associated with the object. For more information, see <a>arns</a>.
+     * A list of <code>FacetArns</code> that will be associated with the object. For more information, see <a>arns</a>.
      * </p>
      * 
      * @param schemaFacet
-     *        List of FacetArns that will be associated with the object. For more information, see <a>arns</a>.
+     *        A list of <code>FacetArns</code> that will be associated with the object. For more information, see
+     *        <a>arns</a>.
      */
 
     public void setSchemaFacet(java.util.Collection<SchemaFacet> schemaFacet) {
@@ -93,7 +95,7 @@ public class BatchCreateObject implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * List of FacetArns that will be associated with the object. For more information, see <a>arns</a>.
+     * A list of <code>FacetArns</code> that will be associated with the object. For more information, see <a>arns</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -102,7 +104,8 @@ public class BatchCreateObject implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param schemaFacet
-     *        List of FacetArns that will be associated with the object. For more information, see <a>arns</a>.
+     *        A list of <code>FacetArns</code> that will be associated with the object. For more information, see
+     *        <a>arns</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -118,11 +121,12 @@ public class BatchCreateObject implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * List of FacetArns that will be associated with the object. For more information, see <a>arns</a>.
+     * A list of <code>FacetArns</code> that will be associated with the object. For more information, see <a>arns</a>.
      * </p>
      * 
      * @param schemaFacet
-     *        List of FacetArns that will be associated with the object. For more information, see <a>arns</a>.
+     *        A list of <code>FacetArns</code> that will be associated with the object. For more information, see
+     *        <a>arns</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,10 +137,10 @@ public class BatchCreateObject implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Attribute map, which contains an attribute ARN as the key and attribute value as the map value.
+     * An attribute map, which contains an attribute ARN as the key and attribute value as the map value.
      * </p>
      * 
-     * @return Attribute map, which contains an attribute ARN as the key and attribute value as the map value.
+     * @return An attribute map, which contains an attribute ARN as the key and attribute value as the map value.
      */
 
     public java.util.List<AttributeKeyAndValue> getObjectAttributeList() {
@@ -145,11 +149,11 @@ public class BatchCreateObject implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Attribute map, which contains an attribute ARN as the key and attribute value as the map value.
+     * An attribute map, which contains an attribute ARN as the key and attribute value as the map value.
      * </p>
      * 
      * @param objectAttributeList
-     *        Attribute map, which contains an attribute ARN as the key and attribute value as the map value.
+     *        An attribute map, which contains an attribute ARN as the key and attribute value as the map value.
      */
 
     public void setObjectAttributeList(java.util.Collection<AttributeKeyAndValue> objectAttributeList) {
@@ -163,7 +167,7 @@ public class BatchCreateObject implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Attribute map, which contains an attribute ARN as the key and attribute value as the map value.
+     * An attribute map, which contains an attribute ARN as the key and attribute value as the map value.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -172,7 +176,7 @@ public class BatchCreateObject implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param objectAttributeList
-     *        Attribute map, which contains an attribute ARN as the key and attribute value as the map value.
+     *        An attribute map, which contains an attribute ARN as the key and attribute value as the map value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -188,11 +192,11 @@ public class BatchCreateObject implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Attribute map, which contains an attribute ARN as the key and attribute value as the map value.
+     * An attribute map, which contains an attribute ARN as the key and attribute value as the map value.
      * </p>
      * 
      * @param objectAttributeList
-     *        Attribute map, which contains an attribute ARN as the key and attribute value as the map value.
+     *        An attribute map, which contains an attribute ARN as the key and attribute value as the map value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

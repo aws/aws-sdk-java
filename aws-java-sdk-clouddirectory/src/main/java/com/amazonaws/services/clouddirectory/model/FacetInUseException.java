@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Occurs when deleting a facet that contains an attribute which is a target to an attribute reference in a different
+ * Occurs when deleting a facet that contains an attribute that is a target to an attribute reference in a different
  * facet.
  * </p>
  */

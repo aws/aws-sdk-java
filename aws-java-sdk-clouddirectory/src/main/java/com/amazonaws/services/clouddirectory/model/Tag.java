@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Tag structure which contains tag key and value.
+ * The tag structure that contains a tag key and value.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/Tag" target="_top">AWS API
@@ -30,24 +30,24 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Key associated with the tag.
+     * The key that is associated with the tag.
      * </p>
      */
     private String key;
     /**
      * <p>
-     * Value associated with the tag.
+     * The value that is associated with the tag.
      * </p>
      */
     private String value;
 
     /**
      * <p>
-     * Key associated with the tag.
+     * The key that is associated with the tag.
      * </p>
      * 
      * @param key
-     *        Key associated with the tag.
+     *        The key that is associated with the tag.
      */
 
     public void setKey(String key) {
@@ -56,10 +56,10 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Key associated with the tag.
+     * The key that is associated with the tag.
      * </p>
      * 
-     * @return Key associated with the tag.
+     * @return The key that is associated with the tag.
      */
 
     public String getKey() {
@@ -68,11 +68,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Key associated with the tag.
+     * The key that is associated with the tag.
      * </p>
      * 
      * @param key
-     *        Key associated with the tag.
+     *        The key that is associated with the tag.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Value associated with the tag.
+     * The value that is associated with the tag.
      * </p>
      * 
      * @param value
-     *        Value associated with the tag.
+     *        The value that is associated with the tag.
      */
 
     public void setValue(String value) {
@@ -96,10 +96,10 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Value associated with the tag.
+     * The value that is associated with the tag.
      * </p>
      * 
-     * @return Value associated with the tag.
+     * @return The value that is associated with the tag.
      */
 
     public String getValue() {
@@ -108,11 +108,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Value associated with the tag.
+     * The value that is associated with the tag.
      * </p>
      * 
      * @param value
-     *        Value associated with the tag.
+     *        The value that is associated with the tag.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Returns the path to the <code>ObjectIdentifiers</code> associated with the directory.
+ * Returns the path to the <code>ObjectIdentifiers</code> that is associated with the directory.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PathToObjectIdentifiers"
@@ -30,7 +30,7 @@ public class PathToObjectIdentifiers implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The path used to identify the object starting from directory root.
+     * The path that is used to identify the object starting from directory root.
      * </p>
      */
     private String path;
@@ -43,11 +43,11 @@ public class PathToObjectIdentifiers implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The path used to identify the object starting from directory root.
+     * The path that is used to identify the object starting from directory root.
      * </p>
      * 
      * @param path
-     *        The path used to identify the object starting from directory root.
+     *        The path that is used to identify the object starting from directory root.
      */
 
     public void setPath(String path) {
@@ -56,10 +56,10 @@ public class PathToObjectIdentifiers implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The path used to identify the object starting from directory root.
+     * The path that is used to identify the object starting from directory root.
      * </p>
      * 
-     * @return The path used to identify the object starting from directory root.
+     * @return The path that is used to identify the object starting from directory root.
      */
 
     public String getPath() {
@@ -68,11 +68,11 @@ public class PathToObjectIdentifiers implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The path used to identify the object starting from directory root.
+     * The path that is used to identify the object starting from directory root.
      * </p>
      * 
      * @param path
-     *        The path used to identify the object starting from directory root.
+     *        The path that is used to identify the object starting from directory root.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,36 +27,38 @@ public class UpdateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * ARN associated with the <a>Facet</a>. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>. For more information, see <a>arns</a>.
      * </p>
      */
     private String schemaArn;
     /**
      * <p>
+     * The name of the facet.
      * </p>
      */
     private String name;
     /**
      * <p>
      * List of attributes that need to be updated in a given schema <a>Facet</a>. Each attribute is followed by
-     * AttributeAction, which specifies the type of update operation to perform.
+     * <code>AttributeAction</code>, which specifies the type of update operation to perform.
      * </p>
      */
     private java.util.List<FacetAttributeUpdate> attributeUpdates;
     /**
      * <p>
-     * Object type associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.
+     * The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.
      * </p>
      */
     private String objectType;
 
     /**
      * <p>
-     * ARN associated with the <a>Facet</a>. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>. For more information, see <a>arns</a>.
      * </p>
      * 
      * @param schemaArn
-     *        ARN associated with the <a>Facet</a>. For more information, see <a>arns</a>.
+     *        The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>. For more information, see
+     *        <a>arns</a>.
      */
 
     public void setSchemaArn(String schemaArn) {
@@ -65,10 +67,11 @@ public class UpdateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * ARN associated with the <a>Facet</a>. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>. For more information, see <a>arns</a>.
      * </p>
      * 
-     * @return ARN associated with the <a>Facet</a>. For more information, see <a>arns</a>.
+     * @return The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>. For more information, see
+     *         <a>arns</a>.
      */
 
     public String getSchemaArn() {
@@ -77,11 +80,12 @@ public class UpdateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * ARN associated with the <a>Facet</a>. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>. For more information, see <a>arns</a>.
      * </p>
      * 
      * @param schemaArn
-     *        ARN associated with the <a>Facet</a>. For more information, see <a>arns</a>.
+     *        The Amazon Resource Name (ARN) that is associated with the <a>Facet</a>. For more information, see
+     *        <a>arns</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,9 +96,11 @@ public class UpdateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
+     * The name of the facet.
      * </p>
      * 
      * @param name
+     *        The name of the facet.
      */
 
     public void setName(String name) {
@@ -103,9 +109,10 @@ public class UpdateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
+     * The name of the facet.
      * </p>
      * 
-     * @return
+     * @return The name of the facet.
      */
 
     public String getName() {
@@ -114,9 +121,11 @@ public class UpdateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
+     * The name of the facet.
      * </p>
      * 
      * @param name
+     *        The name of the facet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -128,11 +137,11 @@ public class UpdateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * List of attributes that need to be updated in a given schema <a>Facet</a>. Each attribute is followed by
-     * AttributeAction, which specifies the type of update operation to perform.
+     * <code>AttributeAction</code>, which specifies the type of update operation to perform.
      * </p>
      * 
      * @return List of attributes that need to be updated in a given schema <a>Facet</a>. Each attribute is followed by
-     *         AttributeAction, which specifies the type of update operation to perform.
+     *         <code>AttributeAction</code>, which specifies the type of update operation to perform.
      */
 
     public java.util.List<FacetAttributeUpdate> getAttributeUpdates() {
@@ -142,12 +151,12 @@ public class UpdateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * List of attributes that need to be updated in a given schema <a>Facet</a>. Each attribute is followed by
-     * AttributeAction, which specifies the type of update operation to perform.
+     * <code>AttributeAction</code>, which specifies the type of update operation to perform.
      * </p>
      * 
      * @param attributeUpdates
      *        List of attributes that need to be updated in a given schema <a>Facet</a>. Each attribute is followed by
-     *        AttributeAction, which specifies the type of update operation to perform.
+     *        <code>AttributeAction</code>, which specifies the type of update operation to perform.
      */
 
     public void setAttributeUpdates(java.util.Collection<FacetAttributeUpdate> attributeUpdates) {
@@ -162,7 +171,7 @@ public class UpdateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * List of attributes that need to be updated in a given schema <a>Facet</a>. Each attribute is followed by
-     * AttributeAction, which specifies the type of update operation to perform.
+     * <code>AttributeAction</code>, which specifies the type of update operation to perform.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -172,7 +181,7 @@ public class UpdateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @param attributeUpdates
      *        List of attributes that need to be updated in a given schema <a>Facet</a>. Each attribute is followed by
-     *        AttributeAction, which specifies the type of update operation to perform.
+     *        <code>AttributeAction</code>, which specifies the type of update operation to perform.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -189,12 +198,12 @@ public class UpdateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * List of attributes that need to be updated in a given schema <a>Facet</a>. Each attribute is followed by
-     * AttributeAction, which specifies the type of update operation to perform.
+     * <code>AttributeAction</code>, which specifies the type of update operation to perform.
      * </p>
      * 
      * @param attributeUpdates
      *        List of attributes that need to be updated in a given schema <a>Facet</a>. Each attribute is followed by
-     *        AttributeAction, which specifies the type of update operation to perform.
+     *        <code>AttributeAction</code>, which specifies the type of update operation to perform.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -205,11 +214,12 @@ public class UpdateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Object type associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.
+     * The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.
      * </p>
      * 
      * @param objectType
-     *        Object type associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.
+     *        The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more
+     *        details.
      * @see ObjectType
      */
 
@@ -219,10 +229,11 @@ public class UpdateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Object type associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.
+     * The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.
      * </p>
      * 
-     * @return Object type associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.
+     * @return The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more
+     *         details.
      * @see ObjectType
      */
 
@@ -232,11 +243,12 @@ public class UpdateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Object type associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.
+     * The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.
      * </p>
      * 
      * @param objectType
-     *        Object type associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.
+     *        The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more
+     *        details.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ObjectType
      */
@@ -248,11 +260,12 @@ public class UpdateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Object type associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.
+     * The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.
      * </p>
      * 
      * @param objectType
-     *        Object type associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.
+     *        The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more
+     *        details.
      * @see ObjectType
      */
 
@@ -262,11 +275,12 @@ public class UpdateFacetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Object type associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.
+     * The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.
      * </p>
      * 
      * @param objectType
-     *        Object type associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.
+     *        The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more
+     *        details.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ObjectType
      */

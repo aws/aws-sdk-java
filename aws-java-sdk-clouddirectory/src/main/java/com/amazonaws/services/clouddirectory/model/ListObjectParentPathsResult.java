@@ -25,7 +25,7 @@ public class ListObjectParentPathsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Returns the path to the <code>ObjectIdentifiers</code> associated with the directory.
+     * Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.
      * </p>
      */
     private java.util.List<PathToObjectIdentifiers> pathToObjectIdentifiersList;
@@ -38,10 +38,10 @@ public class ListObjectParentPathsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Returns the path to the <code>ObjectIdentifiers</code> associated with the directory.
+     * Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.
      * </p>
      * 
-     * @return Returns the path to the <code>ObjectIdentifiers</code> associated with the directory.
+     * @return Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.
      */
 
     public java.util.List<PathToObjectIdentifiers> getPathToObjectIdentifiersList() {
@@ -50,11 +50,11 @@ public class ListObjectParentPathsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Returns the path to the <code>ObjectIdentifiers</code> associated with the directory.
+     * Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.
      * </p>
      * 
      * @param pathToObjectIdentifiersList
-     *        Returns the path to the <code>ObjectIdentifiers</code> associated with the directory.
+     *        Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.
      */
 
     public void setPathToObjectIdentifiersList(java.util.Collection<PathToObjectIdentifiers> pathToObjectIdentifiersList) {
@@ -68,7 +68,7 @@ public class ListObjectParentPathsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Returns the path to the <code>ObjectIdentifiers</code> associated with the directory.
+     * Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListObjectParentPathsResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param pathToObjectIdentifiersList
-     *        Returns the path to the <code>ObjectIdentifiers</code> associated with the directory.
+     *        Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListObjectParentPathsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Returns the path to the <code>ObjectIdentifiers</code> associated with the directory.
+     * Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.
      * </p>
      * 
      * @param pathToObjectIdentifiersList
-     *        Returns the path to the <code>ObjectIdentifiers</code> associated with the directory.
+     *        Returns the path to the <code>ObjectIdentifiers</code> that are associated with the directory.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

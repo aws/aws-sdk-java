@@ -27,30 +27,33 @@ public class UpdateObjectAttributesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides. For more
+     * information, see <a>arns</a>.
      * </p>
      */
     private String directoryArn;
     /**
      * <p>
-     * Reference that identifies the object.
+     * The reference that identifies the object.
      * </p>
      */
     private ObjectReference objectReference;
     /**
      * <p>
-     * Attributes update structure.
+     * The attributes update structure.
      * </p>
      */
     private java.util.List<ObjectAttributeUpdate> attributeUpdates;
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides. For more
+     * information, see <a>arns</a>.
      * </p>
      * 
      * @param directoryArn
-     *        ARN associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.
+     *        The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides. For
+     *        more information, see <a>arns</a>.
      */
 
     public void setDirectoryArn(String directoryArn) {
@@ -59,10 +62,12 @@ public class UpdateObjectAttributesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides. For more
+     * information, see <a>arns</a>.
      * </p>
      * 
-     * @return ARN associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.
+     * @return The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides. For
+     *         more information, see <a>arns</a>.
      */
 
     public String getDirectoryArn() {
@@ -71,11 +76,13 @@ public class UpdateObjectAttributesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides. For more
+     * information, see <a>arns</a>.
      * </p>
      * 
      * @param directoryArn
-     *        ARN associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.
+     *        The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides. For
+     *        more information, see <a>arns</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +93,11 @@ public class UpdateObjectAttributesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Reference that identifies the object.
+     * The reference that identifies the object.
      * </p>
      * 
      * @param objectReference
-     *        Reference that identifies the object.
+     *        The reference that identifies the object.
      */
 
     public void setObjectReference(ObjectReference objectReference) {
@@ -99,10 +106,10 @@ public class UpdateObjectAttributesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Reference that identifies the object.
+     * The reference that identifies the object.
      * </p>
      * 
-     * @return Reference that identifies the object.
+     * @return The reference that identifies the object.
      */
 
     public ObjectReference getObjectReference() {
@@ -111,11 +118,11 @@ public class UpdateObjectAttributesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Reference that identifies the object.
+     * The reference that identifies the object.
      * </p>
      * 
      * @param objectReference
-     *        Reference that identifies the object.
+     *        The reference that identifies the object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,10 +133,10 @@ public class UpdateObjectAttributesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Attributes update structure.
+     * The attributes update structure.
      * </p>
      * 
-     * @return Attributes update structure.
+     * @return The attributes update structure.
      */
 
     public java.util.List<ObjectAttributeUpdate> getAttributeUpdates() {
@@ -138,11 +145,11 @@ public class UpdateObjectAttributesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Attributes update structure.
+     * The attributes update structure.
      * </p>
      * 
      * @param attributeUpdates
-     *        Attributes update structure.
+     *        The attributes update structure.
      */
 
     public void setAttributeUpdates(java.util.Collection<ObjectAttributeUpdate> attributeUpdates) {
@@ -156,7 +163,7 @@ public class UpdateObjectAttributesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Attributes update structure.
+     * The attributes update structure.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -165,7 +172,7 @@ public class UpdateObjectAttributesRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param attributeUpdates
-     *        Attributes update structure.
+     *        The attributes update structure.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,11 +188,11 @@ public class UpdateObjectAttributesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Attributes update structure.
+     * The attributes update structure.
      * </p>
      * 
      * @param attributeUpdates
-     *        Attributes update structure.
+     *        The attributes update structure.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

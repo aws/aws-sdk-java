@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The <a>Facet</a> you provided was not well formed or could not be validated with the schema.
+ * The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

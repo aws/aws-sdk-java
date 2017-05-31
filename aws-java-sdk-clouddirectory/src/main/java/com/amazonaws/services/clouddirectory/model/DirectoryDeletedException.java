@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A directory that has been deleted has been attempted to be accessed. Note: The requested resource will eventually
- * cease to exist.
+ * A directory that has been deleted and to which access has been attempted. Note: The requested resource will
+ * eventually cease to exist.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

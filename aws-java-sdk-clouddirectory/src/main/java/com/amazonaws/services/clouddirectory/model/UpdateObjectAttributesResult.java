@@ -25,18 +25,18 @@ public class UpdateObjectAttributesResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * <code>ObjectIdentifier</code> of the updated object.
+     * The <code>ObjectIdentifier</code> of the updated object.
      * </p>
      */
     private String objectIdentifier;
 
     /**
      * <p>
-     * <code>ObjectIdentifier</code> of the updated object.
+     * The <code>ObjectIdentifier</code> of the updated object.
      * </p>
      * 
      * @param objectIdentifier
-     *        <code>ObjectIdentifier</code> of the updated object.
+     *        The <code>ObjectIdentifier</code> of the updated object.
      */
 
     public void setObjectIdentifier(String objectIdentifier) {
@@ -45,10 +45,10 @@ public class UpdateObjectAttributesResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * <code>ObjectIdentifier</code> of the updated object.
+     * The <code>ObjectIdentifier</code> of the updated object.
      * </p>
      * 
-     * @return <code>ObjectIdentifier</code> of the updated object.
+     * @return The <code>ObjectIdentifier</code> of the updated object.
      */
 
     public String getObjectIdentifier() {
@@ -57,11 +57,11 @@ public class UpdateObjectAttributesResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * <code>ObjectIdentifier</code> of the updated object.
+     * The <code>ObjectIdentifier</code> of the updated object.
      * </p>
      * 
      * @param objectIdentifier
-     *        <code>ObjectIdentifier</code> of the updated object.
+     *        The <code>ObjectIdentifier</code> of the updated object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

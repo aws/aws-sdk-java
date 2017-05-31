@@ -27,13 +27,14 @@ public class ListObjectAttributesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides. For more
+     * information, see <a>arns</a>.
      * </p>
      */
     private String directoryArn;
     /**
      * <p>
-     * Reference that identifies the object whose attributes will be listed.
+     * The reference that identifies the object whose attributes will be listed.
      * </p>
      */
     private ObjectReference objectReference;
@@ -45,7 +46,7 @@ public class ListObjectAttributesRequest extends com.amazonaws.AmazonWebServiceR
     private String nextToken;
     /**
      * <p>
-     * Maximum number of items to be retrieved in a single call. This is an approximate number.
+     * The maximum number of items to be retrieved in a single call. This is an approximate number.
      * </p>
      */
     private Integer maxResults;
@@ -58,18 +59,20 @@ public class ListObjectAttributesRequest extends com.amazonaws.AmazonWebServiceR
     private String consistencyLevel;
     /**
      * <p>
-     * Used to filter the list of object attributes associated with a certain facet.
+     * Used to filter the list of object attributes that are associated with a certain facet.
      * </p>
      */
     private SchemaFacet facetFilter;
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides. For more
+     * information, see <a>arns</a>.
      * </p>
      * 
      * @param directoryArn
-     *        ARN associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.
+     *        The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides. For
+     *        more information, see <a>arns</a>.
      */
 
     public void setDirectoryArn(String directoryArn) {
@@ -78,10 +81,12 @@ public class ListObjectAttributesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides. For more
+     * information, see <a>arns</a>.
      * </p>
      * 
-     * @return ARN associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.
+     * @return The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides. For
+     *         more information, see <a>arns</a>.
      */
 
     public String getDirectoryArn() {
@@ -90,11 +95,13 @@ public class ListObjectAttributesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides. For more
+     * information, see <a>arns</a>.
      * </p>
      * 
      * @param directoryArn
-     *        ARN associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.
+     *        The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides. For
+     *        more information, see <a>arns</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,11 +112,11 @@ public class ListObjectAttributesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Reference that identifies the object whose attributes will be listed.
+     * The reference that identifies the object whose attributes will be listed.
      * </p>
      * 
      * @param objectReference
-     *        Reference that identifies the object whose attributes will be listed.
+     *        The reference that identifies the object whose attributes will be listed.
      */
 
     public void setObjectReference(ObjectReference objectReference) {
@@ -118,10 +125,10 @@ public class ListObjectAttributesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Reference that identifies the object whose attributes will be listed.
+     * The reference that identifies the object whose attributes will be listed.
      * </p>
      * 
-     * @return Reference that identifies the object whose attributes will be listed.
+     * @return The reference that identifies the object whose attributes will be listed.
      */
 
     public ObjectReference getObjectReference() {
@@ -130,11 +137,11 @@ public class ListObjectAttributesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Reference that identifies the object whose attributes will be listed.
+     * The reference that identifies the object whose attributes will be listed.
      * </p>
      * 
      * @param objectReference
-     *        Reference that identifies the object whose attributes will be listed.
+     *        The reference that identifies the object whose attributes will be listed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -185,11 +192,11 @@ public class ListObjectAttributesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Maximum number of items to be retrieved in a single call. This is an approximate number.
+     * The maximum number of items to be retrieved in a single call. This is an approximate number.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of items to be retrieved in a single call. This is an approximate number.
+     *        The maximum number of items to be retrieved in a single call. This is an approximate number.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -198,10 +205,10 @@ public class ListObjectAttributesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Maximum number of items to be retrieved in a single call. This is an approximate number.
+     * The maximum number of items to be retrieved in a single call. This is an approximate number.
      * </p>
      * 
-     * @return Maximum number of items to be retrieved in a single call. This is an approximate number.
+     * @return The maximum number of items to be retrieved in a single call. This is an approximate number.
      */
 
     public Integer getMaxResults() {
@@ -210,11 +217,11 @@ public class ListObjectAttributesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Maximum number of items to be retrieved in a single call. This is an approximate number.
+     * The maximum number of items to be retrieved in a single call. This is an approximate number.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of items to be retrieved in a single call. This is an approximate number.
+     *        The maximum number of items to be retrieved in a single call. This is an approximate number.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -308,11 +315,11 @@ public class ListObjectAttributesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Used to filter the list of object attributes associated with a certain facet.
+     * Used to filter the list of object attributes that are associated with a certain facet.
      * </p>
      * 
      * @param facetFilter
-     *        Used to filter the list of object attributes associated with a certain facet.
+     *        Used to filter the list of object attributes that are associated with a certain facet.
      */
 
     public void setFacetFilter(SchemaFacet facetFilter) {
@@ -321,10 +328,10 @@ public class ListObjectAttributesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Used to filter the list of object attributes associated with a certain facet.
+     * Used to filter the list of object attributes that are associated with a certain facet.
      * </p>
      * 
-     * @return Used to filter the list of object attributes associated with a certain facet.
+     * @return Used to filter the list of object attributes that are associated with a certain facet.
      */
 
     public SchemaFacet getFacetFilter() {
@@ -333,11 +340,11 @@ public class ListObjectAttributesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Used to filter the list of object attributes associated with a certain facet.
+     * Used to filter the list of object attributes that are associated with a certain facet.
      * </p>
      * 
      * @param facetFilter
-     *        Used to filter the list of object attributes associated with a certain facet.
+     *        Used to filter the list of object attributes that are associated with a certain facet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

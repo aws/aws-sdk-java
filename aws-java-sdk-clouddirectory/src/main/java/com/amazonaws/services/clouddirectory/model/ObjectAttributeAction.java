@@ -30,7 +30,7 @@ public class ObjectAttributeAction implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Type can be either Update or Delete.
+     * A type that can be either <code>Update</code> or <code>Delete</code>.
      * </p>
      */
     private String objectAttributeActionType;
@@ -43,11 +43,11 @@ public class ObjectAttributeAction implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Type can be either Update or Delete.
+     * A type that can be either <code>Update</code> or <code>Delete</code>.
      * </p>
      * 
      * @param objectAttributeActionType
-     *        Type can be either Update or Delete.
+     *        A type that can be either <code>Update</code> or <code>Delete</code>.
      * @see UpdateActionType
      */
 
@@ -57,10 +57,10 @@ public class ObjectAttributeAction implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Type can be either Update or Delete.
+     * A type that can be either <code>Update</code> or <code>Delete</code>.
      * </p>
      * 
-     * @return Type can be either Update or Delete.
+     * @return A type that can be either <code>Update</code> or <code>Delete</code>.
      * @see UpdateActionType
      */
 
@@ -70,11 +70,11 @@ public class ObjectAttributeAction implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Type can be either Update or Delete.
+     * A type that can be either <code>Update</code> or <code>Delete</code>.
      * </p>
      * 
      * @param objectAttributeActionType
-     *        Type can be either Update or Delete.
+     *        A type that can be either <code>Update</code> or <code>Delete</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UpdateActionType
      */
@@ -86,11 +86,11 @@ public class ObjectAttributeAction implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Type can be either Update or Delete.
+     * A type that can be either <code>Update</code> or <code>Delete</code>.
      * </p>
      * 
      * @param objectAttributeActionType
-     *        Type can be either Update or Delete.
+     *        A type that can be either <code>Update</code> or <code>Delete</code>.
      * @see UpdateActionType
      */
 
@@ -100,11 +100,11 @@ public class ObjectAttributeAction implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Type can be either Update or Delete.
+     * A type that can be either <code>Update</code> or <code>Delete</code>.
      * </p>
      * 
      * @param objectAttributeActionType
-     *        Type can be either Update or Delete.
+     *        A type that can be either <code>Update</code> or <code>Delete</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UpdateActionType
      */

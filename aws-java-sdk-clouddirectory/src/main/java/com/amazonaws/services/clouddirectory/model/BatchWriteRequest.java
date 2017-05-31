@@ -27,24 +27,27 @@ public class BatchWriteRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a>. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>. For more information, see
+     * <a>arns</a>.
      * </p>
      */
     private String directoryArn;
     /**
      * <p>
-     * List of operations that are part of the batch.
+     * A list of operations that are part of the batch.
      * </p>
      */
     private java.util.List<BatchWriteOperation> operations;
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a>. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>. For more information, see
+     * <a>arns</a>.
      * </p>
      * 
      * @param directoryArn
-     *        ARN associated with the <a>Directory</a>. For more information, see <a>arns</a>.
+     *        The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>. For more information, see
+     *        <a>arns</a>.
      */
 
     public void setDirectoryArn(String directoryArn) {
@@ -53,10 +56,12 @@ public class BatchWriteRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a>. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>. For more information, see
+     * <a>arns</a>.
      * </p>
      * 
-     * @return ARN associated with the <a>Directory</a>. For more information, see <a>arns</a>.
+     * @return The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>. For more information, see
+     *         <a>arns</a>.
      */
 
     public String getDirectoryArn() {
@@ -65,11 +70,13 @@ public class BatchWriteRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a>. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>. For more information, see
+     * <a>arns</a>.
      * </p>
      * 
      * @param directoryArn
-     *        ARN associated with the <a>Directory</a>. For more information, see <a>arns</a>.
+     *        The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>. For more information, see
+     *        <a>arns</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,10 +87,10 @@ public class BatchWriteRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * List of operations that are part of the batch.
+     * A list of operations that are part of the batch.
      * </p>
      * 
-     * @return List of operations that are part of the batch.
+     * @return A list of operations that are part of the batch.
      */
 
     public java.util.List<BatchWriteOperation> getOperations() {
@@ -92,11 +99,11 @@ public class BatchWriteRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * List of operations that are part of the batch.
+     * A list of operations that are part of the batch.
      * </p>
      * 
      * @param operations
-     *        List of operations that are part of the batch.
+     *        A list of operations that are part of the batch.
      */
 
     public void setOperations(java.util.Collection<BatchWriteOperation> operations) {
@@ -110,7 +117,7 @@ public class BatchWriteRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * List of operations that are part of the batch.
+     * A list of operations that are part of the batch.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -119,7 +126,7 @@ public class BatchWriteRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param operations
-     *        List of operations that are part of the batch.
+     *        A list of operations that are part of the batch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +142,11 @@ public class BatchWriteRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * List of operations that are part of the batch.
+     * A list of operations that are part of the batch.
      * </p>
      * 
      * @param operations
-     *        List of operations that are part of the batch.
+     *        A list of operations that are part of the batch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

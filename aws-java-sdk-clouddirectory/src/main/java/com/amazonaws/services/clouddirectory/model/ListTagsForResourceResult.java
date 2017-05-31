@@ -25,7 +25,7 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * List of tag key value pairs associated with the response.
+     * A list of tag key value pairs that are associated with the response.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -39,10 +39,10 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * List of tag key value pairs associated with the response.
+     * A list of tag key value pairs that are associated with the response.
      * </p>
      * 
-     * @return List of tag key value pairs associated with the response.
+     * @return A list of tag key value pairs that are associated with the response.
      */
 
     public java.util.List<Tag> getTags() {
@@ -51,11 +51,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * List of tag key value pairs associated with the response.
+     * A list of tag key value pairs that are associated with the response.
      * </p>
      * 
      * @param tags
-     *        List of tag key value pairs associated with the response.
+     *        A list of tag key value pairs that are associated with the response.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -69,7 +69,7 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * List of tag key value pairs associated with the response.
+     * A list of tag key value pairs that are associated with the response.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param tags
-     *        List of tag key value pairs associated with the response.
+     *        A list of tag key value pairs that are associated with the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * List of tag key value pairs associated with the response.
+     * A list of tag key value pairs that are associated with the response.
      * </p>
      * 
      * @param tags
-     *        List of tag key value pairs associated with the response.
+     *        A list of tag key value pairs that are associated with the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

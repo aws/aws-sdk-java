@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Indicates the requested operation cannot be completed because the object has not been detached from the tree.
+ * Indicates that the requested operation cannot be completed because the object has not been detached from the tree.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

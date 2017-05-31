@@ -25,18 +25,18 @@ public class CreateSchemaResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * ARN associated with the schema. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <a>arns</a>.
      * </p>
      */
     private String schemaArn;
 
     /**
      * <p>
-     * ARN associated with the schema. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <a>arns</a>.
      * </p>
      * 
      * @param schemaArn
-     *        ARN associated with the schema. For more information, see <a>arns</a>.
+     *        The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <a>arns</a>.
      */
 
     public void setSchemaArn(String schemaArn) {
@@ -45,10 +45,10 @@ public class CreateSchemaResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * ARN associated with the schema. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <a>arns</a>.
      * </p>
      * 
-     * @return ARN associated with the schema. For more information, see <a>arns</a>.
+     * @return The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <a>arns</a>.
      */
 
     public String getSchemaArn() {
@@ -57,11 +57,11 @@ public class CreateSchemaResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * ARN associated with the schema. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <a>arns</a>.
      * </p>
      * 
      * @param schemaArn
-     *        ARN associated with the schema. For more information, see <a>arns</a>.
+     *        The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <a>arns</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

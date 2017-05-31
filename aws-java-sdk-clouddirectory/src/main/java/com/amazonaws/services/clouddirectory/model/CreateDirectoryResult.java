@@ -25,13 +25,13 @@ public class CreateDirectoryResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a>. For more information, see <a>arns</a>.
+     * The ARN that is associated with the <a>Directory</a>. For more information, see <a>arns</a>.
      * </p>
      */
     private String directoryArn;
     /**
      * <p>
-     * Name of the <a>Directory</a>.
+     * The name of the <a>Directory</a>.
      * </p>
      */
     private String name;
@@ -43,19 +43,19 @@ public class CreateDirectoryResult extends com.amazonaws.AmazonWebServiceResult<
     private String objectIdentifier;
     /**
      * <p>
-     * ARN of the published schema in the <a>Directory</a>. Once a published schema is copied into the directory, it has
-     * its own ARN which is referred to applied schema ARN. For more information, see <a>arns</a>.
+     * The ARN of the published schema in the <a>Directory</a>. Once a published schema is copied into the directory, it
+     * has its own ARN, which is referred to applied schema ARN. For more information, see <a>arns</a>.
      * </p>
      */
     private String appliedSchemaArn;
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a>. For more information, see <a>arns</a>.
+     * The ARN that is associated with the <a>Directory</a>. For more information, see <a>arns</a>.
      * </p>
      * 
      * @param directoryArn
-     *        ARN associated with the <a>Directory</a>. For more information, see <a>arns</a>.
+     *        The ARN that is associated with the <a>Directory</a>. For more information, see <a>arns</a>.
      */
 
     public void setDirectoryArn(String directoryArn) {
@@ -64,10 +64,10 @@ public class CreateDirectoryResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a>. For more information, see <a>arns</a>.
+     * The ARN that is associated with the <a>Directory</a>. For more information, see <a>arns</a>.
      * </p>
      * 
-     * @return ARN associated with the <a>Directory</a>. For more information, see <a>arns</a>.
+     * @return The ARN that is associated with the <a>Directory</a>. For more information, see <a>arns</a>.
      */
 
     public String getDirectoryArn() {
@@ -76,11 +76,11 @@ public class CreateDirectoryResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a>. For more information, see <a>arns</a>.
+     * The ARN that is associated with the <a>Directory</a>. For more information, see <a>arns</a>.
      * </p>
      * 
      * @param directoryArn
-     *        ARN associated with the <a>Directory</a>. For more information, see <a>arns</a>.
+     *        The ARN that is associated with the <a>Directory</a>. For more information, see <a>arns</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -91,11 +91,11 @@ public class CreateDirectoryResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Name of the <a>Directory</a>.
+     * The name of the <a>Directory</a>.
      * </p>
      * 
      * @param name
-     *        Name of the <a>Directory</a>.
+     *        The name of the <a>Directory</a>.
      */
 
     public void setName(String name) {
@@ -104,10 +104,10 @@ public class CreateDirectoryResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Name of the <a>Directory</a>.
+     * The name of the <a>Directory</a>.
      * </p>
      * 
-     * @return Name of the <a>Directory</a>.
+     * @return The name of the <a>Directory</a>.
      */
 
     public String getName() {
@@ -116,11 +116,11 @@ public class CreateDirectoryResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Name of the <a>Directory</a>.
+     * The name of the <a>Directory</a>.
      * </p>
      * 
      * @param name
-     *        Name of the <a>Directory</a>.
+     *        The name of the <a>Directory</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -171,13 +171,14 @@ public class CreateDirectoryResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * ARN of the published schema in the <a>Directory</a>. Once a published schema is copied into the directory, it has
-     * its own ARN which is referred to applied schema ARN. For more information, see <a>arns</a>.
+     * The ARN of the published schema in the <a>Directory</a>. Once a published schema is copied into the directory, it
+     * has its own ARN, which is referred to applied schema ARN. For more information, see <a>arns</a>.
      * </p>
      * 
      * @param appliedSchemaArn
-     *        ARN of the published schema in the <a>Directory</a>. Once a published schema is copied into the directory,
-     *        it has its own ARN which is referred to applied schema ARN. For more information, see <a>arns</a>.
+     *        The ARN of the published schema in the <a>Directory</a>. Once a published schema is copied into the
+     *        directory, it has its own ARN, which is referred to applied schema ARN. For more information, see
+     *        <a>arns</a>.
      */
 
     public void setAppliedSchemaArn(String appliedSchemaArn) {
@@ -186,12 +187,12 @@ public class CreateDirectoryResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * ARN of the published schema in the <a>Directory</a>. Once a published schema is copied into the directory, it has
-     * its own ARN which is referred to applied schema ARN. For more information, see <a>arns</a>.
+     * The ARN of the published schema in the <a>Directory</a>. Once a published schema is copied into the directory, it
+     * has its own ARN, which is referred to applied schema ARN. For more information, see <a>arns</a>.
      * </p>
      * 
-     * @return ARN of the published schema in the <a>Directory</a>. Once a published schema is copied into the
-     *         directory, it has its own ARN which is referred to applied schema ARN. For more information, see
+     * @return The ARN of the published schema in the <a>Directory</a>. Once a published schema is copied into the
+     *         directory, it has its own ARN, which is referred to applied schema ARN. For more information, see
      *         <a>arns</a>.
      */
 
@@ -201,13 +202,14 @@ public class CreateDirectoryResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * ARN of the published schema in the <a>Directory</a>. Once a published schema is copied into the directory, it has
-     * its own ARN which is referred to applied schema ARN. For more information, see <a>arns</a>.
+     * The ARN of the published schema in the <a>Directory</a>. Once a published schema is copied into the directory, it
+     * has its own ARN, which is referred to applied schema ARN. For more information, see <a>arns</a>.
      * </p>
      * 
      * @param appliedSchemaArn
-     *        ARN of the published schema in the <a>Directory</a>. Once a published schema is copied into the directory,
-     *        it has its own ARN which is referred to applied schema ARN. For more information, see <a>arns</a>.
+     *        The ARN of the published schema in the <a>Directory</a>. Once a published schema is copied into the
+     *        directory, it has its own ARN, which is referred to applied schema ARN. For more information, see
+     *        <a>arns</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

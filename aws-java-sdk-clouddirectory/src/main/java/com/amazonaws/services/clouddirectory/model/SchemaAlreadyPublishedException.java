@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Indicates a schema is already published.
+ * Indicates that a schema is already published.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

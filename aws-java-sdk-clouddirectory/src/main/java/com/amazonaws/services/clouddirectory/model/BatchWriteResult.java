@@ -25,17 +25,17 @@ public class BatchWriteResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * List of all the responses for each batch write.
+     * A list of all the responses for each batch write.
      * </p>
      */
     private java.util.List<BatchWriteOperationResponse> responses;
 
     /**
      * <p>
-     * List of all the responses for each batch write.
+     * A list of all the responses for each batch write.
      * </p>
      * 
-     * @return List of all the responses for each batch write.
+     * @return A list of all the responses for each batch write.
      */
 
     public java.util.List<BatchWriteOperationResponse> getResponses() {
@@ -44,11 +44,11 @@ public class BatchWriteResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * List of all the responses for each batch write.
+     * A list of all the responses for each batch write.
      * </p>
      * 
      * @param responses
-     *        List of all the responses for each batch write.
+     *        A list of all the responses for each batch write.
      */
 
     public void setResponses(java.util.Collection<BatchWriteOperationResponse> responses) {
@@ -62,7 +62,7 @@ public class BatchWriteResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * List of all the responses for each batch write.
+     * A list of all the responses for each batch write.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -71,7 +71,7 @@ public class BatchWriteResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param responses
-     *        List of all the responses for each batch write.
+     *        A list of all the responses for each batch write.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +87,11 @@ public class BatchWriteResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * List of all the responses for each batch write.
+     * A list of all the responses for each batch write.
      * </p>
      * 
      * @param responses
-     *        List of all the responses for each batch write.
+     *        A list of all the responses for each batch write.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Batch Read Exception structure, which contains exception type and message.
+ * The batch read exception structure, which contains the exception type and message.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchReadException" target="_top">AWS
@@ -30,24 +30,24 @@ public class BatchReadException implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Type of exception, such as <code>InvalidArnException</code>.
+     * A type of exception, such as <code>InvalidArnException</code>.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * Exception message associated with the failure.
+     * An exception message that is associated with the failure.
      * </p>
      */
     private String message;
 
     /**
      * <p>
-     * Type of exception, such as <code>InvalidArnException</code>.
+     * A type of exception, such as <code>InvalidArnException</code>.
      * </p>
      * 
      * @param type
-     *        Type of exception, such as <code>InvalidArnException</code>.
+     *        A type of exception, such as <code>InvalidArnException</code>.
      * @see BatchReadExceptionType
      */
 
@@ -57,10 +57,10 @@ public class BatchReadException implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Type of exception, such as <code>InvalidArnException</code>.
+     * A type of exception, such as <code>InvalidArnException</code>.
      * </p>
      * 
-     * @return Type of exception, such as <code>InvalidArnException</code>.
+     * @return A type of exception, such as <code>InvalidArnException</code>.
      * @see BatchReadExceptionType
      */
 
@@ -70,11 +70,11 @@ public class BatchReadException implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Type of exception, such as <code>InvalidArnException</code>.
+     * A type of exception, such as <code>InvalidArnException</code>.
      * </p>
      * 
      * @param type
-     *        Type of exception, such as <code>InvalidArnException</code>.
+     *        A type of exception, such as <code>InvalidArnException</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BatchReadExceptionType
      */
@@ -86,11 +86,11 @@ public class BatchReadException implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Type of exception, such as <code>InvalidArnException</code>.
+     * A type of exception, such as <code>InvalidArnException</code>.
      * </p>
      * 
      * @param type
-     *        Type of exception, such as <code>InvalidArnException</code>.
+     *        A type of exception, such as <code>InvalidArnException</code>.
      * @see BatchReadExceptionType
      */
 
@@ -100,11 +100,11 @@ public class BatchReadException implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Type of exception, such as <code>InvalidArnException</code>.
+     * A type of exception, such as <code>InvalidArnException</code>.
      * </p>
      * 
      * @param type
-     *        Type of exception, such as <code>InvalidArnException</code>.
+     *        A type of exception, such as <code>InvalidArnException</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BatchReadExceptionType
      */
@@ -116,11 +116,11 @@ public class BatchReadException implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Exception message associated with the failure.
+     * An exception message that is associated with the failure.
      * </p>
      * 
      * @param message
-     *        Exception message associated with the failure.
+     *        An exception message that is associated with the failure.
      */
 
     public void setMessage(String message) {
@@ -129,10 +129,10 @@ public class BatchReadException implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Exception message associated with the failure.
+     * An exception message that is associated with the failure.
      * </p>
      * 
-     * @return Exception message associated with the failure.
+     * @return An exception message that is associated with the failure.
      */
 
     public String getMessage() {
@@ -141,11 +141,11 @@ public class BatchReadException implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Exception message associated with the failure.
+     * An exception message that is associated with the failure.
      * </p>
      * 
      * @param message
-     *        Exception message associated with the failure.
+     *        An exception message that is associated with the failure.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

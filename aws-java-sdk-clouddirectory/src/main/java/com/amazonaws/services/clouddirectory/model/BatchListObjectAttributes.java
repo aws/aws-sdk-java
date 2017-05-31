@@ -42,13 +42,13 @@ public class BatchListObjectAttributes implements Serializable, Cloneable, Struc
     private String nextToken;
     /**
      * <p>
-     * Maximum number of items to be retrieved in a single call. This is an approximate number.
+     * The maximum number of items to be retrieved in a single call. This is an approximate number.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * Used to filter the list of object attributes associated with a certain facet.
+     * Used to filter the list of object attributes that are associated with a certain facet.
      * </p>
      */
     private SchemaFacet facetFilter;
@@ -135,11 +135,11 @@ public class BatchListObjectAttributes implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Maximum number of items to be retrieved in a single call. This is an approximate number.
+     * The maximum number of items to be retrieved in a single call. This is an approximate number.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of items to be retrieved in a single call. This is an approximate number.
+     *        The maximum number of items to be retrieved in a single call. This is an approximate number.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -148,10 +148,10 @@ public class BatchListObjectAttributes implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Maximum number of items to be retrieved in a single call. This is an approximate number.
+     * The maximum number of items to be retrieved in a single call. This is an approximate number.
      * </p>
      * 
-     * @return Maximum number of items to be retrieved in a single call. This is an approximate number.
+     * @return The maximum number of items to be retrieved in a single call. This is an approximate number.
      */
 
     public Integer getMaxResults() {
@@ -160,11 +160,11 @@ public class BatchListObjectAttributes implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Maximum number of items to be retrieved in a single call. This is an approximate number.
+     * The maximum number of items to be retrieved in a single call. This is an approximate number.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of items to be retrieved in a single call. This is an approximate number.
+     *        The maximum number of items to be retrieved in a single call. This is an approximate number.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +175,11 @@ public class BatchListObjectAttributes implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Used to filter the list of object attributes associated with a certain facet.
+     * Used to filter the list of object attributes that are associated with a certain facet.
      * </p>
      * 
      * @param facetFilter
-     *        Used to filter the list of object attributes associated with a certain facet.
+     *        Used to filter the list of object attributes that are associated with a certain facet.
      */
 
     public void setFacetFilter(SchemaFacet facetFilter) {
@@ -188,10 +188,10 @@ public class BatchListObjectAttributes implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Used to filter the list of object attributes associated with a certain facet.
+     * Used to filter the list of object attributes that are associated with a certain facet.
      * </p>
      * 
-     * @return Used to filter the list of object attributes associated with a certain facet.
+     * @return Used to filter the list of object attributes that are associated with a certain facet.
      */
 
     public SchemaFacet getFacetFilter() {
@@ -200,11 +200,11 @@ public class BatchListObjectAttributes implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Used to filter the list of object attributes associated with a certain facet.
+     * Used to filter the list of object attributes that are associated with a certain facet.
      * </p>
      * 
      * @param facetFilter
-     *        Used to filter the list of object attributes associated with a certain facet.
+     *        Used to filter the list of object attributes that are associated with a certain facet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

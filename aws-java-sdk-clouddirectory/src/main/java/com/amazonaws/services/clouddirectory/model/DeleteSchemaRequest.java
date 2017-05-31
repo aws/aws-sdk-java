@@ -27,18 +27,18 @@ public class DeleteSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * ARN of the development schema. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) of the development schema. For more information, see <a>arns</a>.
      * </p>
      */
     private String schemaArn;
 
     /**
      * <p>
-     * ARN of the development schema. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) of the development schema. For more information, see <a>arns</a>.
      * </p>
      * 
      * @param schemaArn
-     *        ARN of the development schema. For more information, see <a>arns</a>.
+     *        The Amazon Resource Name (ARN) of the development schema. For more information, see <a>arns</a>.
      */
 
     public void setSchemaArn(String schemaArn) {
@@ -47,10 +47,10 @@ public class DeleteSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * ARN of the development schema. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) of the development schema. For more information, see <a>arns</a>.
      * </p>
      * 
-     * @return ARN of the development schema. For more information, see <a>arns</a>.
+     * @return The Amazon Resource Name (ARN) of the development schema. For more information, see <a>arns</a>.
      */
 
     public String getSchemaArn() {
@@ -59,11 +59,11 @@ public class DeleteSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * ARN of the development schema. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) of the development schema. For more information, see <a>arns</a>.
      * </p>
      * 
      * @param schemaArn
-     *        ARN of the development schema. For more information, see <a>arns</a>.
+     *        The Amazon Resource Name (ARN) of the development schema. For more information, see <a>arns</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -63,6 +63,11 @@ public class AbstractAmazonCloudDirectory implements AmazonCloudDirectory {
     }
 
     @Override
+    public AttachTypedLinkResult attachTypedLink(AttachTypedLinkRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchReadResult batchRead(BatchReadRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -98,6 +103,11 @@ public class AbstractAmazonCloudDirectory implements AmazonCloudDirectory {
     }
 
     @Override
+    public CreateTypedLinkFacetResult createTypedLinkFacet(CreateTypedLinkFacetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteDirectoryResult deleteDirectory(DeleteDirectoryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -118,6 +128,11 @@ public class AbstractAmazonCloudDirectory implements AmazonCloudDirectory {
     }
 
     @Override
+    public DeleteTypedLinkFacetResult deleteTypedLinkFacet(DeleteTypedLinkFacetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DetachFromIndexResult detachFromIndex(DetachFromIndexRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -129,6 +144,11 @@ public class AbstractAmazonCloudDirectory implements AmazonCloudDirectory {
 
     @Override
     public DetachPolicyResult detachPolicy(DetachPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DetachTypedLinkResult detachTypedLink(DetachTypedLinkRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -163,6 +183,11 @@ public class AbstractAmazonCloudDirectory implements AmazonCloudDirectory {
     }
 
     @Override
+    public GetTypedLinkFacetInformationResult getTypedLinkFacetInformation(GetTypedLinkFacetInformationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListAppliedSchemaArnsResult listAppliedSchemaArns(ListAppliedSchemaArnsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -189,6 +214,11 @@ public class AbstractAmazonCloudDirectory implements AmazonCloudDirectory {
 
     @Override
     public ListFacetNamesResult listFacetNames(ListFacetNamesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListIncomingTypedLinksResult listIncomingTypedLinks(ListIncomingTypedLinksRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -223,6 +253,11 @@ public class AbstractAmazonCloudDirectory implements AmazonCloudDirectory {
     }
 
     @Override
+    public ListOutgoingTypedLinksResult listOutgoingTypedLinks(ListOutgoingTypedLinksRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListPolicyAttachmentsResult listPolicyAttachments(ListPolicyAttachmentsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -234,6 +269,16 @@ public class AbstractAmazonCloudDirectory implements AmazonCloudDirectory {
 
     @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTypedLinkFacetAttributesResult listTypedLinkFacetAttributes(ListTypedLinkFacetAttributesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTypedLinkFacetNamesResult listTypedLinkFacetNames(ListTypedLinkFacetNamesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -279,6 +324,11 @@ public class AbstractAmazonCloudDirectory implements AmazonCloudDirectory {
 
     @Override
     public UpdateSchemaResult updateSchema(UpdateSchemaRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateTypedLinkFacetResult updateTypedLinkFacet(UpdateTypedLinkFacetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

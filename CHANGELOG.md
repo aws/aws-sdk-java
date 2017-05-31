@@ -1,3 +1,8 @@
+# __1.11.137__ __2017-05-30__
+## __Amazon CloudDirectory__
+  - ### Features
+    - Cloud Directory has launched support for Typed Links, enabling customers to create object-to-object relationships that are not hierarchical in nature. Typed Links enable customers to quickly query for data along these relationships. Customers can also enforce referential integrity using Typed Links, ensuring data in use is not inadvertently deleted.
+
 # __1.11.136__ __2017-05-25__
 ## __Amazon AppStream__
   - ### Features

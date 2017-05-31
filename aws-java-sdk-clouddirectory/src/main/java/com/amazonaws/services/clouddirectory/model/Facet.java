@@ -37,7 +37,7 @@ public class Facet implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * Object type associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.
+     * The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.
      * </p>
      */
     private String objectType;
@@ -84,11 +84,12 @@ public class Facet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Object type associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.
+     * The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.
      * </p>
      * 
      * @param objectType
-     *        Object type associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.
+     *        The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more
+     *        details.
      * @see ObjectType
      */
 
@@ -98,10 +99,11 @@ public class Facet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Object type associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.
+     * The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.
      * </p>
      * 
-     * @return Object type associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.
+     * @return The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more
+     *         details.
      * @see ObjectType
      */
 
@@ -111,11 +113,12 @@ public class Facet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Object type associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.
+     * The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.
      * </p>
      * 
      * @param objectType
-     *        Object type associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.
+     *        The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more
+     *        details.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ObjectType
      */
@@ -127,11 +130,12 @@ public class Facet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Object type associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.
+     * The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.
      * </p>
      * 
      * @param objectType
-     *        Object type associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.
+     *        The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more
+     *        details.
      * @see ObjectType
      */
 
@@ -141,11 +145,12 @@ public class Facet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Object type associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.
+     * The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.
      * </p>
      * 
      * @param objectType
-     *        Object type associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more details.
+     *        The object type that is associated with the facet. See <a>CreateFacetRequest$ObjectType</a> for more
+     *        details.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ObjectType
      */

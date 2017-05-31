@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Used when a regular object exists in a <a>Directory</a> and you want to find all of the policies associated with that
- * object and the parent to that object.
+ * Used when a regular object exists in a <a>Directory</a> and you want to find all of the policies that are associated
+ * with that object and the parent to that object.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PolicyToPath" target="_top">AWS API

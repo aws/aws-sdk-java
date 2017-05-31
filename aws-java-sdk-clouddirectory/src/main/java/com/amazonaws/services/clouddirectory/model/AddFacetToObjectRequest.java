@@ -27,7 +27,8 @@ public class AddFacetToObjectRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides. For more
+     * information, see <a>arns</a>.
      * </p>
      */
     private String directoryArn;
@@ -39,7 +40,7 @@ public class AddFacetToObjectRequest extends com.amazonaws.AmazonWebServiceReque
     private SchemaFacet schemaFacet;
     /**
      * <p>
-     * Attributes on the facet you are adding to the object.
+     * Attributes on the facet that you are adding to the object.
      * </p>
      */
     private java.util.List<AttributeKeyAndValue> objectAttributeList;
@@ -52,11 +53,13 @@ public class AddFacetToObjectRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides. For more
+     * information, see <a>arns</a>.
      * </p>
      * 
      * @param directoryArn
-     *        ARN associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.
+     *        The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides. For
+     *        more information, see <a>arns</a>.
      */
 
     public void setDirectoryArn(String directoryArn) {
@@ -65,10 +68,12 @@ public class AddFacetToObjectRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides. For more
+     * information, see <a>arns</a>.
      * </p>
      * 
-     * @return ARN associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.
+     * @return The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides. For
+     *         more information, see <a>arns</a>.
      */
 
     public String getDirectoryArn() {
@@ -77,11 +82,13 @@ public class AddFacetToObjectRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides. For more
+     * information, see <a>arns</a>.
      * </p>
      * 
      * @param directoryArn
-     *        ARN associated with the <a>Directory</a> where the object resides. For more information, see <a>arns</a>.
+     *        The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where the object resides. For
+     *        more information, see <a>arns</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,10 +139,10 @@ public class AddFacetToObjectRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Attributes on the facet you are adding to the object.
+     * Attributes on the facet that you are adding to the object.
      * </p>
      * 
-     * @return Attributes on the facet you are adding to the object.
+     * @return Attributes on the facet that you are adding to the object.
      */
 
     public java.util.List<AttributeKeyAndValue> getObjectAttributeList() {
@@ -144,11 +151,11 @@ public class AddFacetToObjectRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Attributes on the facet you are adding to the object.
+     * Attributes on the facet that you are adding to the object.
      * </p>
      * 
      * @param objectAttributeList
-     *        Attributes on the facet you are adding to the object.
+     *        Attributes on the facet that you are adding to the object.
      */
 
     public void setObjectAttributeList(java.util.Collection<AttributeKeyAndValue> objectAttributeList) {
@@ -162,7 +169,7 @@ public class AddFacetToObjectRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Attributes on the facet you are adding to the object.
+     * Attributes on the facet that you are adding to the object.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -171,7 +178,7 @@ public class AddFacetToObjectRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param objectAttributeList
-     *        Attributes on the facet you are adding to the object.
+     *        Attributes on the facet that you are adding to the object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,11 +194,11 @@ public class AddFacetToObjectRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Attributes on the facet you are adding to the object.
+     * Attributes on the facet that you are adding to the object.
      * </p>
      * 
      * @param objectAttributeList
-     *        Attributes on the facet you are adding to the object.
+     *        Attributes on the facet that you are adding to the object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,18 +25,18 @@ public class CreateObjectResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Identifier associated with the object.
+     * The identifier that is associated with the object.
      * </p>
      */
     private String objectIdentifier;
 
     /**
      * <p>
-     * Identifier associated with the object.
+     * The identifier that is associated with the object.
      * </p>
      * 
      * @param objectIdentifier
-     *        Identifier associated with the object.
+     *        The identifier that is associated with the object.
      */
 
     public void setObjectIdentifier(String objectIdentifier) {
@@ -45,10 +45,10 @@ public class CreateObjectResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Identifier associated with the object.
+     * The identifier that is associated with the object.
      * </p>
      * 
-     * @return Identifier associated with the object.
+     * @return The identifier that is associated with the object.
      */
 
     public String getObjectIdentifier() {
@@ -57,11 +57,11 @@ public class CreateObjectResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Identifier associated with the object.
+     * The identifier that is associated with the object.
      * </p>
      * 
      * @param objectIdentifier
-     *        Identifier associated with the object.
+     *        The identifier that is associated with the object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

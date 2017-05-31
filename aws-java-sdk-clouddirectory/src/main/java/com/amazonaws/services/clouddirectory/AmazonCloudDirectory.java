@@ -29,8 +29,8 @@ import com.amazonaws.services.clouddirectory.model.*;
  * <fullname>Amazon Cloud Directory</fullname>
  * <p>
  * Amazon Cloud Directory is a component of the AWS Directory Service that simplifies the development and management of
- * cloud-scale web, mobile and IoT applications. This guide describes the Cloud Directory operations that you can call
- * programatically and includes detailed information on data types and errors. For information about AWS Directory
+ * cloud-scale web, mobile, and IoT applications. This guide describes the Cloud Directory operations that you can call
+ * programmatically and includes detailed information on data types and errors. For information about AWS Directory
  * Services features, see <a href="https://aws.amazon.com/directoryservice/">AWS Directory Service</a> and the <a
  * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/what_is.html">AWS Directory Service
  * Administration Guide</a>.
@@ -119,9 +119,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -131,7 +131,7 @@ public interface AmazonCloudDirectory {
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws FacetValidationException
-     *         The <a>Facet</a> you provided was not well formed or could not be validated with the schema.
+     *         The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.
      * @sample AmazonCloudDirectory.AddFacetToObject
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AddFacetToObject"
      *      target="_top">AWS API Documentation</a>
@@ -140,7 +140,8 @@ public interface AmazonCloudDirectory {
 
     /**
      * <p>
-     * Copies input published schema into <a>Directory</a> with same name and version as that of published schema .
+     * Copies the input published schema into the <a>Directory</a> with the same name and version as that of the
+     * published schema .
      * </p>
      * 
      * @param applySchemaRequest
@@ -159,9 +160,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -169,8 +170,8 @@ public interface AmazonCloudDirectory {
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws InvalidAttachmentException
-     *         Indicates that an attempt to attach an object with the same link name or to apply a schema with same name
-     *         has occurred. Rename the link or the schema and then try again.
+     *         Indicates that an attempt to attach an object with the same link name or to apply a schema with the same
+     *         name has occurred. Rename the link or the schema and then try again.
      * @sample AmazonCloudDirectory.ApplySchema
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ApplySchema" target="_top">AWS API
      *      Documentation</a>
@@ -210,9 +211,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -225,12 +226,12 @@ public interface AmazonCloudDirectory {
      *         Indicates that a link could not be created due to a naming conflict. Choose a different name and then try
      *         again.
      * @throws InvalidAttachmentException
-     *         Indicates that an attempt to attach an object with the same link name or to apply a schema with same name
-     *         has occurred. Rename the link or the schema and then try again.
+     *         Indicates that an attempt to attach an object with the same link name or to apply a schema with the same
+     *         name has occurred. Rename the link or the schema and then try again.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws FacetValidationException
-     *         The <a>Facet</a> you provided was not well formed or could not be validated with the schema.
+     *         The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.
      * @sample AmazonCloudDirectory.AttachObject
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachObject" target="_top">AWS
      *      API Documentation</a>
@@ -258,9 +259,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -272,7 +273,7 @@ public interface AmazonCloudDirectory {
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws NotPolicyException
-     *         Indicates the requested operation can only operate on policy objects.
+     *         Indicates that the requested operation can only operate on policy objects.
      * @sample AmazonCloudDirectory.AttachPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachPolicy" target="_top">AWS
      *      API Documentation</a>
@@ -300,9 +301,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -318,12 +319,57 @@ public interface AmazonCloudDirectory {
      *         An object has been attempted to be attached to an object that does not have the appropriate attribute
      *         value.
      * @throws NotIndexException
-     *         Indicates the requested operation can only operate on index objects.
+     *         Indicates that the requested operation can only operate on index objects.
      * @sample AmazonCloudDirectory.AttachToIndex
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachToIndex" target="_top">AWS
      *      API Documentation</a>
      */
     AttachToIndexResult attachToIndex(AttachToIndexRequest attachToIndexRequest);
+
+    /**
+     * <p>
+     * Attaches a typed link to a specified source and target object. For more information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.
+     * </p>
+     * 
+     * @param attachTypedLinkRequest
+     * @return Result of the AttachTypedLink operation returned by the service.
+     * @throws InternalServiceException
+     *         Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in
+     *         which case you can retry your request until it succeeds. Otherwise, go to the <a
+     *         href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any
+     *         operational issues with the service.
+     * @throws InvalidArnException
+     *         Indicates that the provided ARN value is not valid.
+     * @throws RetryableConflictException
+     *         Occurs when a conflict with a previous successful write is detected. For example, if a write operation
+     *         occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this
+     *         exception may result. This generally occurs when the previous write did not have time to propagate to the
+     *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
+     *         this exception.
+     * @throws ValidationException
+     *         Indicates that your request is malformed in some manner. See the exception message.
+     * @throws LimitExceededException
+     *         Indicates that limits are exceeded. See <a
+     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         information.
+     * @throws AccessDeniedException
+     *         Access denied. Check your permissions.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws InvalidAttachmentException
+     *         Indicates that an attempt to attach an object with the same link name or to apply a schema with the same
+     *         name has occurred. Rename the link or the schema and then try again.
+     * @throws ValidationException
+     *         Indicates that your request is malformed in some manner. See the exception message.
+     * @throws FacetValidationException
+     *         The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.
+     * @sample AmazonCloudDirectory.AttachTypedLink
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachTypedLink" target="_top">AWS
+     *      API Documentation</a>
+     */
+    AttachTypedLinkResult attachTypedLink(AttachTypedLinkRequest attachTypedLinkRequest);
 
     /**
      * <p>
@@ -346,9 +392,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -383,9 +429,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -422,9 +468,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -463,9 +509,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -476,6 +522,8 @@ public interface AmazonCloudDirectory {
      *         A facet with the same name already exists.
      * @throws InvalidRuleException
      *         Occurs when any of the rule parameter keys or values are invalid.
+     * @throws FacetValidationException
+     *         The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.
      * @sample AmazonCloudDirectory.CreateFacet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateFacet" target="_top">AWS API
      *      Documentation</a>
@@ -505,9 +553,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -517,12 +565,12 @@ public interface AmazonCloudDirectory {
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws FacetValidationException
-     *         The <a>Facet</a> you provided was not well formed or could not be validated with the schema.
+     *         The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.
      * @throws LinkNameAlreadyInUseException
      *         Indicates that a link could not be created due to a naming conflict. Choose a different name and then try
      *         again.
      * @throws UnsupportedIndexTypeException
-     *         Indicates the requested index type is not supported.
+     *         Indicates that the requested index type is not supported.
      * @sample AmazonCloudDirectory.CreateIndex
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateIndex" target="_top">AWS API
      *      Documentation</a>
@@ -532,8 +580,8 @@ public interface AmazonCloudDirectory {
     /**
      * <p>
      * Creates an object in a <a>Directory</a>. Additionally attaches the object to a parent, if a parent reference and
-     * LinkName is specified. An object is simply a collection of <a>Facet</a> attributes. You can also use this API
-     * call to create a policy object, if the facet from which you create the object is a policy facet.
+     * <code>LinkName</code> is specified. An object is simply a collection of <a>Facet</a> attributes. You can also use
+     * this API call to create a policy object, if the facet from which you create the object is a policy facet.
      * </p>
      * 
      * @param createObjectRequest
@@ -552,9 +600,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -566,12 +614,12 @@ public interface AmazonCloudDirectory {
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws FacetValidationException
-     *         The <a>Facet</a> you provided was not well formed or could not be validated with the schema.
+     *         The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.
      * @throws LinkNameAlreadyInUseException
      *         Indicates that a link could not be created due to a naming conflict. Choose a different name and then try
      *         again.
      * @throws UnsupportedIndexTypeException
-     *         Indicates the requested index type is not supported.
+     *         Indicates that the requested index type is not supported.
      * @sample AmazonCloudDirectory.CreateObject
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateObject" target="_top">AWS
      *      API Documentation</a>
@@ -618,9 +666,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -635,6 +683,50 @@ public interface AmazonCloudDirectory {
      *      API Documentation</a>
      */
     CreateSchemaResult createSchema(CreateSchemaRequest createSchemaRequest);
+
+    /**
+     * <p>
+     * Creates a <a>TypedLinkFacet</a>. For more information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.
+     * </p>
+     * 
+     * @param createTypedLinkFacetRequest
+     * @return Result of the CreateTypedLinkFacet operation returned by the service.
+     * @throws InternalServiceException
+     *         Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in
+     *         which case you can retry your request until it succeeds. Otherwise, go to the <a
+     *         href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any
+     *         operational issues with the service.
+     * @throws InvalidArnException
+     *         Indicates that the provided ARN value is not valid.
+     * @throws RetryableConflictException
+     *         Occurs when a conflict with a previous successful write is detected. For example, if a write operation
+     *         occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this
+     *         exception may result. This generally occurs when the previous write did not have time to propagate to the
+     *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
+     *         this exception.
+     * @throws ValidationException
+     *         Indicates that your request is malformed in some manner. See the exception message.
+     * @throws LimitExceededException
+     *         Indicates that limits are exceeded. See <a
+     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         information.
+     * @throws AccessDeniedException
+     *         Access denied. Check your permissions.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws FacetAlreadyExistsException
+     *         A facet with the same name already exists.
+     * @throws InvalidRuleException
+     *         Occurs when any of the rule parameter keys or values are invalid.
+     * @throws FacetValidationException
+     *         The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.
+     * @sample AmazonCloudDirectory.CreateTypedLinkFacet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateTypedLinkFacet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateTypedLinkFacetResult createTypedLinkFacet(CreateTypedLinkFacetRequest createTypedLinkFacetRequest);
 
     /**
      * <p>
@@ -654,22 +746,24 @@ public interface AmazonCloudDirectory {
      *         href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any
      *         operational issues with the service.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
      *         Access denied. Check your permissions.
      * @throws DirectoryDeletedException
-     *         A directory that has been deleted has been attempted to be accessed. Note: The requested resource will
-     *         eventually cease to exist.
+     *         A directory that has been deleted and to which access has been attempted. Note: The requested resource
+     *         will eventually cease to exist.
      * @throws RetryableConflictException
      *         Occurs when a conflict with a previous successful write is detected. For example, if a write operation
      *         occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this
      *         exception may result. This generally occurs when the previous write did not have time to propagate to the
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
+     * @throws InvalidArnException
+     *         Indicates that the provided ARN value is not valid.
      * @sample AmazonCloudDirectory.DeleteDirectory
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteDirectory" target="_top">AWS
      *      API Documentation</a>
@@ -678,8 +772,8 @@ public interface AmazonCloudDirectory {
 
     /**
      * <p>
-     * Deletes a given <a>Facet</a>. All attributes and <a>Rule</a>s associated with the facet will be deleted. Only
-     * development schema facets are allowed deletion.
+     * Deletes a given <a>Facet</a>. All attributes and <a>Rule</a>s that are associated with the facet will be deleted.
+     * Only development schema facets are allowed deletion.
      * </p>
      * 
      * @param deleteFacetRequest
@@ -698,9 +792,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -710,7 +804,7 @@ public interface AmazonCloudDirectory {
      * @throws FacetNotFoundException
      *         The specified <a>Facet</a> could not be found.
      * @throws FacetInUseException
-     *         Occurs when deleting a facet that contains an attribute which is a target to an attribute reference in a
+     *         Occurs when deleting a facet that contains an attribute that is a target to an attribute reference in a
      *         different facet.
      * @sample AmazonCloudDirectory.DeleteFacet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteFacet" target="_top">AWS API
@@ -739,9 +833,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -751,8 +845,8 @@ public interface AmazonCloudDirectory {
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws ObjectNotDetachedException
-     *         Indicates the requested operation cannot be completed because the object has not been detached from the
-     *         tree.
+     *         Indicates that the requested operation cannot be completed because the object has not been detached from
+     *         the tree.
      * @sample AmazonCloudDirectory.DeleteObject
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteObject" target="_top">AWS
      *      API Documentation</a>
@@ -780,9 +874,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -797,6 +891,46 @@ public interface AmazonCloudDirectory {
      *      API Documentation</a>
      */
     DeleteSchemaResult deleteSchema(DeleteSchemaRequest deleteSchemaRequest);
+
+    /**
+     * <p>
+     * Deletes a <a>TypedLinkFacet</a>. For more information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.
+     * </p>
+     * 
+     * @param deleteTypedLinkFacetRequest
+     * @return Result of the DeleteTypedLinkFacet operation returned by the service.
+     * @throws InternalServiceException
+     *         Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in
+     *         which case you can retry your request until it succeeds. Otherwise, go to the <a
+     *         href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any
+     *         operational issues with the service.
+     * @throws InvalidArnException
+     *         Indicates that the provided ARN value is not valid.
+     * @throws RetryableConflictException
+     *         Occurs when a conflict with a previous successful write is detected. For example, if a write operation
+     *         occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this
+     *         exception may result. This generally occurs when the previous write did not have time to propagate to the
+     *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
+     *         this exception.
+     * @throws ValidationException
+     *         Indicates that your request is malformed in some manner. See the exception message.
+     * @throws LimitExceededException
+     *         Indicates that limits are exceeded. See <a
+     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         information.
+     * @throws AccessDeniedException
+     *         Access denied. Check your permissions.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws FacetNotFoundException
+     *         The specified <a>Facet</a> could not be found.
+     * @sample AmazonCloudDirectory.DeleteTypedLinkFacet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteTypedLinkFacet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteTypedLinkFacetResult deleteTypedLinkFacet(DeleteTypedLinkFacetRequest deleteTypedLinkFacetRequest);
 
     /**
      * <p>
@@ -819,9 +953,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -831,9 +965,9 @@ public interface AmazonCloudDirectory {
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws ObjectAlreadyDetachedException
-     *         Indicates the object is not attached to the index.
+     *         Indicates that the object is not attached to the index.
      * @throws NotIndexException
-     *         Indicates the requested operation can only operate on index objects.
+     *         Indicates that the requested operation can only operate on index objects.
      * @sample AmazonCloudDirectory.DetachFromIndex
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachFromIndex" target="_top">AWS
      *      API Documentation</a>
@@ -862,9 +996,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -900,9 +1034,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -914,12 +1048,52 @@ public interface AmazonCloudDirectory {
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws NotPolicyException
-     *         Indicates the requested operation can only operate on policy objects.
+     *         Indicates that the requested operation can only operate on policy objects.
      * @sample AmazonCloudDirectory.DetachPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachPolicy" target="_top">AWS
      *      API Documentation</a>
      */
     DetachPolicyResult detachPolicy(DetachPolicyRequest detachPolicyRequest);
+
+    /**
+     * <p>
+     * Detaches a typed link from a specified source and target object. For more information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.
+     * </p>
+     * 
+     * @param detachTypedLinkRequest
+     * @return Result of the DetachTypedLink operation returned by the service.
+     * @throws InternalServiceException
+     *         Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in
+     *         which case you can retry your request until it succeeds. Otherwise, go to the <a
+     *         href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any
+     *         operational issues with the service.
+     * @throws InvalidArnException
+     *         Indicates that the provided ARN value is not valid.
+     * @throws RetryableConflictException
+     *         Occurs when a conflict with a previous successful write is detected. For example, if a write operation
+     *         occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this
+     *         exception may result. This generally occurs when the previous write did not have time to propagate to the
+     *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
+     *         this exception.
+     * @throws ValidationException
+     *         Indicates that your request is malformed in some manner. See the exception message.
+     * @throws LimitExceededException
+     *         Indicates that limits are exceeded. See <a
+     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         information.
+     * @throws AccessDeniedException
+     *         Access denied. Check your permissions.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws FacetValidationException
+     *         The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.
+     * @sample AmazonCloudDirectory.DetachTypedLink
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachTypedLink" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DetachTypedLinkResult detachTypedLink(DetachTypedLinkRequest detachTypedLinkRequest);
 
     /**
      * <p>
@@ -932,17 +1106,17 @@ public interface AmazonCloudDirectory {
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws DirectoryDeletedException
-     *         A directory that has been deleted has been attempted to be accessed. Note: The requested resource will
-     *         eventually cease to exist.
+     *         A directory that has been deleted and to which access has been attempted. Note: The requested resource
+     *         will eventually cease to exist.
      * @throws InternalServiceException
      *         Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in
      *         which case you can retry your request until it succeeds. Otherwise, go to the <a
      *         href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any
      *         operational issues with the service.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -953,6 +1127,8 @@ public interface AmazonCloudDirectory {
      *         exception may result. This generally occurs when the previous write did not have time to propagate to the
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
+     * @throws InvalidArnException
+     *         Indicates that the provided ARN value is not valid.
      * @sample AmazonCloudDirectory.DisableDirectory
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DisableDirectory"
      *      target="_top">AWS API Documentation</a>
@@ -970,17 +1146,17 @@ public interface AmazonCloudDirectory {
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws DirectoryDeletedException
-     *         A directory that has been deleted has been attempted to be accessed. Note: The requested resource will
-     *         eventually cease to exist.
+     *         A directory that has been deleted and to which access has been attempted. Note: The requested resource
+     *         will eventually cease to exist.
      * @throws InternalServiceException
      *         Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in
      *         which case you can retry your request until it succeeds. Otherwise, go to the <a
      *         href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any
      *         operational issues with the service.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -991,6 +1167,8 @@ public interface AmazonCloudDirectory {
      *         exception may result. This generally occurs when the previous write did not have time to propagate to the
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
+     * @throws InvalidArnException
+     *         Indicates that the provided ARN value is not valid.
      * @sample AmazonCloudDirectory.EnableDirectory
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/EnableDirectory" target="_top">AWS
      *      API Documentation</a>
@@ -1018,9 +1196,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -1033,8 +1211,8 @@ public interface AmazonCloudDirectory {
 
     /**
      * <p>
-     * Gets details of the <a>Facet</a>, such as Facet Name, Attributes, <a>Rule</a>s, or ObjectType. You can call this
-     * on all kinds of schema facets -- published, development, or applied.
+     * Gets details of the <a>Facet</a>, such as facet name, attributes, <a>Rule</a>s, or <code>ObjectType</code>. You
+     * can call this on all kinds of schema facets -- published, development, or applied.
      * </p>
      * 
      * @param getFacetRequest
@@ -1053,9 +1231,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -1091,9 +1269,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -1131,9 +1309,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -1141,12 +1319,54 @@ public interface AmazonCloudDirectory {
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @sample AmazonCloudDirectory.GetSchemaAsJson
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetSchemaAsJson" target="_top">AWS
      *      API Documentation</a>
      */
     GetSchemaAsJsonResult getSchemaAsJson(GetSchemaAsJsonRequest getSchemaAsJsonRequest);
+
+    /**
+     * <p>
+     * Returns the identity attribute order for a specific <a>TypedLinkFacet</a>. For more information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.
+     * </p>
+     * 
+     * @param getTypedLinkFacetInformationRequest
+     * @return Result of the GetTypedLinkFacetInformation operation returned by the service.
+     * @throws InternalServiceException
+     *         Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in
+     *         which case you can retry your request until it succeeds. Otherwise, go to the <a
+     *         href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any
+     *         operational issues with the service.
+     * @throws InvalidArnException
+     *         Indicates that the provided ARN value is not valid.
+     * @throws RetryableConflictException
+     *         Occurs when a conflict with a previous successful write is detected. For example, if a write operation
+     *         occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this
+     *         exception may result. This generally occurs when the previous write did not have time to propagate to the
+     *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
+     *         this exception.
+     * @throws ValidationException
+     *         Indicates that your request is malformed in some manner. See the exception message.
+     * @throws LimitExceededException
+     *         Indicates that limits are exceeded. See <a
+     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         information.
+     * @throws AccessDeniedException
+     *         Access denied. Check your permissions.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws InvalidNextTokenException
+     *         Indicates that the <code>NextToken</code> value is not valid.
+     * @throws FacetNotFoundException
+     *         The specified <a>Facet</a> could not be found.
+     * @sample AmazonCloudDirectory.GetTypedLinkFacetInformation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetTypedLinkFacetInformation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetTypedLinkFacetInformationResult getTypedLinkFacetInformation(GetTypedLinkFacetInformationRequest getTypedLinkFacetInformationRequest);
 
     /**
      * <p>
@@ -1169,9 +1389,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -1207,9 +1427,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -1226,7 +1446,7 @@ public interface AmazonCloudDirectory {
 
     /**
      * <p>
-     * Retrieves the ARNs of schemas in the development state.
+     * Retrieves each Amazon Resource Name (ARN) of schemas in the development state.
      * </p>
      * 
      * @param listDevelopmentSchemaArnsRequest
@@ -1245,9 +1465,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -1283,9 +1503,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -1319,9 +1539,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -1359,9 +1579,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -1375,6 +1595,49 @@ public interface AmazonCloudDirectory {
      *      API Documentation</a>
      */
     ListFacetNamesResult listFacetNames(ListFacetNamesRequest listFacetNamesRequest);
+
+    /**
+     * <p>
+     * Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a> information for an object. It also
+     * supports filtering by typed link facet and identity attributes. For more information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.
+     * </p>
+     * 
+     * @param listIncomingTypedLinksRequest
+     * @return Result of the ListIncomingTypedLinks operation returned by the service.
+     * @throws InternalServiceException
+     *         Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in
+     *         which case you can retry your request until it succeeds. Otherwise, go to the <a
+     *         href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any
+     *         operational issues with the service.
+     * @throws InvalidArnException
+     *         Indicates that the provided ARN value is not valid.
+     * @throws RetryableConflictException
+     *         Occurs when a conflict with a previous successful write is detected. For example, if a write operation
+     *         occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this
+     *         exception may result. This generally occurs when the previous write did not have time to propagate to the
+     *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
+     *         this exception.
+     * @throws ValidationException
+     *         Indicates that your request is malformed in some manner. See the exception message.
+     * @throws LimitExceededException
+     *         Indicates that limits are exceeded. See <a
+     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         information.
+     * @throws AccessDeniedException
+     *         Access denied. Check your permissions.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws InvalidNextTokenException
+     *         Indicates that the <code>NextToken</code> value is not valid.
+     * @throws FacetValidationException
+     *         The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.
+     * @sample AmazonCloudDirectory.ListIncomingTypedLinks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIncomingTypedLinks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListIncomingTypedLinksResult listIncomingTypedLinks(ListIncomingTypedLinksRequest listIncomingTypedLinksRequest);
 
     /**
      * <p>
@@ -1397,9 +1660,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -1409,7 +1672,7 @@ public interface AmazonCloudDirectory {
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws NotIndexException
-     *         Indicates the requested operation can only operate on index objects.
+     *         Indicates that the requested operation can only operate on index objects.
      * @sample AmazonCloudDirectory.ListIndex
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIndex" target="_top">AWS API
      *      Documentation</a>
@@ -1418,7 +1681,7 @@ public interface AmazonCloudDirectory {
 
     /**
      * <p>
-     * Lists all attributes associated with an object.
+     * Lists all attributes that are associated with an object.
      * </p>
      * 
      * @param listObjectAttributesRequest
@@ -1437,9 +1700,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -1453,7 +1716,7 @@ public interface AmazonCloudDirectory {
      * @throws InvalidNextTokenException
      *         Indicates that the <code>NextToken</code> value is not valid.
      * @throws FacetValidationException
-     *         The <a>Facet</a> you provided was not well formed or could not be validated with the schema.
+     *         The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.
      * @sample AmazonCloudDirectory.ListObjectAttributes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectAttributes"
      *      target="_top">AWS API Documentation</a>
@@ -1462,7 +1725,7 @@ public interface AmazonCloudDirectory {
 
     /**
      * <p>
-     * Returns a paginated list of child objects associated with a given object.
+     * Returns a paginated list of child objects that are associated with a given object.
      * </p>
      * 
      * @param listObjectChildrenRequest
@@ -1481,9 +1744,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -1497,7 +1760,7 @@ public interface AmazonCloudDirectory {
      * @throws InvalidNextTokenException
      *         Indicates that the <code>NextToken</code> value is not valid.
      * @throws NotNodeException
-     *         Occurs when any invalid operations are performed on an object which is not a node, such as calling
+     *         Occurs when any invalid operations are performed on an object that is not a node, such as calling
      *         <code>ListObjectChildren</code> for a leaf node object.
      * @sample AmazonCloudDirectory.ListObjectChildren
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectChildren"
@@ -1516,8 +1779,8 @@ public interface AmazonCloudDirectory {
      * Use this API to evaluate all parents for an object. The call returns all objects from the root of the directory
      * up to the requested object. The API returns the number of paths based on user-defined <code>MaxResults</code>, in
      * case there are multiple paths to the parent. The order of the paths and nodes returned is consistent among
-     * multiple API calls unless the objects are deleted or moved. Paths not leading to directory root are ignored from
-     * the target object.
+     * multiple API calls unless the objects are deleted or moved. Paths not leading to the directory root are ignored
+     * from the target object.
      * </p>
      * 
      * @param listObjectParentPathsRequest
@@ -1536,9 +1799,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -1557,7 +1820,7 @@ public interface AmazonCloudDirectory {
 
     /**
      * <p>
-     * Lists parent objects associated with a given object in pagination fashion.
+     * Lists parent objects that are associated with a given object in pagination fashion.
      * </p>
      * 
      * @param listObjectParentsRequest
@@ -1576,9 +1839,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -1620,9 +1883,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -1638,6 +1901,49 @@ public interface AmazonCloudDirectory {
      *      target="_top">AWS API Documentation</a>
      */
     ListObjectPoliciesResult listObjectPolicies(ListObjectPoliciesRequest listObjectPoliciesRequest);
+
+    /**
+     * <p>
+     * Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a> information for an object. It also
+     * supports filtering by typed link facet and identity attributes. For more information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.
+     * </p>
+     * 
+     * @param listOutgoingTypedLinksRequest
+     * @return Result of the ListOutgoingTypedLinks operation returned by the service.
+     * @throws InternalServiceException
+     *         Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in
+     *         which case you can retry your request until it succeeds. Otherwise, go to the <a
+     *         href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any
+     *         operational issues with the service.
+     * @throws InvalidArnException
+     *         Indicates that the provided ARN value is not valid.
+     * @throws RetryableConflictException
+     *         Occurs when a conflict with a previous successful write is detected. For example, if a write operation
+     *         occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this
+     *         exception may result. This generally occurs when the previous write did not have time to propagate to the
+     *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
+     *         this exception.
+     * @throws ValidationException
+     *         Indicates that your request is malformed in some manner. See the exception message.
+     * @throws LimitExceededException
+     *         Indicates that limits are exceeded. See <a
+     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         information.
+     * @throws AccessDeniedException
+     *         Access denied. Check your permissions.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws InvalidNextTokenException
+     *         Indicates that the <code>NextToken</code> value is not valid.
+     * @throws FacetValidationException
+     *         The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.
+     * @sample AmazonCloudDirectory.ListOutgoingTypedLinks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListOutgoingTypedLinks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListOutgoingTypedLinksResult listOutgoingTypedLinks(ListOutgoingTypedLinksRequest listOutgoingTypedLinksRequest);
 
     /**
      * <p>
@@ -1660,9 +1966,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -1676,7 +1982,7 @@ public interface AmazonCloudDirectory {
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws NotPolicyException
-     *         Indicates the requested operation can only operate on policy objects.
+     *         Indicates that the requested operation can only operate on policy objects.
      * @sample AmazonCloudDirectory.ListPolicyAttachments
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPolicyAttachments"
      *      target="_top">AWS API Documentation</a>
@@ -1685,7 +1991,7 @@ public interface AmazonCloudDirectory {
 
     /**
      * <p>
-     * Retrieves published schema ARNs.
+     * Retrieves each published schema Amazon Resource Name (ARN).
      * </p>
      * 
      * @param listPublishedSchemaArnsRequest
@@ -1704,9 +2010,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -1743,9 +2049,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -1763,11 +2069,95 @@ public interface AmazonCloudDirectory {
 
     /**
      * <p>
+     * Returns a paginated list of all attribute definitions for a particular <a>TypedLinkFacet</a>. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.
+     * </p>
+     * 
+     * @param listTypedLinkFacetAttributesRequest
+     * @return Result of the ListTypedLinkFacetAttributes operation returned by the service.
+     * @throws InternalServiceException
+     *         Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in
+     *         which case you can retry your request until it succeeds. Otherwise, go to the <a
+     *         href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any
+     *         operational issues with the service.
+     * @throws InvalidArnException
+     *         Indicates that the provided ARN value is not valid.
+     * @throws RetryableConflictException
+     *         Occurs when a conflict with a previous successful write is detected. For example, if a write operation
+     *         occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this
+     *         exception may result. This generally occurs when the previous write did not have time to propagate to the
+     *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
+     *         this exception.
+     * @throws ValidationException
+     *         Indicates that your request is malformed in some manner. See the exception message.
+     * @throws LimitExceededException
+     *         Indicates that limits are exceeded. See <a
+     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         information.
+     * @throws AccessDeniedException
+     *         Access denied. Check your permissions.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws FacetNotFoundException
+     *         The specified <a>Facet</a> could not be found.
+     * @throws InvalidNextTokenException
+     *         Indicates that the <code>NextToken</code> value is not valid.
+     * @sample AmazonCloudDirectory.ListTypedLinkFacetAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTypedLinkFacetAttributesResult listTypedLinkFacetAttributes(ListTypedLinkFacetAttributesRequest listTypedLinkFacetAttributesRequest);
+
+    /**
+     * <p>
+     * Returns a paginated list of <code>TypedLink</code> facet names for a particular schema. For more information, see
+     * <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.
+     * </p>
+     * 
+     * @param listTypedLinkFacetNamesRequest
+     * @return Result of the ListTypedLinkFacetNames operation returned by the service.
+     * @throws InternalServiceException
+     *         Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in
+     *         which case you can retry your request until it succeeds. Otherwise, go to the <a
+     *         href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any
+     *         operational issues with the service.
+     * @throws InvalidArnException
+     *         Indicates that the provided ARN value is not valid.
+     * @throws RetryableConflictException
+     *         Occurs when a conflict with a previous successful write is detected. For example, if a write operation
+     *         occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this
+     *         exception may result. This generally occurs when the previous write did not have time to propagate to the
+     *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
+     *         this exception.
+     * @throws ValidationException
+     *         Indicates that your request is malformed in some manner. See the exception message.
+     * @throws LimitExceededException
+     *         Indicates that limits are exceeded. See <a
+     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         information.
+     * @throws AccessDeniedException
+     *         Access denied. Check your permissions.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws InvalidNextTokenException
+     *         Indicates that the <code>NextToken</code> value is not valid.
+     * @sample AmazonCloudDirectory.ListTypedLinkFacetNames
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetNames"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTypedLinkFacetNamesResult listTypedLinkFacetNames(ListTypedLinkFacetNamesRequest listTypedLinkFacetNamesRequest);
+
+    /**
+     * <p>
      * Lists all policies from the root of the <a>Directory</a> to the object specified. If there are no policies
      * present, an empty list is returned. If policies are present, and if some objects don't have the policies
      * attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns
      * <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the
-     * root from the target object are ignored.
+     * root from the target object are ignored. For more information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.
      * </p>
      * 
      * @param lookupPolicyRequest
@@ -1786,9 +2176,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -1809,9 +2199,9 @@ public interface AmazonCloudDirectory {
 
     /**
      * <p>
-     * Publishes a development schema with a version. If description and attributes are specified, PublishSchema
-     * overrides the development schema description and attributes. If not, the development schema description and
-     * attributes are used.
+     * Publishes a development schema with a version. If description and attributes are specified,
+     * <code>PublishSchema</code> overrides the development schema description and attributes. If not, the development
+     * schema description and attributes are used.
      * </p>
      * 
      * @param publishSchemaRequest
@@ -1830,9 +2220,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -1840,7 +2230,7 @@ public interface AmazonCloudDirectory {
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws SchemaAlreadyPublishedException
-     *         Indicates a schema is already published.
+     *         Indicates that a schema is already published.
      * @sample AmazonCloudDirectory.PublishSchema
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PublishSchema" target="_top">AWS
      *      API Documentation</a>
@@ -1870,9 +2260,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -1908,9 +2298,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -1920,7 +2310,7 @@ public interface AmazonCloudDirectory {
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws FacetValidationException
-     *         The <a>Facet</a> you provided was not well formed or could not be validated with the schema.
+     *         The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.
      * @sample AmazonCloudDirectory.RemoveFacetFromObject
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/RemoveFacetFromObject"
      *      target="_top">AWS API Documentation</a>
@@ -1929,7 +2319,7 @@ public interface AmazonCloudDirectory {
 
     /**
      * <p>
-     * API for adding tags to a resource.
+     * An API operation for adding tags to a resource.
      * </p>
      * 
      * @param tagResourceRequest
@@ -1948,9 +2338,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -1968,7 +2358,7 @@ public interface AmazonCloudDirectory {
 
     /**
      * <p>
-     * API for removing tags from a resource.
+     * An API operation for removing tags from a resource.
      * </p>
      * 
      * @param untagResourceRequest
@@ -1987,9 +2377,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -2043,9 +2433,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -2085,9 +2475,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -2097,7 +2487,7 @@ public interface AmazonCloudDirectory {
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
      * @throws FacetValidationException
-     *         The <a>Facet</a> you provided was not well formed or could not be validated with the schema.
+     *         The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.
      * @sample AmazonCloudDirectory.UpdateObjectAttributes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateObjectAttributes"
      *      target="_top">AWS API Documentation</a>
@@ -2125,9 +2515,9 @@ public interface AmazonCloudDirectory {
      *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
      *         this exception.
      * @throws ValidationException
-     *         Indicates your request is malformed in some manner. See the exception message.
+     *         Indicates that your request is malformed in some manner. See the exception message.
      * @throws LimitExceededException
-     *         Indicates limits are exceeded. See <a
+     *         Indicates that limits are exceeded. See <a
      *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
      *         information.
      * @throws AccessDeniedException
@@ -2139,6 +2529,52 @@ public interface AmazonCloudDirectory {
      *      API Documentation</a>
      */
     UpdateSchemaResult updateSchema(UpdateSchemaRequest updateSchemaRequest);
+
+    /**
+     * <p>
+     * Updates a <a>TypedLinkFacet</a>. For more information, see <a
+     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
+     * link</a>.
+     * </p>
+     * 
+     * @param updateTypedLinkFacetRequest
+     * @return Result of the UpdateTypedLinkFacet operation returned by the service.
+     * @throws InternalServiceException
+     *         Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in
+     *         which case you can retry your request until it succeeds. Otherwise, go to the <a
+     *         href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any
+     *         operational issues with the service.
+     * @throws InvalidArnException
+     *         Indicates that the provided ARN value is not valid.
+     * @throws RetryableConflictException
+     *         Occurs when a conflict with a previous successful write is detected. For example, if a write operation
+     *         occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this
+     *         exception may result. This generally occurs when the previous write did not have time to propagate to the
+     *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
+     *         this exception.
+     * @throws ValidationException
+     *         Indicates that your request is malformed in some manner. See the exception message.
+     * @throws LimitExceededException
+     *         Indicates that limits are exceeded. See <a
+     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         information.
+     * @throws AccessDeniedException
+     *         Access denied. Check your permissions.
+     * @throws FacetValidationException
+     *         The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.
+     * @throws InvalidFacetUpdateException
+     *         An attempt to modify a <a>Facet</a> resulted in an invalid schema exception.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws FacetNotFoundException
+     *         The specified <a>Facet</a> could not be found.
+     * @throws InvalidRuleException
+     *         Occurs when any of the rule parameter keys or values are invalid.
+     * @sample AmazonCloudDirectory.UpdateTypedLinkFacet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateTypedLinkFacet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateTypedLinkFacetResult updateTypedLinkFacet(UpdateTypedLinkFacetRequest updateTypedLinkFacetRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

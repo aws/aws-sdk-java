@@ -27,7 +27,7 @@ public class DetachFromIndexRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ARN of the directory the index and object exist in.
+     * The Amazon Resource Name (ARN) of the directory the index and object exist in.
      * </p>
      */
     private String directoryArn;
@@ -46,11 +46,11 @@ public class DetachFromIndexRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ARN of the directory the index and object exist in.
+     * The Amazon Resource Name (ARN) of the directory the index and object exist in.
      * </p>
      * 
      * @param directoryArn
-     *        The ARN of the directory the index and object exist in.
+     *        The Amazon Resource Name (ARN) of the directory the index and object exist in.
      */
 
     public void setDirectoryArn(String directoryArn) {
@@ -59,10 +59,10 @@ public class DetachFromIndexRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ARN of the directory the index and object exist in.
+     * The Amazon Resource Name (ARN) of the directory the index and object exist in.
      * </p>
      * 
-     * @return The ARN of the directory the index and object exist in.
+     * @return The Amazon Resource Name (ARN) of the directory the index and object exist in.
      */
 
     public String getDirectoryArn() {
@@ -71,11 +71,11 @@ public class DetachFromIndexRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ARN of the directory the index and object exist in.
+     * The Amazon Resource Name (ARN) of the directory the index and object exist in.
      * </p>
      * 
      * @param directoryArn
-     *        The ARN of the directory the index and object exist in.
+     *        The Amazon Resource Name (ARN) of the directory the index and object exist in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

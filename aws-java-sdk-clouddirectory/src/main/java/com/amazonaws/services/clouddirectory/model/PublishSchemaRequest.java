@@ -27,30 +27,34 @@ public class PublishSchemaRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * ARN associated with the development schema. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the development schema. For more information, see
+     * <a>arns</a>.
      * </p>
      */
     private String developmentSchemaArn;
     /**
      * <p>
-     * Version under which the schema will be published.
+     * The version under which the schema will be published.
      * </p>
      */
     private String version;
     /**
      * <p>
-     * New name under which the schema will be published. If this is not provided, the development schema is considered.
+     * The new name under which the schema will be published. If this is not provided, the development schema is
+     * considered.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * ARN associated with the development schema. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the development schema. For more information, see
+     * <a>arns</a>.
      * </p>
      * 
      * @param developmentSchemaArn
-     *        ARN associated with the development schema. For more information, see <a>arns</a>.
+     *        The Amazon Resource Name (ARN) that is associated with the development schema. For more information, see
+     *        <a>arns</a>.
      */
 
     public void setDevelopmentSchemaArn(String developmentSchemaArn) {
@@ -59,10 +63,12 @@ public class PublishSchemaRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * ARN associated with the development schema. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the development schema. For more information, see
+     * <a>arns</a>.
      * </p>
      * 
-     * @return ARN associated with the development schema. For more information, see <a>arns</a>.
+     * @return The Amazon Resource Name (ARN) that is associated with the development schema. For more information, see
+     *         <a>arns</a>.
      */
 
     public String getDevelopmentSchemaArn() {
@@ -71,11 +77,13 @@ public class PublishSchemaRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * ARN associated with the development schema. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the development schema. For more information, see
+     * <a>arns</a>.
      * </p>
      * 
      * @param developmentSchemaArn
-     *        ARN associated with the development schema. For more information, see <a>arns</a>.
+     *        The Amazon Resource Name (ARN) that is associated with the development schema. For more information, see
+     *        <a>arns</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +94,11 @@ public class PublishSchemaRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Version under which the schema will be published.
+     * The version under which the schema will be published.
      * </p>
      * 
      * @param version
-     *        Version under which the schema will be published.
+     *        The version under which the schema will be published.
      */
 
     public void setVersion(String version) {
@@ -99,10 +107,10 @@ public class PublishSchemaRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Version under which the schema will be published.
+     * The version under which the schema will be published.
      * </p>
      * 
-     * @return Version under which the schema will be published.
+     * @return The version under which the schema will be published.
      */
 
     public String getVersion() {
@@ -111,11 +119,11 @@ public class PublishSchemaRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Version under which the schema will be published.
+     * The version under which the schema will be published.
      * </p>
      * 
      * @param version
-     *        Version under which the schema will be published.
+     *        The version under which the schema will be published.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +134,12 @@ public class PublishSchemaRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * New name under which the schema will be published. If this is not provided, the development schema is considered.
+     * The new name under which the schema will be published. If this is not provided, the development schema is
+     * considered.
      * </p>
      * 
      * @param name
-     *        New name under which the schema will be published. If this is not provided, the development schema is
+     *        The new name under which the schema will be published. If this is not provided, the development schema is
      *        considered.
      */
 
@@ -140,10 +149,11 @@ public class PublishSchemaRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * New name under which the schema will be published. If this is not provided, the development schema is considered.
+     * The new name under which the schema will be published. If this is not provided, the development schema is
+     * considered.
      * </p>
      * 
-     * @return New name under which the schema will be published. If this is not provided, the development schema is
+     * @return The new name under which the schema will be published. If this is not provided, the development schema is
      *         considered.
      */
 
@@ -153,11 +163,12 @@ public class PublishSchemaRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * New name under which the schema will be published. If this is not provided, the development schema is considered.
+     * The new name under which the schema will be published. If this is not provided, the development schema is
+     * considered.
      * </p>
      * 
      * @param name
-     *        New name under which the schema will be published. If this is not provided, the development schema is
+     *        The new name under which the schema will be published. If this is not provided, the development schema is
      *        considered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

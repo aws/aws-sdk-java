@@ -30,7 +30,8 @@ public class BatchListObjectAttributesResponse implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Attributes map associated with the object. <code>AttributeArn</code> is the key; attribute value is the value.
+     * The attributes map that is associated with the object. <code>AttributeArn</code> is the key; attribute value is
+     * the value.
      * </p>
      */
     private java.util.List<AttributeKeyAndValue> attributes;
@@ -43,11 +44,12 @@ public class BatchListObjectAttributesResponse implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Attributes map associated with the object. <code>AttributeArn</code> is the key; attribute value is the value.
+     * The attributes map that is associated with the object. <code>AttributeArn</code> is the key; attribute value is
+     * the value.
      * </p>
      * 
-     * @return Attributes map associated with the object. <code>AttributeArn</code> is the key; attribute value is the
-     *         value.
+     * @return The attributes map that is associated with the object. <code>AttributeArn</code> is the key; attribute
+     *         value is the value.
      */
 
     public java.util.List<AttributeKeyAndValue> getAttributes() {
@@ -56,12 +58,13 @@ public class BatchListObjectAttributesResponse implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Attributes map associated with the object. <code>AttributeArn</code> is the key; attribute value is the value.
+     * The attributes map that is associated with the object. <code>AttributeArn</code> is the key; attribute value is
+     * the value.
      * </p>
      * 
      * @param attributes
-     *        Attributes map associated with the object. <code>AttributeArn</code> is the key; attribute value is the
-     *        value.
+     *        The attributes map that is associated with the object. <code>AttributeArn</code> is the key; attribute
+     *        value is the value.
      */
 
     public void setAttributes(java.util.Collection<AttributeKeyAndValue> attributes) {
@@ -75,7 +78,8 @@ public class BatchListObjectAttributesResponse implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Attributes map associated with the object. <code>AttributeArn</code> is the key; attribute value is the value.
+     * The attributes map that is associated with the object. <code>AttributeArn</code> is the key; attribute value is
+     * the value.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -84,8 +88,8 @@ public class BatchListObjectAttributesResponse implements Serializable, Cloneabl
      * </p>
      * 
      * @param attributes
-     *        Attributes map associated with the object. <code>AttributeArn</code> is the key; attribute value is the
-     *        value.
+     *        The attributes map that is associated with the object. <code>AttributeArn</code> is the key; attribute
+     *        value is the value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,12 +105,13 @@ public class BatchListObjectAttributesResponse implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Attributes map associated with the object. <code>AttributeArn</code> is the key; attribute value is the value.
+     * The attributes map that is associated with the object. <code>AttributeArn</code> is the key; attribute value is
+     * the value.
      * </p>
      * 
      * @param attributes
-     *        Attributes map associated with the object. <code>AttributeArn</code> is the key; attribute value is the
-     *        value.
+     *        The attributes map that is associated with the object. <code>AttributeArn</code> is the key; attribute
+     *        value is the value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

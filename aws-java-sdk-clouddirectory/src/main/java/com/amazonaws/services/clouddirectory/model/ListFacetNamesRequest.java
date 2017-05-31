@@ -27,7 +27,7 @@ public class ListFacetNamesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN to retrieve facet names from.
+     * The Amazon Resource Name (ARN) to retrieve facet names from.
      * </p>
      */
     private String schemaArn;
@@ -39,18 +39,18 @@ public class ListFacetNamesRequest extends com.amazonaws.AmazonWebServiceRequest
     private String nextToken;
     /**
      * <p>
-     * The maximum number of results to retrieve
+     * The maximum number of results to retrieve.
      * </p>
      */
     private Integer maxResults;
 
     /**
      * <p>
-     * The ARN to retrieve facet names from.
+     * The Amazon Resource Name (ARN) to retrieve facet names from.
      * </p>
      * 
      * @param schemaArn
-     *        The ARN to retrieve facet names from.
+     *        The Amazon Resource Name (ARN) to retrieve facet names from.
      */
 
     public void setSchemaArn(String schemaArn) {
@@ -59,10 +59,10 @@ public class ListFacetNamesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN to retrieve facet names from.
+     * The Amazon Resource Name (ARN) to retrieve facet names from.
      * </p>
      * 
-     * @return The ARN to retrieve facet names from.
+     * @return The Amazon Resource Name (ARN) to retrieve facet names from.
      */
 
     public String getSchemaArn() {
@@ -71,11 +71,11 @@ public class ListFacetNamesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN to retrieve facet names from.
+     * The Amazon Resource Name (ARN) to retrieve facet names from.
      * </p>
      * 
      * @param schemaArn
-     *        The ARN to retrieve facet names from.
+     *        The Amazon Resource Name (ARN) to retrieve facet names from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +126,11 @@ public class ListFacetNamesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of results to retrieve
+     * The maximum number of results to retrieve.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to retrieve
+     *        The maximum number of results to retrieve.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -139,10 +139,10 @@ public class ListFacetNamesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of results to retrieve
+     * The maximum number of results to retrieve.
      * </p>
      * 
-     * @return The maximum number of results to retrieve
+     * @return The maximum number of results to retrieve.
      */
 
     public Integer getMaxResults() {
@@ -151,11 +151,11 @@ public class ListFacetNamesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of results to retrieve
+     * The maximum number of results to retrieve.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to retrieve
+     *        The maximum number of results to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

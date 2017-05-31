@@ -27,18 +27,18 @@ public class CreateSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Name associated with the schema. This is unique to each account and in each region.
+     * The name that is associated with the schema. This is unique to each account and in each region.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * Name associated with the schema. This is unique to each account and in each region.
+     * The name that is associated with the schema. This is unique to each account and in each region.
      * </p>
      * 
      * @param name
-     *        Name associated with the schema. This is unique to each account and in each region.
+     *        The name that is associated with the schema. This is unique to each account and in each region.
      */
 
     public void setName(String name) {
@@ -47,10 +47,10 @@ public class CreateSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Name associated with the schema. This is unique to each account and in each region.
+     * The name that is associated with the schema. This is unique to each account and in each region.
      * </p>
      * 
-     * @return Name associated with the schema. This is unique to each account and in each region.
+     * @return The name that is associated with the schema. This is unique to each account and in each region.
      */
 
     public String getName() {
@@ -59,11 +59,11 @@ public class CreateSchemaRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Name associated with the schema. This is unique to each account and in each region.
+     * The name that is associated with the schema. This is unique to each account and in each region.
      * </p>
      * 
      * @param name
-     *        Name associated with the schema. This is unique to each account and in each region.
+     *        The name that is associated with the schema. This is unique to each account and in each region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,24 +27,24 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * ARN of the resource. Tagging is only supported for directories.
+     * The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * List of tag key value pairs.
+     * A list of tag key-value pairs.
      * </p>
      */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * ARN of the resource. Tagging is only supported for directories.
+     * The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.
      * </p>
      * 
      * @param resourceArn
-     *        ARN of the resource. Tagging is only supported for directories.
+     *        The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -53,10 +53,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * ARN of the resource. Tagging is only supported for directories.
+     * The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.
      * </p>
      * 
-     * @return ARN of the resource. Tagging is only supported for directories.
+     * @return The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.
      */
 
     public String getResourceArn() {
@@ -65,11 +65,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * ARN of the resource. Tagging is only supported for directories.
+     * The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.
      * </p>
      * 
      * @param resourceArn
-     *        ARN of the resource. Tagging is only supported for directories.
+     *        The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,10 +80,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * List of tag key value pairs.
+     * A list of tag key-value pairs.
      * </p>
      * 
-     * @return List of tag key value pairs.
+     * @return A list of tag key-value pairs.
      */
 
     public java.util.List<Tag> getTags() {
@@ -92,11 +92,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * List of tag key value pairs.
+     * A list of tag key-value pairs.
      * </p>
      * 
      * @param tags
-     *        List of tag key value pairs.
+     *        A list of tag key-value pairs.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -110,7 +110,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * List of tag key value pairs.
+     * A list of tag key-value pairs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -119,7 +119,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param tags
-     *        List of tag key value pairs.
+     *        A list of tag key-value pairs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * List of tag key value pairs.
+     * A list of tag key-value pairs.
      * </p>
      * 
      * @param tags
-     *        List of tag key value pairs.
+     *        A list of tag key-value pairs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

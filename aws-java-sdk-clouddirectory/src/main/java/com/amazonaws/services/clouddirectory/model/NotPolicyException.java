@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Indicates the requested operation can only operate on policy objects.
+ * Indicates that the requested operation can only operate on policy objects.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

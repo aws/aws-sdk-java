@@ -33,8 +33,8 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <fullname>Amazon Cloud Directory</fullname>
  * <p>
  * Amazon Cloud Directory is a component of the AWS Directory Service that simplifies the development and management of
- * cloud-scale web, mobile and IoT applications. This guide describes the Cloud Directory operations that you can call
- * programatically and includes detailed information on data types and errors. For information about AWS Directory
+ * cloud-scale web, mobile, and IoT applications. This guide describes the Cloud Directory operations that you can call
+ * programmatically and includes detailed information on data types and errors. For information about AWS Directory
  * Services features, see <a href="https://aws.amazon.com/directoryservice/">AWS Directory Service</a> and the <a
  * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/what_is.html">AWS Directory Service
  * Administration Guide</a>.
@@ -417,6 +417,39 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     }
 
     @Override
+    public java.util.concurrent.Future<AttachTypedLinkResult> attachTypedLinkAsync(AttachTypedLinkRequest request) {
+
+        return attachTypedLinkAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AttachTypedLinkResult> attachTypedLinkAsync(final AttachTypedLinkRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AttachTypedLinkRequest, AttachTypedLinkResult> asyncHandler) {
+        final AttachTypedLinkRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AttachTypedLinkResult>() {
+            @Override
+            public AttachTypedLinkResult call() throws Exception {
+                AttachTypedLinkResult result = null;
+
+                try {
+                    result = executeAttachTypedLink(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchReadResult> batchReadAsync(BatchReadRequest request) {
 
         return batchReadAsync(request, null);
@@ -648,6 +681,39 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     }
 
     @Override
+    public java.util.concurrent.Future<CreateTypedLinkFacetResult> createTypedLinkFacetAsync(CreateTypedLinkFacetRequest request) {
+
+        return createTypedLinkFacetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTypedLinkFacetResult> createTypedLinkFacetAsync(final CreateTypedLinkFacetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateTypedLinkFacetRequest, CreateTypedLinkFacetResult> asyncHandler) {
+        final CreateTypedLinkFacetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateTypedLinkFacetResult>() {
+            @Override
+            public CreateTypedLinkFacetResult call() throws Exception {
+                CreateTypedLinkFacetResult result = null;
+
+                try {
+                    result = executeCreateTypedLinkFacet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDirectoryResult> deleteDirectoryAsync(DeleteDirectoryRequest request) {
 
         return deleteDirectoryAsync(request, null);
@@ -780,6 +846,39 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteTypedLinkFacetResult> deleteTypedLinkFacetAsync(DeleteTypedLinkFacetRequest request) {
+
+        return deleteTypedLinkFacetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTypedLinkFacetResult> deleteTypedLinkFacetAsync(final DeleteTypedLinkFacetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteTypedLinkFacetRequest, DeleteTypedLinkFacetResult> asyncHandler) {
+        final DeleteTypedLinkFacetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteTypedLinkFacetResult>() {
+            @Override
+            public DeleteTypedLinkFacetResult call() throws Exception {
+                DeleteTypedLinkFacetResult result = null;
+
+                try {
+                    result = executeDeleteTypedLinkFacet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DetachFromIndexResult> detachFromIndexAsync(DetachFromIndexRequest request) {
 
         return detachFromIndexAsync(request, null);
@@ -863,6 +962,39 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
 
                 try {
                     result = executeDetachPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetachTypedLinkResult> detachTypedLinkAsync(DetachTypedLinkRequest request) {
+
+        return detachTypedLinkAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetachTypedLinkResult> detachTypedLinkAsync(final DetachTypedLinkRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DetachTypedLinkRequest, DetachTypedLinkResult> asyncHandler) {
+        final DetachTypedLinkRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DetachTypedLinkResult>() {
+            @Override
+            public DetachTypedLinkResult call() throws Exception {
+                DetachTypedLinkResult result = null;
+
+                try {
+                    result = executeDetachTypedLink(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1077,6 +1209,39 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     }
 
     @Override
+    public java.util.concurrent.Future<GetTypedLinkFacetInformationResult> getTypedLinkFacetInformationAsync(GetTypedLinkFacetInformationRequest request) {
+
+        return getTypedLinkFacetInformationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTypedLinkFacetInformationResult> getTypedLinkFacetInformationAsync(final GetTypedLinkFacetInformationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetTypedLinkFacetInformationRequest, GetTypedLinkFacetInformationResult> asyncHandler) {
+        final GetTypedLinkFacetInformationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetTypedLinkFacetInformationResult>() {
+            @Override
+            public GetTypedLinkFacetInformationResult call() throws Exception {
+                GetTypedLinkFacetInformationResult result = null;
+
+                try {
+                    result = executeGetTypedLinkFacetInformation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAppliedSchemaArnsResult> listAppliedSchemaArnsAsync(ListAppliedSchemaArnsRequest request) {
 
         return listAppliedSchemaArnsAsync(request, null);
@@ -1259,6 +1424,39 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
 
                 try {
                     result = executeListFacetNames(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListIncomingTypedLinksResult> listIncomingTypedLinksAsync(ListIncomingTypedLinksRequest request) {
+
+        return listIncomingTypedLinksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListIncomingTypedLinksResult> listIncomingTypedLinksAsync(final ListIncomingTypedLinksRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListIncomingTypedLinksRequest, ListIncomingTypedLinksResult> asyncHandler) {
+        final ListIncomingTypedLinksRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListIncomingTypedLinksResult>() {
+            @Override
+            public ListIncomingTypedLinksResult call() throws Exception {
+                ListIncomingTypedLinksResult result = null;
+
+                try {
+                    result = executeListIncomingTypedLinks(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1473,6 +1671,39 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     }
 
     @Override
+    public java.util.concurrent.Future<ListOutgoingTypedLinksResult> listOutgoingTypedLinksAsync(ListOutgoingTypedLinksRequest request) {
+
+        return listOutgoingTypedLinksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOutgoingTypedLinksResult> listOutgoingTypedLinksAsync(final ListOutgoingTypedLinksRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListOutgoingTypedLinksRequest, ListOutgoingTypedLinksResult> asyncHandler) {
+        final ListOutgoingTypedLinksRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListOutgoingTypedLinksResult>() {
+            @Override
+            public ListOutgoingTypedLinksResult call() throws Exception {
+                ListOutgoingTypedLinksResult result = null;
+
+                try {
+                    result = executeListOutgoingTypedLinks(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPolicyAttachmentsResult> listPolicyAttachmentsAsync(ListPolicyAttachmentsRequest request) {
 
         return listPolicyAttachmentsAsync(request, null);
@@ -1556,6 +1787,72 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
 
                 try {
                     result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTypedLinkFacetAttributesResult> listTypedLinkFacetAttributesAsync(ListTypedLinkFacetAttributesRequest request) {
+
+        return listTypedLinkFacetAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTypedLinkFacetAttributesResult> listTypedLinkFacetAttributesAsync(final ListTypedLinkFacetAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTypedLinkFacetAttributesRequest, ListTypedLinkFacetAttributesResult> asyncHandler) {
+        final ListTypedLinkFacetAttributesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTypedLinkFacetAttributesResult>() {
+            @Override
+            public ListTypedLinkFacetAttributesResult call() throws Exception {
+                ListTypedLinkFacetAttributesResult result = null;
+
+                try {
+                    result = executeListTypedLinkFacetAttributes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTypedLinkFacetNamesResult> listTypedLinkFacetNamesAsync(ListTypedLinkFacetNamesRequest request) {
+
+        return listTypedLinkFacetNamesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTypedLinkFacetNamesResult> listTypedLinkFacetNamesAsync(final ListTypedLinkFacetNamesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTypedLinkFacetNamesRequest, ListTypedLinkFacetNamesResult> asyncHandler) {
+        final ListTypedLinkFacetNamesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTypedLinkFacetNamesResult>() {
+            @Override
+            public ListTypedLinkFacetNamesResult call() throws Exception {
+                ListTypedLinkFacetNamesResult result = null;
+
+                try {
+                    result = executeListTypedLinkFacetNames(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1853,6 +2150,39 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
 
                 try {
                     result = executeUpdateSchema(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTypedLinkFacetResult> updateTypedLinkFacetAsync(UpdateTypedLinkFacetRequest request) {
+
+        return updateTypedLinkFacetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTypedLinkFacetResult> updateTypedLinkFacetAsync(final UpdateTypedLinkFacetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateTypedLinkFacetRequest, UpdateTypedLinkFacetResult> asyncHandler) {
+        final UpdateTypedLinkFacetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateTypedLinkFacetResult>() {
+            @Override
+            public UpdateTypedLinkFacetResult call() throws Exception {
+                UpdateTypedLinkFacetResult result = null;
+
+                try {
+                    result = executeUpdateTypedLinkFacet(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

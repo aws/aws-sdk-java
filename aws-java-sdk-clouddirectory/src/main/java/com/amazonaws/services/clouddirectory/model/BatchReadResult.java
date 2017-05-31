@@ -25,17 +25,17 @@ public class BatchReadResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * List of all the responses for each batch read.
+     * A list of all the responses for each batch read.
      * </p>
      */
     private java.util.List<BatchReadOperationResponse> responses;
 
     /**
      * <p>
-     * List of all the responses for each batch read.
+     * A list of all the responses for each batch read.
      * </p>
      * 
-     * @return List of all the responses for each batch read.
+     * @return A list of all the responses for each batch read.
      */
 
     public java.util.List<BatchReadOperationResponse> getResponses() {
@@ -44,11 +44,11 @@ public class BatchReadResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * List of all the responses for each batch read.
+     * A list of all the responses for each batch read.
      * </p>
      * 
      * @param responses
-     *        List of all the responses for each batch read.
+     *        A list of all the responses for each batch read.
      */
 
     public void setResponses(java.util.Collection<BatchReadOperationResponse> responses) {
@@ -62,7 +62,7 @@ public class BatchReadResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * List of all the responses for each batch read.
+     * A list of all the responses for each batch read.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -71,7 +71,7 @@ public class BatchReadResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      * 
      * @param responses
-     *        List of all the responses for each batch read.
+     *        A list of all the responses for each batch read.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +87,11 @@ public class BatchReadResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * List of all the responses for each batch read.
+     * A list of all the responses for each batch read.
      * </p>
      * 
      * @param responses
-     *        List of all the responses for each batch read.
+     *        A list of all the responses for each batch read.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

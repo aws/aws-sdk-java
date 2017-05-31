@@ -25,18 +25,18 @@ public class AttachObjectResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Attached <code>ObjectIdentifier</code>, which is the child <code>ObjectIdentifier</code>.
+     * The attached <code>ObjectIdentifier</code>, which is the child <code>ObjectIdentifier</code>.
      * </p>
      */
     private String attachedObjectIdentifier;
 
     /**
      * <p>
-     * Attached <code>ObjectIdentifier</code>, which is the child <code>ObjectIdentifier</code>.
+     * The attached <code>ObjectIdentifier</code>, which is the child <code>ObjectIdentifier</code>.
      * </p>
      * 
      * @param attachedObjectIdentifier
-     *        Attached <code>ObjectIdentifier</code>, which is the child <code>ObjectIdentifier</code>.
+     *        The attached <code>ObjectIdentifier</code>, which is the child <code>ObjectIdentifier</code>.
      */
 
     public void setAttachedObjectIdentifier(String attachedObjectIdentifier) {
@@ -45,10 +45,10 @@ public class AttachObjectResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Attached <code>ObjectIdentifier</code>, which is the child <code>ObjectIdentifier</code>.
+     * The attached <code>ObjectIdentifier</code>, which is the child <code>ObjectIdentifier</code>.
      * </p>
      * 
-     * @return Attached <code>ObjectIdentifier</code>, which is the child <code>ObjectIdentifier</code>.
+     * @return The attached <code>ObjectIdentifier</code>, which is the child <code>ObjectIdentifier</code>.
      */
 
     public String getAttachedObjectIdentifier() {
@@ -57,11 +57,11 @@ public class AttachObjectResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Attached <code>ObjectIdentifier</code>, which is the child <code>ObjectIdentifier</code>.
+     * The attached <code>ObjectIdentifier</code>, which is the child <code>ObjectIdentifier</code>.
      * </p>
      * 
      * @param attachedObjectIdentifier
-     *        Attached <code>ObjectIdentifier</code>, which is the child <code>ObjectIdentifier</code>.
+     *        The attached <code>ObjectIdentifier</code>, which is the child <code>ObjectIdentifier</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

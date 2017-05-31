@@ -30,18 +30,18 @@ public class BatchDeleteObject implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Reference that identifies the object.
+     * The reference that identifies the object.
      * </p>
      */
     private ObjectReference objectReference;
 
     /**
      * <p>
-     * Reference that identifies the object.
+     * The reference that identifies the object.
      * </p>
      * 
      * @param objectReference
-     *        Reference that identifies the object.
+     *        The reference that identifies the object.
      */
 
     public void setObjectReference(ObjectReference objectReference) {
@@ -50,10 +50,10 @@ public class BatchDeleteObject implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Reference that identifies the object.
+     * The reference that identifies the object.
      * </p>
      * 
-     * @return Reference that identifies the object.
+     * @return The reference that identifies the object.
      */
 
     public ObjectReference getObjectReference() {
@@ -62,11 +62,11 @@ public class BatchDeleteObject implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Reference that identifies the object.
+     * The reference that identifies the object.
      * </p>
      * 
      * @param objectReference
-     *        Reference that identifies the object.
+     *        The reference that identifies the object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

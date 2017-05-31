@@ -25,27 +25,27 @@ public class ApplySchemaResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Applied schema ARN associated with the copied schema in the <a>Directory</a>. You can use this ARN to describe
-     * the schema information applied on this directory. For more information, see <a>arns</a>.
+     * The applied schema ARN that is associated with the copied schema in the <a>Directory</a>. You can use this ARN to
+     * describe the schema information applied on this directory. For more information, see <a>arns</a>.
      * </p>
      */
     private String appliedSchemaArn;
     /**
      * <p>
-     * ARN associated with the <a>Directory</a>. For more information, see <a>arns</a>.
+     * The ARN that is associated with the <a>Directory</a>. For more information, see <a>arns</a>.
      * </p>
      */
     private String directoryArn;
 
     /**
      * <p>
-     * Applied schema ARN associated with the copied schema in the <a>Directory</a>. You can use this ARN to describe
-     * the schema information applied on this directory. For more information, see <a>arns</a>.
+     * The applied schema ARN that is associated with the copied schema in the <a>Directory</a>. You can use this ARN to
+     * describe the schema information applied on this directory. For more information, see <a>arns</a>.
      * </p>
      * 
      * @param appliedSchemaArn
-     *        Applied schema ARN associated with the copied schema in the <a>Directory</a>. You can use this ARN to
-     *        describe the schema information applied on this directory. For more information, see <a>arns</a>.
+     *        The applied schema ARN that is associated with the copied schema in the <a>Directory</a>. You can use this
+     *        ARN to describe the schema information applied on this directory. For more information, see <a>arns</a>.
      */
 
     public void setAppliedSchemaArn(String appliedSchemaArn) {
@@ -54,12 +54,13 @@ public class ApplySchemaResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Applied schema ARN associated with the copied schema in the <a>Directory</a>. You can use this ARN to describe
-     * the schema information applied on this directory. For more information, see <a>arns</a>.
+     * The applied schema ARN that is associated with the copied schema in the <a>Directory</a>. You can use this ARN to
+     * describe the schema information applied on this directory. For more information, see <a>arns</a>.
      * </p>
      * 
-     * @return Applied schema ARN associated with the copied schema in the <a>Directory</a>. You can use this ARN to
-     *         describe the schema information applied on this directory. For more information, see <a>arns</a>.
+     * @return The applied schema ARN that is associated with the copied schema in the <a>Directory</a>. You can use
+     *         this ARN to describe the schema information applied on this directory. For more information, see
+     *         <a>arns</a>.
      */
 
     public String getAppliedSchemaArn() {
@@ -68,13 +69,13 @@ public class ApplySchemaResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Applied schema ARN associated with the copied schema in the <a>Directory</a>. You can use this ARN to describe
-     * the schema information applied on this directory. For more information, see <a>arns</a>.
+     * The applied schema ARN that is associated with the copied schema in the <a>Directory</a>. You can use this ARN to
+     * describe the schema information applied on this directory. For more information, see <a>arns</a>.
      * </p>
      * 
      * @param appliedSchemaArn
-     *        Applied schema ARN associated with the copied schema in the <a>Directory</a>. You can use this ARN to
-     *        describe the schema information applied on this directory. For more information, see <a>arns</a>.
+     *        The applied schema ARN that is associated with the copied schema in the <a>Directory</a>. You can use this
+     *        ARN to describe the schema information applied on this directory. For more information, see <a>arns</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -85,11 +86,11 @@ public class ApplySchemaResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a>. For more information, see <a>arns</a>.
+     * The ARN that is associated with the <a>Directory</a>. For more information, see <a>arns</a>.
      * </p>
      * 
      * @param directoryArn
-     *        ARN associated with the <a>Directory</a>. For more information, see <a>arns</a>.
+     *        The ARN that is associated with the <a>Directory</a>. For more information, see <a>arns</a>.
      */
 
     public void setDirectoryArn(String directoryArn) {
@@ -98,10 +99,10 @@ public class ApplySchemaResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a>. For more information, see <a>arns</a>.
+     * The ARN that is associated with the <a>Directory</a>. For more information, see <a>arns</a>.
      * </p>
      * 
-     * @return ARN associated with the <a>Directory</a>. For more information, see <a>arns</a>.
+     * @return The ARN that is associated with the <a>Directory</a>. For more information, see <a>arns</a>.
      */
 
     public String getDirectoryArn() {
@@ -110,11 +111,11 @@ public class ApplySchemaResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a>. For more information, see <a>arns</a>.
+     * The ARN that is associated with the <a>Directory</a>. For more information, see <a>arns</a>.
      * </p>
      * 
      * @param directoryArn
-     *        ARN associated with the <a>Directory</a>. For more information, see <a>arns</a>.
+     *        The ARN that is associated with the <a>Directory</a>. For more information, see <a>arns</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

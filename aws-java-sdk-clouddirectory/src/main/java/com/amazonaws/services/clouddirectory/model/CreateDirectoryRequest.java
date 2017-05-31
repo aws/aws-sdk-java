@@ -27,25 +27,25 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Name of the <a>Directory</a>. Should be unique per account, per region.
+     * The name of the <a>Directory</a>. Should be unique per account, per region.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * ARN of the published schema that will be copied into the data <a>Directory</a>. For more information, see
-     * <a>arns</a>.
+     * The Amazon Resource Name (ARN) of the published schema that will be copied into the data <a>Directory</a>. For
+     * more information, see <a>arns</a>.
      * </p>
      */
     private String schemaArn;
 
     /**
      * <p>
-     * Name of the <a>Directory</a>. Should be unique per account, per region.
+     * The name of the <a>Directory</a>. Should be unique per account, per region.
      * </p>
      * 
      * @param name
-     *        Name of the <a>Directory</a>. Should be unique per account, per region.
+     *        The name of the <a>Directory</a>. Should be unique per account, per region.
      */
 
     public void setName(String name) {
@@ -54,10 +54,10 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Name of the <a>Directory</a>. Should be unique per account, per region.
+     * The name of the <a>Directory</a>. Should be unique per account, per region.
      * </p>
      * 
-     * @return Name of the <a>Directory</a>. Should be unique per account, per region.
+     * @return The name of the <a>Directory</a>. Should be unique per account, per region.
      */
 
     public String getName() {
@@ -66,11 +66,11 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Name of the <a>Directory</a>. Should be unique per account, per region.
+     * The name of the <a>Directory</a>. Should be unique per account, per region.
      * </p>
      * 
      * @param name
-     *        Name of the <a>Directory</a>. Should be unique per account, per region.
+     *        The name of the <a>Directory</a>. Should be unique per account, per region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,13 +81,13 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * ARN of the published schema that will be copied into the data <a>Directory</a>. For more information, see
-     * <a>arns</a>.
+     * The Amazon Resource Name (ARN) of the published schema that will be copied into the data <a>Directory</a>. For
+     * more information, see <a>arns</a>.
      * </p>
      * 
      * @param schemaArn
-     *        ARN of the published schema that will be copied into the data <a>Directory</a>. For more information, see
-     *        <a>arns</a>.
+     *        The Amazon Resource Name (ARN) of the published schema that will be copied into the data <a>Directory</a>.
+     *        For more information, see <a>arns</a>.
      */
 
     public void setSchemaArn(String schemaArn) {
@@ -96,12 +96,12 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * ARN of the published schema that will be copied into the data <a>Directory</a>. For more information, see
-     * <a>arns</a>.
+     * The Amazon Resource Name (ARN) of the published schema that will be copied into the data <a>Directory</a>. For
+     * more information, see <a>arns</a>.
      * </p>
      * 
-     * @return ARN of the published schema that will be copied into the data <a>Directory</a>. For more information, see
-     *         <a>arns</a>.
+     * @return The Amazon Resource Name (ARN) of the published schema that will be copied into the data
+     *         <a>Directory</a>. For more information, see <a>arns</a>.
      */
 
     public String getSchemaArn() {
@@ -110,13 +110,13 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * ARN of the published schema that will be copied into the data <a>Directory</a>. For more information, see
-     * <a>arns</a>.
+     * The Amazon Resource Name (ARN) of the published schema that will be copied into the data <a>Directory</a>. For
+     * more information, see <a>arns</a>.
      * </p>
      * 
      * @param schemaArn
-     *        ARN of the published schema that will be copied into the data <a>Directory</a>. For more information, see
-     *        <a>arns</a>.
+     *        The Amazon Resource Name (ARN) of the published schema that will be copied into the data <a>Directory</a>.
+     *        For more information, see <a>arns</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

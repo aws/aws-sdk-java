@@ -27,24 +27,26 @@ public class ApplySchemaRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Published schema ARN that needs to be copied. For more information, see <a>arns</a>.
+     * Published schema Amazon Resource Name (ARN) that needs to be copied. For more information, see <a>arns</a>.
      * </p>
      */
     private String publishedSchemaArn;
     /**
      * <p>
-     * ARN associated with the <a>Directory</a> into which the schema is copied. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> into which the schema is copied. For
+     * more information, see <a>arns</a>.
      * </p>
      */
     private String directoryArn;
 
     /**
      * <p>
-     * Published schema ARN that needs to be copied. For more information, see <a>arns</a>.
+     * Published schema Amazon Resource Name (ARN) that needs to be copied. For more information, see <a>arns</a>.
      * </p>
      * 
      * @param publishedSchemaArn
-     *        Published schema ARN that needs to be copied. For more information, see <a>arns</a>.
+     *        Published schema Amazon Resource Name (ARN) that needs to be copied. For more information, see
+     *        <a>arns</a>.
      */
 
     public void setPublishedSchemaArn(String publishedSchemaArn) {
@@ -53,10 +55,11 @@ public class ApplySchemaRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Published schema ARN that needs to be copied. For more information, see <a>arns</a>.
+     * Published schema Amazon Resource Name (ARN) that needs to be copied. For more information, see <a>arns</a>.
      * </p>
      * 
-     * @return Published schema ARN that needs to be copied. For more information, see <a>arns</a>.
+     * @return Published schema Amazon Resource Name (ARN) that needs to be copied. For more information, see
+     *         <a>arns</a>.
      */
 
     public String getPublishedSchemaArn() {
@@ -65,11 +68,12 @@ public class ApplySchemaRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Published schema ARN that needs to be copied. For more information, see <a>arns</a>.
+     * Published schema Amazon Resource Name (ARN) that needs to be copied. For more information, see <a>arns</a>.
      * </p>
      * 
      * @param publishedSchemaArn
-     *        Published schema ARN that needs to be copied. For more information, see <a>arns</a>.
+     *        Published schema Amazon Resource Name (ARN) that needs to be copied. For more information, see
+     *        <a>arns</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,12 +84,13 @@ public class ApplySchemaRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a> into which the schema is copied. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> into which the schema is copied. For
+     * more information, see <a>arns</a>.
      * </p>
      * 
      * @param directoryArn
-     *        ARN associated with the <a>Directory</a> into which the schema is copied. For more information, see
-     *        <a>arns</a>.
+     *        The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> into which the schema is
+     *        copied. For more information, see <a>arns</a>.
      */
 
     public void setDirectoryArn(String directoryArn) {
@@ -94,11 +99,12 @@ public class ApplySchemaRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a> into which the schema is copied. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> into which the schema is copied. For
+     * more information, see <a>arns</a>.
      * </p>
      * 
-     * @return ARN associated with the <a>Directory</a> into which the schema is copied. For more information, see
-     *         <a>arns</a>.
+     * @return The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> into which the schema is
+     *         copied. For more information, see <a>arns</a>.
      */
 
     public String getDirectoryArn() {
@@ -107,12 +113,13 @@ public class ApplySchemaRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a> into which the schema is copied. For more information, see <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> into which the schema is copied. For
+     * more information, see <a>arns</a>.
      * </p>
      * 
      * @param directoryArn
-     *        ARN associated with the <a>Directory</a> into which the schema is copied. For more information, see
-     *        <a>arns</a>.
+     *        The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> into which the schema is
+     *        copied. For more information, see <a>arns</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

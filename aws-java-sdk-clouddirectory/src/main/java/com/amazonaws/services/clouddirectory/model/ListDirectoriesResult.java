@@ -25,7 +25,7 @@ public class ListDirectoriesResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Lists all directories associated with your account in pagination fashion.
+     * Lists all directories that are associated with your account in pagination fashion.
      * </p>
      */
     private java.util.List<Directory> directories;
@@ -38,10 +38,10 @@ public class ListDirectoriesResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Lists all directories associated with your account in pagination fashion.
+     * Lists all directories that are associated with your account in pagination fashion.
      * </p>
      * 
-     * @return Lists all directories associated with your account in pagination fashion.
+     * @return Lists all directories that are associated with your account in pagination fashion.
      */
 
     public java.util.List<Directory> getDirectories() {
@@ -50,11 +50,11 @@ public class ListDirectoriesResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Lists all directories associated with your account in pagination fashion.
+     * Lists all directories that are associated with your account in pagination fashion.
      * </p>
      * 
      * @param directories
-     *        Lists all directories associated with your account in pagination fashion.
+     *        Lists all directories that are associated with your account in pagination fashion.
      */
 
     public void setDirectories(java.util.Collection<Directory> directories) {
@@ -68,7 +68,7 @@ public class ListDirectoriesResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Lists all directories associated with your account in pagination fashion.
+     * Lists all directories that are associated with your account in pagination fashion.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListDirectoriesResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param directories
-     *        Lists all directories associated with your account in pagination fashion.
+     *        Lists all directories that are associated with your account in pagination fashion.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListDirectoriesResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Lists all directories associated with your account in pagination fashion.
+     * Lists all directories that are associated with your account in pagination fashion.
      * </p>
      * 
      * @param directories
-     *        Lists all directories associated with your account in pagination fashion.
+     *        Lists all directories that are associated with your account in pagination fashion.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

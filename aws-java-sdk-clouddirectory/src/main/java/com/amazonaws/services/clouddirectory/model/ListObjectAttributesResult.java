@@ -25,7 +25,8 @@ public class ListObjectAttributesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Attributes map associated with the object. AttributeArn is the key, and attribute value is the value.
+     * Attributes map that is associated with the object. <code>AttributeArn</code> is the key, and attribute value is
+     * the value.
      * </p>
      */
     private java.util.List<AttributeKeyAndValue> attributes;
@@ -38,10 +39,12 @@ public class ListObjectAttributesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Attributes map associated with the object. AttributeArn is the key, and attribute value is the value.
+     * Attributes map that is associated with the object. <code>AttributeArn</code> is the key, and attribute value is
+     * the value.
      * </p>
      * 
-     * @return Attributes map associated with the object. AttributeArn is the key, and attribute value is the value.
+     * @return Attributes map that is associated with the object. <code>AttributeArn</code> is the key, and attribute
+     *         value is the value.
      */
 
     public java.util.List<AttributeKeyAndValue> getAttributes() {
@@ -50,11 +53,13 @@ public class ListObjectAttributesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Attributes map associated with the object. AttributeArn is the key, and attribute value is the value.
+     * Attributes map that is associated with the object. <code>AttributeArn</code> is the key, and attribute value is
+     * the value.
      * </p>
      * 
      * @param attributes
-     *        Attributes map associated with the object. AttributeArn is the key, and attribute value is the value.
+     *        Attributes map that is associated with the object. <code>AttributeArn</code> is the key, and attribute
+     *        value is the value.
      */
 
     public void setAttributes(java.util.Collection<AttributeKeyAndValue> attributes) {
@@ -68,7 +73,8 @@ public class ListObjectAttributesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Attributes map associated with the object. AttributeArn is the key, and attribute value is the value.
+     * Attributes map that is associated with the object. <code>AttributeArn</code> is the key, and attribute value is
+     * the value.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +83,8 @@ public class ListObjectAttributesResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param attributes
-     *        Attributes map associated with the object. AttributeArn is the key, and attribute value is the value.
+     *        Attributes map that is associated with the object. <code>AttributeArn</code> is the key, and attribute
+     *        value is the value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +100,13 @@ public class ListObjectAttributesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Attributes map associated with the object. AttributeArn is the key, and attribute value is the value.
+     * Attributes map that is associated with the object. <code>AttributeArn</code> is the key, and attribute value is
+     * the value.
      * </p>
      * 
      * @param attributes
-     *        Attributes map associated with the object. AttributeArn is the key, and attribute value is the value.
+     *        Attributes map that is associated with the object. <code>AttributeArn</code> is the key, and attribute
+     *        value is the value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

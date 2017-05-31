@@ -33,7 +33,7 @@ public class ListObjectParentPathsRequest extends com.amazonaws.AmazonWebService
     private String directoryArn;
     /**
      * <p>
-     * Reference that identifies the object whose parent paths are listed.
+     * The reference that identifies the object whose parent paths are listed.
      * </p>
      */
     private ObjectReference objectReference;
@@ -45,7 +45,7 @@ public class ListObjectParentPathsRequest extends com.amazonaws.AmazonWebService
     private String nextToken;
     /**
      * <p>
-     * Maximum number of items to be retrieved in a single call. This is an approximate number.
+     * The maximum number of items to be retrieved in a single call. This is an approximate number.
      * </p>
      */
     private Integer maxResults;
@@ -92,11 +92,11 @@ public class ListObjectParentPathsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Reference that identifies the object whose parent paths are listed.
+     * The reference that identifies the object whose parent paths are listed.
      * </p>
      * 
      * @param objectReference
-     *        Reference that identifies the object whose parent paths are listed.
+     *        The reference that identifies the object whose parent paths are listed.
      */
 
     public void setObjectReference(ObjectReference objectReference) {
@@ -105,10 +105,10 @@ public class ListObjectParentPathsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Reference that identifies the object whose parent paths are listed.
+     * The reference that identifies the object whose parent paths are listed.
      * </p>
      * 
-     * @return Reference that identifies the object whose parent paths are listed.
+     * @return The reference that identifies the object whose parent paths are listed.
      */
 
     public ObjectReference getObjectReference() {
@@ -117,11 +117,11 @@ public class ListObjectParentPathsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Reference that identifies the object whose parent paths are listed.
+     * The reference that identifies the object whose parent paths are listed.
      * </p>
      * 
      * @param objectReference
-     *        Reference that identifies the object whose parent paths are listed.
+     *        The reference that identifies the object whose parent paths are listed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,11 +172,11 @@ public class ListObjectParentPathsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Maximum number of items to be retrieved in a single call. This is an approximate number.
+     * The maximum number of items to be retrieved in a single call. This is an approximate number.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of items to be retrieved in a single call. This is an approximate number.
+     *        The maximum number of items to be retrieved in a single call. This is an approximate number.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -185,10 +185,10 @@ public class ListObjectParentPathsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Maximum number of items to be retrieved in a single call. This is an approximate number.
+     * The maximum number of items to be retrieved in a single call. This is an approximate number.
      * </p>
      * 
-     * @return Maximum number of items to be retrieved in a single call. This is an approximate number.
+     * @return The maximum number of items to be retrieved in a single call. This is an approximate number.
      */
 
     public Integer getMaxResults() {
@@ -197,11 +197,11 @@ public class ListObjectParentPathsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Maximum number of items to be retrieved in a single call. This is an approximate number.
+     * The maximum number of items to be retrieved in a single call. This is an approximate number.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of items to be retrieved in a single call. This is an approximate number.
+     *        The maximum number of items to be retrieved in a single call. This is an approximate number.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

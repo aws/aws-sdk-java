@@ -25,18 +25,18 @@ public class PublishSchemaResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * ARN associated with the published schema. For more information, see <a>arns</a>.
+     * The ARN that is associated with the published schema. For more information, see <a>arns</a>.
      * </p>
      */
     private String publishedSchemaArn;
 
     /**
      * <p>
-     * ARN associated with the published schema. For more information, see <a>arns</a>.
+     * The ARN that is associated with the published schema. For more information, see <a>arns</a>.
      * </p>
      * 
      * @param publishedSchemaArn
-     *        ARN associated with the published schema. For more information, see <a>arns</a>.
+     *        The ARN that is associated with the published schema. For more information, see <a>arns</a>.
      */
 
     public void setPublishedSchemaArn(String publishedSchemaArn) {
@@ -45,10 +45,10 @@ public class PublishSchemaResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * ARN associated with the published schema. For more information, see <a>arns</a>.
+     * The ARN that is associated with the published schema. For more information, see <a>arns</a>.
      * </p>
      * 
-     * @return ARN associated with the published schema. For more information, see <a>arns</a>.
+     * @return The ARN that is associated with the published schema. For more information, see <a>arns</a>.
      */
 
     public String getPublishedSchemaArn() {
@@ -57,11 +57,11 @@ public class PublishSchemaResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * ARN associated with the published schema. For more information, see <a>arns</a>.
+     * The ARN that is associated with the published schema. For more information, see <a>arns</a>.
      * </p>
      * 
      * @param publishedSchemaArn
-     *        ARN associated with the published schema. For more information, see <a>arns</a>.
+     *        The ARN that is associated with the published schema. For more information, see <a>arns</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

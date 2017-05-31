@@ -30,24 +30,24 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Lists all attributes associated with an object.
+     * Lists all attributes that are associated with an object.
      * </p>
      */
     private BatchListObjectAttributesResponse listObjectAttributes;
     /**
      * <p>
-     * Returns a paginated list of child objects associated with a given object.
+     * Returns a paginated list of child objects that are associated with a given object.
      * </p>
      */
     private BatchListObjectChildrenResponse listObjectChildren;
 
     /**
      * <p>
-     * Lists all attributes associated with an object.
+     * Lists all attributes that are associated with an object.
      * </p>
      * 
      * @param listObjectAttributes
-     *        Lists all attributes associated with an object.
+     *        Lists all attributes that are associated with an object.
      */
 
     public void setListObjectAttributes(BatchListObjectAttributesResponse listObjectAttributes) {
@@ -56,10 +56,10 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Lists all attributes associated with an object.
+     * Lists all attributes that are associated with an object.
      * </p>
      * 
-     * @return Lists all attributes associated with an object.
+     * @return Lists all attributes that are associated with an object.
      */
 
     public BatchListObjectAttributesResponse getListObjectAttributes() {
@@ -68,11 +68,11 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Lists all attributes associated with an object.
+     * Lists all attributes that are associated with an object.
      * </p>
      * 
      * @param listObjectAttributes
-     *        Lists all attributes associated with an object.
+     *        Lists all attributes that are associated with an object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Returns a paginated list of child objects associated with a given object.
+     * Returns a paginated list of child objects that are associated with a given object.
      * </p>
      * 
      * @param listObjectChildren
-     *        Returns a paginated list of child objects associated with a given object.
+     *        Returns a paginated list of child objects that are associated with a given object.
      */
 
     public void setListObjectChildren(BatchListObjectChildrenResponse listObjectChildren) {
@@ -96,10 +96,10 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Returns a paginated list of child objects associated with a given object.
+     * Returns a paginated list of child objects that are associated with a given object.
      * </p>
      * 
-     * @return Returns a paginated list of child objects associated with a given object.
+     * @return Returns a paginated list of child objects that are associated with a given object.
      */
 
     public BatchListObjectChildrenResponse getListObjectChildren() {
@@ -108,11 +108,11 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Returns a paginated list of child objects associated with a given object.
+     * Returns a paginated list of child objects that are associated with a given object.
      * </p>
      * 
      * @param listObjectChildren
-     *        Returns a paginated list of child objects associated with a given object.
+     *        Returns a paginated list of child objects that are associated with a given object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

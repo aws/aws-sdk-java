@@ -27,20 +27,21 @@ public class CreateObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a> in which the object will be created. For more information, see
-     * <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> in which the object will be created.
+     * For more information, see <a>arns</a>.
      * </p>
      */
     private String directoryArn;
     /**
      * <p>
-     * List of facet ARNs to be associated with the object. For more information, see <a>arns</a>.
+     * A list of schema facets to be associated with the object that contains <code>SchemaArn</code> and facet name. For
+     * more information, see <a>arns</a>.
      * </p>
      */
     private java.util.List<SchemaFacet> schemaFacets;
     /**
      * <p>
-     * Attribute map whose attribute ARN contains the key and attribute value as the map value.
+     * The attribute map whose attribute ARN contains the key and attribute value as the map value.
      * </p>
      */
     private java.util.List<AttributeKeyAndValue> objectAttributeList;
@@ -59,13 +60,13 @@ public class CreateObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a> in which the object will be created. For more information, see
-     * <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> in which the object will be created.
+     * For more information, see <a>arns</a>.
      * </p>
      * 
      * @param directoryArn
-     *        ARN associated with the <a>Directory</a> in which the object will be created. For more information, see
-     *        <a>arns</a>.
+     *        The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> in which the object will be
+     *        created. For more information, see <a>arns</a>.
      */
 
     public void setDirectoryArn(String directoryArn) {
@@ -74,12 +75,12 @@ public class CreateObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a> in which the object will be created. For more information, see
-     * <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> in which the object will be created.
+     * For more information, see <a>arns</a>.
      * </p>
      * 
-     * @return ARN associated with the <a>Directory</a> in which the object will be created. For more information, see
-     *         <a>arns</a>.
+     * @return The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> in which the object will be
+     *         created. For more information, see <a>arns</a>.
      */
 
     public String getDirectoryArn() {
@@ -88,13 +89,13 @@ public class CreateObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * ARN associated with the <a>Directory</a> in which the object will be created. For more information, see
-     * <a>arns</a>.
+     * The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> in which the object will be created.
+     * For more information, see <a>arns</a>.
      * </p>
      * 
      * @param directoryArn
-     *        ARN associated with the <a>Directory</a> in which the object will be created. For more information, see
-     *        <a>arns</a>.
+     *        The Amazon Resource Name (ARN) that is associated with the <a>Directory</a> in which the object will be
+     *        created. For more information, see <a>arns</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,10 +106,12 @@ public class CreateObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * List of facet ARNs to be associated with the object. For more information, see <a>arns</a>.
+     * A list of schema facets to be associated with the object that contains <code>SchemaArn</code> and facet name. For
+     * more information, see <a>arns</a>.
      * </p>
      * 
-     * @return List of facet ARNs to be associated with the object. For more information, see <a>arns</a>.
+     * @return A list of schema facets to be associated with the object that contains <code>SchemaArn</code> and facet
+     *         name. For more information, see <a>arns</a>.
      */
 
     public java.util.List<SchemaFacet> getSchemaFacets() {
@@ -117,11 +120,13 @@ public class CreateObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * List of facet ARNs to be associated with the object. For more information, see <a>arns</a>.
+     * A list of schema facets to be associated with the object that contains <code>SchemaArn</code> and facet name. For
+     * more information, see <a>arns</a>.
      * </p>
      * 
      * @param schemaFacets
-     *        List of facet ARNs to be associated with the object. For more information, see <a>arns</a>.
+     *        A list of schema facets to be associated with the object that contains <code>SchemaArn</code> and facet
+     *        name. For more information, see <a>arns</a>.
      */
 
     public void setSchemaFacets(java.util.Collection<SchemaFacet> schemaFacets) {
@@ -135,7 +140,8 @@ public class CreateObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * List of facet ARNs to be associated with the object. For more information, see <a>arns</a>.
+     * A list of schema facets to be associated with the object that contains <code>SchemaArn</code> and facet name. For
+     * more information, see <a>arns</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -144,7 +150,8 @@ public class CreateObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param schemaFacets
-     *        List of facet ARNs to be associated with the object. For more information, see <a>arns</a>.
+     *        A list of schema facets to be associated with the object that contains <code>SchemaArn</code> and facet
+     *        name. For more information, see <a>arns</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -160,11 +167,13 @@ public class CreateObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * List of facet ARNs to be associated with the object. For more information, see <a>arns</a>.
+     * A list of schema facets to be associated with the object that contains <code>SchemaArn</code> and facet name. For
+     * more information, see <a>arns</a>.
      * </p>
      * 
      * @param schemaFacets
-     *        List of facet ARNs to be associated with the object. For more information, see <a>arns</a>.
+     *        A list of schema facets to be associated with the object that contains <code>SchemaArn</code> and facet
+     *        name. For more information, see <a>arns</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,10 +184,10 @@ public class CreateObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Attribute map whose attribute ARN contains the key and attribute value as the map value.
+     * The attribute map whose attribute ARN contains the key and attribute value as the map value.
      * </p>
      * 
-     * @return Attribute map whose attribute ARN contains the key and attribute value as the map value.
+     * @return The attribute map whose attribute ARN contains the key and attribute value as the map value.
      */
 
     public java.util.List<AttributeKeyAndValue> getObjectAttributeList() {
@@ -187,11 +196,11 @@ public class CreateObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Attribute map whose attribute ARN contains the key and attribute value as the map value.
+     * The attribute map whose attribute ARN contains the key and attribute value as the map value.
      * </p>
      * 
      * @param objectAttributeList
-     *        Attribute map whose attribute ARN contains the key and attribute value as the map value.
+     *        The attribute map whose attribute ARN contains the key and attribute value as the map value.
      */
 
     public void setObjectAttributeList(java.util.Collection<AttributeKeyAndValue> objectAttributeList) {
@@ -205,7 +214,7 @@ public class CreateObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Attribute map whose attribute ARN contains the key and attribute value as the map value.
+     * The attribute map whose attribute ARN contains the key and attribute value as the map value.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -214,7 +223,7 @@ public class CreateObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param objectAttributeList
-     *        Attribute map whose attribute ARN contains the key and attribute value as the map value.
+     *        The attribute map whose attribute ARN contains the key and attribute value as the map value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -230,11 +239,11 @@ public class CreateObjectRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Attribute map whose attribute ARN contains the key and attribute value as the map value.
+     * The attribute map whose attribute ARN contains the key and attribute value as the map value.
      * </p>
      * 
      * @param objectAttributeList
-     *        Attribute map whose attribute ARN contains the key and attribute value as the map value.
+     *        The attribute map whose attribute ARN contains the key and attribute value as the map value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

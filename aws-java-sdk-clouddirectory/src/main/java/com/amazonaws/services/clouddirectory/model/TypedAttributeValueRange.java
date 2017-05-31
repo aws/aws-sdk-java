@@ -30,7 +30,7 @@ public class TypedAttributeValueRange implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Inclusive or exclusive range start.
+     * The inclusive or exclusive range start.
      * </p>
      */
     private String startMode;
@@ -42,7 +42,7 @@ public class TypedAttributeValueRange implements Serializable, Cloneable, Struct
     private TypedAttributeValue startValue;
     /**
      * <p>
-     * Inclusive or exclusive range end.
+     * The inclusive or exclusive range end.
      * </p>
      */
     private String endMode;
@@ -55,11 +55,11 @@ public class TypedAttributeValueRange implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Inclusive or exclusive range start.
+     * The inclusive or exclusive range start.
      * </p>
      * 
      * @param startMode
-     *        Inclusive or exclusive range start.
+     *        The inclusive or exclusive range start.
      * @see RangeMode
      */
 
@@ -69,10 +69,10 @@ public class TypedAttributeValueRange implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Inclusive or exclusive range start.
+     * The inclusive or exclusive range start.
      * </p>
      * 
-     * @return Inclusive or exclusive range start.
+     * @return The inclusive or exclusive range start.
      * @see RangeMode
      */
 
@@ -82,11 +82,11 @@ public class TypedAttributeValueRange implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Inclusive or exclusive range start.
+     * The inclusive or exclusive range start.
      * </p>
      * 
      * @param startMode
-     *        Inclusive or exclusive range start.
+     *        The inclusive or exclusive range start.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RangeMode
      */
@@ -98,11 +98,11 @@ public class TypedAttributeValueRange implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Inclusive or exclusive range start.
+     * The inclusive or exclusive range start.
      * </p>
      * 
      * @param startMode
-     *        Inclusive or exclusive range start.
+     *        The inclusive or exclusive range start.
      * @see RangeMode
      */
 
@@ -112,11 +112,11 @@ public class TypedAttributeValueRange implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Inclusive or exclusive range start.
+     * The inclusive or exclusive range start.
      * </p>
      * 
      * @param startMode
-     *        Inclusive or exclusive range start.
+     *        The inclusive or exclusive range start.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RangeMode
      */
@@ -168,11 +168,11 @@ public class TypedAttributeValueRange implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Inclusive or exclusive range end.
+     * The inclusive or exclusive range end.
      * </p>
      * 
      * @param endMode
-     *        Inclusive or exclusive range end.
+     *        The inclusive or exclusive range end.
      * @see RangeMode
      */
 
@@ -182,10 +182,10 @@ public class TypedAttributeValueRange implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Inclusive or exclusive range end.
+     * The inclusive or exclusive range end.
      * </p>
      * 
-     * @return Inclusive or exclusive range end.
+     * @return The inclusive or exclusive range end.
      * @see RangeMode
      */
 
@@ -195,11 +195,11 @@ public class TypedAttributeValueRange implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Inclusive or exclusive range end.
+     * The inclusive or exclusive range end.
      * </p>
      * 
      * @param endMode
-     *        Inclusive or exclusive range end.
+     *        The inclusive or exclusive range end.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RangeMode
      */
@@ -211,11 +211,11 @@ public class TypedAttributeValueRange implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Inclusive or exclusive range end.
+     * The inclusive or exclusive range end.
      * </p>
      * 
      * @param endMode
-     *        Inclusive or exclusive range end.
+     *        The inclusive or exclusive range end.
      * @see RangeMode
      */
 
@@ -225,11 +225,11 @@ public class TypedAttributeValueRange implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Inclusive or exclusive range end.
+     * The inclusive or exclusive range end.
      * </p>
      * 
      * @param endMode
-     *        Inclusive or exclusive range end.
+     *        The inclusive or exclusive range end.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RangeMode
      */

@@ -48,7 +48,7 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
     private BatchDetachObject detachObject;
     /**
      * <p>
-     * Update a given object's attributes.
+     * Updates a given object's attributes.
      * </p>
      */
     private BatchUpdateObjectAttributes updateObjectAttributes;
@@ -60,13 +60,13 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
     private BatchDeleteObject deleteObject;
     /**
      * <p>
-     * Batch operation adding a facet to an object.
+     * A batch operation that adds a facet to an object.
      * </p>
      */
     private BatchAddFacetToObject addFacetToObject;
     /**
      * <p>
-     * Batch operation removing a facet from an object.
+     * A batch operation that removes a facet from an object.
      * </p>
      */
     private BatchRemoveFacetFromObject removeFacetFromObject;
@@ -193,11 +193,11 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Update a given object's attributes.
+     * Updates a given object's attributes.
      * </p>
      * 
      * @param updateObjectAttributes
-     *        Update a given object's attributes.
+     *        Updates a given object's attributes.
      */
 
     public void setUpdateObjectAttributes(BatchUpdateObjectAttributes updateObjectAttributes) {
@@ -206,10 +206,10 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Update a given object's attributes.
+     * Updates a given object's attributes.
      * </p>
      * 
-     * @return Update a given object's attributes.
+     * @return Updates a given object's attributes.
      */
 
     public BatchUpdateObjectAttributes getUpdateObjectAttributes() {
@@ -218,11 +218,11 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Update a given object's attributes.
+     * Updates a given object's attributes.
      * </p>
      * 
      * @param updateObjectAttributes
-     *        Update a given object's attributes.
+     *        Updates a given object's attributes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -273,11 +273,11 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Batch operation adding a facet to an object.
+     * A batch operation that adds a facet to an object.
      * </p>
      * 
      * @param addFacetToObject
-     *        Batch operation adding a facet to an object.
+     *        A batch operation that adds a facet to an object.
      */
 
     public void setAddFacetToObject(BatchAddFacetToObject addFacetToObject) {
@@ -286,10 +286,10 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Batch operation adding a facet to an object.
+     * A batch operation that adds a facet to an object.
      * </p>
      * 
-     * @return Batch operation adding a facet to an object.
+     * @return A batch operation that adds a facet to an object.
      */
 
     public BatchAddFacetToObject getAddFacetToObject() {
@@ -298,11 +298,11 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Batch operation adding a facet to an object.
+     * A batch operation that adds a facet to an object.
      * </p>
      * 
      * @param addFacetToObject
-     *        Batch operation adding a facet to an object.
+     *        A batch operation that adds a facet to an object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -313,11 +313,11 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Batch operation removing a facet from an object.
+     * A batch operation that removes a facet from an object.
      * </p>
      * 
      * @param removeFacetFromObject
-     *        Batch operation removing a facet from an object.
+     *        A batch operation that removes a facet from an object.
      */
 
     public void setRemoveFacetFromObject(BatchRemoveFacetFromObject removeFacetFromObject) {
@@ -326,10 +326,10 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Batch operation removing a facet from an object.
+     * A batch operation that removes a facet from an object.
      * </p>
      * 
-     * @return Batch operation removing a facet from an object.
+     * @return A batch operation that removes a facet from an object.
      */
 
     public BatchRemoveFacetFromObject getRemoveFacetFromObject() {
@@ -338,11 +338,11 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Batch operation removing a facet from an object.
+     * A batch operation that removes a facet from an object.
      * </p>
      * 
      * @param removeFacetFromObject
-     *        Batch operation removing a facet from an object.
+     *        A batch operation that removes a facet from an object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

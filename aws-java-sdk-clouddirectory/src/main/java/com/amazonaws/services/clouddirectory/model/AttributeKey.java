@@ -30,13 +30,13 @@ public class AttributeKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the schema that contains the facet and attribute.
+     * The Amazon Resource Name (ARN) of the schema that contains the facet and attribute.
      * </p>
      */
     private String schemaArn;
     /**
      * <p>
-     * The name of the facet the attribute exists within.
+     * The name of the facet that the attribute exists within.
      * </p>
      */
     private String facetName;
@@ -49,11 +49,11 @@ public class AttributeKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the schema that contains the facet and attribute.
+     * The Amazon Resource Name (ARN) of the schema that contains the facet and attribute.
      * </p>
      * 
      * @param schemaArn
-     *        The ARN of the schema that contains the facet and attribute.
+     *        The Amazon Resource Name (ARN) of the schema that contains the facet and attribute.
      */
 
     public void setSchemaArn(String schemaArn) {
@@ -62,10 +62,10 @@ public class AttributeKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the schema that contains the facet and attribute.
+     * The Amazon Resource Name (ARN) of the schema that contains the facet and attribute.
      * </p>
      * 
-     * @return The ARN of the schema that contains the facet and attribute.
+     * @return The Amazon Resource Name (ARN) of the schema that contains the facet and attribute.
      */
 
     public String getSchemaArn() {
@@ -74,11 +74,11 @@ public class AttributeKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the schema that contains the facet and attribute.
+     * The Amazon Resource Name (ARN) of the schema that contains the facet and attribute.
      * </p>
      * 
      * @param schemaArn
-     *        The ARN of the schema that contains the facet and attribute.
+     *        The Amazon Resource Name (ARN) of the schema that contains the facet and attribute.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class AttributeKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the facet the attribute exists within.
+     * The name of the facet that the attribute exists within.
      * </p>
      * 
      * @param facetName
-     *        The name of the facet the attribute exists within.
+     *        The name of the facet that the attribute exists within.
      */
 
     public void setFacetName(String facetName) {
@@ -102,10 +102,10 @@ public class AttributeKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the facet the attribute exists within.
+     * The name of the facet that the attribute exists within.
      * </p>
      * 
-     * @return The name of the facet the attribute exists within.
+     * @return The name of the facet that the attribute exists within.
      */
 
     public String getFacetName() {
@@ -114,11 +114,11 @@ public class AttributeKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the facet the attribute exists within.
+     * The name of the facet that the attribute exists within.
      * </p>
      * 
      * @param facetName
-     *        The name of the facet the attribute exists within.
+     *        The name of the facet that the attribute exists within.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
