@@ -38,6 +38,12 @@ public class SignUpResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
      * </p>
      */
     private CodeDeliveryDetailsType codeDeliveryDetails;
+    /**
+     * <p>
+     * The UUID of the authenticated user. This is not the same as <code>username</code>.
+     * </p>
+     */
+    private String userSub;
 
     /**
      * <p>
@@ -132,6 +138,46 @@ public class SignUpResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     }
 
     /**
+     * <p>
+     * The UUID of the authenticated user. This is not the same as <code>username</code>.
+     * </p>
+     * 
+     * @param userSub
+     *        The UUID of the authenticated user. This is not the same as <code>username</code>.
+     */
+
+    public void setUserSub(String userSub) {
+        this.userSub = userSub;
+    }
+
+    /**
+     * <p>
+     * The UUID of the authenticated user. This is not the same as <code>username</code>.
+     * </p>
+     * 
+     * @return The UUID of the authenticated user. This is not the same as <code>username</code>.
+     */
+
+    public String getUserSub() {
+        return this.userSub;
+    }
+
+    /**
+     * <p>
+     * The UUID of the authenticated user. This is not the same as <code>username</code>.
+     * </p>
+     * 
+     * @param userSub
+     *        The UUID of the authenticated user. This is not the same as <code>username</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SignUpResult withUserSub(String userSub) {
+        setUserSub(userSub);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -145,7 +191,9 @@ public class SignUpResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
         if (getUserConfirmed() != null)
             sb.append("UserConfirmed: ").append(getUserConfirmed()).append(",");
         if (getCodeDeliveryDetails() != null)
-            sb.append("CodeDeliveryDetails: ").append(getCodeDeliveryDetails());
+            sb.append("CodeDeliveryDetails: ").append(getCodeDeliveryDetails()).append(",");
+        if (getUserSub() != null)
+            sb.append("UserSub: ").append(getUserSub());
         sb.append("}");
         return sb.toString();
     }
@@ -168,6 +216,10 @@ public class SignUpResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
             return false;
         if (other.getCodeDeliveryDetails() != null && other.getCodeDeliveryDetails().equals(this.getCodeDeliveryDetails()) == false)
             return false;
+        if (other.getUserSub() == null ^ this.getUserSub() == null)
+            return false;
+        if (other.getUserSub() != null && other.getUserSub().equals(this.getUserSub()) == false)
+            return false;
         return true;
     }
 
@@ -178,6 +230,7 @@ public class SignUpResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
         hashCode = prime * hashCode + ((getUserConfirmed() == null) ? 0 : getUserConfirmed().hashCode());
         hashCode = prime * hashCode + ((getCodeDeliveryDetails() == null) ? 0 : getCodeDeliveryDetails().hashCode());
+        hashCode = prime * hashCode + ((getUserSub() == null) ? 0 : getUserSub().hashCode());
         return hashCode;
     }
 

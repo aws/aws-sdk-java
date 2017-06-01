@@ -67,7 +67,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
     private String emailVerificationMessage;
     /**
      * <p>
-     * The subject of the email verfication message.
+     * The subject of the email verification message.
      * </p>
      */
     private String emailVerificationSubject;
@@ -129,7 +129,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
     private java.util.Map<String, String> userPoolTags;
     /**
      * <p>
-     * The configuration for AdminCreateUser requests.
+     * The configuration for <code>AdminCreateUser</code> requests.
      * </p>
      */
     private AdminCreateUserConfigType adminCreateUserConfig;
@@ -444,11 +444,11 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The subject of the email verfication message.
+     * The subject of the email verification message.
      * </p>
      * 
      * @param emailVerificationSubject
-     *        The subject of the email verfication message.
+     *        The subject of the email verification message.
      */
 
     public void setEmailVerificationSubject(String emailVerificationSubject) {
@@ -457,10 +457,10 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The subject of the email verfication message.
+     * The subject of the email verification message.
      * </p>
      * 
-     * @return The subject of the email verfication message.
+     * @return The subject of the email verification message.
      */
 
     public String getEmailVerificationSubject() {
@@ -469,11 +469,11 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The subject of the email verfication message.
+     * The subject of the email verification message.
      * </p>
      * 
      * @param emailVerificationSubject
-     *        The subject of the email verfication message.
+     *        The subject of the email verification message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -965,11 +965,11 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The configuration for AdminCreateUser requests.
+     * The configuration for <code>AdminCreateUser</code> requests.
      * </p>
      * 
      * @param adminCreateUserConfig
-     *        The configuration for AdminCreateUser requests.
+     *        The configuration for <code>AdminCreateUser</code> requests.
      */
 
     public void setAdminCreateUserConfig(AdminCreateUserConfigType adminCreateUserConfig) {
@@ -978,10 +978,10 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The configuration for AdminCreateUser requests.
+     * The configuration for <code>AdminCreateUser</code> requests.
      * </p>
      * 
-     * @return The configuration for AdminCreateUser requests.
+     * @return The configuration for <code>AdminCreateUser</code> requests.
      */
 
     public AdminCreateUserConfigType getAdminCreateUserConfig() {
@@ -990,11 +990,11 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The configuration for AdminCreateUser requests.
+     * The configuration for <code>AdminCreateUser</code> requests.
      * </p>
      * 
      * @param adminCreateUserConfig
-     *        The configuration for AdminCreateUser requests.
+     *        The configuration for <code>AdminCreateUser</code> requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

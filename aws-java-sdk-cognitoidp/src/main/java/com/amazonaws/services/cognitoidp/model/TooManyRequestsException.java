@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This exception gets thrown when the user has made too many requests for a given operation.
+ * This exception is thrown when the user has made too many requests for a given operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

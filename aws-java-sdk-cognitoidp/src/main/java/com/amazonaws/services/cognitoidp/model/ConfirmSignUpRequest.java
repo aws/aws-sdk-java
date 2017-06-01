@@ -55,10 +55,11 @@ public class ConfirmSignUpRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String confirmationCode;
     /**
      * <p>
-     * Boolean to be specified to force user confirmation irrespective of existing alias. By default set to False. If
-     * this parameter is set to True and the phone number/email used for sign up confirmation already exists as an alias
-     * with a different user, the API call will migrate the alias from the previous user to the newly created user being
-     * confirmed. If set to False, the API will throw an <b>AliasExistsException</b> error.
+     * Boolean to be specified to force user confirmation irrespective of existing alias. By default set to
+     * <code>False</code>. If this parameter is set to <code>True</code> and the phone number/email used for sign up
+     * confirmation already exists as an alias with a different user, the API call will migrate the alias from the
+     * previous user to the newly created user being confirmed. If set to <code>False</code>, the API will throw an
+     * <b>AliasExistsException</b> error.
      * </p>
      */
     private Boolean forceAliasCreation;
@@ -231,18 +232,19 @@ public class ConfirmSignUpRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Boolean to be specified to force user confirmation irrespective of existing alias. By default set to False. If
-     * this parameter is set to True and the phone number/email used for sign up confirmation already exists as an alias
-     * with a different user, the API call will migrate the alias from the previous user to the newly created user being
-     * confirmed. If set to False, the API will throw an <b>AliasExistsException</b> error.
+     * Boolean to be specified to force user confirmation irrespective of existing alias. By default set to
+     * <code>False</code>. If this parameter is set to <code>True</code> and the phone number/email used for sign up
+     * confirmation already exists as an alias with a different user, the API call will migrate the alias from the
+     * previous user to the newly created user being confirmed. If set to <code>False</code>, the API will throw an
+     * <b>AliasExistsException</b> error.
      * </p>
      * 
      * @param forceAliasCreation
      *        Boolean to be specified to force user confirmation irrespective of existing alias. By default set to
-     *        False. If this parameter is set to True and the phone number/email used for sign up confirmation already
-     *        exists as an alias with a different user, the API call will migrate the alias from the previous user to
-     *        the newly created user being confirmed. If set to False, the API will throw an <b>AliasExistsException</b>
-     *        error.
+     *        <code>False</code>. If this parameter is set to <code>True</code> and the phone number/email used for sign
+     *        up confirmation already exists as an alias with a different user, the API call will migrate the alias from
+     *        the previous user to the newly created user being confirmed. If set to <code>False</code>, the API will
+     *        throw an <b>AliasExistsException</b> error.
      */
 
     public void setForceAliasCreation(Boolean forceAliasCreation) {
@@ -251,17 +253,18 @@ public class ConfirmSignUpRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Boolean to be specified to force user confirmation irrespective of existing alias. By default set to False. If
-     * this parameter is set to True and the phone number/email used for sign up confirmation already exists as an alias
-     * with a different user, the API call will migrate the alias from the previous user to the newly created user being
-     * confirmed. If set to False, the API will throw an <b>AliasExistsException</b> error.
+     * Boolean to be specified to force user confirmation irrespective of existing alias. By default set to
+     * <code>False</code>. If this parameter is set to <code>True</code> and the phone number/email used for sign up
+     * confirmation already exists as an alias with a different user, the API call will migrate the alias from the
+     * previous user to the newly created user being confirmed. If set to <code>False</code>, the API will throw an
+     * <b>AliasExistsException</b> error.
      * </p>
      * 
      * @return Boolean to be specified to force user confirmation irrespective of existing alias. By default set to
-     *         False. If this parameter is set to True and the phone number/email used for sign up confirmation already
-     *         exists as an alias with a different user, the API call will migrate the alias from the previous user to
-     *         the newly created user being confirmed. If set to False, the API will throw an
-     *         <b>AliasExistsException</b> error.
+     *         <code>False</code>. If this parameter is set to <code>True</code> and the phone number/email used for
+     *         sign up confirmation already exists as an alias with a different user, the API call will migrate the
+     *         alias from the previous user to the newly created user being confirmed. If set to <code>False</code>, the
+     *         API will throw an <b>AliasExistsException</b> error.
      */
 
     public Boolean getForceAliasCreation() {
@@ -270,18 +273,19 @@ public class ConfirmSignUpRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Boolean to be specified to force user confirmation irrespective of existing alias. By default set to False. If
-     * this parameter is set to True and the phone number/email used for sign up confirmation already exists as an alias
-     * with a different user, the API call will migrate the alias from the previous user to the newly created user being
-     * confirmed. If set to False, the API will throw an <b>AliasExistsException</b> error.
+     * Boolean to be specified to force user confirmation irrespective of existing alias. By default set to
+     * <code>False</code>. If this parameter is set to <code>True</code> and the phone number/email used for sign up
+     * confirmation already exists as an alias with a different user, the API call will migrate the alias from the
+     * previous user to the newly created user being confirmed. If set to <code>False</code>, the API will throw an
+     * <b>AliasExistsException</b> error.
      * </p>
      * 
      * @param forceAliasCreation
      *        Boolean to be specified to force user confirmation irrespective of existing alias. By default set to
-     *        False. If this parameter is set to True and the phone number/email used for sign up confirmation already
-     *        exists as an alias with a different user, the API call will migrate the alias from the previous user to
-     *        the newly created user being confirmed. If set to False, the API will throw an <b>AliasExistsException</b>
-     *        error.
+     *        <code>False</code>. If this parameter is set to <code>True</code> and the phone number/email used for sign
+     *        up confirmation already exists as an alias with a different user, the API call will migrate the alias from
+     *        the previous user to the newly created user being confirmed. If set to <code>False</code>, the API will
+     *        throw an <b>AliasExistsException</b> error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -292,17 +296,18 @@ public class ConfirmSignUpRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Boolean to be specified to force user confirmation irrespective of existing alias. By default set to False. If
-     * this parameter is set to True and the phone number/email used for sign up confirmation already exists as an alias
-     * with a different user, the API call will migrate the alias from the previous user to the newly created user being
-     * confirmed. If set to False, the API will throw an <b>AliasExistsException</b> error.
+     * Boolean to be specified to force user confirmation irrespective of existing alias. By default set to
+     * <code>False</code>. If this parameter is set to <code>True</code> and the phone number/email used for sign up
+     * confirmation already exists as an alias with a different user, the API call will migrate the alias from the
+     * previous user to the newly created user being confirmed. If set to <code>False</code>, the API will throw an
+     * <b>AliasExistsException</b> error.
      * </p>
      * 
      * @return Boolean to be specified to force user confirmation irrespective of existing alias. By default set to
-     *         False. If this parameter is set to True and the phone number/email used for sign up confirmation already
-     *         exists as an alias with a different user, the API call will migrate the alias from the previous user to
-     *         the newly created user being confirmed. If set to False, the API will throw an
-     *         <b>AliasExistsException</b> error.
+     *         <code>False</code>. If this parameter is set to <code>True</code> and the phone number/email used for
+     *         sign up confirmation already exists as an alias with a different user, the API call will migrate the
+     *         alias from the previous user to the newly created user being confirmed. If set to <code>False</code>, the
+     *         API will throw an <b>AliasExistsException</b> error.
      */
 
     public Boolean isForceAliasCreation() {

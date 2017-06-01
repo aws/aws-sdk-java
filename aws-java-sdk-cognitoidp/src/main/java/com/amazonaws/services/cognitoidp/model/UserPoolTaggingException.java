@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This exception gets thrown when a user pool tag cannot be set or updated.
+ * This exception is thrown when a user pool tag cannot be set or updated.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

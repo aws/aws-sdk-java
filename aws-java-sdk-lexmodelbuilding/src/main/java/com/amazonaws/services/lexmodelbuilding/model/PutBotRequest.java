@@ -95,7 +95,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     private Integer idleSessionTTLInSeconds;
     /**
      * <p>
-     * The Amazon Parrot voice ID that you want Amazon Lex to use for voice interactions with the user. The locale
+     * The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale
      * configured for the voice must match the locale of the bot. For more information, see <a
      * href="http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html">Voice</a> in the <i>Amazon Polly Developer
      * Guide</i>.
@@ -629,15 +629,15 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The Amazon Parrot voice ID that you want Amazon Lex to use for voice interactions with the user. The locale
+     * The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale
      * configured for the voice must match the locale of the bot. For more information, see <a
      * href="http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html">Voice</a> in the <i>Amazon Polly Developer
      * Guide</i>.
      * </p>
      * 
      * @param voiceId
-     *        The Amazon Parrot voice ID that you want Amazon Lex to use for voice interactions with the user. The
-     *        locale configured for the voice must match the locale of the bot. For more information, see <a
+     *        The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale
+     *        configured for the voice must match the locale of the bot. For more information, see <a
      *        href="http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html">Voice</a> in the <i>Amazon Polly
      *        Developer Guide</i>.
      */
@@ -648,13 +648,13 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The Amazon Parrot voice ID that you want Amazon Lex to use for voice interactions with the user. The locale
+     * The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale
      * configured for the voice must match the locale of the bot. For more information, see <a
      * href="http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html">Voice</a> in the <i>Amazon Polly Developer
      * Guide</i>.
      * </p>
      * 
-     * @return The Amazon Parrot voice ID that you want Amazon Lex to use for voice interactions with the user. The
+     * @return The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The
      *         locale configured for the voice must match the locale of the bot. For more information, see <a
      *         href="http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html">Voice</a> in the <i>Amazon Polly
      *         Developer Guide</i>.
@@ -666,15 +666,15 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The Amazon Parrot voice ID that you want Amazon Lex to use for voice interactions with the user. The locale
+     * The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale
      * configured for the voice must match the locale of the bot. For more information, see <a
      * href="http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html">Voice</a> in the <i>Amazon Polly Developer
      * Guide</i>.
      * </p>
      * 
      * @param voiceId
-     *        The Amazon Parrot voice ID that you want Amazon Lex to use for voice interactions with the user. The
-     *        locale configured for the voice must match the locale of the bot. For more information, see <a
+     *        The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale
+     *        configured for the voice must match the locale of the bot. For more information, see <a
      *        href="http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html">Voice</a> in the <i>Amazon Polly
      *        Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.

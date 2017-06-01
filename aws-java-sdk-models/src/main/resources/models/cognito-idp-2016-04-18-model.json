@@ -227,7 +227,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Creates a new user in the specified user pool and sends a welcome message via email or phone (SMS). This message is based on a template that you configured in your call to CreateUserPool or UpdateUserPool. This template includes your custom sign-up instructions and placeholders for user name and temporary password.</p> <p>Requires developer credentials.</p>",
+      "documentation" : "<p>Creates a new user in the specified user pool and sends a welcome message via email or phone (SMS). This message is based on a template that you configured in your call to <a href=\"API_CreateUserPool.html\">CreateUserPool</a> or <a href=\"API_UpdateUserPool.html\">UpdateUserPool</a>. This template includes your custom sign-up instructions and placeholders for user name and temporary password.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -1410,7 +1410,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Updates the specified user's attributes, including developer attributes, as an administrator. Works on any user.</p> <p>Requires developer credentials.</p>",
+      "documentation" : "<p>Updates the specified user's attributes, including developer attributes, as an administrator. Works on any user.</p> <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p> <p>In addition to updating user attributes, this API can also be used to mark phone and email as verified.</p> <p>Requires developer credentials.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -1641,7 +1641,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Confirms tracking of the device. This API call is the call that beings device tracking.</p>",
+      "documentation" : "<p>Confirms tracking of the device. This API call is the call that begins device tracking.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -1738,7 +1738,7 @@
       "authorizer" : null,
       "authtype" : "NONE",
       "deprecated" : false,
-      "documentation" : "<p>Allows a user to enter a code provided when they reset their password to update their password.</p>",
+      "documentation" : "<p>Allows a user to enter a confirmation code to reset a forgotten password.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -2025,6 +2025,73 @@
         "shape" : "CreateGroupResponse"
       }
     },
+    "CreateIdentityProvider" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Creates an identity provider for a user pool.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidParameterException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "DuplicateProviderException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotAuthorizedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "TooManyRequestsException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "LimitExceededException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalErrorException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "CreateIdentityProviderRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "CreateIdentityProvider",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "CreateIdentityProviderResponse"
+      }
+    },
     "CreateUserImportJob" : {
       "authorizer" : null,
       "authtype" : "IAM",
@@ -2211,6 +2278,18 @@
         "error" : null,
         "exception" : false,
         "fault" : false,
+        "shape" : "ScopeDoesNotExistException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidOAuthFlowException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
         "shape" : "InternalErrorException"
       } ],
       "http" : {
@@ -2230,6 +2309,55 @@
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "CreateUserPoolClientResponse"
+      }
+    },
+    "CreateUserPoolDomain" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Creates a new domain for a user pool.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidParameterException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotAuthorizedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalErrorException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "CreateUserPoolDomainRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "CreateUserPoolDomain",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "CreateUserPoolDomainResponse"
       }
     },
     "DeleteGroup" : {
@@ -2280,6 +2408,62 @@
         "xmlNamespace" : null
       },
       "name" : "DeleteGroup",
+      "output" : null
+    },
+    "DeleteIdentityProvider" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Deletes an identity provider for a user pool.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidParameterException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "UnsupportedIdentityProviderException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotAuthorizedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "TooManyRequestsException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalErrorException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DeleteIdentityProviderRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "DeleteIdentityProvider",
       "output" : null
     },
     "DeleteUser" : {
@@ -2529,6 +2713,110 @@
       "name" : "DeleteUserPoolClient",
       "output" : null
     },
+    "DeleteUserPoolDomain" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Deletes a domain for a user pool.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotAuthorizedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidParameterException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalErrorException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DeleteUserPoolDomainRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "DeleteUserPoolDomain",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "DeleteUserPoolDomainResponse"
+      }
+    },
+    "DescribeIdentityProvider" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Gets information about a specific identity provider.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidParameterException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotAuthorizedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "TooManyRequestsException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalErrorException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DescribeIdentityProviderRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "DescribeIdentityProvider",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "DescribeIdentityProviderResponse"
+      }
+    },
     "DescribeUserImportJob" : {
       "authorizer" : null,
       "authtype" : "IAM",
@@ -2700,6 +2988,55 @@
         "shape" : "DescribeUserPoolClientResponse"
       }
     },
+    "DescribeUserPoolDomain" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Gets information about a domain.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotAuthorizedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidParameterException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalErrorException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DescribeUserPoolDomainRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "DescribeUserPoolDomain",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "DescribeUserPoolDomainResponse"
+      }
+    },
     "ForgetDevice" : {
       "authorizer" : null,
       "authtype" : "IAM",
@@ -2778,7 +3115,7 @@
       "authorizer" : null,
       "authtype" : "NONE",
       "deprecated" : false,
-      "documentation" : "<p>Retrieves the password for the specified client ID or username.</p>",
+      "documentation" : "<p>Calling this API causes a message to be sent to the end user with a confirmation code that is required to change the user's password. For the <code>Username</code> parameter, you can use the username or user alias. If a verified phone number exists for the user, the confirmation code is sent to the phone number. Otherwise, if a verified email exists, the confirmation code is sent to the email. If neither a verified phone number nor a verified email exists, <code>InvalidParameterException</code> is thrown. To use the confirmation code for resetting the password, call <a href=\"API_ConfirmForgotPassword.html\">ConfirmForgotPassword</a>.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -3076,6 +3413,61 @@
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "GetGroupResponse"
+      }
+    },
+    "GetIdentityProviderByIdentifier" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Gets the specified identity provider.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidParameterException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotAuthorizedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "TooManyRequestsException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalErrorException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "GetIdentityProviderByIdentifierRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "GetIdentityProviderByIdentifier",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "GetIdentityProviderByIdentifierResponse"
       }
     },
     "GetUser" : {
@@ -3568,6 +3960,61 @@
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "ListGroupsResponse"
+      }
+    },
+    "ListIdentityProviders" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Lists information about all identity providers for a user pool.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidParameterException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotAuthorizedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "TooManyRequestsException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalErrorException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "ListIdentityProvidersRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "ListIdentityProviders",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "ListIdentityProvidersResponse"
       }
     },
     "ListUserImportJobs" : {
@@ -4519,6 +4966,67 @@
         "shape" : "UpdateGroupResponse"
       }
     },
+    "UpdateIdentityProvider" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Updates identity provider information for a user pool.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidParameterException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "UnsupportedIdentityProviderException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotAuthorizedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "TooManyRequestsException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalErrorException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "UpdateIdentityProviderRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "UpdateIdentityProvider",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "UpdateIdentityProviderResponse"
+      }
+    },
     "UpdateUserAttributes" : {
       "authorizer" : null,
       "authtype" : "NONE",
@@ -4777,6 +5285,18 @@
         "error" : null,
         "exception" : false,
         "fault" : false,
+        "shape" : "ScopeDoesNotExistException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidOAuthFlowException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
         "shape" : "InternalErrorException"
       } ],
       "http" : {
@@ -4891,6 +5411,27 @@
     }
   },
   "shapes" : {
+    "AWSAccountIdType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
     "AddCustomAttributesRequest" : {
       "deprecated" : false,
       "documentation" : "<p>Represents the request to add custom attributes.</p>",
@@ -5111,7 +5652,7 @@
       "members" : {
         "AllowAdminCreateUserOnly" : {
           "deprecated" : false,
-          "documentation" : "<p>Set to True if only the administrator is allowed to create user profiles. Set to False if users can sign themselves up via an app.</p>",
+          "documentation" : "<p>Set to <code>True</code> if only the administrator is allowed to create user profiles. Set to <code>False</code> if users can sign themselves up via an app.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5139,7 +5680,7 @@
         },
         "UnusedAccountValidityDays" : {
           "deprecated" : false,
-          "documentation" : "<p>The user account expiration limit, in days, after which the account is no longer usable. To reset the account after that time limit, you must call AdminCreateUser again, specifying \"RESEND\" for the MessageAction parameter. The default value for this paameter is 7.</p>",
+          "documentation" : "<p>The user account expiration limit, in days, after which the account is no longer usable. To reset the account after that time limit, you must call <code>AdminCreateUser</code> again, specifying <code>\"RESEND\"</code> for the <code>MessageAction</code> parameter. The default value for this parameter is 7.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5175,7 +5716,7 @@
       "members" : {
         "DesiredDeliveryMediums" : {
           "deprecated" : false,
-          "documentation" : "<p>Specify \"EMAIL\" if email will be used to send the welcome message. Specify \"SMS\" if the phone number will be used. The default value is \"SMS\". More than one value can be specified.</p>",
+          "documentation" : "<p>Specify <code>\"EMAIL\"</code> if email will be used to send the welcome message. Specify <code>\"SMS\"</code> if the phone number will be used. The default value is <code>\"SMS\"</code>. More than one value can be specified.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5189,7 +5730,7 @@
         },
         "ForceAliasCreation" : {
           "deprecated" : false,
-          "documentation" : "<p>This parameter is only used if the phone_number_verified or email_verified attribute is set to True. Otherwise, it is ignored.</p> <p>If this parameter is set to True and the phone number or email address specified in the UserAttributes parameter already exists as an alias with a different user, the API call will migrate the alias from the previous user to the newly created user. The previous user will no longer be able to log in using that alias.</p> <p>If this parameter is set to False, the API throws an AliasExistsException error if the alias already exists. The default value is False.</p>",
+          "documentation" : "<p>This parameter is only used if the <code>phone_number_verified</code> or <code>email_verified</code> attribute is set to <code>True</code>. Otherwise, it is ignored.</p> <p>If this parameter is set to <code>True</code> and the phone number or email address specified in the UserAttributes parameter already exists as an alias with a different user, the API call will migrate the alias from the previous user to the newly created user. The previous user will no longer be able to log in using that alias.</p> <p>If this parameter is set to <code>False</code>, the API throws an <code>AliasExistsException</code> error if the alias already exists. The default value is <code>False</code>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5203,7 +5744,7 @@
         },
         "MessageAction" : {
           "deprecated" : false,
-          "documentation" : "<p>Set to \"RESEND\" to resend the invitation message to a user that already exists and reset the expiration limit on the user's account. Set to \"SUPPRESS\" to suppress sending the message. Only one value can be specified.</p>",
+          "documentation" : "<p>Set to <code>\"RESEND\"</code> to resend the invitation message to a user that already exists and reset the expiration limit on the user's account. Set to <code>\"SUPPRESS\"</code> to suppress sending the message. Only one value can be specified.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5217,7 +5758,7 @@
         },
         "TemporaryPassword" : {
           "deprecated" : false,
-          "documentation" : "<p>The user's temporary password. This password must conform to the password policy that you specified when you created the user pool.</p> <p>The temporary password is valid only once. To complete the Admin Create User flow, the user must enter the temporary password in the sign-in page along with a new password to be used in all future sign-ins.</p> <p>This parameter is not required. If you do not specify a value, Amazon Cognito generates one for you.</p> <p>The temporary password can only be used until the user account expiration limit that you specified when you created the user pool. To reset the account after that time limit, you must call AdminCreateUser again, specifying \"RESEND\" for the MessageAction parameter.</p>",
+          "documentation" : "<p>The user's temporary password. This password must conform to the password policy that you specified when you created the user pool.</p> <p>The temporary password is valid only once. To complete the Admin Create User flow, the user must enter the temporary password in the sign-in page along with a new password to be used in all future sign-ins.</p> <p>This parameter is not required. If you do not specify a value, Amazon Cognito generates one for you.</p> <p>The temporary password can only be used until the user account expiration limit that you specified when you created the user pool. To reset the account after that time limit, you must call <code>AdminCreateUser</code> again, specifying <code>\"RESEND\"</code> for the <code>MessageAction</code> parameter.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5231,7 +5772,7 @@
         },
         "UserAttributes" : {
           "deprecated" : false,
-          "documentation" : "<p>An array of name-value pairs that contain user attributes and attribute values to be set for the user to be created. You can create a user without specifying any attributes other than Username. However, any attributes that you specify as required (in CreateUserPool or in the <b>Attributes</b> tab of the console) must be supplied either by you (in your call to AdminCreateUser) or by the user (when he or she signs up in response to your welcome message).</p> <p>To send a message inviting the user to sign up, you must specify the user's email address or phone number. This can be done in your call to AdminCreateUser or in the <b>Users</b> tab of the Amazon Cognito console for managing your user pools.</p> <p>In your call to AdminCreateUser, you can set the email_verified attribute to True, and you can set the phone_number_verified attribute to True. (You cannot do this by calling other operations such as AdminUpdateUserAttributes.)</p> <ul> <li> <p> <b>email</b>: The email address of the user to whom the message that contains the code and username will be sent. Required if the email_verified attribute is set to True, or if \"EMAIL\" is specified in the DesiredDeliveryMediums parameter.</p> </li> <li> <p> <b>phone_number</b>: The phone number of the user to whom the message that contains the code and username will be sent. Required if the phone_number_verified attribute is set to True, or if \"SMS\" is specified in the DesiredDeliveryMediums parameter.</p> </li> </ul>",
+          "documentation" : "<p>An array of name-value pairs that contain user attributes and attribute values to be set for the user to be created. You can create a user without specifying any attributes other than <code>Username</code>. However, any attributes that you specify as required (in <a href=\"API_CreateUserPool.html\">CreateUserPool</a> or in the <b>Attributes</b> tab of the console) must be supplied either by you (in your call to <code>AdminCreateUser</code>) or by the user (when he or she signs up in response to your welcome message).</p> <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p> <p>To send a message inviting the user to sign up, you must specify the user's email address or phone number. This can be done in your call to AdminCreateUser or in the <b>Users</b> tab of the Amazon Cognito console for managing your user pools.</p> <p>In your call to <code>AdminCreateUser</code>, you can set the <code>email_verified</code> attribute to <code>True</code>, and you can set the <code>phone_number_verified</code> attribute to <code>True</code>. (You can also do this by calling <a href=\"API_AdminUpdateUserAttributes.html\">AdminUpdateUserAttributes</a>.)</p> <ul> <li> <p> <b>email</b>: The email address of the user to whom the message that contains the code and username will be sent. Required if the <code>email_verified</code> attribute is set to <code>True</code>, or if <code>\"EMAIL\"</code> is specified in the <code>DesiredDeliveryMediums</code> parameter.</p> </li> <li> <p> <b>phone_number</b>: The phone number of the user to whom the message that contains the code and username will be sent. Required if the <code>phone_number_verified</code> attribute is set to <code>True</code>, or if <code>\"SMS\"</code> is specified in the <code>DesiredDeliveryMediums</code> parameter.</p> </li> </ul>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5366,7 +5907,7 @@
       "members" : {
         "UserAttributeNames" : {
           "deprecated" : false,
-          "documentation" : "<p>An array of strings representing the user attribute names you wish to delete.</p>",
+          "documentation" : "<p>An array of strings representing the user attribute names you wish to delete.</p> <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5586,7 +6127,7 @@
         },
         "Username" : {
           "deprecated" : false,
-          "documentation" : "<p>The user name of the user you wish to ebable.</p>",
+          "documentation" : "<p>The user name of the user you wish to enable.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5977,7 +6518,7 @@
       "members" : {
         "AuthFlow" : {
           "deprecated" : false,
-          "documentation" : "<p>The authentication flow.</p>",
+          "documentation" : "<p>The authentication flow for this call to execute. The API action will depend on this value. For example:</p> <ul> <li> <p> <code>REFRESH_TOKEN_AUTH</code> will take in a valid refresh token and return new tokens.</p> </li> <li> <p> <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRPA</code> and return the SRP variables to be used for next challenge execution.</p> </li> </ul> <p>Valid values include:</p> <ul> <li> <p> <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password (SRP) protocol.</p> </li> <li> <p> <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow for refreshing the access token and ID token by supplying a valid refresh token.</p> </li> <li> <p> <code>CUSTOM_AUTH</code>: Custom authentication flow.</p> </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: Non-SRP authentication flow; you can pass in the USERNAME and PASSWORD directly if the flow is enabled for calling the app client.</p> </li> </ul>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5991,7 +6532,7 @@
         },
         "AuthParameters" : {
           "deprecated" : false,
-          "documentation" : "<p>The authentication parameters.</p>",
+          "documentation" : "<p>The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you are invoking. The required values depend on the value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRPA</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>REFRESH_TOKEN</code> (required), <code>DEVICE_KEY</code> </p> </li> <li> <p>For <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app client is configured with client secret), <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li> <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app client is configured with client secret), <code>DEVICE_KEY</code> </p> </li> </ul>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6005,7 +6546,7 @@
         },
         "ClientId" : {
           "deprecated" : false,
-          "documentation" : "<p>The client app ID.</p>",
+          "documentation" : "<p>The app client ID.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6019,7 +6560,7 @@
         },
         "ClientMetadata" : {
           "deprecated" : false,
-          "documentation" : "<p>The client app metadata.</p>",
+          "documentation" : "<p>This is a random key-value pair map which can contain any key and will be passed to your PreAuthentication Lambda trigger as-is. It can be used to implement additional validations around authentication.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6069,7 +6610,7 @@
       "members" : {
         "AuthenticationResult" : {
           "deprecated" : false,
-          "documentation" : "<p>The result of the authentication response.</p>",
+          "documentation" : "<p>The result of the authentication response. This is only returned if the caller does not need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6083,7 +6624,7 @@
         },
         "ChallengeName" : {
           "deprecated" : false,
-          "documentation" : "<p>The name of the challenge.</p>",
+          "documentation" : "<p>The name of the challenge which you are responding to with this call. This is returned to you in the <code>AdminInitiateAuth</code> response if you need to pass another challenge.</p> <ul> <li> <p> <code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.</p> </li> <li> <p> <code>PASSWORD_VERIFIER</code>: Next challenge is to supply <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after the client-side SRP calculations.</p> </li> <li> <p> <code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued.</p> </li> <li> <p> <code>DEVICE_SRP_AUTH</code>: If device tracking was enabled on your user pool and the previous challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.</p> </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code>: Similar to <code>PASSWORD_VERIFIER</code>, but for devices only.</p> </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you need to authenticate with <code>USERNAME</code> and <code>PASSWORD</code> directly. An app client must be enabled to use this flow.</p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: For users which are required to change their passwords after successful first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.</p> </li> </ul>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6097,7 +6638,7 @@
         },
         "ChallengeParameters" : {
           "deprecated" : false,
-          "documentation" : "<p>The challenge parameters.</p>",
+          "documentation" : "<p>The challenge parameters. These are returned to you in the <code>AdminInitiateAuth</code> response if you need to pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>AdminRespondToAuthChallenge</code>).</p> <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p> <p>The value of the <code>USER_IF_FOR_SRP</code> attribute will be the user's actual username, not an alias (such as email address or phone number), even if you specified an alias in your call to <code>AdminInitiateAuth</code>. This is because, in the <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the <code>USERNAME</code> attribute cannot be an alias.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6111,7 +6652,7 @@
         },
         "Session" : {
           "deprecated" : false,
-          "documentation" : "<p>The session.</p>",
+          "documentation" : "<p>The session which should be passed both ways in challenge-response calls to the service. If <code>AdminInitiateAuth</code> or <code>AdminRespondToAuthChallenge</code> API call determines that the caller needs to go through another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>AdminRespondToAuthChallenge</code> API call.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6538,7 +7079,7 @@
       "members" : {
         "ChallengeName" : {
           "deprecated" : false,
-          "documentation" : "<p>The name of the challenge.</p>",
+          "documentation" : "<p>The challenge name. For more information, see <a href=\"API_AdminInitiateAuth.html\">AdminInitiateAuth</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6552,7 +7093,7 @@
         },
         "ChallengeResponses" : {
           "deprecated" : false,
-          "documentation" : "<p>The challenge response.</p>",
+          "documentation" : "<p>The challenge responses. These are inputs corresponding to the value of <code>ChallengeName</code>, for example:</p> <ul> <li> <p> <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret).</p> </li> <li> <p> <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret).</p> </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: <code>PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret). </p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret). </p> </li> </ul> <p>The value of the <code>USERNAME</code> attribute must be the user's actual username, not an alias (such as email address or phone number). To make this easier, the <code>AdminInitiateAuth</code> response includes the actual username value in the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute, even if you specified an alias in your call to <code>AdminInitiateAuth</code>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6566,7 +7107,7 @@
         },
         "ClientId" : {
           "deprecated" : false,
-          "documentation" : "<p>The client ID.</p>",
+          "documentation" : "<p>The app client ID.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6580,7 +7121,7 @@
         },
         "Session" : {
           "deprecated" : false,
-          "documentation" : "<p>The session.</p>",
+          "documentation" : "<p>The session which should be passed both ways in challenge-response calls to the service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller needs to go through another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6644,7 +7185,7 @@
         },
         "ChallengeName" : {
           "deprecated" : false,
-          "documentation" : "<p>The name of the challenge.</p>",
+          "documentation" : "<p>The name of the challenge. For more information, see <a href=\"API_AdminInitiateAuth.html\">AdminInitiateAuth</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6658,7 +7199,7 @@
         },
         "ChallengeParameters" : {
           "deprecated" : false,
-          "documentation" : "<p>The challenge parameters.</p>",
+          "documentation" : "<p>The challenge parameters. For more information, see <a href=\"API_AdminInitiateAuth.html\">AdminInitiateAuth</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6672,7 +7213,7 @@
         },
         "Session" : {
           "deprecated" : false,
-          "documentation" : "<p>The session.</p>",
+          "documentation" : "<p>The session which should be passed both ways in challenge-response calls to the service. If the <a href=\"API_InitiateAuth.html\">InitiateAuth</a> or <a href=\"API_RespondToAuthChallenge.html\">RespondToAuthChallenge</a> API call determines that the caller needs to go through another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6821,7 +7362,7 @@
         },
         "UserPoolId" : {
           "deprecated" : false,
-          "documentation" : "<p>The user pool ID&gt;</p>",
+          "documentation" : "<p>The user pool ID.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -6892,7 +7433,7 @@
       "members" : {
         "UserAttributes" : {
           "deprecated" : false,
-          "documentation" : "<p>An array of name-value pairs representing user attributes.</p>",
+          "documentation" : "<p>An array of name-value pairs representing user attributes.</p> <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -7199,6 +7740,53 @@
       "streaming" : false,
       "type" : "list",
       "value" : null,
+      "wrapper" : false
+    },
+    "AttributeMappingType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "CustomAttributeNameType",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "map",
+      "value" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "StringType",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
       "wrapper" : false
     },
     "AttributeNameListType" : {
@@ -7522,6 +8110,40 @@
       "value" : null,
       "wrapper" : false
     },
+    "CallbackURLsListType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 100,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "RedirectUrlType",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
     "ChallengeNameType" : {
       "deprecated" : false,
       "documentation" : null,
@@ -7695,7 +8317,7 @@
       "min" : 0,
       "pattern" : null,
       "payload" : null,
-      "required" : [ "PreviousPassword", "ProposedPassword" ],
+      "required" : [ "PreviousPassword", "ProposedPassword", "AccessToken" ],
       "streaming" : false,
       "type" : "structure",
       "value" : null,
@@ -8256,7 +8878,7 @@
         },
         "ConfirmationCode" : {
           "deprecated" : false,
-          "documentation" : "<p>The confirmation code sent by a user's request to retrieve a forgotten password.</p>",
+          "documentation" : "<p>The confirmation code sent by a user's request to retrieve a forgotten password. For more information, see <a href=\"API_ForgotPassword.html\">ForgotPassword</a> </p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -8270,7 +8892,7 @@
         },
         "Password" : {
           "deprecated" : false,
-          "documentation" : "<p>The password sent by sent by a user's request to retrieve a forgotten password.</p>",
+          "documentation" : "<p>The password sent by a user's request to retrieve a forgotten password.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -8383,7 +9005,7 @@
         },
         "ForceAliasCreation" : {
           "deprecated" : false,
-          "documentation" : "<p>Boolean to be specified to force user confirmation irrespective of existing alias. By default set to False. If this parameter is set to True and the phone number/email used for sign up confirmation already exists as an alias with a different user, the API call will migrate the alias from the previous user to the newly created user being confirmed. If set to False, the API will throw an <b>AliasExistsException</b> error.</p>",
+          "documentation" : "<p>Boolean to be specified to force user confirmation irrespective of existing alias. By default set to <code>False</code>. If this parameter is set to <code>True</code> and the phone number/email used for sign up confirmation already exists as an alias with a different user, the API call will migrate the alias from the previous user to the newly created user being confirmed. If set to <code>False</code>, the API will throw an <b>AliasExistsException</b> error.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -8603,6 +9225,148 @@
       "value" : null,
       "wrapper" : false
     },
+    "CreateIdentityProviderRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "AttributeMapping" : {
+          "deprecated" : false,
+          "documentation" : "<p>A mapping of identity provider attributes to standard and custom user pool attributes.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AttributeMappingType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "IdpIdentifiers" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of identity provider identifiers.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "IdpIdentifiersListType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ProviderDetails" : {
+          "deprecated" : false,
+          "documentation" : "<p>The identity provider details, such as <code>MetadataURL</code> and <code>MetadataFile</code>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ProviderDetailsType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ProviderName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The identity provider name.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ProviderNameType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ProviderType" : {
+          "deprecated" : false,
+          "documentation" : "<p>The identity provider type.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "IdentityProviderTypeType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "UserPoolId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The user pool ID.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "UserPoolIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "UserPoolId", "ProviderName", "ProviderType", "ProviderDetails" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "CreateIdentityProviderResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "IdentityProvider" : {
+          "deprecated" : false,
+          "documentation" : "<p>The newly created identity provider object.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "IdentityProviderType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "IdentityProvider" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "CreateUserImportJobRequest" : {
       "deprecated" : false,
       "documentation" : "<p>Represents the request to create the user import job.</p>",
@@ -8715,6 +9479,62 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "AllowedOAuthFlows" : {
+          "deprecated" : false,
+          "documentation" : "<p>Set to <code>code</code> to initiate a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the token endpoint.</p> <p>Set to <code>token</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) directly.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "OAuthFlowsType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "AllowedOAuthFlowsUserPoolClient" : {
+          "deprecated" : false,
+          "documentation" : "<p>Set to <code>True</code> if the client is allowed to follow the OAuth protocol when interacting with Cognito user pools.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "BooleanType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "AllowedOAuthScopes" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of allowed <code>OAuth</code> scopes. Currently supported values are <code>\"phone\"</code>, <code>\"email\"</code>, <code>\"openid\"</code>, and <code>\"Cognito\"</code>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ScopeListType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "CallbackURLs" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of allowed callback URLs for the identity providers.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CallbackURLsListType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "ClientName" : {
           "deprecated" : false,
           "documentation" : "<p>The client name for the user pool client you would like to create.</p>",
@@ -8726,6 +9546,20 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "ClientNameType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "DefaultRedirectURI" : {
+          "deprecated" : false,
+          "documentation" : "<p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RedirectUrlType",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -8757,6 +9591,20 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "LogoutURLs" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of allowed logout URLs for the identity providers.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "LogoutURLsListType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "ReadAttributes" : {
           "deprecated" : false,
           "documentation" : "<p>The read attributes.</p>",
@@ -8773,7 +9621,7 @@
         },
         "RefreshTokenValidity" : {
           "deprecated" : false,
-          "documentation" : "<p>The validity of the refresh token, in days.</p>",
+          "documentation" : "<p>The time limit, in days, after which the refresh token is no longer valid and cannot be used.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -8782,6 +9630,20 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "RefreshTokenValidityType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "SupportedIdentityProviders" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of provider names for the identity providers that are supported on this client.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "SupportedIdentityProvidersListType",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -8859,6 +9721,77 @@
       "value" : null,
       "wrapper" : false
     },
+    "CreateUserPoolDomainRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Domain" : {
+          "deprecated" : false,
+          "documentation" : "<p>The domain string.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DomainType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "UserPoolId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The user pool ID.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "UserPoolIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "Domain", "UserPoolId" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "CreateUserPoolDomainResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "CreateUserPoolRequest" : {
       "deprecated" : false,
       "documentation" : "<p>Represents the request to create a user pool.</p>",
@@ -8873,7 +9806,7 @@
       "members" : {
         "AdminCreateUserConfig" : {
           "deprecated" : false,
-          "documentation" : "<p>The configuration for AdminCreateUser requests.</p>",
+          "documentation" : "<p>The configuration for <code>AdminCreateUser</code> requests.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -9267,6 +10200,56 @@
       "value" : null,
       "wrapper" : false
     },
+    "DeleteIdentityProviderRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ProviderName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The identity provider name.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ProviderNameType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "UserPoolId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The user pool ID.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "UserPoolIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "UserPoolId", "ProviderName" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "DeleteUserAttributesRequest" : {
       "deprecated" : false,
       "documentation" : "<p>Represents the request to delete user attributes.</p>",
@@ -9295,7 +10278,7 @@
         },
         "UserAttributeNames" : {
           "deprecated" : false,
-          "documentation" : "<p>An array of strings representing the user attribute names you wish to delete.</p>",
+          "documentation" : "<p>An array of strings representing the user attribute names you wish to delete.</p> <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -9311,7 +10294,7 @@
       "min" : 0,
       "pattern" : null,
       "payload" : null,
-      "required" : [ "UserAttributeNames" ],
+      "required" : [ "UserAttributeNames", "AccessToken" ],
       "streaming" : false,
       "type" : "structure",
       "value" : null,
@@ -9388,6 +10371,77 @@
       "value" : null,
       "wrapper" : false
     },
+    "DeleteUserPoolDomainRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Domain" : {
+          "deprecated" : false,
+          "documentation" : "<p>The domain string.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DomainType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "UserPoolId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The user pool ID.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "UserPoolIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "Domain", "UserPoolId" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DeleteUserPoolDomainResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "DeleteUserPoolRequest" : {
       "deprecated" : false,
       "documentation" : "<p>Represents the request to delete a user pool.</p>",
@@ -9454,7 +10508,7 @@
       "min" : 0,
       "pattern" : null,
       "payload" : null,
-      "required" : null,
+      "required" : [ "AccessToken" ],
       "streaming" : false,
       "type" : "structure",
       "value" : null,
@@ -9512,6 +10566,92 @@
       "required" : null,
       "streaming" : false,
       "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DescribeIdentityProviderRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ProviderName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The identity provider name.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ProviderNameType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "UserPoolId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The user pool ID.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "UserPoolIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "UserPoolId", "ProviderName" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DescribeIdentityProviderResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "IdentityProvider" : {
+          "deprecated" : false,
+          "documentation" : "<p>The identity provider that was deleted.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "IdentityProviderType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "IdentityProvider" ],
+      "streaming" : false,
+      "type" : "structure",
       "value" : null,
       "wrapper" : false
     },
@@ -9674,6 +10814,78 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "UserPoolClientType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DescribeUserPoolDomainRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Domain" : {
+          "deprecated" : false,
+          "documentation" : "<p>The domain string.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DomainType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "Domain" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DescribeUserPoolDomainResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "DomainDescription" : {
+          "deprecated" : false,
+          "documentation" : "<p>A domain description object containing information about the domain.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DomainDescriptionType",
           "streaming" : false,
           "xmlNamespace" : null
         }
@@ -10069,6 +11281,225 @@
       "value" : null,
       "wrapper" : false
     },
+    "DomainDescriptionType" : {
+      "deprecated" : false,
+      "documentation" : "<p>A container for information about a domain.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "AWSAccountId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The AWS account ID for the user pool owner.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AWSAccountIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "CloudFrontDistribution" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ARN of the CloudFront distribution.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ArnType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Domain" : {
+          "deprecated" : false,
+          "documentation" : "<p>The domain string.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DomainType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "S3Bucket" : {
+          "deprecated" : false,
+          "documentation" : "<p>The S3 bucket where the static files for this domain are stored.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "S3BucketType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Status" : {
+          "deprecated" : false,
+          "documentation" : "<p>The domain status.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DomainStatusType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "UserPoolId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The user pool ID.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "UserPoolIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Version" : {
+          "deprecated" : false,
+          "documentation" : "<p>The app version.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DomainVersionType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DomainStatusType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "CREATING", "DELETING", "UPDATING", "ACTIVE" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DomainType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 1024,
+      "member" : null,
+      "members" : { },
+      "min" : 1,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DomainVersionType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 20,
+      "member" : null,
+      "members" : { },
+      "min" : 1,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DuplicateProviderException" : {
+      "deprecated" : false,
+      "documentation" : "<p>This exception is thrown when the provider is already supported by the user pool.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "message" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MessageType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "EmailAddressType" : {
       "deprecated" : false,
       "documentation" : null,
@@ -10149,7 +11580,7 @@
       "fault" : false,
       "flattened" : false,
       "key" : null,
-      "max" : 2048,
+      "max" : 20000,
       "member" : null,
       "members" : { },
       "min" : 6,
@@ -10723,6 +12154,92 @@
       "value" : null,
       "wrapper" : false
     },
+    "GetIdentityProviderByIdentifierRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "IdpIdentifier" : {
+          "deprecated" : false,
+          "documentation" : "<p>The identity provider ID.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "IdpIdentifierType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "UserPoolId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The user pool ID.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "UserPoolIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "UserPoolId", "IdpIdentifier" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "GetIdentityProviderByIdentifierResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "IdentityProvider" : {
+          "deprecated" : false,
+          "documentation" : "<p>The identity provider object.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "IdentityProviderType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "IdentityProvider" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "GetUserAttributeVerificationCodeRequest" : {
       "deprecated" : false,
       "documentation" : "<p>Represents the request to get user attribute verification.</p>",
@@ -10767,7 +12284,7 @@
       "min" : 0,
       "pattern" : null,
       "payload" : null,
-      "required" : [ "AttributeName" ],
+      "required" : [ "AccessToken", "AttributeName" ],
       "streaming" : false,
       "type" : "structure",
       "value" : null,
@@ -10839,7 +12356,7 @@
       "min" : 0,
       "pattern" : null,
       "payload" : null,
-      "required" : null,
+      "required" : [ "AccessToken" ],
       "streaming" : false,
       "type" : "structure",
       "value" : null,
@@ -10873,7 +12390,7 @@
         },
         "UserAttributes" : {
           "deprecated" : false,
-          "documentation" : "<p>An array of name-value pairs representing user attributes.</p>",
+          "documentation" : "<p>An array of name-value pairs representing user attributes.</p> <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -10939,7 +12456,7 @@
       "min" : 0,
       "pattern" : null,
       "payload" : null,
-      "required" : null,
+      "required" : [ "AccessToken" ],
       "streaming" : false,
       "type" : "structure",
       "value" : null,
@@ -11177,6 +12694,216 @@
       "value" : null,
       "wrapper" : false
     },
+    "IdentityProviderType" : {
+      "deprecated" : false,
+      "documentation" : "<p>A container for information about an identity provider.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "AttributeMapping" : {
+          "deprecated" : false,
+          "documentation" : "<p>A mapping of identity provider attributes to standard and custom user pool attributes.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AttributeMappingType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "CreationDate" : {
+          "deprecated" : false,
+          "documentation" : "<p>The date the identity provider was created.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DateType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "IdpIdentifiers" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of identity provider identifiers.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "IdpIdentifiersListType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "LastModifiedDate" : {
+          "deprecated" : false,
+          "documentation" : "<p>The date the identity provider was last modified.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DateType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ProviderDetails" : {
+          "deprecated" : false,
+          "documentation" : "<p>The identity provider details, such as <code>MetadataURL</code> and <code>MetadataFile</code>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ProviderDetailsType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ProviderName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The identity provider name.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ProviderNameType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ProviderType" : {
+          "deprecated" : false,
+          "documentation" : "<p>The identity provider type.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "IdentityProviderTypeType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "UserPoolId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The user pool ID.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "UserPoolIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "IdentityProviderTypeType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "SAML" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "IdpIdentifierType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 40,
+      "member" : null,
+      "members" : { },
+      "min" : 1,
+      "pattern" : "[\\w\\s+=.@-]+",
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "IdpIdentifiersListType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 50,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "IdpIdentifierType",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
     "InitiateAuthRequest" : {
       "deprecated" : false,
       "documentation" : "<p>Initiates the authentication request.</p>",
@@ -11191,7 +12918,7 @@
       "members" : {
         "AuthFlow" : {
           "deprecated" : false,
-          "documentation" : "<p>The authentication flow.</p>",
+          "documentation" : "<p>The authentication flow for this call to execute. The API action will depend on this value. For example: </p> <ul> <li> <p> <code>REFRESH_TOKEN_AUTH</code> will take in a valid refresh token and return new tokens.</p> </li> <li> <p> <code>USER_SRP_AUTH</code> will take in USERNAME and SRPA and return the SRP variables to be used for next challenge execution.</p> </li> </ul> <p>Valid values include:</p> <ul> <li> <p> <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password (SRP) protocol.</p> </li> <li> <p> <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow for refreshing the access token and ID token by supplying a valid refresh token.</p> </li> <li> <p> <code>CUSTOM_AUTH</code>: Custom authentication flow.</p> </li> </ul> <p> <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11205,7 +12932,7 @@
         },
         "AuthParameters" : {
           "deprecated" : false,
-          "documentation" : "<p>The authentication parameters.</p>",
+          "documentation" : "<p>The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you are invoking. The required values depend on the value of <code>AuthFlow</code>:</p> <ul> <li> <p>For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRPA</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>REFRESH_TOKEN</code> (required), <code>DEVICE_KEY</code> </p> </li> <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app client is configured with client secret), <code>DEVICE_KEY</code> </p> </li> </ul>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11219,7 +12946,7 @@
         },
         "ClientId" : {
           "deprecated" : false,
-          "documentation" : "<p>The client ID.</p>",
+          "documentation" : "<p>The app client ID.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11233,7 +12960,7 @@
         },
         "ClientMetadata" : {
           "deprecated" : false,
-          "documentation" : "<p>The client app's metadata.</p>",
+          "documentation" : "<p>This is a random key-value pair map which can contain any key and will be passed to your PreAuthentication Lambda trigger as-is. It can be used to implement additional validations around authentication.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11269,7 +12996,7 @@
       "members" : {
         "AuthenticationResult" : {
           "deprecated" : false,
-          "documentation" : "<p>The result returned by the server in response to the request to initiate authentication.</p>",
+          "documentation" : "<p>The result of the authentication response. This is only returned if the caller does not need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11283,7 +13010,7 @@
         },
         "ChallengeName" : {
           "deprecated" : false,
-          "documentation" : "<p>The name of the challenge.</p>",
+          "documentation" : "<p>The name of the challenge which you are responding to with this call. This is returned to you in the <code>AdminInitiateAuth</code> response if you need to pass another challenge.</p> <p>Valid values include the following. Note that all of these challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable) in the parameters.</p> <ul> <li> <p> <code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.</p> </li> <li> <p> <code>PASSWORD_VERIFIER</code>: Next challenge is to supply <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, and <code>TIMESTAMP</code> after the client-side SRP calculations.</p> </li> <li> <p> <code>CUSTOM_CHALLENGE</code>: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued.</p> </li> <li> <p> <code>DEVICE_SRP_AUTH</code>: If device tracking was enabled on your user pool and the previous challenges were passed, this challenge is returned so that Amazon Cognito can start tracking this device.</p> </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code>: Similar to <code>PASSWORD_VERIFIER</code>, but for devices only.</p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: For users which are required to change their passwords after successful first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.</p> </li> </ul>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11297,7 +13024,7 @@
         },
         "ChallengeParameters" : {
           "deprecated" : false,
-          "documentation" : "<p>The challenge parameters.</p>",
+          "documentation" : "<p>The challenge parameters. These are returned to you in the <code>InitiateAuth</code> response if you need to pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>RespondToAuthChallenge</code>). </p> <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11311,7 +13038,7 @@
         },
         "Session" : {
           "deprecated" : false,
-          "documentation" : "<p>The session.</p>",
+          "documentation" : "<p>The session which should be passed both ways in challenge-response calls to the service. If the <a href=\"API_InitiateAuth.html\">InitiateAuth</a> or <a href=\"API_RespondToAuthChallenge.html\">RespondToAuthChallenge</a> API call determines that the caller needs to go through another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -11441,6 +13168,42 @@
         "message" : {
           "deprecated" : false,
           "documentation" : "<p>The message returned when the Amazon Cognito service throws an invalid AWS Lambda response exception.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MessageType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "InvalidOAuthFlowException" : {
+      "deprecated" : false,
+      "documentation" : "<p>This exception is thrown when the specified OAuth flow is invalid.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "message" : {
+          "deprecated" : false,
+          "documentation" : null,
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -12040,6 +13803,120 @@
       "value" : null,
       "wrapper" : false
     },
+    "ListIdentityProvidersRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "MaxResults" : {
+          "deprecated" : false,
+          "documentation" : "<p>The maximum number of identity providers to return.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ListProvidersLimitType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "NextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>A pagination token.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "PaginationKeyType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "UserPoolId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The user pool ID.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "UserPoolIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "UserPoolId" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ListIdentityProvidersResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "NextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>A pagination token.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "PaginationKeyType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Providers" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of identity provider objects.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ProvidersListType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "Providers" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "ListOfStringTypes" : {
       "deprecated" : false,
       "documentation" : null,
@@ -12074,6 +13951,27 @@
       "value" : null,
       "wrapper" : false
     },
+    "ListProvidersLimitType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 60,
+      "member" : null,
+      "members" : { },
+      "min" : 1,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "integer",
+      "value" : null,
+      "wrapper" : false
+    },
     "ListUserImportJobsRequest" : {
       "deprecated" : false,
       "documentation" : "<p>Represents the request to list the user import jobs.</p>",
@@ -12102,7 +14000,7 @@
         },
         "PaginationToken" : {
           "deprecated" : false,
-          "documentation" : "<p>An identifier that was returned from the previous call to ListUserImportJobs, which can be used to return the next set of import jobs in the list.</p>",
+          "documentation" : "<p>An identifier that was returned from the previous call to <code>ListUserImportJobs</code>, which can be used to return the next set of import jobs in the list.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -12544,7 +14442,7 @@
       "members" : {
         "AttributesToGet" : {
           "deprecated" : false,
-          "documentation" : "<p>The attributes to get from the request to list users.</p>",
+          "documentation" : "<p>An array of strings, where each string is the name of a user attribute to be returned for each user in the search results. If the array is empty, all attributes are returned.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -12558,7 +14456,7 @@
         },
         "Filter" : {
           "deprecated" : false,
-          "documentation" : "<p>The filter for the list users request.</p>",
+          "documentation" : "<p>A filter string of the form \"<i>AttributeName</i> <i>Filter-Type</i> \"<i>AttributeValue</i>\"\". Quotation marks within the filter string must be escaped using the backslash (\\) character. For example, \"<code>family_name</code> = \\\"Reddy\\\"\".</p> <ul> <li> <p> <i>AttributeName</i>: The name of the attribute to search for. You can only search for one attribute at a time.</p> </li> <li> <p> <i>Filter-Type</i>: For an exact match, use =, for example, \"<code>given_name</code> = \\\"Jon\\\"\". For a prefix (\"starts with\") match, use ^=, for example, \"<code>given_name</code> ^= \\\"Jon\\\"\". </p> </li> <li> <p> <i>AttributeValue</i>: The attribute value that must be matched for each user.</p> </li> </ul> <p>If the filter string is empty, <code>ListUsers</code> returns all users in the user pool.</p> <p>You can only search for the following standard attributes:</p> <ul> <li> <p> <code>username</code> (case-sensitive)</p> </li> <li> <p> <code>email</code> </p> </li> <li> <p> <code>phone_number</code> </p> </li> <li> <p> <code>name</code> </p> </li> <li> <p> <code>given_name</code> </p> </li> <li> <p> <code>family_name</code> </p> </li> <li> <p> <code>preferred_username</code> </p> </li> <li> <p> <code>cognito:user_status</code> (called <b>Enabled</b> in the Console) (case-sensitive)</p> </li> <li> <p> <code>status</code> (case-insensitive)</p> </li> </ul> <p>Custom attributes are not searchable.</p> <p>For more information, see <a href=\"http://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api\">Searching for Users Using the ListUsers API</a> and <a href=\"http://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples\">Examples of Using the ListUsers API</a> in the <i>Amazon Cognito Developer Guide</i>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -12572,7 +14470,7 @@
         },
         "Limit" : {
           "deprecated" : false,
-          "documentation" : "<p>The limit of the request to list users.</p>",
+          "documentation" : "<p>Maximum number of users to be returned.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -12600,7 +14498,7 @@
         },
         "UserPoolId" : {
           "deprecated" : false,
-          "documentation" : "<p>The user pool ID for which you want to list users.</p>",
+          "documentation" : "<p>The user pool ID for the user pool on which the search should be performed.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -12669,6 +14567,40 @@
       "required" : null,
       "streaming" : false,
       "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "LogoutURLsListType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 100,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "RedirectUrlType",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
       "value" : null,
       "wrapper" : false
     },
@@ -12971,7 +14903,7 @@
     },
     "NotAuthorizedException" : {
       "deprecated" : false,
-      "documentation" : "<p>This exception gets thrown when a user is not authorized.</p>",
+      "documentation" : "<p>This exception is thrown when a user is not authorized.</p>",
       "enum" : null,
       "error" : null,
       "exception" : true,
@@ -13052,6 +14984,61 @@
       "required" : null,
       "streaming" : false,
       "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "OAuthFlowType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "code", "implicit", "client_credentials" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "OAuthFlowsType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 3,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "OAuthFlowType",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
       "value" : null,
       "wrapper" : false
     },
@@ -13366,6 +15353,186 @@
       "value" : null,
       "wrapper" : false
     },
+    "ProviderDescription" : {
+      "deprecated" : false,
+      "documentation" : "<p>A container for identity provider details.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "CreationDate" : {
+          "deprecated" : false,
+          "documentation" : "<p>The date the provider was added to the user pool.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DateType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "LastModifiedDate" : {
+          "deprecated" : false,
+          "documentation" : "<p>The date the provider was last modified.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DateType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ProviderName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The identity provider name.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ProviderNameType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ProviderType" : {
+          "deprecated" : false,
+          "documentation" : "<p>The identity provider type.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "IdentityProviderTypeType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ProviderDetailsType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "StringType",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "map",
+      "value" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "StringType",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "wrapper" : false
+    },
+    "ProviderNameType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 32,
+      "member" : null,
+      "members" : { },
+      "min" : 1,
+      "pattern" : "[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+",
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ProvidersListType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 50,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "ProviderDescription",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
     "QueryLimit" : {
       "deprecated" : false,
       "documentation" : null,
@@ -13405,6 +15572,27 @@
       "required" : null,
       "streaming" : false,
       "type" : "integer",
+      "value" : null,
+      "wrapper" : false
+    },
+    "RedirectUrlType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 1024,
+      "member" : null,
+      "members" : { },
+      "min" : 1,
+      "pattern" : "[\\p{L}\\p{M}\\p{S}\\p{N}\\p{P}]+",
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
       "value" : null,
       "wrapper" : false
     },
@@ -13579,7 +15767,7 @@
       "members" : {
         "ChallengeName" : {
           "deprecated" : false,
-          "documentation" : "<p>The name of the challenge.</p>",
+          "documentation" : "<p>The challenge name. For more information, see <a href=\"API_InitiateAuth.html\">InitiateAuth</a>.</p> <p> <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -13593,7 +15781,7 @@
         },
         "ChallengeResponses" : {
           "deprecated" : false,
-          "documentation" : "<p>The responses to the authentication challenge.</p>",
+          "documentation" : "<p>The challenge responses. These are inputs corresponding to the value of <code>ChallengeName</code>, for example:</p> <ul> <li> <p> <code>SMS_MFA</code>: <code>SMS_MFA_CODE</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret).</p> </li> <li> <p> <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret).</p> </li> <li> <p> <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret). </p> </li> </ul>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -13607,7 +15795,7 @@
         },
         "ClientId" : {
           "deprecated" : false,
-          "documentation" : "<p>The client ID.</p>",
+          "documentation" : "<p>The app client ID.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -13621,7 +15809,7 @@
         },
         "Session" : {
           "deprecated" : false,
-          "documentation" : "<p>The session.</p>",
+          "documentation" : "<p>The session which should be passed both ways in challenge-response calls to the service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller needs to go through another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -13671,7 +15859,7 @@
         },
         "ChallengeName" : {
           "deprecated" : false,
-          "documentation" : "<p>The challenge name.</p>",
+          "documentation" : "<p>The challenge name. For more information, see <a href=\"API_InitiateAuth.html\">InitiateAuth</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -13685,7 +15873,7 @@
         },
         "ChallengeParameters" : {
           "deprecated" : false,
-          "documentation" : "<p>The challenge parameters.</p>",
+          "documentation" : "<p>The challenge parameters. For more information, see <a href=\"API_InitiateAuth.html\">InitiateAuth</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -13699,7 +15887,7 @@
         },
         "Session" : {
           "deprecated" : false,
-          "documentation" : "<p>The session.</p>",
+          "documentation" : "<p>The session which should be passed both ways in challenge-response calls to the service. If the <a href=\"API_InitiateAuth.html\">InitiateAuth</a> or <a href=\"API_RespondToAuthChallenge.html\">RespondToAuthChallenge</a> API call determines that the caller needs to go through another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -13718,6 +15906,27 @@
       "required" : null,
       "streaming" : false,
       "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "S3BucketType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 1024,
+      "member" : null,
+      "members" : { },
+      "min" : 3,
+      "pattern" : "^[0-9A-Za-z\\.\\-_]*(?<!\\.)$",
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
       "value" : null,
       "wrapper" : false
     },
@@ -13872,6 +16081,97 @@
       "required" : null,
       "streaming" : false,
       "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ScopeDoesNotExistException" : {
+      "deprecated" : false,
+      "documentation" : "<p>This exception is thrown when the specified scope does not exist.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "message" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MessageType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ScopeListType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "ScopeType",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ScopeType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 256,
+      "member" : null,
+      "members" : { },
+      "min" : 1,
+      "pattern" : "[\\x21\\x23-\\x5B\\x5D-\\x7E]+",
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
       "value" : null,
       "wrapper" : false
     },
@@ -14099,7 +16399,7 @@
         },
         "UserAttributes" : {
           "deprecated" : false,
-          "documentation" : "<p>An array of name-value pairs representing user attributes.</p>",
+          "documentation" : "<p>An array of name-value pairs representing user attributes.</p> <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -14188,12 +16488,26 @@
           "shape" : "BooleanType",
           "streaming" : false,
           "xmlNamespace" : null
+        },
+        "UserSub" : {
+          "deprecated" : false,
+          "documentation" : "<p>The UUID of the authenticated user. This is not the same as <code>username</code>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "StringType",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
-      "required" : null,
+      "required" : [ "UserConfirmed", "UserSub" ],
       "streaming" : false,
       "type" : "structure",
       "value" : null,
@@ -14201,7 +16515,7 @@
     },
     "SmsConfigurationType" : {
       "deprecated" : false,
-      "documentation" : "<p>The SMS configuratoin type.</p>",
+      "documentation" : "<p>The SMS configuration type.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -14534,6 +16848,40 @@
       "value" : null,
       "wrapper" : false
     },
+    "SupportedIdentityProvidersListType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "ProviderNameType",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
     "TokenModelType" : {
       "deprecated" : false,
       "documentation" : null,
@@ -14557,7 +16905,7 @@
     },
     "TooManyFailedAttemptsException" : {
       "deprecated" : false,
-      "documentation" : "<p>This exception gets thrown when the user has made too many failed attempts for a given action (e.g., sign in).</p>",
+      "documentation" : "<p>This exception is thrown when the user has made too many failed attempts for a given action (e.g., sign in).</p>",
       "enum" : null,
       "error" : null,
       "exception" : true,
@@ -14593,7 +16941,7 @@
     },
     "TooManyRequestsException" : {
       "deprecated" : false,
-      "documentation" : "<p>This exception gets thrown when the user has made too many requests for a given operation.</p>",
+      "documentation" : "<p>This exception is thrown when the user has made too many requests for a given operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : true,
@@ -14629,7 +16977,7 @@
     },
     "UnexpectedLambdaException" : {
       "deprecated" : false,
-      "documentation" : "<p>This exception gets thrown when the Amazon Cognito service encounters an unexpected exception with the AWS Lambda service.</p>",
+      "documentation" : "<p>This exception is thrown when the Amazon Cognito service encounters an unexpected exception with the AWS Lambda service.</p>",
       "enum" : null,
       "error" : null,
       "exception" : true,
@@ -14642,6 +16990,42 @@
         "message" : {
           "deprecated" : false,
           "documentation" : "<p>The message returned when the Amazon Cognito service returns an unexpected AWS Lambda exception.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MessageType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "UnsupportedIdentityProviderException" : {
+      "deprecated" : false,
+      "documentation" : "<p>This exception is thrown when the specified identifier is not supported.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "message" : {
+          "deprecated" : false,
+          "documentation" : null,
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -14826,7 +17210,7 @@
         },
         "Precedence" : {
           "deprecated" : false,
-          "documentation" : "<p>The new precedence value for the group. For more information about this parameter, see <a href=\"API_CreateGroupRequeste.html\">CreateGroupRequest</a>.</p>",
+          "documentation" : "<p>The new precedence value for the group. For more information about this parameter, see <a href=\"API_CreateGroup.html\">CreateGroup</a>.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -14912,6 +17296,134 @@
       "value" : null,
       "wrapper" : false
     },
+    "UpdateIdentityProviderRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "AttributeMapping" : {
+          "deprecated" : false,
+          "documentation" : "<p>The identity provider attribute mapping to be changed.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AttributeMappingType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "IdpIdentifiers" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of identity provider identifiers.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "IdpIdentifiersListType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ProviderDetails" : {
+          "deprecated" : false,
+          "documentation" : "<p>The identity provider details to be updated, such as <code>MetadataURL</code> and <code>MetadataFile</code>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ProviderDetailsType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ProviderName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The identity provider name.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ProviderNameType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "UserPoolId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The user pool ID.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "UserPoolIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "UserPoolId", "ProviderName" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "UpdateIdentityProviderResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "IdentityProvider" : {
+          "deprecated" : false,
+          "documentation" : "<p>The identity provider object.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "IdentityProviderType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "IdentityProvider" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "UpdateUserAttributesRequest" : {
       "deprecated" : false,
       "documentation" : "<p>Represents the request to update user attributes.</p>",
@@ -14940,7 +17452,7 @@
         },
         "UserAttributes" : {
           "deprecated" : false,
-          "documentation" : "<p>An array of name-value pairs representing user attributes.</p>",
+          "documentation" : "<p>An array of name-value pairs representing user attributes.</p> <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -14956,7 +17468,7 @@
       "min" : 0,
       "pattern" : null,
       "payload" : null,
-      "required" : [ "UserAttributes" ],
+      "required" : [ "UserAttributes", "AccessToken" ],
       "streaming" : false,
       "type" : "structure",
       "value" : null,
@@ -15010,6 +17522,62 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "AllowedOAuthFlows" : {
+          "deprecated" : false,
+          "documentation" : "<p>Set to <code>code</code> to initiate a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the token endpoint.</p> <p>Set to <code>token</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) directly.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "OAuthFlowsType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "AllowedOAuthFlowsUserPoolClient" : {
+          "deprecated" : false,
+          "documentation" : "<p>Set to TRUE if the client is allowed to follow the OAuth protocol when interacting with Cognito user pools.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "BooleanType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "AllowedOAuthScopes" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of allowed <code>OAuth</code> scopes. Currently supported values are <code>\"phone\"</code>, <code>\"email\"</code>, <code>\"openid\"</code>, and <code>\"Cognito\"</code>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ScopeListType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "CallbackURLs" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of allowed callback URLs for the identity providers.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CallbackURLsListType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "ClientId" : {
           "deprecated" : false,
           "documentation" : "<p>The ID of the client associated with the user pool.</p>",
@@ -15038,6 +17606,20 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "DefaultRedirectURI" : {
+          "deprecated" : false,
+          "documentation" : "<p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RedirectUrlType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "ExplicitAuthFlows" : {
           "deprecated" : false,
           "documentation" : "<p>Explicit authentication flows.</p>",
@@ -15049,6 +17631,20 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "ExplicitAuthFlowsListType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "LogoutURLs" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list ofallowed logout URLs for the identity providers.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "LogoutURLsListType",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -15068,7 +17664,7 @@
         },
         "RefreshTokenValidity" : {
           "deprecated" : false,
-          "documentation" : "<p>The validity of the refresh token, in days.</p>",
+          "documentation" : "<p>The time limit, in days, after which the refresh token is no longer valid and cannot be used.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -15077,6 +17673,20 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "RefreshTokenValidityType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "SupportedIdentityProviders" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of provider names for the identity providers that are supported on this client.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "SupportedIdentityProvidersListType",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -15168,7 +17778,7 @@
       "members" : {
         "AdminCreateUserConfig" : {
           "deprecated" : false,
-          "documentation" : "<p>The configuration for AdminCreateUser requests.</p>",
+          "documentation" : "<p>The configuration for <code>AdminCreateUser</code> requests.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -15238,7 +17848,7 @@
         },
         "EmailVerificationSubject" : {
           "deprecated" : false,
-          "documentation" : "<p>The subject of the email verfication message.</p>",
+          "documentation" : "<p>The subject of the email verification message.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -15541,7 +18151,7 @@
         },
         "CompletionDate" : {
           "deprecated" : false,
-          "documentation" : "<p>The date when the user imoprt job was completed.</p>",
+          "documentation" : "<p>The date when the user import job was completed.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -15569,7 +18179,7 @@
         },
         "CreationDate" : {
           "deprecated" : false,
-          "documentation" : "<p>The date when the user import job was created.</p>",
+          "documentation" : "<p>The date the user import job was created.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -15639,7 +18249,7 @@
         },
         "PreSignedUrl" : {
           "deprecated" : false,
-          "documentation" : "<p>The pre-signed URL to be used to upload the .csv file.</p>",
+          "documentation" : "<p>The pre-signed URL to be used to upload the <code>.csv</code> file.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -15681,7 +18291,7 @@
         },
         "Status" : {
           "deprecated" : false,
-          "documentation" : "<p>The status of the user import job. One of the following:</p> <ul> <li> <p>Created - The job was created but not started.</p> </li> <li> <p>Pending - A transition state. You have started the job, but it has not begun importing users yet.</p> </li> <li> <p>InProgress - The job has started, and users are being imported.</p> </li> <li> <p>Stopping - You have stopped the job, but the job has not stopped importing users yet.</p> </li> <li> <p>Stopped - You have stopped the job, and the job has stopped importing users.</p> </li> <li> <p>Succeeded - The job has completed successfully.</p> </li> <li> <p>Failed - The job has stopped due to an error.</p> </li> <li> <p>Expired - You created a job, but did not start the job within 24-48 hours. All data associated with the job was deleted, and the job cannot be started.</p> </li> </ul>",
+          "documentation" : "<p>The status of the user import job. One of the following:</p> <ul> <li> <p> <code>Created</code> - The job was created but not started.</p> </li> <li> <p> <code>Pending</code> - A transition state. You have started the job, but it has not begun importing users yet.</p> </li> <li> <p> <code>InProgress</code> - The job has started, and users are being imported.</p> </li> <li> <p> <code>Stopping</code> - You have stopped the job, but the job has not stopped importing users yet.</p> </li> <li> <p> <code>Stopped</code> - You have stopped the job, and the job has stopped importing users.</p> </li> <li> <p> <code>Succeeded</code> - The job has completed successfully.</p> </li> <li> <p> <code>Failed</code> - The job has stopped due to an error.</p> </li> <li> <p> <code>Expired</code> - You created a job, but did not start the job within 24-48 hours. All data associated with the job was deleted, and the job cannot be started.</p> </li> </ul>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -15753,7 +18363,7 @@
     },
     "UserLambdaValidationException" : {
       "deprecated" : false,
-      "documentation" : "<p>This exception gets thrown when the Amazon Cognito service encounters a user validation exception with the AWS Lambda service.</p>",
+      "documentation" : "<p>This exception is thrown when the Amazon Cognito service encounters a user validation exception with the AWS Lambda service.</p>",
       "enum" : null,
       "error" : null,
       "exception" : true,
@@ -15969,6 +18579,62 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "AllowedOAuthFlows" : {
+          "deprecated" : false,
+          "documentation" : "<p>Set to <code>code</code> to initiate a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the token endpoint.</p> <p>Set to <code>token</code> to specify that the client should get the access token (and, optionally, ID token, based on scopes) directly.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "OAuthFlowsType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "AllowedOAuthFlowsUserPoolClient" : {
+          "deprecated" : false,
+          "documentation" : "<p>Set to TRUE if the client is allowed to follow the OAuth protocol when interacting with Cognito user pools.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "BooleanType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "AllowedOAuthScopes" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of allowed <code>OAuth</code> scopes. Currently supported values are <code>\"phone\"</code>, <code>\"email\"</code>, <code>\"openid\"</code>, and <code>\"Cognito\"</code>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ScopeListType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "CallbackURLs" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of allowed callback URLs for the identity providers.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CallbackURLsListType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "ClientId" : {
           "deprecated" : false,
           "documentation" : "<p>The ID of the client associated with the user pool.</p>",
@@ -16013,7 +18679,7 @@
         },
         "CreationDate" : {
           "deprecated" : false,
-          "documentation" : "<p>The creation date from the user pool request of the client type.</p>",
+          "documentation" : "<p>The date the user pool client was created.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -16022,6 +18688,20 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "DateType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "DefaultRedirectURI" : {
+          "deprecated" : false,
+          "documentation" : "<p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RedirectUrlType",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -16041,7 +18721,7 @@
         },
         "LastModifiedDate" : {
           "deprecated" : false,
-          "documentation" : "<p>The last modified date from the user pool request of the client type.</p>",
+          "documentation" : "<p>The date the user pool client was last modified.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -16050,6 +18730,20 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "DateType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "LogoutURLs" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list ofallowed logout URLs for the identity providers.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "LogoutURLsListType",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -16069,7 +18763,7 @@
         },
         "RefreshTokenValidity" : {
           "deprecated" : false,
-          "documentation" : "<p>The validity of the refresh token, in days.</p>",
+          "documentation" : "<p>The time limit, in days, after which the refresh token is no longer valid and cannot be used.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -16078,6 +18772,20 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "RefreshTokenValidityType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "SupportedIdentityProviders" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of provider names for the identity providers that are supported on this client.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "SupportedIdentityProvidersListType",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -16133,7 +18841,7 @@
       "members" : {
         "CreationDate" : {
           "deprecated" : false,
-          "documentation" : "<p>The creation date in a user pool description.</p>",
+          "documentation" : "<p>The date the user pool description was created.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -16175,7 +18883,7 @@
         },
         "LastModifiedDate" : {
           "deprecated" : false,
-          "documentation" : "<p>The last modified date in a user pool description.</p>",
+          "documentation" : "<p>The date the user pool description was last modified.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -16336,7 +19044,7 @@
       "members" : {
         "PasswordPolicy" : {
           "deprecated" : false,
-          "documentation" : "<p>A container with information about the user pool password policy.</p>",
+          "documentation" : "<p>A container for information about the user pool password policy.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -16360,7 +19068,7 @@
     },
     "UserPoolTaggingException" : {
       "deprecated" : false,
-      "documentation" : "<p>This exception gets thrown when a user pool tag cannot be set or updated.</p>",
+      "documentation" : "<p>This exception is thrown when a user pool tag cannot be set or updated.</p>",
       "enum" : null,
       "error" : null,
       "exception" : true,
@@ -16443,7 +19151,7 @@
     },
     "UserPoolType" : {
       "deprecated" : false,
-      "documentation" : "<p>A container with information about the user pool type.</p>",
+      "documentation" : "<p>A container for information about the user pool type.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -16455,7 +19163,7 @@
       "members" : {
         "AdminCreateUserConfig" : {
           "deprecated" : false,
-          "documentation" : "<p>The configuration for AdminCreateUser requests.</p>",
+          "documentation" : "<p>The configuration for <code>AdminCreateUser</code> requests.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -16497,7 +19205,7 @@
         },
         "CreationDate" : {
           "deprecated" : false,
-          "documentation" : "<p>The creation date of a user pool.</p>",
+          "documentation" : "<p>The date the user pool was created.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -16609,7 +19317,7 @@
         },
         "LambdaConfig" : {
           "deprecated" : false,
-          "documentation" : "<p>A container describing the AWS Lambda triggers associated with a user pool.</p>",
+          "documentation" : "<p>A container for the AWS Lambda triggers associated with a user pool.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -16623,7 +19331,7 @@
         },
         "LastModifiedDate" : {
           "deprecated" : false,
-          "documentation" : "<p>The last modified date of a user pool.</p>",
+          "documentation" : "<p>The date the user pool was last modified.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -16665,7 +19373,7 @@
         },
         "Policies" : {
           "deprecated" : false,
-          "documentation" : "<p>A container describing the policies associated with a user pool.</p>",
+          "documentation" : "<p>A container for the policies associated with a user pool.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -16721,7 +19429,7 @@
         },
         "SmsConfigurationFailure" : {
           "deprecated" : false,
-          "documentation" : "<p>The reason why the SMS configuration cannot send the message(s) to your users.</p>",
+          "documentation" : "<p>The reason why the SMS configuration cannot send the messages to your users.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -17130,7 +19838,7 @@
       "min" : 0,
       "pattern" : null,
       "payload" : null,
-      "required" : [ "AttributeName", "Code" ],
+      "required" : [ "AccessToken", "AttributeName", "Code" ],
       "streaming" : false,
       "type" : "structure",
       "value" : null,
@@ -17158,5 +19866,5 @@
       "wrapper" : false
     }
   },
-  "documentation" : "<p>Using the Amazon Cognito Your User Pools API, you can create a user pool to manage directories and users. You can authenticate a user to obtain tokens related to user identity and access policies.</p> <p>This API reference provides information about user pools in Amazon Cognito Your User Pools.</p> <p>For more information, see the Amazon Cognito Documentation.</p>"
+  "documentation" : "<p>Using the Amazon Cognito User Pools API, you can create a user pool to manage directories and users. You can authenticate a user to obtain tokens related to user identity and access policies.</p> <p>This API reference provides information about user pools in Amazon Cognito User Pools.</p> <p>For more information, see the Amazon Cognito Documentation.</p>"
 }

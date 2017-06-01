@@ -42,8 +42,8 @@ public class ListUserImportJobsRequest extends com.amazonaws.AmazonWebServiceReq
     private Integer maxResults;
     /**
      * <p>
-     * An identifier that was returned from the previous call to ListUserImportJobs, which can be used to return the
-     * next set of import jobs in the list.
+     * An identifier that was returned from the previous call to <code>ListUserImportJobs</code>, which can be used to
+     * return the next set of import jobs in the list.
      * </p>
      */
     private String paginationToken;
@@ -130,13 +130,13 @@ public class ListUserImportJobsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An identifier that was returned from the previous call to ListUserImportJobs, which can be used to return the
-     * next set of import jobs in the list.
+     * An identifier that was returned from the previous call to <code>ListUserImportJobs</code>, which can be used to
+     * return the next set of import jobs in the list.
      * </p>
      * 
      * @param paginationToken
-     *        An identifier that was returned from the previous call to ListUserImportJobs, which can be used to return
-     *        the next set of import jobs in the list.
+     *        An identifier that was returned from the previous call to <code>ListUserImportJobs</code>, which can be
+     *        used to return the next set of import jobs in the list.
      */
 
     public void setPaginationToken(String paginationToken) {
@@ -145,12 +145,12 @@ public class ListUserImportJobsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An identifier that was returned from the previous call to ListUserImportJobs, which can be used to return the
-     * next set of import jobs in the list.
+     * An identifier that was returned from the previous call to <code>ListUserImportJobs</code>, which can be used to
+     * return the next set of import jobs in the list.
      * </p>
      * 
-     * @return An identifier that was returned from the previous call to ListUserImportJobs, which can be used to return
-     *         the next set of import jobs in the list.
+     * @return An identifier that was returned from the previous call to <code>ListUserImportJobs</code>, which can be
+     *         used to return the next set of import jobs in the list.
      */
 
     public String getPaginationToken() {
@@ -159,13 +159,13 @@ public class ListUserImportJobsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An identifier that was returned from the previous call to ListUserImportJobs, which can be used to return the
-     * next set of import jobs in the list.
+     * An identifier that was returned from the previous call to <code>ListUserImportJobs</code>, which can be used to
+     * return the next set of import jobs in the list.
      * </p>
      * 
      * @param paginationToken
-     *        An identifier that was returned from the previous call to ListUserImportJobs, which can be used to return
-     *        the next set of import jobs in the list.
+     *        An identifier that was returned from the previous call to <code>ListUserImportJobs</code>, which can be
+     *        used to return the next set of import jobs in the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

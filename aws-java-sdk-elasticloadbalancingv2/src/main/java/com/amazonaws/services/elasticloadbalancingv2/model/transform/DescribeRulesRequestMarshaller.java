@@ -63,6 +63,14 @@ public class DescribeRulesRequestMarshaller implements Marshaller<Request<Descri
             }
         }
 
+        if (describeRulesRequest.getMarker() != null) {
+            request.addParameter("Marker", StringUtils.fromString(describeRulesRequest.getMarker()));
+        }
+
+        if (describeRulesRequest.getPageSize() != null) {
+            request.addParameter("PageSize", StringUtils.fromInteger(describeRulesRequest.getPageSize()));
+        }
+
         return request;
     }
 

@@ -30,18 +30,18 @@ public class UserPoolPolicyType implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A container with information about the user pool password policy.
+     * A container for information about the user pool password policy.
      * </p>
      */
     private PasswordPolicyType passwordPolicy;
 
     /**
      * <p>
-     * A container with information about the user pool password policy.
+     * A container for information about the user pool password policy.
      * </p>
      * 
      * @param passwordPolicy
-     *        A container with information about the user pool password policy.
+     *        A container for information about the user pool password policy.
      */
 
     public void setPasswordPolicy(PasswordPolicyType passwordPolicy) {
@@ -50,10 +50,10 @@ public class UserPoolPolicyType implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A container with information about the user pool password policy.
+     * A container for information about the user pool password policy.
      * </p>
      * 
-     * @return A container with information about the user pool password policy.
+     * @return A container for information about the user pool password policy.
      */
 
     public PasswordPolicyType getPasswordPolicy() {
@@ -62,11 +62,11 @@ public class UserPoolPolicyType implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A container with information about the user pool password policy.
+     * A container for information about the user pool password policy.
      * </p>
      * 
      * @param passwordPolicy
-     *        A container with information about the user pool password policy.
+     *        A container for information about the user pool password policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

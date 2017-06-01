@@ -55,6 +55,10 @@ public class DescribeRulesResultStaxUnmarshaller implements Unmarshaller<Describ
                     continue;
                 }
 
+                if (context.testExpression("NextMarker", targetDepth)) {
+                    describeRulesResult.setNextMarker(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeRulesResult;

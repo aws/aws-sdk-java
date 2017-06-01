@@ -26,11 +26,11 @@ import com.amazonaws.services.cognitoidp.model.*;
  * </p>
  * <p>
  * <p>
- * Using the Amazon Cognito Your User Pools API, you can create a user pool to manage directories and users. You can
+ * Using the Amazon Cognito User Pools API, you can create a user pool to manage directories and users. You can
  * authenticate a user to obtain tokens related to user identity and access policies.
  * </p>
  * <p>
- * This API reference provides information about user pools in Amazon Cognito Your User Pools.
+ * This API reference provides information about user pools in Amazon Cognito User Pools.
  * </p>
  * <p>
  * For more information, see the Amazon Cognito Documentation.
@@ -151,8 +151,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
     /**
      * <p>
      * Creates a new user in the specified user pool and sends a welcome message via email or phone (SMS). This message
-     * is based on a template that you configured in your call to CreateUserPool or UpdateUserPool. This template
-     * includes your custom sign-up instructions and placeholders for user name and temporary password.
+     * is based on a template that you configured in your call to <a href="API_CreateUserPool.html">CreateUserPool</a>
+     * or <a href="API_UpdateUserPool.html">UpdateUserPool</a>. This template includes your custom sign-up instructions
+     * and placeholders for user name and temporary password.
      * </p>
      * <p>
      * Requires developer credentials.
@@ -170,8 +171,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
     /**
      * <p>
      * Creates a new user in the specified user pool and sends a welcome message via email or phone (SMS). This message
-     * is based on a template that you configured in your call to CreateUserPool or UpdateUserPool. This template
-     * includes your custom sign-up instructions and placeholders for user name and temporary password.
+     * is based on a template that you configured in your call to <a href="API_CreateUserPool.html">CreateUserPool</a>
+     * or <a href="API_UpdateUserPool.html">UpdateUserPool</a>. This template includes your custom sign-up instructions
+     * and placeholders for user name and temporary password.
      * </p>
      * <p>
      * Requires developer credentials.
@@ -797,6 +799,12 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * Updates the specified user's attributes, including developer attributes, as an administrator. Works on any user.
      * </p>
      * <p>
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     * </p>
+     * <p>
+     * In addition to updating user attributes, this API can also be used to mark phone and email as verified.
+     * </p>
+     * <p>
      * Requires developer credentials.
      * </p>
      * 
@@ -813,6 +821,12 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
     /**
      * <p>
      * Updates the specified user's attributes, including developer attributes, as an administrator. Works on any user.
+     * </p>
+     * <p>
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     * </p>
+     * <p>
+     * In addition to updating user attributes, this API can also be used to mark phone and email as verified.
      * </p>
      * <p>
      * Requires developer credentials.
@@ -907,7 +921,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Confirms tracking of the device. This API call is the call that beings device tracking.
+     * Confirms tracking of the device. This API call is the call that begins device tracking.
      * </p>
      * 
      * @param confirmDeviceRequest
@@ -921,7 +935,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Confirms tracking of the device. This API call is the call that beings device tracking.
+     * Confirms tracking of the device. This API call is the call that begins device tracking.
      * </p>
      * 
      * @param confirmDeviceRequest
@@ -940,7 +954,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Allows a user to enter a code provided when they reset their password to update their password.
+     * Allows a user to enter a confirmation code to reset a forgotten password.
      * </p>
      * 
      * @param confirmForgotPasswordRequest
@@ -954,7 +968,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Allows a user to enter a code provided when they reset their password to update their password.
+     * Allows a user to enter a confirmation code to reset a forgotten password.
      * </p>
      * 
      * @param confirmForgotPasswordRequest
@@ -1040,6 +1054,37 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      */
     java.util.concurrent.Future<CreateGroupResult> createGroupAsync(CreateGroupRequest createGroupRequest,
             com.amazonaws.handlers.AsyncHandler<CreateGroupRequest, CreateGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an identity provider for a user pool.
+     * </p>
+     * 
+     * @param createIdentityProviderRequest
+     * @return A Java Future containing the result of the CreateIdentityProvider operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.CreateIdentityProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateIdentityProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateIdentityProviderResult> createIdentityProviderAsync(CreateIdentityProviderRequest createIdentityProviderRequest);
+
+    /**
+     * <p>
+     * Creates an identity provider for a user pool.
+     * </p>
+     * 
+     * @param createIdentityProviderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateIdentityProvider operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.CreateIdentityProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateIdentityProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateIdentityProviderResult> createIdentityProviderAsync(CreateIdentityProviderRequest createIdentityProviderRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateIdentityProviderRequest, CreateIdentityProviderResult> asyncHandler);
 
     /**
      * <p>
@@ -1142,6 +1187,37 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
+     * Creates a new domain for a user pool.
+     * </p>
+     * 
+     * @param createUserPoolDomainRequest
+     * @return A Java Future containing the result of the CreateUserPoolDomain operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.CreateUserPoolDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPoolDomain"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateUserPoolDomainResult> createUserPoolDomainAsync(CreateUserPoolDomainRequest createUserPoolDomainRequest);
+
+    /**
+     * <p>
+     * Creates a new domain for a user pool.
+     * </p>
+     * 
+     * @param createUserPoolDomainRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateUserPoolDomain operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.CreateUserPoolDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPoolDomain"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateUserPoolDomainResult> createUserPoolDomainAsync(CreateUserPoolDomainRequest createUserPoolDomainRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateUserPoolDomainRequest, CreateUserPoolDomainResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a group. Currently only groups with no members can be deleted.
      * </p>
      * <p>
@@ -1176,6 +1252,37 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      */
     java.util.concurrent.Future<DeleteGroupResult> deleteGroupAsync(DeleteGroupRequest deleteGroupRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteGroupRequest, DeleteGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an identity provider for a user pool.
+     * </p>
+     * 
+     * @param deleteIdentityProviderRequest
+     * @return A Java Future containing the result of the DeleteIdentityProvider operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.DeleteIdentityProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteIdentityProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteIdentityProviderResult> deleteIdentityProviderAsync(DeleteIdentityProviderRequest deleteIdentityProviderRequest);
+
+    /**
+     * <p>
+     * Deletes an identity provider for a user pool.
+     * </p>
+     * 
+     * @param deleteIdentityProviderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteIdentityProvider operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.DeleteIdentityProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteIdentityProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteIdentityProviderResult> deleteIdentityProviderAsync(DeleteIdentityProviderRequest deleteIdentityProviderRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteIdentityProviderRequest, DeleteIdentityProviderResult> asyncHandler);
 
     /**
      * <p>
@@ -1311,6 +1418,68 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
+     * Deletes a domain for a user pool.
+     * </p>
+     * 
+     * @param deleteUserPoolDomainRequest
+     * @return A Java Future containing the result of the DeleteUserPoolDomain operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.DeleteUserPoolDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPoolDomain"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteUserPoolDomainResult> deleteUserPoolDomainAsync(DeleteUserPoolDomainRequest deleteUserPoolDomainRequest);
+
+    /**
+     * <p>
+     * Deletes a domain for a user pool.
+     * </p>
+     * 
+     * @param deleteUserPoolDomainRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteUserPoolDomain operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.DeleteUserPoolDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPoolDomain"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteUserPoolDomainResult> deleteUserPoolDomainAsync(DeleteUserPoolDomainRequest deleteUserPoolDomainRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteUserPoolDomainRequest, DeleteUserPoolDomainResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets information about a specific identity provider.
+     * </p>
+     * 
+     * @param describeIdentityProviderRequest
+     * @return A Java Future containing the result of the DescribeIdentityProvider operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.DescribeIdentityProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeIdentityProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeIdentityProviderResult> describeIdentityProviderAsync(DescribeIdentityProviderRequest describeIdentityProviderRequest);
+
+    /**
+     * <p>
+     * Gets information about a specific identity provider.
+     * </p>
+     * 
+     * @param describeIdentityProviderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeIdentityProvider operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.DescribeIdentityProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeIdentityProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeIdentityProviderResult> describeIdentityProviderAsync(DescribeIdentityProviderRequest describeIdentityProviderRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeIdentityProviderRequest, DescribeIdentityProviderResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes the user import job.
      * </p>
      * 
@@ -1410,6 +1579,37 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
+     * Gets information about a domain.
+     * </p>
+     * 
+     * @param describeUserPoolDomainRequest
+     * @return A Java Future containing the result of the DescribeUserPoolDomain operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.DescribeUserPoolDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserPoolDomain"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeUserPoolDomainResult> describeUserPoolDomainAsync(DescribeUserPoolDomainRequest describeUserPoolDomainRequest);
+
+    /**
+     * <p>
+     * Gets information about a domain.
+     * </p>
+     * 
+     * @param describeUserPoolDomainRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeUserPoolDomain operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.DescribeUserPoolDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserPoolDomain"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeUserPoolDomainResult> describeUserPoolDomainAsync(DescribeUserPoolDomainRequest describeUserPoolDomainRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeUserPoolDomainRequest, DescribeUserPoolDomainResult> asyncHandler);
+
+    /**
+     * <p>
      * Forgets the specified device.
      * </p>
      * 
@@ -1443,7 +1643,12 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Retrieves the password for the specified client ID or username.
+     * Calling this API causes a message to be sent to the end user with a confirmation code that is required to change
+     * the user's password. For the <code>Username</code> parameter, you can use the username or user alias. If a
+     * verified phone number exists for the user, the confirmation code is sent to the phone number. Otherwise, if a
+     * verified email exists, the confirmation code is sent to the email. If neither a verified phone number nor a
+     * verified email exists, <code>InvalidParameterException</code> is thrown. To use the confirmation code for
+     * resetting the password, call <a href="API_ConfirmForgotPassword.html">ConfirmForgotPassword</a>.
      * </p>
      * 
      * @param forgotPasswordRequest
@@ -1457,7 +1662,12 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Retrieves the password for the specified client ID or username.
+     * Calling this API causes a message to be sent to the end user with a confirmation code that is required to change
+     * the user's password. For the <code>Username</code> parameter, you can use the username or user alias. If a
+     * verified phone number exists for the user, the confirmation code is sent to the phone number. Otherwise, if a
+     * verified email exists, the confirmation code is sent to the email. If neither a verified phone number nor a
+     * verified email exists, <code>InvalidParameterException</code> is thrown. To use the confirmation code for
+     * resetting the password, call <a href="API_ConfirmForgotPassword.html">ConfirmForgotPassword</a>.
      * </p>
      * 
      * @param forgotPasswordRequest
@@ -1576,6 +1786,41 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      */
     java.util.concurrent.Future<GetGroupResult> getGroupAsync(GetGroupRequest getGroupRequest,
             com.amazonaws.handlers.AsyncHandler<GetGroupRequest, GetGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the specified identity provider.
+     * </p>
+     * 
+     * @param getIdentityProviderByIdentifierRequest
+     * @return A Java Future containing the result of the GetIdentityProviderByIdentifier operation returned by the
+     *         service.
+     * @sample AWSCognitoIdentityProviderAsync.GetIdentityProviderByIdentifier
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetIdentityProviderByIdentifier"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetIdentityProviderByIdentifierResult> getIdentityProviderByIdentifierAsync(
+            GetIdentityProviderByIdentifierRequest getIdentityProviderByIdentifierRequest);
+
+    /**
+     * <p>
+     * Gets the specified identity provider.
+     * </p>
+     * 
+     * @param getIdentityProviderByIdentifierRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetIdentityProviderByIdentifier operation returned by the
+     *         service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.GetIdentityProviderByIdentifier
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetIdentityProviderByIdentifier"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetIdentityProviderByIdentifierResult> getIdentityProviderByIdentifierAsync(
+            GetIdentityProviderByIdentifierRequest getIdentityProviderByIdentifierRequest,
+            com.amazonaws.handlers.AsyncHandler<GetIdentityProviderByIdentifierRequest, GetIdentityProviderByIdentifierResult> asyncHandler);
 
     /**
      * <p>
@@ -1782,6 +2027,37 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      */
     java.util.concurrent.Future<ListGroupsResult> listGroupsAsync(ListGroupsRequest listGroupsRequest,
             com.amazonaws.handlers.AsyncHandler<ListGroupsRequest, ListGroupsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists information about all identity providers for a user pool.
+     * </p>
+     * 
+     * @param listIdentityProvidersRequest
+     * @return A Java Future containing the result of the ListIdentityProviders operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.ListIdentityProviders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListIdentityProviders"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListIdentityProvidersResult> listIdentityProvidersAsync(ListIdentityProvidersRequest listIdentityProvidersRequest);
+
+    /**
+     * <p>
+     * Lists information about all identity providers for a user pool.
+     * </p>
+     * 
+     * @param listIdentityProvidersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListIdentityProviders operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.ListIdentityProviders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListIdentityProviders"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListIdentityProvidersResult> listIdentityProvidersAsync(ListIdentityProvidersRequest listIdentityProvidersRequest,
+            com.amazonaws.handlers.AsyncHandler<ListIdentityProvidersRequest, ListIdentityProvidersResult> asyncHandler);
 
     /**
      * <p>
@@ -2221,6 +2497,37 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      */
     java.util.concurrent.Future<UpdateGroupResult> updateGroupAsync(UpdateGroupRequest updateGroupRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateGroupRequest, UpdateGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates identity provider information for a user pool.
+     * </p>
+     * 
+     * @param updateIdentityProviderRequest
+     * @return A Java Future containing the result of the UpdateIdentityProvider operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.UpdateIdentityProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateIdentityProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateIdentityProviderResult> updateIdentityProviderAsync(UpdateIdentityProviderRequest updateIdentityProviderRequest);
+
+    /**
+     * <p>
+     * Updates identity provider information for a user pool.
+     * </p>
+     * 
+     * @param updateIdentityProviderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateIdentityProvider operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.UpdateIdentityProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateIdentityProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateIdentityProviderResult> updateIdentityProviderAsync(UpdateIdentityProviderRequest updateIdentityProviderRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateIdentityProviderRequest, UpdateIdentityProviderResult> asyncHandler);
 
     /**
      * <p>

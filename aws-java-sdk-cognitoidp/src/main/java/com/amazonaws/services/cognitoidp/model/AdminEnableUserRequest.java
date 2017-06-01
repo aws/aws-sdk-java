@@ -36,7 +36,7 @@ public class AdminEnableUserRequest extends com.amazonaws.AmazonWebServiceReques
     private String userPoolId;
     /**
      * <p>
-     * The user name of the user you wish to ebable.
+     * The user name of the user you wish to enable.
      * </p>
      */
     private String username;
@@ -83,11 +83,11 @@ public class AdminEnableUserRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The user name of the user you wish to ebable.
+     * The user name of the user you wish to enable.
      * </p>
      * 
      * @param username
-     *        The user name of the user you wish to ebable.
+     *        The user name of the user you wish to enable.
      */
 
     public void setUsername(String username) {
@@ -96,10 +96,10 @@ public class AdminEnableUserRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The user name of the user you wish to ebable.
+     * The user name of the user you wish to enable.
      * </p>
      * 
-     * @return The user name of the user you wish to ebable.
+     * @return The user name of the user you wish to enable.
      */
 
     public String getUsername() {
@@ -108,11 +108,11 @@ public class AdminEnableUserRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The user name of the user you wish to ebable.
+     * The user name of the user you wish to enable.
      * </p>
      * 
      * @param username
-     *        The user name of the user you wish to ebable.
+     *        The user name of the user you wish to enable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

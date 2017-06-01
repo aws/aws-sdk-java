@@ -543,6 +543,19 @@ public class AbstractAmazonCodeDeployAsync extends AbstractAmazonCodeDeploy impl
     }
 
     @Override
+    public java.util.concurrent.Future<ListGitHubAccountTokenNamesResult> listGitHubAccountTokenNamesAsync(ListGitHubAccountTokenNamesRequest request) {
+
+        return listGitHubAccountTokenNamesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGitHubAccountTokenNamesResult> listGitHubAccountTokenNamesAsync(ListGitHubAccountTokenNamesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListGitHubAccountTokenNamesRequest, ListGitHubAccountTokenNamesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListOnPremisesInstancesResult> listOnPremisesInstancesAsync(ListOnPremisesInstancesRequest request) {
 
         return listOnPremisesInstancesAsync(request, null);

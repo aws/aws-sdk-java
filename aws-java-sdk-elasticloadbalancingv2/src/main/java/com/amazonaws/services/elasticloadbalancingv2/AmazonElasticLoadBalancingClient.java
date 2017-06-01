@@ -1705,6 +1705,10 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *         This operation is not allowed.
      * @throws TooManyRegistrationsForTargetIdException
      *         You've reached the limit on the number of times a target can be registered with a load balancer.
+     * @throws TooManyTargetsException
+     *         You've reached the limit on the number of targets.
+     * @throws TargetGroupNotFoundException
+     *         The specified target group does not exist.
      * @sample AmazonElasticLoadBalancing.ModifyRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyRule"
      *      target="_top">AWS API Documentation</a>

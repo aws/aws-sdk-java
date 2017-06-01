@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A container with information about the user pool type.
+ * A container for information about the user pool type.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserPoolType" target="_top">AWS API
@@ -42,13 +42,13 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * A container describing the policies associated with a user pool.
+     * A container for the policies associated with a user pool.
      * </p>
      */
     private UserPoolPolicyType policies;
     /**
      * <p>
-     * A container describing the AWS Lambda triggers associated with a user pool.
+     * A container for the AWS Lambda triggers associated with a user pool.
      * </p>
      */
     private LambdaConfigType lambdaConfig;
@@ -60,13 +60,13 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * The last modified date of a user pool.
+     * The date the user pool was last modified.
      * </p>
      */
     private java.util.Date lastModifiedDate;
     /**
      * <p>
-     * The creation date of a user pool.
+     * The date the user pool was created.
      * </p>
      */
     private java.util.Date creationDate;
@@ -170,7 +170,7 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, String> userPoolTags;
     /**
      * <p>
-     * The reason why the SMS configuration cannot send the message(s) to your users.
+     * The reason why the SMS configuration cannot send the messages to your users.
      * </p>
      */
     private String smsConfigurationFailure;
@@ -182,7 +182,7 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
     private String emailConfigurationFailure;
     /**
      * <p>
-     * The configuration for AdminCreateUser requests.
+     * The configuration for <code>AdminCreateUser</code> requests.
      * </p>
      */
     private AdminCreateUserConfigType adminCreateUserConfig;
@@ -269,11 +269,11 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A container describing the policies associated with a user pool.
+     * A container for the policies associated with a user pool.
      * </p>
      * 
      * @param policies
-     *        A container describing the policies associated with a user pool.
+     *        A container for the policies associated with a user pool.
      */
 
     public void setPolicies(UserPoolPolicyType policies) {
@@ -282,10 +282,10 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A container describing the policies associated with a user pool.
+     * A container for the policies associated with a user pool.
      * </p>
      * 
-     * @return A container describing the policies associated with a user pool.
+     * @return A container for the policies associated with a user pool.
      */
 
     public UserPoolPolicyType getPolicies() {
@@ -294,11 +294,11 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A container describing the policies associated with a user pool.
+     * A container for the policies associated with a user pool.
      * </p>
      * 
      * @param policies
-     *        A container describing the policies associated with a user pool.
+     *        A container for the policies associated with a user pool.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -309,11 +309,11 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A container describing the AWS Lambda triggers associated with a user pool.
+     * A container for the AWS Lambda triggers associated with a user pool.
      * </p>
      * 
      * @param lambdaConfig
-     *        A container describing the AWS Lambda triggers associated with a user pool.
+     *        A container for the AWS Lambda triggers associated with a user pool.
      */
 
     public void setLambdaConfig(LambdaConfigType lambdaConfig) {
@@ -322,10 +322,10 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A container describing the AWS Lambda triggers associated with a user pool.
+     * A container for the AWS Lambda triggers associated with a user pool.
      * </p>
      * 
-     * @return A container describing the AWS Lambda triggers associated with a user pool.
+     * @return A container for the AWS Lambda triggers associated with a user pool.
      */
 
     public LambdaConfigType getLambdaConfig() {
@@ -334,11 +334,11 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A container describing the AWS Lambda triggers associated with a user pool.
+     * A container for the AWS Lambda triggers associated with a user pool.
      * </p>
      * 
      * @param lambdaConfig
-     *        A container describing the AWS Lambda triggers associated with a user pool.
+     *        A container for the AWS Lambda triggers associated with a user pool.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -422,11 +422,11 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last modified date of a user pool.
+     * The date the user pool was last modified.
      * </p>
      * 
      * @param lastModifiedDate
-     *        The last modified date of a user pool.
+     *        The date the user pool was last modified.
      */
 
     public void setLastModifiedDate(java.util.Date lastModifiedDate) {
@@ -435,10 +435,10 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last modified date of a user pool.
+     * The date the user pool was last modified.
      * </p>
      * 
-     * @return The last modified date of a user pool.
+     * @return The date the user pool was last modified.
      */
 
     public java.util.Date getLastModifiedDate() {
@@ -447,11 +447,11 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last modified date of a user pool.
+     * The date the user pool was last modified.
      * </p>
      * 
      * @param lastModifiedDate
-     *        The last modified date of a user pool.
+     *        The date the user pool was last modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -462,11 +462,11 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The creation date of a user pool.
+     * The date the user pool was created.
      * </p>
      * 
      * @param creationDate
-     *        The creation date of a user pool.
+     *        The date the user pool was created.
      */
 
     public void setCreationDate(java.util.Date creationDate) {
@@ -475,10 +475,10 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The creation date of a user pool.
+     * The date the user pool was created.
      * </p>
      * 
-     * @return The creation date of a user pool.
+     * @return The date the user pool was created.
      */
 
     public java.util.Date getCreationDate() {
@@ -487,11 +487,11 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The creation date of a user pool.
+     * The date the user pool was created.
      * </p>
      * 
      * @param creationDate
-     *        The creation date of a user pool.
+     *        The date the user pool was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1409,11 +1409,11 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The reason why the SMS configuration cannot send the message(s) to your users.
+     * The reason why the SMS configuration cannot send the messages to your users.
      * </p>
      * 
      * @param smsConfigurationFailure
-     *        The reason why the SMS configuration cannot send the message(s) to your users.
+     *        The reason why the SMS configuration cannot send the messages to your users.
      */
 
     public void setSmsConfigurationFailure(String smsConfigurationFailure) {
@@ -1422,10 +1422,10 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The reason why the SMS configuration cannot send the message(s) to your users.
+     * The reason why the SMS configuration cannot send the messages to your users.
      * </p>
      * 
-     * @return The reason why the SMS configuration cannot send the message(s) to your users.
+     * @return The reason why the SMS configuration cannot send the messages to your users.
      */
 
     public String getSmsConfigurationFailure() {
@@ -1434,11 +1434,11 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The reason why the SMS configuration cannot send the message(s) to your users.
+     * The reason why the SMS configuration cannot send the messages to your users.
      * </p>
      * 
      * @param smsConfigurationFailure
-     *        The reason why the SMS configuration cannot send the message(s) to your users.
+     *        The reason why the SMS configuration cannot send the messages to your users.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1489,11 +1489,11 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The configuration for AdminCreateUser requests.
+     * The configuration for <code>AdminCreateUser</code> requests.
      * </p>
      * 
      * @param adminCreateUserConfig
-     *        The configuration for AdminCreateUser requests.
+     *        The configuration for <code>AdminCreateUser</code> requests.
      */
 
     public void setAdminCreateUserConfig(AdminCreateUserConfigType adminCreateUserConfig) {
@@ -1502,10 +1502,10 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The configuration for AdminCreateUser requests.
+     * The configuration for <code>AdminCreateUser</code> requests.
      * </p>
      * 
-     * @return The configuration for AdminCreateUser requests.
+     * @return The configuration for <code>AdminCreateUser</code> requests.
      */
 
     public AdminCreateUserConfigType getAdminCreateUserConfig() {
@@ -1514,11 +1514,11 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The configuration for AdminCreateUser requests.
+     * The configuration for <code>AdminCreateUser</code> requests.
      * </p>
      * 
      * @param adminCreateUserConfig
-     *        The configuration for AdminCreateUser requests.
+     *        The configuration for <code>AdminCreateUser</code> requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

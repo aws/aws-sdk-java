@@ -54,7 +54,8 @@ public class GetBotChannelAssociationsRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * Substring to match in channel association names. An association will be returned if any part of its name matches
-     * the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."
+     * the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To return all bot channel associations, use
+     * a hyphen ("-") as the <code>nameContains</code> parameter.
      * </p>
      */
     private String nameContains;
@@ -234,12 +235,14 @@ public class GetBotChannelAssociationsRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * Substring to match in channel association names. An association will be returned if any part of its name matches
-     * the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."
+     * the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To return all bot channel associations, use
+     * a hyphen ("-") as the <code>nameContains</code> parameter.
      * </p>
      * 
      * @param nameContains
      *        Substring to match in channel association names. An association will be returned if any part of its name
-     *        matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."
+     *        matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To return all bot channel
+     *        associations, use a hyphen ("-") as the <code>nameContains</code> parameter.
      */
 
     public void setNameContains(String nameContains) {
@@ -249,11 +252,13 @@ public class GetBotChannelAssociationsRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * Substring to match in channel association names. An association will be returned if any part of its name matches
-     * the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."
+     * the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To return all bot channel associations, use
+     * a hyphen ("-") as the <code>nameContains</code> parameter.
      * </p>
      * 
      * @return Substring to match in channel association names. An association will be returned if any part of its name
-     *         matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."
+     *         matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To return all bot channel
+     *         associations, use a hyphen ("-") as the <code>nameContains</code> parameter.
      */
 
     public String getNameContains() {
@@ -263,12 +268,14 @@ public class GetBotChannelAssociationsRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * Substring to match in channel association names. An association will be returned if any part of its name matches
-     * the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."
+     * the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To return all bot channel associations, use
+     * a hyphen ("-") as the <code>nameContains</code> parameter.
      * </p>
      * 
      * @param nameContains
      *        Substring to match in channel association names. An association will be returned if any part of its name
-     *        matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."
+     *        matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To return all bot channel
+     *        associations, use a hyphen ("-") as the <code>nameContains</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

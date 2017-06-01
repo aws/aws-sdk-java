@@ -35,6 +35,8 @@ public class ApplicationInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createTime").build();
     private static final MarshallingInfo<Boolean> LINKEDTOGITHUB_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("linkedToGitHub").build();
+    private static final MarshallingInfo<String> GITHUBACCOUNTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("gitHubAccountName").build();
 
     private static final ApplicationInfoMarshaller instance = new ApplicationInfoMarshaller();
 
@@ -56,6 +58,7 @@ public class ApplicationInfoMarshaller {
             protocolMarshaller.marshall(applicationInfo.getApplicationName(), APPLICATIONNAME_BINDING);
             protocolMarshaller.marshall(applicationInfo.getCreateTime(), CREATETIME_BINDING);
             protocolMarshaller.marshall(applicationInfo.getLinkedToGitHub(), LINKEDTOGITHUB_BINDING);
+            protocolMarshaller.marshall(applicationInfo.getGitHubAccountName(), GITHUBACCOUNTNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

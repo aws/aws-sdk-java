@@ -119,6 +119,18 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private LoadBalancerInfo loadBalancerInfo;
+    /**
+     * <p>
+     * Information about the most recent successful deployment to the deployment group.
+     * </p>
+     */
+    private LastDeploymentInfo lastSuccessfulDeployment;
+    /**
+     * <p>
+     * Information about the most recent attempted deployment to the deployment group.
+     * </p>
+     */
+    private LastDeploymentInfo lastAttemptedDeployment;
 
     /**
      * <p>
@@ -859,6 +871,86 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * Information about the most recent successful deployment to the deployment group.
+     * </p>
+     * 
+     * @param lastSuccessfulDeployment
+     *        Information about the most recent successful deployment to the deployment group.
+     */
+
+    public void setLastSuccessfulDeployment(LastDeploymentInfo lastSuccessfulDeployment) {
+        this.lastSuccessfulDeployment = lastSuccessfulDeployment;
+    }
+
+    /**
+     * <p>
+     * Information about the most recent successful deployment to the deployment group.
+     * </p>
+     * 
+     * @return Information about the most recent successful deployment to the deployment group.
+     */
+
+    public LastDeploymentInfo getLastSuccessfulDeployment() {
+        return this.lastSuccessfulDeployment;
+    }
+
+    /**
+     * <p>
+     * Information about the most recent successful deployment to the deployment group.
+     * </p>
+     * 
+     * @param lastSuccessfulDeployment
+     *        Information about the most recent successful deployment to the deployment group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeploymentGroupInfo withLastSuccessfulDeployment(LastDeploymentInfo lastSuccessfulDeployment) {
+        setLastSuccessfulDeployment(lastSuccessfulDeployment);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the most recent attempted deployment to the deployment group.
+     * </p>
+     * 
+     * @param lastAttemptedDeployment
+     *        Information about the most recent attempted deployment to the deployment group.
+     */
+
+    public void setLastAttemptedDeployment(LastDeploymentInfo lastAttemptedDeployment) {
+        this.lastAttemptedDeployment = lastAttemptedDeployment;
+    }
+
+    /**
+     * <p>
+     * Information about the most recent attempted deployment to the deployment group.
+     * </p>
+     * 
+     * @return Information about the most recent attempted deployment to the deployment group.
+     */
+
+    public LastDeploymentInfo getLastAttemptedDeployment() {
+        return this.lastAttemptedDeployment;
+    }
+
+    /**
+     * <p>
+     * Information about the most recent attempted deployment to the deployment group.
+     * </p>
+     * 
+     * @param lastAttemptedDeployment
+     *        Information about the most recent attempted deployment to the deployment group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeploymentGroupInfo withLastAttemptedDeployment(LastDeploymentInfo lastAttemptedDeployment) {
+        setLastAttemptedDeployment(lastAttemptedDeployment);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -898,7 +990,11 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
         if (getBlueGreenDeploymentConfiguration() != null)
             sb.append("BlueGreenDeploymentConfiguration: ").append(getBlueGreenDeploymentConfiguration()).append(",");
         if (getLoadBalancerInfo() != null)
-            sb.append("LoadBalancerInfo: ").append(getLoadBalancerInfo());
+            sb.append("LoadBalancerInfo: ").append(getLoadBalancerInfo()).append(",");
+        if (getLastSuccessfulDeployment() != null)
+            sb.append("LastSuccessfulDeployment: ").append(getLastSuccessfulDeployment()).append(",");
+        if (getLastAttemptedDeployment() != null)
+            sb.append("LastAttemptedDeployment: ").append(getLastAttemptedDeployment());
         sb.append("}");
         return sb.toString();
     }
@@ -974,6 +1070,14 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getLoadBalancerInfo() != null && other.getLoadBalancerInfo().equals(this.getLoadBalancerInfo()) == false)
             return false;
+        if (other.getLastSuccessfulDeployment() == null ^ this.getLastSuccessfulDeployment() == null)
+            return false;
+        if (other.getLastSuccessfulDeployment() != null && other.getLastSuccessfulDeployment().equals(this.getLastSuccessfulDeployment()) == false)
+            return false;
+        if (other.getLastAttemptedDeployment() == null ^ this.getLastAttemptedDeployment() == null)
+            return false;
+        if (other.getLastAttemptedDeployment() != null && other.getLastAttemptedDeployment().equals(this.getLastAttemptedDeployment()) == false)
+            return false;
         return true;
     }
 
@@ -997,6 +1101,8 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getDeploymentStyle() == null) ? 0 : getDeploymentStyle().hashCode());
         hashCode = prime * hashCode + ((getBlueGreenDeploymentConfiguration() == null) ? 0 : getBlueGreenDeploymentConfiguration().hashCode());
         hashCode = prime * hashCode + ((getLoadBalancerInfo() == null) ? 0 : getLoadBalancerInfo().hashCode());
+        hashCode = prime * hashCode + ((getLastSuccessfulDeployment() == null) ? 0 : getLastSuccessfulDeployment().hashCode());
+        hashCode = prime * hashCode + ((getLastAttemptedDeployment() == null) ? 0 : getLastAttemptedDeployment().hashCode());
         return hashCode;
     }
 

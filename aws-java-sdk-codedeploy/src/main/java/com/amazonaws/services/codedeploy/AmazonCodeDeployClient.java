@@ -158,6 +158,9 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceValidationException").withModeledClass(
+                                    com.amazonaws.services.codedeploy.model.ResourceValidationException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidOperationException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.InvalidOperationException.class))
                     .addErrorMetadata(
@@ -641,7 +644,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param batchGetApplicationRevisionsRequest
-     *        Represents the input of a batch get application revisions operation.
+     *        Represents the input of a BatchGetApplicationRevisions operation.
      * @return Result of the BatchGetApplicationRevisions operation returned by the service.
      * @throws ApplicationDoesNotExistException
      *         The application does not exist with the applicable IAM user or AWS account.
@@ -704,7 +707,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param batchGetApplicationsRequest
-     *        Represents the input of a batch get applications operation.
+     *        Represents the input of a BatchGetApplications operation.
      * @return Result of the BatchGetApplications operation returned by the service.
      * @throws ApplicationNameRequiredException
      *         The minimum number of required application names was not specified.
@@ -766,7 +769,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param batchGetDeploymentGroupsRequest
-     *        Represents the input of a batch get deployment groups operation.
+     *        Represents the input of a BatchGetDeploymentGroups operation.
      * @return Result of the BatchGetDeploymentGroups operation returned by the service.
      * @throws ApplicationNameRequiredException
      *         The minimum number of required application names was not specified.
@@ -829,7 +832,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param batchGetDeploymentInstancesRequest
-     *        Represents the input of a batch get deployment instances operation.
+     *        Represents the input of a BatchGetDeploymentInstances operation.
      * @return Result of the BatchGetDeploymentInstances operation returned by the service.
      * @throws DeploymentIdRequiredException
      *         At least one deployment ID must be specified.
@@ -892,7 +895,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param batchGetDeploymentsRequest
-     *        Represents the input of a batch get deployments operation.
+     *        Represents the input of a BatchGetDeployments operation.
      * @return Result of the BatchGetDeployments operation returned by the service.
      * @throws DeploymentIdRequiredException
      *         At least one deployment ID must be specified.
@@ -952,7 +955,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param batchGetOnPremisesInstancesRequest
-     *        Represents the input of a batch get on-premises instances operation.
+     *        Represents the input of a BatchGetOnPremisesInstances operation.
      * @return Result of the BatchGetOnPremisesInstances operation returned by the service.
      * @throws InstanceNameRequiredException
      *         An on-premises instance name was not specified.
@@ -1077,7 +1080,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param createApplicationRequest
-     *        Represents the input of a create application operation.
+     *        Represents the input of a CreateApplication operation.
      * @return Result of the CreateApplication operation returned by the service.
      * @throws ApplicationNameRequiredException
      *         The minimum number of required application names was not specified.
@@ -1134,7 +1137,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param createDeploymentRequest
-     *        Represents the input of a create deployment operation.
+     *        Represents the input of a CreateDeployment operation.
      * @return Result of the CreateDeployment operation returned by the service.
      * @throws ApplicationNameRequiredException
      *         The minimum number of required application names was not specified.
@@ -1241,7 +1244,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param createDeploymentConfigRequest
-     *        Represents the input of a create deployment configuration operation.
+     *        Represents the input of a CreateDeploymentConfig operation.
      * @return Result of the CreateDeploymentConfig operation returned by the service.
      * @throws InvalidDeploymentConfigNameException
      *         The deployment configuration name was specified in an invalid format.
@@ -1302,7 +1305,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param createDeploymentGroupRequest
-     *        Represents the input of a create deployment group operation.
+     *        Represents the input of a CreateDeploymentGroup operation.
      * @return Result of the CreateDeploymentGroup operation returned by the service.
      * @throws ApplicationNameRequiredException
      *         The minimum number of required application names was not specified.
@@ -1428,7 +1431,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param deleteApplicationRequest
-     *        Represents the input of a delete application operation.
+     *        Represents the input of a DeleteApplication operation.
      * @return Result of the DeleteApplication operation returned by the service.
      * @throws ApplicationNameRequiredException
      *         The minimum number of required application names was not specified.
@@ -1487,7 +1490,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * </note>
      * 
      * @param deleteDeploymentConfigRequest
-     *        Represents the input of a delete deployment configuration operation.
+     *        Represents the input of a DeleteDeploymentConfig operation.
      * @return Result of the DeleteDeploymentConfig operation returned by the service.
      * @throws InvalidDeploymentConfigNameException
      *         The deployment configuration name was specified in an invalid format.
@@ -1545,7 +1548,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param deleteDeploymentGroupRequest
-     *        Represents the input of a delete deployment group operation.
+     *        Represents the input of a DeleteDeploymentGroup operation.
      * @return Result of the DeleteDeploymentGroup operation returned by the service.
      * @throws ApplicationNameRequiredException
      *         The minimum number of required application names was not specified.
@@ -1606,7 +1609,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param deregisterOnPremisesInstanceRequest
-     *        Represents the input of a deregister on-premises instance operation.
+     *        Represents the input of a DeregisterOnPremisesInstance operation.
      * @return Result of the DeregisterOnPremisesInstance operation returned by the service.
      * @throws InstanceNameRequiredException
      *         An on-premises instance name was not specified.
@@ -1661,7 +1664,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param getApplicationRequest
-     *        Represents the input of a get application operation.
+     *        Represents the input of a GetApplication operation.
      * @return Result of the GetApplication operation returned by the service.
      * @throws ApplicationNameRequiredException
      *         The minimum number of required application names was not specified.
@@ -1716,7 +1719,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param getApplicationRevisionRequest
-     *        Represents the input of a get application revision operation.
+     *        Represents the input of a GetApplicationRevision operation.
      * @return Result of the GetApplicationRevision operation returned by the service.
      * @throws ApplicationDoesNotExistException
      *         The application does not exist with the applicable IAM user or AWS account.
@@ -1778,7 +1781,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param getDeploymentRequest
-     *        Represents the input of a get deployment operation.
+     *        Represents the input of a GetDeployment operation.
      * @return Result of the GetDeployment operation returned by the service.
      * @throws DeploymentIdRequiredException
      *         At least one deployment ID must be specified.
@@ -1833,7 +1836,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param getDeploymentConfigRequest
-     *        Represents the input of a get deployment configuration operation.
+     *        Represents the input of a GetDeploymentConfig operation.
      * @return Result of the GetDeploymentConfig operation returned by the service.
      * @throws InvalidDeploymentConfigNameException
      *         The deployment configuration name was specified in an invalid format.
@@ -1888,7 +1891,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param getDeploymentGroupRequest
-     *        Represents the input of a get deployment group operation.
+     *        Represents the input of a GetDeploymentGroup operation.
      * @return Result of the GetDeploymentGroup operation returned by the service.
      * @throws ApplicationNameRequiredException
      *         The minimum number of required application names was not specified.
@@ -1949,7 +1952,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param getDeploymentInstanceRequest
-     *        Represents the input of a get deployment instance operation.
+     *        Represents the input of a GetDeploymentInstance operation.
      * @return Result of the GetDeploymentInstance operation returned by the service.
      * @throws DeploymentIdRequiredException
      *         At least one deployment ID must be specified.
@@ -2011,7 +2014,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param getOnPremisesInstanceRequest
-     *        Represents the input of a get on-premises instance operation.
+     *        Represents the input of a GetOnPremisesInstance operation.
      * @return Result of the GetOnPremisesInstance operation returned by the service.
      * @throws InstanceNameRequiredException
      *         An on-premises instance name was not specified.
@@ -2067,7 +2070,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param listApplicationRevisionsRequest
-     *        Represents the input of a list application revisions operation.
+     *        Represents the input of a ListApplicationRevisions operation.
      * @return Result of the ListApplicationRevisions operation returned by the service.
      * @throws ApplicationDoesNotExistException
      *         The application does not exist with the applicable IAM user or AWS account.
@@ -2138,7 +2141,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param listApplicationsRequest
-     *        Represents the input of a list applications operation.
+     *        Represents the input of a ListApplications operation.
      * @return Result of the ListApplications operation returned by the service.
      * @throws InvalidNextTokenException
      *         The next token was specified in an invalid format.
@@ -2194,7 +2197,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param listDeploymentConfigsRequest
-     *        Represents the input of a list deployment configurations operation.
+     *        Represents the input of a ListDeploymentConfigs operation.
      * @return Result of the ListDeploymentConfigs operation returned by the service.
      * @throws InvalidNextTokenException
      *         The next token was specified in an invalid format.
@@ -2251,7 +2254,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param listDeploymentGroupsRequest
-     *        Represents the input of a list deployment groups operation.
+     *        Represents the input of a ListDeploymentGroups operation.
      * @return Result of the ListDeploymentGroups operation returned by the service.
      * @throws ApplicationNameRequiredException
      *         The minimum number of required application names was not specified.
@@ -2308,7 +2311,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param listDeploymentInstancesRequest
-     *        Represents the input of a list deployment instances operation.
+     *        Represents the input of a ListDeploymentInstances operation.
      * @return Result of the ListDeploymentInstances operation returned by the service.
      * @throws DeploymentIdRequiredException
      *         At least one deployment ID must be specified.
@@ -2378,7 +2381,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param listDeploymentsRequest
-     *        Represents the input of a list deployments operation.
+     *        Represents the input of a ListDeployments operation.
      * @return Result of the ListDeployments operation returned by the service.
      * @throws ApplicationNameRequiredException
      *         The minimum number of required application names was not specified.
@@ -2446,6 +2449,61 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Lists the names of stored connections to GitHub accounts.
+     * </p>
+     * 
+     * @param listGitHubAccountTokenNamesRequest
+     *        Represents the input of a ListGitHubAccountTokenNames operation.
+     * @return Result of the ListGitHubAccountTokenNames operation returned by the service.
+     * @throws InvalidNextTokenException
+     *         The next token was specified in an invalid format.
+     * @throws ResourceValidationException
+     *         The specified resource could not be validated.
+     * @sample AmazonCodeDeploy.ListGitHubAccountTokenNames
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListGitHubAccountTokenNames"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListGitHubAccountTokenNamesResult listGitHubAccountTokenNames(ListGitHubAccountTokenNamesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListGitHubAccountTokenNames(request);
+    }
+
+    @SdkInternalApi
+    final ListGitHubAccountTokenNamesResult executeListGitHubAccountTokenNames(ListGitHubAccountTokenNamesRequest listGitHubAccountTokenNamesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listGitHubAccountTokenNamesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListGitHubAccountTokenNamesRequest> request = null;
+        Response<ListGitHubAccountTokenNamesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListGitHubAccountTokenNamesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listGitHubAccountTokenNamesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListGitHubAccountTokenNamesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListGitHubAccountTokenNamesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets a list of names for one or more on-premises instances.
      * </p>
      * <p>
@@ -2454,7 +2512,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param listOnPremisesInstancesRequest
-     *        Represents the input of a list on-premises instances operation.
+     *        Represents the input of a ListOnPremisesInstances operation.
      * @return Result of the ListOnPremisesInstances operation returned by the service.
      * @throws InvalidRegistrationStatusException
      *         The registration status was specified in an invalid format.
@@ -2516,7 +2574,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param registerApplicationRevisionRequest
-     *        Represents the input of a register application revision operation.
+     *        Represents the input of a RegisterApplicationRevision operation.
      * @return Result of the RegisterApplicationRevision operation returned by the service.
      * @throws ApplicationDoesNotExistException
      *         The application does not exist with the applicable IAM user or AWS account.
@@ -2655,7 +2713,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param removeTagsFromOnPremisesInstancesRequest
-     *        Represents the input of a remove tags from on-premises instances operation.
+     *        Represents the input of a RemoveTagsFromOnPremisesInstances operation.
      * @return Result of the RemoveTagsFromOnPremisesInstances operation returned by the service.
      * @throws InstanceNameRequiredException
      *         An on-premises instance name was not specified.
@@ -2783,7 +2841,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param stopDeploymentRequest
-     *        Represents the input of a stop deployment operation.
+     *        Represents the input of a StopDeployment operation.
      * @return Result of the StopDeployment operation returned by the service.
      * @throws DeploymentIdRequiredException
      *         At least one deployment ID must be specified.
@@ -2840,7 +2898,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param updateApplicationRequest
-     *        Represents the input of an update application operation.
+     *        Represents the input of an UpdateApplication operation.
      * @return Result of the UpdateApplication operation returned by the service.
      * @throws ApplicationNameRequiredException
      *         The minimum number of required application names was not specified.
@@ -2902,7 +2960,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * </p>
      * 
      * @param updateDeploymentGroupRequest
-     *        Represents the input of an update deployment group operation.
+     *        Represents the input of an UpdateDeploymentGroup operation.
      * @return Result of the UpdateDeploymentGroup operation returned by the service.
      * @throws ApplicationNameRequiredException
      *         The minimum number of required application names was not specified.

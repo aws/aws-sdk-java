@@ -58,6 +58,10 @@ public class DeploymentGroupInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("blueGreenDeploymentConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> LOADBALANCERINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("loadBalancerInfo").build();
+    private static final MarshallingInfo<StructuredPojo> LASTSUCCESSFULDEPLOYMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastSuccessfulDeployment").build();
+    private static final MarshallingInfo<StructuredPojo> LASTATTEMPTEDDEPLOYMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastAttemptedDeployment").build();
 
     private static final DeploymentGroupInfoMarshaller instance = new DeploymentGroupInfoMarshaller();
 
@@ -90,6 +94,8 @@ public class DeploymentGroupInfoMarshaller {
             protocolMarshaller.marshall(deploymentGroupInfo.getDeploymentStyle(), DEPLOYMENTSTYLE_BINDING);
             protocolMarshaller.marshall(deploymentGroupInfo.getBlueGreenDeploymentConfiguration(), BLUEGREENDEPLOYMENTCONFIGURATION_BINDING);
             protocolMarshaller.marshall(deploymentGroupInfo.getLoadBalancerInfo(), LOADBALANCERINFO_BINDING);
+            protocolMarshaller.marshall(deploymentGroupInfo.getLastSuccessfulDeployment(), LASTSUCCESSFULDEPLOYMENT_BINDING);
+            protocolMarshaller.marshall(deploymentGroupInfo.getLastAttemptedDeployment(), LASTATTEMPTEDDEPLOYMENT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

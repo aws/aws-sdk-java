@@ -1038,6 +1038,18 @@
         "exception" : false,
         "fault" : false,
         "shape" : "TooManyRegistrationsForTargetIdException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "TooManyTargetsException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "TargetGroupNotFoundException"
       } ],
       "http" : {
         "method" : "POST",
@@ -3366,6 +3378,34 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "Marker" : {
+          "deprecated" : false,
+          "documentation" : "<p>The marker for the next set of results. (You received this marker from a previous call.)</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Marker",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "PageSize" : {
+          "deprecated" : false,
+          "documentation" : "<p>The maximum number of results to return with this call.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "PageSize",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "RuleArns" : {
           "deprecated" : false,
           "documentation" : "<p>The Amazon Resource Names (ARN) of the rules.</p>",
@@ -3402,6 +3442,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "NextMarker" : {
+          "deprecated" : false,
+          "documentation" : "<p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Marker",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "Rules" : {
           "deprecated" : false,
           "documentation" : "<p>Information about the rules.</p>",

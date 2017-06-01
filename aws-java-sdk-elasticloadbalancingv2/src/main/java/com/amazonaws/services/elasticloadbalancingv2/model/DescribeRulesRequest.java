@@ -37,6 +37,18 @@ public class DescribeRulesRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private java.util.List<String> ruleArns;
+    /**
+     * <p>
+     * The marker for the next set of results. (You received this marker from a previous call.)
+     * </p>
+     */
+    private String marker;
+    /**
+     * <p>
+     * The maximum number of results to return with this call.
+     * </p>
+     */
+    private Integer pageSize;
 
     /**
      * <p>
@@ -149,6 +161,86 @@ public class DescribeRulesRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The marker for the next set of results. (You received this marker from a previous call.)
+     * </p>
+     * 
+     * @param marker
+     *        The marker for the next set of results. (You received this marker from a previous call.)
+     */
+
+    public void setMarker(String marker) {
+        this.marker = marker;
+    }
+
+    /**
+     * <p>
+     * The marker for the next set of results. (You received this marker from a previous call.)
+     * </p>
+     * 
+     * @return The marker for the next set of results. (You received this marker from a previous call.)
+     */
+
+    public String getMarker() {
+        return this.marker;
+    }
+
+    /**
+     * <p>
+     * The marker for the next set of results. (You received this marker from a previous call.)
+     * </p>
+     * 
+     * @param marker
+     *        The marker for the next set of results. (You received this marker from a previous call.)
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeRulesRequest withMarker(String marker) {
+        setMarker(marker);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of results to return with this call.
+     * </p>
+     * 
+     * @param pageSize
+     *        The maximum number of results to return with this call.
+     */
+
+    public void setPageSize(Integer pageSize) {
+        this.pageSize = pageSize;
+    }
+
+    /**
+     * <p>
+     * The maximum number of results to return with this call.
+     * </p>
+     * 
+     * @return The maximum number of results to return with this call.
+     */
+
+    public Integer getPageSize() {
+        return this.pageSize;
+    }
+
+    /**
+     * <p>
+     * The maximum number of results to return with this call.
+     * </p>
+     * 
+     * @param pageSize
+     *        The maximum number of results to return with this call.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeRulesRequest withPageSize(Integer pageSize) {
+        setPageSize(pageSize);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -162,7 +254,11 @@ public class DescribeRulesRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getListenerArn() != null)
             sb.append("ListenerArn: ").append(getListenerArn()).append(",");
         if (getRuleArns() != null)
-            sb.append("RuleArns: ").append(getRuleArns());
+            sb.append("RuleArns: ").append(getRuleArns()).append(",");
+        if (getMarker() != null)
+            sb.append("Marker: ").append(getMarker()).append(",");
+        if (getPageSize() != null)
+            sb.append("PageSize: ").append(getPageSize());
         sb.append("}");
         return sb.toString();
     }
@@ -185,6 +281,14 @@ public class DescribeRulesRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getRuleArns() != null && other.getRuleArns().equals(this.getRuleArns()) == false)
             return false;
+        if (other.getMarker() == null ^ this.getMarker() == null)
+            return false;
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false)
+            return false;
+        if (other.getPageSize() == null ^ this.getPageSize() == null)
+            return false;
+        if (other.getPageSize() != null && other.getPageSize().equals(this.getPageSize()) == false)
+            return false;
         return true;
     }
 
@@ -195,6 +299,8 @@ public class DescribeRulesRequest extends com.amazonaws.AmazonWebServiceRequest 
 
         hashCode = prime * hashCode + ((getListenerArn() == null) ? 0 : getListenerArn().hashCode());
         hashCode = prime * hashCode + ((getRuleArns() == null) ? 0 : getRuleArns().hashCode());
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
+        hashCode = prime * hashCode + ((getPageSize() == null) ? 0 : getPageSize().hashCode());
         return hashCode;
     }
 

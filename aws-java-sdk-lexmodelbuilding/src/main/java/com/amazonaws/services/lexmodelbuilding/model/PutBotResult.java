@@ -95,7 +95,7 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     private Integer idleSessionTTLInSeconds;
     /**
      * <p>
-     * The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .
+     * The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .
      * </p>
      */
     private String voiceId;
@@ -698,11 +698,11 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .
+     * The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .
      * </p>
      * 
      * @param voiceId
-     *        The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information,
+     *        The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information,
      *        see .
      */
 
@@ -712,11 +712,11 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .
+     * The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .
      * </p>
      * 
-     * @return The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more
-     *         information, see .
+     * @return The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information,
+     *         see .
      */
 
     public String getVoiceId() {
@@ -725,11 +725,11 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .
+     * The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .
      * </p>
      * 
      * @param voiceId
-     *        The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information,
+     *        The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information,
      *        see .
      * @return Returns a reference to this object so that method calls can be chained together.
      */

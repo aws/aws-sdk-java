@@ -111,6 +111,14 @@ public class DeploymentGroupInfoJsonUnmarshaller implements Unmarshaller<Deploym
                     context.nextToken();
                     deploymentGroupInfo.setLoadBalancerInfo(LoadBalancerInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("lastSuccessfulDeployment", targetDepth)) {
+                    context.nextToken();
+                    deploymentGroupInfo.setLastSuccessfulDeployment(LastDeploymentInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("lastAttemptedDeployment", targetDepth)) {
+                    context.nextToken();
+                    deploymentGroupInfo.setLastAttemptedDeployment(LastDeploymentInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

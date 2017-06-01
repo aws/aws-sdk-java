@@ -1422,6 +1422,39 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListGitHubAccountTokenNamesResult> listGitHubAccountTokenNamesAsync(ListGitHubAccountTokenNamesRequest request) {
+
+        return listGitHubAccountTokenNamesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGitHubAccountTokenNamesResult> listGitHubAccountTokenNamesAsync(final ListGitHubAccountTokenNamesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListGitHubAccountTokenNamesRequest, ListGitHubAccountTokenNamesResult> asyncHandler) {
+        final ListGitHubAccountTokenNamesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListGitHubAccountTokenNamesResult>() {
+            @Override
+            public ListGitHubAccountTokenNamesResult call() throws Exception {
+                ListGitHubAccountTokenNamesResult result = null;
+
+                try {
+                    result = executeListGitHubAccountTokenNames(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListOnPremisesInstancesResult> listOnPremisesInstancesAsync(ListOnPremisesInstancesRequest request) {
 
         return listOnPremisesInstancesAsync(request, null);

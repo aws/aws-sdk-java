@@ -31,11 +31,11 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * receive notification when an asynchronous operation completes.
  * <p>
  * <p>
- * Using the Amazon Cognito Your User Pools API, you can create a user pool to manage directories and users. You can
+ * Using the Amazon Cognito User Pools API, you can create a user pool to manage directories and users. You can
  * authenticate a user to obtain tokens related to user identity and access policies.
  * </p>
  * <p>
- * This API reference provides information about user pools in Amazon Cognito Your User Pools.
+ * This API reference provides information about user pools in Amazon Cognito User Pools.
  * </p>
  * <p>
  * For more information, see the Amazon Cognito Documentation.
@@ -1111,6 +1111,39 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
     }
 
     @Override
+    public java.util.concurrent.Future<CreateIdentityProviderResult> createIdentityProviderAsync(CreateIdentityProviderRequest request) {
+
+        return createIdentityProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateIdentityProviderResult> createIdentityProviderAsync(final CreateIdentityProviderRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateIdentityProviderRequest, CreateIdentityProviderResult> asyncHandler) {
+        final CreateIdentityProviderRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateIdentityProviderResult>() {
+            @Override
+            public CreateIdentityProviderResult call() throws Exception {
+                CreateIdentityProviderResult result = null;
+
+                try {
+                    result = executeCreateIdentityProvider(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateUserImportJobResult> createUserImportJobAsync(CreateUserImportJobRequest request) {
 
         return createUserImportJobAsync(request, null);
@@ -1210,6 +1243,39 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
     }
 
     @Override
+    public java.util.concurrent.Future<CreateUserPoolDomainResult> createUserPoolDomainAsync(CreateUserPoolDomainRequest request) {
+
+        return createUserPoolDomainAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUserPoolDomainResult> createUserPoolDomainAsync(final CreateUserPoolDomainRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateUserPoolDomainRequest, CreateUserPoolDomainResult> asyncHandler) {
+        final CreateUserPoolDomainRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateUserPoolDomainResult>() {
+            @Override
+            public CreateUserPoolDomainResult call() throws Exception {
+                CreateUserPoolDomainResult result = null;
+
+                try {
+                    result = executeCreateUserPoolDomain(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteGroupResult> deleteGroupAsync(DeleteGroupRequest request) {
 
         return deleteGroupAsync(request, null);
@@ -1227,6 +1293,39 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
 
                 try {
                     result = executeDeleteGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteIdentityProviderResult> deleteIdentityProviderAsync(DeleteIdentityProviderRequest request) {
+
+        return deleteIdentityProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteIdentityProviderResult> deleteIdentityProviderAsync(final DeleteIdentityProviderRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteIdentityProviderRequest, DeleteIdentityProviderResult> asyncHandler) {
+        final DeleteIdentityProviderRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteIdentityProviderResult>() {
+            @Override
+            public DeleteIdentityProviderResult call() throws Exception {
+                DeleteIdentityProviderResult result = null;
+
+                try {
+                    result = executeDeleteIdentityProvider(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1375,6 +1474,72 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteUserPoolDomainResult> deleteUserPoolDomainAsync(DeleteUserPoolDomainRequest request) {
+
+        return deleteUserPoolDomainAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUserPoolDomainResult> deleteUserPoolDomainAsync(final DeleteUserPoolDomainRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteUserPoolDomainRequest, DeleteUserPoolDomainResult> asyncHandler) {
+        final DeleteUserPoolDomainRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteUserPoolDomainResult>() {
+            @Override
+            public DeleteUserPoolDomainResult call() throws Exception {
+                DeleteUserPoolDomainResult result = null;
+
+                try {
+                    result = executeDeleteUserPoolDomain(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeIdentityProviderResult> describeIdentityProviderAsync(DescribeIdentityProviderRequest request) {
+
+        return describeIdentityProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeIdentityProviderResult> describeIdentityProviderAsync(final DescribeIdentityProviderRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeIdentityProviderRequest, DescribeIdentityProviderResult> asyncHandler) {
+        final DescribeIdentityProviderRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeIdentityProviderResult>() {
+            @Override
+            public DescribeIdentityProviderResult call() throws Exception {
+                DescribeIdentityProviderResult result = null;
+
+                try {
+                    result = executeDescribeIdentityProvider(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeUserImportJobResult> describeUserImportJobAsync(DescribeUserImportJobRequest request) {
 
         return describeUserImportJobAsync(request, null);
@@ -1458,6 +1623,39 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
 
                 try {
                     result = executeDescribeUserPoolClient(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeUserPoolDomainResult> describeUserPoolDomainAsync(DescribeUserPoolDomainRequest request) {
+
+        return describeUserPoolDomainAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeUserPoolDomainResult> describeUserPoolDomainAsync(final DescribeUserPoolDomainRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeUserPoolDomainRequest, DescribeUserPoolDomainResult> asyncHandler) {
+        final DescribeUserPoolDomainRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeUserPoolDomainResult>() {
+            @Override
+            public DescribeUserPoolDomainResult call() throws Exception {
+                DescribeUserPoolDomainResult result = null;
+
+                try {
+                    result = executeDescribeUserPoolDomain(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1623,6 +1821,41 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
 
                 try {
                     result = executeGetGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetIdentityProviderByIdentifierResult> getIdentityProviderByIdentifierAsync(
+            GetIdentityProviderByIdentifierRequest request) {
+
+        return getIdentityProviderByIdentifierAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetIdentityProviderByIdentifierResult> getIdentityProviderByIdentifierAsync(
+            final GetIdentityProviderByIdentifierRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetIdentityProviderByIdentifierRequest, GetIdentityProviderByIdentifierResult> asyncHandler) {
+        final GetIdentityProviderByIdentifierRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetIdentityProviderByIdentifierResult>() {
+            @Override
+            public GetIdentityProviderByIdentifierResult call() throws Exception {
+                GetIdentityProviderByIdentifierResult result = null;
+
+                try {
+                    result = executeGetIdentityProviderByIdentifier(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1823,6 +2056,39 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
 
                 try {
                     result = executeListGroups(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListIdentityProvidersResult> listIdentityProvidersAsync(ListIdentityProvidersRequest request) {
+
+        return listIdentityProvidersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListIdentityProvidersResult> listIdentityProvidersAsync(final ListIdentityProvidersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListIdentityProvidersRequest, ListIdentityProvidersResult> asyncHandler) {
+        final ListIdentityProvidersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListIdentityProvidersResult>() {
+            @Override
+            public ListIdentityProvidersResult call() throws Exception {
+                ListIdentityProvidersResult result = null;
+
+                try {
+                    result = executeListIdentityProviders(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2252,6 +2518,39 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
 
                 try {
                     result = executeUpdateGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateIdentityProviderResult> updateIdentityProviderAsync(UpdateIdentityProviderRequest request) {
+
+        return updateIdentityProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateIdentityProviderResult> updateIdentityProviderAsync(final UpdateIdentityProviderRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateIdentityProviderRequest, UpdateIdentityProviderResult> asyncHandler) {
+        final UpdateIdentityProviderRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateIdentityProviderResult>() {
+            @Override
+            public UpdateIdentityProviderResult call() throws Exception {
+                UpdateIdentityProviderResult result = null;
+
+                try {
+                    result = executeUpdateIdentityProvider(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

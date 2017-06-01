@@ -27,11 +27,11 @@ import com.amazonaws.services.cognitoidp.model.*;
  * </p>
  * <p>
  * <p>
- * Using the Amazon Cognito Your User Pools API, you can create a user pool to manage directories and users. You can
+ * Using the Amazon Cognito User Pools API, you can create a user pool to manage directories and users. You can
  * authenticate a user to obtain tokens related to user identity and access policies.
  * </p>
  * <p>
- * This API reference provides information about user pools in Amazon Cognito Your User Pools.
+ * This API reference provides information about user pools in Amazon Cognito User Pools.
  * </p>
  * <p>
  * For more information, see the Amazon Cognito Documentation.
@@ -112,9 +112,9 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws UserImportInProgressException
      *         This exception is thrown when you are trying to modify a user pool while a user import job is in progress
      *         for that pool.
@@ -141,9 +141,9 @@ public interface AWSCognitoIdentityProvider {
      * @throws ResourceNotFoundException
      *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws UserNotFoundException
      *         This exception is thrown when a user is not found.
      * @throws InternalErrorException
@@ -170,20 +170,20 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws UnexpectedLambdaException
-     *         This exception gets thrown when the Amazon Cognito service encounters an unexpected exception with the
-     *         AWS Lambda service.
+     *         This exception is thrown when the Amazon Cognito service encounters an unexpected exception with the AWS
+     *         Lambda service.
      * @throws UserLambdaValidationException
-     *         This exception gets thrown when the Amazon Cognito service encounters a user validation exception with
-     *         the AWS Lambda service.
+     *         This exception is thrown when the Amazon Cognito service encounters a user validation exception with the
+     *         AWS Lambda service.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws TooManyFailedAttemptsException
-     *         This exception gets thrown when the user has made too many failed attempts for a given action (e.g., sign
+     *         This exception is thrown when the user has made too many failed attempts for a given action (e.g., sign
      *         in).
      * @throws InvalidLambdaResponseException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid AWS Lambda response.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws LimitExceededException
      *         This exception is thrown when a user exceeds the limit for a requested AWS resource.
      * @throws UserNotFoundException
@@ -199,8 +199,9 @@ public interface AWSCognitoIdentityProvider {
     /**
      * <p>
      * Creates a new user in the specified user pool and sends a welcome message via email or phone (SMS). This message
-     * is based on a template that you configured in your call to CreateUserPool or UpdateUserPool. This template
-     * includes your custom sign-up instructions and placeholders for user name and temporary password.
+     * is based on a template that you configured in your call to <a href="API_CreateUserPool.html">CreateUserPool</a>
+     * or <a href="API_UpdateUserPool.html">UpdateUserPool</a>. This template includes your custom sign-up instructions
+     * and placeholders for user name and temporary password.
      * </p>
      * <p>
      * Requires developer credentials.
@@ -222,11 +223,11 @@ public interface AWSCognitoIdentityProvider {
      * @throws CodeDeliveryFailureException
      *         This exception is thrown when a verification code fails to deliver successfully.
      * @throws UnexpectedLambdaException
-     *         This exception gets thrown when the Amazon Cognito service encounters an unexpected exception with the
-     *         AWS Lambda service.
+     *         This exception is thrown when the Amazon Cognito service encounters an unexpected exception with the AWS
+     *         Lambda service.
      * @throws UserLambdaValidationException
-     *         This exception gets thrown when the Amazon Cognito service encounters a user validation exception with
-     *         the AWS Lambda service.
+     *         This exception is thrown when the Amazon Cognito service encounters a user validation exception with the
+     *         AWS Lambda service.
      * @throws InvalidLambdaResponseException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid AWS Lambda response.
      * @throws PreconditionNotMetException
@@ -239,9 +240,9 @@ public interface AWSCognitoIdentityProvider {
      *         configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b> or the external ID
      *         provided in the role does not match what is provided in the SMS configuration for the user pool.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws UnsupportedUserStateException
      *         The request failed because the user is in an unsupported state.
      * @throws InternalErrorException
@@ -268,9 +269,9 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws UserNotFoundException
      *         This exception is thrown when a user is not found.
      * @throws InternalErrorException
@@ -297,9 +298,9 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws UserNotFoundException
      *         This exception is thrown when a user is not found.
      * @throws InternalErrorException
@@ -326,9 +327,9 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws UserNotFoundException
      *         This exception is thrown when a user is not found.
      * @throws InternalErrorException
@@ -355,9 +356,9 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws UserNotFoundException
      *         This exception is thrown when a user is not found.
      * @throws InternalErrorException
@@ -386,9 +387,9 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidUserPoolConfigurationException
      *         This exception is thrown when the user pool configuration is invalid.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws UserNotFoundException
      *         This exception is thrown when a user is not found.
      * @throws InternalErrorException
@@ -417,11 +418,11 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidUserPoolConfigurationException
      *         This exception is thrown when the user pool configuration is invalid.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @sample AWSCognitoIdentityProvider.AdminGetDevice
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminGetDevice" target="_top">AWS API
      *      Documentation</a>
@@ -444,9 +445,9 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws UserNotFoundException
      *         This exception is thrown when a user is not found.
      * @throws InternalErrorException
@@ -473,19 +474,19 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
      * @throws UnexpectedLambdaException
-     *         This exception gets thrown when the Amazon Cognito service encounters an unexpected exception with the
-     *         AWS Lambda service.
+     *         This exception is thrown when the Amazon Cognito service encounters an unexpected exception with the AWS
+     *         Lambda service.
      * @throws InvalidUserPoolConfigurationException
      *         This exception is thrown when the user pool configuration is invalid.
      * @throws UserLambdaValidationException
-     *         This exception gets thrown when the Amazon Cognito service encounters a user validation exception with
-     *         the AWS Lambda service.
+     *         This exception is thrown when the Amazon Cognito service encounters a user validation exception with the
+     *         AWS Lambda service.
      * @throws InvalidLambdaResponseException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid AWS Lambda response.
      * @throws MFAMethodNotFoundException
@@ -527,11 +528,11 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidUserPoolConfigurationException
      *         This exception is thrown when the user pool configuration is invalid.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @sample AWSCognitoIdentityProvider.AdminListDevices
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListDevices" target="_top">AWS
      *      API Documentation</a>
@@ -553,9 +554,9 @@ public interface AWSCognitoIdentityProvider {
      * @throws ResourceNotFoundException
      *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws UserNotFoundException
      *         This exception is thrown when a user is not found.
      * @throws InternalErrorException
@@ -581,9 +582,9 @@ public interface AWSCognitoIdentityProvider {
      * @throws ResourceNotFoundException
      *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws UserNotFoundException
      *         This exception is thrown when a user is not found.
      * @throws InternalErrorException
@@ -618,17 +619,17 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws UnexpectedLambdaException
-     *         This exception gets thrown when the Amazon Cognito service encounters an unexpected exception with the
-     *         AWS Lambda service.
+     *         This exception is thrown when the Amazon Cognito service encounters an unexpected exception with the AWS
+     *         Lambda service.
      * @throws UserLambdaValidationException
-     *         This exception gets thrown when the Amazon Cognito service encounters a user validation exception with
-     *         the AWS Lambda service.
+     *         This exception is thrown when the Amazon Cognito service encounters a user validation exception with the
+     *         AWS Lambda service.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws InvalidLambdaResponseException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid AWS Lambda response.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws LimitExceededException
      *         This exception is thrown when a user exceeds the limit for a requested AWS resource.
      * @throws UserNotFoundException
@@ -657,23 +658,23 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws CodeMismatchException
      *         This exception is thrown if the provided code does not match what the server was expecting.
      * @throws ExpiredCodeException
      *         This exception is thrown if a code has expired.
      * @throws UnexpectedLambdaException
-     *         This exception gets thrown when the Amazon Cognito service encounters an unexpected exception with the
-     *         AWS Lambda service.
+     *         This exception is thrown when the Amazon Cognito service encounters an unexpected exception with the AWS
+     *         Lambda service.
      * @throws InvalidPasswordException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid password.
      * @throws UserLambdaValidationException
-     *         This exception gets thrown when the Amazon Cognito service encounters a user validation exception with
-     *         the AWS Lambda service.
+     *         This exception is thrown when the Amazon Cognito service encounters a user validation exception with the
+     *         AWS Lambda service.
      * @throws InvalidLambdaResponseException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid AWS Lambda response.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws InvalidUserPoolConfigurationException
      *         This exception is thrown when the user pool configuration is invalid.
      * @throws InternalErrorException
@@ -719,7 +720,7 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws UserNotFoundException
      *         This exception is thrown when a user is not found.
      * @throws InternalErrorException
@@ -748,9 +749,9 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidUserPoolConfigurationException
      *         This exception is thrown when the user pool configuration is invalid.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws UserNotFoundException
      *         This exception is thrown when a user is not found.
      * @throws InternalErrorException
@@ -766,6 +767,12 @@ public interface AWSCognitoIdentityProvider {
      * Updates the specified user's attributes, including developer attributes, as an administrator. Works on any user.
      * </p>
      * <p>
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     * </p>
+     * <p>
+     * In addition to updating user attributes, this API can also be used to mark phone and email as verified.
+     * </p>
+     * <p>
      * Requires developer credentials.
      * </p>
      * 
@@ -777,11 +784,11 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws UnexpectedLambdaException
-     *         This exception gets thrown when the Amazon Cognito service encounters an unexpected exception with the
-     *         AWS Lambda service.
+     *         This exception is thrown when the Amazon Cognito service encounters an unexpected exception with the AWS
+     *         Lambda service.
      * @throws UserLambdaValidationException
-     *         This exception gets thrown when the Amazon Cognito service encounters a user validation exception with
-     *         the AWS Lambda service.
+     *         This exception is thrown when the Amazon Cognito service encounters a user validation exception with the
+     *         AWS Lambda service.
      * @throws InvalidLambdaResponseException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid AWS Lambda response.
      * @throws AliasExistsException
@@ -789,9 +796,9 @@ public interface AWSCognitoIdentityProvider {
      *         already been supplied as an alias from a different account. This exception tells user that an account
      *         with this email or phone already exists.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws UserNotFoundException
      *         This exception is thrown when a user is not found.
      * @throws InternalErrorException
@@ -818,9 +825,9 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws UserNotFoundException
      *         This exception is thrown when a user is not found.
      * @throws InternalErrorException
@@ -846,9 +853,9 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidPasswordException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid password.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws LimitExceededException
      *         This exception is thrown when a user exceeds the limit for a requested AWS resource.
      * @throws PasswordResetRequiredException
@@ -867,7 +874,7 @@ public interface AWSCognitoIdentityProvider {
 
     /**
      * <p>
-     * Confirms tracking of the device. This API call is the call that beings device tracking.
+     * Confirms tracking of the device. This API call is the call that begins device tracking.
      * </p>
      * 
      * @param confirmDeviceRequest
@@ -878,7 +885,7 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws InvalidPasswordException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid password.
      * @throws InvalidLambdaResponseException
@@ -888,7 +895,7 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidUserPoolConfigurationException
      *         This exception is thrown when the user pool configuration is invalid.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws PasswordResetRequiredException
      *         This exception is thrown when a password reset is required.
      * @throws UserNotFoundException
@@ -905,7 +912,7 @@ public interface AWSCognitoIdentityProvider {
 
     /**
      * <p>
-     * Allows a user to enter a code provided when they reset their password to update their password.
+     * Allows a user to enter a confirmation code to reset a forgotten password.
      * </p>
      * 
      * @param confirmForgotPasswordRequest
@@ -914,28 +921,28 @@ public interface AWSCognitoIdentityProvider {
      * @throws ResourceNotFoundException
      *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
      * @throws UnexpectedLambdaException
-     *         This exception gets thrown when the Amazon Cognito service encounters an unexpected exception with the
-     *         AWS Lambda service.
+     *         This exception is thrown when the Amazon Cognito service encounters an unexpected exception with the AWS
+     *         Lambda service.
      * @throws UserLambdaValidationException
-     *         This exception gets thrown when the Amazon Cognito service encounters a user validation exception with
-     *         the AWS Lambda service.
+     *         This exception is thrown when the Amazon Cognito service encounters a user validation exception with the
+     *         AWS Lambda service.
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws InvalidPasswordException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid password.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws CodeMismatchException
      *         This exception is thrown if the provided code does not match what the server was expecting.
      * @throws ExpiredCodeException
      *         This exception is thrown if a code has expired.
      * @throws TooManyFailedAttemptsException
-     *         This exception gets thrown when the user has made too many failed attempts for a given action (e.g., sign
+     *         This exception is thrown when the user has made too many failed attempts for a given action (e.g., sign
      *         in).
      * @throws InvalidLambdaResponseException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid AWS Lambda response.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws LimitExceededException
      *         This exception is thrown when a user exceeds the limit for a requested AWS resource.
      * @throws UserNotFoundException
@@ -963,15 +970,15 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws UnexpectedLambdaException
-     *         This exception gets thrown when the Amazon Cognito service encounters an unexpected exception with the
-     *         AWS Lambda service.
+     *         This exception is thrown when the Amazon Cognito service encounters an unexpected exception with the AWS
+     *         Lambda service.
      * @throws UserLambdaValidationException
-     *         This exception gets thrown when the Amazon Cognito service encounters a user validation exception with
-     *         the AWS Lambda service.
+     *         This exception is thrown when the Amazon Cognito service encounters a user validation exception with the
+     *         AWS Lambda service.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws TooManyFailedAttemptsException
-     *         This exception gets thrown when the user has made too many failed attempts for a given action (e.g., sign
+     *         This exception is thrown when the user has made too many failed attempts for a given action (e.g., sign
      *         in).
      * @throws CodeMismatchException
      *         This exception is thrown if the provided code does not match what the server was expecting.
@@ -984,7 +991,7 @@ public interface AWSCognitoIdentityProvider {
      *         already been supplied as an alias from a different account. This exception tells user that an account
      *         with this email or phone already exists.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws LimitExceededException
      *         This exception is thrown when a user exceeds the limit for a requested AWS resource.
      * @throws UserNotFoundException
@@ -1014,11 +1021,11 @@ public interface AWSCognitoIdentityProvider {
      * @throws ResourceNotFoundException
      *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws LimitExceededException
      *         This exception is thrown when a user exceeds the limit for a requested AWS resource.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
      * @sample AWSCognitoIdentityProvider.CreateGroup
@@ -1026,6 +1033,33 @@ public interface AWSCognitoIdentityProvider {
      *      Documentation</a>
      */
     CreateGroupResult createGroup(CreateGroupRequest createGroupRequest);
+
+    /**
+     * <p>
+     * Creates an identity provider for a user pool.
+     * </p>
+     * 
+     * @param createIdentityProviderRequest
+     * @return Result of the CreateIdentityProvider operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws DuplicateProviderException
+     *         This exception is thrown when the provider is already supported by the user pool.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws TooManyRequestsException
+     *         This exception is thrown when the user has made too many requests for a given operation.
+     * @throws LimitExceededException
+     *         This exception is thrown when a user exceeds the limit for a requested AWS resource.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.CreateIdentityProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateIdentityProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateIdentityProviderResult createIdentityProvider(CreateIdentityProviderRequest createIdentityProviderRequest);
 
     /**
      * <p>
@@ -1040,11 +1074,11 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws PreconditionNotMetException
      *         This exception is thrown when a precondition is not met.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws LimitExceededException
      *         This exception is thrown when a user exceeds the limit for a requested AWS resource.
      * @throws InternalErrorException
@@ -1066,7 +1100,7 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws LimitExceededException
      *         This exception is thrown when a user exceeds the limit for a requested AWS resource.
      * @throws InvalidSmsRoleAccessPolicyException
@@ -1080,9 +1114,9 @@ public interface AWSCognitoIdentityProvider {
      *         This exception is thrown when Amazon Cognito is not allowed to use your email identity. HTTP status code:
      *         400.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws UserPoolTaggingException
-     *         This exception gets thrown when a user pool tag cannot be set or updated.
+     *         This exception is thrown when a user pool tag cannot be set or updated.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
      * @sample AWSCognitoIdentityProvider.CreateUserPool
@@ -1104,11 +1138,15 @@ public interface AWSCognitoIdentityProvider {
      * @throws ResourceNotFoundException
      *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws LimitExceededException
      *         This exception is thrown when a user exceeds the limit for a requested AWS resource.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
+     * @throws ScopeDoesNotExistException
+     *         This exception is thrown when the specified scope does not exist.
+     * @throws InvalidOAuthFlowException
+     *         This exception is thrown when the specified OAuth flow is invalid.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
      * @sample AWSCognitoIdentityProvider.CreateUserPoolClient
@@ -1116,6 +1154,27 @@ public interface AWSCognitoIdentityProvider {
      *      target="_top">AWS API Documentation</a>
      */
     CreateUserPoolClientResult createUserPoolClient(CreateUserPoolClientRequest createUserPoolClientRequest);
+
+    /**
+     * <p>
+     * Creates a new domain for a user pool.
+     * </p>
+     * 
+     * @param createUserPoolDomainRequest
+     * @return Result of the CreateUserPoolDomain operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.CreateUserPoolDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPoolDomain"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateUserPoolDomainResult createUserPoolDomain(CreateUserPoolDomainRequest createUserPoolDomainRequest);
 
     /**
      * <p>
@@ -1132,9 +1191,9 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
      * @sample AWSCognitoIdentityProvider.DeleteGroup
@@ -1142,6 +1201,31 @@ public interface AWSCognitoIdentityProvider {
      *      Documentation</a>
      */
     DeleteGroupResult deleteGroup(DeleteGroupRequest deleteGroupRequest);
+
+    /**
+     * <p>
+     * Deletes an identity provider for a user pool.
+     * </p>
+     * 
+     * @param deleteIdentityProviderRequest
+     * @return Result of the DeleteIdentityProvider operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws UnsupportedIdentityProviderException
+     *         This exception is thrown when the specified identifier is not supported.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws TooManyRequestsException
+     *         This exception is thrown when the user has made too many requests for a given operation.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.DeleteIdentityProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteIdentityProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteIdentityProviderResult deleteIdentityProvider(DeleteIdentityProviderRequest deleteIdentityProviderRequest);
 
     /**
      * <p>
@@ -1156,9 +1240,9 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws PasswordResetRequiredException
      *         This exception is thrown when a password reset is required.
      * @throws UserNotFoundException
@@ -1186,9 +1270,9 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws PasswordResetRequiredException
      *         This exception is thrown when a password reset is required.
      * @throws UserNotFoundException
@@ -1216,9 +1300,9 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws UserImportInProgressException
      *         This exception is thrown when you are trying to modify a user pool while a user import job is in progress
      *         for that pool.
@@ -1243,9 +1327,9 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
      * @sample AWSCognitoIdentityProvider.DeleteUserPoolClient
@@ -1253,6 +1337,50 @@ public interface AWSCognitoIdentityProvider {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteUserPoolClientResult deleteUserPoolClient(DeleteUserPoolClientRequest deleteUserPoolClientRequest);
+
+    /**
+     * <p>
+     * Deletes a domain for a user pool.
+     * </p>
+     * 
+     * @param deleteUserPoolDomainRequest
+     * @return Result of the DeleteUserPoolDomain operation returned by the service.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.DeleteUserPoolDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPoolDomain"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteUserPoolDomainResult deleteUserPoolDomain(DeleteUserPoolDomainRequest deleteUserPoolDomainRequest);
+
+    /**
+     * <p>
+     * Gets information about a specific identity provider.
+     * </p>
+     * 
+     * @param describeIdentityProviderRequest
+     * @return Result of the DescribeIdentityProvider operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws TooManyRequestsException
+     *         This exception is thrown when the user has made too many requests for a given operation.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.DescribeIdentityProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeIdentityProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeIdentityProviderResult describeIdentityProvider(DescribeIdentityProviderRequest describeIdentityProviderRequest);
 
     /**
      * <p>
@@ -1267,9 +1395,9 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
      * @sample AWSCognitoIdentityProvider.DescribeUserImportJob
@@ -1291,11 +1419,11 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws UserPoolTaggingException
-     *         This exception gets thrown when a user pool tag cannot be set or updated.
+     *         This exception is thrown when a user pool tag cannot be set or updated.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
      * @sample AWSCognitoIdentityProvider.DescribeUserPool
@@ -1317,9 +1445,9 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
      * @sample AWSCognitoIdentityProvider.DescribeUserPoolClient
@@ -1327,6 +1455,27 @@ public interface AWSCognitoIdentityProvider {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeUserPoolClientResult describeUserPoolClient(DescribeUserPoolClientRequest describeUserPoolClientRequest);
+
+    /**
+     * <p>
+     * Gets information about a domain.
+     * </p>
+     * 
+     * @param describeUserPoolDomainRequest
+     * @return Result of the DescribeUserPoolDomain operation returned by the service.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.DescribeUserPoolDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserPoolDomain"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeUserPoolDomainResult describeUserPoolDomain(DescribeUserPoolDomainRequest describeUserPoolDomainRequest);
 
     /**
      * <p>
@@ -1341,9 +1490,9 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws InvalidUserPoolConfigurationException
      *         This exception is thrown when the user pool configuration is invalid.
      * @throws PasswordResetRequiredException
@@ -1362,7 +1511,12 @@ public interface AWSCognitoIdentityProvider {
 
     /**
      * <p>
-     * Retrieves the password for the specified client ID or username.
+     * Calling this API causes a message to be sent to the end user with a confirmation code that is required to change
+     * the user's password. For the <code>Username</code> parameter, you can use the username or user alias. If a
+     * verified phone number exists for the user, the confirmation code is sent to the phone number. Otherwise, if a
+     * verified email exists, the confirmation code is sent to the email. If neither a verified phone number nor a
+     * verified email exists, <code>InvalidParameterException</code> is thrown. To use the confirmation code for
+     * resetting the password, call <a href="API_ConfirmForgotPassword.html">ConfirmForgotPassword</a>.
      * </p>
      * 
      * @param forgotPasswordRequest
@@ -1373,17 +1527,17 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws UnexpectedLambdaException
-     *         This exception gets thrown when the Amazon Cognito service encounters an unexpected exception with the
-     *         AWS Lambda service.
+     *         This exception is thrown when the Amazon Cognito service encounters an unexpected exception with the AWS
+     *         Lambda service.
      * @throws UserLambdaValidationException
-     *         This exception gets thrown when the Amazon Cognito service encounters a user validation exception with
-     *         the AWS Lambda service.
+     *         This exception is thrown when the Amazon Cognito service encounters a user validation exception with the
+     *         AWS Lambda service.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws InvalidLambdaResponseException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid AWS Lambda response.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws LimitExceededException
      *         This exception is thrown when a user exceeds the limit for a requested AWS resource.
      * @throws InvalidSmsRoleAccessPolicyException
@@ -1423,9 +1577,9 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
      * @sample AWSCognitoIdentityProvider.GetCSVHeader
@@ -1449,9 +1603,9 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidUserPoolConfigurationException
      *         This exception is thrown when the user pool configuration is invalid.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws PasswordResetRequiredException
      *         This exception is thrown when a password reset is required.
      * @throws UserNotFoundException
@@ -1481,9 +1635,9 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
      * @sample AWSCognitoIdentityProvider.GetGroup
@@ -1491,6 +1645,29 @@ public interface AWSCognitoIdentityProvider {
      *      Documentation</a>
      */
     GetGroupResult getGroup(GetGroupRequest getGroupRequest);
+
+    /**
+     * <p>
+     * Gets the specified identity provider.
+     * </p>
+     * 
+     * @param getIdentityProviderByIdentifierRequest
+     * @return Result of the GetIdentityProviderByIdentifier operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws TooManyRequestsException
+     *         This exception is thrown when the user has made too many requests for a given operation.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.GetIdentityProviderByIdentifier
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetIdentityProviderByIdentifier"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetIdentityProviderByIdentifierResult getIdentityProviderByIdentifier(GetIdentityProviderByIdentifierRequest getIdentityProviderByIdentifierRequest);
 
     /**
      * <p>
@@ -1505,9 +1682,9 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws PasswordResetRequiredException
      *         This exception is thrown when a password reset is required.
      * @throws UserNotFoundException
@@ -1535,15 +1712,15 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws UnexpectedLambdaException
-     *         This exception gets thrown when the Amazon Cognito service encounters an unexpected exception with the
-     *         AWS Lambda service.
+     *         This exception is thrown when the Amazon Cognito service encounters an unexpected exception with the AWS
+     *         Lambda service.
      * @throws UserLambdaValidationException
-     *         This exception gets thrown when the Amazon Cognito service encounters a user validation exception with
-     *         the AWS Lambda service.
+     *         This exception is thrown when the Amazon Cognito service encounters a user validation exception with the
+     *         AWS Lambda service.
      * @throws InvalidLambdaResponseException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid AWS Lambda response.
      * @throws InvalidSmsRoleAccessPolicyException
@@ -1587,9 +1764,9 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws PasswordResetRequiredException
      *         This exception is thrown when a password reset is required.
      * @throws UserNotConfirmedException
@@ -1615,17 +1792,17 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws UnexpectedLambdaException
-     *         This exception gets thrown when the Amazon Cognito service encounters an unexpected exception with the
-     *         AWS Lambda service.
+     *         This exception is thrown when the Amazon Cognito service encounters an unexpected exception with the AWS
+     *         Lambda service.
      * @throws InvalidUserPoolConfigurationException
      *         This exception is thrown when the user pool configuration is invalid.
      * @throws UserLambdaValidationException
-     *         This exception gets thrown when the Amazon Cognito service encounters a user validation exception with
-     *         the AWS Lambda service.
+     *         This exception is thrown when the Amazon Cognito service encounters a user validation exception with the
+     *         AWS Lambda service.
      * @throws InvalidLambdaResponseException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid AWS Lambda response.
      * @throws PasswordResetRequiredException
@@ -1655,11 +1832,11 @@ public interface AWSCognitoIdentityProvider {
      * @throws ResourceNotFoundException
      *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws InvalidUserPoolConfigurationException
      *         This exception is thrown when the user pool configuration is invalid.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws PasswordResetRequiredException
      *         This exception is thrown when a password reset is required.
      * @throws UserNotFoundException
@@ -1689,9 +1866,9 @@ public interface AWSCognitoIdentityProvider {
      * @throws ResourceNotFoundException
      *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
      * @sample AWSCognitoIdentityProvider.ListGroups
@@ -1699,6 +1876,29 @@ public interface AWSCognitoIdentityProvider {
      *      Documentation</a>
      */
     ListGroupsResult listGroups(ListGroupsRequest listGroupsRequest);
+
+    /**
+     * <p>
+     * Lists information about all identity providers for a user pool.
+     * </p>
+     * 
+     * @param listIdentityProvidersRequest
+     * @return Result of the ListIdentityProviders operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws TooManyRequestsException
+     *         This exception is thrown when the user has made too many requests for a given operation.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.ListIdentityProviders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListIdentityProviders"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListIdentityProvidersResult listIdentityProviders(ListIdentityProvidersRequest listIdentityProvidersRequest);
 
     /**
      * <p>
@@ -1713,9 +1913,9 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
      * @sample AWSCognitoIdentityProvider.ListUserImportJobs
@@ -1737,9 +1937,9 @@ public interface AWSCognitoIdentityProvider {
      * @throws ResourceNotFoundException
      *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
      * @sample AWSCognitoIdentityProvider.ListUserPoolClients
@@ -1759,9 +1959,9 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
      * @sample AWSCognitoIdentityProvider.ListUserPools
@@ -1783,9 +1983,9 @@ public interface AWSCognitoIdentityProvider {
      * @throws ResourceNotFoundException
      *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
      * @sample AWSCognitoIdentityProvider.ListUsers
@@ -1809,9 +2009,9 @@ public interface AWSCognitoIdentityProvider {
      * @throws ResourceNotFoundException
      *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
      * @sample AWSCognitoIdentityProvider.ListUsersInGroup
@@ -1833,17 +2033,17 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws UnexpectedLambdaException
-     *         This exception gets thrown when the Amazon Cognito service encounters an unexpected exception with the
-     *         AWS Lambda service.
+     *         This exception is thrown when the Amazon Cognito service encounters an unexpected exception with the AWS
+     *         Lambda service.
      * @throws UserLambdaValidationException
-     *         This exception gets thrown when the Amazon Cognito service encounters a user validation exception with
-     *         the AWS Lambda service.
+     *         This exception is thrown when the Amazon Cognito service encounters a user validation exception with the
+     *         AWS Lambda service.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws InvalidLambdaResponseException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid AWS Lambda response.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws LimitExceededException
      *         This exception is thrown when a user exceeds the limit for a requested AWS resource.
      * @throws InvalidSmsRoleAccessPolicyException
@@ -1881,23 +2081,23 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws CodeMismatchException
      *         This exception is thrown if the provided code does not match what the server was expecting.
      * @throws ExpiredCodeException
      *         This exception is thrown if a code has expired.
      * @throws UnexpectedLambdaException
-     *         This exception gets thrown when the Amazon Cognito service encounters an unexpected exception with the
-     *         AWS Lambda service.
+     *         This exception is thrown when the Amazon Cognito service encounters an unexpected exception with the AWS
+     *         Lambda service.
      * @throws UserLambdaValidationException
-     *         This exception gets thrown when the Amazon Cognito service encounters a user validation exception with
-     *         the AWS Lambda service.
+     *         This exception is thrown when the Amazon Cognito service encounters a user validation exception with the
+     *         AWS Lambda service.
      * @throws InvalidPasswordException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid password.
      * @throws InvalidLambdaResponseException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid AWS Lambda response.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws InvalidUserPoolConfigurationException
      *         This exception is thrown when the user pool configuration is invalid.
      * @throws MFAMethodNotFoundException
@@ -1941,7 +2141,7 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws PasswordResetRequiredException
      *         This exception is thrown when a password reset is required.
      * @throws UserNotFoundException
@@ -1969,13 +2169,13 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws UnexpectedLambdaException
-     *         This exception gets thrown when the Amazon Cognito service encounters an unexpected exception with the
-     *         AWS Lambda service.
+     *         This exception is thrown when the Amazon Cognito service encounters an unexpected exception with the AWS
+     *         Lambda service.
      * @throws UserLambdaValidationException
-     *         This exception gets thrown when the Amazon Cognito service encounters a user validation exception with
-     *         the AWS Lambda service.
+     *         This exception is thrown when the Amazon Cognito service encounters a user validation exception with the
+     *         AWS Lambda service.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws InvalidPasswordException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid password.
      * @throws InvalidLambdaResponseException
@@ -1983,7 +2183,7 @@ public interface AWSCognitoIdentityProvider {
      * @throws UsernameExistsException
      *         This exception is thrown when Amazon Cognito encounters a user name that already exists in the user pool.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
      * @throws InvalidSmsRoleAccessPolicyException
@@ -2017,13 +2217,13 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
      * @throws PreconditionNotMetException
      *         This exception is thrown when a precondition is not met.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @sample AWSCognitoIdentityProvider.StartUserImportJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StartUserImportJob" target="_top">AWS
      *      API Documentation</a>
@@ -2043,13 +2243,13 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
      * @throws PreconditionNotMetException
      *         This exception is thrown when a precondition is not met.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @sample AWSCognitoIdentityProvider.StopUserImportJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StopUserImportJob" target="_top">AWS
      *      API Documentation</a>
@@ -2069,11 +2269,11 @@ public interface AWSCognitoIdentityProvider {
      * @throws ResourceNotFoundException
      *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws InvalidUserPoolConfigurationException
      *         This exception is thrown when the user pool configuration is invalid.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws PasswordResetRequiredException
      *         This exception is thrown when a password reset is required.
      * @throws UserNotFoundException
@@ -2103,9 +2303,9 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
      * @sample AWSCognitoIdentityProvider.UpdateGroup
@@ -2113,6 +2313,31 @@ public interface AWSCognitoIdentityProvider {
      *      Documentation</a>
      */
     UpdateGroupResult updateGroup(UpdateGroupRequest updateGroupRequest);
+
+    /**
+     * <p>
+     * Updates identity provider information for a user pool.
+     * </p>
+     * 
+     * @param updateIdentityProviderRequest
+     * @return Result of the UpdateIdentityProvider operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws UnsupportedIdentityProviderException
+     *         This exception is thrown when the specified identifier is not supported.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws TooManyRequestsException
+     *         This exception is thrown when the user has made too many requests for a given operation.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.UpdateIdentityProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateIdentityProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateIdentityProviderResult updateIdentityProvider(UpdateIdentityProviderRequest updateIdentityProviderRequest);
 
     /**
      * <p>
@@ -2131,17 +2356,17 @@ public interface AWSCognitoIdentityProvider {
      * @throws ExpiredCodeException
      *         This exception is thrown if a code has expired.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws UnexpectedLambdaException
-     *         This exception gets thrown when the Amazon Cognito service encounters an unexpected exception with the
-     *         AWS Lambda service.
+     *         This exception is thrown when the Amazon Cognito service encounters an unexpected exception with the AWS
+     *         Lambda service.
      * @throws UserLambdaValidationException
-     *         This exception gets thrown when the Amazon Cognito service encounters a user validation exception with
-     *         the AWS Lambda service.
+     *         This exception is thrown when the Amazon Cognito service encounters a user validation exception with the
+     *         AWS Lambda service.
      * @throws InvalidLambdaResponseException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid AWS Lambda response.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws AliasExistsException
      *         This exception is thrown when a user tries to confirm the account with an email or phone number that has
      *         already been supplied as an alias from a different account. This exception tells user that an account
@@ -2187,9 +2412,9 @@ public interface AWSCognitoIdentityProvider {
      * @throws ConcurrentModificationException
      *         This exception is thrown if two or more modifications are happening concurrently.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws UserImportInProgressException
      *         This exception is thrown when you are trying to modify a user pool while a user import job is in progress
      *         for that pool.
@@ -2203,7 +2428,7 @@ public interface AWSCognitoIdentityProvider {
      *         configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b> or the external ID
      *         provided in the role does not match what is provided in the SMS configuration for the user pool.
      * @throws UserPoolTaggingException
-     *         This exception gets thrown when a user pool tag cannot be set or updated.
+     *         This exception is thrown when a user pool tag cannot be set or updated.
      * @throws InvalidEmailRoleAccessPolicyException
      *         This exception is thrown when Amazon Cognito is not allowed to use your email identity. HTTP status code:
      *         400.
@@ -2226,9 +2451,13 @@ public interface AWSCognitoIdentityProvider {
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
+     * @throws ScopeDoesNotExistException
+     *         This exception is thrown when the specified scope does not exist.
+     * @throws InvalidOAuthFlowException
+     *         This exception is thrown when the specified OAuth flow is invalid.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
      * @sample AWSCognitoIdentityProvider.UpdateUserPoolClient
@@ -2254,9 +2483,9 @@ public interface AWSCognitoIdentityProvider {
      * @throws ExpiredCodeException
      *         This exception is thrown if a code has expired.
      * @throws NotAuthorizedException
-     *         This exception gets thrown when a user is not authorized.
+     *         This exception is thrown when a user is not authorized.
      * @throws TooManyRequestsException
-     *         This exception gets thrown when the user has made too many requests for a given operation.
+     *         This exception is thrown when the user has made too many requests for a given operation.
      * @throws LimitExceededException
      *         This exception is thrown when a user exceeds the limit for a requested AWS resource.
      * @throws PasswordResetRequiredException

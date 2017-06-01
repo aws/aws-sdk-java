@@ -199,7 +199,7 @@
         "variableDeclarationType" : "BatchGetApplicationRevisionsRequest",
         "variableName" : "batchGetApplicationRevisionsRequest",
         "variableType" : "BatchGetApplicationRevisionsRequest",
-        "documentation" : "<p>Represents the input of a batch get application revisions operation.</p>",
+        "documentation" : "<p>Represents the input of a BatchGetApplicationRevisions operation.</p>",
         "simpleType" : "BatchGetApplicationRevisionsRequest",
         "variableSetterType" : "BatchGetApplicationRevisionsRequest"
       },
@@ -208,7 +208,7 @@
       "operationName" : "BatchGetApplicationRevisions",
       "returnType" : {
         "returnType" : "BatchGetApplicationRevisionsResult",
-        "documentation" : "<p>Represents the output of a batch get application revisions operation.</p>"
+        "documentation" : "<p>Represents the output of a BatchGetApplicationRevisions operation.</p>"
       },
       "syncReturnType" : "BatchGetApplicationRevisionsResult"
     },
@@ -242,7 +242,7 @@
         "variableDeclarationType" : "BatchGetApplicationsRequest",
         "variableName" : "batchGetApplicationsRequest",
         "variableType" : "BatchGetApplicationsRequest",
-        "documentation" : "<p>Represents the input of a batch get applications operation.</p>",
+        "documentation" : "<p>Represents the input of a BatchGetApplications operation.</p>",
         "simpleType" : "BatchGetApplicationsRequest",
         "variableSetterType" : "BatchGetApplicationsRequest"
       },
@@ -251,7 +251,7 @@
       "operationName" : "BatchGetApplications",
       "returnType" : {
         "returnType" : "BatchGetApplicationsResult",
-        "documentation" : "<p>Represents the output of a batch get applications operation.</p>"
+        "documentation" : "<p>Represents the output of a BatchGetApplications operation.</p>"
       },
       "syncReturnType" : "BatchGetApplicationsResult"
     },
@@ -293,7 +293,7 @@
         "variableDeclarationType" : "BatchGetDeploymentGroupsRequest",
         "variableName" : "batchGetDeploymentGroupsRequest",
         "variableType" : "BatchGetDeploymentGroupsRequest",
-        "documentation" : "<p>Represents the input of a batch get deployment groups operation.</p>",
+        "documentation" : "<p>Represents the input of a BatchGetDeploymentGroups operation.</p>",
         "simpleType" : "BatchGetDeploymentGroupsRequest",
         "variableSetterType" : "BatchGetDeploymentGroupsRequest"
       },
@@ -302,7 +302,7 @@
       "operationName" : "BatchGetDeploymentGroups",
       "returnType" : {
         "returnType" : "BatchGetDeploymentGroupsResult",
-        "documentation" : "<p>Represents the output of a batch get deployment groups operation.</p>"
+        "documentation" : "<p>Represents the output of a BatchGetDeploymentGroups operation.</p>"
       },
       "syncReturnType" : "BatchGetDeploymentGroupsResult"
     },
@@ -344,7 +344,7 @@
         "variableDeclarationType" : "BatchGetDeploymentInstancesRequest",
         "variableName" : "batchGetDeploymentInstancesRequest",
         "variableType" : "BatchGetDeploymentInstancesRequest",
-        "documentation" : "<p>Represents the input of a batch get deployment instances operation.</p>",
+        "documentation" : "<p>Represents the input of a BatchGetDeploymentInstances operation.</p>",
         "simpleType" : "BatchGetDeploymentInstancesRequest",
         "variableSetterType" : "BatchGetDeploymentInstancesRequest"
       },
@@ -353,7 +353,7 @@
       "operationName" : "BatchGetDeploymentInstances",
       "returnType" : {
         "returnType" : "BatchGetDeploymentInstancesResult",
-        "documentation" : "<p>Represents the output of a batch get deployment instance operation.</p>"
+        "documentation" : "<p>Represents the output of a BatchGetDeploymentInstances operation.</p>"
       },
       "syncReturnType" : "BatchGetDeploymentInstancesResult"
     },
@@ -383,7 +383,7 @@
         "variableDeclarationType" : "BatchGetDeploymentsRequest",
         "variableName" : "batchGetDeploymentsRequest",
         "variableType" : "BatchGetDeploymentsRequest",
-        "documentation" : "<p>Represents the input of a batch get deployments operation.</p>",
+        "documentation" : "<p>Represents the input of a BatchGetDeployments operation.</p>",
         "simpleType" : "BatchGetDeploymentsRequest",
         "variableSetterType" : "BatchGetDeploymentsRequest"
       },
@@ -392,7 +392,7 @@
       "operationName" : "BatchGetDeployments",
       "returnType" : {
         "returnType" : "BatchGetDeploymentsResult",
-        "documentation" : "<p>Represents the output of a batch get deployments operation.</p>"
+        "documentation" : "<p>Represents the output of a BatchGetDeployments operation.</p>"
       },
       "syncReturnType" : "BatchGetDeploymentsResult"
     },
@@ -422,7 +422,7 @@
         "variableDeclarationType" : "BatchGetOnPremisesInstancesRequest",
         "variableName" : "batchGetOnPremisesInstancesRequest",
         "variableType" : "BatchGetOnPremisesInstancesRequest",
-        "documentation" : "<p>Represents the input of a batch get on-premises instances operation.</p>",
+        "documentation" : "<p>Represents the input of a BatchGetOnPremisesInstances operation.</p>",
         "simpleType" : "BatchGetOnPremisesInstancesRequest",
         "variableSetterType" : "BatchGetOnPremisesInstancesRequest"
       },
@@ -431,7 +431,7 @@
       "operationName" : "BatchGetOnPremisesInstances",
       "returnType" : {
         "returnType" : "BatchGetOnPremisesInstancesResult",
-        "documentation" : "<p>Represents the output of a batch get on-premises instances operation.</p>"
+        "documentation" : "<p>Represents the output of a BatchGetOnPremisesInstances operation.</p>"
       },
       "syncReturnType" : "BatchGetOnPremisesInstancesResult"
     },
@@ -516,7 +516,7 @@
         "variableDeclarationType" : "CreateApplicationRequest",
         "variableName" : "createApplicationRequest",
         "variableType" : "CreateApplicationRequest",
-        "documentation" : "<p>Represents the input of a create application operation.</p>",
+        "documentation" : "<p>Represents the input of a CreateApplication operation.</p>",
         "simpleType" : "CreateApplicationRequest",
         "variableSetterType" : "CreateApplicationRequest"
       },
@@ -525,7 +525,7 @@
       "operationName" : "CreateApplication",
       "returnType" : {
         "returnType" : "CreateApplicationResult",
-        "documentation" : "<p>Represents the output of a create application operation.</p>"
+        "documentation" : "<p>Represents the output of a CreateApplication operation.</p>"
       },
       "syncReturnType" : "CreateApplicationResult"
     },
@@ -611,7 +611,7 @@
         "variableDeclarationType" : "CreateDeploymentRequest",
         "variableName" : "createDeploymentRequest",
         "variableType" : "CreateDeploymentRequest",
-        "documentation" : "<p>Represents the input of a create deployment operation.</p>",
+        "documentation" : "<p>Represents the input of a CreateDeployment operation.</p>",
         "simpleType" : "CreateDeploymentRequest",
         "variableSetterType" : "CreateDeploymentRequest"
       },
@@ -620,7 +620,7 @@
       "operationName" : "CreateDeployment",
       "returnType" : {
         "returnType" : "CreateDeploymentResult",
-        "documentation" : "<p>Represents the output of a create deployment operation.</p>"
+        "documentation" : "<p>Represents the output of a CreateDeployment operation.</p>"
       },
       "syncReturnType" : "CreateDeploymentResult"
     },
@@ -658,7 +658,7 @@
         "variableDeclarationType" : "CreateDeploymentConfigRequest",
         "variableName" : "createDeploymentConfigRequest",
         "variableType" : "CreateDeploymentConfigRequest",
-        "documentation" : "<p>Represents the input of a create deployment configuration operation.</p>",
+        "documentation" : "<p>Represents the input of a CreateDeploymentConfig operation.</p>",
         "simpleType" : "CreateDeploymentConfigRequest",
         "variableSetterType" : "CreateDeploymentConfigRequest"
       },
@@ -667,7 +667,7 @@
       "operationName" : "CreateDeploymentConfig",
       "returnType" : {
         "returnType" : "CreateDeploymentConfigResult",
-        "documentation" : "<p>Represents the output of a create deployment configuration operation.</p>"
+        "documentation" : "<p>Represents the output of a CreateDeploymentConfig operation.</p>"
       },
       "syncReturnType" : "CreateDeploymentConfigResult"
     },
@@ -777,7 +777,7 @@
         "variableDeclarationType" : "CreateDeploymentGroupRequest",
         "variableName" : "createDeploymentGroupRequest",
         "variableType" : "CreateDeploymentGroupRequest",
-        "documentation" : "<p>Represents the input of a create deployment group operation.</p>",
+        "documentation" : "<p>Represents the input of a CreateDeploymentGroup operation.</p>",
         "simpleType" : "CreateDeploymentGroupRequest",
         "variableSetterType" : "CreateDeploymentGroupRequest"
       },
@@ -786,7 +786,7 @@
       "operationName" : "CreateDeploymentGroup",
       "returnType" : {
         "returnType" : "CreateDeploymentGroupResult",
-        "documentation" : "<p>Represents the output of a create deployment group operation.</p>"
+        "documentation" : "<p>Represents the output of a CreateDeploymentGroup operation.</p>"
       },
       "syncReturnType" : "CreateDeploymentGroupResult"
     },
@@ -812,7 +812,7 @@
         "variableDeclarationType" : "DeleteApplicationRequest",
         "variableName" : "deleteApplicationRequest",
         "variableType" : "DeleteApplicationRequest",
-        "documentation" : "<p>Represents the input of a delete application operation.</p>",
+        "documentation" : "<p>Represents the input of a DeleteApplication operation.</p>",
         "simpleType" : "DeleteApplicationRequest",
         "variableSetterType" : "DeleteApplicationRequest"
       },
@@ -855,7 +855,7 @@
         "variableDeclarationType" : "DeleteDeploymentConfigRequest",
         "variableName" : "deleteDeploymentConfigRequest",
         "variableType" : "DeleteDeploymentConfigRequest",
-        "documentation" : "<p>Represents the input of a delete deployment configuration operation.</p>",
+        "documentation" : "<p>Represents the input of a DeleteDeploymentConfig operation.</p>",
         "simpleType" : "DeleteDeploymentConfigRequest",
         "variableSetterType" : "DeleteDeploymentConfigRequest"
       },
@@ -902,7 +902,7 @@
         "variableDeclarationType" : "DeleteDeploymentGroupRequest",
         "variableName" : "deleteDeploymentGroupRequest",
         "variableType" : "DeleteDeploymentGroupRequest",
-        "documentation" : "<p>Represents the input of a delete deployment group operation.</p>",
+        "documentation" : "<p>Represents the input of a DeleteDeploymentGroup operation.</p>",
         "simpleType" : "DeleteDeploymentGroupRequest",
         "variableSetterType" : "DeleteDeploymentGroupRequest"
       },
@@ -911,7 +911,7 @@
       "operationName" : "DeleteDeploymentGroup",
       "returnType" : {
         "returnType" : "DeleteDeploymentGroupResult",
-        "documentation" : "<p>Represents the output of a delete deployment group operation.</p>"
+        "documentation" : "<p>Represents the output of a DeleteDeploymentGroup operation.</p>"
       },
       "syncReturnType" : "DeleteDeploymentGroupResult"
     },
@@ -937,7 +937,7 @@
         "variableDeclarationType" : "DeregisterOnPremisesInstanceRequest",
         "variableName" : "deregisterOnPremisesInstanceRequest",
         "variableType" : "DeregisterOnPremisesInstanceRequest",
-        "documentation" : "<p>Represents the input of a deregister on-premises instance operation.</p>",
+        "documentation" : "<p>Represents the input of a DeregisterOnPremisesInstance operation.</p>",
         "simpleType" : "DeregisterOnPremisesInstanceRequest",
         "variableSetterType" : "DeregisterOnPremisesInstanceRequest"
       },
@@ -976,7 +976,7 @@
         "variableDeclarationType" : "GetApplicationRequest",
         "variableName" : "getApplicationRequest",
         "variableType" : "GetApplicationRequest",
-        "documentation" : "<p>Represents the input of a get application operation.</p>",
+        "documentation" : "<p>Represents the input of a GetApplication operation.</p>",
         "simpleType" : "GetApplicationRequest",
         "variableSetterType" : "GetApplicationRequest"
       },
@@ -985,7 +985,7 @@
       "operationName" : "GetApplication",
       "returnType" : {
         "returnType" : "GetApplicationResult",
-        "documentation" : "<p>Represents the output of a get application operation.</p>"
+        "documentation" : "<p>Represents the output of a GetApplication operation.</p>"
       },
       "syncReturnType" : "GetApplicationResult"
     },
@@ -1027,7 +1027,7 @@
         "variableDeclarationType" : "GetApplicationRevisionRequest",
         "variableName" : "getApplicationRevisionRequest",
         "variableType" : "GetApplicationRevisionRequest",
-        "documentation" : "<p>Represents the input of a get application revision operation.</p>",
+        "documentation" : "<p>Represents the input of a GetApplicationRevision operation.</p>",
         "simpleType" : "GetApplicationRevisionRequest",
         "variableSetterType" : "GetApplicationRevisionRequest"
       },
@@ -1036,7 +1036,7 @@
       "operationName" : "GetApplicationRevision",
       "returnType" : {
         "returnType" : "GetApplicationRevisionResult",
-        "documentation" : "<p>Represents the output of a get application revision operation.</p>"
+        "documentation" : "<p>Represents the output of a GetApplicationRevision operation.</p>"
       },
       "syncReturnType" : "GetApplicationRevisionResult"
     },
@@ -1066,7 +1066,7 @@
         "variableDeclarationType" : "GetDeploymentRequest",
         "variableName" : "getDeploymentRequest",
         "variableType" : "GetDeploymentRequest",
-        "documentation" : "<p>Represents the input of a get deployment operation.</p>",
+        "documentation" : "<p>Represents the input of a GetDeployment operation.</p>",
         "simpleType" : "GetDeploymentRequest",
         "variableSetterType" : "GetDeploymentRequest"
       },
@@ -1075,7 +1075,7 @@
       "operationName" : "GetDeployment",
       "returnType" : {
         "returnType" : "GetDeploymentResult",
-        "documentation" : "<p>Represents the output of a get deployment operation.</p>"
+        "documentation" : "<p>Represents the output of a GetDeployment operation.</p>"
       },
       "syncReturnType" : "GetDeploymentResult"
     },
@@ -1105,7 +1105,7 @@
         "variableDeclarationType" : "GetDeploymentConfigRequest",
         "variableName" : "getDeploymentConfigRequest",
         "variableType" : "GetDeploymentConfigRequest",
-        "documentation" : "<p>Represents the input of a get deployment configuration operation.</p>",
+        "documentation" : "<p>Represents the input of a GetDeploymentConfig operation.</p>",
         "simpleType" : "GetDeploymentConfigRequest",
         "variableSetterType" : "GetDeploymentConfigRequest"
       },
@@ -1114,7 +1114,7 @@
       "operationName" : "GetDeploymentConfig",
       "returnType" : {
         "returnType" : "GetDeploymentConfigResult",
-        "documentation" : "<p>Represents the output of a get deployment configuration operation.</p>"
+        "documentation" : "<p>Represents the output of a GetDeploymentConfig operation.</p>"
       },
       "syncReturnType" : "GetDeploymentConfigResult"
     },
@@ -1156,7 +1156,7 @@
         "variableDeclarationType" : "GetDeploymentGroupRequest",
         "variableName" : "getDeploymentGroupRequest",
         "variableType" : "GetDeploymentGroupRequest",
-        "documentation" : "<p>Represents the input of a get deployment group operation.</p>",
+        "documentation" : "<p>Represents the input of a GetDeploymentGroup operation.</p>",
         "simpleType" : "GetDeploymentGroupRequest",
         "variableSetterType" : "GetDeploymentGroupRequest"
       },
@@ -1165,7 +1165,7 @@
       "operationName" : "GetDeploymentGroup",
       "returnType" : {
         "returnType" : "GetDeploymentGroupResult",
-        "documentation" : "<p>Represents the output of a get deployment group operation.</p>"
+        "documentation" : "<p>Represents the output of a GetDeploymentGroup operation.</p>"
       },
       "syncReturnType" : "GetDeploymentGroupResult"
     },
@@ -1207,7 +1207,7 @@
         "variableDeclarationType" : "GetDeploymentInstanceRequest",
         "variableName" : "getDeploymentInstanceRequest",
         "variableType" : "GetDeploymentInstanceRequest",
-        "documentation" : "<p>Represents the input of a get deployment instance operation.</p>",
+        "documentation" : "<p>Represents the input of a GetDeploymentInstance operation.</p>",
         "simpleType" : "GetDeploymentInstanceRequest",
         "variableSetterType" : "GetDeploymentInstanceRequest"
       },
@@ -1216,7 +1216,7 @@
       "operationName" : "GetDeploymentInstance",
       "returnType" : {
         "returnType" : "GetDeploymentInstanceResult",
-        "documentation" : "<p>Represents the output of a get deployment instance operation.</p>"
+        "documentation" : "<p>Represents the output of a GetDeploymentInstance operation.</p>"
       },
       "syncReturnType" : "GetDeploymentInstanceResult"
     },
@@ -1246,7 +1246,7 @@
         "variableDeclarationType" : "GetOnPremisesInstanceRequest",
         "variableName" : "getOnPremisesInstanceRequest",
         "variableType" : "GetOnPremisesInstanceRequest",
-        "documentation" : "<p>Represents the input of a get on-premises instance operation.</p>",
+        "documentation" : "<p>Represents the input of a GetOnPremisesInstance operation.</p>",
         "simpleType" : "GetOnPremisesInstanceRequest",
         "variableSetterType" : "GetOnPremisesInstanceRequest"
       },
@@ -1255,7 +1255,7 @@
       "operationName" : "GetOnPremisesInstance",
       "returnType" : {
         "returnType" : "GetOnPremisesInstanceResult",
-        "documentation" : "<p>Represents the output of a get on-premises instance operation.</p>"
+        "documentation" : "<p>Represents the output of a GetOnPremisesInstance operation.</p>"
       },
       "syncReturnType" : "GetOnPremisesInstanceResult"
     },
@@ -1313,7 +1313,7 @@
         "variableDeclarationType" : "ListApplicationRevisionsRequest",
         "variableName" : "listApplicationRevisionsRequest",
         "variableType" : "ListApplicationRevisionsRequest",
-        "documentation" : "<p>Represents the input of a list application revisions operation.</p>",
+        "documentation" : "<p>Represents the input of a ListApplicationRevisions operation.</p>",
         "simpleType" : "ListApplicationRevisionsRequest",
         "variableSetterType" : "ListApplicationRevisionsRequest"
       },
@@ -1322,7 +1322,7 @@
       "operationName" : "ListApplicationRevisions",
       "returnType" : {
         "returnType" : "ListApplicationRevisionsResult",
-        "documentation" : "<p>Represents the output of a list application revisions operation.</p>"
+        "documentation" : "<p>Represents the output of a ListApplicationRevisions operation.</p>"
       },
       "syncReturnType" : "ListApplicationRevisionsResult"
     },
@@ -1344,7 +1344,7 @@
         "variableDeclarationType" : "ListApplicationsRequest",
         "variableName" : "listApplicationsRequest",
         "variableType" : "ListApplicationsRequest",
-        "documentation" : "<p>Represents the input of a list applications operation.</p>",
+        "documentation" : "<p>Represents the input of a ListApplications operation.</p>",
         "simpleType" : "ListApplicationsRequest",
         "variableSetterType" : "ListApplicationsRequest"
       },
@@ -1353,7 +1353,7 @@
       "operationName" : "ListApplications",
       "returnType" : {
         "returnType" : "ListApplicationsResult",
-        "documentation" : "<p>Represents the output of a list applications operation.</p>"
+        "documentation" : "<p>Represents the output of a ListApplications operation.</p>"
       },
       "syncReturnType" : "ListApplicationsResult"
     },
@@ -1375,7 +1375,7 @@
         "variableDeclarationType" : "ListDeploymentConfigsRequest",
         "variableName" : "listDeploymentConfigsRequest",
         "variableType" : "ListDeploymentConfigsRequest",
-        "documentation" : "<p>Represents the input of a list deployment configurations operation.</p>",
+        "documentation" : "<p>Represents the input of a ListDeploymentConfigs operation.</p>",
         "simpleType" : "ListDeploymentConfigsRequest",
         "variableSetterType" : "ListDeploymentConfigsRequest"
       },
@@ -1384,7 +1384,7 @@
       "operationName" : "ListDeploymentConfigs",
       "returnType" : {
         "returnType" : "ListDeploymentConfigsResult",
-        "documentation" : "<p>Represents the output of a list deployment configurations operation.</p>"
+        "documentation" : "<p>Represents the output of a ListDeploymentConfigs operation.</p>"
       },
       "syncReturnType" : "ListDeploymentConfigsResult"
     },
@@ -1418,7 +1418,7 @@
         "variableDeclarationType" : "ListDeploymentGroupsRequest",
         "variableName" : "listDeploymentGroupsRequest",
         "variableType" : "ListDeploymentGroupsRequest",
-        "documentation" : "<p>Represents the input of a list deployment groups operation.</p>",
+        "documentation" : "<p>Represents the input of a ListDeploymentGroups operation.</p>",
         "simpleType" : "ListDeploymentGroupsRequest",
         "variableSetterType" : "ListDeploymentGroupsRequest"
       },
@@ -1427,7 +1427,7 @@
       "operationName" : "ListDeploymentGroups",
       "returnType" : {
         "returnType" : "ListDeploymentGroupsResult",
-        "documentation" : "<p>Represents the output of a list deployment groups operation.</p>"
+        "documentation" : "<p>Represents the output of a ListDeploymentGroups operation.</p>"
       },
       "syncReturnType" : "ListDeploymentGroupsResult"
     },
@@ -1477,7 +1477,7 @@
         "variableDeclarationType" : "ListDeploymentInstancesRequest",
         "variableName" : "listDeploymentInstancesRequest",
         "variableType" : "ListDeploymentInstancesRequest",
-        "documentation" : "<p>Represents the input of a list deployment instances operation.</p>",
+        "documentation" : "<p>Represents the input of a ListDeploymentInstances operation.</p>",
         "simpleType" : "ListDeploymentInstancesRequest",
         "variableSetterType" : "ListDeploymentInstancesRequest"
       },
@@ -1486,7 +1486,7 @@
       "operationName" : "ListDeploymentInstances",
       "returnType" : {
         "returnType" : "ListDeploymentInstancesResult",
-        "documentation" : "<p>Represents the output of a list deployment instances operation.</p>"
+        "documentation" : "<p>Represents the output of a ListDeploymentInstances operation.</p>"
       },
       "syncReturnType" : "ListDeploymentInstancesResult"
     },
@@ -1540,7 +1540,7 @@
         "variableDeclarationType" : "ListDeploymentsRequest",
         "variableName" : "listDeploymentsRequest",
         "variableType" : "ListDeploymentsRequest",
-        "documentation" : "<p>Represents the input of a list deployments operation.</p>",
+        "documentation" : "<p>Represents the input of a ListDeployments operation.</p>",
         "simpleType" : "ListDeploymentsRequest",
         "variableSetterType" : "ListDeploymentsRequest"
       },
@@ -1549,9 +1549,44 @@
       "operationName" : "ListDeployments",
       "returnType" : {
         "returnType" : "ListDeploymentsResult",
-        "documentation" : "<p>Represents the output of a list deployments operation.</p>"
+        "documentation" : "<p>Represents the output of a ListDeployments operation.</p>"
       },
       "syncReturnType" : "ListDeploymentsResult"
+    },
+    "ListGitHubAccountTokenNames" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<ListGitHubAccountTokenNamesResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<ListGitHubAccountTokenNamesResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<ListGitHubAccountTokenNamesRequest, ListGitHubAccountTokenNamesResult>",
+      "asyncReturnType" : "ListGitHubAccountTokenNamesResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Lists the names of stored connections to GitHub accounts.</p>",
+      "exceptions" : [ {
+        "exceptionName" : "InvalidNextTokenException",
+        "documentation" : "<p>The next token was specified in an invalid format.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ResourceValidationException",
+        "documentation" : "<p>The specified resource could not be validated.</p>",
+        "httpStatusCode" : null
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "input" : {
+        "variableDeclarationType" : "ListGitHubAccountTokenNamesRequest",
+        "variableName" : "listGitHubAccountTokenNamesRequest",
+        "variableType" : "ListGitHubAccountTokenNamesRequest",
+        "documentation" : "<p>Represents the input of a ListGitHubAccountTokenNames operation.</p>",
+        "simpleType" : "ListGitHubAccountTokenNamesRequest",
+        "variableSetterType" : "ListGitHubAccountTokenNamesRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "listGitHubAccountTokenNames",
+      "operationName" : "ListGitHubAccountTokenNames",
+      "returnType" : {
+        "returnType" : "ListGitHubAccountTokenNamesResult",
+        "documentation" : "<p>Represents the output of a ListGitHubAccountTokenNames operation.</p>"
+      },
+      "syncReturnType" : "ListGitHubAccountTokenNamesResult"
     },
     "ListOnPremisesInstances" : {
       "asyncCallableType" : "java.util.concurrent.Callable<ListOnPremisesInstancesResult>",
@@ -1579,7 +1614,7 @@
         "variableDeclarationType" : "ListOnPremisesInstancesRequest",
         "variableName" : "listOnPremisesInstancesRequest",
         "variableType" : "ListOnPremisesInstancesRequest",
-        "documentation" : "<p>Represents the input of a list on-premises instances operation.</p>",
+        "documentation" : "<p>Represents the input of a ListOnPremisesInstances operation.</p>",
         "simpleType" : "ListOnPremisesInstancesRequest",
         "variableSetterType" : "ListOnPremisesInstancesRequest"
       },
@@ -1630,7 +1665,7 @@
         "variableDeclarationType" : "RegisterApplicationRevisionRequest",
         "variableName" : "registerApplicationRevisionRequest",
         "variableType" : "RegisterApplicationRevisionRequest",
-        "documentation" : "<p>Represents the input of a register application revision operation.</p>",
+        "documentation" : "<p>Represents the input of a RegisterApplicationRevision operation.</p>",
         "simpleType" : "RegisterApplicationRevisionRequest",
         "variableSetterType" : "RegisterApplicationRevisionRequest"
       },
@@ -1748,7 +1783,7 @@
         "variableDeclarationType" : "RemoveTagsFromOnPremisesInstancesRequest",
         "variableName" : "removeTagsFromOnPremisesInstancesRequest",
         "variableType" : "RemoveTagsFromOnPremisesInstancesRequest",
-        "documentation" : "<p>Represents the input of a remove tags from on-premises instances operation.</p>",
+        "documentation" : "<p>Represents the input of a RemoveTagsFromOnPremisesInstances operation.</p>",
         "simpleType" : "RemoveTagsFromOnPremisesInstancesRequest",
         "variableSetterType" : "RemoveTagsFromOnPremisesInstancesRequest"
       },
@@ -1842,7 +1877,7 @@
         "variableDeclarationType" : "StopDeploymentRequest",
         "variableName" : "stopDeploymentRequest",
         "variableType" : "StopDeploymentRequest",
-        "documentation" : "<p>Represents the input of a stop deployment operation.</p>",
+        "documentation" : "<p>Represents the input of a StopDeployment operation.</p>",
         "simpleType" : "StopDeploymentRequest",
         "variableSetterType" : "StopDeploymentRequest"
       },
@@ -1851,7 +1886,7 @@
       "operationName" : "StopDeployment",
       "returnType" : {
         "returnType" : "StopDeploymentResult",
-        "documentation" : "<p>Represents the output of a stop deployment operation.</p>"
+        "documentation" : "<p>Represents the output of a StopDeployment operation.</p>"
       },
       "syncReturnType" : "StopDeploymentResult"
     },
@@ -1885,7 +1920,7 @@
         "variableDeclarationType" : "UpdateApplicationRequest",
         "variableName" : "updateApplicationRequest",
         "variableType" : "UpdateApplicationRequest",
-        "documentation" : "<p>Represents the input of an update application operation.</p>",
+        "documentation" : "<p>Represents the input of an UpdateApplication operation.</p>",
         "simpleType" : "UpdateApplicationRequest",
         "variableSetterType" : "UpdateApplicationRequest"
       },
@@ -2000,7 +2035,7 @@
         "variableDeclarationType" : "UpdateDeploymentGroupRequest",
         "variableName" : "updateDeploymentGroupRequest",
         "variableType" : "UpdateDeploymentGroupRequest",
-        "documentation" : "<p>Represents the input of an update deployment group operation.</p>",
+        "documentation" : "<p>Represents the input of an UpdateDeploymentGroup operation.</p>",
         "simpleType" : "UpdateDeploymentGroupRequest",
         "variableSetterType" : "UpdateDeploymentGroupRequest"
       },
@@ -2009,7 +2044,7 @@
       "operationName" : "UpdateDeploymentGroup",
       "returnType" : {
         "returnType" : "UpdateDeploymentGroupResult",
-        "documentation" : "<p>Represents the output of an update deployment group operation.</p>"
+        "documentation" : "<p>Represents the output of an UpdateDeploymentGroup operation.</p>"
       },
       "syncReturnType" : "UpdateDeploymentGroupResult"
     }
@@ -3763,6 +3798,68 @@
           "variableSetterType" : "Boolean"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "gitHubAccountName",
+        "c2jShape" : "GitHubAccountTokenName",
+        "deprecated" : false,
+        "documentation" : "<p>The name for a connection to a GitHub account.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The name for a connection to a GitHub account.</p>\n@param gitHubAccountName The name for a connection to a GitHub account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withGitHubAccountName",
+        "getterDocumentation" : "/**<p>The name for a connection to a GitHub account.</p>\n@return The name for a connection to a GitHub account.*/",
+        "getterMethodName" : "getGitHubAccountName",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "gitHubAccountName",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "gitHubAccountName",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "GitHubAccountName",
+        "setterDocumentation" : "/**<p>The name for a connection to a GitHub account.</p>\n@param gitHubAccountName The name for a connection to a GitHub account.*/",
+        "setterMethodName" : "setGitHubAccountName",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "gitHubAccountName",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The name for a connection to a GitHub account.</p>\n@param gitHubAccountName The name for a connection to a GitHub account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "gitHubAccountName",
+          "variableType" : "String",
+          "documentation" : "<p>The name for a connection to a GitHub account.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "ApplicationId" : {
@@ -3951,6 +4048,69 @@
             "documentation" : "<p>The time at which the application was created.</p>",
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "GitHubAccountName" : {
+          "c2jName" : "gitHubAccountName",
+          "c2jShape" : "GitHubAccountTokenName",
+          "deprecated" : false,
+          "documentation" : "<p>The name for a connection to a GitHub account.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The name for a connection to a GitHub account.</p>\n@param gitHubAccountName The name for a connection to a GitHub account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withGitHubAccountName",
+          "getterDocumentation" : "/**<p>The name for a connection to a GitHub account.</p>\n@return The name for a connection to a GitHub account.*/",
+          "getterMethodName" : "getGitHubAccountName",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "gitHubAccountName",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "gitHubAccountName",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "GitHubAccountName",
+          "setterDocumentation" : "/**<p>The name for a connection to a GitHub account.</p>\n@param gitHubAccountName The name for a connection to a GitHub account.*/",
+          "setterMethodName" : "setGitHubAccountName",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "gitHubAccountName",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The name for a connection to a GitHub account.</p>\n@param gitHubAccountName The name for a connection to a GitHub account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "gitHubAccountName",
+            "variableType" : "String",
+            "documentation" : "<p>The name for a connection to a GitHub account.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "xmlNameSpaceUri" : null
         },
@@ -4949,7 +5109,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a batch get application revisions operation.</p>",
+      "documentation" : "<p>Represents the input of a BatchGetApplicationRevisions operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -5397,7 +5557,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a batch get application revisions operation.</p>",
+      "documentation" : "<p>Represents the output of a BatchGetApplicationRevisions operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -5966,7 +6126,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a batch get applications operation.</p>",
+      "documentation" : "<p>Represents the input of a BatchGetApplications operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -6289,7 +6449,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a batch get applications operation.</p>",
+      "documentation" : "<p>Represents the output of a BatchGetApplications operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -6608,7 +6768,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a batch get deployment groups operation.</p>",
+      "documentation" : "<p>Represents the input of a BatchGetDeploymentGroups operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -7056,7 +7216,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a batch get deployment groups operation.</p>",
+      "documentation" : "<p>Represents the output of a BatchGetDeploymentGroups operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -7500,7 +7660,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a batch get deployment instances operation.</p>",
+      "documentation" : "<p>Represents the input of a BatchGetDeploymentInstances operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -7948,7 +8108,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a batch get deployment instance operation.</p>",
+      "documentation" : "<p>Represents the output of a BatchGetDeploymentInstances operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -8392,7 +8552,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a batch get deployments operation.</p>",
+      "documentation" : "<p>Represents the input of a BatchGetDeployments operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -8715,7 +8875,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a batch get deployments operation.</p>",
+      "documentation" : "<p>Represents the output of a BatchGetDeployments operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -9034,7 +9194,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a batch get on-premises instances operation.</p>",
+      "documentation" : "<p>Represents the input of a BatchGetOnPremisesInstances operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -9357,7 +9517,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a batch get on-premises instances operation.</p>",
+      "documentation" : "<p>Represents the output of a BatchGetOnPremisesInstances operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -10709,7 +10869,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a create application operation.</p>",
+      "documentation" : "<p>Represents the input of a CreateApplication operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -10878,7 +11038,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a create application operation.</p>",
+      "documentation" : "<p>Represents the output of a CreateApplication operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -11043,7 +11203,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a create deployment configuration operation.</p>",
+      "documentation" : "<p>Represents the input of a CreateDeploymentConfig operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -11337,7 +11497,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a create deployment configuration operation.</p>",
+      "documentation" : "<p>Represents the output of a CreateDeploymentConfig operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -11502,7 +11662,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a create deployment group operation.</p>",
+      "documentation" : "<p>Represents the input of a CreateDeploymentGroup operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -13787,7 +13947,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a create deployment group operation.</p>",
+      "documentation" : "<p>Represents the output of a CreateDeploymentGroup operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -13952,7 +14112,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a create deployment operation.</p>",
+      "documentation" : "<p>Represents the input of a CreateDeployment operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -15246,7 +15406,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a create deployment operation.</p>",
+      "documentation" : "<p>Represents the output of a CreateDeployment operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -15411,7 +15571,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a delete application operation.</p>",
+      "documentation" : "<p>Represents the input of a DeleteApplication operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -15619,7 +15779,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a delete deployment configuration operation.</p>",
+      "documentation" : "<p>Represents the input of a DeleteDeploymentConfig operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -15827,7 +15987,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a delete deployment group operation.</p>",
+      "documentation" : "<p>Represents the input of a DeleteDeploymentGroup operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -16121,7 +16281,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a delete deployment group operation.</p>",
+      "documentation" : "<p>Represents the output of a DeleteDeploymentGroup operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -18598,6 +18758,130 @@
           "variableSetterType" : "LoadBalancerInfo"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "lastSuccessfulDeployment",
+        "c2jShape" : "LastDeploymentInfo",
+        "deprecated" : false,
+        "documentation" : "<p>Information about the most recent successful deployment to the deployment group.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Information about the most recent successful deployment to the deployment group.</p>\n@param lastSuccessfulDeployment Information about the most recent successful deployment to the deployment group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withLastSuccessfulDeployment",
+        "getterDocumentation" : "/**<p>Information about the most recent successful deployment to the deployment group.</p>\n@return Information about the most recent successful deployment to the deployment group.*/",
+        "getterMethodName" : "getLastSuccessfulDeployment",
+        "getterModel" : {
+          "returnType" : "LastDeploymentInfo",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "lastSuccessfulDeployment",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "lastSuccessfulDeployment",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "StructuredPojo",
+        "marshallingType" : "STRUCTURED",
+        "name" : "LastSuccessfulDeployment",
+        "setterDocumentation" : "/**<p>Information about the most recent successful deployment to the deployment group.</p>\n@param lastSuccessfulDeployment Information about the most recent successful deployment to the deployment group.*/",
+        "setterMethodName" : "setLastSuccessfulDeployment",
+        "setterModel" : {
+          "variableDeclarationType" : "LastDeploymentInfo",
+          "variableName" : "lastSuccessfulDeployment",
+          "variableType" : "LastDeploymentInfo",
+          "documentation" : "",
+          "simpleType" : "LastDeploymentInfo",
+          "variableSetterType" : "LastDeploymentInfo"
+        },
+        "simple" : false,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Information about the most recent successful deployment to the deployment group.</p>\n@param lastSuccessfulDeployment Information about the most recent successful deployment to the deployment group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "LastDeploymentInfo",
+          "variableName" : "lastSuccessfulDeployment",
+          "variableType" : "LastDeploymentInfo",
+          "documentation" : "<p>Information about the most recent successful deployment to the deployment group.</p>",
+          "simpleType" : "LastDeploymentInfo",
+          "variableSetterType" : "LastDeploymentInfo"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "lastAttemptedDeployment",
+        "c2jShape" : "LastDeploymentInfo",
+        "deprecated" : false,
+        "documentation" : "<p>Information about the most recent attempted deployment to the deployment group.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Information about the most recent attempted deployment to the deployment group.</p>\n@param lastAttemptedDeployment Information about the most recent attempted deployment to the deployment group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withLastAttemptedDeployment",
+        "getterDocumentation" : "/**<p>Information about the most recent attempted deployment to the deployment group.</p>\n@return Information about the most recent attempted deployment to the deployment group.*/",
+        "getterMethodName" : "getLastAttemptedDeployment",
+        "getterModel" : {
+          "returnType" : "LastDeploymentInfo",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "lastAttemptedDeployment",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "lastAttemptedDeployment",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "StructuredPojo",
+        "marshallingType" : "STRUCTURED",
+        "name" : "LastAttemptedDeployment",
+        "setterDocumentation" : "/**<p>Information about the most recent attempted deployment to the deployment group.</p>\n@param lastAttemptedDeployment Information about the most recent attempted deployment to the deployment group.*/",
+        "setterMethodName" : "setLastAttemptedDeployment",
+        "setterModel" : {
+          "variableDeclarationType" : "LastDeploymentInfo",
+          "variableName" : "lastAttemptedDeployment",
+          "variableType" : "LastDeploymentInfo",
+          "documentation" : "",
+          "simpleType" : "LastDeploymentInfo",
+          "variableSetterType" : "LastDeploymentInfo"
+        },
+        "simple" : false,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Information about the most recent attempted deployment to the deployment group.</p>\n@param lastAttemptedDeployment Information about the most recent attempted deployment to the deployment group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "LastDeploymentInfo",
+          "variableName" : "lastAttemptedDeployment",
+          "variableType" : "LastDeploymentInfo",
+          "documentation" : "<p>Information about the most recent attempted deployment to the deployment group.</p>",
+          "simpleType" : "LastDeploymentInfo",
+          "variableSetterType" : "LastDeploymentInfo"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "AlarmConfiguration" : {
@@ -19381,6 +19665,132 @@
             "documentation" : "<p>The Amazon EC2 tags on which to filter.</p>",
             "simpleType" : "List<EC2TagFilter>",
             "variableSetterType" : "java.util.Collection<EC2TagFilter>"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "LastAttemptedDeployment" : {
+          "c2jName" : "lastAttemptedDeployment",
+          "c2jShape" : "LastDeploymentInfo",
+          "deprecated" : false,
+          "documentation" : "<p>Information about the most recent attempted deployment to the deployment group.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Information about the most recent attempted deployment to the deployment group.</p>\n@param lastAttemptedDeployment Information about the most recent attempted deployment to the deployment group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withLastAttemptedDeployment",
+          "getterDocumentation" : "/**<p>Information about the most recent attempted deployment to the deployment group.</p>\n@return Information about the most recent attempted deployment to the deployment group.*/",
+          "getterMethodName" : "getLastAttemptedDeployment",
+          "getterModel" : {
+            "returnType" : "LastDeploymentInfo",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "lastAttemptedDeployment",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "lastAttemptedDeployment",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "StructuredPojo",
+          "marshallingType" : "STRUCTURED",
+          "name" : "LastAttemptedDeployment",
+          "setterDocumentation" : "/**<p>Information about the most recent attempted deployment to the deployment group.</p>\n@param lastAttemptedDeployment Information about the most recent attempted deployment to the deployment group.*/",
+          "setterMethodName" : "setLastAttemptedDeployment",
+          "setterModel" : {
+            "variableDeclarationType" : "LastDeploymentInfo",
+            "variableName" : "lastAttemptedDeployment",
+            "variableType" : "LastDeploymentInfo",
+            "documentation" : "",
+            "simpleType" : "LastDeploymentInfo",
+            "variableSetterType" : "LastDeploymentInfo"
+          },
+          "simple" : false,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Information about the most recent attempted deployment to the deployment group.</p>\n@param lastAttemptedDeployment Information about the most recent attempted deployment to the deployment group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "LastDeploymentInfo",
+            "variableName" : "lastAttemptedDeployment",
+            "variableType" : "LastDeploymentInfo",
+            "documentation" : "<p>Information about the most recent attempted deployment to the deployment group.</p>",
+            "simpleType" : "LastDeploymentInfo",
+            "variableSetterType" : "LastDeploymentInfo"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "LastSuccessfulDeployment" : {
+          "c2jName" : "lastSuccessfulDeployment",
+          "c2jShape" : "LastDeploymentInfo",
+          "deprecated" : false,
+          "documentation" : "<p>Information about the most recent successful deployment to the deployment group.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Information about the most recent successful deployment to the deployment group.</p>\n@param lastSuccessfulDeployment Information about the most recent successful deployment to the deployment group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withLastSuccessfulDeployment",
+          "getterDocumentation" : "/**<p>Information about the most recent successful deployment to the deployment group.</p>\n@return Information about the most recent successful deployment to the deployment group.*/",
+          "getterMethodName" : "getLastSuccessfulDeployment",
+          "getterModel" : {
+            "returnType" : "LastDeploymentInfo",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "lastSuccessfulDeployment",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "lastSuccessfulDeployment",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "StructuredPojo",
+          "marshallingType" : "STRUCTURED",
+          "name" : "LastSuccessfulDeployment",
+          "setterDocumentation" : "/**<p>Information about the most recent successful deployment to the deployment group.</p>\n@param lastSuccessfulDeployment Information about the most recent successful deployment to the deployment group.*/",
+          "setterMethodName" : "setLastSuccessfulDeployment",
+          "setterModel" : {
+            "variableDeclarationType" : "LastDeploymentInfo",
+            "variableName" : "lastSuccessfulDeployment",
+            "variableType" : "LastDeploymentInfo",
+            "documentation" : "",
+            "simpleType" : "LastDeploymentInfo",
+            "variableSetterType" : "LastDeploymentInfo"
+          },
+          "simple" : false,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Information about the most recent successful deployment to the deployment group.</p>\n@param lastSuccessfulDeployment Information about the most recent successful deployment to the deployment group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "LastDeploymentInfo",
+            "variableName" : "lastSuccessfulDeployment",
+            "variableType" : "LastDeploymentInfo",
+            "documentation" : "<p>Information about the most recent successful deployment to the deployment group.</p>",
+            "simpleType" : "LastDeploymentInfo",
+            "variableSetterType" : "LastDeploymentInfo"
           },
           "xmlNameSpaceUri" : null
         },
@@ -24829,7 +25239,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a deregister on-premises instance operation.</p>",
+      "documentation" : "<p>Represents the input of a DeregisterOnPremisesInstance operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -27491,7 +27901,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a get application operation.</p>",
+      "documentation" : "<p>Represents the input of a GetApplication operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -27660,7 +28070,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a get application operation.</p>",
+      "documentation" : "<p>Represents the output of a GetApplication operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -27825,7 +28235,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a get application revision operation.</p>",
+      "documentation" : "<p>Represents the input of a GetApplicationRevision operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -28119,7 +28529,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a get application revision operation.</p>",
+      "documentation" : "<p>Represents the output of a GetApplicationRevision operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -28534,7 +28944,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a get deployment configuration operation.</p>",
+      "documentation" : "<p>Represents the input of a GetDeploymentConfig operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -28703,7 +29113,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a get deployment configuration operation.</p>",
+      "documentation" : "<p>Represents the output of a GetDeploymentConfig operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -28868,7 +29278,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a get deployment group operation.</p>",
+      "documentation" : "<p>Represents the input of a GetDeploymentGroup operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -29162,7 +29572,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a get deployment group operation.</p>",
+      "documentation" : "<p>Represents the output of a GetDeploymentGroup operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -29327,7 +29737,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a get deployment instance operation.</p>",
+      "documentation" : "<p>Represents the input of a GetDeploymentInstance operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -29621,7 +30031,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a get deployment instance operation.</p>",
+      "documentation" : "<p>Represents the output of a GetDeploymentInstance operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -29786,7 +30196,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a get deployment operation.</p>",
+      "documentation" : "<p>Represents the input of a GetDeployment operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -29955,7 +30365,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a get deployment operation.</p>",
+      "documentation" : "<p>Represents the output of a GetDeployment operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -30120,7 +30530,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a get on-premises instance operation.</p>",
+      "documentation" : "<p>Represents the input of a GetOnPremisesInstance operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -30289,7 +30699,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a get on-premises instance operation.</p>",
+      "documentation" : "<p>Represents the output of a GetOnPremisesInstance operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -34728,6 +35138,546 @@
       },
       "wrapper" : false
     },
+    "LastDeploymentInfo" : {
+      "c2jName" : "LastDeploymentInfo",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>Information about the most recent attempted or successful deployment to a deployment group.</p>",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "deploymentId",
+        "c2jShape" : "DeploymentId",
+        "deprecated" : false,
+        "documentation" : "<p>The deployment ID.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The deployment ID.</p>\n@param deploymentId The deployment ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withDeploymentId",
+        "getterDocumentation" : "/**<p>The deployment ID.</p>\n@return The deployment ID.*/",
+        "getterMethodName" : "getDeploymentId",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "deploymentId",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "deploymentId",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "DeploymentId",
+        "setterDocumentation" : "/**<p>The deployment ID.</p>\n@param deploymentId The deployment ID.*/",
+        "setterMethodName" : "setDeploymentId",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "deploymentId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The deployment ID.</p>\n@param deploymentId The deployment ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "deploymentId",
+          "variableType" : "String",
+          "documentation" : "<p>The deployment ID.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "status",
+        "c2jShape" : "DeploymentStatus",
+        "deprecated" : false,
+        "documentation" : "<p>The status of the most recent deployment.</p>",
+        "enumType" : "DeploymentStatus",
+        "fluentSetterDocumentation" : "/**<p>The status of the most recent deployment.</p>\n@param status The status of the most recent deployment.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DeploymentStatus*/",
+        "fluentSetterMethodName" : "withStatus",
+        "getterDocumentation" : "/**<p>The status of the most recent deployment.</p>\n@return The status of the most recent deployment.\n@see DeploymentStatus*/",
+        "getterMethodName" : "getStatus",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "status",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "status",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "Status",
+        "setterDocumentation" : "/**<p>The status of the most recent deployment.</p>\n@param status The status of the most recent deployment.\n@see DeploymentStatus*/",
+        "setterMethodName" : "setStatus",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "status",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The status of the most recent deployment.</p>\n@param status The status of the most recent deployment.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DeploymentStatus*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "status",
+          "variableType" : "String",
+          "documentation" : "<p>The status of the most recent deployment.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "endTime",
+        "c2jShape" : "Timestamp",
+        "deprecated" : false,
+        "documentation" : "<p>A timestamp indicating when the most recent deployment to the deployment group completed.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>A timestamp indicating when the most recent deployment to the deployment group completed.</p>\n@param endTime A timestamp indicating when the most recent deployment to the deployment group completed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withEndTime",
+        "getterDocumentation" : "/**<p>A timestamp indicating when the most recent deployment to the deployment group completed.</p>\n@return A timestamp indicating when the most recent deployment to the deployment group completed.*/",
+        "getterMethodName" : "getEndTime",
+        "getterModel" : {
+          "returnType" : "java.util.Date",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "endTime",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "endTime",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "java.util.Date",
+        "marshallingType" : "DATE",
+        "name" : "EndTime",
+        "setterDocumentation" : "/**<p>A timestamp indicating when the most recent deployment to the deployment group completed.</p>\n@param endTime A timestamp indicating when the most recent deployment to the deployment group completed.*/",
+        "setterMethodName" : "setEndTime",
+        "setterModel" : {
+          "variableDeclarationType" : "java.util.Date",
+          "variableName" : "endTime",
+          "variableType" : "java.util.Date",
+          "documentation" : "",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>A timestamp indicating when the most recent deployment to the deployment group completed.</p>\n@param endTime A timestamp indicating when the most recent deployment to the deployment group completed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "java.util.Date",
+          "variableName" : "endTime",
+          "variableType" : "java.util.Date",
+          "documentation" : "<p>A timestamp indicating when the most recent deployment to the deployment group completed.</p>",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "createTime",
+        "c2jShape" : "Timestamp",
+        "deprecated" : false,
+        "documentation" : "<p>A timestamp indicating when the most recent deployment to the deployment group started.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>A timestamp indicating when the most recent deployment to the deployment group started.</p>\n@param createTime A timestamp indicating when the most recent deployment to the deployment group started.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withCreateTime",
+        "getterDocumentation" : "/**<p>A timestamp indicating when the most recent deployment to the deployment group started.</p>\n@return A timestamp indicating when the most recent deployment to the deployment group started.*/",
+        "getterMethodName" : "getCreateTime",
+        "getterModel" : {
+          "returnType" : "java.util.Date",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "createTime",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "createTime",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "java.util.Date",
+        "marshallingType" : "DATE",
+        "name" : "CreateTime",
+        "setterDocumentation" : "/**<p>A timestamp indicating when the most recent deployment to the deployment group started.</p>\n@param createTime A timestamp indicating when the most recent deployment to the deployment group started.*/",
+        "setterMethodName" : "setCreateTime",
+        "setterModel" : {
+          "variableDeclarationType" : "java.util.Date",
+          "variableName" : "createTime",
+          "variableType" : "java.util.Date",
+          "documentation" : "",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>A timestamp indicating when the most recent deployment to the deployment group started.</p>\n@param createTime A timestamp indicating when the most recent deployment to the deployment group started.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "java.util.Date",
+          "variableName" : "createTime",
+          "variableType" : "java.util.Date",
+          "documentation" : "<p>A timestamp indicating when the most recent deployment to the deployment group started.</p>",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "CreateTime" : {
+          "c2jName" : "createTime",
+          "c2jShape" : "Timestamp",
+          "deprecated" : false,
+          "documentation" : "<p>A timestamp indicating when the most recent deployment to the deployment group started.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>A timestamp indicating when the most recent deployment to the deployment group started.</p>\n@param createTime A timestamp indicating when the most recent deployment to the deployment group started.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withCreateTime",
+          "getterDocumentation" : "/**<p>A timestamp indicating when the most recent deployment to the deployment group started.</p>\n@return A timestamp indicating when the most recent deployment to the deployment group started.*/",
+          "getterMethodName" : "getCreateTime",
+          "getterModel" : {
+            "returnType" : "java.util.Date",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "createTime",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "createTime",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "java.util.Date",
+          "marshallingType" : "DATE",
+          "name" : "CreateTime",
+          "setterDocumentation" : "/**<p>A timestamp indicating when the most recent deployment to the deployment group started.</p>\n@param createTime A timestamp indicating when the most recent deployment to the deployment group started.*/",
+          "setterMethodName" : "setCreateTime",
+          "setterModel" : {
+            "variableDeclarationType" : "java.util.Date",
+            "variableName" : "createTime",
+            "variableType" : "java.util.Date",
+            "documentation" : "",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>A timestamp indicating when the most recent deployment to the deployment group started.</p>\n@param createTime A timestamp indicating when the most recent deployment to the deployment group started.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "java.util.Date",
+            "variableName" : "createTime",
+            "variableType" : "java.util.Date",
+            "documentation" : "<p>A timestamp indicating when the most recent deployment to the deployment group started.</p>",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "DeploymentId" : {
+          "c2jName" : "deploymentId",
+          "c2jShape" : "DeploymentId",
+          "deprecated" : false,
+          "documentation" : "<p>The deployment ID.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The deployment ID.</p>\n@param deploymentId The deployment ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withDeploymentId",
+          "getterDocumentation" : "/**<p>The deployment ID.</p>\n@return The deployment ID.*/",
+          "getterMethodName" : "getDeploymentId",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "deploymentId",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "deploymentId",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "DeploymentId",
+          "setterDocumentation" : "/**<p>The deployment ID.</p>\n@param deploymentId The deployment ID.*/",
+          "setterMethodName" : "setDeploymentId",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "deploymentId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The deployment ID.</p>\n@param deploymentId The deployment ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "deploymentId",
+            "variableType" : "String",
+            "documentation" : "<p>The deployment ID.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "EndTime" : {
+          "c2jName" : "endTime",
+          "c2jShape" : "Timestamp",
+          "deprecated" : false,
+          "documentation" : "<p>A timestamp indicating when the most recent deployment to the deployment group completed.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>A timestamp indicating when the most recent deployment to the deployment group completed.</p>\n@param endTime A timestamp indicating when the most recent deployment to the deployment group completed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withEndTime",
+          "getterDocumentation" : "/**<p>A timestamp indicating when the most recent deployment to the deployment group completed.</p>\n@return A timestamp indicating when the most recent deployment to the deployment group completed.*/",
+          "getterMethodName" : "getEndTime",
+          "getterModel" : {
+            "returnType" : "java.util.Date",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "endTime",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "endTime",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "java.util.Date",
+          "marshallingType" : "DATE",
+          "name" : "EndTime",
+          "setterDocumentation" : "/**<p>A timestamp indicating when the most recent deployment to the deployment group completed.</p>\n@param endTime A timestamp indicating when the most recent deployment to the deployment group completed.*/",
+          "setterMethodName" : "setEndTime",
+          "setterModel" : {
+            "variableDeclarationType" : "java.util.Date",
+            "variableName" : "endTime",
+            "variableType" : "java.util.Date",
+            "documentation" : "",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>A timestamp indicating when the most recent deployment to the deployment group completed.</p>\n@param endTime A timestamp indicating when the most recent deployment to the deployment group completed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "java.util.Date",
+            "variableName" : "endTime",
+            "variableType" : "java.util.Date",
+            "documentation" : "<p>A timestamp indicating when the most recent deployment to the deployment group completed.</p>",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "Status" : {
+          "c2jName" : "status",
+          "c2jShape" : "DeploymentStatus",
+          "deprecated" : false,
+          "documentation" : "<p>The status of the most recent deployment.</p>",
+          "enumType" : "DeploymentStatus",
+          "fluentSetterDocumentation" : "/**<p>The status of the most recent deployment.</p>\n@param status The status of the most recent deployment.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DeploymentStatus*/",
+          "fluentSetterMethodName" : "withStatus",
+          "getterDocumentation" : "/**<p>The status of the most recent deployment.</p>\n@return The status of the most recent deployment.\n@see DeploymentStatus*/",
+          "getterMethodName" : "getStatus",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "status",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "status",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "Status",
+          "setterDocumentation" : "/**<p>The status of the most recent deployment.</p>\n@param status The status of the most recent deployment.\n@see DeploymentStatus*/",
+          "setterMethodName" : "setStatus",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "status",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The status of the most recent deployment.</p>\n@param status The status of the most recent deployment.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DeploymentStatus*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "status",
+            "variableType" : "String",
+            "documentation" : "<p>The status of the most recent deployment.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "LastDeploymentInfo",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "LastDeploymentInfo",
+        "variableName" : "lastDeploymentInfo",
+        "variableType" : "LastDeploymentInfo",
+        "documentation" : null,
+        "simpleType" : "LastDeploymentInfo",
+        "variableSetterType" : "LastDeploymentInfo"
+      },
+      "wrapper" : false
+    },
     "LifecycleErrorCode" : {
       "c2jName" : "LifecycleErrorCode",
       "customization" : {
@@ -35552,7 +36502,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a list application revisions operation.</p>",
+      "documentation" : "<p>Represents the input of a ListApplicationRevisions operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -36471,7 +37421,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a list application revisions operation.</p>",
+      "documentation" : "<p>Represents the output of a ListApplicationRevisions operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -36915,7 +37865,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a list applications operation.</p>",
+      "documentation" : "<p>Represents the input of a ListApplications operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -37084,7 +38034,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a list applications operation.</p>",
+      "documentation" : "<p>Represents the output of a ListApplications operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -37528,7 +38478,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a list deployment configurations operation.</p>",
+      "documentation" : "<p>Represents the input of a ListDeploymentConfigs operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -37697,7 +38647,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a list deployment configurations operation.</p>",
+      "documentation" : "<p>Represents the output of a ListDeploymentConfigs operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -38141,7 +39091,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a list deployment groups operation.</p>",
+      "documentation" : "<p>Represents the input of a ListDeploymentGroups operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -38435,7 +39385,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a list deployment groups operation.</p>",
+      "documentation" : "<p>Represents the output of a ListDeploymentGroups operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -39004,7 +39954,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a list deployment instances operation.</p>",
+      "documentation" : "<p>Represents the input of a ListDeploymentInstances operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -39856,7 +40806,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a list deployment instances operation.</p>",
+      "documentation" : "<p>Represents the output of a ListDeploymentInstances operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -40300,7 +41250,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a list deployments operation.</p>",
+      "documentation" : "<p>Represents the input of a ListDeployments operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -41123,7 +42073,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a list deployments operation.</p>",
+      "documentation" : "<p>Represents the output of a ListDeployments operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -41558,6 +42508,619 @@
       },
       "wrapper" : false
     },
+    "ListGitHubAccountTokenNamesRequest" : {
+      "c2jName" : "ListGitHubAccountTokenNamesInput",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>Represents the input of a ListGitHubAccountTokenNames operation.</p>",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "ListGitHubAccountTokenNames",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : "CodeDeploy_20141006.ListGitHubAccountTokenNames",
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "nextToken",
+        "c2jShape" : "NextToken",
+        "deprecated" : false,
+        "documentation" : "<p>An identifier returned from the previous ListGitHubAccountTokenNames call. It can be used to return the next set of names in the list. </p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>An identifier returned from the previous ListGitHubAccountTokenNames call. It can be used to return the next set of names in the list. </p>\n@param nextToken An identifier returned from the previous ListGitHubAccountTokenNames call. It can be used to return the next set of names in the list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withNextToken",
+        "getterDocumentation" : "/**<p>An identifier returned from the previous ListGitHubAccountTokenNames call. It can be used to return the next set of names in the list. </p>\n@return An identifier returned from the previous ListGitHubAccountTokenNames call. It can be used to return the next set of names in the list.*/",
+        "getterMethodName" : "getNextToken",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "nextToken",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "nextToken",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "NextToken",
+        "setterDocumentation" : "/**<p>An identifier returned from the previous ListGitHubAccountTokenNames call. It can be used to return the next set of names in the list. </p>\n@param nextToken An identifier returned from the previous ListGitHubAccountTokenNames call. It can be used to return the next set of names in the list.*/",
+        "setterMethodName" : "setNextToken",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "nextToken",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>An identifier returned from the previous ListGitHubAccountTokenNames call. It can be used to return the next set of names in the list. </p>\n@param nextToken An identifier returned from the previous ListGitHubAccountTokenNames call. It can be used to return the next set of names in the list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "nextToken",
+          "variableType" : "String",
+          "documentation" : "<p>An identifier returned from the previous ListGitHubAccountTokenNames call. It can be used to return the next set of names in the list. </p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "NextToken" : {
+          "c2jName" : "nextToken",
+          "c2jShape" : "NextToken",
+          "deprecated" : false,
+          "documentation" : "<p>An identifier returned from the previous ListGitHubAccountTokenNames call. It can be used to return the next set of names in the list. </p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>An identifier returned from the previous ListGitHubAccountTokenNames call. It can be used to return the next set of names in the list. </p>\n@param nextToken An identifier returned from the previous ListGitHubAccountTokenNames call. It can be used to return the next set of names in the list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withNextToken",
+          "getterDocumentation" : "/**<p>An identifier returned from the previous ListGitHubAccountTokenNames call. It can be used to return the next set of names in the list. </p>\n@return An identifier returned from the previous ListGitHubAccountTokenNames call. It can be used to return the next set of names in the list.*/",
+          "getterMethodName" : "getNextToken",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "nextToken",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "nextToken",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "NextToken",
+          "setterDocumentation" : "/**<p>An identifier returned from the previous ListGitHubAccountTokenNames call. It can be used to return the next set of names in the list. </p>\n@param nextToken An identifier returned from the previous ListGitHubAccountTokenNames call. It can be used to return the next set of names in the list.*/",
+          "setterMethodName" : "setNextToken",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "nextToken",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>An identifier returned from the previous ListGitHubAccountTokenNames call. It can be used to return the next set of names in the list. </p>\n@param nextToken An identifier returned from the previous ListGitHubAccountTokenNames call. It can be used to return the next set of names in the list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "nextToken",
+            "variableType" : "String",
+            "documentation" : "<p>An identifier returned from the previous ListGitHubAccountTokenNames call. It can be used to return the next set of names in the list. </p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "ListGitHubAccountTokenNamesRequest",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "ListGitHubAccountTokenNamesRequest",
+        "variableName" : "listGitHubAccountTokenNamesRequest",
+        "variableType" : "ListGitHubAccountTokenNamesRequest",
+        "documentation" : null,
+        "simpleType" : "ListGitHubAccountTokenNamesRequest",
+        "variableSetterType" : "ListGitHubAccountTokenNamesRequest"
+      },
+      "wrapper" : false
+    },
+    "ListGitHubAccountTokenNamesResult" : {
+      "c2jName" : "ListGitHubAccountTokenNamesOutput",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>Represents the output of a ListGitHubAccountTokenNames operation.</p>",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "tokenNameList",
+        "c2jShape" : "GitHubAccountTokenNameList",
+        "deprecated" : false,
+        "documentation" : "<p>A list of names of connections to GitHub accounts.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>A list of names of connections to GitHub accounts.</p>\n@param tokenNameList A list of names of connections to GitHub accounts.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withTokenNameList",
+        "getterDocumentation" : "/**<p>A list of names of connections to GitHub accounts.</p>\n@return A list of names of connections to GitHub accounts.*/",
+        "getterMethodName" : "getTokenNameList",
+        "getterModel" : {
+          "returnType" : "java.util.List<String>",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "tokenNameList",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "tokenNameList",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : true,
+        "listModel" : {
+          "implType" : "com.amazonaws.internal.SdkInternalList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "c2jName" : "member",
+            "c2jShape" : "GitHubAccountTokenName",
+            "deprecated" : false,
+            "documentation" : "",
+            "enumType" : null,
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "fluentSetterMethodName" : "withMember",
+            "getterDocumentation" : "/**\n@return */",
+            "getterMethodName" : "getMember",
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "additionalMarshallingPath" : null,
+              "additionalUnmarshallingPath" : null,
+              "flattened" : false,
+              "greedy" : false,
+              "header" : false,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "marshallLocation" : "PAYLOAD",
+              "marshallLocationName" : "member",
+              "queryString" : false,
+              "statusCode" : false,
+              "unmarshallLocationName" : "member",
+              "uri" : false
+            },
+            "idempotencyToken" : false,
+            "isBinary" : false,
+            "jsonValue" : false,
+            "list" : false,
+            "listModel" : null,
+            "map" : false,
+            "mapModel" : null,
+            "marshallingTargetClass" : "String",
+            "marshallingType" : "STRING",
+            "name" : "Member",
+            "setterDocumentation" : "/**\n@param member */",
+            "setterMethodName" : "setMember",
+            "setterModel" : {
+              "variableDeclarationType" : "String",
+              "variableName" : "member",
+              "variableType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "simple" : true,
+            "unmarshallingType" : null,
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "variable" : {
+              "variableDeclarationType" : "String",
+              "variableName" : "member",
+              "variableType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "xmlNameSpaceUri" : null
+          },
+          "memberLocationName" : null,
+          "memberType" : "String",
+          "map" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : true,
+          "simpleType" : "String",
+          "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "templateType" : "java.util.List<String>"
+        },
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "List",
+        "marshallingType" : "LIST",
+        "name" : "TokenNameList",
+        "setterDocumentation" : "/**<p>A list of names of connections to GitHub accounts.</p>\n@param tokenNameList A list of names of connections to GitHub accounts.*/",
+        "setterMethodName" : "setTokenNameList",
+        "setterModel" : {
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "variableName" : "tokenNameList",
+          "variableType" : "java.util.List<String>",
+          "documentation" : "",
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
+        },
+        "simple" : false,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>A list of names of connections to GitHub accounts.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTokenNameList(java.util.Collection)} or {@link #withTokenNameList(java.util.Collection)} if you want to override the existing values.</p>\n@param tokenNameList A list of names of connections to GitHub accounts.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
+          "variableName" : "tokenNameList",
+          "variableType" : "java.util.List<String>",
+          "documentation" : "<p>A list of names of connections to GitHub accounts.</p>",
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "nextToken",
+        "c2jShape" : "NextToken",
+        "deprecated" : false,
+        "documentation" : "<p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent ListGitHubAccountTokenNames call to return the next set of names in the list. </p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent ListGitHubAccountTokenNames call to return the next set of names in the list. </p>\n@param nextToken If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent ListGitHubAccountTokenNames call to return the next set of names in the list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withNextToken",
+        "getterDocumentation" : "/**<p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent ListGitHubAccountTokenNames call to return the next set of names in the list. </p>\n@return If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent ListGitHubAccountTokenNames call to return the next set of names in the list.*/",
+        "getterMethodName" : "getNextToken",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "nextToken",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "nextToken",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "NextToken",
+        "setterDocumentation" : "/**<p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent ListGitHubAccountTokenNames call to return the next set of names in the list. </p>\n@param nextToken If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent ListGitHubAccountTokenNames call to return the next set of names in the list.*/",
+        "setterMethodName" : "setNextToken",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "nextToken",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent ListGitHubAccountTokenNames call to return the next set of names in the list. </p>\n@param nextToken If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent ListGitHubAccountTokenNames call to return the next set of names in the list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "nextToken",
+          "variableType" : "String",
+          "documentation" : "<p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent ListGitHubAccountTokenNames call to return the next set of names in the list. </p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "NextToken" : {
+          "c2jName" : "nextToken",
+          "c2jShape" : "NextToken",
+          "deprecated" : false,
+          "documentation" : "<p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent ListGitHubAccountTokenNames call to return the next set of names in the list. </p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent ListGitHubAccountTokenNames call to return the next set of names in the list. </p>\n@param nextToken If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent ListGitHubAccountTokenNames call to return the next set of names in the list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withNextToken",
+          "getterDocumentation" : "/**<p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent ListGitHubAccountTokenNames call to return the next set of names in the list. </p>\n@return If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent ListGitHubAccountTokenNames call to return the next set of names in the list.*/",
+          "getterMethodName" : "getNextToken",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "nextToken",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "nextToken",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "NextToken",
+          "setterDocumentation" : "/**<p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent ListGitHubAccountTokenNames call to return the next set of names in the list. </p>\n@param nextToken If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent ListGitHubAccountTokenNames call to return the next set of names in the list.*/",
+          "setterMethodName" : "setNextToken",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "nextToken",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent ListGitHubAccountTokenNames call to return the next set of names in the list. </p>\n@param nextToken If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent ListGitHubAccountTokenNames call to return the next set of names in the list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "nextToken",
+            "variableType" : "String",
+            "documentation" : "<p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent ListGitHubAccountTokenNames call to return the next set of names in the list. </p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "TokenNameList" : {
+          "c2jName" : "tokenNameList",
+          "c2jShape" : "GitHubAccountTokenNameList",
+          "deprecated" : false,
+          "documentation" : "<p>A list of names of connections to GitHub accounts.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>A list of names of connections to GitHub accounts.</p>\n@param tokenNameList A list of names of connections to GitHub accounts.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withTokenNameList",
+          "getterDocumentation" : "/**<p>A list of names of connections to GitHub accounts.</p>\n@return A list of names of connections to GitHub accounts.*/",
+          "getterMethodName" : "getTokenNameList",
+          "getterModel" : {
+            "returnType" : "java.util.List<String>",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "tokenNameList",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "tokenNameList",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : true,
+          "listModel" : {
+            "implType" : "com.amazonaws.internal.SdkInternalList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "c2jName" : "member",
+              "c2jShape" : "GitHubAccountTokenName",
+              "deprecated" : false,
+              "documentation" : "",
+              "enumType" : null,
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "fluentSetterMethodName" : "withMember",
+              "getterDocumentation" : "/**\n@return */",
+              "getterMethodName" : "getMember",
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "additionalMarshallingPath" : null,
+                "additionalUnmarshallingPath" : null,
+                "flattened" : false,
+                "greedy" : false,
+                "header" : false,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "marshallLocation" : "PAYLOAD",
+                "marshallLocationName" : "member",
+                "queryString" : false,
+                "statusCode" : false,
+                "unmarshallLocationName" : "member",
+                "uri" : false
+              },
+              "idempotencyToken" : false,
+              "isBinary" : false,
+              "jsonValue" : false,
+              "list" : false,
+              "listModel" : null,
+              "map" : false,
+              "mapModel" : null,
+              "marshallingTargetClass" : "String",
+              "marshallingType" : "STRING",
+              "name" : "Member",
+              "setterDocumentation" : "/**\n@param member */",
+              "setterMethodName" : "setMember",
+              "setterModel" : {
+                "variableDeclarationType" : "String",
+                "variableName" : "member",
+                "variableType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "simple" : true,
+              "unmarshallingType" : null,
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "variable" : {
+                "variableDeclarationType" : "String",
+                "variableName" : "member",
+                "variableType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "xmlNameSpaceUri" : null
+            },
+            "memberLocationName" : null,
+            "memberType" : "String",
+            "map" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : true,
+            "simpleType" : "String",
+            "templateImplType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "templateType" : "java.util.List<String>"
+          },
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "List",
+          "marshallingType" : "LIST",
+          "name" : "TokenNameList",
+          "setterDocumentation" : "/**<p>A list of names of connections to GitHub accounts.</p>\n@param tokenNameList A list of names of connections to GitHub accounts.*/",
+          "setterMethodName" : "setTokenNameList",
+          "setterModel" : {
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "variableName" : "tokenNameList",
+            "variableType" : "java.util.List<String>",
+            "documentation" : "",
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
+          },
+          "simple" : false,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>A list of names of connections to GitHub accounts.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTokenNameList(java.util.Collection)} or {@link #withTokenNameList(java.util.Collection)} if you want to override the existing values.</p>\n@param tokenNameList A list of names of connections to GitHub accounts.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "com.amazonaws.internal.SdkInternalList<String>",
+            "variableName" : "tokenNameList",
+            "variableType" : "java.util.List<String>",
+            "documentation" : "<p>A list of names of connections to GitHub accounts.</p>",
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "ListGitHubAccountTokenNamesResult",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "ListGitHubAccountTokenNamesResult",
+        "variableName" : "listGitHubAccountTokenNamesResult",
+        "variableType" : "ListGitHubAccountTokenNamesResult",
+        "documentation" : null,
+        "simpleType" : "ListGitHubAccountTokenNamesResult",
+        "variableSetterType" : "ListGitHubAccountTokenNamesResult"
+      },
+      "wrapper" : false
+    },
     "ListOnPremisesInstancesRequest" : {
       "c2jName" : "ListOnPremisesInstancesInput",
       "customization" : {
@@ -41567,7 +43130,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a list on-premises instances operation.</p>",
+      "documentation" : "<p>Represents the input of a ListOnPremisesInstances operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -43322,7 +44885,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a register application revision operation.</p>",
+      "documentation" : "<p>Represents the input of a RegisterApplicationRevision operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -44283,7 +45846,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a remove tags from on-premises instances operation.</p>",
+      "documentation" : "<p>Represents the input of a RemoveTagsFromOnPremisesInstances operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -44912,6 +46475,42 @@
         "documentation" : null,
         "simpleType" : "RemoveTagsFromOnPremisesInstancesResult",
         "variableSetterType" : "RemoveTagsFromOnPremisesInstancesResult"
+      },
+      "wrapper" : false
+    },
+    "ResourceValidationException" : {
+      "c2jName" : "ResourceValidationException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>The specified resource could not be validated.</p>",
+      "enums" : null,
+      "errorCode" : "ResourceValidationException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "ResourceValidationException",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "ResourceValidationException",
+        "variableName" : "resourceValidationException",
+        "variableType" : "ResourceValidationException",
+        "documentation" : null,
+        "simpleType" : "ResourceValidationException",
+        "variableSetterType" : "ResourceValidationException"
       },
       "wrapper" : false
     },
@@ -47115,7 +48714,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a stop deployment operation.</p>",
+      "documentation" : "<p>Represents the input of a StopDeployment operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -47409,7 +49008,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a stop deployment operation.</p>",
+      "documentation" : "<p>Represents the output of a StopDeployment operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -50167,7 +51766,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of an update application operation.</p>",
+      "documentation" : "<p>Represents the input of an UpdateApplication operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -50500,7 +52099,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of an update deployment group operation.</p>",
+      "documentation" : "<p>Represents the input of an UpdateDeploymentGroup operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -52910,7 +54509,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of an update deployment group operation.</p>",
+      "documentation" : "<p>Represents the output of an UpdateDeploymentGroup operation.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,

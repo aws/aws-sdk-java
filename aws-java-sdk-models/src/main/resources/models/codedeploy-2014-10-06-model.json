@@ -1705,6 +1705,43 @@
         "shape" : "ListDeploymentsOutput"
       }
     },
+    "ListGitHubAccountTokenNames" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Lists the names of stored connections to GitHub accounts.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidNextTokenException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceValidationException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "ListGitHubAccountTokenNamesInput",
+        "xmlNamespace" : null
+      },
+      "name" : "ListGitHubAccountTokenNames",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "ListGitHubAccountTokenNamesOutput"
+      }
+    },
     "ListOnPremisesInstances" : {
       "authorizer" : null,
       "authtype" : "IAM",
@@ -2612,6 +2649,20 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "gitHubAccountName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The name for a connection to a GitHub account.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "GitHubAccountTokenName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "linkedToGitHub" : {
           "deprecated" : false,
           "documentation" : "<p>True if the user has authenticated with GitHub for the specified application; otherwise, false.</p>",
@@ -3055,7 +3106,7 @@
     },
     "BatchGetApplicationRevisionsInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a batch get application revisions operation.</p>",
+      "documentation" : "<p>Represents the input of a BatchGetApplicationRevisions operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3105,7 +3156,7 @@
     },
     "BatchGetApplicationRevisionsOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a batch get application revisions operation.</p>",
+      "documentation" : "<p>Represents the output of a BatchGetApplicationRevisions operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3169,7 +3220,7 @@
     },
     "BatchGetApplicationsInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a batch get applications operation.</p>",
+      "documentation" : "<p>Represents the input of a BatchGetApplications operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3205,7 +3256,7 @@
     },
     "BatchGetApplicationsOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a batch get applications operation.</p>",
+      "documentation" : "<p>Represents the output of a BatchGetApplications operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3241,7 +3292,7 @@
     },
     "BatchGetDeploymentGroupsInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a batch get deployment groups operation.</p>",
+      "documentation" : "<p>Represents the input of a BatchGetDeploymentGroups operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3291,7 +3342,7 @@
     },
     "BatchGetDeploymentGroupsOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a batch get deployment groups operation.</p>",
+      "documentation" : "<p>Represents the output of a BatchGetDeploymentGroups operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3341,7 +3392,7 @@
     },
     "BatchGetDeploymentInstancesInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a batch get deployment instances operation.</p>",
+      "documentation" : "<p>Represents the input of a BatchGetDeploymentInstances operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3391,7 +3442,7 @@
     },
     "BatchGetDeploymentInstancesOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a batch get deployment instance operation.</p>",
+      "documentation" : "<p>Represents the output of a BatchGetDeploymentInstances operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3441,7 +3492,7 @@
     },
     "BatchGetDeploymentsInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a batch get deployments operation.</p>",
+      "documentation" : "<p>Represents the input of a BatchGetDeployments operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3477,7 +3528,7 @@
     },
     "BatchGetDeploymentsOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a batch get deployments operation.</p>",
+      "documentation" : "<p>Represents the output of a BatchGetDeployments operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3513,7 +3564,7 @@
     },
     "BatchGetOnPremisesInstancesInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a batch get on-premises instances operation.</p>",
+      "documentation" : "<p>Represents the input of a BatchGetOnPremisesInstances operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3549,7 +3600,7 @@
     },
     "BatchGetOnPremisesInstancesOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a batch get on-premises instances operation.</p>",
+      "documentation" : "<p>Represents the output of a BatchGetOnPremisesInstances operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3840,7 +3891,7 @@
     },
     "CreateApplicationInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a create application operation.</p>",
+      "documentation" : "<p>Represents the input of a CreateApplication operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3876,7 +3927,7 @@
     },
     "CreateApplicationOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a create application operation.</p>",
+      "documentation" : "<p>Represents the output of a CreateApplication operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3912,7 +3963,7 @@
     },
     "CreateDeploymentConfigInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a create deployment configuration operation.</p>",
+      "documentation" : "<p>Represents the input of a CreateDeploymentConfig operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3962,7 +4013,7 @@
     },
     "CreateDeploymentConfigOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a create deployment configuration operation.</p>",
+      "documentation" : "<p>Represents the output of a CreateDeploymentConfig operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -3998,7 +4049,7 @@
     },
     "CreateDeploymentGroupInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a create deployment group operation.</p>",
+      "documentation" : "<p>Represents the input of a CreateDeploymentGroup operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4202,7 +4253,7 @@
     },
     "CreateDeploymentGroupOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a create deployment group operation.</p>",
+      "documentation" : "<p>Represents the output of a CreateDeploymentGroup operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4238,7 +4289,7 @@
     },
     "CreateDeploymentInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a create deployment operation.</p>",
+      "documentation" : "<p>Represents the input of a CreateDeployment operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4400,7 +4451,7 @@
     },
     "CreateDeploymentOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a create deployment operation.</p>",
+      "documentation" : "<p>Represents the output of a CreateDeployment operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4436,7 +4487,7 @@
     },
     "DeleteApplicationInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a delete application operation.</p>",
+      "documentation" : "<p>Represents the input of a DeleteApplication operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4472,7 +4523,7 @@
     },
     "DeleteDeploymentConfigInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a delete deployment configuration operation.</p>",
+      "documentation" : "<p>Represents the input of a DeleteDeploymentConfig operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4508,7 +4559,7 @@
     },
     "DeleteDeploymentGroupInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a delete deployment group operation.</p>",
+      "documentation" : "<p>Represents the input of a DeleteDeploymentGroup operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4558,7 +4609,7 @@
     },
     "DeleteDeploymentGroupOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a delete deployment group operation.</p>",
+      "documentation" : "<p>Represents the output of a DeleteDeploymentGroup operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -5126,6 +5177,34 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "EC2TagFilterList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "lastAttemptedDeployment" : {
+          "deprecated" : false,
+          "documentation" : "<p>Information about the most recent attempted deployment to the deployment group.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "LastDeploymentInfo",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "lastSuccessfulDeployment" : {
+          "deprecated" : false,
+          "documentation" : "<p>Information about the most recent successful deployment to the deployment group.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "LastDeploymentInfo",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -6211,7 +6290,7 @@
     },
     "DeregisterOnPremisesInstanceInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a deregister on-premises instance operation.</p>",
+      "documentation" : "<p>Represents the input of a DeregisterOnPremisesInstance operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -6824,7 +6903,7 @@
     },
     "GetApplicationInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a get application operation.</p>",
+      "documentation" : "<p>Represents the input of a GetApplication operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -6860,7 +6939,7 @@
     },
     "GetApplicationOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a get application operation.</p>",
+      "documentation" : "<p>Represents the output of a GetApplication operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -6896,7 +6975,7 @@
     },
     "GetApplicationRevisionInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a get application revision operation.</p>",
+      "documentation" : "<p>Represents the input of a GetApplicationRevision operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -6946,7 +7025,7 @@
     },
     "GetApplicationRevisionOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a get application revision operation.</p>",
+      "documentation" : "<p>Represents the output of a GetApplicationRevision operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -7010,7 +7089,7 @@
     },
     "GetDeploymentConfigInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a get deployment configuration operation.</p>",
+      "documentation" : "<p>Represents the input of a GetDeploymentConfig operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -7046,7 +7125,7 @@
     },
     "GetDeploymentConfigOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a get deployment configuration operation.</p>",
+      "documentation" : "<p>Represents the output of a GetDeploymentConfig operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -7082,7 +7161,7 @@
     },
     "GetDeploymentGroupInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a get deployment group operation.</p>",
+      "documentation" : "<p>Represents the input of a GetDeploymentGroup operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -7132,7 +7211,7 @@
     },
     "GetDeploymentGroupOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a get deployment group operation.</p>",
+      "documentation" : "<p>Represents the output of a GetDeploymentGroup operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -7168,7 +7247,7 @@
     },
     "GetDeploymentInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a get deployment operation.</p>",
+      "documentation" : "<p>Represents the input of a GetDeployment operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -7204,7 +7283,7 @@
     },
     "GetDeploymentInstanceInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a get deployment instance operation.</p>",
+      "documentation" : "<p>Represents the input of a GetDeploymentInstance operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -7254,7 +7333,7 @@
     },
     "GetDeploymentInstanceOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a get deployment instance operation.</p>",
+      "documentation" : "<p>Represents the output of a GetDeploymentInstance operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -7290,7 +7369,7 @@
     },
     "GetDeploymentOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a get deployment operation.</p>",
+      "documentation" : "<p>Represents the output of a GetDeployment operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -7326,7 +7405,7 @@
     },
     "GetOnPremisesInstanceInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a get on-premises instance operation.</p>",
+      "documentation" : "<p>Represents the input of a GetOnPremisesInstance operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -7362,7 +7441,7 @@
     },
     "GetOnPremisesInstanceOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a get on-premises instance operation.</p>",
+      "documentation" : "<p>Represents the output of a GetOnPremisesInstance operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -7393,6 +7472,82 @@
       "required" : null,
       "streaming" : false,
       "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "GitHubAccountTokenDoesNotExistException" : {
+      "deprecated" : false,
+      "documentation" : "<p>No GitHub account connection exists with the named specified in the call.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "GitHubAccountTokenName" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "GitHubAccountTokenNameList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "GitHubAccountTokenName",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
       "value" : null,
       "wrapper" : false
     },
@@ -9088,6 +9243,84 @@
       "value" : null,
       "wrapper" : false
     },
+    "LastDeploymentInfo" : {
+      "deprecated" : false,
+      "documentation" : "<p>Information about the most recent attempted or successful deployment to a deployment group.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "createTime" : {
+          "deprecated" : false,
+          "documentation" : "<p>A timestamp indicating when the most recent deployment to the deployment group started.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Timestamp",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "deploymentId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The deployment ID.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DeploymentId",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "endTime" : {
+          "deprecated" : false,
+          "documentation" : "<p>A timestamp indicating when the most recent deployment to the deployment group completed.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Timestamp",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "status" : {
+          "deprecated" : false,
+          "documentation" : "<p>The status of the most recent deployment.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DeploymentStatus",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "LifecycleErrorCode" : {
       "deprecated" : false,
       "documentation" : null,
@@ -9321,7 +9554,7 @@
     },
     "ListApplicationRevisionsInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a list application revisions operation.</p>",
+      "documentation" : "<p>Represents the input of a ListApplicationRevisions operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -9441,7 +9674,7 @@
     },
     "ListApplicationRevisionsOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a list application revisions operation.</p>",
+      "documentation" : "<p>Represents the output of a ListApplicationRevisions operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -9491,7 +9724,7 @@
     },
     "ListApplicationsInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a list applications operation.</p>",
+      "documentation" : "<p>Represents the input of a ListApplications operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -9527,7 +9760,7 @@
     },
     "ListApplicationsOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a list applications operation.</p>",
+      "documentation" : "<p>Represents the output of a ListApplications operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -9577,7 +9810,7 @@
     },
     "ListDeploymentConfigsInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a list deployment configurations operation.</p>",
+      "documentation" : "<p>Represents the input of a ListDeploymentConfigs operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -9613,7 +9846,7 @@
     },
     "ListDeploymentConfigsOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a list deployment configurations operation.</p>",
+      "documentation" : "<p>Represents the output of a ListDeploymentConfigs operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -9663,7 +9896,7 @@
     },
     "ListDeploymentGroupsInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a list deployment groups operation.</p>",
+      "documentation" : "<p>Represents the input of a ListDeploymentGroups operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -9713,7 +9946,7 @@
     },
     "ListDeploymentGroupsOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a list deployment groups operation.</p>",
+      "documentation" : "<p>Represents the output of a ListDeploymentGroups operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -9777,7 +10010,7 @@
     },
     "ListDeploymentInstancesInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a list deployment instances operation.</p>",
+      "documentation" : "<p>Represents the input of a ListDeploymentInstances operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -9855,7 +10088,7 @@
     },
     "ListDeploymentInstancesOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a list deployment instances operation.</p>",
+      "documentation" : "<p>Represents the output of a ListDeploymentInstances operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -9905,7 +10138,7 @@
     },
     "ListDeploymentsInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a list deployments operation.</p>",
+      "documentation" : "<p>Represents the input of a ListDeployments operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -9997,7 +10230,7 @@
     },
     "ListDeploymentsOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a list deployments operation.</p>",
+      "documentation" : "<p>Represents the output of a ListDeployments operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -10045,9 +10278,95 @@
       "value" : null,
       "wrapper" : false
     },
+    "ListGitHubAccountTokenNamesInput" : {
+      "deprecated" : false,
+      "documentation" : "<p>Represents the input of a ListGitHubAccountTokenNames operation.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "nextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>An identifier returned from the previous ListGitHubAccountTokenNames call. It can be used to return the next set of names in the list. </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NextToken",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ListGitHubAccountTokenNamesOutput" : {
+      "deprecated" : false,
+      "documentation" : "<p>Represents the output of a ListGitHubAccountTokenNames operation.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "nextToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent ListGitHubAccountTokenNames call to return the next set of names in the list. </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "NextToken",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "tokenNameList" : {
+          "deprecated" : false,
+          "documentation" : "<p>A list of names of connections to GitHub accounts.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "GitHubAccountTokenNameList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "ListOnPremisesInstancesInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a list on-premises instances operation.</p>",
+      "documentation" : "<p>Represents the input of a ListOnPremisesInstances operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -10415,7 +10734,7 @@
     },
     "RegisterApplicationRevisionInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a register application revision operation.</p>",
+      "documentation" : "<p>Represents the input of a RegisterApplicationRevision operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -10564,7 +10883,7 @@
     },
     "RemoveTagsFromOnPremisesInstancesInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a remove tags from on-premises instances operation.</p>",
+      "documentation" : "<p>Represents the input of a RemoveTagsFromOnPremisesInstances operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -10630,6 +10949,27 @@
       "required" : null,
       "streaming" : false,
       "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ResourceValidationException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The specified resource could not be validated.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
       "value" : null,
       "wrapper" : false
     },
@@ -11198,7 +11538,7 @@
     },
     "StopDeploymentInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of a stop deployment operation.</p>",
+      "documentation" : "<p>Represents the input of a StopDeployment operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -11248,7 +11588,7 @@
     },
     "StopDeploymentOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of a stop deployment operation.</p>",
+      "documentation" : "<p>Represents the output of a StopDeployment operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -11922,7 +12262,7 @@
     },
     "UpdateApplicationInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of an update application operation.</p>",
+      "documentation" : "<p>Represents the input of an UpdateApplication operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -11972,7 +12312,7 @@
     },
     "UpdateDeploymentGroupInput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the input of an update deployment group operation.</p>",
+      "documentation" : "<p>Represents the input of an UpdateDeploymentGroup operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -12190,7 +12530,7 @@
     },
     "UpdateDeploymentGroupOutput" : {
       "deprecated" : false,
-      "documentation" : "<p>Represents the output of an update deployment group operation.</p>",
+      "documentation" : "<p>Represents the output of an UpdateDeploymentGroup operation.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,

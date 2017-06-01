@@ -44,6 +44,9 @@ public class AdminUpdateUserAttributesRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * An array of name-value pairs representing user attributes.
      * </p>
+     * <p>
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     * </p>
      */
     private java.util.List<AttributeType> userAttributes;
 
@@ -131,8 +134,13 @@ public class AdminUpdateUserAttributesRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * An array of name-value pairs representing user attributes.
      * </p>
+     * <p>
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     * </p>
      * 
-     * @return An array of name-value pairs representing user attributes.
+     * @return An array of name-value pairs representing user attributes.</p>
+     *         <p>
+     *         For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      */
 
     public java.util.List<AttributeType> getUserAttributes() {
@@ -143,9 +151,14 @@ public class AdminUpdateUserAttributesRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * An array of name-value pairs representing user attributes.
      * </p>
+     * <p>
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     * </p>
      * 
      * @param userAttributes
-     *        An array of name-value pairs representing user attributes.
+     *        An array of name-value pairs representing user attributes.</p>
+     *        <p>
+     *        For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      */
 
     public void setUserAttributes(java.util.Collection<AttributeType> userAttributes) {
@@ -162,13 +175,18 @@ public class AdminUpdateUserAttributesRequest extends com.amazonaws.AmazonWebSer
      * An array of name-value pairs representing user attributes.
      * </p>
      * <p>
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setUserAttributes(java.util.Collection)} or {@link #withUserAttributes(java.util.Collection)} if you want
      * to override the existing values.
      * </p>
      * 
      * @param userAttributes
-     *        An array of name-value pairs representing user attributes.
+     *        An array of name-value pairs representing user attributes.</p>
+     *        <p>
+     *        For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -186,9 +204,14 @@ public class AdminUpdateUserAttributesRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * An array of name-value pairs representing user attributes.
      * </p>
+     * <p>
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     * </p>
      * 
      * @param userAttributes
-     *        An array of name-value pairs representing user attributes.
+     *        An array of name-value pairs representing user attributes.</p>
+     *        <p>
+     *        For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

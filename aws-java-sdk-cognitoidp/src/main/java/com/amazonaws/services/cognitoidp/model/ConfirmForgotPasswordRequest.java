@@ -49,13 +49,14 @@ public class ConfirmForgotPasswordRequest extends com.amazonaws.AmazonWebService
     private String username;
     /**
      * <p>
-     * The confirmation code sent by a user's request to retrieve a forgotten password.
+     * The confirmation code sent by a user's request to retrieve a forgotten password. For more information, see <a
+     * href="API_ForgotPassword.html">ForgotPassword</a>
      * </p>
      */
     private String confirmationCode;
     /**
      * <p>
-     * The password sent by sent by a user's request to retrieve a forgotten password.
+     * The password sent by a user's request to retrieve a forgotten password.
      * </p>
      */
     private String password;
@@ -188,11 +189,13 @@ public class ConfirmForgotPasswordRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The confirmation code sent by a user's request to retrieve a forgotten password.
+     * The confirmation code sent by a user's request to retrieve a forgotten password. For more information, see <a
+     * href="API_ForgotPassword.html">ForgotPassword</a>
      * </p>
      * 
      * @param confirmationCode
-     *        The confirmation code sent by a user's request to retrieve a forgotten password.
+     *        The confirmation code sent by a user's request to retrieve a forgotten password. For more information, see
+     *        <a href="API_ForgotPassword.html">ForgotPassword</a>
      */
 
     public void setConfirmationCode(String confirmationCode) {
@@ -201,10 +204,12 @@ public class ConfirmForgotPasswordRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The confirmation code sent by a user's request to retrieve a forgotten password.
+     * The confirmation code sent by a user's request to retrieve a forgotten password. For more information, see <a
+     * href="API_ForgotPassword.html">ForgotPassword</a>
      * </p>
      * 
-     * @return The confirmation code sent by a user's request to retrieve a forgotten password.
+     * @return The confirmation code sent by a user's request to retrieve a forgotten password. For more information,
+     *         see <a href="API_ForgotPassword.html">ForgotPassword</a>
      */
 
     public String getConfirmationCode() {
@@ -213,11 +218,13 @@ public class ConfirmForgotPasswordRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The confirmation code sent by a user's request to retrieve a forgotten password.
+     * The confirmation code sent by a user's request to retrieve a forgotten password. For more information, see <a
+     * href="API_ForgotPassword.html">ForgotPassword</a>
      * </p>
      * 
      * @param confirmationCode
-     *        The confirmation code sent by a user's request to retrieve a forgotten password.
+     *        The confirmation code sent by a user's request to retrieve a forgotten password. For more information, see
+     *        <a href="API_ForgotPassword.html">ForgotPassword</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -228,11 +235,11 @@ public class ConfirmForgotPasswordRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The password sent by sent by a user's request to retrieve a forgotten password.
+     * The password sent by a user's request to retrieve a forgotten password.
      * </p>
      * 
      * @param password
-     *        The password sent by sent by a user's request to retrieve a forgotten password.
+     *        The password sent by a user's request to retrieve a forgotten password.
      */
 
     public void setPassword(String password) {
@@ -241,10 +248,10 @@ public class ConfirmForgotPasswordRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The password sent by sent by a user's request to retrieve a forgotten password.
+     * The password sent by a user's request to retrieve a forgotten password.
      * </p>
      * 
-     * @return The password sent by sent by a user's request to retrieve a forgotten password.
+     * @return The password sent by a user's request to retrieve a forgotten password.
      */
 
     public String getPassword() {
@@ -253,11 +260,11 @@ public class ConfirmForgotPasswordRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The password sent by sent by a user's request to retrieve a forgotten password.
+     * The password sent by a user's request to retrieve a forgotten password.
      * </p>
      * 
      * @param password
-     *        The password sent by sent by a user's request to retrieve a forgotten password.
+     *        The password sent by a user's request to retrieve a forgotten password.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

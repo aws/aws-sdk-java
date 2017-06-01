@@ -17,7 +17,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods" ],
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
     "presignersFqcn" : null,
@@ -6872,11 +6872,11 @@
         "c2jName" : "voiceId",
         "c2jShape" : "String",
         "deprecated" : false,
-        "documentation" : "<p>The Amazon Parrot voice ID that Amazon Lex uses for voice interactions with the user.</p>",
+        "documentation" : "<p>The Amazon Polly voice ID that Amazon Lex uses for voice interactions with the user.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The Amazon Parrot voice ID that Amazon Lex uses for voice interactions with the user.</p>\n@param voiceId The Amazon Parrot voice ID that Amazon Lex uses for voice interactions with the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The Amazon Polly voice ID that Amazon Lex uses for voice interactions with the user.</p>\n@param voiceId The Amazon Polly voice ID that Amazon Lex uses for voice interactions with the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withVoiceId",
-        "getterDocumentation" : "/**<p>The Amazon Parrot voice ID that Amazon Lex uses for voice interactions with the user.</p>\n@return The Amazon Parrot voice ID that Amazon Lex uses for voice interactions with the user.*/",
+        "getterDocumentation" : "/**<p>The Amazon Polly voice ID that Amazon Lex uses for voice interactions with the user.</p>\n@return The Amazon Polly voice ID that Amazon Lex uses for voice interactions with the user.*/",
         "getterMethodName" : "getVoiceId",
         "getterModel" : {
           "returnType" : "String",
@@ -6908,7 +6908,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VoiceId",
-        "setterDocumentation" : "/**<p>The Amazon Parrot voice ID that Amazon Lex uses for voice interactions with the user.</p>\n@param voiceId The Amazon Parrot voice ID that Amazon Lex uses for voice interactions with the user.*/",
+        "setterDocumentation" : "/**<p>The Amazon Polly voice ID that Amazon Lex uses for voice interactions with the user.</p>\n@param voiceId The Amazon Polly voice ID that Amazon Lex uses for voice interactions with the user.*/",
         "setterMethodName" : "setVoiceId",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -6920,12 +6920,12 @@
         },
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The Amazon Parrot voice ID that Amazon Lex uses for voice interactions with the user.</p>\n@param voiceId The Amazon Parrot voice ID that Amazon Lex uses for voice interactions with the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The Amazon Polly voice ID that Amazon Lex uses for voice interactions with the user.</p>\n@param voiceId The Amazon Polly voice ID that Amazon Lex uses for voice interactions with the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "voiceId",
           "variableType" : "String",
-          "documentation" : "<p>The Amazon Parrot voice ID that Amazon Lex uses for voice interactions with the user.</p>",
+          "documentation" : "<p>The Amazon Polly voice ID that Amazon Lex uses for voice interactions with the user.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -8143,11 +8143,11 @@
           "c2jName" : "voiceId",
           "c2jShape" : "String",
           "deprecated" : false,
-          "documentation" : "<p>The Amazon Parrot voice ID that Amazon Lex uses for voice interactions with the user.</p>",
+          "documentation" : "<p>The Amazon Polly voice ID that Amazon Lex uses for voice interactions with the user.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The Amazon Parrot voice ID that Amazon Lex uses for voice interactions with the user.</p>\n@param voiceId The Amazon Parrot voice ID that Amazon Lex uses for voice interactions with the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The Amazon Polly voice ID that Amazon Lex uses for voice interactions with the user.</p>\n@param voiceId The Amazon Polly voice ID that Amazon Lex uses for voice interactions with the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withVoiceId",
-          "getterDocumentation" : "/**<p>The Amazon Parrot voice ID that Amazon Lex uses for voice interactions with the user.</p>\n@return The Amazon Parrot voice ID that Amazon Lex uses for voice interactions with the user.*/",
+          "getterDocumentation" : "/**<p>The Amazon Polly voice ID that Amazon Lex uses for voice interactions with the user.</p>\n@return The Amazon Polly voice ID that Amazon Lex uses for voice interactions with the user.*/",
           "getterMethodName" : "getVoiceId",
           "getterModel" : {
             "returnType" : "String",
@@ -8179,7 +8179,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VoiceId",
-          "setterDocumentation" : "/**<p>The Amazon Parrot voice ID that Amazon Lex uses for voice interactions with the user.</p>\n@param voiceId The Amazon Parrot voice ID that Amazon Lex uses for voice interactions with the user.*/",
+          "setterDocumentation" : "/**<p>The Amazon Polly voice ID that Amazon Lex uses for voice interactions with the user.</p>\n@param voiceId The Amazon Polly voice ID that Amazon Lex uses for voice interactions with the user.*/",
           "setterMethodName" : "setVoiceId",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -8191,12 +8191,12 @@
           },
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The Amazon Parrot voice ID that Amazon Lex uses for voice interactions with the user.</p>\n@param voiceId The Amazon Parrot voice ID that Amazon Lex uses for voice interactions with the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The Amazon Polly voice ID that Amazon Lex uses for voice interactions with the user.</p>\n@param voiceId The Amazon Polly voice ID that Amazon Lex uses for voice interactions with the user.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "voiceId",
             "variableType" : "String",
-            "documentation" : "<p>The Amazon Parrot voice ID that Amazon Lex uses for voice interactions with the user.</p>",
+            "documentation" : "<p>The Amazon Polly voice ID that Amazon Lex uses for voice interactions with the user.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -19601,11 +19601,11 @@
         "c2jName" : "nameContains",
         "c2jShape" : "BotChannelName",
         "deprecated" : false,
-        "documentation" : "<p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\"</p>",
+        "documentation" : "<p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\" To return all bot channel associations, use a hyphen (\"-\") as the <code>nameContains</code> parameter.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\"</p>\n@param nameContains Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\"\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\" To return all bot channel associations, use a hyphen (\"-\") as the <code>nameContains</code> parameter.</p>\n@param nameContains Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\" To return all bot channel associations, use a hyphen (\"-\") as the <code>nameContains</code> parameter.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withNameContains",
-        "getterDocumentation" : "/**<p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\"</p>\n@return Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\"*/",
+        "getterDocumentation" : "/**<p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\" To return all bot channel associations, use a hyphen (\"-\") as the <code>nameContains</code> parameter.</p>\n@return Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\" To return all bot channel associations, use a hyphen (\"-\") as the <code>nameContains</code> parameter.*/",
         "getterMethodName" : "getNameContains",
         "getterModel" : {
           "returnType" : "String",
@@ -19637,7 +19637,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "NameContains",
-        "setterDocumentation" : "/**<p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\"</p>\n@param nameContains Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\"*/",
+        "setterDocumentation" : "/**<p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\" To return all bot channel associations, use a hyphen (\"-\") as the <code>nameContains</code> parameter.</p>\n@param nameContains Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\" To return all bot channel associations, use a hyphen (\"-\") as the <code>nameContains</code> parameter.*/",
         "setterMethodName" : "setNameContains",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -19649,12 +19649,12 @@
         },
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\"</p>\n@param nameContains Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\"\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\" To return all bot channel associations, use a hyphen (\"-\") as the <code>nameContains</code> parameter.</p>\n@param nameContains Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\" To return all bot channel associations, use a hyphen (\"-\") as the <code>nameContains</code> parameter.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "nameContains",
           "variableType" : "String",
-          "documentation" : "<p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\"</p>",
+          "documentation" : "<p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\" To return all bot channel associations, use a hyphen (\"-\") as the <code>nameContains</code> parameter.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -19854,11 +19854,11 @@
           "c2jName" : "nameContains",
           "c2jShape" : "BotChannelName",
           "deprecated" : false,
-          "documentation" : "<p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\"</p>",
+          "documentation" : "<p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\" To return all bot channel associations, use a hyphen (\"-\") as the <code>nameContains</code> parameter.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\"</p>\n@param nameContains Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\"\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\" To return all bot channel associations, use a hyphen (\"-\") as the <code>nameContains</code> parameter.</p>\n@param nameContains Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\" To return all bot channel associations, use a hyphen (\"-\") as the <code>nameContains</code> parameter.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withNameContains",
-          "getterDocumentation" : "/**<p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\"</p>\n@return Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\"*/",
+          "getterDocumentation" : "/**<p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\" To return all bot channel associations, use a hyphen (\"-\") as the <code>nameContains</code> parameter.</p>\n@return Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\" To return all bot channel associations, use a hyphen (\"-\") as the <code>nameContains</code> parameter.*/",
           "getterMethodName" : "getNameContains",
           "getterModel" : {
             "returnType" : "String",
@@ -19890,7 +19890,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "NameContains",
-          "setterDocumentation" : "/**<p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\"</p>\n@param nameContains Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\"*/",
+          "setterDocumentation" : "/**<p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\" To return all bot channel associations, use a hyphen (\"-\") as the <code>nameContains</code> parameter.</p>\n@param nameContains Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\" To return all bot channel associations, use a hyphen (\"-\") as the <code>nameContains</code> parameter.*/",
           "setterMethodName" : "setNameContains",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -19902,12 +19902,12 @@
           },
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\"</p>\n@param nameContains Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\"\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\" To return all bot channel associations, use a hyphen (\"-\") as the <code>nameContains</code> parameter.</p>\n@param nameContains Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\" To return all bot channel associations, use a hyphen (\"-\") as the <code>nameContains</code> parameter.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "nameContains",
             "variableType" : "String",
-            "documentation" : "<p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\"</p>",
+            "documentation" : "<p>Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, \"xyz\" matches both \"xyzabc\" and \"abcxyz.\" To return all bot channel associations, use a hyphen (\"-\") as the <code>nameContains</code> parameter.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -21450,11 +21450,11 @@
         "c2jName" : "voiceId",
         "c2jShape" : "String",
         "deprecated" : false,
-        "documentation" : "<p>The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>",
+        "documentation" : "<p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>\n@param voiceId The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>\n@param voiceId The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withVoiceId",
-        "getterDocumentation" : "/**<p>The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>\n@return The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .*/",
+        "getterDocumentation" : "/**<p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>\n@return The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .*/",
         "getterMethodName" : "getVoiceId",
         "getterModel" : {
           "returnType" : "String",
@@ -21486,7 +21486,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VoiceId",
-        "setterDocumentation" : "/**<p>The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>\n@param voiceId The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .*/",
+        "setterDocumentation" : "/**<p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>\n@param voiceId The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .*/",
         "setterMethodName" : "setVoiceId",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -21498,12 +21498,12 @@
         },
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>\n@param voiceId The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>\n@param voiceId The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "voiceId",
           "variableType" : "String",
-          "documentation" : "<p>The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>",
+          "documentation" : "<p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -22721,11 +22721,11 @@
           "c2jName" : "voiceId",
           "c2jShape" : "String",
           "deprecated" : false,
-          "documentation" : "<p>The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>",
+          "documentation" : "<p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>\n@param voiceId The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>\n@param voiceId The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withVoiceId",
-          "getterDocumentation" : "/**<p>The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>\n@return The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .*/",
+          "getterDocumentation" : "/**<p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>\n@return The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .*/",
           "getterMethodName" : "getVoiceId",
           "getterModel" : {
             "returnType" : "String",
@@ -22757,7 +22757,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VoiceId",
-          "setterDocumentation" : "/**<p>The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>\n@param voiceId The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .*/",
+          "setterDocumentation" : "/**<p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>\n@param voiceId The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .*/",
           "setterMethodName" : "setVoiceId",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -22769,12 +22769,12 @@
           },
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>\n@param voiceId The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>\n@param voiceId The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "voiceId",
             "variableType" : "String",
-            "documentation" : "<p>The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>",
+            "documentation" : "<p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -39976,11 +39976,11 @@
         "c2jName" : "voiceId",
         "c2jShape" : "String",
         "deprecated" : false,
-        "documentation" : "<p>The Amazon Parrot voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.</p>",
+        "documentation" : "<p>The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The Amazon Parrot voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.</p>\n@param voiceId The Amazon Parrot voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.</p>\n@param voiceId The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withVoiceId",
-        "getterDocumentation" : "/**<p>The Amazon Parrot voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.</p>\n@return The Amazon Parrot voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.*/",
+        "getterDocumentation" : "/**<p>The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.</p>\n@return The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.*/",
         "getterMethodName" : "getVoiceId",
         "getterModel" : {
           "returnType" : "String",
@@ -40012,7 +40012,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VoiceId",
-        "setterDocumentation" : "/**<p>The Amazon Parrot voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.</p>\n@param voiceId The Amazon Parrot voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.*/",
+        "setterDocumentation" : "/**<p>The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.</p>\n@param voiceId The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.*/",
         "setterMethodName" : "setVoiceId",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -40024,12 +40024,12 @@
         },
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The Amazon Parrot voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.</p>\n@param voiceId The Amazon Parrot voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.</p>\n@param voiceId The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "voiceId",
           "variableType" : "String",
-          "documentation" : "<p>The Amazon Parrot voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.</p>",
+          "documentation" : "<p>The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -40995,11 +40995,11 @@
           "c2jName" : "voiceId",
           "c2jShape" : "String",
           "deprecated" : false,
-          "documentation" : "<p>The Amazon Parrot voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.</p>",
+          "documentation" : "<p>The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The Amazon Parrot voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.</p>\n@param voiceId The Amazon Parrot voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.</p>\n@param voiceId The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withVoiceId",
-          "getterDocumentation" : "/**<p>The Amazon Parrot voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.</p>\n@return The Amazon Parrot voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.*/",
+          "getterDocumentation" : "/**<p>The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.</p>\n@return The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.*/",
           "getterMethodName" : "getVoiceId",
           "getterModel" : {
             "returnType" : "String",
@@ -41031,7 +41031,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VoiceId",
-          "setterDocumentation" : "/**<p>The Amazon Parrot voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.</p>\n@param voiceId The Amazon Parrot voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.*/",
+          "setterDocumentation" : "/**<p>The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.</p>\n@param voiceId The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.*/",
           "setterMethodName" : "setVoiceId",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -41043,12 +41043,12 @@
           },
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The Amazon Parrot voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.</p>\n@param voiceId The Amazon Parrot voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.</p>\n@param voiceId The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "voiceId",
             "variableType" : "String",
-            "documentation" : "<p>The Amazon Parrot voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.</p>",
+            "documentation" : "<p>The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/API_Voice.html\">Voice</a> in the <i>Amazon Polly Developer Guide</i>.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -41790,11 +41790,11 @@
         "c2jName" : "voiceId",
         "c2jShape" : "String",
         "deprecated" : false,
-        "documentation" : "<p>The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>",
+        "documentation" : "<p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>\n@param voiceId The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>\n@param voiceId The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withVoiceId",
-        "getterDocumentation" : "/**<p>The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>\n@return The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .*/",
+        "getterDocumentation" : "/**<p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>\n@return The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .*/",
         "getterMethodName" : "getVoiceId",
         "getterModel" : {
           "returnType" : "String",
@@ -41826,7 +41826,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "VoiceId",
-        "setterDocumentation" : "/**<p>The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>\n@param voiceId The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .*/",
+        "setterDocumentation" : "/**<p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>\n@param voiceId The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .*/",
         "setterMethodName" : "setVoiceId",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -41838,12 +41838,12 @@
         },
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>\n@param voiceId The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>\n@param voiceId The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "voiceId",
           "variableType" : "String",
-          "documentation" : "<p>The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>",
+          "documentation" : "<p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -43061,11 +43061,11 @@
           "c2jName" : "voiceId",
           "c2jShape" : "String",
           "deprecated" : false,
-          "documentation" : "<p>The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>",
+          "documentation" : "<p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>\n@param voiceId The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>\n@param voiceId The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withVoiceId",
-          "getterDocumentation" : "/**<p>The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>\n@return The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .*/",
+          "getterDocumentation" : "/**<p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>\n@return The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .*/",
           "getterMethodName" : "getVoiceId",
           "getterModel" : {
             "returnType" : "String",
@@ -43097,7 +43097,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "VoiceId",
-          "setterDocumentation" : "/**<p>The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>\n@param voiceId The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .*/",
+          "setterDocumentation" : "/**<p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>\n@param voiceId The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .*/",
           "setterMethodName" : "setVoiceId",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -43109,12 +43109,12 @@
           },
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>\n@param voiceId The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>\n@param voiceId The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "voiceId",
             "variableType" : "String",
-            "documentation" : "<p>The Amazon Parrot voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>",
+            "documentation" : "<p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the user. For more information, see .</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -53293,7 +53293,573 @@
   "clientConfigFactory" : "ClientConfigurationFactory",
   "customAuthorizers" : { },
   "examples" : {
-    "examples" : { },
+    "examples" : {
+      "GetBot" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "This example shows how to get configuration information for a bot.",
+        "id" : "to-get-information-about-a-bot-1494431724188",
+        "input" : {
+          "name" : "DocOrderPizza",
+          "versionOrAlias" : "$LATEST"
+        },
+        "output" : {
+          "name" : "DocOrderPizzaBot",
+          "description" : "Orders a pizza from a local pizzeria.",
+          "intents" : [ {
+            "intentName" : "DocOrderPizza",
+            "intentVersion" : "$LATEST"
+          } ],
+          "clarificationPrompt" : {
+            "messages" : [ {
+              "contentType" : "PlainText",
+              "content" : "I'm sorry, I didn't hear that. Can you repeate what you just said?"
+            }, {
+              "contentType" : "PlainText",
+              "content" : "Can you say that again?"
+            } ],
+            "maxAttempts" : 1
+          },
+          "abortStatement" : {
+            "messages" : [ {
+              "contentType" : "PlainText",
+              "content" : "I don't understand. Can you try again?"
+            }, {
+              "contentType" : "PlainText",
+              "content" : "I'm sorry, I don't understand."
+            } ]
+          },
+          "status" : "NOT_BUILT",
+          "lastUpdatedDate" : 1.494360160133E9,
+          "createdDate" : 1.494360160133E9,
+          "idleSessionTTLInSeconds" : 300,
+          "checksum" : "20172ee3-fa06-49b2-bbc5-667c090303e9",
+          "version" : "$LATEST",
+          "locale" : "en-US",
+          "childDirected" : true
+        },
+        "title" : "To get information about a bot"
+      } ],
+      "GetBots" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "This example shows how to get a list of all of the bots in your account.",
+        "id" : "to-get-a-list-of-bots-1494432220036",
+        "input" : {
+          "nextToken" : "",
+          "maxResults" : 5
+        },
+        "output" : {
+          "bots" : [ {
+            "name" : "DocOrderPizzaBot",
+            "description" : "Orders a pizza from a local pizzeria.",
+            "status" : "NOT_BUILT",
+            "lastUpdatedDate" : 1.494360160133E9,
+            "createdDate" : 1.494360160133E9,
+            "version" : "$LATEST"
+          } ]
+        },
+        "title" : "To get a list of bots"
+      } ],
+      "GetIntent" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "This example shows how to get information about an intent.",
+        "id" : "to-get-a-information-about-an-intent-1494432574147",
+        "input" : {
+          "name" : "DocOrderPizza",
+          "version" : "$LATEST"
+        },
+        "output" : {
+          "name" : "DocOrderPizza",
+          "description" : "Order a pizza from a local pizzeria.",
+          "slots" : [ {
+            "name" : "Type",
+            "description" : "The type of pizza to order.",
+            "slotConstraint" : "Required",
+            "slotType" : "DocPizzaType",
+            "slotTypeVersion" : "$LATEST",
+            "valueElicitationPrompt" : {
+              "messages" : [ {
+                "contentType" : "PlainText",
+                "content" : "What type of pizza would you like?"
+              }, {
+                "contentType" : "PlainText",
+                "content" : "Vegie or cheese pizza?"
+              }, {
+                "contentType" : "PlainText",
+                "content" : "I can get you a vegie or a cheese pizza."
+              } ],
+              "maxAttempts" : 1
+            },
+            "priority" : 1,
+            "sampleUtterances" : [ "Get me a {Type} pizza.", "A {Type} pizza please.", "I'd like a {Type} pizza." ]
+          }, {
+            "name" : "Crust",
+            "description" : "The type of pizza crust to order.",
+            "slotConstraint" : "Required",
+            "slotType" : "DocPizzaCrustType",
+            "slotTypeVersion" : "$LATEST",
+            "valueElicitationPrompt" : {
+              "messages" : [ {
+                "contentType" : "PlainText",
+                "content" : "What type of crust would you like?"
+              }, {
+                "contentType" : "PlainText",
+                "content" : "Thick or thin crust?"
+              } ],
+              "maxAttempts" : 1
+            },
+            "priority" : 2,
+            "sampleUtterances" : [ "Make it a {Crust} crust.", "I'd like a {Crust} crust." ]
+          }, {
+            "name" : "Sauce",
+            "description" : "The type of sauce to use on the pizza.",
+            "slotConstraint" : "Required",
+            "slotType" : "DocPizzaSauceType",
+            "slotTypeVersion" : "$LATEST",
+            "valueElicitationPrompt" : {
+              "messages" : [ {
+                "contentType" : "PlainText",
+                "content" : "White or red sauce?"
+              }, {
+                "contentType" : "PlainText",
+                "content" : "Garlic or tomato sauce?"
+              } ],
+              "maxAttempts" : 1
+            },
+            "priority" : 3,
+            "sampleUtterances" : [ "Make it {Sauce} sauce.", "I'd like {Sauce} sauce." ]
+          } ],
+          "sampleUtterances" : [ "Order me a pizza.", "Order me a {Type} pizza.", "I want a {Crust} crust {Type} pizza", "I want a {Crust} crust {Type} pizza with {Sauce} sauce." ],
+          "confirmationPrompt" : {
+            "messages" : [ {
+              "contentType" : "PlainText",
+              "content" : "Should I order  your {Crust} crust {Type} pizza with {Sauce} sauce?"
+            } ],
+            "maxAttempts" : 1
+          },
+          "rejectionStatement" : {
+            "messages" : [ {
+              "contentType" : "PlainText",
+              "content" : "Ok, I'll cancel your order."
+            }, {
+              "contentType" : "PlainText",
+              "content" : "I cancelled your order."
+            } ]
+          },
+          "conclusionStatement" : {
+            "messages" : [ {
+              "contentType" : "PlainText",
+              "content" : "All right, I ordered  you a {Crust} crust {Type} pizza with {Sauce} sauce."
+            }, {
+              "contentType" : "PlainText",
+              "content" : "OK, your {Crust} crust {Type} pizza with {Sauce} sauce is on the way."
+            } ],
+            "responseCard" : "foo"
+          },
+          "fulfillmentActivity" : {
+            "type" : "ReturnIntent"
+          },
+          "lastUpdatedDate" : 1.494359783453E9,
+          "createdDate" : 1.494359783453E9,
+          "version" : "$LATEST",
+          "checksum" : "ca9bc13d-afc8-4706-bbaf-091f7a5935d6"
+        },
+        "title" : "To get a information about an intent"
+      } ],
+      "GetIntents" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "This example shows how to get a list of all of the intents in your account.",
+        "id" : "to-get-a-list-of-intents-1494432416363",
+        "input" : {
+          "nextToken" : "",
+          "maxResults" : 10
+        },
+        "output" : {
+          "intents" : [ {
+            "name" : "DocOrderPizza",
+            "description" : "Order a pizza from a local pizzeria.",
+            "lastUpdatedDate" : 1.494359783453E9,
+            "createdDate" : 1.494359783453E9,
+            "version" : "$LATEST"
+          } ]
+        },
+        "title" : "To get a list of intents"
+      } ],
+      "GetSlotType" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "This example shows how to get information about a slot type.",
+        "id" : "to-get-information-about-a-slot-type-1494432961004",
+        "input" : {
+          "name" : "DocPizzaCrustType",
+          "version" : "$LATEST"
+        },
+        "output" : {
+          "name" : "DocPizzaCrustType",
+          "description" : "Available crust types",
+          "enumerationValues" : [ {
+            "value" : "thick"
+          }, {
+            "value" : "thin"
+          } ],
+          "lastUpdatedDate" : 1.494359274403E9,
+          "createdDate" : 1.494359274403E9,
+          "version" : "$LATEST",
+          "checksum" : "210b3d5a-90a3-4b22-ac7e-f50c2c71095f"
+        },
+        "title" : "To get information about a slot type"
+      } ],
+      "GetSlotTypes" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "This example shows how to get a list of all of the slot types in your account.",
+        "id" : "to-get-a-list-of-slot-types-1494432757458",
+        "input" : {
+          "nextToken" : "",
+          "maxResults" : 10
+        },
+        "output" : {
+          "slotTypes" : [ {
+            "name" : "DocPizzaCrustType",
+            "description" : "Available crust types",
+            "lastUpdatedDate" : 1.494359274403E9,
+            "createdDate" : 1.494359274403E9,
+            "version" : "$LATEST"
+          }, {
+            "name" : "DocPizzaSauceType",
+            "description" : "Available pizza sauces",
+            "lastUpdatedDate" : 1.49435644223E9,
+            "createdDate" : 1.49435644223E9,
+            "version" : "$LATEST"
+          }, {
+            "name" : "DocPizzaType",
+            "description" : "Available pizzas",
+            "lastUpdatedDate" : 1.494359198656E9,
+            "createdDate" : 1.494359198656E9,
+            "version" : "$LATEST"
+          } ]
+        },
+        "title" : "To get a list of slot types"
+      } ],
+      "PutBot" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "This example shows how to create a bot for ordering pizzas.",
+        "id" : "to-create-a-bot-1494360003886",
+        "input" : {
+          "name" : "DocOrderPizzaBot",
+          "description" : "Orders a pizza from a local pizzeria.",
+          "intents" : [ {
+            "intentName" : "DocOrderPizza",
+            "intentVersion" : "$LATEST"
+          } ],
+          "clarificationPrompt" : {
+            "messages" : [ {
+              "contentType" : "PlainText",
+              "content" : "I'm sorry, I didn't hear that. Can you repeate what you just said?"
+            }, {
+              "contentType" : "PlainText",
+              "content" : "Can you say that again?"
+            } ],
+            "maxAttempts" : 1
+          },
+          "abortStatement" : {
+            "messages" : [ {
+              "contentType" : "PlainText",
+              "content" : "I don't understand. Can you try again?"
+            }, {
+              "contentType" : "PlainText",
+              "content" : "I'm sorry, I don't understand."
+            } ]
+          },
+          "idleSessionTTLInSeconds" : 300,
+          "processBehavior" : "SAVE",
+          "locale" : "en-US",
+          "childDirected" : true
+        },
+        "output" : {
+          "name" : "DocOrderPizzaBot",
+          "description" : "Orders a pizza from a local pizzeria.",
+          "intents" : [ {
+            "intentName" : "DocOrderPizza",
+            "intentVersion" : "$LATEST"
+          } ],
+          "clarificationPrompt" : {
+            "messages" : [ {
+              "contentType" : "PlainText",
+              "content" : "I'm sorry, I didn't hear that. Can you repeate what you just said?"
+            }, {
+              "contentType" : "PlainText",
+              "content" : "Can you say that again?"
+            } ],
+            "maxAttempts" : 1
+          },
+          "abortStatement" : {
+            "messages" : [ {
+              "contentType" : "PlainText",
+              "content" : "I don't understand. Can you try again?"
+            }, {
+              "contentType" : "PlainText",
+              "content" : "I'm sorry, I don't understand."
+            } ]
+          },
+          "status" : "NOT_BUILT",
+          "lastUpdatedDate" : 1.494360160133E9,
+          "createdDate" : 1.494360160133E9,
+          "idleSessionTTLInSeconds" : 300,
+          "checksum" : "20172ee3-fa06-49b2-bbc5-667c090303e9",
+          "version" : "$LATEST",
+          "locale" : "en-US",
+          "childDirected" : true
+        },
+        "title" : "To create a bot"
+      } ],
+      "PutIntent" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "This example shows how to create an intent for ordering pizzas.",
+        "id" : "to-create-an-intent-1494358144659",
+        "input" : {
+          "name" : "DocOrderPizza",
+          "description" : "Order a pizza from a local pizzeria.",
+          "slots" : [ {
+            "name" : "Type",
+            "description" : "The type of pizza to order.",
+            "slotConstraint" : "Required",
+            "slotType" : "DocPizzaType",
+            "slotTypeVersion" : "$LATEST",
+            "valueElicitationPrompt" : {
+              "messages" : [ {
+                "contentType" : "PlainText",
+                "content" : "What type of pizza would you like?"
+              }, {
+                "contentType" : "PlainText",
+                "content" : "Vegie or cheese pizza?"
+              }, {
+                "contentType" : "PlainText",
+                "content" : "I can get you a vegie or a cheese pizza."
+              } ],
+              "maxAttempts" : 1
+            },
+            "priority" : 1,
+            "sampleUtterances" : [ "Get me a {Type} pizza.", "A {Type} pizza please.", "I'd like a {Type} pizza." ]
+          }, {
+            "name" : "Crust",
+            "description" : "The type of pizza crust to order.",
+            "slotConstraint" : "Required",
+            "slotType" : "DocPizzaCrustType",
+            "slotTypeVersion" : "$LATEST",
+            "valueElicitationPrompt" : {
+              "messages" : [ {
+                "contentType" : "PlainText",
+                "content" : "What type of crust would you like?"
+              }, {
+                "contentType" : "PlainText",
+                "content" : "Thick or thin crust?"
+              } ],
+              "maxAttempts" : 1
+            },
+            "priority" : 2,
+            "sampleUtterances" : [ "Make it a {Crust} crust.", "I'd like a {Crust} crust." ]
+          }, {
+            "name" : "Sauce",
+            "description" : "The type of sauce to use on the pizza.",
+            "slotConstraint" : "Required",
+            "slotType" : "DocPizzaSauceType",
+            "slotTypeVersion" : "$LATEST",
+            "valueElicitationPrompt" : {
+              "messages" : [ {
+                "contentType" : "PlainText",
+                "content" : "White or red sauce?"
+              }, {
+                "contentType" : "PlainText",
+                "content" : "Garlic or tomato sauce?"
+              } ],
+              "maxAttempts" : 1
+            },
+            "priority" : 3,
+            "sampleUtterances" : [ "Make it {Sauce} sauce.", "I'd like {Sauce} sauce." ]
+          } ],
+          "sampleUtterances" : [ "Order me a pizza.", "Order me a {Type} pizza.", "I want a {Crust} crust {Type} pizza", "I want a {Crust} crust {Type} pizza with {Sauce} sauce." ],
+          "confirmationPrompt" : {
+            "messages" : [ {
+              "contentType" : "PlainText",
+              "content" : "Should I order  your {Crust} crust {Type} pizza with {Sauce} sauce?"
+            } ],
+            "maxAttempts" : 1
+          },
+          "rejectionStatement" : {
+            "messages" : [ {
+              "contentType" : "PlainText",
+              "content" : "Ok, I'll cancel your order."
+            }, {
+              "contentType" : "PlainText",
+              "content" : "I cancelled your order."
+            } ]
+          },
+          "conclusionStatement" : {
+            "messages" : [ {
+              "contentType" : "PlainText",
+              "content" : "All right, I ordered  you a {Crust} crust {Type} pizza with {Sauce} sauce."
+            }, {
+              "contentType" : "PlainText",
+              "content" : "OK, your {Crust} crust {Type} pizza with {Sauce} sauce is on the way."
+            } ],
+            "responseCard" : "foo"
+          },
+          "fulfillmentActivity" : {
+            "type" : "ReturnIntent"
+          }
+        },
+        "output" : {
+          "name" : "DocOrderPizza",
+          "description" : "Order a pizza from a local pizzeria.",
+          "slots" : [ {
+            "name" : "Sauce",
+            "description" : "The type of sauce to use on the pizza.",
+            "slotConstraint" : "Required",
+            "slotType" : "DocPizzaSauceType",
+            "slotTypeVersion" : "$LATEST",
+            "valueElicitationPrompt" : {
+              "messages" : [ {
+                "contentType" : "PlainText",
+                "content" : "White or red sauce?"
+              }, {
+                "contentType" : "PlainText",
+                "content" : "Garlic or tomato sauce?"
+              } ],
+              "maxAttempts" : 1
+            },
+            "priority" : 3,
+            "sampleUtterances" : [ "Make it {Sauce} sauce.", "I'd like {Sauce} sauce." ]
+          }, {
+            "name" : "Type",
+            "description" : "The type of pizza to order.",
+            "slotConstraint" : "Required",
+            "slotType" : "DocPizzaType",
+            "slotTypeVersion" : "$LATEST",
+            "valueElicitationPrompt" : {
+              "messages" : [ {
+                "contentType" : "PlainText",
+                "content" : "What type of pizza would you like?"
+              }, {
+                "contentType" : "PlainText",
+                "content" : "Vegie or cheese pizza?"
+              }, {
+                "contentType" : "PlainText",
+                "content" : "I can get you a vegie or a cheese pizza."
+              } ],
+              "maxAttempts" : 1
+            },
+            "priority" : 1,
+            "sampleUtterances" : [ "Get me a {Type} pizza.", "A {Type} pizza please.", "I'd like a {Type} pizza." ]
+          }, {
+            "name" : "Crust",
+            "description" : "The type of pizza crust to order.",
+            "slotConstraint" : "Required",
+            "slotType" : "DocPizzaCrustType",
+            "slotTypeVersion" : "$LATEST",
+            "valueElicitationPrompt" : {
+              "messages" : [ {
+                "contentType" : "PlainText",
+                "content" : "What type of crust would you like?"
+              }, {
+                "contentType" : "PlainText",
+                "content" : "Thick or thin crust?"
+              } ],
+              "maxAttempts" : 1
+            },
+            "priority" : 2,
+            "sampleUtterances" : [ "Make it a {Crust} crust.", "I'd like a {Crust} crust." ]
+          } ],
+          "sampleUtterances" : [ "Order me a pizza.", "Order me a {Type} pizza.", "I want a {Crust} crust {Type} pizza", "I want a {Crust} crust {Type} pizza with {Sauce} sauce." ],
+          "confirmationPrompt" : {
+            "messages" : [ {
+              "contentType" : "PlainText",
+              "content" : "Should I order  your {Crust} crust {Type} pizza with {Sauce} sauce?"
+            } ],
+            "maxAttempts" : 1
+          },
+          "rejectionStatement" : {
+            "messages" : [ {
+              "contentType" : "PlainText",
+              "content" : "Ok, I'll cancel your order."
+            }, {
+              "contentType" : "PlainText",
+              "content" : "I cancelled your order."
+            } ]
+          },
+          "conclusionStatement" : {
+            "messages" : [ {
+              "contentType" : "PlainText",
+              "content" : "All right, I ordered  you a {Crust} crust {Type} pizza with {Sauce} sauce."
+            }, {
+              "contentType" : "PlainText",
+              "content" : "OK, your {Crust} crust {Type} pizza with {Sauce} sauce is on the way."
+            } ],
+            "responseCard" : "foo"
+          },
+          "fulfillmentActivity" : {
+            "type" : "ReturnIntent"
+          },
+          "lastUpdatedDate" : 1.494359783453E9,
+          "createdDate" : 1.494359783453E9,
+          "version" : "$LATEST",
+          "checksum" : "ca9bc13d-afc8-4706-bbaf-091f7a5935d6"
+        },
+        "title" : "To create an intent"
+      } ],
+      "PutSlotType" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "This example shows how to create a slot type that describes pizza sauces.",
+        "id" : "to-create-a-slot-type-1494357262258",
+        "input" : {
+          "name" : "PizzaSauceType",
+          "description" : "Available pizza sauces",
+          "enumerationValues" : [ {
+            "value" : "red"
+          }, {
+            "value" : "white"
+          } ]
+        },
+        "output" : {
+          "name" : "DocPizzaSauceType",
+          "description" : "Available pizza sauces",
+          "enumerationValues" : [ {
+            "value" : "red"
+          }, {
+            "value" : "white"
+          } ],
+          "lastUpdatedDate" : 1.49435644223E9,
+          "createdDate" : 1.49435644223E9,
+          "version" : "$LATEST",
+          "checksum" : "cfd00ed1-775d-4357-947c-aca7e73b44ba"
+        },
+        "title" : "To Create a Slot Type"
+      } ]
+    },
     "version" : "1.0"
   },
   "exceptionUnmarshallerImpl" : null,

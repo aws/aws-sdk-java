@@ -214,6 +214,11 @@ public class AbstractAmazonCodeDeploy implements AmazonCodeDeploy {
     }
 
     @Override
+    public ListGitHubAccountTokenNamesResult listGitHubAccountTokenNames(ListGitHubAccountTokenNamesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListOnPremisesInstancesResult listOnPremisesInstances(ListOnPremisesInstancesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

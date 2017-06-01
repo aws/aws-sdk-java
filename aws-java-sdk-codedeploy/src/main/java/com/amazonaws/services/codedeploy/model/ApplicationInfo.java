@@ -52,6 +52,12 @@ public class ApplicationInfo implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private Boolean linkedToGitHub;
+    /**
+     * <p>
+     * The name for a connection to a GitHub account.
+     * </p>
+     */
+    private String gitHubAccountName;
 
     /**
      * <p>
@@ -226,6 +232,46 @@ public class ApplicationInfo implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The name for a connection to a GitHub account.
+     * </p>
+     * 
+     * @param gitHubAccountName
+     *        The name for a connection to a GitHub account.
+     */
+
+    public void setGitHubAccountName(String gitHubAccountName) {
+        this.gitHubAccountName = gitHubAccountName;
+    }
+
+    /**
+     * <p>
+     * The name for a connection to a GitHub account.
+     * </p>
+     * 
+     * @return The name for a connection to a GitHub account.
+     */
+
+    public String getGitHubAccountName() {
+        return this.gitHubAccountName;
+    }
+
+    /**
+     * <p>
+     * The name for a connection to a GitHub account.
+     * </p>
+     * 
+     * @param gitHubAccountName
+     *        The name for a connection to a GitHub account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationInfo withGitHubAccountName(String gitHubAccountName) {
+        setGitHubAccountName(gitHubAccountName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -243,7 +289,9 @@ public class ApplicationInfo implements Serializable, Cloneable, StructuredPojo 
         if (getCreateTime() != null)
             sb.append("CreateTime: ").append(getCreateTime()).append(",");
         if (getLinkedToGitHub() != null)
-            sb.append("LinkedToGitHub: ").append(getLinkedToGitHub());
+            sb.append("LinkedToGitHub: ").append(getLinkedToGitHub()).append(",");
+        if (getGitHubAccountName() != null)
+            sb.append("GitHubAccountName: ").append(getGitHubAccountName());
         sb.append("}");
         return sb.toString();
     }
@@ -274,6 +322,10 @@ public class ApplicationInfo implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getLinkedToGitHub() != null && other.getLinkedToGitHub().equals(this.getLinkedToGitHub()) == false)
             return false;
+        if (other.getGitHubAccountName() == null ^ this.getGitHubAccountName() == null)
+            return false;
+        if (other.getGitHubAccountName() != null && other.getGitHubAccountName().equals(this.getGitHubAccountName()) == false)
+            return false;
         return true;
     }
 
@@ -286,6 +338,7 @@ public class ApplicationInfo implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
         hashCode = prime * hashCode + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         hashCode = prime * hashCode + ((getLinkedToGitHub() == null) ? 0 : getLinkedToGitHub().hashCode());
+        hashCode = prime * hashCode + ((getGitHubAccountName() == null) ? 0 : getGitHubAccountName().hashCode());
         return hashCode;
     }
 

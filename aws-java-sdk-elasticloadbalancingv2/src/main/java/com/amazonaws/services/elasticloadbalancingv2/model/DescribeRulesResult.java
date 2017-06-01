@@ -29,6 +29,13 @@ public class DescribeRulesResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      */
     private java.util.List<Rule> rules;
+    /**
+     * <p>
+     * The marker to use when requesting the next set of results. If there are no additional results, the string is
+     * empty.
+     * </p>
+     */
+    private String nextMarker;
 
     /**
      * <p>
@@ -101,6 +108,52 @@ public class DescribeRulesResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * The marker to use when requesting the next set of results. If there are no additional results, the string is
+     * empty.
+     * </p>
+     * 
+     * @param nextMarker
+     *        The marker to use when requesting the next set of results. If there are no additional results, the string
+     *        is empty.
+     */
+
+    public void setNextMarker(String nextMarker) {
+        this.nextMarker = nextMarker;
+    }
+
+    /**
+     * <p>
+     * The marker to use when requesting the next set of results. If there are no additional results, the string is
+     * empty.
+     * </p>
+     * 
+     * @return The marker to use when requesting the next set of results. If there are no additional results, the string
+     *         is empty.
+     */
+
+    public String getNextMarker() {
+        return this.nextMarker;
+    }
+
+    /**
+     * <p>
+     * The marker to use when requesting the next set of results. If there are no additional results, the string is
+     * empty.
+     * </p>
+     * 
+     * @param nextMarker
+     *        The marker to use when requesting the next set of results. If there are no additional results, the string
+     *        is empty.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeRulesResult withNextMarker(String nextMarker) {
+        setNextMarker(nextMarker);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -112,7 +165,9 @@ public class DescribeRulesResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRules() != null)
-            sb.append("Rules: ").append(getRules());
+            sb.append("Rules: ").append(getRules()).append(",");
+        if (getNextMarker() != null)
+            sb.append("NextMarker: ").append(getNextMarker());
         sb.append("}");
         return sb.toString();
     }
@@ -131,6 +186,10 @@ public class DescribeRulesResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getRules() != null && other.getRules().equals(this.getRules()) == false)
             return false;
+        if (other.getNextMarker() == null ^ this.getNextMarker() == null)
+            return false;
+        if (other.getNextMarker() != null && other.getNextMarker().equals(this.getNextMarker()) == false)
+            return false;
         return true;
     }
 
@@ -140,6 +199,7 @@ public class DescribeRulesResult extends com.amazonaws.AmazonWebServiceResult<co
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getRules() == null) ? 0 : getRules().hashCode());
+        hashCode = prime * hashCode + ((getNextMarker() == null) ? 0 : getNextMarker().hashCode());
         return hashCode;
     }
 

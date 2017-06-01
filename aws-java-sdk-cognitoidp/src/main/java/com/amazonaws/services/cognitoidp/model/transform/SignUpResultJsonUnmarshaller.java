@@ -56,6 +56,10 @@ public class SignUpResultJsonUnmarshaller implements Unmarshaller<SignUpResult, 
                     context.nextToken();
                     signUpResult.setCodeDeliveryDetails(CodeDeliveryDetailsTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("UserSub", targetDepth)) {
+                    context.nextToken();
+                    signUpResult.setUserSub(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

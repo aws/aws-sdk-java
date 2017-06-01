@@ -32,6 +32,9 @@ public class DeleteUserAttributesRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * An array of strings representing the user attribute names you wish to delete.
      * </p>
+     * <p>
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     * </p>
      */
     private java.util.List<String> userAttributeNames;
     /**
@@ -45,8 +48,13 @@ public class DeleteUserAttributesRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * An array of strings representing the user attribute names you wish to delete.
      * </p>
+     * <p>
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     * </p>
      * 
-     * @return An array of strings representing the user attribute names you wish to delete.
+     * @return An array of strings representing the user attribute names you wish to delete.</p>
+     *         <p>
+     *         For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      */
 
     public java.util.List<String> getUserAttributeNames() {
@@ -57,9 +65,14 @@ public class DeleteUserAttributesRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * An array of strings representing the user attribute names you wish to delete.
      * </p>
+     * <p>
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     * </p>
      * 
      * @param userAttributeNames
-     *        An array of strings representing the user attribute names you wish to delete.
+     *        An array of strings representing the user attribute names you wish to delete.</p>
+     *        <p>
+     *        For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      */
 
     public void setUserAttributeNames(java.util.Collection<String> userAttributeNames) {
@@ -76,13 +89,18 @@ public class DeleteUserAttributesRequest extends com.amazonaws.AmazonWebServiceR
      * An array of strings representing the user attribute names you wish to delete.
      * </p>
      * <p>
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setUserAttributeNames(java.util.Collection)} or {@link #withUserAttributeNames(java.util.Collection)} if
      * you want to override the existing values.
      * </p>
      * 
      * @param userAttributeNames
-     *        An array of strings representing the user attribute names you wish to delete.
+     *        An array of strings representing the user attribute names you wish to delete.</p>
+     *        <p>
+     *        For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,9 +118,14 @@ public class DeleteUserAttributesRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * An array of strings representing the user attribute names you wish to delete.
      * </p>
+     * <p>
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     * </p>
      * 
      * @param userAttributeNames
-     *        An array of strings representing the user attribute names you wish to delete.
+     *        An array of strings representing the user attribute names you wish to delete.</p>
+     *        <p>
+     *        For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

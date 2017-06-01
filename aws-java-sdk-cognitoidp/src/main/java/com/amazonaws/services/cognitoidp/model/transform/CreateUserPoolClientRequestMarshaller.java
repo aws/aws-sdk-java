@@ -42,6 +42,20 @@ public class CreateUserPoolClientRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WriteAttributes").build();
     private static final MarshallingInfo<List> EXPLICITAUTHFLOWS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExplicitAuthFlows").build();
+    private static final MarshallingInfo<List> SUPPORTEDIDENTITYPROVIDERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SupportedIdentityProviders").build();
+    private static final MarshallingInfo<List> CALLBACKURLS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("CallbackURLs").build();
+    private static final MarshallingInfo<List> LOGOUTURLS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("LogoutURLs").build();
+    private static final MarshallingInfo<String> DEFAULTREDIRECTURI_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultRedirectURI").build();
+    private static final MarshallingInfo<List> ALLOWEDOAUTHFLOWS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AllowedOAuthFlows").build();
+    private static final MarshallingInfo<List> ALLOWEDOAUTHSCOPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AllowedOAuthScopes").build();
+    private static final MarshallingInfo<Boolean> ALLOWEDOAUTHFLOWSUSERPOOLCLIENT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AllowedOAuthFlowsUserPoolClient").build();
 
     private static final CreateUserPoolClientRequestMarshaller instance = new CreateUserPoolClientRequestMarshaller();
 
@@ -66,6 +80,13 @@ public class CreateUserPoolClientRequestMarshaller {
             protocolMarshaller.marshall(createUserPoolClientRequest.getReadAttributes(), READATTRIBUTES_BINDING);
             protocolMarshaller.marshall(createUserPoolClientRequest.getWriteAttributes(), WRITEATTRIBUTES_BINDING);
             protocolMarshaller.marshall(createUserPoolClientRequest.getExplicitAuthFlows(), EXPLICITAUTHFLOWS_BINDING);
+            protocolMarshaller.marshall(createUserPoolClientRequest.getSupportedIdentityProviders(), SUPPORTEDIDENTITYPROVIDERS_BINDING);
+            protocolMarshaller.marshall(createUserPoolClientRequest.getCallbackURLs(), CALLBACKURLS_BINDING);
+            protocolMarshaller.marshall(createUserPoolClientRequest.getLogoutURLs(), LOGOUTURLS_BINDING);
+            protocolMarshaller.marshall(createUserPoolClientRequest.getDefaultRedirectURI(), DEFAULTREDIRECTURI_BINDING);
+            protocolMarshaller.marshall(createUserPoolClientRequest.getAllowedOAuthFlows(), ALLOWEDOAUTHFLOWS_BINDING);
+            protocolMarshaller.marshall(createUserPoolClientRequest.getAllowedOAuthScopes(), ALLOWEDOAUTHSCOPES_BINDING);
+            protocolMarshaller.marshall(createUserPoolClientRequest.getAllowedOAuthFlowsUserPoolClient(), ALLOWEDOAUTHFLOWSUSERPOOLCLIENT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

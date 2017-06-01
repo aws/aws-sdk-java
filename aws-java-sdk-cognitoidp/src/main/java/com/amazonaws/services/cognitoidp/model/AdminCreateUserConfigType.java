@@ -30,16 +30,16 @@ public class AdminCreateUserConfigType implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Set to True if only the administrator is allowed to create user profiles. Set to False if users can sign
-     * themselves up via an app.
+     * Set to <code>True</code> if only the administrator is allowed to create user profiles. Set to <code>False</code>
+     * if users can sign themselves up via an app.
      * </p>
      */
     private Boolean allowAdminCreateUserOnly;
     /**
      * <p>
      * The user account expiration limit, in days, after which the account is no longer usable. To reset the account
-     * after that time limit, you must call AdminCreateUser again, specifying "RESEND" for the MessageAction parameter.
-     * The default value for this paameter is 7.
+     * after that time limit, you must call <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the
+     * <code>MessageAction</code> parameter. The default value for this parameter is 7.
      * </p>
      */
     private Integer unusedAccountValidityDays;
@@ -52,13 +52,13 @@ public class AdminCreateUserConfigType implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Set to True if only the administrator is allowed to create user profiles. Set to False if users can sign
-     * themselves up via an app.
+     * Set to <code>True</code> if only the administrator is allowed to create user profiles. Set to <code>False</code>
+     * if users can sign themselves up via an app.
      * </p>
      * 
      * @param allowAdminCreateUserOnly
-     *        Set to True if only the administrator is allowed to create user profiles. Set to False if users can sign
-     *        themselves up via an app.
+     *        Set to <code>True</code> if only the administrator is allowed to create user profiles. Set to
+     *        <code>False</code> if users can sign themselves up via an app.
      */
 
     public void setAllowAdminCreateUserOnly(Boolean allowAdminCreateUserOnly) {
@@ -67,12 +67,12 @@ public class AdminCreateUserConfigType implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Set to True if only the administrator is allowed to create user profiles. Set to False if users can sign
-     * themselves up via an app.
+     * Set to <code>True</code> if only the administrator is allowed to create user profiles. Set to <code>False</code>
+     * if users can sign themselves up via an app.
      * </p>
      * 
-     * @return Set to True if only the administrator is allowed to create user profiles. Set to False if users can sign
-     *         themselves up via an app.
+     * @return Set to <code>True</code> if only the administrator is allowed to create user profiles. Set to
+     *         <code>False</code> if users can sign themselves up via an app.
      */
 
     public Boolean getAllowAdminCreateUserOnly() {
@@ -81,13 +81,13 @@ public class AdminCreateUserConfigType implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Set to True if only the administrator is allowed to create user profiles. Set to False if users can sign
-     * themselves up via an app.
+     * Set to <code>True</code> if only the administrator is allowed to create user profiles. Set to <code>False</code>
+     * if users can sign themselves up via an app.
      * </p>
      * 
      * @param allowAdminCreateUserOnly
-     *        Set to True if only the administrator is allowed to create user profiles. Set to False if users can sign
-     *        themselves up via an app.
+     *        Set to <code>True</code> if only the administrator is allowed to create user profiles. Set to
+     *        <code>False</code> if users can sign themselves up via an app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,12 +98,12 @@ public class AdminCreateUserConfigType implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Set to True if only the administrator is allowed to create user profiles. Set to False if users can sign
-     * themselves up via an app.
+     * Set to <code>True</code> if only the administrator is allowed to create user profiles. Set to <code>False</code>
+     * if users can sign themselves up via an app.
      * </p>
      * 
-     * @return Set to True if only the administrator is allowed to create user profiles. Set to False if users can sign
-     *         themselves up via an app.
+     * @return Set to <code>True</code> if only the administrator is allowed to create user profiles. Set to
+     *         <code>False</code> if users can sign themselves up via an app.
      */
 
     public Boolean isAllowAdminCreateUserOnly() {
@@ -113,14 +113,15 @@ public class AdminCreateUserConfigType implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The user account expiration limit, in days, after which the account is no longer usable. To reset the account
-     * after that time limit, you must call AdminCreateUser again, specifying "RESEND" for the MessageAction parameter.
-     * The default value for this paameter is 7.
+     * after that time limit, you must call <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the
+     * <code>MessageAction</code> parameter. The default value for this parameter is 7.
      * </p>
      * 
      * @param unusedAccountValidityDays
      *        The user account expiration limit, in days, after which the account is no longer usable. To reset the
-     *        account after that time limit, you must call AdminCreateUser again, specifying "RESEND" for the
-     *        MessageAction parameter. The default value for this paameter is 7.
+     *        account after that time limit, you must call <code>AdminCreateUser</code> again, specifying
+     *        <code>"RESEND"</code> for the <code>MessageAction</code> parameter. The default value for this parameter
+     *        is 7.
      */
 
     public void setUnusedAccountValidityDays(Integer unusedAccountValidityDays) {
@@ -130,13 +131,14 @@ public class AdminCreateUserConfigType implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The user account expiration limit, in days, after which the account is no longer usable. To reset the account
-     * after that time limit, you must call AdminCreateUser again, specifying "RESEND" for the MessageAction parameter.
-     * The default value for this paameter is 7.
+     * after that time limit, you must call <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the
+     * <code>MessageAction</code> parameter. The default value for this parameter is 7.
      * </p>
      * 
      * @return The user account expiration limit, in days, after which the account is no longer usable. To reset the
-     *         account after that time limit, you must call AdminCreateUser again, specifying "RESEND" for the
-     *         MessageAction parameter. The default value for this paameter is 7.
+     *         account after that time limit, you must call <code>AdminCreateUser</code> again, specifying
+     *         <code>"RESEND"</code> for the <code>MessageAction</code> parameter. The default value for this parameter
+     *         is 7.
      */
 
     public Integer getUnusedAccountValidityDays() {
@@ -146,14 +148,15 @@ public class AdminCreateUserConfigType implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The user account expiration limit, in days, after which the account is no longer usable. To reset the account
-     * after that time limit, you must call AdminCreateUser again, specifying "RESEND" for the MessageAction parameter.
-     * The default value for this paameter is 7.
+     * after that time limit, you must call <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the
+     * <code>MessageAction</code> parameter. The default value for this parameter is 7.
      * </p>
      * 
      * @param unusedAccountValidityDays
      *        The user account expiration limit, in days, after which the account is no longer usable. To reset the
-     *        account after that time limit, you must call AdminCreateUser again, specifying "RESEND" for the
-     *        MessageAction parameter. The default value for this paameter is 7.
+     *        account after that time limit, you must call <code>AdminCreateUser</code> again, specifying
+     *        <code>"RESEND"</code> for the <code>MessageAction</code> parameter. The default value for this parameter
+     *        is 7.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

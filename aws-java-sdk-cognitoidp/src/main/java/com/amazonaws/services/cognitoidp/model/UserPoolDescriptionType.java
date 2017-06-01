@@ -54,13 +54,13 @@ public class UserPoolDescriptionType implements Serializable, Cloneable, Structu
     private String status;
     /**
      * <p>
-     * The last modified date in a user pool description.
+     * The date the user pool description was last modified.
      * </p>
      */
     private java.util.Date lastModifiedDate;
     /**
      * <p>
-     * The creation date in a user pool description.
+     * The date the user pool description was created.
      * </p>
      */
     private java.util.Date creationDate;
@@ -260,11 +260,11 @@ public class UserPoolDescriptionType implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The last modified date in a user pool description.
+     * The date the user pool description was last modified.
      * </p>
      * 
      * @param lastModifiedDate
-     *        The last modified date in a user pool description.
+     *        The date the user pool description was last modified.
      */
 
     public void setLastModifiedDate(java.util.Date lastModifiedDate) {
@@ -273,10 +273,10 @@ public class UserPoolDescriptionType implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The last modified date in a user pool description.
+     * The date the user pool description was last modified.
      * </p>
      * 
-     * @return The last modified date in a user pool description.
+     * @return The date the user pool description was last modified.
      */
 
     public java.util.Date getLastModifiedDate() {
@@ -285,11 +285,11 @@ public class UserPoolDescriptionType implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The last modified date in a user pool description.
+     * The date the user pool description was last modified.
      * </p>
      * 
      * @param lastModifiedDate
-     *        The last modified date in a user pool description.
+     *        The date the user pool description was last modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -300,11 +300,11 @@ public class UserPoolDescriptionType implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The creation date in a user pool description.
+     * The date the user pool description was created.
      * </p>
      * 
      * @param creationDate
-     *        The creation date in a user pool description.
+     *        The date the user pool description was created.
      */
 
     public void setCreationDate(java.util.Date creationDate) {
@@ -313,10 +313,10 @@ public class UserPoolDescriptionType implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The creation date in a user pool description.
+     * The date the user pool description was created.
      * </p>
      * 
-     * @return The creation date in a user pool description.
+     * @return The date the user pool description was created.
      */
 
     public java.util.Date getCreationDate() {
@@ -325,11 +325,11 @@ public class UserPoolDescriptionType implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The creation date in a user pool description.
+     * The date the user pool description was created.
      * </p>
      * 
      * @param creationDate
-     *        The creation date in a user pool description.
+     *        The date the user pool description was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

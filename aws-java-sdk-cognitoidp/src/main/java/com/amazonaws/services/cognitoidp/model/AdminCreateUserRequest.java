@@ -44,10 +44,13 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * An array of name-value pairs that contain user attributes and attribute values to be set for the user to be
-     * created. You can create a user without specifying any attributes other than Username. However, any attributes
-     * that you specify as required (in CreateUserPool or in the <b>Attributes</b> tab of the console) must be supplied
-     * either by you (in your call to AdminCreateUser) or by the user (when he or she signs up in response to your
-     * welcome message).
+     * created. You can create a user without specifying any attributes other than <code>Username</code>. However, any
+     * attributes that you specify as required (in <a href="API_CreateUserPool.html">CreateUserPool</a> or in the
+     * <b>Attributes</b> tab of the console) must be supplied either by you (in your call to
+     * <code>AdminCreateUser</code>) or by the user (when he or she signs up in response to your welcome message).
+     * </p>
+     * <p>
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      * </p>
      * <p>
      * To send a message inviting the user to sign up, you must specify the user's email address or phone number. This
@@ -55,23 +58,23 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      * your user pools.
      * </p>
      * <p>
-     * In your call to AdminCreateUser, you can set the email_verified attribute to True, and you can set the
-     * phone_number_verified attribute to True. (You cannot do this by calling other operations such as
-     * AdminUpdateUserAttributes.)
+     * In your call to <code>AdminCreateUser</code>, you can set the <code>email_verified</code> attribute to
+     * <code>True</code>, and you can set the <code>phone_number_verified</code> attribute to <code>True</code>. (You
+     * can also do this by calling <a href="API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)
      * </p>
      * <ul>
      * <li>
      * <p>
      * <b>email</b>: The email address of the user to whom the message that contains the code and username will be sent.
-     * Required if the email_verified attribute is set to True, or if "EMAIL" is specified in the DesiredDeliveryMediums
-     * parameter.
+     * Required if the <code>email_verified</code> attribute is set to <code>True</code>, or if <code>"EMAIL"</code> is
+     * specified in the <code>DesiredDeliveryMediums</code> parameter.
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>phone_number</b>: The phone number of the user to whom the message that contains the code and username will be
-     * sent. Required if the phone_number_verified attribute is set to True, or if "SMS" is specified in the
-     * DesiredDeliveryMediums parameter.
+     * sent. Required if the <code>phone_number_verified</code> attribute is set to <code>True</code>, or if
+     * <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code> parameter.
      * </p>
      * </li>
      * </ul>
@@ -107,38 +110,40 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * The temporary password can only be used until the user account expiration limit that you specified when you
-     * created the user pool. To reset the account after that time limit, you must call AdminCreateUser again,
-     * specifying "RESEND" for the MessageAction parameter.
+     * created the user pool. To reset the account after that time limit, you must call <code>AdminCreateUser</code>
+     * again, specifying <code>"RESEND"</code> for the <code>MessageAction</code> parameter.
      * </p>
      */
     private String temporaryPassword;
     /**
      * <p>
-     * This parameter is only used if the phone_number_verified or email_verified attribute is set to True. Otherwise,
-     * it is ignored.
+     * This parameter is only used if the <code>phone_number_verified</code> or <code>email_verified</code> attribute is
+     * set to <code>True</code>. Otherwise, it is ignored.
      * </p>
      * <p>
-     * If this parameter is set to True and the phone number or email address specified in the UserAttributes parameter
-     * already exists as an alias with a different user, the API call will migrate the alias from the previous user to
-     * the newly created user. The previous user will no longer be able to log in using that alias.
+     * If this parameter is set to <code>True</code> and the phone number or email address specified in the
+     * UserAttributes parameter already exists as an alias with a different user, the API call will migrate the alias
+     * from the previous user to the newly created user. The previous user will no longer be able to log in using that
+     * alias.
      * </p>
      * <p>
-     * If this parameter is set to False, the API throws an AliasExistsException error if the alias already exists. The
-     * default value is False.
+     * If this parameter is set to <code>False</code>, the API throws an <code>AliasExistsException</code> error if the
+     * alias already exists. The default value is <code>False</code>.
      * </p>
      */
     private Boolean forceAliasCreation;
     /**
      * <p>
-     * Set to "RESEND" to resend the invitation message to a user that already exists and reset the expiration limit on
-     * the user's account. Set to "SUPPRESS" to suppress sending the message. Only one value can be specified.
+     * Set to <code>"RESEND"</code> to resend the invitation message to a user that already exists and reset the
+     * expiration limit on the user's account. Set to <code>"SUPPRESS"</code> to suppress sending the message. Only one
+     * value can be specified.
      * </p>
      */
     private String messageAction;
     /**
      * <p>
-     * Specify "EMAIL" if email will be used to send the welcome message. Specify "SMS" if the phone number will be
-     * used. The default value is "SMS". More than one value can be specified.
+     * Specify <code>"EMAIL"</code> if email will be used to send the welcome message. Specify <code>"SMS"</code> if the
+     * phone number will be used. The default value is <code>"SMS"</code>. More than one value can be specified.
      * </p>
      */
     private java.util.List<String> desiredDeliveryMediums;
@@ -232,10 +237,13 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * An array of name-value pairs that contain user attributes and attribute values to be set for the user to be
-     * created. You can create a user without specifying any attributes other than Username. However, any attributes
-     * that you specify as required (in CreateUserPool or in the <b>Attributes</b> tab of the console) must be supplied
-     * either by you (in your call to AdminCreateUser) or by the user (when he or she signs up in response to your
-     * welcome message).
+     * created. You can create a user without specifying any attributes other than <code>Username</code>. However, any
+     * attributes that you specify as required (in <a href="API_CreateUserPool.html">CreateUserPool</a> or in the
+     * <b>Attributes</b> tab of the console) must be supplied either by you (in your call to
+     * <code>AdminCreateUser</code>) or by the user (when he or she signs up in response to your welcome message).
+     * </p>
+     * <p>
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      * </p>
      * <p>
      * To send a message inviting the user to sign up, you must specify the user's email address or phone number. This
@@ -243,55 +251,60 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      * your user pools.
      * </p>
      * <p>
-     * In your call to AdminCreateUser, you can set the email_verified attribute to True, and you can set the
-     * phone_number_verified attribute to True. (You cannot do this by calling other operations such as
-     * AdminUpdateUserAttributes.)
+     * In your call to <code>AdminCreateUser</code>, you can set the <code>email_verified</code> attribute to
+     * <code>True</code>, and you can set the <code>phone_number_verified</code> attribute to <code>True</code>. (You
+     * can also do this by calling <a href="API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)
      * </p>
      * <ul>
      * <li>
      * <p>
      * <b>email</b>: The email address of the user to whom the message that contains the code and username will be sent.
-     * Required if the email_verified attribute is set to True, or if "EMAIL" is specified in the DesiredDeliveryMediums
-     * parameter.
+     * Required if the <code>email_verified</code> attribute is set to <code>True</code>, or if <code>"EMAIL"</code> is
+     * specified in the <code>DesiredDeliveryMediums</code> parameter.
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>phone_number</b>: The phone number of the user to whom the message that contains the code and username will be
-     * sent. Required if the phone_number_verified attribute is set to True, or if "SMS" is specified in the
-     * DesiredDeliveryMediums parameter.
+     * sent. Required if the <code>phone_number_verified</code> attribute is set to <code>True</code>, or if
+     * <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code> parameter.
      * </p>
      * </li>
      * </ul>
      * 
      * @return An array of name-value pairs that contain user attributes and attribute values to be set for the user to
-     *         be created. You can create a user without specifying any attributes other than Username. However, any
-     *         attributes that you specify as required (in CreateUserPool or in the <b>Attributes</b> tab of the
-     *         console) must be supplied either by you (in your call to AdminCreateUser) or by the user (when he or she
+     *         be created. You can create a user without specifying any attributes other than <code>Username</code>.
+     *         However, any attributes that you specify as required (in <a
+     *         href="API_CreateUserPool.html">CreateUserPool</a> or in the <b>Attributes</b> tab of the console) must be
+     *         supplied either by you (in your call to <code>AdminCreateUser</code>) or by the user (when he or she
      *         signs up in response to your welcome message).</p>
+     *         <p>
+     *         For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     *         </p>
      *         <p>
      *         To send a message inviting the user to sign up, you must specify the user's email address or phone
      *         number. This can be done in your call to AdminCreateUser or in the <b>Users</b> tab of the Amazon Cognito
      *         console for managing your user pools.
      *         </p>
      *         <p>
-     *         In your call to AdminCreateUser, you can set the email_verified attribute to True, and you can set the
-     *         phone_number_verified attribute to True. (You cannot do this by calling other operations such as
-     *         AdminUpdateUserAttributes.)
+     *         In your call to <code>AdminCreateUser</code>, you can set the <code>email_verified</code> attribute to
+     *         <code>True</code>, and you can set the <code>phone_number_verified</code> attribute to <code>True</code>.
+     *         (You can also do this by calling <a
+     *         href="API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
      *         <b>email</b>: The email address of the user to whom the message that contains the code and username will
-     *         be sent. Required if the email_verified attribute is set to True, or if "EMAIL" is specified in the
-     *         DesiredDeliveryMediums parameter.
+     *         be sent. Required if the <code>email_verified</code> attribute is set to <code>True</code>, or if
+     *         <code>"EMAIL"</code> is specified in the <code>DesiredDeliveryMediums</code> parameter.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <b>phone_number</b>: The phone number of the user to whom the message that contains the code and username
-     *         will be sent. Required if the phone_number_verified attribute is set to True, or if "SMS" is specified in
-     *         the DesiredDeliveryMediums parameter.
+     *         will be sent. Required if the <code>phone_number_verified</code> attribute is set to <code>True</code>,
+     *         or if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code> parameter.
      *         </p>
      *         </li>
      */
@@ -303,10 +316,13 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * An array of name-value pairs that contain user attributes and attribute values to be set for the user to be
-     * created. You can create a user without specifying any attributes other than Username. However, any attributes
-     * that you specify as required (in CreateUserPool or in the <b>Attributes</b> tab of the console) must be supplied
-     * either by you (in your call to AdminCreateUser) or by the user (when he or she signs up in response to your
-     * welcome message).
+     * created. You can create a user without specifying any attributes other than <code>Username</code>. However, any
+     * attributes that you specify as required (in <a href="API_CreateUserPool.html">CreateUserPool</a> or in the
+     * <b>Attributes</b> tab of the console) must be supplied either by you (in your call to
+     * <code>AdminCreateUser</code>) or by the user (when he or she signs up in response to your welcome message).
+     * </p>
+     * <p>
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      * </p>
      * <p>
      * To send a message inviting the user to sign up, you must specify the user's email address or phone number. This
@@ -314,56 +330,61 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      * your user pools.
      * </p>
      * <p>
-     * In your call to AdminCreateUser, you can set the email_verified attribute to True, and you can set the
-     * phone_number_verified attribute to True. (You cannot do this by calling other operations such as
-     * AdminUpdateUserAttributes.)
+     * In your call to <code>AdminCreateUser</code>, you can set the <code>email_verified</code> attribute to
+     * <code>True</code>, and you can set the <code>phone_number_verified</code> attribute to <code>True</code>. (You
+     * can also do this by calling <a href="API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)
      * </p>
      * <ul>
      * <li>
      * <p>
      * <b>email</b>: The email address of the user to whom the message that contains the code and username will be sent.
-     * Required if the email_verified attribute is set to True, or if "EMAIL" is specified in the DesiredDeliveryMediums
-     * parameter.
+     * Required if the <code>email_verified</code> attribute is set to <code>True</code>, or if <code>"EMAIL"</code> is
+     * specified in the <code>DesiredDeliveryMediums</code> parameter.
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>phone_number</b>: The phone number of the user to whom the message that contains the code and username will be
-     * sent. Required if the phone_number_verified attribute is set to True, or if "SMS" is specified in the
-     * DesiredDeliveryMediums parameter.
+     * sent. Required if the <code>phone_number_verified</code> attribute is set to <code>True</code>, or if
+     * <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code> parameter.
      * </p>
      * </li>
      * </ul>
      * 
      * @param userAttributes
      *        An array of name-value pairs that contain user attributes and attribute values to be set for the user to
-     *        be created. You can create a user without specifying any attributes other than Username. However, any
-     *        attributes that you specify as required (in CreateUserPool or in the <b>Attributes</b> tab of the console)
-     *        must be supplied either by you (in your call to AdminCreateUser) or by the user (when he or she signs up
-     *        in response to your welcome message).</p>
+     *        be created. You can create a user without specifying any attributes other than <code>Username</code>.
+     *        However, any attributes that you specify as required (in <a
+     *        href="API_CreateUserPool.html">CreateUserPool</a> or in the <b>Attributes</b> tab of the console) must be
+     *        supplied either by you (in your call to <code>AdminCreateUser</code>) or by the user (when he or she signs
+     *        up in response to your welcome message).</p>
+     *        <p>
+     *        For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     *        </p>
      *        <p>
      *        To send a message inviting the user to sign up, you must specify the user's email address or phone number.
      *        This can be done in your call to AdminCreateUser or in the <b>Users</b> tab of the Amazon Cognito console
      *        for managing your user pools.
      *        </p>
      *        <p>
-     *        In your call to AdminCreateUser, you can set the email_verified attribute to True, and you can set the
-     *        phone_number_verified attribute to True. (You cannot do this by calling other operations such as
-     *        AdminUpdateUserAttributes.)
+     *        In your call to <code>AdminCreateUser</code>, you can set the <code>email_verified</code> attribute to
+     *        <code>True</code>, and you can set the <code>phone_number_verified</code> attribute to <code>True</code>.
+     *        (You can also do this by calling <a
+     *        href="API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
      *        <b>email</b>: The email address of the user to whom the message that contains the code and username will
-     *        be sent. Required if the email_verified attribute is set to True, or if "EMAIL" is specified in the
-     *        DesiredDeliveryMediums parameter.
+     *        be sent. Required if the <code>email_verified</code> attribute is set to <code>True</code>, or if
+     *        <code>"EMAIL"</code> is specified in the <code>DesiredDeliveryMediums</code> parameter.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <b>phone_number</b>: The phone number of the user to whom the message that contains the code and username
-     *        will be sent. Required if the phone_number_verified attribute is set to True, or if "SMS" is specified in
-     *        the DesiredDeliveryMediums parameter.
+     *        will be sent. Required if the <code>phone_number_verified</code> attribute is set to <code>True</code>, or
+     *        if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code> parameter.
      *        </p>
      *        </li>
      */
@@ -380,10 +401,13 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * An array of name-value pairs that contain user attributes and attribute values to be set for the user to be
-     * created. You can create a user without specifying any attributes other than Username. However, any attributes
-     * that you specify as required (in CreateUserPool or in the <b>Attributes</b> tab of the console) must be supplied
-     * either by you (in your call to AdminCreateUser) or by the user (when he or she signs up in response to your
-     * welcome message).
+     * created. You can create a user without specifying any attributes other than <code>Username</code>. However, any
+     * attributes that you specify as required (in <a href="API_CreateUserPool.html">CreateUserPool</a> or in the
+     * <b>Attributes</b> tab of the console) must be supplied either by you (in your call to
+     * <code>AdminCreateUser</code>) or by the user (when he or she signs up in response to your welcome message).
+     * </p>
+     * <p>
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      * </p>
      * <p>
      * To send a message inviting the user to sign up, you must specify the user's email address or phone number. This
@@ -391,23 +415,23 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      * your user pools.
      * </p>
      * <p>
-     * In your call to AdminCreateUser, you can set the email_verified attribute to True, and you can set the
-     * phone_number_verified attribute to True. (You cannot do this by calling other operations such as
-     * AdminUpdateUserAttributes.)
+     * In your call to <code>AdminCreateUser</code>, you can set the <code>email_verified</code> attribute to
+     * <code>True</code>, and you can set the <code>phone_number_verified</code> attribute to <code>True</code>. (You
+     * can also do this by calling <a href="API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)
      * </p>
      * <ul>
      * <li>
      * <p>
      * <b>email</b>: The email address of the user to whom the message that contains the code and username will be sent.
-     * Required if the email_verified attribute is set to True, or if "EMAIL" is specified in the DesiredDeliveryMediums
-     * parameter.
+     * Required if the <code>email_verified</code> attribute is set to <code>True</code>, or if <code>"EMAIL"</code> is
+     * specified in the <code>DesiredDeliveryMediums</code> parameter.
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>phone_number</b>: The phone number of the user to whom the message that contains the code and username will be
-     * sent. Required if the phone_number_verified attribute is set to True, or if "SMS" is specified in the
-     * DesiredDeliveryMediums parameter.
+     * sent. Required if the <code>phone_number_verified</code> attribute is set to <code>True</code>, or if
+     * <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code> parameter.
      * </p>
      * </li>
      * </ul>
@@ -419,33 +443,38 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param userAttributes
      *        An array of name-value pairs that contain user attributes and attribute values to be set for the user to
-     *        be created. You can create a user without specifying any attributes other than Username. However, any
-     *        attributes that you specify as required (in CreateUserPool or in the <b>Attributes</b> tab of the console)
-     *        must be supplied either by you (in your call to AdminCreateUser) or by the user (when he or she signs up
-     *        in response to your welcome message).</p>
+     *        be created. You can create a user without specifying any attributes other than <code>Username</code>.
+     *        However, any attributes that you specify as required (in <a
+     *        href="API_CreateUserPool.html">CreateUserPool</a> or in the <b>Attributes</b> tab of the console) must be
+     *        supplied either by you (in your call to <code>AdminCreateUser</code>) or by the user (when he or she signs
+     *        up in response to your welcome message).</p>
+     *        <p>
+     *        For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     *        </p>
      *        <p>
      *        To send a message inviting the user to sign up, you must specify the user's email address or phone number.
      *        This can be done in your call to AdminCreateUser or in the <b>Users</b> tab of the Amazon Cognito console
      *        for managing your user pools.
      *        </p>
      *        <p>
-     *        In your call to AdminCreateUser, you can set the email_verified attribute to True, and you can set the
-     *        phone_number_verified attribute to True. (You cannot do this by calling other operations such as
-     *        AdminUpdateUserAttributes.)
+     *        In your call to <code>AdminCreateUser</code>, you can set the <code>email_verified</code> attribute to
+     *        <code>True</code>, and you can set the <code>phone_number_verified</code> attribute to <code>True</code>.
+     *        (You can also do this by calling <a
+     *        href="API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
      *        <b>email</b>: The email address of the user to whom the message that contains the code and username will
-     *        be sent. Required if the email_verified attribute is set to True, or if "EMAIL" is specified in the
-     *        DesiredDeliveryMediums parameter.
+     *        be sent. Required if the <code>email_verified</code> attribute is set to <code>True</code>, or if
+     *        <code>"EMAIL"</code> is specified in the <code>DesiredDeliveryMediums</code> parameter.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <b>phone_number</b>: The phone number of the user to whom the message that contains the code and username
-     *        will be sent. Required if the phone_number_verified attribute is set to True, or if "SMS" is specified in
-     *        the DesiredDeliveryMediums parameter.
+     *        will be sent. Required if the <code>phone_number_verified</code> attribute is set to <code>True</code>, or
+     *        if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code> parameter.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -464,10 +493,13 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * An array of name-value pairs that contain user attributes and attribute values to be set for the user to be
-     * created. You can create a user without specifying any attributes other than Username. However, any attributes
-     * that you specify as required (in CreateUserPool or in the <b>Attributes</b> tab of the console) must be supplied
-     * either by you (in your call to AdminCreateUser) or by the user (when he or she signs up in response to your
-     * welcome message).
+     * created. You can create a user without specifying any attributes other than <code>Username</code>. However, any
+     * attributes that you specify as required (in <a href="API_CreateUserPool.html">CreateUserPool</a> or in the
+     * <b>Attributes</b> tab of the console) must be supplied either by you (in your call to
+     * <code>AdminCreateUser</code>) or by the user (when he or she signs up in response to your welcome message).
+     * </p>
+     * <p>
+     * For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
      * </p>
      * <p>
      * To send a message inviting the user to sign up, you must specify the user's email address or phone number. This
@@ -475,56 +507,61 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      * your user pools.
      * </p>
      * <p>
-     * In your call to AdminCreateUser, you can set the email_verified attribute to True, and you can set the
-     * phone_number_verified attribute to True. (You cannot do this by calling other operations such as
-     * AdminUpdateUserAttributes.)
+     * In your call to <code>AdminCreateUser</code>, you can set the <code>email_verified</code> attribute to
+     * <code>True</code>, and you can set the <code>phone_number_verified</code> attribute to <code>True</code>. (You
+     * can also do this by calling <a href="API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)
      * </p>
      * <ul>
      * <li>
      * <p>
      * <b>email</b>: The email address of the user to whom the message that contains the code and username will be sent.
-     * Required if the email_verified attribute is set to True, or if "EMAIL" is specified in the DesiredDeliveryMediums
-     * parameter.
+     * Required if the <code>email_verified</code> attribute is set to <code>True</code>, or if <code>"EMAIL"</code> is
+     * specified in the <code>DesiredDeliveryMediums</code> parameter.
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>phone_number</b>: The phone number of the user to whom the message that contains the code and username will be
-     * sent. Required if the phone_number_verified attribute is set to True, or if "SMS" is specified in the
-     * DesiredDeliveryMediums parameter.
+     * sent. Required if the <code>phone_number_verified</code> attribute is set to <code>True</code>, or if
+     * <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code> parameter.
      * </p>
      * </li>
      * </ul>
      * 
      * @param userAttributes
      *        An array of name-value pairs that contain user attributes and attribute values to be set for the user to
-     *        be created. You can create a user without specifying any attributes other than Username. However, any
-     *        attributes that you specify as required (in CreateUserPool or in the <b>Attributes</b> tab of the console)
-     *        must be supplied either by you (in your call to AdminCreateUser) or by the user (when he or she signs up
-     *        in response to your welcome message).</p>
+     *        be created. You can create a user without specifying any attributes other than <code>Username</code>.
+     *        However, any attributes that you specify as required (in <a
+     *        href="API_CreateUserPool.html">CreateUserPool</a> or in the <b>Attributes</b> tab of the console) must be
+     *        supplied either by you (in your call to <code>AdminCreateUser</code>) or by the user (when he or she signs
+     *        up in response to your welcome message).</p>
+     *        <p>
+     *        For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.
+     *        </p>
      *        <p>
      *        To send a message inviting the user to sign up, you must specify the user's email address or phone number.
      *        This can be done in your call to AdminCreateUser or in the <b>Users</b> tab of the Amazon Cognito console
      *        for managing your user pools.
      *        </p>
      *        <p>
-     *        In your call to AdminCreateUser, you can set the email_verified attribute to True, and you can set the
-     *        phone_number_verified attribute to True. (You cannot do this by calling other operations such as
-     *        AdminUpdateUserAttributes.)
+     *        In your call to <code>AdminCreateUser</code>, you can set the <code>email_verified</code> attribute to
+     *        <code>True</code>, and you can set the <code>phone_number_verified</code> attribute to <code>True</code>.
+     *        (You can also do this by calling <a
+     *        href="API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.)
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
      *        <b>email</b>: The email address of the user to whom the message that contains the code and username will
-     *        be sent. Required if the email_verified attribute is set to True, or if "EMAIL" is specified in the
-     *        DesiredDeliveryMediums parameter.
+     *        be sent. Required if the <code>email_verified</code> attribute is set to <code>True</code>, or if
+     *        <code>"EMAIL"</code> is specified in the <code>DesiredDeliveryMediums</code> parameter.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <b>phone_number</b>: The phone number of the user to whom the message that contains the code and username
-     *        will be sent. Required if the phone_number_verified attribute is set to True, or if "SMS" is specified in
-     *        the DesiredDeliveryMediums parameter.
+     *        will be sent. Required if the <code>phone_number_verified</code> attribute is set to <code>True</code>, or
+     *        if <code>"SMS"</code> is specified in the <code>DesiredDeliveryMediums</code> parameter.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -699,8 +736,8 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * The temporary password can only be used until the user account expiration limit that you specified when you
-     * created the user pool. To reset the account after that time limit, you must call AdminCreateUser again,
-     * specifying "RESEND" for the MessageAction parameter.
+     * created the user pool. To reset the account after that time limit, you must call <code>AdminCreateUser</code>
+     * again, specifying <code>"RESEND"</code> for the <code>MessageAction</code> parameter.
      * </p>
      * 
      * @param temporaryPassword
@@ -715,8 +752,9 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        The temporary password can only be used until the user account expiration limit that you specified when
-     *        you created the user pool. To reset the account after that time limit, you must call AdminCreateUser
-     *        again, specifying "RESEND" for the MessageAction parameter.
+     *        you created the user pool. To reset the account after that time limit, you must call
+     *        <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the <code>MessageAction</code>
+     *        parameter.
      */
 
     public void setTemporaryPassword(String temporaryPassword) {
@@ -737,8 +775,8 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * The temporary password can only be used until the user account expiration limit that you specified when you
-     * created the user pool. To reset the account after that time limit, you must call AdminCreateUser again,
-     * specifying "RESEND" for the MessageAction parameter.
+     * created the user pool. To reset the account after that time limit, you must call <code>AdminCreateUser</code>
+     * again, specifying <code>"RESEND"</code> for the <code>MessageAction</code> parameter.
      * </p>
      * 
      * @return The user's temporary password. This password must conform to the password policy that you specified when
@@ -752,8 +790,9 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         The temporary password can only be used until the user account expiration limit that you specified when
-     *         you created the user pool. To reset the account after that time limit, you must call AdminCreateUser
-     *         again, specifying "RESEND" for the MessageAction parameter.
+     *         you created the user pool. To reset the account after that time limit, you must call
+     *         <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the <code>MessageAction</code>
+     *         parameter.
      */
 
     public String getTemporaryPassword() {
@@ -774,8 +813,8 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * The temporary password can only be used until the user account expiration limit that you specified when you
-     * created the user pool. To reset the account after that time limit, you must call AdminCreateUser again,
-     * specifying "RESEND" for the MessageAction parameter.
+     * created the user pool. To reset the account after that time limit, you must call <code>AdminCreateUser</code>
+     * again, specifying <code>"RESEND"</code> for the <code>MessageAction</code> parameter.
      * </p>
      * 
      * @param temporaryPassword
@@ -790,8 +829,9 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        The temporary password can only be used until the user account expiration limit that you specified when
-     *        you created the user pool. To reset the account after that time limit, you must call AdminCreateUser
-     *        again, specifying "RESEND" for the MessageAction parameter.
+     *        you created the user pool. To reset the account after that time limit, you must call
+     *        <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the <code>MessageAction</code>
+     *        parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -802,31 +842,32 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * This parameter is only used if the phone_number_verified or email_verified attribute is set to True. Otherwise,
-     * it is ignored.
+     * This parameter is only used if the <code>phone_number_verified</code> or <code>email_verified</code> attribute is
+     * set to <code>True</code>. Otherwise, it is ignored.
      * </p>
      * <p>
-     * If this parameter is set to True and the phone number or email address specified in the UserAttributes parameter
-     * already exists as an alias with a different user, the API call will migrate the alias from the previous user to
-     * the newly created user. The previous user will no longer be able to log in using that alias.
+     * If this parameter is set to <code>True</code> and the phone number or email address specified in the
+     * UserAttributes parameter already exists as an alias with a different user, the API call will migrate the alias
+     * from the previous user to the newly created user. The previous user will no longer be able to log in using that
+     * alias.
      * </p>
      * <p>
-     * If this parameter is set to False, the API throws an AliasExistsException error if the alias already exists. The
-     * default value is False.
+     * If this parameter is set to <code>False</code>, the API throws an <code>AliasExistsException</code> error if the
+     * alias already exists. The default value is <code>False</code>.
      * </p>
      * 
      * @param forceAliasCreation
-     *        This parameter is only used if the phone_number_verified or email_verified attribute is set to True.
-     *        Otherwise, it is ignored.</p>
+     *        This parameter is only used if the <code>phone_number_verified</code> or <code>email_verified</code>
+     *        attribute is set to <code>True</code>. Otherwise, it is ignored.</p>
      *        <p>
-     *        If this parameter is set to True and the phone number or email address specified in the UserAttributes
-     *        parameter already exists as an alias with a different user, the API call will migrate the alias from the
-     *        previous user to the newly created user. The previous user will no longer be able to log in using that
-     *        alias.
+     *        If this parameter is set to <code>True</code> and the phone number or email address specified in the
+     *        UserAttributes parameter already exists as an alias with a different user, the API call will migrate the
+     *        alias from the previous user to the newly created user. The previous user will no longer be able to log in
+     *        using that alias.
      *        </p>
      *        <p>
-     *        If this parameter is set to False, the API throws an AliasExistsException error if the alias already
-     *        exists. The default value is False.
+     *        If this parameter is set to <code>False</code>, the API throws an <code>AliasExistsException</code> error
+     *        if the alias already exists. The default value is <code>False</code>.
      */
 
     public void setForceAliasCreation(Boolean forceAliasCreation) {
@@ -835,30 +876,31 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * This parameter is only used if the phone_number_verified or email_verified attribute is set to True. Otherwise,
-     * it is ignored.
+     * This parameter is only used if the <code>phone_number_verified</code> or <code>email_verified</code> attribute is
+     * set to <code>True</code>. Otherwise, it is ignored.
      * </p>
      * <p>
-     * If this parameter is set to True and the phone number or email address specified in the UserAttributes parameter
-     * already exists as an alias with a different user, the API call will migrate the alias from the previous user to
-     * the newly created user. The previous user will no longer be able to log in using that alias.
+     * If this parameter is set to <code>True</code> and the phone number or email address specified in the
+     * UserAttributes parameter already exists as an alias with a different user, the API call will migrate the alias
+     * from the previous user to the newly created user. The previous user will no longer be able to log in using that
+     * alias.
      * </p>
      * <p>
-     * If this parameter is set to False, the API throws an AliasExistsException error if the alias already exists. The
-     * default value is False.
+     * If this parameter is set to <code>False</code>, the API throws an <code>AliasExistsException</code> error if the
+     * alias already exists. The default value is <code>False</code>.
      * </p>
      * 
-     * @return This parameter is only used if the phone_number_verified or email_verified attribute is set to True.
-     *         Otherwise, it is ignored.</p>
+     * @return This parameter is only used if the <code>phone_number_verified</code> or <code>email_verified</code>
+     *         attribute is set to <code>True</code>. Otherwise, it is ignored.</p>
      *         <p>
-     *         If this parameter is set to True and the phone number or email address specified in the UserAttributes
-     *         parameter already exists as an alias with a different user, the API call will migrate the alias from the
-     *         previous user to the newly created user. The previous user will no longer be able to log in using that
-     *         alias.
+     *         If this parameter is set to <code>True</code> and the phone number or email address specified in the
+     *         UserAttributes parameter already exists as an alias with a different user, the API call will migrate the
+     *         alias from the previous user to the newly created user. The previous user will no longer be able to log
+     *         in using that alias.
      *         </p>
      *         <p>
-     *         If this parameter is set to False, the API throws an AliasExistsException error if the alias already
-     *         exists. The default value is False.
+     *         If this parameter is set to <code>False</code>, the API throws an <code>AliasExistsException</code> error
+     *         if the alias already exists. The default value is <code>False</code>.
      */
 
     public Boolean getForceAliasCreation() {
@@ -867,31 +909,32 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * This parameter is only used if the phone_number_verified or email_verified attribute is set to True. Otherwise,
-     * it is ignored.
+     * This parameter is only used if the <code>phone_number_verified</code> or <code>email_verified</code> attribute is
+     * set to <code>True</code>. Otherwise, it is ignored.
      * </p>
      * <p>
-     * If this parameter is set to True and the phone number or email address specified in the UserAttributes parameter
-     * already exists as an alias with a different user, the API call will migrate the alias from the previous user to
-     * the newly created user. The previous user will no longer be able to log in using that alias.
+     * If this parameter is set to <code>True</code> and the phone number or email address specified in the
+     * UserAttributes parameter already exists as an alias with a different user, the API call will migrate the alias
+     * from the previous user to the newly created user. The previous user will no longer be able to log in using that
+     * alias.
      * </p>
      * <p>
-     * If this parameter is set to False, the API throws an AliasExistsException error if the alias already exists. The
-     * default value is False.
+     * If this parameter is set to <code>False</code>, the API throws an <code>AliasExistsException</code> error if the
+     * alias already exists. The default value is <code>False</code>.
      * </p>
      * 
      * @param forceAliasCreation
-     *        This parameter is only used if the phone_number_verified or email_verified attribute is set to True.
-     *        Otherwise, it is ignored.</p>
+     *        This parameter is only used if the <code>phone_number_verified</code> or <code>email_verified</code>
+     *        attribute is set to <code>True</code>. Otherwise, it is ignored.</p>
      *        <p>
-     *        If this parameter is set to True and the phone number or email address specified in the UserAttributes
-     *        parameter already exists as an alias with a different user, the API call will migrate the alias from the
-     *        previous user to the newly created user. The previous user will no longer be able to log in using that
-     *        alias.
+     *        If this parameter is set to <code>True</code> and the phone number or email address specified in the
+     *        UserAttributes parameter already exists as an alias with a different user, the API call will migrate the
+     *        alias from the previous user to the newly created user. The previous user will no longer be able to log in
+     *        using that alias.
      *        </p>
      *        <p>
-     *        If this parameter is set to False, the API throws an AliasExistsException error if the alias already
-     *        exists. The default value is False.
+     *        If this parameter is set to <code>False</code>, the API throws an <code>AliasExistsException</code> error
+     *        if the alias already exists. The default value is <code>False</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -902,30 +945,31 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * This parameter is only used if the phone_number_verified or email_verified attribute is set to True. Otherwise,
-     * it is ignored.
+     * This parameter is only used if the <code>phone_number_verified</code> or <code>email_verified</code> attribute is
+     * set to <code>True</code>. Otherwise, it is ignored.
      * </p>
      * <p>
-     * If this parameter is set to True and the phone number or email address specified in the UserAttributes parameter
-     * already exists as an alias with a different user, the API call will migrate the alias from the previous user to
-     * the newly created user. The previous user will no longer be able to log in using that alias.
+     * If this parameter is set to <code>True</code> and the phone number or email address specified in the
+     * UserAttributes parameter already exists as an alias with a different user, the API call will migrate the alias
+     * from the previous user to the newly created user. The previous user will no longer be able to log in using that
+     * alias.
      * </p>
      * <p>
-     * If this parameter is set to False, the API throws an AliasExistsException error if the alias already exists. The
-     * default value is False.
+     * If this parameter is set to <code>False</code>, the API throws an <code>AliasExistsException</code> error if the
+     * alias already exists. The default value is <code>False</code>.
      * </p>
      * 
-     * @return This parameter is only used if the phone_number_verified or email_verified attribute is set to True.
-     *         Otherwise, it is ignored.</p>
+     * @return This parameter is only used if the <code>phone_number_verified</code> or <code>email_verified</code>
+     *         attribute is set to <code>True</code>. Otherwise, it is ignored.</p>
      *         <p>
-     *         If this parameter is set to True and the phone number or email address specified in the UserAttributes
-     *         parameter already exists as an alias with a different user, the API call will migrate the alias from the
-     *         previous user to the newly created user. The previous user will no longer be able to log in using that
-     *         alias.
+     *         If this parameter is set to <code>True</code> and the phone number or email address specified in the
+     *         UserAttributes parameter already exists as an alias with a different user, the API call will migrate the
+     *         alias from the previous user to the newly created user. The previous user will no longer be able to log
+     *         in using that alias.
      *         </p>
      *         <p>
-     *         If this parameter is set to False, the API throws an AliasExistsException error if the alias already
-     *         exists. The default value is False.
+     *         If this parameter is set to <code>False</code>, the API throws an <code>AliasExistsException</code> error
+     *         if the alias already exists. The default value is <code>False</code>.
      */
 
     public Boolean isForceAliasCreation() {
@@ -934,14 +978,15 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Set to "RESEND" to resend the invitation message to a user that already exists and reset the expiration limit on
-     * the user's account. Set to "SUPPRESS" to suppress sending the message. Only one value can be specified.
+     * Set to <code>"RESEND"</code> to resend the invitation message to a user that already exists and reset the
+     * expiration limit on the user's account. Set to <code>"SUPPRESS"</code> to suppress sending the message. Only one
+     * value can be specified.
      * </p>
      * 
      * @param messageAction
-     *        Set to "RESEND" to resend the invitation message to a user that already exists and reset the expiration
-     *        limit on the user's account. Set to "SUPPRESS" to suppress sending the message. Only one value can be
-     *        specified.
+     *        Set to <code>"RESEND"</code> to resend the invitation message to a user that already exists and reset the
+     *        expiration limit on the user's account. Set to <code>"SUPPRESS"</code> to suppress sending the message.
+     *        Only one value can be specified.
      * @see MessageActionType
      */
 
@@ -951,13 +996,14 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Set to "RESEND" to resend the invitation message to a user that already exists and reset the expiration limit on
-     * the user's account. Set to "SUPPRESS" to suppress sending the message. Only one value can be specified.
+     * Set to <code>"RESEND"</code> to resend the invitation message to a user that already exists and reset the
+     * expiration limit on the user's account. Set to <code>"SUPPRESS"</code> to suppress sending the message. Only one
+     * value can be specified.
      * </p>
      * 
-     * @return Set to "RESEND" to resend the invitation message to a user that already exists and reset the expiration
-     *         limit on the user's account. Set to "SUPPRESS" to suppress sending the message. Only one value can be
-     *         specified.
+     * @return Set to <code>"RESEND"</code> to resend the invitation message to a user that already exists and reset the
+     *         expiration limit on the user's account. Set to <code>"SUPPRESS"</code> to suppress sending the message.
+     *         Only one value can be specified.
      * @see MessageActionType
      */
 
@@ -967,14 +1013,15 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Set to "RESEND" to resend the invitation message to a user that already exists and reset the expiration limit on
-     * the user's account. Set to "SUPPRESS" to suppress sending the message. Only one value can be specified.
+     * Set to <code>"RESEND"</code> to resend the invitation message to a user that already exists and reset the
+     * expiration limit on the user's account. Set to <code>"SUPPRESS"</code> to suppress sending the message. Only one
+     * value can be specified.
      * </p>
      * 
      * @param messageAction
-     *        Set to "RESEND" to resend the invitation message to a user that already exists and reset the expiration
-     *        limit on the user's account. Set to "SUPPRESS" to suppress sending the message. Only one value can be
-     *        specified.
+     *        Set to <code>"RESEND"</code> to resend the invitation message to a user that already exists and reset the
+     *        expiration limit on the user's account. Set to <code>"SUPPRESS"</code> to suppress sending the message.
+     *        Only one value can be specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MessageActionType
      */
@@ -986,14 +1033,15 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Set to "RESEND" to resend the invitation message to a user that already exists and reset the expiration limit on
-     * the user's account. Set to "SUPPRESS" to suppress sending the message. Only one value can be specified.
+     * Set to <code>"RESEND"</code> to resend the invitation message to a user that already exists and reset the
+     * expiration limit on the user's account. Set to <code>"SUPPRESS"</code> to suppress sending the message. Only one
+     * value can be specified.
      * </p>
      * 
      * @param messageAction
-     *        Set to "RESEND" to resend the invitation message to a user that already exists and reset the expiration
-     *        limit on the user's account. Set to "SUPPRESS" to suppress sending the message. Only one value can be
-     *        specified.
+     *        Set to <code>"RESEND"</code> to resend the invitation message to a user that already exists and reset the
+     *        expiration limit on the user's account. Set to <code>"SUPPRESS"</code> to suppress sending the message.
+     *        Only one value can be specified.
      * @see MessageActionType
      */
 
@@ -1003,14 +1051,15 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Set to "RESEND" to resend the invitation message to a user that already exists and reset the expiration limit on
-     * the user's account. Set to "SUPPRESS" to suppress sending the message. Only one value can be specified.
+     * Set to <code>"RESEND"</code> to resend the invitation message to a user that already exists and reset the
+     * expiration limit on the user's account. Set to <code>"SUPPRESS"</code> to suppress sending the message. Only one
+     * value can be specified.
      * </p>
      * 
      * @param messageAction
-     *        Set to "RESEND" to resend the invitation message to a user that already exists and reset the expiration
-     *        limit on the user's account. Set to "SUPPRESS" to suppress sending the message. Only one value can be
-     *        specified.
+     *        Set to <code>"RESEND"</code> to resend the invitation message to a user that already exists and reset the
+     *        expiration limit on the user's account. Set to <code>"SUPPRESS"</code> to suppress sending the message.
+     *        Only one value can be specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MessageActionType
      */
@@ -1022,12 +1071,13 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specify "EMAIL" if email will be used to send the welcome message. Specify "SMS" if the phone number will be
-     * used. The default value is "SMS". More than one value can be specified.
+     * Specify <code>"EMAIL"</code> if email will be used to send the welcome message. Specify <code>"SMS"</code> if the
+     * phone number will be used. The default value is <code>"SMS"</code>. More than one value can be specified.
      * </p>
      * 
-     * @return Specify "EMAIL" if email will be used to send the welcome message. Specify "SMS" if the phone number will
-     *         be used. The default value is "SMS". More than one value can be specified.
+     * @return Specify <code>"EMAIL"</code> if email will be used to send the welcome message. Specify
+     *         <code>"SMS"</code> if the phone number will be used. The default value is <code>"SMS"</code>. More than
+     *         one value can be specified.
      * @see DeliveryMediumType
      */
 
@@ -1037,13 +1087,14 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specify "EMAIL" if email will be used to send the welcome message. Specify "SMS" if the phone number will be
-     * used. The default value is "SMS". More than one value can be specified.
+     * Specify <code>"EMAIL"</code> if email will be used to send the welcome message. Specify <code>"SMS"</code> if the
+     * phone number will be used. The default value is <code>"SMS"</code>. More than one value can be specified.
      * </p>
      * 
      * @param desiredDeliveryMediums
-     *        Specify "EMAIL" if email will be used to send the welcome message. Specify "SMS" if the phone number will
-     *        be used. The default value is "SMS". More than one value can be specified.
+     *        Specify <code>"EMAIL"</code> if email will be used to send the welcome message. Specify <code>"SMS"</code>
+     *        if the phone number will be used. The default value is <code>"SMS"</code>. More than one value can be
+     *        specified.
      * @see DeliveryMediumType
      */
 
@@ -1058,8 +1109,8 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specify "EMAIL" if email will be used to send the welcome message. Specify "SMS" if the phone number will be
-     * used. The default value is "SMS". More than one value can be specified.
+     * Specify <code>"EMAIL"</code> if email will be used to send the welcome message. Specify <code>"SMS"</code> if the
+     * phone number will be used. The default value is <code>"SMS"</code>. More than one value can be specified.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1068,8 +1119,9 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param desiredDeliveryMediums
-     *        Specify "EMAIL" if email will be used to send the welcome message. Specify "SMS" if the phone number will
-     *        be used. The default value is "SMS". More than one value can be specified.
+     *        Specify <code>"EMAIL"</code> if email will be used to send the welcome message. Specify <code>"SMS"</code>
+     *        if the phone number will be used. The default value is <code>"SMS"</code>. More than one value can be
+     *        specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeliveryMediumType
      */
@@ -1086,13 +1138,14 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specify "EMAIL" if email will be used to send the welcome message. Specify "SMS" if the phone number will be
-     * used. The default value is "SMS". More than one value can be specified.
+     * Specify <code>"EMAIL"</code> if email will be used to send the welcome message. Specify <code>"SMS"</code> if the
+     * phone number will be used. The default value is <code>"SMS"</code>. More than one value can be specified.
      * </p>
      * 
      * @param desiredDeliveryMediums
-     *        Specify "EMAIL" if email will be used to send the welcome message. Specify "SMS" if the phone number will
-     *        be used. The default value is "SMS". More than one value can be specified.
+     *        Specify <code>"EMAIL"</code> if email will be used to send the welcome message. Specify <code>"SMS"</code>
+     *        if the phone number will be used. The default value is <code>"SMS"</code>. More than one value can be
+     *        specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeliveryMediumType
      */
@@ -1104,13 +1157,14 @@ public class AdminCreateUserRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specify "EMAIL" if email will be used to send the welcome message. Specify "SMS" if the phone number will be
-     * used. The default value is "SMS". More than one value can be specified.
+     * Specify <code>"EMAIL"</code> if email will be used to send the welcome message. Specify <code>"SMS"</code> if the
+     * phone number will be used. The default value is <code>"SMS"</code>. More than one value can be specified.
      * </p>
      * 
      * @param desiredDeliveryMediums
-     *        Specify "EMAIL" if email will be used to send the welcome message. Specify "SMS" if the phone number will
-     *        be used. The default value is "SMS". More than one value can be specified.
+     *        Specify <code>"EMAIL"</code> if email will be used to send the welcome message. Specify <code>"SMS"</code>
+     *        if the phone number will be used. The default value is <code>"SMS"</code>. More than one value can be
+     *        specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeliveryMediumType
      */
