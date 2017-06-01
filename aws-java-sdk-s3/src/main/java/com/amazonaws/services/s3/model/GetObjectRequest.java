@@ -108,6 +108,8 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
      */
     private Integer partNumber;
 
+    private Long lastModifiedTime;
+
     /**
      * Constructs a new {@link GetObjectRequest} with all the required parameters.
      *
@@ -121,7 +123,25 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
      * @see GetObjectRequest#GetObjectRequest(String, String, boolean)
      */
     public GetObjectRequest(String bucketName, String key) {
-        this(bucketName, key, null);
+        this(bucketName, key, (String) null);
+    }
+
+    /**
+     * Constructs a new {@link GetObjectRequest} with all the required parameters.
+     *
+     * @param bucketName
+     *            The name of the bucket containing the desired object.
+     * @param key
+     *            The key in the specified bucket under which the object is
+     *            stored.
+     * @param lastModifiedTime
+     *            Last modified time for the object known by the client
+     *
+     * @see GetObjectRequest#GetObjectRequest(String, String, String)
+     * @see GetObjectRequest#GetObjectRequest(String, String, boolean)
+     */
+    public GetObjectRequest(String bucketName, String key, Long lastModifiedTime) {
+        this(bucketName, key, null, lastModifiedTime);
     }
 
     /**
@@ -140,9 +160,31 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
      * @see GetObjectRequest#GetObjectRequest(String, String, boolean)
      */
     public GetObjectRequest(String bucketName, String key, String versionId) {
+        this(bucketName, key, versionId, null);
+    }
+
+    /**
+     * Constructs a new {@link GetObjectRequest} with all the required parameters.
+     *
+     * @param bucketName
+     *            The name of the bucket containing the desired object.
+     * @param key
+     *            The key in the specified bucket under which the object is
+     *            stored.
+     * @param versionId
+     *            The Amazon S3 version ID specifying a specific version of the
+     *            object to download.
+     * @param lastModifiedTime
+     *            Last modified time for the object known by the client
+     *
+     * @see GetObjectRequest#GetObjectRequest(String, String)
+     * @see GetObjectRequest#GetObjectRequest(String, String, boolean)
+     */
+    public GetObjectRequest(String bucketName, String key, String versionId, Long lastModifiedTime) {
         setBucketName(bucketName);
         setKey(key);
         setVersionId(versionId);
+        setLastModifiedTime(lastModifiedTime);
     }
 
     public GetObjectRequest(S3ObjectId s3ObjectId) {
@@ -1003,9 +1045,48 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
 
     /**
      * Fluent API to set the S3 object id for this request.
+     *
+     * @return This {@link GetObjectRequest}, enabling additional method
+     *         calls to be chained together.
      */
     public GetObjectRequest withS3ObjectId(S3ObjectId s3ObjectId) {
         setS3ObjectId(s3ObjectId);
         return this;
     }
+
+    /**
+     * Set last modified time known by the client. Useful to avoid roundtrip
+     * to S3 to fetch the metadata but not required
+     *
+     * @param lastModifiedTime
+     *            Last modified time (in milliseconds) for this object
+     */
+    public void setLastModifiedTime(Long lastModifiedTime) {
+        this.lastModifiedTime = lastModifiedTime;
+    }
+
+    /**
+     * Set last modified time known by the client. Useful to avoid roundtrip
+     * to S3 to fetch the metadata but not required
+     *
+     * @param lastModifiedTime
+     *            Last modified time (in milliseconds) for this object
+     *
+     * @return This {@link GetObjectRequest}, enabling additional method
+     *         calls to be chained together.
+     */
+    public GetObjectRequest withLastModifiedTime(Long lastModifiedTime) {
+        setLastModifiedTime(lastModifiedTime);
+        return this;
+    }
+
+    /**
+     * Get last modified time for this object (in milliseconds). Only if
+     * set previously
+     */
+    public Long getLastModifiedTime() {
+        return lastModifiedTime;
+    }
+
+
 }
