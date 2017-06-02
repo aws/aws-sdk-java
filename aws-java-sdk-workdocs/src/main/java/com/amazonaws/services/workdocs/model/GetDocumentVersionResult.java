@@ -29,6 +29,12 @@ public class GetDocumentVersionResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private DocumentVersionMetadata metadata;
+    /**
+     * <p>
+     * The custom metadata on the document version.
+     * </p>
+     */
+    private java.util.Map<String, String> customMetadata;
 
     /**
      * <p>
@@ -71,6 +77,67 @@ public class GetDocumentVersionResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * The custom metadata on the document version.
+     * </p>
+     * 
+     * @return The custom metadata on the document version.
+     */
+
+    public java.util.Map<String, String> getCustomMetadata() {
+        return customMetadata;
+    }
+
+    /**
+     * <p>
+     * The custom metadata on the document version.
+     * </p>
+     * 
+     * @param customMetadata
+     *        The custom metadata on the document version.
+     */
+
+    public void setCustomMetadata(java.util.Map<String, String> customMetadata) {
+        this.customMetadata = customMetadata;
+    }
+
+    /**
+     * <p>
+     * The custom metadata on the document version.
+     * </p>
+     * 
+     * @param customMetadata
+     *        The custom metadata on the document version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDocumentVersionResult withCustomMetadata(java.util.Map<String, String> customMetadata) {
+        setCustomMetadata(customMetadata);
+        return this;
+    }
+
+    public GetDocumentVersionResult addCustomMetadataEntry(String key, String value) {
+        if (null == this.customMetadata) {
+            this.customMetadata = new java.util.HashMap<String, String>();
+        }
+        if (this.customMetadata.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.customMetadata.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into CustomMetadata.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDocumentVersionResult clearCustomMetadataEntries() {
+        this.customMetadata = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -82,7 +149,9 @@ public class GetDocumentVersionResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMetadata() != null)
-            sb.append("Metadata: ").append(getMetadata());
+            sb.append("Metadata: ").append(getMetadata()).append(",");
+        if (getCustomMetadata() != null)
+            sb.append("CustomMetadata: ").append(getCustomMetadata());
         sb.append("}");
         return sb.toString();
     }
@@ -101,6 +170,10 @@ public class GetDocumentVersionResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getMetadata() != null && other.getMetadata().equals(this.getMetadata()) == false)
             return false;
+        if (other.getCustomMetadata() == null ^ this.getCustomMetadata() == null)
+            return false;
+        if (other.getCustomMetadata() != null && other.getCustomMetadata().equals(this.getCustomMetadata()) == false)
+            return false;
         return true;
     }
 
@@ -110,6 +183,7 @@ public class GetDocumentVersionResult extends com.amazonaws.AmazonWebServiceResu
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getMetadata() == null) ? 0 : getMetadata().hashCode());
+        hashCode = prime * hashCode + ((getCustomMetadata() == null) ? 0 : getCustomMetadata().hashCode());
         return hashCode;
     }
 

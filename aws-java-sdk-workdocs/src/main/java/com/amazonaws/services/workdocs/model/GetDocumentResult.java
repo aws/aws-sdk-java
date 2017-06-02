@@ -25,18 +25,24 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The document object.
+     * The metadata details of the document.
      * </p>
      */
     private DocumentMetadata metadata;
+    /**
+     * <p>
+     * The custom metadata on the document.
+     * </p>
+     */
+    private java.util.Map<String, String> customMetadata;
 
     /**
      * <p>
-     * The document object.
+     * The metadata details of the document.
      * </p>
      * 
      * @param metadata
-     *        The document object.
+     *        The metadata details of the document.
      */
 
     public void setMetadata(DocumentMetadata metadata) {
@@ -45,10 +51,10 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The document object.
+     * The metadata details of the document.
      * </p>
      * 
-     * @return The document object.
+     * @return The metadata details of the document.
      */
 
     public DocumentMetadata getMetadata() {
@@ -57,16 +63,77 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The document object.
+     * The metadata details of the document.
      * </p>
      * 
      * @param metadata
-     *        The document object.
+     *        The metadata details of the document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetDocumentResult withMetadata(DocumentMetadata metadata) {
         setMetadata(metadata);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The custom metadata on the document.
+     * </p>
+     * 
+     * @return The custom metadata on the document.
+     */
+
+    public java.util.Map<String, String> getCustomMetadata() {
+        return customMetadata;
+    }
+
+    /**
+     * <p>
+     * The custom metadata on the document.
+     * </p>
+     * 
+     * @param customMetadata
+     *        The custom metadata on the document.
+     */
+
+    public void setCustomMetadata(java.util.Map<String, String> customMetadata) {
+        this.customMetadata = customMetadata;
+    }
+
+    /**
+     * <p>
+     * The custom metadata on the document.
+     * </p>
+     * 
+     * @param customMetadata
+     *        The custom metadata on the document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDocumentResult withCustomMetadata(java.util.Map<String, String> customMetadata) {
+        setCustomMetadata(customMetadata);
+        return this;
+    }
+
+    public GetDocumentResult addCustomMetadataEntry(String key, String value) {
+        if (null == this.customMetadata) {
+            this.customMetadata = new java.util.HashMap<String, String>();
+        }
+        if (this.customMetadata.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.customMetadata.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into CustomMetadata.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDocumentResult clearCustomMetadataEntries() {
+        this.customMetadata = null;
         return this;
     }
 
@@ -82,7 +149,9 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMetadata() != null)
-            sb.append("Metadata: ").append(getMetadata());
+            sb.append("Metadata: ").append(getMetadata()).append(",");
+        if (getCustomMetadata() != null)
+            sb.append("CustomMetadata: ").append(getCustomMetadata());
         sb.append("}");
         return sb.toString();
     }
@@ -101,6 +170,10 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getMetadata() != null && other.getMetadata().equals(this.getMetadata()) == false)
             return false;
+        if (other.getCustomMetadata() == null ^ this.getCustomMetadata() == null)
+            return false;
+        if (other.getCustomMetadata() != null && other.getCustomMetadata().equals(this.getCustomMetadata()) == false)
+            return false;
         return true;
     }
 
@@ -110,6 +183,7 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getMetadata() == null) ? 0 : getMetadata().hashCode());
+        hashCode = prime * hashCode + ((getCustomMetadata() == null) ? 0 : getCustomMetadata().hashCode());
         return hashCode;
     }
 

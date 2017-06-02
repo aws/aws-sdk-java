@@ -29,6 +29,8 @@ public class DeactivateUserRequestMarshaller {
 
     private static final MarshallingInfo<String> USERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("UserId").build();
+    private static final MarshallingInfo<String> AUTHENTICATIONTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("Authentication").build();
 
     private static final DeactivateUserRequestMarshaller instance = new DeactivateUserRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class DeactivateUserRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(deactivateUserRequest.getUserId(), USERID_BINDING);
+            protocolMarshaller.marshall(deactivateUserRequest.getAuthenticationToken(), AUTHENTICATIONTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

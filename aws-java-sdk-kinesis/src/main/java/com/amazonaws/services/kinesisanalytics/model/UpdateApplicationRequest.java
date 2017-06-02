@@ -27,7 +27,7 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Name of the Kinesis Analytics application to update.
+     * Name of the Amazon Kinesis Analytics application to update.
      * </p>
      */
     private String applicationName;
@@ -46,11 +46,11 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Name of the Kinesis Analytics application to update.
+     * Name of the Amazon Kinesis Analytics application to update.
      * </p>
      * 
      * @param applicationName
-     *        Name of the Kinesis Analytics application to update.
+     *        Name of the Amazon Kinesis Analytics application to update.
      */
 
     public void setApplicationName(String applicationName) {
@@ -59,10 +59,10 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Name of the Kinesis Analytics application to update.
+     * Name of the Amazon Kinesis Analytics application to update.
      * </p>
      * 
-     * @return Name of the Kinesis Analytics application to update.
+     * @return Name of the Amazon Kinesis Analytics application to update.
      */
 
     public String getApplicationName() {
@@ -71,11 +71,11 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Name of the Kinesis Analytics application to update.
+     * Name of the Amazon Kinesis Analytics application to update.
      * </p>
      * 
      * @param applicationName
-     *        Name of the Kinesis Analytics application to update.
+     *        Name of the Amazon Kinesis Analytics application to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

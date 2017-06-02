@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DescribeUsersRequestMarshaller {
 
+    private static final MarshallingInfo<String> AUTHENTICATIONTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("Authentication").build();
     private static final MarshallingInfo<String> ORGANIZATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("organizationId").build();
     private static final MarshallingInfo<String> USERIDS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -62,6 +64,7 @@ public class DescribeUsersRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(describeUsersRequest.getAuthenticationToken(), AUTHENTICATIONTOKEN_BINDING);
             protocolMarshaller.marshall(describeUsersRequest.getOrganizationId(), ORGANIZATIONID_BINDING);
             protocolMarshaller.marshall(describeUsersRequest.getUserIds(), USERIDS_BINDING);
             protocolMarshaller.marshall(describeUsersRequest.getQuery(), QUERY_BINDING);

@@ -194,6 +194,72 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<CreateCommentResult> createCommentAsync(CreateCommentRequest request) {
+
+        return createCommentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCommentResult> createCommentAsync(final CreateCommentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateCommentRequest, CreateCommentResult> asyncHandler) {
+        final CreateCommentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateCommentResult>() {
+            @Override
+            public CreateCommentResult call() throws Exception {
+                CreateCommentResult result = null;
+
+                try {
+                    result = executeCreateComment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCustomMetadataResult> createCustomMetadataAsync(CreateCustomMetadataRequest request) {
+
+        return createCustomMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCustomMetadataResult> createCustomMetadataAsync(final CreateCustomMetadataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateCustomMetadataRequest, CreateCustomMetadataResult> asyncHandler) {
+        final CreateCustomMetadataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateCustomMetadataResult>() {
+            @Override
+            public CreateCustomMetadataResult call() throws Exception {
+                CreateCustomMetadataResult result = null;
+
+                try {
+                    result = executeCreateCustomMetadata(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateFolderResult> createFolderAsync(CreateFolderRequest request) {
 
         return createFolderAsync(request, null);
@@ -211,6 +277,39 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
 
                 try {
                     result = executeCreateFolder(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLabelsResult> createLabelsAsync(CreateLabelsRequest request) {
+
+        return createLabelsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLabelsResult> createLabelsAsync(final CreateLabelsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateLabelsRequest, CreateLabelsResult> asyncHandler) {
+        final CreateLabelsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateLabelsResult>() {
+            @Override
+            public CreateLabelsResult call() throws Exception {
+                CreateLabelsResult result = null;
+
+                try {
+                    result = executeCreateLabels(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -327,6 +426,72 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteCommentResult> deleteCommentAsync(DeleteCommentRequest request) {
+
+        return deleteCommentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCommentResult> deleteCommentAsync(final DeleteCommentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteCommentRequest, DeleteCommentResult> asyncHandler) {
+        final DeleteCommentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteCommentResult>() {
+            @Override
+            public DeleteCommentResult call() throws Exception {
+                DeleteCommentResult result = null;
+
+                try {
+                    result = executeDeleteComment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCustomMetadataResult> deleteCustomMetadataAsync(DeleteCustomMetadataRequest request) {
+
+        return deleteCustomMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCustomMetadataResult> deleteCustomMetadataAsync(final DeleteCustomMetadataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteCustomMetadataRequest, DeleteCustomMetadataResult> asyncHandler) {
+        final DeleteCustomMetadataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteCustomMetadataResult>() {
+            @Override
+            public DeleteCustomMetadataResult call() throws Exception {
+                DeleteCustomMetadataResult result = null;
+
+                try {
+                    result = executeDeleteCustomMetadata(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDocumentResult> deleteDocumentAsync(DeleteDocumentRequest request) {
 
         return deleteDocumentAsync(request, null);
@@ -426,6 +591,39 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteLabelsResult> deleteLabelsAsync(DeleteLabelsRequest request) {
+
+        return deleteLabelsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLabelsResult> deleteLabelsAsync(final DeleteLabelsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteLabelsRequest, DeleteLabelsResult> asyncHandler) {
+        final DeleteLabelsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteLabelsResult>() {
+            @Override
+            public DeleteLabelsResult call() throws Exception {
+                DeleteLabelsResult result = null;
+
+                try {
+                    result = executeDeleteLabels(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteNotificationSubscriptionResult> deleteNotificationSubscriptionAsync(DeleteNotificationSubscriptionRequest request) {
 
         return deleteNotificationSubscriptionAsync(request, null);
@@ -477,6 +675,39 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
 
                 try {
                     result = executeDeleteUser(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCommentsResult> describeCommentsAsync(DescribeCommentsRequest request) {
+
+        return describeCommentsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCommentsResult> describeCommentsAsync(final DescribeCommentsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeCommentsRequest, DescribeCommentsResult> asyncHandler) {
+        final DescribeCommentsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeCommentsResult>() {
+            @Override
+            public DescribeCommentsResult call() throws Exception {
+                DescribeCommentsResult result = null;
+
+                try {
+                    result = executeDescribeComments(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

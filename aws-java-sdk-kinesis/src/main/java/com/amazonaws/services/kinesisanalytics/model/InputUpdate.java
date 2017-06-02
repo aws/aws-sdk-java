@@ -36,7 +36,7 @@ public class InputUpdate implements Serializable, Cloneable, StructuredPojo {
     private String inputId;
     /**
      * <p>
-     * Name prefix for in-application stream(s) that Kinesis Analytics creates for the specific streaming source.
+     * Name prefix for in-application streams that Amazon Kinesis Analytics creates for the specific streaming source.
      * </p>
      */
     private String namePrefixUpdate;
@@ -63,8 +63,8 @@ public class InputUpdate implements Serializable, Cloneable, StructuredPojo {
     private InputSchemaUpdate inputSchemaUpdate;
     /**
      * <p>
-     * Describes the parallelism updates (the number in-application streams Kinesis Analytics creates for the specific
-     * streaming source).
+     * Describes the parallelism updates (the number in-application streams Amazon Kinesis Analytics creates for the
+     * specific streaming source).
      * </p>
      */
     private InputParallelismUpdate inputParallelismUpdate;
@@ -111,11 +111,12 @@ public class InputUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name prefix for in-application stream(s) that Kinesis Analytics creates for the specific streaming source.
+     * Name prefix for in-application streams that Amazon Kinesis Analytics creates for the specific streaming source.
      * </p>
      * 
      * @param namePrefixUpdate
-     *        Name prefix for in-application stream(s) that Kinesis Analytics creates for the specific streaming source.
+     *        Name prefix for in-application streams that Amazon Kinesis Analytics creates for the specific streaming
+     *        source.
      */
 
     public void setNamePrefixUpdate(String namePrefixUpdate) {
@@ -124,10 +125,10 @@ public class InputUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name prefix for in-application stream(s) that Kinesis Analytics creates for the specific streaming source.
+     * Name prefix for in-application streams that Amazon Kinesis Analytics creates for the specific streaming source.
      * </p>
      * 
-     * @return Name prefix for in-application stream(s) that Kinesis Analytics creates for the specific streaming
+     * @return Name prefix for in-application streams that Amazon Kinesis Analytics creates for the specific streaming
      *         source.
      */
 
@@ -137,11 +138,12 @@ public class InputUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name prefix for in-application stream(s) that Kinesis Analytics creates for the specific streaming source.
+     * Name prefix for in-application streams that Amazon Kinesis Analytics creates for the specific streaming source.
      * </p>
      * 
      * @param namePrefixUpdate
-     *        Name prefix for in-application stream(s) that Kinesis Analytics creates for the specific streaming source.
+     *        Name prefix for in-application streams that Amazon Kinesis Analytics creates for the specific streaming
+     *        source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -290,13 +292,13 @@ public class InputUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the parallelism updates (the number in-application streams Kinesis Analytics creates for the specific
-     * streaming source).
+     * Describes the parallelism updates (the number in-application streams Amazon Kinesis Analytics creates for the
+     * specific streaming source).
      * </p>
      * 
      * @param inputParallelismUpdate
-     *        Describes the parallelism updates (the number in-application streams Kinesis Analytics creates for the
-     *        specific streaming source).
+     *        Describes the parallelism updates (the number in-application streams Amazon Kinesis Analytics creates for
+     *        the specific streaming source).
      */
 
     public void setInputParallelismUpdate(InputParallelismUpdate inputParallelismUpdate) {
@@ -305,12 +307,12 @@ public class InputUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the parallelism updates (the number in-application streams Kinesis Analytics creates for the specific
-     * streaming source).
+     * Describes the parallelism updates (the number in-application streams Amazon Kinesis Analytics creates for the
+     * specific streaming source).
      * </p>
      * 
-     * @return Describes the parallelism updates (the number in-application streams Kinesis Analytics creates for the
-     *         specific streaming source).
+     * @return Describes the parallelism updates (the number in-application streams Amazon Kinesis Analytics creates for
+     *         the specific streaming source).
      */
 
     public InputParallelismUpdate getInputParallelismUpdate() {
@@ -319,13 +321,13 @@ public class InputUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the parallelism updates (the number in-application streams Kinesis Analytics creates for the specific
-     * streaming source).
+     * Describes the parallelism updates (the number in-application streams Amazon Kinesis Analytics creates for the
+     * specific streaming source).
      * </p>
      * 
      * @param inputParallelismUpdate
-     *        Describes the parallelism updates (the number in-application streams Kinesis Analytics creates for the
-     *        specific streaming source).
+     *        Describes the parallelism updates (the number in-application streams Amazon Kinesis Analytics creates for
+     *        the specific streaming source).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

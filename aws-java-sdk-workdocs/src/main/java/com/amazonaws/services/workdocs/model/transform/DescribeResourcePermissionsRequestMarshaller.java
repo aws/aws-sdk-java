@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DescribeResourcePermissionsRequestMarshaller {
 
+    private static final MarshallingInfo<String> AUTHENTICATIONTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("Authentication").build();
     private static final MarshallingInfo<String> RESOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("ResourceId").build();
     private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -50,6 +52,7 @@ public class DescribeResourcePermissionsRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(describeResourcePermissionsRequest.getAuthenticationToken(), AUTHENTICATIONTOKEN_BINDING);
             protocolMarshaller.marshall(describeResourcePermissionsRequest.getResourceId(), RESOURCEID_BINDING);
             protocolMarshaller.marshall(describeResourcePermissionsRequest.getLimit(), LIMIT_BINDING);
             protocolMarshaller.marshall(describeResourcePermissionsRequest.getMarker(), MARKER_BINDING);

@@ -26,6 +26,7 @@ import com.amazonaws.event.ProgressListener;
 import com.amazonaws.event.ProgressListenerChain;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.internal.RequestCopyUtils;
 import com.amazonaws.services.s3.internal.FileLocks;
 import com.amazonaws.services.s3.internal.Mimetypes;
 import com.amazonaws.services.s3.internal.ServiceUtils;
@@ -1045,11 +1046,7 @@ public class TransferManager {
         getObjectRequest
                 .setGeneralProgressListener(new ProgressListenerChain(new TransferCompletionFilter(), listenerChain));
 
-        GetObjectMetadataRequest getObjectMetadataRequest = new GetObjectMetadataRequest(
-                getObjectRequest.getBucketName(), getObjectRequest.getKey(), getObjectRequest.getVersionId());
-        if (getObjectRequest.getSSECustomerKey() != null) {
-            getObjectMetadataRequest.setSSECustomerKey(getObjectRequest.getSSECustomerKey());
-        }
+        GetObjectMetadataRequest getObjectMetadataRequest = RequestCopyUtils.createGetObjectMetadataRequestFrom(getObjectRequest);
         final ObjectMetadata objectMetadata = s3.getObjectMetadata(getObjectMetadataRequest);
 
         // Used to check if the object is modified between pause and resume

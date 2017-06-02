@@ -31,6 +31,8 @@ public class CreateUserRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OrganizationId").build();
     private static final MarshallingInfo<String> USERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Username").build();
+    private static final MarshallingInfo<String> EMAILADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EmailAddress").build();
     private static final MarshallingInfo<String> GIVENNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("GivenName").build();
     private static final MarshallingInfo<String> SURNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -41,6 +43,8 @@ public class CreateUserRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimeZoneId").build();
     private static final MarshallingInfo<StructuredPojo> STORAGERULE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StorageRule").build();
+    private static final MarshallingInfo<String> AUTHENTICATIONTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("Authentication").build();
 
     private static final CreateUserRequestMarshaller instance = new CreateUserRequestMarshaller();
 
@@ -60,11 +64,13 @@ public class CreateUserRequestMarshaller {
         try {
             protocolMarshaller.marshall(createUserRequest.getOrganizationId(), ORGANIZATIONID_BINDING);
             protocolMarshaller.marshall(createUserRequest.getUsername(), USERNAME_BINDING);
+            protocolMarshaller.marshall(createUserRequest.getEmailAddress(), EMAILADDRESS_BINDING);
             protocolMarshaller.marshall(createUserRequest.getGivenName(), GIVENNAME_BINDING);
             protocolMarshaller.marshall(createUserRequest.getSurname(), SURNAME_BINDING);
             protocolMarshaller.marshall(createUserRequest.getPassword(), PASSWORD_BINDING);
             protocolMarshaller.marshall(createUserRequest.getTimeZoneId(), TIMEZONEID_BINDING);
             protocolMarshaller.marshall(createUserRequest.getStorageRule(), STORAGERULE_BINDING);
+            protocolMarshaller.marshall(createUserRequest.getAuthenticationToken(), AUTHENTICATIONTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

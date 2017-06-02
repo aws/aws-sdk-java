@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.workdocs.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -43,6 +44,12 @@ public class FolderMetadataMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceState").build();
     private static final MarshallingInfo<String> SIGNATURE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Signature").build();
+    private static final MarshallingInfo<List> LABELS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Labels").build();
+    private static final MarshallingInfo<Long> SIZE_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Size").build();
+    private static final MarshallingInfo<Long> LATESTVERSIONSIZE_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LatestVersionSize").build();
 
     private static final FolderMetadataMarshaller instance = new FolderMetadataMarshaller();
 
@@ -68,6 +75,9 @@ public class FolderMetadataMarshaller {
             protocolMarshaller.marshall(folderMetadata.getModifiedTimestamp(), MODIFIEDTIMESTAMP_BINDING);
             protocolMarshaller.marshall(folderMetadata.getResourceState(), RESOURCESTATE_BINDING);
             protocolMarshaller.marshall(folderMetadata.getSignature(), SIGNATURE_BINDING);
+            protocolMarshaller.marshall(folderMetadata.getLabels(), LABELS_BINDING);
+            protocolMarshaller.marshall(folderMetadata.getSize(), SIZE_BINDING);
+            protocolMarshaller.marshall(folderMetadata.getLatestVersionSize(), LATESTVERSIONSIZE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

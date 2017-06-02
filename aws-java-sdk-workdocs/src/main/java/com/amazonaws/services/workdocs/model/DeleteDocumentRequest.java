@@ -27,10 +27,63 @@ public class DeleteDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
+     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * accessing the API using AWS credentials.
+     * </p>
+     */
+    private String authenticationToken;
+    /**
+     * <p>
      * The ID of the document.
      * </p>
      */
     private String documentId;
+
+    /**
+     * <p>
+     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * accessing the API using AWS credentials.
+     * </p>
+     * 
+     * @param authenticationToken
+     *        Amazon WorkDocs authentication token. This field should not be set when using administrative API actions,
+     *        as in accessing the API using AWS credentials.
+     */
+
+    public void setAuthenticationToken(String authenticationToken) {
+        this.authenticationToken = authenticationToken;
+    }
+
+    /**
+     * <p>
+     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * accessing the API using AWS credentials.
+     * </p>
+     * 
+     * @return Amazon WorkDocs authentication token. This field should not be set when using administrative API actions,
+     *         as in accessing the API using AWS credentials.
+     */
+
+    public String getAuthenticationToken() {
+        return this.authenticationToken;
+    }
+
+    /**
+     * <p>
+     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * accessing the API using AWS credentials.
+     * </p>
+     * 
+     * @param authenticationToken
+     *        Amazon WorkDocs authentication token. This field should not be set when using administrative API actions,
+     *        as in accessing the API using AWS credentials.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteDocumentRequest withAuthenticationToken(String authenticationToken) {
+        setAuthenticationToken(authenticationToken);
+        return this;
+    }
 
     /**
      * <p>
@@ -83,6 +136,8 @@ public class DeleteDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAuthenticationToken() != null)
+            sb.append("AuthenticationToken: ").append(getAuthenticationToken()).append(",");
         if (getDocumentId() != null)
             sb.append("DocumentId: ").append(getDocumentId());
         sb.append("}");
@@ -99,6 +154,10 @@ public class DeleteDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
         if (obj instanceof DeleteDocumentRequest == false)
             return false;
         DeleteDocumentRequest other = (DeleteDocumentRequest) obj;
+        if (other.getAuthenticationToken() == null ^ this.getAuthenticationToken() == null)
+            return false;
+        if (other.getAuthenticationToken() != null && other.getAuthenticationToken().equals(this.getAuthenticationToken()) == false)
+            return false;
         if (other.getDocumentId() == null ^ this.getDocumentId() == null)
             return false;
         if (other.getDocumentId() != null && other.getDocumentId().equals(this.getDocumentId()) == false)
@@ -111,6 +170,7 @@ public class DeleteDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAuthenticationToken() == null) ? 0 : getAuthenticationToken().hashCode());
         hashCode = prime * hashCode + ((getDocumentId() == null) ? 0 : getDocumentId().hashCode());
         return hashCode;
     }

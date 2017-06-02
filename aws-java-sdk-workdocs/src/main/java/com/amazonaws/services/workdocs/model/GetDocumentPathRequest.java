@@ -27,6 +27,13 @@ public class GetDocumentPathRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
+     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * accessing the API using AWS credentials.
+     * </p>
+     */
+    private String authenticationToken;
+    /**
+     * <p>
      * The ID of the document.
      * </p>
      */
@@ -39,7 +46,7 @@ public class GetDocumentPathRequest extends com.amazonaws.AmazonWebServiceReques
     private Integer limit;
     /**
      * <p>
-     * A comma-separated list of values. Specify "NAME" to include the names of the parent folders.
+     * A comma-separated list of values. Specify <code>NAME</code> to include the names of the parent folders.
      * </p>
      */
     private String fields;
@@ -49,6 +56,52 @@ public class GetDocumentPathRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String marker;
+
+    /**
+     * <p>
+     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * accessing the API using AWS credentials.
+     * </p>
+     * 
+     * @param authenticationToken
+     *        Amazon WorkDocs authentication token. This field should not be set when using administrative API actions,
+     *        as in accessing the API using AWS credentials.
+     */
+
+    public void setAuthenticationToken(String authenticationToken) {
+        this.authenticationToken = authenticationToken;
+    }
+
+    /**
+     * <p>
+     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * accessing the API using AWS credentials.
+     * </p>
+     * 
+     * @return Amazon WorkDocs authentication token. This field should not be set when using administrative API actions,
+     *         as in accessing the API using AWS credentials.
+     */
+
+    public String getAuthenticationToken() {
+        return this.authenticationToken;
+    }
+
+    /**
+     * <p>
+     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * accessing the API using AWS credentials.
+     * </p>
+     * 
+     * @param authenticationToken
+     *        Amazon WorkDocs authentication token. This field should not be set when using administrative API actions,
+     *        as in accessing the API using AWS credentials.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDocumentPathRequest withAuthenticationToken(String authenticationToken) {
+        setAuthenticationToken(authenticationToken);
+        return this;
+    }
 
     /**
      * <p>
@@ -132,11 +185,11 @@ public class GetDocumentPathRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A comma-separated list of values. Specify "NAME" to include the names of the parent folders.
+     * A comma-separated list of values. Specify <code>NAME</code> to include the names of the parent folders.
      * </p>
      * 
      * @param fields
-     *        A comma-separated list of values. Specify "NAME" to include the names of the parent folders.
+     *        A comma-separated list of values. Specify <code>NAME</code> to include the names of the parent folders.
      */
 
     public void setFields(String fields) {
@@ -145,10 +198,10 @@ public class GetDocumentPathRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A comma-separated list of values. Specify "NAME" to include the names of the parent folders.
+     * A comma-separated list of values. Specify <code>NAME</code> to include the names of the parent folders.
      * </p>
      * 
-     * @return A comma-separated list of values. Specify "NAME" to include the names of the parent folders.
+     * @return A comma-separated list of values. Specify <code>NAME</code> to include the names of the parent folders.
      */
 
     public String getFields() {
@@ -157,11 +210,11 @@ public class GetDocumentPathRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A comma-separated list of values. Specify "NAME" to include the names of the parent folders.
+     * A comma-separated list of values. Specify <code>NAME</code> to include the names of the parent folders.
      * </p>
      * 
      * @param fields
-     *        A comma-separated list of values. Specify "NAME" to include the names of the parent folders.
+     *        A comma-separated list of values. Specify <code>NAME</code> to include the names of the parent folders.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,6 +274,8 @@ public class GetDocumentPathRequest extends com.amazonaws.AmazonWebServiceReques
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAuthenticationToken() != null)
+            sb.append("AuthenticationToken: ").append(getAuthenticationToken()).append(",");
         if (getDocumentId() != null)
             sb.append("DocumentId: ").append(getDocumentId()).append(",");
         if (getLimit() != null)
@@ -243,6 +298,10 @@ public class GetDocumentPathRequest extends com.amazonaws.AmazonWebServiceReques
         if (obj instanceof GetDocumentPathRequest == false)
             return false;
         GetDocumentPathRequest other = (GetDocumentPathRequest) obj;
+        if (other.getAuthenticationToken() == null ^ this.getAuthenticationToken() == null)
+            return false;
+        if (other.getAuthenticationToken() != null && other.getAuthenticationToken().equals(this.getAuthenticationToken()) == false)
+            return false;
         if (other.getDocumentId() == null ^ this.getDocumentId() == null)
             return false;
         if (other.getDocumentId() != null && other.getDocumentId().equals(this.getDocumentId()) == false)
@@ -267,6 +326,7 @@ public class GetDocumentPathRequest extends com.amazonaws.AmazonWebServiceReques
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAuthenticationToken() == null) ? 0 : getAuthenticationToken().hashCode());
         hashCode = prime * hashCode + ((getDocumentId() == null) ? 0 : getDocumentId().hashCode());
         hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
         hashCode = prime * hashCode + ((getFields() == null) ? 0 : getFields().hashCode());

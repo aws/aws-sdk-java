@@ -1,3 +1,16 @@
+# __1.11.140__ __2017-06-02__
+## __Amazon Kinesis Analytics__
+  - ### Features
+    - Kinesis Analytics publishes error messages CloudWatch logs in case of application misconfigurations
+
+## __Amazon S3__
+  - ### Bugfixes
+    - Fixes bug where TransferManager#download fails when requesterPays is enabled on GetObjectRequest. https://github.com/aws/aws-sdk-java/issues/1175
+
+## __Amazon WorkDocs__
+  - ### Features
+    - This release includes new APIs to manage tags and custom metadata on resources and also new APIs to add and retrieve comments at the document level.
+
 # __1.11.139__ __2017-06-01__
 ## __AWS CodeDeploy__
   - ### Features

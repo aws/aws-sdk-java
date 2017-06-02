@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DescribeFolderContentsRequestMarshaller {
 
+    private static final MarshallingInfo<String> AUTHENTICATIONTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("Authentication").build();
     private static final MarshallingInfo<String> FOLDERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("FolderId").build();
     private static final MarshallingInfo<String> SORT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
@@ -58,6 +60,7 @@ public class DescribeFolderContentsRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(describeFolderContentsRequest.getAuthenticationToken(), AUTHENTICATIONTOKEN_BINDING);
             protocolMarshaller.marshall(describeFolderContentsRequest.getFolderId(), FOLDERID_BINDING);
             protocolMarshaller.marshall(describeFolderContentsRequest.getSort(), SORT_BINDING);
             protocolMarshaller.marshall(describeFolderContentsRequest.getOrder(), ORDER_BINDING);

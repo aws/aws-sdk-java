@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateDocumentRequestMarshaller {
 
+    private static final MarshallingInfo<String> AUTHENTICATIONTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("Authentication").build();
     private static final MarshallingInfo<String> DOCUMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("DocumentId").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -52,6 +54,7 @@ public class UpdateDocumentRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(updateDocumentRequest.getAuthenticationToken(), AUTHENTICATIONTOKEN_BINDING);
             protocolMarshaller.marshall(updateDocumentRequest.getDocumentId(), DOCUMENTID_BINDING);
             protocolMarshaller.marshall(updateDocumentRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(updateDocumentRequest.getParentFolderId(), PARENTFOLDERID_BINDING);

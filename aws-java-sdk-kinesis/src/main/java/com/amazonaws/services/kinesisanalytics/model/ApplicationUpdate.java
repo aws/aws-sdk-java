@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes updates to apply to an existing Kinesis Analytics application.
+ * Describes updates to apply to an existing Amazon Kinesis Analytics application.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/ApplicationUpdate" target="_top">AWS
@@ -52,6 +52,12 @@ public class ApplicationUpdate implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private java.util.List<ReferenceDataSourceUpdate> referenceDataSourceUpdates;
+    /**
+     * <p>
+     * Describes application CloudWatch logging option updates.
+     * </p>
+     */
+    private java.util.List<CloudWatchLoggingOptionUpdate> cloudWatchLoggingOptionUpdates;
 
     /**
      * <p>
@@ -304,6 +310,76 @@ public class ApplicationUpdate implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * Describes application CloudWatch logging option updates.
+     * </p>
+     * 
+     * @return Describes application CloudWatch logging option updates.
+     */
+
+    public java.util.List<CloudWatchLoggingOptionUpdate> getCloudWatchLoggingOptionUpdates() {
+        return cloudWatchLoggingOptionUpdates;
+    }
+
+    /**
+     * <p>
+     * Describes application CloudWatch logging option updates.
+     * </p>
+     * 
+     * @param cloudWatchLoggingOptionUpdates
+     *        Describes application CloudWatch logging option updates.
+     */
+
+    public void setCloudWatchLoggingOptionUpdates(java.util.Collection<CloudWatchLoggingOptionUpdate> cloudWatchLoggingOptionUpdates) {
+        if (cloudWatchLoggingOptionUpdates == null) {
+            this.cloudWatchLoggingOptionUpdates = null;
+            return;
+        }
+
+        this.cloudWatchLoggingOptionUpdates = new java.util.ArrayList<CloudWatchLoggingOptionUpdate>(cloudWatchLoggingOptionUpdates);
+    }
+
+    /**
+     * <p>
+     * Describes application CloudWatch logging option updates.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCloudWatchLoggingOptionUpdates(java.util.Collection)} or
+     * {@link #withCloudWatchLoggingOptionUpdates(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param cloudWatchLoggingOptionUpdates
+     *        Describes application CloudWatch logging option updates.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationUpdate withCloudWatchLoggingOptionUpdates(CloudWatchLoggingOptionUpdate... cloudWatchLoggingOptionUpdates) {
+        if (this.cloudWatchLoggingOptionUpdates == null) {
+            setCloudWatchLoggingOptionUpdates(new java.util.ArrayList<CloudWatchLoggingOptionUpdate>(cloudWatchLoggingOptionUpdates.length));
+        }
+        for (CloudWatchLoggingOptionUpdate ele : cloudWatchLoggingOptionUpdates) {
+            this.cloudWatchLoggingOptionUpdates.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes application CloudWatch logging option updates.
+     * </p>
+     * 
+     * @param cloudWatchLoggingOptionUpdates
+     *        Describes application CloudWatch logging option updates.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationUpdate withCloudWatchLoggingOptionUpdates(java.util.Collection<CloudWatchLoggingOptionUpdate> cloudWatchLoggingOptionUpdates) {
+        setCloudWatchLoggingOptionUpdates(cloudWatchLoggingOptionUpdates);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -321,7 +397,9 @@ public class ApplicationUpdate implements Serializable, Cloneable, StructuredPoj
         if (getOutputUpdates() != null)
             sb.append("OutputUpdates: ").append(getOutputUpdates()).append(",");
         if (getReferenceDataSourceUpdates() != null)
-            sb.append("ReferenceDataSourceUpdates: ").append(getReferenceDataSourceUpdates());
+            sb.append("ReferenceDataSourceUpdates: ").append(getReferenceDataSourceUpdates()).append(",");
+        if (getCloudWatchLoggingOptionUpdates() != null)
+            sb.append("CloudWatchLoggingOptionUpdates: ").append(getCloudWatchLoggingOptionUpdates());
         sb.append("}");
         return sb.toString();
     }
@@ -352,6 +430,11 @@ public class ApplicationUpdate implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getReferenceDataSourceUpdates() != null && other.getReferenceDataSourceUpdates().equals(this.getReferenceDataSourceUpdates()) == false)
             return false;
+        if (other.getCloudWatchLoggingOptionUpdates() == null ^ this.getCloudWatchLoggingOptionUpdates() == null)
+            return false;
+        if (other.getCloudWatchLoggingOptionUpdates() != null
+                && other.getCloudWatchLoggingOptionUpdates().equals(this.getCloudWatchLoggingOptionUpdates()) == false)
+            return false;
         return true;
     }
 
@@ -364,6 +447,7 @@ public class ApplicationUpdate implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getApplicationCodeUpdate() == null) ? 0 : getApplicationCodeUpdate().hashCode());
         hashCode = prime * hashCode + ((getOutputUpdates() == null) ? 0 : getOutputUpdates().hashCode());
         hashCode = prime * hashCode + ((getReferenceDataSourceUpdates() == null) ? 0 : getReferenceDataSourceUpdates().hashCode());
+        hashCode = prime * hashCode + ((getCloudWatchLoggingOptionUpdates() == null) ? 0 : getCloudWatchLoggingOptionUpdates().hashCode());
         return hashCode;
     }
 

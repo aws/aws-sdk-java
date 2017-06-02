@@ -27,6 +27,13 @@ public class InitiateDocumentVersionUploadRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
+     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * accessing the API using AWS credentials.
+     * </p>
+     */
+    private String authenticationToken;
+    /**
+     * <p>
      * The ID of the document.
      * </p>
      */
@@ -67,6 +74,52 @@ public class InitiateDocumentVersionUploadRequest extends com.amazonaws.AmazonWe
      * </p>
      */
     private String parentFolderId;
+
+    /**
+     * <p>
+     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * accessing the API using AWS credentials.
+     * </p>
+     * 
+     * @param authenticationToken
+     *        Amazon WorkDocs authentication token. This field should not be set when using administrative API actions,
+     *        as in accessing the API using AWS credentials.
+     */
+
+    public void setAuthenticationToken(String authenticationToken) {
+        this.authenticationToken = authenticationToken;
+    }
+
+    /**
+     * <p>
+     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * accessing the API using AWS credentials.
+     * </p>
+     * 
+     * @return Amazon WorkDocs authentication token. This field should not be set when using administrative API actions,
+     *         as in accessing the API using AWS credentials.
+     */
+
+    public String getAuthenticationToken() {
+        return this.authenticationToken;
+    }
+
+    /**
+     * <p>
+     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * accessing the API using AWS credentials.
+     * </p>
+     * 
+     * @param authenticationToken
+     *        Amazon WorkDocs authentication token. This field should not be set when using administrative API actions,
+     *        as in accessing the API using AWS credentials.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InitiateDocumentVersionUploadRequest withAuthenticationToken(String authenticationToken) {
+        setAuthenticationToken(authenticationToken);
+        return this;
+    }
 
     /**
      * <p>
@@ -359,6 +412,8 @@ public class InitiateDocumentVersionUploadRequest extends com.amazonaws.AmazonWe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAuthenticationToken() != null)
+            sb.append("AuthenticationToken: ").append(getAuthenticationToken()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getName() != null)
@@ -387,6 +442,10 @@ public class InitiateDocumentVersionUploadRequest extends com.amazonaws.AmazonWe
         if (obj instanceof InitiateDocumentVersionUploadRequest == false)
             return false;
         InitiateDocumentVersionUploadRequest other = (InitiateDocumentVersionUploadRequest) obj;
+        if (other.getAuthenticationToken() == null ^ this.getAuthenticationToken() == null)
+            return false;
+        if (other.getAuthenticationToken() != null && other.getAuthenticationToken().equals(this.getAuthenticationToken()) == false)
+            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
@@ -423,6 +482,7 @@ public class InitiateDocumentVersionUploadRequest extends com.amazonaws.AmazonWe
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAuthenticationToken() == null) ? 0 : getAuthenticationToken().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getContentCreatedTimestamp() == null) ? 0 : getContentCreatedTimestamp().hashCode());

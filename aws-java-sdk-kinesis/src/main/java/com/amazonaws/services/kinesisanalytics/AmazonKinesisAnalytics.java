@@ -90,6 +90,33 @@ public interface AmazonKinesisAnalytics {
 
     /**
      * <p>
+     * Adds a CloudWatch log stream to monitor application configuration errors. For more information about using
+     * CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+     * Configuration Errors</a>.
+     * </p>
+     * 
+     * @param addApplicationCloudWatchLoggingOptionRequest
+     * @return Result of the AddApplicationCloudWatchLoggingOption operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Specified application can't be found.
+     * @throws ResourceInUseException
+     *         Application is not available for this operation.
+     * @throws InvalidArgumentException
+     *         Specified input parameter value is invalid.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
+     *         attempting to edit the same application at the same time.
+     * @sample AmazonKinesisAnalytics.AddApplicationCloudWatchLoggingOption
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationCloudWatchLoggingOption"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AddApplicationCloudWatchLoggingOptionResult addApplicationCloudWatchLoggingOption(
+            AddApplicationCloudWatchLoggingOptionRequest addApplicationCloudWatchLoggingOptionRequest);
+
+    /**
+     * <p>
      * Adds a streaming source to your Amazon Kinesis application. For conceptual information, see <a
      * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
      * Input</a>.
@@ -217,8 +244,7 @@ public interface AmazonKinesisAnalytics {
      * <p>
      * In the input configuration, you map the streaming source to an in-application stream, which you can think of as a
      * constantly updating table. In the mapping, you must provide a schema for the in-application stream and map each
-     * data column in the in-application stream to a data element in the streaming source, with the option of renaming,
-     * casting and dropping columns as desired.
+     * data column in the in-application stream to a data element in the streaming source.
      * </p>
      * <p>
      * Your application code is one or more SQL statements that read input data, transform it, and generate output. Your
@@ -282,6 +308,33 @@ public interface AmazonKinesisAnalytics {
 
     /**
      * <p>
+     * Deletes a CloudWatch log stream from an application. For more information about using CloudWatch log streams with
+     * Amazon Kinesis Analytics applications, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+     * Configuration Errors</a>.
+     * </p>
+     * 
+     * @param deleteApplicationCloudWatchLoggingOptionRequest
+     * @return Result of the DeleteApplicationCloudWatchLoggingOption operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Specified application can't be found.
+     * @throws ResourceInUseException
+     *         Application is not available for this operation.
+     * @throws InvalidArgumentException
+     *         Specified input parameter value is invalid.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
+     *         attempting to edit the same application at the same time.
+     * @sample AmazonKinesisAnalytics.DeleteApplicationCloudWatchLoggingOption
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationCloudWatchLoggingOption"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteApplicationCloudWatchLoggingOptionResult deleteApplicationCloudWatchLoggingOption(
+            DeleteApplicationCloudWatchLoggingOptionRequest deleteApplicationCloudWatchLoggingOptionRequest);
+
+    /**
+     * <p>
      * Deletes output destination configuration from your application configuration. Amazon Kinesis Analytics will no
      * longer write data from the corresponding in-application stream to the external output destination.
      * </p>
@@ -295,6 +348,8 @@ public interface AmazonKinesisAnalytics {
      *         Specified application can't be found.
      * @throws ResourceInUseException
      *         Application is not available for this operation.
+     * @throws InvalidArgumentException
+     *         Specified input parameter value is invalid.
      * @throws ConcurrentModificationException
      *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
      *         attempting to edit the same application at the same time.
@@ -381,10 +436,13 @@ public interface AmazonKinesisAnalytics {
      * @throws InvalidArgumentException
      *         Specified input parameter value is invalid.
      * @throws UnableToDetectSchemaException
-     *         Data format is not valid, Kinesis Analytics is not able to detect schema for the given streaming source.
+     *         Data format is not valid, Amazon Kinesis Analytics is not able to detect schema for the given streaming
+     *         source.
      * @throws ResourceProvisionedThroughputExceededException
-     *         Discovery failed to get a record from the streaming source because of the Kinesis Streams
-     *         ProvisionedThroughputExceededException.
+     *         Discovery failed to get a record from the streaming source because of the Amazon Kinesis Streams
+     *         ProvisionedThroughputExceededException. For more information, see <a
+     *         href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html">GetRecords</a> in the
+     *         Amazon Kinesis Streams API Reference.
      * @sample AmazonKinesisAnalytics.DiscoverInputSchema
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DiscoverInputSchema"
      *      target="_top">AWS API Documentation</a>
@@ -476,15 +534,15 @@ public interface AmazonKinesisAnalytics {
 
     /**
      * <p>
-     * Updates an existing Kinesis Analytics application. Using this API, you can update application code, input
+     * Updates an existing Amazon Kinesis Analytics application. Using this API, you can update application code, input
      * configuration, and output configuration.
      * </p>
      * <p>
-     * Note that Kinesis Analytics updates the <code>CurrentApplicationVersionId</code> each time you update your
+     * Note that Amazon Kinesis Analytics updates the <code>CurrentApplicationVersionId</code> each time you update your
      * application.
      * </p>
      * <p>
-     * This opeation requires permission for the <code>kinesisanalytics:UpdateApplication</code> action.
+     * This operation requires permission for the <code>kinesisanalytics:UpdateApplication</code> action.
      * </p>
      * 
      * @param updateApplicationRequest

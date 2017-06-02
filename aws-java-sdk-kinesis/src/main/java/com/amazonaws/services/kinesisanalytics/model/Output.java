@@ -25,7 +25,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <p/>
  * <p>
- * You can configure your application to write output to up to five destinations.
+ * For limits on how many destinations an application can write and other limitations, see <a
+ * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/Output" target="_top">AWS API

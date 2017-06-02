@@ -27,6 +27,13 @@ public class AddResourcePermissionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
+     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * accessing the API using AWS credentials.
+     * </p>
+     */
+    private String authenticationToken;
+    /**
+     * <p>
      * The ID of the resource.
      * </p>
      */
@@ -37,6 +44,52 @@ public class AddResourcePermissionsRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private java.util.List<SharePrincipal> principals;
+
+    /**
+     * <p>
+     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * accessing the API using AWS credentials.
+     * </p>
+     * 
+     * @param authenticationToken
+     *        Amazon WorkDocs authentication token. This field should not be set when using administrative API actions,
+     *        as in accessing the API using AWS credentials.
+     */
+
+    public void setAuthenticationToken(String authenticationToken) {
+        this.authenticationToken = authenticationToken;
+    }
+
+    /**
+     * <p>
+     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * accessing the API using AWS credentials.
+     * </p>
+     * 
+     * @return Amazon WorkDocs authentication token. This field should not be set when using administrative API actions,
+     *         as in accessing the API using AWS credentials.
+     */
+
+    public String getAuthenticationToken() {
+        return this.authenticationToken;
+    }
+
+    /**
+     * <p>
+     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * accessing the API using AWS credentials.
+     * </p>
+     * 
+     * @param authenticationToken
+     *        Amazon WorkDocs authentication token. This field should not be set when using administrative API actions,
+     *        as in accessing the API using AWS credentials.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AddResourcePermissionsRequest withAuthenticationToken(String authenticationToken) {
+        setAuthenticationToken(authenticationToken);
+        return this;
+    }
 
     /**
      * <p>
@@ -159,6 +212,8 @@ public class AddResourcePermissionsRequest extends com.amazonaws.AmazonWebServic
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAuthenticationToken() != null)
+            sb.append("AuthenticationToken: ").append(getAuthenticationToken()).append(",");
         if (getResourceId() != null)
             sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getPrincipals() != null)
@@ -177,6 +232,10 @@ public class AddResourcePermissionsRequest extends com.amazonaws.AmazonWebServic
         if (obj instanceof AddResourcePermissionsRequest == false)
             return false;
         AddResourcePermissionsRequest other = (AddResourcePermissionsRequest) obj;
+        if (other.getAuthenticationToken() == null ^ this.getAuthenticationToken() == null)
+            return false;
+        if (other.getAuthenticationToken() != null && other.getAuthenticationToken().equals(this.getAuthenticationToken()) == false)
+            return false;
         if (other.getResourceId() == null ^ this.getResourceId() == null)
             return false;
         if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
@@ -193,6 +252,7 @@ public class AddResourcePermissionsRequest extends com.amazonaws.AmazonWebServic
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAuthenticationToken() == null) ? 0 : getAuthenticationToken().hashCode());
         hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
         hashCode = prime * hashCode + ((getPrincipals() == null) ? 0 : getPrincipals().hashCode());
         return hashCode;

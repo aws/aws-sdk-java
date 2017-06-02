@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class AddResourcePermissionsRequestMarshaller {
 
+    private static final MarshallingInfo<String> AUTHENTICATIONTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("Authentication").build();
     private static final MarshallingInfo<String> RESOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("ResourceId").build();
     private static final MarshallingInfo<List> PRINCIPALS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -49,6 +51,7 @@ public class AddResourcePermissionsRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(addResourcePermissionsRequest.getAuthenticationToken(), AUTHENTICATIONTOKEN_BINDING);
             protocolMarshaller.marshall(addResourcePermissionsRequest.getResourceId(), RESOURCEID_BINDING);
             protocolMarshaller.marshall(addResourcePermissionsRequest.getPrincipals(), PRINCIPALS_BINDING);
         } catch (Exception e) {

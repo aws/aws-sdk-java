@@ -242,6 +242,41 @@ public class AmazonKinesisAnalyticsAsyncClient extends AmazonKinesisAnalyticsCli
     }
 
     @Override
+    public java.util.concurrent.Future<AddApplicationCloudWatchLoggingOptionResult> addApplicationCloudWatchLoggingOptionAsync(
+            AddApplicationCloudWatchLoggingOptionRequest request) {
+
+        return addApplicationCloudWatchLoggingOptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddApplicationCloudWatchLoggingOptionResult> addApplicationCloudWatchLoggingOptionAsync(
+            final AddApplicationCloudWatchLoggingOptionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AddApplicationCloudWatchLoggingOptionRequest, AddApplicationCloudWatchLoggingOptionResult> asyncHandler) {
+        final AddApplicationCloudWatchLoggingOptionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AddApplicationCloudWatchLoggingOptionResult>() {
+            @Override
+            public AddApplicationCloudWatchLoggingOptionResult call() throws Exception {
+                AddApplicationCloudWatchLoggingOptionResult result = null;
+
+                try {
+                    result = executeAddApplicationCloudWatchLoggingOption(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AddApplicationInputResult> addApplicationInputAsync(AddApplicationInputRequest request) {
 
         return addApplicationInputAsync(request, null);
@@ -393,6 +428,41 @@ public class AmazonKinesisAnalyticsAsyncClient extends AmazonKinesisAnalyticsCli
 
                 try {
                     result = executeDeleteApplication(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApplicationCloudWatchLoggingOptionResult> deleteApplicationCloudWatchLoggingOptionAsync(
+            DeleteApplicationCloudWatchLoggingOptionRequest request) {
+
+        return deleteApplicationCloudWatchLoggingOptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApplicationCloudWatchLoggingOptionResult> deleteApplicationCloudWatchLoggingOptionAsync(
+            final DeleteApplicationCloudWatchLoggingOptionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteApplicationCloudWatchLoggingOptionRequest, DeleteApplicationCloudWatchLoggingOptionResult> asyncHandler) {
+        final DeleteApplicationCloudWatchLoggingOptionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteApplicationCloudWatchLoggingOptionResult>() {
+            @Override
+            public DeleteApplicationCloudWatchLoggingOptionResult call() throws Exception {
+                DeleteApplicationCloudWatchLoggingOptionResult result = null;
+
+                try {
+                    result = executeDeleteApplicationCloudWatchLoggingOption(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

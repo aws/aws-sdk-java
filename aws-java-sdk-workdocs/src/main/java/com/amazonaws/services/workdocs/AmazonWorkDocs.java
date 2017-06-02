@@ -77,8 +77,8 @@ public interface AmazonWorkDocs {
     /**
      * <p>
      * Aborts the upload of the specified document version that was previously initiated by
-     * <a>InitiateDocumentVersionUpload</a>. The client should make this call only when it no longer intends or fails to
-     * upload the document version.
+     * <a>InitiateDocumentVersionUpload</a>. The client should make this call only when it no longer intends to upload
+     * the document version, or fails to do so.
      * </p>
      * 
      * @param abortDocumentVersionUploadRequest
@@ -151,6 +151,63 @@ public interface AmazonWorkDocs {
 
     /**
      * <p>
+     * Adds a new comment to the specified document version.
+     * </p>
+     * 
+     * @param createCommentRequest
+     * @return Result of the CreateComment operation returned by the service.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws ProhibitedStateException
+     *         The specified document version is not in the INITIALIZED state.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @throws DocumentLockedForCommentsException
+     *         This exception is thrown when the document is locked for comments and user tries to create or delete a
+     *         comment on that document.
+     * @sample AmazonWorkDocs.CreateComment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateComment" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateCommentResult createComment(CreateCommentRequest createCommentRequest);
+
+    /**
+     * <p>
+     * Adds one or more custom properties to the specified resource (a folder, document, or version).
+     * </p>
+     * 
+     * @param createCustomMetadataRequest
+     * @return Result of the CreateCustomMetadata operation returned by the service.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws ProhibitedStateException
+     *         The specified document version is not in the INITIALIZED state.
+     * @throws CustomMetadataLimitExceededException
+     *         The limit has been reached on the number of custom properties for the specified resource.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @sample AmazonWorkDocs.CreateCustomMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateCustomMetadata" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateCustomMetadataResult createCustomMetadata(CreateCustomMetadataRequest createCustomMetadataRequest);
+
+    /**
+     * <p>
      * Creates a folder with the specified name and parent folder.
      * </p>
      * 
@@ -163,7 +220,7 @@ public interface AmazonWorkDocs {
      * @throws ProhibitedStateException
      *         The specified document version is not in the INITIALIZED state.
      * @throws LimitExceededException
-     *         You've exceeded the maximum of 100,000 folders under the parent folder.
+     *         The maximum of 100,000 folders under the parent folder has been exceeded.
      * @throws UnauthorizedOperationException
      *         The operation is not permitted.
      * @throws UnauthorizedResourceAccessException
@@ -178,6 +235,32 @@ public interface AmazonWorkDocs {
      *      Documentation</a>
      */
     CreateFolderResult createFolder(CreateFolderRequest createFolderRequest);
+
+    /**
+     * <p>
+     * Adds the specified list of labels to the given resource (a document or folder)
+     * </p>
+     * 
+     * @param createLabelsRequest
+     * @return Result of the CreateLabels operation returned by the service.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @throws TooManyLabelsException
+     *         The limit has been reached on the number of labels for the specified resource.
+     * @sample AmazonWorkDocs.CreateLabels
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateLabels" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateLabelsResult createLabels(CreateLabelsRequest createLabelsRequest);
 
     /**
      * <p>
@@ -251,6 +334,61 @@ public interface AmazonWorkDocs {
      *      Documentation</a>
      */
     DeactivateUserResult deactivateUser(DeactivateUserRequest deactivateUserRequest);
+
+    /**
+     * <p>
+     * Deletes the specified comment from the document version.
+     * </p>
+     * 
+     * @param deleteCommentRequest
+     * @return Result of the DeleteComment operation returned by the service.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws ProhibitedStateException
+     *         The specified document version is not in the INITIALIZED state.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @throws DocumentLockedForCommentsException
+     *         This exception is thrown when the document is locked for comments and user tries to create or delete a
+     *         comment on that document.
+     * @sample AmazonWorkDocs.DeleteComment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteComment" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteCommentResult deleteComment(DeleteCommentRequest deleteCommentRequest);
+
+    /**
+     * <p>
+     * Deletes custom metadata from the specified resource.
+     * </p>
+     * 
+     * @param deleteCustomMetadataRequest
+     * @return Result of the DeleteCustomMetadata operation returned by the service.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws ProhibitedStateException
+     *         The specified document version is not in the INITIALIZED state.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @sample AmazonWorkDocs.DeleteCustomMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteCustomMetadata" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteCustomMetadataResult deleteCustomMetadata(DeleteCustomMetadataRequest deleteCustomMetadataRequest);
 
     /**
      * <p>
@@ -334,6 +472,30 @@ public interface AmazonWorkDocs {
 
     /**
      * <p>
+     * Deletes the specified list of labels from a resource.
+     * </p>
+     * 
+     * @param deleteLabelsRequest
+     * @return Result of the DeleteLabels operation returned by the service.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @sample AmazonWorkDocs.DeleteLabels
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteLabels" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteLabelsResult deleteLabels(DeleteLabelsRequest deleteLabelsRequest);
+
+    /**
+     * <p>
      * Deletes the specified subscription from the specified organization.
      * </p>
      * 
@@ -379,6 +541,32 @@ public interface AmazonWorkDocs {
 
     /**
      * <p>
+     * List all the comments for the specified document version.
+     * </p>
+     * 
+     * @param describeCommentsRequest
+     * @return Result of the DescribeComments operation returned by the service.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws ProhibitedStateException
+     *         The specified document version is not in the INITIALIZED state.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @sample AmazonWorkDocs.DescribeComments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeComments" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeCommentsResult describeComments(DescribeCommentsRequest describeCommentsRequest);
+
+    /**
+     * <p>
      * Retrieves the document versions for the specified document.
      * </p>
      * <p>
@@ -410,7 +598,7 @@ public interface AmazonWorkDocs {
 
     /**
      * <p>
-     * Describes the contents of the specified folder, including its documents and sub-folders.
+     * Describes the contents of the specified folder, including its documents and subfolders.
      * </p>
      * <p>
      * By default, Amazon WorkDocs returns the first 100 active document and folder metadata items. If there are more
@@ -511,7 +699,7 @@ public interface AmazonWorkDocs {
 
     /**
      * <p>
-     * Retrieves the specified document object.
+     * Retrieves details of a document.
      * </p>
      * 
      * @param getDocumentRequest
@@ -681,6 +869,10 @@ public interface AmazonWorkDocs {
      *         organization is failing, such as a connected active directory.
      * @throws ServiceUnavailableException
      *         One or more of the dependencies is unavailable.
+     * @throws DraftUploadOutOfSyncException
+     *         This exception is thrown when a valid checkout ID is not presented on document version upload calls for a
+     *         document that has been checked out from Web client.
+     * @throws ResourceAlreadyCheckedOutException
      * @sample AmazonWorkDocs.InitiateDocumentVersionUpload
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/InitiateDocumentVersionUpload"
      *      target="_top">AWS API Documentation</a>
@@ -733,8 +925,8 @@ public interface AmazonWorkDocs {
 
     /**
      * <p>
-     * Updates the specified attributes of the specified document. The user must have access to both the document and
-     * its parent folder, if applicable.
+     * Updates the specified attributes of a document. The user must have access to both the document and its parent
+     * folder, if applicable.
      * </p>
      * 
      * @param updateDocumentRequest
@@ -744,7 +936,7 @@ public interface AmazonWorkDocs {
      * @throws EntityAlreadyExistsException
      *         The resource already exists.
      * @throws LimitExceededException
-     *         You've exceeded the maximum of 100,000 folders under the parent folder.
+     *         The maximum of 100,000 folders under the parent folder has been exceeded.
      * @throws ProhibitedStateException
      *         The specified document version is not in the INITIALIZED state.
      * @throws ConcurrentModificationException
@@ -815,7 +1007,7 @@ public interface AmazonWorkDocs {
      * @throws ConcurrentModificationException
      *         The resource hierarchy is changing.
      * @throws LimitExceededException
-     *         You've exceeded the maximum of 100,000 folders under the parent folder.
+     *         The maximum of 100,000 folders under the parent folder has been exceeded.
      * @throws UnauthorizedOperationException
      *         The operation is not permitted.
      * @throws UnauthorizedResourceAccessException

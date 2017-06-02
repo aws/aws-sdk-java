@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class AbortDocumentVersionUploadRequestMarshaller {
 
+    private static final MarshallingInfo<String> AUTHENTICATIONTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("Authentication").build();
     private static final MarshallingInfo<String> DOCUMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("DocumentId").build();
     private static final MarshallingInfo<String> VERSIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
@@ -48,6 +50,7 @@ public class AbortDocumentVersionUploadRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(abortDocumentVersionUploadRequest.getAuthenticationToken(), AUTHENTICATIONTOKEN_BINDING);
             protocolMarshaller.marshall(abortDocumentVersionUploadRequest.getDocumentId(), DOCUMENTID_BINDING);
             protocolMarshaller.marshall(abortDocumentVersionUploadRequest.getVersionId(), VERSIONID_BINDING);
         } catch (Exception e) {

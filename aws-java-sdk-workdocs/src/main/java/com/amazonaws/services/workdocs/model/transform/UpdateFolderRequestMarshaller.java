@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateFolderRequestMarshaller {
 
+    private static final MarshallingInfo<String> AUTHENTICATIONTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("Authentication").build();
     private static final MarshallingInfo<String> FOLDERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("FolderId").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -52,6 +54,7 @@ public class UpdateFolderRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(updateFolderRequest.getAuthenticationToken(), AUTHENTICATIONTOKEN_BINDING);
             protocolMarshaller.marshall(updateFolderRequest.getFolderId(), FOLDERID_BINDING);
             protocolMarshaller.marshall(updateFolderRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(updateFolderRequest.getParentFolderId(), PARENTFOLDERID_BINDING);

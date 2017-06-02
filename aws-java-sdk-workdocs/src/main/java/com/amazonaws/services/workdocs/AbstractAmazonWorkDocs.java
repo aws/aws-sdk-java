@@ -43,7 +43,22 @@ public class AbstractAmazonWorkDocs implements AmazonWorkDocs {
     }
 
     @Override
+    public CreateCommentResult createComment(CreateCommentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateCustomMetadataResult createCustomMetadata(CreateCustomMetadataRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateFolderResult createFolder(CreateFolderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateLabelsResult createLabels(CreateLabelsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -63,6 +78,16 @@ public class AbstractAmazonWorkDocs implements AmazonWorkDocs {
     }
 
     @Override
+    public DeleteCommentResult deleteComment(DeleteCommentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteCustomMetadataResult deleteCustomMetadata(DeleteCustomMetadataRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteDocumentResult deleteDocument(DeleteDocumentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -78,12 +103,22 @@ public class AbstractAmazonWorkDocs implements AmazonWorkDocs {
     }
 
     @Override
+    public DeleteLabelsResult deleteLabels(DeleteLabelsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteNotificationSubscriptionResult deleteNotificationSubscription(DeleteNotificationSubscriptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DeleteUserResult deleteUser(DeleteUserRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeCommentsResult describeComments(DescribeCommentsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

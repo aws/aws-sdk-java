@@ -19,7 +19,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Aborts the upload of the specified document version that was previously initiated by <a>InitiateDocumentVersionUpload</a>. The client should make this call only when it no longer intends or fails to upload the document version.</p>",
+      "documentation" : "<p>Aborts the upload of the specified document version that was previously initiated by <a>InitiateDocumentVersionUpload</a>. The client should make this call only when it no longer intends to upload the document version, or fails to do so.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -175,6 +175,140 @@
         "shape" : "AddResourcePermissionsResponse"
       }
     },
+    "CreateComment" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Adds a new comment to the specified document version.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EntityNotExistsException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ProhibitedStateException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "UnauthorizedOperationException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "UnauthorizedResourceAccessException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "FailedDependencyException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ServiceUnavailableException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "DocumentLockedForCommentsException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/api/v1/documents/{DocumentId}/versions/{VersionId}/comment",
+        "responseCode" : "201"
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "CreateCommentRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "CreateComment",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "CreateCommentResponse"
+      }
+    },
+    "CreateCustomMetadata" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Adds one or more custom properties to the specified resource (a folder, document, or version).</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EntityNotExistsException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "UnauthorizedOperationException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "UnauthorizedResourceAccessException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ProhibitedStateException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "CustomMetadataLimitExceededException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "FailedDependencyException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ServiceUnavailableException"
+      } ],
+      "http" : {
+        "method" : "PUT",
+        "requestUri" : "/api/v1/resources/{ResourceId}/customMetadata",
+        "responseCode" : "200"
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "CreateCustomMetadataRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "CreateCustomMetadata",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "CreateCustomMetadataResponse"
+      }
+    },
     "CreateFolder" : {
       "authorizer" : null,
       "authtype" : "IAM",
@@ -246,6 +380,67 @@
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "CreateFolderResponse"
+      }
+    },
+    "CreateLabels" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Adds the specified list of labels to the given resource (a document or folder)</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EntityNotExistsException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "UnauthorizedOperationException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "UnauthorizedResourceAccessException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "FailedDependencyException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ServiceUnavailableException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "TooManyLabelsException"
+      } ],
+      "http" : {
+        "method" : "PUT",
+        "requestUri" : "/api/v1/resources/{ResourceId}/labels",
+        "responseCode" : "200"
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "CreateLabelsRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "CreateLabels",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "CreateLabelsResponse"
       }
     },
     "CreateNotificationSubscription" : {
@@ -395,6 +590,129 @@
       },
       "name" : "DeactivateUser",
       "output" : null
+    },
+    "DeleteComment" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Deletes the specified comment from the document version.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EntityNotExistsException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ProhibitedStateException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "UnauthorizedOperationException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "UnauthorizedResourceAccessException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "FailedDependencyException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ServiceUnavailableException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "DocumentLockedForCommentsException"
+      } ],
+      "http" : {
+        "method" : "DELETE",
+        "requestUri" : "/api/v1/documents/{DocumentId}/versions/{VersionId}/comment/{CommentId}",
+        "responseCode" : "204"
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DeleteCommentRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "DeleteComment",
+      "output" : null
+    },
+    "DeleteCustomMetadata" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Deletes custom metadata from the specified resource.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EntityNotExistsException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "UnauthorizedOperationException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "UnauthorizedResourceAccessException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ProhibitedStateException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "FailedDependencyException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ServiceUnavailableException"
+      } ],
+      "http" : {
+        "method" : "DELETE",
+        "requestUri" : "/api/v1/resources/{ResourceId}/customMetadata",
+        "responseCode" : "200"
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DeleteCustomMetadataRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "DeleteCustomMetadata",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "DeleteCustomMetadataResponse"
+      }
     },
     "DeleteDocument" : {
       "authorizer" : null,
@@ -570,6 +888,61 @@
       "name" : "DeleteFolderContents",
       "output" : null
     },
+    "DeleteLabels" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Deletes the specified list of labels from a resource.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EntityNotExistsException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "UnauthorizedOperationException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "UnauthorizedResourceAccessException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "FailedDependencyException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ServiceUnavailableException"
+      } ],
+      "http" : {
+        "method" : "DELETE",
+        "requestUri" : "/api/v1/resources/{ResourceId}/labels",
+        "responseCode" : "200"
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DeleteLabelsRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "DeleteLabels",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "DeleteLabelsResponse"
+      }
+    },
     "DeleteNotificationSubscription" : {
       "authorizer" : null,
       "authtype" : "IAM",
@@ -664,6 +1037,67 @@
       "name" : "DeleteUser",
       "output" : null
     },
+    "DescribeComments" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>List all the comments for the specified document version.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "EntityNotExistsException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ProhibitedStateException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "UnauthorizedOperationException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "UnauthorizedResourceAccessException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "FailedDependencyException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ServiceUnavailableException"
+      } ],
+      "http" : {
+        "method" : "GET",
+        "requestUri" : "/api/v1/documents/{DocumentId}/versions/{VersionId}/comments",
+        "responseCode" : "200"
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DescribeCommentsRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "DescribeComments",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "DescribeCommentsResponse"
+      }
+    },
     "DescribeDocumentVersions" : {
       "authorizer" : null,
       "authtype" : "IAM",
@@ -735,7 +1169,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Describes the contents of the specified folder, including its documents and sub-folders.</p> <p>By default, Amazon WorkDocs returns the first 100 active document and folder metadata items. If there are more results, the response includes a marker that you can use to request the next set of results. You can also request initialized documents.</p>",
+      "documentation" : "<p>Describes the contents of the specified folder, including its documents and subfolders.</p> <p>By default, Amazon WorkDocs returns the first 100 active document and folder metadata items. If there are more results, the response includes a marker that you can use to request the next set of results. You can also request initialized documents.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -943,7 +1377,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Retrieves the specified document object.</p>",
+      "documentation" : "<p>Retrieves details of a document.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -1297,6 +1731,18 @@
         "exception" : false,
         "fault" : false,
         "shape" : "ServiceUnavailableException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "DraftUploadOutOfSyncException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceAlreadyCheckedOutException"
       } ],
       "http" : {
         "method" : "POST",
@@ -1409,7 +1855,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Updates the specified attributes of the specified document. The user must have access to both the document and its parent folder, if applicable.</p>",
+      "documentation" : "<p>Updates the specified attributes of a document. The user must have access to both the document and its parent folder, if applicable.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -1702,6 +2148,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "AuthenticationToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in accessing the API using AWS credentials.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "Authentication",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AuthenticationHeaderType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "DocumentId" : {
           "deprecated" : false,
           "documentation" : "<p>The ID of the document.</p>",
@@ -1752,6 +2212,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "AuthenticationToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in accessing the API using AWS credentials.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "Authentication",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AuthenticationHeaderType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "UserId" : {
           "deprecated" : false,
           "documentation" : "<p>The ID of the user.</p>",
@@ -1824,6 +2298,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "AuthenticationToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in accessing the API using AWS credentials.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "Authentication",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AuthenticationHeaderType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "Principals" : {
           "deprecated" : false,
           "documentation" : "<p>The users, groups, or organization being granted permission.</p>",
@@ -1898,6 +2386,314 @@
       "value" : null,
       "wrapper" : false
     },
+    "AuthenticationHeaderType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 8199,
+      "member" : null,
+      "members" : { },
+      "min" : 1,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "BooleanType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "boolean",
+      "value" : null,
+      "wrapper" : false
+    },
+    "Comment" : {
+      "deprecated" : false,
+      "documentation" : "<p>Describes a comment.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "CommentId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ID of the comment.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CommentIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Contributor" : {
+          "deprecated" : false,
+          "documentation" : "<p>The details of the user who made the comment.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "User",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "CreatedTimestamp" : {
+          "deprecated" : false,
+          "documentation" : "<p>The time that the comment was created.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "TimestampType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ParentId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ID of the parent comment.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CommentIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "RecipientId" : {
+          "deprecated" : false,
+          "documentation" : "<p>If the comment is a reply to another user's comment, this field contains the user ID of the user being replied to.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "IdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Status" : {
+          "deprecated" : false,
+          "documentation" : "<p>The status of the comment.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CommentStatusType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Text" : {
+          "deprecated" : false,
+          "documentation" : "<p>The text of the comment.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CommentTextType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ThreadId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ID of the root comment in the thread.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CommentIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Visibility" : {
+          "deprecated" : false,
+          "documentation" : "<p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CommentVisibilityType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "CommentId" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "CommentIdType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 128,
+      "member" : null,
+      "members" : { },
+      "min" : 1,
+      "pattern" : "[\\w+-.@]+",
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "CommentList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "Comment",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "CommentStatusType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "DRAFT", "PUBLISHED", "DELETED" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "CommentTextType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 2048,
+      "member" : null,
+      "members" : { },
+      "min" : 1,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "CommentVisibilityType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "PUBLIC", "PRIVATE" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
     "ConcurrentModificationException" : {
       "deprecated" : false,
       "documentation" : "<p>The resource hierarchy is changing.</p>",
@@ -1937,6 +2733,275 @@
       "value" : null,
       "wrapper" : false
     },
+    "CreateCommentRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "AuthenticationToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in accessing the API using AWS credentials.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "Authentication",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AuthenticationHeaderType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "DocumentId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ID of the document.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "uri",
+          "locationName" : "DocumentId",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ResourceIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "NotifyCollaborators" : {
+          "deprecated" : false,
+          "documentation" : "<p>Set this parameter to TRUE to send an email out to the document collaborators after the comment is created.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "BooleanType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ParentId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ID of the parent comment.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CommentIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Text" : {
+          "deprecated" : false,
+          "documentation" : "<p>The text of the comment.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CommentTextType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ThreadId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ID of the root comment in the thread.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CommentIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "VersionId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ID of the document version.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "uri",
+          "locationName" : "VersionId",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DocumentVersionIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Visibility" : {
+          "deprecated" : false,
+          "documentation" : "<p>The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CommentVisibilityType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "DocumentId", "VersionId", "Text" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "CreateCommentResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Comment" : {
+          "deprecated" : false,
+          "documentation" : "<p>The comment that has been created.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Comment",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "CreateCustomMetadataRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "AuthenticationToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in accessing the API using AWS credentials.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "Authentication",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AuthenticationHeaderType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "CustomMetadata" : {
+          "deprecated" : false,
+          "documentation" : "<p>Custom metadata in the form of name-value pairs.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CustomMetadataMap",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ResourceId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ID of the resource.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "uri",
+          "locationName" : "ResourceId",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ResourceIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "VersionId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ID of the version, if the custom metadata is being added to a document version.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "querystring",
+          "locationName" : "versionid",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DocumentVersionIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "ResourceId", "CustomMetadata" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "CreateCustomMetadataResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "CreateFolderRequest" : {
       "deprecated" : false,
       "documentation" : null,
@@ -1949,6 +3014,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "AuthenticationToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in accessing the API using AWS credentials.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "Authentication",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AuthenticationHeaderType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "Name" : {
           "deprecated" : false,
           "documentation" : "<p>The name of the new folder.</p>",
@@ -2014,6 +3093,91 @@
           "xmlNamespace" : null
         }
       },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "CreateLabelsRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "AuthenticationToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in accessing the API using AWS credentials.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "Authentication",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AuthenticationHeaderType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Labels" : {
+          "deprecated" : false,
+          "documentation" : "<p>List of labels to add to the resource.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Labels",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ResourceId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ID of the resource.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "uri",
+          "locationName" : "ResourceId",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ResourceIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "ResourceId", "Labels" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "CreateLabelsResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
       "min" : 0,
       "pattern" : null,
       "payload" : null,
@@ -2149,6 +3313,34 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "AuthenticationToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in accessing the API using AWS credentials.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "Authentication",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AuthenticationHeaderType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "EmailAddress" : {
+          "deprecated" : false,
+          "documentation" : "<p>The email address of the user.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "EmailAddressType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "GivenName" : {
           "deprecated" : false,
           "documentation" : "<p>The given name of the user.</p>",
@@ -2293,6 +3485,168 @@
       "value" : null,
       "wrapper" : false
     },
+    "CustomMetadataKeyList" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 8,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "CustomMetadataKeyType",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "CustomMetadataKeyType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 56,
+      "member" : null,
+      "members" : { },
+      "min" : 1,
+      "pattern" : "[a-zA-Z0-9_-][a-zA-Z0-9 _-]*",
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "CustomMetadataLimitExceededException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The limit has been reached on the number of custom properties for the specified resource.</p>",
+      "enum" : null,
+      "error" : {
+        "code" : null,
+        "httpStatusCode" : 429
+      },
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Message" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ErrorMessageType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "CustomMetadataMap" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "CustomMetadataKeyType",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "max" : 8,
+      "member" : null,
+      "members" : { },
+      "min" : 1,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "map",
+      "value" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "CustomMetadataValueType",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "wrapper" : false
+    },
+    "CustomMetadataValueType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 56,
+      "member" : null,
+      "members" : { },
+      "min" : 1,
+      "pattern" : "[a-zA-Z0-9_-][a-zA-Z0-9 _-]*",
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
     "DeactivateUserRequest" : {
       "deprecated" : false,
       "documentation" : null,
@@ -2305,6 +3659,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "AuthenticationToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in accessing the API using AWS credentials.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "Authentication",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AuthenticationHeaderType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "UserId" : {
           "deprecated" : false,
           "documentation" : "<p>The ID of the user.</p>",
@@ -2353,6 +3721,197 @@
       "value" : null,
       "wrapper" : false
     },
+    "DeleteCommentRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "AuthenticationToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in accessing the API using AWS credentials.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "Authentication",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AuthenticationHeaderType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "CommentId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ID of the comment.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "uri",
+          "locationName" : "CommentId",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CommentIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "DocumentId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ID of the document.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "uri",
+          "locationName" : "DocumentId",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ResourceIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "VersionId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ID of the document version.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "uri",
+          "locationName" : "VersionId",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DocumentVersionIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "DocumentId", "VersionId", "CommentId" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DeleteCustomMetadataRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "AuthenticationToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in accessing the API using AWS credentials.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "Authentication",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AuthenticationHeaderType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "DeleteAll" : {
+          "deprecated" : false,
+          "documentation" : "<p>Flag to indicate removal of all custom metadata properties from the specified resource.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "querystring",
+          "locationName" : "deleteAll",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "BooleanType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Keys" : {
+          "deprecated" : false,
+          "documentation" : "<p>List of properties to remove.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "querystring",
+          "locationName" : "keys",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CustomMetadataKeyList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ResourceId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ID of the resource, either a document or folder.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "uri",
+          "locationName" : "ResourceId",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ResourceIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "VersionId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ID of the version, if the custom metadata is being deleted from a document version.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "querystring",
+          "locationName" : "versionId",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DocumentVersionIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "ResourceId" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DeleteCustomMetadataResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "DeleteDocumentRequest" : {
       "deprecated" : false,
       "documentation" : null,
@@ -2365,6 +3924,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "AuthenticationToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in accessing the API using AWS credentials.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "Authentication",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AuthenticationHeaderType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "DocumentId" : {
           "deprecated" : false,
           "documentation" : "<p>The ID of the document.</p>",
@@ -2401,6 +3974,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "AuthenticationToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in accessing the API using AWS credentials.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "Authentication",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AuthenticationHeaderType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "FolderId" : {
           "deprecated" : false,
           "documentation" : "<p>The ID of the folder.</p>",
@@ -2437,6 +4024,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "AuthenticationToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in accessing the API using AWS credentials.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "Authentication",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AuthenticationHeaderType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "FolderId" : {
           "deprecated" : false,
           "documentation" : "<p>The ID of the folder.</p>",
@@ -2456,6 +4057,105 @@
       "pattern" : null,
       "payload" : null,
       "required" : [ "FolderId" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DeleteLabelsRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "AuthenticationToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in accessing the API using AWS credentials.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "Authentication",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AuthenticationHeaderType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "DeleteAll" : {
+          "deprecated" : false,
+          "documentation" : "<p>Flag to request removal of all labels from the specified resource.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "querystring",
+          "locationName" : "deleteAll",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "BooleanType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Labels" : {
+          "deprecated" : false,
+          "documentation" : "<p>List of labels to delete from the resource.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "querystring",
+          "locationName" : "labels",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Labels",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ResourceId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ID of the resource.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "uri",
+          "locationName" : "ResourceId",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ResourceIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "ResourceId" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DeleteLabelsResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
       "streaming" : false,
       "type" : "structure",
       "value" : null,
@@ -2523,6 +4223,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "AuthenticationToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in accessing the API using AWS credentials.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "Authentication",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AuthenticationHeaderType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "UserId" : {
           "deprecated" : false,
           "documentation" : "<p>The ID of the user.</p>",
@@ -2547,6 +4261,148 @@
       "value" : null,
       "wrapper" : false
     },
+    "DescribeCommentsRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "AuthenticationToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in accessing the API using AWS credentials.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "Authentication",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AuthenticationHeaderType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "DocumentId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ID of the document.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "uri",
+          "locationName" : "DocumentId",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ResourceIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Limit" : {
+          "deprecated" : false,
+          "documentation" : "<p>The maximum number of items to return.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "querystring",
+          "locationName" : "limit",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "LimitType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Marker" : {
+          "deprecated" : false,
+          "documentation" : "<p>The marker for the next set of results. This marker was received from a previous call.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "querystring",
+          "locationName" : "marker",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MarkerType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "VersionId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The ID of the document version.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "uri",
+          "locationName" : "VersionId",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DocumentVersionIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "DocumentId", "VersionId" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DescribeCommentsResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Comments" : {
+          "deprecated" : false,
+          "documentation" : "<p>The list of comments for the specified document version.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CommentList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Marker" : {
+          "deprecated" : false,
+          "documentation" : "<p>The marker for the next set of results. This marker was received from a previous call.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MarkerType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "DescribeDocumentVersionsRequest" : {
       "deprecated" : false,
       "documentation" : null,
@@ -2559,6 +4415,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "AuthenticationToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in accessing the API using AWS credentials.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "Authentication",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AuthenticationHeaderType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "DocumentId" : {
           "deprecated" : false,
           "documentation" : "<p>The ID of the document.</p>",
@@ -2701,6 +4571,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "AuthenticationToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in accessing the API using AWS credentials.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "Authentication",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AuthenticationHeaderType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "FolderId" : {
           "deprecated" : false,
           "documentation" : "<p>The ID of the folder.</p>",
@@ -2745,7 +4629,7 @@
         },
         "Marker" : {
           "deprecated" : false,
-          "documentation" : "<p>The marker for the next set of results. (You received this marker from a previous call.)</p>",
+          "documentation" : "<p>The marker for the next set of results. This marker was received from a previous call.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -2837,7 +4721,7 @@
         },
         "Folders" : {
           "deprecated" : false,
-          "documentation" : "<p>The sub-folders in the specified folder.</p>",
+          "documentation" : "<p>The subfolders in the specified folder.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -2999,6 +4883,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "AuthenticationToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in accessing the API using AWS credentials.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "Authentication",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AuthenticationHeaderType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "Limit" : {
           "deprecated" : false,
           "documentation" : "<p>The maximum number of items to return with this call.</p>",
@@ -3113,6 +5011,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "AuthenticationToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in accessing the API using AWS credentials.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "Authentication",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AuthenticationHeaderType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "Fields" : {
           "deprecated" : false,
           "documentation" : "<p>A comma-separated list of values. Specify \"STORAGE_METADATA\" to include the user storage quota and utilization information.</p>",
@@ -3334,6 +5246,45 @@
       "value" : null,
       "wrapper" : false
     },
+    "DocumentLockedForCommentsException" : {
+      "deprecated" : false,
+      "documentation" : "<p>This exception is thrown when the document is locked for comments and user tries to create or delete a comment on that document.</p>",
+      "enum" : null,
+      "error" : {
+        "code" : null,
+        "httpStatusCode" : 409
+      },
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Message" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ErrorMessageType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "DocumentMetadata" : {
       "deprecated" : false,
       "documentation" : "<p>Describes the document.</p>",
@@ -3385,6 +5336,20 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "ResourceIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Labels" : {
+          "deprecated" : false,
+          "documentation" : "<p>List of labels on the document.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Labels",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -3925,6 +5890,45 @@
       "value" : null,
       "wrapper" : false
     },
+    "DraftUploadOutOfSyncException" : {
+      "deprecated" : false,
+      "documentation" : "<p>This exception is thrown when a valid checkout ID is not presented on document version upload calls for a document that has been checked out from Web client.</p>",
+      "enum" : null,
+      "error" : {
+        "code" : null,
+        "httpStatusCode" : 409
+      },
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Message" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ErrorMessageType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "EmailAddressType" : {
       "deprecated" : false,
       "documentation" : null,
@@ -4228,6 +6232,34 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "Labels" : {
+          "deprecated" : false,
+          "documentation" : "<p>List of labels on the folder.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Labels",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "LatestVersionSize" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "SizeType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "ModifiedTimestamp" : {
           "deprecated" : false,
           "documentation" : "<p>The time when the folder was updated.</p>",
@@ -4297,6 +6329,20 @@
           "shape" : "HashType",
           "streaming" : false,
           "xmlNamespace" : null
+        },
+        "Size" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "SizeType",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
       "min" : 0,
@@ -4354,6 +6400,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "AuthenticationToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in accessing the API using AWS credentials.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "Authentication",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AuthenticationHeaderType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "DocumentId" : {
           "deprecated" : false,
           "documentation" : "<p>The ID of the document.</p>",
@@ -4370,7 +6430,7 @@
         },
         "Fields" : {
           "deprecated" : false,
-          "documentation" : "<p>A comma-separated list of values. Specify \"NAME\" to include the names of the parent folders.</p>",
+          "documentation" : "<p>A comma-separated list of values. Specify <code>NAME</code> to include the names of the parent folders.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4468,9 +6528,23 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "AuthenticationToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in accessing the API using AWS credentials.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "Authentication",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AuthenticationHeaderType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "DocumentId" : {
           "deprecated" : false,
-          "documentation" : "<p>The ID of the document object.</p>",
+          "documentation" : "<p>The ID of the document.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4479,6 +6553,20 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "ResourceIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "IncludeCustomMetadata" : {
+          "deprecated" : false,
+          "documentation" : "<p>Set this to <code>TRUE</code> to include custom metadata in the response.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "querystring",
+          "locationName" : "includeCustomMetadata",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "BooleanType",
           "streaming" : false,
           "xmlNamespace" : null
         }
@@ -4504,9 +6592,23 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "CustomMetadata" : {
+          "deprecated" : false,
+          "documentation" : "<p>The custom metadata on the document.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CustomMetadataMap",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "Metadata" : {
           "deprecated" : false,
-          "documentation" : "<p>The document object.</p>",
+          "documentation" : "<p>The metadata details of the document.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -4540,6 +6642,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "AuthenticationToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in accessing the API using AWS credentials.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "Authentication",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AuthenticationHeaderType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "DocumentId" : {
           "deprecated" : false,
           "documentation" : "<p>The ID of the document.</p>",
@@ -4565,6 +6681,20 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "FieldNamesType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "IncludeCustomMetadata" : {
+          "deprecated" : false,
+          "documentation" : "<p>Set this to TRUE to include custom metadata in the response.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "querystring",
+          "locationName" : "includeCustomMetadata",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "BooleanType",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -4604,6 +6734,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "CustomMetadata" : {
+          "deprecated" : false,
+          "documentation" : "<p>The custom metadata on the document version.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CustomMetadataMap",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "Metadata" : {
           "deprecated" : false,
           "documentation" : "<p>The version metadata.</p>",
@@ -4640,6 +6784,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "AuthenticationToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in accessing the API using AWS credentials.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "Authentication",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AuthenticationHeaderType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "Fields" : {
           "deprecated" : false,
           "documentation" : "<p>A comma-separated list of values. Specify \"NAME\" to include the names of the parent folders.</p>",
@@ -4754,6 +6912,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "AuthenticationToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in accessing the API using AWS credentials.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "Authentication",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AuthenticationHeaderType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "FolderId" : {
           "deprecated" : false,
           "documentation" : "<p>The ID of the folder.</p>",
@@ -4765,6 +6937,20 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "ResourceIdType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "IncludeCustomMetadata" : {
+          "deprecated" : false,
+          "documentation" : "<p>Set to TRUE to include custom metadata in the response.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "querystring",
+          "locationName" : "includeCustomMetadata",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "BooleanType",
           "streaming" : false,
           "xmlNamespace" : null
         }
@@ -4790,6 +6976,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "CustomMetadata" : {
+          "deprecated" : false,
+          "documentation" : "<p>The custom metadata on the folder.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CustomMetadataMap",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "Metadata" : {
           "deprecated" : false,
           "documentation" : "<p>The metadata of the folder.</p>",
@@ -4949,6 +7149,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "AuthenticationToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in accessing the API using AWS credentials.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "Authentication",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AuthenticationHeaderType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "ContentCreatedTimestamp" : {
           "deprecated" : false,
           "documentation" : "<p>The time stamp when the content of the document was originally created.</p>",
@@ -5185,9 +7399,64 @@
       "value" : null,
       "wrapper" : false
     },
+    "Label" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 20,
+      "member" : null,
+      "members" : { },
+      "min" : 1,
+      "pattern" : "[a-zA-Z0-9_-][a-zA-Z0-9 _-]*",
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "Labels" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 20,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "Label",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
     "LimitExceededException" : {
       "deprecated" : false,
-      "documentation" : "<p>You've exceeded the maximum of 100,000 folders under the parent folder.</p>",
+      "documentation" : "<p>The maximum of 100,000 folders under the parent folder has been exceeded.</p>",
       "enum" : null,
       "error" : {
         "code" : null,
@@ -5259,6 +7528,27 @@
       "members" : { },
       "min" : 0,
       "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "MarkerType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 2048,
+      "member" : null,
+      "members" : { },
+      "min" : 1,
+      "pattern" : "[\\u0000-\\u00FF]+",
       "payload" : null,
       "required" : null,
       "streaming" : false,
@@ -5659,6 +7949,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "AuthenticationToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in accessing the API using AWS credentials.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "Authentication",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AuthenticationHeaderType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "ResourceId" : {
           "deprecated" : false,
           "documentation" : "<p>The ID of the resource.</p>",
@@ -5695,6 +7999,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "AuthenticationToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in accessing the API using AWS credentials.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "Authentication",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AuthenticationHeaderType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "PrincipalId" : {
           "deprecated" : false,
           "documentation" : "<p>The principal ID of the resource.</p>",
@@ -5742,6 +8060,45 @@
       "pattern" : null,
       "payload" : null,
       "required" : [ "ResourceId", "PrincipalId" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "ResourceAlreadyCheckedOutException" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : {
+        "code" : null,
+        "httpStatusCode" : 409
+      },
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Message" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ErrorMessageType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
       "streaming" : false,
       "type" : "structure",
       "value" : null,
@@ -6718,6 +9075,45 @@
       "value" : null,
       "wrapper" : false
     },
+    "TooManyLabelsException" : {
+      "deprecated" : false,
+      "documentation" : "<p>The limit has been reached on the number of labels for the specified resource.</p>",
+      "enum" : null,
+      "error" : {
+        "code" : null,
+        "httpStatusCode" : 429
+      },
+      "exception" : true,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Message" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ErrorMessageType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "TooManySubscriptionsException" : {
       "deprecated" : false,
       "documentation" : "<p>You've reached the limit on the number of subscriptions for the WorkDocs instance.</p>",
@@ -6832,6 +9228,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "AuthenticationToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in accessing the API using AWS credentials.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "Authentication",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AuthenticationHeaderType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "DocumentId" : {
           "deprecated" : false,
           "documentation" : "<p>The ID of the document.</p>",
@@ -6910,6 +9320,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "AuthenticationToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in accessing the API using AWS credentials.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "Authentication",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AuthenticationHeaderType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "DocumentId" : {
           "deprecated" : false,
           "documentation" : "<p>The ID of the document.</p>",
@@ -6974,6 +9398,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "AuthenticationToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in accessing the API using AWS credentials.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "Authentication",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AuthenticationHeaderType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "FolderId" : {
           "deprecated" : false,
           "documentation" : "<p>The ID of the folder.</p>",
@@ -7052,6 +9490,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "AuthenticationToken" : {
+          "deprecated" : false,
+          "documentation" : "<p>Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in accessing the API using AWS credentials.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "header",
+          "locationName" : "Authentication",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "AuthenticationHeaderType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "GivenName" : {
           "deprecated" : false,
           "documentation" : "<p>The given name of the user.</p>",
@@ -7688,7 +10140,7 @@
       "member" : null,
       "members" : { },
       "min" : 1,
-      "pattern" : "[\\w\\-.]+(@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]+)?",
+      "pattern" : "[\\w\\-+.]+(@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]+)?",
       "payload" : null,
       "required" : null,
       "streaming" : false,

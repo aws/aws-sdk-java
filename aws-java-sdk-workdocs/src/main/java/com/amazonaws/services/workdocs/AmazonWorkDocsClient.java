@@ -115,6 +115,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                             new JsonErrorShapeMetadata().withErrorCode("InvalidOperationException").withModeledClass(
                                     com.amazonaws.services.workdocs.model.InvalidOperationException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("CustomMetadataLimitExceededException").withModeledClass(
+                                    com.amazonaws.services.workdocs.model.CustomMetadataLimitExceededException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("UnauthorizedResourceAccessException").withModeledClass(
                                     com.amazonaws.services.workdocs.model.UnauthorizedResourceAccessException.class))
                     .addErrorMetadata(
@@ -126,6 +129,9 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("EntityNotExistsException").withModeledClass(
                                     com.amazonaws.services.workdocs.model.EntityNotExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DocumentLockedForCommentsException").withModeledClass(
+                                    com.amazonaws.services.workdocs.model.DocumentLockedForCommentsException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("StorageLimitExceededException").withModeledClass(
                                     com.amazonaws.services.workdocs.model.StorageLimitExceededException.class))
@@ -147,6 +153,15 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("UnauthorizedOperationException").withModeledClass(
                                     com.amazonaws.services.workdocs.model.UnauthorizedOperationException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyLabelsException").withModeledClass(
+                                    com.amazonaws.services.workdocs.model.TooManyLabelsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DraftUploadOutOfSyncException").withModeledClass(
+                                    com.amazonaws.services.workdocs.model.DraftUploadOutOfSyncException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyCheckedOutException").withModeledClass(
+                                    com.amazonaws.services.workdocs.model.ResourceAlreadyCheckedOutException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withModeledClass(
                                     com.amazonaws.services.workdocs.model.ServiceUnavailableException.class))
@@ -189,8 +204,8 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
     /**
      * <p>
      * Aborts the upload of the specified document version that was previously initiated by
-     * <a>InitiateDocumentVersionUpload</a>. The client should make this call only when it no longer intends or fails to
-     * upload the document version.
+     * <a>InitiateDocumentVersionUpload</a>. The client should make this call only when it no longer intends to upload
+     * the document version, or fails to do so.
      * </p>
      * 
      * @param abortDocumentVersionUploadRequest
@@ -371,6 +386,133 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Adds a new comment to the specified document version.
+     * </p>
+     * 
+     * @param createCommentRequest
+     * @return Result of the CreateComment operation returned by the service.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws ProhibitedStateException
+     *         The specified document version is not in the INITIALIZED state.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @throws DocumentLockedForCommentsException
+     *         This exception is thrown when the document is locked for comments and user tries to create or delete a
+     *         comment on that document.
+     * @sample AmazonWorkDocs.CreateComment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateComment" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateCommentResult createComment(CreateCommentRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateComment(request);
+    }
+
+    @SdkInternalApi
+    final CreateCommentResult executeCreateComment(CreateCommentRequest createCommentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createCommentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateCommentRequest> request = null;
+        Response<CreateCommentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateCommentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createCommentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateCommentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateCommentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds one or more custom properties to the specified resource (a folder, document, or version).
+     * </p>
+     * 
+     * @param createCustomMetadataRequest
+     * @return Result of the CreateCustomMetadata operation returned by the service.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws ProhibitedStateException
+     *         The specified document version is not in the INITIALIZED state.
+     * @throws CustomMetadataLimitExceededException
+     *         The limit has been reached on the number of custom properties for the specified resource.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @sample AmazonWorkDocs.CreateCustomMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateCustomMetadata" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateCustomMetadataResult createCustomMetadata(CreateCustomMetadataRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCustomMetadata(request);
+    }
+
+    @SdkInternalApi
+    final CreateCustomMetadataResult executeCreateCustomMetadata(CreateCustomMetadataRequest createCustomMetadataRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createCustomMetadataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateCustomMetadataRequest> request = null;
+        Response<CreateCustomMetadataResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateCustomMetadataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createCustomMetadataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateCustomMetadataResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateCustomMetadataResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a folder with the specified name and parent folder.
      * </p>
      * 
@@ -383,7 +525,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      * @throws ProhibitedStateException
      *         The specified document version is not in the INITIALIZED state.
      * @throws LimitExceededException
-     *         You've exceeded the maximum of 100,000 folders under the parent folder.
+     *         The maximum of 100,000 folders under the parent folder has been exceeded.
      * @throws UnauthorizedOperationException
      *         The operation is not permitted.
      * @throws UnauthorizedResourceAccessException
@@ -424,6 +566,67 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateFolderResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateFolderResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds the specified list of labels to the given resource (a document or folder)
+     * </p>
+     * 
+     * @param createLabelsRequest
+     * @return Result of the CreateLabels operation returned by the service.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @throws TooManyLabelsException
+     *         The limit has been reached on the number of labels for the specified resource.
+     * @sample AmazonWorkDocs.CreateLabels
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateLabels" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateLabelsResult createLabels(CreateLabelsRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateLabels(request);
+    }
+
+    @SdkInternalApi
+    final CreateLabelsResult executeCreateLabels(CreateLabelsRequest createLabelsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createLabelsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateLabelsRequest> request = null;
+        Response<CreateLabelsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateLabelsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createLabelsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateLabelsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateLabelsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -604,6 +807,131 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<DeactivateUserResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeactivateUserResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified comment from the document version.
+     * </p>
+     * 
+     * @param deleteCommentRequest
+     * @return Result of the DeleteComment operation returned by the service.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws ProhibitedStateException
+     *         The specified document version is not in the INITIALIZED state.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @throws DocumentLockedForCommentsException
+     *         This exception is thrown when the document is locked for comments and user tries to create or delete a
+     *         comment on that document.
+     * @sample AmazonWorkDocs.DeleteComment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteComment" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteCommentResult deleteComment(DeleteCommentRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteComment(request);
+    }
+
+    @SdkInternalApi
+    final DeleteCommentResult executeDeleteComment(DeleteCommentRequest deleteCommentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteCommentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteCommentRequest> request = null;
+        Response<DeleteCommentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteCommentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteCommentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteCommentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteCommentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes custom metadata from the specified resource.
+     * </p>
+     * 
+     * @param deleteCustomMetadataRequest
+     * @return Result of the DeleteCustomMetadata operation returned by the service.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws ProhibitedStateException
+     *         The specified document version is not in the INITIALIZED state.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @sample AmazonWorkDocs.DeleteCustomMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteCustomMetadata" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteCustomMetadataResult deleteCustomMetadata(DeleteCustomMetadataRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteCustomMetadata(request);
+    }
+
+    @SdkInternalApi
+    final DeleteCustomMetadataResult executeDeleteCustomMetadata(DeleteCustomMetadataRequest deleteCustomMetadataRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteCustomMetadataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteCustomMetadataRequest> request = null;
+        Response<DeleteCustomMetadataResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteCustomMetadataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteCustomMetadataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteCustomMetadataResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteCustomMetadataResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -801,6 +1129,65 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Deletes the specified list of labels from a resource.
+     * </p>
+     * 
+     * @param deleteLabelsRequest
+     * @return Result of the DeleteLabels operation returned by the service.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @sample AmazonWorkDocs.DeleteLabels
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteLabels" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteLabelsResult deleteLabels(DeleteLabelsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteLabels(request);
+    }
+
+    @SdkInternalApi
+    final DeleteLabelsResult executeDeleteLabels(DeleteLabelsRequest deleteLabelsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteLabelsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteLabelsRequest> request = null;
+        Response<DeleteLabelsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteLabelsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteLabelsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteLabelsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteLabelsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the specified subscription from the specified organization.
      * </p>
      * 
@@ -918,6 +1305,67 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * List all the comments for the specified document version.
+     * </p>
+     * 
+     * @param describeCommentsRequest
+     * @return Result of the DescribeComments operation returned by the service.
+     * @throws EntityNotExistsException
+     *         The resource does not exist.
+     * @throws ProhibitedStateException
+     *         The specified document version is not in the INITIALIZED state.
+     * @throws UnauthorizedOperationException
+     *         The operation is not permitted.
+     * @throws UnauthorizedResourceAccessException
+     *         The caller does not have access to perform the action on the resource.
+     * @throws FailedDependencyException
+     *         The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the
+     *         organization is failing, such as a connected active directory.
+     * @throws ServiceUnavailableException
+     *         One or more of the dependencies is unavailable.
+     * @sample AmazonWorkDocs.DescribeComments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeComments" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeCommentsResult describeComments(DescribeCommentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeComments(request);
+    }
+
+    @SdkInternalApi
+    final DescribeCommentsResult executeDescribeComments(DescribeCommentsRequest describeCommentsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeCommentsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeCommentsRequest> request = null;
+        Response<DescribeCommentsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeCommentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeCommentsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeCommentsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeCommentsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves the document versions for the specified document.
      * </p>
      * <p>
@@ -986,7 +1434,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Describes the contents of the specified folder, including its documents and sub-folders.
+     * Describes the contents of the specified folder, including its documents and subfolders.
      * </p>
      * <p>
      * By default, Amazon WorkDocs returns the first 100 active document and folder metadata items. If there are more
@@ -1233,7 +1681,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Retrieves the specified document object.
+     * Retrieves details of a document.
      * </p>
      * 
      * @param getDocumentRequest
@@ -1578,6 +2026,10 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      *         organization is failing, such as a connected active directory.
      * @throws ServiceUnavailableException
      *         One or more of the dependencies is unavailable.
+     * @throws DraftUploadOutOfSyncException
+     *         This exception is thrown when a valid checkout ID is not presented on document version upload calls for a
+     *         document that has been checked out from Web client.
+     * @throws ResourceAlreadyCheckedOutException
      * @sample AmazonWorkDocs.InitiateDocumentVersionUpload
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/InitiateDocumentVersionUpload"
      *      target="_top">AWS API Documentation</a>
@@ -1741,8 +2193,8 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Updates the specified attributes of the specified document. The user must have access to both the document and
-     * its parent folder, if applicable.
+     * Updates the specified attributes of a document. The user must have access to both the document and its parent
+     * folder, if applicable.
      * </p>
      * 
      * @param updateDocumentRequest
@@ -1752,7 +2204,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      * @throws EntityAlreadyExistsException
      *         The resource already exists.
      * @throws LimitExceededException
-     *         You've exceeded the maximum of 100,000 folders under the parent folder.
+     *         The maximum of 100,000 folders under the parent folder has been exceeded.
      * @throws ProhibitedStateException
      *         The specified document version is not in the INITIALIZED state.
      * @throws ConcurrentModificationException
@@ -1894,7 +2346,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
      * @throws ConcurrentModificationException
      *         The resource hierarchy is changing.
      * @throws LimitExceededException
-     *         You've exceeded the maximum of 100,000 folders under the parent folder.
+     *         The maximum of 100,000 folders under the parent folder has been exceeded.
      * @throws UnauthorizedOperationException
      *         The operation is not permitted.
      * @throws UnauthorizedResourceAccessException

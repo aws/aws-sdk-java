@@ -27,8 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class GetDocumentRequestMarshaller {
 
+    private static final MarshallingInfo<String> AUTHENTICATIONTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("Authentication").build();
     private static final MarshallingInfo<String> DOCUMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("DocumentId").build();
+    private static final MarshallingInfo<Boolean> INCLUDECUSTOMMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("includeCustomMetadata").build();
 
     private static final GetDocumentRequestMarshaller instance = new GetDocumentRequestMarshaller();
 
@@ -46,7 +50,9 @@ public class GetDocumentRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(getDocumentRequest.getAuthenticationToken(), AUTHENTICATIONTOKEN_BINDING);
             protocolMarshaller.marshall(getDocumentRequest.getDocumentId(), DOCUMENTID_BINDING);
+            protocolMarshaller.marshall(getDocumentRequest.getIncludeCustomMetadata(), INCLUDECUSTOMMETADATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You've exceeded the maximum of 100,000 folders under the parent folder.
+ * The maximum of 100,000 folders under the parent folder has been exceeded.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

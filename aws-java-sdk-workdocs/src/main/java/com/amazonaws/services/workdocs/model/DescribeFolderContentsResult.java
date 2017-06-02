@@ -25,7 +25,7 @@ public class DescribeFolderContentsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The sub-folders in the specified folder.
+     * The subfolders in the specified folder.
      * </p>
      */
     private java.util.List<FolderMetadata> folders;
@@ -45,10 +45,10 @@ public class DescribeFolderContentsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The sub-folders in the specified folder.
+     * The subfolders in the specified folder.
      * </p>
      * 
-     * @return The sub-folders in the specified folder.
+     * @return The subfolders in the specified folder.
      */
 
     public java.util.List<FolderMetadata> getFolders() {
@@ -57,11 +57,11 @@ public class DescribeFolderContentsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The sub-folders in the specified folder.
+     * The subfolders in the specified folder.
      * </p>
      * 
      * @param folders
-     *        The sub-folders in the specified folder.
+     *        The subfolders in the specified folder.
      */
 
     public void setFolders(java.util.Collection<FolderMetadata> folders) {
@@ -75,7 +75,7 @@ public class DescribeFolderContentsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The sub-folders in the specified folder.
+     * The subfolders in the specified folder.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -84,7 +84,7 @@ public class DescribeFolderContentsResult extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param folders
-     *        The sub-folders in the specified folder.
+     *        The subfolders in the specified folder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,11 +100,11 @@ public class DescribeFolderContentsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The sub-folders in the specified folder.
+     * The subfolders in the specified folder.
      * </p>
      * 
      * @param folders
-     *        The sub-folders in the specified folder.
+     *        The subfolders in the specified folder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

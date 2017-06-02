@@ -39,7 +39,7 @@ public class AddApplicationInputRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private Long currentApplicationVersionId;
-
+    /** <p/> */
     private Input input;
 
     /**
@@ -129,6 +129,8 @@ public class AddApplicationInputRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p/>
+     * 
      * @param input
      */
 
@@ -137,6 +139,8 @@ public class AddApplicationInputRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p/>
+     * 
      * @return
      */
 
@@ -145,6 +149,8 @@ public class AddApplicationInputRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p/>
+     * 
      * @param input
      * @return Returns a reference to this object so that method calls can be chained together.
      */

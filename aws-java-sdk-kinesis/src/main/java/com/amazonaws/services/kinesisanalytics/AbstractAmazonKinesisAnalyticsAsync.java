@@ -28,6 +28,21 @@ public class AbstractAmazonKinesisAnalyticsAsync extends AbstractAmazonKinesisAn
     }
 
     @Override
+    public java.util.concurrent.Future<AddApplicationCloudWatchLoggingOptionResult> addApplicationCloudWatchLoggingOptionAsync(
+            AddApplicationCloudWatchLoggingOptionRequest request) {
+
+        return addApplicationCloudWatchLoggingOptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddApplicationCloudWatchLoggingOptionResult> addApplicationCloudWatchLoggingOptionAsync(
+            AddApplicationCloudWatchLoggingOptionRequest request,
+            com.amazonaws.handlers.AsyncHandler<AddApplicationCloudWatchLoggingOptionRequest, AddApplicationCloudWatchLoggingOptionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<AddApplicationInputResult> addApplicationInputAsync(AddApplicationInputRequest request) {
 
         return addApplicationInputAsync(request, null);
@@ -90,6 +105,21 @@ public class AbstractAmazonKinesisAnalyticsAsync extends AbstractAmazonKinesisAn
     @Override
     public java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(DeleteApplicationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, DeleteApplicationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApplicationCloudWatchLoggingOptionResult> deleteApplicationCloudWatchLoggingOptionAsync(
+            DeleteApplicationCloudWatchLoggingOptionRequest request) {
+
+        return deleteApplicationCloudWatchLoggingOptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApplicationCloudWatchLoggingOptionResult> deleteApplicationCloudWatchLoggingOptionAsync(
+            DeleteApplicationCloudWatchLoggingOptionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteApplicationCloudWatchLoggingOptionRequest, DeleteApplicationCloudWatchLoggingOptionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

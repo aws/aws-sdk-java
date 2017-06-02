@@ -30,6 +30,49 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
 
     /**
      * <p>
+     * Adds a CloudWatch log stream to monitor application configuration errors. For more information about using
+     * CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+     * Configuration Errors</a>.
+     * </p>
+     * 
+     * @param addApplicationCloudWatchLoggingOptionRequest
+     * @return A Java Future containing the result of the AddApplicationCloudWatchLoggingOption operation returned by
+     *         the service.
+     * @sample AmazonKinesisAnalyticsAsync.AddApplicationCloudWatchLoggingOption
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationCloudWatchLoggingOption"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AddApplicationCloudWatchLoggingOptionResult> addApplicationCloudWatchLoggingOptionAsync(
+            AddApplicationCloudWatchLoggingOptionRequest addApplicationCloudWatchLoggingOptionRequest);
+
+    /**
+     * <p>
+     * Adds a CloudWatch log stream to monitor application configuration errors. For more information about using
+     * CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+     * Configuration Errors</a>.
+     * </p>
+     * 
+     * @param addApplicationCloudWatchLoggingOptionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AddApplicationCloudWatchLoggingOption operation returned by
+     *         the service.
+     * @sample AmazonKinesisAnalyticsAsyncHandler.AddApplicationCloudWatchLoggingOption
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationCloudWatchLoggingOption"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AddApplicationCloudWatchLoggingOptionResult> addApplicationCloudWatchLoggingOptionAsync(
+            AddApplicationCloudWatchLoggingOptionRequest addApplicationCloudWatchLoggingOptionRequest,
+            com.amazonaws.handlers.AsyncHandler<AddApplicationCloudWatchLoggingOptionRequest, AddApplicationCloudWatchLoggingOptionResult> asyncHandler);
+
+    /**
+     * <p>
      * Adds a streaming source to your Amazon Kinesis application. For conceptual information, see <a
      * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html">Configuring Application
      * Input</a>.
@@ -241,8 +284,7 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      * <p>
      * In the input configuration, you map the streaming source to an in-application stream, which you can think of as a
      * constantly updating table. In the mapping, you must provide a schema for the in-application stream and map each
-     * data column in the in-application stream to a data element in the streaming source, with the option of renaming,
-     * casting and dropping columns as desired.
+     * data column in the in-application stream to a data element in the streaming source.
      * </p>
      * <p>
      * Your application code is one or more SQL statements that read input data, transform it, and generate output. Your
@@ -281,8 +323,7 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      * <p>
      * In the input configuration, you map the streaming source to an in-application stream, which you can think of as a
      * constantly updating table. In the mapping, you must provide a schema for the in-application stream and map each
-     * data column in the in-application stream to a data element in the streaming source, with the option of renaming,
-     * casting and dropping columns as desired.
+     * data column in the in-application stream to a data element in the streaming source.
      * </p>
      * <p>
      * Your application code is one or more SQL statements that read input data, transform it, and generate output. Your
@@ -356,6 +397,49 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
      */
     java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(DeleteApplicationRequest deleteApplicationRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, DeleteApplicationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a CloudWatch log stream from an application. For more information about using CloudWatch log streams with
+     * Amazon Kinesis Analytics applications, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+     * Configuration Errors</a>.
+     * </p>
+     * 
+     * @param deleteApplicationCloudWatchLoggingOptionRequest
+     * @return A Java Future containing the result of the DeleteApplicationCloudWatchLoggingOption operation returned by
+     *         the service.
+     * @sample AmazonKinesisAnalyticsAsync.DeleteApplicationCloudWatchLoggingOption
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationCloudWatchLoggingOption"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteApplicationCloudWatchLoggingOptionResult> deleteApplicationCloudWatchLoggingOptionAsync(
+            DeleteApplicationCloudWatchLoggingOptionRequest deleteApplicationCloudWatchLoggingOptionRequest);
+
+    /**
+     * <p>
+     * Deletes a CloudWatch log stream from an application. For more information about using CloudWatch log streams with
+     * Amazon Kinesis Analytics applications, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+     * Configuration Errors</a>.
+     * </p>
+     * 
+     * @param deleteApplicationCloudWatchLoggingOptionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteApplicationCloudWatchLoggingOption operation returned by
+     *         the service.
+     * @sample AmazonKinesisAnalyticsAsyncHandler.DeleteApplicationCloudWatchLoggingOption
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationCloudWatchLoggingOption"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteApplicationCloudWatchLoggingOptionResult> deleteApplicationCloudWatchLoggingOptionAsync(
+            DeleteApplicationCloudWatchLoggingOptionRequest deleteApplicationCloudWatchLoggingOptionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteApplicationCloudWatchLoggingOptionRequest, DeleteApplicationCloudWatchLoggingOptionResult> asyncHandler);
 
     /**
      * <p>
@@ -710,15 +794,15 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
 
     /**
      * <p>
-     * Updates an existing Kinesis Analytics application. Using this API, you can update application code, input
+     * Updates an existing Amazon Kinesis Analytics application. Using this API, you can update application code, input
      * configuration, and output configuration.
      * </p>
      * <p>
-     * Note that Kinesis Analytics updates the <code>CurrentApplicationVersionId</code> each time you update your
+     * Note that Amazon Kinesis Analytics updates the <code>CurrentApplicationVersionId</code> each time you update your
      * application.
      * </p>
      * <p>
-     * This opeation requires permission for the <code>kinesisanalytics:UpdateApplication</code> action.
+     * This operation requires permission for the <code>kinesisanalytics:UpdateApplication</code> action.
      * </p>
      * 
      * @param updateApplicationRequest
@@ -731,15 +815,15 @@ public interface AmazonKinesisAnalyticsAsync extends AmazonKinesisAnalytics {
 
     /**
      * <p>
-     * Updates an existing Kinesis Analytics application. Using this API, you can update application code, input
+     * Updates an existing Amazon Kinesis Analytics application. Using this API, you can update application code, input
      * configuration, and output configuration.
      * </p>
      * <p>
-     * Note that Kinesis Analytics updates the <code>CurrentApplicationVersionId</code> each time you update your
+     * Note that Amazon Kinesis Analytics updates the <code>CurrentApplicationVersionId</code> each time you update your
      * application.
      * </p>
      * <p>
-     * This opeation requires permission for the <code>kinesisanalytics:UpdateApplication</code> action.
+     * This operation requires permission for the <code>kinesisanalytics:UpdateApplication</code> action.
      * </p>
      * 
      * @param updateApplicationRequest

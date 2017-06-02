@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class GetFolderPathRequestMarshaller {
 
+    private static final MarshallingInfo<String> AUTHENTICATIONTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("Authentication").build();
     private static final MarshallingInfo<String> FOLDERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("FolderId").build();
     private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -52,6 +54,7 @@ public class GetFolderPathRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(getFolderPathRequest.getAuthenticationToken(), AUTHENTICATIONTOKEN_BINDING);
             protocolMarshaller.marshall(getFolderPathRequest.getFolderId(), FOLDERID_BINDING);
             protocolMarshaller.marshall(getFolderPathRequest.getLimit(), LIMIT_BINDING);
             protocolMarshaller.marshall(getFolderPathRequest.getFields(), FIELDS_BINDING);

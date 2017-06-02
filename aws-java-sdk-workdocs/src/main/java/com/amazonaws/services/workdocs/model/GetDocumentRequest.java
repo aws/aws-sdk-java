@@ -27,18 +27,77 @@ public class GetDocumentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the document object.
+     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * accessing the API using AWS credentials.
+     * </p>
+     */
+    private String authenticationToken;
+    /**
+     * <p>
+     * The ID of the document.
      * </p>
      */
     private String documentId;
+    /**
+     * <p>
+     * Set this to <code>TRUE</code> to include custom metadata in the response.
+     * </p>
+     */
+    private Boolean includeCustomMetadata;
 
     /**
      * <p>
-     * The ID of the document object.
+     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * accessing the API using AWS credentials.
+     * </p>
+     * 
+     * @param authenticationToken
+     *        Amazon WorkDocs authentication token. This field should not be set when using administrative API actions,
+     *        as in accessing the API using AWS credentials.
+     */
+
+    public void setAuthenticationToken(String authenticationToken) {
+        this.authenticationToken = authenticationToken;
+    }
+
+    /**
+     * <p>
+     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * accessing the API using AWS credentials.
+     * </p>
+     * 
+     * @return Amazon WorkDocs authentication token. This field should not be set when using administrative API actions,
+     *         as in accessing the API using AWS credentials.
+     */
+
+    public String getAuthenticationToken() {
+        return this.authenticationToken;
+    }
+
+    /**
+     * <p>
+     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * accessing the API using AWS credentials.
+     * </p>
+     * 
+     * @param authenticationToken
+     *        Amazon WorkDocs authentication token. This field should not be set when using administrative API actions,
+     *        as in accessing the API using AWS credentials.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDocumentRequest withAuthenticationToken(String authenticationToken) {
+        setAuthenticationToken(authenticationToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the document.
      * </p>
      * 
      * @param documentId
-     *        The ID of the document object.
+     *        The ID of the document.
      */
 
     public void setDocumentId(String documentId) {
@@ -47,10 +106,10 @@ public class GetDocumentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the document object.
+     * The ID of the document.
      * </p>
      * 
-     * @return The ID of the document object.
+     * @return The ID of the document.
      */
 
     public String getDocumentId() {
@@ -59,17 +118,69 @@ public class GetDocumentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the document object.
+     * The ID of the document.
      * </p>
      * 
      * @param documentId
-     *        The ID of the document object.
+     *        The ID of the document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetDocumentRequest withDocumentId(String documentId) {
         setDocumentId(documentId);
         return this;
+    }
+
+    /**
+     * <p>
+     * Set this to <code>TRUE</code> to include custom metadata in the response.
+     * </p>
+     * 
+     * @param includeCustomMetadata
+     *        Set this to <code>TRUE</code> to include custom metadata in the response.
+     */
+
+    public void setIncludeCustomMetadata(Boolean includeCustomMetadata) {
+        this.includeCustomMetadata = includeCustomMetadata;
+    }
+
+    /**
+     * <p>
+     * Set this to <code>TRUE</code> to include custom metadata in the response.
+     * </p>
+     * 
+     * @return Set this to <code>TRUE</code> to include custom metadata in the response.
+     */
+
+    public Boolean getIncludeCustomMetadata() {
+        return this.includeCustomMetadata;
+    }
+
+    /**
+     * <p>
+     * Set this to <code>TRUE</code> to include custom metadata in the response.
+     * </p>
+     * 
+     * @param includeCustomMetadata
+     *        Set this to <code>TRUE</code> to include custom metadata in the response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDocumentRequest withIncludeCustomMetadata(Boolean includeCustomMetadata) {
+        setIncludeCustomMetadata(includeCustomMetadata);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set this to <code>TRUE</code> to include custom metadata in the response.
+     * </p>
+     * 
+     * @return Set this to <code>TRUE</code> to include custom metadata in the response.
+     */
+
+    public Boolean isIncludeCustomMetadata() {
+        return this.includeCustomMetadata;
     }
 
     /**
@@ -83,8 +194,12 @@ public class GetDocumentRequest extends com.amazonaws.AmazonWebServiceRequest im
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAuthenticationToken() != null)
+            sb.append("AuthenticationToken: ").append(getAuthenticationToken()).append(",");
         if (getDocumentId() != null)
-            sb.append("DocumentId: ").append(getDocumentId());
+            sb.append("DocumentId: ").append(getDocumentId()).append(",");
+        if (getIncludeCustomMetadata() != null)
+            sb.append("IncludeCustomMetadata: ").append(getIncludeCustomMetadata());
         sb.append("}");
         return sb.toString();
     }
@@ -99,9 +214,17 @@ public class GetDocumentRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (obj instanceof GetDocumentRequest == false)
             return false;
         GetDocumentRequest other = (GetDocumentRequest) obj;
+        if (other.getAuthenticationToken() == null ^ this.getAuthenticationToken() == null)
+            return false;
+        if (other.getAuthenticationToken() != null && other.getAuthenticationToken().equals(this.getAuthenticationToken()) == false)
+            return false;
         if (other.getDocumentId() == null ^ this.getDocumentId() == null)
             return false;
         if (other.getDocumentId() != null && other.getDocumentId().equals(this.getDocumentId()) == false)
+            return false;
+        if (other.getIncludeCustomMetadata() == null ^ this.getIncludeCustomMetadata() == null)
+            return false;
+        if (other.getIncludeCustomMetadata() != null && other.getIncludeCustomMetadata().equals(this.getIncludeCustomMetadata()) == false)
             return false;
         return true;
     }
@@ -111,7 +234,9 @@ public class GetDocumentRequest extends com.amazonaws.AmazonWebServiceRequest im
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAuthenticationToken() == null) ? 0 : getAuthenticationToken().hashCode());
         hashCode = prime * hashCode + ((getDocumentId() == null) ? 0 : getDocumentId().hashCode());
+        hashCode = prime * hashCode + ((getIncludeCustomMetadata() == null) ? 0 : getIncludeCustomMetadata().hashCode());
         return hashCode;
     }
 

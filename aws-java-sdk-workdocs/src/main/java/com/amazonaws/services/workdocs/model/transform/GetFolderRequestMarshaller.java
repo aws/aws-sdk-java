@@ -27,8 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class GetFolderRequestMarshaller {
 
+    private static final MarshallingInfo<String> AUTHENTICATIONTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("Authentication").build();
     private static final MarshallingInfo<String> FOLDERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("FolderId").build();
+    private static final MarshallingInfo<Boolean> INCLUDECUSTOMMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("includeCustomMetadata").build();
 
     private static final GetFolderRequestMarshaller instance = new GetFolderRequestMarshaller();
 
@@ -46,7 +50,9 @@ public class GetFolderRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(getFolderRequest.getAuthenticationToken(), AUTHENTICATIONTOKEN_BINDING);
             protocolMarshaller.marshall(getFolderRequest.getFolderId(), FOLDERID_BINDING);
+            protocolMarshaller.marshall(getFolderRequest.getIncludeCustomMetadata(), INCLUDECUSTOMMETADATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

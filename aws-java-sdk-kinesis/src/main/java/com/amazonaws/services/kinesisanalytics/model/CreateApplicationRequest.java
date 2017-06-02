@@ -83,13 +83,24 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     private java.util.List<Output> outputs;
     /**
      * <p>
+     * Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+     * Configuration Errors</a>.
+     * </p>
+     */
+    private java.util.List<CloudWatchLoggingOption> cloudWatchLoggingOptions;
+    /**
+     * <p>
      * One or more SQL statements that read input data, transform it, and generate output. For example, you can write a
-     * SQL statement that reads input data and generates a running average of the number of advertisement clicks by
-     * vendor.
+     * SQL statement that reads data from one in-application stream, generates a running average of the number of
+     * advertisement clicks by vendor, and insert resulting rows in another in-application stream using pumps. For more
+     * inforamtion about the typical pattern, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application Code</a>.
      * </p>
      * <p>
-     * You can also provide a series of SQL statements, where output of one statement can be used as the input for the
-     * next statement.
+     * You can provide such series of SQL statements, where output of one statement can be used as the input for the
+     * next statement. You store intermediate results by creating in-application streams and pumps.
      * </p>
      * <p>
      * Note that the application code must create the streams with names specified in the <code>Outputs</code>. For
@@ -546,13 +557,109 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * One or more SQL statements that read input data, transform it, and generate output. For example, you can write a
-     * SQL statement that reads input data and generates a running average of the number of advertisement clicks by
-     * vendor.
+     * Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+     * Configuration Errors</a>.
+     * </p>
+     * 
+     * @return Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For
+     *         more information, see <a
+     *         href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html"
+     *         >Monitoring Configuration Errors</a>.
+     */
+
+    public java.util.List<CloudWatchLoggingOption> getCloudWatchLoggingOptions() {
+        return cloudWatchLoggingOptions;
+    }
+
+    /**
+     * <p>
+     * Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+     * Configuration Errors</a>.
+     * </p>
+     * 
+     * @param cloudWatchLoggingOptions
+     *        Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For
+     *        more information, see <a
+     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html"
+     *        >Monitoring Configuration Errors</a>.
+     */
+
+    public void setCloudWatchLoggingOptions(java.util.Collection<CloudWatchLoggingOption> cloudWatchLoggingOptions) {
+        if (cloudWatchLoggingOptions == null) {
+            this.cloudWatchLoggingOptions = null;
+            return;
+        }
+
+        this.cloudWatchLoggingOptions = new java.util.ArrayList<CloudWatchLoggingOption>(cloudWatchLoggingOptions);
+    }
+
+    /**
+     * <p>
+     * Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+     * Configuration Errors</a>.
      * </p>
      * <p>
-     * You can also provide a series of SQL statements, where output of one statement can be used as the input for the
-     * next statement.
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCloudWatchLoggingOptions(java.util.Collection)} or
+     * {@link #withCloudWatchLoggingOptions(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param cloudWatchLoggingOptions
+     *        Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For
+     *        more information, see <a
+     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html"
+     *        >Monitoring Configuration Errors</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationRequest withCloudWatchLoggingOptions(CloudWatchLoggingOption... cloudWatchLoggingOptions) {
+        if (this.cloudWatchLoggingOptions == null) {
+            setCloudWatchLoggingOptions(new java.util.ArrayList<CloudWatchLoggingOption>(cloudWatchLoggingOptions.length));
+        }
+        for (CloudWatchLoggingOption ele : cloudWatchLoggingOptions) {
+            this.cloudWatchLoggingOptions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+     * Configuration Errors</a>.
+     * </p>
+     * 
+     * @param cloudWatchLoggingOptions
+     *        Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For
+     *        more information, see <a
+     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html"
+     *        >Monitoring Configuration Errors</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationRequest withCloudWatchLoggingOptions(java.util.Collection<CloudWatchLoggingOption> cloudWatchLoggingOptions) {
+        setCloudWatchLoggingOptions(cloudWatchLoggingOptions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more SQL statements that read input data, transform it, and generate output. For example, you can write a
+     * SQL statement that reads data from one in-application stream, generates a running average of the number of
+     * advertisement clicks by vendor, and insert resulting rows in another in-application stream using pumps. For more
+     * inforamtion about the typical pattern, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application Code</a>.
+     * </p>
+     * <p>
+     * You can provide such series of SQL statements, where output of one statement can be used as the input for the
+     * next statement. You store intermediate results by creating in-application streams and pumps.
      * </p>
      * <p>
      * Note that the application code must create the streams with names specified in the <code>Outputs</code>. For
@@ -562,11 +669,14 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * 
      * @param applicationCode
      *        One or more SQL statements that read input data, transform it, and generate output. For example, you can
-     *        write a SQL statement that reads input data and generates a running average of the number of advertisement
-     *        clicks by vendor.</p>
+     *        write a SQL statement that reads data from one in-application stream, generates a running average of the
+     *        number of advertisement clicks by vendor, and insert resulting rows in another in-application stream using
+     *        pumps. For more inforamtion about the typical pattern, see <a
+     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application
+     *        Code</a>. </p>
      *        <p>
-     *        You can also provide a series of SQL statements, where output of one statement can be used as the input
-     *        for the next statement.
+     *        You can provide such series of SQL statements, where output of one statement can be used as the input for
+     *        the next statement. You store intermediate results by creating in-application streams and pumps.
      *        </p>
      *        <p>
      *        Note that the application code must create the streams with names specified in the <code>Outputs</code>.
@@ -581,12 +691,14 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * One or more SQL statements that read input data, transform it, and generate output. For example, you can write a
-     * SQL statement that reads input data and generates a running average of the number of advertisement clicks by
-     * vendor.
+     * SQL statement that reads data from one in-application stream, generates a running average of the number of
+     * advertisement clicks by vendor, and insert resulting rows in another in-application stream using pumps. For more
+     * inforamtion about the typical pattern, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application Code</a>.
      * </p>
      * <p>
-     * You can also provide a series of SQL statements, where output of one statement can be used as the input for the
-     * next statement.
+     * You can provide such series of SQL statements, where output of one statement can be used as the input for the
+     * next statement. You store intermediate results by creating in-application streams and pumps.
      * </p>
      * <p>
      * Note that the application code must create the streams with names specified in the <code>Outputs</code>. For
@@ -595,11 +707,14 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @return One or more SQL statements that read input data, transform it, and generate output. For example, you can
-     *         write a SQL statement that reads input data and generates a running average of the number of
-     *         advertisement clicks by vendor.</p>
+     *         write a SQL statement that reads data from one in-application stream, generates a running average of the
+     *         number of advertisement clicks by vendor, and insert resulting rows in another in-application stream
+     *         using pumps. For more inforamtion about the typical pattern, see <a
+     *         href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application
+     *         Code</a>. </p>
      *         <p>
-     *         You can also provide a series of SQL statements, where output of one statement can be used as the input
-     *         for the next statement.
+     *         You can provide such series of SQL statements, where output of one statement can be used as the input for
+     *         the next statement. You store intermediate results by creating in-application streams and pumps.
      *         </p>
      *         <p>
      *         Note that the application code must create the streams with names specified in the <code>Outputs</code>.
@@ -614,12 +729,14 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * One or more SQL statements that read input data, transform it, and generate output. For example, you can write a
-     * SQL statement that reads input data and generates a running average of the number of advertisement clicks by
-     * vendor.
+     * SQL statement that reads data from one in-application stream, generates a running average of the number of
+     * advertisement clicks by vendor, and insert resulting rows in another in-application stream using pumps. For more
+     * inforamtion about the typical pattern, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application Code</a>.
      * </p>
      * <p>
-     * You can also provide a series of SQL statements, where output of one statement can be used as the input for the
-     * next statement.
+     * You can provide such series of SQL statements, where output of one statement can be used as the input for the
+     * next statement. You store intermediate results by creating in-application streams and pumps.
      * </p>
      * <p>
      * Note that the application code must create the streams with names specified in the <code>Outputs</code>. For
@@ -629,11 +746,14 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * 
      * @param applicationCode
      *        One or more SQL statements that read input data, transform it, and generate output. For example, you can
-     *        write a SQL statement that reads input data and generates a running average of the number of advertisement
-     *        clicks by vendor.</p>
+     *        write a SQL statement that reads data from one in-application stream, generates a running average of the
+     *        number of advertisement clicks by vendor, and insert resulting rows in another in-application stream using
+     *        pumps. For more inforamtion about the typical pattern, see <a
+     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html">Application
+     *        Code</a>. </p>
      *        <p>
-     *        You can also provide a series of SQL statements, where output of one statement can be used as the input
-     *        for the next statement.
+     *        You can provide such series of SQL statements, where output of one statement can be used as the input for
+     *        the next statement. You store intermediate results by creating in-application streams and pumps.
      *        </p>
      *        <p>
      *        Note that the application code must create the streams with names specified in the <code>Outputs</code>.
@@ -666,6 +786,8 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("Inputs: ").append(getInputs()).append(",");
         if (getOutputs() != null)
             sb.append("Outputs: ").append(getOutputs()).append(",");
+        if (getCloudWatchLoggingOptions() != null)
+            sb.append("CloudWatchLoggingOptions: ").append(getCloudWatchLoggingOptions()).append(",");
         if (getApplicationCode() != null)
             sb.append("ApplicationCode: ").append(getApplicationCode());
         sb.append("}");
@@ -698,6 +820,10 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getOutputs() != null && other.getOutputs().equals(this.getOutputs()) == false)
             return false;
+        if (other.getCloudWatchLoggingOptions() == null ^ this.getCloudWatchLoggingOptions() == null)
+            return false;
+        if (other.getCloudWatchLoggingOptions() != null && other.getCloudWatchLoggingOptions().equals(this.getCloudWatchLoggingOptions()) == false)
+            return false;
         if (other.getApplicationCode() == null ^ this.getApplicationCode() == null)
             return false;
         if (other.getApplicationCode() != null && other.getApplicationCode().equals(this.getApplicationCode()) == false)
@@ -714,6 +840,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getApplicationDescription() == null) ? 0 : getApplicationDescription().hashCode());
         hashCode = prime * hashCode + ((getInputs() == null) ? 0 : getInputs().hashCode());
         hashCode = prime * hashCode + ((getOutputs() == null) ? 0 : getOutputs().hashCode());
+        hashCode = prime * hashCode + ((getCloudWatchLoggingOptions() == null) ? 0 : getCloudWatchLoggingOptions().hashCode());
         hashCode = prime * hashCode + ((getApplicationCode() == null) ? 0 : getApplicationCode().hashCode());
         return hashCode;
     }

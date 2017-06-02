@@ -67,6 +67,32 @@ public class AbstractAmazonWorkDocsAsync extends AbstractAmazonWorkDocs implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateCommentResult> createCommentAsync(CreateCommentRequest request) {
+
+        return createCommentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCommentResult> createCommentAsync(CreateCommentRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateCommentRequest, CreateCommentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCustomMetadataResult> createCustomMetadataAsync(CreateCustomMetadataRequest request) {
+
+        return createCustomMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCustomMetadataResult> createCustomMetadataAsync(CreateCustomMetadataRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateCustomMetadataRequest, CreateCustomMetadataResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateFolderResult> createFolderAsync(CreateFolderRequest request) {
 
         return createFolderAsync(request, null);
@@ -75,6 +101,19 @@ public class AbstractAmazonWorkDocsAsync extends AbstractAmazonWorkDocs implemen
     @Override
     public java.util.concurrent.Future<CreateFolderResult> createFolderAsync(CreateFolderRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateFolderRequest, CreateFolderResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLabelsResult> createLabelsAsync(CreateLabelsRequest request) {
+
+        return createLabelsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLabelsResult> createLabelsAsync(CreateLabelsRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateLabelsRequest, CreateLabelsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -119,6 +158,32 @@ public class AbstractAmazonWorkDocsAsync extends AbstractAmazonWorkDocs implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteCommentResult> deleteCommentAsync(DeleteCommentRequest request) {
+
+        return deleteCommentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCommentResult> deleteCommentAsync(DeleteCommentRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteCommentRequest, DeleteCommentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCustomMetadataResult> deleteCustomMetadataAsync(DeleteCustomMetadataRequest request) {
+
+        return deleteCustomMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCustomMetadataResult> deleteCustomMetadataAsync(DeleteCustomMetadataRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteCustomMetadataRequest, DeleteCustomMetadataResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDocumentResult> deleteDocumentAsync(DeleteDocumentRequest request) {
 
         return deleteDocumentAsync(request, null);
@@ -158,6 +223,19 @@ public class AbstractAmazonWorkDocsAsync extends AbstractAmazonWorkDocs implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteLabelsResult> deleteLabelsAsync(DeleteLabelsRequest request) {
+
+        return deleteLabelsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLabelsResult> deleteLabelsAsync(DeleteLabelsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteLabelsRequest, DeleteLabelsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteNotificationSubscriptionResult> deleteNotificationSubscriptionAsync(DeleteNotificationSubscriptionRequest request) {
 
         return deleteNotificationSubscriptionAsync(request, null);
@@ -179,6 +257,19 @@ public class AbstractAmazonWorkDocsAsync extends AbstractAmazonWorkDocs implemen
     @Override
     public java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(DeleteUserRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteUserRequest, DeleteUserResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCommentsResult> describeCommentsAsync(DescribeCommentsRequest request) {
+
+        return describeCommentsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCommentsResult> describeCommentsAsync(DescribeCommentsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeCommentsRequest, DescribeCommentsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

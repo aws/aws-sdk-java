@@ -70,6 +70,12 @@ public class DocumentMetadata implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String resourceState;
+    /**
+     * <p>
+     * List of labels on the document.
+     * </p>
+     */
+    private java.util.List<String> labels;
 
     /**
      * <p>
@@ -385,6 +391,76 @@ public class DocumentMetadata implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * List of labels on the document.
+     * </p>
+     * 
+     * @return List of labels on the document.
+     */
+
+    public java.util.List<String> getLabels() {
+        return labels;
+    }
+
+    /**
+     * <p>
+     * List of labels on the document.
+     * </p>
+     * 
+     * @param labels
+     *        List of labels on the document.
+     */
+
+    public void setLabels(java.util.Collection<String> labels) {
+        if (labels == null) {
+            this.labels = null;
+            return;
+        }
+
+        this.labels = new java.util.ArrayList<String>(labels);
+    }
+
+    /**
+     * <p>
+     * List of labels on the document.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLabels(java.util.Collection)} or {@link #withLabels(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param labels
+     *        List of labels on the document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentMetadata withLabels(String... labels) {
+        if (this.labels == null) {
+            setLabels(new java.util.ArrayList<String>(labels.length));
+        }
+        for (String ele : labels) {
+            this.labels.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * List of labels on the document.
+     * </p>
+     * 
+     * @param labels
+     *        List of labels on the document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentMetadata withLabels(java.util.Collection<String> labels) {
+        setLabels(labels);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -408,7 +484,9 @@ public class DocumentMetadata implements Serializable, Cloneable, StructuredPojo
         if (getLatestVersionMetadata() != null)
             sb.append("LatestVersionMetadata: ").append(getLatestVersionMetadata()).append(",");
         if (getResourceState() != null)
-            sb.append("ResourceState: ").append(getResourceState());
+            sb.append("ResourceState: ").append(getResourceState()).append(",");
+        if (getLabels() != null)
+            sb.append("Labels: ").append(getLabels());
         sb.append("}");
         return sb.toString();
     }
@@ -451,6 +529,10 @@ public class DocumentMetadata implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getResourceState() != null && other.getResourceState().equals(this.getResourceState()) == false)
             return false;
+        if (other.getLabels() == null ^ this.getLabels() == null)
+            return false;
+        if (other.getLabels() != null && other.getLabels().equals(this.getLabels()) == false)
+            return false;
         return true;
     }
 
@@ -466,6 +548,7 @@ public class DocumentMetadata implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getModifiedTimestamp() == null) ? 0 : getModifiedTimestamp().hashCode());
         hashCode = prime * hashCode + ((getLatestVersionMetadata() == null) ? 0 : getLatestVersionMetadata().hashCode());
         hashCode = prime * hashCode + ((getResourceState() == null) ? 0 : getResourceState().hashCode());
+        hashCode = prime * hashCode + ((getLabels() == null) ? 0 : getLabels().hashCode());
         return hashCode;
     }
 

@@ -27,12 +27,16 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class GetDocumentVersionRequestMarshaller {
 
+    private static final MarshallingInfo<String> AUTHENTICATIONTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("Authentication").build();
     private static final MarshallingInfo<String> DOCUMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("DocumentId").build();
     private static final MarshallingInfo<String> VERSIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("VersionId").build();
     private static final MarshallingInfo<String> FIELDS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("fields").build();
+    private static final MarshallingInfo<Boolean> INCLUDECUSTOMMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("includeCustomMetadata").build();
 
     private static final GetDocumentVersionRequestMarshaller instance = new GetDocumentVersionRequestMarshaller();
 
@@ -50,9 +54,11 @@ public class GetDocumentVersionRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(getDocumentVersionRequest.getAuthenticationToken(), AUTHENTICATIONTOKEN_BINDING);
             protocolMarshaller.marshall(getDocumentVersionRequest.getDocumentId(), DOCUMENTID_BINDING);
             protocolMarshaller.marshall(getDocumentVersionRequest.getVersionId(), VERSIONID_BINDING);
             protocolMarshaller.marshall(getDocumentVersionRequest.getFields(), FIELDS_BINDING);
+            protocolMarshaller.marshall(getDocumentVersionRequest.getIncludeCustomMetadata(), INCLUDECUSTOMMETADATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

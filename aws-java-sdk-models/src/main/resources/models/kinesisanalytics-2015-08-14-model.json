@@ -15,6 +15,55 @@
     "xmlNamespace" : null
   },
   "operations" : {
+    "AddApplicationCloudWatchLoggingOption" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Adds a CloudWatch log stream to monitor application configuration errors. For more information about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a href=\"http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html\">Monitoring Configuration Errors</a>.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceInUseException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidArgumentException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ConcurrentModificationException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "AddApplicationCloudWatchLoggingOptionRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "AddApplicationCloudWatchLoggingOption",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "AddApplicationCloudWatchLoggingOptionResponse"
+      }
+    },
     "AddApplicationInput" : {
       "authorizer" : null,
       "authtype" : "IAM",
@@ -166,7 +215,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p> Creates an Amazon Kinesis Analytics application. You can configure each application with one streaming source as input, application code to process the input, and up to five streaming destinations where you want Amazon Kinesis Analytics to write the output data from your application. For an overview, see <a href=\"http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works.html\">How it Works</a>. </p> <p>In the input configuration, you map the streaming source to an in-application stream, which you can think of as a constantly updating table. In the mapping, you must provide a schema for the in-application stream and map each data column in the in-application stream to a data element in the streaming source, with the option of renaming, casting and dropping columns as desired.</p> <p>Your application code is one or more SQL statements that read input data, transform it, and generate output. Your application code can create one or more SQL artifacts like SQL streams or pumps.</p> <p>In the output configuration, you can configure the application to write data from in-application streams created in your applications to up to five streaming destinations.</p> <p> To read data from your source stream or write data to destination streams, Amazon Kinesis Analytics needs your permissions. You grant these permissions by creating IAM roles. This operation requires permissions to perform the <code>kinesisanalytics:CreateApplication</code> action. </p> <p> For introductory exercises to create an Amazon Kinesis Analytics application, see <a href=\"http://docs.aws.amazon.com/kinesisanalytics/latest/dev/getting-started.html\">Getting Started</a>. </p>",
+      "documentation" : "<p> Creates an Amazon Kinesis Analytics application. You can configure each application with one streaming source as input, application code to process the input, and up to five streaming destinations where you want Amazon Kinesis Analytics to write the output data from your application. For an overview, see <a href=\"http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works.html\">How it Works</a>. </p> <p>In the input configuration, you map the streaming source to an in-application stream, which you can think of as a constantly updating table. In the mapping, you must provide a schema for the in-application stream and map each data column in the in-application stream to a data element in the streaming source.</p> <p>Your application code is one or more SQL statements that read input data, transform it, and generate output. Your application code can create one or more SQL artifacts like SQL streams or pumps.</p> <p>In the output configuration, you can configure the application to write data from in-application streams created in your applications to up to five streaming destinations.</p> <p> To read data from your source stream or write data to destination streams, Amazon Kinesis Analytics needs your permissions. You grant these permissions by creating IAM roles. This operation requires permissions to perform the <code>kinesisanalytics:CreateApplication</code> action. </p> <p> For introductory exercises to create an Amazon Kinesis Analytics application, see <a href=\"http://docs.aws.amazon.com/kinesisanalytics/latest/dev/getting-started.html\">Getting Started</a>. </p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -254,6 +303,55 @@
         "shape" : "DeleteApplicationResponse"
       }
     },
+    "DeleteApplicationCloudWatchLoggingOption" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "<p>Deletes a CloudWatch log stream from an application. For more information about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a href=\"http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html\">Monitoring Configuration Errors</a>.</p>",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceNotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ResourceInUseException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidArgumentException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ConcurrentModificationException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/",
+        "responseCode" : null
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DeleteApplicationCloudWatchLoggingOptionRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "DeleteApplicationCloudWatchLoggingOption",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "DeleteApplicationCloudWatchLoggingOptionResponse"
+      }
+    },
     "DeleteApplicationOutput" : {
       "authorizer" : null,
       "authtype" : "IAM",
@@ -271,6 +369,12 @@
         "exception" : false,
         "fault" : false,
         "shape" : "ResourceInUseException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InvalidArgumentException"
       }, {
         "documentation" : null,
         "error" : null,
@@ -535,7 +639,7 @@
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
-      "documentation" : "<p>Updates an existing Kinesis Analytics application. Using this API, you can update application code, input configuration, and output configuration. </p> <p>Note that Kinesis Analytics updates the <code>CurrentApplicationVersionId</code> each time you update your application. </p> <p>This opeation requires permission for the <code>kinesisanalytics:UpdateApplication</code> action.</p>",
+      "documentation" : "<p>Updates an existing Amazon Kinesis Analytics application. Using this API, you can update application code, input configuration, and output configuration. </p> <p>Note that Amazon Kinesis Analytics updates the <code>CurrentApplicationVersionId</code> each time you update your application. </p> <p>This operation requires permission for the <code>kinesisanalytics:UpdateApplication</code> action.</p>",
       "errors" : [ {
         "documentation" : null,
         "error" : null,
@@ -588,6 +692,91 @@
     }
   },
   "shapes" : {
+    "AddApplicationCloudWatchLoggingOptionRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ApplicationName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Kinesis Analytics application name.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ApplicationName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "CloudWatchLoggingOption" : {
+          "deprecated" : false,
+          "documentation" : "<p>Provide the CloudWatch log stream ARN and the IAM role ARN. Note: To write application messages to CloudWatch, the IAM role used must have the <code>PutLogEvents</code> policy action enabled. </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CloudWatchLoggingOption",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "CurrentApplicationVersionId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The version ID of the Amazon Kinesis Analytics application.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ApplicationVersionId",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "ApplicationName", "CurrentApplicationVersionId", "CloudWatchLoggingOption" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "AddApplicationCloudWatchLoggingOptionResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "AddApplicationInputRequest" : {
       "deprecated" : false,
       "documentation" : "<p/>",
@@ -630,7 +819,7 @@
         },
         "Input" : {
           "deprecated" : false,
-          "documentation" : null,
+          "documentation" : "<p/>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -981,6 +1170,20 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "CloudWatchLoggingOptionDescriptions" : {
+          "deprecated" : false,
+          "documentation" : "<p>Describes the CloudWatch log streams configured to receive application messages. For more information about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a href=\"http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html\">Monitoring Configuration Errors</a>. </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CloudWatchLoggingOptionDescriptions",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "CreateTimestamp" : {
           "deprecated" : false,
           "documentation" : "<p>Timestamp when the application version was created.</p>",
@@ -1203,7 +1406,7 @@
     },
     "ApplicationUpdate" : {
       "deprecated" : false,
-      "documentation" : "<p>Describes updates to apply to an existing Kinesis Analytics application.</p>",
+      "documentation" : "<p>Describes updates to apply to an existing Amazon Kinesis Analytics application.</p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -1224,6 +1427,20 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "ApplicationCode",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "CloudWatchLoggingOptionUpdates" : {
+          "deprecated" : false,
+          "documentation" : "<p>Describes application CloudWatch logging option updates.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CloudWatchLoggingOptionUpdates",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -1392,6 +1609,286 @@
       "value" : null,
       "wrapper" : false
     },
+    "CloudWatchLoggingOption" : {
+      "deprecated" : false,
+      "documentation" : "<p>Provides a description of CloudWatch logging options, including the log stream ARN and the role ARN.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "LogStreamARN" : {
+          "deprecated" : false,
+          "documentation" : "<p>ARN of the CloudWatch log to receive application messages.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "LogStreamARN",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "RoleARN" : {
+          "deprecated" : false,
+          "documentation" : "<p>IAM ARN of the role to use to send application messages. Note: To write application messages to CloudWatch, the IAM role used must have the <code>PutLogEvents</code> policy action enabled.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RoleARN",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "LogStreamARN", "RoleARN" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "CloudWatchLoggingOptionDescription" : {
+      "deprecated" : false,
+      "documentation" : "<p>Description of the CloudWatch logging option.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "CloudWatchLoggingOptionId" : {
+          "deprecated" : false,
+          "documentation" : "<p>ID of the CloudWatch logging option description.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Id",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "LogStreamARN" : {
+          "deprecated" : false,
+          "documentation" : "<p>ARN of the CloudWatch log to receive application messages.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "LogStreamARN",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "RoleARN" : {
+          "deprecated" : false,
+          "documentation" : "<p>IAM ARN of the role to use to send application messages. Note: To write application messages to CloudWatch, the IAM role used must have the <code>PutLogEvents</code> policy action enabled.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RoleARN",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "LogStreamARN", "RoleARN" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "CloudWatchLoggingOptionDescriptions" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "CloudWatchLoggingOptionDescription",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "CloudWatchLoggingOptionUpdate" : {
+      "deprecated" : false,
+      "documentation" : "<p>Describes CloudWatch logging option updates.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "CloudWatchLoggingOptionId" : {
+          "deprecated" : false,
+          "documentation" : "<p>ID of the CloudWatch logging option to update</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Id",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "LogStreamARNUpdate" : {
+          "deprecated" : false,
+          "documentation" : "<p>ARN of the CloudWatch log to receive application messages.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "LogStreamARN",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "RoleARNUpdate" : {
+          "deprecated" : false,
+          "documentation" : "<p>IAM ARN of the role to use to send application messages. Note: To write application messages to CloudWatch, the IAM role used must have the <code>PutLogEvents</code> policy action enabled.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "RoleARN",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "CloudWatchLoggingOptionId" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "CloudWatchLoggingOptionUpdates" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "CloudWatchLoggingOptionUpdate",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
+    "CloudWatchLoggingOptions" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "CloudWatchLoggingOption",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
     "CodeValidationException" : {
       "deprecated" : false,
       "documentation" : "<p>User-provided application code (query) is invalid. This can be a simple syntax error.</p>",
@@ -1478,7 +1975,7 @@
       "members" : {
         "ApplicationCode" : {
           "deprecated" : false,
-          "documentation" : "<p>One or more SQL statements that read input data, transform it, and generate output. For example, you can write a SQL statement that reads input data and generates a running average of the number of advertisement clicks by vendor.</p> <p>You can also provide a series of SQL statements, where output of one statement can be used as the input for the next statement.</p> <p>Note that the application code must create the streams with names specified in the <code>Outputs</code>. For example, if your <code>Outputs</code> defines output streams named <code>ExampleOutputStream1</code> and <code>ExampleOutputStream2</code>, then your application code must create these streams. </p>",
+          "documentation" : "<p>One or more SQL statements that read input data, transform it, and generate output. For example, you can write a SQL statement that reads data from one in-application stream, generates a running average of the number of advertisement clicks by vendor, and insert resulting rows in another in-application stream using pumps. For more inforamtion about the typical pattern, see <a href=\"http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-app-code.html\">Application Code</a>. </p> <p>You can provide such series of SQL statements, where output of one statement can be used as the input for the next statement. You store intermediate results by creating in-application streams and pumps.</p> <p>Note that the application code must create the streams with names specified in the <code>Outputs</code>. For example, if your <code>Outputs</code> defines output streams named <code>ExampleOutputStream1</code> and <code>ExampleOutputStream2</code>, then your application code must create these streams. </p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -1515,6 +2012,20 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "ApplicationName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "CloudWatchLoggingOptions" : {
+          "deprecated" : false,
+          "documentation" : "<p>Use this parameter to configure a CloudWatch log stream to monitor application configuration errors. For more information, see <a href=\"http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html\">Monitoring Configuration Errors</a>.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CloudWatchLoggingOptions",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -1587,6 +2098,91 @@
       "pattern" : null,
       "payload" : null,
       "required" : [ "ApplicationSummary" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DeleteApplicationCloudWatchLoggingOptionRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ApplicationName" : {
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Kinesis Analytics application name.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ApplicationName",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "CloudWatchLoggingOptionId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to delete. You can use the <a>DescribeApplication</a> operation to get the <code>CloudWatchLoggingOptionId</code>. </p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Id",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "CurrentApplicationVersionId" : {
+          "deprecated" : false,
+          "documentation" : "<p>The version ID of the Amazon Kinesis Analytics application.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ApplicationVersionId",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "ApplicationName", "CurrentApplicationVersionId", "CloudWatchLoggingOptionId" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DeleteApplicationCloudWatchLoggingOptionResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
       "streaming" : false,
       "type" : "structure",
       "value" : null,
@@ -2278,7 +2874,7 @@
         },
         "NamePrefix" : {
           "deprecated" : false,
-          "documentation" : "<p>Name prefix to use when creating in-application stream. Suppose you specify a prefix \"MyInApplicationStream\". Kinesis Analytics will then create one or more (as per the <code>InputParallelism</code> count you specified) in-application streams with names \"MyInApplicationStream_001\", \"MyInApplicationStream_002\" and so on. </p>",
+          "documentation" : "<p>Name prefix to use when creating in-application stream. Suppose you specify a prefix \"MyInApplicationStream\". Amazon Kinesis Analytics will then create one or more (as per the <code>InputParallelism</code> count you specified) in-application streams with names \"MyInApplicationStream_001\", \"MyInApplicationStream_002\" and so on. </p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -2554,7 +3150,7 @@
     },
     "InputParallelism" : {
       "deprecated" : false,
-      "documentation" : "<p>Describes the number of in-application streams to create for a given streaming source. For information about parallellism, see <a href=\"http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html\">Configuring Application Input</a>. </p>",
+      "documentation" : "<p>Describes the number of in-application streams to create for a given streaming source. For information about parallelism, see <a href=\"http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html\">Configuring Application Input</a>. </p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -2744,7 +3340,7 @@
       "members" : {
         "InputStartingPosition" : {
           "deprecated" : false,
-          "documentation" : "<p>The starting position on the stream.</p> <ul> <li> <p> <code>LATEST</code> - Start reading just after the most recent record in the stream.</p> </li> <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last untrimmed record in the stream, which is the oldest record available in the stream. This option is not available for an Amazon Kinesis Firehose delivery stream.</p> </li> <li> <p> <code>LAST_STOPPED_POINT</code> - Resume reading from where the application last stopped reading.</p> </li> </ul>",
+          "documentation" : "<p>The starting position on the stream.</p> <ul> <li> <p> <code>NOW</code> - Start reading just after the most recent record in the stream, start at the request timestamp that the customer issued.</p> </li> <li> <p> <code>TRIM_HORIZON</code> - Start reading at the last untrimmed record in the stream, which is the oldest record available in the stream. This option is not available for an Amazon Kinesis Firehose delivery stream.</p> </li> <li> <p> <code>LAST_STOPPED_POINT</code> - Resume reading from where the application last stopped reading.</p> </li> </ul>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -2794,7 +3390,7 @@
         },
         "InputParallelismUpdate" : {
           "deprecated" : false,
-          "documentation" : "<p>Describes the parallelism updates (the number in-application streams Kinesis Analytics creates for the specific streaming source).</p>",
+          "documentation" : "<p>Describes the parallelism updates (the number in-application streams Amazon Kinesis Analytics creates for the specific streaming source).</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -2850,7 +3446,7 @@
         },
         "NamePrefixUpdate" : {
           "deprecated" : false,
-          "documentation" : "<p>Name prefix for in-application stream(s) that Kinesis Analytics creates for the specific streaming source.</p>",
+          "documentation" : "<p>Name prefix for in-application streams that Amazon Kinesis Analytics creates for the specific streaming source.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -3805,6 +4401,27 @@
       "value" : null,
       "wrapper" : false
     },
+    "LogStreamARN" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 2048,
+      "member" : null,
+      "members" : { },
+      "min" : 1,
+      "pattern" : "arn:.*",
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
     "MappingParameters" : {
       "deprecated" : false,
       "documentation" : "<p>When configuring application input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source.</p>",
@@ -3857,7 +4474,7 @@
     },
     "Output" : {
       "deprecated" : false,
-      "documentation" : "<p> Describes application output configuration in which you identify an in-application stream and a destination where you want the in-application stream data to be written. The destination can be an Amazon Kinesis stream or an Amazon Kinesis Firehose delivery stream. </p> <p/> <p>You can configure your application to write output to up to five destinations.</p>",
+      "documentation" : "<p> Describes application output configuration in which you identify an in-application stream and a destination where you want the in-application stream data to be written. The destination can be an Amazon Kinesis stream or an Amazon Kinesis Firehose delivery stream. </p> <p/> <p>For limits on how many destinations an application can write and other limitations, see <a href=\"http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html\">Limits</a>. </p>",
       "enum" : null,
       "error" : null,
       "exception" : false,
@@ -4439,7 +5056,7 @@
       "max" : 0,
       "member" : null,
       "members" : { },
-      "min" : 0,
+      "min" : 1,
       "pattern" : null,
       "payload" : null,
       "required" : null,
@@ -4649,7 +5266,7 @@
       "max" : 0,
       "member" : null,
       "members" : { },
-      "min" : 0,
+      "min" : 1,
       "pattern" : null,
       "payload" : null,
       "required" : null,
@@ -5062,7 +5679,7 @@
     },
     "ResourceProvisionedThroughputExceededException" : {
       "deprecated" : false,
-      "documentation" : "<p>Discovery failed to get a record from the streaming source because of the Kinesis Streams ProvisionedThroughputExceededException.</p>",
+      "documentation" : "<p>Discovery failed to get a record from the streaming source because of the Amazon Kinesis Streams ProvisionedThroughputExceededException. For more information, see <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html\">GetRecords</a> in the Amazon Kinesis Streams API Reference.</p>",
       "enum" : null,
       "error" : null,
       "exception" : true,
@@ -5524,7 +6141,7 @@
     },
     "UnableToDetectSchemaException" : {
       "deprecated" : false,
-      "documentation" : "<p>Data format is not valid, Kinesis Analytics is not able to detect schema for the given streaming source.</p>",
+      "documentation" : "<p>Data format is not valid, Amazon Kinesis Analytics is not able to detect schema for the given streaming source.</p>",
       "enum" : null,
       "error" : null,
       "exception" : true,
@@ -5586,7 +6203,7 @@
       "members" : {
         "ApplicationName" : {
           "deprecated" : false,
-          "documentation" : "<p>Name of the Kinesis Analytics application to update.</p>",
+          "documentation" : "<p>Name of the Amazon Kinesis Analytics application to update.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,

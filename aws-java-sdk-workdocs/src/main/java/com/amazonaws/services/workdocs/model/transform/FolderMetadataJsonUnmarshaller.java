@@ -80,6 +80,18 @@ public class FolderMetadataJsonUnmarshaller implements Unmarshaller<FolderMetada
                     context.nextToken();
                     folderMetadata.setSignature(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Labels", targetDepth)) {
+                    context.nextToken();
+                    folderMetadata.setLabels(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("Size", targetDepth)) {
+                    context.nextToken();
+                    folderMetadata.setSize(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("LatestVersionSize", targetDepth)) {
+                    context.nextToken();
+                    folderMetadata.setLatestVersionSize(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

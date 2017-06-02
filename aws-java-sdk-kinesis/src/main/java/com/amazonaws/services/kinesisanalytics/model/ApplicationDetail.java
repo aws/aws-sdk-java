@@ -91,6 +91,15 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
     private java.util.List<ReferenceDataSourceDescription> referenceDataSourceDescriptions;
     /**
      * <p>
+     * Describes the CloudWatch log streams configured to receive application messages. For more information about using
+     * CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+     * Configuration Errors</a>.
+     * </p>
+     */
+    private java.util.List<CloudWatchLoggingOptionDescription> cloudWatchLoggingOptionDescriptions;
+    /**
+     * <p>
      * Returns the application code that you provided to perform data analysis on any of the in-application streams in
      * your application.
      * </p>
@@ -636,6 +645,102 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
+     * Describes the CloudWatch log streams configured to receive application messages. For more information about using
+     * CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+     * Configuration Errors</a>.
+     * </p>
+     * 
+     * @return Describes the CloudWatch log streams configured to receive application messages. For more information
+     *         about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
+     *         href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html"
+     *         >Monitoring Configuration Errors</a>.
+     */
+
+    public java.util.List<CloudWatchLoggingOptionDescription> getCloudWatchLoggingOptionDescriptions() {
+        return cloudWatchLoggingOptionDescriptions;
+    }
+
+    /**
+     * <p>
+     * Describes the CloudWatch log streams configured to receive application messages. For more information about using
+     * CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+     * Configuration Errors</a>.
+     * </p>
+     * 
+     * @param cloudWatchLoggingOptionDescriptions
+     *        Describes the CloudWatch log streams configured to receive application messages. For more information
+     *        about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
+     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html"
+     *        >Monitoring Configuration Errors</a>.
+     */
+
+    public void setCloudWatchLoggingOptionDescriptions(java.util.Collection<CloudWatchLoggingOptionDescription> cloudWatchLoggingOptionDescriptions) {
+        if (cloudWatchLoggingOptionDescriptions == null) {
+            this.cloudWatchLoggingOptionDescriptions = null;
+            return;
+        }
+
+        this.cloudWatchLoggingOptionDescriptions = new java.util.ArrayList<CloudWatchLoggingOptionDescription>(cloudWatchLoggingOptionDescriptions);
+    }
+
+    /**
+     * <p>
+     * Describes the CloudWatch log streams configured to receive application messages. For more information about using
+     * CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+     * Configuration Errors</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCloudWatchLoggingOptionDescriptions(java.util.Collection)} or
+     * {@link #withCloudWatchLoggingOptionDescriptions(java.util.Collection)} if you want to override the existing
+     * values.
+     * </p>
+     * 
+     * @param cloudWatchLoggingOptionDescriptions
+     *        Describes the CloudWatch log streams configured to receive application messages. For more information
+     *        about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
+     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html"
+     *        >Monitoring Configuration Errors</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationDetail withCloudWatchLoggingOptionDescriptions(CloudWatchLoggingOptionDescription... cloudWatchLoggingOptionDescriptions) {
+        if (this.cloudWatchLoggingOptionDescriptions == null) {
+            setCloudWatchLoggingOptionDescriptions(new java.util.ArrayList<CloudWatchLoggingOptionDescription>(cloudWatchLoggingOptionDescriptions.length));
+        }
+        for (CloudWatchLoggingOptionDescription ele : cloudWatchLoggingOptionDescriptions) {
+            this.cloudWatchLoggingOptionDescriptions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes the CloudWatch log streams configured to receive application messages. For more information about using
+     * CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
+     * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html">Monitoring
+     * Configuration Errors</a>.
+     * </p>
+     * 
+     * @param cloudWatchLoggingOptionDescriptions
+     *        Describes the CloudWatch log streams configured to receive application messages. For more information
+     *        about using CloudWatch log streams with Amazon Kinesis Analytics applications, see <a
+     *        href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/cloudwatch-monitor-configuration.html"
+     *        >Monitoring Configuration Errors</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationDetail withCloudWatchLoggingOptionDescriptions(
+            java.util.Collection<CloudWatchLoggingOptionDescription> cloudWatchLoggingOptionDescriptions) {
+        setCloudWatchLoggingOptionDescriptions(cloudWatchLoggingOptionDescriptions);
+        return this;
+    }
+
+    /**
+     * <p>
      * Returns the application code that you provided to perform data analysis on any of the in-application streams in
      * your application.
      * </p>
@@ -749,6 +854,8 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
             sb.append("OutputDescriptions: ").append(getOutputDescriptions()).append(",");
         if (getReferenceDataSourceDescriptions() != null)
             sb.append("ReferenceDataSourceDescriptions: ").append(getReferenceDataSourceDescriptions()).append(",");
+        if (getCloudWatchLoggingOptionDescriptions() != null)
+            sb.append("CloudWatchLoggingOptionDescriptions: ").append(getCloudWatchLoggingOptionDescriptions()).append(",");
         if (getApplicationCode() != null)
             sb.append("ApplicationCode: ").append(getApplicationCode()).append(",");
         if (getApplicationVersionId() != null)
@@ -804,6 +911,11 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
         if (other.getReferenceDataSourceDescriptions() != null
                 && other.getReferenceDataSourceDescriptions().equals(this.getReferenceDataSourceDescriptions()) == false)
             return false;
+        if (other.getCloudWatchLoggingOptionDescriptions() == null ^ this.getCloudWatchLoggingOptionDescriptions() == null)
+            return false;
+        if (other.getCloudWatchLoggingOptionDescriptions() != null
+                && other.getCloudWatchLoggingOptionDescriptions().equals(this.getCloudWatchLoggingOptionDescriptions()) == false)
+            return false;
         if (other.getApplicationCode() == null ^ this.getApplicationCode() == null)
             return false;
         if (other.getApplicationCode() != null && other.getApplicationCode().equals(this.getApplicationCode()) == false)
@@ -829,6 +941,7 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getInputDescriptions() == null) ? 0 : getInputDescriptions().hashCode());
         hashCode = prime * hashCode + ((getOutputDescriptions() == null) ? 0 : getOutputDescriptions().hashCode());
         hashCode = prime * hashCode + ((getReferenceDataSourceDescriptions() == null) ? 0 : getReferenceDataSourceDescriptions().hashCode());
+        hashCode = prime * hashCode + ((getCloudWatchLoggingOptionDescriptions() == null) ? 0 : getCloudWatchLoggingOptionDescriptions().hashCode());
         hashCode = prime * hashCode + ((getApplicationCode() == null) ? 0 : getApplicationCode().hashCode());
         hashCode = prime * hashCode + ((getApplicationVersionId() == null) ? 0 : getApplicationVersionId().hashCode());
         return hashCode;

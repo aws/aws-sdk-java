@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateDocumentVersionRequestMarshaller {
 
+    private static final MarshallingInfo<String> AUTHENTICATIONTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("Authentication").build();
     private static final MarshallingInfo<String> DOCUMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("DocumentId").build();
     private static final MarshallingInfo<String> VERSIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
@@ -50,6 +52,7 @@ public class UpdateDocumentVersionRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(updateDocumentVersionRequest.getAuthenticationToken(), AUTHENTICATIONTOKEN_BINDING);
             protocolMarshaller.marshall(updateDocumentVersionRequest.getDocumentId(), DOCUMENTID_BINDING);
             protocolMarshaller.marshall(updateDocumentVersionRequest.getVersionId(), VERSIONID_BINDING);
             protocolMarshaller.marshall(updateDocumentVersionRequest.getVersionStatus(), VERSIONSTATUS_BINDING);

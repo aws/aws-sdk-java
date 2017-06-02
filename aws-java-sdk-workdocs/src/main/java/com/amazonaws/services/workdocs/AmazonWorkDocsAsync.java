@@ -68,8 +68,8 @@ public interface AmazonWorkDocsAsync extends AmazonWorkDocs {
     /**
      * <p>
      * Aborts the upload of the specified document version that was previously initiated by
-     * <a>InitiateDocumentVersionUpload</a>. The client should make this call only when it no longer intends or fails to
-     * upload the document version.
+     * <a>InitiateDocumentVersionUpload</a>. The client should make this call only when it no longer intends to upload
+     * the document version, or fails to do so.
      * </p>
      * 
      * @param abortDocumentVersionUploadRequest
@@ -84,8 +84,8 @@ public interface AmazonWorkDocsAsync extends AmazonWorkDocs {
     /**
      * <p>
      * Aborts the upload of the specified document version that was previously initiated by
-     * <a>InitiateDocumentVersionUpload</a>. The client should make this call only when it no longer intends or fails to
-     * upload the document version.
+     * <a>InitiateDocumentVersionUpload</a>. The client should make this call only when it no longer intends to upload
+     * the document version, or fails to do so.
      * </p>
      * 
      * @param abortDocumentVersionUploadRequest
@@ -168,6 +168,68 @@ public interface AmazonWorkDocsAsync extends AmazonWorkDocs {
 
     /**
      * <p>
+     * Adds a new comment to the specified document version.
+     * </p>
+     * 
+     * @param createCommentRequest
+     * @return A Java Future containing the result of the CreateComment operation returned by the service.
+     * @sample AmazonWorkDocsAsync.CreateComment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateComment" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCommentResult> createCommentAsync(CreateCommentRequest createCommentRequest);
+
+    /**
+     * <p>
+     * Adds a new comment to the specified document version.
+     * </p>
+     * 
+     * @param createCommentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateComment operation returned by the service.
+     * @sample AmazonWorkDocsAsyncHandler.CreateComment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateComment" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCommentResult> createCommentAsync(CreateCommentRequest createCommentRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateCommentRequest, CreateCommentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds one or more custom properties to the specified resource (a folder, document, or version).
+     * </p>
+     * 
+     * @param createCustomMetadataRequest
+     * @return A Java Future containing the result of the CreateCustomMetadata operation returned by the service.
+     * @sample AmazonWorkDocsAsync.CreateCustomMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateCustomMetadata" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCustomMetadataResult> createCustomMetadataAsync(CreateCustomMetadataRequest createCustomMetadataRequest);
+
+    /**
+     * <p>
+     * Adds one or more custom properties to the specified resource (a folder, document, or version).
+     * </p>
+     * 
+     * @param createCustomMetadataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateCustomMetadata operation returned by the service.
+     * @sample AmazonWorkDocsAsyncHandler.CreateCustomMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateCustomMetadata" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCustomMetadataResult> createCustomMetadataAsync(CreateCustomMetadataRequest createCustomMetadataRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateCustomMetadataRequest, CreateCustomMetadataResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a folder with the specified name and parent folder.
      * </p>
      * 
@@ -196,6 +258,37 @@ public interface AmazonWorkDocsAsync extends AmazonWorkDocs {
      */
     java.util.concurrent.Future<CreateFolderResult> createFolderAsync(CreateFolderRequest createFolderRequest,
             com.amazonaws.handlers.AsyncHandler<CreateFolderRequest, CreateFolderResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds the specified list of labels to the given resource (a document or folder)
+     * </p>
+     * 
+     * @param createLabelsRequest
+     * @return A Java Future containing the result of the CreateLabels operation returned by the service.
+     * @sample AmazonWorkDocsAsync.CreateLabels
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateLabels" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLabelsResult> createLabelsAsync(CreateLabelsRequest createLabelsRequest);
+
+    /**
+     * <p>
+     * Adds the specified list of labels to the given resource (a document or folder)
+     * </p>
+     * 
+     * @param createLabelsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateLabels operation returned by the service.
+     * @sample AmazonWorkDocsAsyncHandler.CreateLabels
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateLabels" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLabelsResult> createLabelsAsync(CreateLabelsRequest createLabelsRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateLabelsRequest, CreateLabelsResult> asyncHandler);
 
     /**
      * <p>
@@ -308,6 +401,68 @@ public interface AmazonWorkDocsAsync extends AmazonWorkDocs {
 
     /**
      * <p>
+     * Deletes the specified comment from the document version.
+     * </p>
+     * 
+     * @param deleteCommentRequest
+     * @return A Java Future containing the result of the DeleteComment operation returned by the service.
+     * @sample AmazonWorkDocsAsync.DeleteComment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteComment" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCommentResult> deleteCommentAsync(DeleteCommentRequest deleteCommentRequest);
+
+    /**
+     * <p>
+     * Deletes the specified comment from the document version.
+     * </p>
+     * 
+     * @param deleteCommentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteComment operation returned by the service.
+     * @sample AmazonWorkDocsAsyncHandler.DeleteComment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteComment" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCommentResult> deleteCommentAsync(DeleteCommentRequest deleteCommentRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteCommentRequest, DeleteCommentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes custom metadata from the specified resource.
+     * </p>
+     * 
+     * @param deleteCustomMetadataRequest
+     * @return A Java Future containing the result of the DeleteCustomMetadata operation returned by the service.
+     * @sample AmazonWorkDocsAsync.DeleteCustomMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteCustomMetadata" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCustomMetadataResult> deleteCustomMetadataAsync(DeleteCustomMetadataRequest deleteCustomMetadataRequest);
+
+    /**
+     * <p>
+     * Deletes custom metadata from the specified resource.
+     * </p>
+     * 
+     * @param deleteCustomMetadataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteCustomMetadata operation returned by the service.
+     * @sample AmazonWorkDocsAsyncHandler.DeleteCustomMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteCustomMetadata" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCustomMetadataResult> deleteCustomMetadataAsync(DeleteCustomMetadataRequest deleteCustomMetadataRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteCustomMetadataRequest, DeleteCustomMetadataResult> asyncHandler);
+
+    /**
+     * <p>
      * Permanently deletes the specified document and its associated metadata.
      * </p>
      * 
@@ -401,6 +556,37 @@ public interface AmazonWorkDocsAsync extends AmazonWorkDocs {
 
     /**
      * <p>
+     * Deletes the specified list of labels from a resource.
+     * </p>
+     * 
+     * @param deleteLabelsRequest
+     * @return A Java Future containing the result of the DeleteLabels operation returned by the service.
+     * @sample AmazonWorkDocsAsync.DeleteLabels
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteLabels" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLabelsResult> deleteLabelsAsync(DeleteLabelsRequest deleteLabelsRequest);
+
+    /**
+     * <p>
+     * Deletes the specified list of labels from a resource.
+     * </p>
+     * 
+     * @param deleteLabelsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteLabels operation returned by the service.
+     * @sample AmazonWorkDocsAsyncHandler.DeleteLabels
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteLabels" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLabelsResult> deleteLabelsAsync(DeleteLabelsRequest deleteLabelsRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteLabelsRequest, DeleteLabelsResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the specified subscription from the specified organization.
      * </p>
      * 
@@ -467,6 +653,37 @@ public interface AmazonWorkDocsAsync extends AmazonWorkDocs {
 
     /**
      * <p>
+     * List all the comments for the specified document version.
+     * </p>
+     * 
+     * @param describeCommentsRequest
+     * @return A Java Future containing the result of the DescribeComments operation returned by the service.
+     * @sample AmazonWorkDocsAsync.DescribeComments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeComments" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeCommentsResult> describeCommentsAsync(DescribeCommentsRequest describeCommentsRequest);
+
+    /**
+     * <p>
+     * List all the comments for the specified document version.
+     * </p>
+     * 
+     * @param describeCommentsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeComments operation returned by the service.
+     * @sample AmazonWorkDocsAsyncHandler.DescribeComments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeComments" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeCommentsResult> describeCommentsAsync(DescribeCommentsRequest describeCommentsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeCommentsRequest, DescribeCommentsResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves the document versions for the specified document.
      * </p>
      * <p>
@@ -504,7 +721,7 @@ public interface AmazonWorkDocsAsync extends AmazonWorkDocs {
 
     /**
      * <p>
-     * Describes the contents of the specified folder, including its documents and sub-folders.
+     * Describes the contents of the specified folder, including its documents and subfolders.
      * </p>
      * <p>
      * By default, Amazon WorkDocs returns the first 100 active document and folder metadata items. If there are more
@@ -522,7 +739,7 @@ public interface AmazonWorkDocsAsync extends AmazonWorkDocs {
 
     /**
      * <p>
-     * Describes the contents of the specified folder, including its documents and sub-folders.
+     * Describes the contents of the specified folder, including its documents and subfolders.
      * </p>
      * <p>
      * By default, Amazon WorkDocs returns the first 100 active document and folder metadata items. If there are more
@@ -654,7 +871,7 @@ public interface AmazonWorkDocsAsync extends AmazonWorkDocs {
 
     /**
      * <p>
-     * Retrieves the specified document object.
+     * Retrieves details of a document.
      * </p>
      * 
      * @param getDocumentRequest
@@ -667,7 +884,7 @@ public interface AmazonWorkDocsAsync extends AmazonWorkDocs {
 
     /**
      * <p>
-     * Retrieves the specified document object.
+     * Retrieves details of a document.
      * </p>
      * 
      * @param getDocumentRequest
@@ -946,8 +1163,8 @@ public interface AmazonWorkDocsAsync extends AmazonWorkDocs {
 
     /**
      * <p>
-     * Updates the specified attributes of the specified document. The user must have access to both the document and
-     * its parent folder, if applicable.
+     * Updates the specified attributes of a document. The user must have access to both the document and its parent
+     * folder, if applicable.
      * </p>
      * 
      * @param updateDocumentRequest
@@ -960,8 +1177,8 @@ public interface AmazonWorkDocsAsync extends AmazonWorkDocs {
 
     /**
      * <p>
-     * Updates the specified attributes of the specified document. The user must have access to both the document and
-     * its parent folder, if applicable.
+     * Updates the specified attributes of a document. The user must have access to both the document and its parent
+     * folder, if applicable.
      * </p>
      * 
      * @param updateDocumentRequest

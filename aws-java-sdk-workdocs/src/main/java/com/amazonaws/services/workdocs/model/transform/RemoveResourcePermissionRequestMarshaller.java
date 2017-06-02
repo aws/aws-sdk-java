@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class RemoveResourcePermissionRequestMarshaller {
 
+    private static final MarshallingInfo<String> AUTHENTICATIONTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("Authentication").build();
     private static final MarshallingInfo<String> RESOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("ResourceId").build();
     private static final MarshallingInfo<String> PRINCIPALID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
@@ -50,6 +52,7 @@ public class RemoveResourcePermissionRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(removeResourcePermissionRequest.getAuthenticationToken(), AUTHENTICATIONTOKEN_BINDING);
             protocolMarshaller.marshall(removeResourcePermissionRequest.getResourceId(), RESOURCEID_BINDING);
             protocolMarshaller.marshall(removeResourcePermissionRequest.getPrincipalId(), PRINCIPALID_BINDING);
             protocolMarshaller.marshall(removeResourcePermissionRequest.getPrincipalType(), PRINCIPALTYPE_BINDING);

@@ -36,6 +36,8 @@ public class ApplicationUpdateMarshaller {
             .marshallLocationName("OutputUpdates").build();
     private static final MarshallingInfo<List> REFERENCEDATASOURCEUPDATES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReferenceDataSourceUpdates").build();
+    private static final MarshallingInfo<List> CLOUDWATCHLOGGINGOPTIONUPDATES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CloudWatchLoggingOptionUpdates").build();
 
     private static final ApplicationUpdateMarshaller instance = new ApplicationUpdateMarshaller();
 
@@ -57,6 +59,7 @@ public class ApplicationUpdateMarshaller {
             protocolMarshaller.marshall(applicationUpdate.getApplicationCodeUpdate(), APPLICATIONCODEUPDATE_BINDING);
             protocolMarshaller.marshall(applicationUpdate.getOutputUpdates(), OUTPUTUPDATES_BINDING);
             protocolMarshaller.marshall(applicationUpdate.getReferenceDataSourceUpdates(), REFERENCEDATASOURCEUPDATES_BINDING);
+            protocolMarshaller.marshall(applicationUpdate.getCloudWatchLoggingOptionUpdates(), CLOUDWATCHLOGGINGOPTIONUPDATES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

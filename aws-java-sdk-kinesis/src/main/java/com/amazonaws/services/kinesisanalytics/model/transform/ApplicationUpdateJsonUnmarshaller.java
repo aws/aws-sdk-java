@@ -65,6 +65,11 @@ public class ApplicationUpdateJsonUnmarshaller implements Unmarshaller<Applicati
                     applicationUpdate.setReferenceDataSourceUpdates(new ListUnmarshaller<ReferenceDataSourceUpdate>(ReferenceDataSourceUpdateJsonUnmarshaller
                             .getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("CloudWatchLoggingOptionUpdates", targetDepth)) {
+                    context.nextToken();
+                    applicationUpdate.setCloudWatchLoggingOptionUpdates(new ListUnmarshaller<CloudWatchLoggingOptionUpdate>(
+                            CloudWatchLoggingOptionUpdateJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

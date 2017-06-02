@@ -52,6 +52,11 @@ public class GetFolderResultJsonUnmarshaller implements Unmarshaller<GetFolderRe
                     context.nextToken();
                     getFolderResult.setMetadata(FolderMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("CustomMetadata", targetDepth)) {
+                    context.nextToken();
+                    getFolderResult.setCustomMetadata(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

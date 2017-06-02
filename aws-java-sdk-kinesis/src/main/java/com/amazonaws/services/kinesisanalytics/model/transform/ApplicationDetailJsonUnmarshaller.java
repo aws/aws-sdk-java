@@ -87,6 +87,11 @@ public class ApplicationDetailJsonUnmarshaller implements Unmarshaller<Applicati
                     applicationDetail.setReferenceDataSourceDescriptions(new ListUnmarshaller<ReferenceDataSourceDescription>(
                             ReferenceDataSourceDescriptionJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("CloudWatchLoggingOptionDescriptions", targetDepth)) {
+                    context.nextToken();
+                    applicationDetail.setCloudWatchLoggingOptionDescriptions(new ListUnmarshaller<CloudWatchLoggingOptionDescription>(
+                            CloudWatchLoggingOptionDescriptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("ApplicationCode", targetDepth)) {
                     context.nextToken();
                     applicationDetail.setApplicationCode(context.getUnmarshaller(String.class).unmarshall(context));

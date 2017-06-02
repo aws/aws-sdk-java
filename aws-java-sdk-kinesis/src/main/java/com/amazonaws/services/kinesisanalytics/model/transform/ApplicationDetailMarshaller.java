@@ -46,6 +46,8 @@ public class ApplicationDetailMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutputDescriptions").build();
     private static final MarshallingInfo<List> REFERENCEDATASOURCEDESCRIPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReferenceDataSourceDescriptions").build();
+    private static final MarshallingInfo<List> CLOUDWATCHLOGGINGOPTIONDESCRIPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CloudWatchLoggingOptionDescriptions").build();
     private static final MarshallingInfo<String> APPLICATIONCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationCode").build();
     private static final MarshallingInfo<Long> APPLICATIONVERSIONID_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
@@ -76,6 +78,7 @@ public class ApplicationDetailMarshaller {
             protocolMarshaller.marshall(applicationDetail.getInputDescriptions(), INPUTDESCRIPTIONS_BINDING);
             protocolMarshaller.marshall(applicationDetail.getOutputDescriptions(), OUTPUTDESCRIPTIONS_BINDING);
             protocolMarshaller.marshall(applicationDetail.getReferenceDataSourceDescriptions(), REFERENCEDATASOURCEDESCRIPTIONS_BINDING);
+            protocolMarshaller.marshall(applicationDetail.getCloudWatchLoggingOptionDescriptions(), CLOUDWATCHLOGGINGOPTIONDESCRIPTIONS_BINDING);
             protocolMarshaller.marshall(applicationDetail.getApplicationCode(), APPLICATIONCODE_BINDING);
             protocolMarshaller.marshall(applicationDetail.getApplicationVersionId(), APPLICATIONVERSIONID_BINDING);
         } catch (Exception e) {

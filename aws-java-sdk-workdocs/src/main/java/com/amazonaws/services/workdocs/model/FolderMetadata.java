@@ -76,6 +76,16 @@ public class FolderMetadata implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String signature;
+    /**
+     * <p>
+     * List of labels on the folder.
+     * </p>
+     */
+    private java.util.List<String> labels;
+
+    private Long size;
+
+    private Long latestVersionSize;
 
     /**
      * <p>
@@ -431,6 +441,128 @@ public class FolderMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * List of labels on the folder.
+     * </p>
+     * 
+     * @return List of labels on the folder.
+     */
+
+    public java.util.List<String> getLabels() {
+        return labels;
+    }
+
+    /**
+     * <p>
+     * List of labels on the folder.
+     * </p>
+     * 
+     * @param labels
+     *        List of labels on the folder.
+     */
+
+    public void setLabels(java.util.Collection<String> labels) {
+        if (labels == null) {
+            this.labels = null;
+            return;
+        }
+
+        this.labels = new java.util.ArrayList<String>(labels);
+    }
+
+    /**
+     * <p>
+     * List of labels on the folder.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLabels(java.util.Collection)} or {@link #withLabels(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param labels
+     *        List of labels on the folder.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FolderMetadata withLabels(String... labels) {
+        if (this.labels == null) {
+            setLabels(new java.util.ArrayList<String>(labels.length));
+        }
+        for (String ele : labels) {
+            this.labels.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * List of labels on the folder.
+     * </p>
+     * 
+     * @param labels
+     *        List of labels on the folder.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FolderMetadata withLabels(java.util.Collection<String> labels) {
+        setLabels(labels);
+        return this;
+    }
+
+    /**
+     * @param size
+     */
+
+    public void setSize(Long size) {
+        this.size = size;
+    }
+
+    /**
+     * @return
+     */
+
+    public Long getSize() {
+        return this.size;
+    }
+
+    /**
+     * @param size
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FolderMetadata withSize(Long size) {
+        setSize(size);
+        return this;
+    }
+
+    /**
+     * @param latestVersionSize
+     */
+
+    public void setLatestVersionSize(Long latestVersionSize) {
+        this.latestVersionSize = latestVersionSize;
+    }
+
+    /**
+     * @return
+     */
+
+    public Long getLatestVersionSize() {
+        return this.latestVersionSize;
+    }
+
+    /**
+     * @param latestVersionSize
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FolderMetadata withLatestVersionSize(Long latestVersionSize) {
+        setLatestVersionSize(latestVersionSize);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -456,7 +588,13 @@ public class FolderMetadata implements Serializable, Cloneable, StructuredPojo {
         if (getResourceState() != null)
             sb.append("ResourceState: ").append(getResourceState()).append(",");
         if (getSignature() != null)
-            sb.append("Signature: ").append(getSignature());
+            sb.append("Signature: ").append(getSignature()).append(",");
+        if (getLabels() != null)
+            sb.append("Labels: ").append(getLabels()).append(",");
+        if (getSize() != null)
+            sb.append("Size: ").append(getSize()).append(",");
+        if (getLatestVersionSize() != null)
+            sb.append("LatestVersionSize: ").append(getLatestVersionSize());
         sb.append("}");
         return sb.toString();
     }
@@ -503,6 +641,18 @@ public class FolderMetadata implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSignature() != null && other.getSignature().equals(this.getSignature()) == false)
             return false;
+        if (other.getLabels() == null ^ this.getLabels() == null)
+            return false;
+        if (other.getLabels() != null && other.getLabels().equals(this.getLabels()) == false)
+            return false;
+        if (other.getSize() == null ^ this.getSize() == null)
+            return false;
+        if (other.getSize() != null && other.getSize().equals(this.getSize()) == false)
+            return false;
+        if (other.getLatestVersionSize() == null ^ this.getLatestVersionSize() == null)
+            return false;
+        if (other.getLatestVersionSize() != null && other.getLatestVersionSize().equals(this.getLatestVersionSize()) == false)
+            return false;
         return true;
     }
 
@@ -519,6 +669,9 @@ public class FolderMetadata implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getModifiedTimestamp() == null) ? 0 : getModifiedTimestamp().hashCode());
         hashCode = prime * hashCode + ((getResourceState() == null) ? 0 : getResourceState().hashCode());
         hashCode = prime * hashCode + ((getSignature() == null) ? 0 : getSignature().hashCode());
+        hashCode = prime * hashCode + ((getLabels() == null) ? 0 : getLabels().hashCode());
+        hashCode = prime * hashCode + ((getSize() == null) ? 0 : getSize().hashCode());
+        hashCode = prime * hashCode + ((getLatestVersionSize() == null) ? 0 : getLatestVersionSize().hashCode());
         return hashCode;
     }
 

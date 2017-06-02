@@ -29,6 +29,8 @@ public class ActivateUserRequestMarshaller {
 
     private static final MarshallingInfo<String> USERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("UserId").build();
+    private static final MarshallingInfo<String> AUTHENTICATIONTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("Authentication").build();
 
     private static final ActivateUserRequestMarshaller instance = new ActivateUserRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class ActivateUserRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(activateUserRequest.getUserId(), USERID_BINDING);
+            protocolMarshaller.marshall(activateUserRequest.getAuthenticationToken(), AUTHENTICATIONTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

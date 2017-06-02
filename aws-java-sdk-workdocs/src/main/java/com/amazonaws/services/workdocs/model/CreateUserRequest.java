@@ -39,6 +39,12 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String username;
     /**
      * <p>
+     * The email address of the user.
+     * </p>
+     */
+    private String emailAddress;
+    /**
+     * <p>
      * The given name of the user.
      * </p>
      */
@@ -67,6 +73,13 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private StorageRuleType storageRule;
+    /**
+     * <p>
+     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * accessing the API using AWS credentials.
+     * </p>
+     */
+    private String authenticationToken;
 
     /**
      * <p>
@@ -145,6 +158,46 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     public CreateUserRequest withUsername(String username) {
         setUsername(username);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The email address of the user.
+     * </p>
+     * 
+     * @param emailAddress
+     *        The email address of the user.
+     */
+
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
+    }
+
+    /**
+     * <p>
+     * The email address of the user.
+     * </p>
+     * 
+     * @return The email address of the user.
+     */
+
+    public String getEmailAddress() {
+        return this.emailAddress;
+    }
+
+    /**
+     * <p>
+     * The email address of the user.
+     * </p>
+     * 
+     * @param emailAddress
+     *        The email address of the user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateUserRequest withEmailAddress(String emailAddress) {
+        setEmailAddress(emailAddress);
         return this;
     }
 
@@ -349,6 +402,52 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * accessing the API using AWS credentials.
+     * </p>
+     * 
+     * @param authenticationToken
+     *        Amazon WorkDocs authentication token. This field should not be set when using administrative API actions,
+     *        as in accessing the API using AWS credentials.
+     */
+
+    public void setAuthenticationToken(String authenticationToken) {
+        this.authenticationToken = authenticationToken;
+    }
+
+    /**
+     * <p>
+     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * accessing the API using AWS credentials.
+     * </p>
+     * 
+     * @return Amazon WorkDocs authentication token. This field should not be set when using administrative API actions,
+     *         as in accessing the API using AWS credentials.
+     */
+
+    public String getAuthenticationToken() {
+        return this.authenticationToken;
+    }
+
+    /**
+     * <p>
+     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * accessing the API using AWS credentials.
+     * </p>
+     * 
+     * @param authenticationToken
+     *        Amazon WorkDocs authentication token. This field should not be set when using administrative API actions,
+     *        as in accessing the API using AWS credentials.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateUserRequest withAuthenticationToken(String authenticationToken) {
+        setAuthenticationToken(authenticationToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -363,6 +462,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
             sb.append("OrganizationId: ").append(getOrganizationId()).append(",");
         if (getUsername() != null)
             sb.append("Username: ").append(getUsername()).append(",");
+        if (getEmailAddress() != null)
+            sb.append("EmailAddress: ").append(getEmailAddress()).append(",");
         if (getGivenName() != null)
             sb.append("GivenName: ").append(getGivenName()).append(",");
         if (getSurname() != null)
@@ -372,7 +473,9 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getTimeZoneId() != null)
             sb.append("TimeZoneId: ").append(getTimeZoneId()).append(",");
         if (getStorageRule() != null)
-            sb.append("StorageRule: ").append(getStorageRule());
+            sb.append("StorageRule: ").append(getStorageRule()).append(",");
+        if (getAuthenticationToken() != null)
+            sb.append("AuthenticationToken: ").append(getAuthenticationToken());
         sb.append("}");
         return sb.toString();
     }
@@ -395,6 +498,10 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getUsername() != null && other.getUsername().equals(this.getUsername()) == false)
             return false;
+        if (other.getEmailAddress() == null ^ this.getEmailAddress() == null)
+            return false;
+        if (other.getEmailAddress() != null && other.getEmailAddress().equals(this.getEmailAddress()) == false)
+            return false;
         if (other.getGivenName() == null ^ this.getGivenName() == null)
             return false;
         if (other.getGivenName() != null && other.getGivenName().equals(this.getGivenName()) == false)
@@ -415,6 +522,10 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getStorageRule() != null && other.getStorageRule().equals(this.getStorageRule()) == false)
             return false;
+        if (other.getAuthenticationToken() == null ^ this.getAuthenticationToken() == null)
+            return false;
+        if (other.getAuthenticationToken() != null && other.getAuthenticationToken().equals(this.getAuthenticationToken()) == false)
+            return false;
         return true;
     }
 
@@ -425,11 +536,13 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
         hashCode = prime * hashCode + ((getOrganizationId() == null) ? 0 : getOrganizationId().hashCode());
         hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
+        hashCode = prime * hashCode + ((getEmailAddress() == null) ? 0 : getEmailAddress().hashCode());
         hashCode = prime * hashCode + ((getGivenName() == null) ? 0 : getGivenName().hashCode());
         hashCode = prime * hashCode + ((getSurname() == null) ? 0 : getSurname().hashCode());
         hashCode = prime * hashCode + ((getPassword() == null) ? 0 : getPassword().hashCode());
         hashCode = prime * hashCode + ((getTimeZoneId() == null) ? 0 : getTimeZoneId().hashCode());
         hashCode = prime * hashCode + ((getStorageRule() == null) ? 0 : getStorageRule().hashCode());
+        hashCode = prime * hashCode + ((getAuthenticationToken() == null) ? 0 : getAuthenticationToken().hashCode());
         return hashCode;
     }
 

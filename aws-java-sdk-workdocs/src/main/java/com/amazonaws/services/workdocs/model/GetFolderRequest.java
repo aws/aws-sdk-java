@@ -27,10 +27,69 @@ public class GetFolderRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
+     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * accessing the API using AWS credentials.
+     * </p>
+     */
+    private String authenticationToken;
+    /**
+     * <p>
      * The ID of the folder.
      * </p>
      */
     private String folderId;
+    /**
+     * <p>
+     * Set to TRUE to include custom metadata in the response.
+     * </p>
+     */
+    private Boolean includeCustomMetadata;
+
+    /**
+     * <p>
+     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * accessing the API using AWS credentials.
+     * </p>
+     * 
+     * @param authenticationToken
+     *        Amazon WorkDocs authentication token. This field should not be set when using administrative API actions,
+     *        as in accessing the API using AWS credentials.
+     */
+
+    public void setAuthenticationToken(String authenticationToken) {
+        this.authenticationToken = authenticationToken;
+    }
+
+    /**
+     * <p>
+     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * accessing the API using AWS credentials.
+     * </p>
+     * 
+     * @return Amazon WorkDocs authentication token. This field should not be set when using administrative API actions,
+     *         as in accessing the API using AWS credentials.
+     */
+
+    public String getAuthenticationToken() {
+        return this.authenticationToken;
+    }
+
+    /**
+     * <p>
+     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * accessing the API using AWS credentials.
+     * </p>
+     * 
+     * @param authenticationToken
+     *        Amazon WorkDocs authentication token. This field should not be set when using administrative API actions,
+     *        as in accessing the API using AWS credentials.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetFolderRequest withAuthenticationToken(String authenticationToken) {
+        setAuthenticationToken(authenticationToken);
+        return this;
+    }
 
     /**
      * <p>
@@ -73,6 +132,58 @@ public class GetFolderRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * Set to TRUE to include custom metadata in the response.
+     * </p>
+     * 
+     * @param includeCustomMetadata
+     *        Set to TRUE to include custom metadata in the response.
+     */
+
+    public void setIncludeCustomMetadata(Boolean includeCustomMetadata) {
+        this.includeCustomMetadata = includeCustomMetadata;
+    }
+
+    /**
+     * <p>
+     * Set to TRUE to include custom metadata in the response.
+     * </p>
+     * 
+     * @return Set to TRUE to include custom metadata in the response.
+     */
+
+    public Boolean getIncludeCustomMetadata() {
+        return this.includeCustomMetadata;
+    }
+
+    /**
+     * <p>
+     * Set to TRUE to include custom metadata in the response.
+     * </p>
+     * 
+     * @param includeCustomMetadata
+     *        Set to TRUE to include custom metadata in the response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetFolderRequest withIncludeCustomMetadata(Boolean includeCustomMetadata) {
+        setIncludeCustomMetadata(includeCustomMetadata);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set to TRUE to include custom metadata in the response.
+     * </p>
+     * 
+     * @return Set to TRUE to include custom metadata in the response.
+     */
+
+    public Boolean isIncludeCustomMetadata() {
+        return this.includeCustomMetadata;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -83,8 +194,12 @@ public class GetFolderRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAuthenticationToken() != null)
+            sb.append("AuthenticationToken: ").append(getAuthenticationToken()).append(",");
         if (getFolderId() != null)
-            sb.append("FolderId: ").append(getFolderId());
+            sb.append("FolderId: ").append(getFolderId()).append(",");
+        if (getIncludeCustomMetadata() != null)
+            sb.append("IncludeCustomMetadata: ").append(getIncludeCustomMetadata());
         sb.append("}");
         return sb.toString();
     }
@@ -99,9 +214,17 @@ public class GetFolderRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (obj instanceof GetFolderRequest == false)
             return false;
         GetFolderRequest other = (GetFolderRequest) obj;
+        if (other.getAuthenticationToken() == null ^ this.getAuthenticationToken() == null)
+            return false;
+        if (other.getAuthenticationToken() != null && other.getAuthenticationToken().equals(this.getAuthenticationToken()) == false)
+            return false;
         if (other.getFolderId() == null ^ this.getFolderId() == null)
             return false;
         if (other.getFolderId() != null && other.getFolderId().equals(this.getFolderId()) == false)
+            return false;
+        if (other.getIncludeCustomMetadata() == null ^ this.getIncludeCustomMetadata() == null)
+            return false;
+        if (other.getIncludeCustomMetadata() != null && other.getIncludeCustomMetadata().equals(this.getIncludeCustomMetadata()) == false)
             return false;
         return true;
     }
@@ -111,7 +234,9 @@ public class GetFolderRequest extends com.amazonaws.AmazonWebServiceRequest impl
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAuthenticationToken() == null) ? 0 : getAuthenticationToken().hashCode());
         hashCode = prime * hashCode + ((getFolderId() == null) ? 0 : getFolderId().hashCode());
+        hashCode = prime * hashCode + ((getIncludeCustomMetadata() == null) ? 0 : getIncludeCustomMetadata().hashCode());
         return hashCode;
     }
 

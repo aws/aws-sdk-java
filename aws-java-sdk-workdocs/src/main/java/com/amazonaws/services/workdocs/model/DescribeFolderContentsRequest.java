@@ -27,6 +27,13 @@ public class DescribeFolderContentsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
+     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * accessing the API using AWS credentials.
+     * </p>
+     */
+    private String authenticationToken;
+    /**
+     * <p>
      * The ID of the folder.
      * </p>
      */
@@ -51,7 +58,7 @@ public class DescribeFolderContentsRequest extends com.amazonaws.AmazonWebServic
     private Integer limit;
     /**
      * <p>
-     * The marker for the next set of results. (You received this marker from a previous call.)
+     * The marker for the next set of results. This marker was received from a previous call.
      * </p>
      */
     private String marker;
@@ -67,6 +74,52 @@ public class DescribeFolderContentsRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String include;
+
+    /**
+     * <p>
+     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * accessing the API using AWS credentials.
+     * </p>
+     * 
+     * @param authenticationToken
+     *        Amazon WorkDocs authentication token. This field should not be set when using administrative API actions,
+     *        as in accessing the API using AWS credentials.
+     */
+
+    public void setAuthenticationToken(String authenticationToken) {
+        this.authenticationToken = authenticationToken;
+    }
+
+    /**
+     * <p>
+     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * accessing the API using AWS credentials.
+     * </p>
+     * 
+     * @return Amazon WorkDocs authentication token. This field should not be set when using administrative API actions,
+     *         as in accessing the API using AWS credentials.
+     */
+
+    public String getAuthenticationToken() {
+        return this.authenticationToken;
+    }
+
+    /**
+     * <p>
+     * Amazon WorkDocs authentication token. This field should not be set when using administrative API actions, as in
+     * accessing the API using AWS credentials.
+     * </p>
+     * 
+     * @param authenticationToken
+     *        Amazon WorkDocs authentication token. This field should not be set when using administrative API actions,
+     *        as in accessing the API using AWS credentials.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeFolderContentsRequest withAuthenticationToken(String authenticationToken) {
+        setAuthenticationToken(authenticationToken);
+        return this;
+    }
 
     /**
      * <p>
@@ -296,11 +349,11 @@ public class DescribeFolderContentsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The marker for the next set of results. (You received this marker from a previous call.)
+     * The marker for the next set of results. This marker was received from a previous call.
      * </p>
      * 
      * @param marker
-     *        The marker for the next set of results. (You received this marker from a previous call.)
+     *        The marker for the next set of results. This marker was received from a previous call.
      */
 
     public void setMarker(String marker) {
@@ -309,10 +362,10 @@ public class DescribeFolderContentsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The marker for the next set of results. (You received this marker from a previous call.)
+     * The marker for the next set of results. This marker was received from a previous call.
      * </p>
      * 
-     * @return The marker for the next set of results. (You received this marker from a previous call.)
+     * @return The marker for the next set of results. This marker was received from a previous call.
      */
 
     public String getMarker() {
@@ -321,11 +374,11 @@ public class DescribeFolderContentsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The marker for the next set of results. (You received this marker from a previous call.)
+     * The marker for the next set of results. This marker was received from a previous call.
      * </p>
      * 
      * @param marker
-     *        The marker for the next set of results. (You received this marker from a previous call.)
+     *        The marker for the next set of results. This marker was received from a previous call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -458,6 +511,8 @@ public class DescribeFolderContentsRequest extends com.amazonaws.AmazonWebServic
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAuthenticationToken() != null)
+            sb.append("AuthenticationToken: ").append(getAuthenticationToken()).append(",");
         if (getFolderId() != null)
             sb.append("FolderId: ").append(getFolderId()).append(",");
         if (getSort() != null)
@@ -486,6 +541,10 @@ public class DescribeFolderContentsRequest extends com.amazonaws.AmazonWebServic
         if (obj instanceof DescribeFolderContentsRequest == false)
             return false;
         DescribeFolderContentsRequest other = (DescribeFolderContentsRequest) obj;
+        if (other.getAuthenticationToken() == null ^ this.getAuthenticationToken() == null)
+            return false;
+        if (other.getAuthenticationToken() != null && other.getAuthenticationToken().equals(this.getAuthenticationToken()) == false)
+            return false;
         if (other.getFolderId() == null ^ this.getFolderId() == null)
             return false;
         if (other.getFolderId() != null && other.getFolderId().equals(this.getFolderId()) == false)
@@ -522,6 +581,7 @@ public class DescribeFolderContentsRequest extends com.amazonaws.AmazonWebServic
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAuthenticationToken() == null) ? 0 : getAuthenticationToken().hashCode());
         hashCode = prime * hashCode + ((getFolderId() == null) ? 0 : getFolderId().hashCode());
         hashCode = prime * hashCode + ((getSort() == null) ? 0 : getSort().hashCode());
         hashCode = prime * hashCode + ((getOrder() == null) ? 0 : getOrder().hashCode());

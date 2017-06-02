@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.workdocs.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -41,6 +42,8 @@ public class DocumentMetadataMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LatestVersionMetadata").build();
     private static final MarshallingInfo<String> RESOURCESTATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceState").build();
+    private static final MarshallingInfo<List> LABELS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Labels").build();
 
     private static final DocumentMetadataMarshaller instance = new DocumentMetadataMarshaller();
 
@@ -65,6 +68,7 @@ public class DocumentMetadataMarshaller {
             protocolMarshaller.marshall(documentMetadata.getModifiedTimestamp(), MODIFIEDTIMESTAMP_BINDING);
             protocolMarshaller.marshall(documentMetadata.getLatestVersionMetadata(), LATESTVERSIONMETADATA_BINDING);
             protocolMarshaller.marshall(documentMetadata.getResourceState(), RESOURCESTATE_BINDING);
+            protocolMarshaller.marshall(documentMetadata.getLabels(), LABELS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
