@@ -3473,7 +3473,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
             if ((signer instanceof AWSS3V4Signer) && bucketRegionShouldBeCached(request)) {
 
-                String region = bucketRegionCache.get(bucketName);
+                String region = fetchRegionFromCache(bucketName);
                 if (region != null) {
                      // If cache contains the region for the bucket, create an endpoint for the region and
                      // update the request with that endpoint.
