@@ -221,7 +221,11 @@ public interface AWSIot {
      * Creates an X.509 certificate using the specified certificate signing request.
      * </p>
      * <p>
-     * <b>Note</b> Reusing the same certificate signing request (CSR) results in a distinct certificate.
+     * <b>Note:</b> The CSR must include a public key that is either an RSA key with a length of at least 2048 bits or
+     * an ECC key from NIST P-256 or NIST P-384 curves.
+     * </p>
+     * <p>
+     * <b>Note:</b> Reusing the same certificate signing request (CSR) results in a distinct certificate.
      * </p>
      * <p>
      * You can create multiple certificates in a batch by creating a directory, copying multiple .csr files into that
@@ -1308,9 +1312,9 @@ public interface AWSIot {
      * <p>
      * Registers a CA certificate with AWS IoT. This CA certificate can then be used to sign device certificates, which
      * can be then registered with AWS IoT. You can register up to 10 CA certificates per AWS account that have the same
-     * subject field and public key. This enables you to have up to 10 certificate authorities sign your device
-     * certificates. If you have more than one CA certificate registered, make sure you pass the CA certificate when you
-     * register your device certificates with the RegisterCertificate API.
+     * subject field. This enables you to have up to 10 certificate authorities sign your device certificates. If you
+     * have more than one CA certificate registered, make sure you pass the CA certificate when you register your device
+     * certificates with the RegisterCertificate API.
      * </p>
      * 
      * @param registerCACertificateRequest

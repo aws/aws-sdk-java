@@ -117,6 +117,10 @@ public class S3ErrorResponseHandler implements
             exceptionBuilder.setErrorResponseXml(content);
             exceptionBuilder.setStatusCode(httpResponse.getStatusCode());
             exceptionBuilder.setCloudFrontId(httpResponse.getHeaders().get(Headers.CLOUD_FRONT_ID));
+            String bucketRegion = httpResponse.getHeader(Headers.S3_BUCKET_REGION);
+            if (bucketRegion != null) {
+                exceptionBuilder.addAdditionalDetail(Headers.S3_BUCKET_REGION, bucketRegion);
+            }
 
             boolean hasErrorTagVisited = false;
             while (reader.hasNext()) {

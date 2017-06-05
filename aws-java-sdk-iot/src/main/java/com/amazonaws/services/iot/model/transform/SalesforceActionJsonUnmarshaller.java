@@ -10,13 +10,13 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.appstream.model.transform;
+package com.amazonaws.services.iot.model.transform;
 
 import java.math.*;
 
 import javax.annotation.Generated;
 
-import com.amazonaws.services.appstream.model.*;
+import com.amazonaws.services.iot.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
 import com.amazonaws.transform.*;
 
@@ -24,13 +24,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * VpcConfig JSON Unmarshaller
+ * SalesforceAction JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class VpcConfigJsonUnmarshaller implements Unmarshaller<VpcConfig, JsonUnmarshallerContext> {
+public class SalesforceActionJsonUnmarshaller implements Unmarshaller<SalesforceAction, JsonUnmarshallerContext> {
 
-    public VpcConfig unmarshall(JsonUnmarshallerContext context) throws Exception {
-        VpcConfig vpcConfig = new VpcConfig();
+    public SalesforceAction unmarshall(JsonUnmarshallerContext context) throws Exception {
+        SalesforceAction salesforceAction = new SalesforceAction();
 
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
@@ -48,13 +48,13 @@ public class VpcConfigJsonUnmarshaller implements Unmarshaller<VpcConfig, JsonUn
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("SubnetIds", targetDepth)) {
+                if (context.testExpression("token", targetDepth)) {
                     context.nextToken();
-                    vpcConfig.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    salesforceAction.setToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("SecurityGroupIds", targetDepth)) {
+                if (context.testExpression("url", targetDepth)) {
                     context.nextToken();
-                    vpcConfig.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    salesforceAction.setUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
@@ -65,14 +65,14 @@ public class VpcConfigJsonUnmarshaller implements Unmarshaller<VpcConfig, JsonUn
             token = context.nextToken();
         }
 
-        return vpcConfig;
+        return salesforceAction;
     }
 
-    private static VpcConfigJsonUnmarshaller instance;
+    private static SalesforceActionJsonUnmarshaller instance;
 
-    public static VpcConfigJsonUnmarshaller getInstance() {
+    public static SalesforceActionJsonUnmarshaller getInstance() {
         if (instance == null)
-            instance = new VpcConfigJsonUnmarshaller();
+            instance = new SalesforceActionJsonUnmarshaller();
         return instance;
     }
 }

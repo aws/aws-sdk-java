@@ -42,7 +42,7 @@ public class CreateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The attribute payload, which consists of up to three name/value pairs in a JSON document. For example:
      * </p>
      * <p>
-     * <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
+     * <code>{\"attributes\":{\"string1\":\"string2\"}}</code>
      * </p>
      */
     private AttributePayload attributePayload;
@@ -132,13 +132,13 @@ public class CreateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The attribute payload, which consists of up to three name/value pairs in a JSON document. For example:
      * </p>
      * <p>
-     * <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
+     * <code>{\"attributes\":{\"string1\":\"string2\"}}</code>
      * </p>
      * 
      * @param attributePayload
      *        The attribute payload, which consists of up to three name/value pairs in a JSON document. For example:</p>
      *        <p>
-     *        <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
+     *        <code>{\"attributes\":{\"string1\":\"string2\"}}</code>
      */
 
     public void setAttributePayload(AttributePayload attributePayload) {
@@ -150,13 +150,13 @@ public class CreateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The attribute payload, which consists of up to three name/value pairs in a JSON document. For example:
      * </p>
      * <p>
-     * <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
+     * <code>{\"attributes\":{\"string1\":\"string2\"}}</code>
      * </p>
      * 
      * @return The attribute payload, which consists of up to three name/value pairs in a JSON document. For
      *         example:</p>
      *         <p>
-     *         <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
+     *         <code>{\"attributes\":{\"string1\":\"string2\"}}</code>
      */
 
     public AttributePayload getAttributePayload() {
@@ -168,13 +168,13 @@ public class CreateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The attribute payload, which consists of up to three name/value pairs in a JSON document. For example:
      * </p>
      * <p>
-     * <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
+     * <code>{\"attributes\":{\"string1\":\"string2\"}}</code>
      * </p>
      * 
      * @param attributePayload
      *        The attribute payload, which consists of up to three name/value pairs in a JSON document. For example:</p>
      *        <p>
-     *        <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
+     *        <code>{\"attributes\":{\"string1\":\"string2\"}}</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

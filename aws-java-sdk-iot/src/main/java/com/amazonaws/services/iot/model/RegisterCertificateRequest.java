@@ -44,7 +44,11 @@ public class RegisterCertificateRequest extends com.amazonaws.AmazonWebServiceRe
      */
     @Deprecated
     private Boolean setAsActive;
-
+    /**
+     * <p>
+     * The status of the register certificate request.
+     * </p>
+     */
     private String status;
 
     /**
@@ -180,7 +184,12 @@ public class RegisterCertificateRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The status of the register certificate request.
+     * </p>
+     * 
      * @param status
+     *        The status of the register certificate request.
      * @see CertificateStatus
      */
 
@@ -189,7 +198,11 @@ public class RegisterCertificateRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @return
+     * <p>
+     * The status of the register certificate request.
+     * </p>
+     * 
+     * @return The status of the register certificate request.
      * @see CertificateStatus
      */
 
@@ -198,7 +211,12 @@ public class RegisterCertificateRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The status of the register certificate request.
+     * </p>
+     * 
      * @param status
+     *        The status of the register certificate request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CertificateStatus
      */
@@ -209,7 +227,12 @@ public class RegisterCertificateRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The status of the register certificate request.
+     * </p>
+     * 
      * @param status
+     *        The status of the register certificate request.
      * @see CertificateStatus
      */
 
@@ -218,7 +241,12 @@ public class RegisterCertificateRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The status of the register certificate request.
+     * </p>
+     * 
      * @param status
+     *        The status of the register certificate request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CertificateStatus
      */

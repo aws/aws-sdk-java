@@ -37,7 +37,12 @@ public class ThingTypeDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private ThingTypeProperties thingTypeProperties;
-
+    /**
+     * <p>
+     * The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a
+     * value indicating whether the thing type is deprecated, and a date and time when it was deprecated.
+     * </p>
+     */
     private ThingTypeMetadata thingTypeMetadata;
 
     /**
@@ -121,7 +126,14 @@ public class ThingTypeDefinition implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a
+     * value indicating whether the thing type is deprecated, and a date and time when it was deprecated.
+     * </p>
+     * 
      * @param thingTypeMetadata
+     *        The ThingTypeMetadata contains additional information about the thing type including: creation date and
+     *        time, a value indicating whether the thing type is deprecated, and a date and time when it was deprecated.
      */
 
     public void setThingTypeMetadata(ThingTypeMetadata thingTypeMetadata) {
@@ -129,7 +141,14 @@ public class ThingTypeDefinition implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a
+     * value indicating whether the thing type is deprecated, and a date and time when it was deprecated.
+     * </p>
+     * 
+     * @return The ThingTypeMetadata contains additional information about the thing type including: creation date and
+     *         time, a value indicating whether the thing type is deprecated, and a date and time when it was
+     *         deprecated.
      */
 
     public ThingTypeMetadata getThingTypeMetadata() {
@@ -137,7 +156,14 @@ public class ThingTypeDefinition implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a
+     * value indicating whether the thing type is deprecated, and a date and time when it was deprecated.
+     * </p>
+     * 
      * @param thingTypeMetadata
+     *        The ThingTypeMetadata contains additional information about the thing type including: creation date and
+     *        time, a value indicating whether the thing type is deprecated, and a date and time when it was deprecated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

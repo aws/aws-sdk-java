@@ -1225,8 +1225,6 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *         The specified resource is in use.
      * @throws InvalidRoleException
      *         The specified role is invalid.
-     * @throws ResourceNotFoundException
-     *         The specified resource was not found.
      * @throws InvalidParameterCombinationException
      *         Indicates an incorrect combination of parameters, or a missing parameter.
      * @throws LimitExceededException

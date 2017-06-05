@@ -75,6 +75,7 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Delete the VPC association for the specified fleet.
      * </p>
      */
+    @Deprecated
     private Boolean deleteVpcConfig;
     /**
      * <p>
@@ -94,6 +95,12 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private Boolean enableDefaultInternetAccess;
+    /**
+     * <p>
+     * Fleet attributes to be deleted.
+     * </p>
+     */
+    private java.util.List<String> attributesToDelete;
 
     /**
      * <p>
@@ -404,7 +411,7 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param deleteVpcConfig
      *        Delete the VPC association for the specified fleet.
      */
-
+    @Deprecated
     public void setDeleteVpcConfig(Boolean deleteVpcConfig) {
         this.deleteVpcConfig = deleteVpcConfig;
     }
@@ -416,7 +423,7 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @return Delete the VPC association for the specified fleet.
      */
-
+    @Deprecated
     public Boolean getDeleteVpcConfig() {
         return this.deleteVpcConfig;
     }
@@ -430,7 +437,7 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        Delete the VPC association for the specified fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public UpdateFleetRequest withDeleteVpcConfig(Boolean deleteVpcConfig) {
         setDeleteVpcConfig(deleteVpcConfig);
         return this;
@@ -443,7 +450,7 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @return Delete the VPC association for the specified fleet.
      */
-
+    @Deprecated
     public Boolean isDeleteVpcConfig() {
         return this.deleteVpcConfig;
     }
@@ -581,6 +588,104 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * Fleet attributes to be deleted.
+     * </p>
+     * 
+     * @return Fleet attributes to be deleted.
+     * @see FleetAttribute
+     */
+
+    public java.util.List<String> getAttributesToDelete() {
+        return attributesToDelete;
+    }
+
+    /**
+     * <p>
+     * Fleet attributes to be deleted.
+     * </p>
+     * 
+     * @param attributesToDelete
+     *        Fleet attributes to be deleted.
+     * @see FleetAttribute
+     */
+
+    public void setAttributesToDelete(java.util.Collection<String> attributesToDelete) {
+        if (attributesToDelete == null) {
+            this.attributesToDelete = null;
+            return;
+        }
+
+        this.attributesToDelete = new java.util.ArrayList<String>(attributesToDelete);
+    }
+
+    /**
+     * <p>
+     * Fleet attributes to be deleted.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAttributesToDelete(java.util.Collection)} or {@link #withAttributesToDelete(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param attributesToDelete
+     *        Fleet attributes to be deleted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FleetAttribute
+     */
+
+    public UpdateFleetRequest withAttributesToDelete(String... attributesToDelete) {
+        if (this.attributesToDelete == null) {
+            setAttributesToDelete(new java.util.ArrayList<String>(attributesToDelete.length));
+        }
+        for (String ele : attributesToDelete) {
+            this.attributesToDelete.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Fleet attributes to be deleted.
+     * </p>
+     * 
+     * @param attributesToDelete
+     *        Fleet attributes to be deleted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FleetAttribute
+     */
+
+    public UpdateFleetRequest withAttributesToDelete(java.util.Collection<String> attributesToDelete) {
+        setAttributesToDelete(attributesToDelete);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Fleet attributes to be deleted.
+     * </p>
+     * 
+     * @param attributesToDelete
+     *        Fleet attributes to be deleted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FleetAttribute
+     */
+
+    public UpdateFleetRequest withAttributesToDelete(FleetAttribute... attributesToDelete) {
+        java.util.ArrayList<String> attributesToDeleteCopy = new java.util.ArrayList<String>(attributesToDelete.length);
+        for (FleetAttribute value : attributesToDelete) {
+            attributesToDeleteCopy.add(value.toString());
+        }
+        if (getAttributesToDelete() == null) {
+            setAttributesToDelete(attributesToDeleteCopy);
+        } else {
+            getAttributesToDelete().addAll(attributesToDeleteCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -612,7 +717,9 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getDisplayName() != null)
             sb.append("DisplayName: ").append(getDisplayName()).append(",");
         if (getEnableDefaultInternetAccess() != null)
-            sb.append("EnableDefaultInternetAccess: ").append(getEnableDefaultInternetAccess());
+            sb.append("EnableDefaultInternetAccess: ").append(getEnableDefaultInternetAccess()).append(",");
+        if (getAttributesToDelete() != null)
+            sb.append("AttributesToDelete: ").append(getAttributesToDelete());
         sb.append("}");
         return sb.toString();
     }
@@ -671,6 +778,10 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getEnableDefaultInternetAccess() != null && other.getEnableDefaultInternetAccess().equals(this.getEnableDefaultInternetAccess()) == false)
             return false;
+        if (other.getAttributesToDelete() == null ^ this.getAttributesToDelete() == null)
+            return false;
+        if (other.getAttributesToDelete() != null && other.getAttributesToDelete().equals(this.getAttributesToDelete()) == false)
+            return false;
         return true;
     }
 
@@ -690,6 +801,7 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getEnableDefaultInternetAccess() == null) ? 0 : getEnableDefaultInternetAccess().hashCode());
+        hashCode = prime * hashCode + ((getAttributesToDelete() == null) ? 0 : getAttributesToDelete().hashCode());
         return hashCode;
     }
 

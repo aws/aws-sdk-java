@@ -42,7 +42,8 @@ public class SnsAction implements Serializable, Cloneable, StructuredPojo {
      * The message format of the message to publish. Optional. Accepted values are "JSON" and "RAW". The default value
      * of the attribute is "RAW". SNS uses this setting to determine if the payload should be parsed and relevant
      * platform-specific bits of the payload should be extracted. To read more about SNS message formats, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/json-formats.html"></a> refer to their official documentation.
+     * href="http://docs.aws.amazon.com/sns/latest/dg/json-formats.html"
+     * >http://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a> refer to their official documentation.
      * </p>
      */
     private String messageFormat;
@@ -132,15 +133,17 @@ public class SnsAction implements Serializable, Cloneable, StructuredPojo {
      * The message format of the message to publish. Optional. Accepted values are "JSON" and "RAW". The default value
      * of the attribute is "RAW". SNS uses this setting to determine if the payload should be parsed and relevant
      * platform-specific bits of the payload should be extracted. To read more about SNS message formats, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/json-formats.html"></a> refer to their official documentation.
+     * href="http://docs.aws.amazon.com/sns/latest/dg/json-formats.html"
+     * >http://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a> refer to their official documentation.
      * </p>
      * 
      * @param messageFormat
      *        The message format of the message to publish. Optional. Accepted values are "JSON" and "RAW". The default
      *        value of the attribute is "RAW". SNS uses this setting to determine if the payload should be parsed and
      *        relevant platform-specific bits of the payload should be extracted. To read more about SNS message
-     *        formats, see <a href="http://docs.aws.amazon.com/sns/latest/dg/json-formats.html"></a> refer to their
-     *        official documentation.
+     *        formats, see <a
+     *        href="http://docs.aws.amazon.com/sns/latest/dg/json-formats.html">http://docs.aws.amazon.com
+     *        /sns/latest/dg/json-formats.html</a> refer to their official documentation.
      * @see MessageFormat
      */
 
@@ -153,14 +156,16 @@ public class SnsAction implements Serializable, Cloneable, StructuredPojo {
      * The message format of the message to publish. Optional. Accepted values are "JSON" and "RAW". The default value
      * of the attribute is "RAW". SNS uses this setting to determine if the payload should be parsed and relevant
      * platform-specific bits of the payload should be extracted. To read more about SNS message formats, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/json-formats.html"></a> refer to their official documentation.
+     * href="http://docs.aws.amazon.com/sns/latest/dg/json-formats.html"
+     * >http://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a> refer to their official documentation.
      * </p>
      * 
      * @return The message format of the message to publish. Optional. Accepted values are "JSON" and "RAW". The default
      *         value of the attribute is "RAW". SNS uses this setting to determine if the payload should be parsed and
      *         relevant platform-specific bits of the payload should be extracted. To read more about SNS message
-     *         formats, see <a href="http://docs.aws.amazon.com/sns/latest/dg/json-formats.html"></a> refer to their
-     *         official documentation.
+     *         formats, see <a
+     *         href="http://docs.aws.amazon.com/sns/latest/dg/json-formats.html">http://docs.aws.amazon.com
+     *         /sns/latest/dg/json-formats.html</a> refer to their official documentation.
      * @see MessageFormat
      */
 
@@ -173,15 +178,17 @@ public class SnsAction implements Serializable, Cloneable, StructuredPojo {
      * The message format of the message to publish. Optional. Accepted values are "JSON" and "RAW". The default value
      * of the attribute is "RAW". SNS uses this setting to determine if the payload should be parsed and relevant
      * platform-specific bits of the payload should be extracted. To read more about SNS message formats, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/json-formats.html"></a> refer to their official documentation.
+     * href="http://docs.aws.amazon.com/sns/latest/dg/json-formats.html"
+     * >http://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a> refer to their official documentation.
      * </p>
      * 
      * @param messageFormat
      *        The message format of the message to publish. Optional. Accepted values are "JSON" and "RAW". The default
      *        value of the attribute is "RAW". SNS uses this setting to determine if the payload should be parsed and
      *        relevant platform-specific bits of the payload should be extracted. To read more about SNS message
-     *        formats, see <a href="http://docs.aws.amazon.com/sns/latest/dg/json-formats.html"></a> refer to their
-     *        official documentation.
+     *        formats, see <a
+     *        href="http://docs.aws.amazon.com/sns/latest/dg/json-formats.html">http://docs.aws.amazon.com
+     *        /sns/latest/dg/json-formats.html</a> refer to their official documentation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MessageFormat
      */
@@ -196,15 +203,17 @@ public class SnsAction implements Serializable, Cloneable, StructuredPojo {
      * The message format of the message to publish. Optional. Accepted values are "JSON" and "RAW". The default value
      * of the attribute is "RAW". SNS uses this setting to determine if the payload should be parsed and relevant
      * platform-specific bits of the payload should be extracted. To read more about SNS message formats, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/json-formats.html"></a> refer to their official documentation.
+     * href="http://docs.aws.amazon.com/sns/latest/dg/json-formats.html"
+     * >http://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a> refer to their official documentation.
      * </p>
      * 
      * @param messageFormat
      *        The message format of the message to publish. Optional. Accepted values are "JSON" and "RAW". The default
      *        value of the attribute is "RAW". SNS uses this setting to determine if the payload should be parsed and
      *        relevant platform-specific bits of the payload should be extracted. To read more about SNS message
-     *        formats, see <a href="http://docs.aws.amazon.com/sns/latest/dg/json-formats.html"></a> refer to their
-     *        official documentation.
+     *        formats, see <a
+     *        href="http://docs.aws.amazon.com/sns/latest/dg/json-formats.html">http://docs.aws.amazon.com
+     *        /sns/latest/dg/json-formats.html</a> refer to their official documentation.
      * @see MessageFormat
      */
 
@@ -217,15 +226,17 @@ public class SnsAction implements Serializable, Cloneable, StructuredPojo {
      * The message format of the message to publish. Optional. Accepted values are "JSON" and "RAW". The default value
      * of the attribute is "RAW". SNS uses this setting to determine if the payload should be parsed and relevant
      * platform-specific bits of the payload should be extracted. To read more about SNS message formats, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/json-formats.html"></a> refer to their official documentation.
+     * href="http://docs.aws.amazon.com/sns/latest/dg/json-formats.html"
+     * >http://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a> refer to their official documentation.
      * </p>
      * 
      * @param messageFormat
      *        The message format of the message to publish. Optional. Accepted values are "JSON" and "RAW". The default
      *        value of the attribute is "RAW". SNS uses this setting to determine if the payload should be parsed and
      *        relevant platform-specific bits of the payload should be extracted. To read more about SNS message
-     *        formats, see <a href="http://docs.aws.amazon.com/sns/latest/dg/json-formats.html"></a> refer to their
-     *        official documentation.
+     *        formats, see <a
+     *        href="http://docs.aws.amazon.com/sns/latest/dg/json-formats.html">http://docs.aws.amazon.com
+     *        /sns/latest/dg/json-formats.html</a> refer to their official documentation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MessageFormat
      */

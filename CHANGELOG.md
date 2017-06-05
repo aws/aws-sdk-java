@@ -1,3 +1,20 @@
+# __1.11.141__ __2017-06-05__
+## __AWS IoT__
+  - ### Features
+    -  Added Salesforce action to IoT Rules Engine.
+
+## __Amazon AppStream__
+  - ### Features
+    - AppStream 2.0 Custom Security Groups allows you to easily control what network resources your streaming instances and images have access to. You can assign up to 5 security groups per Fleet to control the inbound and outbound network access to your streaming instances to specific IP ranges, network protocols, or ports.
+
+## __Amazon S3__
+  - ### Bugfixes
+    - Fix a bug where a bucket's region is not marshalled from a 301 error response if it includes a body. Fixes [#1151](https://github.com/aws/aws-sdk-java/issues/1151).
+
+## __Auto Scaling__
+  - ### Features
+    - Autoscaling resource model update.
+
 # __1.11.140__ __2017-06-02__
 ## __Amazon Kinesis Analytics__
   - ### Features
@@ -22,7 +39,7 @@
 
 ## __Amazon Lex Model Building Service__
   - ### Features
-    - Updated documentation and added examples for Amazon Lex Runtime Service.
+    - Updated documentation and added examples for Amazon Lex Model Building Service.
 
 ## __Elastic Load Balancing__
   - ### Features

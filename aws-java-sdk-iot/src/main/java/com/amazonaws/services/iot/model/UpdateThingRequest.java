@@ -42,7 +42,7 @@ public class UpdateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
      * A list of thing attributes, a JSON string containing name-value pairs. For example:
      * </p>
      * <p>
-     * <code>{\"attributes\":{\"name1\":\"value2\"}})</code>
+     * <code>{\"attributes\":{\"name1\":\"value2\"}}</code>
      * </p>
      * <p>
      * This data is used to add new attributes or update existing attributes.
@@ -149,7 +149,7 @@ public class UpdateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
      * A list of thing attributes, a JSON string containing name-value pairs. For example:
      * </p>
      * <p>
-     * <code>{\"attributes\":{\"name1\":\"value2\"}})</code>
+     * <code>{\"attributes\":{\"name1\":\"value2\"}}</code>
      * </p>
      * <p>
      * This data is used to add new attributes or update existing attributes.
@@ -158,7 +158,7 @@ public class UpdateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param attributePayload
      *        A list of thing attributes, a JSON string containing name-value pairs. For example:</p>
      *        <p>
-     *        <code>{\"attributes\":{\"name1\":\"value2\"}})</code>
+     *        <code>{\"attributes\":{\"name1\":\"value2\"}}</code>
      *        </p>
      *        <p>
      *        This data is used to add new attributes or update existing attributes.
@@ -173,7 +173,7 @@ public class UpdateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
      * A list of thing attributes, a JSON string containing name-value pairs. For example:
      * </p>
      * <p>
-     * <code>{\"attributes\":{\"name1\":\"value2\"}})</code>
+     * <code>{\"attributes\":{\"name1\":\"value2\"}}</code>
      * </p>
      * <p>
      * This data is used to add new attributes or update existing attributes.
@@ -181,7 +181,7 @@ public class UpdateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @return A list of thing attributes, a JSON string containing name-value pairs. For example:</p>
      *         <p>
-     *         <code>{\"attributes\":{\"name1\":\"value2\"}})</code>
+     *         <code>{\"attributes\":{\"name1\":\"value2\"}}</code>
      *         </p>
      *         <p>
      *         This data is used to add new attributes or update existing attributes.
@@ -196,7 +196,7 @@ public class UpdateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
      * A list of thing attributes, a JSON string containing name-value pairs. For example:
      * </p>
      * <p>
-     * <code>{\"attributes\":{\"name1\":\"value2\"}})</code>
+     * <code>{\"attributes\":{\"name1\":\"value2\"}}</code>
      * </p>
      * <p>
      * This data is used to add new attributes or update existing attributes.
@@ -205,7 +205,7 @@ public class UpdateThingRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param attributePayload
      *        A list of thing attributes, a JSON string containing name-value pairs. For example:</p>
      *        <p>
-     *        <code>{\"attributes\":{\"name1\":\"value2\"}})</code>
+     *        <code>{\"attributes\":{\"name1\":\"value2\"}}</code>
      *        </p>
      *        <p>
      *        This data is used to add new attributes or update existing attributes.

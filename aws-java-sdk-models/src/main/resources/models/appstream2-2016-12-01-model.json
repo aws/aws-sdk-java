@@ -750,12 +750,6 @@
         "error" : null,
         "exception" : false,
         "fault" : false,
-        "shape" : "ResourceNotFoundException"
-      }, {
-        "documentation" : null,
-        "error" : null,
-        "exception" : false,
-        "fault" : false,
         "shape" : "InvalidParameterCombinationException"
       }, {
         "documentation" : null,
@@ -1040,7 +1034,7 @@
     "AuthenticationType" : {
       "deprecated" : false,
       "documentation" : null,
-      "enum" : [ "API", "SAML" ],
+      "enum" : [ "API", "SAML", "USERPOOL" ],
       "error" : null,
       "exception" : false,
       "fault" : false,
@@ -2669,6 +2663,61 @@
       "value" : null,
       "wrapper" : false
     },
+    "FleetAttribute" : {
+      "deprecated" : false,
+      "documentation" : "<p>Fleet attribute.</p>",
+      "enum" : [ "VPC_CONFIGURATION", "VPC_CONFIGURATION_SECURITY_GROUP_IDS" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "FleetAttributes" : {
+      "deprecated" : false,
+      "documentation" : "<p>A list of fleet attributes.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "FleetAttribute",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
     "FleetError" : {
       "deprecated" : false,
       "documentation" : "<p>The details of the fleet error.</p>",
@@ -3835,6 +3884,40 @@
       "value" : null,
       "wrapper" : false
     },
+    "SecurityGroupIdList" : {
+      "deprecated" : false,
+      "documentation" : "<p>A list of security groups.</p>",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 5,
+      "member" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "String",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "list",
+      "value" : null,
+      "wrapper" : false
+    },
     "Session" : {
       "deprecated" : false,
       "documentation" : "<p>Contains the parameters for a streaming session.</p>",
@@ -4596,6 +4679,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "AttributesToDelete" : {
+          "deprecated" : false,
+          "documentation" : "<p>Fleet attributes to be deleted.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "FleetAttributes",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "ComputeCapacity" : {
           "deprecated" : false,
           "documentation" : "<p>The parameters for the capacity allocated to the fleet. </p>",
@@ -4611,7 +4708,7 @@
           "xmlNamespace" : null
         },
         "DeleteVpcConfig" : {
-          "deprecated" : false,
+          "deprecated" : true,
           "documentation" : "<p>Delete the VPC association for the specified fleet.</p>",
           "flattened" : false,
           "idempotencyToken" : false,
@@ -4978,6 +5075,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "SecurityGroupIds" : {
+          "deprecated" : false,
+          "documentation" : "<p>Security groups associated with the fleet.</p>",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "SecurityGroupIdList",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "SubnetIds" : {
           "deprecated" : false,
           "documentation" : "<p>The list of subnets to which a network interface is established from the fleet instance.</p>",

@@ -142,7 +142,7 @@ public class CACertificate implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param status
-     *        The status of the CA certificate. </p>
+     *        The status of the CA certificate.</p>
      *        <p>
      *        The status value REGISTER_INACTIVE is deprecated and should not be used.
      * @see CACertificateStatus
@@ -160,7 +160,7 @@ public class CACertificate implements Serializable, Cloneable, StructuredPojo {
      * The status value REGISTER_INACTIVE is deprecated and should not be used.
      * </p>
      * 
-     * @return The status of the CA certificate. </p>
+     * @return The status of the CA certificate.</p>
      *         <p>
      *         The status value REGISTER_INACTIVE is deprecated and should not be used.
      * @see CACertificateStatus
@@ -179,7 +179,7 @@ public class CACertificate implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param status
-     *        The status of the CA certificate. </p>
+     *        The status of the CA certificate.</p>
      *        <p>
      *        The status value REGISTER_INACTIVE is deprecated and should not be used.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -200,7 +200,7 @@ public class CACertificate implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param status
-     *        The status of the CA certificate. </p>
+     *        The status of the CA certificate.</p>
      *        <p>
      *        The status value REGISTER_INACTIVE is deprecated and should not be used.
      * @see CACertificateStatus
@@ -219,7 +219,7 @@ public class CACertificate implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param status
-     *        The status of the CA certificate. </p>
+     *        The status of the CA certificate.</p>
      *        <p>
      *        The status value REGISTER_INACTIVE is deprecated and should not be used.
      * @return Returns a reference to this object so that method calls can be chained together.

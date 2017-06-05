@@ -30,7 +30,7 @@ public class AttributePayload implements Serializable, Cloneable, StructuredPojo
      * A JSON string containing up to three key-value pair in JSON format. For example:
      * </p>
      * <p>
-     * <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
+     * <code>{\"attributes\":{\"string1\":\"string2\"}}</code>
      * </p>
      */
     private java.util.Map<String, String> attributes;
@@ -55,12 +55,12 @@ public class AttributePayload implements Serializable, Cloneable, StructuredPojo
      * A JSON string containing up to three key-value pair in JSON format. For example:
      * </p>
      * <p>
-     * <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
+     * <code>{\"attributes\":{\"string1\":\"string2\"}}</code>
      * </p>
      * 
      * @return A JSON string containing up to three key-value pair in JSON format. For example:</p>
      *         <p>
-     *         <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
+     *         <code>{\"attributes\":{\"string1\":\"string2\"}}</code>
      */
 
     public java.util.Map<String, String> getAttributes() {
@@ -72,13 +72,13 @@ public class AttributePayload implements Serializable, Cloneable, StructuredPojo
      * A JSON string containing up to three key-value pair in JSON format. For example:
      * </p>
      * <p>
-     * <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
+     * <code>{\"attributes\":{\"string1\":\"string2\"}}</code>
      * </p>
      * 
      * @param attributes
      *        A JSON string containing up to three key-value pair in JSON format. For example:</p>
      *        <p>
-     *        <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
+     *        <code>{\"attributes\":{\"string1\":\"string2\"}}</code>
      */
 
     public void setAttributes(java.util.Map<String, String> attributes) {
@@ -90,13 +90,13 @@ public class AttributePayload implements Serializable, Cloneable, StructuredPojo
      * A JSON string containing up to three key-value pair in JSON format. For example:
      * </p>
      * <p>
-     * <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
+     * <code>{\"attributes\":{\"string1\":\"string2\"}}</code>
      * </p>
      * 
      * @param attributes
      *        A JSON string containing up to three key-value pair in JSON format. For example:</p>
      *        <p>
-     *        <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
+     *        <code>{\"attributes\":{\"string1\":\"string2\"}}</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

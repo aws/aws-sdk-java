@@ -98,6 +98,12 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private ElasticsearchAction elasticsearch;
+    /**
+     * <p>
+     * Send a message to a Salesforce IoT Cloud Input Stream.
+     * </p>
+     */
+    private SalesforceAction salesforce;
 
     /**
      * <p>
@@ -586,6 +592,46 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Send a message to a Salesforce IoT Cloud Input Stream.
+     * </p>
+     * 
+     * @param salesforce
+     *        Send a message to a Salesforce IoT Cloud Input Stream.
+     */
+
+    public void setSalesforce(SalesforceAction salesforce) {
+        this.salesforce = salesforce;
+    }
+
+    /**
+     * <p>
+     * Send a message to a Salesforce IoT Cloud Input Stream.
+     * </p>
+     * 
+     * @return Send a message to a Salesforce IoT Cloud Input Stream.
+     */
+
+    public SalesforceAction getSalesforce() {
+        return this.salesforce;
+    }
+
+    /**
+     * <p>
+     * Send a message to a Salesforce IoT Cloud Input Stream.
+     * </p>
+     * 
+     * @param salesforce
+     *        Send a message to a Salesforce IoT Cloud Input Stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Action withSalesforce(SalesforceAction salesforce) {
+        setSalesforce(salesforce);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -619,7 +665,9 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
         if (getCloudwatchAlarm() != null)
             sb.append("CloudwatchAlarm: ").append(getCloudwatchAlarm()).append(",");
         if (getElasticsearch() != null)
-            sb.append("Elasticsearch: ").append(getElasticsearch());
+            sb.append("Elasticsearch: ").append(getElasticsearch()).append(",");
+        if (getSalesforce() != null)
+            sb.append("Salesforce: ").append(getSalesforce());
         sb.append("}");
         return sb.toString();
     }
@@ -682,6 +730,10 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getElasticsearch() != null && other.getElasticsearch().equals(this.getElasticsearch()) == false)
             return false;
+        if (other.getSalesforce() == null ^ this.getSalesforce() == null)
+            return false;
+        if (other.getSalesforce() != null && other.getSalesforce().equals(this.getSalesforce()) == false)
+            return false;
         return true;
     }
 
@@ -702,6 +754,7 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCloudwatchMetric() == null) ? 0 : getCloudwatchMetric().hashCode());
         hashCode = prime * hashCode + ((getCloudwatchAlarm() == null) ? 0 : getCloudwatchAlarm().hashCode());
         hashCode = prime * hashCode + ((getElasticsearch() == null) ? 0 : getElasticsearch().hashCode());
+        hashCode = prime * hashCode + ((getSalesforce() == null) ? 0 : getSalesforce().hashCode());
         return hashCode;
     }
 

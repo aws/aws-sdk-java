@@ -15,18 +15,19 @@ package com.amazonaws.services.appstream.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * Fleet attribute.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public enum AuthenticationType {
+public enum FleetAttribute {
 
-    API("API"),
-    SAML("SAML"),
-    USERPOOL("USERPOOL");
+    VPC_CONFIGURATION("VPC_CONFIGURATION"),
+    VPC_CONFIGURATION_SECURITY_GROUP_IDS("VPC_CONFIGURATION_SECURITY_GROUP_IDS");
 
     private String value;
 
-    private AuthenticationType(String value) {
+    private FleetAttribute(String value) {
         this.value = value;
     }
 
@@ -40,14 +41,14 @@ public enum AuthenticationType {
      *
      * @param value
      *        real value
-     * @return AuthenticationType corresponding to the value
+     * @return FleetAttribute corresponding to the value
      */
-    public static AuthenticationType fromValue(String value) {
+    public static FleetAttribute fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         }
 
-        for (AuthenticationType enumEntry : AuthenticationType.values()) {
+        for (FleetAttribute enumEntry : FleetAttribute.values()) {
             if (enumEntry.toString().equals(value)) {
                 return enumEntry;
             }

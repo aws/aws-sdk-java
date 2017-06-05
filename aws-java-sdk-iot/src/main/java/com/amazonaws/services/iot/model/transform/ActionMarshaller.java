@@ -51,6 +51,8 @@ public class ActionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cloudwatchAlarm").build();
     private static final MarshallingInfo<StructuredPojo> ELASTICSEARCH_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("elasticsearch").build();
+    private static final MarshallingInfo<StructuredPojo> SALESFORCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("salesforce").build();
 
     private static final ActionMarshaller instance = new ActionMarshaller();
 
@@ -80,6 +82,7 @@ public class ActionMarshaller {
             protocolMarshaller.marshall(action.getCloudwatchMetric(), CLOUDWATCHMETRIC_BINDING);
             protocolMarshaller.marshall(action.getCloudwatchAlarm(), CLOUDWATCHALARM_BINDING);
             protocolMarshaller.marshall(action.getElasticsearch(), ELASTICSEARCH_BINDING);
+            protocolMarshaller.marshall(action.getSalesforce(), SALESFORCE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -10,47 +10,46 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.appstream.model.transform;
+package com.amazonaws.services.iot.model.transform;
 
-import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.services.appstream.model.*;
+import com.amazonaws.services.iot.model.*;
 
 import com.amazonaws.protocol.*;
 import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * VpcConfigMarshaller
+ * SalesforceActionMarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 @SdkInternalApi
-public class VpcConfigMarshaller {
+public class SalesforceActionMarshaller {
 
-    private static final MarshallingInfo<List> SUBNETIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("SubnetIds").build();
-    private static final MarshallingInfo<List> SECURITYGROUPIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecurityGroupIds").build();
+    private static final MarshallingInfo<String> TOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("token").build();
+    private static final MarshallingInfo<String> URL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("url").build();
 
-    private static final VpcConfigMarshaller instance = new VpcConfigMarshaller();
+    private static final SalesforceActionMarshaller instance = new SalesforceActionMarshaller();
 
-    public static VpcConfigMarshaller getInstance() {
+    public static SalesforceActionMarshaller getInstance() {
         return instance;
     }
 
     /**
      * Marshall the given parameter object.
      */
-    public void marshall(VpcConfig vpcConfig, ProtocolMarshaller protocolMarshaller) {
+    public void marshall(SalesforceAction salesforceAction, ProtocolMarshaller protocolMarshaller) {
 
-        if (vpcConfig == null) {
+        if (salesforceAction == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
-            protocolMarshaller.marshall(vpcConfig.getSubnetIds(), SUBNETIDS_BINDING);
-            protocolMarshaller.marshall(vpcConfig.getSecurityGroupIds(), SECURITYGROUPIDS_BINDING);
+            protocolMarshaller.marshall(salesforceAction.getToken(), TOKEN_BINDING);
+            protocolMarshaller.marshall(salesforceAction.getUrl(), URL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
