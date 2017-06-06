@@ -172,8 +172,6 @@ public class XmlResponsesSaxParser {
               * sending the document to the XML parser.
               */
             StringBuilder listingDocBuffer = new StringBuilder();
-            br = new BufferedReader(
-                new InputStreamReader(inputStream, Constants.DEFAULT_ENCODING));
 
             char[] buf = new char[8192];
             int read = -1;
