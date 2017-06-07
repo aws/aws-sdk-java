@@ -69,6 +69,21 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private java.util.List<EnvironmentVariable> environmentVariables;
+    /**
+     * <p>
+     * If set to true, enables running the Docker daemon inside a Docker container; otherwise, false or not specified
+     * (the default). This value must be set to true only if this build project will be used to build Docker images, and
+     * the specified build environment image is not one provided by AWS CodeBuild with Docker support. Otherwise, all
+     * associated builds that attempt to interact with the Docker daemon will fail. Note that you must also start the
+     * Docker daemon so that your builds can interact with it as needed. One way to do this is to initialize the Docker
+     * daemon in the install phase of your build spec by running the following build commands. (Do not run the following
+     * build commands if the specified build environment image is provided by AWS CodeBuild with Docker support.)
+     * </p>
+     * <p>
+     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=vfs&amp; - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     * </p>
+     */
+    private Boolean privilegedMode;
 
     /**
      * <p>
@@ -492,6 +507,130 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * If set to true, enables running the Docker daemon inside a Docker container; otherwise, false or not specified
+     * (the default). This value must be set to true only if this build project will be used to build Docker images, and
+     * the specified build environment image is not one provided by AWS CodeBuild with Docker support. Otherwise, all
+     * associated builds that attempt to interact with the Docker daemon will fail. Note that you must also start the
+     * Docker daemon so that your builds can interact with it as needed. One way to do this is to initialize the Docker
+     * daemon in the install phase of your build spec by running the following build commands. (Do not run the following
+     * build commands if the specified build environment image is provided by AWS CodeBuild with Docker support.)
+     * </p>
+     * <p>
+     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=vfs&amp; - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     * </p>
+     * 
+     * @param privilegedMode
+     *        If set to true, enables running the Docker daemon inside a Docker container; otherwise, false or not
+     *        specified (the default). This value must be set to true only if this build project will be used to build
+     *        Docker images, and the specified build environment image is not one provided by AWS CodeBuild with Docker
+     *        support. Otherwise, all associated builds that attempt to interact with the Docker daemon will fail. Note
+     *        that you must also start the Docker daemon so that your builds can interact with it as needed. One way to
+     *        do this is to initialize the Docker daemon in the install phase of your build spec by running the
+     *        following build commands. (Do not run the following build commands if the specified build environment
+     *        image is provided by AWS CodeBuild with Docker support.)</p>
+     *        <p>
+     *        <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=vfs&amp; - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     */
+
+    public void setPrivilegedMode(Boolean privilegedMode) {
+        this.privilegedMode = privilegedMode;
+    }
+
+    /**
+     * <p>
+     * If set to true, enables running the Docker daemon inside a Docker container; otherwise, false or not specified
+     * (the default). This value must be set to true only if this build project will be used to build Docker images, and
+     * the specified build environment image is not one provided by AWS CodeBuild with Docker support. Otherwise, all
+     * associated builds that attempt to interact with the Docker daemon will fail. Note that you must also start the
+     * Docker daemon so that your builds can interact with it as needed. One way to do this is to initialize the Docker
+     * daemon in the install phase of your build spec by running the following build commands. (Do not run the following
+     * build commands if the specified build environment image is provided by AWS CodeBuild with Docker support.)
+     * </p>
+     * <p>
+     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=vfs&amp; - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     * </p>
+     * 
+     * @return If set to true, enables running the Docker daemon inside a Docker container; otherwise, false or not
+     *         specified (the default). This value must be set to true only if this build project will be used to build
+     *         Docker images, and the specified build environment image is not one provided by AWS CodeBuild with Docker
+     *         support. Otherwise, all associated builds that attempt to interact with the Docker daemon will fail. Note
+     *         that you must also start the Docker daemon so that your builds can interact with it as needed. One way to
+     *         do this is to initialize the Docker daemon in the install phase of your build spec by running the
+     *         following build commands. (Do not run the following build commands if the specified build environment
+     *         image is provided by AWS CodeBuild with Docker support.)</p>
+     *         <p>
+     *         <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=vfs&amp; - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     */
+
+    public Boolean getPrivilegedMode() {
+        return this.privilegedMode;
+    }
+
+    /**
+     * <p>
+     * If set to true, enables running the Docker daemon inside a Docker container; otherwise, false or not specified
+     * (the default). This value must be set to true only if this build project will be used to build Docker images, and
+     * the specified build environment image is not one provided by AWS CodeBuild with Docker support. Otherwise, all
+     * associated builds that attempt to interact with the Docker daemon will fail. Note that you must also start the
+     * Docker daemon so that your builds can interact with it as needed. One way to do this is to initialize the Docker
+     * daemon in the install phase of your build spec by running the following build commands. (Do not run the following
+     * build commands if the specified build environment image is provided by AWS CodeBuild with Docker support.)
+     * </p>
+     * <p>
+     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=vfs&amp; - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     * </p>
+     * 
+     * @param privilegedMode
+     *        If set to true, enables running the Docker daemon inside a Docker container; otherwise, false or not
+     *        specified (the default). This value must be set to true only if this build project will be used to build
+     *        Docker images, and the specified build environment image is not one provided by AWS CodeBuild with Docker
+     *        support. Otherwise, all associated builds that attempt to interact with the Docker daemon will fail. Note
+     *        that you must also start the Docker daemon so that your builds can interact with it as needed. One way to
+     *        do this is to initialize the Docker daemon in the install phase of your build spec by running the
+     *        following build commands. (Do not run the following build commands if the specified build environment
+     *        image is provided by AWS CodeBuild with Docker support.)</p>
+     *        <p>
+     *        <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=vfs&amp; - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProjectEnvironment withPrivilegedMode(Boolean privilegedMode) {
+        setPrivilegedMode(privilegedMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If set to true, enables running the Docker daemon inside a Docker container; otherwise, false or not specified
+     * (the default). This value must be set to true only if this build project will be used to build Docker images, and
+     * the specified build environment image is not one provided by AWS CodeBuild with Docker support. Otherwise, all
+     * associated builds that attempt to interact with the Docker daemon will fail. Note that you must also start the
+     * Docker daemon so that your builds can interact with it as needed. One way to do this is to initialize the Docker
+     * daemon in the install phase of your build spec by running the following build commands. (Do not run the following
+     * build commands if the specified build environment image is provided by AWS CodeBuild with Docker support.)
+     * </p>
+     * <p>
+     * <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=vfs&amp; - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     * </p>
+     * 
+     * @return If set to true, enables running the Docker daemon inside a Docker container; otherwise, false or not
+     *         specified (the default). This value must be set to true only if this build project will be used to build
+     *         Docker images, and the specified build environment image is not one provided by AWS CodeBuild with Docker
+     *         support. Otherwise, all associated builds that attempt to interact with the Docker daemon will fail. Note
+     *         that you must also start the Docker daemon so that your builds can interact with it as needed. One way to
+     *         do this is to initialize the Docker daemon in the install phase of your build spec by running the
+     *         following build commands. (Do not run the following build commands if the specified build environment
+     *         image is provided by AWS CodeBuild with Docker support.)</p>
+     *         <p>
+     *         <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=vfs&amp; - timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+     */
+
+    public Boolean isPrivilegedMode() {
+        return this.privilegedMode;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -509,7 +648,9 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
         if (getComputeType() != null)
             sb.append("ComputeType: ").append(getComputeType()).append(",");
         if (getEnvironmentVariables() != null)
-            sb.append("EnvironmentVariables: ").append(getEnvironmentVariables());
+            sb.append("EnvironmentVariables: ").append(getEnvironmentVariables()).append(",");
+        if (getPrivilegedMode() != null)
+            sb.append("PrivilegedMode: ").append(getPrivilegedMode());
         sb.append("}");
         return sb.toString();
     }
@@ -540,6 +681,10 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getEnvironmentVariables() != null && other.getEnvironmentVariables().equals(this.getEnvironmentVariables()) == false)
             return false;
+        if (other.getPrivilegedMode() == null ^ this.getPrivilegedMode() == null)
+            return false;
+        if (other.getPrivilegedMode() != null && other.getPrivilegedMode().equals(this.getPrivilegedMode()) == false)
+            return false;
         return true;
     }
 
@@ -552,6 +697,7 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getImage() == null) ? 0 : getImage().hashCode());
         hashCode = prime * hashCode + ((getComputeType() == null) ? 0 : getComputeType().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentVariables() == null) ? 0 : getEnvironmentVariables().hashCode());
+        hashCode = prime * hashCode + ((getPrivilegedMode() == null) ? 0 : getPrivilegedMode().hashCode());
         return hashCode;
     }
 
