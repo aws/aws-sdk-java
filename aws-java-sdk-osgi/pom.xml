@@ -613,25 +613,29 @@
   </properties>
 
   <build>
+  		<pluginManagement>
+  			<plugins>
+  				  <!-- Convert README.md to HTML to be used in ZIP creation -->
+		          <plugin>
+		              <groupId>com.ruleoftech</groupId>
+		              <artifactId>markdown-page-generator-plugin</artifactId>
+		              <version>0.8</version>
+		              <executions>
+		                  <execution>
+		                      <phase>process-sources</phase>
+		                      <goals>
+		                          <goal>generate</goal>
+		                      </goals>
+		                  </execution>
+		              </executions>
+		              <configuration>
+		                  <inputDirectory>${project.parent.basedir}/</inputDirectory>
+		                  <outputDirectory>${project.build.directory}/markdown-to-html/</outputDirectory>
+		              </configuration>
+		          </plugin>
+  			</plugins>
+  		</pluginManagement>
       <plugins>
-          <!-- Convert README.md to HTML to be used in ZIP creation -->
-          <plugin>
-              <groupId>com.ruleoftech</groupId>
-              <artifactId>markdown-page-generator-plugin</artifactId>
-              <version>0.8</version>
-              <executions>
-                  <execution>
-                      <phase>process-sources</phase>
-                      <goals>
-                          <goal>generate</goal>
-                      </goals>
-                  </execution>
-              </executions>
-              <configuration>
-                  <inputDirectory>${project.parent.basedir}/</inputDirectory>
-                  <outputDirectory>${project.build.directory}/markdown-to-html/</outputDirectory>
-              </configuration>
-          </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -1374,7 +1378,7 @@
                                   <executable>zip</executable>
                                   <commandlineArgs>
                                       -r ../${zip.artifact.name} .
-                                  </commandlineArgs>>
+                                  </commandlineArgs>
                               </configuration>
                           </execution>
                       </executions>
