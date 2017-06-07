@@ -31,13 +31,32 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain.
      * For example, *.example.com protects www.example.com, site.example.com, and images.example.com.
      * </p>
+     * <p>
+     * The maximum length of a DNS name is 253 octets. The name is made up of multiple labels separated by periods. No
+     * label can be longer than 63 octets. Consider the following examples:
+     * </p>
+     * <p>
+     * <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253 octets
+     * (63+1+63+1+63+1+61) and no label exceeds 63 octets.
+     * </p>
+     * <p>
+     * <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length exceeds 253
+     * octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets.
+     * </p>
+     * <p>
+     * <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the DNS
+     * name (63+1+63+1+63+1+62) exceeds 253 octets.
+     * </p>
      */
     private String domainName;
     /**
      * <p>
      * Additional FQDNs to be included in the Subject Alternative Name extension of the ACM Certificate. For example,
      * add the name www.example.net to a certificate for which the <code>DomainName</code> field is www.example.com if
-     * users can reach your site by using either name.
+     * users can reach your site by using either name. The maximum number of domain names that you can add to an ACM
+     * Certificate is 100. However, the initial limit is 10 domain names. If you need more than 10 names, you must
+     * request a limit increase. For more information, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.
      * </p>
      */
     private java.util.List<String> subjectAlternativeNames;
@@ -64,12 +83,43 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain.
      * For example, *.example.com protects www.example.com, site.example.com, and images.example.com.
      * </p>
+     * <p>
+     * The maximum length of a DNS name is 253 octets. The name is made up of multiple labels separated by periods. No
+     * label can be longer than 63 octets. Consider the following examples:
+     * </p>
+     * <p>
+     * <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253 octets
+     * (63+1+63+1+63+1+61) and no label exceeds 63 octets.
+     * </p>
+     * <p>
+     * <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length exceeds 253
+     * octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets.
+     * </p>
+     * <p>
+     * <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the DNS
+     * name (63+1+63+1+63+1+62) exceeds 253 octets.
+     * </p>
      * 
      * @param domainName
      *        Fully qualified domain name (FQDN), such as www.example.com, of the site that you want to secure with an
      *        ACM Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the
      *        same domain. For example, *.example.com protects www.example.com, site.example.com, and
-     *        images.example.com.
+     *        images.example.com. </p>
+     *        <p>
+     *        The maximum length of a DNS name is 253 octets. The name is made up of multiple labels separated by
+     *        periods. No label can be longer than 63 octets. Consider the following examples:
+     *        </p>
+     *        <p>
+     *        <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253
+     *        octets (63+1+63+1+63+1+61) and no label exceeds 63 octets.
+     *        </p>
+     *        <p>
+     *        <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length exceeds
+     *        253 octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets.
+     *        </p>
+     *        <p>
+     *        <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the
+     *        DNS name (63+1+63+1+63+1+62) exceeds 253 octets.
      */
 
     public void setDomainName(String domainName) {
@@ -82,11 +132,42 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain.
      * For example, *.example.com protects www.example.com, site.example.com, and images.example.com.
      * </p>
+     * <p>
+     * The maximum length of a DNS name is 253 octets. The name is made up of multiple labels separated by periods. No
+     * label can be longer than 63 octets. Consider the following examples:
+     * </p>
+     * <p>
+     * <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253 octets
+     * (63+1+63+1+63+1+61) and no label exceeds 63 octets.
+     * </p>
+     * <p>
+     * <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length exceeds 253
+     * octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets.
+     * </p>
+     * <p>
+     * <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the DNS
+     * name (63+1+63+1+63+1+62) exceeds 253 octets.
+     * </p>
      * 
      * @return Fully qualified domain name (FQDN), such as www.example.com, of the site that you want to secure with an
      *         ACM Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the
      *         same domain. For example, *.example.com protects www.example.com, site.example.com, and
-     *         images.example.com.
+     *         images.example.com. </p>
+     *         <p>
+     *         The maximum length of a DNS name is 253 octets. The name is made up of multiple labels separated by
+     *         periods. No label can be longer than 63 octets. Consider the following examples:
+     *         </p>
+     *         <p>
+     *         <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253
+     *         octets (63+1+63+1+63+1+61) and no label exceeds 63 octets.
+     *         </p>
+     *         <p>
+     *         <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length
+     *         exceeds 253 octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets.
+     *         </p>
+     *         <p>
+     *         <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the
+     *         DNS name (63+1+63+1+63+1+62) exceeds 253 octets.
      */
 
     public String getDomainName() {
@@ -99,12 +180,43 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain.
      * For example, *.example.com protects www.example.com, site.example.com, and images.example.com.
      * </p>
+     * <p>
+     * The maximum length of a DNS name is 253 octets. The name is made up of multiple labels separated by periods. No
+     * label can be longer than 63 octets. Consider the following examples:
+     * </p>
+     * <p>
+     * <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253 octets
+     * (63+1+63+1+63+1+61) and no label exceeds 63 octets.
+     * </p>
+     * <p>
+     * <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length exceeds 253
+     * octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets.
+     * </p>
+     * <p>
+     * <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the DNS
+     * name (63+1+63+1+63+1+62) exceeds 253 octets.
+     * </p>
      * 
      * @param domainName
      *        Fully qualified domain name (FQDN), such as www.example.com, of the site that you want to secure with an
      *        ACM Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the
      *        same domain. For example, *.example.com protects www.example.com, site.example.com, and
-     *        images.example.com.
+     *        images.example.com. </p>
+     *        <p>
+     *        The maximum length of a DNS name is 253 octets. The name is made up of multiple labels separated by
+     *        periods. No label can be longer than 63 octets. Consider the following examples:
+     *        </p>
+     *        <p>
+     *        <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the total length is 253
+     *        octets (63+1+63+1+63+1+61) and no label exceeds 63 octets.
+     *        </p>
+     *        <p>
+     *        <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the total length exceeds
+     *        253 octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets.
+     *        </p>
+     *        <p>
+     *        <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the total length of the
+     *        DNS name (63+1+63+1+63+1+62) exceeds 253 octets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -117,12 +229,18 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Additional FQDNs to be included in the Subject Alternative Name extension of the ACM Certificate. For example,
      * add the name www.example.net to a certificate for which the <code>DomainName</code> field is www.example.com if
-     * users can reach your site by using either name.
+     * users can reach your site by using either name. The maximum number of domain names that you can add to an ACM
+     * Certificate is 100. However, the initial limit is 10 domain names. If you need more than 10 names, you must
+     * request a limit increase. For more information, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.
      * </p>
      * 
      * @return Additional FQDNs to be included in the Subject Alternative Name extension of the ACM Certificate. For
      *         example, add the name www.example.net to a certificate for which the <code>DomainName</code> field is
-     *         www.example.com if users can reach your site by using either name.
+     *         www.example.com if users can reach your site by using either name. The maximum number of domain names
+     *         that you can add to an ACM Certificate is 100. However, the initial limit is 10 domain names. If you need
+     *         more than 10 names, you must request a limit increase. For more information, see <a
+     *         href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.
      */
 
     public java.util.List<String> getSubjectAlternativeNames() {
@@ -133,13 +251,19 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Additional FQDNs to be included in the Subject Alternative Name extension of the ACM Certificate. For example,
      * add the name www.example.net to a certificate for which the <code>DomainName</code> field is www.example.com if
-     * users can reach your site by using either name.
+     * users can reach your site by using either name. The maximum number of domain names that you can add to an ACM
+     * Certificate is 100. However, the initial limit is 10 domain names. If you need more than 10 names, you must
+     * request a limit increase. For more information, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.
      * </p>
      * 
      * @param subjectAlternativeNames
      *        Additional FQDNs to be included in the Subject Alternative Name extension of the ACM Certificate. For
      *        example, add the name www.example.net to a certificate for which the <code>DomainName</code> field is
-     *        www.example.com if users can reach your site by using either name.
+     *        www.example.com if users can reach your site by using either name. The maximum number of domain names that
+     *        you can add to an ACM Certificate is 100. However, the initial limit is 10 domain names. If you need more
+     *        than 10 names, you must request a limit increase. For more information, see <a
+     *        href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.
      */
 
     public void setSubjectAlternativeNames(java.util.Collection<String> subjectAlternativeNames) {
@@ -155,7 +279,10 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Additional FQDNs to be included in the Subject Alternative Name extension of the ACM Certificate. For example,
      * add the name www.example.net to a certificate for which the <code>DomainName</code> field is www.example.com if
-     * users can reach your site by using either name.
+     * users can reach your site by using either name. The maximum number of domain names that you can add to an ACM
+     * Certificate is 100. However, the initial limit is 10 domain names. If you need more than 10 names, you must
+     * request a limit increase. For more information, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -166,7 +293,10 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * @param subjectAlternativeNames
      *        Additional FQDNs to be included in the Subject Alternative Name extension of the ACM Certificate. For
      *        example, add the name www.example.net to a certificate for which the <code>DomainName</code> field is
-     *        www.example.com if users can reach your site by using either name.
+     *        www.example.com if users can reach your site by using either name. The maximum number of domain names that
+     *        you can add to an ACM Certificate is 100. However, the initial limit is 10 domain names. If you need more
+     *        than 10 names, you must request a limit increase. For more information, see <a
+     *        href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,13 +314,19 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Additional FQDNs to be included in the Subject Alternative Name extension of the ACM Certificate. For example,
      * add the name www.example.net to a certificate for which the <code>DomainName</code> field is www.example.com if
-     * users can reach your site by using either name.
+     * users can reach your site by using either name. The maximum number of domain names that you can add to an ACM
+     * Certificate is 100. However, the initial limit is 10 domain names. If you need more than 10 names, you must
+     * request a limit increase. For more information, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.
      * </p>
      * 
      * @param subjectAlternativeNames
      *        Additional FQDNs to be included in the Subject Alternative Name extension of the ACM Certificate. For
      *        example, add the name www.example.net to a certificate for which the <code>DomainName</code> field is
-     *        www.example.com if users can reach your site by using either name.
+     *        www.example.com if users can reach your site by using either name. The maximum number of domain names that
+     *        you can add to an ACM Certificate is 100. However, the initial limit is 10 domain names. If you need more
+     *        than 10 names, you must request a limit increase. For more information, see <a
+     *        href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -34,7 +34,7 @@ public class S3OriginConfig implements Serializable, Cloneable {
      * of the value is:
      * </p>
      * <p>
-     * origin-access-identity/CloudFront/<i>ID-of-origin-access-identity</i>
+     * origin-access-identity/cloudfront/<i>ID-of-origin-access-identity</i>
      * </p>
      * <p>
      * where <code> <i>ID-of-origin-access-identity</i> </code> is the value that CloudFront returned in the
@@ -67,7 +67,7 @@ public class S3OriginConfig implements Serializable, Cloneable {
      * of the value is:
      * </p>
      * <p>
-     * origin-access-identity/CloudFront/<i>ID-of-origin-access-identity</i>
+     * origin-access-identity/cloudfront/<i>ID-of-origin-access-identity</i>
      * </p>
      * <p>
      * where <code> <i>ID-of-origin-access-identity</i> </code> is the value that CloudFront returned in the
@@ -96,7 +96,7 @@ public class S3OriginConfig implements Serializable, Cloneable {
      *        configure the origin so that viewers can <i>only</i> access objects in an Amazon S3 bucket through
      *        CloudFront. The format of the value is:</p>
      *        <p>
-     *        origin-access-identity/CloudFront/<i>ID-of-origin-access-identity</i>
+     *        origin-access-identity/cloudfront/<i>ID-of-origin-access-identity</i>
      *        </p>
      *        <p>
      *        where <code> <i>ID-of-origin-access-identity</i> </code> is the value that CloudFront returned in the
@@ -131,7 +131,7 @@ public class S3OriginConfig implements Serializable, Cloneable {
      * of the value is:
      * </p>
      * <p>
-     * origin-access-identity/CloudFront/<i>ID-of-origin-access-identity</i>
+     * origin-access-identity/cloudfront/<i>ID-of-origin-access-identity</i>
      * </p>
      * <p>
      * where <code> <i>ID-of-origin-access-identity</i> </code> is the value that CloudFront returned in the
@@ -159,7 +159,7 @@ public class S3OriginConfig implements Serializable, Cloneable {
      *         configure the origin so that viewers can <i>only</i> access objects in an Amazon S3 bucket through
      *         CloudFront. The format of the value is:</p>
      *         <p>
-     *         origin-access-identity/CloudFront/<i>ID-of-origin-access-identity</i>
+     *         origin-access-identity/cloudfront/<i>ID-of-origin-access-identity</i>
      *         </p>
      *         <p>
      *         where <code> <i>ID-of-origin-access-identity</i> </code> is the value that CloudFront returned in the
@@ -194,7 +194,7 @@ public class S3OriginConfig implements Serializable, Cloneable {
      * of the value is:
      * </p>
      * <p>
-     * origin-access-identity/CloudFront/<i>ID-of-origin-access-identity</i>
+     * origin-access-identity/cloudfront/<i>ID-of-origin-access-identity</i>
      * </p>
      * <p>
      * where <code> <i>ID-of-origin-access-identity</i> </code> is the value that CloudFront returned in the
@@ -223,7 +223,7 @@ public class S3OriginConfig implements Serializable, Cloneable {
      *        configure the origin so that viewers can <i>only</i> access objects in an Amazon S3 bucket through
      *        CloudFront. The format of the value is:</p>
      *        <p>
-     *        origin-access-identity/CloudFront/<i>ID-of-origin-access-identity</i>
+     *        origin-access-identity/cloudfront/<i>ID-of-origin-access-identity</i>
      *        </p>
      *        <p>
      *        where <code> <i>ID-of-origin-access-identity</i> </code> is the value that CloudFront returned in the

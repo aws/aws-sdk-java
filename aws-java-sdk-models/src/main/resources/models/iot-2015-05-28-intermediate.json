@@ -45209,7 +45209,7 @@
       },
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
-      "required" : null,
+      "required" : [ "token", "url" ],
       "shapeName" : "SalesforceAction",
       "signerAware" : false,
       "signerType" : null,

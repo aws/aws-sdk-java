@@ -1,3 +1,16 @@
+# __1.11.142__ __2017-06-06__
+## __AWS Certificate Manager__
+  - ### Features
+    - Documentation update for AWS Certificate Manager.
+
+## __AWS IoT__
+  - ### Features
+    - Update client side validation for SalesForce action.
+
+## __Amazon CloudFront__
+  - ### Features
+    - Doc update to fix incorrect prefix in S3OriginConfig
+
 # __1.11.141__ __2017-06-05__
 ## __AWS IoT__
   - ### Features
