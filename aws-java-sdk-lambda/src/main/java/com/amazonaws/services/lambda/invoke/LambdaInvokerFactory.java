@@ -231,10 +231,6 @@ public final class LambdaInvokerFactory {
                 throw new LambdaSerializationException("InvocationType must be RequestResponse if LogType " + "is set");
             }
 
-            if (args != null && args.length > 1) {
-                throw new LambdaSerializationException("LambdaFunctions take either 0 or 1 arguments");
-            }
-
             return annotation;
         }
 
