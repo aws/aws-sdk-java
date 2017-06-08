@@ -21,19 +21,21 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class Message implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP – Your app
+     * The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP - Your app
      * launches, or it becomes the foreground app if it has been sent to the background. This is the default action.
      * 
-     * DEEP_LINK – Uses deep linking features in iOS and Android to open your app and display a designated user
+     * DEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a designated user
      * interface within the app.
      * 
-     * URL – The default mobile browser on the user's device launches and opens a web page at the URL you specify.
+     * URL - The default mobile browser on the user's device launches and opens a web page at the URL you specify.
      */
     private String action;
     /** The message body. Can include up to 140 characters. */
     private String body;
     /** The URL that points to the icon image for the push notification icon, for example, the app icon. */
     private String imageIconUrl;
+    /** The URL that points to the small icon image for the push notification icon, for example, the app icon. */
+    private String imageSmallIconUrl;
     /** The URL that points to an image used in the push notification. */
     private String imageUrl;
     /** The JSON payload used for a silent push. */
@@ -52,23 +54,23 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
     private String url;
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP – Your app
+     * The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP - Your app
      * launches, or it becomes the foreground app if it has been sent to the background. This is the default action.
      * 
-     * DEEP_LINK – Uses deep linking features in iOS and Android to open your app and display a designated user
+     * DEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a designated user
      * interface within the app.
      * 
-     * URL – The default mobile browser on the user's device launches and opens a web page at the URL you specify.
+     * URL - The default mobile browser on the user's device launches and opens a web page at the URL you specify.
      * 
      * @param action
-     *        The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP – Your app
+     *        The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP - Your app
      *        launches, or it becomes the foreground app if it has been sent to the background. This is the default
      *        action.
      * 
-     *        DEEP_LINK – Uses deep linking features in iOS and Android to open your app and display a designated user
+     *        DEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a designated user
      *        interface within the app.
      * 
-     *        URL – The default mobile browser on the user's device launches and opens a web page at the URL you
+     *        URL - The default mobile browser on the user's device launches and opens a web page at the URL you
      *        specify.
      * @see Action
      */
@@ -78,22 +80,22 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP – Your app
+     * The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP - Your app
      * launches, or it becomes the foreground app if it has been sent to the background. This is the default action.
      * 
-     * DEEP_LINK – Uses deep linking features in iOS and Android to open your app and display a designated user
+     * DEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a designated user
      * interface within the app.
      * 
-     * URL – The default mobile browser on the user's device launches and opens a web page at the URL you specify.
+     * URL - The default mobile browser on the user's device launches and opens a web page at the URL you specify.
      * 
-     * @return The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP – Your
+     * @return The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP - Your
      *         app launches, or it becomes the foreground app if it has been sent to the background. This is the default
      *         action.
      * 
-     *         DEEP_LINK – Uses deep linking features in iOS and Android to open your app and display a designated user
+     *         DEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a designated user
      *         interface within the app.
      * 
-     *         URL – The default mobile browser on the user's device launches and opens a web page at the URL you
+     *         URL - The default mobile browser on the user's device launches and opens a web page at the URL you
      *         specify.
      * @see Action
      */
@@ -103,23 +105,23 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP – Your app
+     * The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP - Your app
      * launches, or it becomes the foreground app if it has been sent to the background. This is the default action.
      * 
-     * DEEP_LINK – Uses deep linking features in iOS and Android to open your app and display a designated user
+     * DEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a designated user
      * interface within the app.
      * 
-     * URL – The default mobile browser on the user's device launches and opens a web page at the URL you specify.
+     * URL - The default mobile browser on the user's device launches and opens a web page at the URL you specify.
      * 
      * @param action
-     *        The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP – Your app
+     *        The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP - Your app
      *        launches, or it becomes the foreground app if it has been sent to the background. This is the default
      *        action.
      * 
-     *        DEEP_LINK – Uses deep linking features in iOS and Android to open your app and display a designated user
+     *        DEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a designated user
      *        interface within the app.
      * 
-     *        URL – The default mobile browser on the user's device launches and opens a web page at the URL you
+     *        URL - The default mobile browser on the user's device launches and opens a web page at the URL you
      *        specify.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Action
@@ -131,23 +133,23 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP – Your app
+     * The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP - Your app
      * launches, or it becomes the foreground app if it has been sent to the background. This is the default action.
      * 
-     * DEEP_LINK – Uses deep linking features in iOS and Android to open your app and display a designated user
+     * DEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a designated user
      * interface within the app.
      * 
-     * URL – The default mobile browser on the user's device launches and opens a web page at the URL you specify.
+     * URL - The default mobile browser on the user's device launches and opens a web page at the URL you specify.
      * 
      * @param action
-     *        The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP – Your app
+     *        The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP - Your app
      *        launches, or it becomes the foreground app if it has been sent to the background. This is the default
      *        action.
      * 
-     *        DEEP_LINK – Uses deep linking features in iOS and Android to open your app and display a designated user
+     *        DEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a designated user
      *        interface within the app.
      * 
-     *        URL – The default mobile browser on the user's device launches and opens a web page at the URL you
+     *        URL - The default mobile browser on the user's device launches and opens a web page at the URL you
      *        specify.
      * @see Action
      */
@@ -157,23 +159,23 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP – Your app
+     * The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP - Your app
      * launches, or it becomes the foreground app if it has been sent to the background. This is the default action.
      * 
-     * DEEP_LINK – Uses deep linking features in iOS and Android to open your app and display a designated user
+     * DEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a designated user
      * interface within the app.
      * 
-     * URL – The default mobile browser on the user's device launches and opens a web page at the URL you specify.
+     * URL - The default mobile browser on the user's device launches and opens a web page at the URL you specify.
      * 
      * @param action
-     *        The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP – Your app
+     *        The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP - Your app
      *        launches, or it becomes the foreground app if it has been sent to the background. This is the default
      *        action.
      * 
-     *        DEEP_LINK – Uses deep linking features in iOS and Android to open your app and display a designated user
+     *        DEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a designated user
      *        interface within the app.
      * 
-     *        URL – The default mobile browser on the user's device launches and opens a web page at the URL you
+     *        URL - The default mobile browser on the user's device launches and opens a web page at the URL you
      *        specify.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Action
@@ -249,6 +251,40 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
 
     public Message withImageIconUrl(String imageIconUrl) {
         setImageIconUrl(imageIconUrl);
+        return this;
+    }
+
+    /**
+     * The URL that points to the small icon image for the push notification icon, for example, the app icon.
+     * 
+     * @param imageSmallIconUrl
+     *        The URL that points to the small icon image for the push notification icon, for example, the app icon.
+     */
+
+    public void setImageSmallIconUrl(String imageSmallIconUrl) {
+        this.imageSmallIconUrl = imageSmallIconUrl;
+    }
+
+    /**
+     * The URL that points to the small icon image for the push notification icon, for example, the app icon.
+     * 
+     * @return The URL that points to the small icon image for the push notification icon, for example, the app icon.
+     */
+
+    public String getImageSmallIconUrl() {
+        return this.imageSmallIconUrl;
+    }
+
+    /**
+     * The URL that points to the small icon image for the push notification icon, for example, the app icon.
+     * 
+     * @param imageSmallIconUrl
+     *        The URL that points to the small icon image for the push notification icon, for example, the app icon.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Message withImageSmallIconUrl(String imageSmallIconUrl) {
+        setImageSmallIconUrl(imageSmallIconUrl);
         return this;
     }
 
@@ -499,6 +535,8 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
             sb.append("Body: ").append(getBody()).append(",");
         if (getImageIconUrl() != null)
             sb.append("ImageIconUrl: ").append(getImageIconUrl()).append(",");
+        if (getImageSmallIconUrl() != null)
+            sb.append("ImageSmallIconUrl: ").append(getImageSmallIconUrl()).append(",");
         if (getImageUrl() != null)
             sb.append("ImageUrl: ").append(getImageUrl()).append(",");
         if (getJsonBody() != null)
@@ -537,6 +575,10 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getImageIconUrl() != null && other.getImageIconUrl().equals(this.getImageIconUrl()) == false)
             return false;
+        if (other.getImageSmallIconUrl() == null ^ this.getImageSmallIconUrl() == null)
+            return false;
+        if (other.getImageSmallIconUrl() != null && other.getImageSmallIconUrl().equals(this.getImageSmallIconUrl()) == false)
+            return false;
         if (other.getImageUrl() == null ^ this.getImageUrl() == null)
             return false;
         if (other.getImageUrl() != null && other.getImageUrl().equals(this.getImageUrl()) == false)
@@ -572,6 +614,7 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
         hashCode = prime * hashCode + ((getBody() == null) ? 0 : getBody().hashCode());
         hashCode = prime * hashCode + ((getImageIconUrl() == null) ? 0 : getImageIconUrl().hashCode());
+        hashCode = prime * hashCode + ((getImageSmallIconUrl() == null) ? 0 : getImageSmallIconUrl().hashCode());
         hashCode = prime * hashCode + ((getImageUrl() == null) ? 0 : getImageUrl().hashCode());
         hashCode = prime * hashCode + ((getJsonBody() == null) ? 0 : getJsonBody().hashCode());
         hashCode = prime * hashCode + ((getMediaUrl() == null) ? 0 : getMediaUrl().hashCode());

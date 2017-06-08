@@ -94,17 +94,17 @@ public interface AmazonPinpoint {
      * @param createCampaignRequest
      * @return Result of the CreateCampaign operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.CreateCampaign
      */
     CreateCampaignResult createCampaign(CreateCampaignRequest createCampaignRequest);
@@ -115,17 +115,17 @@ public interface AmazonPinpoint {
      * @param createImportJobRequest
      * @return Result of the CreateImportJob operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.CreateImportJob
      */
     CreateImportJobResult createImportJob(CreateImportJobRequest createImportJobRequest);
@@ -136,17 +136,17 @@ public interface AmazonPinpoint {
      * @param createSegmentRequest
      * @return Result of the CreateSegment operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.CreateSegment
      */
     CreateSegmentResult createSegment(CreateSegmentRequest createSegmentRequest);
@@ -157,20 +157,41 @@ public interface AmazonPinpoint {
      * @param deleteApnsChannelRequest
      * @return Result of the DeleteApnsChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.DeleteApnsChannel
      */
     DeleteApnsChannelResult deleteApnsChannel(DeleteApnsChannelRequest deleteApnsChannelRequest);
+
+    /**
+     * Delete an APNS sandbox channel
+     * 
+     * @param deleteApnsSandboxChannelRequest
+     * @return Result of the DeleteApnsSandboxChannel operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.DeleteApnsSandboxChannel
+     */
+    DeleteApnsSandboxChannelResult deleteApnsSandboxChannel(DeleteApnsSandboxChannelRequest deleteApnsSandboxChannelRequest);
 
     /**
      * Deletes a campaign.
@@ -178,20 +199,41 @@ public interface AmazonPinpoint {
      * @param deleteCampaignRequest
      * @return Result of the DeleteCampaign operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.DeleteCampaign
      */
     DeleteCampaignResult deleteCampaign(DeleteCampaignRequest deleteCampaignRequest);
+
+    /**
+     * Delete an email channel
+     * 
+     * @param deleteEmailChannelRequest
+     * @return Result of the DeleteEmailChannel operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.DeleteEmailChannel
+     */
+    DeleteEmailChannelResult deleteEmailChannel(DeleteEmailChannelRequest deleteEmailChannelRequest);
 
     /**
      * Deletes the event stream for an app.
@@ -221,17 +263,17 @@ public interface AmazonPinpoint {
      * @param deleteGcmChannelRequest
      * @return Result of the DeleteGcmChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.DeleteGcmChannel
      */
     DeleteGcmChannelResult deleteGcmChannel(DeleteGcmChannelRequest deleteGcmChannelRequest);
@@ -242,20 +284,41 @@ public interface AmazonPinpoint {
      * @param deleteSegmentRequest
      * @return Result of the DeleteSegment operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.DeleteSegment
      */
     DeleteSegmentResult deleteSegment(DeleteSegmentRequest deleteSegmentRequest);
+
+    /**
+     * Delete an SMS channel
+     * 
+     * @param deleteSmsChannelRequest
+     * @return Result of the DeleteSmsChannel operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.DeleteSmsChannel
+     */
+    DeleteSmsChannelResult deleteSmsChannel(DeleteSmsChannelRequest deleteSmsChannelRequest);
 
     /**
      * Returns information about the APNs channel for an app.
@@ -263,20 +326,41 @@ public interface AmazonPinpoint {
      * @param getApnsChannelRequest
      * @return Result of the GetApnsChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.GetApnsChannel
      */
     GetApnsChannelResult getApnsChannel(GetApnsChannelRequest getApnsChannelRequest);
+
+    /**
+     * Get an APNS sandbox channel
+     * 
+     * @param getApnsSandboxChannelRequest
+     * @return Result of the GetApnsSandboxChannel operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.GetApnsSandboxChannel
+     */
+    GetApnsSandboxChannelResult getApnsSandboxChannel(GetApnsSandboxChannelRequest getApnsSandboxChannelRequest);
 
     /**
      * Used to request the settings for an app.
@@ -284,17 +368,17 @@ public interface AmazonPinpoint {
      * @param getApplicationSettingsRequest
      * @return Result of the GetApplicationSettings operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.GetApplicationSettings
      */
     GetApplicationSettingsResult getApplicationSettings(GetApplicationSettingsRequest getApplicationSettingsRequest);
@@ -305,17 +389,17 @@ public interface AmazonPinpoint {
      * @param getCampaignRequest
      * @return Result of the GetCampaign operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.GetCampaign
      */
     GetCampaignResult getCampaign(GetCampaignRequest getCampaignRequest);
@@ -326,17 +410,17 @@ public interface AmazonPinpoint {
      * @param getCampaignActivitiesRequest
      * @return Result of the GetCampaignActivities operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.GetCampaignActivities
      */
     GetCampaignActivitiesResult getCampaignActivities(GetCampaignActivitiesRequest getCampaignActivitiesRequest);
@@ -347,17 +431,17 @@ public interface AmazonPinpoint {
      * @param getCampaignVersionRequest
      * @return Result of the GetCampaignVersion operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.GetCampaignVersion
      */
     GetCampaignVersionResult getCampaignVersion(GetCampaignVersionRequest getCampaignVersionRequest);
@@ -368,17 +452,17 @@ public interface AmazonPinpoint {
      * @param getCampaignVersionsRequest
      * @return Result of the GetCampaignVersions operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.GetCampaignVersions
      */
     GetCampaignVersionsResult getCampaignVersions(GetCampaignVersionsRequest getCampaignVersionsRequest);
@@ -389,20 +473,41 @@ public interface AmazonPinpoint {
      * @param getCampaignsRequest
      * @return Result of the GetCampaigns operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.GetCampaigns
      */
     GetCampaignsResult getCampaigns(GetCampaignsRequest getCampaignsRequest);
+
+    /**
+     * Get an email channel
+     * 
+     * @param getEmailChannelRequest
+     * @return Result of the GetEmailChannel operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.GetEmailChannel
+     */
+    GetEmailChannelResult getEmailChannel(GetEmailChannelRequest getEmailChannelRequest);
 
     /**
      * Returns information about an endpoint.
@@ -410,17 +515,17 @@ public interface AmazonPinpoint {
      * @param getEndpointRequest
      * @return Result of the GetEndpoint operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.GetEndpoint
      */
     GetEndpointResult getEndpoint(GetEndpointRequest getEndpointRequest);
@@ -453,17 +558,17 @@ public interface AmazonPinpoint {
      * @param getGcmChannelRequest
      * @return Result of the GetGcmChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.GetGcmChannel
      */
     GetGcmChannelResult getGcmChannel(GetGcmChannelRequest getGcmChannelRequest);
@@ -474,17 +579,17 @@ public interface AmazonPinpoint {
      * @param getImportJobRequest
      * @return Result of the GetImportJob operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.GetImportJob
      */
     GetImportJobResult getImportJob(GetImportJobRequest getImportJobRequest);
@@ -495,17 +600,17 @@ public interface AmazonPinpoint {
      * @param getImportJobsRequest
      * @return Result of the GetImportJobs operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.GetImportJobs
      */
     GetImportJobsResult getImportJobs(GetImportJobsRequest getImportJobsRequest);
@@ -516,17 +621,17 @@ public interface AmazonPinpoint {
      * @param getSegmentRequest
      * @return Result of the GetSegment operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.GetSegment
      */
     GetSegmentResult getSegment(GetSegmentRequest getSegmentRequest);
@@ -537,17 +642,17 @@ public interface AmazonPinpoint {
      * @param getSegmentImportJobsRequest
      * @return Result of the GetSegmentImportJobs operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.GetSegmentImportJobs
      */
     GetSegmentImportJobsResult getSegmentImportJobs(GetSegmentImportJobsRequest getSegmentImportJobsRequest);
@@ -558,17 +663,17 @@ public interface AmazonPinpoint {
      * @param getSegmentVersionRequest
      * @return Result of the GetSegmentVersion operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.GetSegmentVersion
      */
     GetSegmentVersionResult getSegmentVersion(GetSegmentVersionRequest getSegmentVersionRequest);
@@ -579,17 +684,17 @@ public interface AmazonPinpoint {
      * @param getSegmentVersionsRequest
      * @return Result of the GetSegmentVersions operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.GetSegmentVersions
      */
     GetSegmentVersionsResult getSegmentVersions(GetSegmentVersionsRequest getSegmentVersionsRequest);
@@ -600,20 +705,41 @@ public interface AmazonPinpoint {
      * @param getSegmentsRequest
      * @return Result of the GetSegments operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.GetSegments
      */
     GetSegmentsResult getSegments(GetSegmentsRequest getSegmentsRequest);
+
+    /**
+     * Get an SMS channel
+     * 
+     * @param getSmsChannelRequest
+     * @return Result of the GetSmsChannel operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.GetSmsChannel
+     */
+    GetSmsChannelResult getSmsChannel(GetSmsChannelRequest getSmsChannelRequest);
 
     /**
      * Use to create or update the event stream for an app.
@@ -638,25 +764,67 @@ public interface AmazonPinpoint {
     PutEventStreamResult putEventStream(PutEventStreamRequest putEventStreamRequest);
 
     /**
+     * Send a batch of messages
+     * 
+     * @param sendMessagesRequest
+     * @return Result of the SendMessages operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.SendMessages
+     */
+    SendMessagesResult sendMessages(SendMessagesRequest sendMessagesRequest);
+
+    /**
      * Use to update the APNs channel for an app.
      * 
      * @param updateApnsChannelRequest
      * @return Result of the UpdateApnsChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.UpdateApnsChannel
      */
     UpdateApnsChannelResult updateApnsChannel(UpdateApnsChannelRequest updateApnsChannelRequest);
+
+    /**
+     * Update an APNS sandbox channel
+     * 
+     * @param updateApnsSandboxChannelRequest
+     * @return Result of the UpdateApnsSandboxChannel operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.UpdateApnsSandboxChannel
+     */
+    UpdateApnsSandboxChannelResult updateApnsSandboxChannel(UpdateApnsSandboxChannelRequest updateApnsSandboxChannelRequest);
 
     /**
      * Used to update the settings for an app.
@@ -664,17 +832,17 @@ public interface AmazonPinpoint {
      * @param updateApplicationSettingsRequest
      * @return Result of the UpdateApplicationSettings operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.UpdateApplicationSettings
      */
     UpdateApplicationSettingsResult updateApplicationSettings(UpdateApplicationSettingsRequest updateApplicationSettingsRequest);
@@ -685,20 +853,41 @@ public interface AmazonPinpoint {
      * @param updateCampaignRequest
      * @return Result of the UpdateCampaign operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.UpdateCampaign
      */
     UpdateCampaignResult updateCampaign(UpdateCampaignRequest updateCampaignRequest);
+
+    /**
+     * Update an email channel
+     * 
+     * @param updateEmailChannelRequest
+     * @return Result of the UpdateEmailChannel operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.UpdateEmailChannel
+     */
+    UpdateEmailChannelResult updateEmailChannel(UpdateEmailChannelRequest updateEmailChannelRequest);
 
     /**
      * Use to update an endpoint.
@@ -706,17 +895,17 @@ public interface AmazonPinpoint {
      * @param updateEndpointRequest
      * @return Result of the UpdateEndpoint operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.UpdateEndpoint
      */
     UpdateEndpointResult updateEndpoint(UpdateEndpointRequest updateEndpointRequest);
@@ -727,17 +916,17 @@ public interface AmazonPinpoint {
      * @param updateEndpointsBatchRequest
      * @return Result of the UpdateEndpointsBatch operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.UpdateEndpointsBatch
      */
     UpdateEndpointsBatchResult updateEndpointsBatch(UpdateEndpointsBatchRequest updateEndpointsBatchRequest);
@@ -748,17 +937,17 @@ public interface AmazonPinpoint {
      * @param updateGcmChannelRequest
      * @return Result of the UpdateGcmChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.UpdateGcmChannel
      */
     UpdateGcmChannelResult updateGcmChannel(UpdateGcmChannelRequest updateGcmChannelRequest);
@@ -769,20 +958,41 @@ public interface AmazonPinpoint {
      * @param updateSegmentRequest
      * @return Result of the UpdateSegment operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.UpdateSegment
      */
     UpdateSegmentResult updateSegment(UpdateSegmentRequest updateSegmentRequest);
+
+    /**
+     * Update an SMS channel
+     * 
+     * @param updateSmsChannelRequest
+     * @return Result of the UpdateSmsChannel operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.UpdateSmsChannel
+     */
+    UpdateSmsChannelResult updateSmsChannel(UpdateSmsChannelRequest updateSmsChannelRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

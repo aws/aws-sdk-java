@@ -27,6 +27,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ComparedSourceImageFace implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * Bounding box of the face.
+     * </p>
+     */
     private BoundingBox boundingBox;
     /**
      * <p>
@@ -36,7 +41,12 @@ public class ComparedSourceImageFace implements Serializable, Cloneable, Structu
     private Float confidence;
 
     /**
+     * <p>
+     * Bounding box of the face.
+     * </p>
+     * 
      * @param boundingBox
+     *        Bounding box of the face.
      */
 
     public void setBoundingBox(BoundingBox boundingBox) {
@@ -44,7 +54,11 @@ public class ComparedSourceImageFace implements Serializable, Cloneable, Structu
     }
 
     /**
-     * @return
+     * <p>
+     * Bounding box of the face.
+     * </p>
+     * 
+     * @return Bounding box of the face.
      */
 
     public BoundingBox getBoundingBox() {
@@ -52,7 +66,12 @@ public class ComparedSourceImageFace implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * Bounding box of the face.
+     * </p>
+     * 
      * @param boundingBox
+     *        Bounding box of the face.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

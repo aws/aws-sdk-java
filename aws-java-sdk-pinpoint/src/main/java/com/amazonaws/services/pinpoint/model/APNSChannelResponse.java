@@ -27,7 +27,9 @@ public class APNSChannelResponse implements Serializable, Cloneable, StructuredP
     private String applicationId;
     /** When was this segment created */
     private String creationDate;
-    /** The unique channel ID. */
+    /** If the channel is enabled for sending messages. */
+    private Boolean enabled;
+    /** Channel ID. Not used, only for backwards compatibility. */
     private String id;
     /** Is this channel archived */
     private Boolean isArchived;
@@ -109,10 +111,54 @@ public class APNSChannelResponse implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The unique channel ID.
+     * If the channel is enabled for sending messages.
+     * 
+     * @param enabled
+     *        If the channel is enabled for sending messages.
+     */
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    /**
+     * If the channel is enabled for sending messages.
+     * 
+     * @return If the channel is enabled for sending messages.
+     */
+
+    public Boolean getEnabled() {
+        return this.enabled;
+    }
+
+    /**
+     * If the channel is enabled for sending messages.
+     * 
+     * @param enabled
+     *        If the channel is enabled for sending messages.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public APNSChannelResponse withEnabled(Boolean enabled) {
+        setEnabled(enabled);
+        return this;
+    }
+
+    /**
+     * If the channel is enabled for sending messages.
+     * 
+     * @return If the channel is enabled for sending messages.
+     */
+
+    public Boolean isEnabled() {
+        return this.enabled;
+    }
+
+    /**
+     * Channel ID. Not used, only for backwards compatibility.
      * 
      * @param id
-     *        The unique channel ID.
+     *        Channel ID. Not used, only for backwards compatibility.
      */
 
     public void setId(String id) {
@@ -120,9 +166,9 @@ public class APNSChannelResponse implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The unique channel ID.
+     * Channel ID. Not used, only for backwards compatibility.
      * 
-     * @return The unique channel ID.
+     * @return Channel ID. Not used, only for backwards compatibility.
      */
 
     public String getId() {
@@ -130,10 +176,10 @@ public class APNSChannelResponse implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * The unique channel ID.
+     * Channel ID. Not used, only for backwards compatibility.
      * 
      * @param id
-     *        The unique channel ID.
+     *        Channel ID. Not used, only for backwards compatibility.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -337,6 +383,8 @@ public class APNSChannelResponse implements Serializable, Cloneable, StructuredP
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
         if (getCreationDate() != null)
             sb.append("CreationDate: ").append(getCreationDate()).append(",");
+        if (getEnabled() != null)
+            sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getIsArchived() != null)
@@ -370,6 +418,10 @@ public class APNSChannelResponse implements Serializable, Cloneable, StructuredP
         if (other.getCreationDate() == null ^ this.getCreationDate() == null)
             return false;
         if (other.getCreationDate() != null && other.getCreationDate().equals(this.getCreationDate()) == false)
+            return false;
+        if (other.getEnabled() == null ^ this.getEnabled() == null)
+            return false;
+        if (other.getEnabled() != null && other.getEnabled().equals(this.getEnabled()) == false)
             return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
@@ -405,6 +457,7 @@ public class APNSChannelResponse implements Serializable, Cloneable, StructuredP
 
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
+        hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getIsArchived() == null) ? 0 : getIsArchived().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedBy() == null) ? 0 : getLastModifiedBy().hashCode());

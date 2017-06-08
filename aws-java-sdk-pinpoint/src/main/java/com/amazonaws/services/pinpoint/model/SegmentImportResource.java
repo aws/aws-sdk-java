@@ -23,6 +23,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SegmentImportResource implements Serializable, Cloneable, StructuredPojo {
 
+    /** Channel type counts */
+    private java.util.Map<String, Integer> channelCounts;
     /** A unique, custom ID assigned to the IAM role that restricts who can assume the role. */
     private String externalId;
     /**
@@ -35,6 +37,61 @@ public class SegmentImportResource implements Serializable, Cloneable, Structure
     private String s3Url;
     /** The number of endpoints that were successfully imported to create this segment. */
     private Integer size;
+
+    /**
+     * Channel type counts
+     * 
+     * @return Channel type counts
+     */
+
+    public java.util.Map<String, Integer> getChannelCounts() {
+        return channelCounts;
+    }
+
+    /**
+     * Channel type counts
+     * 
+     * @param channelCounts
+     *        Channel type counts
+     */
+
+    public void setChannelCounts(java.util.Map<String, Integer> channelCounts) {
+        this.channelCounts = channelCounts;
+    }
+
+    /**
+     * Channel type counts
+     * 
+     * @param channelCounts
+     *        Channel type counts
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SegmentImportResource withChannelCounts(java.util.Map<String, Integer> channelCounts) {
+        setChannelCounts(channelCounts);
+        return this;
+    }
+
+    public SegmentImportResource addChannelCountsEntry(String key, Integer value) {
+        if (null == this.channelCounts) {
+            this.channelCounts = new java.util.HashMap<String, Integer>();
+        }
+        if (this.channelCounts.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.channelCounts.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into ChannelCounts.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SegmentImportResource clearChannelCountsEntries() {
+        this.channelCounts = null;
+        return this;
+    }
 
     /**
      * A unique, custom ID assigned to the IAM role that restricts who can assume the role.
@@ -249,6 +306,8 @@ public class SegmentImportResource implements Serializable, Cloneable, Structure
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getChannelCounts() != null)
+            sb.append("ChannelCounts: ").append(getChannelCounts()).append(",");
         if (getExternalId() != null)
             sb.append("ExternalId: ").append(getExternalId()).append(",");
         if (getFormat() != null)
@@ -273,6 +332,10 @@ public class SegmentImportResource implements Serializable, Cloneable, Structure
         if (obj instanceof SegmentImportResource == false)
             return false;
         SegmentImportResource other = (SegmentImportResource) obj;
+        if (other.getChannelCounts() == null ^ this.getChannelCounts() == null)
+            return false;
+        if (other.getChannelCounts() != null && other.getChannelCounts().equals(this.getChannelCounts()) == false)
+            return false;
         if (other.getExternalId() == null ^ this.getExternalId() == null)
             return false;
         if (other.getExternalId() != null && other.getExternalId().equals(this.getExternalId()) == false)
@@ -301,6 +364,7 @@ public class SegmentImportResource implements Serializable, Cloneable, Structure
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getChannelCounts() == null) ? 0 : getChannelCounts().hashCode());
         hashCode = prime * hashCode + ((getExternalId() == null) ? 0 : getExternalId().hashCode());
         hashCode = prime * hashCode + ((getFormat() == null) ? 0 : getFormat().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());

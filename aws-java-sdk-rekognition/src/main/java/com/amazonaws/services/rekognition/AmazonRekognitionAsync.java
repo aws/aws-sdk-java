@@ -470,7 +470,7 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * </p>
      * <p>
      * To filter images, use the labels returned by <code>DetectModerationLabels</code> to determine which types of
-     * content are appropriate. For information about moderation labels, see <a>howitworks-moderateimage</a>.
+     * content are appropriate. For information about moderation labels, see <a>image-moderation</a>.
      * </p>
      * 
      * @param detectModerationLabelsRequest
@@ -487,7 +487,7 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * </p>
      * <p>
      * To filter images, use the labels returned by <code>DetectModerationLabels</code> to determine which types of
-     * content are appropriate. For information about moderation labels, see <a>howitworks-moderateimage</a>.
+     * content are appropriate. For information about moderation labels, see <a>image-moderation</a>.
      * </p>
      * 
      * @param detectModerationLabelsRequest
@@ -500,6 +500,43 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      */
     java.util.concurrent.Future<DetectModerationLabelsResult> detectModerationLabelsAsync(DetectModerationLabelsRequest detectModerationLabelsRequest,
             com.amazonaws.handlers.AsyncHandler<DetectModerationLabelsRequest, DetectModerationLabelsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the name and additional information about a celebrity based on his or her Rekognition ID. The additional
+     * information is returned as an array of URLs. If there is no additional information about the celebrity, this list
+     * is empty. For more information, see <a>celebrity-recognition</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:GetCelebrityInfo</code> action.
+     * </p>
+     * 
+     * @param getCelebrityInfoRequest
+     * @return A Java Future containing the result of the GetCelebrityInfo operation returned by the service.
+     * @sample AmazonRekognitionAsync.GetCelebrityInfo
+     */
+    java.util.concurrent.Future<GetCelebrityInfoResult> getCelebrityInfoAsync(GetCelebrityInfoRequest getCelebrityInfoRequest);
+
+    /**
+     * <p>
+     * Gets the name and additional information about a celebrity based on his or her Rekognition ID. The additional
+     * information is returned as an array of URLs. If there is no additional information about the celebrity, this list
+     * is empty. For more information, see <a>celebrity-recognition</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:GetCelebrityInfo</code> action.
+     * </p>
+     * 
+     * @param getCelebrityInfoRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCelebrityInfo operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.GetCelebrityInfo
+     */
+    java.util.concurrent.Future<GetCelebrityInfoResult> getCelebrityInfoAsync(GetCelebrityInfoRequest getCelebrityInfoRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCelebrityInfoRequest, GetCelebrityInfoResult> asyncHandler);
 
     /**
      * <p>
@@ -520,8 +557,8 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * <p>
      * In response, the operation returns an array of metadata for all detected faces. This includes, the bounding box
      * of the detected face, confidence value (indicating the bounding box contains a face), a face ID assigned by the
-     * service for each face that is detected and stored, and an image ID assigned by the service for the input image If
-     * you request all facial attributes (using the <code>detectionAttributes</code> parameter, Amazon Rekognition
+     * service for each face that is detected and stored, and an image ID assigned by the service for the input image.
+     * If you request all facial attributes (using the <code>detectionAttributes</code> parameter, Amazon Rekognition
      * returns detailed facial attributes such as facial landmarks (for example, location of eye and mount) and other
      * facial attributes such gender. If you provide the same image, specify the same collection, and use the same
      * external ID in the <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate face metadata.
@@ -558,8 +595,8 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * <p>
      * In response, the operation returns an array of metadata for all detected faces. This includes, the bounding box
      * of the detected face, confidence value (indicating the bounding box contains a face), a face ID assigned by the
-     * service for each face that is detected and stored, and an image ID assigned by the service for the input image If
-     * you request all facial attributes (using the <code>detectionAttributes</code> parameter, Amazon Rekognition
+     * service for each face that is detected and stored, and an image ID assigned by the service for the input image.
+     * If you request all facial attributes (using the <code>detectionAttributes</code> parameter, Amazon Rekognition
      * returns detailed facial attributes such as facial landmarks (for example, location of eye and mount) and other
      * facial attributes such gender. If you provide the same image, specify the same collection, and use the same
      * external ID in the <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate face metadata.
@@ -659,6 +696,81 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      */
     java.util.concurrent.Future<ListFacesResult> listFacesAsync(ListFacesRequest listFacesRequest,
             com.amazonaws.handlers.AsyncHandler<ListFacesRequest, ListFacesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns an array of celebrities recognized in the input image. The image is passed either as base64-encoded image
+     * bytes or as a reference to an image in an Amazon S3 bucket. The image must be either a PNG or JPEG formatted
+     * file. For more information, see <a>celebrity-recognition</a>.
+     * </p>
+     * <p>
+     * <code>RecognizeCelebrities</code> returns the 15 largest faces in the image. It lists recognized celebrities in
+     * the <code>CelebrityFaces</code> list and unrecognized faces in the <code>UnrecognizedFaces</code> list. The
+     * operation doesn't return celebrities whose face sizes are smaller than the largest 15 faces in the image.
+     * </p>
+     * <p>
+     * For each celebrity recognized, the API returns a <code>Celebrity</code> object. The <code>Celebrity</code> object
+     * contains the celebrity name, ID, URL links to additional information, match confidence, and a
+     * <code>ComparedFace</code> object that you can use to locate the celebrity's face on the image.
+     * </p>
+     * <p>
+     * Rekognition does not retain information about which images a celebrity has been recognized in. Your application
+     * must store this information and use the <code>Celebrity</code> ID property as a unique identifier for the
+     * celebrity. If you don't store the celebrity name or additional information URLs returned by
+     * <code>RecognizeCelebrities</code>, you will need the ID to identify the celebrity in a call to the operation.
+     * </p>
+     * <p>
+     * For an example, see <a>recognize-celebrities-tutorial</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:RecognizeCelebrities</code> operation.
+     * </p>
+     * 
+     * @param recognizeCelebritiesRequest
+     * @return A Java Future containing the result of the RecognizeCelebrities operation returned by the service.
+     * @sample AmazonRekognitionAsync.RecognizeCelebrities
+     */
+    java.util.concurrent.Future<RecognizeCelebritiesResult> recognizeCelebritiesAsync(RecognizeCelebritiesRequest recognizeCelebritiesRequest);
+
+    /**
+     * <p>
+     * Returns an array of celebrities recognized in the input image. The image is passed either as base64-encoded image
+     * bytes or as a reference to an image in an Amazon S3 bucket. The image must be either a PNG or JPEG formatted
+     * file. For more information, see <a>celebrity-recognition</a>.
+     * </p>
+     * <p>
+     * <code>RecognizeCelebrities</code> returns the 15 largest faces in the image. It lists recognized celebrities in
+     * the <code>CelebrityFaces</code> list and unrecognized faces in the <code>UnrecognizedFaces</code> list. The
+     * operation doesn't return celebrities whose face sizes are smaller than the largest 15 faces in the image.
+     * </p>
+     * <p>
+     * For each celebrity recognized, the API returns a <code>Celebrity</code> object. The <code>Celebrity</code> object
+     * contains the celebrity name, ID, URL links to additional information, match confidence, and a
+     * <code>ComparedFace</code> object that you can use to locate the celebrity's face on the image.
+     * </p>
+     * <p>
+     * Rekognition does not retain information about which images a celebrity has been recognized in. Your application
+     * must store this information and use the <code>Celebrity</code> ID property as a unique identifier for the
+     * celebrity. If you don't store the celebrity name or additional information URLs returned by
+     * <code>RecognizeCelebrities</code>, you will need the ID to identify the celebrity in a call to the operation.
+     * </p>
+     * <p>
+     * For an example, see <a>recognize-celebrities-tutorial</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:RecognizeCelebrities</code> operation.
+     * </p>
+     * 
+     * @param recognizeCelebritiesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RecognizeCelebrities operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.RecognizeCelebrities
+     */
+    java.util.concurrent.Future<RecognizeCelebritiesResult> recognizeCelebritiesAsync(RecognizeCelebritiesRequest recognizeCelebritiesRequest,
+            com.amazonaws.handlers.AsyncHandler<RecognizeCelebritiesRequest, RecognizeCelebritiesResult> asyncHandler);
 
     /**
      * <p>

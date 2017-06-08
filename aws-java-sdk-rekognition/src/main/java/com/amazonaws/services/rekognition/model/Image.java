@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides the source image either as bytes or an S3 object.
+ * Provides the input image either as bytes or an S3 object.
  * </p>
  * <p>
  * You pass image bytes to a Rekognition API operation by using the <code>Bytes</code> property. For example, you would

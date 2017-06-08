@@ -29,7 +29,9 @@ public class GCMChannelResponse implements Serializable, Cloneable, StructuredPo
     private String creationDate;
     /** The GCM API key from Google. */
     private String credential;
-    /** The unique channel ID. */
+    /** If the channel is enabled for sending messages. */
+    private Boolean enabled;
+    /** Channel ID. Not used, only for backwards compatibility. */
     private String id;
     /** Is this channel archived */
     private Boolean isArchived;
@@ -145,10 +147,54 @@ public class GCMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The unique channel ID.
+     * If the channel is enabled for sending messages.
+     * 
+     * @param enabled
+     *        If the channel is enabled for sending messages.
+     */
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    /**
+     * If the channel is enabled for sending messages.
+     * 
+     * @return If the channel is enabled for sending messages.
+     */
+
+    public Boolean getEnabled() {
+        return this.enabled;
+    }
+
+    /**
+     * If the channel is enabled for sending messages.
+     * 
+     * @param enabled
+     *        If the channel is enabled for sending messages.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GCMChannelResponse withEnabled(Boolean enabled) {
+        setEnabled(enabled);
+        return this;
+    }
+
+    /**
+     * If the channel is enabled for sending messages.
+     * 
+     * @return If the channel is enabled for sending messages.
+     */
+
+    public Boolean isEnabled() {
+        return this.enabled;
+    }
+
+    /**
+     * Channel ID. Not used, only for backwards compatibility.
      * 
      * @param id
-     *        The unique channel ID.
+     *        Channel ID. Not used, only for backwards compatibility.
      */
 
     public void setId(String id) {
@@ -156,9 +202,9 @@ public class GCMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The unique channel ID.
+     * Channel ID. Not used, only for backwards compatibility.
      * 
-     * @return The unique channel ID.
+     * @return Channel ID. Not used, only for backwards compatibility.
      */
 
     public String getId() {
@@ -166,10 +212,10 @@ public class GCMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The unique channel ID.
+     * Channel ID. Not used, only for backwards compatibility.
      * 
      * @param id
-     *        The unique channel ID.
+     *        Channel ID. Not used, only for backwards compatibility.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -375,6 +421,8 @@ public class GCMChannelResponse implements Serializable, Cloneable, StructuredPo
             sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getCredential() != null)
             sb.append("Credential: ").append(getCredential()).append(",");
+        if (getEnabled() != null)
+            sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getIsArchived() != null)
@@ -413,6 +461,10 @@ public class GCMChannelResponse implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getCredential() != null && other.getCredential().equals(this.getCredential()) == false)
             return false;
+        if (other.getEnabled() == null ^ this.getEnabled() == null)
+            return false;
+        if (other.getEnabled() != null && other.getEnabled().equals(this.getEnabled()) == false)
+            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
@@ -448,6 +500,7 @@ public class GCMChannelResponse implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
         hashCode = prime * hashCode + ((getCredential() == null) ? 0 : getCredential().hashCode());
+        hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getIsArchived() == null) ? 0 : getIsArchived().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedBy() == null) ? 0 : getLastModifiedBy().hashCode());

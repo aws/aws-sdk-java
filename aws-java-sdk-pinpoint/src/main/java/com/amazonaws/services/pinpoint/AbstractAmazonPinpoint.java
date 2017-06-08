@@ -58,7 +58,17 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
     }
 
     @Override
+    public DeleteApnsSandboxChannelResult deleteApnsSandboxChannel(DeleteApnsSandboxChannelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteCampaignResult deleteCampaign(DeleteCampaignRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteEmailChannelResult deleteEmailChannel(DeleteEmailChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -78,7 +88,17 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
     }
 
     @Override
+    public DeleteSmsChannelResult deleteSmsChannel(DeleteSmsChannelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetApnsChannelResult getApnsChannel(GetApnsChannelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetApnsSandboxChannelResult getApnsSandboxChannel(GetApnsSandboxChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -109,6 +129,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
 
     @Override
     public GetCampaignsResult getCampaigns(GetCampaignsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetEmailChannelResult getEmailChannel(GetEmailChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -163,12 +188,27 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
     }
 
     @Override
+    public GetSmsChannelResult getSmsChannel(GetSmsChannelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutEventStreamResult putEventStream(PutEventStreamRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public SendMessagesResult sendMessages(SendMessagesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateApnsChannelResult updateApnsChannel(UpdateApnsChannelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateApnsSandboxChannelResult updateApnsSandboxChannel(UpdateApnsSandboxChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -179,6 +219,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
 
     @Override
     public UpdateCampaignResult updateCampaign(UpdateCampaignRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateEmailChannelResult updateEmailChannel(UpdateEmailChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -199,6 +244,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
 
     @Override
     public UpdateSegmentResult updateSegment(UpdateSegmentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateSmsChannelResult updateSmsChannel(UpdateSmsChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -278,17 +278,17 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @param createCampaignRequest
      * @return Result of the CreateCampaign operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.CreateCampaign
      */
     @Override
@@ -334,17 +334,17 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @param createImportJobRequest
      * @return Result of the CreateImportJob operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.CreateImportJob
      */
     @Override
@@ -390,17 +390,17 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @param createSegmentRequest
      * @return Result of the CreateSegment operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.CreateSegment
      */
     @Override
@@ -446,17 +446,17 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @param deleteApnsChannelRequest
      * @return Result of the DeleteApnsChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.DeleteApnsChannel
      */
     @Override
@@ -497,22 +497,80 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
     }
 
     /**
+     * Delete an APNS sandbox channel
+     * 
+     * @param deleteApnsSandboxChannelRequest
+     * @return Result of the DeleteApnsSandboxChannel operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.DeleteApnsSandboxChannel
+     */
+    @Override
+    public DeleteApnsSandboxChannelResult deleteApnsSandboxChannel(DeleteApnsSandboxChannelRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteApnsSandboxChannel(request);
+    }
+
+    @SdkInternalApi
+    final DeleteApnsSandboxChannelResult executeDeleteApnsSandboxChannel(DeleteApnsSandboxChannelRequest deleteApnsSandboxChannelRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteApnsSandboxChannelRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteApnsSandboxChannelRequest> request = null;
+        Response<DeleteApnsSandboxChannelResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteApnsSandboxChannelRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteApnsSandboxChannelRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteApnsSandboxChannelResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteApnsSandboxChannelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Deletes a campaign.
      * 
      * @param deleteCampaignRequest
      * @return Result of the DeleteCampaign operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.DeleteCampaign
      */
     @Override
@@ -542,6 +600,62 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteCampaignResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteCampaignResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Delete an email channel
+     * 
+     * @param deleteEmailChannelRequest
+     * @return Result of the DeleteEmailChannel operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.DeleteEmailChannel
+     */
+    @Override
+    public DeleteEmailChannelResult deleteEmailChannel(DeleteEmailChannelRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteEmailChannel(request);
+    }
+
+    @SdkInternalApi
+    final DeleteEmailChannelResult executeDeleteEmailChannel(DeleteEmailChannelRequest deleteEmailChannelRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteEmailChannelRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteEmailChannelRequest> request = null;
+        Response<DeleteEmailChannelResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteEmailChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteEmailChannelRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteEmailChannelResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteEmailChannelResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -615,17 +729,17 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @param deleteGcmChannelRequest
      * @return Result of the DeleteGcmChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.DeleteGcmChannel
      */
     @Override
@@ -671,17 +785,17 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @param deleteSegmentRequest
      * @return Result of the DeleteSegment operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.DeleteSegment
      */
     @Override
@@ -722,22 +836,78 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
     }
 
     /**
+     * Delete an SMS channel
+     * 
+     * @param deleteSmsChannelRequest
+     * @return Result of the DeleteSmsChannel operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.DeleteSmsChannel
+     */
+    @Override
+    public DeleteSmsChannelResult deleteSmsChannel(DeleteSmsChannelRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteSmsChannel(request);
+    }
+
+    @SdkInternalApi
+    final DeleteSmsChannelResult executeDeleteSmsChannel(DeleteSmsChannelRequest deleteSmsChannelRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteSmsChannelRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteSmsChannelRequest> request = null;
+        Response<DeleteSmsChannelResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteSmsChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSmsChannelRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteSmsChannelResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteSmsChannelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Returns information about the APNs channel for an app.
      * 
      * @param getApnsChannelRequest
      * @return Result of the GetApnsChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.GetApnsChannel
      */
     @Override
@@ -778,22 +948,79 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
     }
 
     /**
+     * Get an APNS sandbox channel
+     * 
+     * @param getApnsSandboxChannelRequest
+     * @return Result of the GetApnsSandboxChannel operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.GetApnsSandboxChannel
+     */
+    @Override
+    public GetApnsSandboxChannelResult getApnsSandboxChannel(GetApnsSandboxChannelRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetApnsSandboxChannel(request);
+    }
+
+    @SdkInternalApi
+    final GetApnsSandboxChannelResult executeGetApnsSandboxChannel(GetApnsSandboxChannelRequest getApnsSandboxChannelRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getApnsSandboxChannelRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetApnsSandboxChannelRequest> request = null;
+        Response<GetApnsSandboxChannelResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetApnsSandboxChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getApnsSandboxChannelRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetApnsSandboxChannelResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new GetApnsSandboxChannelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Used to request the settings for an app.
      * 
      * @param getApplicationSettingsRequest
      * @return Result of the GetApplicationSettings operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.GetApplicationSettings
      */
     @Override
@@ -840,17 +1067,17 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @param getCampaignRequest
      * @return Result of the GetCampaign operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.GetCampaign
      */
     @Override
@@ -896,17 +1123,17 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @param getCampaignActivitiesRequest
      * @return Result of the GetCampaignActivities operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.GetCampaignActivities
      */
     @Override
@@ -953,17 +1180,17 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @param getCampaignVersionRequest
      * @return Result of the GetCampaignVersion operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.GetCampaignVersion
      */
     @Override
@@ -1009,17 +1236,17 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @param getCampaignVersionsRequest
      * @return Result of the GetCampaignVersions operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.GetCampaignVersions
      */
     @Override
@@ -1065,17 +1292,17 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @param getCampaignsRequest
      * @return Result of the GetCampaigns operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.GetCampaigns
      */
     @Override
@@ -1116,22 +1343,78 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
     }
 
     /**
+     * Get an email channel
+     * 
+     * @param getEmailChannelRequest
+     * @return Result of the GetEmailChannel operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.GetEmailChannel
+     */
+    @Override
+    public GetEmailChannelResult getEmailChannel(GetEmailChannelRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetEmailChannel(request);
+    }
+
+    @SdkInternalApi
+    final GetEmailChannelResult executeGetEmailChannel(GetEmailChannelRequest getEmailChannelRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getEmailChannelRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetEmailChannelRequest> request = null;
+        Response<GetEmailChannelResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetEmailChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getEmailChannelRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetEmailChannelResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetEmailChannelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Returns information about an endpoint.
      * 
      * @param getEndpointRequest
      * @return Result of the GetEndpoint operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.GetEndpoint
      */
     @Override
@@ -1234,17 +1517,17 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @param getGcmChannelRequest
      * @return Result of the GetGcmChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.GetGcmChannel
      */
     @Override
@@ -1290,17 +1573,17 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @param getImportJobRequest
      * @return Result of the GetImportJob operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.GetImportJob
      */
     @Override
@@ -1346,17 +1629,17 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @param getImportJobsRequest
      * @return Result of the GetImportJobs operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.GetImportJobs
      */
     @Override
@@ -1402,17 +1685,17 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @param getSegmentRequest
      * @return Result of the GetSegment operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.GetSegment
      */
     @Override
@@ -1458,17 +1741,17 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @param getSegmentImportJobsRequest
      * @return Result of the GetSegmentImportJobs operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.GetSegmentImportJobs
      */
     @Override
@@ -1514,17 +1797,17 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @param getSegmentVersionRequest
      * @return Result of the GetSegmentVersion operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.GetSegmentVersion
      */
     @Override
@@ -1570,17 +1853,17 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @param getSegmentVersionsRequest
      * @return Result of the GetSegmentVersions operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.GetSegmentVersions
      */
     @Override
@@ -1626,17 +1909,17 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @param getSegmentsRequest
      * @return Result of the GetSegments operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.GetSegments
      */
     @Override
@@ -1666,6 +1949,62 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<GetSegmentsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetSegmentsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Get an SMS channel
+     * 
+     * @param getSmsChannelRequest
+     * @return Result of the GetSmsChannel operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.GetSmsChannel
+     */
+    @Override
+    public GetSmsChannelResult getSmsChannel(GetSmsChannelRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSmsChannel(request);
+    }
+
+    @SdkInternalApi
+    final GetSmsChannelResult executeGetSmsChannel(GetSmsChannelRequest getSmsChannelRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSmsChannelRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSmsChannelRequest> request = null;
+        Response<GetSmsChannelResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSmsChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSmsChannelRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetSmsChannelResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetSmsChannelResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1734,22 +2073,78 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
     }
 
     /**
+     * Send a batch of messages
+     * 
+     * @param sendMessagesRequest
+     * @return Result of the SendMessages operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.SendMessages
+     */
+    @Override
+    public SendMessagesResult sendMessages(SendMessagesRequest request) {
+        request = beforeClientExecution(request);
+        return executeSendMessages(request);
+    }
+
+    @SdkInternalApi
+    final SendMessagesResult executeSendMessages(SendMessagesRequest sendMessagesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(sendMessagesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SendMessagesRequest> request = null;
+        Response<SendMessagesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SendMessagesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(sendMessagesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SendMessagesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SendMessagesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Use to update the APNs channel for an app.
      * 
      * @param updateApnsChannelRequest
      * @return Result of the UpdateApnsChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.UpdateApnsChannel
      */
     @Override
@@ -1790,22 +2185,80 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
     }
 
     /**
+     * Update an APNS sandbox channel
+     * 
+     * @param updateApnsSandboxChannelRequest
+     * @return Result of the UpdateApnsSandboxChannel operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.UpdateApnsSandboxChannel
+     */
+    @Override
+    public UpdateApnsSandboxChannelResult updateApnsSandboxChannel(UpdateApnsSandboxChannelRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateApnsSandboxChannel(request);
+    }
+
+    @SdkInternalApi
+    final UpdateApnsSandboxChannelResult executeUpdateApnsSandboxChannel(UpdateApnsSandboxChannelRequest updateApnsSandboxChannelRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateApnsSandboxChannelRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateApnsSandboxChannelRequest> request = null;
+        Response<UpdateApnsSandboxChannelResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateApnsSandboxChannelRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateApnsSandboxChannelRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateApnsSandboxChannelResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateApnsSandboxChannelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Used to update the settings for an app.
      * 
      * @param updateApplicationSettingsRequest
      * @return Result of the UpdateApplicationSettings operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.UpdateApplicationSettings
      */
     @Override
@@ -1853,17 +2306,17 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @param updateCampaignRequest
      * @return Result of the UpdateCampaign operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.UpdateCampaign
      */
     @Override
@@ -1904,22 +2357,78 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
     }
 
     /**
+     * Update an email channel
+     * 
+     * @param updateEmailChannelRequest
+     * @return Result of the UpdateEmailChannel operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.UpdateEmailChannel
+     */
+    @Override
+    public UpdateEmailChannelResult updateEmailChannel(UpdateEmailChannelRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateEmailChannel(request);
+    }
+
+    @SdkInternalApi
+    final UpdateEmailChannelResult executeUpdateEmailChannel(UpdateEmailChannelRequest updateEmailChannelRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateEmailChannelRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateEmailChannelRequest> request = null;
+        Response<UpdateEmailChannelResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateEmailChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateEmailChannelRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateEmailChannelResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateEmailChannelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Use to update an endpoint.
      * 
      * @param updateEndpointRequest
      * @return Result of the UpdateEndpoint operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.UpdateEndpoint
      */
     @Override
@@ -1965,17 +2474,17 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @param updateEndpointsBatchRequest
      * @return Result of the UpdateEndpointsBatch operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.UpdateEndpointsBatch
      */
     @Override
@@ -2021,17 +2530,17 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @param updateGcmChannelRequest
      * @return Result of the UpdateGcmChannel operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.UpdateGcmChannel
      */
     @Override
@@ -2077,17 +2586,17 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
      * @param updateSegmentRequest
      * @return Result of the UpdateSegment operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         Simple message object.
      * @throws InternalServerErrorException
-     *         500 response
+     *         Simple message object.
      * @throws ForbiddenException
-     *         403 response
+     *         Simple message object.
      * @throws NotFoundException
-     *         404 response
+     *         Simple message object.
      * @throws MethodNotAllowedException
-     *         405 response
+     *         Simple message object.
      * @throws TooManyRequestsException
-     *         429 response
+     *         Simple message object.
      * @sample AmazonPinpoint.UpdateSegment
      */
     @Override
@@ -2117,6 +2626,62 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateSegmentResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateSegmentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Update an SMS channel
+     * 
+     * @param updateSmsChannelRequest
+     * @return Result of the UpdateSmsChannel operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.UpdateSmsChannel
+     */
+    @Override
+    public UpdateSmsChannelResult updateSmsChannel(UpdateSmsChannelRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateSmsChannel(request);
+    }
+
+    @SdkInternalApi
+    final UpdateSmsChannelResult executeUpdateSmsChannel(UpdateSmsChannelRequest updateSmsChannelRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateSmsChannelRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateSmsChannelRequest> request = null;
+        Response<UpdateSmsChannelResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateSmsChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateSmsChannelRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateSmsChannelResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateSmsChannelResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

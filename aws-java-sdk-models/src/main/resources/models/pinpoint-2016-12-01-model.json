@@ -21,37 +21,37 @@
       "deprecated" : false,
       "documentation" : "Creates or updates a campaign.",
       "errors" : [ {
-        "documentation" : "400 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
-        "documentation" : "500 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
-        "documentation" : "403 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
-        "documentation" : "404 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
-        "documentation" : "405 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
-        "documentation" : "429 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
@@ -70,7 +70,7 @@
       },
       "name" : "CreateCampaign",
       "output" : {
-        "documentation" : "201 response",
+        "documentation" : null,
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "CreateCampaignResponse"
@@ -82,37 +82,37 @@
       "deprecated" : false,
       "documentation" : "Creates or updates an import job.",
       "errors" : [ {
-        "documentation" : "400 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
-        "documentation" : "500 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
-        "documentation" : "403 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
-        "documentation" : "404 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
-        "documentation" : "405 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
-        "documentation" : "429 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
@@ -131,7 +131,7 @@
       },
       "name" : "CreateImportJob",
       "output" : {
-        "documentation" : "201 response",
+        "documentation" : null,
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "CreateImportJobResponse"
@@ -143,37 +143,37 @@
       "deprecated" : false,
       "documentation" : "Used to create or update a segment.",
       "errors" : [ {
-        "documentation" : "400 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
-        "documentation" : "500 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
-        "documentation" : "403 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
-        "documentation" : "404 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
-        "documentation" : "405 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
-        "documentation" : "429 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
@@ -192,7 +192,7 @@
       },
       "name" : "CreateSegment",
       "output" : {
-        "documentation" : "201 response",
+        "documentation" : null,
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "CreateSegmentResponse"
@@ -204,37 +204,37 @@
       "deprecated" : false,
       "documentation" : "Deletes the APNs channel for an app.",
       "errors" : [ {
-        "documentation" : "400 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
-        "documentation" : "500 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
-        "documentation" : "403 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
-        "documentation" : "404 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
-        "documentation" : "405 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
-        "documentation" : "429 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
@@ -253,10 +253,71 @@
       },
       "name" : "DeleteApnsChannel",
       "output" : {
-        "documentation" : "200 response",
+        "documentation" : null,
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "DeleteApnsChannelResponse"
+      }
+    },
+    "DeleteApnsSandboxChannel" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "Delete an APNS sandbox channel",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "BadRequestException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalServerErrorException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ForbiddenException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "MethodNotAllowedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "TooManyRequestsException"
+      } ],
+      "http" : {
+        "method" : "DELETE",
+        "requestUri" : "/v1/apps/{application-id}/channels/apns_sandbox",
+        "responseCode" : "200"
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DeleteApnsSandboxChannelRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "DeleteApnsSandboxChannel",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "DeleteApnsSandboxChannelResponse"
       }
     },
     "DeleteCampaign" : {
@@ -265,37 +326,37 @@
       "deprecated" : false,
       "documentation" : "Deletes a campaign.",
       "errors" : [ {
-        "documentation" : "400 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
-        "documentation" : "500 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
-        "documentation" : "403 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
-        "documentation" : "404 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
-        "documentation" : "405 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
-        "documentation" : "429 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
@@ -314,10 +375,71 @@
       },
       "name" : "DeleteCampaign",
       "output" : {
-        "documentation" : "200 response",
+        "documentation" : null,
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "DeleteCampaignResponse"
+      }
+    },
+    "DeleteEmailChannel" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "Delete an email channel",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "BadRequestException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalServerErrorException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ForbiddenException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "MethodNotAllowedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "TooManyRequestsException"
+      } ],
+      "http" : {
+        "method" : "DELETE",
+        "requestUri" : "/v1/apps/{application-id}/channels/email",
+        "responseCode" : "200"
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DeleteEmailChannelRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "DeleteEmailChannel",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "DeleteEmailChannelResponse"
       }
     },
     "DeleteEventStream" : {
@@ -387,37 +509,37 @@
       "deprecated" : false,
       "documentation" : "Deletes the GCM channel for an app.",
       "errors" : [ {
-        "documentation" : "400 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
-        "documentation" : "500 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
-        "documentation" : "403 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
-        "documentation" : "404 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
-        "documentation" : "405 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
-        "documentation" : "429 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
@@ -436,7 +558,7 @@
       },
       "name" : "DeleteGcmChannel",
       "output" : {
-        "documentation" : "200 response",
+        "documentation" : null,
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "DeleteGcmChannelResponse"
@@ -448,37 +570,37 @@
       "deprecated" : false,
       "documentation" : "Deletes a segment.",
       "errors" : [ {
-        "documentation" : "400 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
-        "documentation" : "500 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
-        "documentation" : "403 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
-        "documentation" : "404 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
-        "documentation" : "405 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
-        "documentation" : "429 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
@@ -497,10 +619,71 @@
       },
       "name" : "DeleteSegment",
       "output" : {
-        "documentation" : "200 response",
+        "documentation" : null,
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "DeleteSegmentResponse"
+      }
+    },
+    "DeleteSmsChannel" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "Delete an SMS channel",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "BadRequestException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalServerErrorException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ForbiddenException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "MethodNotAllowedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "TooManyRequestsException"
+      } ],
+      "http" : {
+        "method" : "DELETE",
+        "requestUri" : "/v1/apps/{application-id}/channels/sms",
+        "responseCode" : "200"
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "DeleteSmsChannelRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "DeleteSmsChannel",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "DeleteSmsChannelResponse"
       }
     },
     "GetApnsChannel" : {
@@ -509,37 +692,37 @@
       "deprecated" : false,
       "documentation" : "Returns information about the APNs channel for an app.",
       "errors" : [ {
-        "documentation" : "400 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
-        "documentation" : "500 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
-        "documentation" : "403 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
-        "documentation" : "404 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
-        "documentation" : "405 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
-        "documentation" : "429 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
@@ -558,10 +741,71 @@
       },
       "name" : "GetApnsChannel",
       "output" : {
-        "documentation" : "200 response",
+        "documentation" : null,
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "GetApnsChannelResponse"
+      }
+    },
+    "GetApnsSandboxChannel" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "Get an APNS sandbox channel",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "BadRequestException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalServerErrorException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ForbiddenException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "MethodNotAllowedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "TooManyRequestsException"
+      } ],
+      "http" : {
+        "method" : "GET",
+        "requestUri" : "/v1/apps/{application-id}/channels/apns_sandbox",
+        "responseCode" : "200"
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "GetApnsSandboxChannelRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "GetApnsSandboxChannel",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "GetApnsSandboxChannelResponse"
       }
     },
     "GetApplicationSettings" : {
@@ -570,37 +814,37 @@
       "deprecated" : false,
       "documentation" : "Used to request the settings for an app.",
       "errors" : [ {
-        "documentation" : "400 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
-        "documentation" : "500 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
-        "documentation" : "403 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
-        "documentation" : "404 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
-        "documentation" : "405 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
-        "documentation" : "429 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
@@ -619,7 +863,7 @@
       },
       "name" : "GetApplicationSettings",
       "output" : {
-        "documentation" : "200 response",
+        "documentation" : null,
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "GetApplicationSettingsResponse"
@@ -631,37 +875,37 @@
       "deprecated" : false,
       "documentation" : "Returns information about a campaign.",
       "errors" : [ {
-        "documentation" : "400 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
-        "documentation" : "500 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
-        "documentation" : "403 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
-        "documentation" : "404 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
-        "documentation" : "405 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
-        "documentation" : "429 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
@@ -680,7 +924,7 @@
       },
       "name" : "GetCampaign",
       "output" : {
-        "documentation" : "200 response",
+        "documentation" : null,
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "GetCampaignResponse"
@@ -692,37 +936,37 @@
       "deprecated" : false,
       "documentation" : "Returns information about the activity performed by a campaign.",
       "errors" : [ {
-        "documentation" : "400 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
-        "documentation" : "500 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
-        "documentation" : "403 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
-        "documentation" : "404 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
-        "documentation" : "405 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
-        "documentation" : "429 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
@@ -741,7 +985,7 @@
       },
       "name" : "GetCampaignActivities",
       "output" : {
-        "documentation" : "200 response",
+        "documentation" : null,
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "GetCampaignActivitiesResponse"
@@ -753,37 +997,37 @@
       "deprecated" : false,
       "documentation" : "Returns information about a specific version of a campaign.",
       "errors" : [ {
-        "documentation" : "400 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
-        "documentation" : "500 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
-        "documentation" : "403 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
-        "documentation" : "404 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
-        "documentation" : "405 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
-        "documentation" : "429 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
@@ -802,7 +1046,7 @@
       },
       "name" : "GetCampaignVersion",
       "output" : {
-        "documentation" : "200 response",
+        "documentation" : null,
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "GetCampaignVersionResponse"
@@ -814,37 +1058,37 @@
       "deprecated" : false,
       "documentation" : "Returns information about your campaign versions.",
       "errors" : [ {
-        "documentation" : "400 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
-        "documentation" : "500 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
-        "documentation" : "403 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
-        "documentation" : "404 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
-        "documentation" : "405 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
-        "documentation" : "429 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
@@ -863,7 +1107,7 @@
       },
       "name" : "GetCampaignVersions",
       "output" : {
-        "documentation" : "200 response",
+        "documentation" : null,
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "GetCampaignVersionsResponse"
@@ -875,37 +1119,37 @@
       "deprecated" : false,
       "documentation" : "Returns information about your campaigns.",
       "errors" : [ {
-        "documentation" : "400 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
-        "documentation" : "500 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
-        "documentation" : "403 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
-        "documentation" : "404 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
-        "documentation" : "405 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
-        "documentation" : "429 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
@@ -924,10 +1168,71 @@
       },
       "name" : "GetCampaigns",
       "output" : {
-        "documentation" : "200 response",
+        "documentation" : null,
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "GetCampaignsResponse"
+      }
+    },
+    "GetEmailChannel" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "Get an email channel",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "BadRequestException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalServerErrorException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ForbiddenException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "MethodNotAllowedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "TooManyRequestsException"
+      } ],
+      "http" : {
+        "method" : "GET",
+        "requestUri" : "/v1/apps/{application-id}/channels/email",
+        "responseCode" : "200"
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "GetEmailChannelRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "GetEmailChannel",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "GetEmailChannelResponse"
       }
     },
     "GetEndpoint" : {
@@ -936,37 +1241,37 @@
       "deprecated" : false,
       "documentation" : "Returns information about an endpoint.",
       "errors" : [ {
-        "documentation" : "400 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
-        "documentation" : "500 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
-        "documentation" : "403 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
-        "documentation" : "404 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
-        "documentation" : "405 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
-        "documentation" : "429 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
@@ -985,7 +1290,7 @@
       },
       "name" : "GetEndpoint",
       "output" : {
-        "documentation" : "200 response",
+        "documentation" : null,
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "GetEndpointResponse"
@@ -1058,37 +1363,37 @@
       "deprecated" : false,
       "documentation" : "Returns information about the GCM channel for an app.",
       "errors" : [ {
-        "documentation" : "400 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
-        "documentation" : "500 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
-        "documentation" : "403 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
-        "documentation" : "404 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
-        "documentation" : "405 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
-        "documentation" : "429 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
@@ -1107,7 +1412,7 @@
       },
       "name" : "GetGcmChannel",
       "output" : {
-        "documentation" : "200 response",
+        "documentation" : null,
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "GetGcmChannelResponse"
@@ -1119,37 +1424,37 @@
       "deprecated" : false,
       "documentation" : "Returns information about an import job.",
       "errors" : [ {
-        "documentation" : "400 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
-        "documentation" : "500 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
-        "documentation" : "403 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
-        "documentation" : "404 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
-        "documentation" : "405 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
-        "documentation" : "429 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
@@ -1168,7 +1473,7 @@
       },
       "name" : "GetImportJob",
       "output" : {
-        "documentation" : "200 response",
+        "documentation" : null,
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "GetImportJobResponse"
@@ -1180,37 +1485,37 @@
       "deprecated" : false,
       "documentation" : "Returns information about your import jobs.",
       "errors" : [ {
-        "documentation" : "400 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
-        "documentation" : "500 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
-        "documentation" : "403 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
-        "documentation" : "404 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
-        "documentation" : "405 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
-        "documentation" : "429 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
@@ -1229,7 +1534,7 @@
       },
       "name" : "GetImportJobs",
       "output" : {
-        "documentation" : "200 response",
+        "documentation" : null,
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "GetImportJobsResponse"
@@ -1241,37 +1546,37 @@
       "deprecated" : false,
       "documentation" : "Returns information about a segment.",
       "errors" : [ {
-        "documentation" : "400 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
-        "documentation" : "500 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
-        "documentation" : "403 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
-        "documentation" : "404 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
-        "documentation" : "405 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
-        "documentation" : "429 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
@@ -1290,7 +1595,7 @@
       },
       "name" : "GetSegment",
       "output" : {
-        "documentation" : "200 response",
+        "documentation" : null,
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "GetSegmentResponse"
@@ -1302,37 +1607,37 @@
       "deprecated" : false,
       "documentation" : "Returns a list of import jobs for a specific segment.",
       "errors" : [ {
-        "documentation" : "400 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
-        "documentation" : "500 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
-        "documentation" : "403 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
-        "documentation" : "404 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
-        "documentation" : "405 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
-        "documentation" : "429 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
@@ -1351,7 +1656,7 @@
       },
       "name" : "GetSegmentImportJobs",
       "output" : {
-        "documentation" : "200 response",
+        "documentation" : null,
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "GetSegmentImportJobsResponse"
@@ -1363,37 +1668,37 @@
       "deprecated" : false,
       "documentation" : "Returns information about a segment version.",
       "errors" : [ {
-        "documentation" : "400 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
-        "documentation" : "500 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
-        "documentation" : "403 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
-        "documentation" : "404 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
-        "documentation" : "405 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
-        "documentation" : "429 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
@@ -1412,7 +1717,7 @@
       },
       "name" : "GetSegmentVersion",
       "output" : {
-        "documentation" : "200 response",
+        "documentation" : null,
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "GetSegmentVersionResponse"
@@ -1424,37 +1729,37 @@
       "deprecated" : false,
       "documentation" : "Returns information about your segment versions.",
       "errors" : [ {
-        "documentation" : "400 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
-        "documentation" : "500 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
-        "documentation" : "403 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
-        "documentation" : "404 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
-        "documentation" : "405 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
-        "documentation" : "429 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
@@ -1473,7 +1778,7 @@
       },
       "name" : "GetSegmentVersions",
       "output" : {
-        "documentation" : "200 response",
+        "documentation" : null,
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "GetSegmentVersionsResponse"
@@ -1485,37 +1790,37 @@
       "deprecated" : false,
       "documentation" : "Used to get information about your segments.",
       "errors" : [ {
-        "documentation" : "400 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
-        "documentation" : "500 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
-        "documentation" : "403 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
-        "documentation" : "404 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
-        "documentation" : "405 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
-        "documentation" : "429 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
@@ -1534,10 +1839,71 @@
       },
       "name" : "GetSegments",
       "output" : {
-        "documentation" : "200 response",
+        "documentation" : null,
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "GetSegmentsResponse"
+      }
+    },
+    "GetSmsChannel" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "Get an SMS channel",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "BadRequestException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalServerErrorException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ForbiddenException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "MethodNotAllowedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "TooManyRequestsException"
+      } ],
+      "http" : {
+        "method" : "GET",
+        "requestUri" : "/v1/apps/{application-id}/channels/sms",
+        "responseCode" : "200"
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "GetSmsChannelRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "GetSmsChannel",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "GetSmsChannelResponse"
       }
     },
     "PutEventStream" : {
@@ -1601,43 +1967,104 @@
         "shape" : "PutEventStreamResponse"
       }
     },
+    "SendMessages" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "Send a batch of messages",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "BadRequestException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalServerErrorException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ForbiddenException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "MethodNotAllowedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "TooManyRequestsException"
+      } ],
+      "http" : {
+        "method" : "POST",
+        "requestUri" : "/v1/apps/{application-id}/messages",
+        "responseCode" : "200"
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "SendMessagesRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "SendMessages",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "SendMessagesResponse"
+      }
+    },
     "UpdateApnsChannel" : {
       "authorizer" : null,
       "authtype" : "IAM",
       "deprecated" : false,
       "documentation" : "Use to update the APNs channel for an app.",
       "errors" : [ {
-        "documentation" : "400 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
-        "documentation" : "500 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
-        "documentation" : "403 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
-        "documentation" : "404 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
-        "documentation" : "405 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
-        "documentation" : "429 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
@@ -1656,10 +2083,71 @@
       },
       "name" : "UpdateApnsChannel",
       "output" : {
-        "documentation" : "200 response",
+        "documentation" : null,
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "UpdateApnsChannelResponse"
+      }
+    },
+    "UpdateApnsSandboxChannel" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "Update an APNS sandbox channel",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "BadRequestException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalServerErrorException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ForbiddenException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "MethodNotAllowedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "TooManyRequestsException"
+      } ],
+      "http" : {
+        "method" : "PUT",
+        "requestUri" : "/v1/apps/{application-id}/channels/apns_sandbox",
+        "responseCode" : "200"
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "UpdateApnsSandboxChannelRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "UpdateApnsSandboxChannel",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "UpdateApnsSandboxChannelResponse"
       }
     },
     "UpdateApplicationSettings" : {
@@ -1668,37 +2156,37 @@
       "deprecated" : false,
       "documentation" : "Used to update the settings for an app.",
       "errors" : [ {
-        "documentation" : "400 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
-        "documentation" : "500 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
-        "documentation" : "403 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
-        "documentation" : "404 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
-        "documentation" : "405 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
-        "documentation" : "429 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
@@ -1717,7 +2205,7 @@
       },
       "name" : "UpdateApplicationSettings",
       "output" : {
-        "documentation" : "200 response",
+        "documentation" : null,
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "UpdateApplicationSettingsResponse"
@@ -1729,37 +2217,37 @@
       "deprecated" : false,
       "documentation" : "Use to update a campaign.",
       "errors" : [ {
-        "documentation" : "400 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
-        "documentation" : "500 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
-        "documentation" : "403 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
-        "documentation" : "404 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
-        "documentation" : "405 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
-        "documentation" : "429 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
@@ -1778,10 +2266,71 @@
       },
       "name" : "UpdateCampaign",
       "output" : {
-        "documentation" : "200 response",
+        "documentation" : null,
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "UpdateCampaignResponse"
+      }
+    },
+    "UpdateEmailChannel" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "Update an email channel",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "BadRequestException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalServerErrorException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ForbiddenException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "MethodNotAllowedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "TooManyRequestsException"
+      } ],
+      "http" : {
+        "method" : "PUT",
+        "requestUri" : "/v1/apps/{application-id}/channels/email",
+        "responseCode" : "200"
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "UpdateEmailChannelRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "UpdateEmailChannel",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "UpdateEmailChannelResponse"
       }
     },
     "UpdateEndpoint" : {
@@ -1790,37 +2339,37 @@
       "deprecated" : false,
       "documentation" : "Use to update an endpoint.",
       "errors" : [ {
-        "documentation" : "400 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
-        "documentation" : "500 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
-        "documentation" : "403 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
-        "documentation" : "404 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
-        "documentation" : "405 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
-        "documentation" : "429 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
@@ -1839,7 +2388,7 @@
       },
       "name" : "UpdateEndpoint",
       "output" : {
-        "documentation" : "202 response",
+        "documentation" : null,
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "UpdateEndpointResponse"
@@ -1851,37 +2400,37 @@
       "deprecated" : false,
       "documentation" : "Use to update a batch of endpoints.",
       "errors" : [ {
-        "documentation" : "400 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
-        "documentation" : "500 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
-        "documentation" : "403 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
-        "documentation" : "404 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
-        "documentation" : "405 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
-        "documentation" : "429 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
@@ -1900,7 +2449,7 @@
       },
       "name" : "UpdateEndpointsBatch",
       "output" : {
-        "documentation" : "202 response",
+        "documentation" : null,
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "UpdateEndpointsBatchResponse"
@@ -1912,37 +2461,37 @@
       "deprecated" : false,
       "documentation" : "Use to update the GCM channel for an app.",
       "errors" : [ {
-        "documentation" : "400 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
-        "documentation" : "500 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
-        "documentation" : "403 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
-        "documentation" : "404 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
-        "documentation" : "405 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
-        "documentation" : "429 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
@@ -1961,7 +2510,7 @@
       },
       "name" : "UpdateGcmChannel",
       "output" : {
-        "documentation" : "200 response",
+        "documentation" : null,
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "UpdateGcmChannelResponse"
@@ -1973,37 +2522,37 @@
       "deprecated" : false,
       "documentation" : "Use to update a segment.",
       "errors" : [ {
-        "documentation" : "400 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "BadRequestException"
       }, {
-        "documentation" : "500 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "InternalServerErrorException"
       }, {
-        "documentation" : "403 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "ForbiddenException"
       }, {
-        "documentation" : "404 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "NotFoundException"
       }, {
-        "documentation" : "405 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
         "shape" : "MethodNotAllowedException"
       }, {
-        "documentation" : "429 response",
+        "documentation" : null,
         "error" : null,
         "exception" : false,
         "fault" : false,
@@ -2022,10 +2571,71 @@
       },
       "name" : "UpdateSegment",
       "output" : {
-        "documentation" : "200 response",
+        "documentation" : null,
         "locationName" : null,
         "resultWrapper" : null,
         "shape" : "UpdateSegmentResponse"
+      }
+    },
+    "UpdateSmsChannel" : {
+      "authorizer" : null,
+      "authtype" : "IAM",
+      "deprecated" : false,
+      "documentation" : "Update an SMS channel",
+      "errors" : [ {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "BadRequestException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "InternalServerErrorException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "ForbiddenException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "NotFoundException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "MethodNotAllowedException"
+      }, {
+        "documentation" : null,
+        "error" : null,
+        "exception" : false,
+        "fault" : false,
+        "shape" : "TooManyRequestsException"
+      } ],
+      "http" : {
+        "method" : "PUT",
+        "requestUri" : "/v1/apps/{application-id}/channels/sms",
+        "responseCode" : "200"
+      },
+      "input" : {
+        "documentation" : null,
+        "locationName" : null,
+        "shape" : "UpdateSmsChannelRequest",
+        "xmlNamespace" : null
+      },
+      "name" : "UpdateSmsChannel",
+      "output" : {
+        "documentation" : null,
+        "locationName" : null,
+        "resultWrapper" : null,
+        "shape" : "UpdateSmsChannelResponse"
       }
     }
   },
@@ -2053,6 +2663,20 @@
           "payload" : false,
           "queryName" : null,
           "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Enabled" : {
+          "deprecated" : false,
+          "documentation" : "If the channel is enabled for sending messages.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__boolean",
           "streaming" : false,
           "xmlNamespace" : null
         },
@@ -2120,9 +2744,439 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "Enabled" : {
+          "deprecated" : false,
+          "documentation" : "If the channel is enabled for sending messages.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__boolean",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "Id" : {
           "deprecated" : false,
-          "documentation" : "The unique channel ID.",
+          "documentation" : "Channel ID. Not used, only for backwards compatibility.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "IsArchived" : {
+          "deprecated" : false,
+          "documentation" : "Is this channel archived",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__boolean",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "LastModifiedBy" : {
+          "deprecated" : false,
+          "documentation" : "Who last updated this entry",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "LastModifiedDate" : {
+          "deprecated" : false,
+          "documentation" : "Last date this was updated",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Platform" : {
+          "deprecated" : false,
+          "documentation" : "The platform type. Will be APNS.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Version" : {
+          "deprecated" : false,
+          "documentation" : "Version of channel",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__integer",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "APNSMessage" : {
+      "deprecated" : false,
+      "documentation" : "APNS Message.",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Action" : {
+          "deprecated" : false,
+          "documentation" : "The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP - Your app launches, or it becomes the foreground app if it has been sent to the background. This is the default action. DEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a designated user interface within the app. URL - The default mobile browser on the user's device launches and opens a web page at the URL you specify. Possible values include: OPEN_APP | DEEP_LINK | URL",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Action",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Badge" : {
+          "deprecated" : false,
+          "documentation" : "Include this key when you want the system to modify the badge of your app icon. If this key is not included in the dictionary, the badge is not changed. To remove the badge, set the value of this key to 0.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__integer",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Body" : {
+          "deprecated" : false,
+          "documentation" : "The message body of the notification, the email body or the text message.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Category" : {
+          "deprecated" : false,
+          "documentation" : "Provide this key with a string value that represents the notification's type. This value corresponds to the value in the identifier property of one of your app's registered categories.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Data" : {
+          "deprecated" : false,
+          "documentation" : "The data payload used for a silent push. This payload is added to the notifications' data.pinpoint.jsonBody' object",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MapOf__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "MediaUrl" : {
+          "deprecated" : false,
+          "documentation" : "The URL that points to a video used in the push notification.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "RawContent" : {
+          "deprecated" : false,
+          "documentation" : "The Raw JSON formatted string to be used as the payload. This value overrides the message.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "SilentPush" : {
+          "deprecated" : false,
+          "documentation" : "Indicates if the message should display on the users device. Silent pushes can be used for Remote Configuration and Phone Home use cases.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__boolean",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Sound" : {
+          "deprecated" : false,
+          "documentation" : "Include this key when you want the system to play a sound. The value of this key is the name of a sound file in your app's main bundle or in the Library/Sounds folder of your app's data container. If the sound file cannot be found, or if you specify defaultfor the value, the system plays the default alert sound.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Substitutions" : {
+          "deprecated" : false,
+          "documentation" : "Default message substitutions. Can be overridden by individual address substitutions.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MapOfListOf__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ThreadId" : {
+          "deprecated" : false,
+          "documentation" : "Provide this key with a string value that represents the app-specific identifier for grouping notifications. If you provide a Notification Content app extension, you can use this value to group your notifications together.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Title" : {
+          "deprecated" : false,
+          "documentation" : "The message title that displays above the message on the user's device.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Url" : {
+          "deprecated" : false,
+          "documentation" : "The URL to open in the user's mobile browser. Used if the value for Action is URL.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "APNSSandboxChannelRequest" : {
+      "deprecated" : false,
+      "documentation" : "Apple Development Push Notification Service channel definition.",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Certificate" : {
+          "deprecated" : false,
+          "documentation" : "The distribution certificate from Apple.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Enabled" : {
+          "deprecated" : false,
+          "documentation" : "If the channel is enabled for sending messages.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__boolean",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "PrivateKey" : {
+          "deprecated" : false,
+          "documentation" : "The certificate private key.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "APNSSandboxChannelResponse" : {
+      "deprecated" : false,
+      "documentation" : "Apple Development Push Notification Service channel definition.",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ApplicationId" : {
+          "deprecated" : false,
+          "documentation" : "Application id",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "CreationDate" : {
+          "deprecated" : false,
+          "documentation" : "When was this segment created",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Enabled" : {
+          "deprecated" : false,
+          "documentation" : "If the channel is enabled for sending messages.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__boolean",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Id" : {
+          "deprecated" : false,
+          "documentation" : "Channel ID. Not used, only for backwards compatibility.",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -2475,6 +3529,112 @@
       "value" : null,
       "wrapper" : false
     },
+    "AddressConfiguration" : {
+      "deprecated" : false,
+      "documentation" : "Address configuration.",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "BodyOverride" : {
+          "deprecated" : false,
+          "documentation" : "Body override. If specified will override default body.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ChannelType" : {
+          "deprecated" : false,
+          "documentation" : "Type of channel of this address",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "ChannelType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Context" : {
+          "deprecated" : false,
+          "documentation" : "A map of custom attributes to attributes to be attached to the message for this address. This payload is added to the push notification's 'data.pinpoint' object or added to the email/sms delivery receipt event attributes.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MapOf__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "RawContent" : {
+          "deprecated" : false,
+          "documentation" : "The Raw JSON formatted string to be used as the payload. This value overrides the message.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Substitutions" : {
+          "deprecated" : false,
+          "documentation" : "A map of substitution values for the message to be merged with the DefaultMessage's substitutions. Substitutions on this map take precedence over the all other substitutions.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MapOfListOf__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "TitleOverride" : {
+          "deprecated" : false,
+          "documentation" : "Title override. If specified will override default title if applicable.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "ApplicationSettingsResource" : {
       "deprecated" : false,
       "documentation" : "Application settings.",
@@ -2567,7 +3727,7 @@
       "members" : {
         "AttributeType" : {
           "deprecated" : false,
-          "documentation" : "The type of dimension:\nINCLUSIVE – Endpoints that match the criteria are included in the segment.\nEXCLUSIVE – Endpoints that match the criteria are excluded from the segment.",
+          "documentation" : "The type of dimension:\nINCLUSIVE - Endpoints that match the criteria are included in the segment.\nEXCLUSIVE - Endpoints that match the criteria are excluded from the segment.",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -2656,6 +3816,70 @@
         "RequestID" : {
           "deprecated" : false,
           "documentation" : "The unique message body ID.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "CampaignEmailMessage" : {
+      "deprecated" : false,
+      "documentation" : "The email message configuration.",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Body" : {
+          "deprecated" : false,
+          "documentation" : "The email text body.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "HtmlBody" : {
+          "deprecated" : false,
+          "documentation" : "The email html body.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Title" : {
+          "deprecated" : false,
+          "documentation" : "The email title (Or subject).",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -3015,6 +4239,70 @@
       "value" : null,
       "wrapper" : false
     },
+    "CampaignSmsMessage" : {
+      "deprecated" : false,
+      "documentation" : "SMS message configuration.",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Body" : {
+          "deprecated" : false,
+          "documentation" : "The SMS text body.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "MessageType" : {
+          "deprecated" : false,
+          "documentation" : "Is this is a transactional SMS message, otherwise a promotional message.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MessageType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "SenderId" : {
+          "deprecated" : false,
+          "documentation" : "Sender ID of sent message.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "CampaignState" : {
       "deprecated" : false,
       "documentation" : "State of the Campaign",
@@ -3125,7 +4413,7 @@
     "ChannelType" : {
       "deprecated" : false,
       "documentation" : null,
-      "enum" : [ "APNS", "GCM" ],
+      "enum" : [ "GCM", "APNS", "APNS_SANDBOX", "ADM", "SMS", "EMAIL" ],
       "error" : null,
       "exception" : false,
       "fault" : false,
@@ -3401,6 +4689,176 @@
       "value" : null,
       "wrapper" : false
     },
+    "DefaultMessage" : {
+      "deprecated" : false,
+      "documentation" : "Default Message across push notification, email, and sms.",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Body" : {
+          "deprecated" : false,
+          "documentation" : "The message body of the notification, the email body or the text message.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Substitutions" : {
+          "deprecated" : false,
+          "documentation" : "Default message substitutions. Can be overridden by individual address substitutions.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MapOfListOf__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DefaultPushNotificationMessage" : {
+      "deprecated" : false,
+      "documentation" : "Default Push Notification Message.",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Action" : {
+          "deprecated" : false,
+          "documentation" : "The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP - Your app launches, or it becomes the foreground app if it has been sent to the background. This is the default action. DEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a designated user interface within the app. URL - The default mobile browser on the user's device launches and opens a web page at the URL you specify. Possible values include: OPEN_APP | DEEP_LINK | URL",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Action",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Body" : {
+          "deprecated" : false,
+          "documentation" : "The message body of the notification, the email body or the text message.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Data" : {
+          "deprecated" : false,
+          "documentation" : "The data payload used for a silent push. This payload is added to the notifications' data.pinpoint.jsonBody' object",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MapOf__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "SilentPush" : {
+          "deprecated" : false,
+          "documentation" : "Indicates if the message should display on the users device. Silent pushes can be used for Remote Configuration and Phone Home use cases.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__boolean",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Substitutions" : {
+          "deprecated" : false,
+          "documentation" : "Default message substitutions. Can be overridden by individual address substitutions.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MapOfListOf__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Title" : {
+          "deprecated" : false,
+          "documentation" : "The message title that displays above the message on the user's device.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Url" : {
+          "deprecated" : false,
+          "documentation" : "The URL to open in the user's mobile browser. Used if the value for Action is URL.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "DeleteApnsChannelRequest" : {
       "deprecated" : false,
       "documentation" : null,
@@ -3468,6 +4926,78 @@
       "pattern" : null,
       "payload" : "APNSChannelResponse",
       "required" : [ "APNSChannelResponse" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DeleteApnsSandboxChannelRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ApplicationId" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "uri",
+          "locationName" : "application-id",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "ApplicationId" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DeleteApnsSandboxChannelResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "APNSSandboxChannelResponse" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "APNSSandboxChannelResponse",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : "APNSSandboxChannelResponse",
+      "required" : [ "APNSSandboxChannelResponse" ],
       "streaming" : false,
       "type" : "structure",
       "value" : null,
@@ -3554,6 +5084,78 @@
       "pattern" : null,
       "payload" : "CampaignResponse",
       "required" : [ "CampaignResponse" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DeleteEmailChannelRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ApplicationId" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "uri",
+          "locationName" : "application-id",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "ApplicationId" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DeleteEmailChannelResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "EmailChannelResponse" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "EmailChannelResponse",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : "EmailChannelResponse",
+      "required" : [ "EmailChannelResponse" ],
       "streaming" : false,
       "type" : "structure",
       "value" : null,
@@ -3789,6 +5391,99 @@
       "value" : null,
       "wrapper" : false
     },
+    "DeleteSmsChannelRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ApplicationId" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "uri",
+          "locationName" : "application-id",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "ApplicationId" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DeleteSmsChannelResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "SMSChannelResponse" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "SMSChannelResponse",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : "SMSChannelResponse",
+      "required" : [ "SMSChannelResponse" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "DeliveryStatus" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "SUCCESSFUL", "THROTTLED", "TEMPORARY_FAILURE", "PERMANENT_FAILURE" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
     "DimensionType" : {
       "deprecated" : false,
       "documentation" : null,
@@ -3810,6 +5505,98 @@
       "value" : null,
       "wrapper" : false
     },
+    "DirectMessageConfiguration" : {
+      "deprecated" : false,
+      "documentation" : "The message configuration.",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "APNSMessage" : {
+          "deprecated" : false,
+          "documentation" : "The message to APNS channels. Overrides the default push notification message.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "APNSMessage",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "DefaultMessage" : {
+          "deprecated" : false,
+          "documentation" : "The default message for all channels.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DefaultMessage",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "DefaultPushNotificationMessage" : {
+          "deprecated" : false,
+          "documentation" : "The default push notification message for all push channels.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DefaultPushNotificationMessage",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "GCMMessage" : {
+          "deprecated" : false,
+          "documentation" : "The message to GCM channels. Overrides the default push notification message.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "GCMMessage",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "SMSMessage" : {
+          "deprecated" : false,
+          "documentation" : "The message to SMS channels. Overrides the default message.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "SMSMessage",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "Duration" : {
       "deprecated" : false,
       "documentation" : null,
@@ -3828,6 +5615,274 @@
       "required" : null,
       "streaming" : false,
       "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "EmailChannelRequest" : {
+      "deprecated" : false,
+      "documentation" : "Email Channel Request",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Enabled" : {
+          "deprecated" : false,
+          "documentation" : "If the channel is enabled for sending messages.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__boolean",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "FromAddress" : {
+          "deprecated" : false,
+          "documentation" : "The email address used to send emails from.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Identity" : {
+          "deprecated" : false,
+          "documentation" : "The ARN of an identity verified with SES.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "RoleArn" : {
+          "deprecated" : false,
+          "documentation" : "The ARN of an IAM Role used to submit events to Mobile Analytics' event ingestion service",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "EmailChannelResponse" : {
+      "deprecated" : false,
+      "documentation" : "Email Channel Response.",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ApplicationId" : {
+          "deprecated" : false,
+          "documentation" : "Application id",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "CreationDate" : {
+          "deprecated" : false,
+          "documentation" : "The date that the settings were last updated in ISO 8601 format.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Enabled" : {
+          "deprecated" : false,
+          "documentation" : "If the channel is enabled for sending messages.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__boolean",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "FromAddress" : {
+          "deprecated" : false,
+          "documentation" : "The email address used to send emails from.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Id" : {
+          "deprecated" : false,
+          "documentation" : "Channel ID. Not used, only for backwards compatibility.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Identity" : {
+          "deprecated" : false,
+          "documentation" : "The ARN of an identity verified with SES.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "IsArchived" : {
+          "deprecated" : false,
+          "documentation" : "Is this channel archived",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__boolean",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "LastModifiedBy" : {
+          "deprecated" : false,
+          "documentation" : "Who last updated this entry",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "LastModifiedDate" : {
+          "deprecated" : false,
+          "documentation" : "Last date this was updated",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Platform" : {
+          "deprecated" : false,
+          "documentation" : "Platform type. Will be \"EMAIL\"",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "RoleArn" : {
+          "deprecated" : false,
+          "documentation" : "The ARN of an IAM Role used to submit events to Mobile Analytics' event ingestion service",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Version" : {
+          "deprecated" : false,
+          "documentation" : "Version of channel",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__integer",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
       "value" : null,
       "wrapper" : false
     },
@@ -4995,6 +7050,20 @@
           "shape" : "__string",
           "streaming" : false,
           "xmlNamespace" : null
+        },
+        "Enabled" : {
+          "deprecated" : false,
+          "documentation" : "If the channel is enabled for sending messages.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__boolean",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
       "min" : 0,
@@ -5060,9 +7129,23 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "Enabled" : {
+          "deprecated" : false,
+          "documentation" : "If the channel is enabled for sending messages.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__boolean",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "Id" : {
           "deprecated" : false,
-          "documentation" : "The unique channel ID.",
+          "documentation" : "Channel ID. Not used, only for backwards compatibility.",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -5154,6 +7237,238 @@
       "value" : null,
       "wrapper" : false
     },
+    "GCMMessage" : {
+      "deprecated" : false,
+      "documentation" : "GCM Message.",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Action" : {
+          "deprecated" : false,
+          "documentation" : "The action that occurs if the user taps a push notification delivered by the campaign: OPEN_APP - Your app launches, or it becomes the foreground app if it has been sent to the background. This is the default action. DEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a designated user interface within the app. URL - The default mobile browser on the user's device launches and opens a web page at the URL you specify. Possible values include: OPEN_APP | DEEP_LINK | URL",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "Action",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Body" : {
+          "deprecated" : false,
+          "documentation" : "The message body of the notification, the email body or the text message.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "CollapseKey" : {
+          "deprecated" : false,
+          "documentation" : "This parameter identifies a group of messages (e.g., with collapse_key: \"Updates Available\") that can be collapsed, so that only the last message gets sent when delivery can be resumed. This is intended to avoid sending too many of the same messages when the device comes back online or becomes active.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Data" : {
+          "deprecated" : false,
+          "documentation" : "The data payload used for a silent push. This payload is added to the notifications' data.pinpoint.jsonBody' object",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MapOf__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "IconReference" : {
+          "deprecated" : false,
+          "documentation" : "The icon image name of the asset saved in your application.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ImageIconUrl" : {
+          "deprecated" : false,
+          "documentation" : "The URL that points to an image used as the large icon to the notification content view.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ImageUrl" : {
+          "deprecated" : false,
+          "documentation" : "The URL that points to an image used in the push notification.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "RawContent" : {
+          "deprecated" : false,
+          "documentation" : "The Raw JSON formatted string to be used as the payload. This value overrides the message.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "RestrictedPackageName" : {
+          "deprecated" : false,
+          "documentation" : "This parameter specifies the package name of the application where the registration tokens must match in order to receive the message.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "SilentPush" : {
+          "deprecated" : false,
+          "documentation" : "Indicates if the message should display on the users device. Silent pushes can be used for Remote Configuration and Phone Home use cases.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__boolean",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "SmallImageIconUrl" : {
+          "deprecated" : false,
+          "documentation" : "The URL that points to an image used as the small icon for the notification which will be used to represent the notification in the status bar and content view",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Sound" : {
+          "deprecated" : false,
+          "documentation" : "Indicates a sound to play when the device receives the notification. Supports default, or the filename of a sound resource bundled in the app. Android sound files must reside in /res/raw/",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Substitutions" : {
+          "deprecated" : false,
+          "documentation" : "Default message substitutions. Can be overridden by individual address substitutions.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MapOfListOf__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Title" : {
+          "deprecated" : false,
+          "documentation" : "The message title that displays above the message on the user's device.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Url" : {
+          "deprecated" : false,
+          "documentation" : "The URL to open in the user's mobile browser. Used if the value for Action is URL.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "GetApnsChannelRequest" : {
       "deprecated" : false,
       "documentation" : null,
@@ -5221,6 +7536,78 @@
       "pattern" : null,
       "payload" : "APNSChannelResponse",
       "required" : [ "APNSChannelResponse" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "GetApnsSandboxChannelRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ApplicationId" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "uri",
+          "locationName" : "application-id",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "ApplicationId" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "GetApnsSandboxChannelResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "APNSSandboxChannelResponse" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "APNSSandboxChannelResponse",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : "APNSSandboxChannelResponse",
+      "required" : [ "APNSSandboxChannelResponse" ],
       "streaming" : false,
       "type" : "structure",
       "value" : null,
@@ -5807,6 +8194,78 @@
       "pattern" : null,
       "payload" : "CampaignsResponse",
       "required" : [ "CampaignsResponse" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "GetEmailChannelRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ApplicationId" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "uri",
+          "locationName" : "application-id",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "ApplicationId" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "GetEmailChannelResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "EmailChannelResponse" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "EmailChannelResponse",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : "EmailChannelResponse",
+      "required" : [ "EmailChannelResponse" ],
       "streaming" : false,
       "type" : "structure",
       "value" : null,
@@ -6742,6 +9201,78 @@
       "value" : null,
       "wrapper" : false
     },
+    "GetSmsChannelRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ApplicationId" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "uri",
+          "locationName" : "application-id",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : [ "ApplicationId" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "GetSmsChannelResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "SMSChannelResponse" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "SMSChannelResponse",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : "SMSChannelResponse",
+      "required" : [ "SMSChannelResponse" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "ImportJobRequest" : {
       "deprecated" : false,
       "documentation" : null,
@@ -7610,6 +10141,53 @@
       "value" : null,
       "wrapper" : false
     },
+    "MapOfAddressConfiguration" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "__string",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "map",
+      "value" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "AddressConfiguration",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "wrapper" : false
+    },
     "MapOfAttributeDimension" : {
       "deprecated" : false,
       "documentation" : null,
@@ -7704,6 +10282,53 @@
       },
       "wrapper" : false
     },
+    "MapOfMessageResult" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "__string",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "map",
+      "value" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "MessageResult",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "wrapper" : false
+    },
     "MapOf__double" : {
       "deprecated" : false,
       "documentation" : null,
@@ -7751,6 +10376,100 @@
       },
       "wrapper" : false
     },
+    "MapOf__integer" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "__string",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "map",
+      "value" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "__integer",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "wrapper" : false
+    },
+    "MapOf__string" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "__string",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "map",
+      "value" : {
+        "deprecated" : false,
+        "documentation" : null,
+        "flattened" : false,
+        "idempotencyToken" : false,
+        "jsonvalue" : false,
+        "location" : null,
+        "locationName" : null,
+        "payload" : false,
+        "queryName" : null,
+        "shape" : "__string",
+        "streaming" : false,
+        "xmlNamespace" : null
+      },
+      "wrapper" : false
+    },
     "Message" : {
       "deprecated" : false,
       "documentation" : null,
@@ -7765,7 +10484,7 @@
       "members" : {
         "Action" : {
           "deprecated" : false,
-          "documentation" : "The action that occurs if the user taps a push notification delivered by the campaign:\nOPEN_APP – Your app launches, or it becomes the foreground app if it has been sent to the background. This is the default action.\n\nDEEP_LINK – Uses deep linking features in iOS and Android to open your app and display a designated user interface within the app.\n\nURL – The default mobile browser on the user's device launches and opens a web page at the URL you specify.",
+          "documentation" : "The action that occurs if the user taps a push notification delivered by the campaign:\nOPEN_APP - Your app launches, or it becomes the foreground app if it has been sent to the background. This is the default action.\n\nDEEP_LINK - Uses deep linking features in iOS and Android to open your app and display a designated user interface within the app.\n\nURL - The default mobile browser on the user's device launches and opens a web page at the URL you specify.",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -7794,6 +10513,20 @@
         "ImageIconUrl" : {
           "deprecated" : false,
           "documentation" : "The URL that points to the icon image for the push notification icon, for example, the app icon.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ImageSmallIconUrl" : {
+          "deprecated" : false,
+          "documentation" : "The URL that points to the small icon image for the push notification icon, for example, the app icon.",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -7989,6 +10722,20 @@
           "streaming" : false,
           "xmlNamespace" : null
         },
+        "EmailMessage" : {
+          "deprecated" : false,
+          "documentation" : "The email message configuration.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CampaignEmailMessage",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "GCMMessage" : {
           "deprecated" : false,
           "documentation" : "The message that the campaign delivers to GCM channels. Overrides the default message.",
@@ -8002,6 +10749,20 @@
           "shape" : "Message",
           "streaming" : false,
           "xmlNamespace" : null
+        },
+        "SMSMessage" : {
+          "deprecated" : false,
+          "documentation" : "The SMS message configuration.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "CampaignSmsMessage",
+          "streaming" : false,
+          "xmlNamespace" : null
         }
       },
       "min" : 0,
@@ -8010,6 +10771,233 @@
       "required" : null,
       "streaming" : false,
       "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "MessageRequest" : {
+      "deprecated" : false,
+      "documentation" : "Send message request.",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Addresses" : {
+          "deprecated" : false,
+          "documentation" : "A map of destination addresses, with the address as the key(Email address, phone number or push token) and the Address Configuration as the value.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MapOfAddressConfiguration",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Context" : {
+          "deprecated" : false,
+          "documentation" : "A map of custom attributes to attributes to be attached to the message. This payload is added to the push notification's 'data.pinpoint' object or added to the email/sms delivery receipt event attributes.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MapOf__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "MessageConfiguration" : {
+          "deprecated" : false,
+          "documentation" : "Message configuration.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DirectMessageConfiguration",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "MessageResponse" : {
+      "deprecated" : false,
+      "documentation" : "Send message response.",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ApplicationId" : {
+          "deprecated" : false,
+          "documentation" : "Application id of the message.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "RequestId" : {
+          "deprecated" : false,
+          "documentation" : "Original request Id for which this message was delivered.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Result" : {
+          "deprecated" : false,
+          "documentation" : "A map containing a multi part response for each address, with the address as the key(Email address, phone number or push token) and the result as the value.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MapOfMessageResult",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "MessageResult" : {
+      "deprecated" : false,
+      "documentation" : "The result from sending a message to an address.",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "DeliveryStatus" : {
+          "deprecated" : false,
+          "documentation" : "Delivery status of message.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "DeliveryStatus",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "StatusCode" : {
+          "deprecated" : false,
+          "documentation" : "Downstream service status code.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__integer",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "StatusMessage" : {
+          "deprecated" : false,
+          "documentation" : "Status message for message delivery.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "UpdatedToken" : {
+          "deprecated" : false,
+          "documentation" : "If token was updated as part of delivery. (This is GCM Specific)",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "MessageType" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : [ "TRANSACTIONAL", "PROMOTIONAL" ],
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : { },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "string",
       "value" : null,
       "wrapper" : false
     },
@@ -8283,7 +11271,7 @@
         },
         "RecencyType" : {
           "deprecated" : false,
-          "documentation" : "The recency dimension type:\nACTIVE – Users who have used your app within the specified duration are included in the segment.\nINACTIVE – Users who have not used your app within the specified duration are included in the segment.",
+          "documentation" : "The recency dimension type:\nACTIVE - Users who have used your app within the specified duration are included in the segment.\nINACTIVE - Users who have not used your app within the specified duration are included in the segment.",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -8323,6 +11311,310 @@
       "required" : null,
       "streaming" : false,
       "type" : "string",
+      "value" : null,
+      "wrapper" : false
+    },
+    "SMSChannelRequest" : {
+      "deprecated" : false,
+      "documentation" : "SMS Channel Request",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Enabled" : {
+          "deprecated" : false,
+          "documentation" : "If the channel is enabled for sending messages.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__boolean",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "SenderId" : {
+          "deprecated" : false,
+          "documentation" : "Sender identifier of your messages.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "SMSChannelResponse" : {
+      "deprecated" : false,
+      "documentation" : "SMS Channel Response.",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ApplicationId" : {
+          "deprecated" : false,
+          "documentation" : "Application id",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "CreationDate" : {
+          "deprecated" : false,
+          "documentation" : "The date that the settings were last updated in ISO 8601 format.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Enabled" : {
+          "deprecated" : false,
+          "documentation" : "If the channel is enabled for sending messages.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__boolean",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Id" : {
+          "deprecated" : false,
+          "documentation" : "Channel ID. Not used, only for backwards compatibility.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "IsArchived" : {
+          "deprecated" : false,
+          "documentation" : "Is this channel archived",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__boolean",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "LastModifiedBy" : {
+          "deprecated" : false,
+          "documentation" : "Who last updated this entry",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "LastModifiedDate" : {
+          "deprecated" : false,
+          "documentation" : "Last date this was updated",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Platform" : {
+          "deprecated" : false,
+          "documentation" : "Platform type. Will be \"SMS\"",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "SenderId" : {
+          "deprecated" : false,
+          "documentation" : "Sender identifier of your messages.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ShortCode" : {
+          "deprecated" : false,
+          "documentation" : "The short code registered with the phone provider.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Version" : {
+          "deprecated" : false,
+          "documentation" : "Version of channel",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__integer",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "SMSMessage" : {
+      "deprecated" : false,
+      "documentation" : "SMS Message.",
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "Body" : {
+          "deprecated" : false,
+          "documentation" : "The message body of the notification, the email body or the text message.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "MessageType" : {
+          "deprecated" : false,
+          "documentation" : "Is this a transaction priority message or lower priority.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MessageType",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "SenderId" : {
+          "deprecated" : false,
+          "documentation" : "Sender ID of sent message.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Substitutions" : {
+          "deprecated" : false,
+          "documentation" : "Default message substitutions. Can be overridden by individual address substitutions.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MapOfListOf__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : null,
+      "required" : null,
+      "streaming" : false,
+      "type" : "structure",
       "value" : null,
       "wrapper" : false
     },
@@ -8483,6 +11775,20 @@
         "AppVersion" : {
           "deprecated" : false,
           "documentation" : "The app version criteria for the segment.",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "SetDimension",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "Channel" : {
+          "deprecated" : false,
+          "documentation" : "The channel criteria for the segment.",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -8664,6 +11970,20 @@
       "max" : 0,
       "member" : null,
       "members" : {
+        "ChannelCounts" : {
+          "deprecated" : false,
+          "documentation" : "Channel type counts",
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MapOf__integer",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
         "ExternalId" : {
           "deprecated" : false,
           "documentation" : "A unique, custom ID assigned to the IAM role that restricts who can assume the role.",
@@ -8892,7 +12212,7 @@
         },
         "SegmentType" : {
           "deprecated" : false,
-          "documentation" : "The segment type:\nDIMENSIONAL – A dynamic segment built from selection criteria based on endpoint data reported by your app. You create this type of segment by using the segment builder in the Amazon Pinpoint console or by making a POST request to the segments resource.\nIMPORT – A static segment built from an imported set of endpoint definitions. You create this type of segment by importing a segment in the Amazon Pinpoint console or by making a POST request to the jobs/import resource.",
+          "documentation" : "The segment type:\nDIMENSIONAL - A dynamic segment built from selection criteria based on endpoint data reported by your app. You create this type of segment by using the segment builder in the Amazon Pinpoint console or by making a POST request to the segments resource.\nIMPORT - A static segment built from an imported set of endpoint definitions. You create this type of segment by importing a segment in the Amazon Pinpoint console or by making a POST request to the jobs/import resource.",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -8999,6 +12319,92 @@
       "value" : null,
       "wrapper" : false
     },
+    "SendMessagesRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ApplicationId" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "uri",
+          "locationName" : "application-id",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "MessageRequest" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MessageRequest",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : "MessageRequest",
+      "required" : [ "ApplicationId", "MessageRequest" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "SendMessagesResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "MessageResponse" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "MessageResponse",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : "MessageResponse",
+      "required" : [ "MessageResponse" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "SetDimension" : {
       "deprecated" : false,
       "documentation" : "Dimension specification of a segment.",
@@ -9013,7 +12419,7 @@
       "members" : {
         "DimensionType" : {
           "deprecated" : false,
-          "documentation" : "The type of dimension:\nINCLUSIVE – Endpoints that match the criteria are included in the segment.\nEXCLUSIVE – Endpoints that match the criteria are excluded from the segment.",
+          "documentation" : "The type of dimension:\nINCLUSIVE - Endpoints that match the criteria are included in the segment.\nEXCLUSIVE - Endpoints that match the criteria are excluded from the segment.",
           "flattened" : false,
           "idempotencyToken" : false,
           "jsonvalue" : false,
@@ -9308,6 +12714,92 @@
       "value" : null,
       "wrapper" : false
     },
+    "UpdateApnsSandboxChannelRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "APNSSandboxChannelRequest" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "APNSSandboxChannelRequest",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "ApplicationId" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "uri",
+          "locationName" : "application-id",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : "APNSSandboxChannelRequest",
+      "required" : [ "ApplicationId", "APNSSandboxChannelRequest" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "UpdateApnsSandboxChannelResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "APNSSandboxChannelResponse" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "APNSSandboxChannelResponse",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : "APNSSandboxChannelResponse",
+      "required" : [ "APNSSandboxChannelResponse" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
     "UpdateApplicationSettingsRequest" : {
       "deprecated" : false,
       "documentation" : null,
@@ -9489,6 +12981,92 @@
       "pattern" : null,
       "payload" : "CampaignResponse",
       "required" : [ "CampaignResponse" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "UpdateEmailChannelRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ApplicationId" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "uri",
+          "locationName" : "application-id",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "EmailChannelRequest" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "EmailChannelRequest",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : "EmailChannelRequest",
+      "required" : [ "ApplicationId", "EmailChannelRequest" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "UpdateEmailChannelResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "EmailChannelResponse" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "EmailChannelResponse",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : "EmailChannelResponse",
+      "required" : [ "EmailChannelResponse" ],
       "streaming" : false,
       "type" : "structure",
       "value" : null,
@@ -9861,6 +13439,92 @@
       "pattern" : null,
       "payload" : "SegmentResponse",
       "required" : [ "SegmentResponse" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "UpdateSmsChannelRequest" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "ApplicationId" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : "uri",
+          "locationName" : "application-id",
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "__string",
+          "streaming" : false,
+          "xmlNamespace" : null
+        },
+        "SMSChannelRequest" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "SMSChannelRequest",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : "SMSChannelRequest",
+      "required" : [ "ApplicationId", "SMSChannelRequest" ],
+      "streaming" : false,
+      "type" : "structure",
+      "value" : null,
+      "wrapper" : false
+    },
+    "UpdateSmsChannelResponse" : {
+      "deprecated" : false,
+      "documentation" : null,
+      "enum" : null,
+      "error" : null,
+      "exception" : false,
+      "fault" : false,
+      "flattened" : false,
+      "key" : null,
+      "max" : 0,
+      "member" : null,
+      "members" : {
+        "SMSChannelResponse" : {
+          "deprecated" : false,
+          "documentation" : null,
+          "flattened" : false,
+          "idempotencyToken" : false,
+          "jsonvalue" : false,
+          "location" : null,
+          "locationName" : null,
+          "payload" : false,
+          "queryName" : null,
+          "shape" : "SMSChannelResponse",
+          "streaming" : false,
+          "xmlNamespace" : null
+        }
+      },
+      "min" : 0,
+      "pattern" : null,
+      "payload" : "SMSChannelResponse",
+      "required" : [ "SMSChannelResponse" ],
       "streaming" : false,
       "type" : "structure",
       "value" : null,

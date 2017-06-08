@@ -797,7 +797,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * </p>
      * <p>
      * To filter images, use the labels returned by <code>DetectModerationLabels</code> to determine which types of
-     * content are appropriate. For information about moderation labels, see <a>howitworks-moderateimage</a>.
+     * content are appropriate. For information about moderation labels, see <a>image-moderation</a>.
      * </p>
      * 
      * @param detectModerationLabelsRequest
@@ -861,6 +861,70 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Gets the name and additional information about a celebrity based on his or her Rekognition ID. The additional
+     * information is returned as an array of URLs. If there is no additional information about the celebrity, this list
+     * is empty. For more information, see <a>celebrity-recognition</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:GetCelebrityInfo</code> action.
+     * </p>
+     * 
+     * @param getCelebrityInfoRequest
+     * @return Result of the GetCelebrityInfo operation returned by the service.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @throws ResourceNotFoundException
+     *         Collection specified in the request is not found.
+     * @sample AmazonRekognition.GetCelebrityInfo
+     */
+    @Override
+    public GetCelebrityInfoResult getCelebrityInfo(GetCelebrityInfoRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCelebrityInfo(request);
+    }
+
+    @SdkInternalApi
+    final GetCelebrityInfoResult executeGetCelebrityInfo(GetCelebrityInfoRequest getCelebrityInfoRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCelebrityInfoRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCelebrityInfoRequest> request = null;
+        Response<GetCelebrityInfoResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCelebrityInfoRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCelebrityInfoRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCelebrityInfoResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetCelebrityInfoResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Detects faces in the input image and adds them to the specified collection.
      * </p>
      * <p>
@@ -878,8 +942,8 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * <p>
      * In response, the operation returns an array of metadata for all detected faces. This includes, the bounding box
      * of the detected face, confidence value (indicating the bounding box contains a face), a face ID assigned by the
-     * service for each face that is detected and stored, and an image ID assigned by the service for the input image If
-     * you request all facial attributes (using the <code>detectionAttributes</code> parameter, Amazon Rekognition
+     * service for each face that is detected and stored, and an image ID assigned by the service for the input image.
+     * If you request all facial attributes (using the <code>detectionAttributes</code> parameter, Amazon Rekognition
      * returns detailed facial attributes such as facial landmarks (for example, location of eye and mount) and other
      * facial attributes such gender. If you provide the same image, specify the same collection, and use the same
      * external ID in the <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate face metadata.
@@ -1075,6 +1139,95 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<ListFacesResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListFacesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns an array of celebrities recognized in the input image. The image is passed either as base64-encoded image
+     * bytes or as a reference to an image in an Amazon S3 bucket. The image must be either a PNG or JPEG formatted
+     * file. For more information, see <a>celebrity-recognition</a>.
+     * </p>
+     * <p>
+     * <code>RecognizeCelebrities</code> returns the 15 largest faces in the image. It lists recognized celebrities in
+     * the <code>CelebrityFaces</code> list and unrecognized faces in the <code>UnrecognizedFaces</code> list. The
+     * operation doesn't return celebrities whose face sizes are smaller than the largest 15 faces in the image.
+     * </p>
+     * <p>
+     * For each celebrity recognized, the API returns a <code>Celebrity</code> object. The <code>Celebrity</code> object
+     * contains the celebrity name, ID, URL links to additional information, match confidence, and a
+     * <code>ComparedFace</code> object that you can use to locate the celebrity's face on the image.
+     * </p>
+     * <p>
+     * Rekognition does not retain information about which images a celebrity has been recognized in. Your application
+     * must store this information and use the <code>Celebrity</code> ID property as a unique identifier for the
+     * celebrity. If you don't store the celebrity name or additional information URLs returned by
+     * <code>RecognizeCelebrities</code>, you will need the ID to identify the celebrity in a call to the operation.
+     * </p>
+     * <p>
+     * For an example, see <a>recognize-celebrities-tutorial</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:RecognizeCelebrities</code> operation.
+     * </p>
+     * 
+     * @param recognizeCelebritiesRequest
+     * @return Result of the RecognizeCelebrities operation returned by the service.
+     * @throws InvalidS3ObjectException
+     *         Amazon Rekognition is unable to access the S3 object specified in the request.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws InvalidImageFormatException
+     *         The provided image format is not supported.
+     * @throws ImageTooLargeException
+     *         The input image size exceeds the allowed limit. For more information, see <a>limits</a>.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @throws InvalidImageFormatException
+     *         The provided image format is not supported.
+     * @sample AmazonRekognition.RecognizeCelebrities
+     */
+    @Override
+    public RecognizeCelebritiesResult recognizeCelebrities(RecognizeCelebritiesRequest request) {
+        request = beforeClientExecution(request);
+        return executeRecognizeCelebrities(request);
+    }
+
+    @SdkInternalApi
+    final RecognizeCelebritiesResult executeRecognizeCelebrities(RecognizeCelebritiesRequest recognizeCelebritiesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(recognizeCelebritiesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RecognizeCelebritiesRequest> request = null;
+        Response<RecognizeCelebritiesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RecognizeCelebritiesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(recognizeCelebritiesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RecognizeCelebritiesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RecognizeCelebritiesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

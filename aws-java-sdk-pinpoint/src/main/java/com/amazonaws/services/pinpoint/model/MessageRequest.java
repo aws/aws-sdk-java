@@ -1,0 +1,266 @@
+/*
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.pinpoint.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * Send message request.
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class MessageRequest implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * A map of destination addresses, with the address as the key(Email address, phone number or push token) and the
+     * Address Configuration as the value.
+     */
+    private java.util.Map<String, AddressConfiguration> addresses;
+    /**
+     * A map of custom attributes to attributes to be attached to the message. This payload is added to the push
+     * notification's 'data.pinpoint' object or added to the email/sms delivery receipt event attributes.
+     */
+    private java.util.Map<String, String> context;
+    /** Message configuration. */
+    private DirectMessageConfiguration messageConfiguration;
+
+    /**
+     * A map of destination addresses, with the address as the key(Email address, phone number or push token) and the
+     * Address Configuration as the value.
+     * 
+     * @return A map of destination addresses, with the address as the key(Email address, phone number or push token)
+     *         and the Address Configuration as the value.
+     */
+
+    public java.util.Map<String, AddressConfiguration> getAddresses() {
+        return addresses;
+    }
+
+    /**
+     * A map of destination addresses, with the address as the key(Email address, phone number or push token) and the
+     * Address Configuration as the value.
+     * 
+     * @param addresses
+     *        A map of destination addresses, with the address as the key(Email address, phone number or push token) and
+     *        the Address Configuration as the value.
+     */
+
+    public void setAddresses(java.util.Map<String, AddressConfiguration> addresses) {
+        this.addresses = addresses;
+    }
+
+    /**
+     * A map of destination addresses, with the address as the key(Email address, phone number or push token) and the
+     * Address Configuration as the value.
+     * 
+     * @param addresses
+     *        A map of destination addresses, with the address as the key(Email address, phone number or push token) and
+     *        the Address Configuration as the value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MessageRequest withAddresses(java.util.Map<String, AddressConfiguration> addresses) {
+        setAddresses(addresses);
+        return this;
+    }
+
+    public MessageRequest addAddressesEntry(String key, AddressConfiguration value) {
+        if (null == this.addresses) {
+            this.addresses = new java.util.HashMap<String, AddressConfiguration>();
+        }
+        if (this.addresses.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.addresses.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Addresses.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MessageRequest clearAddressesEntries() {
+        this.addresses = null;
+        return this;
+    }
+
+    /**
+     * A map of custom attributes to attributes to be attached to the message. This payload is added to the push
+     * notification's 'data.pinpoint' object or added to the email/sms delivery receipt event attributes.
+     * 
+     * @return A map of custom attributes to attributes to be attached to the message. This payload is added to the push
+     *         notification's 'data.pinpoint' object or added to the email/sms delivery receipt event attributes.
+     */
+
+    public java.util.Map<String, String> getContext() {
+        return context;
+    }
+
+    /**
+     * A map of custom attributes to attributes to be attached to the message. This payload is added to the push
+     * notification's 'data.pinpoint' object or added to the email/sms delivery receipt event attributes.
+     * 
+     * @param context
+     *        A map of custom attributes to attributes to be attached to the message. This payload is added to the push
+     *        notification's 'data.pinpoint' object or added to the email/sms delivery receipt event attributes.
+     */
+
+    public void setContext(java.util.Map<String, String> context) {
+        this.context = context;
+    }
+
+    /**
+     * A map of custom attributes to attributes to be attached to the message. This payload is added to the push
+     * notification's 'data.pinpoint' object or added to the email/sms delivery receipt event attributes.
+     * 
+     * @param context
+     *        A map of custom attributes to attributes to be attached to the message. This payload is added to the push
+     *        notification's 'data.pinpoint' object or added to the email/sms delivery receipt event attributes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MessageRequest withContext(java.util.Map<String, String> context) {
+        setContext(context);
+        return this;
+    }
+
+    public MessageRequest addContextEntry(String key, String value) {
+        if (null == this.context) {
+            this.context = new java.util.HashMap<String, String>();
+        }
+        if (this.context.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.context.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Context.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MessageRequest clearContextEntries() {
+        this.context = null;
+        return this;
+    }
+
+    /**
+     * Message configuration.
+     * 
+     * @param messageConfiguration
+     *        Message configuration.
+     */
+
+    public void setMessageConfiguration(DirectMessageConfiguration messageConfiguration) {
+        this.messageConfiguration = messageConfiguration;
+    }
+
+    /**
+     * Message configuration.
+     * 
+     * @return Message configuration.
+     */
+
+    public DirectMessageConfiguration getMessageConfiguration() {
+        return this.messageConfiguration;
+    }
+
+    /**
+     * Message configuration.
+     * 
+     * @param messageConfiguration
+     *        Message configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MessageRequest withMessageConfiguration(DirectMessageConfiguration messageConfiguration) {
+        setMessageConfiguration(messageConfiguration);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object; useful for testing and debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getAddresses() != null)
+            sb.append("Addresses: ").append(getAddresses()).append(",");
+        if (getContext() != null)
+            sb.append("Context: ").append(getContext()).append(",");
+        if (getMessageConfiguration() != null)
+            sb.append("MessageConfiguration: ").append(getMessageConfiguration());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof MessageRequest == false)
+            return false;
+        MessageRequest other = (MessageRequest) obj;
+        if (other.getAddresses() == null ^ this.getAddresses() == null)
+            return false;
+        if (other.getAddresses() != null && other.getAddresses().equals(this.getAddresses()) == false)
+            return false;
+        if (other.getContext() == null ^ this.getContext() == null)
+            return false;
+        if (other.getContext() != null && other.getContext().equals(this.getContext()) == false)
+            return false;
+        if (other.getMessageConfiguration() == null ^ this.getMessageConfiguration() == null)
+            return false;
+        if (other.getMessageConfiguration() != null && other.getMessageConfiguration().equals(this.getMessageConfiguration()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getAddresses() == null) ? 0 : getAddresses().hashCode());
+        hashCode = prime * hashCode + ((getContext() == null) ? 0 : getContext().hashCode());
+        hashCode = prime * hashCode + ((getMessageConfiguration() == null) ? 0 : getMessageConfiguration().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public MessageRequest clone() {
+        try {
+            return (MessageRequest) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.pinpoint.model.transform.MessageRequestMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

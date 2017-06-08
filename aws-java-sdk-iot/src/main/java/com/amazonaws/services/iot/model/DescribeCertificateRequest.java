@@ -31,6 +31,12 @@ public class DescribeCertificateRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String certificateId;
+    /**
+     * <p>
+     * The PEM of the certificate.
+     * </p>
+     */
+    private String certificatePem;
 
     /**
      * <p>
@@ -73,6 +79,46 @@ public class DescribeCertificateRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The PEM of the certificate.
+     * </p>
+     * 
+     * @param certificatePem
+     *        The PEM of the certificate.
+     */
+
+    public void setCertificatePem(String certificatePem) {
+        this.certificatePem = certificatePem;
+    }
+
+    /**
+     * <p>
+     * The PEM of the certificate.
+     * </p>
+     * 
+     * @return The PEM of the certificate.
+     */
+
+    public String getCertificatePem() {
+        return this.certificatePem;
+    }
+
+    /**
+     * <p>
+     * The PEM of the certificate.
+     * </p>
+     * 
+     * @param certificatePem
+     *        The PEM of the certificate.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeCertificateRequest withCertificatePem(String certificatePem) {
+        setCertificatePem(certificatePem);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -84,7 +130,9 @@ public class DescribeCertificateRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificateId() != null)
-            sb.append("CertificateId: ").append(getCertificateId());
+            sb.append("CertificateId: ").append(getCertificateId()).append(",");
+        if (getCertificatePem() != null)
+            sb.append("CertificatePem: ").append(getCertificatePem());
         sb.append("}");
         return sb.toString();
     }
@@ -103,6 +151,10 @@ public class DescribeCertificateRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getCertificateId() != null && other.getCertificateId().equals(this.getCertificateId()) == false)
             return false;
+        if (other.getCertificatePem() == null ^ this.getCertificatePem() == null)
+            return false;
+        if (other.getCertificatePem() != null && other.getCertificatePem().equals(this.getCertificatePem()) == false)
+            return false;
         return true;
     }
 
@@ -112,6 +164,7 @@ public class DescribeCertificateRequest extends com.amazonaws.AmazonWebServiceRe
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCertificateId() == null) ? 0 : getCertificateId().hashCode());
+        hashCode = prime * hashCode + ((getCertificatePem() == null) ? 0 : getCertificatePem().hashCode());
         return hashCode;
     }
 

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.pinpoint.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -27,6 +29,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class SegmentImportResourceMarshaller {
 
+    private static final MarshallingInfo<Map> CHANNELCOUNTS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ChannelCounts").build();
     private static final MarshallingInfo<String> EXTERNALID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExternalId").build();
     private static final MarshallingInfo<String> FORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -54,6 +58,7 @@ public class SegmentImportResourceMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(segmentImportResource.getChannelCounts(), CHANNELCOUNTS_BINDING);
             protocolMarshaller.marshall(segmentImportResource.getExternalId(), EXTERNALID_BINDING);
             protocolMarshaller.marshall(segmentImportResource.getFormat(), FORMAT_BINDING);
             protocolMarshaller.marshall(segmentImportResource.getRoleArn(), ROLEARN_BINDING);

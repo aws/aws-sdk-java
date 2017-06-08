@@ -38,9 +38,9 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
     /** The name of segment */
     private String name;
     /**
-     * The segment type: DIMENSIONAL – A dynamic segment built from selection criteria based on endpoint data reported
+     * The segment type: DIMENSIONAL - A dynamic segment built from selection criteria based on endpoint data reported
      * by your app. You create this type of segment by using the segment builder in the Amazon Pinpoint console or by
-     * making a POST request to the segments resource. IMPORT – A static segment built from an imported set of endpoint
+     * making a POST request to the segments resource. IMPORT - A static segment built from an imported set of endpoint
      * definitions. You create this type of segment by importing a segment in the Amazon Pinpoint console or by making a
      * POST request to the jobs/import resource.
      */
@@ -287,16 +287,16 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The segment type: DIMENSIONAL – A dynamic segment built from selection criteria based on endpoint data reported
+     * The segment type: DIMENSIONAL - A dynamic segment built from selection criteria based on endpoint data reported
      * by your app. You create this type of segment by using the segment builder in the Amazon Pinpoint console or by
-     * making a POST request to the segments resource. IMPORT – A static segment built from an imported set of endpoint
+     * making a POST request to the segments resource. IMPORT - A static segment built from an imported set of endpoint
      * definitions. You create this type of segment by importing a segment in the Amazon Pinpoint console or by making a
      * POST request to the jobs/import resource.
      * 
      * @param segmentType
-     *        The segment type: DIMENSIONAL – A dynamic segment built from selection criteria based on endpoint data
+     *        The segment type: DIMENSIONAL - A dynamic segment built from selection criteria based on endpoint data
      *        reported by your app. You create this type of segment by using the segment builder in the Amazon Pinpoint
-     *        console or by making a POST request to the segments resource. IMPORT – A static segment built from an
+     *        console or by making a POST request to the segments resource. IMPORT - A static segment built from an
      *        imported set of endpoint definitions. You create this type of segment by importing a segment in the Amazon
      *        Pinpoint console or by making a POST request to the jobs/import resource.
      * @see SegmentType
@@ -307,15 +307,15 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The segment type: DIMENSIONAL – A dynamic segment built from selection criteria based on endpoint data reported
+     * The segment type: DIMENSIONAL - A dynamic segment built from selection criteria based on endpoint data reported
      * by your app. You create this type of segment by using the segment builder in the Amazon Pinpoint console or by
-     * making a POST request to the segments resource. IMPORT – A static segment built from an imported set of endpoint
+     * making a POST request to the segments resource. IMPORT - A static segment built from an imported set of endpoint
      * definitions. You create this type of segment by importing a segment in the Amazon Pinpoint console or by making a
      * POST request to the jobs/import resource.
      * 
-     * @return The segment type: DIMENSIONAL – A dynamic segment built from selection criteria based on endpoint data
+     * @return The segment type: DIMENSIONAL - A dynamic segment built from selection criteria based on endpoint data
      *         reported by your app. You create this type of segment by using the segment builder in the Amazon Pinpoint
-     *         console or by making a POST request to the segments resource. IMPORT – A static segment built from an
+     *         console or by making a POST request to the segments resource. IMPORT - A static segment built from an
      *         imported set of endpoint definitions. You create this type of segment by importing a segment in the
      *         Amazon Pinpoint console or by making a POST request to the jobs/import resource.
      * @see SegmentType
@@ -326,16 +326,16 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The segment type: DIMENSIONAL – A dynamic segment built from selection criteria based on endpoint data reported
+     * The segment type: DIMENSIONAL - A dynamic segment built from selection criteria based on endpoint data reported
      * by your app. You create this type of segment by using the segment builder in the Amazon Pinpoint console or by
-     * making a POST request to the segments resource. IMPORT – A static segment built from an imported set of endpoint
+     * making a POST request to the segments resource. IMPORT - A static segment built from an imported set of endpoint
      * definitions. You create this type of segment by importing a segment in the Amazon Pinpoint console or by making a
      * POST request to the jobs/import resource.
      * 
      * @param segmentType
-     *        The segment type: DIMENSIONAL – A dynamic segment built from selection criteria based on endpoint data
+     *        The segment type: DIMENSIONAL - A dynamic segment built from selection criteria based on endpoint data
      *        reported by your app. You create this type of segment by using the segment builder in the Amazon Pinpoint
-     *        console or by making a POST request to the segments resource. IMPORT – A static segment built from an
+     *        console or by making a POST request to the segments resource. IMPORT - A static segment built from an
      *        imported set of endpoint definitions. You create this type of segment by importing a segment in the Amazon
      *        Pinpoint console or by making a POST request to the jobs/import resource.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -348,16 +348,16 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The segment type: DIMENSIONAL – A dynamic segment built from selection criteria based on endpoint data reported
+     * The segment type: DIMENSIONAL - A dynamic segment built from selection criteria based on endpoint data reported
      * by your app. You create this type of segment by using the segment builder in the Amazon Pinpoint console or by
-     * making a POST request to the segments resource. IMPORT – A static segment built from an imported set of endpoint
+     * making a POST request to the segments resource. IMPORT - A static segment built from an imported set of endpoint
      * definitions. You create this type of segment by importing a segment in the Amazon Pinpoint console or by making a
      * POST request to the jobs/import resource.
      * 
      * @param segmentType
-     *        The segment type: DIMENSIONAL – A dynamic segment built from selection criteria based on endpoint data
+     *        The segment type: DIMENSIONAL - A dynamic segment built from selection criteria based on endpoint data
      *        reported by your app. You create this type of segment by using the segment builder in the Amazon Pinpoint
-     *        console or by making a POST request to the segments resource. IMPORT – A static segment built from an
+     *        console or by making a POST request to the segments resource. IMPORT - A static segment built from an
      *        imported set of endpoint definitions. You create this type of segment by importing a segment in the Amazon
      *        Pinpoint console or by making a POST request to the jobs/import resource.
      * @see SegmentType
@@ -368,16 +368,16 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * The segment type: DIMENSIONAL – A dynamic segment built from selection criteria based on endpoint data reported
+     * The segment type: DIMENSIONAL - A dynamic segment built from selection criteria based on endpoint data reported
      * by your app. You create this type of segment by using the segment builder in the Amazon Pinpoint console or by
-     * making a POST request to the segments resource. IMPORT – A static segment built from an imported set of endpoint
+     * making a POST request to the segments resource. IMPORT - A static segment built from an imported set of endpoint
      * definitions. You create this type of segment by importing a segment in the Amazon Pinpoint console or by making a
      * POST request to the jobs/import resource.
      * 
      * @param segmentType
-     *        The segment type: DIMENSIONAL – A dynamic segment built from selection criteria based on endpoint data
+     *        The segment type: DIMENSIONAL - A dynamic segment built from selection criteria based on endpoint data
      *        reported by your app. You create this type of segment by using the segment builder in the Amazon Pinpoint
-     *        console or by making a POST request to the segments resource. IMPORT – A static segment built from an
+     *        console or by making a POST request to the segments resource. IMPORT - A static segment built from an
      *        imported set of endpoint definitions. You create this type of segment by importing a segment in the Amazon
      *        Pinpoint console or by making a POST request to the jobs/import resource.
      * @return Returns a reference to this object so that method calls can be chained together.

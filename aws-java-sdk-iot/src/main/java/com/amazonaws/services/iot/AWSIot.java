@@ -719,7 +719,7 @@ public interface AWSIot {
 
     /**
      * <p>
-     * Gets information about the specified certificate.
+     * Gets information about the specified certificate. You may specify the certificate using either its ID or PEM.
      * </p>
      * 
      * @param describeCertificateRequest

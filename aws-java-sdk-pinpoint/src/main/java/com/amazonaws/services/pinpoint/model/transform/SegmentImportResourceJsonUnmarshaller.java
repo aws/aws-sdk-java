@@ -48,6 +48,11 @@ public class SegmentImportResourceJsonUnmarshaller implements Unmarshaller<Segme
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("ChannelCounts", targetDepth)) {
+                    context.nextToken();
+                    segmentImportResource.setChannelCounts(new MapUnmarshaller<String, Integer>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(Integer.class)).unmarshall(context));
+                }
                 if (context.testExpression("ExternalId", targetDepth)) {
                     context.nextToken();
                     segmentImportResource.setExternalId(context.getUnmarshaller(String.class).unmarshall(context));

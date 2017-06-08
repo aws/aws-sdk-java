@@ -121,6 +121,29 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<DeleteApnsChannelRequest, DeleteApnsChannelResult> asyncHandler);
 
     /**
+     * Delete an APNS sandbox channel
+     * 
+     * @param deleteApnsSandboxChannelRequest
+     * @return A Java Future containing the result of the DeleteApnsSandboxChannel operation returned by the service.
+     * @sample AmazonPinpointAsync.DeleteApnsSandboxChannel
+     */
+    java.util.concurrent.Future<DeleteApnsSandboxChannelResult> deleteApnsSandboxChannelAsync(DeleteApnsSandboxChannelRequest deleteApnsSandboxChannelRequest);
+
+    /**
+     * Delete an APNS sandbox channel
+     * 
+     * @param deleteApnsSandboxChannelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteApnsSandboxChannel operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.DeleteApnsSandboxChannel
+     */
+    java.util.concurrent.Future<DeleteApnsSandboxChannelResult> deleteApnsSandboxChannelAsync(DeleteApnsSandboxChannelRequest deleteApnsSandboxChannelRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteApnsSandboxChannelRequest, DeleteApnsSandboxChannelResult> asyncHandler);
+
+    /**
      * Deletes a campaign.
      * 
      * @param deleteCampaignRequest
@@ -142,6 +165,29 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      */
     java.util.concurrent.Future<DeleteCampaignResult> deleteCampaignAsync(DeleteCampaignRequest deleteCampaignRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteCampaignRequest, DeleteCampaignResult> asyncHandler);
+
+    /**
+     * Delete an email channel
+     * 
+     * @param deleteEmailChannelRequest
+     * @return A Java Future containing the result of the DeleteEmailChannel operation returned by the service.
+     * @sample AmazonPinpointAsync.DeleteEmailChannel
+     */
+    java.util.concurrent.Future<DeleteEmailChannelResult> deleteEmailChannelAsync(DeleteEmailChannelRequest deleteEmailChannelRequest);
+
+    /**
+     * Delete an email channel
+     * 
+     * @param deleteEmailChannelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteEmailChannel operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.DeleteEmailChannel
+     */
+    java.util.concurrent.Future<DeleteEmailChannelResult> deleteEmailChannelAsync(DeleteEmailChannelRequest deleteEmailChannelRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteEmailChannelRequest, DeleteEmailChannelResult> asyncHandler);
 
     /**
      * Deletes the event stream for an app.
@@ -215,6 +261,29 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<DeleteSegmentRequest, DeleteSegmentResult> asyncHandler);
 
     /**
+     * Delete an SMS channel
+     * 
+     * @param deleteSmsChannelRequest
+     * @return A Java Future containing the result of the DeleteSmsChannel operation returned by the service.
+     * @sample AmazonPinpointAsync.DeleteSmsChannel
+     */
+    java.util.concurrent.Future<DeleteSmsChannelResult> deleteSmsChannelAsync(DeleteSmsChannelRequest deleteSmsChannelRequest);
+
+    /**
+     * Delete an SMS channel
+     * 
+     * @param deleteSmsChannelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteSmsChannel operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.DeleteSmsChannel
+     */
+    java.util.concurrent.Future<DeleteSmsChannelResult> deleteSmsChannelAsync(DeleteSmsChannelRequest deleteSmsChannelRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteSmsChannelRequest, DeleteSmsChannelResult> asyncHandler);
+
+    /**
      * Returns information about the APNs channel for an app.
      * 
      * @param getApnsChannelRequest
@@ -236,6 +305,29 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      */
     java.util.concurrent.Future<GetApnsChannelResult> getApnsChannelAsync(GetApnsChannelRequest getApnsChannelRequest,
             com.amazonaws.handlers.AsyncHandler<GetApnsChannelRequest, GetApnsChannelResult> asyncHandler);
+
+    /**
+     * Get an APNS sandbox channel
+     * 
+     * @param getApnsSandboxChannelRequest
+     * @return A Java Future containing the result of the GetApnsSandboxChannel operation returned by the service.
+     * @sample AmazonPinpointAsync.GetApnsSandboxChannel
+     */
+    java.util.concurrent.Future<GetApnsSandboxChannelResult> getApnsSandboxChannelAsync(GetApnsSandboxChannelRequest getApnsSandboxChannelRequest);
+
+    /**
+     * Get an APNS sandbox channel
+     * 
+     * @param getApnsSandboxChannelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetApnsSandboxChannel operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.GetApnsSandboxChannel
+     */
+    java.util.concurrent.Future<GetApnsSandboxChannelResult> getApnsSandboxChannelAsync(GetApnsSandboxChannelRequest getApnsSandboxChannelRequest,
+            com.amazonaws.handlers.AsyncHandler<GetApnsSandboxChannelRequest, GetApnsSandboxChannelResult> asyncHandler);
 
     /**
      * Used to request the settings for an app.
@@ -374,6 +466,29 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      */
     java.util.concurrent.Future<GetCampaignsResult> getCampaignsAsync(GetCampaignsRequest getCampaignsRequest,
             com.amazonaws.handlers.AsyncHandler<GetCampaignsRequest, GetCampaignsResult> asyncHandler);
+
+    /**
+     * Get an email channel
+     * 
+     * @param getEmailChannelRequest
+     * @return A Java Future containing the result of the GetEmailChannel operation returned by the service.
+     * @sample AmazonPinpointAsync.GetEmailChannel
+     */
+    java.util.concurrent.Future<GetEmailChannelResult> getEmailChannelAsync(GetEmailChannelRequest getEmailChannelRequest);
+
+    /**
+     * Get an email channel
+     * 
+     * @param getEmailChannelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetEmailChannel operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.GetEmailChannel
+     */
+    java.util.concurrent.Future<GetEmailChannelResult> getEmailChannelAsync(GetEmailChannelRequest getEmailChannelRequest,
+            com.amazonaws.handlers.AsyncHandler<GetEmailChannelRequest, GetEmailChannelResult> asyncHandler);
 
     /**
      * Returns information about an endpoint.
@@ -608,6 +723,29 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<GetSegmentsRequest, GetSegmentsResult> asyncHandler);
 
     /**
+     * Get an SMS channel
+     * 
+     * @param getSmsChannelRequest
+     * @return A Java Future containing the result of the GetSmsChannel operation returned by the service.
+     * @sample AmazonPinpointAsync.GetSmsChannel
+     */
+    java.util.concurrent.Future<GetSmsChannelResult> getSmsChannelAsync(GetSmsChannelRequest getSmsChannelRequest);
+
+    /**
+     * Get an SMS channel
+     * 
+     * @param getSmsChannelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSmsChannel operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.GetSmsChannel
+     */
+    java.util.concurrent.Future<GetSmsChannelResult> getSmsChannelAsync(GetSmsChannelRequest getSmsChannelRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSmsChannelRequest, GetSmsChannelResult> asyncHandler);
+
+    /**
      * Use to create or update the event stream for an app.
      * 
      * @param putEventStreamRequest
@@ -633,6 +771,29 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<PutEventStreamRequest, PutEventStreamResult> asyncHandler);
 
     /**
+     * Send a batch of messages
+     * 
+     * @param sendMessagesRequest
+     * @return A Java Future containing the result of the SendMessages operation returned by the service.
+     * @sample AmazonPinpointAsync.SendMessages
+     */
+    java.util.concurrent.Future<SendMessagesResult> sendMessagesAsync(SendMessagesRequest sendMessagesRequest);
+
+    /**
+     * Send a batch of messages
+     * 
+     * @param sendMessagesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SendMessages operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.SendMessages
+     */
+    java.util.concurrent.Future<SendMessagesResult> sendMessagesAsync(SendMessagesRequest sendMessagesRequest,
+            com.amazonaws.handlers.AsyncHandler<SendMessagesRequest, SendMessagesResult> asyncHandler);
+
+    /**
      * Use to update the APNs channel for an app.
      * 
      * @param updateApnsChannelRequest
@@ -654,6 +815,29 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      */
     java.util.concurrent.Future<UpdateApnsChannelResult> updateApnsChannelAsync(UpdateApnsChannelRequest updateApnsChannelRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateApnsChannelRequest, UpdateApnsChannelResult> asyncHandler);
+
+    /**
+     * Update an APNS sandbox channel
+     * 
+     * @param updateApnsSandboxChannelRequest
+     * @return A Java Future containing the result of the UpdateApnsSandboxChannel operation returned by the service.
+     * @sample AmazonPinpointAsync.UpdateApnsSandboxChannel
+     */
+    java.util.concurrent.Future<UpdateApnsSandboxChannelResult> updateApnsSandboxChannelAsync(UpdateApnsSandboxChannelRequest updateApnsSandboxChannelRequest);
+
+    /**
+     * Update an APNS sandbox channel
+     * 
+     * @param updateApnsSandboxChannelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateApnsSandboxChannel operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.UpdateApnsSandboxChannel
+     */
+    java.util.concurrent.Future<UpdateApnsSandboxChannelResult> updateApnsSandboxChannelAsync(UpdateApnsSandboxChannelRequest updateApnsSandboxChannelRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateApnsSandboxChannelRequest, UpdateApnsSandboxChannelResult> asyncHandler);
 
     /**
      * Used to update the settings for an app.
@@ -702,6 +886,29 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      */
     java.util.concurrent.Future<UpdateCampaignResult> updateCampaignAsync(UpdateCampaignRequest updateCampaignRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateCampaignRequest, UpdateCampaignResult> asyncHandler);
+
+    /**
+     * Update an email channel
+     * 
+     * @param updateEmailChannelRequest
+     * @return A Java Future containing the result of the UpdateEmailChannel operation returned by the service.
+     * @sample AmazonPinpointAsync.UpdateEmailChannel
+     */
+    java.util.concurrent.Future<UpdateEmailChannelResult> updateEmailChannelAsync(UpdateEmailChannelRequest updateEmailChannelRequest);
+
+    /**
+     * Update an email channel
+     * 
+     * @param updateEmailChannelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateEmailChannel operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.UpdateEmailChannel
+     */
+    java.util.concurrent.Future<UpdateEmailChannelResult> updateEmailChannelAsync(UpdateEmailChannelRequest updateEmailChannelRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateEmailChannelRequest, UpdateEmailChannelResult> asyncHandler);
 
     /**
      * Use to update an endpoint.
@@ -794,5 +1001,28 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
      */
     java.util.concurrent.Future<UpdateSegmentResult> updateSegmentAsync(UpdateSegmentRequest updateSegmentRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateSegmentRequest, UpdateSegmentResult> asyncHandler);
+
+    /**
+     * Update an SMS channel
+     * 
+     * @param updateSmsChannelRequest
+     * @return A Java Future containing the result of the UpdateSmsChannel operation returned by the service.
+     * @sample AmazonPinpointAsync.UpdateSmsChannel
+     */
+    java.util.concurrent.Future<UpdateSmsChannelResult> updateSmsChannelAsync(UpdateSmsChannelRequest updateSmsChannelRequest);
+
+    /**
+     * Update an SMS channel
+     * 
+     * @param updateSmsChannelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateSmsChannel operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.UpdateSmsChannel
+     */
+    java.util.concurrent.Future<UpdateSmsChannelResult> updateSmsChannelAsync(UpdateSmsChannelRequest updateSmsChannelRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateSmsChannelRequest, UpdateSmsChannelResult> asyncHandler);
 
 }

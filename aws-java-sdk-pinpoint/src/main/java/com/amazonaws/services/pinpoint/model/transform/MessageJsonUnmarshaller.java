@@ -60,6 +60,10 @@ public class MessageJsonUnmarshaller implements Unmarshaller<Message, JsonUnmars
                     context.nextToken();
                     message.setImageIconUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ImageSmallIconUrl", targetDepth)) {
+                    context.nextToken();
+                    message.setImageSmallIconUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ImageUrl", targetDepth)) {
                     context.nextToken();
                     message.setImageUrl(context.getUnmarshaller(String.class).unmarshall(context));

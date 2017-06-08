@@ -29,6 +29,8 @@ public class SegmentDemographicsMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> APPVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AppVersion").build();
+    private static final MarshallingInfo<StructuredPojo> CHANNEL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Channel").build();
     private static final MarshallingInfo<StructuredPojo> DEVICETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeviceType").build();
     private static final MarshallingInfo<StructuredPojo> MAKE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -55,6 +57,7 @@ public class SegmentDemographicsMarshaller {
 
         try {
             protocolMarshaller.marshall(segmentDemographics.getAppVersion(), APPVERSION_BINDING);
+            protocolMarshaller.marshall(segmentDemographics.getChannel(), CHANNEL_BINDING);
             protocolMarshaller.marshall(segmentDemographics.getDeviceType(), DEVICETYPE_BINDING);
             protocolMarshaller.marshall(segmentDemographics.getMake(), MAKE_BINDING);
             protocolMarshaller.marshall(segmentDemographics.getModel(), MODEL_BINDING);

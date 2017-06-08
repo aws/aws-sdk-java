@@ -31,6 +31,8 @@ public class APNSChannelResponseMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationId").build();
     private static final MarshallingInfo<String> CREATIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationDate").build();
+    private static final MarshallingInfo<Boolean> ENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Enabled").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Id").build();
     private static final MarshallingInfo<Boolean> ISARCHIVED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
@@ -62,6 +64,7 @@ public class APNSChannelResponseMarshaller {
         try {
             protocolMarshaller.marshall(aPNSChannelResponse.getApplicationId(), APPLICATIONID_BINDING);
             protocolMarshaller.marshall(aPNSChannelResponse.getCreationDate(), CREATIONDATE_BINDING);
+            protocolMarshaller.marshall(aPNSChannelResponse.getEnabled(), ENABLED_BINDING);
             protocolMarshaller.marshall(aPNSChannelResponse.getId(), ID_BINDING);
             protocolMarshaller.marshall(aPNSChannelResponse.getIsArchived(), ISARCHIVED_BINDING);
             protocolMarshaller.marshall(aPNSChannelResponse.getLastModifiedBy(), LASTMODIFIEDBY_BINDING);

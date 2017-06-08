@@ -20,6 +20,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DetectModerationLabelsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The input image as bytes or an S3 object.
+     * </p>
+     */
     private Image image;
     /**
      * <p>
@@ -34,7 +39,12 @@ public class DetectModerationLabelsRequest extends com.amazonaws.AmazonWebServic
     private Float minConfidence;
 
     /**
+     * <p>
+     * The input image as bytes or an S3 object.
+     * </p>
+     * 
      * @param image
+     *        The input image as bytes or an S3 object.
      */
 
     public void setImage(Image image) {
@@ -42,7 +52,11 @@ public class DetectModerationLabelsRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * @return
+     * <p>
+     * The input image as bytes or an S3 object.
+     * </p>
+     * 
+     * @return The input image as bytes or an S3 object.
      */
 
     public Image getImage() {
@@ -50,7 +64,12 @@ public class DetectModerationLabelsRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The input image as bytes or an S3 object.
+     * </p>
+     * 
      * @param image
+     *        The input image as bytes or an S3 object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -33,16 +33,24 @@ public enum PinpointActions implements Action {
     CreateSegment("pinpoint:CreateSegment"),
     /** Action for the DeleteApnsChannel operation. */
     DeleteApnsChannel("pinpoint:DeleteApnsChannel"),
+    /** Action for the DeleteApnsSandboxChannel operation. */
+    DeleteApnsSandboxChannel("pinpoint:DeleteApnsSandboxChannel"),
     /** Action for the DeleteCampaign operation. */
     DeleteCampaign("pinpoint:DeleteCampaign"),
+    /** Action for the DeleteEmailChannel operation. */
+    DeleteEmailChannel("pinpoint:DeleteEmailChannel"),
     /** Action for the DeleteEventStream operation. */
     DeleteEventStream("pinpoint:DeleteEventStream"),
     /** Action for the DeleteGcmChannel operation. */
     DeleteGcmChannel("pinpoint:DeleteGcmChannel"),
     /** Action for the DeleteSegment operation. */
     DeleteSegment("pinpoint:DeleteSegment"),
+    /** Action for the DeleteSmsChannel operation. */
+    DeleteSmsChannel("pinpoint:DeleteSmsChannel"),
     /** Action for the GetApnsChannel operation. */
     GetApnsChannel("pinpoint:GetApnsChannel"),
+    /** Action for the GetApnsSandboxChannel operation. */
+    GetApnsSandboxChannel("pinpoint:GetApnsSandboxChannel"),
     /** Action for the GetApplicationSettings operation. */
     GetApplicationSettings("pinpoint:GetApplicationSettings"),
     /** Action for the GetCampaign operation. */
@@ -55,6 +63,8 @@ public enum PinpointActions implements Action {
     GetCampaignVersions("pinpoint:GetCampaignVersions"),
     /** Action for the GetCampaigns operation. */
     GetCampaigns("pinpoint:GetCampaigns"),
+    /** Action for the GetEmailChannel operation. */
+    GetEmailChannel("pinpoint:GetEmailChannel"),
     /** Action for the GetEndpoint operation. */
     GetEndpoint("pinpoint:GetEndpoint"),
     /** Action for the GetEventStream operation. */
@@ -75,14 +85,22 @@ public enum PinpointActions implements Action {
     GetSegmentVersions("pinpoint:GetSegmentVersions"),
     /** Action for the GetSegments operation. */
     GetSegments("pinpoint:GetSegments"),
+    /** Action for the GetSmsChannel operation. */
+    GetSmsChannel("pinpoint:GetSmsChannel"),
     /** Action for the PutEventStream operation. */
     PutEventStream("pinpoint:PutEventStream"),
+    /** Action for the SendMessages operation. */
+    SendMessages("pinpoint:SendMessages"),
     /** Action for the UpdateApnsChannel operation. */
     UpdateApnsChannel("pinpoint:UpdateApnsChannel"),
+    /** Action for the UpdateApnsSandboxChannel operation. */
+    UpdateApnsSandboxChannel("pinpoint:UpdateApnsSandboxChannel"),
     /** Action for the UpdateApplicationSettings operation. */
     UpdateApplicationSettings("pinpoint:UpdateApplicationSettings"),
     /** Action for the UpdateCampaign operation. */
     UpdateCampaign("pinpoint:UpdateCampaign"),
+    /** Action for the UpdateEmailChannel operation. */
+    UpdateEmailChannel("pinpoint:UpdateEmailChannel"),
     /** Action for the UpdateEndpoint operation. */
     UpdateEndpoint("pinpoint:UpdateEndpoint"),
     /** Action for the UpdateEndpointsBatch operation. */
@@ -91,6 +109,8 @@ public enum PinpointActions implements Action {
     UpdateGcmChannel("pinpoint:UpdateGcmChannel"),
     /** Action for the UpdateSegment operation. */
     UpdateSegment("pinpoint:UpdateSegment"),
+    /** Action for the UpdateSmsChannel operation. */
+    UpdateSmsChannel("pinpoint:UpdateSmsChannel"),
 
     ;
 

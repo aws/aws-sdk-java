@@ -19,12 +19,18 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides face metadata for target image faces that are analysed by <code>CompareFaces</code>.
+ * Provides face metadata for target image faces that are analysed by <code>CompareFaces</code> and
+ * <code>RecognizeCelebrities</code>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ComparedFace implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * Bounding box of the face.
+     * </p>
+     */
     private BoundingBox boundingBox;
     /**
      * <p>
@@ -52,7 +58,12 @@ public class ComparedFace implements Serializable, Cloneable, StructuredPojo {
     private ImageQuality quality;
 
     /**
+     * <p>
+     * Bounding box of the face.
+     * </p>
+     * 
      * @param boundingBox
+     *        Bounding box of the face.
      */
 
     public void setBoundingBox(BoundingBox boundingBox) {
@@ -60,7 +71,11 @@ public class ComparedFace implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Bounding box of the face.
+     * </p>
+     * 
+     * @return Bounding box of the face.
      */
 
     public BoundingBox getBoundingBox() {
@@ -68,7 +83,12 @@ public class ComparedFace implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Bounding box of the face.
+     * </p>
+     * 
      * @param boundingBox
+     *        Bounding box of the face.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

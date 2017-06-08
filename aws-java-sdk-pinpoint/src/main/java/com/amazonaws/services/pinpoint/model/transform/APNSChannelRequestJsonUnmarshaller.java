@@ -52,6 +52,10 @@ public class APNSChannelRequestJsonUnmarshaller implements Unmarshaller<APNSChan
                     context.nextToken();
                     aPNSChannelRequest.setCertificate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Enabled", targetDepth)) {
+                    context.nextToken();
+                    aPNSChannelRequest.setEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("PrivateKey", targetDepth)) {
                     context.nextToken();
                     aPNSChannelRequest.setPrivateKey(context.getUnmarshaller(String.class).unmarshall(context));

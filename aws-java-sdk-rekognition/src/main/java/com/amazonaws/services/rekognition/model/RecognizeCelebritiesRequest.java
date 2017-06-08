@@ -1,0 +1,118 @@
+/*
+ * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.rekognition.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+
+import com.amazonaws.AmazonWebServiceRequest;
+
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class RecognizeCelebritiesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
+
+    /**
+     * <p>
+     * The input image to use for celebrity recognition.
+     * </p>
+     */
+    private Image image;
+
+    /**
+     * <p>
+     * The input image to use for celebrity recognition.
+     * </p>
+     * 
+     * @param image
+     *        The input image to use for celebrity recognition.
+     */
+
+    public void setImage(Image image) {
+        this.image = image;
+    }
+
+    /**
+     * <p>
+     * The input image to use for celebrity recognition.
+     * </p>
+     * 
+     * @return The input image to use for celebrity recognition.
+     */
+
+    public Image getImage() {
+        return this.image;
+    }
+
+    /**
+     * <p>
+     * The input image to use for celebrity recognition.
+     * </p>
+     * 
+     * @param image
+     *        The input image to use for celebrity recognition.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecognizeCelebritiesRequest withImage(Image image) {
+        setImage(image);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object; useful for testing and debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getImage() != null)
+            sb.append("Image: ").append(getImage());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof RecognizeCelebritiesRequest == false)
+            return false;
+        RecognizeCelebritiesRequest other = (RecognizeCelebritiesRequest) obj;
+        if (other.getImage() == null ^ this.getImage() == null)
+            return false;
+        if (other.getImage() != null && other.getImage().equals(this.getImage()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getImage() == null) ? 0 : getImage().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public RecognizeCelebritiesRequest clone() {
+        return (RecognizeCelebritiesRequest) super.clone();
+    }
+
+}

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the face properties such as the bounding box, face ID, image ID of the source image, and external image ID
+ * Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID
  * that you assigned.
  * </p>
  */
@@ -32,11 +32,15 @@ public class Face implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String faceId;
-
+    /**
+     * <p>
+     * Bounding box of the face.
+     * </p>
+     */
     private BoundingBox boundingBox;
     /**
      * <p>
-     * Unique identifier that Amazon Rekognition assigns to the source image.
+     * Unique identifier that Amazon Rekognition assigns to the input image.
      * </p>
      */
     private String imageId;
@@ -94,7 +98,12 @@ public class Face implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Bounding box of the face.
+     * </p>
+     * 
      * @param boundingBox
+     *        Bounding box of the face.
      */
 
     public void setBoundingBox(BoundingBox boundingBox) {
@@ -102,7 +111,11 @@ public class Face implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Bounding box of the face.
+     * </p>
+     * 
+     * @return Bounding box of the face.
      */
 
     public BoundingBox getBoundingBox() {
@@ -110,7 +123,12 @@ public class Face implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Bounding box of the face.
+     * </p>
+     * 
      * @param boundingBox
+     *        Bounding box of the face.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -121,11 +139,11 @@ public class Face implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier that Amazon Rekognition assigns to the source image.
+     * Unique identifier that Amazon Rekognition assigns to the input image.
      * </p>
      * 
      * @param imageId
-     *        Unique identifier that Amazon Rekognition assigns to the source image.
+     *        Unique identifier that Amazon Rekognition assigns to the input image.
      */
 
     public void setImageId(String imageId) {
@@ -134,10 +152,10 @@ public class Face implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier that Amazon Rekognition assigns to the source image.
+     * Unique identifier that Amazon Rekognition assigns to the input image.
      * </p>
      * 
-     * @return Unique identifier that Amazon Rekognition assigns to the source image.
+     * @return Unique identifier that Amazon Rekognition assigns to the input image.
      */
 
     public String getImageId() {
@@ -146,11 +164,11 @@ public class Face implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique identifier that Amazon Rekognition assigns to the source image.
+     * Unique identifier that Amazon Rekognition assigns to the input image.
      * </p>
      * 
      * @param imageId
-     *        Unique identifier that Amazon Rekognition assigns to the source image.
+     *        Unique identifier that Amazon Rekognition assigns to the input image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

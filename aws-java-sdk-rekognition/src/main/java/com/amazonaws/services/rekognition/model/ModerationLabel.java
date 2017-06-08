@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Provides information about a single type of moderated content found in an image. Each type of moderated content has a
- * label within a hierarchical taxonomy. For more information, see <a>howitworks-moderateimage</a>.
+ * label within a hierarchical taxonomy. For more information, see <a>image-moderation</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

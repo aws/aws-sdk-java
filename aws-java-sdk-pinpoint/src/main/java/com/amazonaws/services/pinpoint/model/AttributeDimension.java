@@ -24,7 +24,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class AttributeDimension implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * The type of dimension: INCLUSIVE – Endpoints that match the criteria are included in the segment. EXCLUSIVE –
+     * The type of dimension: INCLUSIVE - Endpoints that match the criteria are included in the segment. EXCLUSIVE -
      * Endpoints that match the criteria are excluded from the segment.
      */
     private String attributeType;
@@ -35,12 +35,12 @@ public class AttributeDimension implements Serializable, Cloneable, StructuredPo
     private java.util.List<String> values;
 
     /**
-     * The type of dimension: INCLUSIVE – Endpoints that match the criteria are included in the segment. EXCLUSIVE –
+     * The type of dimension: INCLUSIVE - Endpoints that match the criteria are included in the segment. EXCLUSIVE -
      * Endpoints that match the criteria are excluded from the segment.
      * 
      * @param attributeType
-     *        The type of dimension: INCLUSIVE – Endpoints that match the criteria are included in the segment.
-     *        EXCLUSIVE – Endpoints that match the criteria are excluded from the segment.
+     *        The type of dimension: INCLUSIVE - Endpoints that match the criteria are included in the segment.
+     *        EXCLUSIVE - Endpoints that match the criteria are excluded from the segment.
      * @see AttributeType
      */
 
@@ -49,11 +49,11 @@ public class AttributeDimension implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The type of dimension: INCLUSIVE – Endpoints that match the criteria are included in the segment. EXCLUSIVE –
+     * The type of dimension: INCLUSIVE - Endpoints that match the criteria are included in the segment. EXCLUSIVE -
      * Endpoints that match the criteria are excluded from the segment.
      * 
-     * @return The type of dimension: INCLUSIVE – Endpoints that match the criteria are included in the segment.
-     *         EXCLUSIVE – Endpoints that match the criteria are excluded from the segment.
+     * @return The type of dimension: INCLUSIVE - Endpoints that match the criteria are included in the segment.
+     *         EXCLUSIVE - Endpoints that match the criteria are excluded from the segment.
      * @see AttributeType
      */
 
@@ -62,12 +62,12 @@ public class AttributeDimension implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The type of dimension: INCLUSIVE – Endpoints that match the criteria are included in the segment. EXCLUSIVE –
+     * The type of dimension: INCLUSIVE - Endpoints that match the criteria are included in the segment. EXCLUSIVE -
      * Endpoints that match the criteria are excluded from the segment.
      * 
      * @param attributeType
-     *        The type of dimension: INCLUSIVE – Endpoints that match the criteria are included in the segment.
-     *        EXCLUSIVE – Endpoints that match the criteria are excluded from the segment.
+     *        The type of dimension: INCLUSIVE - Endpoints that match the criteria are included in the segment.
+     *        EXCLUSIVE - Endpoints that match the criteria are excluded from the segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AttributeType
      */
@@ -78,12 +78,12 @@ public class AttributeDimension implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The type of dimension: INCLUSIVE – Endpoints that match the criteria are included in the segment. EXCLUSIVE –
+     * The type of dimension: INCLUSIVE - Endpoints that match the criteria are included in the segment. EXCLUSIVE -
      * Endpoints that match the criteria are excluded from the segment.
      * 
      * @param attributeType
-     *        The type of dimension: INCLUSIVE – Endpoints that match the criteria are included in the segment.
-     *        EXCLUSIVE – Endpoints that match the criteria are excluded from the segment.
+     *        The type of dimension: INCLUSIVE - Endpoints that match the criteria are included in the segment.
+     *        EXCLUSIVE - Endpoints that match the criteria are excluded from the segment.
      * @see AttributeType
      */
 
@@ -92,12 +92,12 @@ public class AttributeDimension implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * The type of dimension: INCLUSIVE – Endpoints that match the criteria are included in the segment. EXCLUSIVE –
+     * The type of dimension: INCLUSIVE - Endpoints that match the criteria are included in the segment. EXCLUSIVE -
      * Endpoints that match the criteria are excluded from the segment.
      * 
      * @param attributeType
-     *        The type of dimension: INCLUSIVE – Endpoints that match the criteria are included in the segment.
-     *        EXCLUSIVE – Endpoints that match the criteria are excluded from the segment.
+     *        The type of dimension: INCLUSIVE - Endpoints that match the criteria are included in the segment.
+     *        EXCLUSIVE - Endpoints that match the criteria are excluded from the segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AttributeType
      */

@@ -29,6 +29,8 @@ public class DescribeCertificateRequestMarshaller {
 
     private static final MarshallingInfo<String> CERTIFICATEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("certificateId").build();
+    private static final MarshallingInfo<String> CERTIFICATEPEM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("x-amzn-iot-certificate-pem").build();
 
     private static final DescribeCertificateRequestMarshaller instance = new DescribeCertificateRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class DescribeCertificateRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(describeCertificateRequest.getCertificateId(), CERTIFICATEID_BINDING);
+            protocolMarshaller.marshall(describeCertificateRequest.getCertificatePem(), CERTIFICATEPEM_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

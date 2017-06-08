@@ -56,9 +56,17 @@ public class MessageConfigurationJsonUnmarshaller implements Unmarshaller<Messag
                     context.nextToken();
                     messageConfiguration.setDefaultMessage(MessageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("EmailMessage", targetDepth)) {
+                    context.nextToken();
+                    messageConfiguration.setEmailMessage(CampaignEmailMessageJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("GCMMessage", targetDepth)) {
                     context.nextToken();
                     messageConfiguration.setGCMMessage(MessageJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("SMSMessage", targetDepth)) {
+                    context.nextToken();
+                    messageConfiguration.setSMSMessage(CampaignSmsMessageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

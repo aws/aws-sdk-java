@@ -476,6 +476,39 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<GetCelebrityInfoResult> getCelebrityInfoAsync(GetCelebrityInfoRequest request) {
+
+        return getCelebrityInfoAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCelebrityInfoResult> getCelebrityInfoAsync(final GetCelebrityInfoRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCelebrityInfoRequest, GetCelebrityInfoResult> asyncHandler) {
+        final GetCelebrityInfoRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCelebrityInfoResult>() {
+            @Override
+            public GetCelebrityInfoResult call() throws Exception {
+                GetCelebrityInfoResult result = null;
+
+                try {
+                    result = executeGetCelebrityInfo(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<IndexFacesResult> indexFacesAsync(IndexFacesRequest request) {
 
         return indexFacesAsync(request, null);
@@ -559,6 +592,39 @@ public class AmazonRekognitionAsyncClient extends AmazonRekognitionClient implem
 
                 try {
                     result = executeListFaces(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RecognizeCelebritiesResult> recognizeCelebritiesAsync(RecognizeCelebritiesRequest request) {
+
+        return recognizeCelebritiesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RecognizeCelebritiesResult> recognizeCelebritiesAsync(final RecognizeCelebritiesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RecognizeCelebritiesRequest, RecognizeCelebritiesResult> asyncHandler) {
+        final RecognizeCelebritiesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RecognizeCelebritiesResult>() {
+            @Override
+            public RecognizeCelebritiesResult call() throws Exception {
+                RecognizeCelebritiesResult result = null;
+
+                try {
+                    result = executeRecognizeCelebrities(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -25,6 +25,8 @@ public class GCMChannelRequest implements Serializable, Cloneable, StructuredPoj
 
     /** Platform credential API key from Google. */
     private String apiKey;
+    /** If the channel is enabled for sending messages. */
+    private Boolean enabled;
 
     /**
      * Platform credential API key from Google.
@@ -61,6 +63,50 @@ public class GCMChannelRequest implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * If the channel is enabled for sending messages.
+     * 
+     * @param enabled
+     *        If the channel is enabled for sending messages.
+     */
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    /**
+     * If the channel is enabled for sending messages.
+     * 
+     * @return If the channel is enabled for sending messages.
+     */
+
+    public Boolean getEnabled() {
+        return this.enabled;
+    }
+
+    /**
+     * If the channel is enabled for sending messages.
+     * 
+     * @param enabled
+     *        If the channel is enabled for sending messages.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GCMChannelRequest withEnabled(Boolean enabled) {
+        setEnabled(enabled);
+        return this;
+    }
+
+    /**
+     * If the channel is enabled for sending messages.
+     * 
+     * @return If the channel is enabled for sending messages.
+     */
+
+    public Boolean isEnabled() {
+        return this.enabled;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -72,7 +118,9 @@ public class GCMChannelRequest implements Serializable, Cloneable, StructuredPoj
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApiKey() != null)
-            sb.append("ApiKey: ").append(getApiKey());
+            sb.append("ApiKey: ").append(getApiKey()).append(",");
+        if (getEnabled() != null)
+            sb.append("Enabled: ").append(getEnabled());
         sb.append("}");
         return sb.toString();
     }
@@ -91,6 +139,10 @@ public class GCMChannelRequest implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getApiKey() != null && other.getApiKey().equals(this.getApiKey()) == false)
             return false;
+        if (other.getEnabled() == null ^ this.getEnabled() == null)
+            return false;
+        if (other.getEnabled() != null && other.getEnabled().equals(this.getEnabled()) == false)
+            return false;
         return true;
     }
 
@@ -100,6 +152,7 @@ public class GCMChannelRequest implements Serializable, Cloneable, StructuredPoj
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApiKey() == null) ? 0 : getApiKey().hashCode());
+        hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
         return hashCode;
     }
 

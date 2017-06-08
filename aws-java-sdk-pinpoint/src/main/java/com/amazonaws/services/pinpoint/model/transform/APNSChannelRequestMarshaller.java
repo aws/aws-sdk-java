@@ -29,6 +29,8 @@ public class APNSChannelRequestMarshaller {
 
     private static final MarshallingInfo<String> CERTIFICATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Certificate").build();
+    private static final MarshallingInfo<Boolean> ENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Enabled").build();
     private static final MarshallingInfo<String> PRIVATEKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrivateKey").build();
 
@@ -49,6 +51,7 @@ public class APNSChannelRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(aPNSChannelRequest.getCertificate(), CERTIFICATE_BINDING);
+            protocolMarshaller.marshall(aPNSChannelRequest.getEnabled(), ENABLED_BINDING);
             protocolMarshaller.marshall(aPNSChannelRequest.getPrivateKey(), PRIVATEKEY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

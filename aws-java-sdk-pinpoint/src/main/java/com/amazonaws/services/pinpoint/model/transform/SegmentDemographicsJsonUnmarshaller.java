@@ -52,6 +52,10 @@ public class SegmentDemographicsJsonUnmarshaller implements Unmarshaller<Segment
                     context.nextToken();
                     segmentDemographics.setAppVersion(SetDimensionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Channel", targetDepth)) {
+                    context.nextToken();
+                    segmentDemographics.setChannel(SetDimensionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("DeviceType", targetDepth)) {
                     context.nextToken();
                     segmentDemographics.setDeviceType(SetDimensionJsonUnmarshaller.getInstance().unmarshall(context));

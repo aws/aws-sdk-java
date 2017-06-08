@@ -31,7 +31,12 @@ public class FaceMatch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Float similarity;
-
+    /**
+     * <p>
+     * Describes the face properties such as the bounding box, face ID, image ID of the source image, and external image
+     * ID that you assigned.
+     * </p>
+     */
     private Face face;
 
     /**
@@ -75,7 +80,14 @@ public class FaceMatch implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Describes the face properties such as the bounding box, face ID, image ID of the source image, and external image
+     * ID that you assigned.
+     * </p>
+     * 
      * @param face
+     *        Describes the face properties such as the bounding box, face ID, image ID of the source image, and
+     *        external image ID that you assigned.
      */
 
     public void setFace(Face face) {
@@ -83,7 +95,13 @@ public class FaceMatch implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Describes the face properties such as the bounding box, face ID, image ID of the source image, and external image
+     * ID that you assigned.
+     * </p>
+     * 
+     * @return Describes the face properties such as the bounding box, face ID, image ID of the source image, and
+     *         external image ID that you assigned.
      */
 
     public Face getFace() {
@@ -91,7 +109,14 @@ public class FaceMatch implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Describes the face properties such as the bounding box, face ID, image ID of the source image, and external image
+     * ID that you assigned.
+     * </p>
+     * 
      * @param face
+     *        Describes the face properties such as the bounding box, face ID, image ID of the source image, and
+     *        external image ID that you assigned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

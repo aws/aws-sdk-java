@@ -25,6 +25,8 @@ public class SegmentDemographics implements Serializable, Cloneable, StructuredP
 
     /** The app version criteria for the segment. */
     private SetDimension appVersion;
+    /** The channel criteria for the segment. */
+    private SetDimension channel;
     /** The device type criteria for the segment. */
     private SetDimension deviceType;
     /** The device make criteria for the segment. */
@@ -65,6 +67,40 @@ public class SegmentDemographics implements Serializable, Cloneable, StructuredP
 
     public SegmentDemographics withAppVersion(SetDimension appVersion) {
         setAppVersion(appVersion);
+        return this;
+    }
+
+    /**
+     * The channel criteria for the segment.
+     * 
+     * @param channel
+     *        The channel criteria for the segment.
+     */
+
+    public void setChannel(SetDimension channel) {
+        this.channel = channel;
+    }
+
+    /**
+     * The channel criteria for the segment.
+     * 
+     * @return The channel criteria for the segment.
+     */
+
+    public SetDimension getChannel() {
+        return this.channel;
+    }
+
+    /**
+     * The channel criteria for the segment.
+     * 
+     * @param channel
+     *        The channel criteria for the segment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SegmentDemographics withChannel(SetDimension channel) {
+        setChannel(channel);
         return this;
     }
 
@@ -217,6 +253,8 @@ public class SegmentDemographics implements Serializable, Cloneable, StructuredP
         sb.append("{");
         if (getAppVersion() != null)
             sb.append("AppVersion: ").append(getAppVersion()).append(",");
+        if (getChannel() != null)
+            sb.append("Channel: ").append(getChannel()).append(",");
         if (getDeviceType() != null)
             sb.append("DeviceType: ").append(getDeviceType()).append(",");
         if (getMake() != null)
@@ -243,6 +281,10 @@ public class SegmentDemographics implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getAppVersion() != null && other.getAppVersion().equals(this.getAppVersion()) == false)
             return false;
+        if (other.getChannel() == null ^ this.getChannel() == null)
+            return false;
+        if (other.getChannel() != null && other.getChannel().equals(this.getChannel()) == false)
+            return false;
         if (other.getDeviceType() == null ^ this.getDeviceType() == null)
             return false;
         if (other.getDeviceType() != null && other.getDeviceType().equals(this.getDeviceType()) == false)
@@ -268,6 +310,7 @@ public class SegmentDemographics implements Serializable, Cloneable, StructuredP
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAppVersion() == null) ? 0 : getAppVersion().hashCode());
+        hashCode = prime * hashCode + ((getChannel() == null) ? 0 : getChannel().hashCode());
         hashCode = prime * hashCode + ((getDeviceType() == null) ? 0 : getDeviceType().hashCode());
         hashCode = prime * hashCode + ((getMake() == null) ? 0 : getMake().hashCode());
         hashCode = prime * hashCode + ((getModel() == null) ? 0 : getModel().hashCode());

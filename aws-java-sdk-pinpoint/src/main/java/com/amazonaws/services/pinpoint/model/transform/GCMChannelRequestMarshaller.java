@@ -29,6 +29,8 @@ public class GCMChannelRequestMarshaller {
 
     private static final MarshallingInfo<String> APIKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ApiKey").build();
+    private static final MarshallingInfo<Boolean> ENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Enabled").build();
 
     private static final GCMChannelRequestMarshaller instance = new GCMChannelRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class GCMChannelRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(gCMChannelRequest.getApiKey(), APIKEY_BINDING);
+            protocolMarshaller.marshall(gCMChannelRequest.getEnabled(), ENABLED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

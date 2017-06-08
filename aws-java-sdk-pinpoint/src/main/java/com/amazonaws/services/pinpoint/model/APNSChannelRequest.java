@@ -25,6 +25,8 @@ public class APNSChannelRequest implements Serializable, Cloneable, StructuredPo
 
     /** The distribution certificate from Apple. */
     private String certificate;
+    /** If the channel is enabled for sending messages. */
+    private Boolean enabled;
     /** The certificate private key. */
     private String privateKey;
 
@@ -60,6 +62,50 @@ public class APNSChannelRequest implements Serializable, Cloneable, StructuredPo
     public APNSChannelRequest withCertificate(String certificate) {
         setCertificate(certificate);
         return this;
+    }
+
+    /**
+     * If the channel is enabled for sending messages.
+     * 
+     * @param enabled
+     *        If the channel is enabled for sending messages.
+     */
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    /**
+     * If the channel is enabled for sending messages.
+     * 
+     * @return If the channel is enabled for sending messages.
+     */
+
+    public Boolean getEnabled() {
+        return this.enabled;
+    }
+
+    /**
+     * If the channel is enabled for sending messages.
+     * 
+     * @param enabled
+     *        If the channel is enabled for sending messages.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public APNSChannelRequest withEnabled(Boolean enabled) {
+        setEnabled(enabled);
+        return this;
+    }
+
+    /**
+     * If the channel is enabled for sending messages.
+     * 
+     * @return If the channel is enabled for sending messages.
+     */
+
+    public Boolean isEnabled() {
+        return this.enabled;
     }
 
     /**
@@ -109,6 +155,8 @@ public class APNSChannelRequest implements Serializable, Cloneable, StructuredPo
         sb.append("{");
         if (getCertificate() != null)
             sb.append("Certificate: ").append(getCertificate()).append(",");
+        if (getEnabled() != null)
+            sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getPrivateKey() != null)
             sb.append("PrivateKey: ").append(getPrivateKey());
         sb.append("}");
@@ -129,6 +177,10 @@ public class APNSChannelRequest implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getCertificate() != null && other.getCertificate().equals(this.getCertificate()) == false)
             return false;
+        if (other.getEnabled() == null ^ this.getEnabled() == null)
+            return false;
+        if (other.getEnabled() != null && other.getEnabled().equals(this.getEnabled()) == false)
+            return false;
         if (other.getPrivateKey() == null ^ this.getPrivateKey() == null)
             return false;
         if (other.getPrivateKey() != null && other.getPrivateKey().equals(this.getPrivateKey()) == false)
@@ -142,6 +194,7 @@ public class APNSChannelRequest implements Serializable, Cloneable, StructuredPo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCertificate() == null) ? 0 : getCertificate().hashCode());
+        hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
         hashCode = prime * hashCode + ((getPrivateKey() == null) ? 0 : getPrivateKey().hashCode());
         return hashCode;
     }

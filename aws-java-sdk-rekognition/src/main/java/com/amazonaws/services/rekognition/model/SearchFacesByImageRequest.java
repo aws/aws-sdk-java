@@ -26,7 +26,11 @@ public class SearchFacesByImageRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String collectionId;
-
+    /**
+     * <p>
+     * The input image as bytes or an S3 object.
+     * </p>
+     */
     private Image image;
     /**
      * <p>
@@ -84,7 +88,12 @@ public class SearchFacesByImageRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The input image as bytes or an S3 object.
+     * </p>
+     * 
      * @param image
+     *        The input image as bytes or an S3 object.
      */
 
     public void setImage(Image image) {
@@ -92,7 +101,11 @@ public class SearchFacesByImageRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * The input image as bytes or an S3 object.
+     * </p>
+     * 
+     * @return The input image as bytes or an S3 object.
      */
 
     public Image getImage() {
@@ -100,7 +113,12 @@ public class SearchFacesByImageRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The input image as bytes or an S3 object.
+     * </p>
+     * 
      * @param image
+     *        The input image as bytes or an S3 object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

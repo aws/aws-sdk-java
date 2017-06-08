@@ -119,6 +119,19 @@ public class AbstractAmazonRekognitionAsync extends AbstractAmazonRekognition im
     }
 
     @Override
+    public java.util.concurrent.Future<GetCelebrityInfoResult> getCelebrityInfoAsync(GetCelebrityInfoRequest request) {
+
+        return getCelebrityInfoAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCelebrityInfoResult> getCelebrityInfoAsync(GetCelebrityInfoRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetCelebrityInfoRequest, GetCelebrityInfoResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<IndexFacesResult> indexFacesAsync(IndexFacesRequest request) {
 
         return indexFacesAsync(request, null);
@@ -153,6 +166,19 @@ public class AbstractAmazonRekognitionAsync extends AbstractAmazonRekognition im
     @Override
     public java.util.concurrent.Future<ListFacesResult> listFacesAsync(ListFacesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListFacesRequest, ListFacesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RecognizeCelebritiesResult> recognizeCelebritiesAsync(RecognizeCelebritiesRequest request) {
+
+        return recognizeCelebritiesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RecognizeCelebritiesResult> recognizeCelebritiesAsync(RecognizeCelebritiesRequest request,
+            com.amazonaws.handlers.AsyncHandler<RecognizeCelebritiesRequest, RecognizeCelebritiesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
