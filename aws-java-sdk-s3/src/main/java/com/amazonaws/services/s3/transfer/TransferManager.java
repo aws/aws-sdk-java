@@ -675,6 +675,7 @@ public class TransferManager {
         UploadMonitor watcher = UploadMonitor.create(this, upload, executorService,
                                                      uploadCallable, putObjectRequest, listenerChain);
         upload.setMonitor(watcher);
+        executorService.shutdown();
 
         return upload;
     }
@@ -1136,6 +1137,7 @@ public class TransferManager {
                 executorService, lastFullyDownloadedPart, isDownloadParallel, resumeOnRetry));
         download.setMonitor(new DownloadMonitor(download, future));
         latch.countDown();
+        executorService.shutdown();
         return download;
     }
 
