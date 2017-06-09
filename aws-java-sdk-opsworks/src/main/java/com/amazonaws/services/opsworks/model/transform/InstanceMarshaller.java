@@ -34,6 +34,8 @@ public class InstanceMarshaller {
             .marshallLocationName("AmiId").build();
     private static final MarshallingInfo<String> ARCHITECTURE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Architecture").build();
+    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Arn").build();
     private static final MarshallingInfo<String> AUTOSCALINGTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoScalingType").build();
     private static final MarshallingInfo<String> AVAILABILITYZONE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -128,6 +130,7 @@ public class InstanceMarshaller {
             protocolMarshaller.marshall(instance.getAgentVersion(), AGENTVERSION_BINDING);
             protocolMarshaller.marshall(instance.getAmiId(), AMIID_BINDING);
             protocolMarshaller.marshall(instance.getArchitecture(), ARCHITECTURE_BINDING);
+            protocolMarshaller.marshall(instance.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(instance.getAutoScalingType(), AUTOSCALINGTYPE_BINDING);
             protocolMarshaller.marshall(instance.getAvailabilityZone(), AVAILABILITYZONE_BINDING);
             protocolMarshaller.marshall(instance.getBlockDeviceMappings(), BLOCKDEVICEMAPPINGS_BINDING);

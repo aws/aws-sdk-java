@@ -120,7 +120,7 @@ public class DeploymentCommand implements Serializable, Cloneable, StructuredPoj
      * <li>
      * <p>
      * <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to
-     * upgrade, such as <code>Amazon Linux 2014.09</code>. You must also set the <code>allow_reboot</code> argument to
+     * upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code> argument to
      * true.
      * </p>
      * </li>
@@ -133,10 +133,10 @@ public class DeploymentCommand implements Serializable, Cloneable, StructuredPoj
      * </li>
      * </ul>
      * <p>
-     * For example, to upgrade an instance to Amazon Linux 2014.09, set <code>Args</code> to the following.
+     * For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.
      * </p>
      * <p>
-     * <code> { "upgrade_os_to":["Amazon Linux 2014.09"], "allow_reboot":["true"] } </code>
+     * <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code>
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, java.util.List<String>> args;
@@ -948,7 +948,7 @@ public class DeploymentCommand implements Serializable, Cloneable, StructuredPoj
      * <li>
      * <p>
      * <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to
-     * upgrade, such as <code>Amazon Linux 2014.09</code>. You must also set the <code>allow_reboot</code> argument to
+     * upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code> argument to
      * true.
      * </p>
      * </li>
@@ -961,10 +961,10 @@ public class DeploymentCommand implements Serializable, Cloneable, StructuredPoj
      * </li>
      * </ul>
      * <p>
-     * For example, to upgrade an instance to Amazon Linux 2014.09, set <code>Args</code> to the following.
+     * For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.
      * </p>
      * <p>
-     * <code> { "upgrade_os_to":["Amazon Linux 2014.09"], "allow_reboot":["true"] } </code>
+     * <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code>
      * </p>
      * 
      * @return The arguments of those commands that take arguments. It should be set to a JSON object with the following
@@ -979,7 +979,7 @@ public class DeploymentCommand implements Serializable, Cloneable, StructuredPoj
      *         <li>
      *         <p>
      *         <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want
-     *         to upgrade, such as <code>Amazon Linux 2014.09</code>. You must also set the <code>allow_reboot</code>
+     *         to upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code>
      *         argument to true.
      *         </p>
      *         </li>
@@ -992,10 +992,10 @@ public class DeploymentCommand implements Serializable, Cloneable, StructuredPoj
      *         </li>
      *         </ul>
      *         <p>
-     *         For example, to upgrade an instance to Amazon Linux 2014.09, set <code>Args</code> to the following.
+     *         For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.
      *         </p>
      *         <p>
-     *         <code> { "upgrade_os_to":["Amazon Linux 2014.09"], "allow_reboot":["true"] } </code>
+     *         <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code>
      */
 
     public java.util.Map<String, java.util.List<String>> getArgs() {
@@ -1019,7 +1019,7 @@ public class DeploymentCommand implements Serializable, Cloneable, StructuredPoj
      * <li>
      * <p>
      * <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to
-     * upgrade, such as <code>Amazon Linux 2014.09</code>. You must also set the <code>allow_reboot</code> argument to
+     * upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code> argument to
      * true.
      * </p>
      * </li>
@@ -1032,10 +1032,10 @@ public class DeploymentCommand implements Serializable, Cloneable, StructuredPoj
      * </li>
      * </ul>
      * <p>
-     * For example, to upgrade an instance to Amazon Linux 2014.09, set <code>Args</code> to the following.
+     * For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.
      * </p>
      * <p>
-     * <code> { "upgrade_os_to":["Amazon Linux 2014.09"], "allow_reboot":["true"] } </code>
+     * <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code>
      * </p>
      * 
      * @param args
@@ -1051,7 +1051,7 @@ public class DeploymentCommand implements Serializable, Cloneable, StructuredPoj
      *        <li>
      *        <p>
      *        <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to
-     *        upgrade, such as <code>Amazon Linux 2014.09</code>. You must also set the <code>allow_reboot</code>
+     *        upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code>
      *        argument to true.
      *        </p>
      *        </li>
@@ -1064,10 +1064,10 @@ public class DeploymentCommand implements Serializable, Cloneable, StructuredPoj
      *        </li>
      *        </ul>
      *        <p>
-     *        For example, to upgrade an instance to Amazon Linux 2014.09, set <code>Args</code> to the following.
+     *        For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.
      *        </p>
      *        <p>
-     *        <code> { "upgrade_os_to":["Amazon Linux 2014.09"], "allow_reboot":["true"] } </code>
+     *        <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code>
      */
 
     public void setArgs(java.util.Map<String, java.util.List<String>> args) {
@@ -1088,7 +1088,7 @@ public class DeploymentCommand implements Serializable, Cloneable, StructuredPoj
      * <li>
      * <p>
      * <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to
-     * upgrade, such as <code>Amazon Linux 2014.09</code>. You must also set the <code>allow_reboot</code> argument to
+     * upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code> argument to
      * true.
      * </p>
      * </li>
@@ -1101,10 +1101,10 @@ public class DeploymentCommand implements Serializable, Cloneable, StructuredPoj
      * </li>
      * </ul>
      * <p>
-     * For example, to upgrade an instance to Amazon Linux 2014.09, set <code>Args</code> to the following.
+     * For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.
      * </p>
      * <p>
-     * <code> { "upgrade_os_to":["Amazon Linux 2014.09"], "allow_reboot":["true"] } </code>
+     * <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code>
      * </p>
      * 
      * @param args
@@ -1120,7 +1120,7 @@ public class DeploymentCommand implements Serializable, Cloneable, StructuredPoj
      *        <li>
      *        <p>
      *        <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to
-     *        upgrade, such as <code>Amazon Linux 2014.09</code>. You must also set the <code>allow_reboot</code>
+     *        upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code>
      *        argument to true.
      *        </p>
      *        </li>
@@ -1133,10 +1133,10 @@ public class DeploymentCommand implements Serializable, Cloneable, StructuredPoj
      *        </li>
      *        </ul>
      *        <p>
-     *        For example, to upgrade an instance to Amazon Linux 2014.09, set <code>Args</code> to the following.
+     *        For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.
      *        </p>
      *        <p>
-     *        <code> { "upgrade_os_to":["Amazon Linux 2014.09"], "allow_reboot":["true"] } </code>
+     *        <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

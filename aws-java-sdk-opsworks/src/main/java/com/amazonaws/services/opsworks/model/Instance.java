@@ -48,6 +48,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String architecture;
+
+    private String arn;
     /**
      * <p>
      * For load-based or time-based instances, the type.
@@ -176,7 +178,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
     private String platform;
     /**
      * <p>
-     * The The instance's private DNS name.
+     * The instance's private DNS name.
      * </p>
      */
     private String privateDns;
@@ -525,6 +527,32 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     public Instance withArchitecture(Architecture architecture) {
         setArchitecture(architecture);
+        return this;
+    }
+
+    /**
+     * @param arn
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * @param arn
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Instance withArn(String arn) {
+        setArn(arn);
         return this;
     }
 
@@ -1502,11 +1530,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The The instance's private DNS name.
+     * The instance's private DNS name.
      * </p>
      * 
      * @param privateDns
-     *        The The instance's private DNS name.
+     *        The instance's private DNS name.
      */
 
     public void setPrivateDns(String privateDns) {
@@ -1515,10 +1543,10 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The The instance's private DNS name.
+     * The instance's private DNS name.
      * </p>
      * 
-     * @return The The instance's private DNS name.
+     * @return The instance's private DNS name.
      */
 
     public String getPrivateDns() {
@@ -1527,11 +1555,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The The instance's private DNS name.
+     * The instance's private DNS name.
      * </p>
      * 
      * @param privateDns
-     *        The The instance's private DNS name.
+     *        The instance's private DNS name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2815,6 +2843,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
             sb.append("AmiId: ").append(getAmiId()).append(",");
         if (getArchitecture() != null)
             sb.append("Architecture: ").append(getArchitecture()).append(",");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getAutoScalingType() != null)
             sb.append("AutoScalingType: ").append(getAutoScalingType()).append(",");
         if (getAvailabilityZone() != null)
@@ -2914,6 +2944,10 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
         if (other.getArchitecture() == null ^ this.getArchitecture() == null)
             return false;
         if (other.getArchitecture() != null && other.getArchitecture().equals(this.getArchitecture()) == false)
+            return false;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
         if (other.getAutoScalingType() == null ^ this.getAutoScalingType() == null)
             return false;
@@ -3074,6 +3108,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAgentVersion() == null) ? 0 : getAgentVersion().hashCode());
         hashCode = prime * hashCode + ((getAmiId() == null) ? 0 : getAmiId().hashCode());
         hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getAutoScalingType() == null) ? 0 : getAutoScalingType().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode());

@@ -330,8 +330,9 @@ public interface AWSOpsWorks {
 
     /**
      * <p>
-     * Attaches an Elastic Load Balancing load balancer to a specified layer. For more information, see <a
-     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/load-balancer-elb.html">Elastic Load Balancing</a>.
+     * Attaches an Elastic Load Balancing load balancer to a specified layer. AWS OpsWorks Stacks does not support
+     * Application Load Balancer. You can only use Classic Load Balancer with AWS OpsWorks Stacks. For more information,
+     * see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers-elb.html">Elastic Load Balancing</a>.
      * </p>
      * <note>
      * <p>
@@ -1436,6 +1437,23 @@ public interface AWSOpsWorks {
 
     /**
      * <p>
+     * Returns a list of tags that are applied to the specified stack or layer.
+     * </p>
+     * 
+     * @param listTagsRequest
+     * @return Result of the ListTags operation returned by the service.
+     * @throws ValidationException
+     *         Indicates that a request was not valid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.ListTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/ListTags" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListTagsResult listTags(ListTagsRequest listTagsRequest);
+
+    /**
+     * <p>
      * Reboots a specified instance. For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting, Stopping,
      * and Rebooting Instances</a>.
@@ -1781,6 +1799,25 @@ public interface AWSOpsWorks {
 
     /**
      * <p>
+     * Apply cost-allocation tags to a specified stack or layer in AWS OpsWorks Stacks. For more information about how
+     * tagging works, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/tagging.html">Tags</a> in the
+     * AWS OpsWorks User Guide.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ValidationException
+     *         Indicates that a request was not valid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
      * Unassigns a registered instance from all of it's layers. The instance remains in the stack as an unassigned
      * instance and can be assigned to another layer, as needed. You cannot use this action with instances that were
      * created with AWS OpsWorks Stacks.
@@ -1827,6 +1864,23 @@ public interface AWSOpsWorks {
      *      Documentation</a>
      */
     UnassignVolumeResult unassignVolume(UnassignVolumeRequest unassignVolumeRequest);
+
+    /**
+     * <p>
+     * Removes tags from a specified stack or layer.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ValidationException
+     *         Indicates that a request was not valid.
+     * @throws ResourceNotFoundException
+     *         Indicates that a resource was not found.
+     * @sample AWSOpsWorks.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>

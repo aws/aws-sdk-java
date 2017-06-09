@@ -1,3 +1,8 @@
+# __1.11.145__ __2017-06-09__
+## __AWS OpsWorks__
+  - ### Features
+    - Tagging Support for AWS OpsWorks Stacks
+
 # __1.11.144__ __2017-06-08__
 ## __AWS IoT__
   - ### Features

@@ -28,6 +28,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Layer implements Serializable, Cloneable, StructuredPojo {
 
+    private String arn;
     /**
      * <p>
      * The layer stack ID.
@@ -181,6 +182,32 @@ public class Layer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private LifecycleEventConfiguration lifecycleEventConfiguration;
+
+    /**
+     * @param arn
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * @param arn
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Layer withArn(String arn) {
+        setArn(arn);
+        return this;
+    }
 
     /**
      * <p>
@@ -1489,6 +1516,8 @@ public class Layer implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getStackId() != null)
             sb.append("StackId: ").append(getStackId()).append(",");
         if (getLayerId() != null)
@@ -1547,6 +1576,10 @@ public class Layer implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof Layer == false)
             return false;
         Layer other = (Layer) obj;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
         if (other.getStackId() == null ^ this.getStackId() == null)
             return false;
         if (other.getStackId() != null && other.getStackId().equals(this.getStackId()) == false)
@@ -1643,6 +1676,7 @@ public class Layer implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getStackId() == null) ? 0 : getStackId().hashCode());
         hashCode = prime * hashCode + ((getLayerId() == null) ? 0 : getLayerId().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());

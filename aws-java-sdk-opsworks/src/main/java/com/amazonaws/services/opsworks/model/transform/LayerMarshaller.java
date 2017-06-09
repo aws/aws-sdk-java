@@ -29,6 +29,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class LayerMarshaller {
 
+    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Arn").build();
     private static final MarshallingInfo<String> STACKID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("StackId").build();
     private static final MarshallingInfo<String> LAYERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -90,6 +92,7 @@ public class LayerMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(layer.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(layer.getStackId(), STACKID_BINDING);
             protocolMarshaller.marshall(layer.getLayerId(), LAYERID_BINDING);
             protocolMarshaller.marshall(layer.getType(), TYPE_BINDING);

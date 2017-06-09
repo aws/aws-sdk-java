@@ -60,6 +60,10 @@ public class InstanceJsonUnmarshaller implements Unmarshaller<Instance, JsonUnma
                     context.nextToken();
                     instance.setArchitecture(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Arn", targetDepth)) {
+                    context.nextToken();
+                    instance.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("AutoScalingType", targetDepth)) {
                     context.nextToken();
                     instance.setAutoScalingType(context.getUnmarshaller(String.class).unmarshall(context));

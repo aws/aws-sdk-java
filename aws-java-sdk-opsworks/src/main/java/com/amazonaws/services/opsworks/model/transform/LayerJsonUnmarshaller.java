@@ -48,6 +48,10 @@ public class LayerJsonUnmarshaller implements Unmarshaller<Layer, JsonUnmarshall
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("Arn", targetDepth)) {
+                    context.nextToken();
+                    layer.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("StackId", targetDepth)) {
                     context.nextToken();
                     layer.setStackId(context.getUnmarshaller(String.class).unmarshall(context));

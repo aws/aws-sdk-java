@@ -38,7 +38,8 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
     private String type;
     /**
      * <p>
-     * The source URL.
+     * The source URL. The following is an example of an Amazon S3 source URL:
+     * <code>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</code>.
      * </p>
      */
     private String url;
@@ -179,11 +180,13 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The source URL.
+     * The source URL. The following is an example of an Amazon S3 source URL:
+     * <code>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</code>.
      * </p>
      * 
      * @param url
-     *        The source URL.
+     *        The source URL. The following is an example of an Amazon S3 source URL:
+     *        <code>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</code>.
      */
 
     public void setUrl(String url) {
@@ -192,10 +195,12 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The source URL.
+     * The source URL. The following is an example of an Amazon S3 source URL:
+     * <code>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</code>.
      * </p>
      * 
-     * @return The source URL.
+     * @return The source URL. The following is an example of an Amazon S3 source URL:
+     *         <code>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</code>.
      */
 
     public String getUrl() {
@@ -204,11 +209,13 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The source URL.
+     * The source URL. The following is an example of an Amazon S3 source URL:
+     * <code>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</code>.
      * </p>
      * 
      * @param url
-     *        The source URL.
+     *        The source URL. The following is an example of an Amazon S3 source URL:
+     *        <code>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

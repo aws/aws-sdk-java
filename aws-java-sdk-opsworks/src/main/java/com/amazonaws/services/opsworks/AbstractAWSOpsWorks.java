@@ -269,6 +269,11 @@ public class AbstractAWSOpsWorks implements AWSOpsWorks {
     }
 
     @Override
+    public ListTagsResult listTags(ListTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RebootInstanceResult rebootInstance(RebootInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -334,12 +339,22 @@ public class AbstractAWSOpsWorks implements AWSOpsWorks {
     }
 
     @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UnassignInstanceResult unassignInstance(UnassignInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public UnassignVolumeResult unassignVolume(UnassignVolumeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

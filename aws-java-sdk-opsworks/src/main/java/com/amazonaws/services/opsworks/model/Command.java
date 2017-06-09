@@ -111,12 +111,37 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
+     * <code>configure</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>deploy</code>
      * </p>
      * </li>
      * <li>
      * <p>
+     * <code>execute_recipes</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>install_dependencies</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>restart</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>rollback</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>setup</code>
      * </p>
      * </li>
      * <li>
@@ -131,22 +156,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>restart</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>undeploy</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>update_dependencies</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>install_dependencies</code>
      * </p>
      * </li>
      * <li>
@@ -156,7 +166,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>execute_recipes</code>
+     * <code>update_dependencies</code>
      * </p>
      * </li>
      * </ul>
@@ -659,12 +669,37 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
+     * <code>configure</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>deploy</code>
      * </p>
      * </li>
      * <li>
      * <p>
+     * <code>execute_recipes</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>install_dependencies</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>restart</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>rollback</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>setup</code>
      * </p>
      * </li>
      * <li>
@@ -679,22 +714,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>restart</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>undeploy</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>update_dependencies</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>install_dependencies</code>
      * </p>
      * </li>
      * <li>
@@ -704,7 +724,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>execute_recipes</code>
+     * <code>update_dependencies</code>
      * </p>
      * </li>
      * </ul>
@@ -714,12 +734,37 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
+     *        <code>configure</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>deploy</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
+     *        <code>execute_recipes</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>install_dependencies</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>restart</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>rollback</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>setup</code>
      *        </p>
      *        </li>
      *        <li>
@@ -734,22 +779,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>restart</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>undeploy</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>update_dependencies</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>install_dependencies</code>
      *        </p>
      *        </li>
      *        <li>
@@ -759,7 +789,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>execute_recipes</code>
+     *        <code>update_dependencies</code>
      *        </p>
      *        </li>
      */
@@ -775,12 +805,37 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
+     * <code>configure</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>deploy</code>
      * </p>
      * </li>
      * <li>
      * <p>
+     * <code>execute_recipes</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>install_dependencies</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>restart</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>rollback</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>setup</code>
      * </p>
      * </li>
      * <li>
@@ -795,22 +850,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>restart</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>undeploy</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>update_dependencies</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>install_dependencies</code>
      * </p>
      * </li>
      * <li>
@@ -820,7 +860,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>execute_recipes</code>
+     * <code>update_dependencies</code>
      * </p>
      * </li>
      * </ul>
@@ -829,12 +869,37 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
+     *         <code>configure</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>deploy</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
+     *         <code>execute_recipes</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>install_dependencies</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>restart</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>rollback</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>setup</code>
      *         </p>
      *         </li>
      *         <li>
@@ -849,22 +914,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>restart</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         <code>undeploy</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>update_dependencies</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>install_dependencies</code>
      *         </p>
      *         </li>
      *         <li>
@@ -874,7 +924,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>execute_recipes</code>
+     *         <code>update_dependencies</code>
      *         </p>
      *         </li>
      */
@@ -890,12 +940,37 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
+     * <code>configure</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>deploy</code>
      * </p>
      * </li>
      * <li>
      * <p>
+     * <code>execute_recipes</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>install_dependencies</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>restart</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>rollback</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>setup</code>
      * </p>
      * </li>
      * <li>
@@ -910,22 +985,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>restart</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>undeploy</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>update_dependencies</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>install_dependencies</code>
      * </p>
      * </li>
      * <li>
@@ -935,7 +995,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>execute_recipes</code>
+     * <code>update_dependencies</code>
      * </p>
      * </li>
      * </ul>
@@ -945,12 +1005,37 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
+     *        <code>configure</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>deploy</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
+     *        <code>execute_recipes</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>install_dependencies</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>restart</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>rollback</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>setup</code>
      *        </p>
      *        </li>
      *        <li>
@@ -965,22 +1050,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>restart</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>undeploy</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>update_dependencies</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>install_dependencies</code>
      *        </p>
      *        </li>
      *        <li>
@@ -990,7 +1060,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>execute_recipes</code>
+     *        <code>update_dependencies</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
