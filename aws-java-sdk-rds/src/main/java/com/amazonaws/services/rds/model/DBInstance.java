@@ -35,6 +35,16 @@ import javax.annotation.Generated;
  * <a>ModifyDBInstance</a>
  * </p>
  * </li>
+ * <li>
+ * <p>
+ * <a>StopDBInstance</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>StartDBInstance</a>
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * This data type is used as a response element in the <a>DescribeDBInstances</a> action.

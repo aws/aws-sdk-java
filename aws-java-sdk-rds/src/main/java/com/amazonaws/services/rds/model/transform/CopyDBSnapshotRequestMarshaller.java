@@ -77,6 +77,10 @@ public class CopyDBSnapshotRequestMarshaller implements Marshaller<Request<CopyD
             request.addParameter("PreSignedUrl", StringUtils.fromString(copyDBSnapshotRequest.getPreSignedUrl()));
         }
 
+        if (copyDBSnapshotRequest.getOptionGroupName() != null) {
+            request.addParameter("OptionGroupName", StringUtils.fromString(copyDBSnapshotRequest.getOptionGroupName()));
+        }
+
         if (copyDBSnapshotRequest.getSourceRegion() != null) {
             request.addParameter("SourceRegion", StringUtils.fromString(copyDBSnapshotRequest.getSourceRegion()));
         }

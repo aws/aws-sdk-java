@@ -240,6 +240,11 @@ public class DBClusterStaxUnmarshaller implements Unmarshaller<DBCluster, StaxUn
                     continue;
                 }
 
+                if (context.testExpression("CloneGroupId", targetDepth)) {
+                    dBCluster.setCloneGroupId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("ClusterCreateTime", targetDepth)) {
                     dBCluster.setClusterCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

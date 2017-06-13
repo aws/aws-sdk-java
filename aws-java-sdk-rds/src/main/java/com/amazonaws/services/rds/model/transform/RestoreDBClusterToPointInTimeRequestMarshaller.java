@@ -46,6 +46,10 @@ public class RestoreDBClusterToPointInTimeRequestMarshaller implements
             request.addParameter("DBClusterIdentifier", StringUtils.fromString(restoreDBClusterToPointInTimeRequest.getDBClusterIdentifier()));
         }
 
+        if (restoreDBClusterToPointInTimeRequest.getRestoreType() != null) {
+            request.addParameter("RestoreType", StringUtils.fromString(restoreDBClusterToPointInTimeRequest.getRestoreType()));
+        }
+
         if (restoreDBClusterToPointInTimeRequest.getSourceDBClusterIdentifier() != null) {
             request.addParameter("SourceDBClusterIdentifier", StringUtils.fromString(restoreDBClusterToPointInTimeRequest.getSourceDBClusterIdentifier()));
         }

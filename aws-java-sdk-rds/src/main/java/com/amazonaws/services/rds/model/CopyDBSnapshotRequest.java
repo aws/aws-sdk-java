@@ -31,10 +31,20 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * The identifier for the source DB snapshot.
      * </p>
      * <p>
-     * If you are copying from a shared manual DB snapshot, this must be the ARN of the shared DB snapshot.
+     * If the source snapshot is in the same region as the copy, specify a valid DB snapshot identifier. For example,
+     * <code>rds:mysql-instance1-snapshot-20130805</code>.
      * </p>
      * <p>
-     * You cannot copy an encrypted, shared DB snapshot from one AWS region to another.
+     * If the source snapshot is in a different region than the copy, specify a valid DB snapshot ARN. For example,
+     * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>.
+     * </p>
+     * <p>
+     * If you are copying from a shared manual DB snapshot, this parameter must be the Amazon Resource Name (ARN) of the
+     * shared DB snapshot.
+     * </p>
+     * <p>
+     * If you are copying an encrypted snapshot this parameter must be in the ARN format for the source region, and must
+     * match the <code>SourceDBSnapshotIdentifier</code> in the <code>PreSignedUrl</code> parameter.
      * </p>
      * <p>
      * Constraints:
@@ -43,18 +53,6 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * Must specify a valid system snapshot in the "available" state.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If the source snapshot is in the same region as the copy, specify a valid DB snapshot identifier.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If the source snapshot is in a different region than the copy, specify a valid DB snapshot ARN. For more
-     * information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
-     * Copying a DB Snapshot or DB Cluster Snapshot</a>.
      * </p>
      * </li>
      * </ul>
@@ -68,7 +66,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
     private String sourceDBSnapshotIdentifier;
     /**
      * <p>
-     * The identifier for the copied snapshot.
+     * The identifier for the copy of the snapshot.
      * </p>
      * <p>
      * Constraints:
@@ -106,26 +104,21 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * identifier, or the KMS key alias for the KMS encryption key.
      * </p>
      * <p>
-     * If you copy an unencrypted DB snapshot and specify a value for the <code>KmsKeyId</code> parameter, Amazon RDS
-     * encrypts the target DB snapshot using the specified KMS encryption key.
-     * </p>
-     * <p>
-     * If you copy an encrypted DB snapshot from your AWS account, you can specify a value for <code>KmsKeyId</code> to
-     * encrypt the copy with a new KMS encryption key. If you don't specify a value for <code>KmsKeyId</code>, then the
-     * copy of the DB snapshot is encrypted with the same KMS key as the source DB snapshot.
-     * </p>
-     * <p>
-     * If you copy an encrypted snapshot to a different AWS region, then you must specify a KMS key for the destination
-     * AWS region.
+     * If you copy an encrypted DB snapshot from your AWS account, you can specify a value for this parameter to encrypt
+     * the copy with a new KMS encryption key. If you don't specify a value for this parameter, then the copy of the DB
+     * snapshot is encrypted with the same KMS key as the source DB snapshot.
      * </p>
      * <p>
      * If you copy an encrypted DB snapshot that is shared from another AWS account, then you must specify a value for
-     * <code>KmsKeyId</code>.
+     * this parameter.
      * </p>
      * <p>
-     * To copy an encrypted DB snapshot to another region, you must set <code>KmsKeyId</code> to the KMS key ID used to
-     * encrypt the copy of the DB snapshot in the destination region. KMS encryption keys are specific to the region
-     * that they are created in, and you cannot use encryption keys from one region in another region.
+     * If you specify this parameter when you copy an unencrypted snapshot, the copy is encrypted.
+     * </p>
+     * <p>
+     * If you copy an encrypted snapshot to a different AWS region, then you must specify a KMS key for the destination
+     * AWS region. KMS encryption keys are specific to the region that they are created in, and you cannot use
+     * encryption keys from one region in another region.
      * </p>
      */
     private String kmsKeyId;
@@ -141,8 +134,12 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The URL that contains a Signature Version 4 signed request for the <code>CopyDBSnapshot</code> API action in the
-     * AWS region that contains the source DB snapshot to copy. The <code>PreSignedUrl</code> parameter must be used
-     * when copying an encrypted DB snapshot from another AWS region.
+     * source AWS region that contains the source DB snapshot to copy.
+     * </p>
+     * <p>
+     * You must specify this parameter when you copy an encrypted DB snapshot from another AWS region by using the
+     * Amazon RDS API. You can specify the source region option instead of this parameter when you copy an encrypted DB
+     * snapshot from another AWS region by using the AWS CLI.
      * </p>
      * <p>
      * The presigned URL must be a valid request for the <code>CopyDBSnapshot</code> API action that can be executed in
@@ -181,13 +178,26 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * <p>
      * To learn how to generate a Signature Version 4 signed request, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests:
-     * Using Query Parameters (AWS Signature Version 4)</a> and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests: Using
+     * Query Parameters (AWS Signature Version 4)</a> and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing
      * Process</a>.
      * </p>
      */
     private String preSignedUrl;
+    /**
+     * <p>
+     * The name of an option group to associate with the copy.
+     * </p>
+     * <p>
+     * Specify this option if you are copying a snapshot from one AWS region to another, and your DB instance uses a
+     * non-default option group. If your source DB instance uses Transparent Data Encryption for Oracle or Microsoft SQL
+     * Server, you must specify this option when copying across regions. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options"
+     * >Option Group Considerations</a>.
+     * </p>
+     */
+    private String optionGroupName;
     /** The region where the source snapshot is located. */
     private String sourceRegion;
 
@@ -196,10 +206,20 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * The identifier for the source DB snapshot.
      * </p>
      * <p>
-     * If you are copying from a shared manual DB snapshot, this must be the ARN of the shared DB snapshot.
+     * If the source snapshot is in the same region as the copy, specify a valid DB snapshot identifier. For example,
+     * <code>rds:mysql-instance1-snapshot-20130805</code>.
      * </p>
      * <p>
-     * You cannot copy an encrypted, shared DB snapshot from one AWS region to another.
+     * If the source snapshot is in a different region than the copy, specify a valid DB snapshot ARN. For example,
+     * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>.
+     * </p>
+     * <p>
+     * If you are copying from a shared manual DB snapshot, this parameter must be the Amazon Resource Name (ARN) of the
+     * shared DB snapshot.
+     * </p>
+     * <p>
+     * If you are copying an encrypted snapshot this parameter must be in the ARN format for the source region, and must
+     * match the <code>SourceDBSnapshotIdentifier</code> in the <code>PreSignedUrl</code> parameter.
      * </p>
      * <p>
      * Constraints:
@@ -208,18 +228,6 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * Must specify a valid system snapshot in the "available" state.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If the source snapshot is in the same region as the copy, specify a valid DB snapshot identifier.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If the source snapshot is in a different region than the copy, specify a valid DB snapshot ARN. For more
-     * information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
-     * Copying a DB Snapshot or DB Cluster Snapshot</a>.
      * </p>
      * </li>
      * </ul>
@@ -233,10 +241,20 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * @param sourceDBSnapshotIdentifier
      *        The identifier for the source DB snapshot.</p>
      *        <p>
-     *        If you are copying from a shared manual DB snapshot, this must be the ARN of the shared DB snapshot.
+     *        If the source snapshot is in the same region as the copy, specify a valid DB snapshot identifier. For
+     *        example, <code>rds:mysql-instance1-snapshot-20130805</code>.
      *        </p>
      *        <p>
-     *        You cannot copy an encrypted, shared DB snapshot from one AWS region to another.
+     *        If the source snapshot is in a different region than the copy, specify a valid DB snapshot ARN. For
+     *        example, <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>.
+     *        </p>
+     *        <p>
+     *        If you are copying from a shared manual DB snapshot, this parameter must be the Amazon Resource Name (ARN)
+     *        of the shared DB snapshot.
+     *        </p>
+     *        <p>
+     *        If you are copying an encrypted snapshot this parameter must be in the ARN format for the source region,
+     *        and must match the <code>SourceDBSnapshotIdentifier</code> in the <code>PreSignedUrl</code> parameter.
      *        </p>
      *        <p>
      *        Constraints:
@@ -245,18 +263,6 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        Must specify a valid system snapshot in the "available" state.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        If the source snapshot is in the same region as the copy, specify a valid DB snapshot identifier.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        If the source snapshot is in a different region than the copy, specify a valid DB snapshot ARN. For more
-     *        information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
-     *        Copying a DB Snapshot or DB Cluster Snapshot</a>.
      *        </p>
      *        </li>
      *        </ul>
@@ -276,10 +282,20 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * The identifier for the source DB snapshot.
      * </p>
      * <p>
-     * If you are copying from a shared manual DB snapshot, this must be the ARN of the shared DB snapshot.
+     * If the source snapshot is in the same region as the copy, specify a valid DB snapshot identifier. For example,
+     * <code>rds:mysql-instance1-snapshot-20130805</code>.
      * </p>
      * <p>
-     * You cannot copy an encrypted, shared DB snapshot from one AWS region to another.
+     * If the source snapshot is in a different region than the copy, specify a valid DB snapshot ARN. For example,
+     * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>.
+     * </p>
+     * <p>
+     * If you are copying from a shared manual DB snapshot, this parameter must be the Amazon Resource Name (ARN) of the
+     * shared DB snapshot.
+     * </p>
+     * <p>
+     * If you are copying an encrypted snapshot this parameter must be in the ARN format for the source region, and must
+     * match the <code>SourceDBSnapshotIdentifier</code> in the <code>PreSignedUrl</code> parameter.
      * </p>
      * <p>
      * Constraints:
@@ -288,18 +304,6 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * Must specify a valid system snapshot in the "available" state.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If the source snapshot is in the same region as the copy, specify a valid DB snapshot identifier.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If the source snapshot is in a different region than the copy, specify a valid DB snapshot ARN. For more
-     * information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
-     * Copying a DB Snapshot or DB Cluster Snapshot</a>.
      * </p>
      * </li>
      * </ul>
@@ -312,10 +316,20 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @return The identifier for the source DB snapshot.</p>
      *         <p>
-     *         If you are copying from a shared manual DB snapshot, this must be the ARN of the shared DB snapshot.
+     *         If the source snapshot is in the same region as the copy, specify a valid DB snapshot identifier. For
+     *         example, <code>rds:mysql-instance1-snapshot-20130805</code>.
      *         </p>
      *         <p>
-     *         You cannot copy an encrypted, shared DB snapshot from one AWS region to another.
+     *         If the source snapshot is in a different region than the copy, specify a valid DB snapshot ARN. For
+     *         example, <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>.
+     *         </p>
+     *         <p>
+     *         If you are copying from a shared manual DB snapshot, this parameter must be the Amazon Resource Name
+     *         (ARN) of the shared DB snapshot.
+     *         </p>
+     *         <p>
+     *         If you are copying an encrypted snapshot this parameter must be in the ARN format for the source region,
+     *         and must match the <code>SourceDBSnapshotIdentifier</code> in the <code>PreSignedUrl</code> parameter.
      *         </p>
      *         <p>
      *         Constraints:
@@ -324,19 +338,6 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <li>
      *         <p>
      *         Must specify a valid system snapshot in the "available" state.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         If the source snapshot is in the same region as the copy, specify a valid DB snapshot identifier.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         If the source snapshot is in a different region than the copy, specify a valid DB snapshot ARN. For more
-     *         information, go to <a
-     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html"> Copying a DB
-     *         Snapshot or DB Cluster Snapshot</a>.
      *         </p>
      *         </li>
      *         </ul>
@@ -356,10 +357,20 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * The identifier for the source DB snapshot.
      * </p>
      * <p>
-     * If you are copying from a shared manual DB snapshot, this must be the ARN of the shared DB snapshot.
+     * If the source snapshot is in the same region as the copy, specify a valid DB snapshot identifier. For example,
+     * <code>rds:mysql-instance1-snapshot-20130805</code>.
      * </p>
      * <p>
-     * You cannot copy an encrypted, shared DB snapshot from one AWS region to another.
+     * If the source snapshot is in a different region than the copy, specify a valid DB snapshot ARN. For example,
+     * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>.
+     * </p>
+     * <p>
+     * If you are copying from a shared manual DB snapshot, this parameter must be the Amazon Resource Name (ARN) of the
+     * shared DB snapshot.
+     * </p>
+     * <p>
+     * If you are copying an encrypted snapshot this parameter must be in the ARN format for the source region, and must
+     * match the <code>SourceDBSnapshotIdentifier</code> in the <code>PreSignedUrl</code> parameter.
      * </p>
      * <p>
      * Constraints:
@@ -368,18 +379,6 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * <li>
      * <p>
      * Must specify a valid system snapshot in the "available" state.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If the source snapshot is in the same region as the copy, specify a valid DB snapshot identifier.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If the source snapshot is in a different region than the copy, specify a valid DB snapshot ARN. For more
-     * information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
-     * Copying a DB Snapshot or DB Cluster Snapshot</a>.
      * </p>
      * </li>
      * </ul>
@@ -393,10 +392,20 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * @param sourceDBSnapshotIdentifier
      *        The identifier for the source DB snapshot.</p>
      *        <p>
-     *        If you are copying from a shared manual DB snapshot, this must be the ARN of the shared DB snapshot.
+     *        If the source snapshot is in the same region as the copy, specify a valid DB snapshot identifier. For
+     *        example, <code>rds:mysql-instance1-snapshot-20130805</code>.
      *        </p>
      *        <p>
-     *        You cannot copy an encrypted, shared DB snapshot from one AWS region to another.
+     *        If the source snapshot is in a different region than the copy, specify a valid DB snapshot ARN. For
+     *        example, <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20130805</code>.
+     *        </p>
+     *        <p>
+     *        If you are copying from a shared manual DB snapshot, this parameter must be the Amazon Resource Name (ARN)
+     *        of the shared DB snapshot.
+     *        </p>
+     *        <p>
+     *        If you are copying an encrypted snapshot this parameter must be in the ARN format for the source region,
+     *        and must match the <code>SourceDBSnapshotIdentifier</code> in the <code>PreSignedUrl</code> parameter.
      *        </p>
      *        <p>
      *        Constraints:
@@ -405,18 +414,6 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        Must specify a valid system snapshot in the "available" state.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        If the source snapshot is in the same region as the copy, specify a valid DB snapshot identifier.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        If the source snapshot is in a different region than the copy, specify a valid DB snapshot ARN. For more
-     *        information, go to <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html">
-     *        Copying a DB Snapshot or DB Cluster Snapshot</a>.
      *        </p>
      *        </li>
      *        </ul>
@@ -435,7 +432,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier for the copied snapshot.
+     * The identifier for the copy of the snapshot.
      * </p>
      * <p>
      * Constraints:
@@ -467,7 +464,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param targetDBSnapshotIdentifier
-     *        The identifier for the copied snapshot.</p>
+     *        The identifier for the copy of the snapshot. </p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -503,7 +500,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier for the copied snapshot.
+     * The identifier for the copy of the snapshot.
      * </p>
      * <p>
      * Constraints:
@@ -534,7 +531,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * Example: <code>my-db-snapshot</code>
      * </p>
      * 
-     * @return The identifier for the copied snapshot.</p>
+     * @return The identifier for the copy of the snapshot. </p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -570,7 +567,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The identifier for the copied snapshot.
+     * The identifier for the copy of the snapshot.
      * </p>
      * <p>
      * Constraints:
@@ -602,7 +599,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param targetDBSnapshotIdentifier
-     *        The identifier for the copied snapshot.</p>
+     *        The identifier for the copy of the snapshot. </p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -644,53 +641,42 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * identifier, or the KMS key alias for the KMS encryption key.
      * </p>
      * <p>
-     * If you copy an unencrypted DB snapshot and specify a value for the <code>KmsKeyId</code> parameter, Amazon RDS
-     * encrypts the target DB snapshot using the specified KMS encryption key.
-     * </p>
-     * <p>
-     * If you copy an encrypted DB snapshot from your AWS account, you can specify a value for <code>KmsKeyId</code> to
-     * encrypt the copy with a new KMS encryption key. If you don't specify a value for <code>KmsKeyId</code>, then the
-     * copy of the DB snapshot is encrypted with the same KMS key as the source DB snapshot.
-     * </p>
-     * <p>
-     * If you copy an encrypted snapshot to a different AWS region, then you must specify a KMS key for the destination
-     * AWS region.
+     * If you copy an encrypted DB snapshot from your AWS account, you can specify a value for this parameter to encrypt
+     * the copy with a new KMS encryption key. If you don't specify a value for this parameter, then the copy of the DB
+     * snapshot is encrypted with the same KMS key as the source DB snapshot.
      * </p>
      * <p>
      * If you copy an encrypted DB snapshot that is shared from another AWS account, then you must specify a value for
-     * <code>KmsKeyId</code>.
+     * this parameter.
      * </p>
      * <p>
-     * To copy an encrypted DB snapshot to another region, you must set <code>KmsKeyId</code> to the KMS key ID used to
-     * encrypt the copy of the DB snapshot in the destination region. KMS encryption keys are specific to the region
-     * that they are created in, and you cannot use encryption keys from one region in another region.
+     * If you specify this parameter when you copy an unencrypted snapshot, the copy is encrypted.
+     * </p>
+     * <p>
+     * If you copy an encrypted snapshot to a different AWS region, then you must specify a KMS key for the destination
+     * AWS region. KMS encryption keys are specific to the region that they are created in, and you cannot use
+     * encryption keys from one region in another region.
      * </p>
      * 
      * @param kmsKeyId
      *        The AWS KMS key ID for an encrypted DB snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS key
      *        identifier, or the KMS key alias for the KMS encryption key. </p>
      *        <p>
-     *        If you copy an unencrypted DB snapshot and specify a value for the <code>KmsKeyId</code> parameter, Amazon
-     *        RDS encrypts the target DB snapshot using the specified KMS encryption key.
-     *        </p>
-     *        <p>
-     *        If you copy an encrypted DB snapshot from your AWS account, you can specify a value for
-     *        <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for
-     *        <code>KmsKeyId</code>, then the copy of the DB snapshot is encrypted with the same KMS key as the source
-     *        DB snapshot.
-     *        </p>
-     *        <p>
-     *        If you copy an encrypted snapshot to a different AWS region, then you must specify a KMS key for the
-     *        destination AWS region.
+     *        If you copy an encrypted DB snapshot from your AWS account, you can specify a value for this parameter to
+     *        encrypt the copy with a new KMS encryption key. If you don't specify a value for this parameter, then the
+     *        copy of the DB snapshot is encrypted with the same KMS key as the source DB snapshot.
      *        </p>
      *        <p>
      *        If you copy an encrypted DB snapshot that is shared from another AWS account, then you must specify a
-     *        value for <code>KmsKeyId</code>.
+     *        value for this parameter.
      *        </p>
      *        <p>
-     *        To copy an encrypted DB snapshot to another region, you must set <code>KmsKeyId</code> to the KMS key ID
-     *        used to encrypt the copy of the DB snapshot in the destination region. KMS encryption keys are specific to
-     *        the region that they are created in, and you cannot use encryption keys from one region in another region.
+     *        If you specify this parameter when you copy an unencrypted snapshot, the copy is encrypted.
+     *        </p>
+     *        <p>
+     *        If you copy an encrypted snapshot to a different AWS region, then you must specify a KMS key for the
+     *        destination AWS region. KMS encryption keys are specific to the region that they are created in, and you
+     *        cannot use encryption keys from one region in another region.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -703,53 +689,41 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * identifier, or the KMS key alias for the KMS encryption key.
      * </p>
      * <p>
-     * If you copy an unencrypted DB snapshot and specify a value for the <code>KmsKeyId</code> parameter, Amazon RDS
-     * encrypts the target DB snapshot using the specified KMS encryption key.
-     * </p>
-     * <p>
-     * If you copy an encrypted DB snapshot from your AWS account, you can specify a value for <code>KmsKeyId</code> to
-     * encrypt the copy with a new KMS encryption key. If you don't specify a value for <code>KmsKeyId</code>, then the
-     * copy of the DB snapshot is encrypted with the same KMS key as the source DB snapshot.
-     * </p>
-     * <p>
-     * If you copy an encrypted snapshot to a different AWS region, then you must specify a KMS key for the destination
-     * AWS region.
+     * If you copy an encrypted DB snapshot from your AWS account, you can specify a value for this parameter to encrypt
+     * the copy with a new KMS encryption key. If you don't specify a value for this parameter, then the copy of the DB
+     * snapshot is encrypted with the same KMS key as the source DB snapshot.
      * </p>
      * <p>
      * If you copy an encrypted DB snapshot that is shared from another AWS account, then you must specify a value for
-     * <code>KmsKeyId</code>.
+     * this parameter.
      * </p>
      * <p>
-     * To copy an encrypted DB snapshot to another region, you must set <code>KmsKeyId</code> to the KMS key ID used to
-     * encrypt the copy of the DB snapshot in the destination region. KMS encryption keys are specific to the region
-     * that they are created in, and you cannot use encryption keys from one region in another region.
+     * If you specify this parameter when you copy an unencrypted snapshot, the copy is encrypted.
+     * </p>
+     * <p>
+     * If you copy an encrypted snapshot to a different AWS region, then you must specify a KMS key for the destination
+     * AWS region. KMS encryption keys are specific to the region that they are created in, and you cannot use
+     * encryption keys from one region in another region.
      * </p>
      * 
      * @return The AWS KMS key ID for an encrypted DB snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS
      *         key identifier, or the KMS key alias for the KMS encryption key. </p>
      *         <p>
-     *         If you copy an unencrypted DB snapshot and specify a value for the <code>KmsKeyId</code> parameter,
-     *         Amazon RDS encrypts the target DB snapshot using the specified KMS encryption key.
-     *         </p>
-     *         <p>
-     *         If you copy an encrypted DB snapshot from your AWS account, you can specify a value for
-     *         <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for
-     *         <code>KmsKeyId</code>, then the copy of the DB snapshot is encrypted with the same KMS key as the source
-     *         DB snapshot.
-     *         </p>
-     *         <p>
-     *         If you copy an encrypted snapshot to a different AWS region, then you must specify a KMS key for the
-     *         destination AWS region.
+     *         If you copy an encrypted DB snapshot from your AWS account, you can specify a value for this parameter to
+     *         encrypt the copy with a new KMS encryption key. If you don't specify a value for this parameter, then the
+     *         copy of the DB snapshot is encrypted with the same KMS key as the source DB snapshot.
      *         </p>
      *         <p>
      *         If you copy an encrypted DB snapshot that is shared from another AWS account, then you must specify a
-     *         value for <code>KmsKeyId</code>.
+     *         value for this parameter.
      *         </p>
      *         <p>
-     *         To copy an encrypted DB snapshot to another region, you must set <code>KmsKeyId</code> to the KMS key ID
-     *         used to encrypt the copy of the DB snapshot in the destination region. KMS encryption keys are specific
-     *         to the region that they are created in, and you cannot use encryption keys from one region in another
-     *         region.
+     *         If you specify this parameter when you copy an unencrypted snapshot, the copy is encrypted.
+     *         </p>
+     *         <p>
+     *         If you copy an encrypted snapshot to a different AWS region, then you must specify a KMS key for the
+     *         destination AWS region. KMS encryption keys are specific to the region that they are created in, and you
+     *         cannot use encryption keys from one region in another region.
      */
 
     public String getKmsKeyId() {
@@ -762,53 +736,42 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * identifier, or the KMS key alias for the KMS encryption key.
      * </p>
      * <p>
-     * If you copy an unencrypted DB snapshot and specify a value for the <code>KmsKeyId</code> parameter, Amazon RDS
-     * encrypts the target DB snapshot using the specified KMS encryption key.
-     * </p>
-     * <p>
-     * If you copy an encrypted DB snapshot from your AWS account, you can specify a value for <code>KmsKeyId</code> to
-     * encrypt the copy with a new KMS encryption key. If you don't specify a value for <code>KmsKeyId</code>, then the
-     * copy of the DB snapshot is encrypted with the same KMS key as the source DB snapshot.
-     * </p>
-     * <p>
-     * If you copy an encrypted snapshot to a different AWS region, then you must specify a KMS key for the destination
-     * AWS region.
+     * If you copy an encrypted DB snapshot from your AWS account, you can specify a value for this parameter to encrypt
+     * the copy with a new KMS encryption key. If you don't specify a value for this parameter, then the copy of the DB
+     * snapshot is encrypted with the same KMS key as the source DB snapshot.
      * </p>
      * <p>
      * If you copy an encrypted DB snapshot that is shared from another AWS account, then you must specify a value for
-     * <code>KmsKeyId</code>.
+     * this parameter.
      * </p>
      * <p>
-     * To copy an encrypted DB snapshot to another region, you must set <code>KmsKeyId</code> to the KMS key ID used to
-     * encrypt the copy of the DB snapshot in the destination region. KMS encryption keys are specific to the region
-     * that they are created in, and you cannot use encryption keys from one region in another region.
+     * If you specify this parameter when you copy an unencrypted snapshot, the copy is encrypted.
+     * </p>
+     * <p>
+     * If you copy an encrypted snapshot to a different AWS region, then you must specify a KMS key for the destination
+     * AWS region. KMS encryption keys are specific to the region that they are created in, and you cannot use
+     * encryption keys from one region in another region.
      * </p>
      * 
      * @param kmsKeyId
      *        The AWS KMS key ID for an encrypted DB snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS key
      *        identifier, or the KMS key alias for the KMS encryption key. </p>
      *        <p>
-     *        If you copy an unencrypted DB snapshot and specify a value for the <code>KmsKeyId</code> parameter, Amazon
-     *        RDS encrypts the target DB snapshot using the specified KMS encryption key.
-     *        </p>
-     *        <p>
-     *        If you copy an encrypted DB snapshot from your AWS account, you can specify a value for
-     *        <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for
-     *        <code>KmsKeyId</code>, then the copy of the DB snapshot is encrypted with the same KMS key as the source
-     *        DB snapshot.
-     *        </p>
-     *        <p>
-     *        If you copy an encrypted snapshot to a different AWS region, then you must specify a KMS key for the
-     *        destination AWS region.
+     *        If you copy an encrypted DB snapshot from your AWS account, you can specify a value for this parameter to
+     *        encrypt the copy with a new KMS encryption key. If you don't specify a value for this parameter, then the
+     *        copy of the DB snapshot is encrypted with the same KMS key as the source DB snapshot.
      *        </p>
      *        <p>
      *        If you copy an encrypted DB snapshot that is shared from another AWS account, then you must specify a
-     *        value for <code>KmsKeyId</code>.
+     *        value for this parameter.
      *        </p>
      *        <p>
-     *        To copy an encrypted DB snapshot to another region, you must set <code>KmsKeyId</code> to the KMS key ID
-     *        used to encrypt the copy of the DB snapshot in the destination region. KMS encryption keys are specific to
-     *        the region that they are created in, and you cannot use encryption keys from one region in another region.
+     *        If you specify this parameter when you copy an unencrypted snapshot, the copy is encrypted.
+     *        </p>
+     *        <p>
+     *        If you copy an encrypted snapshot to a different AWS region, then you must specify a KMS key for the
+     *        destination AWS region. KMS encryption keys are specific to the region that they are created in, and you
+     *        cannot use encryption keys from one region in another region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -935,8 +898,12 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The URL that contains a Signature Version 4 signed request for the <code>CopyDBSnapshot</code> API action in the
-     * AWS region that contains the source DB snapshot to copy. The <code>PreSignedUrl</code> parameter must be used
-     * when copying an encrypted DB snapshot from another AWS region.
+     * source AWS region that contains the source DB snapshot to copy.
+     * </p>
+     * <p>
+     * You must specify this parameter when you copy an encrypted DB snapshot from another AWS region by using the
+     * Amazon RDS API. You can specify the source region option instead of this parameter when you copy an encrypted DB
+     * snapshot from another AWS region by using the AWS CLI.
      * </p>
      * <p>
      * The presigned URL must be a valid request for the <code>CopyDBSnapshot</code> API action that can be executed in
@@ -975,16 +942,20 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * <p>
      * To learn how to generate a Signature Version 4 signed request, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests:
-     * Using Query Parameters (AWS Signature Version 4)</a> and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests: Using
+     * Query Parameters (AWS Signature Version 4)</a> and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing
      * Process</a>.
      * </p>
      * 
      * @param preSignedUrl
      *        The URL that contains a Signature Version 4 signed request for the <code>CopyDBSnapshot</code> API action
-     *        in the AWS region that contains the source DB snapshot to copy. The <code>PreSignedUrl</code> parameter
-     *        must be used when copying an encrypted DB snapshot from another AWS region.</p>
+     *        in the source AWS region that contains the source DB snapshot to copy. </p>
+     *        <p>
+     *        You must specify this parameter when you copy an encrypted DB snapshot from another AWS region by using
+     *        the Amazon RDS API. You can specify the source region option instead of this parameter when you copy an
+     *        encrypted DB snapshot from another AWS region by using the AWS CLI.
+     *        </p>
      *        <p>
      *        The presigned URL must be a valid request for the <code>CopyDBSnapshot</code> API action that can be
      *        executed in the source region that contains the encrypted DB snapshot to be copied. The presigned URL
@@ -1023,9 +994,9 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </ul>
      *        <p>
      *        To learn how to generate a Signature Version 4 signed request, see <a
-     *        href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating
+     *        href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      *        Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
+     *        href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing
      *        Process</a>.
      */
 
@@ -1036,8 +1007,12 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The URL that contains a Signature Version 4 signed request for the <code>CopyDBSnapshot</code> API action in the
-     * AWS region that contains the source DB snapshot to copy. The <code>PreSignedUrl</code> parameter must be used
-     * when copying an encrypted DB snapshot from another AWS region.
+     * source AWS region that contains the source DB snapshot to copy.
+     * </p>
+     * <p>
+     * You must specify this parameter when you copy an encrypted DB snapshot from another AWS region by using the
+     * Amazon RDS API. You can specify the source region option instead of this parameter when you copy an encrypted DB
+     * snapshot from another AWS region by using the AWS CLI.
      * </p>
      * <p>
      * The presigned URL must be a valid request for the <code>CopyDBSnapshot</code> API action that can be executed in
@@ -1076,15 +1051,19 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * <p>
      * To learn how to generate a Signature Version 4 signed request, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests:
-     * Using Query Parameters (AWS Signature Version 4)</a> and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests: Using
+     * Query Parameters (AWS Signature Version 4)</a> and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing
      * Process</a>.
      * </p>
      * 
      * @return The URL that contains a Signature Version 4 signed request for the <code>CopyDBSnapshot</code> API action
-     *         in the AWS region that contains the source DB snapshot to copy. The <code>PreSignedUrl</code> parameter
-     *         must be used when copying an encrypted DB snapshot from another AWS region.</p>
+     *         in the source AWS region that contains the source DB snapshot to copy. </p>
+     *         <p>
+     *         You must specify this parameter when you copy an encrypted DB snapshot from another AWS region by using
+     *         the Amazon RDS API. You can specify the source region option instead of this parameter when you copy an
+     *         encrypted DB snapshot from another AWS region by using the AWS CLI.
+     *         </p>
      *         <p>
      *         The presigned URL must be a valid request for the <code>CopyDBSnapshot</code> API action that can be
      *         executed in the source region that contains the encrypted DB snapshot to be copied. The presigned URL
@@ -1123,9 +1102,9 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      *         </ul>
      *         <p>
      *         To learn how to generate a Signature Version 4 signed request, see <a
-     *         href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating
+     *         href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      *         Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
+     *         href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing
      *         Process</a>.
      */
 
@@ -1136,8 +1115,12 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The URL that contains a Signature Version 4 signed request for the <code>CopyDBSnapshot</code> API action in the
-     * AWS region that contains the source DB snapshot to copy. The <code>PreSignedUrl</code> parameter must be used
-     * when copying an encrypted DB snapshot from another AWS region.
+     * source AWS region that contains the source DB snapshot to copy.
+     * </p>
+     * <p>
+     * You must specify this parameter when you copy an encrypted DB snapshot from another AWS region by using the
+     * Amazon RDS API. You can specify the source region option instead of this parameter when you copy an encrypted DB
+     * snapshot from another AWS region by using the AWS CLI.
      * </p>
      * <p>
      * The presigned URL must be a valid request for the <code>CopyDBSnapshot</code> API action that can be executed in
@@ -1176,16 +1159,20 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * <p>
      * To learn how to generate a Signature Version 4 signed request, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating Requests:
-     * Using Query Parameters (AWS Signature Version 4)</a> and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating Requests: Using
+     * Query Parameters (AWS Signature Version 4)</a> and <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing
      * Process</a>.
      * </p>
      * 
      * @param preSignedUrl
      *        The URL that contains a Signature Version 4 signed request for the <code>CopyDBSnapshot</code> API action
-     *        in the AWS region that contains the source DB snapshot to copy. The <code>PreSignedUrl</code> parameter
-     *        must be used when copying an encrypted DB snapshot from another AWS region.</p>
+     *        in the source AWS region that contains the source DB snapshot to copy. </p>
+     *        <p>
+     *        You must specify this parameter when you copy an encrypted DB snapshot from another AWS region by using
+     *        the Amazon RDS API. You can specify the source region option instead of this parameter when you copy an
+     *        encrypted DB snapshot from another AWS region by using the AWS CLI.
+     *        </p>
      *        <p>
      *        The presigned URL must be a valid request for the <code>CopyDBSnapshot</code> API action that can be
      *        executed in the source region that contains the encrypted DB snapshot to be copied. The presigned URL
@@ -1224,15 +1211,97 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </ul>
      *        <p>
      *        To learn how to generate a Signature Version 4 signed request, see <a
-     *        href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html"> Authenticating
+     *        href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      *        Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing
+     *        href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing
      *        Process</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CopyDBSnapshotRequest withPreSignedUrl(String preSignedUrl) {
         setPreSignedUrl(preSignedUrl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of an option group to associate with the copy.
+     * </p>
+     * <p>
+     * Specify this option if you are copying a snapshot from one AWS region to another, and your DB instance uses a
+     * non-default option group. If your source DB instance uses Transparent Data Encryption for Oracle or Microsoft SQL
+     * Server, you must specify this option when copying across regions. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options"
+     * >Option Group Considerations</a>.
+     * </p>
+     * 
+     * @param optionGroupName
+     *        The name of an option group to associate with the copy. </p>
+     *        <p>
+     *        Specify this option if you are copying a snapshot from one AWS region to another, and your DB instance
+     *        uses a non-default option group. If your source DB instance uses Transparent Data Encryption for Oracle or
+     *        Microsoft SQL Server, you must specify this option when copying across regions. For more information, see
+     *        <a href=
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options"
+     *        >Option Group Considerations</a>.
+     */
+
+    public void setOptionGroupName(String optionGroupName) {
+        this.optionGroupName = optionGroupName;
+    }
+
+    /**
+     * <p>
+     * The name of an option group to associate with the copy.
+     * </p>
+     * <p>
+     * Specify this option if you are copying a snapshot from one AWS region to another, and your DB instance uses a
+     * non-default option group. If your source DB instance uses Transparent Data Encryption for Oracle or Microsoft SQL
+     * Server, you must specify this option when copying across regions. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options"
+     * >Option Group Considerations</a>.
+     * </p>
+     * 
+     * @return The name of an option group to associate with the copy. </p>
+     *         <p>
+     *         Specify this option if you are copying a snapshot from one AWS region to another, and your DB instance
+     *         uses a non-default option group. If your source DB instance uses Transparent Data Encryption for Oracle
+     *         or Microsoft SQL Server, you must specify this option when copying across regions. For more information,
+     *         see <a href=
+     *         "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options"
+     *         >Option Group Considerations</a>.
+     */
+
+    public String getOptionGroupName() {
+        return this.optionGroupName;
+    }
+
+    /**
+     * <p>
+     * The name of an option group to associate with the copy.
+     * </p>
+     * <p>
+     * Specify this option if you are copying a snapshot from one AWS region to another, and your DB instance uses a
+     * non-default option group. If your source DB instance uses Transparent Data Encryption for Oracle or Microsoft SQL
+     * Server, you must specify this option when copying across regions. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options"
+     * >Option Group Considerations</a>.
+     * </p>
+     * 
+     * @param optionGroupName
+     *        The name of an option group to associate with the copy. </p>
+     *        <p>
+     *        Specify this option if you are copying a snapshot from one AWS region to another, and your DB instance
+     *        uses a non-default option group. If your source DB instance uses Transparent Data Encryption for Oracle or
+     *        Microsoft SQL Server, you must specify this option when copying across regions. For more information, see
+     *        <a href=
+     *        "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options"
+     *        >Option Group Considerations</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CopyDBSnapshotRequest withOptionGroupName(String optionGroupName) {
+        setOptionGroupName(optionGroupName);
         return this;
     }
 
@@ -1293,6 +1362,8 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("CopyTags: ").append(getCopyTags()).append(",");
         if (getPreSignedUrl() != null)
             sb.append("PreSignedUrl: ").append(getPreSignedUrl()).append(",");
+        if (getOptionGroupName() != null)
+            sb.append("OptionGroupName: ").append(getOptionGroupName()).append(",");
         if (getSourceRegion() != null)
             sb.append("SourceRegion: ").append(getSourceRegion());
         sb.append("}");
@@ -1333,6 +1404,10 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getPreSignedUrl() != null && other.getPreSignedUrl().equals(this.getPreSignedUrl()) == false)
             return false;
+        if (other.getOptionGroupName() == null ^ this.getOptionGroupName() == null)
+            return false;
+        if (other.getOptionGroupName() != null && other.getOptionGroupName().equals(this.getOptionGroupName()) == false)
+            return false;
         if (other.getSourceRegion() == null ^ this.getSourceRegion() == null)
             return false;
         if (other.getSourceRegion() != null && other.getSourceRegion().equals(this.getSourceRegion()) == false)
@@ -1351,6 +1426,7 @@ public class CopyDBSnapshotRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getCopyTags() == null) ? 0 : getCopyTags().hashCode());
         hashCode = prime * hashCode + ((getPreSignedUrl() == null) ? 0 : getPreSignedUrl().hashCode());
+        hashCode = prime * hashCode + ((getOptionGroupName() == null) ? 0 : getOptionGroupName().hashCode());
         hashCode = prime * hashCode + ((getSourceRegion() == null) ? 0 : getSourceRegion().hashCode());
         return hashCode;
     }

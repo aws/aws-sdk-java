@@ -247,13 +247,73 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * The name of the database engine to be used for this instance.
      * </p>
      * <p>
-     * Valid Values: <code>mysql</code> | <code>mariadb</code> | <code>oracle-se1</code> | <code>oracle-se2</code> |
-     * <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> | <code>aurora</code>
-     * </p>
-     * <p>
      * Not every database engine is available for every AWS region.
      * </p>
+     * <p>
+     * Valid Values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>aurora</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mariadb</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mysql</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-ee</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-se2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-se1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-se</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>postgres</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sqlserver-ee</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sqlserver-se</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sqlserver-ex</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sqlserver-web</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String engine;
     /**
@@ -675,8 +735,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <b>Version 5.6 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1, ap-southeast-2,
-     * eu-west-1, us-east-1, us-east-2, us-west-2):</b> <code> 5.6.10a</code>
+     * Version 5.6 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1, ap-southeast-2,
+     * eu-west-1, us-east-1, us-east-2, us-west-2): <code> 5.6.10a</code>
      * </p>
      * </li>
      * </ul>
@@ -686,25 +746,30 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <b>Version 10.1 (available in these AWS regions: us-east-2):</b> <code> 10.1.16</code>
+     * <code>10.1.19</code> (supported in all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 10.1 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1, ap-southeast-1,
-     * ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 10.1.14</code>
+     * <code>10.1.14</code> (supported in all regions except us-east-2)
+     * </p>
+     * </li>
+     * </ul>
+     * <p/>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>10.0.28</code> (supported in all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 10.0 (available in all AWS regions):</b> <code> 10.0.24</code>
+     * <code>10.0.24</code> (supported in all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 10.0 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1, ap-southeast-1,
-     * ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b>
-     * <code> 10.0.17</code>
+     * <code>10.0.17</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
      * </p>
      * </li>
      * </ul>
@@ -714,7 +779,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>13.00.2164.0.v1</code> (supported for all editions, and all AWS regions except sa-east-1)
+     * <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>13.00.2164.0.v1</code> (supported for all editions, and all AWS regions)
      * </p>
      * </li>
      * </ul>
@@ -724,13 +794,18 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>12.00.5546.0.v1</code> (supported for all editions, and all AWS regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise Edition, and all AWS regions except
-     * us-east-2)
+     * ca-central-1 and eu-west-2)
      * </p>
      * </li>
      * </ul>
@@ -740,17 +815,24 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>11.00.6020.0.v1</code> (supported for all editions, and all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>11.00.5058.0.v1</code> (supported for all editions, and all AWS regions except us-east-2)
+     * <code>11.00.5058.0.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1, and
+     * eu-west-2)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>11.00.2100.60.v1</code> (supported for all editions, and all AWS regions except us-east-2)
+     * <code>11.00.2100.60.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1,
+     * and eu-west-2)
      * </p>
      * </li>
      * </ul>
@@ -760,17 +842,20 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS regions except us-east-2)
+     * <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1, and
+     * eu-west-2)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS regions except us-east-2)
+     * <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1,
+     * and eu-west-2)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS regions except us-east-2)
+     * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1, and
+     * eu-west-2)
      * </p>
      * </li>
      * </ul>
@@ -780,50 +865,98 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <b>Version 5.7 (available in all AWS regions):</b> <code> 5.7.11</code>
+     * <code>5.7.17</code> (supported in all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.7 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1, ap-southeast-1,
-     * ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b>
-     * <code> 5.7.10</code>
+     * <code>5.7.16</code> (supported in all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.6 (available in all AWS regions):</b> <code> 5.6.29</code>
+     * <code>5.7.11</code> (supported in all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.6 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1, ap-southeast-1,
-     * ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b>
-     * <code> 5.6.27</code>
+     * <code>5.7.10</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
+     * </p>
+     * </li>
+     * </ul>
+     * <p/>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>5.6.35</code> (supported in all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.6 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-southeast-1, ap-southeast-2,
-     * eu-central-1, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code> 5.6.23</code>
+     * <code>5.6.34</code> (supported in all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.6 (available in these AWS regions: ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1,
-     * eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b>
-     * <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22</code>
+     * <code>5.6.29</code> (supported in all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.5 (available in all AWS regions):</b> <code> 5.5.46</code>
+     * <code>5.6.27</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.1 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
-     * sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code> 5.1.73a | 5.1.73b</code>
+     * <code>5.6.23</code> (supported in all regions except us-east-2, ap-south-1, ca-central-1, eu-west-2)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.6.22</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2, ca-central-1,
+     * eu-west-2)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.6.21b</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2, ca-central-1,
+     * eu-west-2)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.6.21</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2, ca-central-1,
+     * eu-west-2)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.6.19b</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2, ca-central-1,
+     * eu-west-2)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.6.19a</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2, ca-central-1,
+     * eu-west-2)
+     * </p>
+     * </li>
+     * </ul>
+     * <p/>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>5.5.54</code> (supported in all AWS regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.5.53</code> (supported in all AWS regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.5.46</code> (supported in all AWS regions)
      * </p>
      * </li>
      * </ul>
@@ -1178,7 +1311,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * false.
      * </p>
      * <p>
-     * You can enable IAM database authentication for the following database engines
+     * You can enable IAM database authentication for the following database engines:
      * </p>
      * <ul>
      * <li>
@@ -1287,16 +1420,74 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        The name of the database engine to be used for this instance.
      *        </p>
      *        <p>
-     *        Valid Values: <code>mysql</code> | <code>mariadb</code> | <code>oracle-se1</code> |
-     *        <code>oracle-se2</code> | <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> |
-     *        <code>sqlserver-se</code> | <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code>
-     *        | <code>aurora</code>
+     *        Not every database engine is available for every AWS region.
      *        </p>
      *        <p>
-     *        Not every database engine is available for every AWS region.
-     * @param masterUsername
-     *        The name for the master database user.
+     *        Valid Values:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>aurora</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>mariadb</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>mysql</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-ee</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-se2</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-se1</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-se</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>postgres</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sqlserver-ee</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sqlserver-se</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sqlserver-ex</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sqlserver-web</code>
+     *        </p>
+     *        </li>
+     * @param masterUsername
+     *        The name for the master database user.</p>
      *        <p>
      *        <b>Amazon Aurora</b>
      *        </p>
@@ -2769,24 +2960,143 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * The name of the database engine to be used for this instance.
      * </p>
      * <p>
-     * Valid Values: <code>mysql</code> | <code>mariadb</code> | <code>oracle-se1</code> | <code>oracle-se2</code> |
-     * <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> | <code>aurora</code>
-     * </p>
-     * <p>
      * Not every database engine is available for every AWS region.
      * </p>
+     * <p>
+     * Valid Values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>aurora</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mariadb</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mysql</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-ee</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-se2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-se1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-se</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>postgres</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sqlserver-ee</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sqlserver-se</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sqlserver-ex</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sqlserver-web</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param engine
-     *        The name of the database engine to be used for this instance.</p>
-     *        <p>
-     *        Valid Values: <code>mysql</code> | <code>mariadb</code> | <code>oracle-se1</code> |
-     *        <code>oracle-se2</code> | <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> |
-     *        <code>sqlserver-se</code> | <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code>
-     *        | <code>aurora</code>
-     *        </p>
+     *        The name of the database engine to be used for this instance. </p>
      *        <p>
      *        Not every database engine is available for every AWS region.
+     *        </p>
+     *        <p>
+     *        Valid Values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>aurora</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>mariadb</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>mysql</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-ee</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-se2</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-se1</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-se</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>postgres</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sqlserver-ee</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sqlserver-se</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sqlserver-ex</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sqlserver-web</code>
+     *        </p>
+     *        </li>
      */
 
     public void setEngine(String engine) {
@@ -2798,23 +3108,142 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * The name of the database engine to be used for this instance.
      * </p>
      * <p>
-     * Valid Values: <code>mysql</code> | <code>mariadb</code> | <code>oracle-se1</code> | <code>oracle-se2</code> |
-     * <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> | <code>aurora</code>
-     * </p>
-     * <p>
      * Not every database engine is available for every AWS region.
      * </p>
+     * <p>
+     * Valid Values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>aurora</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mariadb</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mysql</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-ee</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-se2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-se1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-se</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>postgres</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sqlserver-ee</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sqlserver-se</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sqlserver-ex</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sqlserver-web</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The name of the database engine to be used for this instance.</p>
-     *         <p>
-     *         Valid Values: <code>mysql</code> | <code>mariadb</code> | <code>oracle-se1</code> |
-     *         <code>oracle-se2</code> | <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> |
-     *         <code>sqlserver-se</code> | <code>sqlserver-ex</code> | <code>sqlserver-web</code> |
-     *         <code>postgres</code> | <code>aurora</code>
-     *         </p>
+     * @return The name of the database engine to be used for this instance. </p>
      *         <p>
      *         Not every database engine is available for every AWS region.
+     *         </p>
+     *         <p>
+     *         Valid Values:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>aurora</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>mariadb</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>mysql</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>oracle-ee</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>oracle-se2</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>oracle-se1</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>oracle-se</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>postgres</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>sqlserver-ee</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>sqlserver-se</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>sqlserver-ex</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>sqlserver-web</code>
+     *         </p>
+     *         </li>
      */
 
     public String getEngine() {
@@ -2826,24 +3255,143 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * The name of the database engine to be used for this instance.
      * </p>
      * <p>
-     * Valid Values: <code>mysql</code> | <code>mariadb</code> | <code>oracle-se1</code> | <code>oracle-se2</code> |
-     * <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
-     * <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code> | <code>aurora</code>
-     * </p>
-     * <p>
      * Not every database engine is available for every AWS region.
      * </p>
+     * <p>
+     * Valid Values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>aurora</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mariadb</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mysql</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-ee</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-se2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-se1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>oracle-se</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>postgres</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sqlserver-ee</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sqlserver-se</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sqlserver-ex</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sqlserver-web</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param engine
-     *        The name of the database engine to be used for this instance.</p>
-     *        <p>
-     *        Valid Values: <code>mysql</code> | <code>mariadb</code> | <code>oracle-se1</code> |
-     *        <code>oracle-se2</code> | <code>oracle-se</code> | <code>oracle-ee</code> | <code>sqlserver-ee</code> |
-     *        <code>sqlserver-se</code> | <code>sqlserver-ex</code> | <code>sqlserver-web</code> | <code>postgres</code>
-     *        | <code>aurora</code>
-     *        </p>
+     *        The name of the database engine to be used for this instance. </p>
      *        <p>
      *        Not every database engine is available for every AWS region.
+     *        </p>
+     *        <p>
+     *        Valid Values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>aurora</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>mariadb</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>mysql</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-ee</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-se2</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-se1</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>oracle-se</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>postgres</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sqlserver-ee</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sqlserver-se</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sqlserver-ex</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sqlserver-web</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -5406,8 +5954,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <b>Version 5.6 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1, ap-southeast-2,
-     * eu-west-1, us-east-1, us-east-2, us-west-2):</b> <code> 5.6.10a</code>
+     * Version 5.6 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1, ap-southeast-2,
+     * eu-west-1, us-east-1, us-east-2, us-west-2): <code> 5.6.10a</code>
      * </p>
      * </li>
      * </ul>
@@ -5417,25 +5965,30 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <b>Version 10.1 (available in these AWS regions: us-east-2):</b> <code> 10.1.16</code>
+     * <code>10.1.19</code> (supported in all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 10.1 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1, ap-southeast-1,
-     * ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 10.1.14</code>
+     * <code>10.1.14</code> (supported in all regions except us-east-2)
+     * </p>
+     * </li>
+     * </ul>
+     * <p/>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>10.0.28</code> (supported in all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 10.0 (available in all AWS regions):</b> <code> 10.0.24</code>
+     * <code>10.0.24</code> (supported in all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 10.0 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1, ap-southeast-1,
-     * ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b>
-     * <code> 10.0.17</code>
+     * <code>10.0.17</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
      * </p>
      * </li>
      * </ul>
@@ -5445,7 +5998,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>13.00.2164.0.v1</code> (supported for all editions, and all AWS regions except sa-east-1)
+     * <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>13.00.2164.0.v1</code> (supported for all editions, and all AWS regions)
      * </p>
      * </li>
      * </ul>
@@ -5455,13 +6013,18 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>12.00.5546.0.v1</code> (supported for all editions, and all AWS regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise Edition, and all AWS regions except
-     * us-east-2)
+     * ca-central-1 and eu-west-2)
      * </p>
      * </li>
      * </ul>
@@ -5471,17 +6034,24 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>11.00.6020.0.v1</code> (supported for all editions, and all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>11.00.5058.0.v1</code> (supported for all editions, and all AWS regions except us-east-2)
+     * <code>11.00.5058.0.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1, and
+     * eu-west-2)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>11.00.2100.60.v1</code> (supported for all editions, and all AWS regions except us-east-2)
+     * <code>11.00.2100.60.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1,
+     * and eu-west-2)
      * </p>
      * </li>
      * </ul>
@@ -5491,17 +6061,20 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS regions except us-east-2)
+     * <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1, and
+     * eu-west-2)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS regions except us-east-2)
+     * <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1,
+     * and eu-west-2)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS regions except us-east-2)
+     * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1, and
+     * eu-west-2)
      * </p>
      * </li>
      * </ul>
@@ -5511,50 +6084,98 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <b>Version 5.7 (available in all AWS regions):</b> <code> 5.7.11</code>
+     * <code>5.7.17</code> (supported in all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.7 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1, ap-southeast-1,
-     * ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b>
-     * <code> 5.7.10</code>
+     * <code>5.7.16</code> (supported in all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.6 (available in all AWS regions):</b> <code> 5.6.29</code>
+     * <code>5.7.11</code> (supported in all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.6 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1, ap-southeast-1,
-     * ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b>
-     * <code> 5.6.27</code>
+     * <code>5.7.10</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
+     * </p>
+     * </li>
+     * </ul>
+     * <p/>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>5.6.35</code> (supported in all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.6 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-southeast-1, ap-southeast-2,
-     * eu-central-1, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code> 5.6.23</code>
+     * <code>5.6.34</code> (supported in all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.6 (available in these AWS regions: ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1,
-     * eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b>
-     * <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22</code>
+     * <code>5.6.29</code> (supported in all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.5 (available in all AWS regions):</b> <code> 5.5.46</code>
+     * <code>5.6.27</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.1 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
-     * sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code> 5.1.73a | 5.1.73b</code>
+     * <code>5.6.23</code> (supported in all regions except us-east-2, ap-south-1, ca-central-1, eu-west-2)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.6.22</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2, ca-central-1,
+     * eu-west-2)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.6.21b</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2, ca-central-1,
+     * eu-west-2)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.6.21</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2, ca-central-1,
+     * eu-west-2)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.6.19b</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2, ca-central-1,
+     * eu-west-2)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.6.19a</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2, ca-central-1,
+     * eu-west-2)
+     * </p>
+     * </li>
+     * </ul>
+     * <p/>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>5.5.54</code> (supported in all AWS regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.5.53</code> (supported in all AWS regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.5.46</code> (supported in all AWS regions)
      * </p>
      * </li>
      * </ul>
@@ -5701,8 +6322,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Version 5.6 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1,
-     *        ap-southeast-2, eu-west-1, us-east-1, us-east-2, us-west-2):</b> <code> 5.6.10a</code>
+     *        Version 5.6 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1, ap-southeast-2,
+     *        eu-west-1, us-east-1, us-east-2, us-west-2): <code> 5.6.10a</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -5712,26 +6333,30 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Version 10.1 (available in these AWS regions: us-east-2):</b> <code> 10.1.16</code>
+     *        <code>10.1.19</code> (supported in all AWS regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 10.1 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1,
-     *        ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b>
-     *        <code> 10.1.14</code>
+     *        <code>10.1.14</code> (supported in all regions except us-east-2)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p/>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>10.0.28</code> (supported in all AWS regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 10.0 (available in all AWS regions):</b> <code> 10.0.24</code>
+     *        <code>10.0.24</code> (supported in all AWS regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 10.0 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1,
-     *        ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1,
-     *        us-west-2):</b> <code> 10.0.17</code>
+     *        <code>10.0.17</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
      *        </p>
      *        </li>
      *        </ul>
@@ -5741,7 +6366,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>13.00.2164.0.v1</code> (supported for all editions, and all AWS regions except sa-east-1)
+     *        <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>13.00.2164.0.v1</code> (supported for all editions, and all AWS regions)
      *        </p>
      *        </li>
      *        </ul>
@@ -5751,13 +6381,18 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
+     *        <code>12.00.5546.0.v1</code> (supported for all editions, and all AWS regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise Edition, and all AWS regions
-     *        except us-east-2)
+     *        except ca-central-1 and eu-west-2)
      *        </p>
      *        </li>
      *        </ul>
@@ -5767,17 +6402,24 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
+     *        <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>11.00.6020.0.v1</code> (supported for all editions, and all AWS regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>11.00.5058.0.v1</code> (supported for all editions, and all AWS regions except us-east-2)
+     *        <code>11.00.5058.0.v1</code> (supported for all editions, and all AWS regions except us-east-2,
+     *        ca-central-1, and eu-west-2)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>11.00.2100.60.v1</code> (supported for all editions, and all AWS regions except us-east-2)
+     *        <code>11.00.2100.60.v1</code> (supported for all editions, and all AWS regions except us-east-2,
+     *        ca-central-1, and eu-west-2)
      *        </p>
      *        </li>
      *        </ul>
@@ -5787,17 +6429,20 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS regions except us-east-2)
+     *        <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS regions except us-east-2,
+     *        ca-central-1, and eu-west-2)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS regions except us-east-2)
+     *        <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS regions except us-east-2,
+     *        ca-central-1, and eu-west-2)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS regions except us-east-2)
+     *        <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS regions except us-east-2,
+     *        ca-central-1, and eu-west-2)
      *        </p>
      *        </li>
      *        </ul>
@@ -5807,51 +6452,98 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Version 5.7 (available in all AWS regions):</b> <code> 5.7.11</code>
+     *        <code>5.7.17</code> (supported in all AWS regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 5.7 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1,
-     *        ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1,
-     *        us-west-2):</b> <code> 5.7.10</code>
+     *        <code>5.7.16</code> (supported in all AWS regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 5.6 (available in all AWS regions):</b> <code> 5.6.29</code>
+     *        <code>5.7.11</code> (supported in all AWS regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 5.6 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1,
-     *        ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1,
-     *        us-west-2):</b> <code> 5.6.27</code>
+     *        <code>5.7.10</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p/>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>5.6.35</code> (supported in all AWS regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 5.6 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-southeast-1,
-     *        ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b>
-     *        <code> 5.6.23</code>
+     *        <code>5.6.34</code> (supported in all AWS regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 5.6 (available in these AWS regions: ap-northeast-1, ap-southeast-1, ap-southeast-2,
-     *        eu-central-1, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b>
-     *        <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22</code>
+     *        <code>5.6.29</code> (supported in all AWS regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 5.5 (available in all AWS regions):</b> <code> 5.5.46</code>
+     *        <code>5.6.27</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 5.1 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
-     *        sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code> 5.1.73a | 5.1.73b</code>
+     *        <code>5.6.23</code> (supported in all regions except us-east-2, ap-south-1, ca-central-1, eu-west-2)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>5.6.22</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2, ca-central-1,
+     *        eu-west-2)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>5.6.21b</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2, ca-central-1,
+     *        eu-west-2)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>5.6.21</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2, ca-central-1,
+     *        eu-west-2)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>5.6.19b</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2, ca-central-1,
+     *        eu-west-2)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>5.6.19a</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2, ca-central-1,
+     *        eu-west-2)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p/>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>5.5.54</code> (supported in all AWS regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>5.5.53</code> (supported in all AWS regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>5.5.46</code> (supported in all AWS regions)
      *        </p>
      *        </li>
      *        </ul>
@@ -6012,8 +6704,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <b>Version 5.6 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1, ap-southeast-2,
-     * eu-west-1, us-east-1, us-east-2, us-west-2):</b> <code> 5.6.10a</code>
+     * Version 5.6 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1, ap-southeast-2,
+     * eu-west-1, us-east-1, us-east-2, us-west-2): <code> 5.6.10a</code>
      * </p>
      * </li>
      * </ul>
@@ -6023,25 +6715,30 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <b>Version 10.1 (available in these AWS regions: us-east-2):</b> <code> 10.1.16</code>
+     * <code>10.1.19</code> (supported in all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 10.1 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1, ap-southeast-1,
-     * ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 10.1.14</code>
+     * <code>10.1.14</code> (supported in all regions except us-east-2)
+     * </p>
+     * </li>
+     * </ul>
+     * <p/>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>10.0.28</code> (supported in all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 10.0 (available in all AWS regions):</b> <code> 10.0.24</code>
+     * <code>10.0.24</code> (supported in all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 10.0 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1, ap-southeast-1,
-     * ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b>
-     * <code> 10.0.17</code>
+     * <code>10.0.17</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
      * </p>
      * </li>
      * </ul>
@@ -6051,7 +6748,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>13.00.2164.0.v1</code> (supported for all editions, and all AWS regions except sa-east-1)
+     * <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>13.00.2164.0.v1</code> (supported for all editions, and all AWS regions)
      * </p>
      * </li>
      * </ul>
@@ -6061,13 +6763,18 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>12.00.5546.0.v1</code> (supported for all editions, and all AWS regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise Edition, and all AWS regions except
-     * us-east-2)
+     * ca-central-1 and eu-west-2)
      * </p>
      * </li>
      * </ul>
@@ -6077,17 +6784,24 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>11.00.6020.0.v1</code> (supported for all editions, and all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>11.00.5058.0.v1</code> (supported for all editions, and all AWS regions except us-east-2)
+     * <code>11.00.5058.0.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1, and
+     * eu-west-2)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>11.00.2100.60.v1</code> (supported for all editions, and all AWS regions except us-east-2)
+     * <code>11.00.2100.60.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1,
+     * and eu-west-2)
      * </p>
      * </li>
      * </ul>
@@ -6097,17 +6811,20 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS regions except us-east-2)
+     * <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1, and
+     * eu-west-2)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS regions except us-east-2)
+     * <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1,
+     * and eu-west-2)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS regions except us-east-2)
+     * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1, and
+     * eu-west-2)
      * </p>
      * </li>
      * </ul>
@@ -6117,50 +6834,98 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <b>Version 5.7 (available in all AWS regions):</b> <code> 5.7.11</code>
+     * <code>5.7.17</code> (supported in all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.7 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1, ap-southeast-1,
-     * ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b>
-     * <code> 5.7.10</code>
+     * <code>5.7.16</code> (supported in all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.6 (available in all AWS regions):</b> <code> 5.6.29</code>
+     * <code>5.7.11</code> (supported in all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.6 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1, ap-southeast-1,
-     * ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b>
-     * <code> 5.6.27</code>
+     * <code>5.7.10</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
+     * </p>
+     * </li>
+     * </ul>
+     * <p/>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>5.6.35</code> (supported in all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.6 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-southeast-1, ap-southeast-2,
-     * eu-central-1, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code> 5.6.23</code>
+     * <code>5.6.34</code> (supported in all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.6 (available in these AWS regions: ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1,
-     * eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b>
-     * <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22</code>
+     * <code>5.6.29</code> (supported in all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.5 (available in all AWS regions):</b> <code> 5.5.46</code>
+     * <code>5.6.27</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.1 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
-     * sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code> 5.1.73a | 5.1.73b</code>
+     * <code>5.6.23</code> (supported in all regions except us-east-2, ap-south-1, ca-central-1, eu-west-2)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.6.22</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2, ca-central-1,
+     * eu-west-2)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.6.21b</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2, ca-central-1,
+     * eu-west-2)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.6.21</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2, ca-central-1,
+     * eu-west-2)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.6.19b</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2, ca-central-1,
+     * eu-west-2)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.6.19a</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2, ca-central-1,
+     * eu-west-2)
+     * </p>
+     * </li>
+     * </ul>
+     * <p/>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>5.5.54</code> (supported in all AWS regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.5.53</code> (supported in all AWS regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.5.46</code> (supported in all AWS regions)
      * </p>
      * </li>
      * </ul>
@@ -6306,8 +7071,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>Version 5.6 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1,
-     *         ap-southeast-2, eu-west-1, us-east-1, us-east-2, us-west-2):</b> <code> 5.6.10a</code>
+     *         Version 5.6 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1, ap-southeast-2,
+     *         eu-west-1, us-east-1, us-east-2, us-west-2): <code> 5.6.10a</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -6317,26 +7082,30 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>Version 10.1 (available in these AWS regions: us-east-2):</b> <code> 10.1.16</code>
+     *         <code>10.1.19</code> (supported in all AWS regions)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 10.1 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1,
-     *         ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b>
-     *         <code> 10.1.14</code>
+     *         <code>10.1.14</code> (supported in all regions except us-east-2)
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p/>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>10.0.28</code> (supported in all AWS regions)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 10.0 (available in all AWS regions):</b> <code> 10.0.24</code>
+     *         <code>10.0.24</code> (supported in all AWS regions)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 10.0 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1,
-     *         ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1,
-     *         us-west-2):</b> <code> 10.0.17</code>
+     *         <code>10.0.17</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
      *         </p>
      *         </li>
      *         </ul>
@@ -6346,7 +7115,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>13.00.2164.0.v1</code> (supported for all editions, and all AWS regions except sa-east-1)
+     *         <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS regions)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>13.00.2164.0.v1</code> (supported for all editions, and all AWS regions)
      *         </p>
      *         </li>
      *         </ul>
@@ -6356,13 +7130,18 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
+     *         <code>12.00.5546.0.v1</code> (supported for all editions, and all AWS regions)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS regions)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise Edition, and all AWS regions
-     *         except us-east-2)
+     *         except ca-central-1 and eu-west-2)
      *         </p>
      *         </li>
      *         </ul>
@@ -6372,17 +7151,24 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
+     *         <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS regions)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>11.00.6020.0.v1</code> (supported for all editions, and all AWS regions)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>11.00.5058.0.v1</code> (supported for all editions, and all AWS regions except us-east-2)
+     *         <code>11.00.5058.0.v1</code> (supported for all editions, and all AWS regions except us-east-2,
+     *         ca-central-1, and eu-west-2)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>11.00.2100.60.v1</code> (supported for all editions, and all AWS regions except us-east-2)
+     *         <code>11.00.2100.60.v1</code> (supported for all editions, and all AWS regions except us-east-2,
+     *         ca-central-1, and eu-west-2)
      *         </p>
      *         </li>
      *         </ul>
@@ -6392,17 +7178,20 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS regions except us-east-2)
+     *         <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS regions except us-east-2,
+     *         ca-central-1, and eu-west-2)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS regions except us-east-2)
+     *         <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS regions except us-east-2,
+     *         ca-central-1, and eu-west-2)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS regions except us-east-2)
+     *         <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS regions except us-east-2,
+     *         ca-central-1, and eu-west-2)
      *         </p>
      *         </li>
      *         </ul>
@@ -6412,51 +7201,98 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>Version 5.7 (available in all AWS regions):</b> <code> 5.7.11</code>
+     *         <code>5.7.17</code> (supported in all AWS regions)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 5.7 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1,
-     *         ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1,
-     *         us-west-2):</b> <code> 5.7.10</code>
+     *         <code>5.7.16</code> (supported in all AWS regions)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 5.6 (available in all AWS regions):</b> <code> 5.6.29</code>
+     *         <code>5.7.11</code> (supported in all AWS regions)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 5.6 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1,
-     *         ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1,
-     *         us-west-2):</b> <code> 5.6.27</code>
+     *         <code>5.7.10</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p/>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>5.6.35</code> (supported in all AWS regions)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 5.6 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-southeast-1,
-     *         ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b>
-     *         <code> 5.6.23</code>
+     *         <code>5.6.34</code> (supported in all AWS regions)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 5.6 (available in these AWS regions: ap-northeast-1, ap-southeast-1, ap-southeast-2,
-     *         eu-central-1, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b>
-     *         <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22</code>
+     *         <code>5.6.29</code> (supported in all AWS regions)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 5.5 (available in all AWS regions):</b> <code> 5.5.46</code>
+     *         <code>5.6.27</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version 5.1 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
-     *         sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code> 5.1.73a | 5.1.73b</code>
+     *         <code>5.6.23</code> (supported in all regions except us-east-2, ap-south-1, ca-central-1, eu-west-2)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>5.6.22</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2, ca-central-1,
+     *         eu-west-2)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>5.6.21b</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2,
+     *         ca-central-1, eu-west-2)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>5.6.21</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2, ca-central-1,
+     *         eu-west-2)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>5.6.19b</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2,
+     *         ca-central-1, eu-west-2)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>5.6.19a</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2,
+     *         ca-central-1, eu-west-2)
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p/>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>5.5.54</code> (supported in all AWS regions)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>5.5.53</code> (supported in all AWS regions)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>5.5.46</code> (supported in all AWS regions)
      *         </p>
      *         </li>
      *         </ul>
@@ -6617,8 +7453,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <b>Version 5.6 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1, ap-southeast-2,
-     * eu-west-1, us-east-1, us-east-2, us-west-2):</b> <code> 5.6.10a</code>
+     * Version 5.6 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1, ap-southeast-2,
+     * eu-west-1, us-east-1, us-east-2, us-west-2): <code> 5.6.10a</code>
      * </p>
      * </li>
      * </ul>
@@ -6628,25 +7464,30 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <b>Version 10.1 (available in these AWS regions: us-east-2):</b> <code> 10.1.16</code>
+     * <code>10.1.19</code> (supported in all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 10.1 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1, ap-southeast-1,
-     * ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 10.1.14</code>
+     * <code>10.1.14</code> (supported in all regions except us-east-2)
+     * </p>
+     * </li>
+     * </ul>
+     * <p/>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>10.0.28</code> (supported in all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 10.0 (available in all AWS regions):</b> <code> 10.0.24</code>
+     * <code>10.0.24</code> (supported in all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 10.0 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1, ap-southeast-1,
-     * ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b>
-     * <code> 10.0.17</code>
+     * <code>10.0.17</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
      * </p>
      * </li>
      * </ul>
@@ -6656,7 +7497,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>13.00.2164.0.v1</code> (supported for all editions, and all AWS regions except sa-east-1)
+     * <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>13.00.2164.0.v1</code> (supported for all editions, and all AWS regions)
      * </p>
      * </li>
      * </ul>
@@ -6666,13 +7512,18 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>12.00.5546.0.v1</code> (supported for all editions, and all AWS regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise Edition, and all AWS regions except
-     * us-east-2)
+     * ca-central-1 and eu-west-2)
      * </p>
      * </li>
      * </ul>
@@ -6682,17 +7533,24 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>11.00.6020.0.v1</code> (supported for all editions, and all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>11.00.5058.0.v1</code> (supported for all editions, and all AWS regions except us-east-2)
+     * <code>11.00.5058.0.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1, and
+     * eu-west-2)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>11.00.2100.60.v1</code> (supported for all editions, and all AWS regions except us-east-2)
+     * <code>11.00.2100.60.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1,
+     * and eu-west-2)
      * </p>
      * </li>
      * </ul>
@@ -6702,17 +7560,20 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS regions except us-east-2)
+     * <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1, and
+     * eu-west-2)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS regions except us-east-2)
+     * <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1,
+     * and eu-west-2)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS regions except us-east-2)
+     * <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS regions except us-east-2, ca-central-1, and
+     * eu-west-2)
      * </p>
      * </li>
      * </ul>
@@ -6722,50 +7583,98 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <b>Version 5.7 (available in all AWS regions):</b> <code> 5.7.11</code>
+     * <code>5.7.17</code> (supported in all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.7 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1, ap-southeast-1,
-     * ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b>
-     * <code> 5.7.10</code>
+     * <code>5.7.16</code> (supported in all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.6 (available in all AWS regions):</b> <code> 5.6.29</code>
+     * <code>5.7.11</code> (supported in all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.6 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1, ap-southeast-1,
-     * ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b>
-     * <code> 5.6.27</code>
+     * <code>5.7.10</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
+     * </p>
+     * </li>
+     * </ul>
+     * <p/>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>5.6.35</code> (supported in all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.6 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-southeast-1, ap-southeast-2,
-     * eu-central-1, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code> 5.6.23</code>
+     * <code>5.6.34</code> (supported in all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.6 (available in these AWS regions: ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-central-1,
-     * eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b>
-     * <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22</code>
+     * <code>5.6.29</code> (supported in all AWS regions)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.5 (available in all AWS regions):</b> <code> 5.5.46</code>
+     * <code>5.6.27</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version 5.1 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
-     * sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code> 5.1.73a | 5.1.73b</code>
+     * <code>5.6.23</code> (supported in all regions except us-east-2, ap-south-1, ca-central-1, eu-west-2)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.6.22</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2, ca-central-1,
+     * eu-west-2)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.6.21b</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2, ca-central-1,
+     * eu-west-2)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.6.21</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2, ca-central-1,
+     * eu-west-2)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.6.19b</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2, ca-central-1,
+     * eu-west-2)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.6.19a</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2, ca-central-1,
+     * eu-west-2)
+     * </p>
+     * </li>
+     * </ul>
+     * <p/>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>5.5.54</code> (supported in all AWS regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.5.53</code> (supported in all AWS regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>5.5.46</code> (supported in all AWS regions)
      * </p>
      * </li>
      * </ul>
@@ -6912,8 +7821,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Version 5.6 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1,
-     *        ap-southeast-2, eu-west-1, us-east-1, us-east-2, us-west-2):</b> <code> 5.6.10a</code>
+     *        Version 5.6 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1, ap-southeast-2,
+     *        eu-west-1, us-east-1, us-east-2, us-west-2): <code> 5.6.10a</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -6923,26 +7832,30 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Version 10.1 (available in these AWS regions: us-east-2):</b> <code> 10.1.16</code>
+     *        <code>10.1.19</code> (supported in all AWS regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 10.1 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1,
-     *        ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b>
-     *        <code> 10.1.14</code>
+     *        <code>10.1.14</code> (supported in all regions except us-east-2)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p/>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>10.0.28</code> (supported in all AWS regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 10.0 (available in all AWS regions):</b> <code> 10.0.24</code>
+     *        <code>10.0.24</code> (supported in all AWS regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 10.0 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1,
-     *        ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1,
-     *        us-west-2):</b> <code> 10.0.17</code>
+     *        <code>10.0.17</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
      *        </p>
      *        </li>
      *        </ul>
@@ -6952,7 +7865,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>13.00.2164.0.v1</code> (supported for all editions, and all AWS regions except sa-east-1)
+     *        <code>13.00.4422.0.v1</code> (supported for all editions, and all AWS regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>13.00.2164.0.v1</code> (supported for all editions, and all AWS regions)
      *        </p>
      *        </li>
      *        </ul>
@@ -6962,13 +7880,18 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
+     *        <code>12.00.5546.0.v1</code> (supported for all editions, and all AWS regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>12.00.5000.0.v1</code> (supported for all editions, and all AWS regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>12.00.4422.0.v1</code> (supported for all editions except Enterprise Edition, and all AWS regions
-     *        except us-east-2)
+     *        except ca-central-1 and eu-west-2)
      *        </p>
      *        </li>
      *        </ul>
@@ -6978,17 +7901,24 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
+     *        <code>11.00.6594.0.v1</code> (supported for all editions, and all AWS regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>11.00.6020.0.v1</code> (supported for all editions, and all AWS regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>11.00.5058.0.v1</code> (supported for all editions, and all AWS regions except us-east-2)
+     *        <code>11.00.5058.0.v1</code> (supported for all editions, and all AWS regions except us-east-2,
+     *        ca-central-1, and eu-west-2)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>11.00.2100.60.v1</code> (supported for all editions, and all AWS regions except us-east-2)
+     *        <code>11.00.2100.60.v1</code> (supported for all editions, and all AWS regions except us-east-2,
+     *        ca-central-1, and eu-west-2)
      *        </p>
      *        </li>
      *        </ul>
@@ -6998,17 +7928,20 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS regions except us-east-2)
+     *        <code>10.50.6529.0.v1</code> (supported for all editions, and all AWS regions except us-east-2,
+     *        ca-central-1, and eu-west-2)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS regions except us-east-2)
+     *        <code>10.50.6000.34.v1</code> (supported for all editions, and all AWS regions except us-east-2,
+     *        ca-central-1, and eu-west-2)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS regions except us-east-2)
+     *        <code>10.50.2789.0.v1</code> (supported for all editions, and all AWS regions except us-east-2,
+     *        ca-central-1, and eu-west-2)
      *        </p>
      *        </li>
      *        </ul>
@@ -7018,51 +7951,98 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Version 5.7 (available in all AWS regions):</b> <code> 5.7.11</code>
+     *        <code>5.7.17</code> (supported in all AWS regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 5.7 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1,
-     *        ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1,
-     *        us-west-2):</b> <code> 5.7.10</code>
+     *        <code>5.7.16</code> (supported in all AWS regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 5.6 (available in all AWS regions):</b> <code> 5.6.29</code>
+     *        <code>5.7.11</code> (supported in all AWS regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 5.6 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-south-1,
-     *        ap-southeast-1, ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1,
-     *        us-west-2):</b> <code> 5.6.27</code>
+     *        <code>5.7.10</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p/>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>5.6.35</code> (supported in all AWS regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 5.6 (available in these AWS regions: ap-northeast-1, ap-northeast-2, ap-southeast-1,
-     *        ap-southeast-2, eu-central-1, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b>
-     *        <code> 5.6.23</code>
+     *        <code>5.6.34</code> (supported in all AWS regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 5.6 (available in these AWS regions: ap-northeast-1, ap-southeast-1, ap-southeast-2,
-     *        eu-central-1, eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b>
-     *        <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22</code>
+     *        <code>5.6.29</code> (supported in all AWS regions)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 5.5 (available in all AWS regions):</b> <code> 5.5.46</code>
+     *        <code>5.6.27</code> (supported in all regions except us-east-2, ca-central-1, eu-west-2)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version 5.1 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2, eu-west-1,
-     *        sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code> 5.1.73a | 5.1.73b</code>
+     *        <code>5.6.23</code> (supported in all regions except us-east-2, ap-south-1, ca-central-1, eu-west-2)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>5.6.22</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2, ca-central-1,
+     *        eu-west-2)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>5.6.21b</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2, ca-central-1,
+     *        eu-west-2)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>5.6.21</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2, ca-central-1,
+     *        eu-west-2)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>5.6.19b</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2, ca-central-1,
+     *        eu-west-2)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>5.6.19a</code> (supported in all regions except us-east-2, ap-south-1, ap-northeast-2, ca-central-1,
+     *        eu-west-2)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p/>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>5.5.54</code> (supported in all AWS regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>5.5.53</code> (supported in all AWS regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>5.5.46</code> (supported in all AWS regions)
      *        </p>
      *        </li>
      *        </ul>
@@ -8697,7 +9677,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * false.
      * </p>
      * <p>
-     * You can enable IAM database authentication for the following database engines
+     * You can enable IAM database authentication for the following database engines:
      * </p>
      * <ul>
      * <li>
@@ -8719,7 +9699,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts;
      *        otherwise false. </p>
      *        <p>
-     *        You can enable IAM database authentication for the following database engines
+     *        You can enable IAM database authentication for the following database engines:
      *        </p>
      *        <ul>
      *        <li>
@@ -8747,7 +9727,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * false.
      * </p>
      * <p>
-     * You can enable IAM database authentication for the following database engines
+     * You can enable IAM database authentication for the following database engines:
      * </p>
      * <ul>
      * <li>
@@ -8768,7 +9748,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts;
      *         otherwise false. </p>
      *         <p>
-     *         You can enable IAM database authentication for the following database engines
+     *         You can enable IAM database authentication for the following database engines:
      *         </p>
      *         <ul>
      *         <li>
@@ -8796,7 +9776,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * false.
      * </p>
      * <p>
-     * You can enable IAM database authentication for the following database engines
+     * You can enable IAM database authentication for the following database engines:
      * </p>
      * <ul>
      * <li>
@@ -8818,7 +9798,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts;
      *        otherwise false. </p>
      *        <p>
-     *        You can enable IAM database authentication for the following database engines
+     *        You can enable IAM database authentication for the following database engines:
      *        </p>
      *        <ul>
      *        <li>
@@ -8848,7 +9828,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * false.
      * </p>
      * <p>
-     * You can enable IAM database authentication for the following database engines
+     * You can enable IAM database authentication for the following database engines:
      * </p>
      * <ul>
      * <li>
@@ -8869,7 +9849,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts;
      *         otherwise false. </p>
      *         <p>
-     *         You can enable IAM database authentication for the following database engines
+     *         You can enable IAM database authentication for the following database engines:
      *         </p>
      *         <ul>
      *         <li>

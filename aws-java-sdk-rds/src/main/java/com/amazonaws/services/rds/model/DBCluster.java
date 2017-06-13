@@ -278,6 +278,12 @@ public class DBCluster implements Serializable, Cloneable {
     private Boolean iAMDatabaseAuthenticationEnabled;
     /**
      * <p>
+     * Identifies the clone group to which the DB cluster is associated.
+     * </p>
+     */
+    private String cloneGroupId;
+    /**
+     * <p>
      * Specifies the time when the DB cluster was created, in Universal Coordinated Time (UTC).
      * </p>
      */
@@ -1953,6 +1959,46 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Identifies the clone group to which the DB cluster is associated.
+     * </p>
+     * 
+     * @param cloneGroupId
+     *        Identifies the clone group to which the DB cluster is associated.
+     */
+
+    public void setCloneGroupId(String cloneGroupId) {
+        this.cloneGroupId = cloneGroupId;
+    }
+
+    /**
+     * <p>
+     * Identifies the clone group to which the DB cluster is associated.
+     * </p>
+     * 
+     * @return Identifies the clone group to which the DB cluster is associated.
+     */
+
+    public String getCloneGroupId() {
+        return this.cloneGroupId;
+    }
+
+    /**
+     * <p>
+     * Identifies the clone group to which the DB cluster is associated.
+     * </p>
+     * 
+     * @param cloneGroupId
+     *        Identifies the clone group to which the DB cluster is associated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withCloneGroupId(String cloneGroupId) {
+        setCloneGroupId(cloneGroupId);
+        return this;
+    }
+
+    /**
+     * <p>
      * Specifies the time when the DB cluster was created, in Universal Coordinated Time (UTC).
      * </p>
      * 
@@ -2068,6 +2114,8 @@ public class DBCluster implements Serializable, Cloneable {
             sb.append("AssociatedRoles: ").append(getAssociatedRoles()).append(",");
         if (getIAMDatabaseAuthenticationEnabled() != null)
             sb.append("IAMDatabaseAuthenticationEnabled: ").append(getIAMDatabaseAuthenticationEnabled()).append(",");
+        if (getCloneGroupId() != null)
+            sb.append("CloneGroupId: ").append(getCloneGroupId()).append(",");
         if (getClusterCreateTime() != null)
             sb.append("ClusterCreateTime: ").append(getClusterCreateTime());
         sb.append("}");
@@ -2218,6 +2266,10 @@ public class DBCluster implements Serializable, Cloneable {
         if (other.getIAMDatabaseAuthenticationEnabled() != null
                 && other.getIAMDatabaseAuthenticationEnabled().equals(this.getIAMDatabaseAuthenticationEnabled()) == false)
             return false;
+        if (other.getCloneGroupId() == null ^ this.getCloneGroupId() == null)
+            return false;
+        if (other.getCloneGroupId() != null && other.getCloneGroupId().equals(this.getCloneGroupId()) == false)
+            return false;
         if (other.getClusterCreateTime() == null ^ this.getClusterCreateTime() == null)
             return false;
         if (other.getClusterCreateTime() != null && other.getClusterCreateTime().equals(this.getClusterCreateTime()) == false)
@@ -2263,6 +2315,7 @@ public class DBCluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDBClusterArn() == null) ? 0 : getDBClusterArn().hashCode());
         hashCode = prime * hashCode + ((getAssociatedRoles() == null) ? 0 : getAssociatedRoles().hashCode());
         hashCode = prime * hashCode + ((getIAMDatabaseAuthenticationEnabled() == null) ? 0 : getIAMDatabaseAuthenticationEnabled().hashCode());
+        hashCode = prime * hashCode + ((getCloneGroupId() == null) ? 0 : getCloneGroupId().hashCode());
         hashCode = prime * hashCode + ((getClusterCreateTime() == null) ? 0 : getClusterCreateTime().hashCode());
         return hashCode;
     }
