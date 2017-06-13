@@ -1,3 +1,8 @@
+# __1.11.147__ __2017-06-13__
+## __AWS Config__
+  - ### Features
+    - With this release AWS Config supports the Amazon CloudWatch alarm resource type.
+
 # __1.11.146__ __2017-06-12__
 ## __Amazon Relational Database Service (RDS)__
   - ### Features

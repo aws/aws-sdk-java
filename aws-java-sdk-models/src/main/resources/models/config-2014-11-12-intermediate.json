@@ -33578,6 +33578,9 @@
       }, {
         "name" : "AWSRedshiftEventSubscription",
         "value" : "AWS::Redshift::EventSubscription"
+      }, {
+        "name" : "AWSCloudWatchAlarm",
+        "value" : "AWS::CloudWatch::Alarm"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,
